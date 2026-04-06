@@ -12,20 +12,20 @@ References are grouped by topic. Each entry provides:
 
 ## Topics
 
-*(Topics will be added as the research develops. Example placeholders below.)*
-
+- `leech_lattice` — Constructions and properties of the Leech lattice
+- `octonions` — Octonion algebra, integral octonions, and related products
+- `e8_lattice` — The E8 root lattice and its representations
+- `okubo_algebra` — The Okubo (pseudo-octonion) algebra and triality
 - `background` — General mathematical background
-- `hypothesis` — Works directly related to the hypothesis under investigation
 - `algorithms` — Computational methods used in the Python project
-- `related_work` — Adjacent results and conjectures
 
 ## Reference Files
 
 Each topic has its own file:
 
-| File | Topic |
+| File | Topics covered |
 |---|---|
-| *(to be created)* | *(to be defined)* |
+| [leech_lattice_octonionic_constructions.txt](leech_lattice_octonionic_constructions.txt) | Leech lattice, octonions, E8 lattice — octonionic constructions |
 
 ## Format for Each Entry
 

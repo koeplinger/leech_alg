@@ -31,3 +31,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | File | Description |
 |---|---|
 | [001_initial_setup.txt](001_initial_setup.txt) | Project structure and manifesto setup |
+| [002_source_document_housekeeping.txt](002_source_document_housekeeping.txt) | Hypothesis stated at high level; source documents renamed and registered |

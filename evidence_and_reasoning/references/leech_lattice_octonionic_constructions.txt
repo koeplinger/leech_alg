@@ -1,0 +1,66 @@
+Topic: Octonionic constructions of the Leech lattice
+=========================================================
+
+This file collects references for works that construct, or contribute to constructing,
+the Leech lattice using octonions, the E8 lattice, and related structures.
+
+---
+
+### [Wilson2009]
+
+- **Authors**: Robert A. Wilson
+- **Title**: Octonions and the Leech lattice
+- **Published in**: Journal of Algebra, Volume 322, Issue 7, 2009, pages 2186–2190
+- **Year**: 2009
+- **DOI**: 10.1016/j.jalgebra.2009.03.021
+- **Article history**: Received 18 December 2008; available online 27 March 2009;
+  communicated by Gernot Stroth
+- **Affiliation**: School of Mathematical Sciences, Queen Mary, University of London,
+  Mile End Road, London E1 4NS, United Kingdom
+- **Source file**: wilson_2009_octonions_and_leech_lattice.pdf
+- **Topics**: Leech lattice, octonions, E8 lattice, octonionic Leech lattice,
+  Coxeter–Dickson non-associative ring, minimal vectors, Conway group
+- **Originality note**: Published in a peer-reviewed journal (Journal of Algebra,
+  Elsevier). Wilson claims this construction is "new" and provides "the first real
+  explanation" of why the minimal vector count 196560 factors as
+  3 × 240 × (1 + 16 + 16 × 16). The paper explicitly situates itself relative to
+  prior constructions (referencing 23 other constructions cited in [3] and 4
+  constructions in [16] of Wilson's bibliography). No dispute over priority or
+  originality is known to this project at time of writing. If a dispute is
+  discovered later it must be added here.
+- **Notes**: The construction defines the octonionic Leech lattice Λ as the set of
+  triples (x, y, z) of octonions from the E8 lattice L (specifically the
+  Coxeter–Dickson ring A), subject to three closure conditions. This 3-coordinate
+  structure — three copies of an octonionic E8 representation — is directly
+  relevant to the hypothesis under investigation in this project.
+
+---
+
+### [Dixon2010]
+
+- **Authors**: Geoffrey Dixon
+- **Title**: Integral Octonions, Octonion XY-Product, and the Leech Lattice
+- **Published in**: UNPUBLISHED PREPRINT. No journal imprint appears in the document.
+  Author affiliation listed as www.7stones.com (Dixon's personal website).
+- **Year**: 2010 (document dated November 21, 2010)
+- **URL**: No stable URL known. Document obtained directly.
+- **Source file**: dixon_2010_integral_octonions_xy_product_leech_lattice.pdf
+- **Topics**: Leech lattice, integral octonions, XY-product, X-product, E8 lattice,
+  laminated lattices in dimensions 4, 8, 16, 24
+- **Originality note**: This is an unpublished preprint and has not undergone formal
+  peer review. The XY-product construction referenced as [1] in Dixon's paper is
+  attributed to Dixon's earlier work; no dispute over that is known to this project.
+  Because the document has not been peer-reviewed, independent verification of its
+  claims is required before they are relied upon in this project. No plagiarism
+  dispute is known at time of writing.
+- **Notes**: Dixon constructs representations of the E8 lattice (Λ8) using the
+  X-product variant of octonion multiplication, and extends this to reach the
+  24-dimensional Leech lattice via a construction involving three copies. The
+  XY-product (A ∘_XY B := (AX)(Y†B)) is central to the paper and differs from
+  standard octonion multiplication. This approach is a second independent line of
+  evidence for the three-copies-of-E8 structure that the hypothesis aims to
+  reformulate using the Okubo algebra.
+
+---
+
+Last updated: 2026-04-06
