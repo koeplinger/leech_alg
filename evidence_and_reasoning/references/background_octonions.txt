@@ -1,0 +1,72 @@
+Topic: Octonion algebra — background and standard properties
+==============================================================
+
+This file collects references for the foundational properties of the octonion
+algebra used throughout this project.  These are well-established results in
+the public domain.
+
+---
+
+### [Wikipedia-Octonion]
+
+- **Title**: Octonion
+- **Source**: Wikipedia, the free encyclopedia
+- **URL**: https://en.wikipedia.org/wiki/Octonion
+- **Topics**: octonions, alternativity, flexibility, associator, Moufang identities,
+  composition algebra, division algebra, Fano plane, conjugate, norm
+- **Originality note**: Wikipedia is a collaborative encyclopaedia.  The mathematical
+  content on this page describes results in the public domain (the octonion algebra
+  was discovered by John T. Graves in 1843 and independently by Arthur Cayley in 1845;
+  see note on priority below).  Wikipedia itself makes no original mathematical claims.
+  No dispute over the content of standard octonion properties is known.
+- **Priority note on discovery**: The octonions were first described by John T. Graves
+  in a letter to William R. Hamilton dated 26 December 1843.  Arthur Cayley published
+  a description independently in 1845, before Graves's work was published, leading to
+  the name "Cayley numbers" being used historically.  Hamilton communicated Graves's
+  work to the Royal Irish Academy in 1844.  The priority of Graves is acknowledged in
+  the modern literature.  References:
+    - Baez, J.C., "The Octonions", Bull. Amer. Math. Soc. 39 (2002) 145-205.
+      (See Section 1 for the historical account.)
+    - Conway, J.H. and Smith, D.A., "On Quaternions and Octonions: Their Geometry,
+      Arithmetic and Symmetry", A.K. Peters, 2003.
+- **Notes**: Used as the primary reference for standard octonion properties verified
+  in python_project/tests/test_octonions.py, including: identity, imaginary squares,
+  anticommutativity, alternativity, flexibility, Moufang identities, norm
+  multiplicativity, conjugate formula, division algebra property.
+
+---
+
+### [Schafer1966]
+
+- **Authors**: Richard D. Schafer
+- **Title**: Introduction to Nonassociative Algebras
+- **Published in**: Academic Press, New York, 1966.  (Dover reprint 1995.)
+- **Topics**: alternative algebras, associator, Moufang algebras, Cayley algebras
+- **Originality note**: Standard textbook; no dispute known.
+- **Notes**: Standard reference for the theorem that, for an alternative algebra,
+  the associator is totally antisymmetric (alternating).  Referenced in
+  python_project/tests/test_octonions.py (TestAssociatorAntisymmetry) to justify
+  that total antisymmetry of the associator on basis elements implies the property
+  for all elements by trilinearity.
+
+---
+
+### [Baez2002]
+
+- **Authors**: John C. Baez
+- **Title**: The Octonions
+- **Published in**: Bulletin of the American Mathematical Society, Vol. 39, No. 2
+  (2002), pp. 145-205.
+- **URL**: https://arxiv.org/abs/math/0105155
+- **Topics**: octonions, Fano plane, division algebras, triality, E8, normed
+  division algebras
+- **Originality note**: Survey article; no dispute known.  Widely cited as the
+  definitive modern survey of the octonions and their applications.
+- **Notes**: Not yet cited directly in the project but listed here as the
+  authoritative reference for historical and structural background on octonions,
+  including the Fano plane description, the connection to triality, and the role
+  of octonions in E8 and related structures.
+
+---
+
+Last updated: 2026-04-06

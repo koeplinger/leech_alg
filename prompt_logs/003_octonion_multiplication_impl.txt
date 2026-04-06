@@ -1,0 +1,97 @@
+Date: 2026-04-06
+Prompt number: 003
+Description: Octonion multiplication rules compared; Python implementation and tests
+
+--- PROMPT START ---
+
+You have done the renaming and reference housekeeping exactly the way I want you to do it. Very well.
+You are asking me to verify whether I trust the work of Geoffrey Dixon as it has not been peer reviewed.
+The answer is that here we will not trust any work, regardless of whether it has been peer reviewed or
+not, and regardless of publication mode. Instead, we will verify it explicitly by writing a python
+program. That said, I had a while back written a computer program that essentially verified both works
+(Wilson and Dixon). But I dimly remember that there were typos in at least one of the papers, which
+needed fixing. That is of course a technicality, and does not take away from the original finding. Here
+we will refer to both works, and put my personal spin on it: Geoffrey Dixon discovered that the Leech
+lattice closes on an octonionic construction of three versions of the E8 lattice, and Robert Wilson
+later provided a needed correction.
+
+Now let's start with the verification by means of a Python program. The program will have an
+implementation of the octonion product (with tests) that permits the multiplication tables used by
+Wilson and Dixon, respectively.
+
+Start by reading the definition of octonion multiplication in both papers and see whether they differ.
+If they differ, then generate two separate multiplication tables, one for each author. For now, don't
+worry about the authors' construction of the E8 lattice yet.
+
+In this first prompt, just verify that the octonion multiplication rule(s) are indeed octonionic, that
+the algebra is always alternative and flexible, and other key characteristics of octonions that you find
+e.g. on Wikipedia.
+
+--- PROMPT END ---
+
+--- FINDING: MULTIPLICATION TABLES COMPARED ---
+
+After reading both papers in full:
+
+Wilson [Wilson2009] uses PL(7) = {inf} u F_7 as his index set.
+  Base rule: i_0 * i_1 = i_3.
+  Symmetries: t->t+1 and t->2t (mod 7 in {0,...,6}).
+  7 triples (Wilson indices): (0,1,3),(1,2,4),(2,3,5),(3,4,6),(4,5,0),(5,6,1),(6,0,2).
+
+Dixon [Dixon2010] uses {0,...,7} as his index set (e_0 = identity).
+  Base rule: e_a * e_{a+1} = e_{a+3}, a=1,...,7 (mod 7 in {1,...,7}).
+  7 triples (Dixon indices): (1,2,4),(2,3,5),(3,4,6),(4,5,7),(5,6,1),(6,7,2),(7,1,3).
+
+Index mapping: Wilson i_inf <-> Dixon e_0; Wilson i_k <-> Dixon e_{k+1} for k=0,...,6.
+Under this mapping the two triple sets are IDENTICAL.
+=> ONE multiplication table (STANDARD_ALGEBRA) suffices for both authors' standard product.
+
+Dixon additionally defines an X-product:
+  A o_X B := (A * l0) * (l0^{-1} * B),  l0 = (e_0+...+e_7)/2.
+  Multiplication table governed by: e_a o e_{a+2} = e_{a+3}, a=1,...,7 (mod 7).
+  7 triples: (1,3,4),(2,4,5),(3,5,6),(4,6,7),(5,7,1),(6,1,2),(7,2,3).
+=> XPRODUCT_ALGEBRA is a distinct (but isomorphic) octonion algebra.
+
+Full comparison documented in:
+  evidence_and_reasoning/key_claims/001_wilson_dixon_multiplication_tables_compared.txt
+
+--- ACTIONS TAKEN ---
+
+Files created:
+  python_project/src/octonions.py         -- OctonionAlgebra, Octonion, associator()
+  python_project/tests/test_octonions.py  -- 52 tests across 19 test classes
+  python_project/conftest.py              -- pytest path configuration
+  python_project/requirements.txt
+  python_project/src/__init__.py
+  python_project/tests/__init__.py
+  evidence_and_reasoning/key_claims/001_wilson_dixon_multiplication_tables_compared.txt
+  evidence_and_reasoning/references/background_octonions.txt
+
+Test results:
+  52 passed, 0 failed (0.53 s)
+  python3 -m pytest tests/test_octonions.py -v
+
+Properties verified (both STANDARD_ALGEBRA and XPRODUCT_ALGEBRA):
+  1.  Identity element
+  2.  e_i^2 = -e_0 for imaginary basis elements
+  3.  Anticommutativity of distinct imaginary basis pairs
+  4.  Non-commutativity (sanity)
+  5.  Non-associativity (sanity)
+  6.  Norm multiplicativity: N(x*y) = N(x)*N(y)
+  7.  Conjugate formula: x*conj(x) = conj(x)*x = N(x)*e_0
+  8.  Conjugate is an involution
+  9.  Left alternativity: (x*x)*y = x*(x*y)
+  10. Right alternativity: x*(y*y) = (x*y)*y
+  11. Flexibility: (x*y)*x = x*(y*x)
+  12. Total antisymmetry of associator (all 512 ordered basis triples)
+  13. Left Moufang identity: z*(x*(z*y)) = ((z*x)*z)*y
+  14. Division algebra: two-sided inverses for all basis elements
+  15. No zero divisors among basis elements
+  16. Power-associativity: x^3, x^4 correct
+  17. STANDARD_ALGEBRA and XPRODUCT_ALGEBRA have different tables
+  18. Dixon's stated rules e_a*e_{a+1}=e_{a+3} and e_a o e_{a+2}=e_{a+3} match
+      the implemented tables exactly
+  19. Cross-check: XPRODUCT_ALGEBRA table agrees with Dixon's analytic formula
+      A o_X B = (A*l0)*(l0^{-1}*B) for all 64 basis pairs
+
+--- END ACTIONS ---

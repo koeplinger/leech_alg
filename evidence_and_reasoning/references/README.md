@@ -26,6 +26,7 @@ Each topic has its own file:
 | File | Topics covered |
 |---|---|
 | [leech_lattice_octonionic_constructions.txt](leech_lattice_octonionic_constructions.txt) | Leech lattice, octonions, E8 lattice — octonionic constructions |
+| [background_octonions.txt](background_octonions.txt) | Octonion algebra background: standard properties, history, survey |
 
 ## Format for Each Entry
 
