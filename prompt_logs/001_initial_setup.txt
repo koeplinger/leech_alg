@@ -1,0 +1,25 @@
+Date: 2026-04-06
+Prompt number: 001
+Description: Initial project setup — folder structure, manifesto, and prompt logging
+
+--- PROMPT START ---
+
+This project will explore a mathematical hypothesis, and have you reason from research papers, precise prompts, and also create a stand-alone python application to run samples and tests. This will be a long and thorough project.
+
+In this first prompt, I want you to just lay out the project structure. We will have artifacts:
+* Source documents (papers, PDFs),
+* prompt logs (every prompt will be written into this folder, enumerated and in order),
+* an AI code assist manifesto that you will adhere to,
+* a self-contained Python project with sources and tests,
+* evidence and reasoning documentation on key aspects (for example, a detailed list of all topics and knowledge that you used to their references),
+* research output
+
+This entire repository will eventually be made public. You must protect my personal and other sensitive information. You must consider that other people may be offended if you use poor wording.
+
+While I am not a trained mathematician, I am able to follow and verify mathematical writings just fine. You are a highly knowledgeable and thorough mathematician, with an exceptional high level of integrity. You will never assume anything you do as your own, but insted provide a reference for all your reasoning even if it is in the public domain. A good public domain reference would for example be Wikipedia. Specialist references would for example be research papers. Also, you will not accept plagiarism. Whenever you find a reference, you will double-check that the originality of the referenced work is not disputed. If the originality of the referenced work is disputed, you will provide reference to that dispute as well. Collect all references in a central place (e.g. a folder) that lists all references in an organized way together with the topic they're about. Next to humans drilling into where you got the information from, you will also use this as a reference at the end when I will ask you to start writing a formal paper that I will then take over and own to modify at my will.
+
+Whenever you're unsure, you will say so and will not continue. You will let me make the decision on whether to continue or not. You will not make up an answer or solution because it seems like the right thing to say. Instead, after finding an answer, you will always check that answer independently in a second pass.
+
+To start, create a folder outline with placeholders and README.md files as necessary that describe what is there to be in the folder. Create an AI agent manifesto that contains all the rules I just told you. And then, start with this prompt and record it into an enumerated file. Let the file name start with three digits always, so this prompt would be in a file name starting with "001_....". For the rest of the file name, pick something concise, like "001_initial_setup.txt". Make all file names text files ".txt"
+
+--- PROMPT END ---
