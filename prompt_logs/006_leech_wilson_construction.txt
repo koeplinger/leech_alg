@@ -15,23 +15,24 @@ given multiplication rule closes on the Leech lattice from Wilson's work. In
 later prompts when we look at Dixon's construction, this will serve as
 verification from a separate point of view."
 
---- CONTEXT ---
+--- CLARIFICATION OF THE USER'S QUESTION ---
 
-Λ is a rank-24 Z-module (lattice) embedded inside L³, where L = E8 = the
-integral octonions (the Coxeter–Dickson order).  Because L carries the octonion
-product, L³ inherits candidate algebraic structure.  The membership conditions
-(1)–(3) characterise exactly which elements of L³ belong to Λ.  The question
-of whether an octonion-based multiplication rule on R^24 restricts to a product
-that closes on Λ is the central research question of this project.
+The user's question contained two issues that were identified and corrected
+before proceeding:
 
-The minimal-vector shell consists of the 196,560 vectors of minimum norm
-(N_std = 8), the analogue of E8 roots for the Leech lattice.  (Λ has no
-vectors of norm 2, so it has no root system in the classical sense; the
-minimal-vector shell plays the equivalent structural role.)
+Issue 1: "Multiplication that closes."
+Wilson does NOT define a "multiplication that closes on the Leech lattice."
+He constructs the Leech lattice as a SET Λ ⊂ L³ satisfying three algebraic
+conditions (membership conditions, not a product rule).
 
-This prompt established Wilson's membership test and verified all three families
-of minimal-shell vectors, providing the reference for evaluating any proposed
-product.
+Issue 2: "Root system."
+The Leech lattice has NO root system (no vectors of norm 2; this is one of its
+four defining properties).  The relevant object is the minimal-vector shell:
+196,560 vectors of standard R^24 norm-squared 8.
+
+What was actually done: established Wilson's Leech lattice membership test and
+verified all 196,560 minimal vectors satisfy the membership conditions.  These
+tools will serve as the reference for evaluating any proposed product.
 
 --- CONSTRUCTION INVESTIGATED ---
 

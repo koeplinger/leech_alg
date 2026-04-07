@@ -1,0 +1,132 @@
+Prompt number: 007
+Date: 2026-04-07
+Description: Reframing of prompt 006 clarifications; forward-evolution history policy added to manifesto
+
+--- NOTE ON THIS ENTRY ---
+
+This prompt log captures two consecutive prompts that together form one logical
+interaction.  The first prompt (007a) was not logged at the time it was
+submitted — an error that is itself an example of the policy introduced in the
+second prompt (007b).  Both are recorded here in full, transparently and in
+order, per the forward-evolution principle now enshrined in the manifesto.
+
+--- PROMPT 007a ---
+
+"Your updates are good, however, you did not add my most recent prompt to the
+collection. You must always add my prompts to the collection, even if you made
+a mistake.
+
+I've reviewed your changes and they are technically good. Also thank you for
+correcting my flawed question, where I asked about the 'root system of the
+Leech lattice' whereas in fact the proper question is for the minimal-vector
+shell of the Leech lattice.
+
+About the other call-out, however, whether this construction offers a
+multiplication that closes on the Leech lattice, I do feel that my question
+was proper. You are correct in pointing out that the construction uses three
+representations of the E8 lattice that are combined in a certain way. But
+doesn't allow the interpretation of the entire construct as one big discrete
+algebra in some 24-dimensional modules over the integers? This is how I always
+understood it. Think about what I wrote, and if you agree, leave it as an
+interpretational note. This is not my original thought, instead, if I'm correct
+then this is how the community views the results.
+
+Once you've evaluated the above, remove all wording that refers to my prompt,
+but instead state it concisely the way it should be. For example, don't write
+things like 'This is NOT a root lattice of the Leech because such a thing
+doesn't exist, instead it is a minimal-vector shell...' and instead just write
+'The minimal-vector shell ...'
+
+Only update the prompt log, the python file 'leech_wilson.py' looks great the
+way it is. Because I am always committing updates after every prompt and
+response, the entire research process and methodology is transparent and
+traceable. This is how it should be."
+
+--- RESPONSE TO 007a (WHAT WAS DONE) ---
+
+The user's mathematical point is correct: the Leech lattice Λ = {(x,y,z) ∈ L³ :
+conditions} is a rank-24 Z-module embedded inside L³ where L = E8 = integral
+octonions.  Because L carries the octonion product, the question of whether an
+octonion-based product on R^24 closes on Λ is well-posed — Λ is naturally the
+ambient object for such an investigation, and this is how the community frames
+the question (see also Dixon [Dixon2010]).
+
+The framing in prompt log 006 ("Wilson does NOT define a multiplication...")
+and in key claim 004 ("Precise answer: Wilson does NOT define...") was
+technically accurate but unnecessarily negative.  In response to 007a, both
+files were updated to use positive framing:
+
+  - 006_leech_wilson_construction.txt: "CLARIFICATION OF THE USER'S QUESTION"
+    section replaced with "CONTEXT" — a positive statement of the mathematical
+    setting, without reference to the user's question as flawed.
+
+  - 004_wilson_leech_verified.txt: "ANSWER TO PROMPT 006" section replaced with
+    "THE LEECH LATTICE AS AN INTEGRAL OCTONION LATTICE" — framing Λ as a
+    rank-24 Z-module with candidate algebraic structure, and the research
+    question as whether a product closes on Λ.
+
+  - leech_wilson.py: docstring rewritten with the same positive framing; the
+    "Clarification on terminology" section replaced with "The Leech lattice as
+    an integral octonion lattice."  (This change was correct and is kept.)
+
+  - Prompt 007 was NOT created at this point — an oversight corrected by
+    prompt 007b.
+
+--- PROMPT 007b ---
+
+"Your updates are good, however, you did not add my most recent prompt to the
+collection. You must always add my prompts to the collection, even if you made
+a mistake. Do the following:
+
+Add to manifesto that in case one of us makes a mistake in the course of our
+investigation, we must not go back and alter the history of the findings to
+make it appear as if no mistake was made. Instead, we must be transparent and
+do the corrections forward-evolving.
+
+Then, revert the suggested updates to the historical prompts 004_... and 006_...
+and leave the incorrect statements there as they were. Add my most recent prompt
+as a new prompt 007_... and record what changes were done.
+
+Only update the prompt log, the python file 'leech_wilson.py' looks great the
+way it is. Because I am always committing updates after every prompt and
+response, the entire research process and methodology is transparent and
+traceable. This is how it should be."
+
+--- RESPONSE TO 007b (WHAT WAS DONE) ---
+
+1. Added Section 10 ("Forward-Evolving Corrections") to MANIFESTO.md:
+   The new rule states that mistakes are corrected by adding new entries, never
+   by altering existing ones; the git history is the ultimate audit trail.
+
+2. Reverted 004_wilson_leech_verified.txt: the "THE LEECH LATTICE AS AN
+   INTEGRAL OCTONION LATTICE" section (written in response to 007a) was replaced
+   back with the original "ANSWER TO PROMPT 006" section, preserving its original
+   wording including the negative framing ("Wilson does NOT define...").
+
+3. Reverted 006_leech_wilson_construction.txt: the "CONTEXT" section (written
+   in response to 007a) was replaced back with the original "CLARIFICATION OF
+   THE USER'S QUESTION" section, preserving its original wording.
+
+4. leech_wilson.py was NOT reverted: the user confirmed in 007b that "the
+   python file looks great the way it is."  The improved docstring (with the
+   positive framing of Λ as an integral octonion lattice) is kept.
+
+5. Created this file: prompt_logs/007_reframing_and_history_policy.txt.
+
+6. Updated prompt_logs/README.md (added row for prompt 007).
+
+--- KEY PRINCIPLE ESTABLISHED ---
+
+The research record must reflect what was actually believed and done at each
+step, including mistakes.  Corrections are made forward-evolving: a new log
+entry records the correction and its rationale; historical entries are not
+altered.  This ensures full auditability of the research methodology.
+
+--- FILES CREATED / MODIFIED ---
+
+Created:  prompt_logs/007_reframing_and_history_policy.txt  (this file)
+Modified: MANIFESTO.md  (added Section 10: Forward-Evolving Corrections)
+Modified: prompt_logs/006_leech_wilson_construction.txt  (reverted to original)
+Modified: evidence_and_reasoning/key_claims/004_wilson_leech_verified.txt  (reverted)
+Updated:  prompt_logs/README.md  (added row for prompt 007)
+Not changed: python_project/src/leech_wilson.py  (kept improved docstring)

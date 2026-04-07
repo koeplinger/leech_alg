@@ -73,4 +73,13 @@ The AI agent operates in the role of a highly knowledgeable and thorough mathema
 
 ---
 
+## 10. Forward-Evolving Corrections
+
+- When a mistake is discovered — whether in a claim, a computation, a classification, or the framing of a question — **it must be corrected forward, not by altering the historical record**.
+- Prompt logs, key claim files, and other artifacts that are already committed must be left as they were at the time of writing.  A new entry (new prompt log, amended claim, or explicit correction note) is created to record the correction and its rationale.
+- This applies equally to mistakes made by the AI agent and to mistakes made by the human researcher.  The research record must reflect what was actually believed and done at each step, so that the methodology remains auditable.
+- The git commit history is the ultimate source of truth for what changed and when.
+
+---
+
 *This manifesto was established at project inception and applies to all subsequent AI-assisted work unless explicitly amended by the human researcher.*
