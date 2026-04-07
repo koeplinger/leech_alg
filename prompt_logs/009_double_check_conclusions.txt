@@ -1,0 +1,93 @@
+Prompt number: 009
+Date: 2026-04-07
+Description: Double-check of conclusions from prompts 006–008; verification of open questions
+
+--- PROMPT ---
+
+"You have concluded the analysis I wanted you to do on the works of Wilson and
+Dixon. I have reviewed your files and code and tests, and they look plausible
+and complete to me. Nevertheless, run a double-check the conclusion: Both works
+represent the Leech lattice in their own way. While the representations are
+different, they are nevertheless correct concrete representations in the general
+understanding of what the Leech lattice is. Furthermore, both works permit an
+interpretation of demonstrating an integral algebra on a 24-dimensional module
+over the integers. This double-check is for redundancy, to make sure I didn't
+overlook anything, and to make sure that there are no open questions that you
+have left behind or found not relevant."
+
+--- ANALYSIS ---
+
+Two claims were examined against the source materials and computational evidence:
+
+Claim 1: Both works represent the Leech lattice in their own way.
+
+  Wilson — FULLY ESTABLISHED:
+    All four defining properties of the Leech lattice are verified:
+    - Even lattice: tested (type-1 Gram matrix entries all in 2Z)
+    - Self-dual (det_Wilson = 1): analytic proof [Wilson2009 Section 4]
+    - Rank 24: verified computationally
+    - No norm-2 vectors: analytic proof [Wilson2009 Section 4]
+    Combined with the full 196,560 membership check, Wilson's Λ is the Leech
+    lattice by Conway's uniqueness theorem [Conway-Sloane Chapter 12].
+
+  Dixon — BASIC STRUCTURE VERIFIED, FULL CHARACTERIZATION TRUSTED FROM PAPER:
+    Confirmed computationally:
+    - 196,560 distinct vectors of norm 8 ✓
+    - Rank 24 ✓
+    - No norm-2 vectors (all norms = 8 by calculation) ✓
+    Not independently verified:
+    - Even lattice property for Dixon's shell (not tested)
+    - Self-duality of Dixon's lattice (no proof reproduced)
+    These two properties are required for the full Leech lattice
+    characterization by Conway's theorem.  We rely on Dixon's paper for them.
+    This is an honest gap in the computational verification.
+
+  The "different representations" conclusion is sound: 179,328 exclusive
+  vectors each, 17,232 shared, confirmed computationally.
+
+Claim 2: Both works permit an interpretation of an integral algebra on a
+         24-dimensional module over the integers.
+
+  What is true:
+    Both constructions embed Λ₂₄ inside L³ where L = E8 = integral octonions.
+    Because L carries the octonion product, the ambient space L³ has candidate
+    algebraic structure.  Λ is a rank-24 Z-module inside L³.  This makes the
+    question of a product closing on Λ well-posed and natural.
+
+  What is NOT true (and must not be overlooked):
+    Neither work DEMONSTRATES an integral algebra on Λ₂₄.
+    - Wilson constructs Λ as a SET satisfying three membership conditions.
+      He defines no product on Λ.  Key claim 004 records: "Wilson does NOT
+      define a 'multiplication that closes on the Leech lattice.'"
+    - Dixon defines XY-products on E8 (8-dimensional), but for the
+      24-dimensional Leech lattice writes in Section 7 explicitly:
+      "No idea yet."  The question is posed as open, not as a result.
+
+  The statement "permit an interpretation" is correct in the weaker sense:
+  the constructions PLACE Λ₂₄ in a setting where the algebra question is
+  natural.  But the integral algebra question is the project's central
+  UNSOLVED problem and must not be considered resolved.
+
+--- OPEN QUESTIONS FLAGGED ---
+
+1. Even lattice property for Dixon's shell — not computationally verified.
+   Should be added to the test suite for rigorous independent confirmation.
+
+2. Self-duality of Dixon's lattice — not proven analytically or numerically.
+
+3. The integral algebra question — explicitly open.  Neither Wilson nor Dixon
+   has found a product closing on Λ₂₄.  This is the research project's
+   central unsolved question.
+
+4. The 17,232 shared vectors — why exactly this number?  The A₁ type-1
+   contribution (336) is understood, but the type-2 (6,144) and type-3
+   (10,752) overlap counts have no explanation yet.  This is a potentially
+   interesting structural question about the relationship between the two
+   embeddings.
+
+--- FILES CREATED / MODIFIED ---
+
+Created:  prompt_logs/009_double_check_conclusions.txt  (this file)
+Created:  evidence_and_reasoning/key_claims/006_double_check_wilson_dixon.txt
+Updated:  prompt_logs/README.md  (added row for prompt 009)
+Updated:  evidence_and_reasoning/key_claims/README.md  (added entry for claim 006)

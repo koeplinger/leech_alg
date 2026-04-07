@@ -38,3 +38,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [006_leech_wilson_construction.txt](006_leech_wilson_construction.txt) | Wilson's Leech lattice: 196,560 minimal vectors verified; type-3 bug found and fixed |
 | [007_reframing_and_history_policy.txt](007_reframing_and_history_policy.txt) | Reframing of 006 clarifications (Λ as integral octonion lattice); forward-evolution history policy added to manifesto |
 | [008_dixon_leech_construction.txt](008_dixon_leech_construction.txt) | Dixon's Leech lattice: 196,560 minimal vectors verified; different embedding from Wilson's found (17,232 shared) |
+| [009_double_check_conclusions.txt](009_double_check_conclusions.txt) | Double-check of Wilson/Dixon conclusions; integral algebra question flagged as OPEN; gaps in Dixon verification noted |
