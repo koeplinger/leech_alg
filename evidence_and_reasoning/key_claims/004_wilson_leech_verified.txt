@@ -90,22 +90,18 @@ No norm-2 vectors (proven analytically):
 These four properties uniquely characterise the Leech lattice by Conway's
 theorem [Conway–Sloane, Chapter 12].
 
---- ANSWER TO PROMPT 006 ---
+--- THE LEECH LATTICE AS AN INTEGRAL OCTONION LATTICE ---
 
-The user asked: "does Wilson's construction yield a multiplication that closes
-on the Leech lattice?"
-
-Precise answer: Wilson does NOT define a "multiplication that closes on the
-Leech lattice."  He constructs the Leech lattice as a SET Λ ⊂ L³ via three
-algebraic conditions, then characterises its 196,560 minimal vectors.
-
-The object Wilson constructs IS the Leech lattice (verified computationally
-by confirming all 196,560 minimal vectors satisfy conditions 1–3, plus the four
-defining properties of the Leech lattice).
-
-The computational tools built here — the membership test is_in_leech(x, y, z)
-and the three minimal-vector generators — are the reference for evaluating
-whether a proposed product maps E8 elements into the Leech lattice.
+Λ is a rank-24 Z-module (lattice) embedded inside L³, where
+L = E8 = the integral octonions (the Coxeter–Dickson order).  Because L
+carries the octonion product, L³ inherits candidate algebraic structure, and
+the membership conditions (1)–(3) characterise exactly which elements of L³
+belong to Λ.  The question of whether an octonion-based multiplication rule
+on R^24 restricts to a product that closes on Λ — making Λ a 24-dimensional
+integral algebra — is the central research question of this project.  Dixon
+[Dixon2010] has examined this question; the tools established here (the
+membership test is_in_leech and the minimal-vector shell) provide the
+reference for evaluating any such proposal.
 
 --- REFERENCES ---
 

@@ -1,27 +1,41 @@
 """
 leech_wilson.py — Wilson's octonionic Leech lattice construction.
 
-Clarification on terminology
-------------------------------
-Wilson [Wilson2009] does NOT define a "multiplication that closes on the Leech
-lattice."  He constructs the Leech lattice as a SET of triples from three copies
-of the E8 lattice L.  The Leech lattice has NO root system (no vectors of norm 2);
-this is one of its four defining properties.  What Wilson characterises are the
-196,560 minimal vectors (standard R^24 norm-squared = 8), which form the "first
-shell" of the lattice.  These are sometimes loosely called the "root system" in
-informal usage, but that term is technically incorrect.
+The Leech lattice as an integral octonion lattice
+--------------------------------------------------
+The Leech lattice Λ is a rank-24 Z-module (lattice) embedded inside L³, where
+L = E8 = the integral octonions (the Coxeter–Dickson order, the unique maximal
+order of the real octonion division algebra).  Because L carries the octonion
+product, L³ inherits candidate algebraic structure.  The membership conditions
+(1)–(3) below characterise exactly which elements of L³ belong to Λ.
+
+The central research question of this project: whether a proposed
+octonion-based multiplication rule on R^24 restricts to a product on Λ that
+closes — i.e., whether Λ forms a 24-dimensional integral algebra under some
+octonion-derived product.  Dixon [Dixon2010] has examined this question by
+defining an XY-product.  Wilson's construction provides the reference object:
+Λ as a precisely characterised rank-24 Z-lattice with algebraic membership
+conditions.
+
+The minimal-vector shell of Λ consists of the 196,560 vectors of minimum
+norm (N_std = 8 in the standard R^24 metric), partitioned into three families.
+These are the analogue, for the Leech lattice, of the 240 roots in E8 — the
+extremal vectors that generate and characterise the lattice.  (The Leech
+lattice has no vectors of norm 2, so it has no root system in the classical
+Lie-theoretic sense; the minimal-vector shell plays the equivalent structural
+role.)
 
 What this module establishes (for future verification work)
 ------------------------------------------------------------
 1. A membership test is_in_leech(x, y, z): Wilson's three conditions.
-2. The three families of 196,560 minimal vectors.
-3. The Leech lattice is rank 24, even, self-dual (Gram det = 1), and has no
-   vectors of norm less than 8.
+2. The three families of 196,560 minimal-shell vectors.
+3. The Leech lattice is rank 24, even, self-dual (Gram det = 1 under Wilson's
+   inner product), and has minimum norm 8.
 
 These together uniquely characterise the Leech lattice by Conway's theorem
-[Conway–Sloane, Chapter 12].  The membership test and minimal-vector shell will
-serve as the reference for checking whether Dixon's product (or any other proposed
-product) maps E8 elements into the Leech lattice.
+[Conway–Sloane, Chapter 12].  The membership test and minimal-vector shell
+serve as the reference for checking whether a proposed product maps E8 elements
+into the Leech lattice.
 
 Wilson's Leech lattice definition [Wilson2009 Section 3]
 ---------------------------------------------------------
