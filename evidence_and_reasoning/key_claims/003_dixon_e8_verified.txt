@@ -1,0 +1,114 @@
+Claim number: 003
+Title: Dixon's two 240-element octonionic constructions are valid E8 minimal-vector shells
+Status: ESTABLISHED
+Date: 2026-04-07
+
+--- STATEMENT ---
+
+Dixon [Dixon2010] defines two 240-element subsets of STANDARD_ALGEBRA, each
+forming the minimal-vector shell of an E8 lattice representation:
+
+  Ξ^even = Ξ₀ ∪ Ξ₂  (240 elements, norm² = 1)
+  A^odd  = A₁ ∪ A₃  (240 elements, norm² = 2)
+
+Both sets satisfy all expected properties of a root system / minimal-vector
+shell for E8:
+
+  - Correct element counts: 240 = 16+224 (Ξ^even); 240 = 112+128 (A^odd).
+  - No duplicate elements.
+  - All elements have the expected norm (1 for Ξ^even, 2 for A^odd).
+  - Correct coordinate structures.
+  - Rank 8: the elements span R^8.
+  - Root-system integrality: 2⟨α,β⟩ ∈ Z for all α,β ∈ Ξ^even.
+  - Reflection closure: σ_α(β) = β − 2⟨α,β⟩α ∈ Ξ^even for all α,β ∈ Ξ^even.
+  - Dixon's X-product property eq. (5): for all X and all basis pairs (e_a, e_b),
+    the X-product (e_a*X)*(X^{-1}*e_b) is a ±basis element.
+
+These properties are verified computationally in python_project/tests/test_e8_dixon.py.
+
+--- CONSTRUCTION: Ξ^even ---
+
+Reference: [Dixon2010 Section 2, eq. (4)].
+
+Ξ₀ = {±e_a : a = 0,...,7}
+  Count: 2 * 8 = 16.
+  Coordinate structure: single nonzero entry = ±1.
+  Norm: N(±e_a) = 1.
+
+Ξ₂ = {(±e_a ± e_b ± e_c ± e_d)/2 : a,b,c,d distinct,
+        e_a(e_b(e_c*e_d)) = ±e_0}
+  Count: 14 valid 4-index subsets × 16 sign patterns = 224.
+  Coordinate structure: exactly 4 nonzero entries, each ±1/2.
+  Norm: N = 4*(1/2)² = 1.
+
+The 14 valid 4-element subsets are:
+  Type A (7 sets):  {0} ∪ T for each standard Fano triple T ⊂ {1,...,7}.
+    Example: T = (1,2,4) → subset {0,1,2,4}.
+  Type B (7 sets):  complement of T within {1,...,7} for each Fano triple T.
+    Example: T = (1,2,4) → subset {3,5,6,7}.
+
+Total: Ξ^even = Ξ₀ ∪ Ξ₂ has 16 + 224 = 240 elements.
+
+--- CONSTRUCTION: A^odd ---
+
+Reference: [Dixon2010 Section 6].
+
+A₁ = {±e_a ± e_b : a,b ∈ {0,...,7} distinct}
+  Count: C(8,2) * 4 = 28 * 4 = 112.
+  Coordinate structure: exactly two nonzero entries, each ±1.
+  Norm: N(±e_a ± e_b) = 1² + 1² = 2.
+
+A₃ = {(1/2)(±e_0 ± e_1 ... ± e_7) : EVEN number of + signs}
+  Equivalently: even number of − signs (since 8 − even = even).
+  Count: 2^8 / 2 = 128.
+  Coordinate structure: all eight entries = ±1/2.
+  Norm: N = 8*(1/2)² = 2.
+
+Total: A^odd = A₁ ∪ A₃ has 112 + 128 = 240 elements.
+
+--- RELATION TO WILSON'S CONSTRUCTION ---
+
+A₁ (Dixon) = Wilson's type-1 roots:  identical 112-element set {±e_a ± e_b}.
+
+A₃ (Dixon, even minus-count) and Wilson's type-2 roots (odd minus-count) are
+complementary: they partition all 256 sign-pattern elements (1/2)(±e_0...±e_7).
+  A₃ ∩ Wilson's type-2 = ∅  (complementary parity conditions).
+  A₃ ∪ Wilson's type-2 = all 256 sign-pattern vectors at scale ½.
+
+Ξ^even (norm 1) and Wilson's L (norm 2) are E8 representations at different
+scales; neither is a subset of the other.
+
+--- DIXON'S X-PRODUCT PROPERTY ---
+
+Reference: [Dixon2010 eq. (5)].
+
+For any X in the algebra with N(X) ≠ 0, the X-product of two basis elements is:
+  e_a ◦_X e_b = (e_a * X) * (X^{-1} * e_b)
+
+Dixon proves this always equals ±e_c for some basis element e_c, when X ∈ Ξ^even
+or X ∈ A^odd.
+
+Verified computationally:
+  For X ∈ Ξ^even (N(X)=1, so X^{-1}=X̄):
+    (e_a * X) * (X̄ * e_b) = ±e_c  for all 240 X and all 64 pairs (a,b).
+  For X ∈ A^odd (N(X)=2, so X^{-1}=X̄/2):
+    (e_a * X) * ((X̄/2) * e_b) = ±e_c  for all 240 X and all 64 pairs (a,b).
+
+Total: 2 × 240 × 64 = 30,720 combinations verified.
+
+--- REFERENCES ---
+
+[Dixon2010]  G.M. Dixon, "Integral Octonions, Octonion XY-Product, and the
+             Leech Lattice", preprint, 2010.
+
+[Wilson2009] R.A. Wilson, "Octonions and the Leech lattice",
+             Journal of Algebra 322 (2009) 2186-2190.
+             DOI: 10.1016/j.jalgebra.2009.03.021
+
+--- COMPUTATIONAL EVIDENCE ---
+
+Test file:  python_project/tests/test_e8_dixon.py
+Test count: 29 tests across 11 classes
+Test result: 29 passed, 0 failed (run date: 2026-04-07)
+
+Full suite (105 tests including octonion and Wilson tests): 105 passed, 0 failed.

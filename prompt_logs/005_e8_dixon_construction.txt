@@ -1,0 +1,111 @@
+Prompt number: 005
+Date: 2026-04-07
+Description: Dixon E8 lattice construction — implementation and verification
+
+--- PROMPT ---
+
+"Great. Now look at Dixon's work and see to verify that his representations of
+the E8 lattice have indeed the expected properties. The goal of all of this is
+to verify our methodology and tooling, that we can prove to ourselves and to
+the world that our approach is able to produce robust results. The goal is not
+to create elegant software. Just as you have already done, keep all results and
+code easily verifiable by a human."
+
+--- CONTEXT ---
+
+This prompt continues directly from Prompt 004 (Wilson's E8 construction).
+The octonion algebra implementation and Wilson's E8 tests were already complete
+and fully passing (76 tests).  The source file python_project/src/e8_dixon.py
+had been written (implementing Ξ^even and A^odd) but the test file had not yet
+been written when the context was exhausted.
+
+--- CONSTRUCTION UNDER INVESTIGATION ---
+
+Dixon defines two E8-related sets inside the octonion algebra (STANDARD_ALGEBRA):
+
+Ξ^even (norm² = 1, 240 elements) — [Dixon2010 Section 2, eq. (4)]
+  Ξ₀ = {±e_a : a = 0,...,7}                              16 elements
+  Ξ₂ = {(±e_a ± e_b ± e_c ± e_d)/2 :                   224 elements
+          a,b,c,d distinct,
+          e_a(e_b(e_c*e_d)) = ±e_0}
+  Ξ^even = Ξ₀ ∪ Ξ₂
+
+A^odd (norm² = 2, 240 elements) — [Dixon2010 Section 6]
+  A₁ = {±e_a ± e_b : a,b distinct}                      112 elements
+  A₃ = {(1/2)(±e_0...±e_7) : even # of +'s}             128 elements
+  A^odd = A₁ ∪ A₃
+
+--- ACTIONS TAKEN ---
+
+1. Confirmed e8_dixon.py was already written (from the previous context).
+   Functions: dixon_xi0, dixon_xi2, dixon_xi_even, dixon_a1, dixon_a3,
+   dixon_a_odd, is_pm_basis_element.
+
+2. Wrote python_project/tests/test_e8_dixon.py with 29 tests across 11 classes,
+   covering all structural properties expected of Dixon's E8 representations.
+
+3. Ran full test suite: 105 tests, 0 failures.
+
+--- TEST CLASSES ---
+
+TestXiEvenCounts       — |Ξ₀|=16, |Ξ₂|=224, |Ξ^even|=240, no duplicates
+TestXiEvenCoordStructure — single ±1 entry (Ξ₀); exactly 4 ±½ entries (Ξ₂)
+TestXiEvenNorms        — all norm² = 1
+TestXi2Condition       — each Ξ₂ element satisfies e_a(e_b(e_c*e_d)) = ±e_0
+                         for some ordering of its 4 support indices
+TestXi2ValidSubsets    — exactly 14 valid subsets; all 7 Type-A ({0}∪Fano)
+                         and all 7 Type-B (complement-of-Fano in {1,...,7})
+TestXiEvenRank         — rank 8 (Ξ^even spans R^8)
+TestXiEvenRootSystemIntegrality — all entries of 2G in Z (Cartan-integer test)
+TestXiEvenReflectionClosure    — σ_α(β) = β - 2⟨α,β⟩α ∈ Ξ^even for all α,β
+TestXiEvenXProduct     — (e_a*X)*(X̄*e_b) = ±e_c for all X ∈ Ξ^even
+                         [Dixon2010 eq. (5), norm 1 case]
+TestAOddCounts         — |A₁|=112, |A₃|=128, |A^odd|=240, no duplicates
+TestAOddNorms          — all norm² = 2
+TestAOddVsWilson       — A₁ = Wilson's type-1; A₃ ∩ Wilson's type-2 = ∅;
+                         A₃ ∪ Wilson's type-2 = all 256 sign patterns
+TestAOddXProduct       — (e_a*X)*((X̄/2)*e_b) = ±e_c for all X ∈ A^odd
+                         [Dixon2010 eq. (5), norm 2 case, X^{-1} = X̄/2]
+
+--- KEY FINDINGS ---
+
+1. Both Ξ^even and A^odd are valid E8 minimal-vector shells, confirmed by:
+   - Correct counts (240 elements each)
+   - No duplicates
+   - Correct coordinate structure
+   - Correct norms
+   - Root system closure under reflections (Ξ^even)
+   - Rank 8
+
+2. Ξ²'s defining condition is satisfied by exactly 14 unordered 4-element
+   subsets of {0,...,7}: 7 Type-A ({0} ∪ Fano triple) and 7 Type-B
+   (complement of Fano triple within {1,...,7}).  This is consistent with
+   the analytic description in the e8_dixon.py module docstring.
+
+3. Dixon's X-product property (eq. 5) is verified computationally for all
+   240*64 = 15,360 combinations for Ξ^even, and all 240*64 = 15,360
+   combinations for A^odd.  In both cases, the result is always ±e_c for
+   some basis element e_c.
+
+4. The relationship between Dixon's and Wilson's constructions is made precise:
+   - A₁ (Dixon) = type-1 roots (Wilson): identical 112-element set.
+   - A₃ (Dixon, even minus) and Wilson's type-2 (odd minus) partition all
+     256 sign-pattern elements.
+   - Ξ^even (norm 1) and Wilson's L (norm 2) are E8 representations at
+     different scales; neither contains the other.
+
+--- FILES CREATED / MODIFIED ---
+
+Created: python_project/tests/test_e8_dixon.py  (29 tests, all pass)
+Created: prompt_logs/005_e8_dixon_construction.txt  (this file)
+Created: evidence_and_reasoning/key_claims/003_dixon_e8_verified.txt
+
+Updated: prompt_logs/README.md  (added row for prompt 005)
+Updated: evidence_and_reasoning/key_claims/README.md  (added entry for claim 003)
+
+--- REFERENCES ---
+
+[Dixon2010]  G.M. Dixon, "Integral Octonions, Octonion XY-Product, and the
+             Leech Lattice", preprint, 2010.
+[Wilson2009] R.A. Wilson, "Octonions and the Leech lattice",
+             Journal of Algebra 322 (2009) 2186-2190.

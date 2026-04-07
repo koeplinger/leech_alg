@@ -34,3 +34,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [002_source_document_housekeeping.txt](002_source_document_housekeeping.txt) | Hypothesis stated at high level; source documents renamed and registered |
 | [003_octonion_multiplication_impl.txt](003_octonion_multiplication_impl.txt) | Octonion multiplication rules compared; Python implementation and 52 tests |
 | [004_e8_wilson_construction.txt](004_e8_wilson_construction.txt) | Wilson E8 lattice construction; Python implementation and 24 tests |
+| [005_e8_dixon_construction.txt](005_e8_dixon_construction.txt) | Dixon E8 constructions (Ξ^even, A^odd); Python implementation and 29 tests |
