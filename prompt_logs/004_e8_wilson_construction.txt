@@ -1,0 +1,87 @@
+Date: 2026-04-06
+Prompt number: 004
+Description: Wilson E8 lattice construction — Python implementation and verification
+
+--- PROMPT START ---
+
+Both authors will eventually show that their construction of a multiplication from
+three octonionic representations of the E8 lattice closes on the Leech lattice. But
+let's not look at the Leech just yet, but focus on the authors' construction of the
+E8 lattice. Start with Robert Wilson's construction. Looking only at Wilson's work,
+write a Python check that confirms that his constructions have indeed expected
+properties from representations of the E8 lattice. We'll do the same for Dixon's
+work later (don't look at it for now).
+
+--- PROMPT END ---
+
+--- FINDING: WILSON'S E8 CONSTRUCTION ---
+
+Wilson [Wilson2009] Section 2 defines the E8 lattice L as the Z-span of 240 octonions:
+
+  Type-1 (112 roots):  ±i_t ± i_u  for distinct t, u in PL(7)
+  Type-2 (128 roots):  (1/2)(±1 ± i_0 ± ... ± i_6)  with an ODD number of minus signs.
+
+Under the index map  Wilson i_inf <-> e_0,  Wilson i_k <-> e_{k+1}  (established in
+key claim 001), this becomes:
+
+  Type-1 (112 roots):  ±e_a ± e_b  for distinct a, b in {0,...,7}
+  Type-2 (128 roots):  (1/2)(±e_0 ± e_1 ± ... ± e_7)  with an ODD number of minus signs.
+
+Wilson's special element s = (1/2)(-1 + i_0 + ... + i_6) becomes:
+  s = (1/2)(-e_0 + e_1 + ... + e_7)
+which is a type-2 root (1 minus sign = odd).
+
+Wilson additionally proves:
+  N(s) = 2  (s is a minimal vector of L)
+  Ls = 2B   (B = Coxeter-Dickson ring, another E8 copy)
+  2L ⊂ Ls ⊂ L
+
+Lattice membership criterion (D8+ = E8 characterisation):
+  L = { x in R^8 : all x_i in Z,     sum(x_i) even }
+    u { x in R^8 : all x_i in Z+1/2, sum(x_i) odd  }
+
+Self-duality / unimodularity:
+  A Z-basis of L that covers BOTH cosets of D8 is required to see det = 1.
+  The basis {WILSON_S, e_0+e_1, e_0-e_1, e_0+e_2, e_0+e_3, e_0+e_4, e_0+e_5, e_0+e_6}
+  has det(B) = 1 (verified analytically by cofactor expansion along the e_7 column).
+  Bases consisting only of type-1 roots span the D8 sublattice of index 2 (det = 4).
+
+--- ACTIONS TAKEN ---
+
+Files created:
+  python_project/src/e8_wilson.py         -- wilson_e8_roots(), WILSON_S, is_in_L()
+  python_project/tests/test_e8_wilson.py  -- 24 tests across 10 test classes
+  evidence_and_reasoning/key_claims/002_wilson_e8_verified.txt
+
+Test results:
+  76 passed, 0 failed (0.22 s)
+  python3 -m pytest -v  (full suite, both test files)
+
+Properties verified (Wilson's E8 lattice L):
+  1.  Type-1 root count: 112  [Wilson2009 Section 2]
+  2.  Type-2 root count: 128  [Wilson2009 Section 2]
+  3.  Total root count: 240   [Wilson2009 Section 2]
+  4.  No duplicate roots
+  5.  Type-1 coordinate structure: exactly two ±1 entries, rest 0
+  6.  Type-2 coordinate structure: all 8 entries ±1/2
+  7.  All type-1 roots have squared norm 2
+  8.  All type-2 roots have squared norm 2
+  9.  All 240 roots have squared norm 2  (E8 has one root length)
+ 10.  All roots satisfy the L membership criterion (is_in_L)
+ 11.  Single basis elements e_k are NOT in L  (sanity check)
+ 12.  Doubled basis elements 2*e_k ARE in L   (sanity check)
+ 13.  The all-positive half-integer element is NOT in L  (sanity check on D8+ criterion)
+ 14.  Full 240×240 Gram matrix has all-integer entries  (L is an integral lattice)
+ 15.  Rank 8: 8 linearly independent roots exist
+ 16.  Z-basis Gram matrix det = 1  (L is unimodular / self-dual)  [Wilson2009 Section 2]
+ 17.  WILSON_S = (1/2)(-e_0+e_1+...+e_7):
+        a. Coordinates are (-1/2, 1/2, ..., 1/2)
+        b. N(s) = 2
+        c. s is a type-2 root (1 minus sign = odd)
+        d. s-bar has N(s-bar) = 2
+ 18.  Even lattice: sample of sums/differences of roots have even norm
+ 19.  Ls ⊆ L: r*s in L for all 240 roots r  [Wilson2009 Section 2]
+ 20.  2L ⊆ Ls: r*s-bar in L for all 240 roots r  [Wilson2009 Section 2]
+      (by right-alternativity: 2r in Ls iff 2r*s^{-1} = r*s-bar in L)
+
+--- END ACTIONS ---
