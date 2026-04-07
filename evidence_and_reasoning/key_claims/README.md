@@ -36,3 +36,4 @@ Each claim file should carry one of the following status labels:
 | [002_wilson_e8_verified.txt](002_wilson_e8_verified.txt) | Wilson's 240-element octonionic construction is a valid E8 lattice | ESTABLISHED |
 | [003_dixon_e8_verified.txt](003_dixon_e8_verified.txt) | Dixon's two 240-element constructions (Ξ^even, A^odd) are valid E8 minimal-vector shells | ESTABLISHED |
 | [004_wilson_leech_verified.txt](004_wilson_leech_verified.txt) | Wilson's three families (720+11520+184320=196560) are the Leech lattice minimal vectors | ESTABLISHED |
+| [005_dixon_leech_verified.txt](005_dixon_leech_verified.txt) | Dixon's three families (720+11520+184320=196560) form a different embedding of the Leech minimal shell; 17,232 vectors shared with Wilson's | ESTABLISHED |

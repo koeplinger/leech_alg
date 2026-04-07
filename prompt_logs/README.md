@@ -37,3 +37,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [005_e8_dixon_construction.txt](005_e8_dixon_construction.txt) | Dixon E8 constructions (Ξ^even, A^odd); Python implementation and 29 tests |
 | [006_leech_wilson_construction.txt](006_leech_wilson_construction.txt) | Wilson's Leech lattice: 196,560 minimal vectors verified; type-3 bug found and fixed |
 | [007_reframing_and_history_policy.txt](007_reframing_and_history_policy.txt) | Reframing of 006 clarifications (Λ as integral octonion lattice); forward-evolution history policy added to manifesto |
+| [008_dixon_leech_construction.txt](008_dixon_leech_construction.txt) | Dixon's Leech lattice: 196,560 minimal vectors verified; different embedding from Wilson's found (17,232 shared) |
