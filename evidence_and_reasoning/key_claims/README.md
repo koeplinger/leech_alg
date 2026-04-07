@@ -35,3 +35,4 @@ Each claim file should carry one of the following status labels:
 | [001_wilson_dixon_multiplication_tables_compared.txt](001_wilson_dixon_multiplication_tables_compared.txt) | Wilson and Dixon use identical octonion multiplication tables (up to index relabelling) | ESTABLISHED |
 | [002_wilson_e8_verified.txt](002_wilson_e8_verified.txt) | Wilson's 240-element octonionic construction is a valid E8 lattice | ESTABLISHED |
 | [003_dixon_e8_verified.txt](003_dixon_e8_verified.txt) | Dixon's two 240-element constructions (Ξ^even, A^odd) are valid E8 minimal-vector shells | ESTABLISHED |
+| [004_wilson_leech_verified.txt](004_wilson_leech_verified.txt) | Wilson's three families (720+11520+184320=196560) are the Leech lattice minimal vectors | ESTABLISHED |

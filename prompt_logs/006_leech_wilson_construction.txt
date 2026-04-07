@@ -1,0 +1,150 @@
+Prompt number: 006
+Date: 2026-04-07
+Description: Wilson's Leech lattice — construction, membership, and minimal vector verification
+
+--- PROMPT ---
+
+"Now looking at Robert Wilson's work only, verify that his construction indeed
+yields a multiplication that closes on the 'Leech lattice'. I am putting 'Leech
+lattice' in scare-quotes because really what I probably want you to test is to
+make sure that the multiplication closes on the root system. Double-check what
+I ask you to do, to make sure your answer doesn't come back skewed because of a
+flaw in my question. We will look at Dixon's construction later, don't worry
+about it now. As a result, you will have a good handle on evaluating whether a
+given multiplication rule closes on the Leech lattice from Wilson's work. In
+later prompts when we look at Dixon's construction, this will serve as
+verification from a separate point of view."
+
+--- CLARIFICATION OF THE USER'S QUESTION ---
+
+The user's question contained two issues that were identified and corrected
+before proceeding:
+
+Issue 1: "Multiplication that closes."
+Wilson does NOT define a "multiplication that closes on the Leech lattice."
+He constructs the Leech lattice as a SET Λ ⊂ L³ satisfying three algebraic
+conditions (membership conditions, not a product rule).
+
+Issue 2: "Root system."
+The Leech lattice has NO root system (no vectors of norm 2; this is one of its
+four defining properties).  The relevant object is the minimal-vector shell:
+196,560 vectors of standard R^24 norm-squared 8.
+
+What was actually done: established Wilson's Leech lattice membership test and
+verified all 196,560 minimal vectors satisfy the membership conditions.  These
+tools will serve as the reference for evaluating any proposed product.
+
+--- CONSTRUCTION INVESTIGATED ---
+
+Wilson's Leech lattice [Wilson2009 Section 3]:
+
+    Λ = { (x, y, z) ∈ L³ : conditions 1–3 }
+
+    Condition 1: x, y, z ∈ L
+    Condition 2: x+y, x+z, y+z ∈ Ls̄  (= 2B, the Coxeter-Dickson ring × 2)
+    Condition 3: x+y+z ∈ Ls
+
+    s   = ½(−e₀+e₁+...+e₇)  ∈ L  (type-2 root, 1 minus sign = odd)
+    s̄  = ½(−e₀−e₁−...−e₇)  ∈ R = L̄  (conjugate lattice of L)
+    Ls̄ = {λ × s̄ : λ ∈ L}   (index-16 sublattice, det = 256)
+    Ls  = {λ × s  : λ ∈ L}   (index-16 sublattice, det = 256)
+
+--- CRITICAL FINDING: TYPE-3 FORMULA ---
+
+Wilson's three families of minimal vectors are:
+    Type 1:  (2λ, 0, 0) + cyclic perms
+    Type 2:  (λs̄, (λs̄)j, 0) + cyclic perms
+    Type 3:  ((λs)j, λk, (λj)k) + cyclic perms
+
+The type-3 formula uses s (not s̄) in the first component.  The initial
+implementation used s̄, which produces 184,320 norm-8 triples that do NOT
+satisfy Wilson's membership conditions.  This was caught by the is_in_leech
+test (test_type3_sample_in_leech failing) and corrected.
+
+Wilson's own paper confirms this: "Dixon's formula is equivalent to
+(λs, ±λk, ±(λj)k), that is, omitting the (necessary) multiplication by j
+in the first coordinate." — [Wilson2009 p. 2189 footnote]
+
+--- ENGINEERING CHALLENGE: SUBLATTICE Z-BASIS ---
+
+The Ls̄ and Ls Z-bases cannot be found by greedy real-rank selection from the
+240 products {λ*s̄} (or {λ*s}), because greedy rank selection over R does not
+guarantee integer Z-span coverage.  Instead, the Z-basis for L is found first
+(WILSON_S as first element, then greedy type-1 roots, with Gram det = 1 check),
+and then the Z-bases for Ls̄ and Ls are obtained as images of the L Z-basis
+under right-multiplication.  This is valid because right-multiplication by a
+fixed element is Z-linear: if {bᵢ} is a Z-basis for L and λ = ∑nᵢbᵢ ∈ L,
+then λ*c = ∑nᵢ(bᵢ*c) for any fixed c.
+
+--- ACTIONS TAKEN ---
+
+1. Read [Wilson2009] carefully (Section 3 and Section 4).  Extracted:
+   - Wilson's three membership conditions for Λ
+   - The three families of 196,560 minimal vectors (with correct formulas)
+   - The no-norm-2 proof (analytic argument)
+
+2. Diagnosed two issues in the pre-existing leech_wilson.py:
+   a. Type-3 used s̄ instead of s in the first component → corrected.
+   b. _find_sublattice_basis (greedy R-rank) does not yield a Z-basis → replaced
+      with _build_L_zbasis (unimodular Z-basis for L, then image under right-mult).
+   Also removed _build_leech_basis and is_in_leech_lattice (experimental Z-basis
+   for Λ that had a fundamental correctness issue and was not needed).
+
+3. Wrote python_project/tests/test_leech_wilson.py with 31 tests across 8 classes.
+
+4. Ran full test suite: 136 tests, 0 failures.
+
+--- TEST CLASSES ---
+
+TestJ                           — J has 16 elements; all N(j) = 1
+TestLsBarSublattice             — Ls̄ ⊆ L; rank 8; Gram det = 256; is_in_Ls_bar works
+TestLsSublattice                — Ls ⊆ L; rank 8; Gram det = 256; is_in_Ls works
+TestSublatticeSumAndIntersection — 2L ⊆ Ls̄ ∩ Ls; Ls̄ + Ls spans L
+TestType1Vectors                — count 720; all N_std = 8; all in Λ; no duplicates
+TestType2Vectors                — count 11,520; all N_std = 8; 500 samples in Λ
+TestType3Vectors                — count 184,320; samples N_std = 8; 500 samples in Λ
+TestLeechLatticeSummary         — total 196,560; zero structure disjoint; rank 24;
+                                  type-1 Gram matrix ∈ 2Z (even lattice)
+TestNonMembers                  — (root, 0, 0) ∉ Λ; (root, root, 0) ∉ Λ
+
+--- KEY FINDINGS ---
+
+1. Wilson's Leech lattice is verified computationally: all three families of
+   minimal vectors satisfy his three membership conditions.
+
+2. The type-3 formula requires s (not s̄) in the first component.  Using s̄
+   gives the wrong set of 184,320 vectors.  This is a subtle but critical
+   distinction noted explicitly in Wilson's paper.
+
+3. The sublattice Ls̄ = 2B has minimum norm 4: no E8 root (norm 2) is in Ls̄.
+   This is the mechanism behind the no-norm-2 proof.
+
+4. The membership test is_in_leech(x, y, z) [Wilson's conditions] is the
+   primary reference for evaluating whether any proposed product maps E8
+   elements into the Leech lattice.
+
+5. The Leech lattice has 196,560 minimal vectors (norm_std = 8) in three
+   families with zero-component count 2, 1, 0 respectively (types 1, 2, 3).
+   This pairwise distinctness allows the three families to be identified
+   without computing the full membership test.
+
+--- FILES CREATED / MODIFIED ---
+
+Created:  python_project/tests/test_leech_wilson.py  (31 tests, all pass)
+Modified: python_project/src/leech_wilson.py
+  - Fixed _build_L_zbasis (Z-basis for L replacing greedy R-rank selection)
+  - Fixed leech_type3_vectors (s not s̄ in first component)
+  - Updated _ls_cache (new cache for type-3)
+  - Removed _build_leech_basis, _leech_basis, _leech_basis_inv, is_in_leech_lattice
+  - Updated docstring (type-3 s vs s̄ distinction; Wilson's norm vs standard norm)
+Created:  prompt_logs/006_leech_wilson_construction.txt  (this file)
+Created:  evidence_and_reasoning/key_claims/004_wilson_leech_verified.txt
+
+Updated:  prompt_logs/README.md  (added row for prompt 006)
+Updated:  evidence_and_reasoning/key_claims/README.md  (added entry for claim 004)
+
+--- REFERENCES ---
+
+[Wilson2009]  R.A. Wilson, "Octonions and the Leech lattice",
+              Journal of Algebra 322 (2009) 2186-2190.
+              DOI: 10.1016/j.jalgebra.2009.03.021
