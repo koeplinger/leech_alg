@@ -1,0 +1,38 @@
+Prompt number: 012
+Date: 2026-04-08
+Description: User flags missing prompt log; Koeplinger2023 DOI added
+
+--- PROMPT ---
+
+"You did not add this prompt to the prompt log. It is part of the manifesto
+to always log all prompts. You have done this with previous prompts in the
+"prompt_logs" folder. Add it. What can I do to make sure you never forget to
+add any prompt to the prompt log anymore. This includes the current prompt.
+
+Then, for Koeplionger2023 you can record the DOI from this link as a
+ResearchGate reference http://dx.doi.org/10.13140/RG.2.2.19003.39209"
+
+--- CORRECTION ---
+
+Prompt 011 was not logged at the time of the interaction. This was a
+violation of Manifesto Section 8 (Prompt Logging). The prompt log for 011
+has now been created retroactively alongside this log entry (012).
+
+The AI agent has saved a feedback memory to prevent recurrence:
+  - Every conversation must begin by checking prompt_logs/ for the next
+    available number.
+  - The prompt log entry must be written before or alongside the substantive
+    work, never deferred to "later."
+
+--- DOI FIX ---
+
+Koeplinger2023 reference entry updated with:
+  DOI: 10.13140/RG.2.2.19003.39209
+  (ResearchGate deposit)
+
+--- FILES CREATED / MODIFIED ---
+
+Created:  prompt_logs/011_okubo_references_digest.txt  (retroactive log)
+Created:  prompt_logs/012_prompt_log_reminder_and_doi_fix.txt  (this file)
+Updated:  prompt_logs/README.md  (added rows for prompts 011 and 012)
+Modified: evidence_and_reasoning/references/okubo_algebra.txt  (Koeplinger2023 DOI)

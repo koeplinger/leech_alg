@@ -1,0 +1,51 @@
+Prompt number: 011
+Date: 2026-04-08
+Description: Pivot to Okubo algebras; digest 7 source PDFs; create reference registry entries
+
+--- PROMPT ---
+
+"Now we're pivoting towards Okubo algebras. All investigation so far is
+valuable as a reference, but not as a trusted source. You can look there for
+ideas and suggestions, but do not trust anything. In fact, we do not trust
+anything anywhere, regardless of whether it is a peer reviewed paper,
+preprint, Wikipedia entry, ... Instead, whenever we find a property that is
+useful for our research here, you will create code that implements this
+property, and write a reasonable test. If the test succeeds, then I will
+review it. If my review comes back OK, then we will trust it. I have loaded
+several papers about the Okubo algebra, and algebras with triality, into the
+source documents section. Read them. Locate each document in the internet and
+update the reference registry with their proper source information, just as
+you already have organized the other references. We will use this as the
+basis for writing code that implements Okubo algebra, with several ways to
+construct them (direct, as well as as an isotopy of the Oktonions), and to
+test them. But first digest the references so that you know where to look at
+when I ask you to start implementing."
+
+--- TRUST PROTOCOL ESTABLISHED ---
+
+Nothing is trusted from any source — peer-reviewed papers, preprints,
+Wikipedia, or prior work in this repository. The trust protocol is:
+  1. Find a useful property in the literature.
+  2. Implement the property in code.
+  3. Write a test for the property.
+  4. If the test passes, the user reviews it.
+  5. Only after user review approval is the property trusted.
+
+--- DOCUMENTS READ ---
+
+Seven new PDFs were read in full:
+  1. SmithVojtechovsky_Okubo_2022_DocMath.pdf
+  2. Elduque1996classOfTernCompAlgs.pdf
+  3. MarraniCorradettiZucconi2023_OkuboInv_arXiv2309.17435.pdf
+  4. 2023_FureyHughesTrialityOkuboBrief.pdf
+  5. KamiyaOkubo2015_AlgsTrialityAndS4_arXiv1503.00614.pdf
+  6. Elduque2002_OkuboAlgsWithIsotropicNorm_arXiv2210.03456v1.pdf
+  7. Elduque2000_trialityAutomDerivCompAlgs_LinAlgAppl.pdf
+
+--- FILES CREATED / MODIFIED ---
+
+Created:  evidence_and_reasoning/references/okubo_algebra.txt  (7 reference entries)
+Modified: evidence_and_reasoning/references/README.md  (added table row for okubo_algebra.txt)
+Modified: source_documents/README.md  (full contents listing for all 9 PDFs)
+Created:  prompt_logs/011_okubo_references_digest.txt  (this file)
+Updated:  prompt_logs/README.md  (added row for prompt 011)

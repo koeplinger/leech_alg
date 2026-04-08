@@ -1,0 +1,162 @@
+Topic: Okubo algebra — constructions, properties, triality, and applications
+=====================================================================================
+
+This file collects references for the Okubo (pseudo-octonion) algebra and
+related structures: symmetric composition algebras, triality, automorphisms
+and derivations of composition algebras, and applications.
+
+---
+
+### [SmithVojtechovsky2022]
+
+- **Authors**: Jonathan D. H. Smith, Petr Vojtěchovský
+- **Title**: Okubo quasigroups
+- **Published in**: Documenta Mathematica, Volume 27 (2022), pages 535–580
+- **Year**: 2022
+- **DOI**: 10.4171/DM/877
+- **Source file**: SmithVojtechovsky_Okubo_2022_DocMath.pdf
+- **Topics**: okubo_algebra, background
+- **Originality note**: Published in a peer-reviewed journal (Documenta
+  Mathematica, EMS Press). No dispute over originality or priority is known
+  at time of writing.
+- **Notes**: Studies quasigroup structures obtained by replacing split
+  octonion multiplication with multiplication from para-octonion and Okubo
+  algebras. Covers multiplication groups, power structure, generating sets,
+  subquasigroups, and automorphisms of Okubo quasigroups. Provides an
+  algebraic-combinatorial perspective on the Okubo product that complements
+  the purely algebraic treatments in other references.
+
+---
+
+### [Elduque1996]
+
+- **Authors**: Alberto Elduque
+- **Title**: On a class of ternary composition algebras
+- **Published in**: Journal of the Korean Mathematical Society, Volume 33,
+  Number 1 (1996), pages 183–203
+- **Year**: 1996
+- **URL**: https://jkms.kms.or.kr/journal/view.html?volume=33&number=1&spage=183
+- **Source file**: Elduque1996classOfTernCompAlgs.pdf
+- **Topics**: okubo_algebra, background
+- **Originality note**: Published in a peer-reviewed journal (J. Korean Math.
+  Soc., ISSN 0304-9914). No dispute over originality or priority is known at
+  time of writing.
+- **Notes**: Introduces and studies a class of ternary composition algebras
+  related to symmetric composition algebras. Relevant to the algebraic
+  foundations underlying the Okubo algebra's ternary structure.
+
+---
+
+### [MarraniCorradettiZucconi2025]
+
+- **Authors**: Alessio Marrani, Daniele Corradetti, Francesco Zucconi
+- **Title**: Physics with non-unital algebras? An invitation to the Okubo algebra
+- **Published in**: Journal of Physics A: Mathematical and Theoretical,
+  Volume 58 (2025), Article 075202
+- **Year**: 2025 (arXiv preprint 2023)
+- **DOI**: 10.1088/1751-8121/adafef
+- **arXiv**: 2309.17435 [hep-th]
+- **Source file**: MarraniCorradettiZucconi2023_OkuboInv_arXiv2309.17435.pdf
+- **Topics**: okubo_algebra, octonions
+- **Originality note**: Published in a peer-reviewed journal (J. Phys. A,
+  IOP Publishing). The arXiv preprint (v1: September 2023) predates the
+  journal publication (2025). No dispute over originality or priority is
+  known at time of writing.
+- **Notes**: Comprehensive treatment of the Okubo algebra from a physics
+  perspective. Covers: the direct matrix construction on traceless 3×3
+  Hermitian matrices with product x*y = μ·xy + μ̄·yx − (1/3)Tr(xy); the
+  Petersson construction from octonions via an order-3 automorphism τ; the
+  norm n(x) = (1/6)Tr(x²); the idempotent e satisfying e*e = e; recovery
+  of the octonionic product via x·y = (e*x)*(y*e); Aut(Okubo) = SU(3);
+  and conjectured connections to QCD (gluons as Okubo algebra elements).
+
+---
+
+### [KamiyaOkubo2015]
+
+- **Authors**: Noriaki Kamiya, Susumu Okubo
+- **Title**: Algebras satisfying triality and S₄-symmetry
+- **Published in**: UNPUBLISHED PREPRINT (arXiv only). No journal imprint
+  is known at time of writing.
+- **Year**: 2015
+- **arXiv**: 1503.00614 [math-ph]
+- **Source file**: KamiyaOkubo2015_AlgsTrialityAndS4_arXiv1503.00614.pdf
+- **Topics**: okubo_algebra, background
+- **Originality note**: Unpublished arXiv preprint. Not peer-reviewed.
+  Independent verification of claims is required before reliance in this
+  project. No plagiarism dispute is known at time of writing.
+- **Notes**: Review of non-associative algebras, especially Lie algebras
+  satisfying the triality relation, and their connection to S₄ (symmetric
+  group on 4 objects) symmetry. Authored by Susumu Okubo (the algebra's
+  namesake) and Noriaki Kamiya. Relevant for understanding the triality
+  principle from the perspective of its originator.
+
+---
+
+### [Elduque2023_IsotropicNorm]
+
+- **Authors**: Alberto Elduque
+- **Title**: Okubo algebras with isotropic norm
+- **Published in**: Non-Associative Algebras and Related Topics (NAART 2020),
+  pages 287–301. Edited by H. Albuquerque, J. Brox, C. Martínez, and
+  P. Saraiva. Springer Proceedings in Mathematics & Statistics, Volume 427.
+  Springer, Cham, 2023.
+- **Year**: 2023 (arXiv preprint October 2022)
+- **arXiv**: 2210.03456 [math.RA]
+- **Source file**: Elduque2002_OkuboAlgsWithIsotropicNorm_arXiv2210.03456v1.pdf
+- **Topics**: okubo_algebra
+- **Originality note**: Published in a peer-reviewed proceedings volume
+  (Springer). The arXiv preprint (October 2022) predates the proceedings
+  publication (2023). No dispute over originality or priority is known at
+  time of writing.
+- **Notes**: Studies Okubo algebras whose norm form is isotropic (i.e.,
+  there exist nonzero elements of norm zero). Characterizes these via a
+  (ℤ/3)²-grading on sl(3,F). Relevant for understanding the split case
+  and the grading structure of Okubo algebras.
+
+---
+
+### [Elduque2000_Triality]
+
+- **Authors**: Alberto Elduque
+- **Title**: On triality and automorphisms and derivations of composition algebras
+- **Published in**: Linear Algebra and its Applications, Volume 314,
+  Issues 1–3 (2000), pages 49–74
+- **Year**: 2000
+- **DOI**: 10.1016/S0024-3795(00)00105-1
+- **Source file**: Elduque2000_trialityAutomDerivCompAlgs_LinAlgAppl.pdf
+- **Topics**: okubo_algebra, octonions, background
+- **Originality note**: Published in a peer-reviewed journal (Linear Algebra
+  and its Applications, Elsevier). No dispute over originality or priority
+  is known at time of writing.
+- **Notes**: Develops the Principle of Local Triality for derivations and
+  orthogonal Lie algebras of symmetric composition algebras. Computes
+  automorphism groups and derivation algebras: for Okubo algebras,
+  Aut = SU(3) and Der = su(3) (the 8-dimensional Lie algebra of type A₂).
+  Establishes that symmetric composition algebras (para-Hurwitz and Okubo)
+  satisfy (x*y)*x = x*(y*x) = n(x)y. Central reference for the triality
+  framework connecting octonions, para-octonions, and Okubo algebras.
+
+---
+
+### [Koeplinger2023]
+
+- **Authors**: Jens Köplinger
+- **Title**: Towards autotopies of normed composition algebras in algebraic QFT
+- **Published in**: UNPUBLISHED PREPRINT. Self-published, Revision B,
+  November 2023. Deposited on ResearchGate.
+- **Year**: 2023
+- **DOI**: 10.13140/RG.2.2.19003.39209 (ResearchGate deposit)
+- **Source file**: 2023_FureyHughesTrialityOkuboBrief.pdf
+- **Topics**: okubo_algebra, octonions, leech_lattice
+- **Originality note**: Unpublished preprint by the human researcher of this
+  project. Not peer-reviewed. This is the motivating document for the
+  present research project.
+- **Notes**: Proposes investigating autotopies of normed composition algebras
+  in the context of algebraic quantum field theory. Discusses the connection
+  between octonions, the Okubo algebra, and triality. This document frames
+  the research question that this project is pursuing.
+
+---
+
+Last updated: 2026-04-08

@@ -40,3 +40,5 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [008_dixon_leech_construction.txt](008_dixon_leech_construction.txt) | Dixon's Leech lattice: 196,560 minimal vectors verified; different embedding from Wilson's found (17,232 shared) |
 | [009_double_check_conclusions.txt](009_double_check_conclusions.txt) | Double-check of Wilson/Dixon conclusions; integral algebra question flagged as OPEN; gaps in Dixon verification noted |
 | [010_methodology_complete_pivot.txt](010_methodology_complete_pivot.txt) | User's viewpoint on integral algebra recorded; methodology validated; pivot to research goal: find a highly symmetric rank-24 Z-algebra inside Λ |
+| [011_okubo_references_digest.txt](011_okubo_references_digest.txt) | Pivot to Okubo algebras; trust protocol established; 7 source PDFs read; reference registry created |
+| [012_prompt_log_reminder_and_doi_fix.txt](012_prompt_log_reminder_and_doi_fix.txt) | User flags missing prompt log; Koeplinger2023 DOI added; feedback memory saved to prevent recurrence |
