@@ -1,0 +1,46 @@
+Prompt number: 013
+Date: 2026-04-08
+Description: Implement Okubo algebra with multiple construction methods and comprehensive tests
+
+--- PROMPT ---
+
+"Now I want you to build out code for Okubo algebra. Looking at the various
+ways to create one (from the references I've given, and also from what you
+know from general knowledge such as Wikipedia or Okubo's book from the
+1990s), implement generating methods. For example, there can be a method
+that generates a representation of the Okubo algebra as an isotope of a
+given octonion algebra. The result of these generating methods will be an
+object that encodes the algebra in its entirety. Write test for all
+properties of the Okubo algebra (Euclidean norm, flexibility, and so on).
+The tests need to allow to conclude that a given algebra is indeed Okubo."
+
+--- PLAN ---
+
+Implement the Okubo algebra in python_project/ with:
+  1. An OkuboAlgebra class encoding the algebra (multiplication table, norm)
+  2. Construction method 1: Petersson isotope from octonions via order-3
+     automorphism τ (Elduque2000, MarraniCorradettiZucconi2025)
+  3. Construction method 2: Direct matrix construction on traceless 3×3
+     Hermitian matrices (MarraniCorradettiZucconi2025, Okubo's original)
+  4. Comprehensive tests verifying all defining properties:
+     - 8-dimensional
+     - Non-unital (no identity element)
+     - Flexible: (x*y)*x = x*(y*x)
+     - Composition / norm multiplicativity: n(x*y) = n(x)·n(y)
+     - Symmetric composition property: (x*y)*x = x*(y*x) = n(x)·y
+     - Non-alternative (not all associators vanish)
+     - Aut = SU(3) (dimension check: dim Der = 8)
+     - Existence of idempotent e with e*e = e
+     - Both constructions produce isomorphic algebras
+
+--- FILES CREATED / MODIFIED ---
+
+Created:  python_project/src/okubo.py  (OkuboAlgebra, OkuboElement, from_octonions, from_hermitian_matrices)
+Created:  python_project/tests/test_okubo.py  (40 tests across 10 test classes)
+Created:  prompt_logs/013_okubo_algebra_implementation.txt  (this file)
+Updated:  prompt_logs/README.md  (added row for prompt 013)
+
+--- TEST RESULTS ---
+
+40 tests passed (20 per construction × 2 constructions + construction-specific).
+All 197 tests in the full suite pass (157 existing + 40 new).
