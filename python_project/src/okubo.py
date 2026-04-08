@@ -157,8 +157,24 @@ def _standard_tau_matrix() -> np.ndarray:
     8×8 matrix of the order-3 automorphism τ of the standard octonion
     algebra.
 
-    τ fixes e_0, e_1, e_3, e_7 and applies a 2π/3 rotation to each of
-    the planes (e_2, e_5) and (e_4, e_6).
+    Structure of the fixed subalgebra
+    ----------------------------------
+    The elements {e_1, e_3, e_7} form a Fano line (quaternion subalgebra):
+        e_1 * e_3 = e_7,   e_3 * e_7 = e_1,   e_7 * e_1 = e_3.
+    Together with e_0 (the identity), they span a copy of the quaternions
+    H inside the octonions O.  The automorphism τ fixes this copy of H
+    pointwise.
+
+    Structure of the rotating part
+    -------------------------------
+    The complementary elements {e_2, e_4, e_5, e_6} split into two
+    rotation pairs: (e_2, e_5) and (e_4, e_6).  Each pair lies in a
+    Fano triple with the mediating fixed element e_3:
+        (2, 3, 5):  e_2 * e_3 = e_5,   e_3 * e_5 = e_2
+        (3, 4, 6):  e_3 * e_4 = e_6,   e_4 * e_6 = e_3
+    Both pairs are rotated by the same angle 2π/3.  The pairing is not
+    arbitrary: only specific pairings yield a valid automorphism (see
+    okubo_samples.py for worked examples on other Fano lines).
 
     Reference: [MarraniCorradettiZucconi2025] eq. (1.5).
     """

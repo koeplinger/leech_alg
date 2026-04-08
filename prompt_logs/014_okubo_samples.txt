@@ -1,0 +1,25 @@
+Prompt number: 014
+Date: 2026-04-08
+Description: Create okubo_samples.py with instructive examples of τ constructions
+
+--- PROMPT ---
+
+"I have reviewed your code and the tests, and they look good to me. The
+Petersson-style generation of the Okubo algebra is what we will use more
+of. For clarity, create a new file "okubo_samples.py" that aims at being
+instructive to the reader. Next to the details you have already put in the
+documentation of the _standard_tau_matrix() function in okubo.py, also say
+a bit about the structure of those octonion basis elements (e.g. which are
+part of an associative triple, and so on). In the new okubo_samples.py,
+give a few samples like that. The file should be structured like this:
+About 10 or so lines of explanation of how the tau matrices are
+constructed, then the construction in code, and then a call to the test.
+Output the test result. Repeat this structure for a representative number
+of examples, maybe 3 or 4 should suffice."
+
+--- FILES CREATED / MODIFIED ---
+
+Created:  python_project/src/okubo_samples.py
+Modified: python_project/src/okubo.py  (expanded _standard_tau_matrix docstring)
+Created:  prompt_logs/014_okubo_samples.txt  (this file)
+Updated:  prompt_logs/README.md  (added row for prompt 014)

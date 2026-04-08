@@ -43,3 +43,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [011_okubo_references_digest.txt](011_okubo_references_digest.txt) | Pivot to Okubo algebras; trust protocol established; 7 source PDFs read; reference registry created |
 | [012_prompt_log_reminder_and_doi_fix.txt](012_prompt_log_reminder_and_doi_fix.txt) | User flags missing prompt log; Koeplinger2023 DOI added; feedback memory saved to prevent recurrence |
 | [013_okubo_algebra_implementation.txt](013_okubo_algebra_implementation.txt) | Implement Okubo algebra with multiple constructions and comprehensive tests |
+| [014_okubo_samples.txt](014_okubo_samples.txt) | Instructive examples of Petersson τ constructions in okubo_samples.py |
