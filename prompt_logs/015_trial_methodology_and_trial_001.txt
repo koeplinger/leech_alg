@@ -1,0 +1,56 @@
+Prompt 015 — Trial methodology and Trial 001
+=============================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+Now we will start with the first of what will be a series of trials. Each trial
+will be its own python file that starts with "trial_...". Each trial will first
+define a 24-dimensional Z-module (i.e., a discrete algebra over the integers)
+and test whether it closes on the Leech lattice. Because lattices close under
+addition, it is sufficient to test the multiplication rule. Here, we
+specifically want to test whether the multiplication is closed on the inner-most
+shell of the Leech (you have used the symbol lambda_24 before I believe; use the
+conventional symbols and terminology, not flawed symbols or terminology that I
+may introduce by a poorly worded prompt; I am always reviewing your results and
+am learning from them).
+
+While I have an idea of what algebras to try, the first trials will be defined
+by multiplications that I know don't close on the Leech. That is ok. The goal
+is to establish a good methodology that lets a reviewer clearly understand what
+was tested, what succeeded, and what failed. The key of these trials is to learn
+the anatomy of the failure, to guide us to understanding why the trial failed.
+It is understanding of this anatomy that we will use to refine our trials. So,
+we are not shooting from the hip ("try this!", "try that!") but move to a
+controlled goal. While I am hopeful to find a positive trial at some point, it
+could just as well be that we won't find anything. That is ok, people have been
+looking for a long time for such a thing. I do need to understand exactly when
+this point it reached and why.
+
+When preparing a trial, implement sanity checks as well. For example, if all
+products are at vector positions with a norm greater than the inner-most shell
+of the Leech, then try scaling it so that at least some of the products fall on
+the shell.
+
+Take these instructions I gave you and make a file "TRIAL_METHODOLOGY.md" with
+these instructions. Make a memory to read this file whenever I request a trial.
+
+Ok here is the first trial: Take an octonion algebra O and make three copies of
+it: O1, O2, and O3. The 24 dimensions of the Z-module then correspond to the
+three copies. The algebra O1 will occupy vector coefficient indices 0-7, O2
+occupies 8-15, and O3 occupies 16-23. The multiplication table (structure
+constants) of the 24-dimensional Z-module will then be calculated by mixing O1,
+O2, and O3 parts with a symmetric way: Coefficients that were in indices
+occupied by O1 will be the octonion product written back into these indices; and
+likewise for O2 and O3. If the coefficient index of the first factor is in O1
+and the second factor in O2, then the result will be written into O3. In
+general, if the coefficient indices are in two different octonion copies, then
+the result will become part of the third one.
+
+Actions taken:
+--------------
+1. Created TRIAL_METHODOLOGY.md documenting the methodology for all trials.
+2. Created memory file referencing the trial methodology.
+3. Implemented trial_001_triple_octonion.py: the "O1 + O2 + O3" triple-octonion
+   algebra on R^24, tested for closure on the minimal shell of Λ (Leech lattice).
+4. Ran the trial and recorded results.
