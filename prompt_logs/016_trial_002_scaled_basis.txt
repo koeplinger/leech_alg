@@ -1,0 +1,35 @@
+Prompt 016 — Trial 002: Scaled basis for triple-octonion algebra
+================================================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+I have reviewed the methodology notes you took, the code for the first trial,
+and the separate write-up. This looks good, let's move forward with the second
+trial. Earlier I used the wording "scaling" when referring to the attempt to have
+the algebra close on the inner-most shell of the Leech lattice. Maybe a better
+word would be to allow nonintegral basis elements that could be fractional or
+even irrational. The coefficients of the algebra must always be integers, yes,
+but the basis vectors may have any length. The Leech lattice representation uses
+fractional coefficients, so that a choice of basis with fractional coefficients
+would allow to still hit all elements of the Leech lattice in a module over the
+integers. Please correct my wording if it is not precise.
+
+In that spirit, I want you to use the same algebra as in the first trial, but
+allow the basis elements to be noninteger. Because the algebra doesn't close on
+the Leech lattice, there are different choices of basis elements, each of which
+will have a generally different number of products close on the inner-most shell
+of the Leech. Write the second trial in a way that it finds some of those
+possible solutions. You don't have to be exhaustive at this point, just find
+some through sampling. The basis element choices with the highest rate of being
+closed on the inner-most shell of the Leech should be the most prominent in
+random sampling as well. Ah yes, let me know if there's a symbol or
+abbreviation that is commonly used in math that refers to the inner-most shell
+of the Leech lattice, so that I don't have to type as much going forward.
+
+Actions taken:
+--------------
+1. Addressed terminology: Min(Λ) for the minimal shell; clarified Z-algebra
+   basis terminology.
+2. Implemented trial_002_scaled_triple_octonion.py: per-block scaling search.
+3. Ran trial and recorded results.
