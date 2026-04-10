@@ -1,0 +1,45 @@
+Prompt 021 — Implement trials 003–004: discrete sweep and automorphism basis changes
+====================================================================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+Good. Now let's get to the ideas you've offered in prompt
+019_ideas_additional_tests.txt -- Your idea #6 subsumes my simpler #6. Keep the
+existing tests, keep the algebra from the first two tests, but implement tests
+for your #1, #2, #4, #5, and #6. Break them into two or more python files if it
+helps keeping them focused to a particular aspect. Here we are not looking for
+elegant designed code that uses shared libraries and normalization. Instead, we
+are looking for self-contained tests that read well top-to-bottom. The current
+shared files (e8_..., leech_..., octonions.py, okubo.py, okubo_samples.py) are
+great. Keep them as shared resources, They're basic. But when it comes to the
+tests, don't try to normalize them down to the last bit. It makes it so hard for
+a human to read what's goingon.
+
+Actions taken:
+--------------
+1. Planned two self-contained trial files:
+   - trial_003: exhaustive sweep over conjugation × sign × routing variants
+     (ideas #1, #2, #4, #5 from prompt 019)
+   - trial_004: E8 lattice automorphism basis changes within blocks
+     (idea #6 from prompt 019, subsumes user's permutation idea)
+2. Implemented trial_003_discrete_variants.py and trial_004_basis_automorphisms.py.
+3. Ran both trials.
+
+Results summary:
+----------------
+Trial 003 — ALL 1,536 discrete variants fail.
+  - Best closure: 68.8% (172/250), same as baseline (trial 001).
+  - Failures exclusively type3×type3, exclusively condition 3 (x+y+z ∈ Ls).
+  - Sign flips have zero effect. Third-block routing is optimal.
+  - Conjugation changes nothing fundamental.
+
+Trial 004 — No E8 automorphism improves over baseline.
+  - Baseline (identity): 60.0%. Single-block changes: best 53.3% (worse).
+  - Three-block changes: best 40.0% (much worse).
+  - Sign-only (exhaustive 128): all tie at baseline 60.0%.
+  - Automorphisms introduce NEW failures (type2×type2) not present in baseline.
+
+Combined conclusion: the type3×type3 obstruction is structural — intrinsic
+to the triple-octonion architecture, not fixable by any discrete modification
+of the cross-block rule or any E8 automorphism basis change.

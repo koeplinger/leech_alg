@@ -50,3 +50,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [018_terminology_update_order.txt](018_terminology_update_order.txt) | Replace "Z-module"/"Z-algebra" with "order" across all non-prompt-log files |
 | [019_ideas_additional_tests.txt](019_ideas_additional_tests.txt) | Six ideas for additional tests to rule out the triple-octonion algebra; conjugation + sign + routing sweep recommended |
 | [020_prompt_logging_correction.txt](020_prompt_logging_correction.txt) | User catches missing prompt logs; retroactive logs 018–020 created |
+| [021_trials_003_004_discrete_sweep_and_automorphisms.txt](021_trials_003_004_discrete_sweep_and_automorphisms.txt) | Trials 003–004: all 1,536 discrete variants fail; E8 automorphisms cannot help; triple-octonion obstruction is structural |
