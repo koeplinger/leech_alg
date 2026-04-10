@@ -37,4 +37,5 @@ Each claim file should carry one of the following status labels:
 | [003_dixon_e8_verified.txt](003_dixon_e8_verified.txt) | Dixon's two 240-element constructions (Ξ^even, A^odd) are valid E8 minimal-vector shells | ESTABLISHED |
 | [004_wilson_leech_verified.txt](004_wilson_leech_verified.txt) | Wilson's three families (720+11520+184320=196560) are the Leech lattice minimal vectors | ESTABLISHED |
 | [005_dixon_leech_verified.txt](005_dixon_leech_verified.txt) | Dixon's three families (720+11520+184320=196560) form a different embedding of the Leech minimal shell; 17,232 vectors shared with Wilson's | ESTABLISHED |
-| [006_double_check_wilson_dixon.txt](006_double_check_wilson_dixon.txt) | Double-check: Wilson fully established; Dixon structural verification only (even/self-dual gaps); integral algebra question explicitly OPEN | ESTABLISHED / OPEN |
+| [006_double_check_wilson_dixon.txt](006_double_check_wilson_dixon.txt) | Double-check: Wilson fully established; Dixon structural verification only (even/self-dual gaps); order question explicitly OPEN | ESTABLISHED / OPEN |
+| [007_triple_octonion_ruled_out.txt](007_triple_octonion_ruled_out.txt) | Triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃) comprehensively ruled out as order on Λ — 4 trials, all discrete/continuous variants fail on type3×type3 condition 3 | ESTABLISHED |

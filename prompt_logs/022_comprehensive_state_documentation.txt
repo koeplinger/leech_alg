@@ -1,0 +1,57 @@
+Prompt 022 — Comprehensive state documentation for future research continuity
+==============================================================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+Great. You write "The triple-octonion algebra is comprehensively ruled out." I
+want you to read all files in this repository, adhering to the manifesto, and
+record the state of things such that any subsequent research (a human, an AI
+without any context history whatsoever) would be able to read and understand what
+it means to "comprehensively rule out" an algebra. This is the methodology we've
+established, and it is the ground we stand on. Do the needed updates or
+additions so that we can continue with other algebras next, without having
+historical confusion or errors make things complicated. Make things clear and
+findable. Don't alter the history. Make it transparent. Make a new starting
+point that is efficient without requiring prior context but just the files in
+this repository.
+
+Actions taken:
+--------------
+1. Read ALL files in the repository to understand the complete state.
+
+2. Created CURRENT_STATE.md at the repo root — the clean entry point.
+   Contains:
+   - Research goal (order on Λ)
+   - Definition of "comprehensively ruled out"
+   - Summary of established foundations (claims 001–006, tools, tests)
+   - Full ruling-out argument for triple-octonion algebra (4 trials)
+   - What is and is NOT ruled out
+   - How to read the evidence (where to find what)
+   - What to do next
+   - Repository map
+
+3. Created key claim 007 (007_triple_octonion_ruled_out.txt):
+   - Formal statement of the ruling-out
+   - Full definition of the algebra family tested
+   - Evidence from all 4 trials
+   - Structural diagnosis of WHY it fails
+   - Precise scope: what is ruled out vs. what remains open
+
+4. Updated evidence_and_reasoning/README.md:
+   - Added key claims summary table
+   - Added trial results summary table
+
+5. Updated evidence_and_reasoning/key_claims/README.md:
+   - Added claim 007 entry
+
+6. Updated python_project/src/README.md:
+   - Added shared tools inventory table
+   - Added trial files inventory table
+   - Added run instructions
+
+7. Updated README.md (top-level):
+   - Added research goal description
+   - Added link to CURRENT_STATE.md as primary entry point
+   - Added current status summary
+   - Added run instructions

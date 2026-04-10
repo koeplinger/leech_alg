@@ -1,0 +1,131 @@
+Claim number: 007
+Title: The triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃) is comprehensively ruled out as an order on Λ
+Status: ESTABLISHED
+Date: 2026-04-09
+
+--- STATEMENT ---
+
+The triple-octonion algebra — three copies of the standard octonion algebra
+on R²⁴ with Z₃-symmetric cross-block mixing — cannot be an order on the
+Leech lattice Λ.  This ruling-out is comprehensive: it applies not only to
+the base algebra but to all natural modifications tested (per-block scaling,
+conjugation variants, sign flips, routing changes, and E8 automorphism
+basis changes).
+
+--- DEFINITION OF THE ALGEBRA FAMILY ---
+
+Base algebra (trial 001):
+  O₁ at indices 0–7, O₂ at indices 8–15, O₃ at indices 16–23.
+  Same-block:  Oα × Oα → Oα  (standard octonion product).
+  Cross-block: Oα × Oβ → Oγ  where {α,β,γ} = {0,1,2}.
+
+Modifications tested:
+  (a) Per-block scaling s₁, s₂, s₃ (trial 002)
+  (b) Conjugation of left/right factor in cross-block terms:
+      4 choices per pair × 3 pairs = 64 combinations (trial 003)
+  (c) Sign flips on cross-block contributions:
+      2 choices per pair × 3 pairs = 8 combinations (trial 003)
+  (d) Routing: third-block, left-block, or right-block (trial 003)
+  (e) E8 lattice automorphisms (signed permutations) applied independently
+      to each block (trial 004)
+
+Combined discrete space: 64 × 8 × 3 = 1,536 variants (trial 003).
+Automorphism search: 500 single-block + 500 three-block random +
+128 exhaustive sign-only (trial 004).
+
+--- EVIDENCE ---
+
+Trial 001 — Base algebra (trial_001_triple_octonion.py):
+  Result: 74.8% of type3×type3 products fail.
+  All other type combinations (t1×t1, t1×t2, t1×t3, t2×t2, t2×t3) pass 100%.
+  Failure mode: exclusively Wilson condition 3 (x+y+z ∈ Ls).
+  Conditions 1 and 2 are always satisfied.
+  Evidence file: evidence_and_reasoning/trial_001_results.md
+
+Trial 002 — Per-block scaling (trial_002_scaled_triple_octonion.py):
+  Result: Two independent obstructions.
+  Obstruction 1 (norm): For type3×type3, min achievable ||q||² ≈ 14.6 > 8.
+    No scaling can bring these products to the minimal shell.
+  Obstruction 2 (lattice): Even when ||q||² = 8 is achievable (type2×type2),
+    0 of 1,188 products at that norm satisfy Wilson's conditions.
+    The scaling introduces irrational coordinate mixing.
+  Evidence file: evidence_and_reasoning/trial_002_results.md
+
+Trial 003 — Discrete variants (trial_003_discrete_variants.py):
+  Result: All 1,536 variants fail.
+  Best closure rate: 68.8% (same as baseline; achieved by 31 variants,
+    all with third-block routing).
+  Zero variants have zero type3×type3 failures.
+  Sign flips have zero effect (all 8 patterns tie when other params fixed).
+  Detailed analysis of best variant confirms: failures are exclusively
+    type3×type3, exclusively condition 3 (x+y+z ∈ Ls).
+  Evidence file: evidence_and_reasoning/trial_003_results.md
+
+Trial 004 — E8 automorphism basis changes (trial_004_basis_automorphisms.py):
+  Result: Identity (no change) is already optimal at 60%.
+  Single-block automorphisms: best 53.3% (worse than baseline).
+  Three-block automorphisms: best 40.0% (much worse).
+  Sign-only on one block (exhaustive 128): all tie at 60.0%.
+  Automorphisms introduce NEW failure types (type2×type2) not in baseline.
+  Evidence file: evidence_and_reasoning/trial_004_results.md
+
+--- STRUCTURAL DIAGNOSIS ---
+
+The failure is intrinsic to the triple-octonion architecture:
+
+1. Type-3 vectors have all three blocks nonzero.  The product generates 9
+   nonzero contributions (3 same-block + 6 cross-block) distributed across
+   3 target blocks.
+
+2. Wilson's condition 3 requires x+y+z ∈ Ls, where x, y, z are the three
+   octonion-block components of the product.  This condition governs the
+   *global* relationship between all three blocks simultaneously.
+
+3. The triple-octonion product determines each block's value from a sum of
+   three independent octonion products.  The Ls sublattice condition imposes
+   a constraint that links all three blocks through a specific algebraic
+   relation (multiplication by the structural element s).  The triple-
+   octonion architecture has no mechanism to enforce this constraint.
+
+4. This diagnosis is confirmed by the insensitivity to modifications:
+   - Conjugation changes the Ls/Ls̄ structure within each cross-block term
+     but cannot create the inter-block coordination that condition 3 requires.
+   - Sign flips change interference patterns but not the fundamental
+     mismatch between the product's block-independence and condition 3's
+     block-linking requirement.
+   - Routing changes where products land but doesn't change *what* they are.
+   - Basis changes within blocks can't create inter-block structure.
+
+--- WHAT IS RULED OUT ---
+
+Any algebra of the form:
+  "Three copies of an octonion algebra, with block structure O₁ ⊕ O₂ ⊕ O₃
+   mapped to indices {0–7, 8–15, 16–23}, where same-block products use the
+   standard octonion product (possibly with conjugation), and cross-block
+   products use the octonion product (possibly with conjugation, sign flips,
+   or different routing), optionally with per-block scaling or E8 automorphism
+   basis changes within each block."
+
+--- WHAT IS NOT RULED OUT ---
+
+1. Algebras where cross-block products use a DIFFERENT product (not the
+   octonion product) — e.g., the Okubo product.
+2. Algebras with a different block decomposition (not 8+8+8).
+3. Products defined directly on R²⁴ without block structure.
+4. Products where same-block terms also differ from the standard octonion
+   product.
+
+--- REFERENCES ---
+
+[Wilson2009]  R.A. Wilson, "Octonions and the Leech lattice",
+              J. Algebra 322 (2009) 2186–2190.
+[Dixon2010]   G.M. Dixon, "Integral Octonions, Octonion XY-Product, and the
+              Leech Lattice", preprint, 2010.
+
+--- COMPUTATIONAL EVIDENCE ---
+
+Trial code: python_project/src/trial_001_triple_octonion.py
+            python_project/src/trial_002_scaled_triple_octonion.py
+            python_project/src/trial_003_discrete_variants.py
+            python_project/src/trial_004_basis_automorphisms.py
+All trials use fixed random seeds for reproducibility.
