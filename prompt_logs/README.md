@@ -52,3 +52,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [020_prompt_logging_correction.txt](020_prompt_logging_correction.txt) | User catches missing prompt logs; retroactive logs 018–020 created |
 | [021_trials_003_004_discrete_sweep_and_automorphisms.txt](021_trials_003_004_discrete_sweep_and_automorphisms.txt) | Trials 003–004: all 1,536 discrete variants fail; E8 automorphisms cannot help; triple-octonion obstruction is structural |
 | [022_comprehensive_state_documentation.txt](022_comprehensive_state_documentation.txt) | Full repository state documentation: CURRENT_STATE.md, key claim 007, README updates — clean starting point for future work |
+| [023_triple_okubo_shifted_basis.txt](023_triple_okubo_shifted_basis.txt) | Triple Okubo/para-octonion algebra (trials 005–006): Petersson isotopes with Z₃ orbit; catastrophic failure from irrational √3 structure constants |

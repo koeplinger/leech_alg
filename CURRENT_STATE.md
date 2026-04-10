@@ -22,8 +22,9 @@ The order should be highly symmetric.  The Leech lattice's automorphism group
 (the Conway group Co₀) is the largest context for symmetry; any order structure
 would ideally respect or interact with this symmetry in a meaningful way.
 
-**Status: OPEN.**  No such multiplication is known.  One candidate family (the
-triple-octonion algebra) has been comprehensively ruled out.  See below.
+**Status: OPEN.**  No such multiplication is known.  Two candidate families
+have been comprehensively ruled out: the triple-octonion algebra and the triple
+Okubo/para-octonion algebra (Petersson isotopes).  See below.
 
 ---
 
@@ -88,8 +89,7 @@ table (up to index relabelling).
 
 `python_project/src/okubo.py` and `okubo_samples.py` implement the Okubo
 algebra (Petersson construction from octonions via order-3 automorphism τ).
-These are available as tools for future trials but have not yet been tested
-against the Leech lattice.
+These have been tested against the Leech lattice in trials 005–006 (see below).
 
 ### Test suite
 
@@ -166,6 +166,73 @@ The entire family of algebras with:
 
 ---
 
+## Ruled-out algebra: triple Okubo/para-octonion (Petersson isotopes)
+
+### The algebra
+
+A Z₃ orbit of Petersson isotopes on R²⁴, using the order-3 octonion
+automorphism τ (fixes {e₀, e₁, e₃, e₇}, rotates (e₂, e₅) and (e₄, e₆)
+by 2π/3):
+
+- Block 0 (indices 0–7): **para-octonion** x * y = x̄ · ȳ (Petersson with τ⁰)
+- Block 1 (indices 8–15): **Okubo_τ** x * y = τ(x̄) · τ²(ȳ)
+- Block 2 (indices 16–23): **Okubo_τ²** x * y = τ²(x̄) · τ(ȳ)
+
+Cross-block products use the target block's algebra: Bα × Bβ → Bγ using *_γ.
+
+**Note on the original intent:** The user's idea was to take three Okubo
+algebras from the same Fano line by cyclically rotating the mediator.
+Computational verification showed that no Fano line admits all 3 cyclic
+mediators as valid automorphisms — only 1 or 2 work.  The Z₃ orbit above
+is the closest valid construction.
+
+### What was tested (2 trials)
+
+| Trial | What it tests | File | Result |
+|---|---|---|---|
+| 005 | Base algebra + 1,536 discrete variants (exhaustive) | `trial_005_triple_okubo.py` | FAIL: 91.5% leave E8 lattice |
+| 006 | E8 automorphism basis changes (600 tested) | `trial_006_triple_okubo_automorphisms.py` | FAIL: 3.8% best; √3 not absorbable |
+
+### The failure mode
+
+This failure is **more severe** than the triple-octonion:
+
+- The triple-octonion preserved E8 membership (conditions 1 & 2) and failed
+  only on condition 3 for type3×type3.
+- The triple Okubo/para-octonion fails on **ALL type combinations** (not just
+  type3×type3) and **91.5% of products leave the E8 lattice entirely**
+  (condition 1 fails).
+
+### Why it fails (structural diagnosis)
+
+The Petersson construction with any non-trivial order-3 automorphism τ
+introduces structure constants involving cos(2π/3) = −1/2 and sin(2π/3) = √3/2.
+When applied to E8 lattice vectors (integer or half-integer coordinates), the
+products acquire irrational √3 components that cannot lie in the E8 lattice.
+
+Block 0 (para-octonion) is less affected because x̄ · ȳ has the same structure
+constants as the octonion product.  This explains why type1×type1 partially
+succeeds (53.5%): type-1 vectors have only one nonzero block, so the
+same-block product in block 0 uses rational structure constants.
+
+No conjugation, sign, routing, or E8 automorphism change can eliminate
+irrational structure constants — this is a fundamental algebraic obstruction.
+
+### What this rules out
+
+Any 24-dimensional algebra built from Petersson isotopes of the octonion
+algebra (para-octonion and/or Okubo algebras) using a non-trivial order-3
+automorphism τ, with the same 8+8+8 block structure and cross-block routing.
+
+### What this does NOT rule out
+
+- Okubo-type algebras constructed without the Petersson 2π/3-rotation
+  (i.e., with a different order-3 automorphism that has rational matrix entries)
+- Products where the cross-block rule is not "use the target block's algebra"
+- Non-block-decomposed products on R²⁴
+
+---
+
 ## How to read the evidence
 
 ### Trial results
@@ -199,13 +266,12 @@ the trial, and prints detailed results.
 
 ## What to do next
 
-The triple-octonion architecture is ruled out.  Future work should explore
-algebras that differ **structurally**, not parametrically:
+Both the triple-octonion and triple Okubo/para-octonion architectures are
+ruled out.  Future work should explore algebras that differ **structurally**:
 
-1. **Okubo-based products** — the Okubo algebra tools are implemented and ready
-   (`okubo.py`).  The Okubo product has different structure constants from the
-   octonion product and different symmetry properties (it is a symmetric
-   composition algebra satisfying (x*y)*x = x*(y*x) = n(x)y).
+1. **Different order-3 automorphisms** — the current Okubo trials used a
+   specific τ with irrational matrix entries.  An order-3 automorphism with
+   rational (or at least E8-compatible) entries could avoid the √3 obstruction.
 
 2. **Non-block-decomposed products** — define multiplication directly on R²⁴
    without assuming an 8+8+8 block structure.
@@ -215,6 +281,9 @@ algebras that differ **structurally**, not parametrically:
 
 4. **Products informed by the Conway group** — use the automorphism group of Λ
    to constrain the multiplication rule.
+
+5. **Hybrid constructions** — mix different algebra types across blocks in ways
+   not yet explored (e.g., different cross-block routing rules).
 
 Before implementing any new trial, read `TRIAL_METHODOLOGY.md`.
 
@@ -237,7 +306,9 @@ leech_alg/
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
-│   └── trial_004_results.md       # Automorphism basis changes: identity optimal
+│   ├── trial_004_results.md       # Automorphism basis changes: identity optimal
+│   ├── trial_005_results.md       # Triple Okubo/para-octonion: √3 leaves E8
+│   └── trial_006_results.md       # Okubo + automorphisms: √3 not absorbable
 │
 ├── python_project/
 │   ├── src/
@@ -251,10 +322,12 @@ leech_alg/
 │   │   ├── trial_001_*.py         # Trial 001: base triple-octonion
 │   │   ├── trial_002_*.py         # Trial 002: per-block scaling
 │   │   ├── trial_003_*.py         # Trial 003: discrete variants
-│   │   └── trial_004_*.py         # Trial 004: automorphism basis changes
+│   │   ├── trial_004_*.py         # Trial 004: automorphism basis changes
+│   │   ├── trial_005_*.py         # Trial 005: triple Okubo/para-octonion
+│   │   └── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
 │   └── tests/                     # 157 tests verifying foundations
 │
-├── prompt_logs/                   # Chronological AI interaction log (001–022)
+├── prompt_logs/                   # Chronological AI interaction log (001–023)
 ├── source_documents/              # Primary source PDFs
 └── research_output/               # (reserved for future experimental output)
 ```

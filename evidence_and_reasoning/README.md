@@ -44,6 +44,8 @@ See [key_claims/README.md](key_claims/README.md) for the full index.
 | 002 | Triple-octonion + per-block scaling | FAIL: norm + lattice obstruction | [trial_002_results.md](trial_002_results.md) |
 | 003 | Triple-octonion + discrete variants (1,536) | FAIL: all variants fail | [trial_003_results.md](trial_003_results.md) |
 | 004 | Triple-octonion + E8 automorphism basis changes | FAIL: identity is optimal | [trial_004_results.md](trial_004_results.md) |
+| 005 | Triple Okubo/para-octonion (base + 1,536 discrete variants) | FAIL: √3 leaves E8 | [trial_005_results.md](trial_005_results.md) |
+| 006 | Triple Okubo/para-octonion + E8 automorphism basis changes | FAIL: √3 not absorbable | [trial_006_results.md](trial_006_results.md) |
 
 ## Guidelines
 

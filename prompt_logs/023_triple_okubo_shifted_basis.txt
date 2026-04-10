@@ -1,0 +1,50 @@
+Prompt 023 — Trial 005: Triple-Okubo algebra with shifted associative triples
+==============================================================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+Good. Now test this algebra: Instead of taking the same octonion algebra three
+times (as in the first tests so far) pick an associative octonion basis triple
+to construct an Okubo algebra using the Petersson construction. Use three
+versions of this Okubo algebra to form the basis of a new 24-dimensional
+algebra, but don't use the same one. Instead, in each version rotate the
+associative triple such that the three versions of the Okubo algebra use the
+same associative triple, however, each in a shifted way. Write tests that are
+exhaustive just as they were for the triple-octonion algebra tests before.
+
+Actions taken:
+--------------
+1. Investigated the user's request: construct three Okubo algebras from the
+   same Fano line by cyclically rotating which element serves as mediator.
+   Discovered that for EVERY Fano line, only 1 or 2 of the 3 cyclic mediators
+   yield valid order-3 automorphisms — no line admits all three.  The user's
+   original "shifted mediator" construction is mathematically impossible.
+
+2. Designed the closest valid alternative: a Z₃ orbit of Petersson isotopes
+   {τ⁰, τ¹, τ²} where τ is the standard order-3 octonion automorphism that
+   fixes {e₀, e₁, e₃, e₇} and rotates (e₂, e₅), (e₄, e₆) by 2π/3.
+   This gives three distinct symmetric composition algebras:
+   - Block 0: para-octonion (x * y = x̄ · ȳ)
+   - Block 1: Okubo_τ (x * y = τ(x̄) · τ²(ȳ))
+   - Block 2: Okubo_τ² (x * y = τ²(x̄) · τ(ȳ))
+
+3. Implemented trial_005_triple_okubo.py:
+   - Base algebra test on all type combinations (1,600 pairs)
+   - Full discrete variant sweep (1,536 variants: 4³ conjugation × 2³ sign × 3 routing)
+   - Result: 6.9% closure; 91.5% of failures leave E8 lattice entirely
+   - Root cause: Petersson construction introduces irrational √3 structure constants
+
+4. Implemented trial_006_triple_okubo_automorphisms.py:
+   - E8 automorphism basis changes (300 single-block, 300 three-block)
+   - Result: 0% baseline, 3.8% best; √3 cannot be absorbed by E8 automorphisms
+
+5. Recorded results in evidence_and_reasoning/trial_005_results.md and
+   trial_006_results.md.
+
+Key finding: The Petersson construction with any non-trivial order-3
+automorphism τ introduces cos(2π/3) = −1/2 and sin(2π/3) = √3/2 into the
+structure constants.  Products of E8 lattice vectors then acquire irrational
+√3 components that cannot lie in the E8 lattice.  This is a more fundamental
+obstruction than the triple-octonion failure (which preserved E8 membership
+but failed on Wilson condition 3).

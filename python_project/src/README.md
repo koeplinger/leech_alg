@@ -32,6 +32,8 @@ cd python_project/src && python3 trial_NNN_*.py
 | 002 | `trial_002_scaled_triple_octonion.py` | Per-block scaling search |
 | 003 | `trial_003_discrete_variants.py` | Conjugation × sign × routing (1,536 variants) |
 | 004 | `trial_004_basis_automorphisms.py` | E8 automorphism basis changes |
+| 005 | `trial_005_triple_okubo.py` | Triple Okubo/para-octonion (base + discrete variants) |
+| 006 | `trial_006_triple_okubo_automorphisms.py` | Triple Okubo/para-octonion + E8 automorphisms |
 
 All trials use fixed random seeds for reproducibility.  Results are recorded
 in `../../evidence_and_reasoning/trial_NNN_results.md`.
