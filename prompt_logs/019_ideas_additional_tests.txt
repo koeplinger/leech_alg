@@ -1,0 +1,50 @@
+Prompt 019 — Ideas for additional tests to rule out the triple-octonion algebra
+================================================================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+Great. With these updates, and the existing two trials for the product made from
+three octonions, is there an additional test that you can think of to reasonable
+rule out this algebra from being an order that closes on the Leech? We already
+have enough evidence that it doesn't, here I'm looking for thoroughness of our
+methodology. I give one example of a test: trivial reordering of coefficient
+mappings. Rather than prescribing the coefficient mappings from the octonion
+algebras into the Leech lattice, we could permit any permutation thereof. There
+are a lot of permutations, of course, and certainly not all need to be checked.
+This is an idea for another test. There may be other ideas. In a first step,
+give me some ideas. I will then see whether we pick on of these for the algebra
+of the first two tests, or whether we make the move to test another algebra.
+
+Actions taken:
+--------------
+Presented six ideas for additional tests, ordered by relevance to the known
+failure mode (condition 3, type3×type3):
+
+1. Conjugation variants on cross-block terms (ā·b, a·b̄, ā·b̄).
+   4³ = 64 combinations, fewer after Z₃ symmetry. Directly targets the
+   Ls/Ls̄ structure that condition 3 governs.
+
+2. Sign flips on cross-block terms (±1 per cross-block pair).
+   2³ = 8 patterns (4 up to Z₃ symmetry). Simplest discrete variant.
+
+3. Permutation of basis indices within blocks (user's suggestion).
+   Only permutations preserving the E8 lattice L are relevant. The meaningful
+   space is Aut(L) modulo Aut(O) ∩ Aut(L). Could apply different permutations
+   to different blocks.
+
+4. Different block-to-block routing.
+   Alternative to Oα × Oβ → Oγ: cross products could stay in the left or
+   right factor's block. Breaks Z₃ symmetry. Only 2–3 routing rules.
+
+5. Combined sweep of ideas 1+2+4.
+   Full discrete parameter space is small (~500 combinations). Recommended
+   as the highest-value single test for this algebra.
+
+6. Non-diagonal basis change within blocks (GL(8) per block).
+   Generalises trial 002's diagonal scaling. Continuous, high-dimensional
+   (64 params/block). Could restrict to Aut(L) to keep it finite.
+
+Recommendation: ideas 1+2+4 as a single exhaustive sweep. If the entire
+discrete family fails, that is a much stronger negative result than
+trials 001–002 alone.

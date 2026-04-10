@@ -44,3 +44,9 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [012_prompt_log_reminder_and_doi_fix.txt](012_prompt_log_reminder_and_doi_fix.txt) | User flags missing prompt log; Koeplinger2023 DOI added; feedback memory saved to prevent recurrence |
 | [013_okubo_algebra_implementation.txt](013_okubo_algebra_implementation.txt) | Implement Okubo algebra with multiple constructions and comprehensive tests |
 | [014_okubo_samples.txt](014_okubo_samples.txt) | Instructive examples of Petersson τ constructions in okubo_samples.py |
+| [015_trial_methodology_and_trial_001.txt](015_trial_methodology_and_trial_001.txt) | Trial methodology established; trial 001 (triple-octonion algebra) implemented and run; type3×type3 failure isolated |
+| [016_trial_002_scaled_basis.txt](016_trial_002_scaled_basis.txt) | Trial 002: per-block scaling search; two structural obstructions found (norm bound + lattice membership) |
+| [017_zmodule_vs_order_correction.txt](017_zmodule_vs_order_correction.txt) | User self-corrects: the goal is an order on Λ, not a Z-module; terminology clarified |
+| [018_terminology_update_order.txt](018_terminology_update_order.txt) | Replace "Z-module"/"Z-algebra" with "order" across all non-prompt-log files |
+| [019_ideas_additional_tests.txt](019_ideas_additional_tests.txt) | Six ideas for additional tests to rule out the triple-octonion algebra; conjugation + sign + routing sweep recommended |
+| [020_prompt_logging_correction.txt](020_prompt_logging_correction.txt) | User catches missing prompt logs; retroactive logs 018–020 created |

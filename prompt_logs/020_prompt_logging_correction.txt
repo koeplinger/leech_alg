@@ -1,0 +1,20 @@
+Prompt 020 — Prompt logging correction
+=======================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+why did you not record my prompt in the prompt_log? There should be a memory to
+always do this. There should be a memory to adhere to the manifesto. Record my
+previous prompt to the prompt log, including this one. Just as you have done
+before so nicely, record the essence of your answers. I do want you to implement
+some of your answers, but first we must establish traceability of thought.
+
+Actions taken:
+--------------
+1. Acknowledged the failure to log prompts 018 and 019 at the start of the
+   session (violating memory feedback_prompt_logging.md and
+   feedback_manifesto_compliance.md).
+2. Created retroactive logs: 018 (terminology update), 019 (additional test
+   ideas), and 020 (this correction).
+3. Updated prompt_logs/README.md index with entries for 017–020.
