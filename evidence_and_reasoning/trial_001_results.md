@@ -1,4 +1,4 @@
-# Trial 001 Results — Triple-octonion Z-module (O₁ ⊕ O₂ ⊕ O₃)
+# Trial 001 Results — Triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃)
 
 Date: 2026-04-09
 

@@ -19,8 +19,8 @@ Three sub-claims were examined:
           and self-duality properties trusted from [Dixon2010] but not
           independently verified computationally.
 
-  Claim 2:  Λ₂₄ admits an integral algebra structure (a product closing on
-            the 24-dimensional Z-module).
+  Claim 2:  Λ₂₄ admits an order structure (a bilinear product under which
+            Λ is closed).
   Status: OPEN.  Neither Wilson nor Dixon demonstrates such a product.
           Dixon [Dixon2010 Section 7] explicitly poses this as an open question:
           "No idea yet."
@@ -89,10 +89,9 @@ Computationally established (test_full_shells_differ):
 --- EVIDENCE FOR CLAIM 2 (INTEGRAL ALGEBRA — OPEN) ---
 
 What both constructions establish:
-  Λ₂₄ is a rank-24 Z-module (free module of rank 24 over the integers)
-  embedded inside L³, where L = E8 = integral octonions.  Because L carries
-  the octonion product, the question "does some octonion-derived product close
-  on Λ?" is well-posed and natural.
+  Λ₂₄ is a rank-24 lattice embedded inside L³, where L = E8 = integral
+  octonions.  Because L carries the octonion product, the question "does some
+  octonion-derived product make Λ an order?" is well-posed and natural.
 
 What neither construction establishes:
   No product on Λ₂₄ is defined by either Wilson or Dixon.

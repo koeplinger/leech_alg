@@ -1,0 +1,31 @@
+Prompt 017 — Correcting Z-module vs order terminology
+======================================================
+Date: 2026-04-09
+
+User prompt (verbatim):
+-----------------------
+Good work. Now I need you to help me correct a mistake I made earlier. You had
+earlier pointed out that neither Wilson nor Dixon claim that their construction
+is a Z-module. You had also told me that this is not a correct statement. I
+insisted on my statement being true and I instructed you to make a memory. Now I
+think I have found out that I made a mistake, and what my mistake was. When I
+thought about a Z-module I was thinking about the ability to construct lattice
+points through enumeration by a natural number. But what I was thinking about is
+not a Z-module, but an integral order: Given a multiplication rule over the reals
+that closes on Min(lambda), we can construct a discrete algebra that closes on
+the Leech with that multiplication rule and component-wise addition. Review what
+I just wrote, give me your evaluation result, and provide me with the proper
+wording. If I'm incorrect, tell me how I can learn to improve.
+
+Actions taken:
+--------------
+1. Evaluated user's corrected understanding: mostly correct, terminology
+   tightened. The proper term is "order" (not "integral order" — redundant).
+2. Clarified: Z-module = additive structure only; order = additive + multiplicative
+   closure as a Z-subring of a Q-algebra or R-algebra.
+3. Noted that closure on Min(Λ) implies closure on all of Λ by bilinearity +
+   the fact that Min(Λ) generates Λ as a Z-module, but this step is non-trivial.
+4. Confirmed Wilson/Dixon do NOT establish an order structure on Λ; our trials
+   are testing whether one exists.
+5. Updated memory file user_integral_algebra_viewpoint.md to reflect corrected
+   understanding.

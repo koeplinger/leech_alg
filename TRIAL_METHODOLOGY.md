@@ -1,15 +1,17 @@
 # Trial Methodology
 
 This document defines the methodology for all trial files (`trial_*.py`) in this
-project. Each trial tests whether a proposed 24-dimensional Z-module (algebra
-over the integers) closes under multiplication on the Leech lattice Λ.
+project. Each trial tests whether a proposed 24-dimensional algebra closes
+under multiplication on the Leech lattice Λ (i.e., whether Λ admits an order
+under the proposed product).
 
 ---
 
 ## Goal
 
-Find a highly symmetric rank-24 Z-algebra whose multiplication is closed on the
-Leech lattice Λ. Because lattices are closed under addition by definition, it is
+Find a highly symmetric order on the Leech lattice Λ — a bilinear product
+· : R²⁴ × R²⁴ → R²⁴ such that (Λ, +, ·) is an order in the R-algebra
+(R²⁴, +, ·). Because lattices are closed under addition by definition, it is
 sufficient to test whether the proposed multiplication rule is closed.
 
 Specifically, we test closure on the **minimal shell** of Λ: the 196,560 vectors

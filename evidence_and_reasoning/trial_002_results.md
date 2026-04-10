@@ -102,9 +102,9 @@ target (8) for all (u, v).
 
 ## What this rules out
 
-Any Z-algebra of the form "three copies of octonions with per-block scaling
+Any algebra of the form "three copies of octonions with per-block scaling
 and Z₃-symmetric cross-block mixing (product always goes to the third block)"
-is ruled out as a candidate for a Min(Λ)-closed algebra.
+is ruled out as a candidate for an order on Λ closed on Min(Λ).
 
 ## What remains open
 

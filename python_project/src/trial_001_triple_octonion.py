@@ -1,5 +1,5 @@
 """
-trial_001_triple_octonion.py — Triple-octonion Z-module on R^24.
+trial_001_triple_octonion.py — Triple-octonion algebra on R^24.
 
 Algebra definition
 ==================
@@ -237,7 +237,7 @@ def run_trial(max_pairs: int = 0, verbose: bool = True):
 
     if verbose:
         print("=" * 72)
-        print("TRIAL 001: Triple-octonion Z-module (O₁ ⊕ O₂ ⊕ O₃)")
+        print("TRIAL 001: Triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃)")
         print("=" * 72)
 
     # ------------------------------------------------------------------
