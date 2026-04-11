@@ -1,0 +1,117 @@
+Topic: Prior art — multiplicative structures / orders on the Leech lattice
+=============================================================================
+
+Literature search conducted: 2026-04-11
+Purpose: Identify any prior work establishing or ruling out an order (or
+ring, algebra, multiplicatively closed structure) on the Leech lattice,
+before publishing our finding.
+
+---
+
+## Summary of search
+
+**No prior work was found establishing an order on the Leech lattice
+under an octonion-derived bilinear product.**
+
+The specific construction in this project — three copies of a
+transposition-twisted octonion algebra with Z₃ cross-block routing —
+does not appear in the literature.
+
+The closest related work falls into three categories:
+
+1. **Wilson (2009)**: Characterises Λ as a sublattice of L³ using
+   octonionic conditions, but does not define or test a multiplicative
+   product on Λ.
+
+2. **Dixon (2010)**: Defines an XY-product on triples of octonions and
+   constructs the Leech lattice, but does not establish closure of Λ
+   under that product.
+
+3. **Baez / Egan (2014)**: Explores whether the Leech lattice can be
+   made into a ring via the exceptional Jordan algebra (27-dimensional,
+   commutative).  Finds that an integral octonionic sublattice of 𝔥₃(O)
+   is closed under the doubled Jordan product 2(xy + yx), but this
+   involves a factor-of-2 scaling and the Jordan (commutative) product,
+   not an octonion-derived (non-commutative, non-associative) product.
+   The question of closure under the standard Jordan product remains
+   open.  The human researcher of this project (Koeplinger) participated
+   in that discussion.
+
+---
+
+## Detailed findings
+
+### [Wilson2009] — Octonions and the Leech lattice
+
+Wilson constructs Λ as {(x,y,z) ∈ L³ : conditions 1–3} and describes
+the Conway group Co₀ using 3×3 octonionic matrices.  The paper does not
+define or test a bilinear product on Λ; it uses the octonionic structure
+for characterisation and group theory, not for defining an algebra on Λ.
+
+### [Dixon2010] — Integral Octonions, Octonion XY-Product, and the Leech Lattice
+
+Dixon constructs the Leech lattice using the XY-product
+A ∘ B = (A·l₀)(l₀⁻¹·B).  The XY-product is a different octonion
+algebra on R⁸ (isomorphic to the standard one).  Dixon does not test or
+claim closure of Λ under the XY-product or any other bilinear product.
+
+### [Baez2014] — Integral Octonions, Parts 9–10 (n-Category Café)
+
+John Baez's blog series (November–December 2014) explores the exceptional
+Jordan algebra 𝔥₃(O) as a framework for the Leech lattice.  The Leech
+lattice sits in the off-diagonal part of 𝔥₃(O) (24-dimensional
+subspace).  Key findings:
+
+- The lattice Z³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed under the Jordan product
+  x ∘ y = xy + yx.
+- It IS closed under the doubled Jordan product 2(xy + yx).
+- Baez poses the open question: "A nice question is whether we can find
+  a lattice like this that is closed under the Jordan product x∘y=xy+yx."
+  He calls this a potential "exceptional Leech–Jordan ring."
+- Greg Egan finds 17,280 sublattices that yield formally real Jordan
+  rings under the doubled product.
+- Baez expresses dissatisfaction with the factor of 2: "the factor of 2
+  in condition c) really annoys me."
+- **The human researcher (Koeplinger) is quoted in the discussion**:
+  "I ran several kinds of (exceptional) Jordan products through my little
+  program...but essentially didn't find anything that would close on the
+  Leech inner shell."
+
+This is the closest prior art to our finding, but it uses a fundamentally
+different algebraic framework (commutative Jordan product in 27
+dimensions) rather than a non-commutative, non-associative octonion-
+derived product in 24 dimensions.
+
+### [Dixon1995] — Octonions: Invariant representation of the Leech lattice
+
+Earlier work by Dixon (1995, hep-th/9504040) on invariant octonionic
+representations.  Primarily concerned with representation, not with
+multiplicative closure.
+
+### [WilsonConway] — Conway's group and octonions
+
+Wilson describes the double cover of Conway's group Co₀ using right
+multiplications by 3×3 octonionic matrices.  This uses the octonion
+product to describe symmetries, not to define a closed algebra on Λ.
+
+---
+
+## Search methodology
+
+Searched for:
+- "order on Leech lattice" / "ring structure Leech lattice"
+- "Leech lattice multiplicative structure octonion algebra"
+- "Leech lattice bilinear product closure"
+- "Fano plane permutation twisted octonion multiplication"
+- "exceptional Jordan algebra Leech lattice closed product"
+- Dixon XY-product closure
+- Wilson octonion Leech product structure
+- n-Category Café integral octonions (Baez series)
+- arXiv searches for non-associative algebras + Leech lattice
+
+Sources checked: Google Scholar, arXiv, Semantic Scholar, ResearchGate,
+n-Category Café, Wilson's publication list.
+
+---
+
+Last updated: 2026-04-11

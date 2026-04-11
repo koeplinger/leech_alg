@@ -1,0 +1,70 @@
+Prompt 033 — Research writeup: summary, paper plan, consistency check
+======================================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+Great -- let's pivot to the last phase of this research, to write up the
+research results formally.
+
+First I want you to make a small record of the research result, to
+complement the existing research_statement.md. It should be the condensed
+summary of what we've found. The product we've found is highly symmetric:
+three octonions, the same basis element swap applied each, with structure
+constants made from a symmetric block construction. This simplicity is our
+claim for relevance.
+
+Then I want you to make a plan for a formal mathematical paper. The plan
+needs to start with basic documentation steps, like review all current
+references and evaluate for relevance, also keeping in mind what I've told
+you what is important to me. The plan also needs to include at the beginning
+a check against other publications related to the actual finding (remember,
+we wanted to start with Okubo algebra, however, the result just uses
+Octonions with a basis element swap). As for the mathematical research
+paper, I want you to plan out its structure. Make a draft on what you would
+want to say in the abstract, introduction, main proof, further notes,
+summary, and references. Here's where it's important: We have developed
+this finding together. In my view, I brought a hypothesis, established a
+methodology with manifesto, and performed reviews, on a series of prompts.
+After each prompt, I reviewed your results, corrected my misunderstandings,
+corrected your results (and in particular, drift away from the manifesto).
+Next to a brief mention in the abstract, I want you to write in a later
+section a fair representation on how this work went about. As a reference,
+you will reference this repository, which I will make public. That includes
+all prompts and evidence, everything. The reader can then make their own
+mind what this means regarding "discovery"; personally all I'm really
+interested in is the result, as just another glimpse into the inner
+workings of numbers. Finally, once you've planned the paper, I want you to
+plan a consistency check that I can review and amend if needed. As always,
+while you are the technical work as a highly skilled paid mathematician
+would do, I need to remain in control of the methodology.
+
+Actions taken:
+--------------
+1. Created evidence_and_reasoning/research_result.md — condensed summary
+   of the finding (the construction, the claim, verification status, what
+   is not yet established).
+
+2. Conducted literature search for prior art (Phase 1A of the plan):
+   - Searched Google Scholar, arXiv, Semantic Scholar, n-Category Café,
+     Wilson's publications, ResearchGate.
+   - No prior work found establishing an order on Λ under an
+     octonion-derived bilinear product.
+   - Closest prior art: Baez/Egan (2014) on Jordan algebra approach
+     (different framework: commutative, 27-dim, factor-of-2 issue).
+   - The human researcher (Koeplinger) is quoted in Baez's 2014
+     discussion as having tested Jordan products without finding closure.
+   - Recorded findings in references/prior_art_orders_on_leech.txt.
+
+3. Created paper plan (Phase 2) with:
+   - Working title, abstract draft, 8-section structure.
+   - Proof strategy discussion (exhaustive computation vs symbolic proof
+     vs hybrid).
+   - Methodology section honouring the human-AI collaboration narrative.
+   - 10-item consistency check plan (Phase 3).
+
+4. Plan approved by user. Execution order: literature search (done) →
+   reference audit → consistency checks → exhaustive verification →
+   algebraic properties → update CURRENT_STATE → draft paper → review.
+
+(Further actions ongoing — reference audit, consistency checks, etc.)
