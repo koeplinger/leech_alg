@@ -1,0 +1,56 @@
+Prompt 024 — Terminology reference and research statement
+==========================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+Trial 023 is a very interesting result. I did not expect this outcome, and
+honestly I feel a bit overrun by your AI response. You have corrected my
+mathematically impossible ask, and provided a new construction that is
+intriguing. How would you call such a construction that uses a Z_3 orbit of
+octonion isotopes, generating two Okubo algebras and one para-Octonion algebra?
+I want to fix this and be able to refer back to it later, because in the
+earlier trials 001 and 002, where we used a naive octonion product to see
+whether it closes on the Leech, there was a distinct 2+1 signature also, where
+two of the blocks closed 100% on the Leech lattice but one block only closed
+by around 25%. Of course, that trial was conceptually flawed as well, and I
+have lerned my mistakes as can be traced in the prompt history. But still, a
+signal is a signal, and we can use it as intuition for guidance. So, come up
+with a good name for the construction in trial 023, and then also for the
+construction in trial 001 and 002, so that we can efficiently refer back to
+them later. If there's established terminology, then use that. Because we're
+now in nonstandard turf, create a terminology reference or dictionary.
+
+In the spirit of proper terminology or dictionary, I want you to also make a
+high-level description of the reserach effort. Check the following for
+mathematical accuracy, correct it as needed, make the wording concise and tight
+and precise, and record it as the overall research statement for this effort.
+Also, translate it into German as well:
+
+In the Leech lattice (lambda), the inner-most shell Min(lambda) takes the role
+of a root system in other lattices. Whereas for example the E8 lattice has a
+root system that closes under octonion multiplication when supplied with the
+"Kirmse-twist", generating 7 possible integral orders on the E8 lattice when
+applying such Kirmse-twise to each of the 7 imaginary octonion basis elements,
+a corresponding concept on Min(lambda) is not known yet.
+
+Actions taken:
+--------------
+1. Reviewed trial 001 results (triple octonion product, 2+1 closure pattern),
+   trial 002 results (scaled triple octonion, structural obstruction), and
+   trial 005/006 results (Petersson triality triple, √3 obstruction).
+
+2. Established terminology for the two constructions and the 2+1 phenomenon.
+   Created evidence_and_reasoning/terminology.md as reference dictionary.
+
+3. Corrected and tightened the user's research statement for mathematical
+   accuracy. Key corrections:
+   - Min(Λ) does not form a "root system" in the technical sense (no norm-2
+     vectors in Λ); it plays an analogous structural role.
+   - Clarified "Kirmse twist" → the index-doubling permutation that corrects
+     Kirmse's non-closed integers to give Coxeter's integral octonions.
+   - Clarified "7 possible integral orders" → 7 maximal orders, following
+     Conway–Smith.
+
+4. Recorded the research statement (English and German) in
+   evidence_and_reasoning/research_statement.md.
