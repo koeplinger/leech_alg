@@ -1,0 +1,44 @@
+Prompt 027 — Isotopy vs isomorphism; norm conventions
+======================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+What you call "isomorphic" is what I know under the label "isotopy". Can you
+explain to me whether my understanding is on target or whether it needs
+correction? Also add this to the terminology.md file so that it is clear.
+
+[Also:] Put an entry for the Leech lattice into the terminology and define
+what norm condition you have been using. Double-check all documentation and
+in-code comments to make sure you've used the right norm convention
+throughout.
+
+Actions taken:
+--------------
+1. Analyzed whether the swap(1,2) construction is an isomorphism or an
+   isotopy.  Conclusion: it is a genuine isomorphism (a special case of
+   isotopy where all three maps are identical).  Verified computationally:
+   σ(x ·_std y) = σ(x) ·_swap σ(y) for all 64 basis pairs, 0 mismatches.
+   The Petersson construction (trial 005) is an isotopy in the general sense
+   (f ≠ g when τ ≠ id).
+
+2. Added three new entries to terminology.md (established terms section):
+   - "Isomorphism (of algebras)" — definition, relation to isotopy, project
+     context (swap is an isomorphism).
+   - "Isotopy (of algebras)" — definition with triple (f,g,h), distinction
+     from isomorphism, project context (Petersson is an isotopy).  References
+     to McCrimmon and Albert.
+   - "Leech lattice Λ — norm conventions" — defines N(v) = v·v as the
+     standard used throughout; table of key values (E8 roots: 2, Min(Λ): 8);
+     notes Wilson's halved convention N_W = ½ v·v.
+
+3. Updated terminology.md index to include the three new entries.
+
+4. Audited all code and documentation for norm consistency.  All code
+   (leech_wilson.py, e8_wilson.py, trial_*.py) consistently uses N_std.
+   One clarity issue found in research_statement.md line 49: mixed Wilson
+   and standard conventions in one phrase.  Fixed by adding an explicit
+   parenthetical noting the convention and pointing to terminology.md.
+
+5. Updated research_statement.md correction #1 with norm convention
+   clarification.

@@ -47,7 +47,10 @@ zulässt — ist nicht bekannt.
    system requires norm-2 vectors and closure under reflections; the Leech
    lattice has no norm-2 vectors.  Min(Λ) consists of norm-4 vectors
    (squared norm 8) that generate Λ and determine its symmetry group, hence
-   the analogy.
+   the analogy.  (Here "squared norm 8" refers to the standard Euclidean
+   inner product v · v = Σ vᵢ²; Wilson uses a halved norm under which these
+   vectors have norm 4.  This project uses the standard convention
+   throughout; see terminology.md, "Leech lattice Λ — norm conventions.")
 
 2. **"Kirmse-twist"** → Clarified as "index-doubling permutation."
    Kirmse (1924) proposed a set of 240 integral octonions forming E8, but

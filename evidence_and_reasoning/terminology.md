@@ -9,7 +9,8 @@ specific to this project, terms are marked as **(project-specific)**.
 ## Index
 
 **Established terms:**
-Kirmse integers — Kirmse twist — Maximal order (of integral octonions) —
+Isomorphism (of algebras) — Isotopy (of algebras) — Kirmse integers —
+Kirmse twist — Leech lattice Λ — Maximal order (of integral octonions) —
 Okubo algebra — Para-Hurwitz algebra — Petersson construction —
 Symmetric composition algebra — Triality (D₄ triality)
 
@@ -21,6 +22,77 @@ Transposition-twisted triple octonion product — Triple octonion product —
 ---
 
 ## Established terms
+
+### Isomorphism (of algebras)
+
+An **isomorphism** between two algebras (A, ·) and (B, *) is a bijective
+linear map φ: A → B satisfying φ(x · y) = φ(x) * φ(y) for all x, y ∈ A.
+A single map governs both input and output.
+
+Isomorphism is a special case of **isotopy** (see below): it corresponds to
+the isotopy triple (φ, φ, φ) where all three maps are the same.
+
+In this project: the transposition-twisted algebra swap(s,t) is isomorphic
+to the standard octonion algebra.  The map σ: e_s ↔ e_t (extended linearly)
+satisfies σ(x ·_std y) = σ(x) ·_swap σ(y) for all basis pairs.  Verified
+computationally: 0/64 mismatches.  However, σ does not preserve the E8
+lattice L (it moves half-integer basis vectors), so L is closed under the
+standard product but the swap product acts differently on L.
+
+### Isotopy (of algebras)
+
+An **isotopy** between two algebras (A, ·) and (B, *) is a triple (f, g, h)
+of bijective linear maps A → B satisfying h(x · y) = f(x) * g(y) for all
+x, y ∈ A.  Unlike isomorphism, the maps applied to the two inputs and the
+output may all differ.  Two algebras related by an isotopy are called
+**isotopic**; the new algebra is an **isotope** of the original.
+
+When f = g = h = φ, this reduces to an **isomorphism** (see above).
+
+In this project: the **Petersson construction** x *_τ y = τ(x̄) · τ²(ȳ)
+is an isotopy of the octonion algebra (O, ·), with f: x ↦ τ(x̄),
+g: y ↦ τ²(ȳ), and h = id.  Since f ≠ g (when τ ≠ id), it is a genuine
+isotopy that is not an isomorphism.  The resulting algebra (a symmetric
+composition algebra) has fundamentally different properties — for example,
+it has no identity element.
+
+Reference: McCrimmon, K., "A Taste of Jordan Algebras" (2004), §5.3;
+Albert, A.A., "Non-associative algebras I", Ann. of Math. 43 (1942),
+685–707 (introduced the concept of isotopy for non-associative algebras).
+
+### Leech lattice Λ — norm conventions
+
+The **Leech lattice** Λ is the unique even unimodular lattice of rank 24
+with no vectors of squared norm 2.  Its automorphism group is 2·Co₁, where
+Co₁ is Conway's first sporadic group.
+
+**Norm convention used in this project.**  Throughout all code and
+documentation, we use the **standard squared Euclidean norm** in R²⁴:
+
+  N(v) = v · v = Σᵢ vᵢ²
+
+This is the norm returned by `np.dot(v, v)` in the codebase.  Key values:
+
+| Object                  | N(v) = v·v |
+|-------------------------|------------|
+| E8 roots                | 2          |
+| Min(Λ) (minimal shell)  | 8          |
+| Second shell of Λ       | 12         |
+
+Wilson (2009) uses a **halved norm** N_W = ½ v·v, under which the minimal
+shell has N_W = 4 and E8 roots have N_W = 1.  When citing Wilson's results,
+we translate to the standard convention above.
+
+The Leech lattice is constructed in this project via Wilson's
+characterisation:  Λ = {(x, y, z) ∈ L³ : conditions 1–3}, where L is the
+E8 lattice (= D₈⁺, the Coxeter–Dickson maximal order of integral
+octonions).  See `leech_wilson.py` for the implementation.
+
+References:
+- Conway, J.H. and Sloane, N.J.A., "Sphere Packings, Lattices and Groups"
+  (3rd ed., 1999), Chapter 4.
+- Wilson, R.A., "Octonions and the Leech lattice", J. Algebra 322 (2009),
+  2186–2190.
 
 ### Kirmse integers — Kirmse twist
 
@@ -233,4 +305,4 @@ than the Wilson-condition-3 failure of the triple octonion product.
 
 ---
 
-Last updated: 2026-04-11 (trial 007 results added)
+Last updated: 2026-04-11 (isotopy/isomorphism, Leech lattice norm conventions added)
