@@ -1,0 +1,50 @@
+Prompt 025 — Trial: Triple Kirmse-twisted octonions with Z₃ routing
+=====================================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+[...] Here is the construction: Take three copies of the octonions, and perform
+a "Kirmse-twist" on the same imaginary direction each. Then combine these three
+copies similar to the triple octonion product in trials 001 and 002, i.e., with
+Z_3 cross-block routing. Perform the needed steps for closure that we have
+established as good methodology. If it makes sense structurally, perform the
+tests from Kirmse-twisting different octonion basis elements.
+
+Also requested: Add terminology rule to MANIFESTO.md (done, new §9).
+
+Actions taken:
+--------------
+1. Added §9 (Terminology) to MANIFESTO.md.
+2. Investigated Kirmse twist / index-doubling permutation in codebase and
+   literature.
+3. Implemented trial: three copies of Kirmse-twisted octonions (= Coxeter
+   integral octonions / maximal order) with Z₃ cross-block routing.
+4. Tested closure on Min(Λ) for all 7 choices of distinguished imaginary
+   basis element.
+5. Recorded results.
+
+Results:
+--------
+Phase 0: Wilson's L IS closed under standard multiplication (57,600/57,600
+root pairs).  L is confirmed as the Coxeter–Dickson maximal order.  Trial 001
+already used the correct integral octonions — the Kirmse twist was already
+implicitly applied.
+
+Phase 1: All 7 index-doubling permutations are Fano-plane automorphisms and
+produce the same multiplication table.  All give identical Leech results to
+the standard (81.3% closure, type3×type3 fails on Wilson condition 3).
+
+Phase 2 (KEY FINDING): All 21 transpositions of imaginary basis elements
+achieve 100% Leech lattice closure.  swap(1,2) tested exhaustively on
+type1×type1 (518,400 pairs, 0 failures) and on 50,000 type3×type3 pairs
+(0 failures).  Total: 593,400 pairs, 0 failures.
+
+Phase 3: The pattern is NOT about permutation parity or cycle type.  It
+depends on the relationship between the permutation and the Fano plane.
+All transpositions work; some 3-cycles, 5-cycles, etc. also work; all
+4-cycles tested fail.
+
+VERDICT: CONDITIONAL PASS — pending exhaustive verification.
+
+Full results: evidence_and_reasoning/trial_007_results.md

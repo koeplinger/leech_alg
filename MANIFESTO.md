@@ -66,14 +66,30 @@ The AI agent operates in the role of a highly knowledgeable and thorough mathema
 
 ---
 
-## 9. Scope Discipline
+## 9. Terminology
+
+- New multiplication rules and constructions that do not have established
+  terminology must be given a descriptive name and added to
+  [evidence_and_reasoning/terminology.md](evidence_and_reasoning/terminology.md)
+  under "Project-specific terms."
+- Established specialist terminology (e.g., from the theory of composition
+  algebras, lattices, or octonion arithmetic) that is referenced in the
+  project must also be recorded in the same file under "Established terms,"
+  with references.
+- The threshold for inclusion is: a term that a reader would need in order to
+  follow the trial results and reasoning in this project.  Terms can be added
+  or removed during documentation cleanup.
+
+---
+
+## 10. Scope Discipline
 
 - The AI agent will not add features, claims, or documentation beyond what is requested.
 - When scope is ambiguous, the agent will ask for clarification rather than assume.
 
 ---
 
-## 10. Forward-Evolving Corrections
+## 11. Forward-Evolving Corrections
 
 - When a mistake is discovered — whether in a claim, a computation, a classification, or the framing of a question — **it must be corrected forward, not by altering the historical record**.
 - Prompt logs, key claim files, and other artifacts that are already committed must be left as they were at the time of writing.  A new entry (new prompt log, amended claim, or explicit correction note) is created to record the correction and its rationale.

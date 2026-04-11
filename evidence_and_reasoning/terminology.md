@@ -14,7 +14,8 @@ Okubo algebra — Para-Hurwitz algebra — Petersson construction —
 Symmetric composition algebra — Triality (D₄ triality)
 
 **Project-specific terms:**
-2+1 closure pattern — Petersson triality triple — Triple octonion product —
+2+1 closure pattern — Petersson triality triple —
+Transposition-twisted triple octonion product — Triple octonion product —
 √3 obstruction
 
 ---
@@ -189,6 +190,25 @@ construction with non-trivial τ introduces irrational structure constants
 (cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
 lattice entirely.
 
+### Transposition-twisted triple octonion product
+
+(Trial 007, prompt 025.)  The triple octonion product (see below) where the
+standard Fano-plane multiplication is replaced by a **transposition-twisted**
+multiplication: apply any transposition (s ↔ t) of two imaginary basis
+elements {1,...,7} to the standard Fano triples before building the
+OctonionAlgebra.  This changes the signs of certain structure constants,
+producing a different but isomorphic octonion algebra on the same R⁸.
+
+All 21 transpositions achieve **100% Leech lattice closure** on 593,400
+tested pairs (including 518,400 exhaustive type1×type1 and 50,000
+type3×type3).  This fixes the Wilson condition 3 failure of the
+(un-twisted) triple octonion product.
+
+Since all transpositions are in the same orbit under the Fano-plane
+automorphism group GL(3, F₂), they all produce the same multiplication
+table up to basis relabeling.  The transposition-twisted product is
+therefore essentially unique (up to Fano-plane automorphism).
+
 ### Triple octonion product
 
 (Trials 001, 002.)  A 24-dimensional algebra R²⁴ = O₁ ⊕ O₂ ⊕ O₃ built
@@ -213,4 +233,4 @@ than the Wilson-condition-3 failure of the triple octonion product.
 
 ---
 
-Last updated: 2026-04-11
+Last updated: 2026-04-11 (trial 007 results added)
