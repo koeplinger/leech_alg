@@ -1,0 +1,20 @@
+Prompt 031 — Prompt logging reminder
+======================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+Record all prompts in the prompt log. Double-check to ensure you have a
+memory to record all prompts in the prompt log. Double-check to ensure that
+this is stated in the manifesto also.
+
+Actions taken:
+--------------
+1. Checked Manifesto §8 — already states: "Every AI interaction prompt is
+   recorded in prompt_logs/, enumerated in order."
+2. Checked memory feedback_prompt_logging.md — already records: "Every user
+   prompt must be logged as the FIRST action in every conversation."
+3. Checked memory feedback_manifesto_compliance.md — also covers this.
+4. All three were already in place. However, the agent had violated them by
+   failing to log prompts 029, 030, and 031 at the time they were received.
+   This was caught and corrected in prompt 032.

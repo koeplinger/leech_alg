@@ -1,0 +1,26 @@
+Prompt 032 — Prompt logging violation caught
+==============================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+You did not record the previous few prompts. This is a violation of your
+memory and the manifesto.
+
+Actions taken:
+--------------
+1. Acknowledged the violation. The agent failed to create prompt log entries
+   for prompts 029, 030, and 031 at the time they were received, despite
+   Manifesto §8 and two memory entries requiring this.
+
+2. Created retroactive prompt log entries:
+   - 029_performance_optimization.txt
+   - 030_multiprocessing_and_gpu.txt
+   - 031_prompt_logging_reminder.txt
+   - 032_prompt_logging_violation.txt (this file)
+
+Root cause: The session was a continuation from a prior conversation that ran
+out of context. The agent correctly logged prompt 028 (the first prompt in
+this session) but then failed to log subsequent prompts within the same
+session, treating them as continuations rather than separate logged prompts.
+Each distinct user message constitutes a prompt that must be logged.

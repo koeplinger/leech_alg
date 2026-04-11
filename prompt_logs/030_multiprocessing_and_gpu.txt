@@ -1,0 +1,34 @@
+Prompt 030 — Multiprocessing and GPU support
+==============================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+Yes do multiprocessor support. I may also take it to another machine to
+perform the actual run. Since the meat of the calculation is fully
+vectorized, what do you think about changing programming language? My specs
+aren't the greatest, my laptop is running a 12th Gen Intel® Core™ i7-12650H
+× 16 CPU and has a NVIDIA GeForce RTX™ 3050 Ti Laptop GPU. All on Ubuntu
+24.04.4 LTS.
+
+Actions taken:
+--------------
+1. Created trial_007_exhaust.py with:
+   - CPU multiprocessing (mp.Pool, auto-detected core count).
+   - Fixed-first-vector optimisation: for exhaustive row-by-row enumeration,
+     precompute C[j,k] = Σ_i M[i,j,k] a[i] once per row, reducing per-pair
+     work from 512N to 64N multiply-adds (8× fewer FLOPs).
+   - GPU support via CuPy (auto-detected, optional --gpu flag).
+   - Verification against reference implementation before every run.
+   - CLI: --exhaustive, --random N, --gpu, --workers N, --skip-verify.
+
+2. Benchmarked:
+   - Random 4M pairs, 16 workers: 6.9s, 1.72 µs/pair (124× vs pure Python).
+   - Fixed-first-vector, single core: 385ms/row, 1.96 µs/pair.
+   - Exhaustive estimate with 16 CPU threads: ~2.1 hours.
+   - Exhaustive estimate with GPU: ~5–15 minutes (untested, CuPy not
+     installed on user's machine).
+
+3. Advised against changing programming language: the bottleneck is dense
+   BLAS matrix multiply (B @ C, 196560×8 times 8×8), which NumPy already
+   delegates to optimised BLAS. A C/Rust rewrite would call the same BLAS.

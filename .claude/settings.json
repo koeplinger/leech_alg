@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 trial_007_scaled_test.py)"
+      "Bash(python3 trial_007_scaled_test.py)",
+      "Bash(python3 trial_007_fast.py 4000000)",
+      "Bash(python3 trial_007_exhaust.py --random 4000000 --seed 2026)"
     ]
   }
 }

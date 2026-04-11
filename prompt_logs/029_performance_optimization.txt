@@ -1,0 +1,37 @@
+Prompt 029 — Performance-optimized closure test
+=================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+Because we've been writing code to test all results from first principles
+(we don't trust anyone, not even ourselves), let's try writing a performance
+optimization. Don't modify the existing python files, they are clean and
+instructive. We don't want performance optimizations to make code harder to
+read. All examples so far were for clarity, verifiability, to make it clear
+to a human what's going on. The performance-optimized code, in contrast, can
+be as hard-to-read as you like. We will not use it as definitive proof, but
+we will work on a symbolic (mathematical) proof for that. But first things
+first, let's take advantage of the current context and try to optimize
+performance.
+
+Actions taken:
+--------------
+1. Created trial_007_fast.py: vectorised NumPy implementation.
+   - Precomputes 8×8×8 structure constant tensor for swap(1,2).
+   - Batches all multiplications via np.einsum (9 block pairs, 50K pairs
+     per batch).
+   - Vectorises all Wilson membership checks (is_in_L, is_in_Ls̄, is_in_Ls)
+     with bulk NumPy operations.
+   - Includes verification against reference implementation (1000 pairs,
+     0 mismatches).
+
+2. Ran 4M pair test with the fast implementation.
+
+Results:
+--------
+- 4,000,000 pairs, 0 failures, 0 zero products.
+- Wall-clock time: 33.8s (0.6 min).
+- Per pair: 8.4 µs.
+- Speedup vs pure Python: 25.3×.
+- Exhaustive estimate: 90.6h (3.8 days), down from 95.4 days.
