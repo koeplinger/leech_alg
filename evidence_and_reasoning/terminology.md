@@ -2,25 +2,101 @@
 
 This file defines terminology used in this project. Where established
 mathematical terminology exists, it is cited. Where constructions are
-specific to this project, terms are marked as **project-specific**.
+specific to this project, terms are marked as **(project-specific)**.
+
+---
+
+## Index
+
+**Established terms:**
+Kirmse integers — Kirmse twist — Maximal order (of integral octonions) —
+Okubo algebra — Para-Hurwitz algebra — Petersson construction —
+Symmetric composition algebra — Triality (D₄ triality)
+
+**Project-specific terms:**
+2+1 closure pattern — Petersson triality triple — Triple octonion product —
+√3 obstruction
 
 ---
 
 ## Established terms
 
-### Symmetric composition algebra
+### Kirmse integers — Kirmse twist
 
-An 8-dimensional composition algebra (V, *, n) satisfying
-(x * y) * x = x * (y * x) = n(x) y for all x, y.  Over a field of
-characteristic ≠ 2, 3, these are exactly the **para-Hurwitz algebras** and the
-**Okubo algebras**.  Reference: [Elduque2000_Triality], [KMRT, Chapter VIII].
+Johannes Kirmse (born 1894, Schmölln, Thuringia) received his PhD from the
+University of Leipzig in 1923 under Gustav Herglotz and published his sole
+known paper on integral octonions in 1924, while working as a high school
+teacher in Apolda:
 
-### Para-Hurwitz algebra (para-octonion algebra)
+> J. Kirmse, "Über die Darstellbarkeit natürlicher ganzer Zahlen als Summen
+> von acht Quadraten und über ein mit diesem Problem zusammenhängendes
+> nichtkommutatives und nichtassoziatives Zahlensystem,"
+> Ber. Verh. Sächs. Akad. Wiss. Leipzig, Math.-Phys. Kl. **76** (1924),
+> 63–82.
 
-The symmetric composition algebra obtained from an octonion algebra (O, ·)
-by the **Petersson construction** with the identity automorphism (τ = id):
-x * y = x̄ · ȳ, where x̄ denotes octonion conjugation.  This is the simplest
-symmetric composition algebra.  Reference: [Elduque2000_Triality] §3.
+In this paper Kirmse accomplished the following:
+
+1. **Kirmse's identities**: x(x̄y) = n(x)y = (yx̄)x — appearing in print
+   presumably for the first time (Petersson 2018).
+2. He exhibited the E8 lattice as a positive definite unimodular integral
+   quadratic lattice of rank 8 inside the real octonion algebra, by a
+   judicious choice of basis vectors.
+3. He may have inadvertently initiated the study of alternative algebras;
+   Petersson (2018) speculates that Emil Artin's lifelong interest in
+   alternative algebras was inspired by Kirmse's paper, since both Kirmse
+   and Artin were students of Herglotz at Leipzig (Artin received his PhD
+   in 1921, Kirmse in 1923).
+
+Kirmse then claimed — without proof — that his lattice is closed under
+octonion multiplication.  Coxeter (1946), upon studying Kirmse's paper,
+was unable to verify this and eventually showed the claim is false: certain
+products of several factors, where the multiplication is non-associative,
+land outside the lattice.  Coxeter, together with Bruck, then remedied the
+defect by a modification of Kirmse's construction (an **index-doubling
+permutation** of the imaginary basis elements), producing a genuine maximal
+order.
+
+In this project, **Kirmse twist** is used as shorthand for the
+index-doubling permutation that corrects Kirmse's construction to a closed
+one.
+
+**A note on attribution and fairness.**  The term "Kirmse integers" in
+modern usage refers exclusively to the non-closed system — Kirmse's error.
+This practice reduces the man to his one mistake and erases his actual
+contributions (the identities, the lattice construction, and the
+pioneering investigation of octonion arithmetic).  Petersson (2018), who
+gives the most detailed modern account, treats Kirmse with respect, calling
+his work "the bold attempt of a young mathematician" tackling "a weird and
+bizarre topic even by today's standards, let alone the ones of a hundred
+years ago."  This project follows Petersson's example and records Kirmse's
+positive contributions alongside the error.
+
+References:
+- Kirmse (1924), as cited above.
+- Coxeter, H.S.M., "Integral Cayley numbers," Duke Math. J. **13** (1946),
+  561–578.
+- Petersson, H.P., "Integral octonions," lecture at the Málaga Workshop on
+  Non-Associative Algebras, September 6, 2018.  Available at:
+  https://www.fernuni-hagen.de/mi/fakultaet/emeriti/docs/petersson/ass.-rem.-int.-oct.pdf
+- Conway, J.H. and Smith, D.A., "On Quaternions and Octonions" (2003),
+  Chapter 9.
+
+### Maximal order (of integral octonions)
+
+A lattice Γ ⊂ O (the real octonion algebra) that is closed under
+multiplication, contains the identity, and is maximal with respect to
+inclusion among such lattices.  There are exactly 7 maximal orders in the
+octonions, each isometric to the E8 root lattice.  They are obtained by
+choosing one of the 7 imaginary basis elements as a distinguished unit and
+applying the Kirmse twist (index-doubling permutation).
+
+Note: Petersson (2018) documents that Dickson (1923) had constructed
+integral octonions isomorphic to Coxeter's more than twenty years before
+Coxeter's 1946 paper; Coxeter himself acknowledged this in a postscript.
+
+References: Conway and Smith (2003), Chapter 9; Coxeter (1946);
+Dickson, L.E., "A new simple theory of hypercomplex integers,"
+J. Math. Pures Appl. (1923).
 
 ### Okubo algebra (pseudo-octonion algebra)
 
@@ -30,6 +106,13 @@ x * y = τ(x̄) · τ²(ȳ).  Named after Susumu Okubo, who first constructed
 it on traceless 3×3 matrices over C.  Over R, there is (up to isomorphism)
 one Okubo algebra; over other fields there may be several.
 References: [MarraniCorradettiZucconi2025], [Elduque2000_Triality].
+
+### Para-Hurwitz algebra (para-octonion algebra)
+
+The symmetric composition algebra obtained from an octonion algebra (O, ·)
+by the **Petersson construction** with the identity automorphism (τ = id):
+x * y = x̄ · ȳ, where x̄ denotes octonion conjugation.  This is the simplest
+symmetric composition algebra.  Reference: [Elduque2000_Triality] §3.
 
 ### Petersson construction
 
@@ -41,25 +124,13 @@ when τ ≠ id, it gives an Okubo algebra.
 Reference: [MarraniCorradettiZucconi2025] eq. (1.5); originally due to
 H. Petersson (1969).
 
-### Maximal order (of integral octonions)
+### Symmetric composition algebra
 
-A lattice Γ ⊂ O (the real octonion algebra) that is closed under
-multiplication, contains the identity, and is maximal with respect to
-inclusion among such lattices.  There are exactly 7 maximal orders in the
-octonions, each isometric to the E8 root lattice.  They are obtained by
-choosing one of the 7 imaginary basis elements as a distinguished unit and
-applying the **index-doubling permutation** (correcting Kirmse's original
-non-closed construction).  Reference: Conway and Smith, "On Quaternions and
-Octonions" (2003), Chapter 9; Coxeter (1946).
-
-### Kirmse integers / index-doubling permutation
-
-Kirmse (1924) proposed a set of 240 "integral octonions" forming the E8
-lattice, but this set is NOT closed under multiplication.  Coxeter (1946)
-showed that applying an **index-doubling permutation** (a specific
-permutation of the 7 imaginary basis elements) to Kirmse's set produces a
-genuine maximal order.  In this project, we use **Kirmse twist** as shorthand
-for this correction.  Reference: Conway and Smith (2003), §9.3.
+An 8-dimensional composition algebra (V, *, n) satisfying
+(x * y) * x = x * (y * x) = n(x) y for all x, y.  Over a field of
+characteristic ≠ 2, 3, these are exactly the **para-Hurwitz algebras** and
+the **Okubo algebras**.
+Reference: [Elduque2000_Triality], [KMRT, Chapter VIII].
 
 ### Triality (D₄ triality)
 
@@ -74,38 +145,6 @@ Reference: [Elduque2000_Triality] §4.
 ---
 
 ## Project-specific terms
-
-### Triple octonion product
-
-(Trials 001, 002.)  A 24-dimensional algebra R²⁴ = O₁ ⊕ O₂ ⊕ O₃ built
-from three copies of the standard octonion algebra with **Z₃ cross-block
-routing**: products of vectors from blocks α and β land in block γ, where
-{α, β, γ} = {1, 2, 3}, using the standard octonion multiplication.
-Same-block products Oα × Oα → Oα also use the standard octonion product.
-
-Trial 001 tested this product without rescaling.  Trial 002 tested it with
-per-block scaling.  Both failed, but trial 001 exhibited a distinctive
-**2+1 closure pattern** (see below).
-
-### Petersson triality triple
-
-(Trial 005, prompt 023.)  A 24-dimensional algebra R²⁴ = B₀ ⊕ B₁ ⊕ B₂
-where the three blocks carry different symmetric composition algebras
-forming the **Z₃ orbit** under powers of an order-3 octonion automorphism τ:
-
-- B₀: para-octonion (Petersson with τ⁰ = id)
-- B₁: Okubo_τ   (Petersson with τ)
-- B₂: Okubo_τ²  (Petersson with τ²)
-
-Cross-block products use the target block's algebra.  This construction
-arose when the user's original request (cyclically rotating the mediator
-of a Fano line) was shown to be mathematically impossible for all 7 Fano
-lines; the Petersson triality triple is the closest valid alternative.
-
-The construction failed due to a **√3 obstruction**: the Petersson
-construction with non-trivial τ introduces irrational structure constants
-(cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
-lattice entirely.
 
 ### 2+1 closure pattern
 
@@ -129,6 +168,38 @@ The 2+1 pattern may be a structural signal reflecting the underlying
 asymmetry between the para-Hurwitz and Okubo components of the triality
 orbit, or between the block-occupancy patterns of the three vector types
 in Wilson's Leech lattice construction.
+
+### Petersson triality triple
+
+(Trial 005, prompt 023.)  A 24-dimensional algebra R²⁴ = B₀ ⊕ B₁ ⊕ B₂
+where the three blocks carry different symmetric composition algebras
+forming the **Z₃ orbit** under powers of an order-3 octonion automorphism τ:
+
+- B₀: para-octonion (Petersson with τ⁰ = id)
+- B₁: Okubo_τ   (Petersson with τ)
+- B₂: Okubo_τ²  (Petersson with τ²)
+
+Cross-block products use the target block's algebra.  This construction
+arose when the user's original request (cyclically rotating the mediator
+of a Fano line) was shown to be mathematically impossible for all 7 Fano
+lines; the Petersson triality triple is the closest valid alternative.
+
+The construction failed due to a **√3 obstruction**: the Petersson
+construction with non-trivial τ introduces irrational structure constants
+(cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
+lattice entirely.
+
+### Triple octonion product
+
+(Trials 001, 002.)  A 24-dimensional algebra R²⁴ = O₁ ⊕ O₂ ⊕ O₃ built
+from three copies of the standard octonion algebra with **Z₃ cross-block
+routing**: products of vectors from blocks α and β land in block γ, where
+{α, β, γ} = {1, 2, 3}, using the standard octonion multiplication.
+Same-block products Oα × Oα → Oα also use the standard octonion product.
+
+Trial 001 tested this product without rescaling.  Trial 002 tested it with
+per-block scaling.  Both failed, but trial 001 exhibited a distinctive
+**2+1 closure pattern** (see above).
 
 ### √3 obstruction
 
