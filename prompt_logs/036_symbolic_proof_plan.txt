@@ -1,0 +1,65 @@
+Prompt 036 — Symbolic proof plan and paper revision
+=====================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+This needs work. I'll start at the top of the paper and post updates as
+I see them. We will then iterate until the paper reflects something I
+understand, can own and defend.
+
+Title is good. Keep it.
+
+In the abstract: "Closure is verified computationally..." - no,
+absolutely not. The computational verification was a vehicle in the
+discovery process, to mediate our distrust into anything we read or say
+or think we know. We wrote tests from first principles and then
+reproduced everything. That's how we know the properties of an octonion
+really are what's in the literature and in Wikipedia, that Robert
+Wilson's construction really does create the Leech lattice, and so on.
+All of this is part of the methodology and needs to be said in your
+draft section 6. In the abstract, and the main part, all interest is on
+symbolic verification. You summarize the construction symbolically, and
+summarize Wilson's construction. How about you show how two out of three
+blocks in Wilson's construction do close under the conventional octonion
+product, and give a symbolic reason why the third block doesn't?
+Octonion pair twisting is an isomorphism so it necessarily closes on
+those two blocks as well. Mention than, and then make a proof that the
+twist closes on the third block, and also on the Z_3-symmetric cross
+block routing. Again, up until the section with the methodology, we
+don't want any reference to computational validation and sampling.
+
+Here's my suggestion: First make a plan for the proof. Once you know
+exactly how the proof is to be executed symbolically, make a plan for
+updating the paper. Then update the paper.
+
+Actions taken:
+--------------
+1. Ran symbolic_proof_checks.py — ALL LEMMAS PASS (exact arithmetic):
+   - Lemma A (σ(L)=L): PASS — all 8 basis vectors map into L under σ
+   - Lemma C (L·σ(Ls̄)⊆σ(Ls̄)): PASS — all 64 basis products verified
+   - Lemma D (σ(Ls)·σ(Ls)⊆σ(Ls)): PASS — all 64 basis products verified
+   - Lemma E (σ(Ls)≠Ls): PASS — basis vector 3 of σ(Ls) not in Ls
+   - Counterexample (Ls·Ls⊄Ls): PASS — Ls_basis[1]·Ls_basis[3] ∉ Ls
+   - Bonus: σ(Ls̄)≠Ls̄ confirmed; L·Ls̄⊆Ls̄ confirmed
+
+2. Corrected formula in evidence_and_reasoning/research_result.md:
+   - Changed x·_σ y = σ(x)·σ(y) to x·_σ y = σ(σ(x)·σ(y))
+   - Added isomorphism statement: σ(x·y) = σ(x)·_σ σ(y)
+   - Updated "What is not yet established" → symbolic proof and
+     algebraic properties now established
+
+3. Major revision of paper/main.tex:
+   - Abstract: removed computational references, states symbolic proof
+   - Section 1: removed computational language, previews proof structure
+   - Section 3: CORRECTED formula to x·_σ y = σ(σ(x)·σ(y)),
+     corrected isomorphism proof
+   - Section 4 (renamed "Proof of closure"): complete symbolic proof
+     with five lemmas (A-E), bilinearity decomposition, proofs of
+     conditions 1-3, explanation of why standard product fails
+   - Section 5: algebraic properties (kept, unchanged)
+   - Section 6: methodology — computational verification now properly
+     framed as discovery vehicle, not as the proof
+   - Section 8: conclusion updated (symbolic proof done, removed from
+     open questions)
+   - Compiles to 10 pages, no errors

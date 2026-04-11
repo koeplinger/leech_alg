@@ -8,7 +8,10 @@
       "Bash(python python_project/src/consistency_checks.py)",
       "Bash(python3 python_project/src/consistency_checks.py)",
       "Bash(python3 consistency_checks.py)",
-      "Bash(pdflatex -interaction=nonstopmode main.tex)"
+      "Bash(pdflatex -interaction=nonstopmode main.tex)",
+      "Bash(python3)",
+      "Bash(python3 -c ':*)",
+      "Bash(python3 symbolic_proof_checks.py)"
     ]
   }
 }

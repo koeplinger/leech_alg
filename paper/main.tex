@@ -54,11 +54,12 @@ in a 24-dimensional real algebra.  The product is built from three
 identical copies of a \emph{transposition-twisted} octonion algebra ---
 the algebra obtained by applying a single transposition to the
 imaginary basis elements of the standard Fano-plane multiplication ---
-with $\ZZ_3$-symmetric cross-block routing.  Closure is verified
-computationally on random samples totalling over twelve million pairs
-of minimal vectors, with zero failures; symbolic analysis shows why
-the twist corrects the single obstruction (Wilson's condition~3) that
-prevents the standard (untwisted) triple-octonion product from closing.
+with $\ZZ_3$-symmetric cross-block routing.  Wilson's octonionic
+characterisation of~$\LL$ imposes three sublattice conditions.
+The standard (untwisted) triple-octonion product satisfies
+conditions~1 and~2 but fails condition~3; we prove symbolically that
+the twist corrects this failure by mapping the condition-3 sublattice
+to one that is closed under the standard octonion product.
 The construction is essentially unique: all twenty-one transpositions
 yield the same algebra up to Fano-plane automorphisms.
 
@@ -98,14 +99,17 @@ products without finding closure on the Leech inner shell.
 
 The standard triple-octonion product on~$L^3$ --- using the same
 octonion multiplication in all three blocks with
-$\ZZ_3$-symmetric cross-block routing --- fails to close on~$\LL$.
-The failure is exclusively in type-3~$\times$~type-3 products and
-exclusively on Wilson's condition~3 ($x+y+z \in Ls$), at a rate of
-approximately 73\%.  The other Wilson conditions are always satisfied.
+$\ZZ_3$-symmetric cross-block routing --- satisfies Wilson's
+conditions~1 and~2 automatically but fails condition~3.  The failure
+is structural: condition~3 requires $x+y+z \in Ls$ for the block sum,
+and the standard product does not preserve the sublattice~$Ls$ under
+multiplication.
 
-The main result of this paper is that a small modification --- applying
-a single transposition to the Fano-plane triples --- corrects this
-failure.
+The main result of this paper is that a single transposition applied to
+the Fano-plane triples corrects this failure.  The key insight is that
+the twist maps the condition-3 sublattice~$Ls$ to~$\sigma(Ls)$, a
+different sublattice of~$L$ that \emph{is} closed under the standard
+octonion product.
 
 \begin{theorem}\label{thm:main}
 Let\/ $\cdot_\sigma$ denote the transposition-twisted octonion
@@ -113,8 +117,7 @@ multiplication on~$\RR^8$ (Definition~\ref{def:twist}), and let\/
 $\star$ denote the associated triple product on
 $\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ with $\ZZ_3$ cross-block
 routing (Definition~\ref{def:triple}).  Then for all
-$u, v \in \operatorname{Min}(\LL)$, the product $u \star v$ lies
-in~$\LL$.
+$u, v \in \LL$, the product $u \star v$ lies in~$\LL$.
 \end{theorem}
 
 \begin{corollary}\label{cor:order}
@@ -126,9 +129,7 @@ $(\RR^{24}, +, \star)$.
 $\operatorname{Min}(\LL)$ generates~$\LL$ over~$\ZZ$
 \cite{ConwaySloane1999}.  The product~$\star$ is bilinear (it is a
 sum of bilinear octonion products).  By Theorem~\ref{thm:main},
-$\star$ maps $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$
-into~$\LL$.  By bilinearity, it maps
-$\LL \times \LL$ into~$\LL$.
+$\star$ maps $\LL \times \LL$ into~$\LL$.
 \end{proof}
 
 % ===============================================================
@@ -219,38 +220,37 @@ $j, k \in J = \{\pm e_t : 0 \le t \le 7\}$ (16~unit octonions).
 \label{def:twist}
 Let $\sigma = (s\; t)$ be a transposition on $\{1, \ldots, 7\}$.
 Extend~$\sigma$ to a linear map $\sigma: \RR^8 \to \RR^8$ that fixes
-$e_0$ and permutes $e_s \leftrightarrow e_t$.  Define the
-\emph{$\sigma$-twisted multiplication} on~$\RR^8$ by
-\[
-  x \cdot_\sigma y \;=\; \sigma(x) \cdot \sigma(y),
-\]
+$e_0$ and permutes $e_s \leftrightarrow e_t$.  Apply~$\sigma$ to each
+standard Fano triple: $(a,b,c) \mapsto (\sigma(a), \sigma(b), \sigma(c))$.
+The resulting triples define a new multiplication table on~$\RR^8$.
+Equivalently, the \emph{$\sigma$-twisted multiplication} is
+\begin{equation}\label{eq:twist-formula}
+  x \cdot_\sigma y \;=\; \sigma\bigl(\sigma(x) \cdot \sigma(y)\bigr),
+\end{equation}
 where $\cdot$ denotes the standard octonion product.
 \end{definition}
 
 \begin{proposition}\label{prop:iso}
 $(\RR^8, \cdot_\sigma)$ is an octonion algebra, isomorphic
 to~$(\OO, \cdot)$ via the map~$\sigma$ itself:
-\[
+\begin{equation}\label{eq:iso}
   \sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)
   \qquad \text{for all } x, y \in \RR^8.
-\]
+\end{equation}
 In particular, $\cdot_\sigma$ satisfies the composition property
 $\Nrm(x \cdot_\sigma y) = \Nrm(x)\Nrm(y)$.
 \end{proposition}
 
 \begin{proof}
-The map $\sigma: (\OO, \cdot) \to (\RR^8, \cdot_\sigma)$ is a
-vector-space isomorphism (it is a permutation matrix on the basis).
-For the algebra homomorphism property:
+For any $x, y \in \RR^8$:
 \[
   \sigma(x) \cdot_\sigma \sigma(y)
-  = \sigma(\sigma(x)) \cdot \sigma(\sigma(y))
-  = x \cdot y,
+  = \sigma\bigl(\sigma(\sigma(x)) \cdot \sigma(\sigma(y))\bigr)
+  = \sigma(x \cdot y),
 \]
-since $\sigma^2 = \mathrm{id}$.  Hence
-$\sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)$
-after applying~$\sigma$ to both sides.  Composition follows from
-isomorphism.
+since $\sigma^2 = \mathrm{id}$.  Thus $\sigma: (\OO, \cdot) \to
+(\RR^8, \cdot_\sigma)$ is a vector-space isomorphism that preserves
+multiplication.  Composition follows.
 \end{proof}
 
 \begin{remark}\label{rem:table-diffs}
@@ -294,84 +294,235 @@ $\alpha \ne \beta$, and in block~$\alpha$ when $\alpha = \beta$.
 All nine block-pair products use the single multiplication~$\cdot_\sigma$.
 \end{definition}
 
-\begin{remark}\label{rem:bilinear}
-The product~$\star$ is bilinear over~$\RR$, since each of its nine
-constituent terms is a bilinear octonion product composed with a fixed
-linear map (summation into the target block).
+% ===============================================================
+\section{Proof of closure}\label{sec:proof}
+% ===============================================================
+
+We prove Theorem~\ref{thm:main} by showing that the twisted product
+preserves each of Wilson's three conditions.  The proof rests on five
+lemmas about the interaction between the transposition~$\sigma$, the
+maximal order~$L$, and the sublattices $Ls$ and~$L\bar{s}$.
+
+\subsection{Reduction to standard products}
+
+Since each $\sigma$-twisted product has the form
+$a \cdot_\sigma b = \sigma(\sigma(a) \cdot \sigma(b))$, and $\sigma$
+is linear, each block $P_\alpha$ is $\sigma$ applied to a sum of
+standard octonion products of $\sigma$-images of the inputs.
+
+Write $X = \sigma(x)$, $Y = \sigma(y)$, $Z = \sigma(z)$,
+$X' = \sigma(x')$, $Y' = \sigma(y')$, $Z' = \sigma(z')$.  Then:
+\begin{align}
+  P_1 &= \sigma\bigl(X \cdot X' + Z \cdot Y' + Y \cdot Z'\bigr),
+  \label{eq:P1-std} \\
+  P_2 &= \sigma\bigl(Y \cdot Y' + X \cdot Z' + Z \cdot X'\bigr),
+  \label{eq:P2-std} \\
+  P_3 &= \sigma\bigl(Z \cdot Z' + Y \cdot X' + X \cdot Y'\bigr).
+  \label{eq:P3-std}
+\end{align}
+
+Taking sums:
+\begin{itemize}
+\item \textbf{Block sum.}
+  $P_1 + P_2 + P_3 = \sigma\bigl((X+Y+Z) \cdot (X'+Y'+Z')\bigr)$.
+\item \textbf{Pairwise sums.}  For example,
+  $P_1 + P_2 = \sigma\bigl(X \cdot (X'+Z') + Y \cdot (Y'+Z') +
+  Z \cdot (X'+Y')\bigr)$, and similarly for the other two pairs.
+\end{itemize}
+
+\subsection{The five lemmas}
+
+\begin{lemma}[Lemma A]\label{lem:sigma-L}
+$\sigma(L) = L$.
+\end{lemma}
+
+\begin{proof}
+The lattice $L = D_8^+$ consists of all vectors in~$\RR^8$ whose
+coordinates are either all integers or all half-integers, with even
+coordinate sum.  The transposition~$\sigma$ permutes two coordinates,
+which preserves both the integer/half-integer parity and the coordinate
+sum.  Hence $\sigma(L) \subseteq L$.  Since $\sigma$ is an involution,
+$\sigma(L) = L$.
+\end{proof}
+
+\begin{lemma}[Lemma B]\label{lem:L-order}
+$L \cdot L \subseteq L$.
+\end{lemma}
+
+\begin{proof}
+$L$ is a maximal order in~$\OO$
+\cite{Coxeter1946, ConwaySmith2003}.
+\end{proof}
+
+\begin{lemma}[Lemma C]\label{lem:L-sigmaLsbar}
+$L \cdot \sigma(L\bar{s}) \subseteq \sigma(L\bar{s})$.
+\end{lemma}
+
+\begin{proof}
+Both $L$ and $\sigma(L\bar{s})$ are lattices of rank~8.  It suffices to
+check the inclusion on $\ZZ$-bases: if $\{b_1, \ldots, b_8\}$ is a
+$\ZZ$-basis of~$L$ and $\{c_1, \ldots, c_8\}$ is a $\ZZ$-basis
+of~$\sigma(L\bar{s})$, then $L \cdot \sigma(L\bar{s}) \subseteq
+\sigma(L\bar{s})$ holds if and only if each of the 64 products
+$b_i \cdot c_j$ is an integer combination of $\{c_1, \ldots, c_8\}$.
+This is verified by exact arithmetic (using rational numbers, no
+floating point) on explicit bases.  All 64 products lie
+in~$\sigma(L\bar{s})$.
+\end{proof}
+
+\begin{lemma}[Lemma D]\label{lem:sigmaLs-closed}
+$\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
+\end{lemma}
+
+\begin{proof}
+As in Lemma~C, verified on $\ZZ$-bases by exact arithmetic: all 64
+products of basis vectors of~$\sigma(Ls)$ lie in~$\sigma(Ls)$.
+\end{proof}
+
+\begin{lemma}[Lemma E]\label{lem:sigmaLs-neq-Ls}
+$\sigma(Ls) \neq Ls$.
+\end{lemma}
+
+\begin{proof}
+Let $\sigma = (1\;2)$.  Consider the element
+$v = (-1, 0, 1, 0, 0, 1, 0, 1)$, which lies in~$\sigma(Ls)$.
+Direct computation shows that $v$ is not an integer combination
+of any $\ZZ$-basis for~$Ls$, so $v \notin Ls$.
+\end{proof}
+
+\begin{remark}\label{rem:Ls-not-closed}
+The sublattice~$Ls$ is \emph{not} closed under the standard octonion
+product: there exist basis vectors $a, b \in Ls$ with $a \cdot b
+\notin Ls$.  This is the reason the untwisted triple product fails
+condition~3.  The twist maps the condition-3 sublattice from~$Ls$
+(where closure fails) to~$\sigma(Ls)$ (where closure holds, by
+Lemma~D).
 \end{remark}
 
-% ===============================================================
-\section{Why the twist works}\label{sec:why}
-% ===============================================================
+\subsection{Condition~1: each block lies in~$L$}
 
-We analyse why the transposition twist corrects the closure failure
-of the standard triple-octonion product.
-
-\subsection{The standard product fails on condition~3}
-
-Let $\star_{\mathrm{std}}$ denote the triple product
-\eqref{eq:triple}--\eqref{eq:P3} using the standard octonion
-multiplication~$\cdot$ in place of~$\cdot_\sigma$.
-
-\begin{proposition}\label{prop:std-fail}
-The product $\star_{\mathrm{std}}$ satisfies Wilson's conditions~1
-and~2 for all pairs of minimal vectors, but fails condition~3 for
-approximately 73\% of type-3~$\times$~type-3 pairs.  All other type
-combinations satisfy all three conditions.
+\begin{proposition}\label{prop:cond1}
+For all $u, v \in \LL$, each block $P_\alpha$ of $u \star v$ lies
+in~$L$.
 \end{proposition}
 
-This was verified computationally on over 500{,}000 pairs (see
-Section~\ref{sec:methodology}).  The failure is
-structural: condition~3 requires $P_1 + P_2 + P_3 \in Ls$, and
-the standard product does not produce sums in~$Ls$ for the majority
-of type-3~$\times$~type-3 products.
+\begin{proof}
+Consider $P_1 = \sigma(X \cdot X' + Z \cdot Y' + Y \cdot Z')$.
+Since $u \in \LL$, condition~1 gives $x \in L$, so
+$X = \sigma(x) \in L$ by Lemma~A.  Similarly $X', Y, Y', Z, Z' \in L$.
+By Lemma~B, each product $X \cdot X'$, $Z \cdot Y'$, $Y \cdot Z'$ lies
+in~$L$.  Their sum lies in~$L$ (closed under addition).  Applying
+$\sigma$ and using Lemma~A, $P_1 \in L$.  The same argument applies to
+$P_2$ and~$P_3$.
+\end{proof}
 
-\subsection{The transposition changes condition-3 sums}
+\subsection{Condition~2: pairwise sums lie in~$L\bar{s}$}
 
-The block sum $P_1 + P_2 + P_3$ collects all nine cross-block and
-same-block products.  Under the standard multiplication, this sum
-generically misses the sublattice~$Ls$ because the structure constants
-produce the wrong residues modulo the index-16 sublattice.
-
-The transposition~$\sigma$ changes 30 of 64 structure constants.
-Crucially, $\sigma$ preserves both~$L$ and~$L\bar{s}$ as sets (since
-$\sigma$ is a coordinate permutation and $D_8^+$ is invariant under
-coordinate permutations), so conditions~1 and~2 remain satisfied.
-However, the altered structure constants change how the nine product
-terms combine in the sum $P_1 + P_2 + P_3$, redirecting the sum
-into~$Ls$.
-
-\begin{proposition}\label{prop:twist-fixes}
-For the transposition-twisted product~$\star$:
-\begin{enumerate}[label=(\roman*)]
-\item Conditions~1 and~2 are satisfied for all pairs of minimal
-  vectors (as for the standard product).
-\item Condition~3 is satisfied for all pairs of minimal vectors,
-  including all type-3~$\times$~type-3 pairs.
-\end{enumerate}
+\begin{proposition}\label{prop:cond2}
+For all $u, v \in \LL$, the pairwise sums $P_\alpha + P_\beta$ lie
+in~$L\bar{s}$.
 \end{proposition}
 
-This establishes Theorem~\ref{thm:main}.  The proof is
-computational: all pairs tested (over 12{,}000{,}000 including all
-type combinations, with random sampling from the full
-$196{,}560 \times 196{,}560$ product space) satisfy all three
-Wilson conditions, with zero failures.
+\begin{proof}
+We show $P_1 + P_2 \in L\bar{s}$; the other two cases follow by the
+$\ZZ_3$ symmetry of the routing.
 
-\subsection{Invariance under transposition choice}
+From \eqref{eq:P1-std}--\eqref{eq:P2-std}:
+\[
+  P_1 + P_2 = \sigma\bigl(X \cdot (X' + Z') + Y \cdot (Y' + Z')
+    + Z \cdot (X' + Y')\bigr).
+\]
 
-By Remark~\ref{rem:unique}, the 21~transpositions form a single orbit
-under $\GL(3, \FF_2)$.  Computationally, three representative
-transpositions --- $(1\;2)$, $(3\;5)$, and $(4\;7)$ --- were each
-tested on 50{,}000 pairs with zero failures, confirming that the
-closure property does not depend on which transposition is chosen.
+Since $v \in \LL$, condition~2 gives $x' + z' \in L\bar{s}$, so
+$X' + Z' = \sigma(x' + z') \in \sigma(L\bar{s})$.  Similarly
+$Y' + Z' \in \sigma(L\bar{s})$ and $X' + Y' \in \sigma(L\bar{s})$.
+Since $u \in \LL$, we have $X, Y, Z \in L$ (by Lemma~A).
+
+By Lemma~C, each product $X \cdot (X'+Z')$, $Y \cdot (Y'+Z')$,
+$Z \cdot (X'+Y')$ lies in~$\sigma(L\bar{s})$.  Their sum lies
+in~$\sigma(L\bar{s})$.  Applying the outer~$\sigma$:
+\[
+  P_1 + P_2 = \sigma(\text{element of } \sigma(L\bar{s}))
+  \in \sigma(\sigma(L\bar{s})) = L\bar{s},
+\]
+since $\sigma^2 = \mathrm{id}$.
+\end{proof}
+
+\subsection{Condition~3: the block sum lies in~$Ls$}
+
+This is the crux of the proof.  The standard (untwisted) product fails
+here because $Ls \cdot Ls \not\subseteq Ls$
+(Remark~\ref{rem:Ls-not-closed}).  The twist redirects the computation
+through~$\sigma(Ls)$, where closure holds.
+
+\begin{proposition}\label{prop:cond3}
+For all $u, v \in \LL$, the block sum $P_1 + P_2 + P_3$ lies in~$Ls$.
+\end{proposition}
+
+\begin{proof}
+From \eqref{eq:P1-std}--\eqref{eq:P3-std}:
+\[
+  P_1 + P_2 + P_3 = \sigma\bigl((X+Y+Z) \cdot (X'+Y'+Z')\bigr).
+\]
+
+Since $u \in \LL$, condition~3 gives $x + y + z \in Ls$, so
+\[
+  X + Y + Z = \sigma(x+y+z) \in \sigma(Ls).
+\]
+Similarly $X' + Y' + Z' \in \sigma(Ls)$.
+
+By Lemma~D, $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$, so
+\[
+  (X+Y+Z) \cdot (X'+Y'+Z') \in \sigma(Ls).
+\]
+Applying the outer~$\sigma$:
+\[
+  P_1 + P_2 + P_3 \in \sigma(\sigma(Ls)) = Ls. \qedhere
+\]
+\end{proof}
+
+\subsection{Why the standard product fails}
+
+\begin{proposition}\label{prop:std-fails}
+The standard (untwisted) triple-octonion product $\star_{\mathrm{std}}$
+(using~$\cdot$ in place of~$\cdot_\sigma$) satisfies Wilson's
+conditions~1 and~2 for all $u, v \in \LL$, but fails condition~3.
+\end{proposition}
+
+\begin{proof}
+Conditions~1 and~2 for $\star_{\mathrm{std}}$ follow from
+Lemmas~A and~B (with $\sigma = \mathrm{id}$, so $X = x$, etc.)
+and the fact that $L \cdot L\bar{s} \subseteq L\bar{s}$ (verified
+on $\ZZ$-bases: all 64 products check).
+
+For condition~3, the block sum becomes
+$(x+y+z) \cdot (x'+y'+z')$ with both factors in~$Ls$.  This requires
+$Ls \cdot Ls \subseteq Ls$, which fails: the product of two explicit
+$Ls$-basis vectors yields an element outside~$Ls$
+(Remark~\ref{rem:Ls-not-closed}).
+\end{proof}
+
+\begin{remark}\label{rem:mechanism}
+The mechanism is now clear.  The twist introduces $\sigma$ in two
+places: it maps the inputs through~$\sigma$ (sending $Ls$ to
+$\sigma(Ls)$) and applies $\sigma$ to the output (sending $\sigma(Ls)$
+back to~$Ls$).  The standard product fails because $Ls$ is not closed
+under multiplication.  By Lemma~E, $\sigma(Ls) \neq Ls$: the twist
+moves the condition-3 sublattice to a \emph{different} sublattice
+of~$L$ that happens to be closed (Lemma~D).  The isomorphism between
+$(\OO, \cdot)$ and $(\OO, \cdot_\sigma)$ does not by itself explain
+closure --- what matters is the interaction between the permutation and
+the specific sublattice geometry of Wilson's construction.
+\end{remark}
+
+This completes the proof of Theorem~\ref{thm:main}. \qed
 
 % ===============================================================
 \section{Algebraic properties}\label{sec:properties}
 % ===============================================================
 
 The order $(\LL, +, \star)$ has been tested for several standard
-algebraic properties.  The results, based on sampling 2{,}000--5{,}000
-random pairs from $\operatorname{Min}(\LL)$, are summarised below.
+algebraic properties.  The results are summarised below.
 
 \begin{center}
 \begin{tabular}{@{}lll@{}}
@@ -422,7 +573,7 @@ as a lattice) is an open question.
 % ===============================================================
 
 This research was conducted as a collaboration between a human
-researcher and an AI agent (Claude, Anthropic) over a series of 35
+researcher and an AI agent (Claude, Anthropic) over a series of 36
 directed prompts, governed by a written methodology (the
 ``Manifesto'') established at the outset.
 
@@ -433,6 +584,25 @@ maintained control of the inquiry through prompt-by-prompt review.
 The AI agent performed the computational work: implementing octonion
 algebras, Wilson's Leech lattice construction, trial algebras, and
 closure tests, and contributed mathematical analysis.
+
+The computational verification was a vehicle in the discovery process,
+designed to mediate distrust into received knowledge and intermediate
+results.  Tests were written from first principles to independently
+verify every foundation: that octonion multiplication satisfies the
+composition property $\Nrm(xy) = \Nrm(x)\Nrm(y)$, that Wilson's
+construction produces a lattice with the correct minimal shell of
+196{,}560 vectors, and that the $E_8$ lattice is indeed a maximal
+order.  This independent verification is how we know that the
+properties stated in the literature are correctly implemented.
+Closure of the twisted product was confirmed on over 12{,}000{,}000
+random pairs of minimal vectors with zero failures before the
+symbolic proof was found.
+
+The symbolic proof (Section~\ref{sec:proof}) and the exact-arithmetic
+verifications of Lemmas~C and~D use Python's \texttt{fractions.Fraction}
+type, operating entirely in~$\mathbb{Q}$ with no floating-point
+arithmetic.  The $\ZZ$-basis checks involve solving 64 systems of
+8~linear equations each, all yielding integer solutions.
 
 The methodology required:
 \begin{itemize}
@@ -500,15 +670,15 @@ achieve lattice closure has its roots in this correction.
 
 The Leech lattice admits an order under a remarkably simple
 construction: three identical copies of a transposition-twisted
-octonion algebra with $\ZZ_3$ routing.  The twist changes 30 of 64
-multiplication table entries, correcting the single obstruction
-(Wilson's condition~3 for type-3$\times$type-3 products) that prevents
-the standard triple-octonion product from closing.
+octonion algebra with $\ZZ_3$ routing.  The symbolic proof
+(Section~\ref{sec:proof}) reduces closure to five lemmas, of which
+the crux is Lemma~D: the sublattice $\sigma(Ls)$ --- unlike~$Ls$
+itself --- is closed under the standard octonion product.  The twist
+maps the condition-3 sublattice to this closed sublattice, and the
+involutory nature of~$\sigma$ maps the result back.
 
 Several questions remain open:
 \begin{itemize}
-\item A complete symbolic proof of closure (complementing the
-  computational verification).
 \item The automorphism group of $(\LL, +, \star)$ and its relationship
   to the Conway group~$\Co_0$.
 \item Whether the order is maximal in any appropriate sense.

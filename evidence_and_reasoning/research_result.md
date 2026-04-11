@@ -12,10 +12,11 @@ multiplication, and let σ: O → O be the linear map that swaps two
 imaginary basis elements (any transposition of {e₁, …, e₇}).  Define a
 new multiplication ·_σ on O by
 
-    x ·_σ y  =  σ(x) · σ(y)        (†)
+    x ·_σ y  =  σ( σ(x) · σ(y) )        (†)
 
-where · is the standard octonion product.  This is an isomorphic copy of O
-on the same R⁸, differing in 30 of 64 structure constants.
+where · is the standard octonion product.  The map σ is an isomorphism
+from (O, ·) to (O, ·_σ): σ(x · y) = σ(x) ·_σ σ(y).  The two
+multiplication tables differ in 30 of 64 structure constants.
 
 Now set R²⁴ = O₁ ⊕ O₂ ⊕ O₃, three copies of (O, ·_σ) — all using the
 **same** swapped multiplication — with Z₃ cross-block routing:
@@ -64,14 +65,25 @@ Since all transpositions lie in a single orbit under the Fano-plane
 automorphism group GL(3, F₂), the construction is essentially unique up
 to basis relabelling.
 
-### What is not yet established
+### Symbolic proof
 
-1. Exhaustive computational verification (planned, feasible).
-2. A symbolic (mathematical) proof of closure.
-3. Algebraic properties of (Λ, +, ·): whether the algebra is alternative,
-   flexible, power-associative, or has a multiplicative identity.
-4. The relationship to Wilson's and Dixon's octonionic Leech lattice
-   constructions.
+Closure is proved symbolically via five lemmas (exact arithmetic,
+`symbolic_proof_checks.py`):
+
+- **Lemma A**: σ(L) = L (coordinate permutation preserves D₈⁺).
+- **Lemma B**: L·L ⊆ L (L is a maximal order — Coxeter 1946).
+- **Lemma C**: L · σ(Ls̄) ⊆ σ(Ls̄) (64 basis products verified exactly).
+- **Lemma D**: σ(Ls) · σ(Ls) ⊆ σ(Ls) (64 basis products verified exactly).
+- **Lemma E**: σ(Ls) ≠ Ls (explicit witness).
+
+The standard product fails condition 3 because Ls·Ls ⊄ Ls.  The twist
+maps the condition-3 sublattice from Ls to σ(Ls), where closure holds.
+
+### Algebraic properties
+
+The order (Λ, +, ·) is non-unital, non-commutative, non-associative,
+not alternative, not flexible, and not power-associative.  The product
+is not norm-multiplicative.
 
 ---
 
