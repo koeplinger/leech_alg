@@ -1,0 +1,33 @@
+Prompt 028 — Scaled closure test (4 million pairs) with timing
+================================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+Earlier you have pointed in the test results from trial 007 to three caveats
+by quoting from the manifesto I had you create: Random sampling of some
+500000 samples out of an exhaustive pool of over 30 billion possibilities is
+suggestive but not exhaustive. Run a test on 4 million samples next, measure
+how long it took on my laptop, and give me an estimate on how long the fully
+exhaustive test would run. Let's do this next.
+
+Actions taken:
+--------------
+1. Created trial_007_scaled_test.py: draws 4,000,000 random pairs uniformly
+   from the full Min(Λ) pool (196,560 vectors, all three types combined),
+   tests Leech closure under swap(1,2), and measures wall-clock time.
+
+2. Ran the test.
+
+Results:
+--------
+- 4,000,000 pairs tested, 0 failures, 0 zero products.
+- Wall-clock time: 853.1s (14.2 min) on user's laptop.
+- Per pair: 213.3 µs.
+- Exhaustive pool: 196,560² = 38,635,833,600 pairs.
+- Estimated exhaustive time: ~8,240,000s ≈ 2,289 hours ≈ 95.4 days.
+
+The exhaustive test at current speed is not feasible on a single core in
+pure Python.  Paths to feasibility: (a) vectorize with NumPy batch
+operations, (b) rewrite the inner loop in C/Cython/Numba, (c) parallelise
+across cores, or (d) pursue a mathematical proof of closure instead.
