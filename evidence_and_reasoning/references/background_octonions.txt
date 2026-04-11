@@ -69,4 +69,135 @@ the public domain.
 
 ---
 
-Last updated: 2026-04-06
+### [Kirmse1924]
+
+- **Authors**: Johannes Kirmse
+- **Title**: Über die Darstellbarkeit natürlicher ganzer Zahlen als Summen
+  von acht Quadraten und über ein mit diesem Problem zusammenhängendes
+  nichtkommutatives und nichtassoziatives Zahlensystem
+- **Published in**: Berichte über die Verhandlungen der Königlich
+  Sächsischen Gesellschaft der Wissenschaften zu Leipzig, Mathematisch-
+  Physische Klasse, Volume 76 (1924), pages 63–82
+- **Year**: 1924
+- **Topics**: integral octonions, E8 lattice, sums of eight squares
+- **Originality note**: Original research paper; Kirmse's sole known
+  publication. No dispute over originality known. The paper contains an
+  error (claiming the integral octonion lattice is closed under
+  multiplication), corrected by Coxeter (1946).
+- **Notes**: Kirmse exhibited the E8 lattice as a positive definite
+  unimodular integral quadratic lattice of rank 8 inside the real
+  octonion algebra. He also published what are presumably the first
+  appearance in print of the identities x(x̄y) = n(x)y = (yx̄)x
+  (Petersson 2018). See terminology.md for a fuller account of Kirmse's
+  contributions alongside the error.
+
+---
+
+### [Coxeter1946]
+
+- **Authors**: H.S.M. Coxeter
+- **Title**: Integral Cayley numbers
+- **Published in**: Duke Mathematical Journal, Volume 13, Number 4 (1946),
+  pages 561–578
+- **Year**: 1946
+- **DOI**: 10.1215/S0012-7094-46-01347-6
+- **Topics**: integral octonions, maximal orders, index-doubling permutation
+- **Originality note**: Published in a peer-reviewed journal. Coxeter
+  corrects Kirmse's error and constructs the first explicitly verified
+  maximal order of integral octonions via the index-doubling permutation.
+  No dispute over originality or priority known.
+- **Notes**: Coxeter showed Kirmse's lattice is not closed under
+  multiplication for non-associative products. Together with Bruck, he
+  introduced the index-doubling permutation (the "Kirmse twist") that
+  corrects the construction to a genuine maximal order.
+
+---
+
+### [ConwaySmith2003]
+
+- **Authors**: John H. Conway, Derek A. Smith
+- **Title**: On Quaternions and Octonions: Their Geometry, Arithmetic, and
+  Symmetry
+- **Published in**: A.K. Peters, Natick, Massachusetts, 2003
+- **Year**: 2003
+- **ISBN**: 1-56881-134-9
+- **Topics**: quaternions, octonions, integral octonions, maximal orders,
+  E8 lattice, Leech lattice
+- **Originality note**: Published monograph. Standard reference for
+  integral octonion arithmetic. No dispute known.
+- **Notes**: Chapter 9 covers maximal orders of integral octonions and the
+  index-doubling permutation. Used throughout this project as the primary
+  reference for the 7 maximal orders.
+
+---
+
+### [ConwaySloane1999]
+
+- **Authors**: John H. Conway, Neil J.A. Sloane
+- **Title**: Sphere Packings, Lattices and Groups
+- **Published in**: Springer-Verlag, New York, 3rd edition, 1999
+  (Grundlehren der mathematischen Wissenschaften, Volume 290)
+- **Year**: 1999
+- **ISBN**: 0-387-98585-9
+- **Topics**: Leech lattice, sphere packings, lattices, error-correcting
+  codes, E8 lattice, Niemeier lattices
+- **Originality note**: Standard reference monograph. No dispute known.
+- **Notes**: Chapter 4 covers the Leech lattice. Chapter 12 contains
+  Conway's uniqueness theorem for the Leech lattice (the unique even
+  unimodular lattice of rank 24 with no vectors of squared norm 2).
+  Cited in this project for the Leech lattice's basic properties and for
+  the fact that Min(Λ) generates Λ over Z.
+
+---
+
+### [Petersson2018]
+
+- **Authors**: Holger P. Petersson
+- **Title**: Integral octonions
+- **Published in**: Lecture at the Málaga Workshop on Non-Associative
+  Algebras, September 6, 2018
+- **Year**: 2018
+- **URL**: https://www.fernuni-hagen.de/mi/fakultaet/emeriti/docs/petersson/ass.-rem.-int.-oct.pdf
+- **Topics**: integral octonions, Kirmse, Coxeter, Dickson, maximal orders,
+  historical account
+- **Originality note**: Lecture notes; not formally peer-reviewed. Provides
+  the most detailed modern historical account of the development of
+  integral octonion theory from Kirmse (1924) through Coxeter (1946).
+- **Notes**: Petersson treats Kirmse with respect, calling his work "the
+  bold attempt of a young mathematician." Documents Dickson's (1923)
+  prior construction of integral octonions isomorphic to Coxeter's.
+  Source for the claim that Kirmse's identities first appeared in print
+  in 1924.
+
+---
+
+### [Baez2014_IntegralOctonions]
+
+- **Authors**: John C. Baez (with contributions by Greg Egan and others)
+- **Title**: Integral Octonions, Parts 1–12
+- **Published in**: The n-Category Café (group blog), 2014
+- **Year**: 2014
+- **URL**: https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html
+  (Part 9); https://math.ucr.edu/home/baez/octonions/integers/index.html
+  (series index)
+- **Topics**: integral octonions, Leech lattice, exceptional Jordan
+  algebra, Jordan ring, multiplicative closure
+- **Originality note**: Blog series; not peer-reviewed. Contains original
+  computations by Baez and Egan, and open questions.
+- **Notes**: Parts 9–10 explore whether the Leech lattice can be made into
+  a ring via the exceptional Jordan algebra 𝔥₃(O). Key findings:
+  (1) The lattice Z³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed under the standard
+  Jordan product x ∘ y = xy + yx, but IS closed under the doubled
+  product 2(xy + yx). (2) Baez poses the open question of finding an
+  "exceptional Leech–Jordan ring." (3) Egan finds 17,280 sublattices
+  yielding formally real Jordan rings under the doubled product.
+  The human researcher of this project (Koeplinger) participated in the
+  discussion, reporting that Jordan products did not close on the Leech
+  inner shell. This is the closest prior art to the present finding, but
+  uses a fundamentally different algebraic framework (commutative Jordan
+  product, 27-dimensional) rather than the non-commutative
+  octonion-derived product in 24 dimensions used here.
+
+---
+
+Last updated: 2026-04-11

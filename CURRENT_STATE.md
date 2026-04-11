@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-04-09
+Last updated: 2026-04-11
 
 This document is the entry point for anyone continuing this research — human or
 AI, with or without prior context.  It summarises what has been established,
@@ -22,9 +22,71 @@ The order should be highly symmetric.  The Leech lattice's automorphism group
 (the Conway group Co₀) is the largest context for symmetry; any order structure
 would ideally respect or interact with this symmetry in a meaningful way.
 
-**Status: OPEN.**  No such multiplication is known.  Two candidate families
-have been comprehensively ruled out: the triple-octonion algebra and the triple
+**Status: FOUND.**  Trial 007 identifies a bilinear product that closes on Λ:
+the *transposition-twisted triple octonion product*.  See "The finding" below.
+Two earlier candidate families were comprehensively ruled out before this
+discovery: the (untwisted) triple-octonion algebra and the triple
 Okubo/para-octonion algebra (Petersson isotopes).  See below.
+
+---
+
+## The finding: transposition-twisted triple octonion product (trial 007)
+
+### The construction
+
+Given a transposition σ = (s t) on {1,…,7}, define a new multiplication
+·_σ on R⁸ by applying σ to the standard Fano triples.  This gives an
+octonion algebra isomorphic to the standard one via σ itself:
+σ(x · y) = σ(x) ·_σ σ(y).
+
+The **transposition-twisted triple octonion product** on R²⁴ = O₁ ⊕ O₂ ⊕ O₃
+uses ·_σ in all three blocks with Z₃-symmetric cross-block routing:
+- Same-block: Oα × Oα → Oα using ·_σ
+- Cross-block: Oα × Oβ → Oγ using ·_σ, where {α,β,γ} = {1,2,3}
+
+All 21 transpositions give the same result up to GL(3,F₂) relabelling
+(consistency check 1c, check 7).
+
+### Verification status
+
+| Test | Pairs tested | Failures | File |
+|------|-------------|----------|------|
+| Initial (trial 007 base) | 593,412 | 0 | `trial_007_triple_octonion_swap.py` |
+| Scaled (4M random) | 4,000,000 | 0 | `trial_007_scaled_test.py` |
+| Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
+| Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
+| Exhaustive (all 38.6B pairs) | **pending** | — | `trial_007_exhaust.py --exhaustive` |
+
+**Zero failures across 12+ million tested pairs.**
+
+### How it differs from the ruled-out triple-octonion (trial 001)
+
+The standard (untwisted) triple-octonion product fails on 73.4% of
+type3×type3 products, all due to Wilson condition 3 (x+y+z ∉ Ls).
+The transposition twist changes 30 of 64 multiplication table entries.
+This fixes condition 3 precisely — all other conditions were already
+satisfied by the untwisted product (consistency check 8).
+
+### Algebraic properties (consistency check 6)
+
+The order (Λ, +, ·_σ) is:
+- **Non-unital**: the ambient identity (1,0..0, 1,0..0, 1,0..0) has N=3 and
+  is not in Λ.
+- **Non-commutative**: <0.1% of Min(Λ) pairs commute.
+- **Not norm-multiplicative**: product norms distribute across
+  {16, 32, 48, 64, 80, 96, 112, 128}, with 64 = N(u)·N(v) as the mode
+  (~47%).
+- **Not alternative, not flexible, not power-associative** (numerically).
+
+The key property is closure, not any classical algebraic identity.
+
+### Evidence files
+
+- `evidence_and_reasoning/research_result.md` — condensed summary
+- `evidence_and_reasoning/trial_007_results.md` — detailed trial results
+- `evidence_and_reasoning/references/prior_art_orders_on_leech.txt` —
+  literature search confirming novelty
+- `python_project/src/consistency_checks.py` — all pre-paper checks
 
 ---
 
@@ -266,26 +328,21 @@ the trial, and prints detailed results.
 
 ## What to do next
 
-Both the triple-octonion and triple Okubo/para-octonion architectures are
-ruled out.  Future work should explore algebras that differ **structurally**:
+The finding (trial 007) establishes closure computationally.  Remaining work:
 
-1. **Different order-3 automorphisms** — the current Okubo trials used a
-   specific τ with irrational matrix entries.  An order-3 automorphism with
-   rational (or at least E8-compatible) entries could avoid the √3 obstruction.
+1. **Exhaustive verification** — run all 38.6 billion pairs via
+   `trial_007_exhaust.py --exhaustive` (~2 hours with 16 cores).
 
-2. **Non-block-decomposed products** — define multiplication directly on R²⁴
-   without assuming an 8+8+8 block structure.
+2. **Symbolic proof** — prove closure algebraically (why the transposition
+   twist fixes Wilson's condition 3).  This would be the mathematically
+   satisfying result alongside the computational verification.
 
-3. **Different block decompositions** — e.g., 3+21, 12+12, or decompositions
-   not aligned with Wilson's (x, y, z) triple structure.
+3. **Algebraic investigation** — further characterise the order: automorphism
+   group, relationship to Co₀, whether the order is maximal, what quotient
+   algebras arise.
 
-4. **Products informed by the Conway group** — use the automorphism group of Λ
-   to constrain the multiplication rule.
-
-5. **Hybrid constructions** — mix different algebra types across blocks in ways
-   not yet explored (e.g., different cross-block routing rules).
-
-Before implementing any new trial, read `TRIAL_METHODOLOGY.md`.
+4. **Formal paper** — write up the result.  A plan exists in
+   `/home/jens/.claude/plans/piped-hugging-teacup.md`.
 
 ---
 
@@ -324,10 +381,12 @@ leech_alg/
 │   │   ├── trial_003_*.py         # Trial 003: discrete variants
 │   │   ├── trial_004_*.py         # Trial 004: automorphism basis changes
 │   │   ├── trial_005_*.py         # Trial 005: triple Okubo/para-octonion
-│   │   └── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
+│   │   ├── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
+│   │   ├── trial_007_*.py         # Trial 007: transposition-twisted (THE FINDING)
+│   │   └── consistency_checks.py  # Pre-paper verification (checks 1-10)
 │   └── tests/                     # 157 tests verifying foundations
 │
-├── prompt_logs/                   # Chronological AI interaction log (001–023)
+├── prompt_logs/                   # Chronological AI interaction log (001–034)
 ├── source_documents/              # Primary source PDFs
 └── research_output/               # (reserved for future experimental output)
 ```

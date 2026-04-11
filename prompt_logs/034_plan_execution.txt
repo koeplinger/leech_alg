@@ -1,0 +1,49 @@
+Prompt 034 — Plan execution: reference audit, consistency checks
+=================================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+Continue with the next steps of the plan.
+
+Actions taken:
+--------------
+1. Fixed consistency_checks.py:
+   - Removed broken np.linalg.qr pivoting call (numpy doesn't support it).
+   - Corrected Check 2b: σ = swap(1,2) DOES preserve L (coordinate
+     permutation preserves D₈⁺ — this is expected). Also preserves Ls̄.
+     The mechanism by which the swap achieves closure is the 30/64
+     multiplication table differences, not sublattice disruption.
+
+2. Ran all consistency checks — ALL PASS:
+   - Check 1: Construction well-defined (valid tables, composition, GL(3,F₂) orbit)
+   - Check 2: Isomorphism verified (0/64 mismatches), σ preserves L and Ls̄
+   - Check 3: Exactly 30/64 table entries differ (6 sign, 16 target, 8 both)
+   - Check 5: Bilinearity OK, Min(Λ) has rank 24
+   - Check 7: swap(1,2), swap(3,5), swap(4,7) all close (50K pairs each, 0 failures)
+   - Check 8: Standard fails 73.4% on condition 3 for type3×type3; swap gives 0%
+   - Check 9: Wilson cross-reference verified (s, s̄, Ls, type-3 formula)
+   - Check 10: Vector counts correct, fast matches reference at tol=1e-12
+
+3. Implemented and ran Check 6 (algebraic properties investigation):
+   - No identity element: (1,0..0, 1,0..0, 1,0..0) has N=3, not in Λ
+   - Not norm-multiplicative: 52.9% violate, norms at {16,32,48,64,80,96,112,128}
+   - Not alternative: ~0.1% satisfy left/right alternativity
+   - Not flexible: 8.6% satisfy (x·y)·x = x·(y·x)
+   - Not power-associative: 29.3% satisfy x²·x = x·x²
+   - Not commutative: 0.05% of pairs commute
+   Key conclusion: the order is non-unital, non-commutative, non-associative,
+   non-alternative, non-flexible. The property is closure, not classical identities.
+
+4. Updated CURRENT_STATE.md (Phase 1C):
+   - Changed status from OPEN to FOUND
+   - Added "The finding" section with construction, verification table,
+     comparison to untwisted product, algebraic properties
+   - Updated repository map for trial 007 files and consistency_checks.py
+   - Replaced "What to do next" with post-finding agenda
+
+5. Notable finding from Check 2b: σ = swap(1,2) preserves BOTH L and Ls̄
+   (as expected — it's a coordinate permutation, and D₈⁺ is closed under
+   these). The mechanism by which the swap achieves closure is the 30/64
+   multiplication table differences, not sublattice disruption. This is
+   more subtle than initially assumed in the plan.
