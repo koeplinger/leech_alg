@@ -1,0 +1,25 @@
+Prompt 026 — Understanding the transposition twist
+====================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+[...] After fixing a transposition swap (say, unit e1 swapped with e2), are
+you saying that we can apply that same transposition swap on all of these
+three octonion copies, and the simple cross-block mixing (1x1=1, 1x2=3,
+1x3=2, 2x3=1, 2x2=2, 3x3=3)?
+
+Help me understand your terminology. You write about the coefficient swap:
+"This changes the signs of certain structure constants, producing a
+different but isomorphic octonion algebra on the same R⁸" What exactly do
+you mean with "different but isomorphic"? [...]
+
+Actions taken:
+--------------
+1. Confirmed the user's description of the construction is correct.
+2. Explained "isomorphic" in this context: the standard and swapped algebras
+   are related by a linear change of basis φ, but φ moves the lattice.
+   The lattice is fixed; the multiplication is what changes.
+3. Created trial_007_explanation.py: a self-contained, minimal demonstration
+   showing the construction, the 30 differing table entries, and the closure
+   test (30,000 pairs, 0 failures).
