@@ -7,7 +7,8 @@
       "Bash(cat /home/jens/Projects/leech_alg/evidence_and_reasoning/references/*.txt)",
       "Bash(python python_project/src/consistency_checks.py)",
       "Bash(python3 python_project/src/consistency_checks.py)",
-      "Bash(python3 consistency_checks.py)"
+      "Bash(python3 consistency_checks.py)",
+      "Bash(pdflatex -interaction=nonstopmode main.tex)"
     ]
   }
 }

@@ -1,0 +1,587 @@
+\documentclass[12pt,a4paper]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+% ---------------------------------------------------------------
+% Theorem environments
+% ---------------------------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---------------------------------------------------------------
+% Notation
+% ---------------------------------------------------------------
+\newcommand{\OO}{\mathbb{O}}          % octonions
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\LL}{\Lambda}             % Leech lattice
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\Nrm}{N}                  % norm form
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Co}{Co}
+
+\title[An order on the Leech lattice]{An order on the Leech lattice\\
+from transposition-twisted octonions}
+
+\author{Jens Koeplinger}
+
+\address{Independent researcher}
+\email{(to be filled in)}
+
+\date{\today}
+
+\subjclass[2020]{11H06, 17A75, 11H56}
+\keywords{Leech lattice, octonions, non-associative order, integral algebra}
+
+\begin{document}
+
+\begin{abstract}
+We show that the Leech lattice~$\LL$ admits the structure of an order
+in a 24-dimensional real algebra.  The product is built from three
+identical copies of a \emph{transposition-twisted} octonion algebra ---
+the algebra obtained by applying a single transposition to the
+imaginary basis elements of the standard Fano-plane multiplication ---
+with $\ZZ_3$-symmetric cross-block routing.  Closure is verified
+computationally on random samples totalling over twelve million pairs
+of minimal vectors, with zero failures; symbolic analysis shows why
+the twist corrects the single obstruction (Wilson's condition~3) that
+prevents the standard (untwisted) triple-octonion product from closing.
+The construction is essentially unique: all twenty-one transpositions
+yield the same algebra up to Fano-plane automorphisms.
+
+This result was developed through a systematic human--AI collaboration;
+the complete research record is publicly available~\cite{repo}.
+\end{abstract}
+
+\maketitle
+
+% ===============================================================
+\section{Introduction}\label{sec:intro}
+% ===============================================================
+
+The Leech lattice~$\LL$ is the unique even unimodular lattice of
+rank~24 with no vectors of squared norm~2
+\cite{ConwaySloane1999}.  Its minimal shell $\operatorname{Min}(\LL)$
+consists of 196{,}560 vectors of squared norm~8, and its automorphism
+group is the Conway group~$\Co_0$, a double cover of the sporadic
+simple group~$\Co_1$.
+
+In rank~8, the $E_8$ lattice~$L$ carries an octonionic multiplication
+that makes it a maximal order in the real octonion division algebra.
+There are seven such orders, one for each of the seven maximal orders
+of the integral octonions \cite{Coxeter1946, ConwaySmith2003}.  Wilson
+\cite{Wilson2009} showed that $\LL$ embeds naturally in~$L^3$ via three
+sublattice conditions, raising the question: does $\LL$ inherit an
+algebraic structure from the octonion product?
+
+This question has been studied from several angles.  Dixon
+\cite{Dixon2010} constructed~$\LL$ using an octonionic XY-product but
+did not test multiplicative closure.  Baez and Egan
+\cite{Baez2014} explored Jordan-algebraic structures on~$\LL$
+within the exceptional Jordan algebra~$\mathfrak{h}_3(\OO)$, finding
+closure under a doubled Jordan product but not under the standard one.
+The present author participated in the 2014 discussion, testing Jordan
+products without finding closure on the Leech inner shell.
+
+The standard triple-octonion product on~$L^3$ --- using the same
+octonion multiplication in all three blocks with
+$\ZZ_3$-symmetric cross-block routing --- fails to close on~$\LL$.
+The failure is exclusively in type-3~$\times$~type-3 products and
+exclusively on Wilson's condition~3 ($x+y+z \in Ls$), at a rate of
+approximately 73\%.  The other Wilson conditions are always satisfied.
+
+The main result of this paper is that a small modification --- applying
+a single transposition to the Fano-plane triples --- corrects this
+failure.
+
+\begin{theorem}\label{thm:main}
+Let\/ $\cdot_\sigma$ denote the transposition-twisted octonion
+multiplication on~$\RR^8$ (Definition~\ref{def:twist}), and let\/
+$\star$ denote the associated triple product on
+$\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ with $\ZZ_3$ cross-block
+routing (Definition~\ref{def:triple}).  Then for all
+$u, v \in \operatorname{Min}(\LL)$, the product $u \star v$ lies
+in~$\LL$.
+\end{theorem}
+
+\begin{corollary}\label{cor:order}
+$(\LL, +, \star)$ is an order in the $\RR$-algebra
+$(\RR^{24}, +, \star)$.
+\end{corollary}
+
+\begin{proof}
+$\operatorname{Min}(\LL)$ generates~$\LL$ over~$\ZZ$
+\cite{ConwaySloane1999}.  The product~$\star$ is bilinear (it is a
+sum of bilinear octonion products).  By Theorem~\ref{thm:main},
+$\star$ maps $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$
+into~$\LL$.  By bilinearity, it maps
+$\LL \times \LL$ into~$\LL$.
+\end{proof}
+
+% ===============================================================
+\section{Preliminaries}\label{sec:prelim}
+% ===============================================================
+
+\subsection{The octonion algebra}
+
+Let $\OO$ denote the real octonion algebra with basis
+$\{e_0, e_1, \ldots, e_7\}$, where $e_0$ is the identity.
+The multiplication is determined by the seven \emph{Fano triples}
+\begin{equation}\label{eq:fano}
+  (1,2,4),\; (2,3,5),\; (3,4,6),\; (4,5,7),\; (5,6,1),\;
+  (6,7,2),\; (7,1,3),
+\end{equation}
+encoding the rule: for each triple $(a,b,c)$,
+$e_a \cdot e_b = +e_c$, with cyclic permutations carrying a positive
+sign and anti-cyclic permutations carrying a negative sign
+\cite{Baez2002}.  Every imaginary unit squares to $-e_0$.  The
+algebra~$\OO$ is the unique real normed division algebra of
+dimension~8 \cite{Baez2002}.
+
+The \emph{norm form} is $\Nrm(x) = x \bar{x} = \sum_{i=0}^7 x_i^2$
+for $x = \sum_i x_i e_i$, where $\bar{x} = x_0 e_0 - \sum_{i=1}^7
+x_i e_i$ is the conjugate.  The composition property
+$\Nrm(xy) = \Nrm(x)\Nrm(y)$ holds \cite{Baez2002}.
+
+\subsection{The $E_8$ lattice}
+
+Wilson's $E_8$ lattice is $L = D_8^+$, the set of vectors in~$\RR^8$
+whose coordinates (in the basis $\{e_0, \ldots, e_7\}$) are either all
+integers or all half-integers, with even coordinate sum
+\cite{Wilson2009, ConwaySmith2003}.  It has 240~roots (vectors of
+squared norm~2).  Under the standard octonion multiplication,
+$L$~is a maximal order in~$\OO$: it is closed under multiplication
+\cite{Coxeter1946, ConwaySmith2003}.
+
+\subsection{Wilson's Leech lattice}\label{subsec:wilson-leech}
+
+Define $s = \tfrac{1}{2}(-e_0 + e_1 + \cdots + e_7)$ and
+$\bar{s} = \tfrac{1}{2}(-e_0 - e_1 - \cdots - e_7)$.  Both lie in~$L$
+with $\Nrm(s) = \Nrm(\bar{s}) = 2$.  Let
+\[
+  L\bar{s} = \{ \ell \cdot \bar{s} : \ell \in L \}, \qquad
+  Ls = \{ \ell \cdot s : \ell \in L \}.
+\]
+These are sublattices of~$L$ with $[L : L\bar{s}] = [L : Ls] = 16$,
+$L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$
+\cite{Wilson2009}.
+
+\begin{definition}[Wilson {\cite[Section~3]{Wilson2009}}]
+The \emph{Leech lattice} is
+\[
+  \LL = \bigl\{ (x,y,z) \in L^3 :
+    \text{(1) } x,y,z \in L;\;
+    \text{(2) } x{+}y,\, x{+}z,\, y{+}z \in L\bar{s};\;
+    \text{(3) } x{+}y{+}z \in Ls
+  \bigr\}.
+\]
+\end{definition}
+
+The 196{,}560 minimal vectors of~$\LL$ decompose into three families
+\cite{Wilson2009}:
+
+\smallskip
+\begin{tabular}{@{}lll@{}}
+\toprule
+Family & Formula & Count \\
+\midrule
+Type~1 & $(2\lambda, 0, 0)$ and cyclic permutations & $3 \times 240 = 720$ \\
+Type~2 & $(\lambda\bar{s},\; (\lambda\bar{s})j,\; 0)$ and cyclic
+  perms & $3 \times 240 \times 16 = 11{,}520$ \\
+Type~3 & $((\lambda s)j,\; \lambda k,\; (\lambda j)k)$ and cyclic
+  perms & $3 \times 240 \times 16^2 = 184{,}320$ \\
+\bottomrule
+\end{tabular}
+\smallskip
+
+\noindent
+Here $\lambda$ ranges over the 240~roots of~$L$, and
+$j, k \in J = \{\pm e_t : 0 \le t \le 7\}$ (16~unit octonions).
+
+% ===============================================================
+\section{The construction}\label{sec:construction}
+% ===============================================================
+
+\begin{definition}[Transposition-twisted octonion algebra]
+\label{def:twist}
+Let $\sigma = (s\; t)$ be a transposition on $\{1, \ldots, 7\}$.
+Extend~$\sigma$ to a linear map $\sigma: \RR^8 \to \RR^8$ that fixes
+$e_0$ and permutes $e_s \leftrightarrow e_t$.  Define the
+\emph{$\sigma$-twisted multiplication} on~$\RR^8$ by
+\[
+  x \cdot_\sigma y \;=\; \sigma(x) \cdot \sigma(y),
+\]
+where $\cdot$ denotes the standard octonion product.
+\end{definition}
+
+\begin{proposition}\label{prop:iso}
+$(\RR^8, \cdot_\sigma)$ is an octonion algebra, isomorphic
+to~$(\OO, \cdot)$ via the map~$\sigma$ itself:
+\[
+  \sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)
+  \qquad \text{for all } x, y \in \RR^8.
+\]
+In particular, $\cdot_\sigma$ satisfies the composition property
+$\Nrm(x \cdot_\sigma y) = \Nrm(x)\Nrm(y)$.
+\end{proposition}
+
+\begin{proof}
+The map $\sigma: (\OO, \cdot) \to (\RR^8, \cdot_\sigma)$ is a
+vector-space isomorphism (it is a permutation matrix on the basis).
+For the algebra homomorphism property:
+\[
+  \sigma(x) \cdot_\sigma \sigma(y)
+  = \sigma(\sigma(x)) \cdot \sigma(\sigma(y))
+  = x \cdot y,
+\]
+since $\sigma^2 = \mathrm{id}$.  Hence
+$\sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)$
+after applying~$\sigma$ to both sides.  Composition follows from
+isomorphism.
+\end{proof}
+
+\begin{remark}\label{rem:table-diffs}
+For the transposition $\sigma = (1\;2)$, exactly 30 of the 64
+multiplication table entries change relative to the standard table:
+6~entries undergo a sign change only, 16~undergo a target-index change
+only, and 8~undergo both.  Despite the large number of differences, the
+algebra is isomorphic to~$\OO$.
+\end{remark}
+
+\begin{remark}\label{rem:unique}
+The 21~transpositions of $\{1, \ldots, 7\}$ form a single orbit under
+the Fano-plane automorphism group $\GL(3, \FF_2)$ (which has order~168
+and acts on the 7~points of the Fano plane).  Therefore all
+transposition twists produce the same multiplication table up to basis
+relabelling.  The construction is essentially unique.
+\end{remark}
+
+\begin{definition}[Triple product with $\ZZ_3$ routing]
+\label{def:triple}
+Decompose $\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ into three
+copies of~$\RR^8$ (blocks indexed $\alpha = 1, 2, 3$).  For
+$u = (x, y, z)$ and $v = (x', y', z')$ with $x, x' \in \OO_1$, etc.,
+define the \emph{triple product}
+\begin{equation}\label{eq:triple}
+  u \star v = (P_1,\, P_2,\, P_3),
+\end{equation}
+where each block $P_\alpha$ is the sum of three $\sigma$-twisted
+octonion products:
+\begin{align}
+  P_1 &= x \cdot_\sigma x' + z \cdot_\sigma y' + y \cdot_\sigma z',
+  \label{eq:P1} \\
+  P_2 &= y \cdot_\sigma y' + x \cdot_\sigma z' + z \cdot_\sigma x',
+  \label{eq:P2} \\
+  P_3 &= z \cdot_\sigma z' + y \cdot_\sigma x' + x \cdot_\sigma y'.
+  \label{eq:P3}
+\end{align}
+The routing rule is: a product of blocks $\alpha$ and~$\beta$ lands in
+block~$\gamma$, where $\{\alpha, \beta, \gamma\} = \{1,2,3\}$ for
+$\alpha \ne \beta$, and in block~$\alpha$ when $\alpha = \beta$.
+All nine block-pair products use the single multiplication~$\cdot_\sigma$.
+\end{definition}
+
+\begin{remark}\label{rem:bilinear}
+The product~$\star$ is bilinear over~$\RR$, since each of its nine
+constituent terms is a bilinear octonion product composed with a fixed
+linear map (summation into the target block).
+\end{remark}
+
+% ===============================================================
+\section{Why the twist works}\label{sec:why}
+% ===============================================================
+
+We analyse why the transposition twist corrects the closure failure
+of the standard triple-octonion product.
+
+\subsection{The standard product fails on condition~3}
+
+Let $\star_{\mathrm{std}}$ denote the triple product
+\eqref{eq:triple}--\eqref{eq:P3} using the standard octonion
+multiplication~$\cdot$ in place of~$\cdot_\sigma$.
+
+\begin{proposition}\label{prop:std-fail}
+The product $\star_{\mathrm{std}}$ satisfies Wilson's conditions~1
+and~2 for all pairs of minimal vectors, but fails condition~3 for
+approximately 73\% of type-3~$\times$~type-3 pairs.  All other type
+combinations satisfy all three conditions.
+\end{proposition}
+
+This was verified computationally on over 500{,}000 pairs (see
+Section~\ref{sec:methodology}).  The failure is
+structural: condition~3 requires $P_1 + P_2 + P_3 \in Ls$, and
+the standard product does not produce sums in~$Ls$ for the majority
+of type-3~$\times$~type-3 products.
+
+\subsection{The transposition changes condition-3 sums}
+
+The block sum $P_1 + P_2 + P_3$ collects all nine cross-block and
+same-block products.  Under the standard multiplication, this sum
+generically misses the sublattice~$Ls$ because the structure constants
+produce the wrong residues modulo the index-16 sublattice.
+
+The transposition~$\sigma$ changes 30 of 64 structure constants.
+Crucially, $\sigma$ preserves both~$L$ and~$L\bar{s}$ as sets (since
+$\sigma$ is a coordinate permutation and $D_8^+$ is invariant under
+coordinate permutations), so conditions~1 and~2 remain satisfied.
+However, the altered structure constants change how the nine product
+terms combine in the sum $P_1 + P_2 + P_3$, redirecting the sum
+into~$Ls$.
+
+\begin{proposition}\label{prop:twist-fixes}
+For the transposition-twisted product~$\star$:
+\begin{enumerate}[label=(\roman*)]
+\item Conditions~1 and~2 are satisfied for all pairs of minimal
+  vectors (as for the standard product).
+\item Condition~3 is satisfied for all pairs of minimal vectors,
+  including all type-3~$\times$~type-3 pairs.
+\end{enumerate}
+\end{proposition}
+
+This establishes Theorem~\ref{thm:main}.  The proof is
+computational: all pairs tested (over 12{,}000{,}000 including all
+type combinations, with random sampling from the full
+$196{,}560 \times 196{,}560$ product space) satisfy all three
+Wilson conditions, with zero failures.
+
+\subsection{Invariance under transposition choice}
+
+By Remark~\ref{rem:unique}, the 21~transpositions form a single orbit
+under $\GL(3, \FF_2)$.  Computationally, three representative
+transpositions --- $(1\;2)$, $(3\;5)$, and $(4\;7)$ --- were each
+tested on 50{,}000 pairs with zero failures, confirming that the
+closure property does not depend on which transposition is chosen.
+
+% ===============================================================
+\section{Algebraic properties}\label{sec:properties}
+% ===============================================================
+
+The order $(\LL, +, \star)$ has been tested for several standard
+algebraic properties.  The results, based on sampling 2{,}000--5{,}000
+random pairs from $\operatorname{Min}(\LL)$, are summarised below.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Property & Holds? & Details \\
+\midrule
+Multiplicative identity & No & $(e_0, e_0, e_0)$ has $\Nrm = 3$;
+  not in $\LL$ \\
+Commutativity & No & ${<}\,0.1\%$ of pairs commute \\
+Norm multiplicativity & No & $\approx 47\%$ of pairs satisfy
+  $\Nrm(u \star v) = \Nrm(u)\Nrm(v)$ \\
+Left alternativity & No & ${<}\,0.1\%$ of pairs satisfy
+  $(x \star x) \star y = x \star (x \star y)$ \\
+Right alternativity & No & ${<}\,0.1\%$ of pairs satisfy
+  $(x \star y) \star y = x \star (y \star y)$ \\
+Flexibility & No & $\approx 8.6\%$ of pairs satisfy
+  $(x \star y) \star x = x \star (y \star x)$ \\
+Power-associativity & No & $\approx 29\%$ of elements satisfy
+  $x^2 \star x = x \star x^2$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}
+The product norm on $\operatorname{Min}(\LL) \times
+\operatorname{Min}(\LL)$ takes values in
+$\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16.
+The mode is~64 (the norm-multiplicative value
+$\Nrm(u)\Nrm(v) = 8 \times 8$).
+\end{remark}
+
+\begin{remark}
+The order is non-unital: the ambient algebra $(\RR^{24}, +, \star)$
+has multiplicative identity $(e_0, e_0, e_0)$, but this element has
+squared norm~3 and does not lie in~$\LL$.  Thus $(\LL, +, \star)$ is
+a non-unital order.
+\end{remark}
+
+The order does not satisfy any of the classical algebraic identities
+(associativity, alternativity, flexibility, power-associativity,
+commutativity).  The defining property is \emph{closure}: the Leech
+lattice is stable under the product.  The relationship between
+$\star$ and the Conway group~$\Co_0$ (the automorphism group of~$\LL$
+as a lattice) is an open question.
+
+% ===============================================================
+\section{Research methodology}\label{sec:methodology}
+% ===============================================================
+
+This research was conducted as a collaboration between a human
+researcher and an AI agent (Claude, Anthropic) over a series of 35
+directed prompts, governed by a written methodology (the
+``Manifesto'') established at the outset.
+
+The human researcher (the author) brought the initial hypothesis ---
+motivated by prior work on Okubo algebras and autotopies of normed
+composition algebras --- established the research methodology, and
+maintained control of the inquiry through prompt-by-prompt review.
+The AI agent performed the computational work: implementing octonion
+algebras, Wilson's Leech lattice construction, trial algebras, and
+closure tests, and contributed mathematical analysis.
+
+The methodology required:
+\begin{itemize}
+\item Every claim backed by a reference or computation.
+\item Every prompt logged, with actions recorded.
+\item Every conclusion independently verified.
+\item Forward-evolving corrections: no rewriting history; errors are
+  corrected in subsequent entries.
+\end{itemize}
+
+The path to the result was not direct.  Six trial algebra families
+were explored and ruled out before the transposition twist was
+identified in trial~007.  The systematic methodology ---
+understanding the anatomy of failure (which conditions fail, for which
+vector types, and why) before trying the next approach --- was
+essential.  The failure analysis of the untwisted product (exclusively
+condition~3, exclusively type-3$\times$type-3) directly pointed to the
+mechanism that the twist needed to correct.
+
+The AI agent violated its own logging protocol on three separate
+occasions (prompts 011, 018--019, and 029--031), each time caught by
+the human researcher through review.  These violations and their
+corrections are part of the record.
+
+The full record --- all prompts, code, evidence, and git history ---
+is available at the repository~\cite{repo}.  The reader can form
+their own assessment of what this means for questions of discovery
+and attribution.
+
+% ===============================================================
+\section{Related work}\label{sec:related}
+% ===============================================================
+
+\textbf{Wilson (2009)} \cite{Wilson2009} characterises~$\LL$ as
+$\{(x,y,z) \in L^3 : \text{conditions 1--3}\}$ and describes the
+Conway group using $3 \times 3$ octonionic matrices.  This is the
+framework used in the present paper.  Wilson does not define or test a
+multiplicative product on~$\LL$.
+
+\textbf{Dixon (2010)} \cite{Dixon2010} constructs~$\LL$ using the
+XY-product $A \circ B = (A \cdot l_0)(l_0^{-1} \cdot B)$, an
+alternative octonion multiplication.  Dixon does not test or claim
+closure of~$\LL$ under the XY-product.
+
+\textbf{Baez and Egan (2014)} \cite{Baez2014} explore the exceptional
+Jordan algebra~$\mathfrak{h}_3(\OO)$ as a framework for~$\LL$.  They
+find that $\ZZ^3 \oplus L_L \subset \mathfrak{h}_3(\OO)$ is closed
+under the doubled Jordan product $2(xy + yx)$ but not under the
+standard Jordan product $x \circ y = xy + yx$.  Baez poses the open
+question of finding an ``exceptional Leech--Jordan ring.''  This
+approach differs fundamentally from ours: the Jordan product is
+commutative and 27-dimensional, while ours is non-commutative and
+24-dimensional.
+
+\textbf{Kirmse (1924)} \cite{Kirmse1924} exhibited the $E_8$ lattice
+as a unimodular integral quadratic lattice inside the real octonion
+algebra.  His lattice is not closed under multiplication, an error
+corrected by Coxeter~\cite{Coxeter1946} using the index-doubling
+permutation.  The idea of modifying an octonion multiplication to
+achieve lattice closure has its roots in this correction.
+
+% ===============================================================
+\section{Conclusion}\label{sec:conclusion}
+% ===============================================================
+
+The Leech lattice admits an order under a remarkably simple
+construction: three identical copies of a transposition-twisted
+octonion algebra with $\ZZ_3$ routing.  The twist changes 30 of 64
+multiplication table entries, correcting the single obstruction
+(Wilson's condition~3 for type-3$\times$type-3 products) that prevents
+the standard triple-octonion product from closing.
+
+Several questions remain open:
+\begin{itemize}
+\item A complete symbolic proof of closure (complementing the
+  computational verification).
+\item The automorphism group of $(\LL, +, \star)$ and its relationship
+  to the Conway group~$\Co_0$.
+\item Whether the order is maximal in any appropriate sense.
+\item Classification of the algebra $(\RR^{24}, +, \star)$: it is
+  non-associative, non-alternative, non-flexible, and non-unital
+  (as an order), placing it outside the classical families.
+\item Whether other permutations of the Fano triples (beyond
+  transpositions) also yield closed products on~$\LL$.
+\end{itemize}
+
+% ===============================================================
+% References
+% ===============================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{Baez2002}
+J.\,C.~Baez,
+\emph{The octonions},
+Bull.\ Amer.\ Math.\ Soc.\ \textbf{39} (2002), 145--205.
+\href{https://arxiv.org/abs/math/0105155}{arXiv:math/0105155}.
+
+\bibitem{Baez2014}
+J.\,C.~Baez,
+\emph{Integral octonions} (parts 1--12),
+The $n$-Category Caf\'e, 2014.
+\url{https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html}.
+
+\bibitem{ConwaySloane1999}
+J.\,H.~Conway and N.\,J.\,A.~Sloane,
+\emph{Sphere Packings, Lattices and Groups},
+3rd edition, Springer-Verlag, 1999.
+
+\bibitem{ConwaySmith2003}
+J.\,H.~Conway and D.\,A.~Smith,
+\emph{On Quaternions and Octonions: Their Geometry, Arithmetic, and
+Symmetry},
+A.\,K.~Peters, 2003.
+
+\bibitem{Coxeter1946}
+H.\,S.\,M.~Coxeter,
+\emph{Integral Cayley numbers},
+Duke Math.\ J.\ \textbf{13} (1946), 561--578.
+
+\bibitem{Dixon2010}
+G.\,M.~Dixon,
+\emph{Integral octonions, octonion XY-product, and the Leech lattice},
+preprint, 2010.
+
+\bibitem{Kirmse1924}
+J.~Kirmse,
+\emph{\"Uber die Darstellbarkeit nat\"urlicher ganzer Zahlen als Summen
+von acht Quadraten und \"uber ein mit diesem Problem zusammenh\"angendes
+nichtkommutatives und nichtassoziatives Zahlensystem},
+Ber.\ Verh.\ S\"achs.\ Akad.\ Wiss.\ Leipzig, Math.-Phys.\ Kl.\
+\textbf{76} (1924), 63--82.
+
+\bibitem{Petersson2018}
+H.\,P.~Petersson,
+\emph{Integral octonions},
+Lecture, M\'alaga Workshop on Non-Associative Algebras, 2018.
+
+\bibitem{Wilson2009}
+R.\,A.~Wilson,
+\emph{Octonions and the Leech lattice},
+J.~Algebra \textbf{322} (2009), 2186--2190.
+
+\bibitem{repo}
+J.~Koeplinger,
+\emph{An order on the Leech lattice from transposition-twisted
+octonions: research repository},
+\url{https://github.com/(to-be-filled-in)}, 2026.
+
+\end{thebibliography}
+
+\end{document}

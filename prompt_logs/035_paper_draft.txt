@@ -1,0 +1,44 @@
+Prompt 035 — Draft the formal mathematical paper
+=================================================
+Date: 2026-04-11
+
+User prompt (verbatim):
+-----------------------
+You are suggesting an exhaustive verification next, by running all possible
+31 billion or so pairs on the inner-most shell of the Leech lattice. This
+sounds like a conclusive argument for establishing the property. The reason
+why this has less of a priority for is that code could be wrong, so running
+an exhaustive test would exhaustively confirm the artifacts the wrong code
+validates. Running 4 million tests therefore gives me the same high level
+of confidence as running all 31 billion tests, that your findings - together
+with your explanation in symbolic form - is correct. Really what would be
+needed next is a mathematical paper that I can review in quiet and peace.
+
+So, skip the exhaustive verification and go to the next step of drafting
+the paper.
+
+Actions taken:
+--------------
+1. Created paper/main.tex — complete first draft of the formal paper.
+   Structure follows the approved plan:
+   - Section 1: Introduction (background, statement of Theorem 1.1 and Corollary 1.2)
+   - Section 2: Preliminaries (octonions, E8 lattice, Wilson's Leech lattice)
+   - Section 3: The construction (Definition 3.1 twist, Proposition 3.2 isomorphism,
+     Remark 3.3 table differences, Remark 3.4 uniqueness, Definition 3.5 triple product
+     with explicit formula for P_1, P_2, P_3)
+   - Section 4: Why the twist works (standard fails cond 3, twist fixes it,
+     invariance under transposition choice)
+   - Section 5: Algebraic properties (table of test results: non-unital,
+     non-commutative, not norm-multiplicative, not alternative/flexible/power-assoc)
+   - Section 6: Research methodology (human-AI collaboration, 35 prompts,
+     manifesto, logging violations caught by human, full repo reference)
+   - Section 7: Related work (Wilson, Dixon, Baez/Egan, Kirmse)
+   - Section 8: Conclusion (open questions)
+   - References (10 entries)
+
+2. Compiled successfully: 8 pages, pdflatex, no errors.
+   Only warnings: harmless hyperref Unicode in title.
+
+3. User's instruction recorded: skip exhaustive verification (code could be
+   wrong; 4M random samples give same confidence as 38.6B; symbolic proof
+   is what matters).
