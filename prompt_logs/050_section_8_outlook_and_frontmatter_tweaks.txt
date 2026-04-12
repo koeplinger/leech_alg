@@ -1,0 +1,67 @@
+Prompt 050 -- Section 8 (Outlook) wording tweaks and frontmatter
+                 address + email
+==================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Continue wording tweaks in section 8:
+
+Replace "the originator's own book-length physics-oriented account"
+with "Okubo's seminal book"
+
+Replace "The author's preceding work [13] argues for" with "The
+author previously invited [13] for research into"
+
+in "it would sit naturally alongside" replace "would" with "could".
+
+Remove the redundant (and somewhat spectacularizing) "If a
+ternary reformulation of the Leech-lattice order exists with an
+order-3 automorphism playing the distinguished structural role, it
+would sit naturally alongside this programme and may offer a point
+of contact between the most rigid finite-dimensional lattice in
+mathematics and the symmetry content of the Standard Model."
+
+In the front matter, replace "independent researcher" with "105 E
+Avondale Dr, Greensboro, NC 27403, USA". Replace the e-mail with
+"jenskoeplinger@gmail.com"
+
+Actions taken:
+--------------
+1. Section 9.1 (Ternary reformulation, paper/main.tex):
+      Before: "... and the originator's own book-length
+               physics-oriented account~\cite{Okubo1995_Book}."
+      After:  "... and Okubo's seminal book~\cite{Okubo1995_Book}."
+
+2. Section 9.2 (Consequences for algebraic approaches to physics):
+      Before: "The author's preceding work~\cite{Koeplinger2023}
+               argues for autotopies of normed composition
+               algebras as a mathematical setting for this line
+               of inquiry."
+      After:  "The author previously invited~\cite{Koeplinger2023}
+               for research into autotopies of normed composition
+               algebras as a mathematical setting for this line
+               of inquiry."
+   (User phrasing applied verbatim.)
+
+3. Section 9.2, final sentence: removed in full.  The sentence
+   deleted was "If a ternary reformulation of the Leech-lattice
+   order exists with an order-3 automorphism playing the
+   distinguished structural role, it would sit naturally
+   alongside this programme and may offer a point of contact
+   between the most rigid finite-dimensional lattice in
+   mathematics and the symmetry content of the Standard Model."
+   The user's separate "would -> could" tweak applied to the
+   same sentence; that tweak became moot since the whole
+   sentence is now gone.  The Furey/Hughes paragraph now ends
+   on "...one concrete realization of that wider scaffolding."
+
+4. Frontmatter (paper/main.tex lines 43-44):
+      \address{Independent researcher}        ->
+      \address{105 E Avondale Dr, Greensboro, NC 27403, USA}
+
+      \email{(to be filled in)}  ->
+      \email{jenskoeplinger@gmail.com}
+
+5. Recompiled paper twice (pdflatex): 12 pages, all cross-
+   references resolved, no new warnings.
