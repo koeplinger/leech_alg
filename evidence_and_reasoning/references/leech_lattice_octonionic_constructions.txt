@@ -17,7 +17,8 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
   communicated by Gernot Stroth
 - **Affiliation**: School of Mathematical Sciences, Queen Mary, University of London,
   Mile End Road, London E1 4NS, United Kingdom
-- **Source file**: wilson_2009_octonions_and_leech_lattice.pdf
+- **Source**: Not redistributed locally (Elsevier publisher copyright).
+  Canonical DOI: https://doi.org/10.1016/j.jalgebra.2009.03.021
 - **Topics**: Leech lattice, octonions, E8 lattice, octonionic Leech lattice,
   Coxeter–Dickson non-associative ring, minimal vectors, Conway group
 - **Originality note**: Published in a peer-reviewed journal (Journal of Algebra,
@@ -43,8 +44,8 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
 - **Published in**: UNPUBLISHED PREPRINT. No journal imprint appears in the document.
   Author affiliation listed as www.7stones.com (Dixon's personal website).
 - **Year**: 2010 (document dated November 21, 2010)
-- **URL**: No stable URL known. Document obtained directly.
-- **Source file**: dixon_2010_integral_octonions_xy_product_leech_lattice.pdf
+- **URL**: Dixon's site https://www.7stones.com (no explicit license).
+- **Source**: Not redistributed locally (no explicit license from author).
 - **Topics**: Leech lattice, integral octonions, XY-product, X-product, E8 lattice,
   laminated lattices in dimensions 4, 8, 16, 24
 - **Originality note**: This is an unpublished preprint and has not undergone formal
@@ -63,4 +64,4 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
 
 ---
 
-Last updated: 2026-04-06
+Last updated: 2026-04-12

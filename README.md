@@ -21,12 +21,12 @@ The finished write-up is in [paper/main.tex](paper/main.tex)
 | [CURRENT_STATE.md](CURRENT_STATE.md) | **Entry point** — what's established, what's ruled out, what's next |
 | [MANIFESTO.md](MANIFESTO.md) | Operating rules for AI-assisted research |
 | [TRIAL_METHODOLOGY.md](TRIAL_METHODOLOGY.md) | Structure and philosophy for trial files |
-| [paper/](paper/) | Formal write-up (LaTeX source + compiled PDF) |
+| [paper/main.tex](paper/main.tex), [paper/main.pdf](paper/main.pdf), [paper/references.bib](paper/references.bib) | Formal write-up: LaTeX source, compiled PDF, BibTeX database |
 | [evidence_and_reasoning/](evidence_and_reasoning/) | Key claims, trial results, and references |
 | [python_project/](python_project/) | Python code: shared tools, trial experiments, symbolic-proof verification |
-| [prompt_logs/](prompt_logs/) | Chronological log of all AI interaction prompts (000–043) |
-| [source_documents/](source_documents/) | Primary source PDFs |
-| [research_output/](research_output/) | Reserved for future experimental output |
+| [prompt_logs/](prompt_logs/) | Chronological log of all AI interaction prompts |
+| [source_documents/](source_documents/) | Primary source PDFs (freely redistributable only; others listed by DOI) |
+| [LICENSE.md](LICENSE.md), [LICENSE-CODE](LICENSE-CODE) | CC BY 4.0 for text / evidence / paper; MIT for source code |
 
 ## Current Status
 
@@ -48,9 +48,10 @@ multiplication.
   (octonion properties, Wilson's construction).  157+ tests pass.
 - **Formal write-up** with full proof, related work, and methodology in
   [paper/main.tex](paper/main.tex).
-- **Key claim:** [key claim 007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)
-  (the original "ruled out" note for the untwisted triple-octonion product;
-  the twist resolves the obstruction identified there).
+- **Key claims:** [007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)
+  (untwisted triple-octonion ruled out) and
+  [008](evidence_and_reasoning/key_claims/008_transposition_twist_order.txt)
+  (the transposition-twisted product is an order on Λ).
 
 **Open questions:**
 - Algebraic properties (identity, alternativity, norm multiplicativity).

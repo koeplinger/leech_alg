@@ -1,27 +1,33 @@
 # Source Documents
 
-This folder holds primary source materials used in the research: research papers, PDFs, and any other reference documents that are consulted directly.
+This folder holds primary source materials that are freely redistributable. For works that are not freely redistributable, see the "Externally hosted sources" table below for DOIs and (where available) author-postprint links.
 
-## Contents
+## Contents (held locally)
 
 ### Leech lattice — octonionic constructions
 
-| File | Reference key | Description |
-|---|---|---|
-| wilson_2009_octonions_and_leech_lattice.pdf | [Wilson2009] | Wilson's octonionic Leech lattice construction |
-| dixon_2010_integral_octonions_xy_product_leech_lattice.pdf | [Dixon2010] | Dixon's integral octonion / XY-product Leech lattice construction |
+No local PDFs. See "Externally hosted sources" for Wilson 2009 and Dixon 2010.
 
 ### Okubo algebra and triality
 
 | File | Reference key | Description |
 |---|---|---|
-| SmithVojtechovsky_Okubo_2022_DocMath.pdf | [SmithVojtechovsky2022] | Okubo quasigroups (Doc. Math. 2022) |
-| Elduque1996classOfTernCompAlgs.pdf | [Elduque1996] | Ternary composition algebras (J. Korean Math. Soc. 1996) |
-| MarraniCorradettiZucconi2023_OkuboInv_arXiv2309.17435.pdf | [MarraniCorradettiZucconi2025] | Physics invitation to Okubo algebra (J. Phys. A 2025) |
+| SmithVojtechovsky_Okubo_2022_DocMath.pdf | [SmithVojtechovsky2022] | Okubo quasigroups (Doc. Math. 2022, diamond open access, CC-BY) |
+| MarraniCorradettiZucconi2023_OkuboInv_arXiv2309.17435.pdf | [MarraniCorradettiZucconi2025] | Physics invitation to Okubo algebra (arXiv preprint; published J. Phys. A 2025) |
 | KamiyaOkubo2015_AlgsTrialityAndS4_arXiv1503.00614.pdf | [KamiyaOkubo2015] | Triality and S₄-symmetry (arXiv preprint 2015) |
-| Elduque2002_OkuboAlgsWithIsotropicNorm_arXiv2210.03456v1.pdf | [Elduque2023_IsotropicNorm] | Okubo algebras with isotropic norm (Springer 2023) |
-| Elduque2000_trialityAutomDerivCompAlgs_LinAlgAppl.pdf | [Elduque2000_Triality] | Triality, automorphisms, derivations of composition algebras (LAA 2000) |
-| 2023_FureyHughesTrialityOkuboBrief.pdf | [Koeplinger2023] | Autotopies of normed composition algebras (preprint 2023) |
+| Elduque2002_OkuboAlgsWithIsotropicNorm_arXiv2210.03456v1.pdf | [Elduque2023_IsotropicNorm] | Okubo algebras with isotropic norm (arXiv preprint; published Springer 2023) |
+| 2023_FureyHughesTrialityOkuboBrief.pdf | [Koeplinger2023] | Autotopies of normed composition algebras (author's preprint 2023; author holds distribution rights) |
+
+## Externally hosted sources
+
+These works are not freely redistributable; consult the publisher's site or the author's personal page.
+
+| Reference key | Citation | DOI / URL |
+|---|---|---|
+| [Wilson2009] | R.A. Wilson, "Octonions and the Leech lattice", J. Algebra 322 (2009) 2186–2190 | https://doi.org/10.1016/j.jalgebra.2009.03.021 |
+| [Dixon2010] | G.M. Dixon, "Integral Octonions, Octonion XY-Product, and the Leech Lattice", unpublished preprint, 2010 | Author's site: https://www.7stones.com |
+| [Elduque2000_Triality] | A. Elduque, "On triality and automorphisms and derivations of composition algebras", Linear Algebra Appl. 314 (2000) 49–74 | https://doi.org/10.1016/S0024-3795(00)00105-1 |
+| [Elduque1996] | A. Elduque, "On a class of ternary composition algebras", J. Korean Math. Soc. 33 (1996) 183–203 | https://koreascience.kr/article/JAKO199611920807509.page |
 
 ## Naming Convention
 
@@ -36,5 +42,5 @@ When a document in this folder is cited in the research, it must also be registe
 
 ## Important Notes
 
-- Do not commit documents that are not freely redistributable without verifying their license.
+- Only documents that are freely redistributable are held in this folder. Publisher-copyright PDFs and preprints without explicit permission are listed in "Externally hosted sources" above and are not committed to the repository.
 - Do not include any documents containing personal or sensitive information.

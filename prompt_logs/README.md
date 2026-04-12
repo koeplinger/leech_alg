@@ -53,3 +53,32 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [021_trials_003_004_discrete_sweep_and_automorphisms.txt](021_trials_003_004_discrete_sweep_and_automorphisms.txt) | Trials 003–004: all 1,536 discrete variants fail; E8 automorphisms cannot help; triple-octonion obstruction is structural |
 | [022_comprehensive_state_documentation.txt](022_comprehensive_state_documentation.txt) | Full repository state documentation: CURRENT_STATE.md, key claim 007, README updates — clean starting point for future work |
 | [023_triple_okubo_shifted_basis.txt](023_triple_okubo_shifted_basis.txt) | Triple Okubo/para-octonion algebra (trials 005–006): Petersson isotopes with Z₃ orbit; catastrophic failure from irrational √3 structure constants |
+| [024_terminology_and_research_statement.txt](024_terminology_and_research_statement.txt) | Terminology registry expanded; research statement refined |
+| [025_triple_kirmse_twisted_octonions.txt](025_triple_kirmse_twisted_octonions.txt) | Trial 007 conceived: transposition-twisted triple octonion; first closure test succeeds on 593k pairs |
+| [026_understanding_transposition_twist.txt](026_understanding_transposition_twist.txt) | Mechanism of the transposition twist analysed; why it fixes Wilson condition (3) |
+| [027_isotopy_and_norm_conventions.txt](027_isotopy_and_norm_conventions.txt) | Isotopy framing clarified; norm conventions aligned with Wilson |
+| [028_scaled_closure_test.txt](028_scaled_closure_test.txt) | Scaled-up random closure test; 4M pairs, zero failures |
+| [029_performance_optimization.txt](029_performance_optimization.txt) | Fast implementation; parity with reference code confirmed |
+| [030_multiprocessing_and_gpu.txt](030_multiprocessing_and_gpu.txt) | Multiprocessor harness for exhaustive-verification capacity |
+| [031_prompt_logging_reminder.txt](031_prompt_logging_reminder.txt) | User reminds of logging protocol; retroactive logs created |
+| [032_prompt_logging_violation.txt](032_prompt_logging_violation.txt) | Second logging violation caught and corrected; feedback memory reinforced |
+| [033_research_writeup_plan.txt](033_research_writeup_plan.txt) | Plan for the formal paper: structure, scope, audience |
+| [034_plan_execution.txt](034_plan_execution.txt) | Paper draft execution: consistency checks, literature search, CURRENT_STATE update |
+| [035_paper_draft.txt](035_paper_draft.txt) | First full draft of paper/main.tex |
+| [036_symbolic_proof_plan.txt](036_symbolic_proof_plan.txt) | Symbolic proof plan: five-lemma decomposition |
+| [037_kirmse_distinction.txt](037_kirmse_distinction.txt) | Kirmse/Coxeter distinction and attribution; historical accuracy |
+| [038_shells_vs_order.txt](038_shells_vs_order.txt) | "Shells" vs. "order" terminology tightened |
+| [039_paper_updates_kirmse_shells.txt](039_paper_updates_kirmse_shells.txt) | Paper edits: Kirmse attribution, shells-vs-order usage |
+| [040_elduque_and_acknowledgments.txt](040_elduque_and_acknowledgments.txt) | Elduque references integrated; acknowledgements drafted |
+| [041_outlook_soft_references.txt](041_outlook_soft_references.txt) | Outlook section softened; forward-looking references added |
+| [042_furey_hughes_trio_of_trialities.txt](042_furey_hughes_trio_of_trialities.txt) | Furey/Hughes arXiv:2409.17948 correctly cited |
+| [043_readme_update_and_abstract_tweaks.txt](043_readme_update_and_abstract_tweaks.txt) | README refreshed; abstract tightened; repository URL set |
+| [044_section1_narrative_trims.txt](044_section1_narrative_trims.txt) | Section 1 editorial asides removed; paper-tone memory saved |
+| [045_sections_2_and_3_trims.txt](045_sections_2_and_3_trims.txt) | Section 2 and 3 repetition removed; "single" → "same" |
+| [046_gitignore_claude_and_section4_tweaks.txt](046_gitignore_claude_and_section4_tweaks.txt) | .claude/ gitignored; Section 4 lemma-labelling simplified; Remark 4.11 removed |
+| [047_wilson_condition_headings.txt](047_wilson_condition_headings.txt) | Section 4.3–4.5 headings clarified with "Wilson Condition (N):" |
+| [048_drop_wilson_in_headings_and_bracket_condition_numbers_in_proofs.txt](048_drop_wilson_in_headings_and_bracket_condition_numbers_in_proofs.txt) | Section 4 headings trimmed; round-bracketed condition numbers in proofs |
+| [049_section_6_and_7_tweaks.txt](049_section_6_and_7_tweaks.txt) | Methodology paragraph reframed; Section 7 "what-others-didn't-do" phrases removed |
+| [050_section_8_outlook_and_frontmatter_tweaks.txt](050_section_8_outlook_and_frontmatter_tweaks.txt) | Outlook wording tweaked; frontmatter address and email filled in |
+| [051_consistency_check_and_cleanup.txt](051_consistency_check_and_cleanup.txt) | Corpus consistency check; key claim 008 added; research_output/ removed; cleanup flags raised |
+| [052_licensing_cleanup_and_repo_completion.txt](052_licensing_cleanup_and_repo_completion.txt) | 4 non-redistributable PDFs removed; DOIs recorded; README/paper-index completed; CC BY 4.0 + MIT licenses added |

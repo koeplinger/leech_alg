@@ -1,0 +1,120 @@
+Prompt 052 -- Execute source-document licensing cleanup and
+               repository-completion actions B1-B4
+==============================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Remove the three Elsevier / KMS PDFs (Wilson 2009, Elduque 2000,
+Elduque 1996) and the Dixon preprint from this repo, and replace each
+reference entry with a link to the publisher's DOI and, where
+available, the author's own postprint. The arXiv and Doc. Math. PDFs
+are safe to keep. Keep my preprint (FureyHughes/Koeplinger 2023)
+
+Then do all of the following (B1 through B4):
+
+   B1. paper/ is not referenced from README.md's "Repository layout"
+       section. add a paper/ entry pointing to paper/main.pdf and the
+       BibTeX file.
+
+   B2. prompt_logs/README.md summary table may not cover the 044-050
+       wording-tweak entries. add a one-line-per-prompt update.
+
+   B3. .claude/ is gitignored (prompt 046) but .claude/settings.json
+       may still be cached in git index -- verify with
+       `git ls-files .claude/` and, if still tracked, commit the
+       removal.
+
+   B4. No LICENSE file at the repository root. For a corpus intended
+       for independent review, add CC-BY-4.0 for text/evidence, and
+       MIT for code
+
+Actions taken:
+--------------
+
+1. Removed 4 non-redistributable PDFs via git rm:
+     source_documents/wilson_2009_octonions_and_leech_lattice.pdf
+     source_documents/Elduque2000_trialityAutomDerivCompAlgs_LinAlgAppl.pdf
+     source_documents/Elduque1996classOfTernCompAlgs.pdf
+     source_documents/dixon_2010_integral_octonions_xy_product_leech_lattice.pdf
+   All four are Elsevier / J. Korean Math. Soc. publisher PDFs or an
+   unpublished preprint without explicit redistribution permission.
+
+2. Updated reference files to remove "Source file" pointers and record
+   DOI / URL as the canonical source instead:
+   - evidence_and_reasoning/references/leech_lattice_octonionic_constructions.txt
+     (Wilson 2009 -> DOI; Dixon 2010 -> author site note)
+   - evidence_and_reasoning/references/okubo_algebra.txt
+     (Elduque 1996 -> journal URL; Elduque 2000 -> DOI)
+   - "Last updated" dates advanced to 2026-04-12 where changed.
+
+3. Updated source_documents/README.md:
+   - Split into "Contents (held locally)" and "Externally hosted
+     sources".
+   - Local contents: the 4 arXiv preprints, Doc. Math. 2022, and
+     the author's FureyHughes/Koeplinger 2023 preprint.
+   - External sources: Wilson 2009, Dixon 2010, Elduque 2000,
+     Elduque 1996, each with DOI or canonical URL.
+   - "Important Notes" section rewritten to reflect the new policy.
+
+B1. README.md "Repository Structure" table:
+    - Old paper/ row pointing at the folder was expanded to list
+      paper/main.tex, paper/main.pdf, paper/references.bib directly.
+    - research_output/ row removed (folder was removed in prompt 051).
+    - source_documents/ description updated to note "freely
+      redistributable only; others listed by DOI".
+    - LICENSE.md and LICENSE-CODE row added (see B4 below).
+    - prompt_logs/ description generalised (no longer pinned to
+      "000-043" range).
+
+B1 bonus: README.md "Current Status" block updated:
+    - Key-claim callout now lists BOTH claim 007 (ruled out) and
+      claim 008 (the order), consistent with prompt 051's new claim.
+
+B2. prompt_logs/README.md "Contents" table extended with one row per
+    prompt from 024 through 051 inclusive (28 new rows, each one line,
+    each describing the essential action or finding of that prompt).
+    This was the whole block of trial-007 / paper-writing / wording-
+    tweak prompts that had not yet been indexed.
+
+B3. git ls-files .claude/  returned empty.  Confirmed: no files in the
+    .claude/ tree are currently tracked.  Nothing to remove from the
+    index.  The .gitignore entry added in prompt 046 is sufficient.
+
+B4. Two license files added at the repository root:
+    - LICENSE.md: top-level licensing explainer.  Specifies CC BY 4.0
+      for all text / documentation / evidence / paper / prompt logs /
+      figures.  Specifies MIT for source code.  Notes that third-party
+      materials retain their original licenses.  Includes contact
+      information.
+    - LICENSE-CODE: the verbatim MIT License text with
+      "Copyright (c) 2026 Jens Koeplinger".
+
+    Rationale for the split:
+    - CC BY 4.0 is the standard license for scholarly text that
+      permits redistribution and adaptation with attribution; suitable
+      for the paper, prompt logs, evidence, and CURRENT_STATE.md.
+    - MIT is the most permissive common license for code; suitable
+      for the Python scripts in python_project/ and allows reviewers
+      or downstream readers to reuse code freely.
+
+Files changed / added / removed summary:
+-----------------------------------------
+Removed from git:
+  source_documents/wilson_2009_octonions_and_leech_lattice.pdf
+  source_documents/Elduque2000_trialityAutomDerivCompAlgs_LinAlgAppl.pdf
+  source_documents/Elduque1996classOfTernCompAlgs.pdf
+  source_documents/dixon_2010_integral_octonions_xy_product_leech_lattice.pdf
+
+Added:
+  LICENSE.md
+  LICENSE-CODE
+
+Modified:
+  README.md
+  source_documents/README.md
+  prompt_logs/README.md
+  evidence_and_reasoning/references/leech_lattice_octonionic_constructions.txt
+  evidence_and_reasoning/references/okubo_algebra.txt
+
+No paper changes; paper/main.tex was not touched in this prompt.
