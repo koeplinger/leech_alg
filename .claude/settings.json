@@ -11,7 +11,8 @@
       "Bash(pdflatex -interaction=nonstopmode main.tex)",
       "Bash(python3)",
       "Bash(python3 -c ':*)",
-      "Bash(python3 symbolic_proof_checks.py)"
+      "Bash(python3 symbolic_proof_checks.py)",
+      "Read(//tmp/**)"
     ]
   }
 }

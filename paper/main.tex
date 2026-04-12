@@ -58,12 +58,10 @@ the algebra obtained by applying a single transposition to the
 imaginary basis elements of the standard Fano-plane multiplication ---
 with $\ZZ_3$-symmetric cross-block routing.  Wilson's octonionic
 characterisation of~$\LL$ imposes three sublattice conditions.
-The standard (untwisted) triple-octonion product satisfies
-conditions~1 and~2 but fails condition~3; we prove symbolically that
-the twist corrects this failure by mapping the condition-3 sublattice
-to one that is closed under the standard octonion product.
-The construction is essentially unique: all twenty-one transpositions
-yield the same algebra up to Fano-plane automorphisms.
+The standard (untwisted) triple-octonion product satisfies two of
+the three conditions but not the third; we show that the twist
+properly closes the remaining sublattice by mapping it to one that
+is closed under the standard octonion product.
 
 This result was developed through a systematic human--AI collaboration;
 the complete research record is publicly available~\cite{repo}.
@@ -101,17 +99,17 @@ products without finding closure on the Leech inner shell.
 
 The standard triple-octonion product on~$L^3$ --- using the same
 octonion multiplication in all three blocks with
-$\ZZ_3$-symmetric cross-block routing --- satisfies Wilson's
-conditions~1 and~2 automatically but fails condition~3.  The failure
-is structural: condition~3 requires $x+y+z \in Ls$ for the block sum,
-and the standard product does not preserve the sublattice~$Ls$ under
-multiplication.
+$\ZZ_3$-symmetric cross-block routing --- satisfies two of Wilson's
+three sublattice conditions automatically, but closure on the
+third requires a block-sum sublattice~$Ls$ to be preserved under
+octonion multiplication, and the standard product does not
+preserve it.
 
 The main result of this paper is that a single transposition applied to
-the Fano-plane triples corrects this failure.  The key insight is that
-the twist maps the condition-3 sublattice~$Ls$ to~$\sigma(Ls)$, a
-different sublattice of~$L$ that \emph{is} closed under the standard
-octonion product.
+the Fano-plane triples properly closes the remaining condition.
+The key insight is that the twist maps the block-sum sublattice~$Ls$
+to~$\sigma(Ls)$, a different sublattice of~$L$ that \emph{is} closed
+under the standard octonion product.
 
 \begin{theorem}\label{thm:main}
 Let\/ $\cdot_\sigma$ denote the transposition-twisted octonion
@@ -444,10 +442,9 @@ of any $\ZZ$-basis for~$Ls$, so $v \notin Ls$.
 \begin{remark}\label{rem:Ls-not-closed}
 The sublattice~$Ls$ is \emph{not} closed under the standard octonion
 product: there exist basis vectors $a, b \in Ls$ with $a \cdot b
-\notin Ls$.  This is the reason the untwisted triple product fails
-condition~3.  The twist maps the condition-3 sublattice from~$Ls$
-(where closure fails) to~$\sigma(Ls)$ (where closure holds, by
-Lemma~D).
+\notin Ls$.  This is precisely the obstruction that the twist
+resolves: it moves the block-sum sublattice from~$Ls$ to~$\sigma(Ls)$,
+where closure holds by Lemma~D.
 \end{remark}
 
 \subsection{Condition~1: each block lies in~$L$}
@@ -501,10 +498,10 @@ since $\sigma^2 = \mathrm{id}$.
 
 \subsection{Condition~3: the block sum lies in~$Ls$}
 
-This is the crux of the proof.  The standard (untwisted) product fails
-here because $Ls \cdot Ls \not\subseteq Ls$
-(Remark~\ref{rem:Ls-not-closed}).  The twist redirects the computation
-through~$\sigma(Ls)$, where closure holds.
+This is the crux of the proof.  For the standard (untwisted) product
+the block sum would require $Ls \cdot Ls \subseteq Ls$, which does
+not hold (Remark~\ref{rem:Ls-not-closed}).  The twist redirects the
+computation through~$\sigma(Ls)$, where closure holds.
 
 \begin{proposition}\label{prop:cond3}
 For all $u, v \in \LL$, the block sum $P_1 + P_2 + P_3$ lies in~$Ls$.
@@ -557,13 +554,14 @@ $Ls$-basis vectors yields an element outside~$Ls$
 The mechanism is now clear.  The twist introduces $\sigma$ in two
 places: it maps the inputs through~$\sigma$ (sending $Ls$ to
 $\sigma(Ls)$) and applies $\sigma$ to the output (sending $\sigma(Ls)$
-back to~$Ls$).  The standard product fails because $Ls$ is not closed
-under multiplication.  By Lemma~E, $\sigma(Ls) \neq Ls$: the twist
-moves the condition-3 sublattice to a \emph{different} sublattice
-of~$L$ that happens to be closed (Lemma~D).  The isomorphism between
-$(\OO, \cdot)$ and $(\OO, \cdot_\sigma)$ does not by itself explain
-closure --- what matters is the interaction between the permutation and
-the specific sublattice geometry of Wilson's construction.
+back to~$Ls$).  The standard product leaves this block-sum sublattice
+un-closed: $Ls \cdot Ls \not\subseteq Ls$.  By Lemma~E,
+$\sigma(Ls) \neq Ls$, so the twist moves the block-sum sublattice
+to a \emph{different} sublattice of~$L$ that \emph{is} closed
+(Lemma~D).  The isomorphism between $(\OO, \cdot)$ and
+$(\OO, \cdot_\sigma)$ does not by itself explain closure --- what
+matters is the interaction between the permutation and the specific
+sublattice geometry of Wilson's construction.
 \end{remark}
 
 This completes the proof of Theorem~\ref{thm:main}. \qed
@@ -952,7 +950,7 @@ J.~Algebra \textbf{322} (2009), 2186--2190.
 J.~Koeplinger,
 \emph{An order on the Leech lattice from transposition-twisted
 octonions: research repository},
-\url{https://github.com/(to-be-filled-in)}, 2026.
+\url{https://bitbucket.org/jenskoeplinger/leech_alg}, 2026.
 
 \end{thebibliography}
 
