@@ -1,0 +1,81 @@
+Prompt 044 -- Section 1 narrative trims (remove editorial asides)
+===================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Continue the wording tweaks.
+
+In section "1. Introduction": Remove the text "... but did not test
+multiplicative closure". In general, we want to point to what we
+believe and confirmed was accomplished, and defer to the reader (and
+the referenced author) to what this actually means. To give you a
+hint (but no need to record it as such in the paper), both Wilson
+and Dixon accomplished multiplicative closure of sorts, just not in
+a Z_3 symmetric way. I feel that I can take their construction and
+make a multiplication out of it. The claim for relevance in our
+work is the Z_3 symmetry. You already state this matter-of-factly
+in the abstract, our readers are really smart, they appreciate
+that kind of brevity and leaving them in control of making their
+own conclusions. Say, if we were to dwell on how simple and
+beautiful our construction would be, it would turn them off. They
+know what they're doing, are highly trained and capable, don't have
+much time to read, and definitely don't have time to argue with
+narcissistic attitudes.
+
+Similarly, just scratch the words "... but not under the standard
+one". Their construction is beautiful, and I get that from the
+first half of the sentence already. That's all that needs to be
+said.
+
+Remove this line "The present author participated in the 2014
+discussion, testing Jordan products without finding closure on the
+Leech inner shell." -- It was great being allowed in the
+verification of some of their early proposals, no need to dwell on
+it.
+
+Other than that, this section is good.
+
+Actions taken:
+--------------
+1. Section 1 (Introduction), the "studied from several angles"
+   paragraph: removed three fragments per user's narrow
+   instructions.
+
+   Before:
+      Dixon [Dixon2010] constructed L using an octonionic
+      XY-product but did not test multiplicative closure.  Baez
+      and Egan [Baez2014] explored Jordan-algebraic structures on
+      L within the exceptional Jordan algebra h_3(O), finding
+      closure under a doubled Jordan product but not under the
+      standard one.  The present author participated in the 2014
+      discussion, testing Jordan products without finding closure
+      on the Leech inner shell.
+
+   After:
+      Dixon [Dixon2010] constructed L using an octonionic
+      XY-product.  Baez and Egan [Baez2014] explored Jordan-
+      algebraic structures on L within the exceptional Jordan
+      algebra h_3(O), finding closure under a doubled Jordan
+      product.
+
+   Specifically:
+   - Deleted " but did not test multiplicative closure" after
+     the Dixon citation.
+   - Deleted " but not under the standard one" after the Baez
+     and Egan description.
+   - Deleted the entire sentence about the present author's
+     participation in the 2014 discussion.
+
+2. Recompiled paper: 13 pages, clean.
+
+Editorial principle recorded (see separate feedback memory):
+  Readers are highly trained and time-pressed.  State what was
+  accomplished and cite the original; do not characterise what
+  prior work did not do, and do not editorialise about our own
+  construction's simplicity or beauty.  Brevity and matter-of-
+  fact tone are the norm.  Hint from the user (not to be written
+  into the paper): both Wilson and Dixon achieved multiplicative
+  closure "of sorts" in their constructions; the distinctive
+  claim of this paper is Z_3 symmetry, and that claim already
+  stands on its own in the abstract.
