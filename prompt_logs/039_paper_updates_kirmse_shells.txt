@@ -1,0 +1,52 @@
+Prompt 039 — Paper updates: Kirmse distinction and shell-vs-order
+==================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Ok. yes I want you to do the updates to the paper that you suggest in
+the previous two prompts. I also insist that you add the previous two
+prompts to the prompt log, just as you have done before, and as you
+are required per the manifesto and per the memory you have already
+made. Now I'm making a human memory for this as well.
+
+Actions taken:
+--------------
+1. Created prompt log entries for prompts 037 and 038 (Kirmse
+   distinction and shell-vs-order questions that preceded this one).
+
+2. Paper updates to paper/main.tex:
+
+   a. Added Remark 2.1 (Kirmse's convention versus ours) in Section
+      2.2, explaining:
+      - Kirmse (1924) used a labelling under which D₈⁺ is not closed
+      - Coxeter (1946) corrected it by permuting two basis indices
+      - Our Fano triples (1,2,4),(2,3,5),...,(7,1,3) are one of the
+        seven Coxeter-corrected conventions
+      - Verified L·L⊆L directly on a Z-basis using exact arithmetic
+        (64/64 PASS)
+
+   b. Added Remark 2.2 (Closure of the lattice, not the shells)
+      in Section 2.2, explaining:
+      - Norm-multiplicativity forces root·root to have squared norm 4,
+        so the root system cannot be multiplicatively closed
+      - What is closed is the full lattice L (containing all shells)
+      - Forward-references the analogous distinction for Λ
+
+   c. Added Remark 1.3 (Order-closure, not shell-closure) after
+      Corollary 1.2, explaining:
+      - Λ⋆Λ⊆Λ means products land somewhere in Λ, not in the
+        minimal shell
+      - Product norms on Min(Λ)×Min(Λ) take values
+        {16,32,48,64,80,96,112,128} — never 8
+      - Being an order (ring-theoretic) is weaker than and
+        independent of any shell-level closure
+
+   d. Rewrote the Kirmse paragraph in Section 7 (Related work) to
+      emphasise the conceptual chain:
+      Kirmse → Coxeter → σ-twist
+      Each step is a transposition of basis indices; each resolves
+      a closure obstruction at the next level of the construction.
+
+3. Compiled paper: 11 pages, no errors. (Had to fix two LaTeX typos
+   — \end{remark> instead of \end{remark} — during the edits.)

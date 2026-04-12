@@ -132,6 +132,20 @@ sum of bilinear octonion products).  By Theorem~\ref{thm:main},
 $\star$ maps $\LL \times \LL$ into~$\LL$.
 \end{proof}
 
+\begin{remark}[Order-closure, not shell-closure]\label{rem:order-closure}
+The closure statement $\LL \star \LL \subseteq \LL$ means that
+products land somewhere in~$\LL$; it does not assert that the
+minimal shell is preserved.  Empirically, the product norm on
+$\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ takes values
+in $\{16, 32, 48, 64, 80, 96, 112, 128\}$ (see
+Section~\ref{sec:properties}), none of which equals the minimal value
+$\Nrm = 8$: products of minimal vectors always land on strictly
+higher shells.  This is consistent with $(\LL, +, \star)$ being an
+order in the ring-theoretic sense --- a subring that is a free
+$\ZZ$-module of rank equal to the ambient algebra's dimension ---
+a property weaker than, and independent of, any shell-level closure.
+\end{remark}
+
 % ===============================================================
 \section{Preliminaries}\label{sec:prelim}
 % ===============================================================
@@ -166,6 +180,41 @@ integers or all half-integers, with even coordinate sum
 squared norm~2).  Under the standard octonion multiplication,
 $L$~is a maximal order in~$\OO$: it is closed under multiplication
 \cite{Coxeter1946, ConwaySmith2003}.
+
+\begin{remark}[Kirmse's convention versus ours]\label{rem:kirmse}
+The closure $L \cdot L \subseteq L$ depends on which Fano-plane
+labelling defines the octonion product.  Kirmse~\cite{Kirmse1924}
+originally proposed a specific labelling under which $D_8^+$ is
+\emph{not} closed --- a subtle error corrected by
+Coxeter~\cite{Coxeter1946}, who showed that permuting two basis
+indices yields a different multiplication on the same~$\RR^8$ under
+which $D_8^+$ \emph{is} closed.  There are seven such
+Coxeter-corrected conventions, each giving one of the seven maximal
+orders of the integral octonions~\cite{ConwaySmith2003}.
+
+The ``standard'' Fano triples~\eqref{eq:fano} used in this paper are
+one of the Coxeter-corrected conventions, not Kirmse's.  We have
+verified $L \cdot L \subseteq L$ directly under our convention: using
+an explicit $\ZZ$-basis of $L$ and exact rational arithmetic, all 64
+basis products are integer combinations of the basis.
+\end{remark}
+
+\begin{remark}[Closure of the lattice, not the shells]\label{rem:shells}
+When we say $L$ is closed under multiplication, we mean closure of the
+lattice~$L$, not of any individual shell.  Since the octonion product
+is norm-multiplicative, the product of two roots (squared norm~2) has
+squared norm~4 and lies on the second shell of~$L$, not among the
+roots.  The root system itself cannot be multiplicatively closed ---
+norm-multiplicativity forbids it.  What is closed is the full
+lattice, which contains every shell.
+
+The same distinction will apply to $(\LL, +, \star)$ in
+Theorem~\ref{thm:main}: products of minimal Leech vectors land on
+higher shells of~$\LL$, not back in the minimal shell (see
+Section~\ref{sec:properties}).  Being an order in the ring-theoretic
+sense requires closure on the lattice, not on any shell, and these are
+very different properties.
+\end{remark}
 
 \subsection{Wilson's Leech lattice}\label{subsec:wilson-leech}
 
@@ -660,9 +709,19 @@ commutative and 27-dimensional, while ours is non-commutative and
 \textbf{Kirmse (1924)} \cite{Kirmse1924} exhibited the $E_8$ lattice
 as a unimodular integral quadratic lattice inside the real octonion
 algebra.  His lattice is not closed under multiplication, an error
-corrected by Coxeter~\cite{Coxeter1946} using the index-doubling
-permutation.  The idea of modifying an octonion multiplication to
-achieve lattice closure has its roots in this correction.
+corrected by Coxeter~\cite{Coxeter1946} by swapping two basis indices
+in the Fano-plane labelling.
+
+The present construction continues the same conceptual line.  The
+Kirmse--Coxeter step modifies the octonion multiplication (a single
+transposition of basis indices) so that the $E_8$ lattice becomes an
+order.  The present paper applies a second transposition of basis
+indices --- the twist $\sigma$ in Definition~\ref{def:twist} --- to
+the already-corrected octonion product, so that the triple-product
+construction on the Leech lattice becomes an order.  The chain is
+Kirmse $\to$ Coxeter $\to$ $\sigma$-twist: each step is a
+transposition, and each resolves a closure obstruction at the next
+level of the construction.
 
 % ===============================================================
 \section{Conclusion}\label{sec:conclusion}

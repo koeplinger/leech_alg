@@ -1,0 +1,49 @@
+Prompt 037 — Kirmse distinction in Section 2.2
+===============================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Good updates. At first I was wondering why you ran numerical simulations
+for some of the simple truths that can be clearly verified in the
+literature. But then I remembered my instruction to you, that we don't
+trust anything, and must verify everything from scratch ourselves.
+Therefore, you have done exactly what I told you to do, and this is
+good. Keep doing this.
+
+Now let's do a deep-dive into individual mathematical aspects. Section
+2.2 "The E_8 lattice" you describe Wilson's construction. You write
+"Under ste standard octonion multiplication, L is a maximal order in
+O: it is closed under multiplication". Help me understand how this is
+not a restatement of Johannes Kirmse's mistake.
+
+Assistant response (summary):
+-----------------------------
+Explained the distinction:
+- Kirmse's error was using a specific Fano triple labelling under
+  which D₈⁺ is NOT closed.
+- Coxeter's correction: permute two basis indices to obtain a
+  different multiplication on the same R⁸ under which D₈⁺ IS closed.
+  There are seven such corrected conventions (→ the seven maximal
+  orders of Conway–Smith).
+- Our "standard" Fano triples (1,2,4), (2,3,5), (3,4,6), (4,5,7),
+  (5,6,1), (6,7,2), (7,1,3) are one of the Coxeter-corrected
+  conventions, not Kirmse's. Under these triples, D₈⁺ is closed.
+
+Verification from first principles:
+- Ran an additional exact-arithmetic check: built a Z-basis of L
+  and verified all 64 basis products lie in L. Result: 64/64 PASS.
+- This independently confirms Lemma B (L · L ⊆ L) without relying
+  on the Coxeter 1946 citation.
+
+Proposed paper update (accepted by user in prompt 039):
+- Add a remark in Section 2.2 explaining the Kirmse/Coxeter
+  distinction and that our convention is Coxeter-corrected.
+- Reinforce in Section 7 (Kirmse paragraph) that the Kirmse→Coxeter
+  correction is the conceptual precursor to the present paper's
+  chain Kirmse→Coxeter→σ-twist.
+
+Actions taken:
+--------------
+See prompt_logs/039_paper_updates_kirmse_shells.txt for the paper
+updates implementing the proposal above.

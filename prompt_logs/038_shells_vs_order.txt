@@ -1,0 +1,58 @@
+Prompt 038 — Shells vs. order: what closure means
+===================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+The roots of L have norm 2, so when you say it closes under octonion
+multiplication, does that mean that a product made from octonions
+assigned to each of the roots would multiply to an lattice point with
+norm 4? The similar question is then for the inner shell of the Leech
+lattice, where all lattice points have norm sqrt(8), does that mean
+that the product of any two points there would multiply to a lattice
+point with norm 8? How can you say that such a product forms a
+(maximal) order? I see you wrote "due to bilinearity" which implies
+scaling by an integer. That sounds right on the surface, however, I
+would be comfortable to accept it if a lattice product actually closes
+on the roots (or inner shell). But if it doesn't close, then how can
+one conclude on this being an order?
+
+Assistant response (summary):
+-----------------------------
+Confirmed the user's observation and explained what "order" means:
+
+1. E₈ case: products of roots (squared norm 2) land at squared norm 4,
+   because the octonion product is norm-multiplicative. The root system
+   is NOT closed — it cannot be, by norm-multiplicativity alone. What
+   is closed is the full lattice L = D₈⁺, which contains all shells.
+
+2. Leech case: the twisted product ⋆ is NOT norm-multiplicative (only
+   ~47% of pairs satisfy N(u⋆v) = N(u)N(v), per Section 5). The
+   empirical norm distribution on Min(Λ) × Min(Λ) is
+   {16, 32, 48, 64, 80, 96, 112, 128} — NONE of these is 8. The
+   minimal shell is not closed; products land on higher shells of Λ.
+
+3. Nevertheless, (Λ, +, ⋆) is an order in the ring-theoretic sense:
+   Λ is a free Z-module of rank 24, contains a Q-basis of R²⁴, and
+   (by Theorem 1.1) Λ ⋆ Λ ⊆ Λ. Shell-closure is NOT part of the
+   definition of an order.
+
+4. The bilinearity argument is rigorous, not hand-wavy. Explained
+   concretely for L: we take a Z-basis {b₁,...,b₈} of L (8 vectors
+   that span L over Z, not 8 roots); verify all 64 products b_i · b_j
+   are integer combinations of the basis; then for any a,b ∈ L,
+   write a = Σ α_i b_i, b = Σ β_j b_j with α,β ∈ Z, and
+   a·b = Σ α_i β_j (b_i · b_j) is a Z-linear combination of elements
+   of L, hence in L. The same argument applies to Λ with Min(Λ)
+   generating Λ over Z.
+
+Proposed paper update (accepted by user in prompt 039):
+- Add a remark near Corollary 1.2 (or in Section 2.3) explicitly
+  stating that Λ ⋆ Λ ⊆ Λ means products land somewhere in Λ
+  (generally on higher shells), not in the minimal shell — and that
+  this is consistent with an order in the ring-theoretic sense.
+
+Actions taken:
+--------------
+See prompt_logs/039_paper_updates_kirmse_shells.txt for the paper
+updates implementing the proposal above.
