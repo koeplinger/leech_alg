@@ -21,7 +21,7 @@ The finished write-up is in [paper/main.tex](paper/main.tex)
 | [CURRENT_STATE.md](CURRENT_STATE.md) | **Entry point** — what's established, what's ruled out, what's next |
 | [MANIFESTO.md](MANIFESTO.md) | Operating rules for AI-assisted research |
 | [TRIAL_METHODOLOGY.md](TRIAL_METHODOLOGY.md) | Structure and philosophy for trial files |
-| [paper/main.tex](paper/main.tex), [paper/main.pdf](paper/main.pdf), [paper/references.bib](paper/references.bib) | Formal write-up: LaTeX source, compiled PDF, BibTeX database |
+| [paper/main.tex](paper/main.tex), [paper/main.pdf](paper/main.pdf) | Formal write-up: LaTeX source (bibliography inline via \bibitem) and compiled PDF |
 | [evidence_and_reasoning/](evidence_and_reasoning/) | Key claims, trial results, and references |
 | [python_project/](python_project/) | Python code: shared tools, trial experiments, symbolic-proof verification |
 | [prompt_logs/](prompt_logs/) | Chronological log of all AI interaction prompts |

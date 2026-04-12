@@ -56,7 +56,8 @@ and derivations of composition algebras, and applications.
 - **Year**: 2025 (arXiv preprint 2023)
 - **DOI**: 10.1088/1751-8121/adafef
 - **arXiv**: 2309.17435 [hep-th]
-- **Source file**: MarraniCorradettiZucconi2023_OkuboInv_arXiv2309.17435.pdf
+- **Source**: Externally hosted on arXiv (license: nonexclusive-distrib/1.0;
+  third-party redistribution not granted). URL: https://arxiv.org/abs/2309.17435
 - **Topics**: okubo_algebra, octonions
 - **Originality note**: Published in a peer-reviewed journal (J. Phys. A,
   IOP Publishing). The arXiv preprint (v1: September 2023) predates the
@@ -80,7 +81,8 @@ and derivations of composition algebras, and applications.
   is known at time of writing.
 - **Year**: 2015
 - **arXiv**: 1503.00614 [math-ph]
-- **Source file**: KamiyaOkubo2015_AlgsTrialityAndS4_arXiv1503.00614.pdf
+- **Source**: Externally hosted on arXiv (license: nonexclusive-distrib/1.0;
+  third-party redistribution not granted). URL: https://arxiv.org/abs/1503.00614
 - **Topics**: okubo_algebra, background
 - **Originality note**: Unpublished arXiv preprint. Not peer-reviewed.
   Independent verification of claims is required before reliance in this
@@ -103,7 +105,8 @@ and derivations of composition algebras, and applications.
   Springer, Cham, 2023.
 - **Year**: 2023 (arXiv preprint October 2022)
 - **arXiv**: 2210.03456 [math.RA]
-- **Source file**: Elduque2002_OkuboAlgsWithIsotropicNorm_arXiv2210.03456v1.pdf
+- **Source**: Externally hosted on arXiv (license: nonexclusive-distrib/1.0;
+  third-party redistribution not granted). URL: https://arxiv.org/abs/2210.03456
 - **Topics**: okubo_algebra
 - **Originality note**: Published in a peer-reviewed proceedings volume
   (Springer). The arXiv preprint (October 2022) predates the proceedings

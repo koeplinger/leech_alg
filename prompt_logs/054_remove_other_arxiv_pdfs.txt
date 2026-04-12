@@ -1,0 +1,84 @@
+Prompt 054 -- Remove remaining arXiv PDFs under nonexclusive-distrib
+                license; correct licensing classification
+======================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+You write: "Recommendation: symmetric with the Dixon decision --
+remove the three other arXiv PDFs, replace with arXiv links in
+source_documents/README.md and the reference files. Shall I do that?"
+-- Yes, do that.
+
+Context and correction to earlier work:
+---------------------------------------
+In prompt 052 I removed four documents whose PDFs are not freely
+redistributable (Wilson 2009, Elduque 2000, Elduque 1996, Dixon 2010)
+and classified the three other arXiv papers as "safe to redistribute".
+That classification was WRONG.
+
+All four arXiv papers in the repo were verified (via the arXiv
+abstract pages) to carry the same license:
+  "arXiv nonexclusive-distrib/1.0"
+  http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+This license grants arXiv.org the right to distribute the article;
+it does NOT grant third parties redistribution rights.  The author
+retains copyright.
+
+The four arXiv IDs:
+  Dixon 2010             -- arXiv:1011.2541
+  Elduque 2002           -- arXiv:2210.03456
+  Kamiya-Okubo 2015      -- arXiv:1503.00614
+  Marrani et al. 2023    -- arXiv:2309.17435
+
+Dixon was removed in prompt 052; the other three were still held
+locally.  The user's directive in this prompt applies the symmetric
+treatment to the remaining three.
+
+Actions taken:
+--------------
+
+1. Removed three PDFs via git rm:
+     source_documents/Elduque2002_OkuboAlgsWithIsotropicNorm_arXiv2210.03456v1.pdf
+     source_documents/KamiyaOkubo2015_AlgsTrialityAndS4_arXiv1503.00614.pdf
+     source_documents/MarraniCorradettiZucconi2023_OkuboInv_arXiv2309.17435.pdf
+
+2. Rewrote source_documents/README.md:
+   - "Contents (held locally)" table now lists only two files:
+       SmithVojtechovsky 2022 (Doc. Math., CC BY)
+       FureyHughes/Koeplinger 2023 (author's preprint)
+   - Added explanatory note above "Externally hosted sources":
+     "arXiv's 'nonexclusive-distrib/1.0' license grants distribution
+     rights only to arXiv itself; author copyright is retained.
+     Consult the authoritative source via the link below."
+   - Added license column to the external-sources table so the access
+     terms are explicit on each row.
+   - "Important Notes" updated to name arXiv nonexclusive-distrib
+     explicitly alongside publisher-copyright PDFs.
+
+3. Rewrote three "Source file" lines in
+   evidence_and_reasoning/references/okubo_algebra.txt:
+   - Entry [MarraniCorradettiZucconi2025]: arXiv:2309.17435
+   - Entry [KamiyaOkubo2015]: arXiv:1503.00614
+   - Entry [Elduque2023_IsotropicNorm]: arXiv:2210.03456
+   Each now reads:
+     "Source: Externally hosted on arXiv (license:
+      nonexclusive-distrib/1.0; third-party redistribution not
+      granted). URL: <arXiv URL>"
+
+4. Nothing else is affected.  Citations in paper/main.tex already
+   link to arXiv URLs for Kamiya-Okubo 2015 and Elduque 2023; the
+   Marrani et al. 2025 entry cites the J. Phys. A publication DOI.
+   No paper edits required.
+
+Remaining locally-held PDFs in source_documents/ (now a clean set):
+  SmithVojtechovsky_Okubo_2022_DocMath.pdf   (CC BY, diamond OA)
+  2023_FureyHughesTrialityOkuboBrief.pdf      (author's own preprint)
+
+Note on the earlier classification error:
+------------------------------------------
+Per the Manifesto's forward-evolving-correction rule, prompt 052
+itself is not rewritten; this prompt log records the corrected
+understanding and the action taken.  A reader of the corpus who
+reaches 052 first will see 053 and 054 as the next entries that
+complete the cleanup.

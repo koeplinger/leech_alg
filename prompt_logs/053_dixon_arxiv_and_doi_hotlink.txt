@@ -1,0 +1,58 @@
+Prompt 053 -- Dixon 2010 arXiv link; Koeplinger 2023 DOI hotlink
+==================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+About the reference to Dixon's paper, I found it here:
+https://arxiv.org/abs/1011.2541 -- point to this reference (for of 6]
+G. M. Dixon, Integral octonions, octonion XY-product, and the Leech
+lattice, preprint, 2010.) -- record this properly everywhere.
+
+In the paper, make DOI: 10.13140/RG.2.2.19003.39209. a hotlink.
+
+Actions taken:
+--------------
+
+1. paper/main.tex, bibliography entry for Dixon2010:
+   Added line:
+     \href{https://arxiv.org/abs/1011.2541}{arXiv:1011.2541}.
+   (Formatting follows the existing in-bibliography style used for
+   KamiyaOkubo2015 and Elduque2023_IsotropicNorm.)
+
+2. paper/main.tex, bibliography entry for Koeplinger2023:
+   "DOI: 10.13140/RG.2.2.19003.39209."
+     ->
+   \href{https://doi.org/10.13140/RG.2.2.19003.39209}{DOI:\,10.13140/RG.2.2.19003.39209}.
+
+3. source_documents/README.md, "Externally hosted sources" row for
+   [Dixon2010]:  "Author's site: https://www.7stones.com" ->
+                 "arXiv:1011.2541 -- https://arxiv.org/abs/1011.2541".
+
+4. evidence_and_reasoning/references/leech_lattice_octonionic_constructions.txt:
+   Dixon entry: "Published in" and "URL" fields rewritten to name
+   arXiv:1011.2541 as the canonical preprint hosting; the
+   "Source: Not redistributed locally" note clarified as "arXiv's
+   non-exclusive distribution license" so readers understand the
+   access path.
+
+5. README.md (repository root):
+   Corrected the paper-row to remove the nonexistent
+   paper/references.bib entry; the paper's bibliography is inline
+   in main.tex via \bibitem.  The row now reads:
+     paper/main.tex, paper/main.pdf | Formal write-up: LaTeX source
+     (bibliography inline via \bibitem) and compiled PDF
+
+6. pdflatex main.tex  (twice).  12 pages, all cross-references
+   resolved, no new warnings.  arXiv:1011.2541 and the
+   DOI:10.13140/RG.2.2.19003.39209 now render as clickable
+   hyperlinks in the bibliography.
+
+Note on scope:
+--------------
+"Record this properly everywhere" was applied to the four canonical
+locations where the Dixon reference is indexed (paper bibliography,
+source_documents/README.md, references/leech_lattice_octonionic_
+constructions.txt, and the fixed README row).  Historical prompt logs
+that mention Dixon are left unchanged, per the MANIFESTO's forward-
+evolving-corrections rule.

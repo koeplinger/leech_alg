@@ -41,11 +41,13 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
 
 - **Authors**: Geoffrey Dixon
 - **Title**: Integral Octonions, Octonion XY-Product, and the Leech Lattice
-- **Published in**: UNPUBLISHED PREPRINT. No journal imprint appears in the document.
-  Author affiliation listed as www.7stones.com (Dixon's personal website).
+- **Published in**: arXiv preprint (no journal publication). Author
+  affiliation listed as www.7stones.com (Dixon's personal website).
 - **Year**: 2010 (document dated November 21, 2010)
-- **URL**: Dixon's site https://www.7stones.com (no explicit license).
-- **Source**: Not redistributed locally (no explicit license from author).
+- **arXiv ID**: 1011.2541 — https://arxiv.org/abs/1011.2541
+- **Source**: Canonical preprint hosted on arXiv under arXiv's
+  non-exclusive distribution license. Not separately redistributed
+  from this repository.
 - **Topics**: Leech lattice, integral octonions, XY-product, X-product, E8 lattice,
   laminated lattices in dimensions 4, 8, 16, 24
 - **Originality note**: This is an unpublished preprint and has not undergone formal
