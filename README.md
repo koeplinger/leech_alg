@@ -45,7 +45,7 @@ multiplication.
   executes the finite case verifications with exact integer arithmetic).
 - **Computational verification** on 4M+ random pairs of minimal vectors with
   zero failures, plus tests from first principles on every foundation
-  (octonion properties, Wilson's construction).  157+ tests pass.
+  (octonion properties, Wilson's construction).  197 tests pass.
 - **Formal write-up** with full proof, related work, and methodology in
   [paper/main.tex](paper/main.tex).
 - **Key claims:** [007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)

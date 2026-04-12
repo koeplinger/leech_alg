@@ -51,3 +51,18 @@ Thumbs.db
 
 # Claude Code local settings (not for sharing)
 .claude/
+
+# LaTeX build artifacts (main.pdf IS committed; build scratch files are not)
+*.aux
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb

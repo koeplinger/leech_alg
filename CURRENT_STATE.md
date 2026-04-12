@@ -155,7 +155,7 @@ These have been tested against the Leech lattice in trials 005–006 (see below)
 
 ### Test suite
 
-157 tests verify the foundations.  Run with:
+197 tests verify the foundations.  Run with:
 ```
 cd python_project && python3 -m pytest tests/ -v
 ```

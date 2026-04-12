@@ -1,0 +1,64 @@
+Prompt 055 -- .gitignore LaTeX artifacts, confirm requirements.txt,
+                and run the test suite on HEAD
+======================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+add LaTeX patterns (*.aux, *.out, *.log, *.toc, etc.) to .gitignore and
+git rm --cached those two,
+
+add python requirements.txt
+
+run the test-suite sanity on HEAD
+
+reference [19] (bitbucket) is good
+
+don't change the README.md to point to the paper PDF; eventually the
+paper will be at a public site as the primary location
+
+Actions taken:
+--------------
+
+1. .gitignore:
+   Added a block of LaTeX build-artifact patterns:
+     *.aux, *.out, *.toc, *.lof, *.lot, *.fls, *.fdb_latexmk,
+     *.synctex.gz, *.bbl, *.blg, *.nav, *.snm, *.vrb
+   Note: *.log was already ignored (line 17 of the existing
+   .gitignore); it covers paper/main.log already.  Comment added to
+   clarify that main.pdf IS committed intentionally (for readers who
+   don't want to run pdflatex), but build scratch files are not.
+
+2. Untracked two LaTeX scratch files that had been committed:
+     git rm --cached paper/main.aux
+     git rm --cached paper/main.out
+   Files remain on disk (so pdflatex stays happy); they are now
+   ignored and will stop being part of the working-tree diff.
+
+3. python_project/requirements.txt:
+   Verified that the file already exists (pre-dates this prompt) and
+   contains the correct minimal set:
+     numpy>=1.21
+     pytest>=7.0
+   All other imports found in src/ and tests/ are stdlib
+   (fractions, itertools, collections, typing, multiprocessing,
+   argparse, time, os, sys).  No edits required.
+
+4. Test suite run (pytest):
+     cd python_project && python3 -m pytest tests/ -q
+   Result: 197 passed in 5.28s.  No warnings, no skips, no xfails.
+
+5. Stale test counts in docs updated (flagged by step 4):
+   - CURRENT_STATE.md: "157 tests verify the foundations." -> "197
+     tests verify the foundations."
+   - README.md:        "157+ tests pass." -> "197 tests pass."
+   The pre-existing wording dated to a point before
+   trial_007 and symbolic-proof tests were added; the count is now
+   accurate.
+
+No action needed for the other items the user mentioned:
+  - Reference [19] (bitbucket) confirmed correct in the paper
+    bibliography (\bibitem{repo}), so no change.
+  - README.md deliberately NOT changed to point at paper/main.pdf;
+    the paper will live at a public site and README should continue
+    to route reviewers through CURRENT_STATE.md.
