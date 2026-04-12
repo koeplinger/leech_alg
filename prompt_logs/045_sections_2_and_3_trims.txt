@@ -1,0 +1,53 @@
+Prompt 045 -- Sections 2 and 3 narrative trims
+================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+In section "2. Preliminaries": Scratch these sentences, they are
+repetitive: "The root system itself cannot be multiplicatively
+closed -- norm-multiplicativity forbids it.  What is closed is the
+full lattice, which contains every shell." ... and ... "Being an
+order in the ring-theoretic sense requires closure on the lattice,
+not on any shell, and these are very different properties."
+
+In section "3. The construction":
+
+Scratch this sentence, it's not surprising or special about the
+number of changes, and we've already shown the isomorphism:
+"Despite the large number of differences, the algebra is
+isomorphic to O."
+
+In this sentence, replace the word "single" with "same": "All nine
+block-pair products use the single multiplication"
+
+Actions taken:
+--------------
+1. Section 2, Remark rem:shells (paper/main.tex):
+   - Deleted "The root system itself cannot be multiplicatively
+     closed --- norm-multiplicativity forbids it.  What is closed
+     is the full lattice, which contains every shell."
+   - Deleted "Being an order in the ring-theoretic sense requires
+     closure on the lattice, not on any shell, and these are very
+     different properties."
+   The remark now contains only the shell-versus-lattice example
+   (octonion roots squared land on the second shell) and the
+   forward pointer to Theorem~\ref{thm:main}.
+
+2. Section 3, Remark rem:table-diffs:
+   Deleted "Despite the large number of differences, the algebra
+   is isomorphic to O."  The isomorphism is already established
+   in Proposition~\ref{prop:iso}; no need to restate.
+
+3. Section 3, Definition def:triple, last sentence:
+   Replaced "All nine block-pair products use the single
+   multiplication ..." with "All nine block-pair products use
+   the same multiplication ..."
+
+4. Recompiled paper: 12 pages (was 13), clean.
+
+Editorial principle applied (consistent with feedback from
+prompt 044): don't restate what the reader has just been told, and
+don't characterise a finding as surprising or unusual ("despite the
+large number of differences") when the quantitative detail itself
+already carries whatever intuition the reader needs.
