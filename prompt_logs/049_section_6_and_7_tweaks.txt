@@ -1,0 +1,97 @@
+Prompt 049 -- Section 6 (methodology) and Section 7 (related work)
+                wording tweaks
+==================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Continuing the wording tweak.
+
+Section 5 is good.
+
+Update section 6:
+
+In "over a series of 36 directed prompts" remove "36" since that
+number is not stable.
+
+Replace "exclusively condition 3" with "Wilson's condition(3) per
+Definition (2.3)" (with hotlink cross-reference per default style
+of this paper).
+
+After "These violations and their corrections are part of the
+record." add "Conversely, the author learned from the AI agent
+about errors and misconceptions in the framing of certain prompts,
+which likewise are part of the record." Maybe look at that
+paragraph and word it a bit more tightly. In essence, the
+iterative approach towards converging onto something that is
+robust, including the needed learnings of what it actually is that
+that we're doing, are part of how study, research, and discovery
+has historically been done. We're doing this no differently now,
+but also have the ability to trace everything that went into this
+work - beginning to end - from the complete list of prompts. This
+transparency is novel.
+
+In section 7, remove: "Wilson does not define or test a
+multiplicative product on Lambda.", remove "Dixon does not test or
+claim closure of Lambda under the XY-product.", remove "but not
+under the standard Jordan product x o y = xy + yx."
+
+Actions taken:
+--------------
+1. Section 6 (paper/main.tex), opening sentence:
+   "over a series of 36 directed prompts"
+     -> "over a series of directed prompts"
+   Rationale: the count (which has grown past 49 during this
+   wording-tweak phase alone) is not a stable artifact; removing
+   it prevents the number from dating the paper.
+
+2. Section 6, failure-analysis sentence:
+   "(exclusively condition 3, exclusively type-3 x type-3)"
+     -> "(Wilson's condition~(3) per
+          Definition~\ref{def:wilson-leech}, exclusively
+          type-3 x type-3)"
+   Uses the paper's default hot-linked cross-reference style
+   (consistent with Section 4).
+
+3. Section 6, "violations" paragraph: reworded and tightened,
+   adding the user-specified symmetric sentence and folding in
+   the iterative-convergence / transparency framing.
+
+   Before (1 sentence, 2 claims):
+     The AI agent violated its own logging protocol on three
+     separate occasions (prompts 011, 018-019, and 029-031),
+     each time caught by the human researcher through review.
+     These violations and their corrections are part of the
+     record.
+
+   After (4 sentences):
+     Iterative convergence toward a robust result --- including
+     learning along the way what it is we are actually doing ---
+     is how study, research, and discovery have always
+     proceeded.  The AI agent violated its own logging protocol
+     on three occasions (prompts 011, 018-019, and 029-031),
+     each time caught by the human researcher on review.
+     Conversely, the author learned from the AI agent about
+     errors and misconceptions in the framing of certain
+     prompts, which likewise are part of the record.  What is
+     novel here is the ability to trace the entire path,
+     beginning to end, through the complete list of prompts.
+
+   The user-supplied "Conversely, ..." sentence is kept verbatim.
+   The opening sentence provides the "this is how research has
+   always been done" framing; the closing sentence provides the
+   "what is novel is the traceability" framing.
+
+4. Section 7 (Related work), three narrow deletions:
+   - Removed "Wilson does not define or test a multiplicative
+     product on Lambda." (after the Wilson entry).
+   - Removed "Dixon does not test or claim closure of Lambda
+     under the XY-product." (after the Dixon entry).
+   - Removed "but not under the standard Jordan product
+     x o y = xy + yx" from the Baez and Egan entry.
+   Editorial principle consistent with prompt 044 (paper tone):
+   state what each cited work accomplished and cite it; do not
+   characterise what prior work did not do.
+
+5. Recompiled paper twice: 12 pages, all cross-references
+   resolved, no new warnings.
