@@ -26,6 +26,8 @@
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\HH}{\mathbb{H}}
 \newcommand{\LL}{\Lambda}             % Leech lattice
 \newcommand{\norm}[1]{\lVert #1 \rVert}
 \newcommand{\ip}[2]{\langle #1, #2 \rangle}
@@ -736,7 +738,7 @@ itself --- is closed under the standard octonion product.  The twist
 maps the condition-3 sublattice to this closed sublattice, and the
 involutory nature of~$\sigma$ maps the result back.
 
-Several questions remain open:
+Several questions remain immediately open:
 \begin{itemize}
 \item The automorphism group of $(\LL, +, \star)$ and its relationship
   to the Conway group~$\Co_0$.
@@ -747,6 +749,91 @@ Several questions remain open:
 \item Whether other permutations of the Fano triples (beyond
   transpositions) also yield closed products on~$\LL$.
 \end{itemize}
+
+% ===============================================================
+\section{Outlook}\label{sec:outlook}
+% ===============================================================
+
+The intention in publishing this result at this stage is to invite
+research rather than to sit on the ideas.  If others arrive at deeper
+answers faster, so much the better.  What follows is an outlook that
+names the directions we find most promising and the sources that
+shaped the intuition leading to the present construction.
+
+\subsection{A ternary reformulation}
+
+A more natural classification of $(\RR^{24}, +, \star)$ may emerge
+from a \emph{ternary} rather than binary viewpoint.  The Leech lattice
+possesses a prominent $\ZZ_3$-symmetry (the cyclic permutation of the
+three octonion blocks used throughout this paper), and the binary
+product~$\star$ is assembled from nine bilinear building blocks whose
+routing is itself governed by that $\ZZ_3$-action.  Ternary
+composition algebras, as studied by
+Elduque~\cite{Elduque1996,Elduque2000_Triality,Elduque2023_IsotropicNorm},
+are typically non-associative, non-commutative, non-alternative, and
+non-power-associative --- the same negative classification our order
+satisfies --- yet carry high internal symmetry, with order-3
+automorphisms playing the central role: the Okubo algebra has
+automorphism group $\mathrm{SU}(3)$, and the Okubo product itself
+is built from an order-3 automorphism of the octonions.
+Complementary perspectives on the Okubo algebra and triality include
+the quasigroup-theoretic treatment of Smith and
+Vojt\v{e}chovsk\'y~\cite{SmithVojtechovsky2022}, Kamiya and Okubo's
+study of algebras satisfying triality and $S_4$-symmetry
+\cite{KamiyaOkubo2015}, and the originator's own book-length
+physics-oriented account~\cite{Okubo1995_Book}.  A deeper precursor
+is Hall's monograph~\cite{Hall2019_Moufang}, which establishes that
+Moufang loops and groups with triality are essentially the same
+object, giving a structural scaffolding for any triality-based
+reformulation.  Recasting $\star$ as a trace-like reduction of a
+ternary operation compatible with the $\ZZ_3$-block symmetry is a
+natural direction for further work.
+
+\subsection{Consequences for algebraic approaches to physics}
+
+A classification of the ambient algebra $(\RR^{24}, +, \star)$
+matters beyond pure algebra.  Programmes that seek to model
+fundamental physics on algebraic structures --- especially those that
+use the four normed division algebras, triality, and related
+symmetric composition algebras --- have grown considerably in recent
+years.  The author's preceding work~\cite{Koeplinger2023} argues for
+autotopies of normed composition algebras as a mathematical setting
+for this line of inquiry.  Recent work of Furey and
+Hughes~\cite{FureyHughes2025_TrioOfTrialities} isolates triality
+itself as the operative structural skeleton: the Standard Model's
+$\mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1)$
+gauge symmetries are embedded inside
+$\mathfrak{tri}(\CC) \oplus \mathfrak{tri}(\HH) \oplus \mathfrak{tri}(\OO)$,
+and the triality skeleton is shown to accommodate a variety of
+particle-family representations --- the authors' own assignment of
+three Standard Model generations to a triality triple in
+$\CC \otimes \HH \otimes \OO$ is one concrete realization of that
+wider scaffolding.  If a ternary reformulation of the
+Leech-lattice order exists with an order-3 automorphism playing the
+distinguished structural role, it would sit naturally alongside this
+programme and may offer a point of contact between the most rigid
+finite-dimensional lattice in mathematics and the symmetry content
+of the Standard Model.
+
+\subsection{On the form of this work}
+
+This paper is the outcome of a human--AI collaboration conducted
+entirely through a sequence of AI prompts (Section~\ref{sec:methodology}),
+with the complete record of prompts, code, intermediate results, and
+corrections preserved verbatim~\cite{repo}.  The form itself is part
+of the contribution.  Collaborations of this kind will become more
+common, and this work is offered in its present form partly in the
+hope that the process --- how a research question was framed, how the
+AI was directed and corrected, how false trails were recognised and
+closed --- is instructive for mathematicians considering AI-assisted
+research.  Comments on both substance and method are welcome.
+
+% ===============================================================
+\section*{Acknowledgments}
+% ===============================================================
+
+The author thanks Geoffrey Dixon for helpful discussions and advice
+on octonionic structures associated with the Leech lattice.
 
 % ===============================================================
 % References
@@ -786,6 +873,62 @@ Duke Math.\ J.\ \textbf{13} (1946), 561--578.
 G.\,M.~Dixon,
 \emph{Integral octonions, octonion XY-product, and the Leech lattice},
 preprint, 2010.
+
+\bibitem{Elduque1996}
+A.~Elduque,
+\emph{On a class of ternary composition algebras},
+J.~Korean Math.\ Soc.\ \textbf{33} (1996), no.~1, 183--203.
+
+\bibitem{Elduque2000_Triality}
+A.~Elduque,
+\emph{On triality and automorphisms and derivations of composition
+algebras},
+Linear Algebra Appl.\ \textbf{314} (2000), no.~1--3, 49--74.
+
+\bibitem{Elduque2023_IsotropicNorm}
+A.~Elduque,
+\emph{Okubo algebras with isotropic norm},
+in: Non-Associative Algebras and Related Topics (NAART 2020),
+Springer Proc.\ Math.\ Stat., vol.~427, Springer, Cham, 2023,
+pp.~287--301.
+\href{https://arxiv.org/abs/2210.03456}{arXiv:2210.03456}.
+
+\bibitem{FureyHughes2025_TrioOfTrialities}
+N.~Furey and M.\,J.~Hughes,
+\emph{Three generations and a trio of trialities},
+Phys.\ Lett.\ B \textbf{865} (2025), 139473.
+\href{https://arxiv.org/abs/2409.17948}{arXiv:2409.17948}.
+
+\bibitem{Hall2019_Moufang}
+J.\,I.~Hall,
+\emph{Moufang Loops and Groups with Triality are Essentially the
+Same Thing},
+Memoirs of the American Mathematical Society, vol.~260, no.~1252,
+Amer.\ Math.\ Soc., Providence, RI, 2019.
+
+\bibitem{KamiyaOkubo2015}
+N.~Kamiya and S.~Okubo,
+\emph{Algebras satisfying triality and\/ $S_4$-symmetry},
+preprint, 2015.
+\href{https://arxiv.org/abs/1503.00614}{arXiv:1503.00614}.
+
+\bibitem{Koeplinger2023}
+J.~K\"oplinger,
+\emph{Towards autotopies of normed composition algebras in algebraic
+quantum field theory},
+preprint, 2023.  DOI: 10.13140/RG.2.2.19003.39209.
+
+\bibitem{Okubo1995_Book}
+S.~Okubo,
+\emph{Introduction to Octonion and Other Non-Associative Algebras in
+Physics},
+Montroll Memorial Lecture Series in Mathematical Physics, vol.~2,
+Cambridge University Press, Cambridge, 1995.
+
+\bibitem{SmithVojtechovsky2022}
+J.\,D.\,H.~Smith and P.~Vojt\v{e}chovsk\'y,
+\emph{Okubo quasigroups},
+Doc.\ Math.\ \textbf{27} (2022), 535--580.
 
 \bibitem{Kirmse1924}
 J.~Kirmse,

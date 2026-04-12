@@ -1,0 +1,103 @@
+Prompt 041 — Outlook section, soft references for intuition-building
+======================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Great - add these two new Elduque references also to the
+evidence_and_reasoning/references text files. You have all the hard
+"must-have" references in the paper. I would like to add a few more
+soft-references, because developing an intuition is crucial towards
+discovery, in my view, and acknowledging who helped me get there is
+of personal importance to me. This makes the conclusion longer,
+maybe even something to be broken out into outlook, but that is what
+I want. I want to invite research, and not secretly sit on ideas in
+order to slow down others exploring them. If others are faster, well
+then I suppose they're better. Going back and revisiting who all
+helped me get to the intuition that prompted this investigation from
+starters, I see the two Baez references (triality, octonions, E8
+lattice), Elduque (ternary composition algebras), now the two Elduque
+papers, but we also have to add some more regarding Okubo algebra.
+From the references collection, add to the outlook
+[SmithVojtechovsky2022], Okubo's seminal book on Okubo algebra in
+physics, [KamiyaOkubo2015], [Elduque2023_IsotropicNorm]. Then,
+venture out into how a classification of algebras could mean in
+physics, in particular if indeed ternary structures would become
+helpful, such as [Koeplinger2023], the recent work by Nichol Furey
+and Mia Hughes on trios of triality. Also add the seminal work by
+Jonathan Hall on triality. ... And make suggestions on who else
+could be relevant, I want to go down that list and make sure nobody
+is overlooked.
+
+Actions taken:
+--------------
+1. Confirmed (no action needed): Elduque1996 and Elduque2000_Triality
+   are already in evidence_and_reasoning/references/okubo_algebra.txt
+   (added in prompt 011). No duplicate entries created.
+
+2. Reference file updates:
+
+   a. evidence_and_reasoning/references/okubo_algebra.txt:
+      added new entry [Okubo1995_Book] for Susumu Okubo's seminal
+      "Introduction to Octonion and Other Non-Associative Algebras in
+      Physics" (Cambridge University Press, 1995, ISBN 0-521-47215-6).
+      Entry marked as bibliographic-only (not held in
+      source_documents/).
+
+   b. evidence_and_reasoning/references/triality_and_algebraic_physics.txt
+      CREATED (new file) with three soft-reference entries:
+      - [Hall2019_Moufang] — J.I. Hall, Memoirs AMS vol. 260 no. 1252,
+        "Moufang Loops and Groups with Triality are Essentially the
+        Same Thing".
+      - [FureyHughes2022_OneGen] — arXiv:2204.05310, "One generation
+        of Standard Model Weyl representations as a single copy of
+        R⊗C⊗H⊗O".
+      - [FureyHughes2022_SymmBr] — arXiv:2210.10126, "Division
+        algebraic symmetry breaking".
+      All three flagged for human verification of exact title /
+      journal / DOI before final submission.
+
+   c. evidence_and_reasoning/references/README.md: added two rows to
+      the file-index table, covering prior_art_orders_on_leech.txt
+      (was already missing) and the new
+      triality_and_algebraic_physics.txt.
+
+3. Paper restructuring (paper/main.tex):
+
+   a. Split former Section 8 into two sections:
+      - Section 8 "Conclusion" (brief summary + immediate open
+        questions list)
+      - Section 9 "Outlook" (new, longer section with soft
+        references)
+
+   b. Section 9 "Outlook" has three subsections:
+      - "A ternary reformulation": expands the ternary-viewpoint
+        discussion to cite Elduque1996, Elduque2000, Elduque2023,
+        SmithVojtechovsky2022, KamiyaOkubo2015, Okubo1995_Book, and
+        Hall2019_Moufang.
+      - "Consequences for algebraic approaches to physics":
+        Koeplinger2023 for autotopies framing, Furey/Hughes
+        (OneGen and SymmBr) for contemporary division-algebraic
+        Standard Model work.
+      - "On the form of this work": the human-AI collaboration
+        note (moved from former conclusion).
+
+   c. Bibliography extended with seven new entries:
+      Elduque2023_IsotropicNorm, FureyHughes2022_OneGen,
+      FureyHughes2022_SymmBr, Hall2019_Moufang, KamiyaOkubo2015,
+      Koeplinger2023, Okubo1995_Book, SmithVojtechovsky2022.
+
+   d. Added \\newcommand definitions for \\CC and \\HH (needed for
+      the R⊗C⊗H⊗O notation in the Furey/Hughes citation).
+
+4. Compiled paper: 13 pages, no errors, all references resolved.
+
+5. Response to user included a curated list of additional candidates
+   they may want to consider (see prompt 042 for any follow-up).
+
+Verification flagged:
+- Furey/Hughes exact titles/journals/DOIs (best-effort identifiers
+  given; user to verify in fine-comb pass)
+- Hall2019_Moufang volume number and title capitalization (best-
+  effort; user to verify)
+

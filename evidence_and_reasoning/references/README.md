@@ -28,6 +28,8 @@ Each topic has its own file:
 | [leech_lattice_octonionic_constructions.txt](leech_lattice_octonionic_constructions.txt) | Leech lattice, octonions, E8 lattice — octonionic constructions |
 | [background_octonions.txt](background_octonions.txt) | Octonion algebra background: standard properties, history, survey |
 | [okubo_algebra.txt](okubo_algebra.txt) | Okubo algebra: constructions, properties, triality, applications |
+| [prior_art_orders_on_leech.txt](prior_art_orders_on_leech.txt) | Prior art on multiplicative orders on the Leech lattice |
+| [triality_and_algebraic_physics.txt](triality_and_algebraic_physics.txt) | Soft references: triality in physics, division-algebra approaches to the Standard Model |
 
 ## Format for Each Entry
 

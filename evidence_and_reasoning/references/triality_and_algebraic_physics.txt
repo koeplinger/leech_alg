@@ -1,0 +1,69 @@
+Topic: Triality and algebraic approaches to physics
+=====================================================
+
+This file collects soft references for the broader programme of using
+triality and algebraic structures (normed division algebras, Moufang
+loops, composition algebras) in mathematical physics.  These references
+are cited in the Outlook section of the paper as context for the
+proposal that a ternary reformulation of the Leech-lattice order may
+be a natural direction.  Entries here are bibliographic pointers for
+intuition-building context rather than sources used to establish
+technical claims.
+
+---
+
+### [Hall2019_Moufang]
+
+- **Author**: Jonathan I. Hall
+- **Title**: Moufang Loops and Groups with Triality are Essentially the
+  Same Thing
+- **Published in**: Memoirs of the American Mathematical Society,
+  Volume 260, Number 1252 (2019), vi+194 pp.
+- **Year**: 2019
+- **ISBN**: 978-1-4704-3622-7
+- **DOI**: 10.1090/memo/1252
+- **Topics**: triality, Moufang loops, groups with triality, octonions
+- **Originality note**: Peer-reviewed monograph published in the Memoirs
+  of the AMS. No dispute over originality known.
+- **Notes**: Establishes a precise correspondence between Moufang loops
+  and groups with triality. Seminal modern treatment of triality in the
+  loop-theoretic setting, and a natural reference point for any
+  ternary-structured reformulation of the construction in this paper.
+- **Status**: Bibliographic entry only; not held in source_documents/.
+- **Verification**: Title, volume, and DOI to be confirmed by the human
+  researcher before the final submission pass.
+
+---
+
+### [FureyHughes2025_TrioOfTrialities]
+
+- **Authors**: Nichol Furey, Mia J. Hughes
+- **Title**: Three generations and a trio of trialities
+- **Published in**: Physics Letters B, Volume 865 (2025), Article 139473
+- **Year**: 2025
+- **arXiv**: 2409.17948 [hep-ph]
+- **Topics**: triality, octonions, standard model, division algebras,
+  three generations, algebraic physics
+- **Originality note**: Peer-reviewed journal article (Phys. Lett. B).
+  The arXiv preprint (September 2024) precedes the journal publication
+  (2025). No dispute over originality or priority is known at time of
+  writing.
+- **Notes**: Identifies the Standard Model's
+  su(3) ⊕ su(2) ⊕ u(1) internal symmetries inside the triality
+  algebras tri(C) ⊕ tri(H) ⊕ tri(O), and applies the resulting action
+  to a triality triple (Ψ₊, Ψ₋, V) in C ⊗ H ⊗ O to recover three
+  generations of Standard-Model representations (with the third
+  generation arising via a Cartan factorization that merges spinor
+  representations into a set of scalar bosons including the Higgs
+  representation). Cited in this paper's Outlook as the contemporary
+  example showing that triality can be isolated as an algebraic
+  skeleton into which a variety of particle-family representations
+  fit (the authors' own being one specific realization).
+- **Status**: Bibliographic entry only; not held in source_documents/.
+- **Verification**: arXiv identifier 2409.17948 and journal reference
+  Phys. Lett. B 865 (2025) 139473 provided by the human researcher
+  in prompt 042.
+
+---
+
+Last updated: 2026-04-12

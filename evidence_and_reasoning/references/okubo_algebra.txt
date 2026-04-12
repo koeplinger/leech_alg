@@ -159,4 +159,27 @@ and derivations of composition algebras, and applications.
 
 ---
 
-Last updated: 2026-04-08
+### [Okubo1995_Book]
+
+- **Author**: Susumu Okubo
+- **Title**: Introduction to Octonion and Other Non-Associative Algebras in
+  Physics
+- **Published in**: Montroll Memorial Lecture Series in Mathematical Physics,
+  Volume 2, Cambridge University Press, Cambridge, 1995
+- **Year**: 1995
+- **ISBN**: 0-521-47215-6
+- **Topics**: okubo_algebra, octonions, physics, non-associative algebras,
+  triality
+- **Originality note**: Monograph by Susumu Okubo, the originator of the
+  algebra bearing his name. No dispute over originality known.
+- **Notes**: Seminal book-length treatment of non-associative algebras in
+  physics by the algebra's namesake. Cited here as a soft reference for the
+  long-standing programme of applying octonionic and Okubo-algebraic
+  structures to physics, which is background for the Outlook section's
+  discussion of ternary structures in physics.
+- **Status**: Not held in source_documents/; listed by bibliographic
+  information only.
+
+---
+
+Last updated: 2026-04-12
