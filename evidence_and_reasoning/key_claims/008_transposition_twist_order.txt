@@ -1,0 +1,112 @@
+Claim number: 008
+Title: The transposition-twisted triple octonion product is an order on the Leech lattice Λ
+Status: ESTABLISHED (symbolic proof + independent computational verification)
+Date: 2026-04-12
+
+--- RELATION TO CLAIM 007 ---
+
+Claim 007 (2026-04-09) rules out the *untwisted* triple-octonion algebra,
+together with all natural discrete and continuous modifications tested
+at that time, as an order on Λ.  Claim 008 is not a revision of 007:
+claim 007 remains true of the family it covers.  Claim 008 records a
+positive finding obtained by leaving that family — specifically, by
+twisting the single octonion multiplication used in all three blocks
+via a transposition of imaginary basis elements, a construction not
+included in the discrete variants exhausted under claim 007.
+
+Per Manifesto Section 11 (Forward-evolving corrections), this file is
+a new entry recording a subsequent finding; it does not alter claim 007.
+
+--- STATEMENT ---
+
+Let σ be a transposition of two imaginary basis elements of the
+octonion algebra O (e.g. σ = (e₁ e₂)).  Define a new bilinear
+multiplication on R⁸ by
+
+    x ·_σ y := σ( σ(x) · σ(y) ),
+
+where · is the standard octonion product.  Equivalently, σ : (O, ·)
+→ (O, ·_σ) is an isomorphism of algebras, but σ does not preserve the
+Wilson E8 lattice L.
+
+Define the transposition-twisted triple octonion product on
+R²⁴ = O₁ ⊕ O₂ ⊕ O₃ by using ·_σ in all three blocks with Z₃-symmetric
+cross-block routing (same-block Oα × Oα → Oα; cross-block Oα × Oβ → Oγ
+for {α, β, γ} = {1, 2, 3}).
+
+Then the Leech lattice Λ (in Wilson's E8-triple realisation) is closed
+under this product.  Consequently (Λ, +, ·_σ-triple) is an order in
+the real non-associative R-algebra (R²⁴, +, ·_σ-triple).
+
+--- PROOF ---
+
+The symbolic proof is written out in full in paper/main.tex, Section 4.
+It reduces closure on Min(Λ) (hence, by bilinearity, on Λ) to five
+lemmas:
+
+  Lemma 4.1:  σ(L) = L          (coordinate-permutation invariance of D₈⁺)
+  Lemma 4.2:  L · L ⊆ L         (L is a maximal order; Coxeter 1946)
+  Lemma 4.3:  L · σ(Ls̄) ⊆ σ(Ls̄)
+              (σ(Ls̄) is a left L-module under the standard product)
+  Lemma 4.4:  σ(Ls) · σ(Ls) ⊆ σ(Ls)
+              (σ(Ls) is closed under the standard product)
+  Lemma 4.5:  σ(Ls) ≠ Ls
+              (so the twist is doing nontrivial work)
+
+The core structural point: v ·_σ w, expanded via the bilinearity
+decomposition, reduces each of Wilson's three sublattice conditions to
+a statement about standard octonion products of the σ-images of the
+input blocks.  Wilson's condition (3) becomes σ(Ls) · σ(Ls) ⊆ σ(Ls),
+which holds (Lemma 4.4); the analogous statement for Ls itself is
+*false* for the untwisted product — this is precisely the condition-3
+failure recorded in claim 007.
+
+Lemmas 4.3 and 4.4 are *finite* verifications: each asserts closure of
+a product of 8 Z-basis vectors against 8 Z-basis vectors, i.e. 64
+products per lemma.  These are discharged by exact rational arithmetic.
+
+--- COMPUTATIONAL EVIDENCE ---
+
+1. Symbolic lemma checks (exact arithmetic, fractions.Fraction):
+   python_project/src/symbolic_proof_checks.py
+   Verifies Lemmas 4.1–4.5 on explicit Z-bases; all pass.
+
+2. Random-sample verification on Min(Λ):
+   - trial_007_triple_octonion_swap.py      593,412 pairs, 0 failures
+   - trial_007_scaled_test.py             4,000,000 pairs, 0 failures
+   - trial_007_fast.py                    4,000,000 pairs, 0 failures
+   - trial_007_exhaust.py                 4,000,000 pairs, 0 failures
+   Total: 12,593,412 random minimal-vector pairs tested; 0 failures.
+
+3. Independence of the transposition:
+   All 21 transpositions of {1,…,7} are equivalent up to GL(3, F₂)
+   relabelling; verified in consistency_checks.py (check 7).
+
+--- WHAT DOES AND DOES NOT FOLLOW ---
+
+Follows:
+ - (Λ, +, ·_σ-triple) is an order in the real R-algebra (R²⁴, +, ·_σ-triple).
+ - The obstruction identified in claim 007 (failure of Wilson condition
+   (3) for type3 × type3) is specific to the *untwisted* standard
+   product in that block structure; a single transposition twist
+   removes it.
+
+Does NOT follow:
+ - Any claim about associativity, alternativity, flexibility, power-
+   associativity, unitality, or norm multiplicativity.  See Section 5
+   of the paper and the discussion in CURRENT_STATE.md: the order is
+   non-unital, non-commutative, and not norm-multiplicative.
+ - Any claim that this order is maximal, or a claim about its
+   automorphism group, its relationship to Co₀, or uniqueness up to
+   isomorphism.  These are open questions.
+
+--- REFERENCES ---
+
+[Wilson2009]   R.A. Wilson, "Octonions and the Leech lattice",
+               J. Algebra 322 (2009) 2186–2190.
+[Coxeter1946]  H.S.M. Coxeter, "Integral Cayley numbers",
+               Duke Math. J. 13 (1946) 561–578.
+[Conway-Smith] J.H. Conway, D.A. Smith, "On Quaternions and Octonions",
+               A.K. Peters, 2003.
+Paper:         paper/main.tex (this repository).
+Prior claim:   evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt

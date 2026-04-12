@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-04-11
+Last updated: 2026-04-12
 
 This document is the entry point for anyone continuing this research — human or
 AI, with or without prior context.  It summarises what has been established,
@@ -326,23 +326,41 @@ the trial, and prints detailed results.
 
 ---
 
-## What to do next
+## What has been done since the finding
 
-The finding (trial 007) establishes closure computationally.  Remaining work:
+1. **Symbolic proof complete.**  A symbolic proof of closure on Wilson's
+   three sublattice conditions is established in `paper/main.tex`
+   (Section 4, "Proof of closure").  The proof rests on five lemmas
+   about the interaction between the transposition σ, the maximal
+   order L, and the sublattices Ls and Ls̄.  The finite-case
+   verifications (Lemmas C and D, 64 Z-basis products each) are
+   executed with exact rational arithmetic in
+   `python_project/src/symbolic_proof_checks.py`.
 
-1. **Exhaustive verification** — run all 38.6 billion pairs via
+2. **Formal paper written.**  `paper/main.tex` (12 pages) contains
+   abstract, preliminaries, construction, symbolic proof, algebraic
+   properties, methodology, related work, conclusion, outlook, and
+   bibliography.  Compiles clean with pdflatex.
+
+3. **Computational verification extended.**  Over 12,000,000 random
+   minimal-vector pairs tested across multiple test harnesses
+   (`trial_007_fast.py`, `trial_007_exhaust.py`) with zero failures.
+
+## What remains open
+
+1. **Exhaustive verification** — all 38.6 billion pairs via
    `trial_007_exhaust.py --exhaustive` (~2 hours with 16 cores).
+   Not required for the symbolic proof; useful as an independent
+   check.
 
-2. **Symbolic proof** — prove closure algebraically (why the transposition
-   twist fixes Wilson's condition 3).  This would be the mathematically
-   satisfying result alongside the computational verification.
+2. **Algebraic investigation** — further characterise the order:
+   automorphism group, relationship to Co₀, whether the order is
+   maximal, what quotient algebras arise.  Partial results are in
+   Section 5 of the paper.
 
-3. **Algebraic investigation** — further characterise the order: automorphism
-   group, relationship to Co₀, whether the order is maximal, what quotient
-   algebras arise.
-
-4. **Formal paper** — write up the result.  A plan exists in
-   `/home/jens/.claude/plans/piped-hugging-teacup.md`.
+3. **Ternary reformulation** — explore whether the construction
+   factors naturally through a ternary composition algebra (Elduque),
+   in line with the Outlook section of the paper.
 
 ---
 
@@ -358,7 +376,8 @@ leech_alg/
 ├── evidence_and_reasoning/
 │   ├── key_claims/                # Logical backbone: one file per major claim
 │   │   ├── 001–006                # Foundations (Wilson, Dixon, octonions)
-│   │   └── 007                    # Triple-octonion algebra ruled out
+│   │   ├── 007                    # Untwisted triple-octonion ruled out
+│   │   └── 008                    # Transposition-twisted triple octonion: order on Λ
 │   ├── references/                # Central reference registry
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
@@ -386,7 +405,7 @@ leech_alg/
 │   │   └── consistency_checks.py  # Pre-paper verification (checks 1-10)
 │   └── tests/                     # 157 tests verifying foundations
 │
-├── prompt_logs/                   # Chronological AI interaction log (001–034)
-├── source_documents/              # Primary source PDFs
-└── research_output/               # (reserved for future experimental output)
+├── prompt_logs/                   # Chronological AI interaction log
+├── paper/                         # Formal paper: main.tex, references.bib
+└── source_documents/              # Primary source PDFs (freely redistributable)
 ```

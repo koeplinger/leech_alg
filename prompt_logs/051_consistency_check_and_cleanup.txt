@@ -1,0 +1,149 @@
+Prompt 051 -- Consistency check and cleanup before independent review
+======================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Add today's date (12 April 2026) to the paper. Then, do a documentation
+check for consistency across the artifacts in this repository. Start
+with reading the manifesto again. Check for consistent terminology.
+Update key claims, references, results, if outdated. I notice a folder
+"research_output" that looks redundant. Remove it if it is redundant.
+Clear the source_documents, double-check that I am allowed to
+distribute these freely without violating their license. If there's
+another cleanup action that would need to be done, let me know (but
+don't do it automatically). The goal of this cleanup is to send the
+entire corpus to independent review.
+
+Actions taken:
+--------------
+
+1. Paper date (paper/main.tex):
+   \date{\today}  ->  \date{12 April 2026}
+   Recompiled twice with pdflatex.  Page 1 renders "Date: 12 April
+   2026." 12 pages, all cross-references resolved, no new warnings.
+
+2. MANIFESTO re-read (MANIFESTO.md).  Grounded the consistency
+   check in its rules; in particular, Section 11 (Forward-evolving
+   corrections): mistakes and outdated claims are corrected by
+   adding a new entry, never by altering the historical record.
+   This shaped how claim 007 was handled (see point 4).
+
+3. CURRENT_STATE.md updated:
+   - Date header: 2026-04-11 -> 2026-04-12.
+   - "What to do next" section (symbolic proof / paper listed as
+     TODO) replaced by two new sections:
+       "What has been done since the finding"
+         (symbolic proof complete in paper/main.tex; 12M+ random-
+          pair verifications; paper written, compiles clean)
+       "What remains open"
+         (exhaustive 38.6B-pair verification; algebraic
+          characterisation; ternary reformulation)
+   - Repository map: research_output line removed; paper/ added;
+     key_claims line updated to include 008.
+
+4. New Key Claim 008 created -- forward-evolving correction for 007:
+   evidence_and_reasoning/key_claims/008_transposition_twist_order.txt
+   Title: "The transposition-twisted triple octonion product is an
+           order on the Leech lattice Λ"
+   Status: ESTABLISHED (symbolic proof + independent computational
+           verification).
+   Contents: relation to claim 007 (per Manifesto Section 11),
+   statement, proof outline (five lemmas Lemmas 4.1 through 4.5 of
+   the paper), computational evidence (symbolic_proof_checks.py +
+   12,593,412 random pairs), what does and does not follow,
+   references.
+   Claim 007 (2026-04-09) is left untouched; it remains accurate
+   for the family of untwisted triple-octonion algebras it covers.
+
+5. key_claims/README.md updated:
+   New row added to the Contents table for claim 008.  Existing
+   rows, status labels, naming conventions unchanged.
+
+6. Terminology check (evidence_and_reasoning/terminology.md):
+   Already up to date (last revision 2026-04-11).  The term
+   "Transposition-twisted triple octonion product" is correctly
+   defined and matches usage in paper/main.tex and CURRENT_STATE.md.
+   No change required.
+
+7. research_output/ folder removed (git rm -r research_output/).
+   Contained only a template README describing an experiments/
+   figures/ summaries/ subfolder plan that was never used.  All
+   experimental output has lived in evidence_and_reasoning/ and
+   python_project/ instead.  The folder was redundant.
+
+8. Paper recompiled (pdflatex, twice): 12 pages, no new warnings.
+   Page 1 shows "Date: 12 April 2026."
+
+Flags raised to user (not executed per user's "let me know, don't
+do it automatically" directive):
+---------------------------------------------------------------
+
+A. source_documents/ licensing.  Audit by category of the 9 PDFs:
+
+   Clearly freely redistributable:
+     - Elduque2002_OkuboAlgsWithIsotropicNorm_arXiv2210.03456v1.pdf
+       (arXiv preprint; arXiv's non-exclusive distribution license)
+     - KamiyaOkubo2015_AlgsTrialityAndS4_arXiv1503.00614.pdf
+       (arXiv preprint)
+     - MarraniCorradettiZucconi2023_OkuboInv_arXiv2309.17435.pdf
+       (arXiv preprint)
+     - SmithVojtechovsky_Okubo_2022_DocMath.pdf
+       (Documenta Mathematica, diamond open access, CC-BY)
+     - 2023_FureyHughesTrialityOkuboBrief.pdf
+       (referenced as [Koeplinger2023]; user's own preprint; user
+        holds distribution rights)
+
+   Likely NOT freely redistributable (publisher copyright on the
+   PDFs in question):
+     - wilson_2009_octonions_and_leech_lattice.pdf
+       (Journal of Algebra / Elsevier; publisher PDF is copyright
+        Elsevier; an author-accepted postprint may be permitted on
+        the author's personal page but this project's file is
+        likely the publisher version)
+     - Elduque2000_trialityAutomDerivCompAlgs_LinAlgAppl.pdf
+       (Linear Algebra and Its Applications / Elsevier; same)
+     - Elduque1996classOfTernCompAlgs.pdf
+       (Journal of the Korean Mathematical Society 1996; license on
+        older KMS issues would need to be checked individually)
+
+   Ambiguous:
+     - dixon_2010_integral_octonions_xy_product_leech_lattice.pdf
+       (Dixon's unpublished preprint from www.7stones.com; no
+        explicit license statement; would need author's consent for
+        third-party redistribution)
+
+   Recommendation to user:
+     Before publishing the corpus publicly, remove the three Elsevier
+     / KMS PDFs (Wilson 2009, Elduque 2000, Elduque 1996) and the
+     Dixon preprint, and replace each reference entry with a link to
+     the publisher's DOI and, where available, the author's own
+     postprint.  The arXiv and Doc. Math. PDFs are safe to keep.
+     The user's own preprint (FureyHughes/Koeplinger 2023) is the
+     user's decision.
+
+B. Other cleanup actions flagged (not executed):
+
+   B1. paper/ is not referenced from README.md's "Repository layout"
+       section.  Consider adding a paper/ entry pointing to
+       paper/main.pdf and the BibTeX file.
+
+   B2. prompt_logs/README.md summary table may not cover the 044-050
+       wording-tweak entries.  Consider a one-line-per-prompt update.
+
+   B3. .claude/ is gitignored (prompt 046) but .claude/settings.json
+       may still be cached in git index -- verify with
+       `git ls-files .claude/` and, if still tracked, commit the
+       removal.
+
+   B4. No LICENSE file at the repository root.  For a corpus intended
+       for independent review, consider adding one (e.g., CC-BY-4.0
+       for text/evidence, MIT for code).
+
+   B5. The paper's acknowledgements / methodology points to a
+       "publicly available" repository at
+       https://bitbucket.org/jenskoeplinger/leech_alg -- verify the
+       repository has been pushed there and is public.
+
+None of B1-B5 were executed; they are reported for the user's
+decision per the user's directive.
