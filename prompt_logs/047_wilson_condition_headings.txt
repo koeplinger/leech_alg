@@ -1,0 +1,56 @@
+Prompt 047 -- Wilson Condition (i) subsection headings; Def 2.3
+                 cross-reference; Proposition 4.10 wording tweak
+==================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+Yes, the flag you're pointing out to me needs correction: The
+section title "4.3 Condition 1: ..." leaves the reader unclear
+what this is. Change this section heading (and 4.4 and 4.5 section
+headings accordingly) to read "... Wilson Condition (1): ...",
+"...(2)...", and "...(3)...", respectively. Then, make a reference
+to definition 2.3 so that the reader knows what those conditions
+are. Then, in the text of Proposition 4.10 replace "satisfies
+conditions (1) and (2) of Definition 2.3" with "satisfies Wilson's
+conditions (1) and (2) per Definition 2.3"
+
+Actions taken:
+--------------
+1. Section 4 intro (paper/main.tex, "Proof of closure"):
+   Added a hot-linked parenthetical "(Definition~\ref{def:wilson-
+   leech})" to the opening sentence, so the reader has a single
+   canonical place to hover and recall what Wilson's three
+   conditions are.  This is the requested "reference to
+   Definition 2.3".
+
+2. Subsection headings 4.3, 4.4, 4.5:
+   - "Condition~1: each block lies in~$L$"
+     -> "Wilson Condition~(1): each block lies in~$L$"
+   - "Condition~2: pairwise sums lie in~$L\bar{s}$"
+     -> "Wilson Condition~(2): pairwise sums lie in~$L\bar{s}$"
+   - "Condition~3: the block sum lies in~$Ls$"
+     -> "Wilson Condition~(3): the block sum lies in~$Ls$"
+   Round-bracketed numerals match Definition 2.3's own style and
+   the "Wilson" qualifier disambiguates the conditions.  No
+   per-subsection \ref to Definition 2.3 in the headings
+   themselves --- keeping headings short; the forward reference
+   from the Section 4 intro covers the reader's need.
+
+3. Proposition 4.10 statement:
+      Before: "satisfies conditions~(1) and~(2) of
+               Definition~\ref{def:wilson-leech} for all
+               u, v in Lambda, but not~(3)."
+      After:  "satisfies Wilson's conditions~(1) and~(2) per
+               Definition~\ref{def:wilson-leech} for all
+               u, v in Lambda, but not~(3)."
+
+4. Recompiled paper twice (pdflatex): 12 pages, all cross-
+   references resolved, no new warnings.
+
+Notes:
+- The proofs of Propositions 4.7, 4.8, 4.9 still reference
+  Wilson's conditions by bare number ("condition 1 gives",
+  etc.).  This was flagged in prompt 046 and remains open.
+  Not addressed in this prompt; the user's scope here was
+  headings + Prop 4.10 statement only.

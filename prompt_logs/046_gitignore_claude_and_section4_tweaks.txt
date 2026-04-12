@@ -1,0 +1,120 @@
+Prompt 046 -- Gitignore .claude; Section 4 lemma re-labelling,
+               Prop 4.10 definition reference, remove Remark 4.11
+==================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+I just notice that the .claude folder is checked into the repo. Mark
+it git ignored and remove it from being tracked going forward. This
+is a security risk for anyone who wants to check out the entire repo
+and use Claude to run things.
+
+Now continuing with the wording change in the paper and looking at
+section 4:
+
+The lemmas 4.1 through 4.5 are nicely enumerated, no need to
+introduce another labelling lemma A through E. Use the numeric one
+instead, and make it just like all other references hotlinked (the
+existing paper default for cross-references) so that the reader of
+the PDF
+
+In proposition 4.10 make a reference to Definition 2.3 so that the
+user can hover over the PDF and see the enumerated conditions. Make
+the enumeration in round brackets to guide the eye as this is how
+it's written in definition 2.3 (and I like it that way).
+
+In remark 4.11 remove "The mechanism is now clear."  ... and
+reading over it, I think it's too repetitive. At this point, if a
+reader is unclear or requires clarification, I think they need to
+look for themselves in the earlier sections. Repeating them wouldn't
+be helpful to me. So I think the entire remark 4.11 needs to be
+removed.
+
+Actions taken:
+--------------
+A. Repository hygiene (.claude folder):
+   1. Inspected .claude/ contents:
+         .claude/settings.json        (tracked)
+         .claude/settings.local.json  (untracked, already local)
+   2. Reviewed settings.json to confirm no secret material --- it
+      holds Bash/Read permission allow-lists used by the local
+      Claude Code installation.  Nonetheless, the allow-list is a
+      per-user surface and should not be committed (a checkout
+      inheriting someone else's allow-list is the security risk
+      the user flagged).
+   3. git rm --cached .claude/settings.json  (file kept on disk,
+      untracked going forward).
+   4. Appended to .gitignore:
+         # Claude Code local settings (not for sharing)
+         .claude/
+      This covers both the currently tracked file and any future
+      .claude/ additions (projects, history, session files).
+   5. git status now shows the deletion of .claude/settings.json
+      staged and .gitignore modified; no commit made (manifesto:
+      only commit when explicitly asked, and the user did not ask).
+
+B. Paper (paper/main.tex), Section 4 lemma labelling:
+   6. Removed the manual optional headers [Lemma A] ... [Lemma E]
+      from the five lemma environments so the amsart numbering
+      "Lemma 4.1" ... "Lemma 4.5" appears alone.
+   7. Replaced every in-text A-E reference with a hot-linked
+      cross-reference using the paper's existing default style
+      (Lemma~\ref{...}):
+         Lemma~A -> Lemma~\ref{lem:sigma-L}
+         Lemma~B -> Lemma~\ref{lem:L-order}
+         Lemma~C -> Lemma~\ref{lem:L-sigmaLsbar}
+         Lemma~D -> Lemma~\ref{lem:sigmaLs-closed}
+         Lemma~E -> Lemma~\ref{lem:sigmaLs-neq-Ls}
+      Covered sites:
+         lines 419 (Lemma 4.5 proof "as in Lemma C")
+         line 439 (Remark rem:Ls-not-closed)
+         lines 452-455 (Prop cond1 proof)
+         line 479 (Prop cond2 proof)
+         line 481 (Prop cond2 proof)
+         line 514 (Prop cond3 proof)
+         line 534 (Prop std-fails proof, "Lemmas A and B")
+         line 643 (methodology, "Lemmas C and D")
+         line 726 (Outlook, "the crux is Lemma D")
+      All references compile cleanly and hyperref resolves them.
+
+C. Proposition 4.10 (prop:std-fails):
+   8. Added a label \label{def:wilson-leech} to Definition 2.3
+      (Wilson's Leech lattice), which previously had no label.
+   9. Rewrote the proposition statement to hotlink Definition 2.3
+      and use round-bracketed enumeration matching the bracketing
+      style used inside Definition 2.3:
+         Before: "satisfies Wilson's conditions 1 and 2 for all
+                  u, v in Lambda, but fails condition 3."
+         After:  "satisfies conditions (1) and (2) of
+                  Definition~\ref{def:wilson-leech} for all
+                  u, v in Lambda, but not (3)."
+      Also switched "fails" to "not", per the positive-wording
+      convention established in prompts 043-044.
+  10. Updated the proof of Proposition 4.10 for consistency:
+      "Conditions 1 and 2" -> "Conditions (1) and (2)";
+      "For condition 3" -> "For condition (3)".
+      Scope kept narrow to Proposition 4.10; other proofs in
+      Section 4 (cond1, cond2, cond3) still use unbracketed
+      condition numbers, flagged below.
+
+D. Remark 4.11 (rem:mechanism):
+  11. Removed the entire remark (13 lines of LaTeX).  Nothing
+      else referenced it; no fix-ups needed.
+
+E. Recompile:
+  12. pdflatex run twice (to resolve forward references); output:
+      12 pages, all cross-references resolved.  No new warnings
+      beyond the pre-existing hyperref Unicode-bookmark notices.
+
+Parallel-wording observation flagged to user (no change made):
+--------------------------------------------------------------
+The proofs of Propositions 4.7 (cond1), 4.8 (cond2), and 4.9
+(cond3) still reference Wilson's conditions by bare number
+("condition 1 gives", "condition 2 gives", "condition 3 gives").
+For full consistency with Proposition 4.10, these could be
+changed to the round-bracketed, hot-linked form
+"condition~(i) of Definition~\ref{def:wilson-leech} gives"
+(or just "(1) of Def.~2.3 gives", etc.).  Left untouched pending
+user decision, because the scope of prompt 046 was Prop 4.10
+specifically.

@@ -223,6 +223,7 @@ $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$
 \cite{Wilson2009}.
 
 \begin{definition}[Wilson {\cite[Section~3]{Wilson2009}}]
+\label{def:wilson-leech}
 The \emph{Leech lattice} is
 \[
   \LL = \bigl\{ (x,y,z) \in L^3 :
@@ -340,7 +341,8 @@ All nine block-pair products use the same multiplication~$\cdot_\sigma$.
 % ===============================================================
 
 We prove Theorem~\ref{thm:main} by showing that the twisted product
-preserves each of Wilson's three conditions.  The proof rests on five
+preserves each of Wilson's three conditions
+(Definition~\ref{def:wilson-leech}).  The proof rests on five
 lemmas about the interaction between the transposition~$\sigma$, the
 maximal order~$L$, and the sublattices $Ls$ and~$L\bar{s}$.
 
@@ -373,7 +375,7 @@ Taking sums:
 
 \subsection{The five lemmas}
 
-\begin{lemma}[Lemma A]\label{lem:sigma-L}
+\begin{lemma}\label{lem:sigma-L}
 $\sigma(L) = L$.
 \end{lemma}
 
@@ -386,7 +388,7 @@ sum.  Hence $\sigma(L) \subseteq L$.  Since $\sigma$ is an involution,
 $\sigma(L) = L$.
 \end{proof}
 
-\begin{lemma}[Lemma B]\label{lem:L-order}
+\begin{lemma}\label{lem:L-order}
 $L \cdot L \subseteq L$.
 \end{lemma}
 
@@ -395,7 +397,7 @@ $L$ is a maximal order in~$\OO$
 \cite{Coxeter1946, ConwaySmith2003}.
 \end{proof}
 
-\begin{lemma}[Lemma C]\label{lem:L-sigmaLsbar}
+\begin{lemma}\label{lem:L-sigmaLsbar}
 $L \cdot \sigma(L\bar{s}) \subseteq \sigma(L\bar{s})$.
 \end{lemma}
 
@@ -411,16 +413,16 @@ floating point) on explicit bases.  All 64 products lie
 in~$\sigma(L\bar{s})$.
 \end{proof}
 
-\begin{lemma}[Lemma D]\label{lem:sigmaLs-closed}
+\begin{lemma}\label{lem:sigmaLs-closed}
 $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
 \end{lemma}
 
 \begin{proof}
-As in Lemma~C, verified on $\ZZ$-bases by exact arithmetic: all 64
+As in Lemma~\ref{lem:L-sigmaLsbar}, verified on $\ZZ$-bases by exact arithmetic: all 64
 products of basis vectors of~$\sigma(Ls)$ lie in~$\sigma(Ls)$.
 \end{proof}
 
-\begin{lemma}[Lemma E]\label{lem:sigmaLs-neq-Ls}
+\begin{lemma}\label{lem:sigmaLs-neq-Ls}
 $\sigma(Ls) \neq Ls$.
 \end{lemma}
 
@@ -436,10 +438,10 @@ The sublattice~$Ls$ is \emph{not} closed under the standard octonion
 product: there exist basis vectors $a, b \in Ls$ with $a \cdot b
 \notin Ls$.  This is precisely the obstruction that the twist
 resolves: it moves the block-sum sublattice from~$Ls$ to~$\sigma(Ls)$,
-where closure holds by Lemma~D.
+where closure holds by Lemma~\ref{lem:sigmaLs-closed}.
 \end{remark}
 
-\subsection{Condition~1: each block lies in~$L$}
+\subsection{Condition~(1): each block lies in~$L$}
 
 \begin{proposition}\label{prop:cond1}
 For all $u, v \in \LL$, each block $P_\alpha$ of $u \star v$ lies
@@ -448,15 +450,17 @@ in~$L$.
 
 \begin{proof}
 Consider $P_1 = \sigma(X \cdot X' + Z \cdot Y' + Y \cdot Z')$.
-Since $u \in \LL$, condition~1 gives $x \in L$, so
-$X = \sigma(x) \in L$ by Lemma~A.  Similarly $X', Y, Y', Z, Z' \in L$.
-By Lemma~B, each product $X \cdot X'$, $Z \cdot Y'$, $Y \cdot Z'$ lies
-in~$L$.  Their sum lies in~$L$ (closed under addition).  Applying
-$\sigma$ and using Lemma~A, $P_1 \in L$.  The same argument applies to
+Since $u \in \LL$, condition~(1) gives $x \in L$, so
+$X = \sigma(x) \in L$ by Lemma~\ref{lem:sigma-L}.  Similarly
+$X', Y, Y', Z, Z' \in L$.
+By Lemma~\ref{lem:L-order}, each product $X \cdot X'$, $Z \cdot Y'$,
+$Y \cdot Z'$ lies in~$L$.  Their sum lies in~$L$ (closed under
+addition).  Applying $\sigma$ and using Lemma~\ref{lem:sigma-L},
+$P_1 \in L$.  The same argument applies to
 $P_2$ and~$P_3$.
 \end{proof}
 
-\subsection{Condition~2: pairwise sums lie in~$L\bar{s}$}
+\subsection{Condition~(2): pairwise sums lie in~$L\bar{s}$}
 
 \begin{proposition}\label{prop:cond2}
 For all $u, v \in \LL$, the pairwise sums $P_\alpha + P_\beta$ lie
@@ -473,12 +477,12 @@ From \eqref{eq:P1-std}--\eqref{eq:P2-std}:
     + Z \cdot (X' + Y')\bigr).
 \]
 
-Since $v \in \LL$, condition~2 gives $x' + z' \in L\bar{s}$, so
+Since $v \in \LL$, condition~(2) gives $x' + z' \in L\bar{s}$, so
 $X' + Z' = \sigma(x' + z') \in \sigma(L\bar{s})$.  Similarly
 $Y' + Z' \in \sigma(L\bar{s})$ and $X' + Y' \in \sigma(L\bar{s})$.
-Since $u \in \LL$, we have $X, Y, Z \in L$ (by Lemma~A).
+Since $u \in \LL$, we have $X, Y, Z \in L$ (by Lemma~\ref{lem:sigma-L}).
 
-By Lemma~C, each product $X \cdot (X'+Z')$, $Y \cdot (Y'+Z')$,
+By Lemma~\ref{lem:L-sigmaLsbar}, each product $X \cdot (X'+Z')$, $Y \cdot (Y'+Z')$,
 $Z \cdot (X'+Y')$ lies in~$\sigma(L\bar{s})$.  Their sum lies
 in~$\sigma(L\bar{s})$.  Applying the outer~$\sigma$:
 \[
@@ -488,7 +492,7 @@ in~$\sigma(L\bar{s})$.  Applying the outer~$\sigma$:
 since $\sigma^2 = \mathrm{id}$.
 \end{proof}
 
-\subsection{Condition~3: the block sum lies in~$Ls$}
+\subsection{Condition~(3): the block sum lies in~$Ls$}
 
 This is the crux of the proof.  For the standard (untwisted) product
 the block sum would require $Ls \cdot Ls \subseteq Ls$, which does
@@ -505,13 +509,13 @@ From \eqref{eq:P1-std}--\eqref{eq:P3-std}:
   P_1 + P_2 + P_3 = \sigma\bigl((X+Y+Z) \cdot (X'+Y'+Z')\bigr).
 \]
 
-Since $u \in \LL$, condition~3 gives $x + y + z \in Ls$, so
+Since $u \in \LL$, condition~(3) gives $x + y + z \in Ls$, so
 \[
   X + Y + Z = \sigma(x+y+z) \in \sigma(Ls).
 \]
 Similarly $X' + Y' + Z' \in \sigma(Ls)$.
 
-By Lemma~D, $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$, so
+By Lemma~\ref{lem:sigmaLs-closed}, $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$, so
 \[
   (X+Y+Z) \cdot (X'+Y'+Z') \in \sigma(Ls).
 \]
@@ -526,35 +530,22 @@ Applying the outer~$\sigma$:
 \begin{proposition}\label{prop:std-fails}
 The standard (untwisted) triple-octonion product $\star_{\mathrm{std}}$
 (using~$\cdot$ in place of~$\cdot_\sigma$) satisfies Wilson's
-conditions~1 and~2 for all $u, v \in \LL$, but fails condition~3.
+conditions~(1) and~(2) per Definition~\ref{def:wilson-leech} for
+all $u, v \in \LL$, but not~(3).
 \end{proposition}
 
 \begin{proof}
-Conditions~1 and~2 for $\star_{\mathrm{std}}$ follow from
-Lemmas~A and~B (with $\sigma = \mathrm{id}$, so $X = x$, etc.)
+Conditions~(1) and~(2) for $\star_{\mathrm{std}}$ follow from
+Lemmas~\ref{lem:sigma-L} and~\ref{lem:L-order} (with $\sigma = \mathrm{id}$, so $X = x$, etc.)
 and the fact that $L \cdot L\bar{s} \subseteq L\bar{s}$ (verified
 on $\ZZ$-bases: all 64 products check).
 
-For condition~3, the block sum becomes
+For condition~(3), the block sum becomes
 $(x+y+z) \cdot (x'+y'+z')$ with both factors in~$Ls$.  This requires
 $Ls \cdot Ls \subseteq Ls$, which fails: the product of two explicit
 $Ls$-basis vectors yields an element outside~$Ls$
 (Remark~\ref{rem:Ls-not-closed}).
 \end{proof}
-
-\begin{remark}\label{rem:mechanism}
-The mechanism is now clear.  The twist introduces $\sigma$ in two
-places: it maps the inputs through~$\sigma$ (sending $Ls$ to
-$\sigma(Ls)$) and applies $\sigma$ to the output (sending $\sigma(Ls)$
-back to~$Ls$).  The standard product leaves this block-sum sublattice
-un-closed: $Ls \cdot Ls \not\subseteq Ls$.  By Lemma~E,
-$\sigma(Ls) \neq Ls$, so the twist moves the block-sum sublattice
-to a \emph{different} sublattice of~$L$ that \emph{is} closed
-(Lemma~D).  The isomorphism between $(\OO, \cdot)$ and
-$(\OO, \cdot_\sigma)$ does not by itself explain closure --- what
-matters is the interaction between the permutation and the specific
-sublattice geometry of Wilson's construction.
-\end{remark}
 
 This completes the proof of Theorem~\ref{thm:main}. \qed
 
@@ -640,7 +631,7 @@ random pairs of minimal vectors with zero failures before the
 symbolic proof was found.
 
 The symbolic proof (Section~\ref{sec:proof}) and the exact-arithmetic
-verifications of Lemmas~C and~D use Python's \texttt{fractions.Fraction}
+verifications of Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed} use Python's \texttt{fractions.Fraction}
 type, operating entirely in~$\mathbb{Q}$ with no floating-point
 arithmetic.  The $\ZZ$-basis checks involve solving 64 systems of
 8~linear equations each, all yielding integer solutions.
@@ -723,7 +714,7 @@ The Leech lattice admits an order under a remarkably simple
 construction: three identical copies of a transposition-twisted
 octonion algebra with $\ZZ_3$ routing.  The symbolic proof
 (Section~\ref{sec:proof}) reduces closure to five lemmas, of which
-the crux is Lemma~D: the sublattice $\sigma(Ls)$ --- unlike~$Ls$
+the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice $\sigma(Ls)$ --- unlike~$Ls$
 itself --- is closed under the standard octonion product.  The twist
 maps the condition-3 sublattice to this closed sublattice, and the
 involutory nature of~$\sigma$ maps the result back.

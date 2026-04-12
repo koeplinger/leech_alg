@@ -1,0 +1,39 @@
+Prompt 048 -- Drop "Wilson" from subsection headings; round-
+                bracket condition numbers in proofs 4.7, 4.8, 4.9
+==================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+After reading the updates, change the section headings 4.3, 4.4,
+and 4.5 to remove the word "Wilson" (you already have it added
+nicely at the beginning of section 4 so that is ok). Then then,
+yes, update the formatting in proofs 4.7, 4.8, and 4.9 to put the
+number of the condition in round brackets. Keep all other edits.
+from earlier.
+
+Actions taken:
+--------------
+1. Subsection headings (paper/main.tex):
+   - "Wilson Condition~(1): each block lies in~$L$"
+       -> "Condition~(1): each block lies in~$L$"
+   - "Wilson Condition~(2): pairwise sums lie in~$L\bar{s}$"
+       -> "Condition~(2): pairwise sums lie in~$L\bar{s}$"
+   - "Wilson Condition~(3): the block sum lies in~$Ls$"
+       -> "Condition~(3): the block sum lies in~$Ls$"
+   The Section 4 intro still carries the hot-link
+   "(Definition~\ref{def:wilson-leech})", so the Wilson
+   attribution is kept in a single canonical place.
+
+2. Proofs of Propositions 4.7, 4.8, 4.9:
+   - 4.7 proof: "condition~1 gives" -> "condition~(1) gives"
+   - 4.8 proof: "condition~2 gives" -> "condition~(2) gives"
+   - 4.9 proof: "condition~3 gives" -> "condition~(3) gives"
+   No change to Proposition 4.10 (already done in prompt 047) or
+   to the methodology section's reference to "condition~3,
+   exclusively type-3 x type-3" (that sentence describes the
+   investigation process, not a formal reference to Wilson's
+   conditions).
+
+3. Recompiled paper twice (pdflatex): 12 pages, all cross-
+   references resolved, no new warnings.

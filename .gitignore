@@ -48,3 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+
+# Claude Code local settings (not for sharing)
+.claude/
