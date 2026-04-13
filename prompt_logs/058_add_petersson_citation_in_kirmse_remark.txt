@@ -1,0 +1,41 @@
+Prompt 058 -- Ensure Petersson [17] is cited; add it to the Kirmse
+                 remark
+=====================================================================
+Date: 2026-04-12
+
+User prompt (verbatim):
+-----------------------
+I have made a small tweak to the abstract by removing a detail that is
+elaborated in the paper properly. Now I can't find that the Petersson
+reference [17] is actually used. That reference is important to me,
+and to the least should be added in the remark around Kirmse's mistake
+that currently only references Kirmse's work [16]. A minimal update
+should suffice, i.e., to simply add [17] as a reference here, too.
+
+Actions taken:
+--------------
+
+1. paper/main.tex, Remark "Kirmse's convention versus ours"
+   (label rem:kirmse, line ~185):
+
+   Before:
+     There are seven such Coxeter-corrected conventions, each giving
+     one of the seven maximal orders of the integral
+     octonions~\cite{ConwaySmith2003}.
+
+   After:
+     There are seven such Coxeter-corrected conventions, each giving
+     one of the seven maximal orders of the integral
+     octonions~\cite{ConwaySmith2003}; see also
+     Petersson~\cite{Petersson2018} for a modern account.
+
+   This is the minimal edit requested: \cite{Petersson2018} added in
+   the same remark where Kirmse and Coxeter are already cited.  The
+   framing "see also ... for a modern account" is accurate to what
+   Petersson's 2018 lecture "Integral octonions" is (a survey of the
+   Kirmse-Coxeter correction and its modern context) and does not
+   misattribute the historical correction.
+
+2. Recompiled paper twice (pdflatex): 12 pages, 308,751 bytes.  All
+   cross-references resolved, no new warnings.  Petersson's bib
+   entry [Petersson2018] is now cited.
