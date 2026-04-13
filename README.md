@@ -54,11 +54,20 @@ multiplication.
   (the transposition-twisted product is an order on Λ).
 
 **Open questions:**
-- Algebraic properties (identity, alternativity, norm multiplicativity).
+- Algebraic properties as a binary product have been characterised on
+  Min(Λ): the order is non-unital, non-commutative, not
+  norm-multiplicative, and fails alternativity, flexibility, and
+  power-associativity (see Section 5 of the paper and
+  [CURRENT_STATE.md](CURRENT_STATE.md)).  Open: whether any of these
+  negative findings admits a tighter structural statement on Λ
+  itself rather than on random samples of Min(Λ).
 - Maximality of the order.
 - Relationship to the Conway group Co₀ = Aut(Λ).
-- Whether a ternary reformulation (via composition algebras in the sense of
-  Elduque) gives a more natural classification.
+- Whether a **ternary** reformulation (via composition algebras in the
+  sense of Elduque, or via Okubo's ternary structure) gives a more
+  natural classification — the rigid Z₃ cross-block routing and the
+  order-3 automorphism content of the construction both point that
+  way.  This is the principal direction suggested for future work.
 
 ## Running the Code
 

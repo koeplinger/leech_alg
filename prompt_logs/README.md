@@ -86,3 +86,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [054_remove_other_arxiv_pdfs.txt](054_remove_other_arxiv_pdfs.txt) | Correction to prompt 052: 3 remaining arXiv PDFs also under nonexclusive-distrib license; removed and relinked |
 | [055_gitignore_latex_artifacts_and_test_run.txt](055_gitignore_latex_artifacts_and_test_run.txt) | LaTeX build artifacts gitignored; requirements.txt confirmed; 197-test suite passes on HEAD; stale test counts updated |
 | [056_refresh_readme_files.txt](056_refresh_readme_files.txt) | Refreshed python_project/, src/, tests/ READMEs (stubs/stale) and evidence_and_reasoning/ index (added claim 008, trial 007) |
+| [057_readme_open_questions_precision.txt](057_readme_open_questions_precision.txt) | README "Open questions": binary-property bullet tightened to reflect completed testing; ternary-reformulation bullet strengthened as the principal direction for future work |
