@@ -85,3 +85,4 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 | [053_dixon_arxiv_and_doi_hotlink.txt](053_dixon_arxiv_and_doi_hotlink.txt) | Dixon 2010 pointed to arXiv:1011.2541 across refs/paper; Koeplinger 2023 DOI turned into a hotlink in the paper |
 | [054_remove_other_arxiv_pdfs.txt](054_remove_other_arxiv_pdfs.txt) | Correction to prompt 052: 3 remaining arXiv PDFs also under nonexclusive-distrib license; removed and relinked |
 | [055_gitignore_latex_artifacts_and_test_run.txt](055_gitignore_latex_artifacts_and_test_run.txt) | LaTeX build artifacts gitignored; requirements.txt confirmed; 197-test suite passes on HEAD; stale test counts updated |
+| [056_refresh_readme_files.txt](056_refresh_readme_files.txt) | Refreshed python_project/, src/, tests/ READMEs (stubs/stale) and evidence_and_reasoning/ index (added claim 008, trial 007) |

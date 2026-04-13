@@ -1,19 +1,33 @@
 # Tests
 
-This folder contains the test suite for the Python project.
+Test suite for the Python project.  197 tests verify every shared tool used by the trials and by the symbolic proof.
+
+Run the full suite from `python_project/`:
+
+```bash
+python3 -m pytest tests/ -v
+```
 
 ## Contents
 
-*(To be populated as the project develops.)*
+| File | Subject |
+|---|---|
+| `test_octonions.py` | Octonion algebra: structure constants, Fano-plane rule, composition (norm-multiplicativity), Dixon X-product |
+| `test_e8_wilson.py` | Wilson's E8 lattice L: 240-root enumeration, membership test, structural element s |
+| `test_e8_dixon.py` | Dixon's E8 constructions Ξ^even and A^odd: enumeration, lattice properties, integrality |
+| `test_leech_wilson.py` | Wilson's Leech lattice Λ: 196,560 minimal vectors, three-condition membership test, type-1/2/3 decomposition |
+| `test_leech_dixon.py` | Dixon's Leech lattice: 196,560 minimal vectors, comparison with Wilson's embedding (17,232 shared vectors) |
+| `test_okubo.py` | Okubo algebra: Petersson construction, order-3 automorphism τ validation, structure constants |
 
-## Test Categories
+## Categories
 
-- **Unit tests**: Verify individual functions and modules in isolation.
-- **Mathematical validation tests**: Confirm that computed results match known or expected mathematical properties.
-- **Sampling tests**: Verify correctness of random sampling procedures, including reproducibility under fixed seeds.
+- **Unit tests**: individual functions and modules in isolation.
+- **Mathematical validation tests**: computed results match known properties (root counts, lattice determinants, composition law).
+- **Cross-construction tests**: Wilson and Dixon implementations agree where they should and differ where they should.
 
 ## Guidelines
 
-- Tests must be self-contained and runnable without external services.
-- Each test file should correspond to a source module where possible.
-- Test names should clearly describe what property or behavior is being verified.
+- Tests are self-contained and runnable without external services.
+- Each test file corresponds to a source module.
+- Test names describe the property or behaviour being verified.
+- Random tests use fixed seeds for reproducibility.

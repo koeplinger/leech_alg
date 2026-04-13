@@ -16,10 +16,13 @@ This folder serves two functions:
 
 ```
 evidence_and_reasoning/
-├── key_claims/        # One file per major claim or lemma, with argument and references
-├── references/        # Central registry of all cited works, organized by topic
-├── trial_NNN_*.md     # Results of each computational trial
-└── README.md          # This file
+├── key_claims/           # One file per major claim or lemma, with argument and references
+├── references/           # Central registry of all cited works, organized by topic
+├── trial_NNN_*.md        # Results of each computational trial (001–007)
+├── research_statement.md # Refined statement of the research goal
+├── research_result.md    # Condensed summary of the finding (transposition-twisted product)
+├── terminology.md        # Authoritative glossary of terms used across the corpus
+└── README.md             # This file
 ```
 
 ## Key claims (logical backbone)
@@ -34,7 +37,8 @@ See [key_claims/README.md](key_claims/README.md) for the full index.
 | 004 | Wilson's three families give the 196,560 Leech lattice minimal vectors | ESTABLISHED |
 | 005 | Dixon's three families give a different embedding of the Leech minimal shell | ESTABLISHED |
 | 006 | Double-check of Wilson/Dixon; order question confirmed OPEN | ESTABLISHED / OPEN |
-| 007 | **Triple-octonion algebra comprehensively ruled out** | ESTABLISHED |
+| 007 | Untwisted triple-octonion algebra comprehensively ruled out | ESTABLISHED |
+| 008 | **Transposition-twisted triple octonion product is an order on Λ** | ESTABLISHED |
 
 ## Trial results
 
@@ -46,6 +50,7 @@ See [key_claims/README.md](key_claims/README.md) for the full index.
 | 004 | Triple-octonion + E8 automorphism basis changes | FAIL: identity is optimal | [trial_004_results.md](trial_004_results.md) |
 | 005 | Triple Okubo/para-octonion (base + 1,536 discrete variants) | FAIL: √3 leaves E8 | [trial_005_results.md](trial_005_results.md) |
 | 006 | Triple Okubo/para-octonion + E8 automorphism basis changes | FAIL: √3 not absorbable | [trial_006_results.md](trial_006_results.md) |
+| 007 | Transposition-twisted triple octonion (the order on Λ) | **PASS**: 12.5M+ random pairs, 0 failures; symbolic proof in [paper/main.tex](../paper/main.tex) | [trial_007_results.md](trial_007_results.md) |
 
 ## Guidelines
 
