@@ -11,7 +11,7 @@
 \newcommand{\RR}{\mathbb{R}}
 
 \newtheorem*{observation}{Observation}
-\newtheorem*{example}{Example}
+\newtheorem{example}{Example}[section]
 
 \title[A companion note on the $\sigma$-twist]%
 {A companion note\\
@@ -528,6 +528,82 @@ $\sigma$ fixes~$L$ but not~$Ls$, and this is what allows the twist
 to change the closure question for~$Ls$.  One level up, $\sigma$
 fixes~$\OO_1 \oplus \OO_2 \oplus \OO_3$ but not~$\LL$, and this is
 what allows the twist to change the closure question for~$\LL$.
+
+% ===================================================================
+\section{Could the $\sigma$-twist undo Coxeter's fix?}
+% ===================================================================
+
+A natural concern:\ Coxeter's correction~$\kappa$ of Kirmse swaps two
+Fano triples in the multiplication table, producing a convention
+under which the $E_8$ lattice~$L$ closes.  Our~$\sigma$ is also a
+transposition.  Could a poor choice of~$\sigma$ effectively reverse
+Coxeter's swap and return us to Kirmse's 1924 regime, where~$L$
+fails to close?
+
+The answer is no, for a reason that is worth surfacing because it
+also explains why~$\sigma$ can help at all.  Coxeter's~$\kappa$ and
+our~$\sigma$ act at different structural levels:
+
+\begin{itemize}
+\item Coxeter's~$\kappa$ is a transposition of \emph{Fano
+  triples}.\ It modifies the octonion multiplication table globally:\
+  the products of \emph{all} basis vectors whose Fano lines are
+  touched are rewritten.
+\item Our~$\sigma$ is a transposition of \emph{coordinate axes}.\ It
+  is a linear involution of $\RR^8$ that extends to the multiplication
+  by conjugation, $a \cdot_\sigma b = \sigma(\sigma(a) \cdot
+  \sigma(b))$.
+\end{itemize}
+
+Most coordinate-level transpositions do \emph{not} correspond to
+Fano-triple permutations; for instance, with our conventions
+$\sigma = (1\;2)$ does not send the triple $(2,3,5)$ to any of the
+other six listed in~\eqref{eq:fano}, so the Fano plane's line
+structure is not preserved by~$\sigma$ at all.\ In particular,
+$\sigma$ cannot be $\kappa^{-1}$\ because~$\kappa$ \emph{is} a
+rearrangement of lines while~$\sigma$ is not.
+
+Beyond this structural separation, there is a stronger and more
+directly relevant guarantee.  The sub-lattice~$L$ is invariant
+under~$\sigma$:
+\[
+  \sigma(L) = L
+  \qquad \text{(Lemma A of the main paper).}
+\]
+Coxeter's correction is a statement about~$L$:\ under his corrected
+convention, $L \cdot L \subseteq L$.\ Because~$\sigma$ fixes~$L$, the
+$\sigma$-twisted product inherits this closure directly:
+\[
+  L \cdot_\sigma L
+  \;=\; \sigma\bigl(\sigma(L) \cdot \sigma(L)\bigr)
+  \;=\; \sigma(L \cdot L)
+  \;\subseteq\; \sigma(L)
+  \;=\; L.
+\]
+So regardless of which coordinate transposition~$\sigma$ we choose
+(so long as $\sigma(L) = L$, which holds for any permutation of the
+imaginary axes that preserves the $D_8^+$ structure), Coxeter's $E_8$
+closure is automatically preserved.  Kirmse's 1924 regime, which
+failed at the level of~$L$ itself, cannot be reached from Coxeter's
+convention by a twist that fixes~$L$.
+
+What the $\sigma$-twist \emph{does} change is how the product sees
+sub-lattices of~$L$ that~$\sigma$ does not fix --- in our case,
+$Ls$.\ Here~$\sigma(Ls) \ne Ls$ (explicit witness in item~1 of the
+next section), and this is precisely what allows the twist to
+resolve Wilson's
+condition~(3) without touching conditions~(1) or~(2).  The two
+corrections --- Coxeter's~$\kappa$ at the Fano-triple level, and
+our~$\sigma$ at the coordinate level --- are therefore acting on
+different strata of the same construction:\ Coxeter's fixes the
+$E_8$ stratum once and for all; ours redirects a strictly
+finer-grained sub-lattice question that Coxeter's convention, while
+necessary, does not by itself settle.
+
+In short: Coxeter's~$\kappa$ is not a linear map on~$\RR^8$ at all
+(it is a rearrangement of the multiplication table); our~$\sigma$
+is a linear map on~$\RR^8$ that happens to fix~$L$ on the nose.
+There is no route along the $\sigma$-family back to Kirmse's regime.
 
 % ===================================================================
 \section{Summary of concrete data}

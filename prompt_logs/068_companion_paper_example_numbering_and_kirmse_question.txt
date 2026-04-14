@@ -1,0 +1,87 @@
+Prompt 068 — Companion paper: example numbering + "could σ undo Coxeter?" question
+==================================================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+I read through the companion paper. The examples don't show the
+enumeration but you're referencing them numerically. Then a question:
+If the Coxeter sigma is a twist that turns a given octonion algebra
+into one that closes on the E_8 lattice, and now we're applying
+another sigma twist that closes on all E_8 sublattices per Wilson's
+construction, wouldn't it be possible to find exactly that first
+Coxeter-Kirmse-twist that way, effectively undoing it, and running
+into Kirmse's 1924 mistake? Add an explanation to the companion paper
+if you have an explanation. But if you're not sure, then don't make
+up something but instead record it in detail and tell me about it.
+
+Interpretation / task list:
+---------------------------
+ 1. Fix example enumeration in paper/companion.tex so that numerical
+    references (Example~\ref{...}) render with actual numbers.
+ 2. Add an explanation to companion.tex addressing whether our σ
+    could reverse Coxeter's κ and return to Kirmse's 1924 regime —
+    IF confident in the answer.  Otherwise: do not fabricate, record
+    the question in detail, and flag it to the user.
+ 3. Verify LaTeX compile.
+ 4. Log prompt per Manifesto.
+
+Outcome:
+--------
+
+Example numbering fix:
+ - Root cause: preamble had \newtheorem*{example}{Example} (starred
+   form → unnumbered), but six \ref{ex:...} references existed in
+   the body.  All references produced bare question marks.
+ - Fix: changed to \newtheorem{example}{Example}[section] so examples
+   are numbered by section.
+ - Verified via pdftotext: Example 2.1, 2.2, 3.1, 4.1, 6.1, 8.1, 9.1
+   now render with labels.
+
+"Could σ undo Coxeter?" answer — confident; added as new §10 of
+companion.tex (before the Summary).  The argument rests on three
+points, all already in the main paper as lemmas:
+
+ (a) Coxeter's κ and our σ act at different structural levels.
+     Coxeter's κ is a transposition of Fano triples, i.e.\ a
+     rearrangement of the multiplication table that touches all
+     products on the affected lines.  Our σ is a transposition of
+     coordinate axes — a linear involution of R^8 that extends to
+     the multiplication by conjugation a·_σ b = σ(σ(a)·σ(b)).
+     Most coordinate transpositions are not Fano-plane
+     automorphisms (example verified in passing: σ=(1 2) sends the
+     Fano triple (2,3,5) to the non-triple (1,3,5) under our
+     project convention), so σ cannot equal κ^{-1}: κ permutes
+     lines, σ does not.
+
+ (b) σ fixes L (Lemma A / Lemma~\ref{lem:sigma-L} of the main
+     paper).  Therefore the σ-twist inherits Coxeter's E_8
+     closure automatically:
+         L ·_σ L = σ(σ(L)·σ(L)) = σ(L·L) ⊆ σ(L) = L.
+     So regardless of which coordinate transposition σ we pick
+     (so long as it preserves D_8^+, which holds for any
+     permutation of the seven imaginary axes), Kirmse's 1924
+     regime — which failed at the L level — cannot be reached.
+
+ (c) σ does change the story at sub-L sublattices that it does
+     not fix, notably Ls (σ(Ls) ≠ Ls).  This is precisely where
+     the twist helps Wilson condition~(3) without disturbing
+     conditions~(1) or~(2).  Coxeter's κ and our σ thus act on
+     different strata of the same construction: κ fixes the E_8
+     stratum; σ redirects the finer-grained Ls stratum that κ does
+     not by itself settle.
+
+ - No new math claimed: all three points are direct consequences of
+   the four lemmas in the main paper.  The new section simply
+   organises them as a direct reply to the user's question.
+ - LaTeX recompile clean.
+ - Added entry to prompt_logs/README.md index.
+
+Confidence note:
+ - Point (a) relies on the claim that σ=(1 2) is not a Fano plane
+   automorphism under the project convention.  Verified by hand:
+   (2,3,5) goes to (1,3,5), and {1,3,5} is not one of the seven
+   lines in eq.~(3.1) of the companion.  Ironclad.
+ - Point (b) is Lemma~A of the main paper, proved there.
+ - Point (c) is stated in the main paper's Remark rem:Ls-not-closed
+   with numerical witness.
