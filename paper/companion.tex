@@ -1,0 +1,564 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+
+\newcommand{\LL}{\Lambda}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+
+\newtheorem*{observation}{Observation}
+\newtheorem*{example}{Example}
+
+\title[A companion note on the $\sigma$-twist]%
+{A companion note\\
+\large Kirmse--Coxeter and the $\sigma$-twist, by concrete example}
+\author{Jens K\"oplinger}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note accompanies the paper ``An order on the Leech lattice from
+transposition-twisted octonions.''  Its purpose is purely expository:
+to walk through the construction step by step, pairing every abstract
+definition with a concrete hand-checkable example, and to do so first
+at the~$E_8$ level (where Coxeter's correction of Kirmse provides the
+historical precedent) and then at the Leech level (where the
+$\sigma$-twist plays the analogous role).  No new results are
+proved.  Readers who are comfortable with the main paper will find
+nothing new here; readers who want to see every piece verified by
+hand will find the explicit numerics they may have missed.
+\end{abstract}
+
+% ===================================================================
+\section{Preliminaries}
+% ===================================================================
+
+This note follows the conventions of the main paper.  We work with
+the real octonion algebra~$\OO$ on $\RR^8$ with basis
+$\{e_0, e_1, \ldots, e_7\}$, and with Wilson's construction of the
+Leech lattice inside the triple octonion space
+$\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$.
+
+The guiding principle throughout is: \emph{distinguish abstract
+structure from the specific lattice to which it is applied}.  The
+same ambient algebra can host many lattices; the same lattice can
+be tested against many bilinear products on the ambient space.
+``Closure of this lattice under this product'' is a question about
+both, not just one.
+
+% ===================================================================
+\section{The $E_8$ lattice}\label{sec:e8}
+% ===================================================================
+
+\subsection*{Abstract}
+
+The lattice~$E_8$ is the unique even unimodular lattice in~$\RR^8$
+(up to isomorphism).  ``Even'' means every vector~$v \in E_8$ has
+integer squared norm $\|v\|^2 \in 2\ZZ$.  ``Unimodular'' means
+$E_8$ equals its own dual lattice (the set of vectors having
+integer inner product with every element of~$E_8$).  It contains
+$240$ vectors of minimal squared norm~$2$, the \emph{roots}.
+
+\subsection*{Concrete}
+
+Following Wilson, take for $L$ the integer span of the following
+240 octonions:
+\begin{itemize}
+\item \textbf{112 ``type-1'' roots} of the form
+  $\pm e_a \pm e_b$ with $0 \le a < b \le 7$;
+\item \textbf{128 ``type-2'' roots} of the form
+  $\tfrac{1}{2}(\varepsilon_0 e_0 + \varepsilon_1 e_1 + \cdots
+  + \varepsilon_7 e_7)$ where each
+  $\varepsilon_i \in \{+1, -1\}$ and the number of~$-1$s is odd.
+\end{itemize}
+
+Equivalently,
+\[
+  L = \{v \in \ZZ^8 : \sum_i v_i \text{ is even}\}
+   \;\cup\;
+      \{v \in (\ZZ + \tfrac{1}{2})^8 : \sum_i v_i \text{ is odd}\}.
+\]
+
+\begin{example}
+The vector $(1, 1, 0, 0, 0, 0, 0, 0) = e_0 + e_1$ is a type-1 root:
+integer coordinates, sum~$2$.  The vector
+$\tfrac{1}{2}(-1, 1, 1, 1, 1, 1, 1, 1)$ is a type-2 root:
+half-integer coordinates, one $-1$ (odd count), coordinate sum $3$
+(odd).  Both lie in~$L$; both have squared norm~$2$.
+\end{example}
+
+\begin{example}
+Distinguished element in~$L$ to be used throughout:
+\[
+  s \;=\; \tfrac{1}{2}(-e_0 + e_1 + e_2 + e_3 + e_4 + e_5 + e_6 + e_7),
+\]
+of squared norm~$2$.  In coordinates $s = (-\tfrac{1}{2},
+\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2},
+\tfrac{1}{2}, \tfrac{1}{2})$: half-integer, one~$-1/2$ (odd count),
+sum~$3$ (odd).  Confirmed in~$L$.
+\end{example}
+
+% ===================================================================
+\section{The octonion algebra}\label{sec:oct}
+% ===================================================================
+
+\subsection*{Abstract}
+
+The octonions~$\OO$ are the unique real \emph{normed division
+algebra} of dimension~$8$: a real $8$-dimensional vector space with
+a bilinear product~$x \cdot y$ and a positive-definite quadratic
+norm satisfying $\|x \cdot y\| = \|x\| \cdot \|y\|$.  The algebra is
+non-commutative and non-associative (but alternative).
+
+\subsection*{Concrete}
+
+Fix the basis $\{e_0, e_1, \ldots, e_7\}$ with $e_0$ the
+multiplicative identity.  The multiplication on the imaginary units
+is determined by the seven \emph{Fano triples}
+\begin{equation}\label{eq:fano}
+  (1,2,4),\; (2,3,5),\; (3,4,6),\; (4,5,7),\; (5,6,1),\; (6,7,2),\;
+  (7,1,3),
+\end{equation}
+read cyclically: for $(a, b, c)$ above, $e_a \cdot e_b = +e_c$,
+$e_b \cdot e_c = +e_a$, $e_c \cdot e_a = +e_b$, with opposite signs
+for the reversed products.  Every imaginary unit squares to~$-e_0$.
+
+\begin{example}
+From the triple~$(1,2,4)$: $\,e_1 \cdot e_2 = +e_4$ and
+$e_2 \cdot e_1 = -e_4$.  From~$(7,1,3)$: $\,e_1 \cdot e_3 = +e_7$.
+From~$(6,7,2)$: $\,e_7 \cdot e_2 = +e_6$, so
+$e_2 \cdot e_7 = -e_6$.
+\end{example}
+
+\subsection*{Closure of $L$ under the octonion product}
+
+Under the Fano convention \eqref{eq:fano}, the lattice~$L$ is closed
+under octonion multiplication: for every $u, v \in L$, the product
+$u \cdot v \in L$.  This is a classical result of Coxeter~(1946),
+verified in the main paper by computing all $8 \times 8 = 64$
+products of a $\ZZ$-basis of~$L$ in exact arithmetic and checking
+that each lies again in~$L$.
+
+\begin{example}
+A sample product.  From $s \cdot s$ with $s$ as above, using the
+identity $(\sum_{k=1}^{7} e_k)^2 = -7 e_0$:
+\[
+  s \cdot s \;=\;
+    -\tfrac{3}{2}\, e_0 - \tfrac{1}{2}(e_1 + e_2 + e_3 + e_4 + e_5
+    + e_6 + e_7).
+\]
+Its coordinates are all half-integer; the coordinate sum is
+$-\tfrac{3}{2} - 7 \cdot \tfrac{1}{2} = -5$, odd.  Hence
+$s \cdot s \in L$.
+\end{example}
+
+% ===================================================================
+\section{The Kirmse--Coxeter precedent}\label{sec:kirmse}
+% ===================================================================
+
+\subsection*{Historical remark}
+
+Kirmse (1924) proposed a specific set of 240 integral octonions
+together with a multiplication table.  He asserted the set was
+closed under the multiplication.  Coxeter (1946) noticed a subtle
+error: Kirmse's multiplication table, as written, did not produce
+closure.  Coxeter showed that if one permutes two basis indices in
+the Fano-plane labelling, one obtains a (different) multiplication
+table under which the 240-element set \emph{is} closed.  There are
+seven such Coxeter-corrected conventions, one for each pair of
+imaginary indices; each gives one of the seven maximal orders of
+the integral octonions discussed in Conway--Smith.
+
+The Fano triples \eqref{eq:fano} used in this note and in the main
+paper are one of Coxeter's seven corrected conventions.  Under this
+convention $L$ closes, as stated above.  We do not reproduce
+Kirmse's original table here; the point of recalling the story is
+the structural pattern, not the historical arithmetic:
+
+\begin{observation}
+A convention of octonion multiplication fixes how basis products
+are assigned.  A different convention, obtained by transposing two
+basis indices, assigns products differently.  For some lattices, the
+two conventions are interchangeable (the lattice is closed under
+both); for others, only one convention closes.  Which lattices
+behave which way is precisely the question that Kirmse got wrong
+and Coxeter got right.
+\end{observation}
+
+\subsection*{A concrete lattice where the story does matter}
+
+For the lattice~$L$ itself, this distinction is invisible: $L$ is
+symmetric under every coordinate permutation, so transposing two
+basis indices produces an algebra under which $L$ also closes.  To
+see the Kirmse--Coxeter phenomenon concretely at the $E_8$ level we
+need a lattice that is \emph{not} symmetric under such a swap.  One
+appears naturally in Wilson's Leech construction: the sublattice
+\[
+  Ls \;=\; \{\ell \cdot s : \ell \in L\},
+\]
+the image of $L$ under right-multiplication by the element~$s$
+above.  This is again a full-rank sublattice of~$L$, of index~$16$
+(see the main paper, Section~2.3).  It is a lattice, so of course it
+is closed under addition; the question is whether it is closed under
+octonion multiplication.
+
+\begin{example}[Standard product fails on~$Ls$]\label{ex:Ls-fails}
+Take
+\[
+  a = (-1,\, 0,\, 0,\, 0,\, 1,\, 0,\, 1,\, 1), \qquad
+  b = (-1,\, 1,\, 0,\, 0,\, 0,\, 1,\, 0,\, 1).
+\]
+Both $a$ and $b$ are in $Ls$ (they appear as basis vectors of~$Ls$
+produced in the main paper's exact-arithmetic verification).  Their
+octonion product, computed under the Fano convention
+\eqref{eq:fano}, is
+\[
+  a \cdot b = (0,\, -2,\, 2,\, 1,\, -2,\, -1,\, -1,\, -1).
+\]
+This vector has integer coordinates and lies in~$L$ --- but it is
+\emph{not} an integer combination of a $\ZZ$-basis of~$Ls$.  The
+verification is carried out with exact rational arithmetic in the
+script
+\href{../python_project/src/symbolic_proof_checks.py}{\texttt{symbolic\_proof\_checks.py}}.
+
+Consequently, $Ls \cdot Ls \not\subseteq Ls$.
+\end{example}
+
+This is the structural echo of Kirmse's situation at the sublattice
+level: a specific sublattice, under a specific octonion product,
+fails to close.
+
+% ===================================================================
+\section{The Coxeter transposition, abstractly}\label{sec:swap}
+% ===================================================================
+
+\subsection*{Abstract}
+
+Fix a transposition $\sigma = (s\; t)$ on the imaginary basis
+indices $\{1, \ldots, 7\}$ (for example, $\sigma = (1\;2)$).
+Extend~$\sigma$ linearly to a map $\RR^8 \to \RR^8$ that fixes
+$e_0$ and swaps $e_s \leftrightarrow e_t$.  This~$\sigma$ is an
+\emph{isometry} of~$\RR^8$: it preserves the Euclidean inner
+product.  It is also an involution: $\sigma^2 = \mathrm{id}$.
+
+Starting from the standard product~$\cdot$, the map~$\sigma$ induces
+a \emph{$\sigma$-twisted product} on the same $\RR^8$:
+\begin{equation}\label{eq:twist}
+  x \cdot_\sigma y \;=\; \sigma\bigl(\sigma(x) \cdot \sigma(y)\bigr).
+\end{equation}
+The pair $(\RR^8, \cdot_\sigma)$ is again an octonion algebra,
+abstractly isomorphic to $(\RR^8, \cdot)$ via~$\sigma$ itself.  But
+it is a \emph{different bilinear product} on the same $\RR^8$: it
+assigns different specific products to pairs of basis vectors.
+
+\subsection*{Concrete}
+
+Take $\sigma = (1\; 2)$, which swaps $e_1$ and~$e_2$ (and fixes
+$e_0, e_3, e_4, e_5, e_6, e_7$).  Then
+\begin{align*}
+  e_1 \cdot_\sigma e_2
+    &= \sigma(\sigma(e_1) \cdot \sigma(e_2))
+     = \sigma(e_2 \cdot e_1)
+     = \sigma(-e_4)
+     = -e_4,
+\end{align*}
+whereas $e_1 \cdot e_2 = +e_4$ under the standard product.  Similarly
+one checks $e_1 \cdot_\sigma e_4 = +e_2$ (vs.\ $-e_2$ under
+$\cdot$), and so on: the two products disagree on some pairs of
+basis elements.
+
+\subsection*{What is twisted and what is invariant}
+
+\begin{itemize}
+\item \textbf{Twisted:} the multiplication table.  Under
+  $\cdot_\sigma$, the Fano triples \eqref{eq:fano} are replaced by
+  $(\sigma(a), \sigma(b), \sigma(c))$ for each original triple.
+\item \textbf{Invariant under~$\sigma$ (as a linear map):}
+  the underlying vector space~$\RR^8$, the Euclidean inner product,
+  the decomposition into integer and half-integer vectors, and the
+  lattice~$L$ itself ($\sigma(L) = L$ since $\sigma$ is a coordinate
+  permutation).
+\item \textbf{Not invariant under~$\sigma$:} specific sublattices
+  of~$L$ that depend on a distinguished element, such as~$Ls$.
+  Since $Ls$ is defined as $\{\ell \cdot s : \ell \in L\}$, applying
+  $\sigma$ gives
+  \[
+    \sigma(Ls) = \{\sigma(\ell) \cdot_{\sigma} \sigma(s)
+                    : \ell \in L\}
+    \;\ne\; Ls
+  \]
+  in general.  The main paper verifies $\sigma(Ls) \ne Ls$
+  directly: for $\sigma = (1\;2)$, the vector
+  $(-1, 0, 1, 0, 0, 1, 0, 1)$ lies in~$\sigma(Ls)$ but not
+  in~$Ls$.
+\end{itemize}
+
+The last two bullets together say: \emph{$\sigma$ is an isometry of
+$\RR^8$ that fixes~$L$ but moves~$Ls$ to a distinct sublattice.}
+
+% ===================================================================
+\section{The twist at the $E_8$ level changes the story}
+% ===================================================================
+
+The sublattice $\sigma(Ls)$ is the image of~$Ls$ under the
+transposition.  It has the same rank as~$Ls$, the same index in~$L$,
+and is isometric to~$Ls$.  But its elements are different vectors.
+The question of closure under the standard octonion product is now
+posed afresh.
+
+\begin{example}[Standard product succeeds on~$\sigma(Ls)$]
+\label{ex:sigmaLs-succeeds}
+A $\ZZ$-basis of~$\sigma(Ls)$ is obtained by applying~$\sigma$
+(coordinate swap of positions $1, 2$) to each basis vector of~$Ls$.
+Using the basis generated in the main paper's verification, all
+$8 \times 8 = 64$ products of basis vectors of~$\sigma(Ls)$, under
+the standard octonion product~$\cdot$, lie again in~$\sigma(Ls)$.
+The verification is in
+\href{../python_project/src/symbolic_proof_checks.py}{\texttt{symbolic\_proof\_checks.py}}
+as Lemma~D.
+
+Hence $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
+\end{example}
+
+\subsection*{Two equivalent readings}
+
+Because $\sigma$ is an isometry and an algebra isomorphism
+$(\RR^8, \cdot) \to (\RR^8, \cdot_\sigma)$, one can restate
+Example~\ref{ex:sigmaLs-succeeds} in an equivalent form on the
+original lattice~$Ls$ with the twisted product:
+\[
+  Ls \cdot_\sigma Ls \;\subseteq\; Ls.
+\]
+(Apply $\sigma$ to both sides of the inclusion
+$\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$ and use
+$\sigma^2 = \mathrm{id}$ together with
+\eqref{eq:twist}.)  The two forms are tautologically equivalent.
+
+Reading both against Example~\ref{ex:Ls-fails}:
+\[
+  \underbrace{Ls \cdot Ls \not\subseteq Ls}_{\text{standard product
+  fails on $Ls$}}
+  \qquad\text{versus}\qquad
+  \underbrace{Ls \cdot_\sigma Ls \subseteq Ls}_{\text{twisted product
+  succeeds on $Ls$}}.
+\]
+Equivalently:
+\[
+  \underbrace{Ls \cdot Ls \not\subseteq Ls}_{\text{$Ls$ fails}}
+  \qquad\text{versus}\qquad
+  \underbrace{\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)}
+    _{\text{$\sigma(Ls)$ succeeds}}.
+\]
+
+\subsection*{Interpretation}
+
+Two different bilinear products on~$\RR^8$ (namely~$\cdot$
+and~$\cdot_\sigma$) are isomorphic as abstract algebras.  Every
+theorem phrased in the language of the abstract algebra carries
+over.  But ``does lattice~$X$ close under product~$\star$?'' is not
+a theorem phrased purely in the abstract algebra: it also names a
+specific subset $X \subset \RR^8$, and the answer depends on how the
+isomorphism relates $X$ to itself.
+
+If $\sigma(X) = X$, the answer is the same for both products.  If
+$\sigma(X) \ne X$, the answer can flip: $X$ may fail to close
+under~$\cdot$ while $\sigma(X)$ closes under~$\cdot$; equivalently,
+$X$ closes under $\cdot_\sigma$ while~$\sigma(X)$ fails under
+$\cdot_\sigma$.  The lattice~$L$ itself is $\sigma$-invariant and
+therefore closes under both products.  The sublattice~$Ls$ is
+\emph{not} $\sigma$-invariant, and this is exactly what opens the
+gap between the two closure statements.
+
+This is the structural lesson of Kirmse--Coxeter in isolation.  The
+same lesson, applied one dimension higher, is the content of the
+main paper.
+
+% ===================================================================
+\section{Wilson's Leech lattice}\label{sec:wilson-leech}
+% ===================================================================
+
+\subsection*{Abstract}
+
+The Leech lattice~$\LL$ is the unique even unimodular lattice of
+rank~$24$ with no roots (i.e.\ no vectors of squared norm~$2$).  Its
+minimal vectors have squared norm~$4$, and there are exactly
+$196{,}560$ of them.
+
+\subsection*{Concrete (Wilson's construction)}
+
+Identify $\RR^{24}$ with $\OO_1 \oplus \OO_2 \oplus \OO_3$: three
+copies of the octonions, labelled $\alpha = 1, 2, 3$.  Let
+$\bar{s} = \tfrac{1}{2}(-e_0 - e_1 - e_2 - \cdots - e_7)$ (the
+octonion conjugate of the negative of the earlier~$s$; it also lies
+in~$L$).  Define two sublattices of~$L$:
+\[
+  Ls = \{\ell \cdot s : \ell \in L\}, \qquad
+  L\bar{s} = \{\ell \cdot \bar{s} : \ell \in L\},
+\]
+each of index~$16$ in~$L$.  Wilson's Leech lattice is then
+\begin{multline}\label{eq:leech}
+  \LL \;=\; \bigl\{(x, y, z) \in L^3 \;:\\
+    x + y,\; x + z,\; y + z \;\in\; L\bar{s}; \quad
+    x + y + z \;\in\; Ls \bigr\}.
+\end{multline}
+
+The sublattice~$Ls$ from Section~\ref{sec:kirmse} is precisely the
+``condition-(3) block sum'' lattice in Wilson's definition.
+
+% ===================================================================
+\section{The standard triple product on $\RR^{24}$}
+% ===================================================================
+
+\subsection*{Abstract}
+
+The natural bilinear product on $\RR^{24} = \OO_1 \oplus \OO_2
+\oplus \OO_3$ built from a single octonion product is a
+\emph{triple product with $\ZZ_3$-symmetric cross-block routing}.
+For $u = (x, y, z)$ and $v = (x', y', z')$ define
+\[
+  u \star v \;=\; (P_1, P_2, P_3),
+\]
+where
+\begin{align*}
+  P_1 &= x \cdot x' + z \cdot y' + y \cdot z', \\
+  P_2 &= y \cdot y' + x \cdot z' + z \cdot x', \\
+  P_3 &= z \cdot z' + y \cdot x' + x \cdot y'.
+\end{align*}
+Same-block products stay in the block; cross-block products
+$O_\alpha \times O_\beta$ land in $O_\gamma$ with
+$\{\alpha, \beta, \gamma\} = \{1, 2, 3\}$.  The three blocks play
+the same role under cyclic rotation $1 \to 2 \to 3 \to 1$.
+
+\subsection*{Why condition~(3) is the obstruction}
+
+A direct computation from the definitions gives
+\[
+  P_1 + P_2 + P_3 \;=\; (x + y + z) \cdot (x' + y' + z').
+\]
+Thus ``$u \star v$ satisfies Wilson's condition~(3)'' amounts to:
+``the product of two elements of~$Ls$ lies in~$Ls$''.
+
+Using $u, v \in \LL$ means $x + y + z \in Ls$ and $x' + y' + z'
+\in Ls$, so the question reduces exactly to whether $Ls \cdot Ls
+\subseteq Ls$.  By Example~\ref{ex:Ls-fails}, it does not.  Hence:
+
+\begin{example}[Standard triple product fails on~$\LL$]
+\label{ex:triple-fails}
+There exist $u, v \in \LL$ for which $u \star v \notin \LL$: the
+block sum of $u \star v$ need not lie in~$Ls$, failing Wilson's
+condition~(3).  The concrete obstruction is precisely the pair
+$(a, b)$ of Example~\ref{ex:Ls-fails}: any $u, v \in \LL$ whose
+triple sums equal~$a, b$ respectively produce a $u \star v$ whose
+block sum equals~$a \cdot b \notin Ls$.
+\end{example}
+
+% ===================================================================
+\section{The $\sigma$-twisted triple product}
+% ===================================================================
+
+\subsection*{Abstract}
+
+Apply~$\sigma$ componentwise to each of the three octonion blocks.
+This yields a linear map on~$\RR^{24}$, still denoted~$\sigma$, that
+is an isometry and satisfies $\sigma^2 = \mathrm{id}$.  Replace the
+octonion product in each of the nine block-pair products of~$\star$
+by the $\sigma$-twisted product $\cdot_\sigma$ from
+\eqref{eq:twist}: this produces a new bilinear product
+$\star_\sigma$ on~$\RR^{24}$.  By the same formal manipulation as
+before,
+\[
+  u \star_\sigma v \;=\; \sigma\bigl(\sigma(u) \star \sigma(v)\bigr),
+\]
+where on the right $\star$ is the standard (untwisted) triple
+product.
+
+\subsection*{Concrete}
+
+Choose $\sigma = (1\; 2)$, acting on imaginary indices of each
+octonion block.  Then for $u, v \in \LL$,
+\[
+  (\text{block sum of } u \star_\sigma v)
+  \;=\;
+  \sigma\bigl((\sigma(x) + \sigma(y) + \sigma(z)) \cdot
+              (\sigma(x') + \sigma(y') + \sigma(z'))\bigr).
+\]
+Inside the outer~$\sigma$, each triple sum lies in~$\sigma(Ls)$
+(since each original triple sum lies in~$Ls$, by Wilson's
+condition~(3) on~$u, v$).  By
+Example~\ref{ex:sigmaLs-succeeds}, $\sigma(Ls) \cdot \sigma(Ls)
+\subseteq \sigma(Ls)$.  Applying the outer~$\sigma$ brings the
+result into $\sigma(\sigma(Ls)) = Ls$.
+
+So the block sum of $u \star_\sigma v$ lies in~$Ls$: Wilson's
+condition~(3) is restored.  Conditions~(1) and~(2) go through by
+analogous arguments (see the main paper, Section~4).  The net effect
+is:
+
+\begin{example}[$\sigma$-twisted triple product succeeds on~$\LL$]
+For all $u, v \in \LL$, the product $u \star_\sigma v$ lies
+in~$\LL$.  This is Theorem~3.1 of the main paper.
+\end{example}
+
+\subsection*{What is twisted and what is invariant (at the Leech
+level)}
+
+\begin{itemize}
+\item \textbf{Twisted:} the octonion multiplication used inside
+  each of the nine block-pair products.  Equivalently, the Fano
+  triples~\eqref{eq:fano} are replaced block by block by their
+  $\sigma$-images.
+\item \textbf{Invariant under~$\sigma$:} the ambient space
+  $\RR^{24}$, the three-block decomposition into~$\OO_1, \OO_2,
+  \OO_3$, the $\ZZ_3$ cross-block routing rule, and the
+  sub-lattice~$L$ of each block ($\sigma(L) = L$).
+\item \textbf{Not invariant under~$\sigma$:} the sub-lattice~$Ls$
+  of each block ($\sigma(Ls) \ne Ls$), and through it the Leech
+  lattice itself ($\sigma(\LL) \ne \LL$ in general, since~$\LL$ is
+  defined by a condition involving~$Ls$).
+\end{itemize}
+
+The comparison with the $E_8$ level is exact.  One level down,
+$\sigma$ fixes~$L$ but not~$Ls$, and this is what allows the twist
+to change the closure question for~$Ls$.  One level up, $\sigma$
+fixes~$\OO_1 \oplus \OO_2 \oplus \OO_3$ but not~$\LL$, and this is
+what allows the twist to change the closure question for~$\LL$.
+
+% ===================================================================
+\section{Summary of concrete data}
+% ===================================================================
+
+\noindent Three empirical facts are verified by exact rational
+arithmetic in
+\href{../python_project/src/symbolic_proof_checks.py}
+     {\texttt{symbolic\_proof\_checks.py}}:
+\begin{enumerate}
+\item $\sigma(Ls) \ne Ls$ (explicit witness:
+  $(-1, 0, 1, 0, 0, 1, 0, 1) \in \sigma(Ls) \setminus Ls$).
+\item $Ls \cdot Ls \not\subseteq Ls$ under the standard octonion
+  product (explicit witness~$a, b$ in
+  Example~\ref{ex:Ls-fails} with $a \cdot b \notin Ls$).
+\item $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$ under the
+  standard octonion product (all 64 basis products land in
+  $\sigma(Ls)$).
+\end{enumerate}
+
+\noindent Two equivalent phrasings of the main result are:
+\begin{itemize}
+\item ``$\LL$ is closed under the $\sigma$-twisted triple product
+  $\star_\sigma$.''
+\item ``$\sigma(\LL)$ is closed under the standard triple product
+  $\star$.''
+\end{itemize}
+Both say the same thing via the algebra isomorphism
+$\sigma: (\RR^{24}, \star) \to (\RR^{24}, \star_\sigma)$; neither
+says that $\LL$ is closed under~$\star$, which is false.
+
+% ===================================================================
+
+\end{document}

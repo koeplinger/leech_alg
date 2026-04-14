@@ -1,0 +1,45 @@
+Prompt 066 — Main paper: add two-equivalent-framings remark
+===========================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+Thank you for holding back on writing the answer verbatim, but giving
+me the math formulas that amount to just as much. The situation is
+already clear now, and you can add a small remark to the main paper
+about the two equivalent framings. Armed with this knowledge, I will
+then review your updates to the main paper and the pedagogical
+companion paper, which will serve to confirm that I have the knowledge
+to reply to the highly-skilled inquirer.
+
+Interpretation / task list:
+---------------------------
+ 1. Add a small remark to paper/main.tex making the two equivalent
+    framings of Theorem~\ref{thm:main} explicit:
+      Λ ⋆ Λ ⊆ Λ  ⟺  Σ(Λ) ⋆₀ Σ(Λ) ⊆ Σ(Λ),
+    where ⋆₀ is the analogous triple product using the standard
+    (untwisted) octonion multiplication, and Σ = σ⊕σ⊕σ is the
+    block-wise twist.
+ 2. State the non-equivalence: neither reading asserts Λ ⋆₀ Λ ⊆ Λ,
+    which is false; the twist does not rename a closure, it picks
+    out a distinct Leech embedding Σ(Λ) ≠ Λ (because σ(Ls) ≠ Ls).
+ 3. Do not answer the circulated feedback directly; the remark
+    provides the mathematical framework the user will use to reply.
+ 4. Verify LaTeX compile.
+ 5. Log prompt per Manifesto.
+
+Outcome:
+--------
+ - Added Remark~\ref{rem:two-framings} to paper/main.tex immediately
+   after Remark~\ref{rem:order-closure}, placed with the theorem
+   cluster (Theorem, Corollary, two Remarks).
+ - The remark defines ⋆₀ as the untwisted analogue of ⋆, proves
+   Σ = σ⊕σ⊕σ is an algebra isomorphism (RR^{24}, ⋆) → (RR^{24}, ⋆₀)
+   directly from equations \eqref{eq:P1-std}–\eqref{eq:P3-std}, and
+   states the equivalence.
+ - Explicitly notes: neither reading says Λ ⋆₀ Λ ⊆ Λ (which fails
+   via Remark rem:Ls-not-closed), and the distinctness Σ(Λ) ≠ Λ
+   comes from σ(Ls) ≠ Ls.
+ - LaTeX recompile clean; no new warnings.
+ - No edits to companion.tex; no edits elsewhere.
+ - Added entry to prompt_logs/README.md index.

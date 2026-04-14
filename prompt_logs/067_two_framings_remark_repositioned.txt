@@ -1,0 +1,42 @@
+Prompt 067 — Reposition two-framings remark to avoid forward references
+=======================================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+The update to the main paper is good, but the position at which the
+remark currently is (remark 1.4) has so many forward references. Move
+it instead right after remark 4.5, so that the new remark doesn't have
+any forward references anymore. You can refer to theorem 1.1 as the
+central theorem (with cross-reference).
+
+Interpretation / task list:
+---------------------------
+ 1. Move Remark~\ref{rem:two-framings} from its §1 position
+    (immediately after Remark~\ref{rem:order-closure}) to §4.2
+    (immediately after Remark~\ref{rem:Ls-not-closed}).
+ 2. Replace the bare Theorem~\ref{thm:main} reference with
+    "the central Theorem~\ref{thm:main}" to cue that it is a
+    back-reference to a prominent earlier statement.
+ 3. Drop the now-redundant "(Remark~\ref{rem:Ls-not-closed})"
+    parenthetical on $Ls \cdot Ls \subseteq Ls$ failing, since the
+    remark now sits immediately next to that result.
+ 4. Verify LaTeX compile.
+ 5. Log prompt per Manifesto.
+
+Outcome:
+--------
+ - Moved Remark~\ref{rem:two-framings} from §1 (after
+   rem:order-closure) to §4.2 "The four lemmas" (immediately after
+   rem:Ls-not-closed).
+ - All cross-references now point backwards: the remark cites
+   Definition~\ref{def:triple}, equations \eqref{eq:P1-std}--
+   \eqref{eq:P3-std}, the central Theorem~\ref{thm:main}, and
+   implicitly the adjacent rem:Ls-not-closed (no longer needing the
+   explicit parenthetical).
+ - LaTeX recompile clean; no new warnings.
+ - No other files touched.
+ - Per Manifesto §11, the prior outcome section of prompt 066 is
+   kept as it was at the time of that prompt; this new log records
+   the repositioning correction.
+ - Added entry to prompt_logs/README.md index.

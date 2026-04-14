@@ -1,0 +1,95 @@
+Prompt 065 — Companion paper: gentle exposition of Kirmse-Coxeter and σ-twist
+=============================================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+I've received an inquiry that echoes my prior confusion from prompt
+037 ("Help me understand how this is not a restatement of Johannes
+Kirmse's mistake."). Because I have to be absolutely sure about this,
+and be able to share it concisely and efficiently, write a small
+companion paper that is a gentle exposition of the exact construction
+in this work, with a representative example of the positive and
+negative case. The companion paper needs to be structured as follows:
+
+- definition of the E8 lattice (general, and then a concrete
+  representation)
+- definition of the octonions (general, and then a concrete
+  representation)
+- demonstration why the octonion product does not close on the E8
+  lattice
+- definition of the Kirmse-twist according to Coxeter (general, and
+  then a concrete representation)
+- demonstration how it changes the earlier negative demonstration
+  and now closes
+- an explanation of the interpretation: what exactly are we twisting?
+  what remains invariant?
+- now do the same steps above, for Wilson's construction of the
+  Leech lattice (instead of E8) and for our sigma-twist (instead of
+  Coxeter's Kirmse twist)
+
+The combination of general (abstract) definition and concrete example
+is key here.
+
+Here is the feedback I've received. Before answering, I want to learn
+from your companion paper first, fully internalize it, and then write
+my own response. Important: Do not answer the feedback. If I'm not
+confident in answering it myself, then I will continue to ask you for
+additional training until I can.
+
+--START FEEDBACK--
+Your octonionic multiplication via the \sigma twist is an isomorphic
+copy of the original multiplication in O. Your cross product is also
+an isomorphic copy via \sigma since the original products are
+replaced by the \sigma twisted products. So, it seems to me, the
+entire setup has just been renamed. This should preserve all
+algebraic properties, including closure, so if your new lattice is
+closed under *, the old one should be closed as well. What am I
+missing? Maybe you are not moving the actual lattice construction by
+\sigma? But if that's the case, then you can keep the original
+multiplication in O and the original cross product and you can just
+shift the lattice construction by the inverse of \sigma (in this case
+\sigma^{-1}=\sigma, of course) and find a copy of the Leech lattice
+that is closed under *.
+--END FEEDBACK--
+
+Interpretation / task list:
+---------------------------
+ 1. Write a standalone companion paper at paper/companion.tex.
+ 2. Follow the seven-step structure verbatim.
+ 3. Always pair abstract definitions with concrete hand-verifiable
+    examples.
+ 4. At the Leech level, use the witnesses produced by
+    symbolic_proof_checks.py: Ls·Ls ⊄ Ls counterexample and
+    σ(Ls)·σ(Ls) ⊆ σ(Ls) closure.
+ 5. DO NOT ANSWER THE FEEDBACK.  The paper is a teaching aid so the
+    user can formulate their own response.
+ 6. Log prompt per Manifesto.
+
+Outcome:
+--------
+ - Created paper/companion.tex, amsart standalone, 8 pages, compiles
+   clean (only cosmetic amsart/hyperref style warnings).
+ - Seven-step structure followed verbatim:
+   E8 (general + Wilson's L concrete); octonions (general + Fano
+   triples (1,2,4),(2,3,5),(3,4,6),(4,5,7),(5,6,1),(6,7,2),(7,1,3)
+   with s = ½(-e_0+e_1+…+e_7)); negative demo at the E8 level via
+   the Ls sublattice (historical Kirmse remark kept narrative, since
+   our Coxeter-corrected Fano already closes L itself — Ls is the
+   structural analog that actually fails); Coxeter/Kirmse twist
+   τ = (e_i ↔ e_j) (general + concrete σ = (1 2)); positive demo
+   σ(Ls)·σ(Ls) ⊆ σ(Ls); interpretation split into "what is twisted"
+   vs "what is invariant"; then the same seven steps at the Leech
+   level using Wilson's Λ.
+ - Concrete witnesses lifted from symbolic_proof_checks.py:
+   · σ(Ls) ≠ Ls witness (-1,0,1,0,0,1,0,1);
+   · Ls·Ls failure a=(-1,0,0,0,1,0,1,1), b=(-1,1,0,0,0,1,0,1),
+     a·b=(0,-2,2,1,-2,-1,-1,-1);
+   · σ(Ls)·σ(Ls) ⊆ σ(Ls) success (Lemma D).
+ - Summary section closes with the two equivalent readings:
+   "Λ is closed under ⋆_σ" ⟺ "σ(Λ) is closed under ⋆", with an
+   explicit note that neither says Λ is closed under ⋆ (which is
+   false).  This surfaces the structural lesson without answering
+   the feedback.
+ - No edits to main.tex; no conclusions framed for the user.
+ - Added entry to prompt_logs/README.md index.
