@@ -1,0 +1,36 @@
+Prompt 060 — Baez/Egan rewrite in Section 7
+============================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+I have done some manual tweaks to your updates from the previous
+prompts. Read the paper tex to make sure your context is up to date.
+
+Then update the paper regarding Baez/Egan with the following actions
+from your plan:
+Yes, verify Ega's 17280 sublattices number and the exact phrasing
+before writing the final paragraph. Expand the paragraph to 8-10
+lines, that is ok, and rewrite it following your suggestions (but
+skip the contrast to our work, let the reader figure that out).
+Update the bibliography as you mention. Don't add the acknowledgement
+that I participated in that discussion by ruling out one particular
+naive example.
+
+Interpretation / task list:
+---------------------------
+ 1. Re-read paper/main.tex, especially abstract, section 4 (merged
+    lemma/remark), section 4.6 (merged std-fails prose), section 7
+    (Wilson, Dixon) to sync context with any manual tweaks.
+ 2. WebFetch Baez's n-Category Café "Integral Octonions" parts 9 and
+    10 to verify:
+    - Egan's "17,280 sublattices" count (exact number and what is
+      being counted).
+    - Baez's exact phrasing of the open question re: plain Jordan
+      product vs doubled.
+    - The structure of the lattice (Z^3 ⊕ octonion triple off-diag).
+ 3. Rewrite Baez/Egan paragraph in Section 7 to 8–10 lines per plan.
+    Skip the contrast to our work.
+ 4. Update bibliography entry Baez2014 to cite the series 1–12 and
+    the specific parts 9–10 landing.
+ 5. Skip the COI acknowledgment — user explicitly ruled out.
