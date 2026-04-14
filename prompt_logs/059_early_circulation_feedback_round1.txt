@@ -1,0 +1,58 @@
+Prompt 059 — Early circulation feedback, round 1 (structural/content)
+=======================================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+I start getting feedback from early circulation. Let's addtress it,
+starting with structural and content first. Make sure to adhere to the
+manifesto, and record this and all following prompts.
+
+Some of the proofs are overly obvious. Keep it like that for now. I am
+not a trained mathematician and need to be able to verify everything
+myself. Making things more elegant and compact works against this,
+because it would purport understanding that I may not have. I
+understand everything the way it's written right now just fine. That
+said, Lemma 4.5 is goofy because it demonstrates a property that
+exactly can NOT be used for the proof. Merge it into the following
+remark 4.6 because it is informative to see the demonstration of the
+counterexample. That'll make the section heading of 4.2 "The four
+lemmas" I suppose (check this). Similarly with Proposition 4.10, no
+need to make it a numbered proposition with proof, just merge it into
+the prose of section "4.6 Why the standard product fails"..
+
+Then in section 7 I forgot to double-check your summarizations of
+related work. That is an oversight on my end. Here are some pointers
+to check: Does Wilson (2009) really describe the Conway group using
+3x3 matrices in that paper? I don't think so. Dixon (2010) uses the
+XY product, yes, but the example you give looks wrong. Make a proper
+representation of the XY product, not just one with l_0.
+
+I love the closing sentence of section 7: "The chain is Kirmse →
+Coxeter → σ-twist: each step is a transposition, and each resolves a
+closure obstruction at the next level of the construction." Merge
+this in a compact way into the abstract, to give the reader a hint of
+the structure of the construction.
+
+Finally, make a plan on how to properly summarize the work by Baez
+and Egan. I want to review your plan first
+
+Interpretation / task list:
+---------------------------
+Structural edits to main.tex:
+ 1. Section 4: merge Lemma 4.5 into Remark 4.6 (as counterexample
+    demonstration); adjust section 4.2 heading ("The four lemmas" if
+    now accurate).
+ 2. Section 4.6 ("Why the standard product fails"): merge
+    Proposition 4.10 into prose; no numbered proposition.
+ 3. Section 7: verify Wilson 2009 claim re: 3×3 matrices for Conway
+    group (likely incorrect — fix); fix Dixon 2010 XY-product
+    example to be a proper representation (not just with l_0).
+ 4. Abstract: merge the Kirmse → Coxeter → σ-twist closing line of
+    Section 7 compactly.
+ 5. Baez/Egan: produce a PLAN first for the user to review before
+    editing.
+
+Manifesto compliance: every prompt logged, every conclusion recorded,
+stop and ask on conflicts. User explicitly said keep proofs verbose
+(purposely not compact) — preserve that.

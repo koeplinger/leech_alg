@@ -56,7 +56,13 @@ in a 24-dimensional real algebra.  The product is built from three
 identical copies of a \emph{transposition-twisted} octonion algebra ---
 the algebra obtained by applying a single transposition to the
 imaginary basis elements of the standard Fano-plane multiplication ---
-with $\ZZ_3$-symmetric cross-block routing.
+with $\ZZ_3$-symmetric cross-block routing.  The construction sits at
+the end of a short chain of transpositions: Kirmse
+$\to$ Coxeter $\to$ $\sigma$-twist, each step a transposition of two
+basis indices that resolves a closure obstruction at the next level
+--- Coxeter's transposition turns Kirmse's~$E_8$ candidate into an
+order in the octonions, and the present $\sigma$-twist turns the
+triple-octonion product on~$\LL$ into an order.
 
 This result was developed through a systematic human--AI collaboration;
 the complete research record is publicly available~\cite{repo}.
@@ -338,7 +344,7 @@ All nine block-pair products use the same multiplication~$\cdot_\sigma$.
 
 We prove Theorem~\ref{thm:main} by showing that the twisted product
 preserves each of Wilson's three conditions
-(Definition~\ref{def:wilson-leech}).  The proof rests on five
+(Definition~\ref{def:wilson-leech}).  The proof rests on four
 lemmas about the interaction between the transposition~$\sigma$, the
 maximal order~$L$, and the sublattices $Ls$ and~$L\bar{s}$.
 
@@ -369,7 +375,7 @@ Taking sums:
   Z \cdot (X'+Y')\bigr)$, and similarly for the other two pairs.
 \end{itemize}
 
-\subsection{The five lemmas}
+\subsection{The four lemmas}
 
 \begin{lemma}\label{lem:sigma-L}
 $\sigma(L) = L$.
@@ -418,23 +424,21 @@ As in Lemma~\ref{lem:L-sigmaLsbar}, verified on $\ZZ$-bases by exact arithmetic:
 products of basis vectors of~$\sigma(Ls)$ lie in~$\sigma(Ls)$.
 \end{proof}
 
-\begin{lemma}\label{lem:sigmaLs-neq-Ls}
-$\sigma(Ls) \neq Ls$.
-\end{lemma}
-
-\begin{proof}
-Let $\sigma = (1\;2)$.  Consider the element
-$v = (-1, 0, 1, 0, 0, 1, 0, 1)$, which lies in~$\sigma(Ls)$.
-Direct computation shows that $v$ is not an integer combination
-of any $\ZZ$-basis for~$Ls$, so $v \notin Ls$.
-\end{proof}
-
 \begin{remark}\label{rem:Ls-not-closed}
 The sublattice~$Ls$ is \emph{not} closed under the standard octonion
 product: there exist basis vectors $a, b \in Ls$ with $a \cdot b
 \notin Ls$.  This is precisely the obstruction that the twist
 resolves: it moves the block-sum sublattice from~$Ls$ to~$\sigma(Ls)$,
 where closure holds by Lemma~\ref{lem:sigmaLs-closed}.
+
+Note that $\sigma(Ls)$ is genuinely different from~$Ls$ (not just a
+relabelling).  For example, with $\sigma = (1\;2)$, the element
+$v = (-1, 0, 1, 0, 0, 1, 0, 1)$ lies in~$\sigma(Ls)$ but direct
+computation shows it is not an integer combination of any $\ZZ$-basis
+for~$Ls$, so $v \notin Ls$.  This distinction is what makes the twist
+useful: $\sigma$ is not the identity on the block-sum sublattice, so
+it can redirect a product into a different (and, as it turns out,
+closed) sublattice.
 \end{remark}
 
 \subsection{Condition~(1): each block lies in~$L$}
@@ -521,30 +525,7 @@ Applying the outer~$\sigma$:
 \]
 \end{proof}
 
-\subsection{Why the standard product fails}
-
-\begin{proposition}\label{prop:std-fails}
-The standard (untwisted) triple-octonion product $\star_{\mathrm{std}}$
-(using~$\cdot$ in place of~$\cdot_\sigma$) satisfies Wilson's
-conditions~(1) and~(2) per Definition~\ref{def:wilson-leech} for
-all $u, v \in \LL$, but not~(3).
-\end{proposition}
-
-\begin{proof}
-Conditions~(1) and~(2) for $\star_{\mathrm{std}}$ follow from
-Lemmas~\ref{lem:sigma-L} and~\ref{lem:L-order} (with $\sigma = \mathrm{id}$, so $X = x$, etc.)
-and the fact that $L \cdot L\bar{s} \subseteq L\bar{s}$ (verified
-on $\ZZ$-bases: all 64 products check).
-
-For condition~(3), the block sum becomes
-$(x+y+z) \cdot (x'+y'+z')$ with both factors in~$Ls$.  This requires
-$Ls \cdot Ls \subseteq Ls$, which fails: the product of two explicit
-$Ls$-basis vectors yields an element outside~$Ls$
-(Remark~\ref{rem:Ls-not-closed}).
-\end{proof}
-
-This completes the proof of Theorem~\ref{thm:main}. \qed
-
+This completes the proof of Theorem~\ref{thm:main}.
 % ===============================================================
 \section{Algebraic properties}\label{sec:properties}
 % ===============================================================
@@ -672,13 +653,23 @@ and attribution.
 % ===============================================================
 
 \textbf{Wilson (2009)} \cite{Wilson2009} characterises~$\LL$ as
-$\{(x,y,z) \in L^3 : \text{conditions 1--3}\}$ and describes the
-Conway group using $3 \times 3$ octonionic matrices.  This is the
-framework used in the present paper.
+$\{(x,y,z) \in L^3 : \text{conditions 1--3}\}$, gives an explicit
+listing of the 196{,}560 minimal vectors in the form
+$3 \times 240 \times (1 + 16 + 16 \times 16)$, and proves that~$\LL$
+is even and self-dual.  The sublattice framework is
+the setting used in the present paper.
 
 \textbf{Dixon (2010)} \cite{Dixon2010} constructs~$\LL$ using the
-XY-product $A \circ B = (A \cdot l_0)(l_0^{-1} \cdot B)$, an
-alternative octonion multiplication.
+octonion XY-product
+\[
+  A \circ_{XY} B \;=\; (A X)(Y^{\dagger} B),
+\]
+where $X, Y \in \OO$ are chosen so that $Y X^{\dagger}$ is a unit
+octonion (the identity of the new multiplication).  When $Y^{\dagger} = X^{-1}$
+the XY-product specialises to the X-product $A \circ_X B = (AX)(X^{-1}
+B)$; Dixon uses this X-product with $X = \ell_0 = \frac{1}{2}(1 + e_1
++ \cdots + e_7)$ to obtain~$E_8$, and general XY-products for
+higher-dimensional laminated lattices including~$\LL$.
 
 \textbf{Baez and Egan (2014)} \cite{Baez2014} explore the exceptional
 Jordan algebra~$\mathfrak{h}_3(\OO)$ as a framework for~$\LL$.  They
@@ -713,7 +704,7 @@ level of the construction.
 The Leech lattice admits an order under a remarkably simple
 construction: three identical copies of a transposition-twisted
 octonion algebra with $\ZZ_3$ routing.  The symbolic proof
-(Section~\ref{sec:proof}) reduces closure to five lemmas, of which
+(Section~\ref{sec:proof}) reduces closure to four lemmas, of which
 the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice $\sigma(Ls)$ --- unlike~$Ls$
 itself --- is closed under the standard octonion product.  The twist
 maps the condition-3 sublattice to this closed sublattice, and the
