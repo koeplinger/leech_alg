@@ -40,7 +40,7 @@ multiplication.
 
 **Evidence:**
 - **Symbolic proof** of closure on Wilson's three sublattice conditions, via
-  five lemmas on the interplay between the twist σ and the Leech sublattices
+  four lemmas on the interplay between the twist σ and the Leech sublattices
   Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
   executes the finite case verifications with exact integer arithmetic).
 - **Computational verification** on 4M+ random pairs of minimal vectors with
@@ -75,7 +75,7 @@ multiplication.
 cd python_project
 python3 -m pytest tests/ -v                     # Run all foundation tests
 cd src
-python3 symbolic_proof_checks.py                # Verify the five lemmas
+python3 symbolic_proof_checks.py                # Verify the four lemmas
 python3 trial_007_kirmse_twist.py               # The winning trial
 python3 trial_001_triple_octonion.py            # Any earlier trial
 ```

@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-04-12
+Last updated: 2026-04-14
 
 This document is the entry point for anyone continuing this research — human or
 AI, with or without prior context.  It summarises what has been established,
@@ -330,12 +330,16 @@ the trial, and prints detailed results.
 
 1. **Symbolic proof complete.**  A symbolic proof of closure on Wilson's
    three sublattice conditions is established in `paper/main.tex`
-   (Section 4, "Proof of closure").  The proof rests on five lemmas
+   (Section 4, "Proof of closure").  The proof rests on four lemmas
    about the interaction between the transposition σ, the maximal
    order L, and the sublattices Ls and Ls̄.  The finite-case
    verifications (Lemmas C and D, 64 Z-basis products each) are
    executed with exact rational arithmetic in
-   `python_project/src/symbolic_proof_checks.py`.
+   `python_project/src/symbolic_proof_checks.py`.  The earlier
+   fifth check, σ(Ls) ≠ Ls, is still verified by the script but is
+   now recorded as a remark in the paper rather than a lemma, since
+   it is a non-triviality observation about the sublattice, not a
+   step of the closure proof.
 
 2. **Formal paper written.**  `paper/main.tex` (12 pages) contains
    abstract, preliminaries, construction, symbolic proof, algebraic

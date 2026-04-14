@@ -1,6 +1,8 @@
 """
-symbolic_proof_checks.py — Exact-arithmetic verification of the five lemmas
-needed for the symbolic proof of Leech lattice closure.
+symbolic_proof_checks.py — Exact-arithmetic verification of the four lemmas
+needed for the symbolic proof of Leech lattice closure, plus the
+accompanying non-triviality check σ(Ls) ≠ Ls (recorded as a remark in
+Section 4 of the paper rather than a lemma).
 
 All arithmetic uses doubled-integer coordinates (multiply everything by 2)
 to avoid fractions entirely. The octonion product of two vectors with
@@ -12,7 +14,7 @@ Lemma A: σ(L) = L
 Lemma B: L·L ⊆ L  (maximal order)
 Lemma C: L · σ(Ls̄) ⊆ σ(Ls̄)
 Lemma D: σ(Ls) · σ(Ls) ⊆ σ(Ls)
-Lemma E: σ(Ls) ≠ Ls  (and Ls·Ls ⊄ Ls as counterexample)
+Remark (non-triviality): σ(Ls) ≠ Ls  (and Ls·Ls ⊄ Ls as counterexample)
 """
 
 import numpy as np

@@ -44,7 +44,7 @@ All trials use fixed random seeds for reproducibility.  Results are recorded in 
 
 | File | Purpose |
 |---|---|
-| `symbolic_proof_checks.py` | Exact-rational-arithmetic verification of the five lemmas in Section 4 of the paper (σ(L) = L; L · L ⊆ L; L · σ(Lš) ⊆ σ(Lš); σ(Ls) · σ(Ls) ⊆ σ(Ls); σ(Ls) ≠ Ls).  No floating-point. |
+| `symbolic_proof_checks.py` | Exact-rational-arithmetic verification of the four lemmas in Section 4 of the paper (σ(L) = L; L · L ⊆ L; L · σ(Lš) ⊆ σ(Lš); σ(Ls) · σ(Ls) ⊆ σ(Ls)), plus the accompanying non-triviality check σ(Ls) ≠ Ls now recorded as a remark in Section 4.  No floating-point. |
 | `consistency_checks.py` | Ten pre-paper consistency checks: construction well-definedness, isomorphism claim, table differences, exhaustive verification harness, generation arguments, claimed algebraic properties, transposition independence, untwisted-vs-twisted comparison, cross-reference with Wilson's paper, code correctness. |
 
 ## Guidelines

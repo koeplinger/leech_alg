@@ -67,17 +67,20 @@ to basis relabelling.
 
 ### Symbolic proof
 
-Closure is proved symbolically via five lemmas (exact arithmetic,
+Closure is proved symbolically via four lemmas (exact arithmetic,
 `symbolic_proof_checks.py`):
 
 - **Lemma A**: σ(L) = L (coordinate permutation preserves D₈⁺).
 - **Lemma B**: L·L ⊆ L (L is a maximal order — Coxeter 1946).
 - **Lemma C**: L · σ(Ls̄) ⊆ σ(Ls̄) (64 basis products verified exactly).
 - **Lemma D**: σ(Ls) · σ(Ls) ⊆ σ(Ls) (64 basis products verified exactly).
-- **Lemma E**: σ(Ls) ≠ Ls (explicit witness).
 
 The standard product fails condition 3 because Ls·Ls ⊄ Ls.  The twist
 maps the condition-3 sublattice from Ls to σ(Ls), where closure holds.
+The accompanying observation σ(Ls) ≠ Ls (verified by an explicit
+witness in the script) is recorded as a remark in Section 4 of the
+paper rather than a lemma: it confirms the construction is
+non-trivial, but is not used in the closure argument.
 
 ### Algebraic properties
 
@@ -87,4 +90,4 @@ is not norm-multiplicative.
 
 ---
 
-Last updated: 2026-04-11
+Last updated: 2026-04-14

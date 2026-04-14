@@ -1,0 +1,37 @@
+Prompt 062 — Housekeeping after feedback round 1
+=================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+Good. I tweaked the paper main.tex just a bit, read it and update
+your context. The reference bibitem is good, also update the paper
+in the external housekeeping folders and files in this repo. You
+know the main README and the MANIFESTO so you know where everything
+is supposed to be.
+
+Interpretation / task list:
+---------------------------
+ 1. Re-read paper/main.tex to pick up user's latest tweaks.
+ 2. Review MANIFESTO and README to understand which housekeeping
+    folders/files need updating.
+ 3. Propagate the substantive changes made in prompts 059-061 to
+    wherever the paper's state is echoed:
+    - CURRENT_STATE.md
+    - evidence_and_reasoning/ (references, key_claims)
+    - README.md / paper/README.md
+    Specifically what changed since last housekeeping update:
+    (a) Section 4 merged Lemma 4.5 into Remark 4.6; "four lemmas".
+    (b) Section 4.6 merged Prop 4.10 into prose.
+    (c) Abstract expanded with Kirmse->Coxeter->sigma chain.
+    (d) Section 7 Wilson description corrected (no 3x3 matrices in
+        the 2009 paper; those are in the follow-on paper).
+    (e) Section 7 Dixon description: proper XY-product formula;
+        specialisation to X-product when Y†=X^-1.
+    (f) Section 7 Baez/Egan rewritten with Egan's 17,280 count,
+        parts 9-10, Baez's open question and negative conjecture.
+    (g) New footnote on Dixon paragraph noting Dixon 1995 precursor
+        and Wilson 2009 correction as structurally similar to
+        Kirmse-Coxeter.
+    (h) New bibitem Dixon1995.
+    (i) Baez2014 bibitem updated to cite parts 9 & 10 explicitly.

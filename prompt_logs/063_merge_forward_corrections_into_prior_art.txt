@@ -1,0 +1,33 @@
+Prompt 063 — Merge forward corrections into prior_art body
+===========================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+You did the forward-evolving directive well, however, take the
+"Forward corrections" in "prior_art_orders_on_leech.txt" and update
+the main document, just noting today's "last updated" time stamp.
+
+Interpretation / task list:
+---------------------------
+ 1. Apply the four forward corrections (appended in prompt 062) into
+    the main body of prior_art_orders_on_leech.txt:
+    (a) Wilson (2009): no 3×3 matrices in that paper; corrects the
+        "Conway group via 3×3 octonionic matrices" phrasing.  Those
+        matrices are in the follow-on "Conway's group and octonions".
+    (b) Dixon (2010) XY-product: proper formula
+        A ∘_{XY} B = (AX)(Y†B); ℓ₀ special case is the X-product.
+    (c) Dixon (1995): earlier precursor (hep-th/9506080) with small
+        correction supplied by Wilson 2009.  Add a new detailed entry.
+    (d) Baez & Egan (2014): refine with parts 9–10 specificity,
+        Egan's at-least 17,280 Leech embeddings, and the correctly
+        phrased open question (undoubled Jordan closure, Baez's
+        negative conjecture).
+ 2. Remove the "Forward corrections" appendix block added in 062.
+ 3. Update the "Last updated" date to 2026-04-14.
+
+Note on manifesto 11 compliance: this is a living *reference
+registry* (not a key-claim or prompt log).  The user explicitly
+requested applying the corrections to the main body with a fresh
+timestamp — that records the update clearly.  Git history preserves
+the prior state.

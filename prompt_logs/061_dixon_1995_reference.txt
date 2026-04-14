@@ -1,0 +1,37 @@
+Prompt 061 — Dixon 1995 reference and Dixon/Wilson footnote
+===========================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+Geoffrey Dixon had in fact posed his hypothesis years earlier than
+the 2010 reference. While we want to keep that reference, and all
+that's written about it, do find and reference Dixon's 1995's paper
+(Leech invariance exposed) and make a footnote in section 6 that the
+situation between Dixon and Wilson 2009 is not unlike Kirmse and
+Coxeter, where Dixon posed a structurally correct hypothesis that
+needed correction, which Wilson provided as a side note in his 2009
+paper. Keep this footnote short, respectful, and not dramatic.
+
+Interpretation / task list:
+---------------------------
+ 1. Locate Dixon 1995 "OCTONIONS: INVARIANT LEECH LATTICE EXPOSED"
+    (hep-th/9506080) — already known from Wilson's references in his
+    2009 paper [10, 11].  Verify title and add bibitem.
+ 2. User says "footnote in section 6" but sections 6=Methodology and
+    7=Related work.  The content (Dixon/Wilson parallels
+    Kirmse/Coxeter) belongs with the Dixon paragraph in Section 7.
+    Asked user to confirm — user confirmed they meant Section 7.
+ 3. Keep footnote short, respectful, no drama.
+ 4. Preserve existing Dixon 2010 reference and paragraph.
+
+Wilson 2009 mentions Dixon's conjectured formula:
+  "After this paper was submitted, I became aware of some work in
+   progress by Geoffrey Dixon [12], which comes much closer to the
+   description of the minimal vectors given above, at the end of
+   Section 3.  However, as far as I can see his conjectured formula
+   for the last set of vectors needs modification: in effect, his
+   formula is equivalent to (λs, ±λk, ±(λj)k), that is, omitting the
+   (necessary) multiplication by j in the first coordinate."
+
+This is the "side note" correction the user is referring to.
