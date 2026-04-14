@@ -1,0 +1,66 @@
+Prompt 064 — Additional prior art: Leech lattice constructions
+===============================================================
+Date: 2026-04-14
+
+User prompt (verbatim):
+-----------------------
+Here are some references I need to sort through, in order to identify
+prior art. These references all deal with reconstructing the Leech
+lattice. Our claim here is that our order closes on the Leech lattice,
+where the order is very simple and Z_3 symmetric. That is, our work
+here is more from a linear algebra point of view, and we already
+collected the Baez/Egan/Dixon work. But I need to make an effort at
+being comprehensive in identifying prior work.
+
+Check the Conway-Sloane paper "Twenty-three constructions of the Leech
+lattice" in 1982.
+
+You already collected "Sphere-packings, lattices and groups" (Springer,
+1988), check it again.
+
+Do you have access to read the Frenkel, Lepowsky and Meurman in the
+Journal of Algebra (1982) based on E8+E8+E8? If so, read it. If not,
+let me know.
+
+On a tangent, there's a paper by Elkies and Gross (1996) that claims an
+octonionic construction of the Leech lattice. Do you have access? If
+so, read it. If not, let me know.
+
+Interpretation / task list:
+---------------------------
+ 1. Assess access to each of the four references.
+ 2. For references we have direct access to: read and extract the
+    construction style, note whether any multiplicative / order
+    structure is proposed or tested.
+ 3. For references we do not have direct access to: state so clearly;
+    do not invent content.
+ 4. Frame findings in terms of prior-art relevance to our claim
+    (Z_3-symmetric order on Λ via transposition-twisted octonions).
+ 5. Log prompt per Manifesto.
+
+Outcome:
+--------
+ - Verified access status: full-text PDFs for all four references
+   (Conway–Sloane 1982, Lepowsky–Meurman 1982, Elkies–Gross 1996,
+   and SPLAG 1999) paywalled or not directly fetchable.  Structural
+   content confirmed via Wilson 2009 bibliography, Elkies' publication
+   list, Baez Integral-Octonions series, and secondary summaries.
+   User is obtaining physical copies from library to verify the
+   absence of any bilinear/ring/order structure on Λ.
+ - Corrected authorship: the 1982 J. Algebra paper is Lepowsky and
+   Meurman alone (no Frenkel); Frenkel joined the collaboration later
+   (FLM 1988 book on vertex operator algebras and the Monster).
+ - Per user's follow-up instruction (option "both"):
+   (a) prior_art_orders_on_leech.txt rewritten — new entries for
+       [ConwaySloane1982], [LepowskyMeurman1982], [ElkiesGross1996];
+       Summary section reorganised around four structural categories
+       (Baez/Egan closest, precursors farthest); entries reordered
+       roughly chronologically; search methodology and library-copy
+       caveats noted; timestamp refreshed to 2026-04-14.
+   (b) paper §7 Related Work gained a new "Earlier precursors"
+       paragraph between Baez/Egan and Kirmse/Coxeter, citing the
+       three additions; bibitems added for ConwaySloane1982,
+       ElkiesGross1996, LepowskyMeurman1982.  LaTeX recompile clean.
+ - User framing recorded: these three are "precursor work for
+   Baez/Egan, one step further removed from our work here" — tracing
+   the full trail back toward Kirmse.

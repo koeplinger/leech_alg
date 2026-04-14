@@ -1,7 +1,7 @@
 Topic: Prior art — multiplicative structures / orders on the Leech lattice
 =============================================================================
 
-Literature search conducted: 2026-04-11
+Literature search conducted: 2026-04-11, extended 2026-04-14
 Purpose: Identify any prior work establishing or ruling out an order (or
 ring, algebra, multiplicatively closed structure) on the Leech lattice,
 before publishing our finding.
@@ -17,18 +17,10 @@ The specific construction in this project — three copies of a
 transposition-twisted octonion algebra with Z₃ cross-block routing —
 does not appear in the literature.
 
-The closest related work falls into three categories:
+The closest related work falls into four categories (listed
+roughly by structural distance from the present construction):
 
-1. **Wilson (2009)**: Characterises Λ as a sublattice of L³ using
-   octonionic conditions, but does not define or test a multiplicative
-   product on Λ.
-
-2. **Dixon (1995, 2010)**: Proposes octonionic descriptions of Λ using
-   variants of the octonion product (XY-product in the 2010 formal
-   preprint, earlier versions going back to the 1995 arXiv preprints),
-   but does not establish closure of Λ under any such product.
-
-3. **Baez / Egan (2014)**: Explores whether the Leech lattice can be
+1. **Baez / Egan (2014)**: Explores whether the Leech lattice can be
    made into a ring via the exceptional Jordan algebra (27-dimensional,
    commutative).  Finds that an integer sublattice of 𝔥₃(O) containing
    a Leech embedding is closed under the doubled Jordan product
@@ -39,23 +31,65 @@ The closest related work falls into three categories:
    answer.  The human researcher of this project (Koeplinger)
    participated in that discussion.
 
+2. **Dixon (1995, 2010)**: Proposes octonionic descriptions of Λ using
+   variants of the octonion product (XY-product in the 2010 formal
+   preprint, earlier versions going back to the 1995 arXiv preprints),
+   but does not establish closure of Λ under any such product.
+
+3. **Wilson (2009)**: Characterises Λ as a sublattice of L³ using
+   octonionic conditions, but does not define or test a multiplicative
+   product on Λ.
+
+4. **Earlier precursors** — additive/geometric constructions of Λ
+   that foreshadow the octonion-triple and Jordan-algebra frameworks
+   above but do not test closure under any bilinear product:
+   Conway–Sloane 1982 (23 constructions, one per Niemeier lattice,
+   including a Turyn-style construction from three copies of E₈);
+   Lepowsky–Meurman 1982 (Λ as a sublattice of E₈³ containing 2E₈³,
+   used to generate Co₀); and Elkies–Gross 1996 (Λ from an integer
+   form of the exceptional Jordan algebra 𝔥₃(O) by taking the
+   orthogonal complement of a distinguished identity element).
+
 ---
 
 ## Detailed findings
 
-### [Wilson2009] — Octonions and the Leech lattice
+### [ConwaySloane1982] — Twenty-three constructions for the Leech lattice
 
-Wilson constructs Λ as {(x,y,z) ∈ L³ : conditions 1–3}, gives the
-explicit decomposition 196,560 = 3 × 240 × (1 + 16 + 16²) of the
-minimal shell into three families, and proves Λ is even and self-dual
-by elementary arguments using L and the sublattices Ls, Ls̄.  The
-paper does not describe the Conway group; it announces at the end
-that a follow-on paper ("Conway's group and octonions", listed as
-reference [20] of Wilson 2009 and submitted at the time) will
-generate Aut(Λ) using 3×3 octonionic matrices.  See the [WilsonConway]
-entry below for that follow-on.  Wilson 2009 does not define or test
-a bilinear product on Λ; it uses the octonionic structure for the
-sublattice characterisation only.
+Conway and Sloane give 23 constructions of Λ, one for each of the 23
+Niemeier lattices (equivalently, one for each class of deep hole in
+the Leech lattice).  Each construction glues vectors according to
+the hole structure.  Among the 23 is a Turyn-style construction from
+three copies of E₈ corresponding to the 3E₈ Niemeier lattice; this is
+the underlying structural precedent for all later "triple of
+octonions / E₈³" approaches (Lepowsky–Meurman 1982, Dixon 1995/2010,
+Wilson 2009).  An expanded version appears as Chapter 24 of SPLAG.
+Published in Proc. Roy. Soc. London A 381 (1982), 275–283.  The 23
+constructions are additive/code-theoretic; no bilinear product is
+defined on Λ.
+
+Direct PDF access was not available during this search (paywalled).
+Structural content confirmed via Wilson 2009 (which cites this as
+reference [3]) and secondary sources; physical copy to be
+obtained from library for verification.
+
+### [LepowskyMeurman1982] — An E₈-approach to the Leech lattice and the Conway group
+
+Lepowsky and Meurman (J. Algebra 77 (1982), 484–504) describe Λ as a
+sublattice of E₈³ containing 2E₈³ and use this to construct the
+Conway group Co₀ via a maximal 2-local subgroup permuting the three
+E₈ factors together with one extra automorphism.  This is a
+group-theoretic / Lie-algebraic treatment of the E₈³ decomposition;
+no bilinear product on Λ is defined or tested.  The E₈³ ambient
+decomposition itself anticipates the R²⁴ = O₁ ⊕ O₂ ⊕ O₃ viewpoint
+used here and in Wilson 2009 / Dixon 2010 / Baez 2014, but the
+multiplicative question is not engaged.  Note: the 1982 paper is by
+Lepowsky and Meurman alone; Frenkel joined the collaboration later
+for the Monster vertex operator algebra (FLM, 1988).
+
+Direct PDF access was not available during this search (paywalled);
+structural content confirmed via secondary summaries.  Physical copy
+to be obtained from library for verification.
 
 ### [Dixon1995] — Octonions: invariant Leech lattice exposed
 
@@ -70,6 +104,49 @@ characterisation above.  The Dixon–Wilson situation is structurally
 analogous to the Kirmse–Coxeter one: an early, structurally correct
 proposal refined by a later author's short correction.  Dixon 1995
 does not test or claim closure of Λ under any bilinear product.
+
+### [ElkiesGross1996] — The exceptional cone and the Leech lattice
+
+Elkies and Gross (Internat. Math. Res. Notices 1996, no. 14,
+665–698) work in the 27-dimensional exceptional Jordan algebra
+𝔥₃(O).  They study integer forms (J, E) of 𝔥₃(O) and obtain Λ as
+an even integral lattice J₀ = (ZE)⊥ ⊂ J, i.e. the orthogonal
+complement of a distinguished identity element E with respect to the
+trace form determined by E.  Triples of Cayley integers with this
+quadratic form give an isometric copy of Λ.  They prove that for
+two different integral forms K of 𝔥₃(O) the automorphism group
+Aut K is generated by octave reflections.
+
+Wilson 2009 groups this with Dixon 1995 as one of the "tried to
+build Leech from triples of integral octonions" attempts (Wilson's
+reference [12]).  Structurally this is the nearest precursor to the
+Baez/Egan 2014 Jordan-closure investigation: both work in 𝔥₃(O).
+The Elkies–Gross treatment is additive/geometric (lattice and
+reflection groups); the question of whether Λ or the ambient integer
+form is closed under the (undoubled or doubled) Jordan product is
+not raised.  A follow-up paper "Cubic rings and the exceptional
+Jordan algebra" (Elkies–Gross, Duke Math. J. 109 (2001), 383–409)
+further investigates these structures using modular forms and
+Niemeier's classification.
+
+Direct PDF access was not available during this search (paywalled);
+structural content confirmed via Elkies' publication list, Baez's
+Integral Octonions n-Category Café series, and Wilson 2009.
+Physical copy to be obtained from library for verification.
+
+### [Wilson2009] — Octonions and the Leech lattice
+
+Wilson constructs Λ as {(x,y,z) ∈ L³ : conditions 1–3}, gives the
+explicit decomposition 196,560 = 3 × 240 × (1 + 16 + 16²) of the
+minimal shell into three families, and proves Λ is even and self-dual
+by elementary arguments using L and the sublattices Ls, Ls̄.  The
+paper does not describe the Conway group; it announces at the end
+that a follow-on paper ("Conway's group and octonions", listed as
+reference [20] of Wilson 2009 and submitted at the time) will
+generate Aut(Λ) using 3×3 octonionic matrices.  See the [WilsonConway]
+entry below for that follow-on.  Wilson 2009 does not define or test
+a bilinear product on Λ; it uses the octonionic structure for the
+sublattice characterisation only.
 
 ### [Dixon2010] — Integral Octonions, Octonion XY-Product, and the Leech Lattice
 
@@ -141,9 +218,20 @@ Searched for:
 - Wilson octonion Leech product structure
 - n-Category Café integral octonions (Baez series)
 - arXiv searches for non-associative algebras + Leech lattice
+- Conway–Sloane "Twenty-three constructions" 1982
+- Frenkel/Lepowsky/Meurman 1982 J. Algebra Leech (identified as
+  Lepowsky–Meurman only)
+- Elkies–Gross 1996 "The exceptional cone and the Leech lattice"
 
 Sources checked: Google Scholar, arXiv, Semantic Scholar, ResearchGate,
-n-Category Café, Wilson's publication list.
+n-Category Café, Wilson's publication list, Elkies' publication list.
+
+For the four paywalled references (Conway–Sloane 1982,
+Lepowsky–Meurman 1982, Elkies–Gross 1996, and the Elkies–Gross
+2001 follow-up), structural content was verified via secondary
+sources (including Wilson 2009, which cites all three in its
+bibliography); physical copies are to be obtained from a library to
+confirm the absence of multiplicative/ring/order structure on Λ.
 
 ---
 
