@@ -410,14 +410,21 @@ $196{,}560$ of them.
 
 Identify $\RR^{24}$ with $\OO_1 \oplus \OO_2 \oplus \OO_3$: three
 copies of the octonions, labelled $\alpha = 1, 2, 3$.  Let
-$\bar{s} = \tfrac{1}{2}(-e_0 - e_1 - e_2 - \cdots - e_7)$ (the
-octonion conjugate of the negative of the earlier~$s$; it also lies
-in~$L$).  Define two sublattices of~$L$:
+$\bar{s} = \tfrac{1}{2}(-e_0 - e_1 - e_2 - \cdots - e_7)$, the
+octonion conjugate of the negative of the earlier~$s$, again of
+squared norm~$2$.  Note $\bar s \notin L$ under the lattice
+membership criterion of Section~\ref{sec:e8}: its coordinates are
+half-integer but its coordinate sum is~$-4$, which falls in the
+excluded even branch of the half-integer case.  Define two
+sublattices of~$L$:
 \[
   Ls = \{\ell \cdot s : \ell \in L\}, \qquad
   L\bar{s} = \{\ell \cdot \bar{s} : \ell \in L\},
 \]
-each of index~$16$ in~$L$.  Wilson's Leech lattice is then
+each of index~$16$ in~$L$.  These sets are sublattices of~$L$
+despite $\bar s \notin L$: for every $\ell \in L$ the product
+$\ell \cdot \bar s$ nonetheless lies in~$L$ (verified directly on
+the 240 roots and extended by linearity).  Wilson's Leech lattice is then
 \begin{multline}\label{eq:leech}
   \LL \;=\; \bigl\{(x, y, z) \in L^3 \;:\\
     x + y,\; x + z,\; y + z \;\in\; L\bar{s}; \quad

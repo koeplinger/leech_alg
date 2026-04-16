@@ -1,0 +1,7 @@
+Prompt 070 — Reviewer critique of the paper
+
+User request:
+"This repository contains a paper, companion, and full methodology. I want you to be a reviewer of the paper, who is a highly trained mathematician. Find issues in the argument, treatment, exposition, or other weaknesses. The repo is referenced from the paper, and serves as supplemental information. However, the paper must be self-contained and correct. Write a formal review."
+
+Task:
+Play the role of a demanding, highly trained mathematician reviewing paper/main.tex (with the companion and supplemental material as context). Identify issues in argument, treatment, exposition, and other weaknesses. Deliver a formal review.

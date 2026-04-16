@@ -214,13 +214,21 @@ Section~\ref{sec:properties}).
 \subsection{Wilson's Leech lattice}\label{subsec:wilson-leech}
 
 Define $s = \tfrac{1}{2}(-e_0 + e_1 + \cdots + e_7)$ and
-$\bar{s} = \tfrac{1}{2}(-e_0 - e_1 - \cdots - e_7)$.  Both lie in~$L$
-with $\Nrm(s) = \Nrm(\bar{s}) = 2$.  Let
+$\bar{s} = \tfrac{1}{2}(-e_0 - e_1 - \cdots - e_7)$, both of
+norm~$\Nrm(s) = \Nrm(\bar{s}) = 2$.  Then $s \in L$ (it is a
+type-2 root, with an odd coordinate sum), while $\bar{s} \notin L$
+(its coordinate sum is~$-4$, which falls in the excluded even
+branch of the half-integer case).  Let
 \[
   L\bar{s} = \{ \ell \cdot \bar{s} : \ell \in L \}, \qquad
   Ls = \{ \ell \cdot s : \ell \in L \}.
 \]
-These are sublattices of~$L$ with $[L : L\bar{s}] = [L : Ls] = 16$,
+Although $\bar s$ itself does not lie in~$L$, the set $L\bar s$
+nonetheless lies in~$L$: for every $\ell \in L$ the product
+$\ell \cdot \bar s$ lies in~$L$ (directly verified on the 240 roots
+of~$L$ and extended by linearity).  Both $L\bar{s}$ and~$Ls$ are
+therefore sublattices of~$L$, with
+$[L : L\bar{s}] = [L : Ls] = 16$,
 $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$
 \cite{Wilson2009}.
 
@@ -562,8 +570,8 @@ algebraic properties.  The results are summarised below.
 \toprule
 Property & Holds? & Details \\
 \midrule
-Multiplicative identity & No & $(e_0, e_0, e_0)$ has $\Nrm = 3$;
-  not in $\LL$ \\
+Multiplicative identity & No & the ambient algebra
+  $(\RR^{24}, +, \star)$ has no identity element \\
 Commutativity & No & ${<}\,0.1\%$ of pairs commute \\
 Norm multiplicativity & No & $\approx 47\%$ of pairs satisfy
   $\Nrm(u \star v) = \Nrm(u)\Nrm(v)$ \\
@@ -588,10 +596,15 @@ $\Nrm(u)\Nrm(v) = 8 \times 8$).
 \end{remark}
 
 \begin{remark}
-The order is non-unital: the ambient algebra $(\RR^{24}, +, \star)$
-has multiplicative identity $(e_0, e_0, e_0)$, but this element has
-squared norm~3 and does not lie in~$\LL$.  Thus $(\LL, +, \star)$ is
-a non-unital order.
+The ambient algebra $(\RR^{24}, +, \star)$ has no multiplicative
+identity: any putative left identity~$(a,b,c)$ would have to act on
+an arbitrary~$(x',y',z')$ by the block matrix
+$\bigl(\begin{smallmatrix} a & c & b \\ c & b & a \\ b & a & c
+\end{smallmatrix}\bigr)$ (entries acting by left-multiplication
+in~$\OO$), and no triple $(a,b,c)$ makes this the identity on all
+three blocks simultaneously.  In particular, $(e_0, e_0, e_0)$ is
+not an identity: it maps $(x', y', z')$ to $(x'+y'+z',\, x'+y'+z',\,
+x'+y'+z')$.  Consequently $(\LL, +, \star)$ is a non-unital order.
 \end{remark}
 
 The order does not satisfy any of the classical algebraic identities

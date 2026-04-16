@@ -1,0 +1,16 @@
+Prompt 072 — Enforce MANIFESTO logging of all prompts
+
+User request (verbatim):
+"Log all prompts per the manifesto, including my previous one."
+
+Context:
+Prompt 070 (reviewer critique request) was logged at the start of that interaction.
+Prompt 071 (apply selected review fixes) was not logged immediately when the user
+issued it; this prompt is the user's reminder to log all prompts including 071.
+
+Actions taken:
+- Created prompt_logs/071_reviewer_critique_apply_fixes.txt recording the user's
+  "apply fixes" prompt verbatim, the actions taken in that turn (review record
+  created, errors 2.1 and 2.2 corrected in both main and companion, PDFs rebuilt),
+  and the items deferred per user direction.
+- Created this file (072) recording the current reminder prompt.
