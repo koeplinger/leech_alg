@@ -1,0 +1,29 @@
+Prompt 077 — Confirm review corrections, then plan a true symbolic proof
+Date: 2026-04-28
+
+User request (verbatim):
+"great. now looking at the review that you've created on April 16.
+I've already addressed a few topics, now let's work on a few more.
+I'll tell you exactly which ones, and we'll go one by one.
+
+First, confirm that we've properly corrected the following errors
+already:
+
+1. Correct the claim "$\bar s\in L$" (Section 2.3). State the $L$
+   membership criterion so it is consistent with the supplemental
+   code's `is_in_L`.
+2. Correct the multiplicative-identity statements (Section 4). The
+   ambient algebra $(\mathbb{R}^{24},\star)$ has no multiplicative
+   identity; $(e_0,e_0,e_0)$ is not one.
+
+Then, lets replace the remaining references to numeric verification
+with truly symbolic proofs. You're already spelling out that this is a
+human-AI collaboration, and that the complete research record is part
+of the contribution. Add to this that numeric validation was always
+done, in both Python and GAP/LOOPS. With that, don't just rename the
+"symbolic proof" misleading wording, but instead let's provide the
+full symbolic proof. Start by making a plan of these proofs, so that
+we can review your plan and decide whether to inline them or to
+reference details in an appendix."
+
+Plan: see assistant response.

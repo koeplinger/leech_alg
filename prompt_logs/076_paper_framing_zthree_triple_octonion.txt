@@ -1,0 +1,31 @@
+Prompt 076 — Reframe paper around Z_3-symmetric triple-octonion product
+Date: 2026-04-28
+
+User request (verbatim):
+"Great. Now we need to work on the paper. From feedback, we need to
+improve its framing. Right now we're mentioning a lot of construction
+details, like transposition-twisted octonions, as if this would be an
+algebra that's different from the octonions. They're not, of course,
+we're simply using one of the Coxeter representation of the octonions
+as a starting point. Make small edits for the paper that make it clear
+that our finding applies to a Z_3 symmetric triple-octonion product
+that closes on the Leech. When asking about the exact ways that the
+algebra and the lattice are represented in R^24, we then mention the
+construction details. We want to do some more updates to the paper,
+but let's start with this high-level framing. Update the main paper
+with today's date, too."
+
+Context:
+- Feedback indicates that words like "transposition-twisted octonions"
+  and "twisted Kirmse octonions" read as if a different algebra than
+  the octonions were being introduced. They are not: the octonions are
+  the octonions. We are using a Coxeter representation as the starting
+  point and the σ-twist is one ingredient of the Z_3-symmetric
+  triple-octonion product on R^24.
+- High-level framing: result is about a Z_3-symmetric triple-octonion
+  product (defined on three octonion blocks with a Z_3 cyclic role
+  permutation) that closes on the Leech lattice.
+- Construction-level framing (Coxeter basis, σ-twist on individual
+  blocks, the block-product table) belongs only where the paper
+  discusses the explicit R^24 representation.
+- Update the date in main.tex to today (2026-04-28).

@@ -36,14 +36,14 @@
 \DeclareMathOperator{\Co}{Co}
 
 \title[An order on the Leech lattice]{An order on the Leech lattice\\
-from transposition-twisted octonions}
+from a $\ZZ_3$-symmetric triple-octonion product}
 
 \author{Jens Koeplinger}
 
 \address{105 E Avondale Dr, Greensboro, NC 27403, USA}
 \email{jenskoeplinger@gmail.com}
 
-\date{17 April 2026}
+\date{28 April 2026}
 
 \subjclass[2020]{11H06, 17A75, 11H56}
 \keywords{Leech lattice, octonions, non-associative order, integral algebra}
@@ -52,17 +52,19 @@ from transposition-twisted octonions}
 
 \begin{abstract}
 We show that the Leech lattice~$\LL$ admits the structure of an order
-in a 24-dimensional real algebra.  The product is built from three
-identical copies of a \emph{transposition-twisted} octonion algebra ---
-the algebra obtained by applying a single transposition to the
-imaginary basis elements of the standard Fano-plane multiplication ---
-with $\ZZ_3$-symmetric cross-block routing.  The construction sits at
-the end of a short chain of transpositions: Kirmse
-$\to$ Coxeter $\to$ $\sigma$-twist, each step a transposition of two
-basis indices that resolves a closure obstruction at the next level
---- Coxeter's transposition turns Kirmse's~$E_8$ candidate into an
-order in the octonions, and the present $\sigma$-twist turns the
-triple-octonion product on~$\LL$ into an order.
+in a 24-dimensional real algebra.  The product is a
+$\ZZ_3$-symmetric triple-octonion product on~$\RR^{24}$, assembled
+from nine octonion-multiplication blocks under cyclic $\ZZ_3$
+permutation of three octonion factors.  Realising this product
+concretely on Wilson's sublattice description of~$\LL \subset \RR^{24}$
+requires a particular Coxeter representation of the octonions,
+related to the standard Fano-plane labelling by a single
+transposition~$\sigma$ of two imaginary basis indices.  The chain
+Kirmse $\to$ Coxeter $\to$ $\sigma$ --- each step a transposition of
+two basis indices --- successively aligns the octonion multiplication
+with the lattice: Coxeter's transposition turns Kirmse's~$E_8$
+candidate into an order in the octonions, and~$\sigma$ aligns the
+triple-octonion product so that it closes on~$\LL$.
 
 This result was developed through a systematic human--AI collaboration;
 the complete research record is publicly available~\cite{repo}.
@@ -95,19 +97,23 @@ Baez and Egan \cite{Baez2014} explored Jordan-algebraic structures
 on~$\LL$ within the exceptional Jordan algebra~$\mathfrak{h}_3(\OO)$,
 finding closure under a doubled Jordan product.
 
-The standard triple-octonion product on~$L^3$ --- using the same
-octonion multiplication in all three blocks with
-$\ZZ_3$-symmetric cross-block routing --- satisfies two of Wilson's
-three sublattice conditions automatically, but closure on the
-third requires a block-sum sublattice~$Ls$ to be preserved under
-octonion multiplication, and the standard product does not
-preserve it.
+The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ --- using the
+same octonion multiplication in all three blocks with $\ZZ_3$-symmetric
+cross-block routing --- satisfies two of Wilson's three sublattice
+conditions automatically, but closure on the third requires a
+block-sum sublattice~$Ls$ to be preserved under octonion
+multiplication, and that condition is sensitive to which Coxeter
+representation of the octonions is used in~$\RR^{24}$.
 
-The main result of this paper is that a single transposition applied to
-the Fano-plane triples properly closes the remaining condition.
-The key insight is that the twist maps the block-sum sublattice~$Ls$
-to~$\sigma(Ls)$, a different sublattice of~$L$ that \emph{is} closed
-under the standard octonion product.
+The main result of this paper is that the $\ZZ_3$-symmetric
+triple-octonion product closes on~$\LL$ once the octonions are
+realised in the Coxeter representation that is aligned with Wilson's
+sublattice description of~$\LL$.  Relative to the standard Fano-plane
+labelling we use throughout for the $E_8$ block, that representation is
+obtained by a single transposition~$\sigma$ of two imaginary basis
+indices: the resulting product maps the block-sum sublattice~$Ls$
+into~$\sigma(Ls)$, a different sublattice of~$L$ that \emph{is}
+closed under the underlying octonion multiplication.
 
 \begin{theorem}\label{thm:main}
 Let\/ $\cdot_\sigma$ denote the transposition-twisted octonion
@@ -768,8 +774,9 @@ level of the construction.
 % ===============================================================
 
 The Leech lattice admits an order under a remarkably simple
-construction: three identical copies of a transposition-twisted
-octonion algebra with $\ZZ_3$ routing.  The symbolic proof
+construction: a $\ZZ_3$-symmetric triple-octonion product on~$\RR^{24}$,
+realised in the Coxeter representation aligned with Wilson's
+sublattice description of~$\LL$.  The symbolic proof
 (Section~\ref{sec:proof}) reduces closure to four lemmas, of which
 the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice $\sigma(Ls)$ --- unlike~$Ls$
 itself --- is closed under the standard octonion product.  The twist
