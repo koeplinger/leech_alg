@@ -232,11 +232,15 @@ branch of the half-integer case).  Let
   L\bar{s} = \{ \ell \cdot \bar{s} : \ell \in L \}, \qquad
   Ls = \{ \ell \cdot s : \ell \in L \}.
 \]
-Although $\bar s$ itself does not lie in~$L$, the set $L\bar s$
-nonetheless lies in~$L$: for every $\ell \in L$ the product
-$\ell \cdot \bar s$ lies in~$L$ (directly verified on the 240 roots
-of~$L$ and extended by linearity).  Both $L\bar{s}$ and~$Ls$ are
-therefore sublattices of~$L$, with
+Both $L\bar{s}$ and~$Ls$ are sublattices of~$L$,\footnote{$L\bar
+s \subseteq L$ even though $\bar s \notin L$: each $\ell \cdot
+\bar s$ with $\ell$ a root of~$L$ lies in~$L$ by direct
+computation, and the inclusion extends by $\ZZ$-linearity in the
+left factor. $L\bar s$ is therefore a $\ZZ$-subgroup of~$L$, and
+is moreover closed under left-multiplication by~$L$ (Wilson's
+condition~(2) for the untwisted product, used implicitly
+throughout~\cite{Wilson2009}). For~$Ls$ both properties are
+immediate from $s \in L$.} with
 $[L : L\bar{s}] = [L : Ls] = 16$,
 $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$
 \cite{Wilson2009}.
@@ -314,6 +318,23 @@ since $\sigma^2 = \mathrm{id}$.  Thus $\sigma: (\OO, \cdot) \to
 (\RR^8, \cdot_\sigma)$ is a vector-space isomorphism that preserves
 multiplication.  Composition follows.
 \end{proof}
+
+\begin{remark}[$\sigma$ vs.\ a Fano-line permutation]
+\label{rem:sigma-vs-fano}
+The map~$\sigma$ is a linear involution of~$\RR^8$, swapping two
+coordinate axes and preserving both the underlying vector space
+and the Euclidean norm.  This is structurally different from a
+permutation of Fano triples (such as the one Coxeter used to
+correct Kirmse's $E_8$ convention), which rewrites the
+multiplication table without being induced by a linear map
+on~$\RR^8$.  Most coordinate transpositions do not correspond to
+Fano-triple permutations: $\sigma = (1\;2)$ does not send the
+triple~$(2,3,5)$ in~\eqref{eq:fano} to any of the other six listed
+there, so the Fano line structure is not preserved by~$\sigma$.
+Coxeter's correction and the present~$\sigma$ thus act at
+different strata of the construction; we expand on this in
+Section~\ref{sec:related}.
+\end{remark}
 
 \begin{remark}\label{rem:table-diffs}
 For the transposition $\sigma = (1\;2)$, exactly 30 of the 64
@@ -638,87 +659,6 @@ $\star$ and the Conway group~$\Co_0$ (the automorphism group of~$\LL$
 as a lattice) is an open question.
 
 % ===============================================================
-\section{Research methodology}\label{sec:methodology}
-% ===============================================================
-
-This research was conducted as a collaboration between a human
-researcher and an AI agent (Claude, Anthropic) over a series of
-directed prompts, governed by a written methodology (the
-``Manifesto'') established at the outset.
-
-The human researcher (the author) brought the initial hypothesis ---
-motivated by prior work on Okubo algebras and autotopies of normed
-composition algebras --- established the research methodology, and
-maintained control of the inquiry through prompt-by-prompt review.
-The AI agent performed the computational work: implementing octonion
-algebras, Wilson's Leech lattice construction, trial algebras, and
-closure tests, and contributed mathematical analysis.
-
-Tests were written from first principles to independently verify
-every foundation: that octonion multiplication satisfies the
-composition property $\Nrm(xy) = \Nrm(x)\Nrm(y)$, that Wilson's
-construction produces a lattice with the correct minimal shell of
-196{,}560 vectors, and that the $E_8$ lattice is indeed a maximal
-order.  This independent verification is how we know that the
-properties stated in the literature are correctly implemented.
-Closure of the twisted product was first observed on over
-12{,}000{,}000 random pairs of minimal vectors with zero failures,
-which prompted the search for a symbolic proof.
-
-\paragraph{Symbolic proof and numeric validation.}
-The proof of Theorem~\ref{thm:main} given in Section~\ref{sec:proof}
-is symbolic: each of the four lemmas is established by exhibiting a
-finite list of integer coefficients (Appendix~\ref{sec:appendix-tables}),
-and the conclusion follows by $\ZZ$-bilinearity.  No floating-point
-or sampled arithmetic enters the proof.  Independently, the same
-basis-by-basis identities that constitute the appendix tables were
-recomputed in two separate computer-algebra implementations as a
-cross-check: a Python implementation using
-\texttt{fractions.Fraction} exact rationals
-(\texttt{python\_project/src/symbolic\_proof\_checks.py}), and a
-GAP/LOOPS implementation using GAP's native exact rational arithmetic
-(\texttt{gap\_project/tests/test\_lemmas.g}).  Both implementations
-reproduce the same integer coefficients displayed in the appendix.
-This redundancy is validation, not proof: it serves to detect
-transcription or implementation errors in the appendix tables, but
-the logical content of the proof rests on the tables themselves.
-
-The methodology required:
-\begin{itemize}
-\item Every claim backed by a reference or computation.
-\item Every prompt logged, with actions recorded.
-\item Every conclusion independently verified.
-\item Forward-evolving corrections: no rewriting history; errors are
-  corrected in subsequent entries.
-\end{itemize}
-
-The path to the result was not direct.  Six trial algebra families
-were explored and ruled out before the transposition twist was
-identified in trial~007.  The systematic methodology ---
-understanding the anatomy of failure (which conditions fail, for which
-vector types, and why) before trying the next approach --- was
-essential.  The failure analysis of the untwisted product (Wilson's
-condition~(3) per Definition~\ref{def:wilson-leech}, exclusively
-type-3$\times$type-3) directly pointed to the
-mechanism that the twist needed to correct.
-
-Iterative convergence toward a robust result --- including learning
-along the way what it is we are actually doing --- is how study,
-research, and discovery have always proceeded.  The AI agent violated
-its own logging protocol on three occasions (prompts 011, 018--019,
-and 029--031), each time caught by the human researcher on review.
-Conversely, the author learned from the AI agent about errors and
-misconceptions in the framing of certain prompts, which likewise
-are part of the record.  What is novel here is the ability to trace
-the entire path, beginning to end, through the complete list of
-prompts.
-
-The full record --- all prompts, code, evidence, and git history ---
-is available at the repository~\cite{repo}.  The reader can form
-their own assessment of what this means for questions of discovery
-and attribution.
-
-% ===============================================================
 \section{Related work}\label{sec:related}
 % ===============================================================
 
@@ -785,16 +725,35 @@ algebra.  His lattice is not closed under multiplication, an error
 corrected by Coxeter~\cite{Coxeter1946} by swapping two basis indices
 in the Fano-plane labelling.
 
-The present construction continues the same conceptual line.  The
-Kirmse--Coxeter step modifies the octonion multiplication (a single
-transposition of basis indices) so that the $E_8$ lattice becomes an
-order.  The present paper applies a second transposition of basis
-indices --- the twist $\sigma$ in Definition~\ref{def:twist} --- to
-the already-corrected octonion product, so that the triple-product
-construction on the Leech lattice becomes an order.  The chain is
-Kirmse $\to$ Coxeter $\to$ $\sigma$-twist: each step is a
-transposition, and each resolves a closure obstruction at the next
-level of the construction.
+The present construction continues the same conceptual line, but
+the two transpositions in the chain are structurally different.
+Coxeter's correction is a permutation of Fano \emph{triples}: it
+rewrites the multiplication table without being induced by a linear
+map on~$\RR^8$.  The present~$\sigma$ is a permutation of
+\emph{coordinate axes}: a linear involution of~$\RR^8$ that
+conjugates the multiplication, $\cdot \mapsto \cdot_\sigma$
+(Definition~\ref{def:twist}; cf.\ Remark~\ref{rem:sigma-vs-fano}).
+Both modify the bilinear product, but each resolves a closure
+obstruction at a different stratum: Coxeter's at the $E_8$ stratum,
+forcing $L \cdot L \subseteq L$;~$\sigma$ at a finer-grained
+sublattice stratum, forcing $\sigma(Ls) \cdot \sigma(Ls) \subseteq
+\sigma(Ls)$ (Lemma~\ref{lem:sigmaLs-closed}).  Because $\sigma(L)
+= L$, the $\sigma$-twist preserves Coxeter's closure automatically:
+$L \cdot_\sigma L = \sigma(L \cdot L) \subseteq L$.  No choice
+of~$\sigma$ can return the construction to Kirmse's pre-Coxeter
+regime.
+
+\textbf{Comparison.}  The product~$\star$ is bilinear on~$\RR^{24}$
+itself.  It does not require an enclosing 27-dimensional
+Jordan-algebraic ambient within which the Leech sits as a subspace
+(cf.~\cite{Baez2014}), and the cross-block $\ZZ_3$ symmetry is
+supplied by the routing of Definition~\ref{def:triple} rather than
+by the octonion product itself: Dixon's XY-product
+\cite{Dixon1995, Dixon2010} is a useful device for describing each
+$E_8$ block, but it is not in itself $\ZZ_3$-symmetric across the
+three factors.  Whether $\Sigma(\LL)$ overlaps with one of the
+embeddings catalogued by Egan, or sits outside that family, is a
+question this paper does not address.
 
 % ===============================================================
 \section{Conclusion}\label{sec:conclusion}
@@ -835,74 +794,35 @@ Several questions remain immediately open:
 \section{Outlook}\label{sec:outlook}
 % ===============================================================
 
-The intention in publishing this result at this stage is to invite
-research rather than to sit on the ideas.  If others arrive at deeper
-answers faster, so much the better.  What follows is an outlook that
-names the directions we find most promising and the sources that
-shaped the intuition leading to the present construction.
-
 \subsection{A ternary reformulation}
 
 A more natural classification of $(\RR^{24}, +, \star)$ may emerge
 from a \emph{ternary} rather than binary viewpoint.  The Leech lattice
-possesses a prominent $\ZZ_3$-symmetry (the cyclic permutation of the
-three octonion blocks used throughout this paper), and the binary
-product~$\star$ is assembled from nine bilinear building blocks whose
-routing is itself governed by that $\ZZ_3$-action.  Ternary
-composition algebras, as studied by
-Elduque~\cite{Elduque1996,Elduque2000_Triality,Elduque2023_IsotropicNorm},
+carries a prominent $\ZZ_3$-symmetry (the cyclic permutation of the
+three octonion blocks), and~$\star$ is assembled from nine bilinear
+building blocks routed by that $\ZZ_3$-action.  Ternary composition
+algebras, as studied by
+Elduque~\cite{Elduque1996,Elduque2000_Triality,Elduque2023_IsotropicNorm}
+and others~\cite{SmithVojtechovsky2022,KamiyaOkubo2015,Okubo1995_Book},
 are typically non-associative, non-commutative, non-alternative, and
-non-power-associative --- the same negative classification our order
-satisfies --- yet carry high internal symmetry, with order-3
-automorphisms playing the central role: the Okubo algebra has
-automorphism group $\mathrm{SU}(3)$, and the Okubo product itself
-is built from an order-3 automorphism of the octonions.
-Complementary perspectives on the Okubo algebra and triality include
-the quasigroup-theoretic treatment of Smith and
-Vojt\v{e}chovsk\'y~\cite{SmithVojtechovsky2022}, Kamiya and Okubo's
-study of algebras satisfying triality and $S_4$-symmetry
-\cite{KamiyaOkubo2015}, and Okubo's seminal
-book~\cite{Okubo1995_Book}.  A deeper precursor
-is Hall's monograph~\cite{Hall2019_Moufang}, which establishes that
-Moufang loops and groups with triality are essentially the same
-object, giving a structural scaffolding for any triality-based
-reformulation.  Recasting $\star$ as a trace-like reduction of a
-ternary operation compatible with the $\ZZ_3$-block symmetry is a
-natural direction for further work.
+non-power-associative --- the same negative classification $(\RR^{24},
++, \star)$ satisfies --- yet carry high internal symmetry, with
+order-3 automorphisms playing the central role: the Okubo algebra has
+automorphism group $\mathrm{SU}(3)$, and its product is built from an
+order-3 automorphism of the octonions.  Hall's
+monograph~\cite{Hall2019_Moufang} establishes that Moufang loops and
+groups with triality are essentially the same object.  Recasting
+$\star$ as a trace-like reduction of a ternary operation compatible
+with the $\ZZ_3$-block symmetry is a natural direction for further
+work.
 
-\subsection{Consequences for algebraic approaches to physics}
+\subsection{Algebraic models in physics}
 
-A classification of the ambient algebra $(\RR^{24}, +, \star)$
-matters beyond pure algebra.  Programmes that seek to model
-fundamental physics on algebraic structures --- especially those that
-use the four normed division algebras, triality, and related
-symmetric composition algebras --- have grown considerably in recent
-years.  The author previously invited~\cite{Koeplinger2023} for
-research into autotopies of normed composition algebras as a
-mathematical setting for this line of inquiry.  Recent work of Furey and
-Hughes~\cite{FureyHughes2025_TrioOfTrialities} isolates triality
-itself as the operative structural skeleton: the Standard Model's
-$\mathfrak{su}(3) \oplus \mathfrak{su}(2) \oplus \mathfrak{u}(1)$
-gauge symmetries are embedded inside
-$\mathfrak{tri}(\CC) \oplus \mathfrak{tri}(\HH) \oplus \mathfrak{tri}(\OO)$,
-and the triality skeleton is shown to accommodate a variety of
-particle-family representations --- the authors' own assignment of
-three Standard Model generations to a triality triple in
-$\CC \otimes \HH \otimes \OO$ is one concrete realization of that
-wider scaffolding.
-
-\subsection{On the form of this work}
-
-This paper is the outcome of a human--AI collaboration conducted
-entirely through a sequence of AI prompts (Section~\ref{sec:methodology}),
-with the complete record of prompts, code, intermediate results, and
-corrections preserved verbatim~\cite{repo}.  The form itself is part
-of the contribution.  Collaborations of this kind will become more
-common, and this work is offered in its present form partly in the
-hope that the process --- how a research question was framed, how the
-AI was directed and corrected, how false trails were recognised and
-closed --- is instructive for mathematicians considering AI-assisted
-research.  Comments on both substance and method are welcome.
+Programmes that model fundamental physics on normed-division-algebra,
+triality, or symmetric-composition-algebra structures
+\cite{Koeplinger2023,FureyHughes2025_TrioOfTrialities} are one setting
+in which a non-classical bilinear product on~$\RR^{24}$ may be of
+interest.
 
 % ===============================================================
 \section*{Acknowledgments}
@@ -928,7 +848,7 @@ in the basis indicated.  All entries are integer; closure under the
 standard octonion product follows by $\ZZ$-bilinearity.  The same
 identities have been recomputed in two independent computer-algebra
 implementations as a cross-check
-(Section~\ref{sec:methodology}).
+(Appendix~\ref{sec:methodology}).
 
 Coordinates throughout are with respect to the basis
 $\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
@@ -1256,6 +1176,87 @@ $i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
 \end{minipage}
 \caption{Coefficients $c_k$ such that $M_i \cdot M_j = \sum_{k=1}^{8} c_k\, M_k$, for the bases defined above.}\label{tbl:appendix-MM}
 \end{table}
+
+% ===============================================================
+\section{Research methodology}\label{sec:methodology}
+% ===============================================================
+
+This research was conducted as a collaboration between a human
+researcher and an AI agent (Claude, Anthropic) over a series of
+directed prompts, governed by a written methodology (the
+``Manifesto'') established at the outset.
+
+The human researcher (the author) brought the initial hypothesis ---
+motivated by prior work on Okubo algebras and autotopies of normed
+composition algebras --- established the research methodology, and
+maintained control of the inquiry through prompt-by-prompt review.
+The AI agent performed the computational work: implementing octonion
+algebras, Wilson's Leech lattice construction, trial algebras, and
+closure tests, and contributed mathematical analysis.
+
+Tests were written from first principles to independently verify
+every foundation: that octonion multiplication satisfies the
+composition property $\Nrm(xy) = \Nrm(x)\Nrm(y)$, that Wilson's
+construction produces a lattice with the correct minimal shell of
+196{,}560 vectors, and that the $E_8$ lattice is indeed a maximal
+order.  This independent verification is how we know that the
+properties stated in the literature are correctly implemented.
+Closure of the twisted product was first observed on over
+12{,}000{,}000 random pairs of minimal vectors with zero failures,
+which prompted the search for a symbolic proof.
+
+\paragraph{Symbolic proof and numeric validation.}
+The proof of Theorem~\ref{thm:main} given in Section~\ref{sec:proof}
+is symbolic: each of the four lemmas is established by exhibiting a
+finite list of integer coefficients (Appendix~\ref{sec:appendix-tables}),
+and the conclusion follows by $\ZZ$-bilinearity.  No floating-point
+or sampled arithmetic enters the proof.  Independently, the same
+basis-by-basis identities that constitute the appendix tables were
+recomputed in two separate computer-algebra implementations as a
+cross-check: a Python implementation using
+\texttt{fractions.Fraction} exact rationals
+(\texttt{python\_project/src/symbolic\_proof\_checks.py}), and a
+GAP/LOOPS implementation using GAP's native exact rational arithmetic
+(\texttt{gap\_project/tests/test\_lemmas.g}).  Both implementations
+reproduce the same integer coefficients displayed in the appendix.
+This redundancy is validation, not proof: it serves to detect
+transcription or implementation errors in the appendix tables, but
+the logical content of the proof rests on the tables themselves.
+
+The methodology required:
+\begin{itemize}
+\item Every claim backed by a reference or computation.
+\item Every prompt logged, with actions recorded.
+\item Every conclusion independently verified.
+\item Forward-evolving corrections: no rewriting history; errors are
+  corrected in subsequent entries.
+\end{itemize}
+
+The path to the result was not direct.  Six trial algebra families
+were explored and ruled out before the transposition twist was
+identified in trial~007.  The systematic methodology ---
+understanding the anatomy of failure (which conditions fail, for which
+vector types, and why) before trying the next approach --- was
+essential.  The failure analysis of the untwisted product (Wilson's
+condition~(3) per Definition~\ref{def:wilson-leech}, exclusively
+type-3$\times$type-3) directly pointed to the
+mechanism that the twist needed to correct.
+
+Iterative convergence toward a robust result --- including learning
+along the way what it is we are actually doing --- is how study,
+research, and discovery have always proceeded.  The AI agent violated
+its own logging protocol on three occasions (prompts 011, 018--019,
+and 029--031), each time caught by the human researcher on review.
+Conversely, the author learned from the AI agent about errors and
+misconceptions in the framing of certain prompts, which likewise
+are part of the record.  What is novel here is the ability to trace
+the entire path, beginning to end, through the complete list of
+prompts.
+
+The full record --- all prompts, code, evidence, and git history ---
+is available at the repository~\cite{repo}.  The reader can form
+their own assessment of what this means for questions of discovery
+and attribution.
 
 % ===============================================================
 % References

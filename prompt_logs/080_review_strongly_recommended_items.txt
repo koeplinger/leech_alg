@@ -1,0 +1,57 @@
+Prompt 080 — Address the four "strongly recommended" review items
+Date: 2026-04-28
+
+User request (verbatim):
+"Great. Now looking at the 'strongly recommended' notes of the
+April 16 review:
+
+4. Add a paragraph in Section 6 comparing Sigma(Lambda) and star
+   against the Egan enumeration and against Dixon's XY-product,
+   explicitly addressing novelty.
+
+Do it, but keep it really short: Our claim for relevance lies in the
+product's simplicity. It does not require a larger 27-dim construction
+within which the Leech close in a subspace (per Egan/Baez), and
+Dixon's XY product is a construction that is helpful to describe the
+E8-component construction, yes, but is not in itself Z_3 symmetric.
+I'll review this paragraph, and may still decide not to have it at
+all (and let the reader make their own opinion).
+
+5. Pull the Kirmse-Coxeter vs. sigma distinction from the companion
+   into Section 6 of the main paper.
+
+Yes that is a good one. Add a remark after the sigma twist is defined
+as well, so that there are no unneeded forward-references. Keep it
+short and focused on the structure.
+
+6. Move Section 5 to an appendix and tighten Section 7.
+
+Sure, makes sense.
+
+7. State or cite the argument that L sbar subset L is a *sublattice*
+   (closure under addition and L-multiplication) so that the reader
+   sees the consistency despite sbar not in L.
+
+Sure, but keep it really short, maybe in a foot note."
+
+Plan:
+  - Item 7: short footnote in Section 2.3 explaining that L sbar is
+    closed under L-multiplication (and hence is a sublattice of L)
+    even though sbar is not in L.
+  - Item 5: a focused remark immediately after Definition 3.1
+    (the sigma-twisted product), distinguishing the linear involution
+    sigma from a Fano-line permutation; expand briefly in Section 6
+    when the Kirmse -> Coxeter -> sigma chain is described, by
+    pointing at the structural difference (linear coordinate
+    involution vs Fano-plane relabelling).
+  - Item 4: one short paragraph in Section 6 noting that the present
+    construction's relevance is its simplicity: no enclosing 27-dim
+    Jordan-algebraic ambient required (cf Egan/Baez), and no
+    XY-product needed for the triple structure, since the Z_3-symmetry
+    is supplied by the cross-block routing rather than by the
+    octonion product itself (cf Dixon).
+  - Item 6: move Section 5 (methodology) into a new appendix B; in
+    its place leave a short pointer paragraph in the main flow (or
+    nothing). Tighten Section 7 (Outlook) by trimming the most
+    speculative material and the form-of-this-work subsection,
+    consistent with the paper's tone (no praising-our-own-construction).
