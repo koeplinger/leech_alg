@@ -1,0 +1,21 @@
+Prompt 081 — Produce a second referee review of paper/main.tex
+Date: 2026-04-28
+
+User request (verbatim):
+"Great. Finally, look at the main paper that we have now, and make
+another review in the same spirit and format of the 16 April review.
+I will then review all of it slowly."
+
+Actions:
+- Re-read the current paper/main.tex (28 April 2026 version) carefully.
+- Produce a referee report at paper/reviews/2026-04-28_claude_opus_4_7_review.md
+  in the same format as the 16 April review:
+  Recommendation, Summary of the claim, Substantive errors,
+  Mathematical substance, Minor mathematical issues, Exposition
+  and presentation, Summary of requested revisions.
+- Note resolved-since-16-April items explicitly so the reviewer's
+  trajectory is visible.
+- Be specific (line numbers, section refs); avoid contrived
+  concerns. Recommendation will be "Minor revision" given the
+  substantial improvements since the previous round.
+- Save the review and let the user read through it.
