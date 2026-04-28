@@ -1,0 +1,95 @@
+Topic: Computer algebra systems used in the verification suites
+==============================================================
+
+This file collects references for the software systems used to verify the
+claims in the paper and the companion.  The Python suite in
+python_project/ uses standard scientific-Python libraries (NumPy, SciPy,
+pytest) which are not listed individually here; the GAP suite in
+gap_project/ uses the GAP system together with the LOOPS package, both
+of which are recorded below.
+
+---
+
+### [GAP-4.12.1]
+
+- **Title**: GAP — Groups, Algorithms, and Programming, Version 4.12.1
+- **Authors**: The GAP Group (collaborative; principal contributors listed
+  on the project website)
+- **Year**: 2022
+- **URL**: https://www.gap-system.org/
+- **Recommended citation** (per /usr/share/doc/gap/CITATION on Debian and
+  the project's website):
+    [GAP]  GAP — Groups, Algorithms, and Programming, Version 4.12.1,
+    The GAP Group (2022), https://www.gap-system.org/.
+- **Topics**: algorithms, computer-algebra, octonions, lattices,
+  exact-rational arithmetic
+- **Originality note**: GAP is an established free open-source computer
+  algebra system, in continuous public development since 1986
+  (originally Lehrstuhl D für Mathematik, RWTH Aachen; coordination
+  moved to the University of St Andrews in 1997).  The system itself
+  makes no original mathematical claims; it provides exact-arithmetic
+  computational primitives.  No dispute over the software's authorship
+  or purpose is known.
+- **Notes**: Used by gap_project/ for exact-rational verification of the
+  octonion multiplication, the E_8 lattice L = D_8^+, the sublattices
+  Ls and Lsbar, the transposition twist, the four lemmas of paper
+  Section 4, and Theorem 1.2 (closure of the Leech lattice under the
+  transposition-twisted triple product).  The suite uses no
+  floating-point arithmetic; all checks are exact over Q.
+
+---
+
+### [LOOPS-3.4.4]
+
+- **Title**: LOOPS — Computing with quasigroups and loops in GAP,
+  Version 3.4.4
+- **Subtitle** (from PackageInfo): "Computing with quasigroups and loops
+  in GAP"
+- **Authors**: Gábor Péter Nagy (University of Szeged) and
+  Petr Vojtěchovský (University of Denver)
+- **Year**: 2024 (release date 29 August 2024 per PackageInfo.g)
+- **URL**: https://gap-packages.github.io/loops/
+- **Source repository**: https://github.com/gap-packages/loops
+- **Status**: Accepted GAP package
+- **Recommended citation** (in the absence of a CITATION file in the
+  package distribution, the standard GAP-package form):
+    [LOOPS]  G.P. Nagy and P. Vojtěchovský, LOOPS, Computing with
+    quasigroups and loops in GAP, Version 3.4.4 (2024),
+    GAP package, https://gap-packages.github.io/loops/.
+- **Topics**: algorithms, computer-algebra, Moufang-loops, octonions,
+  quasigroups
+- **Originality note**: LOOPS is an open-source GAP package developed and
+  maintained publicly by Nagy and Vojtěchovský since the mid-2000s.  It
+  draws on the standard quasigroup-theoretic literature; its
+  implementations of e.g. the Moufang-loop classification (Goodaire et
+  al.; Nagy-Vojtěchovský 2007 for order 64; Slattery-Zenisek 2012 for
+  order 243) are correctly attributed in the package documentation.  No
+  dispute over the package's authorship is known.
+- **Notes**: Used by gap_project/tests/test_octonion.g for an
+  independent structural check on the octonion multiplication.  We build
+  the 16-element Cayley table of the signed octonion units from our
+  Fano triples, hand it to LoopByCayleyTable, and verify via LOOPS that
+  the result is a Moufang loop of order 16 isomorphic to the LOOPS
+  library's MoufangLoop(16, 3).  This is the only place the LOOPS
+  package itself is exercised; the rest of the GAP suite is plain GAP.
+
+---
+
+### Notes on use in this project
+
+The two software suites (python_project/ and gap_project/) are
+intentionally redundant and rely on different runtimes, languages, and
+arithmetic primitives:
+
+- python_project/ uses Python with NumPy (floating-point) for the
+  exhaustive vector-counting tests, plus Python's fractions.Fraction
+  module for exact-arithmetic verification of the four lemmas in
+  python_project/src/symbolic_proof_checks.py.
+
+- gap_project/ uses GAP's built-in Rationals throughout; no
+  floating-point arithmetic is used anywhere in the GAP suite.  GAP's
+  exact-arithmetic SolutionMat is used for every Z-basis membership test.
+
+The agreement between the two suites is part of the verification
+strategy: a bug in one library or one author's coding is unlikely to
+manifest identically in both.

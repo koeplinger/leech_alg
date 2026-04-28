@@ -27,6 +27,19 @@ To check that both are available:
 echo 'LoadPackage("loops"); Print(IsLoadedPackage("loops"), "\n"); QUIT;' | gap -q
 ```
 
+This suite was developed against **GAP 4.12.1** and **LOOPS 3.4.4**.
+Full citation entries for both, in the project's reference registry, are
+in
+[`evidence_and_reasoning/references/computer_algebra_systems.txt`](../evidence_and_reasoning/references/computer_algebra_systems.txt).
+For convenience, the recommended short citations are:
+
+> [GAP] *GAP — Groups, Algorithms, and Programming, Version 4.12.1*,
+> The GAP Group (2022), https://www.gap-system.org/.
+>
+> [LOOPS] G.P. Nagy and P. Vojtěchovský, *LOOPS, Computing with
+> quasigroups and loops in GAP, Version 3.4.4* (2024), GAP package,
+> https://gap-packages.github.io/loops/.
+
 ## Running
 
 From the repository root:

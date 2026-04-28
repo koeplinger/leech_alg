@@ -1,0 +1,18 @@
+Prompt 075 — Add GAP and LOOPS to the project references
+
+User request (verbatim):
+"Add the sources of GAP and LOOPS to the references also."
+
+Actions taken:
+- Determined exact installed versions:
+    GAP   4.12.1  (Debian package, 2022)
+    LOOPS 3.4.4   (release date 29 August 2024)
+- Read the canonical GAP CITATION text from /usr/share/doc/gap/CITATION.
+- Inspected the LOOPS PackageInfo.g for authors, subtitle, status, URLs.
+- Created evidence_and_reasoning/references/computer_algebra_systems.txt
+  with full entries for both GAP and LOOPS, in the project's standard
+  reference format (Title / Authors / Year / URL / Recommended citation /
+  Topics / Originality note / Notes on use in this project).
+- Added the new file to the references README's table.
+- Cross-linked from gap_project/README.md so a reader who picks up only
+  the GAP suite can find the references.

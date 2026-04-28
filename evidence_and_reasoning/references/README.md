@@ -30,6 +30,7 @@ Each topic has its own file:
 | [okubo_algebra.txt](okubo_algebra.txt) | Okubo algebra: constructions, properties, triality, applications |
 | [prior_art_orders_on_leech.txt](prior_art_orders_on_leech.txt) | Prior art on multiplicative orders on the Leech lattice |
 | [triality_and_algebraic_physics.txt](triality_and_algebraic_physics.txt) | Soft references: triality in physics, division-algebra approaches to the Standard Model |
+| [computer_algebra_systems.txt](computer_algebra_systems.txt) | GAP and LOOPS — the systems used in the GAP verification suite |
 
 ## Format for Each Entry
 
