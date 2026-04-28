@@ -26,4 +26,70 @@ full symbolic proof. Start by making a plan of these proofs, so that
 we can review your plan and decide whether to inline them or to
 reference details in an appendix."
 
-Plan: see assistant response.
+Assistant response (digest):
+
+A. Status of the two corrections checked against current main.tex
+   and python_project/src/e8_wilson.py:is_in_L:
+
+   1. (s-bar membership) — PARTIALLY corrected.
+      - Section 2.3 (lines 224-227) correctly states s in L, sbar
+        not in L, with the parenthetical "excluded even branch of
+        the half-integer case".
+      - Section 2.2 (lines 180-183) still describes L as
+        "either all integers or all half-integers, with even
+        coordinate sum" — read literally this would put sbar
+        (sum -4, even) into L, contradicting 2.3 and is_in_L.
+      - The fix needs the parity criterion split between the two
+        branches (integers: sum even; half-integers: sum odd).
+
+   2. (multiplicative identity) — FULLY corrected.
+      - Table entry at line 579-580 reads "the ambient algebra
+        has no identity element".
+      - Remark at line 604-614 gives the block-matrix argument
+        and notes (e_0,e_0,e_0) is not an identity.
+
+B. Plan for genuinely symbolic proof of Lemmas 4.3 and 4.4:
+
+   Honest framing first: a structural proof identifying sigma(Ls)
+   with a left ideal / automorphism image / module is not in
+   evidence and may be real new mathematics. Plan delivers a
+   rigorous symbolic proof in the standard sense — every step
+   exact, no probabilistic sampling, hand-verifiable modulo
+   arithmetic.
+
+   Three pieces:
+
+   (A) Inline: bilinearity-reduction lemma.
+       Lemma: For full-rank Z-lattices A, B in R^8 with chosen
+       Z-bases, A.B subset B iff all 64 basis-basis products
+       lie in the Z-span of B. Proof: Z-bilinearity. This
+       converts the closure statement from a quantifier over the
+       (infinite) lattice into a finite check.
+
+   (B) Appendix: explicit Z-bases and 64-product tables for
+       Lemmas 4.2 (L.L), 4.3 (L.sigma(Lsbar)), 4.4 (sigma(Ls).sigma(Ls)).
+       Inline statements reference the appendix.
+
+   (C) Section 5: numeric-validation paragraph distinguishing
+       proof from validation. Symbolic proof = the appendix
+       tables (cited mechanically). Validation = re-checks of
+       the same lemmas in two independent computer-algebra
+       implementations: Python (Fraction exact rationals,
+       symbolic_proof_checks.py) and GAP/LOOPS
+       (test_lemmas.g). Both produce identical exact outputs.
+
+   (D) Section 6 or 7: explicit open question per the reviewer
+       — the structural reason why sigma(Ls) is closed and Ls
+       is not.
+
+C. Four decision points presented for the user to confirm before
+   implementation:
+   1. Inline tables vs appendix — recommend appendix for the
+      bulky product tables, bases inline.
+   2. Full tables (alpha) vs S_3-orbit-compressed (beta) —
+      recommend alpha for transparency.
+   3. One appendix or two — recommend one appendix, two/three
+      subsections.
+   4. Whether Lemma 4.2 (L.L) gets the same treatment —
+      recommend yes, completes the proof end-to-end without
+      deferring to Coxeter / Conway-Smith for the basis check.

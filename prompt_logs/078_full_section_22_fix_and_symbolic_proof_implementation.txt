@@ -1,0 +1,37 @@
+Prompt 078 — Fully correct Section 2.2 and implement the symbolic proof
+Date: 2026-04-28
+
+User request (verbatim):
+"Log the previous prompt, with a digest of your response.
+
+Thanks for pointing out that item 1 is only partially corrected.
+Correct it in whole.
+
+Then, I've reviewed your four decision points regarding the symbolic
+proof. Go with your recommendation for each."
+
+Decisions confirmed (from prompt 077 plan, item C):
+  1. Tables in appendix, bases inline.
+  2. Full tables (Option alpha), no S_3-orbit compression.
+  3. One appendix, multiple subsections (one per lemma).
+  4. Include Lemma 4.2 (L.L) in the appendix treatment too.
+
+Actions:
+  - Fully correct Section 2.2 of paper/main.tex: split the parity
+    criterion across the two branches (integers: sum even;
+    half-integers: sum odd) so it matches Section 2.3 and the
+    supplemental code's is_in_L.
+  - Add Lemma 4.0 (bilinearity reduction) inline at the head of
+    Section 4.2.
+  - Rewrite the proofs of Lemmas 4.2, 4.3, 4.4 to invoke Lemma 4.0
+    and refer to the appendix for the explicit basis tables.
+  - Add a new Appendix A with three subsections, one per lemma,
+    each presenting an explicit Z-basis and a 64-row table of the
+    basis-basis products as integer combinations of the target
+    basis. Tables produced by an exact-arithmetic Python script,
+    cross-validated against GAP/LOOPS.
+  - In Section 5 (methodology), add a paragraph distinguishing
+    the symbolic proof from numeric validation, naming both the
+    Python and GAP/LOOPS implementations.
+  - Add the structural-reason-for-closure open question to
+    Section 7 (Conclusion's open questions list).

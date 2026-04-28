@@ -5,6 +5,8 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{float}
 
 % ---------------------------------------------------------------
 % Theorem environments
@@ -24,6 +26,7 @@
 % ---------------------------------------------------------------
 \newcommand{\OO}{\mathbb{O}}          % octonions
 \newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\FF}{\mathbb{F}}
 \newcommand{\CC}{\mathbb{C}}
@@ -178,12 +181,12 @@ $\Nrm(xy) = \Nrm(x)\Nrm(y)$ holds \cite{Baez2002}.
 \subsection{The $E_8$ lattice}
 
 Wilson's $E_8$ lattice is $L = D_8^+$, the set of vectors in~$\RR^8$
-whose coordinates (in the basis $\{e_0, \ldots, e_7\}$) are either all
-integers or all half-integers, with even coordinate sum
-\cite{Wilson2009, ConwaySmith2003}.  It has 240~roots (vectors of
-squared norm~2).  Under the standard octonion multiplication,
-$L$~is a maximal order in~$\OO$: it is closed under multiplication
-\cite{Coxeter1946, ConwaySmith2003}.
+whose coordinates (in the basis $\{e_0, \ldots, e_7\}$) are either
+all integers with even coordinate sum, or all half-integers with odd
+coordinate sum \cite{Wilson2009, ConwaySmith2003}.  It has
+240~roots (vectors of squared norm~2).  Under the standard octonion
+multiplication, $L$~is a maximal order in~$\OO$: it is closed under
+multiplication \cite{Coxeter1946, ConwaySmith2003}.
 
 \begin{remark}[Kirmse's convention versus ours]\label{rem:kirmse}
 The closure $L \cdot L \subseteq L$ depends on which Fano-plane
@@ -404,13 +407,32 @@ sum.  Hence $\sigma(L) \subseteq L$.  Since $\sigma$ is an involution,
 $\sigma(L) = L$.
 \end{proof}
 
+For each of the next three lemmas, $L$, $\sigma(L\bar s)$, and
+$\sigma(Ls)$ are full-rank $\ZZ$-lattices of rank~$8$ in~$\RR^8$.  By
+$\ZZ$-bilinearity of the octonion product, an inclusion $A \cdot B
+\subseteq C$ between such lattices holds if and only if it holds on a
+chosen pair of $\ZZ$-bases: if $\{a_i\}_{i=1}^8$ generates $A$ and
+$\{b_j\}_{j=1}^8$ generates $B$, then $A\cdot B \subseteq C$ is
+equivalent to each of the 64 products $a_i\cdot b_j$ lying in
+$\ZZ\langle c_1,\ldots,c_8\rangle$ for a chosen $\ZZ$-basis
+$\{c_k\}_{k=1}^8$ of~$C$.  Each lemma below is proved by exhibiting
+that finite list of integer coefficients explicitly.  Concrete
+$\ZZ$-bases for $L$, $\sigma(Ls)$, and $\sigma(L\bar s)$ are fixed in
+Appendix~\ref{sec:appendix-tables} (denoted there $L_k$, $M_k$, $N_k$
+respectively); the 64-entry coefficient tables for the three
+lemmas appear as Tables~\ref{tbl:appendix-LL},
+\ref{tbl:appendix-LN}, and~\ref{tbl:appendix-MM}.
+
 \begin{lemma}\label{lem:L-order}
 $L \cdot L \subseteq L$.
 \end{lemma}
 
 \begin{proof}
-$L$ is a maximal order in~$\OO$
-\cite{Coxeter1946, ConwaySmith2003}.
+The 64 products $L_i \cdot L_j$ are integer combinations of
+$\{L_1,\ldots,L_8\}$; the explicit coefficients are
+Table~\ref{tbl:appendix-LL}.  By $\ZZ$-bilinearity, $L \cdot L
+\subseteq L$.  This recovers the classical fact that $L = D_8^+$ is
+a maximal order in~$\OO$ \cite{Coxeter1946, ConwaySmith2003}.
 \end{proof}
 
 \begin{lemma}\label{lem:L-sigmaLsbar}
@@ -418,15 +440,9 @@ $L \cdot \sigma(L\bar{s}) \subseteq \sigma(L\bar{s})$.
 \end{lemma}
 
 \begin{proof}
-Both $L$ and $\sigma(L\bar{s})$ are lattices of rank~8.  It suffices to
-check the inclusion on $\ZZ$-bases: if $\{b_1, \ldots, b_8\}$ is a
-$\ZZ$-basis of~$L$ and $\{c_1, \ldots, c_8\}$ is a $\ZZ$-basis
-of~$\sigma(L\bar{s})$, then $L \cdot \sigma(L\bar{s}) \subseteq
-\sigma(L\bar{s})$ holds if and only if each of the 64 products
-$b_i \cdot c_j$ is an integer combination of $\{c_1, \ldots, c_8\}$.
-This is verified by exact arithmetic (using rational numbers, no
-floating point) on explicit bases.  All 64 products lie
-in~$\sigma(L\bar{s})$.
+The 64 products $L_i \cdot N_j$ are integer combinations of
+$\{N_1,\ldots,N_8\}$; the explicit coefficients are
+Table~\ref{tbl:appendix-LN}.
 \end{proof}
 
 \begin{lemma}\label{lem:sigmaLs-closed}
@@ -434,8 +450,9 @@ $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
 \end{lemma}
 
 \begin{proof}
-As in Lemma~\ref{lem:L-sigmaLsbar}, verified on $\ZZ$-bases by exact arithmetic: all 64
-products of basis vectors of~$\sigma(Ls)$ lie in~$\sigma(Ls)$.
+The 64 products $M_i \cdot M_j$ are integer combinations of
+$\{M_1,\ldots,M_8\}$; the explicit coefficients are
+Table~\ref{tbl:appendix-MM}.
 \end{proof}
 
 \begin{remark}\label{rem:Ls-not-closed}
@@ -637,24 +654,34 @@ The AI agent performed the computational work: implementing octonion
 algebras, Wilson's Leech lattice construction, trial algebras, and
 closure tests, and contributed mathematical analysis.
 
-The computational verification was a vehicle in the discovery process,
-designed to mediate distrust into received knowledge and intermediate
-results.  Tests were written from first principles to independently
-verify every foundation: that octonion multiplication satisfies the
+Tests were written from first principles to independently verify
+every foundation: that octonion multiplication satisfies the
 composition property $\Nrm(xy) = \Nrm(x)\Nrm(y)$, that Wilson's
 construction produces a lattice with the correct minimal shell of
 196{,}560 vectors, and that the $E_8$ lattice is indeed a maximal
 order.  This independent verification is how we know that the
 properties stated in the literature are correctly implemented.
-Closure of the twisted product was confirmed on over 12{,}000{,}000
-random pairs of minimal vectors with zero failures before the
-symbolic proof was found.
+Closure of the twisted product was first observed on over
+12{,}000{,}000 random pairs of minimal vectors with zero failures,
+which prompted the search for a symbolic proof.
 
-The symbolic proof (Section~\ref{sec:proof}) and the exact-arithmetic
-verifications of Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed} use Python's \texttt{fractions.Fraction}
-type, operating entirely in~$\mathbb{Q}$ with no floating-point
-arithmetic.  The $\ZZ$-basis checks involve solving 64 systems of
-8~linear equations each, all yielding integer solutions.
+\paragraph{Symbolic proof and numeric validation.}
+The proof of Theorem~\ref{thm:main} given in Section~\ref{sec:proof}
+is symbolic: each of the four lemmas is established by exhibiting a
+finite list of integer coefficients (Appendix~\ref{sec:appendix-tables}),
+and the conclusion follows by $\ZZ$-bilinearity.  No floating-point
+or sampled arithmetic enters the proof.  Independently, the same
+basis-by-basis identities that constitute the appendix tables were
+recomputed in two separate computer-algebra implementations as a
+cross-check: a Python implementation using
+\texttt{fractions.Fraction} exact rationals
+(\texttt{python\_project/src/symbolic\_proof\_checks.py}), and a
+GAP/LOOPS implementation using GAP's native exact rational arithmetic
+(\texttt{gap\_project/tests/test\_lemmas.g}).  Both implementations
+reproduce the same integer coefficients displayed in the appendix.
+This redundancy is validation, not proof: it serves to detect
+transcription or implementation errors in the appendix tables, but
+the logical content of the proof rests on the tables themselves.
 
 The methodology required:
 \begin{itemize}
@@ -785,6 +812,15 @@ involutory nature of~$\sigma$ maps the result back.
 
 Several questions remain immediately open:
 \begin{itemize}
+\item A structural reason for Lemma~\ref{lem:sigmaLs-closed}.  The
+  proof in Appendix~\ref{sec:appendix-tables} exhibits the 64
+  integer coefficients certifying $\sigma(Ls)\cdot\sigma(Ls) \subseteq
+  \sigma(Ls)$, but does not explain \emph{why} $\sigma(Ls)$ is closed
+  under the standard octonion product while $Ls$ is not.  An
+  identification of $\sigma(Ls)$ with a left ideal, with the image
+  under a norm-preserving octonion automorphism, or with some
+  module-theoretic structure over~$L$, would replace the appendix
+  tables by a structural argument.
 \item The automorphism group of $(\LL, +, \star)$ and its relationship
   to the Conway group~$\Co_0$.
 \item Whether the order is maximal in any appropriate sense.
@@ -874,6 +910,352 @@ research.  Comments on both substance and method are welcome.
 
 The author thanks Geoffrey M. Dixon and Robert A. Wilson for helpful discussions and advice
 on octonionic structures associated with the Leech lattice.
+
+% ===============================================================
+\appendix
+\section{Explicit basis tables for Lemmas
+\ref{lem:L-order}--\ref{lem:sigmaLs-closed}}\label{sec:appendix-tables}
+% ===============================================================
+
+We fix concrete $\ZZ$-bases for the lattices $L$, $\sigma(Ls)$, and
+$\sigma(L\bar s)$, and tabulate the integer coefficients of the
+basis-by-basis products called for in the proofs of
+Lemmas~\ref{lem:L-order}, \ref{lem:L-sigmaLsbar},
+and~\ref{lem:sigmaLs-closed}.  Each table has 64 entries and is
+arranged so that the row labelled $(i,j)$ gives the unique 8-tuple
+$(c_1,\ldots,c_8) \in \ZZ^8$ representing the corresponding product
+in the basis indicated.  All entries are integer; closure under the
+standard octonion product follows by $\ZZ$-bilinearity.  The same
+identities have been recomputed in two independent computer-algebra
+implementations as a cross-check
+(Section~\ref{sec:methodology}).
+
+Coordinates throughout are with respect to the basis
+$\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
+
+\paragraph{The basis $\{L_k\}$.} The first vector is Wilson's $s = \tfrac12(-e_0+e_1+\cdots+e_7)$; the remaining seven are type-1 roots of $L$ chosen so that $\{L_1,\ldots,L_8\}$ is linearly independent over $\QQ$ and spans $L$ over $\ZZ$.
+\begin{align*}
+  L_{1} &= (\tfrac{-1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2}) \\
+  L_{2} &= (1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
+  L_{3} &= (1,\ -1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
+  L_{4} &= (1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0) \\
+  L_{5} &= (1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0) \\
+  L_{6} &= (1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0) \\
+  L_{7} &= (1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0) \\
+  L_{8} &= (1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0)
+\end{align*}
+
+\paragraph{The basis $\{M_k\}$.} Defined by $M_k := \sigma(L_k \cdot s)$ with $\sigma = (1\;2)$ acting on coordinates by swapping $e_1$ and $e_2$. Spans $\sigma(Ls)$ over $\ZZ$.
+\begin{align*}
+  M_{1} &= (\tfrac{-3}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2}) \\
+  M_{2} &= (-1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1,\ 1) \\
+  M_{3} &= (0,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 0) \\
+  M_{4} &= (-1,\ 0,\ 1,\ 0,\ 0,\ 1,\ 0,\ 1) \\
+  M_{5} &= (-1,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0) \\
+  M_{6} &= (-1,\ 1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1) \\
+  M_{7} &= (-1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0) \\
+  M_{8} &= (-1,\ 1,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0)
+\end{align*}
+
+\paragraph{The basis $\{N_k\}$.} Defined by $N_k := \sigma(L_k \cdot \bar s)$. Spans $\sigma(L\bar s)$ over $\ZZ$.
+\begin{align*}
+  N_{1} &= (2,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
+  N_{2} &= (0,\ 0,\ -1,\ 0,\ -1,\ 0,\ -1,\ -1) \\
+  N_{3} &= (-1,\ -1,\ 0,\ -1,\ 0,\ -1,\ 0,\ 0) \\
+  N_{4} &= (0,\ -1,\ -1,\ 0,\ 0,\ -1,\ 0,\ -1) \\
+  N_{5} &= (0,\ -1,\ -1,\ -1,\ 0,\ 0,\ -1,\ 0) \\
+  N_{6} &= (0,\ -1,\ 0,\ -1,\ -1,\ 0,\ 0,\ -1) \\
+  N_{7} &= (0,\ 0,\ -1,\ -1,\ -1,\ -1,\ 0,\ 0) \\
+  N_{8} &= (0,\ -1,\ 0,\ 0,\ -1,\ -1,\ -1,\ 0)
+\end{align*}
+
+\begin{table}[H]
+\centering
+{\bfseries Lemma~\ref{lem:L-order}: $L \cdot L \subseteq L$.}\par\medskip
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tabular}{cc|rrrrrrrr}
+\toprule
+$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
+\midrule
+1 & 1 & -1 & -1 & -1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 2 & 0 & -2 & -2 & 1 & 1 & 0 & 1 & 0 \\
+1 & 3 & 2 & 2 & 2 & -1 & -1 & 0 & -1 & 0 \\
+1 & 4 & 0 & -2 & -2 & 0 & 1 & 1 & 0 & 1 \\
+1 & 5 & 2 & 1 & 2 & -1 & -1 & 0 & 0 & -1 \\
+1 & 6 & 0 & -1 & -2 & 0 & 0 & 0 & 1 & 1 \\
+1 & 7 & 2 & 1 & 2 & 0 & -1 & -1 & -1 & 0 \\
+1 & 8 & 2 & 2 & 2 & -1 & 0 & -1 & -1 & -1 \\
+\midrule
+2 & 1 & 2 & 1 & 2 & -1 & -1 & 0 & -1 & 0 \\
+2 & 2 & 0 & 1 & -1 & 0 & 0 & 0 & 0 & 0 \\
+2 & 3 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+2 & 4 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
+2 & 5 & 2 & 3 & 3 & -1 & 0 & -1 & -1 & -1 \\
+2 & 6 & 0 & 1 & 0 & -1 & 0 & 1 & 0 & 0 \\
+2 & 7 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 1 \\
+2 & 8 & 0 & 1 & 0 & 0 & 0 & 0 & -1 & 1 \\
+\midrule
+3 & 1 & 0 & -1 & -2 & 1 & 1 & 0 & 1 & 0 \\
+3 & 2 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+3 & 3 & 0 & -1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+3 & 4 & 0 & 0 & 1 & 1 & 0 & -1 & 0 & 0 \\
+3 & 5 & -2 & -3 & -3 & 1 & 2 & 1 & 1 & 1 \\
+3 & 6 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
+3 & 7 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & -1 \\
+3 & 8 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & 1 \\
+\midrule
+4 & 1 & 2 & 2 & 2 & -1 & -1 & -1 & 0 & -1 \\
+4 & 2 & 0 & 1 & 0 & 1 & 0 & -1 & 0 & 0 \\
+4 & 3 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
+4 & 4 & 0 & -1 & -1 & 2 & 0 & 0 & 0 & 0 \\
+4 & 5 & 0 & -1 & -1 & 1 & 1 & 0 & 1 & 0 \\
+4 & 6 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
+4 & 7 & 0 & 0 & 0 & 1 & -1 & 0 & 1 & 0 \\
+4 & 8 & 2 & 2 & 3 & 0 & -1 & -1 & -1 & 0 \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tabular}{cc|rrrrrrrr}
+\toprule
+$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
+\midrule
+5 & 1 & 0 & -1 & -2 & 1 & 0 & 0 & 0 & 1 \\
+5 & 2 & -2 & -2 & -4 & 1 & 2 & 1 & 1 & 1 \\
+5 & 3 & 2 & 2 & 4 & -1 & 0 & -1 & -1 & -1 \\
+5 & 4 & 0 & 0 & 0 & 1 & 1 & 0 & -1 & 0 \\
+5 & 5 & 0 & -1 & -1 & 0 & 2 & 0 & 0 & 0 \\
+5 & 6 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
+5 & 7 & 0 & -1 & -1 & 1 & 1 & 0 & 1 & 0 \\
+5 & 8 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 1 \\
+\midrule
+6 & 1 & 2 & 1 & 2 & 0 & 0 & -1 & -1 & -1 \\
+6 & 2 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
+6 & 3 & 0 & 0 & 1 & -1 & 0 & 1 & 0 & 0 \\
+6 & 4 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
+6 & 5 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & -1 \\
+6 & 6 & 0 & -1 & -1 & 0 & 0 & 2 & 0 & 0 \\
+6 & 7 & 2 & 2 & 3 & -1 & -1 & 0 & 0 & -1 \\
+6 & 8 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
+\midrule
+7 & 1 & 0 & -1 & -2 & 0 & 1 & 1 & 0 & 0 \\
+7 & 2 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & -1 \\
+7 & 3 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & 1 \\
+7 & 4 & 0 & -1 & -1 & 1 & 1 & 0 & 1 & 0 \\
+7 & 5 & 0 & 0 & 0 & -1 & 1 & 0 & 1 & 0 \\
+7 & 6 & -2 & -3 & -4 & 1 & 1 & 2 & 2 & 1 \\
+7 & 7 & 0 & -1 & -1 & 0 & 0 & 0 & 2 & 0 \\
+7 & 8 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 1 \\
+\midrule
+8 & 1 & 0 & -2 & -2 & 1 & 0 & 1 & 1 & 0 \\
+8 & 2 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 1 \\
+8 & 3 & 0 & 0 & 1 & 0 & 0 & 0 & -1 & 1 \\
+8 & 4 & -2 & -3 & -4 & 2 & 1 & 1 & 1 & 2 \\
+8 & 5 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
+8 & 6 & 0 & 0 & 0 & 0 & -1 & 1 & 0 & 1 \\
+8 & 7 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & 1 \\
+8 & 8 & 0 & -1 & -1 & 0 & 0 & 0 & 0 & 2 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\caption{Coefficients $c_k$ such that $L_i \cdot L_j = \sum_{k=1}^{8} c_k\, L_k$, for the bases defined above.}\label{tbl:appendix-LL}
+\end{table}
+
+\begin{table}[H]
+\centering
+{\bfseries Lemma~\ref{lem:L-sigmaLsbar}: $L \cdot \sigma(L\bar s) \subseteq \sigma(L\bar s)$.}\par\medskip
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tabular}{cc|rrrrrrrr}
+\toprule
+$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
+\midrule
+1 & 1 & -1 & -1 & -1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 2 & 0 & -2 & -2 & 0 & 1 & 1 & 0 & 1 \\
+1 & 3 & 2 & 2 & 2 & 0 & -1 & -1 & 0 & -1 \\
+1 & 4 & 0 & -1 & -2 & 0 & 1 & 0 & 1 & 0 \\
+1 & 5 & 2 & 1 & 2 & -1 & -1 & 0 & 0 & -1 \\
+1 & 6 & 0 & -2 & -2 & 1 & 0 & 0 & 1 & 1 \\
+1 & 7 & 2 & 2 & 2 & -1 & -1 & -1 & -1 & 0 \\
+1 & 8 & 2 & 1 & 2 & 0 & 0 & -1 & -1 & -1 \\
+\midrule
+2 & 1 & 2 & 2 & 2 & -1 & -1 & -1 & 0 & -1 \\
+2 & 2 & -1 & 0 & -2 & 0 & 0 & 1 & 0 & 1 \\
+2 & 3 & 1 & 1 & 2 & 0 & 0 & 0 & -1 & 0 \\
+2 & 4 & 0 & 0 & -1 & 1 & 0 & 0 & 0 & 1 \\
+2 & 5 & 0 & 0 & -1 & 0 & 1 & 1 & 0 & 0 \\
+2 & 6 & 1 & 1 & 1 & 0 & -1 & 1 & -1 & 0 \\
+2 & 7 & 1 & 2 & 2 & -1 & -1 & 0 & 0 & 0 \\
+2 & 8 & 1 & 1 & 1 & -1 & 0 & 0 & -1 & 1 \\
+\midrule
+3 & 1 & 0 & -2 & -2 & 1 & 1 & 1 & 0 & 1 \\
+3 & 2 & 1 & 2 & 2 & 0 & 0 & -1 & 0 & -1 \\
+3 & 3 & -1 & -1 & 0 & 0 & 0 & 0 & 1 & 0 \\
+3 & 4 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & -1 \\
+3 & 5 & 0 & 0 & 1 & 0 & 1 & -1 & 0 & 0 \\
+3 & 6 & -1 & -1 & -1 & 0 & 1 & 1 & 1 & 0 \\
+3 & 7 & -1 & -2 & -2 & 1 & 1 & 0 & 2 & 0 \\
+3 & 8 & -1 & -1 & -1 & 1 & 0 & 0 & 1 & 1 \\
+\midrule
+4 & 1 & 2 & 1 & 2 & -1 & -1 & 0 & -1 & 0 \\
+4 & 2 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
+4 & 3 & 0 & 0 & 1 & 1 & 0 & -1 & 0 & 0 \\
+4 & 4 & 0 & -1 & -1 & 2 & 0 & 0 & 0 & 0 \\
+4 & 5 & 2 & 2 & 3 & 0 & 0 & -1 & -1 & -1 \\
+4 & 6 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
+4 & 7 & 0 & -1 & -1 & 1 & 0 & 0 & 1 & 1 \\
+4 & 8 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tabular}{cc|rrrrrrrr}
+\toprule
+$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
+\midrule
+5 & 1 & 0 & -1 & -2 & 1 & 0 & 0 & 0 & 1 \\
+5 & 2 & 0 & 1 & 0 & 0 & 1 & 0 & -1 & 0 \\
+5 & 3 & 0 & -1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+5 & 4 & -2 & -3 & -4 & 2 & 2 & 1 & 1 & 1 \\
+5 & 5 & 0 & -1 & -1 & 0 & 2 & 0 & 0 & 0 \\
+5 & 6 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
+5 & 7 & 0 & 0 & -1 & 0 & 1 & 0 & 1 & 0 \\
+5 & 8 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 1 \\
+\midrule
+6 & 1 & 2 & 1 & 2 & 0 & 0 & -1 & -1 & -1 \\
+6 & 2 & 1 & 2 & 1 & -1 & 0 & 0 & 0 & -1 \\
+6 & 3 & -1 & -1 & -1 & 1 & 0 & 1 & 1 & 0 \\
+6 & 4 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & -1 \\
+6 & 5 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & -1 \\
+6 & 6 & -1 & -2 & -3 & 1 & 1 & 2 & 1 & 0 \\
+6 & 7 & 1 & 1 & 1 & 0 & -1 & 0 & 1 & -1 \\
+6 & 8 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+\midrule
+7 & 1 & 0 & -1 & -2 & 0 & 1 & 1 & 0 & 0 \\
+7 & 2 & -1 & -1 & -2 & 0 & 1 & 1 & 1 & 1 \\
+7 & 3 & 1 & 0 & 2 & 0 & -1 & 0 & 0 & 0 \\
+7 & 4 & 0 & -1 & -1 & 1 & 0 & 1 & 1 & 0 \\
+7 & 5 & 0 & -1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+7 & 6 & -1 & -2 & -2 & 0 & 0 & 2 & 1 & 1 \\
+7 & 7 & 1 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+7 & 8 & -1 & -3 & -3 & 1 & 1 & 1 & 1 & 2 \\
+\midrule
+8 & 1 & 0 & -2 & -2 & 1 & 0 & 1 & 1 & 0 \\
+8 & 2 & -1 & -1 & -3 & 1 & 1 & 0 & 1 & 1 \\
+8 & 3 & 1 & 2 & 3 & -1 & -1 & -1 & 0 & 0 \\
+8 & 4 & 0 & 0 & 0 & 1 & 0 & -1 & 1 & 0 \\
+8 & 5 & 0 & -1 & -1 & 0 & 1 & 0 & 1 & 1 \\
+8 & 6 & -1 & -1 & -2 & 1 & 0 & 1 & 1 & 1 \\
+8 & 7 & -1 & -1 & -2 & 0 & 0 & 0 & 2 & 1 \\
+8 & 8 & 1 & 1 & 1 & 0 & -1 & -1 & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\caption{Coefficients $c_k$ such that $L_i \cdot N_j = \sum_{k=1}^{8} c_k\, N_k$, for the bases defined above.}\label{tbl:appendix-LN}
+\end{table}
+
+\begin{table}[H]
+\centering
+{\bfseries Lemma~\ref{lem:sigmaLs-closed}: $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.}\par\medskip
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tabular}{cc|rrrrrrrr}
+\toprule
+$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
+\midrule
+1 & 1 & -1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 2 & 0 & 0 & 2 & 0 & -1 & -1 & 0 & -1 \\
+1 & 3 & -2 & -2 & -4 & 0 & 1 & 1 & 0 & 1 \\
+1 & 4 & 0 & 1 & 2 & -2 & -1 & 0 & -1 & 0 \\
+1 & 5 & -2 & -1 & -2 & 1 & -1 & 0 & 0 & 1 \\
+1 & 6 & 0 & 2 & 2 & -1 & 0 & -2 & -1 & -1 \\
+1 & 7 & -2 & -2 & -2 & 1 & 1 & 1 & -1 & 0 \\
+1 & 8 & -2 & -1 & -2 & 0 & 0 & 1 & 1 & -1 \\
+\midrule
+2 & 1 & -2 & -3 & -2 & 0 & 1 & 1 & 0 & 1 \\
+2 & 2 & 2 & -1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+2 & 3 & 2 & 3 & 3 & 0 & -2 & -2 & 0 & -2 \\
+2 & 4 & 2 & 1 & 2 & -1 & 0 & -1 & 0 & -2 \\
+2 & 5 & 4 & 4 & 7 & -2 & -3 & -2 & -1 & -2 \\
+2 & 6 & 0 & -2 & -1 & 1 & 0 & -1 & 2 & 0 \\
+2 & 7 & 2 & 1 & 2 & 0 & -1 & -2 & -1 & 0 \\
+2 & 8 & 2 & 1 & 3 & 1 & -1 & -1 & -1 & -2 \\
+\midrule
+3 & 1 & 0 & 1 & 0 & 0 & -1 & -1 & 0 & -1 \\
+3 & 2 & -2 & -3 & -5 & 0 & 2 & 2 & 0 & 2 \\
+3 & 3 & 2 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+3 & 4 & -2 & -3 & -6 & 1 & 2 & 1 & 2 & 2 \\
+3 & 5 & 0 & -2 & -3 & 0 & 1 & 2 & 1 & 0 \\
+3 & 6 & 0 & -2 & -3 & 1 & 0 & 1 & 0 & 2 \\
+3 & 7 & 2 & 3 & 2 & -2 & -1 & 0 & -1 & 0 \\
+3 & 8 & 2 & 1 & 1 & -1 & 1 & -1 & -1 & 0 \\
+\midrule
+4 & 1 & -2 & -1 & -2 & -1 & 1 & 0 & 1 & 0 \\
+4 & 2 & 0 & -2 & -1 & -1 & 0 & 1 & 0 & 2 \\
+4 & 3 & 4 & 4 & 5 & -1 & -2 & -1 & -2 & -2 \\
+4 & 4 & 2 & 1 & 1 & -2 & 0 & 0 & 0 & 0 \\
+4 & 5 & 2 & 2 & 3 & -2 & -2 & 1 & -1 & -1 \\
+4 & 6 & 2 & 1 & 2 & -1 & -2 & -1 & 0 & 0 \\
+4 & 7 & 4 & 5 & 7 & -3 & -2 & -2 & -3 & -1 \\
+4 & 8 & 2 & 0 & 2 & -1 & 0 & 0 & -1 & -1 \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tabular}{cc|rrrrrrrr}
+\toprule
+$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
+\midrule
+5 & 1 & 0 & 1 & 2 & -1 & -2 & 0 & 0 & -1 \\
+5 & 2 & -2 & -5 & -6 & 2 & 1 & 2 & 1 & 2 \\
+5 & 3 & 2 & 3 & 2 & 0 & -1 & -2 & -1 & 0 \\
+5 & 4 & 0 & -1 & -2 & 0 & 0 & -1 & 1 & 1 \\
+5 & 5 & 2 & 1 & 1 & 0 & -2 & 0 & 0 & 0 \\
+5 & 6 & 0 & -1 & -1 & 2 & -1 & -1 & 0 & 1 \\
+5 & 7 & 0 & 0 & -1 & 0 & -1 & 0 & -1 & 2 \\
+5 & 8 & 2 & 2 & 2 & 0 & -1 & -1 & -2 & -1 \\
+\midrule
+6 & 1 & -2 & -2 & -2 & 1 & 0 & -1 & 1 & 1 \\
+6 & 2 & 2 & 1 & 2 & -1 & 0 & -1 & -2 & 0 \\
+6 & 3 & 2 & 3 & 2 & -1 & 0 & -1 & 0 & -2 \\
+6 & 4 & 0 & 0 & -1 & -1 & 2 & -1 & 0 & 0 \\
+6 & 5 & 2 & 2 & 2 & -2 & -1 & -1 & 0 & -1 \\
+6 & 6 & 2 & 1 & 1 & 0 & 0 & -2 & 0 & 0 \\
+6 & 7 & 2 & 4 & 3 & -1 & -1 & -2 & -2 & -1 \\
+6 & 8 & 4 & 5 & 7 & -2 & -1 & -3 & -2 & -3 \\
+\midrule
+7 & 1 & 0 & 2 & 2 & -1 & -1 & -1 & -2 & 0 \\
+7 & 2 & 0 & -2 & -1 & 0 & 1 & 2 & -1 & 0 \\
+7 & 3 & 0 & -2 & -3 & 2 & 1 & 0 & 1 & 0 \\
+7 & 4 & -2 & -4 & -6 & 1 & 2 & 2 & 1 & 1 \\
+7 & 5 & 2 & 1 & 2 & 0 & -1 & 0 & -1 & -2 \\
+7 & 6 & 0 & -3 & -2 & 1 & 1 & 0 & 0 & 1 \\
+7 & 7 & 2 & 1 & 1 & 0 & 0 & 0 & -2 & 0 \\
+7 & 8 & 0 & -1 & -1 & 1 & 2 & 0 & -1 & -1 \\
+\midrule
+8 & 1 & 0 & 1 & 2 & 0 & 0 & -1 & -1 & -2 \\
+8 & 2 & 0 & -2 & -2 & -1 & 1 & 1 & 1 & 0 \\
+8 & 3 & 0 & 0 & -2 & 1 & -1 & 1 & 1 & 0 \\
+8 & 4 & 0 & 1 & -1 & -1 & 0 & 0 & 1 & -1 \\
+8 & 5 & 0 & -1 & -1 & 0 & -1 & 1 & 2 & -1 \\
+8 & 6 & -2 & -4 & -6 & 2 & 1 & 1 & 2 & 1 \\
+8 & 7 & 2 & 2 & 2 & -1 & -2 & 0 & -1 & -1 \\
+8 & 8 & 2 & 1 & 1 & 0 & 0 & 0 & 0 & -2 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\caption{Coefficients $c_k$ such that $M_i \cdot M_j = \sum_{k=1}^{8} c_k\, M_k$, for the bases defined above.}\label{tbl:appendix-MM}
+\end{table}
 
 % ===============================================================
 % References

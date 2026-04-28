@@ -1,0 +1,22 @@
+Prompt 079 — Two-column appendix tables, each forced onto a single page
+Date: 2026-04-28
+
+User request (verbatim):
+"Ok, the structure is good overall. As a cosmetic call-out, the
+three tables would look nicer if you could split them into
+two-column format, say, by having the first 32 coefficient rows
+on the left column and the second 32 coefficient rows on the
+right side. Then, force each table and its caption to be on
+the same page in the paper."
+
+Actions:
+- Add \usepackage{float} to paper/main.tex preamble (for [H]
+  placement specifier).
+- Replace each of the three appendix table blocks with a
+  table[H] float containing two side-by-side minipages, each
+  holding a tabular with 32 rows (i=1..4 on the left,
+  i=5..8 on the right). Caption + label live below the
+  side-by-side block, inside the float. The [H] specifier
+  forces the table+caption onto a single page (no floating).
+- Verify the build is clean (no overfull boxes; each table
+  fits on one page; cross-references resolve).
