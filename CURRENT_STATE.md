@@ -160,6 +160,17 @@ These have been tested against the Leech lattice in trials 005–006 (see below)
 cd python_project && python3 -m pytest tests/ -v
 ```
 
+A parallel **GAP / LOOPS** verification suite re-derives the paper's and
+companion's key claims independently — same mathematical content, different
+language and runtime.  110 checks, all arithmetic exact (rational); the
+LOOPS package is used to cross-verify the octonion multiplication as the
+unique non-associative Moufang loop of order 16.  Run with:
+```
+gap -q gap_project/run_all.g
+```
+See [gap_project/README.md](gap_project/README.md) for the test-by-test
+mapping to paper sections and to the Python suite.
+
 ---
 
 ## Ruled-out algebra: triple-octonion (O₁ ⊕ O₂ ⊕ O₃)

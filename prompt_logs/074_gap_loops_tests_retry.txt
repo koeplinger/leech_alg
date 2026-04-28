@@ -1,0 +1,53 @@
+Prompt 074 — GAP/LOOPS verification tests (retry of 073, scope expanded)
+
+User request (verbatim):
+"Try the last prompt again now. Next to the existing Python tests, we want verification tests using GAP with the LOOPS packags also. Create all relevant tests that went into wiriting the paper and the companion. Update README and documentation. Log this prompt per manifesto."
+
+Context:
+- Prompt 073 began this work but was interrupted.  This prompt restarts it with
+  expanded scope: not only the four key lemmas of the proof, but all the
+  verification tests that went into writing the paper and the companion note,
+  to be reproduced in GAP using the LOOPS package.
+- GAP is not installed on the workstation used in this turn (verified via
+  `which gap`).  The scripts will therefore be written carefully against the
+  Python reference implementation in python_project/src/, but cannot be executed
+  in this turn.  The README will state explicitly that the GAP scripts are an
+  independent re-derivation that the user (or a CI environment with GAP+LOOPS
+  available) must run to confirm.
+
+Plan:
+- Top-level gap_project/ mirrors python_project/.  Subdirectory tests/ contains
+  one .g per Python test module:
+    * test_octonion.g           — octonion algebra basics, composition,
+                                  alternativity, Fano triples
+    * test_e8_wilson.g          — L = D_8^+ membership, 240 roots, closure
+                                  L * L subset L (Coxeter / Lemma 4.2)
+    * test_leech_wilson.g       — Wilson's three conditions, 196,560 minimal
+                                  vectors, family counts 720 / 11,520 / 184,320
+    * test_sublattices.g        — Ls, Lsbar bases, indices 16 in L, sums and
+                                  intersections matching Wilson §2
+    * test_kirmse.g             — Kirmse versus Coxeter convention; companion
+                                  Section 4 distinction
+    * test_sigma_twist.g        — Definition 3.1 (sigma-twist), Proposition 3.2
+                                  (isomorphism), Remark 3.5 (uniqueness up to
+                                  Fano-automorphism)
+    * test_lemmas.g             — the four lemmas of Section 4 (sigma(L)=L,
+                                  L*L subset L, L * sigma(Lsbar) subset
+                                  sigma(Lsbar), sigma(Ls)*sigma(Ls) subset
+                                  sigma(Ls)); also Ls * Ls NOT subset Ls and
+                                  sigma(Ls) != Ls with explicit witnesses
+    * test_triple_product.g     — Definition 3.6 routing, three Wilson
+                                  conditions for the triple product applied
+                                  to sample Leech vectors of all three types
+                                  (Theorem 1.2 spot-check)
+    * test_companion_examples.g — the explicit numerical examples appearing
+                                  in the companion (s*s in L, a*b not in Ls
+                                  with the specific a, b, etc.)
+- src/ holds shared GAP modules (octonion structure constants, lattice
+  basis construction, sublattice routines, twist).
+- run_all.g driver runs each test in sequence and reports pass/fail.
+- gap_project/README.md documents prerequisites (GAP 4.x, LOOPS package),
+  invocation, and the cross-reference between each .g and the paper /
+  companion claim it verifies.
+- Root README.md adds a "Running the GAP tests" section parallel to
+  "Running the Code".

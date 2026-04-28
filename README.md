@@ -24,6 +24,7 @@ The finished write-up is in [paper/main.tex](paper/main.tex)
 | [paper/main.tex](paper/main.tex), [paper/main.pdf](paper/main.pdf) | Formal write-up: LaTeX source (bibliography inline via \bibitem) and compiled PDF |
 | [evidence_and_reasoning/](evidence_and_reasoning/) | Key claims, trial results, and references |
 | [python_project/](python_project/) | Python code: shared tools, trial experiments, symbolic-proof verification |
+| [gap_project/](gap_project/) | GAP / LOOPS independent re-derivation of the paper's verification tests |
 | [prompt_logs/](prompt_logs/) | Chronological log of all AI interaction prompts |
 | [source_documents/](source_documents/) | Primary source PDFs (freely redistributable only; others listed by DOI) |
 | [LICENSE.md](LICENSE.md), [LICENSE-CODE](LICENSE-CODE) | CC BY 4.0 for text / evidence / paper; MIT for source code |
@@ -46,6 +47,10 @@ multiplication.
 - **Computational verification** on 4M+ random pairs of minimal vectors with
   zero failures, plus tests from first principles on every foundation
   (octonion properties, Wilson's construction).  197 tests pass.
+- **Independent GAP / LOOPS re-derivation** of the same verification tests
+  ([gap_project/](gap_project/), 110 checks; uses the LOOPS package to
+  cross-verify the octonion multiplication as the unique non-associative
+  Moufang loop of order 16).  All arithmetic exact (rational); no floating point.
 - **Formal write-up** with full proof, related work, and methodology in
   [paper/main.tex](paper/main.tex).
 - **Key claims:** [007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)
@@ -71,6 +76,8 @@ multiplication.
 
 ## Running the Code
 
+### Python suite
+
 ```bash
 cd python_project
 python3 -m pytest tests/ -v                     # Run all foundation tests
@@ -82,9 +89,23 @@ python3 trial_001_triple_octonion.py            # Any earlier trial
 
 Requires Python 3.x with NumPy and SciPy.
 
-Compiling the paper:
+### GAP / LOOPS suite
+
+```bash
+gap -q gap_project/run_all.g                    # 110 checks across 8 files
+```
+
+Requires GAP 4.x with the LOOPS package
+(`apt install gap gap-pkg-loops` on Debian/Ubuntu, or via GAP's PackageManager).
+The GAP suite re-derives the same verification claims as the Python suite,
+with all arithmetic exact (rational), and uses LOOPS to cross-verify the
+octonion multiplication as a Moufang loop of order 16.  See
+[gap_project/README.md](gap_project/README.md) for the full layout.
+
+### Compiling the paper
 
 ```bash
 cd paper
 pdflatex main.tex
+pdflatex companion.tex
 ```
