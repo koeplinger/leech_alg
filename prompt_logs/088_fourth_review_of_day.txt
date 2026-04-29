@@ -1,0 +1,15 @@
+Prompt 088 — Fourth review of the day, post Prompts 086 and 087
+Date: 2026-04-28
+
+User request (verbatim):
+"alright - make another review of the paper; let's see if we're
+good now"
+
+Plan:
+- Re-read main.tex post Prompts 086 (round-4 fixes: rename to
+  (i,j), hedge, soften Wilson, citation tidy, bridge) and 087
+  (seven-orders rewrite).
+- Verify each fix landed cleanly with no new collision or
+  regression.
+- Check carry-over items from earlier rounds and note their status.
+- Save at paper/reviews/2026-04-28_claude_opus_4_7_review_4.md.
