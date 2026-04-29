@@ -1,0 +1,54 @@
+Prompt 089 — Brief verification mentions for Baez/Egan and Dixon, plus
+structural comparison of the Egan/Baez induced order on Lambda
+Date: 2026-04-28
+
+User request (verbatim):
+"Great. Let's make a self-contained investigation of the Egan/Baez
+construction. You've already created a verification in the 'paper'
+folder. That's enough for us to briefly mention in the paper that
+we've independently verified their construction as correct, right?
+I don't care about typos or the numeric error, it's the essence
+that counts here. Similarly, we've also independently verified
+Dixon's 2010 construction, right? Let's briefly mention this as
+well. For both independent verifications, just state that we've
+done so and defer to the online repo for the code.
+
+Now for the interesting part: Egan/Baez work on a 27-dim
+Jordan-like algebra that closes on the Leech lattice in its
+off-diagonal part. You could say that this creates an order on
+the Leech lattice as well, right? You've got to cherry-pick that
+24-dim subspace, sure, but any product in the ambient 27-dim
+algebra has the property that the off-diagonal 24-dim subspace
+closes on the Leech lattice. How does this order relate
+structurally to ours? In our work, we've always started with
+products on Min(lambda) which then get thrown somewhere into the
+Leech lattice. What happens with those in Egan/Baez?"
+
+Plan:
+  - Add brief verification mentions in the existing Baez/Egan and
+    Dixon entries in §6 (Related work). Defer to the repository
+    for code; do not elaborate on the verification itself.
+  - Add a new paragraph after the existing **Comparison.** that
+    spells out the structural anatomy of Baez/Egan's closure
+    restricted to Lambda x Lambda:
+
+    For off-diagonal X, Y representing u, v in Lambda subset O^3,
+    one has 2(XY + YX) = D + R, where R is an off-diagonal
+    residue in Lambda and D is a diagonal piece in Z^3 whose
+    entries are 4 times the block-pair Euclidean inner products
+    of u and v: D = 4(<x,x'>+<y,y'>, <x,x'>+<z,z'>, <y,y'>+<z,z'>),
+    so tr D = 8 <u, v>. Projecting onto the off-diagonal subspace
+    gives a bilinear closed product on Lambda --- an order in the
+    sense of Theorem 1.1, but obtained by projection from a larger
+    ambient. The induced product is commutative (Jordan symmetric);
+    ours is not.
+
+    For minimal Leech vectors u in Min(Lambda), squaring gives
+    diagonal trace 8 N(u) = 64; the projection discards the
+    inner-product shadow.
+
+  - Be careful with the verification mention: Egan's count of
+    17,280 Jordan rings cannot be reverified without re-running
+    the enumeration; we verified the *derivation* of the lower
+    bound 244,035,421 and all symbolic claims. Be honest about
+    what was verified.

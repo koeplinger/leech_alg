@@ -715,7 +715,9 @@ octonion (the identity of the new multiplication).  When $Y^{\dagger} = X^{-1}$
 the XY-product specialises to the X-product $A \circ_X B = (AX)(X^{-1}
 B)$; Dixon uses this X-product with $X = \ell_0 = \frac{1}{2}(1 + e_1
 + \cdots + e_7)$ to obtain~$E_8$, and general XY-products for
-higher-dimensional laminated lattices including~$\LL$.
+higher-dimensional laminated lattices including~$\LL$.  We have
+independently reproduced this construction in the supplemental
+code~\cite{repo}.
 
 \textbf{Baez and Egan (2014)} \cite{Baez2014} study closure
 properties of integer sublattices of the exceptional Jordan algebra
@@ -731,7 +733,14 @@ Leech embeddings $L_L \subset \OO^3$ for which the associated
 (see part~10 of~\cite{Baez2014} for Egan's computational counts).
 Baez left open the question whether any such lattice is closed under
 the undoubled Jordan product --- which would remove the factor-of-2
-discrepancy --- and conjectures that the answer is negative.
+discrepancy --- and conjectures that the answer is negative.  We
+have independently reproduced this verification chain end-to-end ---
+the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
+Leech-lattice theorem, the doubled-Jordan-product closure, and the
+derivation of the lower bound $244{,}035{,}421$ on the number of
+$E_8^3$-orbit Leech embeddings; details and code are in~\cite{repo}.
+Egan's sharper count of $17{,}280$ Jordan rings comes from an
+exhaustive enumeration that we have not re-run.
 
 \textbf{Earlier precursors.}  Further back, several constructions
 foreshadow the octonion-triple and Jordan-algebra frameworks above.
@@ -784,6 +793,38 @@ $E_8$ block, but it is not in itself $\ZZ_3$-symmetric across the
 three factors.  Whether $\Sigma(\LL)$ overlaps with one of the
 embeddings catalogued by Egan, or sits outside that family, is a
 question this paper does not address.
+
+\textbf{Anatomy of the Baez--Egan closure on $\LL$.}  Egan and
+Baez's closure is on the ambient 27-dimensional lattice
+$\widetilde{\LL} = \ZZ^3 \oplus \LL \subset \mathfrak{h}_3(\OO)$,
+not on $\LL$ alone.  For off-diagonal Hermitian matrices $X, Y \in
+\mathfrak{h}_3(\OO)$ representing $u = (x,y,z)$ and $v = (x',y',z')$
+in $\LL \subset \OO^3$, direct computation gives
+\[
+  2(XY + YX) \;=\; D \;+\; R,
+\]
+where $R$ is an off-diagonal residue lying in $\LL$ and $D \in
+\ZZ^3$ is a diagonal piece whose entries are four times the
+block-pair Euclidean inner products of $u$ and $v$:
+\[
+  D \;=\; 4\bigl(\langle x, x'\rangle + \langle y, y'\rangle,\;
+                  \langle x, x'\rangle + \langle z, z'\rangle,\;
+                  \langle y, y'\rangle + \langle z, z'\rangle\bigr),
+\]
+so $\operatorname{tr} D = 8 \langle u, v\rangle$ recovers the
+$\RR^{24}$ inner product of $u$ and $v$.  Projecting onto the
+off-diagonal subspace defines a $\ZZ$-bilinear closed product
+$\varphi(u, v) := R$ on $\LL$ --- an order in the sense of
+Theorem~\ref{thm:main}, but obtained by projecting from a larger
+ambient with the inner-product shadow $D$ discarded.  For minimal
+Leech vectors $u \in \operatorname{Min}(\LL)$, squaring gives
+$\operatorname{tr} D = 8\Nrm(u) = 64$, so the projection is
+non-trivial on every minimal-vector input.  The induced product
+$\varphi$ is moreover commutative (the Jordan product is symmetric
+in its arguments), whereas $\star$ is not
+(Section~\ref{sec:properties}); the two orders are therefore
+distinct bilinear products on $\RR^{24}$ that both close on $\LL$,
+reaching that closure through different ambient algebras.
 
 % ===============================================================
 \section{Conclusion}\label{sec:conclusion}
