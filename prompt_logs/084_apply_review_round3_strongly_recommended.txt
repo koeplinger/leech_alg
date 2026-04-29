@@ -1,0 +1,22 @@
+Prompt 084 — Apply round-3 review's six "strongly recommended" items
+Date: 2026-04-28
+
+User request (verbatim):
+"Fix all items 1. through 6. under 'strongly recommended' exactly as
+you suggest."
+
+Items (per paper/reviews/2026-04-28_claude_opus_4_7_review_2.md):
+  1. Rename the transposition indices in Definition 3.1 (and
+     Remark 3.5) from (s,t) to (a,b) to remove the collision with
+     Wilson's s.
+  2. Update \bibitem{repo} title to match the paper's current title.
+  3. Tighten the Sigma(Lambda) ne Lambda argument in Remark 4.6 by
+     invoking Wilson surjectivity onto Ls explicitly.
+  4. Remove the unused Min(Lambda) sentence from Corollary 1.3's
+     proof.
+  5. De-duplicate the Conway-group open question: keep the §7 bullet,
+     remove the §5 sentence.
+  6. Add the "By Z-bilinearity, A.B subset C" closing sentence to
+     Lemmas 4.3 and 4.4 proofs.
+
+Build the paper after each edit (or in batches) to confirm clean.

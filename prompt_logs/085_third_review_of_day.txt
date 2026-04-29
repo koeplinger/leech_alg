@@ -1,0 +1,17 @@
+Prompt 085 — Third review of the day, post round-3 fixes
+Date: 2026-04-28
+
+User request (verbatim):
+"Hold the thought on the Egan/Baez investigation. Make another
+review of the paper now."
+
+Plan:
+- Read paper/main.tex from start to end again, post the round-3
+  edits (Prompt 084: rename to (a,b), repo bib title, Sigma(Lambda)
+  argument, Corollary 1.3 trim, Conway-group de-duplication, Lemma
+  4.3/4.4 closing sentences).
+- Verify each round-3 fix landed cleanly and did not introduce a
+  new inconsistency.
+- Look afresh for anything missed in earlier rounds.
+- Save at paper/reviews/2026-04-28_claude_opus_4_7_review_3.md.
+- Format identical to previous reviews.

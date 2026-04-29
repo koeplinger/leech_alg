@@ -133,10 +133,9 @@ $(\RR^{24}, +, \star)$.
 \end{corollary}
 
 \begin{proof}
-$\operatorname{Min}(\LL)$ generates~$\LL$ over~$\ZZ$
-\cite{ConwaySloane1999}.  The product~$\star$ is bilinear (it is a
-sum of bilinear octonion products).  By Theorem~\ref{thm:main},
-$\star$ maps $\LL \times \LL$ into~$\LL$.
+The product~$\star$ is bilinear (it is a sum of bilinear octonion
+products).  By Theorem~\ref{thm:main}, $\star$ maps $\LL \times \LL$
+into~$\LL$.
 \end{proof}
 
 \begin{remark}[Order-closure, not shell-closure]\label{rem:order-closure}
@@ -284,9 +283,9 @@ $j, k \in J = \{\pm e_t : 0 \le t \le 7\}$ (16~unit octonions).
 
 \begin{definition}[Transposition-twisted octonion algebra]
 \label{def:twist}
-Let $\sigma = (s\; t)$ be a transposition on $\{1, \ldots, 7\}$.
+Let $\sigma = (a\; b)$ be a transposition on $\{1, \ldots, 7\}$.
 Extend~$\sigma$ to a linear map $\sigma: \RR^8 \to \RR^8$ that fixes
-$e_0$ and permutes $e_s \leftrightarrow e_t$.  Apply~$\sigma$ to each
+$e_0$ and permutes $e_a \leftrightarrow e_b$.  Apply~$\sigma$ to each
 standard Fano triple: $(a,b,c) \mapsto (\sigma(a), \sigma(b), \sigma(c))$.
 The resulting triples define a new multiplication table on~$\RR^8$.
 Equivalently, the \emph{$\sigma$-twisted multiplication} is
@@ -348,7 +347,7 @@ The 21~transpositions of $\{1, \ldots, 7\}$ form a single orbit under
 the Fano-plane automorphism group $\GL(3, \FF_2)$ (which has order~168
 and acts on the 7~points of the Fano plane).  Indeed, $\GL(3, \FF_2)$
 is $2$-transitive on the 7 points, so any pair of imaginary indices
-can be mapped to any other pair, and conjugation of~$\sigma = (s\;t)$
+can be mapped to any other pair, and conjugation of~$\sigma = (a\;b)$
 by a Fano automorphism produces another transposition.  All 21
 transpositions are therefore equivalent up to a relabelling of the
 imaginary basis, and the construction is essentially unique.
@@ -470,7 +469,8 @@ $L \cdot \sigma(L\bar{s}) \subseteq \sigma(L\bar{s})$.
 \begin{proof}
 The 64 products $L_i \cdot N_j$ are integer combinations of
 $\{N_1,\ldots,N_8\}$; the explicit coefficients are
-Table~\ref{tbl:appendix-LN}.
+Table~\ref{tbl:appendix-LN}.  By $\ZZ$-bilinearity,
+$L \cdot \sigma(L\bar s) \subseteq \sigma(L\bar s)$.
 \end{proof}
 
 \begin{lemma}\label{lem:sigmaLs-closed}
@@ -480,7 +480,8 @@ $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
 \begin{proof}
 The 64 products $M_i \cdot M_j$ are integer combinations of
 $\{M_1,\ldots,M_8\}$; the explicit coefficients are
-Table~\ref{tbl:appendix-MM}.
+Table~\ref{tbl:appendix-MM}.  By $\ZZ$-bilinearity,
+$\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
 \end{proof}
 
 \begin{remark}\label{rem:Ls-not-closed}
@@ -525,10 +526,12 @@ product closes.  To see $\Sigma(\LL) \ne \LL$ explicitly: an element
 $(x',y',z') \in \Sigma(\LL)$ is by construction
 $(\sigma(x), \sigma(y), \sigma(z))$ for some $(x,y,z) \in \LL$, so
 its block sum $x'{+}y'{+}z' = \sigma(x{+}y{+}z)$ lies in
-$\sigma(Ls)$, not in general in~$Ls$.  By
-Remark~\ref{rem:Ls-not-closed}, $\sigma(Ls) \ne Ls$, so $\Sigma(\LL)$
-contains triples whose block sum violates Wilson's condition~(3) for
-membership in~$\LL$.
+$\sigma(Ls)$.  Since the block-sum map $\LL \to Ls$ is surjective
+(Wilson \cite[Section~3]{Wilson2009}) and $\sigma(Ls) \ne Ls$
+(Remark~\ref{rem:Ls-not-closed}), there exist $(x,y,z) \in \LL$ with
+$\sigma(x{+}y{+}z) \in \sigma(Ls) \setminus Ls$, and the
+corresponding triple in $\Sigma(\LL)$ violates Wilson's
+condition~(3) for membership in~$\LL$.
 \end{remark}
 
 \subsection{Condition~(1): each block lies in~$L$}
@@ -673,9 +676,7 @@ x'+y'+z')$.  Consequently $(\LL, +, \star)$ is a non-unital order.
 The order does not satisfy any of the classical algebraic identities
 (associativity, alternativity, flexibility, power-associativity,
 commutativity).  The defining property is \emph{closure}: the Leech
-lattice is stable under the product.  The relationship between
-$\star$ and the Conway group~$\Co_0$ (the automorphism group of~$\LL$
-as a lattice) is an open question.
+lattice is stable under the product.
 
 % ===============================================================
 \section{Related work}\label{sec:related}
@@ -1423,8 +1424,8 @@ J.~Algebra \textbf{322} (2009), 2186--2190.
 
 \bibitem{repo}
 J.~Koeplinger,
-\emph{An order on the Leech lattice from transposition-twisted
-octonions: research repository},
+\emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
+triple-octonion product: research repository},
 \url{https://bitbucket.org/jenskoeplinger/leech_alg}, 2026.
 
 \end{thebibliography}
