@@ -1,0 +1,8 @@
+Prompt 087 — Fix the "seven such orders" circular phrasing in §1
+Date: 2026-04-28
+
+User request (verbatim):
+"address the 'seven such orders' circular phrasing"
+
+This is the strongly-recommended item 2 from the round-4 review
+that was deferred in Prompt 086. Apply the suggested rewrite.

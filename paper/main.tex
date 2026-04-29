@@ -88,11 +88,13 @@ simple group~$\Co_1$.
 
 In rank~8, the $E_8$ lattice~$L$ carries an octonionic multiplication
 that makes it a maximal order in the real octonion division algebra.
-There are seven such orders, one for each of the seven maximal orders
-of the integral octonions \cite{Coxeter1946, ConwaySmith2003}.  Wilson
-\cite{Wilson2009} showed that $\LL$ embeds naturally in~$L^3$ via three
-sublattice conditions, raising the question: does $\LL$ inherit an
-algebraic structure from the octonion product?
+Seven octonion-multiplication conventions on~$\RR^8$ have this
+property; the resulting structures are in bijection with the seven
+maximal orders of the integral octonions
+\cite{Coxeter1946, ConwaySmith2003}.  Wilson
+\cite[Section~3]{Wilson2009} showed that $\LL$ embeds naturally
+in~$L^3$ via three sublattice conditions, raising the question: does
+$\LL$ inherit an algebraic structure from the octonion product?
 
 This question has been studied from several angles.  Dixon
 \cite{Dixon2010} constructed~$\LL$ using an octonionic XY-product.
@@ -179,10 +181,11 @@ $\Nrm(xy) = \Nrm(x)\Nrm(y)$ holds \cite{Baez2002}.
 
 \subsection{The $E_8$ lattice}
 
-Wilson's $E_8$ lattice is $L = D_8^+$, the set of vectors in~$\RR^8$
-whose coordinates (in the basis $\{e_0, \ldots, e_7\}$) are either
-all integers with even coordinate sum, or all half-integers with odd
-coordinate sum \cite{Wilson2009, ConwaySmith2003}.  It has
+In Wilson's setup~\cite[Section~2]{Wilson2009}, the $E_8$ lattice is
+$L = D_8^+$, the set of vectors in~$\RR^8$ whose coordinates (in the
+basis $\{e_0, \ldots, e_7\}$) are either all integers with even
+coordinate sum, or all half-integers with odd coordinate sum
+\cite{ConwaySmith2003}.  It has
 240~roots (vectors of squared norm~2).  Under the standard octonion
 multiplication, $L$~is a maximal order in~$\OO$: it is closed under
 multiplication \cite{Coxeter1946, ConwaySmith2003}.
@@ -237,12 +240,12 @@ s \subseteq L$ even though $\bar s \notin L$: each $\ell \cdot
 computation, and the inclusion extends by $\ZZ$-linearity in the
 left factor. $L\bar s$ is therefore a $\ZZ$-subgroup of~$L$, and
 is moreover closed under left-multiplication by~$L$ (Wilson's
-condition~(2) for the untwisted product, used implicitly
-throughout~\cite{Wilson2009}). For~$Ls$ both properties are
-immediate from $s \in L$.} with
+condition~(2) for the untwisted product, implicit in the sublattice
+argument of~\cite[Section~3]{Wilson2009}). For~$Ls$ both properties
+are immediate from $s \in L$.} with
 $[L : L\bar{s}] = [L : Ls] = 16$,
 $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$
-\cite{Wilson2009}.
+\cite[Section~2]{Wilson2009}.
 
 \begin{definition}[Wilson {\cite[Section~3]{Wilson2009}}]
 \label{def:wilson-leech}
@@ -257,7 +260,7 @@ The \emph{Leech lattice} is
 \end{definition}
 
 The 196{,}560 minimal vectors of~$\LL$ decompose into three families
-\cite{Wilson2009}:
+\cite[Section~3]{Wilson2009}:
 
 \smallskip
 \begin{tabular}{@{}lll@{}}
@@ -283,9 +286,9 @@ $j, k \in J = \{\pm e_t : 0 \le t \le 7\}$ (16~unit octonions).
 
 \begin{definition}[Transposition-twisted octonion algebra]
 \label{def:twist}
-Let $\sigma = (a\; b)$ be a transposition on $\{1, \ldots, 7\}$.
+Let $\sigma = (i\; j)$ be a transposition on $\{1, \ldots, 7\}$.
 Extend~$\sigma$ to a linear map $\sigma: \RR^8 \to \RR^8$ that fixes
-$e_0$ and permutes $e_a \leftrightarrow e_b$.  Apply~$\sigma$ to each
+$e_0$ and permutes $e_i \leftrightarrow e_j$.  Apply~$\sigma$ to each
 standard Fano triple: $(a,b,c) \mapsto (\sigma(a), \sigma(b), \sigma(c))$.
 The resulting triples define a new multiplication table on~$\RR^8$.
 Equivalently, the \emph{$\sigma$-twisted multiplication} is
@@ -335,6 +338,9 @@ different strata of the construction; we expand on this in
 Section~\ref{sec:related}.
 \end{remark}
 
+To make the action of~$\sigma$ on the multiplication concrete, we
+record the count of changed entries.
+
 \begin{remark}\label{rem:table-diffs}
 For the transposition $\sigma = (1\;2)$, exactly 30 of the 64
 multiplication table entries change relative to the standard table:
@@ -347,10 +353,13 @@ The 21~transpositions of $\{1, \ldots, 7\}$ form a single orbit under
 the Fano-plane automorphism group $\GL(3, \FF_2)$ (which has order~168
 and acts on the 7~points of the Fano plane).  Indeed, $\GL(3, \FF_2)$
 is $2$-transitive on the 7 points, so any pair of imaginary indices
-can be mapped to any other pair, and conjugation of~$\sigma = (a\;b)$
+can be mapped to any other pair, and conjugation of~$\sigma = (i\;j)$
 by a Fano automorphism produces another transposition.  All 21
 transpositions are therefore equivalent up to a relabelling of the
-imaginary basis, and the construction is essentially unique.
+imaginary basis, and the construction is essentially unique
+\emph{among transposition twists}; longer-cycle coordinate
+permutations are not covered by this argument and may yield
+inequivalent products.
 \end{remark}
 
 \begin{definition}[Triple product with $\ZZ_3$ routing]

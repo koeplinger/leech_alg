@@ -1,0 +1,29 @@
+Prompt 086 — Apply round-4 review's regression fix and four nice-to-have items
+Date: 2026-04-28
+
+User request (verbatim):
+"fix the regression, and the three nice-to-have items (though I
+count four)"
+
+The user is acknowledging that I labelled the round-4 review's
+"nice to have" items as "three" but actually listed four. Apply
+all four.
+
+The strongly-recommended item 2 (§1 circular phrasing) is NOT
+included in the user's request and is left for later.
+
+Items to apply:
+  1. Regression: rename sigma = (a, b) -> sigma = (i, j) in
+     Definition 3.1 and Remark 3.5; update e_a/e_b to e_i/e_j.
+  10. Hedge "essentially unique" in Remark 3.5 to clarify that
+      the quantifier is over transpositions only; longer-cycle
+      twists are not covered.
+  11. Soften "Wilson's E_8 lattice" wording in §2.2 to "In
+      Wilson's setup, the E_8 lattice is L = D_8^+, ...".
+  12. Tidy Wilson citation style: add section pointers wherever
+      Wilson is cited substantively.
+  13. Add a bridge sentence between Remark 3.3 (sigma vs Fano)
+      and Remark 3.4 (table-diffs count) so the order reads
+      naturally.
+
+Build the paper after each batch of edits.
