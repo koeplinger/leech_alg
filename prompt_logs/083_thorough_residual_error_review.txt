@@ -1,0 +1,31 @@
+Prompt 083 — Thorough second-of-the-day review for residual errors
+Date: 2026-04-28
+
+User request (verbatim):
+"Before we start the Egan/Baez investigation, do another review of
+the paper. Record it as a second review from today. I want to make
+sure that all residual errors that you're spotting are removed before
+I do a line-by-line review. Incrementalism is very taxing on me at
+this stage."
+
+Plan:
+- Read paper/main.tex from start to end (Section 1 through Appendix B
+  and bibliography), looking specifically for:
+  * Mathematical errors (wrong statements, broken arguments).
+  * Internal inconsistencies (X said one way in one place, the
+    opposite or different elsewhere).
+  * Lingering old phrasings that should have been updated when an
+    earlier round corrected a related point.
+  * Broken/forward cross-references.
+  * Definitions used before being stated.
+  * Numerical or attribution errors.
+  * Bibliography or citation issues.
+- Be exhaustive about errors and inconsistencies. Defer stylistic
+  preferences to the user.
+- Save the review at
+  paper/reviews/2026-04-28_claude_opus_4_7_review_2.md so it does
+  not collide with the morning review.
+- Format: same headers as previous reviews
+  (Recommendation, Summary, Items resolved, Substantive errors,
+  Mathematical substance, Minor issues, Exposition, Summary of
+  requested revisions).
