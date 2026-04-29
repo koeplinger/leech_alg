@@ -1,0 +1,74 @@
+Prompt 082 — Apply round-2 review fixes (minor); flag Egan/Baez deep dive for follow-up
+Date: 2026-04-28
+
+User request (verbatim):
+"Fix the residual error right-away.
+
+re '3.1' just add a side note that the inverse direction is trivial
+
+re '3.2' I like that, add those two lines
+
+re '3.3' you've made me interested in really understanding the
+structure of the Egan/Baez closure; and I think the reader would be
+interested as well: for one, our analysis has independently verified
+that their claim is correct (which - as of right now - I see John
+Baez' web site stand unverified). So here I want us to do an
+investigation, mention that we've done a computer proof and validated
+their online claim (but don't elaborate in the paper, that's for them
+to work out); but do answer a structural question between their
+closure anatomy on the Leech lattice and ours. -- this is a larger
+effort, maybe just do all the other minor edits in this prompt first,
+and then flag this one for detail follow-up prompts.
+
+re '3.4' we don't make a uniqueness claim here, just an existence
+claim (which is then proven); the question for generalization is
+indeed interesting, however, I defer this to mathematical follow-up
+
+re '3.5' good call-out; I pick (a)
+
+re minor issues, do update 'Sample sizes in §5's properties table.'
+and close the gap '$\Sigma(\Lambda) \ne \Lambda$ in Remark 4.6.' --
+also supply the one-line proof of 'Essentially unique' in Remark 3.5.
+Add the n-category cafe cross reference re 'Egan's count of $17{,}280$.'
+
+Finally, it is ok to scratch 'The AI agent violated its own logging
+protocol on three occasions (prompts 011, 018–019, and 029–031),
+each time caught by the human researcher on review.' -- But do make
+it clear that not just the human author, but also the AI agent, made
+mistakes throughout the investigation, which were caught due to
+systematic investigation and cross-checking."
+
+Plan in this prompt (immediate):
+  1. Fix Lemma 4.1's proof to use the corrected description of L.
+  2. Add a side note in §4.2's bilinearity-reduction preamble that
+     the only-if direction is trivial.
+  3. State the Z-basis of L in closed form in Appendix A:
+     L_1 = s; L_2 = e_0+e_1; L_3 = e_0-e_1; L_{k+2} = e_0+e_k for
+     k=2..6.
+  4. Reword the fifth open-question bullet: "Whether other linear
+     coordinate permutations of R^8 (beyond simple transpositions
+     sigma) conjugate the multiplication into a closed product on
+     Lambda" -- option (a) per user.
+  5. §5 properties table: add sample sizes / protocol.
+  6. Remark 4.6 (rem:two-framings): close the gap that
+     Sigma(Lambda) ne Lambda by referring to the explicit witness
+     in Remark 4.5 (rem:Ls-not-closed) and chasing it through the
+     block-sum.
+  7. Remark 3.5 (rem:unique): one-line proof of essential
+     uniqueness using GL(3, F_2) 2-transitivity on the 7
+     imaginary points.
+  8. Egan's count 17,280: add a cross-ref to the n-Category Cafe
+     part where the count is established.
+  9. Replace the logging-protocol-violations sentence in
+     Appendix B with a broader, less-specific statement that
+     mistakes were made by both human and AI agent throughout
+     the investigation, caught by the systematic cross-checking
+     methodology.
+
+Deferred to follow-up prompts (flagged):
+  - Item 3.3: do a computer-aided independent verification of
+    Baez/Egan's closure claim; document the structural relation
+    between their closure anatomy on the Leech and the present
+    construction; mention in the paper that the verification was
+    done (without elaborating the details); answer the structural
+    question of how the two closures relate.

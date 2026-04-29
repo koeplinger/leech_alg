@@ -182,6 +182,31 @@ Each of (a), (b), (c) is a different question. Pick one or split into two bullet
 
 ---
 
-## 7. Disposition by the author (to be added)
+## 7. Disposition by the author (2026-04-28)
 
-The author will read this review slowly and decide which items to address now, defer, or decline. As before, only the deferred-or-declined items will be considered settled at the end of this round.
+Upon receipt of this review, the author directed the following immediate corrections in the main paper:
+
+- **§2.1 (mandatory):** Lemma 4.1's proof updated to use the corrected description of $L$ ("all integers with even sum, or all half-integers with odd sum"), with a back-reference to §2.
+
+- **§3.1 (strongly recommended):** the bilinearity-reduction preamble now adds a parenthetical noting that the forward direction uses bilinearity and the reverse direction is immediate.
+
+- **§3.2 (strongly recommended):** Appendix A now states the $\ZZ$-basis of $L$ in closed form: $L_1 = s$, $L_2 = e_0+e_1$, $L_3 = e_0-e_1$, $L_{k+2} = e_0+e_k$ for $k=2,\ldots,6$.
+
+- **§3.5 (strongly recommended):** the fifth open-question bullet rewritten under interpretation (a) — other linear coordinate permutations of $\RR^8$ beyond simple transpositions — to remove the conflict with Remark 3.3.
+
+- **§4 minor:**
+  - Sample sizes and the sampling protocol added to §5's properties table.
+  - Remark 3.5 ("essentially unique") now contains a one-line proof using $2$-transitivity of $\GL(3, \FF_2)$.
+  - Remark 4.6 closes the $\Sigma(\Lambda) \ne \Lambda$ gap by chasing a witness through the block sum.
+  - Egan's $17{,}280$ count cross-referenced to part 10 of \cite{Baez2014}.
+- **§5 exposition:** the logging-protocol-violations sentence in Appendix B has been replaced by a broader statement that mistakes were made on both sides (human and AI) throughout the investigation, and that each was caught by the systematic cross-checking the methodology requires.
+
+The remaining items (§3.3 Egan/Baez novelty question, §3.4 routing uniqueness, and several minor items) are deferred:
+
+- **§3.3** is now an active research direction: the author intends to (a) independently verify Baez's claim about the doubled Jordan product on $\ZZ^3 \oplus L_L$ by direct symbolic computation, (b) document this verification, and (c) answer a structural question relating Baez–Egan's closure anatomy on $\Lambda$ to the present construction. This will be addressed in follow-up prompts and reflected in the paper as a short, factual mention of the verification result, with details deferred to the supplemental repository.
+
+- **§3.4** (routing uniqueness): the paper makes an existence claim, not a uniqueness claim; the question of whether other $\ZZ_3$-symmetric routings yield closed products is genuine but deferred to mathematical follow-up.
+
+- Minor items 8 (precise $L\bar s$ citation), 9 (validation cross-check protocol description), 11 (logging-violations consideration — partially addressed: the specific prompt numbers were removed; the broader point retained), 12 (consolidating closure-of-shells remarks), 14 (Proposition 3.3 orientation), 15 (extending the §6 Comparison to earlier precursors): not addressed in this round; left open.
+
+All deferred items remain open for formal review and are not to be considered settled.

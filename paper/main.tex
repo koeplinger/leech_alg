@@ -346,9 +346,12 @@ only, and 8~undergo both.
 \begin{remark}\label{rem:unique}
 The 21~transpositions of $\{1, \ldots, 7\}$ form a single orbit under
 the Fano-plane automorphism group $\GL(3, \FF_2)$ (which has order~168
-and acts on the 7~points of the Fano plane).  Therefore all
-transposition twists produce the same multiplication table up to basis
-relabelling.  The construction is essentially unique.
+and acts on the 7~points of the Fano plane).  Indeed, $\GL(3, \FF_2)$
+is $2$-transitive on the 7 points, so any pair of imaginary indices
+can be mapped to any other pair, and conjugation of~$\sigma = (s\;t)$
+by a Fano automorphism produces another transposition.  All 21
+transpositions are therefore equivalent up to a relabelling of the
+imaginary basis, and the construction is essentially unique.
 \end{remark}
 
 \begin{definition}[Triple product with $\ZZ_3$ routing]
@@ -421,10 +424,11 @@ $\sigma(L) = L$.
 
 \begin{proof}
 The lattice $L = D_8^+$ consists of all vectors in~$\RR^8$ whose
-coordinates are either all integers or all half-integers, with even
-coordinate sum.  The transposition~$\sigma$ permutes two coordinates,
-which preserves both the integer/half-integer parity and the coordinate
-sum.  Hence $\sigma(L) \subseteq L$.  Since $\sigma$ is an involution,
+coordinates are either all integers with even coordinate sum, or all
+half-integers with odd coordinate sum (Section~\ref{sec:prelim}).  The
+transposition~$\sigma$ permutes two coordinates, which preserves both
+the integer/half-integer parity and the coordinate sum.  Hence
+$\sigma(L) \subseteq L$.  Since $\sigma$ is an involution,
 $\sigma(L) = L$.
 \end{proof}
 
@@ -436,8 +440,11 @@ chosen pair of $\ZZ$-bases: if $\{a_i\}_{i=1}^8$ generates $A$ and
 $\{b_j\}_{j=1}^8$ generates $B$, then $A\cdot B \subseteq C$ is
 equivalent to each of the 64 products $a_i\cdot b_j$ lying in
 $\ZZ\langle c_1,\ldots,c_8\rangle$ for a chosen $\ZZ$-basis
-$\{c_k\}_{k=1}^8$ of~$C$.  Each lemma below is proved by exhibiting
-that finite list of integer coefficients explicitly.  Concrete
+$\{c_k\}_{k=1}^8$ of~$C$.  (The forward direction is the substantive
+one and uses bilinearity; the reverse direction is immediate
+since each $a_i\in A$ and each $b_j\in B$.)  Each lemma below is
+proved by exhibiting that finite list of integer coefficients
+explicitly.  Concrete
 $\ZZ$-bases for $L$, $\sigma(Ls)$, and $\sigma(L\bar s)$ are fixed in
 Appendix~\ref{sec:appendix-tables} (denoted there $L_k$, $M_k$, $N_k$
 respectively); the 64-entry coefficient tables for the three
@@ -513,8 +520,15 @@ Neither reading asserts $\LL \,\star_0\, \LL \subseteq \LL$, which
 fails: the standard triple product obstructs Wilson's condition~(3),
 since it would require $Ls \cdot Ls \subseteq Ls$.  The twist does not
 rename a closure that was already present; it identifies a distinct
-Leech embedding $\Sigma(\LL) \ne \LL$ --- distinct because
-$\sigma(Ls) \ne Ls$ --- on which the standard triple product closes.
+Leech embedding $\Sigma(\LL) \ne \LL$ on which the standard triple
+product closes.  To see $\Sigma(\LL) \ne \LL$ explicitly: an element
+$(x',y',z') \in \Sigma(\LL)$ is by construction
+$(\sigma(x), \sigma(y), \sigma(z))$ for some $(x,y,z) \in \LL$, so
+its block sum $x'{+}y'{+}z' = \sigma(x{+}y{+}z)$ lies in
+$\sigma(Ls)$, not in general in~$Ls$.  By
+Remark~\ref{rem:Ls-not-closed}, $\sigma(Ls) \ne Ls$, so $\Sigma(\LL)$
+contains triples whose block sum violates Wilson's condition~(3) for
+membership in~$\LL$.
 \end{remark}
 
 \subsection{Condition~(1): each block lies in~$L$}
@@ -607,7 +621,12 @@ This completes the proof of Theorem~\ref{thm:main}.
 % ===============================================================
 
 The order $(\LL, +, \star)$ has been tested for several standard
-algebraic properties.  The results are summarised below.
+algebraic properties.  All percentages below are over samples drawn
+uniformly from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$
+(or from $\operatorname{Min}(\LL)$, for power-associativity); sample
+sizes are 5{,}000 pairs for norm multiplicativity and 2{,}000 pairs
+(resp.\ 2{,}000 elements for power-associativity) for each remaining
+test.
 
 \begin{center}
 \begin{tabular}{@{}lll@{}}
@@ -698,7 +717,8 @@ $L_L \cong \LL$ embedded as an octonionic triple.  This lattice is
 but \emph{is} closed under the doubled product $2(xy + yx)$.
 Egan further enumerated at least $17{,}280$ distinct off-diagonal
 Leech embeddings $L_L \subset \OO^3$ for which the associated
-27-dimensional lattice is closed under this doubled product.
+27-dimensional lattice is closed under this doubled product
+(see part~10 of~\cite{Baez2014} for Egan's computational counts).
 Baez left open the question whether any such lattice is closed under
 the undoubled Jordan product --- which would remove the factor-of-2
 discrepancy --- and conjectures that the answer is negative.
@@ -786,8 +806,10 @@ Several questions remain immediately open:
 \item Classification of the algebra $(\RR^{24}, +, \star)$: it is
   non-associative, non-alternative, non-flexible, and non-unital
   (as an order), placing it outside the classical families.
-\item Whether other permutations of the Fano triples (beyond
-  transpositions) also yield closed products on~$\LL$.
+\item Whether other linear coordinate permutations of~$\RR^8$
+  (beyond simple transpositions of imaginary axes) conjugate the
+  octonion multiplication into a triple product that closes
+  on~$\LL$ in the sense of Theorem~\ref{thm:main}.
 \end{itemize}
 
 % ===============================================================
@@ -853,7 +875,7 @@ implementations as a cross-check
 Coordinates throughout are with respect to the basis
 $\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
 
-\paragraph{The basis $\{L_k\}$.} The first vector is Wilson's $s = \tfrac12(-e_0+e_1+\cdots+e_7)$; the remaining seven are type-1 roots of $L$ chosen so that $\{L_1,\ldots,L_8\}$ is linearly independent over $\QQ$ and spans $L$ over $\ZZ$.
+\paragraph{The basis $\{L_k\}$.} Concretely: $L_1 = s = \tfrac12(-e_0+e_1+\cdots+e_7)$, $L_2 = e_0+e_1$, $L_3 = e_0-e_1$, and $L_{k+2} = e_0+e_k$ for $k=2,\ldots,6$. The eight vectors are linearly independent over $\QQ$ and span $L$ over $\ZZ$.
 \begin{align*}
   L_{1} &= (\tfrac{-1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2}) \\
   L_{2} &= (1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
@@ -1244,14 +1266,17 @@ mechanism that the twist needed to correct.
 
 Iterative convergence toward a robust result --- including learning
 along the way what it is we are actually doing --- is how study,
-research, and discovery have always proceeded.  The AI agent violated
-its own logging protocol on three occasions (prompts 011, 018--019,
-and 029--031), each time caught by the human researcher on review.
-Conversely, the author learned from the AI agent about errors and
-misconceptions in the framing of certain prompts, which likewise
-are part of the record.  What is novel here is the ability to trace
-the entire path, beginning to end, through the complete list of
-prompts.
+research, and discovery have always proceeded.  Mistakes were made
+on both sides: the AI agent occasionally departed from the agreed
+protocol or produced incorrect intermediate analyses, and the human
+author at times framed prompts under misconceptions or accepted
+intermediate results without sufficient scrutiny.  In each case, the
+error was caught by the systematic cross-checking that the
+methodology requires --- explicit verification, prompt-by-prompt
+review, and independent reimplementation in two computer-algebra
+systems --- and corrected forward.  What is novel here is the
+ability to trace the entire path, beginning to end, through the
+complete list of prompts.
 
 The full record --- all prompts, code, evidence, and git history ---
 is available at the repository~\cite{repo}.  The reader can form
