@@ -1,0 +1,17 @@
+Prompt 092 — Remove TOC, update date to 29 April 2026, then a fresh review
+Date: 2026-04-29
+
+User request (verbatim):
+"Looks great. Remove the table of contents. Then, change the date
+to today's date (29 April 2026).
+
+After that, write another review on this most recent version of
+the paper."
+
+Plan:
+  - Remove \tableofcontents{} (and the following \pagebreak{}, since
+    its purpose was to start the body on a fresh page after the TOC).
+  - Update \subtitle from "28 April 2026 (v1)" to "29 April 2026 (v1)".
+  - Build clean.
+  - Write a review at paper/reviews/2026-04-29_claude_opus_4_7_review.md
+    in the same format as previous reviews.
