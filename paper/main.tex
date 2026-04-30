@@ -1,12 +1,42 @@
-\documentclass[12pt,a4paper]{amsart}
-
-\usepackage{amsmath,amssymb,amsthm}
+\documentclass[twoside,english]{paper}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose}
+\usepackage{babel}
 \usepackage{mathrsfs}
-\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{longtable}
 \usepackage{float}
+\usepackage[pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+% Save and disable \example as this might
+% clash with theorems
+\let\paperclassexample\example
+\let\endpaperclassexample\endexample
+\let\example\relax
+% If theorems hasn't been loaded, restore example
+\AtBeginDocument{%
+  \@ifundefined{example}{\let\example\paperclassexample}{}
+}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\newcommand{\lyxaddress}[1]{
+	\par {\raggedright #1
+	\vspace{1.4em}
+	\noindent\par}
+}
+
+\makeatother
 
 % ---------------------------------------------------------------
 % Theorem environments
@@ -38,20 +68,15 @@
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\Co}{Co}
 
-\title[An order on the Leech lattice]{An order on the Leech lattice\\
-from a $\ZZ_3$-symmetric triple-octonion product}
-
-\author{Jens Koeplinger}
-
-\address{105 E Avondale Dr, Greensboro, NC 27403, USA}
-\email{jenskoeplinger@gmail.com}
-
-\date{28 April 2026}
-
-\subjclass[2020]{11H06, 17A75, 11H56}
-\keywords{Leech lattice, octonions, non-associative order, integral algebra}
-
 \begin{document}
+\title{An order on the Leech lattice from a $\ZZ_3$-symmetric
+triple-octonion product}
+\subtitle{28 April 2026 (v1)}
+\author{Jens K\"oplinger}
+\maketitle
+
+\lyxaddress{105 E Avondale Dr, Greensboro, NC 27403, USA \\
+jenskoeplinger@gmail.com}
 
 \begin{abstract}
 We show that the Leech lattice~$\LL$ admits the structure of an order
@@ -73,7 +98,9 @@ This result was developed through a systematic human--AI collaboration;
 the complete research record is publicly available~\cite{repo}.
 \end{abstract}
 
-\maketitle
+\tableofcontents{}
+
+\pagebreak{}
 
 % ===============================================================
 \section{Introduction}\label{sec:intro}
@@ -1345,15 +1372,15 @@ and attribution.
 % References
 % ===============================================================
 
-\begin{thebibliography}{99}
+\begin{thebibliography}{FureyHughes2025\_TrioOfTrialities}
 
-\bibitem{Baez2002}
+\bibitem[Baez2002]{Baez2002}
 J.\,C.~Baez,
 \emph{The octonions},
 Bull.\ Amer.\ Math.\ Soc.\ \textbf{39} (2002), 145--205.
 \href{https://arxiv.org/abs/math/0105155}{arXiv:math/0105155}.
 
-\bibitem{Baez2014}
+\bibitem[Baez2014]{Baez2014}
 J.\,C.~Baez (with contributions by G.~Egan and others),
 \emph{Integral octonions} (parts 1--12),
 The $n$-Category Caf\'e, November--December 2014.
@@ -1361,51 +1388,51 @@ The material discussed here appears in parts 9 and 10:
 \url{https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html},
 \url{https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html}.
 
-\bibitem{ConwaySloane1982}
+\bibitem[ConwaySloane1982]{ConwaySloane1982}
 J.\,H.~Conway and N.\,J.\,A.~Sloane,
 \emph{Twenty-three constructions for the Leech lattice},
 Proc.\ Roy.\ Soc.\ London Ser.\ A \textbf{381} (1982), 275--283.
 
-\bibitem{ConwaySloane1999}
+\bibitem[ConwaySloane1999]{ConwaySloane1999}
 J.\,H.~Conway and N.\,J.\,A.~Sloane,
 \emph{Sphere Packings, Lattices and Groups},
 3rd edition, Springer-Verlag, 1999.
 
-\bibitem{ConwaySmith2003}
+\bibitem[ConwaySmith2003]{ConwaySmith2003}
 J.\,H.~Conway and D.\,A.~Smith,
 \emph{On Quaternions and Octonions: Their Geometry, Arithmetic, and
 Symmetry},
 A.\,K.~Peters, 2003.
 
-\bibitem{Coxeter1946}
+\bibitem[Coxeter1946]{Coxeter1946}
 H.\,S.\,M.~Coxeter,
 \emph{Integral Cayley numbers},
 Duke Math.\ J.\ \textbf{13} (1946), 561--578.
 
-\bibitem{Dixon1995}
+\bibitem[Dixon1995]{Dixon1995}
 G.\,M.~Dixon,
 \emph{Octonions: invariant Leech lattice exposed},
 preprint, 1995.
 \href{https://arxiv.org/abs/hep-th/9506080}{arXiv:hep-th/9506080}.
 
-\bibitem{Dixon2010}
+\bibitem[Dixon2010]{Dixon2010}
 G.\,M.~Dixon,
 \emph{Integral octonions, octonion XY-product, and the Leech lattice},
 preprint, 2010.
 \href{https://arxiv.org/abs/1011.2541}{arXiv:1011.2541}.
 
-\bibitem{Elduque1996}
+\bibitem[Elduque1996]{Elduque1996}
 A.~Elduque,
 \emph{On a class of ternary composition algebras},
 J.~Korean Math.\ Soc.\ \textbf{33} (1996), no.~1, 183--203.
 
-\bibitem{Elduque2000_Triality}
+\bibitem[Elduque2000\_Triality]{Elduque2000_Triality}
 A.~Elduque,
 \emph{On triality and automorphisms and derivations of composition
 algebras},
 Linear Algebra Appl.\ \textbf{314} (2000), no.~1--3, 49--74.
 
-\bibitem{Elduque2023_IsotropicNorm}
+\bibitem[Elduque2023\_IsotropicNorm]{Elduque2023_IsotropicNorm}
 A.~Elduque,
 \emph{Okubo algebras with isotropic norm},
 in: Non-Associative Algebras and Related Topics (NAART 2020),
@@ -1413,55 +1440,55 @@ Springer Proc.\ Math.\ Stat., vol.~427, Springer, Cham, 2023,
 pp.~287--301.
 \href{https://arxiv.org/abs/2210.03456}{arXiv:2210.03456}.
 
-\bibitem{ElkiesGross1996}
+\bibitem[ElkiesGross1996]{ElkiesGross1996}
 N.\,D.~Elkies and B.\,H.~Gross,
 \emph{The exceptional cone and the Leech lattice},
 Internat.\ Math.\ Res.\ Notices \textbf{1996}, no.~14, 665--698.
 
-\bibitem{FureyHughes2025_TrioOfTrialities}
+\bibitem[FureyHughes2025\_TrioOfTrialities]{FureyHughes2025_TrioOfTrialities}
 N.~Furey and M.\,J.~Hughes,
 \emph{Three generations and a trio of trialities},
 Phys.\ Lett.\ B \textbf{865} (2025), 139473.
 \href{https://arxiv.org/abs/2409.17948}{arXiv:2409.17948}.
 
-\bibitem{Hall2019_Moufang}
+\bibitem[Hall2019\_Moufang]{Hall2019_Moufang}
 J.\,I.~Hall,
 \emph{Moufang Loops and Groups with Triality are Essentially the
 Same Thing},
 Memoirs of the American Mathematical Society, vol.~260, no.~1252,
 Amer.\ Math.\ Soc., Providence, RI, 2019.
 
-\bibitem{KamiyaOkubo2015}
+\bibitem[KamiyaOkubo2015]{KamiyaOkubo2015}
 N.~Kamiya and S.~Okubo,
 \emph{Algebras satisfying triality and\/ $S_4$-symmetry},
 preprint, 2015.
 \href{https://arxiv.org/abs/1503.00614}{arXiv:1503.00614}.
 
-\bibitem{Koeplinger2023}
+\bibitem[Koeplinger2023]{Koeplinger2023}
 J.~K\"oplinger,
 \emph{Towards autotopies of normed composition algebras in algebraic
 quantum field theory},
 preprint, 2023.
 \href{https://doi.org/10.13140/RG.2.2.19003.39209}{DOI:\,10.13140/RG.2.2.19003.39209}.
 
-\bibitem{LepowskyMeurman1982}
+\bibitem[LepowskyMeurman1982]{LepowskyMeurman1982}
 J.~Lepowsky and A.~Meurman,
 \emph{An\/ $E_8$-approach to the Leech lattice and the Conway group},
 J.~Algebra \textbf{77} (1982), no.~2, 484--504.
 
-\bibitem{Okubo1995_Book}
+\bibitem[Okubo1995\_Book]{Okubo1995_Book}
 S.~Okubo,
 \emph{Introduction to Octonion and Other Non-Associative Algebras in
 Physics},
 Montroll Memorial Lecture Series in Mathematical Physics, vol.~2,
 Cambridge University Press, Cambridge, 1995.
 
-\bibitem{SmithVojtechovsky2022}
+\bibitem[SmithVojtechovsky2022]{SmithVojtechovsky2022}
 J.\,D.\,H.~Smith and P.~Vojt\v{e}chovsk\'y,
 \emph{Okubo quasigroups},
 Doc.\ Math.\ \textbf{27} (2022), 535--580.
 
-\bibitem{Kirmse1924}
+\bibitem[Kirmse1924]{Kirmse1924}
 J.~Kirmse,
 \emph{\"Uber die Darstellbarkeit nat\"urlicher ganzer Zahlen als Summen
 von acht Quadraten und \"uber ein mit diesem Problem zusammenh\"angendes
@@ -1469,17 +1496,17 @@ nichtkommutatives und nichtassoziatives Zahlensystem},
 Ber.\ Verh.\ S\"achs.\ Akad.\ Wiss.\ Leipzig, Math.-Phys.\ Kl.\
 \textbf{76} (1924), 63--82.
 
-\bibitem{Petersson2018}
+\bibitem[Petersson2018]{Petersson2018}
 H.\,P.~Petersson,
 \emph{Integral octonions},
 Lecture, M\'alaga Workshop on Non-Associative Algebras, 2018.
 
-\bibitem{Wilson2009}
+\bibitem[Wilson2009]{Wilson2009}
 R.\,A.~Wilson,
 \emph{Octonions and the Leech lattice},
 J.~Algebra \textbf{322} (2009), 2186--2190.
 
-\bibitem{repo}
+\bibitem[repo]{repo}
 J.~Koeplinger,
 \emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product: research repository},

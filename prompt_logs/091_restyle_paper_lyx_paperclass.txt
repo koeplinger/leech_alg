@@ -1,0 +1,37 @@
+Prompt 091 — Restyle paper/main.tex to match the user's LyX `paper`-class style
+Date: 2026-04-28
+
+User request (verbatim):
+"restyle the paper following the attached file's TeX style"
+
+The attached file is the user's own refutation paper
+(Koepl2025_GogGurchRefutation_v12.tex) using LyX's `paper`
+documentclass with a particular preamble + bibliography style.
+
+Style elements to adopt from the attached file:
+  - \documentclass[twoside,english]{paper}
+  - Packages: fontenc T1, inputenc latin9, geometry verbose, babel,
+    amsmath, amsthm, amssymb, mathrsfs, hyperref with
+    pdfusetitle/bookmarks/breaklinks/pdfborder/colorlinks options.
+  - LyX boilerplate \makeatletter block (paperclassexample workaround,
+    \numberwithin equation/figure to section, \lyxaddress definition).
+  - Title block: \title, \subtitle{date (vN)}, \author, \maketitle,
+    \lyxaddress for postal/email.
+  - \tableofcontents{}, \pagebreak{}.
+  - Bibliography: \begin{thebibliography}{LongestKey} with
+    \bibitem[Label]{key} entries (label = key).
+
+Style elements to drop relative to amsart:
+  - \subjclass and \keywords (paper class doesn't use them).
+  - \address and \email (replaced by \lyxaddress).
+  - amsart's \title[short]{full} short-title syntax.
+
+To preserve:
+  - Mathematical content unchanged.
+  - All \newtheorem definitions and \newcommand aliases.
+  - Existing booktabs/longtable/enumitem/float package use.
+  - Cross-references and equation labels.
+
+Plan: rewrite preamble + title block + bibliography header.
+Body content (sections, theorems, equations, tables, appendices)
+stays as-is.
