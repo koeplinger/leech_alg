@@ -1,0 +1,16 @@
+Prompt 094 — Bump version to v2 and write another review
+Date: 2026-04-29
+
+User request (verbatim):
+"This paper is actually version 'v2', update it.
+
+And just to feed my paranoia, let's make another review."
+
+Followup user message during the work:
+"stop - the paper is version 'v3' sorry!"
+
+Plan (corrected):
+  - Update \subtitle from "29 April 2026 (v1)" to "29 April 2026 (v3)".
+  - Build clean.
+  - Write a fresh review at
+    paper/reviews/2026-04-29_claude_opus_4_7_review_2.md.
