@@ -1,0 +1,40 @@
+Prompt 093 — Reorder §6 paragraphs, shorten bib width spec, add page
+break before References, keep "repo"
+Date: 2026-04-29
+
+User request (verbatim):
+"Do the following:
+- keep 'repo', because it is part of the contribution, together with
+  this very paper
+- yes, shorten the pseudo-strings in the bibliography
+- have a look at the section 6: all paragraphs are nice, however,
+  the order is not logical. After the initial Baez/Egan section you
+  have a section on earlier work, then Kirmse, and then there are
+  two newer sections that related to Baez/Egan; put these in a
+  logical order
+
+Ah yes, one more thing: In the references, if the references start
+towards the bottom of the page, and (as it is currently) only show
+a single reference before the page break, then insert a page break
+before the references altogether so that they start fresh. Shouldn't
+increase the length of the paper."
+
+Plan:
+  - 'repo': leave as-is (no edit).
+  - Bibliography width spec: change from
+      \begin{thebibliography}{FureyHughes2025\_TrioOfTrialities}
+    to a shorter pseudo-string, e.g.,
+      \begin{thebibliography}{XXXXXXXX}
+    (8-char standin) so the labels reflow tighter.
+  - Section 6 paragraph order: current order is
+      Wilson -> Dixon -> Baez/Egan -> Earlier precursors -> Kirmse
+        -> Kirmse-Coxeter-sigma chain -> Comparison -> Anatomy
+    The two Baez/Egan-related paragraphs (Comparison, Anatomy) belong
+    immediately after Baez/Egan. Reordered:
+      Wilson -> Dixon -> Baez/Egan -> Comparison -> Anatomy
+        -> Earlier precursors -> Kirmse -> Kirmse-Coxeter-sigma chain
+  - Insert \pagebreak{} (or \clearpage) before \begin{thebibliography}
+    so References start fresh on a new page. The current build has
+    only one reference visible at the bottom of p.16 before page
+    break -- ugly orphan.
+  - Build clean.
