@@ -734,13 +734,20 @@ Leech embeddings $L_L \subset \OO^3$ for which the associated
 Baez left open the question whether any such lattice is closed under
 the undoubled Jordan product --- which would remove the factor-of-2
 discrepancy --- and conjectures that the answer is negative.  We
-have independently reproduced this verification chain end-to-end ---
-the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
-Leech-lattice theorem, the doubled-Jordan-product closure, and the
+have independently reproduced the full Baez--Egan verification chain
+--- the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
+Leech-lattice theorem, the doubled-Jordan-product closure, the
 derivation of the lower bound $244{,}035{,}421$ on the number of
-$E_8^3$-orbit Leech embeddings; details and code are in~\cite{repo}.
-Egan's sharper count of $17{,}280$ Jordan rings comes from an
-exhaustive enumeration that we have not re-run.
+$E_8^3$-orbit Leech embeddings, and Egan's sharper count of
+$17{,}280$ Jordan rings.  This last factors as $17{,}280 = 270
+\times 64$: the $270$ is the number of sublattices $L_1 \subset L$
+isometric to $\sqrt{2}\,L$, equivalently the number of $4$-dimensional
+maximal totally isotropic subspaces of $L/2L \cong \FF_2^8$ under the
+plus-type quadratic form induced by the $E_8$ Gram form; the $64$ is
+the number of $L_2$ in this collection that meet a given $L_1$ only
+in $2L$, equivalently the number of $4$-dimensional complementary
+isotropic subspaces.  All Baez--Egan claims hold under our reading.
+Details and code are in~\cite{repo}.
 
 \textbf{Earlier precursors.}  Further back, several constructions
 foreshadow the octonion-triple and Jordan-algebra frameworks above.

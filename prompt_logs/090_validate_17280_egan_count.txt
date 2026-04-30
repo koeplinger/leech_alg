@@ -1,0 +1,31 @@
+Prompt 090 — Try to validate Egan's 17,280 Jordan-ring count
+Date: 2026-04-28
+
+User request (verbatim):
+"That sounds great. I'll review your updates to the paper in detail
+soon. But first, try to validate Egan's 17,280 sharper count as well.
+I'd much rather write 'all claims validated' if that's the case.
+Would be nice."
+
+Plan:
+  - Per Baez/Egan part 11: 17,280 = 270 × 64, where
+      270 = number of sublattices L_1 ⊂ E_8 isometric to √2 E_8
+      64  = number of compatible companions L_2 (with L_1 ∩ L_2 = 2 E_8)
+        per fixed L_1.
+  - Cleanest enumeration: maximal isotropic 4-dim subspaces of F_2^8
+    with the E_8 mod 2 quadratic form (which is the plus-type form on
+    F_2^8). Each 4-dim totally-isotropic V corresponds to an
+    intermediate sublattice L_V = {x in E_8 : x mod 2 in V} of index
+    16 with min squared norm >= 4 (i.e., a √2 E_8 sublattice).
+  - Compatibility L_1 ∩ L_2 = 2 E_8 translates to V_1 ∩ V_2 = {0}
+    over F_2.
+
+First result (this run):
+  - Number of maximal isotropic 4-dim subspaces of F_2^8 with the
+    induced E_8 mod 2 quadratic form: 270. ✓ Matches Egan.
+  - Pair count V_1 ∩ V_2 = {0}: still to compute.
+
+Followup user message (during the run):
+"Make sure to log the previous prompt to the prompt log."
+
+This file logs the present (Prompt 090) request.
