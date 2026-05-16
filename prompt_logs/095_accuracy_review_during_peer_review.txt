@@ -1,0 +1,43 @@
+Prompt 095 — Accuracy review of main paper during peer review
+Date: 2026-05-16
+
+User request (verbatim):
+"You're looking at a repository that we have previously worked on. Read the
+repository and familiarize yourself with how the main paper (in paper/main.tex
+with PDF) came about. This paper is currently being reviewed. We have done
+numerous quality checks before, but let's keep doing those no matter what.
+
+Review the main paper and check it for accuracy: Argument, execution,
+formulas, references, wording, ... Tell me whether it satisfies acceptable
+academic standards.
+
+(following the forward-evolving prompt log, add this as a new prompt 095...,
+and follow the manifesto as such; write your review into the paper/reviews
+folder just like all others - we're adding a few steps to the investigation)"
+
+Plan:
+  - Familiarize with repository history and prior reviews.
+  - Read paper/main.tex in full; cross-check formulas, references, argument,
+    wording.
+  - Verify any checkable claims (counts, citations, formulas) independently
+    where feasible.
+  - Write the review into paper/reviews/2026-05-16_claude_opus_4_7_review.md
+    following the format of prior reviews.
+  - Report to the user whether the paper meets acceptable academic standards.
+
+Outcome:
+  - Wrote an independent verification script (/tmp/verify_paper.py): octonion
+    multiplication rebuilt from the Fano triples, exact Fraction arithmetic,
+    independent Gaussian elimination. Recomputed all 192 appendix coefficient
+    rows (Tables A.1/A.2/A.3) -- all integer, all match the manuscript
+    entry-for-entry. Confirmed composition property, s in L / sbar not in L,
+    bases M_k and N_k, Remark 3.5 table-diff counts (30/6/16/8), the Remark 4.6
+    witness, the minimal-vector counts, and 270 = prod (2^i+1) for the
+    O+(8,2) isotropic-subspace count.
+  - Re-derived the proof skeleton (routing, block/pairwise sums, lemma usage)
+    by hand; no errors found.
+  - Conclusion: paper meets acceptable academic standards. Recommendation
+    Accept. Only likely referee friction: the deliberately non-unital use of
+    the word "order" -- already disclosed in Remarks 1.3 and 5.3.
+  - Review written to paper/reviews/2026-05-16_claude_opus_4_7_review.md
+    (round 8).
