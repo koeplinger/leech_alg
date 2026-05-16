@@ -1,0 +1,37 @@
+Prompt 096 — Can the appendix tables for Lemmas 4.3/4.4 be reduced?
+Date: 2026-05-16
+
+User request (verbatim):
+"Great. Now look at the three tables in the appendix, where we elaborate on
+structure constants. The first table supports lemma 4.2, which is simply the
+textbook knowledge per Coxeter 1946 (as cited). It serves as a demonstration
+of method for lemmas 4.3 and 4.4. However, a friend just told me that lemmas
+4.3 and 4.4 may be at least partially reducible to a symbolic proof, requiring
+just one (and not two) explicit tables in the appendix.
+
+Before I paste you exactly what he sent me, have a look yourself and see what
+you can find. Right now, in both lemmas, we currently simply say 'look at the
+table', respectively. Can this be simplified?"
+
+Context: follow-up to prompt 095 (round-8 accuracy review). The user wants an
+independent look before sharing a friend's note.
+
+Plan / work done:
+  - Computed all left/right-ideal and subring relations for Ls, Lsbar,
+    sigma(Ls), sigma(Lsbar) under the standard octonion product.
+  - FINDING (error): the footnote in section 2.3 claims Ls is "closed under
+    left-multiplication by L". This is false (40 of 64 basis products escape)
+    and contradicts the paper's own Remark 4.5. Must be corrected forward.
+  - FINDING (reduction): since L_sbar cap Ls = 2L (paper's own statement),
+    2L is contained in both sigma(Ls) and sigma(Lsbar). The octonion product
+    on L descends to an F2-bilinear product mu-bar on L/2L = F2^8, whose
+    structure constants are exactly Table A.1 reduced mod 2. Lemma 4.3 becomes
+    "V = sigma(Lsbar)/2L is a left ideal of (L/2L, mu-bar)" and Lemma 4.4
+    becomes "W = sigma(Ls)/2L is a subalgebra". Both verified computationally.
+    This replaces the two integer tables A.2, A.3 (128 rows over Z) by finite
+    F2 checks against the single mod-2 reduction of Table A.1.
+  - Also corrected numbering typos in the round-8 review (uncommitted):
+    lemma/remark/proposition numbers were off by one in several places.
+  - Wrote findings into paper/reviews/2026-05-16_claude_opus_4_7_review_2.md
+    (round 9). No edit to main.tex (user wants to compare with friend's note
+    first).
