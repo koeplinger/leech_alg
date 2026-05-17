@@ -1,0 +1,206 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\LL}{\Lambda}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\Nrm}{N}
+
+\theoremstyle{remark}
+\newtheorem*{remarknote}{Remark}
+
+\title[Update brief: order on the Leech lattice]{Update brief for\\
+\emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
+triple-octonion product}}
+\author{Jens K\"oplinger}
+\date{16 May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The manuscript version of 29 April 2026 (v3) is frozen while under
+review.  This brief records two updates for a future revision: one
+correction that \emph{needs} to be made (a non-load-bearing error in a
+footnote of Section~2.3), and one simplification that \emph{should} be
+made (replacing the three appendix structure-constant tables by a
+single one, with the other two lemmas obtained from a reduction
+modulo~$2L$).  Section and lemma numbers refer to v3.  Every claim
+below was checked in an independent exact-arithmetic implementation.
+\end{abstract}
+
+% ===============================================================
+\section{Required correction: the Section~2.3 footnote}
+% ===============================================================
+
+\paragraph{Location.}
+The footnote attached to the sentence ``Both $L\bar s$ and~$Ls$ are
+sublattices of~$L$'' in Section~2.3.
+
+\paragraph{The error.}
+The footnote states two properties of $L\bar s$ --- that it is a
+$\ZZ$-subgroup of~$L$, and that it is ``closed under
+left-multiplication by~$L$'' --- and then asserts: \emph{``For~$Ls$
+both properties are immediate from $s\in L$.''}  The second property
+is \textbf{false for~$Ls$}: a basis-level check shows that $40$ of the
+$64$ products $L_i\cdot(L_j s)$ leave~$Ls$, so
+$L\cdot Ls\not\subseteq Ls$.
+
+The claim is moreover self-contradictory within the paper.  Since
+$Ls\subseteq L$, a closure $L\cdot Ls\subseteq Ls$ would force
+$Ls\cdot Ls\subseteq L\cdot Ls\subseteq Ls$ --- exactly the closure
+that Remark~4.5 (and the very existence of Table~A.3) denies.  The
+non-closure of $Ls$ is the central obstruction the paper resolves; the
+footnote inadvertently asserts it away.
+
+\paragraph{Why it is not load-bearing.}
+The footnote only needs to justify the sentence it annotates, namely
+that $Ls$ is a \emph{sublattice} of~$L$.  That requires only
+$Ls\subseteq L$ and that $Ls$ is a subgroup --- both genuinely
+immediate from $s\in L$, since $\ell s\in L\cdot L\subseteq L$.
+Closure under left-multiplication by~$L$ is never used for~$Ls$
+anywhere in the proof; it was introduced because it is correct and
+relevant for~$L\bar s$ (it is Wilson's condition~(2)) and then
+over-extended to~$Ls$ by the phrase ``both properties.''  No theorem,
+lemma, or proposition depends on the false claim.
+
+\paragraph{Suggested fix.}
+Replace ``For~$Ls$ both properties are immediate from $s\in L$.'' by,
+e.g.:
+\begin{quote}
+For~$Ls$, the subgroup property is likewise immediate from $s\in L$.
+Closure under left-multiplication by~$L$, by contrast, holds
+for~$L\bar s$ but \emph{fails} for~$Ls$ --- and that failure is
+precisely the obstruction resolved by the twist (Remark~4.5).
+\end{quote}
+This costs one sentence, removes the contradiction, and foreshadows
+the crux of the proof.
+
+\begin{remarknote}
+A related fact, correct and optional: $L\bar s$ is in fact a
+\emph{two-sided} ideal of~$L$ ($L\cdot L\bar s$, $L\bar s\cdot L$, and
+$L\bar s\cdot L\bar s$ are all contained in~$L\bar s$).  The paper
+claims, and needs, only the left-multiplication half; no change is
+required.
+\end{remarknote}
+
+% ===============================================================
+\section{Recommended simplification: three tables to one}
+% ===============================================================
+
+Appendix~A currently carries three $64$-row tables of integer
+structure constants: Table~A.1 for Lemma~4.2 ($L\cdot L\subseteq L$,
+textbook, cited to Coxeter), and Tables~A.2 and~A.3 for Lemmas~4.3
+and~4.4.  Lemmas~4.3 and~4.4 can instead be obtained from Table~A.1 by
+a reduction modulo~$2L$, eliminating the two extra integer tables.
+
+\paragraph{The reduction.}
+The paper already states (Section~2.3, after Wilson) that
+$L\bar s\cap Ls=2L$.  Hence $2L\subseteq Ls$ and $2L\subseteq L\bar s$,
+and applying the involution~$\sigma$ (with $\sigma(2L)=2L$),
+\[
+  2L\subseteq\sigma(Ls),\qquad 2L\subseteq\sigma(L\bar s).
+\]
+Because $L\cdot L\subseteq L$ (Lemma~4.2) and the octonion product is
+$\ZZ$-bilinear, $(a+2c)\cdot b\equiv a\cdot b\pmod{2L}$ for $c\in L$,
+and likewise in the right factor.  The product therefore descends to a
+well-defined $\FF_2$-bilinear product
+\[
+  \bar\mu:\ \bar L\times\bar L\to\bar L,
+  \qquad \bar L:=L/2L\cong\FF_2^{\,8},
+\]
+whose structure constants are exactly the entries of Table~A.1
+\emph{reduced modulo~$2$}.  No new table is introduced.
+
+Since $2L$ is contained in both $\sigma(L\bar s)$ and~$\sigma(Ls)$,
+these sublattices are full preimages of $\FF_2$-subspaces
+\[
+  V:=\sigma(L\bar s)/2L,\qquad W:=\sigma(Ls)/2L,
+\]
+and from $\sigma(L\bar s)+\sigma(Ls)=L$,
+$\sigma(L\bar s)\cap\sigma(Ls)=2L$ one gets $\bar L=V\oplus W$ with
+$\dim V=\dim W=4$.
+
+\paragraph{The two lemmas as subspace conditions.}
+The closure statements become conditions on~$\bar\mu$:
+\[
+  \text{Lemma~4.3}\iff\bar\mu(\bar L,V)\subseteq V
+  \quad(\text{$V$ a left ideal}),\qquad
+  \text{Lemma~4.4}\iff\bar\mu(W,W)\subseteq W
+  \quad(\text{$W$ a subalgebra}).
+\]
+The substantive direction is immediate: for Lemma~4.3, given $a\in L$
+and $w\in\sigma(L\bar s)$, the product $a\cdot w$ lies in~$L$
+(Lemma~4.2) with class $\bar\mu([a],[w])\in V$; since $\sigma(L\bar s)$
+is the full preimage of~$V$, this gives $a\cdot w\in\sigma(L\bar s)$.
+Lemma~4.4 is identical with~$W$.  Both reduced conditions have been
+verified.
+
+\paragraph{Effect on the appendix.}
+Tables~A.2 and~A.3 ($128$ rows of unbounded integers) are replaced by
+checks against a single object --- the mod-$2$ reduction of Table~A.1
+--- together with the mod-$2$ generators of $V$ and~$W$ (the
+appendix's $N_k$ and~$M_k$ reduced modulo~$2$).  The two checks are
+$\bar\mu(\bar L,V)\subseteq V$ ($8\times4=32$ products over~$\FF_2$)
+and $\bar\mu(W,W)\subseteq W$ ($4\times4=16$ products), small enough to
+display compactly or inline.  Table~A.1 is kept as the worked
+demonstration of method and becomes the single integer table carrying
+all three lemmas.
+
+\paragraph{A structural by-product.}
+The Conclusion lists as open ``a structural reason for Lemma~4.4.''
+The reduction supplies a partial answer in the requested register:
+closure of $\sigma(Ls)$ \emph{is} the statement that the
+$4$-dimensional subspace~$W$ is a subalgebra of the $8$-dimensional
+$\FF_2$-algebra $L/2L$, and the twist's role is to move the
+condition-(3) subspace from $Ls/2L$ (not a subalgebra) to~$W$ (a
+subalgebra).
+
+\paragraph{Scope and caveats.}
+\begin{itemize}
+\item This is a reduction in size and a gain in transparency, not a
+  removal of all computation.  Lemmas~4.3 and~4.4 remain genuinely
+  independent finite checks --- $W$ being a subalgebra does not follow
+  formally from $V$ being an ideal.  What changes is that the checks
+  are small $\FF_2$ computations against one shared table rather than
+  two separate $\ZZ$-valued tables.
+\item The reduction consumes the equality $L\bar s\cap Ls=2L$,
+  currently cited to Wilson.  For a self-contained appendix this
+  should be stated as the hypothesis the reduction uses (it is cheap
+  to verify directly).
+\item \emph{Direct framing of Lemma~4.4.}  By conjugating with~$\sigma$,
+  Lemma~4.4 is equivalent to: the twisted product closes on~$Ls$,
+  \[
+    Ls\cdot_\sigma Ls\subseteq Ls,
+    \qquad\text{even though}\qquad
+    Ls\cdot Ls\not\subseteq Ls.
+  \]
+  This is the most direct way to \emph{state} the crux --- it is the
+  octonion-level counterpart of the ``two equivalent framings'' of
+  Remark~4.6.  It is a relabelling, however, and does not by itself
+  avoid the appendix table: a proof is still required, and it is the
+  reduction modulo~$2L$ above that supplies the table-free proof.  The
+  two are complementary --- the direct framing for the statement, the
+  modular reduction for the proof.
+\item Adopting this is an exposition choice.  Recasting Lemmas~4.3
+  and~4.4 in the mod-$2$ language shortens the appendix and strengthens
+  the structural narrative of the Conclusion; keeping all three
+  integer tables remains defensible as a uniform, fully explicit
+  presentation.  The mathematics of the paper is unchanged either way.
+\end{itemize}
+
+% ===============================================================
+\section*{Acknowledgments}
+% ===============================================================
+
+The author thanks Matthew Barley for probing the paper and for help in
+improving it.
+
+\end{document}

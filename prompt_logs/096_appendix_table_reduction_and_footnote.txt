@@ -35,3 +35,21 @@ Plan / work done:
   - Wrote findings into paper/reviews/2026-05-16_claude_opus_4_7_review_2.md
     (round 9). No edit to main.tex (user wants to compare with friend's note
     first).
+
+Follow-up requests in same turn:
+  - User: freeze v3 (29 April 2026); write a TeX/PDF brief summarising the
+    required correction (footnote) and the recommended simplification (table
+    reduction via mod-2). -> wrote paper/update_brief.tex, compiled to
+    update_brief.pdf (3 pages, clean).
+  - User asked whether GitHub issue #1's statement "the twisted product
+    closes on Ls ... avoids the appendix tables" is the same as the modular
+    reduction. Verified Ls .sigma Ls subseteq Ls (CLOSED) and Ls.Ls not
+    closed. Conclusion: that statement is the octonion-level restatement of
+    Lemma 4.4 (= Remark 4.6 two-framings); it is a cleaner STATEMENT but does
+    not by itself avoid the table -- the mod-2 reduction does. Complementary,
+    not the same.
+  - Verified the Z3 cyclic shift rho(x,y,z)=(y,z,x) is an automorphism of
+    (R^24, star) -- agreed with user it is not a new discovery (it is what
+    "Z3-symmetric" in the title means; Section 8 already discusses it).
+  - User: acknowledge Matthew Barley for probing/improving the paper -->
+    added to the Acknowledgments of update_brief.tex.
