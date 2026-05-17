@@ -1,0 +1,29 @@
+Prompt 099 — New (separate) update brief for the Kirmse-twist history
+Date: 2026-05-17
+
+User request (verbatim):
+"yes do not fold any results or follow-up items into the existing update brief
+for the 29 April version of the paper; instead, create a new update brief; let
+me go to the library first and get the remaining articles; then we'll make a
+digest from there -- so the plan is (1) look at all the source materials and
+derive everything from scratch ourselves - verify what's correct and identify
+errors; as you said, this is for historical accuracy; then (2) elevate the
+wording on how we describe the Kirmse twist on the octonion multiplication -
+the current wording is sloppy."
+
+Plan recorded by the user:
+  (1) Obtain the primary sources; derive the history from scratch; verify what
+      is correct and identify errors (historical accuracy).
+  (2) Elevate the wording describing the Kirmse twist on the octonion
+      multiplication.
+  Sequencing: user goes to the library first; the digest is made afterward.
+
+Action this turn:
+  - Created a SEPARATE second update brief (not folded into
+    update_brief_2026-04-29_v3.tex):
+    paper/update_brief_2026-04-29_v3_kirmse.tex (+ .pdf).
+  - The new brief is a working/skeleton document: states the two-step plan,
+    the primary-source acquisition list, and the items provisionally
+    identified -- all explicitly marked PENDING primary-source verification.
+    Nothing is asserted as final; the digest follows the library trip.
+  - No edit to main.tex (frozen v3), companion.tex, or the first update brief.
