@@ -1,0 +1,63 @@
+Prompt 098 — Historical accuracy of the Kirmse/Coxeter characterization
+Date: 2026-05-17
+
+User request (paraphrased; full text in conversation):
+The characterization of the "Kirmse twist" reads sloppy ("flip two elements
+in the Fano triples", "there are seven of them"). The user recalls the
+correction is really "replace the unit element with one of the imaginary
+units, then factor through the affected triples". User worries the paper may
+contain a mistake. Asks: account of where the paper's claim came from; roles
+and dates of L. E. Dickson and R. H. Bruck; was Dickson before/after Coxeter;
+did Dickson wrongly claim Kirmse's integers close; did Kirmse already propose
+seven correct orders and err only on an eighth; what papers exist 1920s-1940s
+by Kirmse / Bruck / Dickson. User wants certainty before changing the paper.
+
+Investigation:
+  - Traced the paper's account: it derives from Petersson (2018), digested in
+    prompt 037 -> evidence_and_reasoning/terminology.md and
+    background_octonions.txt. The phrase "permute/swap two basis indices" is
+    an AI-written gloss introduced in the prompt-037 summary; it is NOT
+    Petersson's wording.
+  - Read Petersson 2018 in full (lecture PDF, the project's cited source;
+    Petersson read hard-copies of Kirmse 1924 and Mahler 1942).
+  - Cross-checked Wikipedia "Octonion" and Baez "Integral Octonions Part 6".
+
+Findings (sources: Petersson 2018; Baez Integral Octonions Pt 6; Wikipedia
+"Octonion"; Conway-Smith 2003 via search):
+  CONFIRMED:
+   * The correcting operation swaps coordinate a_0 (the identity / "infinity")
+     with an imaginary coordinate a_j; seven choices j=1..7 -> seven maximal
+     orders. NOT "two imaginary basis indices". Matches the user's memory.
+   * "Kirmse integers" = the single un-swapped set; not closed; Kirmse claimed
+     (1924, without proof) it is -> "Kirmse's mistake".
+   * BRUCK supplied the correction (Petersson, verbatim: Coxeter "turned to
+     Bruck ... who remedied the defect by a modification of Kirmse's original
+     construction"). No separate Bruck paper; it is within Coxeter 1946.
+   * DICKSON (1923) independently constructed a correct integral octonion
+     algebra isomorphic to Coxeter's -- 23 years before Coxeter, and before
+     Kirmse's 1924 paper. Dickson did NOT repeat Kirmse's error.
+   * Dates: Dickson 1923; Kirmse 1924; Mahler 1942; Coxeter 1946.
+  CONTESTED / UNRESOLVED:
+   * Whether Kirmse himself proposed the seven correct orders. Wikipedia says
+     so ("constructed by Kirmse (1924), Dickson and Bruck"; "[Kirmse] thought
+     there were eight rather than seven"); Petersson and Baez do NOT credit
+     Kirmse with the seven. Not certifiable without Coxeter 1946 / Conway-Smith.
+   * Whether the paper's Remark "sigma vs Fano" claim -- that Coxeter's
+     correction is "not induced by a linear map on R^8" -- is correct. A swap
+     a_0<->a_j IS a linear coordinate transposition, which would contradict
+     that remark. Needs Coxeter 1946 to settle.
+
+Action: wrote findings to
+paper/reviews/2026-05-17_claude_opus_4_7_kirmse_history_note.md.
+No edit to main.tex (frozen v3) or companion.
+
+Follow-up (same turn): user asked to confirm the prose-change count and for a
+complete primary-source acquisition list for a library trip.
+  - Confirmed: credit Bruck (required); add Dickson 1923 (recommended);
+    Mahler 1942 is OPTIONAL, not required by any claim the paper makes.
+  - Checked online availability: Dickson (1923) is free on Numdam
+    (numdam.org/item/JMPA_1923_9_2__281_0.pdf -> confirms cite (9) 2 (1923));
+    Coxeter (1946) is paywalled on Project Euclid, needs a library (or the
+    Dover reprint "The Beauty of Geometry", to be verified).
+  - Added an "acquisition list" section to the history note. No separate
+    Bruck paper exists; Coxeter 1946 covers Bruck.
