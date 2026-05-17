@@ -1,0 +1,42 @@
+Prompt 097 — Is Lambda/2Lambda isomorphic to F2[O]^3?
+Date: 2026-05-17
+
+User request (verbatim):
+"Ok. There's one more thing from the feedback I've received at
+https://github.com/koeplinger/leech_alg/issues/1 :
+
+'Is Λ/2Λ ≅ F₂[O]³? If yes, this connects the order to the octonion F₂-algebra,
+which has known connections to the binary Golay code and the sporadic groups.'
+
+Now I find this relation not surprising, giving the historical context that
+relates the binary Golay code to the Leech lattice. The feedback frames this
+as a new discovery. What do you think?"
+
+Work done:
+  - Confirmed star descends to a well-defined F2-bilinear product on
+    Lambda/2Lambda (24-dim F2-algebra).
+  - Built Lambda explicitly: Wilson conditions reduced mod 2 give a 12-dim
+    F2-subspace of (L/2L)^3; lifted and HNF-reduced (with 2L^3) to a 24-vector
+    Z-basis of Lambda. Verified all 24 basis vectors lie in Lambda and that
+    star closes with integer Lambda-coordinates.
+  - Computed the 24x24 F2 structure constants of (Lambda/2Lambda, star-bar).
+  FINDINGS:
+    * star-bar is NON-unital (no left identity, no right identity).
+    * dim(A * A) = 8, not 24: every product lands in an 8-dimensional
+      subspace.
+    * star-bar is alternative mod 2 (300/300 left & right) -- although star
+      is NOT alternative over R. Mildly interesting, not a "discovery".
+    * non-commutative, non-associative.
+  CONCLUSION: Lambda/2Lambda is NOT isomorphic to F2[O]^3 as an algebra.
+    F2[O]^3 is unital with full 24-dim product image; (Lambda/2Lambda,
+    star-bar) is non-unital with an 8-dim product image. As vector spaces
+    both are F2^24 -- a trivial, content-free "isomorphism". The
+    Leech<->Golay<->Co_0 connection via mod-2 reduction is classical
+    (Conway; Conway-Sloane SPLAG; the Turyn-style three-E8 construction is
+    Conway-Sloane 1982, already cited in the paper). Not a new discovery;
+    the user's skepticism is correct.
+  - Assessment reported to the user.
+  - Follow-up: at the user's request, recorded the assessment as a short note
+    at paper/reviews/2026-05-17_claude_opus_4_7_feedback_note.md, including the
+    observation that star-bar is alternative mod 2 (noted against the backdrop
+    of A. A. Albert's structure theory of alternative algebras).
