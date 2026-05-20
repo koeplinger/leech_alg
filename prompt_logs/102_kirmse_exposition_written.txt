@@ -1,0 +1,30 @@
+Prompt 102 — Confirmation of corrected framing; Kirmse exposition written
+Date: 2026-05-20
+
+User request (verbatim):
+"You have done a good job stopping rather than writing. Yes, Kirmse claimed 8
+orders, and then demonstrates the one (out of the 8) that is actually _not_
+an order. Got it. You have laid it out well, don't follow my flawed wording
+in the prompt (it is ephemeral), but use the correct framing and wording
+self-contained in the write-up."
+
+Resolution of prompt 101: the user confirmed the corrected framing -- Kirmse
+claimed eight maximal orders; his explicitly exhibited order J_1 is one of
+the non-orders. The flawed "Kirmse found 7" wording in prompt 101 is to be
+disregarded; the write-up uses the verified framing.
+
+Action:
+  - Wrote paper/kirmse_1924_exposition.tex, compiled to .pdf (6 pages, clean).
+    "How far Johannes Kirmse got in 1924: a verified exposition of his
+    arithmetic of the integral octonions." Author: Claude Opus 4.7 (Anthropic),
+    at the direction of J. Koeplinger; references prompt 100 (the verification).
+  - Self-contained: full multiplication table (1), conjugation/norm,
+    composition identities, the order definitions, the verbatim "Man findet
+    acht solche" claim, J_1 and its generators, a survey of Kirmse's later
+    results, and the from-scratch verification (J_1 not closed; 7 of 30
+    candidates closed). Every section ends with a "Sources and tracing"
+    remark mapping each formula to Kirmse's equation/page/section.
+  - Marked preliminary: the correction (Coxeter 1946) and the origin question
+    are deliberately deferred until that paper is read.
+  - No edit to main.tex or the update briefs. A brief appendix correcting the
+    main paper remains a later step (after Coxeter 1946).

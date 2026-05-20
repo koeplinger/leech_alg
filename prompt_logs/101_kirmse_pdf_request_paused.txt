@@ -1,0 +1,32 @@
+Prompt 101 — Request for a self-contained Kirmse PDF; paused on a framing conflict
+Date: 2026-05-20
+
+User request (verbatim, abridged):
+"This is an enormous finding. Remember when we read Wikipedia's (unverified)
+claim that Kirmse did indeed find 7 (but not 8) integral orders? ... Make a
+self-contained PDF write-up on Kirmse's paper alone ... showing all of
+Kirmse's definitions and derivations that lead to the conclusion that he did
+indeed find 7 (but not 8) integral orders ... make yourself the author ...
+reference the prompt that led you there ... wait on the Coxeter paper before
+finalizing."
+
+Why this prompt was PAUSED (manifesto sec. 4 uncertainty protocol, sec. 11
+forward-evolving corrections apply to human framing too):
+
+The requested PDF thesis -- "Kirmse did indeed find 7 (but not 8) integral
+orders" -- is NOT supported by the verification done in Prompt 100, and the
+one checkable data point contradicts it:
+  - Kirmse CLAIMED eight maximal orders ("Man findet acht solche", p.70).
+  - He exhibited explicitly exactly ONE order, J_1.
+  - Verified from scratch: J_1 is NOT closed -> not one of the 7 genuine
+    maximal orders.
+  - He never listed the other seven of his "eight"; only a schematic form
+    is given. So "Kirmse found the seven genuine orders" cannot be verified
+    from his paper, and the single order he did write down was a wrong one.
+The verification therefore CONFIRMS the traditional "Kirmse's mistake"
+(Petersson) and does NOT support Wikipedia's "the seven ... were constructed
+by Kirmse (1924), Dickson and Bruck."
+
+Action: did NOT write the PDF. Flagged the discrepancy to the user and
+proposed an accurate thesis for the write-up; awaiting an explicit decision
+before proceeding.

@@ -1,0 +1,458 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{hyperref}
+
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\Nm}{\mathrm{N}}
+\newcommand{\cj}[1]{\overline{#1}}
+
+\numberwithin{equation}{section}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\theoremstyle{remark}
+\newtheorem*{tracing}{Sources and tracing}
+
+\title[How far Johannes Kirmse got in 1924]{How far Johannes Kirmse got in
+1924:\\ a verified exposition of his arithmetic\\ of the integral octonions}
+\author{Claude Opus 4.7}
+\address{Anthropic}
+\date{Preliminary version --- 20 May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a self-contained exposition of Johannes Kirmse's 1924 paper on the
+arithmetic of the octonions~\cite{Kirmse1924}, written by the AI agent at the
+direction of Jens K\"oplinger as part of the research record of the
+repository~\cite{repo}; the verification it reports was carried out under
+prompt~100 of that record.  Its single purpose is to establish, from
+Kirmse's original text and by independent computation, \emph{exactly} what
+Kirmse achieved and where his one substantive error lies.
+
+The conclusion is this.  Kirmse built, essentially in full, the arithmetic
+theory of the integral octonions: the units and the multiplication table,
+conjugation and norm, the composition identities, modules, orders and
+maximal orders, an ideal theory, and from it the classical eight-squares
+theorem.  His one substantive error is a miscount: he states
+(\cite{Kirmse1924}, p.~70) that there are \emph{eight} maximal orders
+containing the integer lattice~$J_0$, whereas there are \emph{seven}; and the
+one maximal order he writes down explicitly, his~$J_1$, is itself \emph{not}
+closed under multiplication.  Every formula below is traced to Kirmse's
+original; each section closes with a \emph{Sources and tracing} remark.
+
+This is a preliminary version.  The companion historical questions --- who
+corrected the count, in what form, and where the error first entered the
+later literature --- require Coxeter's 1946 paper and are deliberately left
+untouched here.
+\end{abstract}
+
+% ===============================================================
+\section{Purpose and method}
+% ===============================================================
+
+Johannes Kirmse's name survives in two phrases.  To workers in
+non-associative algebra it survives in \emph{Kirmse's identities}; to those
+concerned with integral quadratic forms it survives in \emph{Kirmse's
+mistake}.  The second phrase has all but erased the first, and with it the
+fact that Kirmse's short 1924 paper is one of the founding documents of the
+arithmetic of the octonions.
+
+The present note was written to answer one question precisely: how far did
+Kirmse get, and where exactly is the mistake?  It follows the methodology of
+the repository~\cite{repo} in which it was produced: no claim --- Kirmse's,
+or anyone's --- is taken on trust; every assertion is either traced to
+Kirmse's printed text or verified from scratch by exact computation.  The
+two are kept strictly separate.  Sections~\ref{sec:arith}--\ref{sec:after}
+expound Kirmse's paper and trace every formula to it.  Section~\ref{sec:verify}
+reports an independent computation, owing nothing to Kirmse or to any later
+author, that tests his central claim.  Section~\ref{sec:assess} draws the
+balance.
+
+We write $\OO$ for the real algebra Kirmse studies --- the Graves--Cayley
+octonions --- and reserve the symbols $J_0$, $J_1$ for the two lattices he
+names.
+
+% ===============================================================
+\section{The elementary arithmetic of the Cayley numbers}\label{sec:arith}
+% ===============================================================
+
+Kirmse begins with an algebra of \emph{eight} units
+$i_0, i_1, \ldots, i_7$, with $i_0 = 1$ the identity, and a real algebra
+\[
+  a = \alpha_0 + \alpha_1 i_1 + \alpha_2 i_2 + \cdots + \alpha_7 i_7,
+  \qquad \alpha_0,\ldots,\alpha_7 \in \RR .
+\]
+The multiplication of the units is fixed by his table~(1).  Reading that
+table, the seven products that carry a positive sign organise into seven
+oriented triples
+\begin{equation}\label{eq:triples}
+  (1,2,3),\ (1,5,4),\ (1,6,7),\ (2,4,7),\ (2,6,5),\ (3,4,6),\ (3,5,7),
+\end{equation}
+with the rule: for each triple $(a,b,c)$,
+\[
+  i_a i_b = i_c,\quad i_b i_c = i_a,\quad i_c i_a = i_b
+  \qquad\text{(and the reverse products carry a minus sign),}
+\]
+together with $i_j^2 = -1$ for $j=1,\ldots,7$ and $i_0 i_j = i_j i_0 = i_j$.
+Written out, the products of the seven imaginary units are
+
+\smallskip
+\[
+\renewcommand{\arraystretch}{1.25}
+\begin{array}{c|ccccccc}
+\cdot & i_1 & i_2 & i_3 & i_4 & i_5 & i_6 & i_7\\\hline
+i_1 & -1   & i_3  & -i_2 & -i_5 & i_4  & i_7  & -i_6\\
+i_2 & -i_3 & -1   & i_1  & i_7  & -i_6 & i_5  & -i_4\\
+i_3 & i_2  & -i_1 & -1   & i_6  & i_7  & -i_4 & -i_5\\
+i_4 & i_5  & -i_7 & -i_6 & -1   & -i_1 & i_3  & i_2\\
+i_5 & -i_4 & i_6  & -i_7 & i_1  & -1   & -i_2 & i_3\\
+i_6 & -i_7 & -i_5 & i_4  & -i_3 & i_2  & -1   & i_1\\
+i_7 & i_6  & i_4  & i_5  & -i_2 & -i_3 & -i_1 & -1
+\end{array}
+\]
+\smallskip
+
+\noindent
+This is Kirmse's table~(1) in full.  He notes that the problem he set
+himself --- an eight-unit system containing the quaternions and carrying the
+fourth power of the sum of squares as a norm --- admits ``several, but not
+essentially different'' solutions, of which~(1) is one.
+
+To each $a$ Kirmse associates the \emph{symmetric} number (the conjugate)
+and the \emph{Relativnorm}
+\begin{align}
+  \cj a &= \alpha_0 - \alpha_1 i_1 - \cdots - \alpha_7 i_7,
+  \label{eq:conj}\\
+  \Nm(a) &= a\cj a = \sum_{j=0}^{7} \alpha_j^{\,2}.
+  \label{eq:norm}
+\end{align}
+Conjugation reverses products,
+\begin{equation}\label{eq:antiauto}
+  \cj{a b} = \cj b\,\cj a .
+\end{equation}
+Developing the eight products $a, a i_1, \ldots, a i_7$ in the units yields
+an $8\times8$ matrix $M[a]$ of a linear substitution; its determinant, the
+\emph{Grundnorm}, equals $\Nm(a)^4$, and from the structure of $M[ab]$
+Kirmse obtains the composition law
+\begin{equation}\label{eq:comp}
+  \Nm(ab) = \Nm(a)\,\Nm(b).
+\end{equation}
+Calling $a$ \emph{regular} when $\Nm(a)\neq 0$, he solves the one-sided
+equations $ax=c$ and $ya=c$:
+\begin{equation}\label{eq:div}
+  x = \frac{\cj a\,c}{\Nm(a)},
+  \qquad
+  y = \frac{c\,\cj a}{\Nm(a)} .
+\end{equation}
+Specialising $c=ab$ gives the two \emph{composition identities}
+\begin{equation}\label{eq:kirmse-id}
+  \cj a\,(a b) = \Nm(a)\,b,
+  \qquad
+  (a b)\,\cj b = \Nm(b)\,a,
+\end{equation}
+so that ``for products of three factors in which two consecutive factors are
+conjugate, the associative law holds'' --- in particular
+$(\cj a a)b = \cj a(ab)$ and $a(b\cj b) = (ab)\cj b$.  Finally Kirmse calls
+$a_1,a_2,a_3$ \emph{coplanar} when corresponding imaginary components are
+proportional; coplanar numbers commute and associate, every power $a^m$ is
+coplanar with $a$, and ``coplanar numbers behave like algebraic numbers.''
+
+\begin{tracing}
+The eight units and the multiplication table reproduce Kirmse's table~(1),
+\cite{Kirmse1924} p.~64; we have rendered his printed array of $64$ products
+$i_j i_k$ as the seven oriented triples~\eqref{eq:triples} plus
+$i_j^2=-1$ and $i_0 i_k=i_k$, and the $7\times7$ array above is that same
+table written out (it was checked entry-by-entry against the scan of p.~64).
+The conjugate~\eqref{eq:conj} and norm~\eqref{eq:norm} are Kirmse's, p.~64
+(he names $\cj a$ the number ``symmetric to~$a$'' and $\Nm(a)$ the
+\emph{Relativnorm}).  Equation~\eqref{eq:antiauto} is Kirmse's~(2), p.~64.
+The matrix $M[a]$ is his~(3) and the product expansion his~(4), p.~65; the
+composition law~\eqref{eq:comp} is his~(5), p.~66, derived there from the
+column structure of $M[ab]$.  The division formulas~\eqref{eq:div} are
+his~(7\,a) and~(7\,b), pp.~66--67; the composition
+identities~\eqref{eq:kirmse-id} are the content of his~(8), p.~67.  The
+remarks on coplanar numbers follow his~(9)--(10), p.~67.  All of this is
+Kirmse's \S1, ``Die elementare Arithmetik der Cayleyschen Zahlen.''
+\end{tracing}
+
+% ===============================================================
+\section{Modules, orders, and the count of maximal orders}\label{sec:orders}
+% ===============================================================
+
+Kirmse now restricts to the rational octonions $K$ --- those $a$ with all
+$\alpha_j\in\QQ$ --- and develops a theory of lattices in $K$.
+
+\begin{definition}
+A \emph{module} is a subset of $K$ closed under integer linear combinations.
+It is \emph{finite} if it consists of all $\gamma_0 a_0 + \cdots + \gamma_7 a_7$
+($\gamma_j\in\ZZ$) for eight independent numbers $a_0,\ldots,a_7$.  A finite
+module is an \emph{Integrit\"atsbereich} --- an \emph{order} --- if with any
+two numbers $a,b$ it also contains the products $ab$ and $ba$.  An order is a
+\emph{most-comprehensive order} (\emph{umfassendster Integrit\"atsbereich})
+--- a \emph{maximal order} --- if it contains
+\begin{equation}\label{eq:J0}
+  J_0 = [\,1, i_1, i_2, i_3, i_4, i_5, i_6, i_7\,]
+\end{equation}
+and cannot be enlarged by adjoining a further number of $K$ without ceasing
+to be an order.
+\end{definition}
+
+The lattice $J_0$ of octonions with integer components is itself an order.
+Kirmse's structural theorem about \emph{any} order is obtained as follows.
+If $a$ lies in an order with $\ZZ$-basis $a_0,\ldots,a_7$, the products
+$a a_j$ have integer coordinates in that basis; eliminating the basis from
+the eight resulting linear relations gives an integer determinant $D[a]$
+with
+\begin{equation}\label{eq:degree8}
+  D[a] = 0,
+\end{equation}
+so every number of an order satisfies a monic integral equation of degree~8.
+Because conjugates and coplanar combinations again satisfy such equations,
+$a+\cj a$ and $a\cj a$ are rational integers; and multiplying by a suitable
+unit moves any chosen component to the front.  Kirmse concludes:
+
+\begin{theorem}[Kirmse, p.~69]\label{thm:doubles}
+The double of every number belonging to an order $J\subseteq K$ has
+exclusively integer components.
+\end{theorem}
+
+Thus the numbers of an order have components that are integers or
+half-integers, and the maximal orders may be sought by a finite search among
+lattices between $J_0$ and $\tfrac12 J_0$.  At this point Kirmse writes
+(\cite{Kirmse1924}, p.~70), verbatim:
+
+\begin{quote}\itshape
+``Dieser Satz erlaubt sofort, durch eine einfache endliche Rechnung die
+s\"amtlichen umfassendsten Integrit\"atsbereiche \"uber $J_0$ aufzusuchen.
+\textnormal{\textbf{Man findet acht solche}}, deren jeder die Gestalt hat''
+\end{quote}
+\begin{equation}\label{eq:eight}
+  J = \Bigl[\, J_0,\ \tfrac12\bigl(i_{\nu_1}+i_{\nu_2}+i_{\nu_3}+i_{\nu_4}\bigr),\
+  \tfrac12\textstyle\sum_{k=0}^{7} i_k \,\Bigr],
+\end{equation}
+the indices $\nu_1,\nu_2,\nu_3,\nu_4$ all distinct, drawn from
+$\{0,1,\ldots,7\}$.  That is: \emph{Kirmse asserts there are eight maximal
+orders.}  He adds that each contains exactly fourteen elements of the
+``middle kind'' $\tfrac12(\text{four units})$, falling into seven
+complementary pairs.
+
+He then exhibits \emph{one} of the eight explicitly.  Calling it $J_1$,
+\begin{equation}\label{eq:J1}
+  J_1 = \bigl[\, J_0,\ a_1,\ a_2,\ a_3,\ a_4 \,\bigr],
+\end{equation}
+\begin{equation}\label{eq:J1gens}
+\begin{aligned}
+  a_1 &= \tfrac12\bigl(1 + i_1 + i_2 + i_3\bigr), &
+  a_2 &= \tfrac12\bigl(i_4 + i_5 + i_6 + i_7\bigr),\\
+  a_3 &= \tfrac12\bigl(1 + i_1 + i_4 + i_5\bigr), &
+  a_4 &= \tfrac12\bigl(1 + i_2 + i_4 + i_7\bigr),
+\end{aligned}
+\end{equation}
+with $J_0$ of index $\Nm(J_1)=16$ in $J_1$.  Every later section of the
+paper works in this $J_1$.
+
+\begin{tracing}
+The definitions of module, finite module, order (\emph{Integrit\"atsbereich})
+and maximal order (\emph{umfassendster Integrit\"atsbereich}), and the
+lattice $J_0$ of~\eqref{eq:J0}, are Kirmse's, \cite{Kirmse1924} p.~68.  The
+integral degree-8 equation~\eqref{eq:degree8} is his~(11), p.~69, derived in
+his \S2 by the elimination just summarised.  Theorem~\ref{thm:doubles} is the
+italicised \emph{Satz} at the foot of his p.~69.  The claim of eight maximal
+orders and the schematic form~\eqref{eq:eight} are on his p.~70; the quoted
+German is verbatim, and the emphasis on ``acht'' (\emph{eight}) is added.
+The order $J_1$ and its generators~\eqref{eq:J1}--\eqref{eq:J1gens}, and the
+index $16$, are Kirmse's, p.~70.  All of this is his \S2, ``Moduln und
+Integrit\"atsbereiche im Gebiete der Cayleyschen Zahlen mit rationalen
+Komponenten.''
+\end{tracing}
+
+% ===============================================================
+\section{What Kirmse built on $J_1$}\label{sec:after}
+% ===============================================================
+
+The remaining three sections, all set in $J_1$, show the reach of the
+construction; we summarise them only to record how far Kirmse carried the
+theory.
+
+In \S3 (``Die ungeraden Ideale\ldots'') he develops one- and two-sided ideals,
+their norms, and primitive and primary ideals.  In \S4 (``Die Einheiten und
+die geraden Ideale in $J_1$'') he finds the units: \emph{sixteen} in $J_0$
+(the $\pm i_j$) and \emph{two hundred and forty} in $J_1$ ---
+the $\pm i_j$ together with $224$ half-integer units --- and observes that
+they ``form a group in an extended sense, in which all group-theoretic
+theorems hold except the associative law and its consequences,'' i.e.\ a
+Moufang loop; he counts $2160 = 240\cdot 9$ numbers of norm~2.  In \S5 (``Die
+Primzerlegung\ldots'') he gives the prime decomposition, finds that every
+ideal of $J_1$ (and every odd ideal of $J_0$) is principal, computes the
+ideal zeta function
+\begin{equation}\label{eq:zeta}
+  Z(s) = \zeta(4s)\,\zeta(4s-3),
+\end{equation}
+and derives the eight-squares theorem: the number of representations of an
+odd $n>0$ as a sum of eight integer squares is
+\begin{equation}\label{eq:eightsquares}
+  r_8(n) = 16\sum_{d\mid n} d^{\,3}.
+\end{equation}
+A postscript adds a Minkowski geometry-of-numbers proof that all ideals are
+principal.
+
+These results --- the $240$ units, \eqref{eq:zeta}, \eqref{eq:eightsquares}
+--- are correct.  They are facts about the $E_8$ lattice as a quadratic form
+and, as Section~\ref{sec:verify} will make clear, do not depend on the one
+claim that fails.
+
+\begin{tracing}
+The section titles and contents are Kirmse's \S\S3--5, \cite{Kirmse1924}
+pp.~70--82: the ideal theory of \S3 (from p.~70); the units and the
+count~$240$, the ``group in an extended sense,'' and $2160=240\cdot9$ in \S4,
+p.~76; the zeta function~\eqref{eq:zeta} (his $Z(s)$, p.~77) and the
+eight-squares theorem~\eqref{eq:eightsquares} (his numbered conclusions~2--3,
+p.~78); the Minkowski argument is the \emph{Nachschrift}, p.~82.  Equations
+\eqref{eq:zeta}--\eqref{eq:eightsquares} restate his results in his own
+notation.
+\end{tracing}
+
+% ===============================================================
+\section{Independent verification}\label{sec:verify}
+% ===============================================================
+
+Kirmse asserts~\eqref{eq:eight} --- eight maximal orders --- ``durch eine
+einfache endliche Rechnung,'' but prints no part of that computation.  We
+carry it out, in exact arithmetic, from his data alone: the multiplication
+table~(1) of Section~\ref{sec:arith} and the order $J_1$
+of~\eqref{eq:J1}--\eqref{eq:J1gens}.  Nothing from any later author enters.
+
+\medskip\noindent\textbf{(a) The table is sound.}  Built from the seven
+triples~\eqref{eq:triples}, the multiplication satisfies the composition
+law~\eqref{eq:comp}, $\Nm(uv)=\Nm(u)\Nm(v)$, on every tested pair.  Kirmse's
+$\OO$ is a genuine (composition) octonion algebra.
+
+\medskip\noindent\textbf{(b) $J_1$ is not closed.}  $J_1$ is the
+$\ZZ$-span of the twelve numbers $1,i_1,\ldots,i_7,a_1,a_2,a_3,a_4$.  By
+bilinearity, $J_1$ is an order if and only if all $144$ products of these
+generators lie in $J_1$.  Ten of them do not.  The simplest witness uses two
+of Kirmse's own generators:
+\begin{equation}\label{eq:witness}
+  a_1\cdot a_3
+  = \tfrac12(1{+}i_1{+}i_2{+}i_3)\cdot\tfrac12(1{+}i_1{+}i_4{+}i_5)
+  = \tfrac12\bigl(i_1+i_2+i_4+i_7\bigr).
+\end{equation}
+The number $\tfrac12(i_1+i_2+i_4+i_7)$ does not belong to $J_1$: its
+half-integer pattern is not one of the sixteen that $J_1$ admits.  Hence
+\[
+  J_1\cdot J_1 \not\subseteq J_1 ;
+\]
+\emph{$J_1$ is not closed under multiplication, and so is not an order at
+all.}
+
+\medskip\noindent\textbf{(c) There are seven maximal orders, not eight.}  A
+maximal order containing $J_0$ is a unimodular even lattice, hence
+corresponds to a doubly-even self-dual binary code of length~$8$; there are
+exactly $30$ such codes (the coordinate relabellings of the extended Hamming
+code).  Testing each of the $30$ candidate lattices for closure under
+table~(1) leaves exactly
+\[
+  \boxed{\ \text{seven}\ }
+\]
+that are closed.  Kirmse's $J_1$ is among the $30$ candidates but is one of
+the $23$ that fail.  His count~\eqref{eq:eight} is therefore too large by
+one, and the representative he chose was one of the non-orders.
+
+\begin{tracing}
+This section traces not to Kirmse but to an independent computation.  The
+multiplication is that of Section~\ref{sec:arith} (Kirmse's table~(1));
+the lattice $J_1$ is~\eqref{eq:J1}--\eqref{eq:J1gens} (Kirmse's p.~70).  The
+arithmetic is exact and is reproducible from the script
+\texttt{python\_project/src/verify\_kirmse\_1924.py} in the
+repository~\cite{repo}; the run reported here was performed under prompt~100
+of the research record.  Item~(b)'s witness~\eqref{eq:witness} was also
+checked by hand.  The count of $30$ doubly-even self-dual binary codes of
+length~$8$ is classical; item~(c) re-derives it and the figure ``seven'' is
+the output of the closure test, not a quotation.
+\end{tracing}
+
+% ===============================================================
+\section{Assessment}\label{sec:assess}
+% ===============================================================
+
+What Kirmse accomplished in these twenty pages is considerable, and is set
+out in Sections~\ref{sec:arith}--\ref{sec:after}: a working octonion algebra;
+conjugation, norm, and the composition law; the composition
+identities~\eqref{eq:kirmse-id} that bear his name; the notions of order and
+maximal order; the structural Theorem~\ref{thm:doubles}; an ideal theory; the
+$240$-unit Moufang loop; and, as the paper's announced goal, a derivation of
+the eight-squares theorem~\eqref{eq:eightsquares}.  Much of the modern
+arithmetic of the integral octonions is already here, in 1924.
+
+His one substantive error is exactly located.  It is not in the algebra, nor
+in the ideal theory, nor in the final theorem --- all of which concern the
+$E_8$ lattice as a quadratic form and stand.  It is the single claim,
+\eqref{eq:eight}, that there are \emph{eight} maximal orders over $J_0$.
+There are seven.  And the one maximal order Kirmse wrote down and used,
+$J_1$, is itself not multiplicatively closed: of the orders he actually
+exhibited, the score is none out of one.  This is the precise content of
+what later became known as ``Kirmse's mistake.''  It does not diminish the
+rest; it is one miscount in a paper that otherwise built a theory.
+
+Two matters are deliberately left open here.  First, who detected the error
+and in what form the count was corrected: that is the subject of Coxeter's
+1946 paper, and this exposition will be revised once that paper has been read
+from the source in the same manner as Kirmse's.  Second, whether the other
+seven members of Kirmse's claimed eight coincide with the seven genuine
+maximal orders: Kirmse gives only the schematic form~\eqref{eq:eight}, never
+an explicit list, so this cannot be settled from his text and is not claimed
+here.
+
+A small biographical note, since it differs from some secondary accounts:
+the paper's by-line reads ``Johannes Kirmse \emph{in Hannover},'' it was
+presented to the Saxon Academy by G.~Herglotz in the session of 5~May 1924,
+and it is signed ``Hannover, am 15.~April 1924.''
+
+\begin{tracing}
+The list of accomplishments refers back to
+Sections~\ref{sec:arith}--\ref{sec:after} and through them to Kirmse's
+\S\S1--5.  The localisation of the error refers to~\eqref{eq:eight}
+(Kirmse, p.~70) and to Section~\ref{sec:verify}.  The by-line, the
+presentation by Herglotz, and the place and date of signature are read from
+\cite{Kirmse1924}, pp.~63 and~82.  The deferred questions concern
+H.~S.~M.~Coxeter, \emph{Integral Cayley numbers}, Duke Math.\ J.~\textbf{13}
+(1946), 561--578, not consulted for this preliminary version.
+\end{tracing}
+
+% ===============================================================
+\begin{thebibliography}{9}
+
+\bibitem{Kirmse1924}
+J.~Kirmse,
+\emph{\"Uber die Darstellbarkeit nat\"urlicher ganzer Zahlen als Summen von
+acht Quadraten und \"uber ein mit diesem Problem zusammenh\"angendes
+nichtkommutatives und nichtassoziatives Zahlensystem},
+Berichte \"uber die Verhandlungen der S\"achsischen Akademie der
+Wissenschaften zu Leipzig, Mathematisch-Physische Klasse \textbf{76} (1924),
+63--82.
+
+\bibitem{repo}
+J.~K\"oplinger,
+\emph{An order on the Leech lattice from a $\ZZ_3$-symmetric triple-octonion
+product: research repository},
+\url{https://bitbucket.org/jenskoeplinger/leech_alg}, 2026.
+Verification script: \texttt{python\_project/src/verify\_kirmse\_1924.py};
+research record: prompt~100.
+
+\end{thebibliography}
+
+\end{document}

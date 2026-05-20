@@ -1,0 +1,34 @@
+Prompt 100 — Verification of the source papers; Kirmse 1924
+Date: 2026-05-20
+
+User request (verbatim):
+"I have loaded Kirmse 1924 and Mahler 1942 into the folder
+/home/jens/tmp/LeechAlg_1920s-1940s (pending Coxeter 1946). You can get
+Dickson 1923 online, do so.
+
+Start the verification on these papers. In particular, I'm interested in how
+far exactly Kirmse got in 1924. I'll read the paper separately in the
+meantime as well."
+
+Work done this turn (Kirmse 1924):
+  - Downloaded Dickson 1923 from Numdam into the source folder (pending read).
+  - Read Kirmse 1924 in full -- 20 scanned pages, seq_325..344 (pp. 63-82),
+    clear Antiqua type. Transcribed his multiplication table (1) and his
+    order J_1.
+  - Verified from scratch (python_project/src/verify_kirmse_1924.py), using
+    ONLY Kirmse's own table (1) and his own definition of J_1:
+      * table (1) is a valid composition algebra (N(uv)=N(u)N(v));
+      * Kirmse's J_1 is NOT closed under multiplication -- 10 of 144
+        generator products leave J_1; witness a1*a3 = 1/2(i1+i2+i4+i7);
+      * of the 30 E8-type candidate codes, exactly 7 are closed under
+        table (1) -> 7 maximal orders;
+      * Kirmse's named J_1 is among the 30 but is one of the non-closed ones.
+  - KEY verbatim finding (p.70, seq_332): "Man findet acht solche" --
+    Kirmse explicitly claimed EIGHT maximal orders. The true number is
+    seven. This is the documented "Kirmse mistake", confirmed from the
+    source and verified computationally.
+  - Recorded full findings (what Kirmse achieved + the error) in
+    paper/reviews/2026-05-20_claude_opus_4_7_kirmse_1924_verification.md.
+
+Pending: Mahler 1942 and Dickson 1923 (loaded/downloaded), Coxeter 1946
+(user obtaining). No edit to main.tex / briefs.
