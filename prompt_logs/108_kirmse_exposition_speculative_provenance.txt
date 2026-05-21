@@ -1,0 +1,41 @@
+Prompt 108 — Update the Kirmse exposition with a speculative provenance appendix
+Date: 2026-05-20
+
+User request (verbatim, abridged):
+"I want you to update your Kirmse write-up in a way that honestly states a
+possible provenance, speculative, and you can credit me for it. Put it into a
+footnote or appendix if you feel that it doesn't deserve the exposure of a
+main-body exposition. This is _your_ writeup, but I want to be acknowledged
+for contributing the human aspect. ... Do you have enough information on how
+to update the Kirmse write-up in a way that you can defend, given the strict
+guidelines that you are following?"
+(User also corrected a typo in the prior message: "bag", not "bad".)
+
+Defensibility design (manifesto sec.4 permits speculation if clearly
+labelled; sec.2 attribution; kept separate from verified content):
+  - The speculation is placed in a clearly-marked Appendix A "A speculative
+    note on provenance", not the body, and opens with an italic disclaimer.
+  - It is anchored only to verified facts (the two-part closure test; the 8
+    unit-invariant lattices = 7 genuine + J_1; the block in which J_1 fails).
+  - It does NOT assert the unsupported "first working example" as fact: it
+    states plainly that the paper records exactly one realisation, J_1, that
+    J_1 is not an order, and that exposition order != discovery order.
+  - It renders the "generalisation" misstep accurately: the form is correct;
+    the error is the leap to a complete classification on an unstated,
+    insufficient criterion -- not a "wrong formula".
+  - Jens Koeplinger is credited in the abstract, the appendix opening, and
+    the appendix tracing remark.
+
+Changes to paper/kirmse_1924_exposition.tex:
+  - Abstract: one sentence noting the speculative appendix (credited).
+  - Section 5: new verified item (d) -- the two-part structure of closure,
+    the 8 unit-invariant lattices = 7 + J_1, J_1's failures all in the
+    half x half block (forensic finding, prompt 103). Tracing updated to
+    cite verify_kirmse_1924_forensic.py and prompts 100/103.
+  - Section 6: the "second open matter" paragraph rewritten -- the count
+    "eight" is now accounted for via 5(d); fact vs reconstruction kept
+    separate; points to Appendix A.
+  - New Appendix A (speculative provenance), as above.
+  - repo bibitem updated (scripts; prompts 100,103,108).
+  Recompiled clean, 7 pages. Document remains marked "preliminary"
+  (Coxeter 1946 still pending).

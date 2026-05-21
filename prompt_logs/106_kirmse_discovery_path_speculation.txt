@@ -1,0 +1,36 @@
+Prompt 106 — Assessing a proposed "path to discovery" narrative for Kirmse
+Date: 2026-05-20
+
+User request (verbatim, abridged):
+"Kirmse may have written down one concrete realization that was indeed an
+integral order. It worked. He then looked at how this could possibly be
+generalized. He arrived at the wrong generalization formula (that actually
+yields 30 possible realizations). In a second incorrect conclusion, he then
+counted eight integral orders ... Do you think this could have been a
+plausible path to discovery, wrongful generalization, and subsequent
+erroneous 'generalized' exposition?"
+
+Assessment given (no files changed; discussion turn):
+  - Plausible only as a GENERIC research pattern; as a claim about Kirmse it
+    is speculation the paper does not support.
+  - Its load-bearing step ("a first concrete realization that worked") has
+    no evidence: the paper records exactly one concrete realization, J_1,
+    and J_1 does NOT work. The text presents the general result first, then
+    specializes to J_1 -- that is exposition order, not discovery order;
+    the discovery order is not in the document.
+  - Mathematical mischaracterisations in the narrative:
+     * the schematic/"generalization formula" is NOT wrong -- it is a correct
+       NECESSARY form (all 7 genuine orders have it); "30" is our count of
+       lattices meeting that correct form, not the yield of a wrong formula,
+       and not a number Kirmse wrote.
+     * "counted eight, assuming the original was among them" does not explain
+       WHY eight; the eight is explained by the unit-invariance reconstruction.
+  - The narrative is internally tense: Step 1 says the original "worked";
+    Step 4 places the original among the eight, which contain the
+    non-working J_1.
+  - Key point: the attribution conclusion does NOT depend on the path. What
+    the paper establishes stands regardless of how Kirmse arrived at it.
+  - Recommendation: keep the write-up to the verified logical anatomy
+    (two-part closure test, part two omitted); state explicitly that the
+    paper does not record Kirmse's path of discovery; do not include a
+    discovery-path narrative (or flag it heavily as speculation).
