@@ -1,0 +1,29 @@
+Prompt 105 — Assessing the "two-step misalignment" characterization
+Date: 2026-05-20
+
+User request (verbatim, abridged):
+"Do I read it correctly that you actually find 30 possible concrete
+realizations of the first equation on page 70? This would explain a two-step
+misalignment: There are thirty, but Kirmse implicitly (and silently) used an
+invariance condition under unit multiplication. Yet his intuition was
+correct, there are indeed 7 integral orders. How do you feel about this
+characterization in terms of a two-step misalignment?"
+
+Assessment given (no files changed; discussion turn):
+  - Confirmed: yes, 30 is correct -- the schematic (first equation, p.70),
+    unpacked with the "14 middle elements in 7 complementary pairs + 1/2 sum"
+    structure, is realized by exactly 30 lattices (the doubly-even self-dual
+    [8,4] codes). The chain 30 > 8 > 7 is factually sound.
+  - Refined "two-step": the genuine two-ness is that the closure check
+    FACTORS into two sub-tests -- products involving a unit (narrows 30->8)
+    and products of two half-integer elements (narrows 8->7). By our
+    reconstruction Kirmse ran sub-test one and reported its output (8) as
+    final; the misalignment is the omission of sub-test two. So it is a
+    two-PART verification with the single misalignment in part two -- not
+    two misalignments. Part one (30->8) is a correct narrowing as far as it
+    goes.
+  - Corrected "his intuition was correct, there are indeed 7": Kirmse's
+    stated count was eight; he never wrote seven. His structural intuition
+    (the framework, the half-integer form, finitely many orders) was sound
+    and is his; his count was not. "Seven" is our verified result, not
+    Kirmse's intuition -- it must not be laundered back to him.
