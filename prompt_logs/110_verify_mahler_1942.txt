@@ -1,0 +1,36 @@
+Prompt 110 — Verification of Mahler 1942 (ideals in the Cayley-Dickson algebra)
+Date: 2026-05-20
+
+User request: "do it." (continue the source verification with Mahler 1942.)
+
+Source: K. Mahler, "On ideals in the Cayley-Dickson algebra," Proc. Roy.
+Irish Acad. Sect. A 48 (1942), 123-133. Loaded in
+/home/jens/tmp/LeechAlg_1920s-1940s/Mahler_1942.pdf (12 pages).
+
+Petersson's account (to be checked against the source): Mahler relies on
+Dickson 1923; describes the one-sided ideals of the integral octonions,
+showing every such ideal is principal and generable by a multiple of an
+integral octonion of norm 1, 2, or 4; but the description is "explicit but
+still incomplete" -- not every such octonion yields a one-sided ideal.
+
+Status: surveying then reading the paper.
+
+OUTCOME (verified, python_project/src/verify_mahler_1942.py):
+  - Mahler's Cayley-Dickson product = Dickson's; composition algebra.
+  - Mahler's ring J (criterion (14)) = Dickson's order O_D: a genuine
+    maximal order, closed, index 16; 240 norm-1, 2160 norm-2.
+  - THEOREM 1 (Euclidean algorithm): covering radius^2 of J = 1/2; confirms
+    Mahler's proved bound <= 15/16 and his stated exact constant 1/2.
+  - THEOREM 2 (every left ideal principal): the engine is Theorem 1
+    (covering^2 < 1); Mahler's explicit counterexample -- (g|g),
+    g=1/2(1+i1+i2+i3), does not generate a left ideal -- verified exactly:
+    his witness equals his stated value and is non-integral.
+  - Mahler is candid about both limitations himself (constant not tight;
+    converse of Thm 2 fails). Mathematics is correct.
+  - FINDING: equation (10) has a typographical MISPRINT -- A8 printed as
+    (1/2(1+i3) | 1/2(1+i2)) fails criterion (14) and makes the basis span a
+    non-closed lattice; the correct value is (1/2(1+i3) | 1/2(1+i3)) =
+    Dickson's V. Harmless (proofs use criterion (14), which is correct).
+  - Cover sheet misprints the title "Cayley-Dixon" (the paper: "Cayley-Dickson").
+  Recorded: paper/reviews/2026-05-20_claude_opus_4_7_mahler_1942_verification.md
+  All three 1920s-40s papers now verified. Coxeter 1946 still pending.

@@ -1,0 +1,56 @@
+Prompt 109 — Verification of Dickson 1923 (integral octonions)
+Date: 2026-05-20
+
+User request (verbatim, abridged):
+"let's continue with Mahler and Dickson (or if you want to split them, start
+with Dickson since it's earlier in time)."
+(User also offered a working framing: "as a machine, you are trained on
+facts ... I help you find new facts." Acknowledged; the verify-everything
+methodology stands because trained text contains errors too.)
+
+Source: L. E. Dickson, "A new simple theory of hypercomplex integers,"
+J. Math. Pures Appl. (9) 2 (1923), 281-326. Downloaded from Numdam.
+The paper is in ENGLISH (French journal). The octonion section is
+Section 19, "The Integers of Cayley's Algebra" (journal pp. ~319-326).
+
+First-pass survey (pdftotext):
+  - Section 19: Dickson uses quaternion units 1,i,j,k plus e,ie,je,ke;
+    Cayley-Dickson "condensed" product (his eq. 24); norm; N(xy)=N(x)N(y).
+  - He determines all maximal orders ("maximal sets of integers ... having
+    properties C,U,N"), derives the half-integer structure, builds an
+    explicit 8-element basis (29) and the order (30).
+  - He ASSERTS closure ("It can be verified that this is true also of the
+    product of any two of the numbers (29)") and PROVES maximality (no
+    enlargement keeps C,U,N).
+  - THEOREM XV: "The only maximal systems of integers of Cayley's algebra
+    having properties C,U,N are (30) and the two systems obtained from it by
+    cyclic permutations of i,j,k" -- i.e. Dickson claims exactly THREE.
+  - Closing remark hedges: "other maximal systems (if such exist) having
+    properties C,U1,N,M".
+  Note: modern count is seven; Kirmse claimed eight; Dickson claims three.
+  To be verified from scratch: (a) is Dickson's order (30) genuinely closed;
+  (b) how many maximal orders exist for his multiplication; (c) whether "3"
+  is an undercount or a consequence of his C,U,N axioms.
+
+Status: reading the PDF pages of Section 19 next to extract the exact
+basis (29) and the exact statements.
+
+OUTCOME (verified, python_project/src/verify_dickson_1923.py):
+  - Dickson's Cayley-Dickson product (eq.24) is a genuine octonion algebra.
+  - Dickson's order O_D (system (30), basis (29)) IS closed -- a genuine
+    maximal order. Dickson got the CONSTRUCTION right (unlike Kirmse's J_1).
+    Confirms Petersson: isomorphic to Coxeter's.
+  - There are exactly 7 maximal orders for Dickson's product; all 7 satisfy
+    his axioms C (closure), U (contains 1), N (integral norm).
+  - THEOREM XV claims 3 -> UNDERCOUNT (3 vs 7).
+  - Cause, stated by Dickson himself (p.321): "We shall assume that the
+    latter [Hurwitz quaternions] occur in our set in all cases." Exactly 3
+    of the 7 maximal orders contain p=1/2(1+i+j+k); those 3 are O_D and its
+    two (ijk)-cyclic images = Theorem XV's triple. The 4 missed all lack p.
+    Theorem XV as printed is false; the proof establishes the true RESTRICTED
+    statement (only 3 maximal orders contain the Hurwitz quaternions).
+  - Side by side: Dickson 1923 -- construction correct, count 3 (under by 4);
+    Kirmse 1924 -- construction wrong (J_1 not closed), count 8 (over by 1);
+    truth 7.
+  Recorded: paper/reviews/2026-05-20_claude_opus_4_7_dickson_1923_verification.md
+  Pending: Mahler 1942; Coxeter 1946.
