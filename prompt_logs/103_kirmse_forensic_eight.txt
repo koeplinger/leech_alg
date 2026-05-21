@@ -1,0 +1,46 @@
+Prompt 103 — Forensics: can Kirmse's eight orders be constructed from his prose?
+Date: 2026-05-20
+
+User request (verbatim, abridged):
+"Before looking at Mahler 1942 and Dickson 1923 I want to dig deeper. ... do
+a bit of forensics: Yes, it is true that Kirmse _says_ that there are 8
+orders, and that he then uses a concrete representation that isn't; but
+that's not sufficient to pin discovery to him. We need to see whether the
+prose can be made to work to actually yield integral orders, or whether it's
+just a statement. ... Are there sufficient hints in Kirmse's paper to
+construct those 8 orders?"
+(User also: native German speaker, no need to translate; write-ups stay
+English-targeted.)
+
+Work done:
+  - Re-read Kirmse's section 2 (pp.68-71) forensically. The eight orders are
+    discussed ONLY on p.70: the assertion "Man findet acht solche", the
+    schematic form [J_0, 1/2(quadruple), 1/2 sum i], the structural remark
+    "14 middle elements in 7 complementary pairs", and exactly ONE explicit
+    order, J_1. No computation is printed; the schematic, read as Kirmse's
+    module-bracket (defined p.68), spans only an index-<=4 module and so
+    cannot by itself construct a maximal order. => the explicit text does
+    NOT construct the eight.
+  - Forensic computation (python_project/src/verify_kirmse_1924_forensic.py),
+    Kirmse's table (1) only:
+      * 30 E8-type candidate lattices over J_0;
+      * exactly 7 closed under multiplication (genuine maximal orders);
+      * exactly 8 invariant under multiplication by the UNITS;
+      * the 8 unit-invariant lattices = the 7 genuine orders + Kirmse's J_1;
+      * J_1 is the unique unit-invariant non-order;
+      * J_1's closure failures are confined to the half x half products
+        (10 of 16 of a_i*a_j fail; all 128 products involving a unit close).
+  - Interpretation (reconstruction, since Kirmse printed no computation):
+    Kirmse's "einfache endliche Rechnung" most plausibly tested invariance
+    under the units -- a necessary but NOT sufficient closure condition --
+    which yields exactly 8; the missing condition is closure under products
+    of two half-integer elements; the 8th, defective lattice is precisely
+    his J_1. Three independent matches (count 8; contains the 7; J_1 = the
+    bad one) make this strongly supported, though it remains an inference.
+  - Consequence: Kirmse's enumeration was of unit-invariant lattices, not of
+    orders; his paper does not establish him as having identified/verified
+    the seven. Recorded in
+    paper/reviews/2026-05-20_claude_opus_4_7_kirmse_forensic.md.
+
+No edit to main.tex, the briefs, or the exposition (preliminary, pending
+Coxeter 1946).

@@ -1,0 +1,39 @@
+Prompt 104 — Assessment of the researcher's reading of Kirmse p.70
+Date: 2026-05-20
+
+User request (verbatim, abridged):
+"Around the first equation of page 70, Kirmse says that the eight orders
+have _the form of_ that equation. His statement is that you find what we
+call integral orders on E8 from those that are invariant when multiplying
+with the unit elements. This is a hypothesis, and I don't see the explicit
+calculations. Under the reasonable assumption that the reader executes these
+calculations ... the reader would have found 8 combinations that satisfy this
+invariance condition ... Seven of these are indeed integral orders, but
+exactly the one that Kirmse picks is not. ... I would call it a conjecture
+(with calculations missing) and a mistake (picking the one that actually
+doesn't work). ... how do you feel about my readings?"
+
+Assessment given (no files changed; discussion turn):
+  Sound in the reading: the "Gestalt"/form statement; no explicit
+  calculations printed; 7 of the 8 are orders and Kirmse's J_1 is the unique
+  non-order; the non-discovery instinct.
+  Corrections offered:
+   1. "Invariance under multiplication by the units" is NOT Kirmse's stated
+      criterion. Kirmse states the task ("die saemtlichen umfassendsten
+      Integritaetsbereiche aufzusuchen") and the count (eight); the
+      unit-invariance criterion is our reconstruction (prompt 103). The
+      researcher's wording slides our inference into "Kirmse's statement";
+      that line must stay sharp or the write-up would mis-attribute a
+      precise (wrong) criterion to Kirmse.
+   2. A reader doing Kirmse's actually-stated task (find all maximal orders),
+      done correctly, finds 7. "8" is the fingerprint of the insufficient
+      unit-invariance computation, not of the stated task.
+   3. "Conjecture": Kirmse wrote "Man findet acht solche" -- presented as the
+      established result of a computation, i.e. asserted as fact, not flagged
+      as tentative. Better: an unproven assertion (proof omitted) that is
+      false.
+   4. The bad pick of J_1 is not a separate slip: J_1 passes the
+      unit-invariance test, so under Kirmse's own (insufficient) criterion it
+      was indistinguishable from a genuine order. One root error
+      (necessary-but-insufficient criterion) with two symptoms (count 8 vs 7;
+      defective representative J_1).
