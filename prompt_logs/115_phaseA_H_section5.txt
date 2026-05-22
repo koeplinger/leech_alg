@@ -1,0 +1,36 @@
+Prompt 115 — Phase A, item (H): Section 5 algebraic-properties expansion
+Date: 2026-05-22
+
+User: DP5 confirmed (cite Corradetti in Outlook for the thematic parallel,
+flag the operational distinction; adopt "mod-2 quotient" terminology).
+"Continue with phase A item (H): cube and quartic power-associativity
+separately, Elduque's symmetric composition property, larger samples (as
+reasonable; say, start with a runtime of one hour and let's review then)."
+
+Task: re-run the Section-5 empirical property tests on Min(Lambda) with
+(a) cube power-associativity (x^2*x = x*x^2) and quartic power-associativity
+(all 5 degree-4 parenthesisations of x coincide) tested SEPARATELY;
+(b) the Elduque symmetric-composition property <u*v,w> = <u,v*w> added;
+(c) substantially larger samples.
+
+Note on runtime: the harness caps a single command at 10 min; a one-hour
+single run is not possible. The test is fast (integer-doubled arithmetic),
+so a ~9-min budgeted run yields ~10^5 samples per property -- ~30-60x the
+current 2-5k. Running that; will review whether more chunks are warranted.
+
+OUTCOME (verify_section5_properties.py, 802000 samples per property, 540 s):
+  commutativity            0.017%   (paper "<0.1%" -- ok)
+  norm multiplicativity   46.72%    (paper "~47%"  -- ok)
+  left alternativity       0.187%   (paper "<0.1%" -- WRONG, true ~0.19%)
+  right alternativity      0.185%   (paper "<0.1%" -- WRONG, true ~0.19%)
+  flexibility              8.35%    (paper "~8.6%" -- slightly high)
+  cube power-assoc        30.73%    (paper "~29%" power-assoc.)
+  quartic power-assoc     12.75%    (NEW)
+  symmetric (Elduque)     25.45%    (NEW -- star is NOT a symmetric
+                                     composition algebra)
+  - Key correction for the v4 update: section 5's "<0.1%" for left/right
+    alternativity is a small-sample artifact; true value ~0.19%.
+  - Power-associativity row splits: cube 30.7%, quartic 12.7%.
+  - New row: symmetric composition <u*v,w>=<u,v*w> at 25.5%.
+  - 802k samples; SE <= 0.06%; sufficient (more chunks only marginal).
+  Recorded: paper/reviews/2026-05-22_claude_opus_4_7_section5_properties.md

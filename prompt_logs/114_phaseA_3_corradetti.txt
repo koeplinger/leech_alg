@@ -1,0 +1,39 @@
+Prompt 114 — Phase A, item (3): analyse Corradetti's Okubo / 2-adic paper
+Date: 2026-05-22
+
+User: "proceed with phase A point (3) ... here's the one I started with:
+arxiv.org/pdf/2605.09333 -- have a peek into the three newer ones as well
+(arxiv author search Corradetti, D) ... remain focused on our work at hand
+(orders on E8 and the Leech lattice)."
+
+Task: locate and read Corradetti's recent paper(s) on an order on E8 via the
+Okubo algebra and a 2-adic reduction from an overlattice; compare with our
+mod-2 reduction (item 2) and the Baez-Egan material; decide (DP5) whether
+main.tex should cite/discuss it.
+
+Status: fetching the paper and the author's recent listing.
+
+OUTCOME:
+  - Read in full: Corradetti, "Integral elements of Okubo algebra and the
+    E8-lattice", arXiv:2605.09333 (10 May 2026, 17 pp.).
+  - Surveyed (abstracts): 2605.09458 (Integral Shell Polytopes -- geometric
+    companion, same 2-adic/Okubo theme), 2605.15075, 2605.18538 (adjacent
+    composition-algebra/golden-ring/polytope work, not on point).
+  - Corradetti's paper: built on the Coxeter-Dickson order (Dickson 1923 /
+    Coxeter 1946 -- same foundation we verified). Para-octonion product
+    closes on E8 over Z (clean order). Okubo product does NOT close over Z
+    (sqrt-3 obstruction); needs Z[sqrt3]; a diagonal 2-adic scaling D=
+    diag(2,2,2,2,4,4,4,4) gives a closed Z[sqrt3]-order; its Z-shadow is a
+    conductor sublattice of E8 of index 2^12, det 2^24, min 8; E8 recovered
+    by 2-adic saturation.
+  - Parallels with our work: shared Coxeter-Dickson foundation; the Okubo/
+    Elduque/ternary theme of our section 8 Outlook; 2-primary structure
+    (his [E8:L_Ok]=2^12, our [L^3:Lambda]=2^12). Contrasts: he is 8-dim/E8
+    (not Leech); his "2-adic" is a SCALING+SATURATION, ours (item 2) is a
+    mod-2 QUOTIENT -- distinct operations, must not be conflated; our star
+    closes on Lambda over Z, his Okubo product does not close on E8 over Z.
+  - RECOMMENDATION (DP5): cite Corradetti 2605.09333 -- in section 8 Outlook
+    (Okubo-arithmetic context + contrast) and optionally section 6 (the
+    para-octonionic order on E8). Do NOT claim our mod-2 reduction equals his
+    2-adic saturation.
+  Recorded: paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md

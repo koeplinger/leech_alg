@@ -1,0 +1,25 @@
+Prompt 116 — record standard errors; Phase A item (2): mod-2-quotient write-up
+Date: 2026-05-22
+
+User: "record the standard error as well" (for the section-5 properties);
+"phase A step (2): write up the mod-2-quotient nature of the second and
+third table."
+
+Done:
+  - Standard errors computed and added to
+    paper/reviews/2026-05-22_claude_opus_4_7_section5_properties.md
+    (SE = sqrt(p(1-p)/N), N=802000): commutativity +/-0.0014%,
+    norm-mult +/-0.056%, left/right alt +/-0.0048%, flexibility +/-0.031%,
+    cube PA +/-0.052%, quartic PA +/-0.037%, symmetric +/-0.049%. The §5
+    revision instruction now also says to record the per-property SE.
+  - Item (2): wrote verify_mod2_quotient.py (re-confirms: 2L in sigma(Ls)
+    and sigma(Lsbar); the product descends to an F2-bilinear mu-bar on the
+    mod-2 quotient L/2L = F2^8 = octonion F2-algebra; V=sigma(Lsbar)/2L and
+    W=sigma(Ls)/2L are 4-dim, L/2L = V (+) W; Lemma 4.3 <=> V a left ideal,
+    Lemma 4.4 <=> W a subalgebra -- all verified).
+  - Revised Section 2 of update_brief_2026-04-29_v3.tex: reframed from
+    "replace the tables" to DP2's "keep the concrete tables, ADD their
+    mod-2-quotient nature alongside". Adopted the terminology "mod-2
+    quotient" (vs a 2-adic scaling/saturation), with a sentence delineating
+    it from Corradetti's 2-adic conductor-sublattice construction.
+    Recompiled clean (2 pp.).

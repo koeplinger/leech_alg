@@ -1,0 +1,33 @@
+Prompt 111 — Plan for the substantial update of the main paper
+Date: 2026-05-22
+
+User request (verbatim, abridged): the user is tracking updates (1) a Kirmse-
+mistake appendix; (1b) clean up the "Kirmse twist" description once Coxeter
+1946 is reviewed, and explain why sigma cannot reach a Kirmse twist; (1c) NEW
+- check whether consecutive sigma-twists close on the Leech lattice; (2) add
+the 2-adic nature of two of the three appendix tables; (3) NEW - compare that
+2-adic construction with Daniele Corradetti's recent paper (Okubo algebra,
+2-adic reduction from an overlattice, order on E8); (4) fix errors (the
+footnote). Asks what else is being tracked, and: "Make a plan ... Make a
+2026-05-22_plan.md so that we can work it down."
+
+Action: wrote 2026-05-22_plan.md at the repo root -- a full plan covering
+items (1)-(4), the items the user's list omitted (the "order" terminology;
+the scope of the historical appendix re Dickson XV / Mahler; bibliography +
+reference-file updates; companion.tex; version bump; final review; minor
+review carry-overs; disposition of the standalone Kirmse exposition),
+sequencing (Coxeter gates only 1b), and the decision points. No paper files
+changed; this is a planning step.
+
+Follow-up (prompt 112, same date): user confirmed decisions A-I.
+  A do (order terminology); B do (appendix; scope still open -> DP1);
+  C do (bibliography: Dickson, Mahler, Bruck, fix Kirmse journal name);
+  D update companion.tex in place, not frozen -- new version like the paper;
+  E update reference/evidence files; F v3->v4 (flagged most-important);
+  G several review passes; H -> expanded into item (H): split cube vs
+  quartic power-associativity, run LARGER samples for the section-5
+  statistics, add the symmetric-composition property (Elduque,
+  <u*v,w>=<u,v*w>); I keep the standalone Kirmse exposition internal.
+  Plan updated (2026-05-22_plan.md, revision 2). One open scope decision
+  remains: DP1 (Kirmse-only vs broadened historical appendix) -- AI
+  recommends broadening; awaiting user's call.

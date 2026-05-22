@@ -1,0 +1,34 @@
+Prompt 113 — Phase A, item (1c): consecutive sigma-twists
+Date: 2026-05-22
+
+User: "Re DP1: ... broad scope, which will then also include Coxeter. ...
+Let's start with phase A, (1c), examine consecutive twists."
+
+DP1 resolved: historical appendix gets broad scope (Kirmse, Dickson, Mahler,
+Coxeter). Plan updated.
+
+(1c) task: examine whether consecutive sigma-twists close on the Leech
+lattice. Two sigma-twists compose to a single twist by pi = sigma2*sigma1
+(conjugation twist x.pi y = pi^-1(pi(x).pi(y))). A product of two
+transpositions is identity, a 3-cycle (share one index), or a (2,2)-element
+(disjoint). The triple product star_pi closes on Lambda iff (paper's proof
+structure) pi(Ls).pi(Ls) <= pi(Ls) AND L.pi(Lsbar) <= pi(Lsbar). Census of
+all permutations of {1..7} by cycle type. Status: computing.
+
+OUTCOME (verify_consecutive_twists_exact.py, verify_twist_characterization.py):
+  - First attempt: a lemma criterion (pi(Ls).pi(Ls)<=pi(Ls) AND
+    L.pi(Lsbar)<=pi(Lsbar)). The 2nd lemma is sufficient but NOT necessary
+    (the three terms of a pairwise block sum are coupled by Lambda-membership).
+    A direct cross-check on Lambda caught a 3-cycle closing although the
+    criterion said no. Criterion discarded.
+  - Reliable test: built a genuine Z-basis of Lambda (24 vectors; covolume
+    2^12 verified). star_pi closes <=> all 576 basis-pair products in Lambda.
+  - RESULT (exact): identity twist -> no; single transposition -> all 21
+    close; 3-cycles -> 35 of 70 close; (2,2) doubles -> 42 of 105 close.
+    Consecutive sigma-twists DO close on Lambda, for a substantial fraction.
+  - CHARACTERISATION (Fano plane governs it): for every 3-subset exactly one
+    of the two 3-cycle orientations closes; a (2,2) (a b)(c d) never closes
+    when its three fixed indices form a Fano line (0/21) and closes for
+    exactly half otherwise (42/84).
+  Recorded: paper/reviews/2026-05-22_claude_opus_4_7_consecutive_twists.md.
+  DP7 (whether this enters the paper) deferred to the section-6 revision.
