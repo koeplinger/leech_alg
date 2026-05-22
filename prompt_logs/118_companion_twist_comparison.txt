@@ -1,0 +1,57 @@
+Prompt 118 -- Companion paper: precise description of the two twists
+Date: 2026-05-22
+
+User: "I don't understand. '$\sigma$ conjugates the product into the
+non-composition twisted product' -- our sigma is an isomorphism, is it not?
+What you mean by 'The real distinction is role, not kind'? How about you
+update the companion paper first with the proper description of the
+Coxeter-Kirmse twist, an explicit example on what exactly it modifies; and
+then separately what our sigma twist does. I need to exactly understand
+which acts on which (acting on the algebra vs acting on the vector space).
+Then I need to exactly understand how there can be no route between the two."
+
+Context: in prompt 117 I reported the Coxeter verification and (in the reply,
+not in any file) wrote a sloppy/incorrect characterisation: I said "sigma
+conjugates the octonion product into the non-composition twisted product".
+That is WRONG. sigma is orthogonal, so the sigma-conjugate product
+a ._sigma b = sigma(sigma(a).sigma(b)) IS a composition algebra -- an
+octonion algebra isomorphic to (R^8, .) via sigma. The non-composition
+object is the TRIPLE product star on R^24, a separate construction.
+
+Task: update paper/companion.tex with a precise, example-driven account of
+(1) the Coxeter-Kirmse twist and exactly what it modifies, (2) what the
+sigma-twist does, (3) which acts on the algebra vs the vector space, (4) the
+precise relationship between the two (whether there is a "route" between
+them). Correct the earlier error. This is part of plan item (1b).
+
+Status: COMPLETE.
+
+Outcome:
+- Corrected my earlier error. sigma IS an isomorphism: it is an algebra
+  isomorphism (R^8, ._sigma) -> (R^8, .). Because sigma is orthogonal,
+  ._sigma is a composition algebra -- an octonion algebra isomorphic to
+  (R^8, .). The non-composition product is the TRIPLE product star on R^24,
+  a separate construction, NOT ._sigma.
+- Added a concrete-example block to verify_coxeter_1946.py (tau = (1 2)):
+  framing-B table changes and the a1.a3 witness repaired into J_1. Verified.
+- Revised paper/companion.tex:
+  * Section 4 rewritten: proper concrete account of the Kirmse-Coxeter twist
+    -- Kirmse's table is correct, his exhibited lattice J_1 is not closed;
+    the remedy tau is a transposition of two coordinate axes (linear
+    involution of R^8); framing A (act on the lattice / vector space) and
+    framing B (act on the product / algebra) are one map; explicit verified
+    example of what tau modifies. Bruck credited.
+  * Section 5 retitled "The sigma-twist, abstractly" (was "The Coxeter
+    transposition" -- a misnomer).
+  * Section 10 rewritten: removed the false claim that Coxeter's correction
+    is "not a linear map on R^8". The two twists are the SAME kind of map
+    (coordinate transpositions); sigma=(1 2) is literally one of the 21 that
+    correct J_1. The reason no sigma-twist undoes Coxeter's fix is that
+    L = D_8^+ is invariant under every coordinate permutation (sigma(L)=L),
+    not a difference in the maps. "Different strata" = different lattices.
+  * date / authorship updated to note the 4.7 revision.
+- Companion compiles clean (10 pp, no undefined refs).
+
+The same "not a linear map" error is in main.tex (Remark rem:sigma-vs-fano
+and Section 6); main.tex is frozen v3 -- correction goes to update brief,
+plan item (1b).

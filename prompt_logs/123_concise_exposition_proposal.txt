@@ -1,0 +1,36 @@
+Prompt 123 -- User's concise summary; proposal to compress companion + fix main paper
+Date: 2026-05-22
+
+User restates understanding and proposes to (a) reduce the companion's
+clarification prose to one concise line of exposition, (b) use a concise
+version to replace the sloppy prose in the main paper. Asks "what do you
+think?" -- explicitly "if this is true, then...".
+
+Evaluation of the user's summary:
+- Same operation (swap two imaginary axes): CORRECT.
+- Kirmse/Coxeter E8 sits asymmetrically; image under sigma also asymmetric:
+  CORRECT (verified: 0 of 21 transpositions fix J_1 or any of the 7 orders).
+- sigma-twist restores the order in Kirmse/Coxeter's setting: CORRECT.
+- "21 -> 7 because associative triples are cyclically identical
+  (123)=(231)=(312)": WRONG REASON. The cyclic identity is one Fano line
+  written three ways. The 21->7 grouping that yields the 7 orders is a
+  DIFFERENT 7x3 structure: each set is 3 *disjoint* transpositions fixing one
+  common imaginary unit (Coxeter; verified -- each group's moved-set is 6,
+  fixed-set is 1). Two distinct 7x3 structures; do not conflate. Recommend
+  the concise exposition just cite "seven maximal orders (Coxeter)" with no
+  slick reason.
+- "no route from ours to theirs": conclusion CORRECT; rigorous engine is
+  sigma(L)=L => L .sigma L = sigma(L.L) <= L (the Proposition from prompt 122).
+- "sigma on Ls (and only that) makes all three Wilson conditions close":
+  PARTLY WRONG. Condition (1) [blocks in L] closes because sigma(L)=L -- the
+  "E8 representation unchanged" part the user themselves noted. The twist's
+  action on the non-invariant sublattices Ls and L s-bar closes conditions
+  (2) and (3) (Lemmas 4.3, 4.4). So: (1) <- L unchanged; (2),(3) <- Ls/Lsbar.
+
+Action: delivered evaluation + a corrected concise exposition the user can
+use. Recommended: companion keeps its worked examples (its purpose), tighten
+only the summary prose; main paper's sloppy prose (Remark rem:sigma-vs-fano,
+Section 6) replaced by a concise correct paragraph via update brief (item 1b,
+main.tex frozen). Offered to execute both.
+
+Status: COMPLETE (pending user go-ahead on execution).

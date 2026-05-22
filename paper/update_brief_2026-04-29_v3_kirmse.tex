@@ -8,129 +8,157 @@
 
 \newcommand{\OO}{\mathbb{O}}
 \newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\LL}{\Lambda}
 
 \title[Update brief II: the Kirmse twist]{Update brief~II for\\
 \emph{An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric
 triple-octonion product}\\
 \large Historical accuracy of the Kirmse--Coxeter correction}
 \author{Jens K\"oplinger}
-\date{17 May 2026}
+\date{22 May 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 The manuscript version of 29 April 2026 (v3) is frozen while under review.
-This is the \emph{second}, separate update brief for that frozen version;
-it is not to be merged with the first
-(\texttt{update\_brief\_2026-04-29\_v3.tex}, which covers a footnote
-correction and an appendix simplification).  The present brief concerns one
-topic only: how the manuscript describes the Kirmse--Coxeter correction of
-the integral octonions (the ``Kirmse twist'') --- in the Introduction, in the
-two relevant Remarks of Sections~2 and~3, and in the Section~6 historical
-paragraph.  \textbf{Its contents are provisional.}  They are to be finalised
-only after the primary sources are obtained and the history is re-derived
-from scratch.  Detailed reasoning and verbatim source quotations are in
-\texttt{paper/reviews/2026-05-17\_claude\_opus\_4\_7\_kirmse\_history\_note.md}.
+This is the \emph{second}, separate update brief for that frozen version; it
+is not to be merged with the first
+(\texttt{update\_brief\_2026-04-29\_v3.tex}, a footnote correction and an
+appendix simplification).  The present brief concerns one topic: how the
+manuscript describes the Kirmse--Coxeter correction of the integral
+octonions (the ``Kirmse twist'').  The four primary sources have now been
+obtained and verified from scratch in exact arithmetic; the brief is no
+longer provisional.  It records what was verified and the resulting
+corrections, and supplies replacement text.
 \end{abstract}
 
 % ===============================================================
-\section{Plan}
+\section{Verified from primary sources}\label{sec:verified}
 % ===============================================================
 
-The work proceeds in two steps, in order:
+Each source was read in the original and re-derived computationally;
+no secondary source was taken on trust.  Verification notes are in
+\texttt{paper/reviews/}; scripts in \texttt{python\_project/src/}.
+
+\begin{itemize}
+\item \textbf{Kirmse (1924).}  He gives a correct octonion multiplication
+  table and seeks the maximal orders.  He states there are \emph{eight}
+  (``Man findet acht solche \ldots,'' p.~70) and exhibits one, $J_1$, in
+  detail.  \emph{$J_1$ is not closed under multiplication}: the product
+  $\tfrac12(1{+}i_1{+}i_2{+}i_3)\cdot\tfrac12(1{+}i_1{+}i_4{+}i_5)
+  =\tfrac12(i_1{+}i_2{+}i_4{+}i_7)$ leaves $J_1$.  The true number of
+  maximal orders is \emph{seven}; $J_1$ is the spurious entry.
+  (\texttt{verify\_kirmse\_1924.py}; note 2026-05-20.)
+\item \textbf{Dickson (1923).}  Predating Coxeter, Dickson gave a genuine
+  integral-octonion construction --- his order $O_D$ \emph{is} closed.  His
+  Theorem~XV nonetheless undercounts (states three maximal orders; there are
+  seven), because of an extra assumption he states openly in the derivation:
+  that the orders contain the Hurwitz quaternions.  (\texttt{verify\_dickson%
+  \_1923.py}; note 2026-05-20.)
+\item \textbf{Mahler (1942).}  Ideal theory over Coxeter's order; results
+  correct, one misprint.  (\texttt{verify\_mahler\_1942.py}; note
+  2026-05-20.)
+\item \textbf{Coxeter (1946).}  Section~4 identifies Kirmse's error
+  (``Actually there are only seven''), with the \emph{same} non-closure
+  witness as above.  The remedy is due to \textbf{R.\,H.~Bruck}: ``Bruck's
+  domain $J$ can be derived from $J_1$ by transposing two of the $i$'s.''
+  That is, a transposition of two \emph{imaginary} octonion units --- a
+  linear involution of~$\RR^8$.  The $\binom72=21$ such transpositions yield
+  the seven maximal orders.  Coxeter's postscript independently identifies
+  the cause of Dickson's undercount (the integral-quaternion assumption).
+  (\texttt{verify\_coxeter\_1946.py}; note 2026-05-22.)
+\end{itemize}
+
+% ===============================================================
+\section{Corrections to the manuscript}\label{sec:items}
+% ===============================================================
 
 \begin{enumerate}
-\item[(1)] \textbf{Verify the history from primary sources.}  Obtain the
-  original papers (Section~\ref{sec:sources}), read them, and derive the
-  historical account from scratch --- confirming what is correct and
-  identifying any errors, in the manuscript and in the project's own
-  reference files.  No secondary source (Petersson, Conway--Smith,
-  Wikipedia, Baez) is to be taken on trust; they serve only as
-  cross-checks.
-\item[(2)] \textbf{Elevate the wording.}  Once the history is settled,
-  rewrite the description of the Kirmse twist.  The current wording ---
-  ``swapping two basis indices in the Fano-plane labelling'', ``there are
-  seven of them'' --- is imprecise and is to be replaced by an accurate,
-  structurally explicit account.
+\item[(a)] \textbf{The correcting operation.}  It is a transposition of two
+  \emph{imaginary coordinate axes} --- a linear involution of~$\RR^8$, the
+  same \emph{kind} of map as the manuscript's~$\sigma$.  Any wording that
+  describes it otherwise (e.g.\ as interchanging the identity with an
+  imaginary unit, or as a Fano-triple permutation that is ``not induced by a
+  linear map'') is to be removed.
+
+\item[(b)] \textbf{Credit Bruck.}  Coxeter \emph{found} the error; Bruck
+  \emph{supplied} the remedy; Coxeter published and developed it.  The
+  manuscript credits only Coxeter (Remark in Section~2.3).  Add Bruck.
+
+\item[(c)] \textbf{Remark ``$\sigma$ vs.\ a Fano-line permutation''
+  (Section~3).}  It asserts that Coxeter's correction ``rewrites the
+  multiplication table without being induced by a linear map on~$\RR^8$.''
+  This is \textbf{false}: Coxeter's correction \emph{is} a linear coordinate
+  transposition.  Replace the Remark with the text of
+  Section~\ref{sec:replacement}.
+
+\item[(d)] \textbf{Section~6 historical paragraph.}  It carries the same
+  false claim (``Coxeter's correction is a permutation of Fano \emph{triples}
+  \ldots\ without being induced by a linear map on~$\RR^8$'').  The
+  ``different strata'' framing there is correct and is kept; the
+  ``different \emph{kind} of map'' / ``not a linear map'' contrast is to be
+  replaced by the accurate statement: the two are the same kind of map (a
+  coordinate transposition), differing in the lattice each acts on ---
+  Coxeter's on a maximal-order candidate, the present~$\sigma$ on the
+  sublattice~$Ls$.
+
+\item[(e)] \textbf{Remark on Kirmse's convention (Section~2.3).}  It says
+  ``Kirmse originally proposed a specific labelling under which $D_8^+$ is
+  not closed.''  This locates the error in the multiplication table;
+  Coxeter's Section~4 --- and our verification --- locate it in the
+  \emph{lattice} Kirmse exhibited ($J_1$): his table is itself a correct
+  octonion algebra.  Re-word so the error is the choice of lattice, and so
+  that Kirmse is recorded as stating \emph{eight} maximal domains where
+  there are seven.
+
+\item[(f)] \textbf{Bibliography.}  Add Dickson (1923); optionally Mahler
+  (1942).  A broader historical appendix (treating all four sources) is a
+  separate deliverable; this brief covers only the wording of the twist.
 \end{enumerate}
 
-\noindent
-Everything in Sections~\ref{sec:sources}--\ref{sec:items} below is
-\emph{pending} step~(1).  Nothing here is final.
-
 % ===============================================================
-\section{Primary sources to obtain}\label{sec:sources}
+\section{Replacement text}\label{sec:replacement}
 % ===============================================================
 
-The mathematical facts in this area ($E_8$ is a maximal order; there are
-seven; the twist yields a closed order) are to be verified
-\emph{computationally} in-project, not cited.  Only the \emph{historical}
-record requires the original documents:
+The following replaces the Remark ``$\sigma$ vs.\ a Fano-line permutation.''
 
-\begin{itemize}
-\item \textbf{Kirmse (1924)} --- \emph{required.}  J.~Kirmse, ``\"Uber die
-  Darstellbarkeit nat\"urlicher ganzer Zahlen als Summen von acht Quadraten
-  \ldots,'' Ber.\ Verh.\ S\"achs.\ Akad.\ Wiss.\ Leipzig, Math.-Phys.\ Kl.\
-  \textbf{76} (1924), 63--82.  German.  Settles whether Kirmse proposed one
-  lattice or seven.
-\item \textbf{Coxeter (1946)} --- \emph{required.}  H.\,S.\,M.~Coxeter,
-  ``Integral Cayley numbers,'' Duke Math.\ J.\ \textbf{13} (1946), 561--578.
-  Settles the precise form of the correction and how Bruck is credited.
-  Paywalled online; needs a library.
-\item \textbf{Dickson (1923)} --- \emph{recommended; already free online}
-  (Numdam).  L.\,E.~Dickson, ``A new simple theory of hypercomplex
-  integers,'' J.~Math.\ Pures Appl.\ (9) \textbf{2} (1923), 281--326.
-\item \textbf{Mahler (1942)} --- \emph{optional, not load-bearing.}
-  K.~Mahler, ``On ideals in the Cayley--Dickson algebra,'' Proc.\ Roy.\
-  Irish Acad.\ Sect.\ A \textbf{48} (1942), 123--133.
-\end{itemize}
+\begin{quote}
+\textbf{Remark} ($\sigma$ and the Coxeter correction).
+The Coxeter--Bruck correction of Kirmse's integral-octonion convention and
+the present~$\sigma$ are the same kind of map: a transposition of two
+imaginary coordinate axes, a linear involution of~$\RR^8$.  Like any
+coordinate transposition, each rewrites the multiplication table --- it does
+not preserve the Fano line structure --- but each \emph{is} induced by a
+linear map.  The two differ only in what they act on.  Coxeter's
+transposition repairs a maximal-order candidate that sits asymmetrically
+in~$\RR^8$.  The present~$\sigma$ acts where the order is $L = D_8^+$, which
+is invariant under every coordinate permutation; hence $\sigma(L) = L$ and
+\[
+  L \cdot_\sigma L \;=\; \sigma(L \cdot L) \;\subseteq\; L,
+\]
+so the twist preserves the $E_8$-level closure automatically.  The twist's
+effect falls entirely on the sublattices $Ls$ and $L\bar s$, which are not
+$\sigma$-invariant: that is what redirects Wilson's sublattice conditions.
+\end{quote}
 
 \noindent
-There is no separate Bruck publication; his correction is recorded within
-Coxeter (1946).
+The Section~6 paragraph is corrected to the same effect, keeping its
+``different strata'' language: Coxeter's transposition and~$\sigma$ are one
+kind of operation, applied at different strata --- Coxeter's to the $E_8$
+order, $\sigma$ to the condition-(3) sublattice.
 
 % ===============================================================
-\section{Items provisionally identified}\label{sec:items}
+\section*{Note on the companion document and reference files}
 % ===============================================================
 
-The following are the candidate changes, \textbf{each pending verification}
-in step~(1).  They are recorded here so the digest has a starting point.
-
-\begin{itemize}
-\item \textbf{Credit Bruck.}  The secondary record (Petersson 2018)
-  attributes the actual correction to R.\,H.~Bruck, with Coxeter publishing
-  it.  The manuscript credits only Coxeter.  To be confirmed against
-  Coxeter (1946) and then corrected in the prose.
-\item \textbf{The correcting operation.}  The secondary record describes it
-  as interchanging the identity element with one imaginary unit (seven
-  choices $\to$ seven maximal orders), \emph{not} as ``swapping two basis
-  indices in the Fano-plane labelling.''  The accurate description --- and
-  its precise relation to the manuscript's transposition~$\sigma$ of two
-  \emph{imaginary} units --- is to be established from Coxeter (1946).
-\item \textbf{Re-examine the Remark contrasting $\sigma$ with a Fano-line
-  permutation.}  It currently asserts that Coxeter's correction is ``not
-  induced by a linear map on~$\RR^8$.''  If the correction is a coordinate
-  interchange, that assertion is wrong and the intended contrast must be
-  restated.  To be settled from Coxeter (1946).
-\item \textbf{Did Kirmse propose seven orders?}  The secondary sources
-  disagree.  This is the central open historical question and is to be
-  decided from Kirmse (1924) itself, cross-checked with Coxeter (1946).
-\item \textbf{Dickson's priority.}  Dickson (1923) reportedly gave a correct
-  integral-octonion construction more than twenty years before Coxeter.
-  Whether, and how, to record this (and to cite Dickson, and optionally
-  Mahler) is to be decided after reading Dickson (1923).
-\item \textbf{Project reference files.}  \texttt{background\_octonions.txt}
-  and \texttt{terminology.md} are to be checked for the same issues,
-  including a discrepancy in the name of Kirmse's journal.
-\end{itemize}
-
-% ===============================================================
-\section*{Note on the companion document}
-% ===============================================================
-
-\texttt{companion.tex} carries the same imprecise wording.  It is a frozen
-training document and is not edited here, but the same correction should be
-applied if the companion is ever revised.
+\texttt{companion.tex} has been revised (22 May 2026); its Sections~4
+and~10 now carry the corrected, example-driven account and a short
+proposition that $L \cdot_\sigma L \subseteq L$ for every coordinate
+transposition.  The project reference files
+(\texttt{background\_octonions.txt}, \texttt{terminology.md}) are still to
+be checked for the same imprecise wording and for a discrepancy in the name
+of Kirmse's journal.
 
 \end{document}

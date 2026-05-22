@@ -1,0 +1,36 @@
+Prompt 121 -- Evaluate user's proposed framing of the two tweaks
+Date: 2026-05-22
+
+User: "These are good additions and help me understand it. How do you feel
+about this framing: The twist sigma=(1 2) on Kirmse's J_1 maps the lattice
+into one that closes on Kirmse's concrete octonion multiplication rules.
+Coxeter changed not just the way E8 sits in R^8, but also the multiplication
+rule to the elegant cyclic labelling. With both of these tweaks (J_1 to L,
+Kirmse-octonion table to Coxeter-cyclic-octonion table), the construction now
+leaves L invariant under sigma."
+
+Evaluation given:
+- Claim 1 (sigma=(1 2) on J_1 gives a lattice closed under Kirmse's .K):
+  CORRECT, verified.
+- Main correction: sigma(L)=L is a PURELY GEOMETRIC fact about L=D_8^+ as a
+  point set; it does NOT depend on the octonion multiplication table at all.
+  Changing the table contributes nothing to sigma-invariance. sigma(L)=L
+  (geometric, table-independent) and L.L<=L (algebraic, table-dependent) are
+  two separate properties; the framing fuses them.
+- Claim 2 (Coxeter changed the table to the cyclic {n,n+1,n+3} labelling):
+  UNSUPPORTED / wrong. Verified earlier (prompt 117, C1): Coxeter's table
+  (4.1) reproduces Kirmse's table (1) exactly. Coxeter's correction kept
+  Kirmse's table and moved the lattice (Bruck's transposition). The cyclic
+  labelling is a standard modern convention (quadratic residues mod 7), not
+  attributable to Coxeter's correction. (Main paper's loose "Coxeter-
+  corrected convention" wording is already flagged for update brief 1b.)
+- sigma(J_1) is one of the 7 maximal orders of Kirmse's octonions, NOT the
+  paper's D_8^+; the twist does not take J_1 to L.
+- Offered a cleaner framing: two independent choices -- (1) lattice L=D_8^+,
+  the coordinate-symmetric placement => sigma(L)=L; (2) a good table => L
+  closed. Both needed, neither causes the other.
+
+Action: evaluation delivered in reply; offered to fold the corrected framing
+into companion.tex if the user wants. No file edits this turn.
+
+Status: COMPLETE (pending user decision on whether to update companion).

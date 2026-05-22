@@ -1,0 +1,35 @@
+Prompt 120 -- Companion: why "sigma fixes L" and "sigma moves J_1" do not conflict
+Date: 2026-05-22
+
+User: "Ok. One gap in our understanding: I always understood sigma as a
+placeholder that permits the concrete example of flipping axes (1, 2) but
+that's just the working concrete example (just like the representation of
+Coxeter's octonion multiplication is a concrete working example).
+
+You write: 'sigma fixes L (sigma(L)=L, because D_8^+ is symmetric under every
+coordinate permutation).' but before that you also wrote 'Kirmse's table .K
+together with Kirmse's lattice J_1. The transposition sigma=(1 2) repairs
+that pair: sigma(J_1) is closed under .K.' -- why is this not a contradiction?"
+
+Answer: not a contradiction -- sigma(L)=L and sigma(J_1)!=J_1 are statements
+about two DIFFERENT lattices. A coordinate transposition is one fixed map on
+R^8; whether it fixes a given lattice X depends on X's own symmetry. L=D_8^+
+and J_1 are both E8-type lattices but PLACED differently in R^8 relative to
+the coordinate axes: L is the maximally symmetric placement (invariant under
+every coordinate permutation); J_1 is a placement invariant under none of the
+21 imaginary-axis transpositions. "Being E8" fixes the isometry type, not the
+placement; only the placement decides coordinate symmetry. sigma fixing L and
+moving J_1 is not a paradox -- it is the mechanism: sigma must fix the lattice
+that stays closed (L) and move the lattices whose closure is redirected
+(J_1 for Coxeter, Ls for us).
+
+Verified: sigma=(1 2) moves J_1 -- sigma(a_3) leaves J_1's code
+(verify_coxeter_1946.py shows all 21 transpositions send J_1 to domains
+distinct from J_1); D_8^+ invariant under all coordinate permutations.
+
+Action: added a clarifying paragraph to companion.tex Section 10.
+
+Status: COMPLETE. Companion Section 10 gains a clarifying paragraph
+(sigma fixes L, moves J_1 -- not a contradiction; placement vs isometry
+type; D_8^+ chosen precisely because it is the coordinate-symmetric
+placement). Compiles clean (11 pp).

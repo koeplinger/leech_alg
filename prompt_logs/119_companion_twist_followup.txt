@@ -1,0 +1,37 @@
+Prompt 119 -- Companion: unify symbol, answer "are we undoing Coxeter's fix?"
+Date: 2026-05-22
+
+User: "Whew. You had me seriously scared here for a moment. Yes, both
+Coxeter-Kirmse and our twists are of the same nature but acting differently.
+Let's keep a clear terminology 'algebra isomorphism' then.
+
+In the rewritten companion.tex, before reading it closely, why do you use the
+symbol tau for the transposition of two coordinate axes in the Kirmse-twist
+example? If it is the same as our sigma, then why not use it? If one of our
+sigma twists is _exactly_ the twist that fixed Kirmse's mistake, how is it
+that we're not making a mistake? Wilson's first condition requires each block
+to lie in L. Our triple-octonion product closes per block. We're undoing the
+fix to Kirmse's mistake. How can this not be a mistake?"
+
+(Note: should have logged this prompt before doing the work; logged after.)
+
+Task: (a) use one symbol sigma throughout the companion, not tau; (b) answer,
+in the companion itself, the worry that the sigma-twist "undoes" Coxeter's
+fix and breaks Wilson's condition (1).
+
+Resolution:
+- tau -> sigma throughout companion.tex (sed). Section 4 reworded to state
+  the single-symbol convention explicitly: same kind of map; what differs is
+  the algebra/lattice it acts on, not the map.
+- The worry is answered in Section 10, new closing subsection "Condition (1)
+  is Coxeter's fix carried through, not undone":
+    * For u,v in Lambda <= L^3, every block of u star_sigma v is a sum of
+      sigma-twisted products of L-elements; L .sigma L <= L (since
+      sigma(L)=L), so every block lands in L. Wilson condition (1) holds.
+    * Condition (1) holding IS Coxeter's L.L<=L carried through the twist.
+      The construction depends on the fix, does not undo it.
+    * "Using one of Coxeter's transpositions" =/= "undoing Coxeter's fix":
+      the fix is a fact about (._K, J_1); the twist acts on (., Ls).
+- Companion recompiles clean (11 pp, no undefined refs).
+
+Status: COMPLETE.

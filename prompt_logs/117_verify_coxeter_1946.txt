@@ -1,0 +1,53 @@
+Prompt 117 — Verification of Coxeter 1946 ("Integral Cayley numbers")
+Date: 2026-05-22
+
+User: "I have obtained screenshots of the Coxeter paper and placed them in
+/home/jens/tmp/LeechAlg_1920s-1940s/Coxeter1946/. Just like with the other
+works (Kirmse, Dickson, Mahler) analyse [Coxeter] and make a write-up."
+(The message says "analyse Kirmse" -- a slip; the obtained paper is Coxeter,
+and Kirmse/Dickson/Mahler are named as the works already done.)
+
+Source: H. S. M. Coxeter, "Integral Cayley numbers", Duke Math. J. 13 (1946),
+561-578. Screenshots in LeechAlg_1920s-1940s/Coxeter1946/.
+
+Task: read Coxeter 1946, verify from scratch, write a verification note --
+in particular pin down (a) the precise nature of Coxeter's correction of
+Kirmse's construction (resolves the "Kirmse twist" wording in our paper),
+(b) Bruck's role, (c) the count of maximal orders, (d) the postscript on
+Dickson/Mahler. This unblocks plan items (1b) and the Coxeter part of (1).
+
+Status: COMPLETE.
+
+Outcome:
+- Read Coxeter 1946 in full (pp. 561-578).
+- Wrote verify_coxeter_1946.py: re-checks all six Section-4 claims (C1-C6)
+  from Kirmse's own table (1) and order J_1. Every claim verified:
+    C1  Coxeter's (4.1) = Kirmse's table (1), a composition algebra.
+    C2  7 maximal orders (of 30 E8-type candidates), not 8; J_1 not closed.
+    C3  witness 1/2(1+i1+i2+i3).1/2(1+i1+i4+i5) = 1/2(i1+i2+i4+i7) -- exact;
+        identical to the witness found independently in verify_kirmse_1924.py.
+    C4  all 21 transpositions of imaginary axes send J_1 to a closed domain.
+    C5  21 transpositions -> 7 distinct domains, 7 sets of 3, each fixing one
+        special unit; the 7 = the 7 maximal orders, all distinct from J_1.
+    C6  'transpose the elements' = 'transpose the table' (one linear map).
+- Verification note: paper/reviews/2026-05-22_claude_opus_4_7_coxeter_1946_
+  verification.md.
+
+Key findings:
+(a) Correction = "transposing two of the i's" (Coxeter 1946, Sec.4) -- a
+    LINEAR coordinate transposition, the same KIND of map as our sigma.
+    => the paper's Remark rem:sigma-vs-fano and the Sec.6 paragraph are
+    WRONG where they say Coxeter's correction is "not induced by a linear
+    map on R^8". Expository, non-load-bearing; correction goes to item (1b).
+(b) Bruck's role: error found by Coxeter; remedy supplied by Bruck; published
+    /developed by Coxeter. Paper should credit Bruck.
+(c) Count: Coxeter asserts seven (takes the count from Kirmse minus the bad
+    one); identifies which seven; proves J maximal (Sec.11).
+(d) Postscript (Sec.14): Coxeter learned of Dickson 1923 / Mahler 1942 via
+    O. Taussky Todd after writing the paper. He explains Dickson's undercount
+    by the "very artificial requirement that the integral Cayley numbers
+    should include the integral quaternions" -- independent confirmation of
+    our Dickson 1923 verification (Theorem XV, 3 vs 7).
+
+The 1920s-40s source-verification set (Kirmse, Dickson, Mahler, Coxeter) is
+now complete. Unblocks plan items (1) and (1b).

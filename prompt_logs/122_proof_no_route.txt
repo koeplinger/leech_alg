@@ -1,0 +1,41 @@
+Prompt 122 -- "Did I get it?" + proof that there is no route to Kirmse's mistake
+Date: 2026-05-22
+
+User: confirms the breakthrough ("J_1 -> L is not performed by the twist;
+L is a separately, deliberately chosen lattice"). Restates understanding:
+Coxeter rotates both lattice and table into a coordinate-symmetric form;
+sigma leaves L invariant and is an algebra isomorphism; in Kirmse's
+representation the same sigma would generally not work. Asks: can we PROVE
+there is no route from our sigma to making Kirmse's mistake? Proposes a
+one-line proof: "sigma(L)=L always, and sigma(J_1) is not coordinate-
+symmetric always. Hence no route."
+
+Assessment:
+- Breakthrough is correct and now genuinely understood. Affirmed.
+- The proof: the ingredient sigma(L)=L IS the proof; the sigma(J_1) clause is
+  extraneous (J_1 is not part of the paper's construction at all) and should
+  be dropped. Clean proof: L=D_8^+ is coordinate-symmetric so sigma(L)=L;
+  the paper establishes L.L<=L; hence L .sigma L = sigma(L.L) <= sigma(L) = L
+  for every coordinate transposition sigma. No sigma-twist breaks E8-level
+  closure. (Two ingredients: sigma(L)=L geometry, and L.L<=L the paper's
+  computation; the conjugation identity finishes it.)
+- Recurring misattribution corrected again: Coxeter did NOT relabel to the
+  cyclic table, and Coxeter's corrected order J is NOT D_8^+ (it is one of
+  the non-coordinate-symmetric Kirmse orders). The symmetric representation
+  (L=D_8^+ + cyclic table) is a modern/Wilson choice of coordinates, not
+  Coxeter's.
+- "sigma is an algebra isomorphism" is automatic for any table and any sigma;
+  not specific to the symmetric representation.
+
+Verification added to verify_coxeter_1946.py: no coordinate transposition
+fixes J_1 or any of the 7 maximal orders of Kirmse's table (confirms the
+Kirmse representation is genuinely non-coordinate-symmetric).
+
+Verification result: 0 of 21 transpositions fix J_1; 0 of 21 fix any of the
+7 maximal orders of Kirmse's table. Confirmed: Kirmse's representation is
+genuinely non-coordinate-symmetric -- no maximal order there is sigma-
+invariant for any transposition. (Contrast: D_8^+ is fixed by every
+coordinate permutation.)
+
+Status: COMPLETE. Reply delivered; offered to add the proof as a crisp
+proposition to companion.tex.

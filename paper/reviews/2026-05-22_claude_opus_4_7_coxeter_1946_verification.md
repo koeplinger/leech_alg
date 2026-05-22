@@ -1,0 +1,169 @@
+# Primary-source verification — Coxeter (1946), "Integral Cayley numbers"
+
+**Date:** 2026-05-22
+**Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
+**Prompt:** 117. Fourth and last source paper of the 1920s–40s set
+(after Kirmse 1924, Dickson 1923, Mahler 1942).
+**Source read:** H. S. M. Coxeter, *Integral Cayley numbers*, Duke Math. J.
+**13** (1946), 561–578. Read in full from screenshots of the *Twelve
+Geometric Essays* reprint (pp. 561–578, original pagination).
+**Reproducible check:** `python_project/src/verify_coxeter_1946.py` — every
+Section-4 claim re-checked from Kirmse's own table (1) and order $J_1$.
+
+---
+
+## What Coxeter did
+
+The paper has three parts. (i) §§1–3: a proof of the eight-square theorem
+from the octonions, and the Fano-plane / 168-group machinery. (ii) §§4–5:
+*Kirmse's mistake* and the corrected integral domain $J$ with its 240 units.
+(iii) §§6–13: the geometric development — $J$ is the $E_8$ lattice, its 240
+units are the vertices of Gosset's polytope $4_{21}$, and $J$ itself is the
+honeycomb $5_{21}$, the densest sphere packing in eight dimensions; §§11–13
+prove $J$ maximal and enumerate its short vectors. §14 is a postscript.
+
+Our interest is §4 (pp. 565–566), where Coxeter examines Kirmse 1924, and
+§14, where he acknowledges Dickson 1923 and Mahler 1942.
+
+## §4 — "Kirmse's mistake" — verified from scratch
+
+Coxeter's Section-4 claims, each re-checked against Kirmse's own data
+(table (1), Kirmse p. 64; the domain $J_1$, Kirmse p. 70 — the same data
+already used in `verify_kirmse_1924.py`):
+
+| # | Coxeter's claim | result |
+|---|---|---|
+| C1 | his table (4.1) is Kirmse's table (1); a composition algebra | **confirmed** |
+| C2 | Kirmse states eight maximal domains; "actually there are only seven" | **confirmed** — 7 of the 30 $E_8$-type lattices are closed |
+| C3 | $J_1$ is not closed: $\tfrac12(1{+}i_1{+}i_2{+}i_3)\cdot\tfrac12(1{+}i_1{+}i_4{+}i_5)=\tfrac12(i_1{+}i_2{+}i_4{+}i_7)$, "not one of the 240 units" | **confirmed** — product reproduces exactly; it is norm 1 but $\notin J_1$ |
+| C4 | "Bruck's domain $J$ can be derived from $J_1$ by transposing two of the $i$'s"; the result is closed | **confirmed** — all 21 transpositions send $J_1$ to a closed domain |
+| C5 | the 21 transpositions "fall into 7 sets of 3" → seven domains | **confirmed** — 7 distinct images, sets of size $[3,3,3,3,3,3,3]$, each set fixing exactly one $i$ |
+| C6 | (implicit) "$J_1$ could be used as it stands if we replaced his multiplication table" — transposing the elements ⇔ transposing the table | **confirmed** as an identity, for every candidate lattice |
+
+Coxeter's §4 is **correct in every checked claim.** His witness product is
+*identical* to the one found independently in our Kirmse verification
+(2026-05-20): $\tfrac12(i_1+i_2+i_4+i_7)$. The picture is exact — Kirmse's
+eight = the spurious $J_1$ together with seven genuine orders; $J_1$ is the
+one that is not closed; and the seven transposition-images of $J_1$ *are*
+the seven maximal orders.
+
+## Bruck's role
+
+Coxeter found the error himself ("We easily verify that $J_1$ itself is not
+closed under multiplication"). He then told R. H. Bruck, who "sent me a
+revised description of such a domain." The fix — transposing two of the
+$i$'s — is **Bruck's**; Coxeter verified it (§5), proved it maximal (§11),
+and supplied the geometric $E_8$ development. The introduction (p. 561)
+thanks Bruck "for pointing the way out of the impasse into which Kirmse's
+mistake had led me." So: **error identified by Coxeter, remedy supplied by
+Bruck, published and developed by Coxeter (1946).**
+
+## §14 — the postscript: Dickson and Mahler
+
+Coxeter learned of Dickson 1923 and Mahler 1942 only *after* writing the
+paper, when Olga Taussky Todd drew his attention to Mahler [15], which cites
+Dickson [9]. The postscript records:
+
+- **Dickson's undercount, explained by Coxeter exactly as we found it.**
+  Coxeter writes that Dickson "asserted … that there are only three systems
+  which include all the eight basic units … He misused the remaining four of
+  the seven systems by adding the very artificial requirement that the
+  integral Cayley numbers should include the integral quaternions
+  $\tfrac12(\pm1\pm i\pm j\pm k)$." This is **independent confirmation of our
+  Dickson 1923 verification** (2026-05-20): Theorem XV states three where
+  there are seven, and the cause is the Hurwitz-quaternion restriction.
+- Coxeter notes the seven systems can be described as specializing, in turn,
+  one of the seven units $i,j,k,e,ie,je,ke$; Dickson specialized $i$,
+  Coxeter $e$ (preserving the cyclic symmetry of $i,j,k$).
+- **Mahler.** Coxeter remarks that Mahler's theorem [15; 127], called "not
+  easy to prove" — for every Cayley number $X$ there is an integral $G$ with
+  $N(X-G)\le\tfrac12$ — is an immediate consequence of his §11 (Dickson had
+  only $5/4$ in place of $\tfrac12$). He also restates Mahler's result that
+  every left (or right) ideal is principal, generated by an integral Cayley
+  number of norm 1, 2 or 4.
+
+## Implication for our paper — a required correction
+
+Our paper twice characterises Coxeter's correction in a way that **Coxeter's
+own text (verified above) contradicts.**
+
+- **Remark "$\sigma$ vs. a Fano-line permutation"** (`rem:sigma-vs-fano`):
+  "[$\sigma$] is structurally different from a permutation of Fano triples
+  (such as the one Coxeter used to correct Kirmse's $E_8$ convention), which
+  rewrites the multiplication table **without being induced by a linear map
+  on $\RR^8$**."
+- **§6 related work:** "Coxeter's correction is a permutation of Fano
+  *triples*: it rewrites the multiplication table **without being induced by
+  a linear map on $\RR^8$**. The present $\sigma$ is a permutation of
+  *coordinate axes*: a linear involution of $\RR^8$ …"
+
+Both passages set up a dichotomy — Coxeter's correction is *not* a linear
+map; $\sigma$ *is* — that is **false**. Coxeter 1946 §4 states the correction
+in plain words: "Bruck's domain $J$ can be derived from $J_1$ **by
+transposing two of the $i$'s**." A transposition of two imaginary octonion
+units is a transposition of two coordinate axes — a **linear involution of
+$\RR^8$**, exactly the same *kind* of map as our $\sigma=(1\;2)$. Claim C4
+verifies it directly; claim C6 verifies that "transpose the elements" and
+"transpose the table" are the one linear operation seen from two sides — the
+very point our Remark mistakes for a categorical difference.
+
+The genuine distinction between Coxeter's correction and $\sigma$ is one of
+**role, not kind**:
+
+- Coxeter–Bruck's transposition is applied **once**, to repair Kirmse's
+  choice of *lattice*: it carries the spurious $J_1$ onto a genuine maximal
+  order. The product remains an octonion (composition) multiplication.
+- Our $\sigma$ **conjugates** the octonion product into the *twisted* product
+  $\cdot_\sigma$, which is *not* a composition algebra (§5), to redirect the
+  $Ls$-closure obstruction at the Leech-lattice stratum.
+
+The paper's "different strata" framing (Coxeter's at the $E_8$ stratum,
+$\sigma$ at the sublattice stratum) is **correct and should be kept.** What
+must be removed is the claim that Coxeter's correction is "not induced by a
+linear map on $\RR^8$," together with the false implication that it and
+$\sigma$ are different *kinds* of operation. Both are coordinate
+transpositions; both, as a by-product, permute the Fano triples (the Remark
+itself notes $\sigma$ does not preserve the Fano lines).
+
+This is an **expository/historical correction, not load-bearing**: no lemma,
+proposition, or theorem depends on it. It belongs to plan item (1b).
+
+A softer, second point for (1b): Remark `rem:kirmse` says "Kirmse originally
+proposed a specific labelling under which $D_8^+$ is not closed." Coxeter's
+§4 — and our verification — locate Kirmse's error not in his multiplication
+*table* (table (1) is a correct octonion algebra, C1) but in his choice of
+*lattice*: the domain $J_1$ he exhibited as maximal is not closed. The
+sentence should be re-examined so that it locates the error where Coxeter
+and Kirmse's own text put it.
+
+## The four source papers, settled
+
+| paper | exhibited construction | claimed count | true count |
+|---|---|---|---|
+| **Dickson 1923** | $O_D$ — a genuine maximal order | **3** (Thm XV) | 7 |
+| **Kirmse 1924** | $J_1$ — not closed, not an order | **8** (p. 70) | 7 |
+| **Mahler 1942** | ideal theory over Coxeter's order | — | (results correct; one misprint) |
+| **Coxeter 1946** | $J$ = Bruck's corrected order | **7** | 7 |
+
+**Coxeter 1946 is the paper that first has the count right** — and it is
+right because §4 corrects Kirmse and §14 corrects Dickson. Coxeter
+nonetheless takes the *count* seven from Kirmse's enumeration ("which
+presumably are the remaining seven of his eight") rather than re-deriving it;
+his contribution is to identify *which* seven and to prove one of them
+($J$) maximal. The rigorous, self-contained statement that there are exactly
+seven, all equivalent under the automorphism group, is the modern account
+(Conway–Smith 2003).
+
+## Status
+
+Coxeter 1946: **verified** — Section 4 correct in every checked claim;
+postscript consistent with our Dickson and Mahler verifications. The
+1920s–40s source-verification set (Kirmse, Dickson, Mahler, Coxeter) is now
+**complete.**
+
+Facts vs. interpretation: claims C1–C6 (the witness, the count seven, the
+21→7 transposition structure, the framing duality) are **verified facts**.
+The reading of §14 and of Bruck's role is a faithful transcription of
+Coxeter's text. The recommendation to correct `rem:sigma-vs-fano` and the §6
+paragraph follows directly from C4/C6 and from Coxeter's own wording
+("transposing two of the $i$'s").

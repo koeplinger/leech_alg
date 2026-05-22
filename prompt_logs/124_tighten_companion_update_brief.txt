@@ -1,0 +1,30 @@
+Prompt 124 -- Tighten companion Section 10; fill in the Kirmse update brief
+Date: 2026-05-22
+
+User: "Yes perfect. I got it. Do it: tighten the companion but keep the
+worked hand-checkable examples; and update the Kirmse update brief. Both
+need to be dated as of today (22 May 2026)."
+
+Task:
+- companion.tex: tighten Section 10 to the concise corrected exposition
+  (same operation; sigma(L)=L => no route; Ls/Lsbar action is the point),
+  keeping all worked hand-checkable examples (those live in Sections 4-6, 11
+  and are untouched). Date shows 22 May 2026.
+- update_brief_2026-04-29_v3_kirmse.tex: fill in / update with the concise
+  correct paragraph for the main paper -- the replacement for Remark
+  rem:sigma-vs-fano and the Section 6 prose (plan item 1b). Date 22 May 2026.
+
+Done:
+- companion.tex Section 10 tightened from ~112 lines to ~40: concern +
+  Proposition (L .sigma L <= L for every coordinate transposition, with
+  two-line proof) + two paragraphs (condition (1) carried through; the
+  Ls/Lsbar action; placement-not-type). Added \newtheorem*{proposition}.
+  All worked examples (Sections 4-6, 11) untouched. Compiles clean, 10 pp.
+- update_brief_2026-04-29_v3_kirmse.tex rewritten from skeleton/plan to
+  finalised brief, dated 22 May 2026: Section 1 "Verified from primary
+  sources" (the 4 sources, findings); Section 2 corrections (a)-(f) to the
+  manuscript; Section 3 replacement text for the Remark and Section 6;
+  closing note (companion revised; reference files still to check).
+  Compiles clean, 2 pp.
+
+Status: COMPLETE.
