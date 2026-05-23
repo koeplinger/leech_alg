@@ -1,0 +1,19 @@
+Prompt 145 -- Introduction: remove undefined technical elements
+Date: 2026-05-23
+
+User: two specific rewrites in the Introduction to strip undefined
+elements (Ls.Ls<=Ls, sigma(Ls), Lemma 4.3/4.4 numbers) that don't
+belong in an intro:
+1. "The third (the block-sum condition, x+y+z in Ls) requires the
+   inclusion Ls.Ls<=Ls, which fails: Ls is not closed under the
+   octonion product." -> "The third, however, is not closed under
+   the octonion product."
+2. "but it moves the sublattices Lsbar and Ls that Wilson's
+   conditions invoke; the obstruction Ls.Ls not subseteq Ls becomes
+   sigma(Ls).sigma(Ls) subseteq sigma(Ls) (Lemma 4.4), and a parallel
+   inclusion holds for Lsbar (Lemma 4.3)." -> "but it moves Wilson's
+   sublattices such that inclusion holds."
+
+Applied. main.pdf 20 pp, compiles clean.
+
+Status: COMPLETE.
