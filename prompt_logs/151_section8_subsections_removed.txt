@@ -1,0 +1,16 @@
+Prompt 151 -- §8 subsection headers removed
+Date: 2026-05-23
+
+User: "In section 8, remove the two subsection headers 8.1 and 8.2 but
+keep the prose unchanged. It sayd it all."
+
+Action: removed
+- \subsection{A ternary reformulation}
+- \subsection{Algebraic models in physics}
+
+from paper/main.tex.  The two paragraphs of prose under §8 Outlook now
+flow as a continuous outlook without internal headers.
+
+Paper rebuilds clean at 20 pages.
+
+Status: COMPLETE.
