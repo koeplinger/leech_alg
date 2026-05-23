@@ -247,7 +247,7 @@ $\ZZ$-basis of~$L$ and exact rational arithmetic, with all 64 basis
 products integer combinations of the basis.  Because $L = D_8^+$ is
 fixed by every coordinate permutation, this closure is invariant
 under any Kirmse-twist of the product -- including the
-present~$\sigma$ (Remark~\ref{rem:sigma-vs-fano}).
+present~$\sigma$.
 \end{remark}
 
 \begin{remark}[Closure of the lattice, not the shells]\label{rem:shells}
@@ -286,7 +286,7 @@ argument of~\cite[Section~3]{Wilson2009}). For~$Ls$, the subgroup
 property is likewise immediate from $s \in L$. Closure under
 left-multiplication by~$L$, by contrast, holds for~$L\bar s$ but
 \emph{fails} for~$Ls$ -- and that failure is precisely the
-obstruction resolved by the twist (Remark~\ref{rem:Ls-not-closed}).}
+obstruction resolved in this paper (Remark~\ref{rem:Ls-not-closed}).}
 with
 $[L : L\bar{s}] = [L : Ls] = 16$,
 $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$
@@ -365,56 +365,6 @@ since $\sigma^2 = \mathrm{id}$.  Thus $\sigma: (\OO, \cdot) \to
 (\RR^8, \cdot_\sigma)$ is a vector-space isomorphism that preserves
 multiplication.  Composition follows.
 \end{proof}
-
-\begin{remark}[$\sigma$ and the Coxeter--Bruck correction]
-\label{rem:sigma-vs-fano}
-The Coxeter--Bruck correction of Kirmse's integral-octonion convention
-and the present~$\sigma$ are the same kind of map: a transposition of
-two imaginary coordinate axes, a linear involution of~$\RR^8$.  Like
-any coordinate transposition, each rewrites the multiplication table
--- it does not preserve the Fano line structure (e.g.\ $\sigma =
-(1\;2)$ does not send the triple~$(2,3,5)$ in~\eqref{eq:fano} to any
-of the other six listed there) -- but each \emph{is} induced by a
-linear map.  The two differ only in the lattice on which they act.
-Coxeter--Bruck's transposition repairs a maximal-order candidate
-that sits asymmetrically in~$\RR^8$.  The present~$\sigma$ acts
-where the order is $L = D_8^+$, which is invariant under every
-coordinate permutation; hence $\sigma(L) = L$ and
-\[
-  L \cdot_\sigma L \;=\; \sigma(L \cdot L) \;\subseteq\; L,
-\]
-so the twist preserves the $E_8$-level closure automatically.  Its
-effect falls entirely on the sublattices $Ls$ and $L\bar s$, which
-are not $\sigma$-invariant: that is what redirects Wilson's
-sublattice conditions.  We expand on this in
-Section~\ref{sec:related}, and a historical synthesis of the
-1923--1946 development is in
-Appendix~\ref{app:history}.
-\end{remark}
-
-To make the action of~$\sigma$ on the multiplication concrete, we
-record the count of changed entries.
-
-\begin{remark}\label{rem:table-diffs}
-For the transposition $\sigma = (1\;2)$, exactly 30 of the 64
-multiplication table entries change relative to the standard table:
-6~entries undergo a sign change only, 16~undergo a target-index change
-only, and 8~undergo both.
-\end{remark}
-
-\begin{remark}\label{rem:unique}
-The 21~transpositions of $\{1, \ldots, 7\}$ form a single orbit under
-the Fano-plane automorphism group $\GL(3, \FF_2)$ (which has order~168
-and acts on the 7~points of the Fano plane).  Indeed, $\GL(3, \FF_2)$
-is $2$-transitive on the 7 points, so any pair of imaginary indices
-can be mapped to any other pair, and conjugation of~$\sigma = (i\;j)$
-by a Fano automorphism produces another transposition.  All 21
-transpositions are therefore equivalent up to a relabelling of the
-imaginary basis, and the construction is essentially unique
-\emph{among transposition twists}; longer-cycle coordinate
-permutations are not covered by this argument and may yield
-inequivalent products.
-\end{remark}
 
 \begin{definition}[Triple product with $\ZZ_3$ routing]
 \label{def:triple}
@@ -1469,8 +1419,8 @@ on a maximal-order candidate that sits asymmetrically in~$\RR^8$;
 the present~$\sigma$ acts on the coordinate-symmetric placement
 $L = D_8^+$ (where it is inert at the $E_8$ stratum) and does its
 work on the sublattice~$Ls$ of Wilson's Leech construction.  See
-Remarks~\ref{rem:kirmse} and~\ref{rem:sigma-vs-fano} for the
-implications used in the body of the paper.
+Remark~\ref{rem:kirmse} for the implications used in the body of the
+paper.
 
 % ===============================================================
 \section{Research methodology}\label{sec:methodology}
