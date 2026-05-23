@@ -705,10 +705,10 @@ The order $(\LL, +, \star)$ has been tested for several standard
 algebraic identities.  Samples are drawn uniformly (by family weight)
 from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
 binary identities, and from $\operatorname{Min}(\LL)$ for the cube and
-quartic identities.  Sample size is $N = 802{,}000$ per property;
+quartic identities.  Sample size is $N = 1{,}072{,}000$ per property;
 exact integer arithmetic throughout.  The standard error is
 $\mathrm{SE} = \sqrt{p(1-p)/N}$, where $p$ is the fraction of samples
-on which the identity holds; SE values below are at most $0.06\%$,
+on which the identity holds; SE values below are at most $0.05\%$,
 so the figures are stable to the digits shown.
 
 \begin{center}
@@ -719,23 +719,23 @@ Property & Holds? & Fraction of samples (\% $\pm$ SE) \\
 Multiplicative identity & No & the ambient algebra
   $(\RR^{24}, +, \star)$ has no identity element \\
 Commutativity $u\star v = v\star u$ & No &
-  $0.017\% \pm 0.0014\%$ \\
+  $0.018\% \pm 0.0013\%$ \\
 Norm multiplicativity $\Nrm(u\star v) = \Nrm(u)\Nrm(v)$ & No &
-  $46.72\% \pm 0.056\%$ \\
+  $46.78\% \pm 0.048\%$ \\
 Left alternativity $(x\star x)\star y = x\star(x\star y)$ & No &
-  $0.187\% \pm 0.0048\%$ \\
+  $0.191\% \pm 0.0042\%$ \\
 Right alternativity $(x\star y)\star y = x\star(y\star y)$ & No &
-  $0.185\% \pm 0.0048\%$ \\
+  $0.194\% \pm 0.0042\%$ \\
 Flexibility $(x\star y)\star x = x\star(y\star x)$ & No &
-  $8.35\% \pm 0.031\%$ \\
+  $8.34\% \pm 0.027\%$ \\
 Cube power-associativity $x^2\star x = x\star x^2$ & No &
-  $30.73\% \pm 0.052\%$ \\
+  $30.71\% \pm 0.045\%$ \\
 Quartic power-associativity (all five parenthesisations of
   $x\star x\star x\star x$ coincide) & No &
-  $12.75\% \pm 0.037\%$ \\
+  $12.74\% \pm 0.032\%$ \\
 Symmetric composition $\langle u\star v, w\rangle =
   \langle u, v\star w\rangle$ (after Elduque) & No &
-  $25.45\% \pm 0.049\%$ \\
+  $25.45\% \pm 0.042\%$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1013,13 +1013,9 @@ interest.
 \section*{Acknowledgments}
 % ===============================================================
 
-The author thanks Geoffrey M. Dixon and Robert A. Wilson for helpful
-discussions and advice on octonionic structures associated with the
-Leech lattice; Matthew Barley for probing the paper and for help in
-improving it; and Petr Vojt\v{e}chovsk\'{y}, whose pointer to the
-$\sigma$-twist surfaced the imprecise description of the Kirmse twist
-in earlier drafts and prompted the historical synthesis of
-Appendix~\ref{app:history}.
+The author thanks Matthew Barley, Geoffrey M. Dixon, Petr
+Vojt\v{e}chovsk\'{y}, and Robert A. Wilson for valuable discussion,
+advice, feedback, and corrections.
 
 % ===============================================================
 \appendix

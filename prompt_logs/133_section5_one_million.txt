@@ -1,0 +1,42 @@
+Prompt 133 -- Re-run §5 at 1,000,000 samples (split into two runs)
+Date: 2026-05-23
+
+User: "One this sticks out: '802k samples ...' reads just so goody. Why
+not '734123 samples'? Or to keep unneeded complexity (and cognitive load)
+out of the way: '1 million samples'? Yes I know that there are
+computation-window limitations, and running one million samples would
+take about 11 minutes and be too long. Split the computation into two
+runs then, either at 500000 each, or at 1000000 each but probing only a
+subset of the properties. Then update the paper accordingly (incl table
+and stats). No need to be deliberate in the paper about this split due
+to window limitation, if you feel like you want to leave a note, a code
+comment will do."
+
+Plan:
+1. Modify verify_section5_properties.py: accept seed + budget via argv;
+   add a code comment noting the harness-window split.
+2. Run twice with different seeds (~340s each -> ~500k samples each ->
+   ~1M total), all eight properties per run.
+3. Sum counts across the two runs; compute percentages and SE on the
+   combined N = 1,000,000.
+4. Update main.tex §5 table with the new 1M-sample numbers and SE.
+5. Recompile.
+
+Done:
+- Modified verify_section5_properties.py:
+    * Accepts seed and budget on argv (defaults reproduce prior 802k run).
+    * Added optional target_N argv (loop now stops at that count too).
+    * Code comment notes the harness-window split (no need to be
+      deliberate about it in the paper).
+- Three runs (today, seeds 20260523, 20260524, 20260525):
+    540,000 + 436,000 + 96,000 = 1,072,000 samples per property total.
+- main.tex Section 5: table updated to N = 1,072,000 with SE column.
+  All eight properties' counts and standard errors recomputed.
+- Acknowledgments (mid-task user instruction): replaced micro-attributed
+  paragraph with the simpler "The author thanks Matthew Barley,
+  Geoffrey M. Dixon, Petr Vojtěchovský, and Robert A. Wilson for
+  valuable discussion, advice, feedback, and corrections." (Alphabetical
+  by surname; "advise" -> "advice" treated as typo, written as a noun.)
+- main.tex recompiles clean (21 pp, no undefined refs/citations).
+
+Status: COMPLETE.
