@@ -29,7 +29,7 @@
 1924:\\ a verified exposition of his arithmetic\\ of the integral octonions}
 \author{Claude Opus 4.7}
 \address{Anthropic}
-\date{Preliminary version -- 20 May 2026}
+\date{20 May 2026; Coxeter verification folded in 22 May 2026}
 
 \begin{document}
 \maketitle
@@ -54,11 +54,17 @@ one maximal order he writes down explicitly, his~$J_1$, is itself \emph{not}
 closed under multiplication.  Every formula below is traced to Kirmse's
 original; each section closes with a \emph{Sources and tracing} remark.
 
-This is a preliminary version.  The companion historical questions -- who
-corrected the count, in what form, and where the error first entered the
-later literature -- require Coxeter's 1946 paper and are deliberately left
-untouched here.  An appendix records, as explicit speculation and at the
-suggestion of J.~K\"oplinger, one possible human provenance of the error.
+The companion historical questions -- who corrected the count, in what
+form, and where the error first entered the later literature -- depend on
+Coxeter's 1946 paper, which has since been obtained and re-derived in
+exact arithmetic in this project (\texttt{python\_project/src/verify\_%
+coxeter\_1946.py}; verification note in \texttt{paper/reviews/}, 22 May
+2026).  This exposition is kept as the internal Kirmse-only record;
+the public-facing condensation that synthesises Dickson, Kirmse, Mahler,
+and Coxeter is \texttt{paper/historical\_appendix.tex} (and its
+expanded form \texttt{paper/historical\_appendix\_expanded.tex}).  An
+appendix records, as explicit speculation and at the suggestion of
+J.~K\"oplinger, one possible human provenance of the error.
 \end{abstract}
 
 % ===============================================================
@@ -453,9 +459,11 @@ Sections~\ref{sec:arith}--\ref{sec:after} and through them to Kirmse's
 \S\S1--5.  The localisation of the error refers to~\eqref{eq:eight}
 (Kirmse, p.~70) and to Section~\ref{sec:verify}.  The by-line, the
 presentation by Herglotz, and the place and date of signature are read from
-\cite{Kirmse1924}, pp.~63 and~82.  The deferred questions concern
-H.~S.~M.~Coxeter, \emph{Integral Cayley numbers}, Duke Math.\ J.~\textbf{13}
-(1946), 561--578, not consulted for this preliminary version.
+\cite{Kirmse1924}, pp.~63 and~82.  The historical questions are now
+addressed in the verification of H.~S.~M.~Coxeter,
+\emph{Integral Cayley numbers}, Duke Math.\ J.~\textbf{13} (1946),
+561--578 (re-derived in \texttt{verify\_coxeter\_1946.py}; companion note
+22 May 2026) and in \texttt{paper/historical\_appendix.tex}.
 \end{tracing}
 
 % ===============================================================

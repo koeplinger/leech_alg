@@ -121,16 +121,22 @@ In this paper Kirmse accomplished the following:
    in 1921, Kirmse in 1923).
 
 Kirmse then claimed — without proof — that his lattice is closed under
-octonion multiplication.  Coxeter (1946), upon studying Kirmse's paper,
-was unable to verify this and eventually showed the claim is false: certain
-products of several factors, where the multiplication is non-associative,
-land outside the lattice.  Coxeter, together with Bruck, then remedied the
-defect by a modification of Kirmse's construction (an **index-doubling
-permutation** of the imaginary basis elements), producing a genuine maximal
-order.
+octonion multiplication.  In fact Kirmse stated that there are *eight*
+such maximal domains (his p. 70); the true number is **seven**, and the
+one he exhibited explicitly, $J_1$, is the spurious entry.  Coxeter
+(1946, §4) re-derived the failure with an explicit one-line witness,
+$\tfrac12(1{+}i_1{+}i_2{+}i_3)\cdot\tfrac12(1{+}i_1{+}i_4{+}i_5)
+=\tfrac12(i_1{+}i_2{+}i_4{+}i_7)\notin J_1$, and recorded the remedy
+supplied by **R. H. Bruck**: "Bruck's domain $J$ can be derived from
+$J_1$ by transposing two of the $i$'s" — a **transposition of two
+imaginary basis units**, a linear involution of $\mathbb{R}^8$.  The
+$\binom{7}{2}=21$ such transpositions yield the seven maximal orders
+in seven sets of three.  Verified from the originals in this project
+(\texttt{python\_project/src/verify\_kirmse\_1924.py},
+\texttt{verify\_coxeter\_1946.py}; notes in \texttt{paper/reviews/}).
 
 In this project, **Kirmse twist** is used as shorthand for the
-index-doubling permutation that corrects Kirmse's construction to a closed
+transposition of two imaginary basis units that corrects Kirmse's construction to a closed
 one.
 
 **A note on attribution and fairness.**  The term "Kirmse integers" in
@@ -158,18 +164,25 @@ References:
 
 A lattice Γ ⊂ O (the real octonion algebra) that is closed under
 multiplication, contains the identity, and is maximal with respect to
-inclusion among such lattices.  There are exactly 7 maximal orders in the
-octonions, each isometric to the E8 root lattice.  They are obtained by
-choosing one of the 7 imaginary basis elements as a distinguished unit and
-applying the Kirmse twist (index-doubling permutation).
+inclusion among such lattices.  There are exactly **seven** maximal
+orders in the octonions, each isometric to the $E_8$ root lattice.  The
+$\binom{7}{2}=21$ transpositions of pairs of imaginary basis units act
+transitively on the seven (Coxeter 1946, §4); they fall into seven sets
+of three, with each set fixing one common imaginary unit (Coxeter's
+"special unit" — one of $i_1,\ldots,i_7$).
 
-Note: Petersson (2018) documents that Dickson (1923) had constructed
-integral octonions isomorphic to Coxeter's more than twenty years before
-Coxeter's 1946 paper; Coxeter himself acknowledged this in a postscript.
+Note: Dickson (1923, Theorem XV) gave a correct construction of one
+maximal order more than twenty years before Coxeter; his theorem
+nonetheless states three maximal orders rather than seven, an undercount
+arising from an extra assumption he states openly in the derivation
+(p. 321: that the orders contain the Hurwitz quaternions
+$\tfrac12(\pm1\pm i\pm j\pm k)$).  Coxeter (1946, §14, postscript)
+identifies this cause independently.  Verified from the originals in
+this project (\texttt{verify\_dickson\_1923.py},
+\texttt{verify\_coxeter\_1946.py}).
 
-References: Conway and Smith (2003), Chapter 9; Coxeter (1946);
-Dickson, L.E., "A new simple theory of hypercomplex integers,"
-J. Math. Pures Appl. (1923).
+References: Dickson (1923); Kirmse (1924); Coxeter (1946); Conway and
+Smith (2003), Chapter 9.
 
 ### Okubo algebra (pseudo-octonion algebra)
 

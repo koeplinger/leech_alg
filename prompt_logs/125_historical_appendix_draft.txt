@@ -1,5 +1,5 @@
 Prompt 125 -- Draft the broad historical appendix (Kirmse + Dickson + Mahler + Coxeter)
-Date: 2026-05-22
+Date: 2026-05-23
 
 User: "Yes let's draft the broad historical appendix (Kirmse + Dickson +
 Mahler + Coxeter). This is a great synthesis solely from original sources."

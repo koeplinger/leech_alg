@@ -1,5 +1,5 @@
 Prompt 129 -- Restore expanded historical appendix, move plan, status check
-Date: 2026-05-22
+Date: 2026-05-23
 
 User: "Misunderstanding! I'm ok with the 'historical_appendix.pdf' file to be
 longer; just when we merge it into the paper it should be shorter. Restore

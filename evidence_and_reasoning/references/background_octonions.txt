@@ -69,27 +69,77 @@ the public domain.
 
 ---
 
+### [Dickson1923]
+
+- **Authors**: Leonard Eugene Dickson
+- **Title**: A new simple theory of hypercomplex integers
+- **Published in**: Journal de Mathématiques Pures et Appliquées (9th
+  series), Volume 2 (1923), pages 281–326
+- **Year**: 1923
+- **Topics**: integral octonions, Cayley–Dickson doubling, maximal orders
+- **Originality note**: Original research paper; the first published
+  construction of an integral-octonion maximal order, predating Kirmse
+  (1924) and Coxeter (1946). Dickson's order O_D (his system (30)) is
+  genuinely closed, verified in this project. His Theorem XV states
+  three maximal orders; the true number is seven. The undercount arises
+  from an extra assumption Dickson states openly on p. 321 — that the
+  orders contain the Hurwitz quaternions ½(±1±i±j±k) — which holds for
+  exactly three of the seven. Coxeter (1946, §14, postscript)
+  identifies this cause independently.
+- **Notes**: Predates Kirmse and Coxeter. Construction is correct; the
+  count is too small by four, by a qualifier Dickson stated in the
+  derivation. Verified from the original in this project
+  (python_project/src/verify_dickson_1923.py; note in paper/reviews/).
+
+---
+
 ### [Kirmse1924]
 
 - **Authors**: Johannes Kirmse
 - **Title**: Über die Darstellbarkeit natürlicher ganzer Zahlen als Summen
   von acht Quadraten und über ein mit diesem Problem zusammenhängendes
   nichtkommutatives und nichtassoziatives Zahlensystem
-- **Published in**: Berichte über die Verhandlungen der Königlich
-  Sächsischen Gesellschaft der Wissenschaften zu Leipzig, Mathematisch-
-  Physische Klasse, Volume 76 (1924), pages 63–82
+- **Published in**: Berichte über die Verhandlungen der Sächsischen
+  Akademie der Wissenschaften zu Leipzig, Mathematisch-Physische
+  Klasse, Volume 76 (1924), pages 63–82
 - **Year**: 1924
 - **Topics**: integral octonions, E8 lattice, sums of eight squares
 - **Originality note**: Original research paper; Kirmse's sole known
-  publication. No dispute over originality known. The paper contains an
-  error (claiming the integral octonion lattice is closed under
-  multiplication), corrected by Coxeter (1946).
+  publication. No dispute over originality known. The paper contains
+  one substantive error (an enumeration miscount: eight stated, seven
+  actual; his exhibited domain J_1 is not closed), identified by
+  Coxeter (1946) and remedied by R. H. Bruck (reported in Coxeter
+  1946). Verified from the original in this project
+  (python_project/src/verify_kirmse_1924.py; note in paper/reviews/).
 - **Notes**: Kirmse exhibited the E8 lattice as a positive definite
   unimodular integral quadratic lattice of rank 8 inside the real
   octonion algebra. He also published what are presumably the first
   appearance in print of the identities x(x̄y) = n(x)y = (yx̄)x
   (Petersson 2018). See terminology.md for a fuller account of Kirmse's
   contributions alongside the error.
+
+---
+
+### [Mahler1942]
+
+- **Authors**: Kurt Mahler
+- **Title**: On ideals in the Cayley–Dickson algebra
+- **Published in**: Proceedings of the Royal Irish Academy, Section A,
+  Volume 48 (1942), pages 123–133
+- **Year**: 1942
+- **Topics**: integral Cayley numbers, ideal theory, Euclidean property,
+  principal ideals
+- **Originality note**: Original research paper. Mahler works over a
+  maximal order (one of the seven, identified by Coxeter four years
+  later) and develops its arithmetic: a Euclidean property
+  N(X - G) ≤ 1/2 (sharper than Dickson's 5/4) and a principal-ideal
+  theorem. Mahler cites Dickson (1923) but not Kirmse; that citation
+  chain brought Dickson's priority to Coxeter's attention (Coxeter 1946,
+  §14). Verified from the original in this project (one transcription
+  error in equation (10), without consequence for the theorems;
+  python_project/src/verify_mahler_1942.py; note in paper/reviews/).
+- **Notes**: Cited in Coxeter (1946)'s postscript. Results re-derived
+  computationally.
 
 ---
 
@@ -101,15 +151,23 @@ the public domain.
   pages 561–578
 - **Year**: 1946
 - **DOI**: 10.1215/S0012-7094-46-01347-6
-- **Topics**: integral octonions, maximal orders, index-doubling permutation
+- **Topics**: integral octonions, maximal orders, the Coxeter–Bruck
+  transposition of two imaginary basis units
 - **Originality note**: Published in a peer-reviewed journal. Coxeter
-  corrects Kirmse's error and constructs the first explicitly verified
-  maximal order of integral octonions via the index-doubling permutation.
-  No dispute over originality or priority known.
-- **Notes**: Coxeter showed Kirmse's lattice is not closed under
-  multiplication for non-associative products. Together with Bruck, he
-  introduced the index-doubling permutation (the "Kirmse twist") that
-  corrects the construction to a genuine maximal order.
+  identifies Kirmse's error in §4 with an explicit one-line non-closure
+  witness, and reports the remedy due to R. H. Bruck. Postscript (§14)
+  acknowledges Dickson (1923) as having given a correct construction
+  more than two decades earlier. No dispute over originality or
+  priority known. Verified from the original in this project
+  (python_project/src/verify_coxeter_1946.py; note in paper/reviews/).
+- **Notes**: Coxeter showed Kirmse's exhibited domain J_1 is not closed:
+  the product ½(1+i_1+i_2+i_3)·½(1+i_1+i_4+i_5) = ½(i_1+i_2+i_4+i_7) is
+  not among Kirmse's 240 units. Bruck supplied the remedy: a
+  transposition of two imaginary basis units of the octonions — a
+  linear involution of R^8 — carries J_1 to a closed maximal order.
+  The (7 choose 2) = 21 such transpositions yield the seven maximal
+  orders, in seven sets of three. §§6–13 develop the E_8 / 5_{21}
+  geometry of the corrected order.
 
 ---
 
@@ -126,8 +184,9 @@ the public domain.
 - **Originality note**: Published monograph. Standard reference for
   integral octonion arithmetic. No dispute known.
 - **Notes**: Chapter 9 covers maximal orders of integral octonions and the
-  index-doubling permutation. Used throughout this project as the primary
-  reference for the 7 maximal orders.
+  Kirmse–Coxeter–Bruck correction. Used as a modern cross-check; the
+  primary-source-verified account in this project is built directly from
+  Dickson (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946).
 
 ---
 

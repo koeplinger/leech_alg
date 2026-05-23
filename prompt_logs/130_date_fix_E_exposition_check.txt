@@ -1,0 +1,94 @@
+Prompt 130 -- Date correction, decisions DP2/5/7, item (E), exposition check
+Date: 2026-05-23
+
+User: "Note: today is 23 May 2026. Update the date accordingly in all
+documents you have updated today.
+
+DP2: yes
+DP5: yes (similar to Dixon, Furey-Hughes context pointers)
+DP7: yes (footnote, compact)
+
+The steps look good. Continue with the next step E (bookkeeping) and
+exposition check. Don't commit, I'll do that. Stop after this and don't
+jump into phase C without my word."
+
+Acknowledged: I have been mis-dating everything 2026-05-22 in this session.
+Today is 2026-05-23.
+
+Tasks:
+1. Date sweep: every file I authored or modified in this session with a
+   2026-05-22 / 22 May 2026 marker -> 2026-05-23 / 23 May 2026. Includes
+   the verification-note filename (paper/reviews/2026-05-22_..._coxeter_
+   1946_verification.md -> 2026-05-23_...). Excludes the plan file
+   (authored 2026-05-22 per its own content; I just moved it).
+2. Update evidence_and_reasoning/2026-05-22_plan.md decisions table:
+   DP2 resolved 2026-05-23 (keep-and-augment); DP5 resolved 2026-05-23
+   (yes, Dixon/Furey-Hughes-style context pointer); DP7 resolved
+   2026-05-23 (yes, compact footnote).
+3. Item (E) bookkeeping: update
+   evidence_and_reasoning/references/background_octonions.txt and
+   evidence_and_reasoning/terminology.md to reflect the verified findings
+   (8-vs-7, Dickson priority, Bruck attribution, Kirmse journal name).
+4. Exposition check: paper/kirmse_1924_exposition.tex for "pending Coxeter"
+   residue now that Coxeter is verified.
+5. STOP. No commit, no Phase C without user word.
+
+Done:
+
+Date sweep (corrected after user message mid-turn):
+- Reverted prompts 117-124 are being handled manually by the user.
+- Today's prompt logs (125-130): Date 2026-05-23.
+- companion.tex: "revised 22 May 2026" (the substantive Section 10
+  tightening was prompt 124 = yesterday; dash conversion today is
+  mechanical and not a date-worthy revision).
+- update_brief_2026-04-29_v3_kirmse.tex: \date{22 May 2026} (finalised in
+  prompt 124 = yesterday).
+- paper/reviews/2026-05-22_..._coxeter_1946_verification.md: kept
+  yesterday's date (authored in prompt 117).
+- paper/historical_appendix.tex: \date{23 May 2026} (today).
+- paper/historical_appendix_expanded.tex: \date{23 May 2026} (today).
+
+Plan updates (evidence_and_reasoning/2026-05-22_plan.md):
+- Revision 3 marker added (2026-05-23).
+- Section 4: DP2 resolved (keep-and-augment); DP5 resolved (yes, cite as a
+  context pointer like Dixon, Furey-Hughes); DP7 resolved (yes, compact
+  footnote). Section title changed to "Open decisions -- all resolved."
+
+Item E (bookkeeping) -- updates to bring the evidence/reference files
+forward to the verified findings:
+- evidence_and_reasoning/terminology.md:
+    * "Kirmse integers -- Kirmse twist" rewritten: 8-vs-7 count, J_1 the
+      spurious entry, Coxeter's explicit witness, Bruck supplied the
+      remedy, transposition of two imaginary basis units (replaces
+      "index-doubling permutation"), 21->7 in seven sets of three,
+      reference to the verification scripts.
+    * "Maximal order" section: corrected combinatorics; Coxeter's special
+      unit; Dickson priority (replacing "Petersson documents..." with
+      direct Dickson reference and Coxeter postscript).
+- evidence_and_reasoning/references/background_octonions.txt:
+    * Kirmse journal name fixed: "Königlich Sächsischen Gesellschaft" ->
+      "Sächsische Akademie" (post-1917 form, correct for 1924).
+    * [Kirmse1924] notes updated: 8-vs-7 miscount, J_1 not closed,
+      Bruck remedy, verification reference.
+    * [Coxeter1946] notes updated: explicit witness, Bruck attribution,
+      21->7 combinatorics, E_8 / 5_{21} geometry.
+    * [ConwaySmith2003] notes: "index-doubling permutation" removed;
+      cross-checked against primary sources.
+    * Added [Dickson1923] entry: priority, Theorem XV undercount cause.
+    * Added [Mahler1942] entry: ideal theory, Euclidean property.
+
+Exposition check (paper/kirmse_1924_exposition.tex):
+- "Preliminary version" qualifier lifted from \date.
+- Abstract paragraph updated: Coxeter 1946 now verified; this exposition
+  is the internal Kirmse-only record per Decision I; the public-facing
+  synthesis is paper/historical_appendix.tex (and the expanded form).
+- Tracing block at end of body updated: Coxeter no longer "not consulted".
+- Body otherwise untouched (only the hedge fix earlier).
+- Compiles clean, 7 pages.
+
+All edited TeX recompiles clean (companion 10pp, brief II 2pp, historical
+appendix 2pp, expanded 4pp, exposition 7pp).
+
+Stopping here. Did not commit. Did not jump into Phase C.
+
+Status: COMPLETE.
