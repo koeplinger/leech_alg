@@ -1,0 +1,19 @@
+Prompt 134 -- §5: re-run for exactly 1,000,000 samples
+Date: 2026-05-23
+
+User: "arrgh - I asked for a simple 'one million' samples (because '802,000'
+samples is a quirky number). You ran '1,072,000' samples, which is a larger
+but still quirky number. Make it '1 million' straight so that the reader
+doesn't spend brain cycles on wondering where those 72,000 come from."
+
+Acknowledged. The script now supports target_N so two clean 500k runs
+yield exactly 1,000,000. Re-running.
+
+Done:
+- Two clean runs at target_N=500000 each (seeds 20260601, 20260602),
+  each in ~330 s, exactly 500,000 samples per property per run.
+- Sum: N = 1,000,000 exactly. main.tex §5 preamble says "N = 10^6";
+  table values updated.
+- main.tex recompiles clean (21 pp).
+
+Status: COMPLETE.
