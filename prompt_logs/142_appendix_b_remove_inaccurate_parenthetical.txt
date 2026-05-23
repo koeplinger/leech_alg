@@ -1,0 +1,41 @@
+Prompt 142 -- Appendix B: remove inaccurate parenthetical; record the correction
+Date: 2026-05-23
+
+User: "In appendix B remove '-- an integral-octonion maximal order
+supported on the E8 lattice, repaired by a transposition of two imaginary
+basis units --', and make a note that this statement in itself was not
+correct."
+
+Why the statement was wrong: it characterised the present paper's
+construction as "a maximal order ... repaired by a transposition of two
+imaginary basis units." That is the description of the Coxeter-Bruck
+correction of Kirmse's J_1, not of the present construction. The present
+construction takes the coordinate-symmetric placement L = D_8^+ of E_8,
+which is already closed under the octonion product without any
+"repair"; sigma does NOT act on the maximal order L (it fixes L), and
+acts non-trivially on the SUBLATTICES Ls and L bar s. The paper does
+not repair an order by sigma; it uses an already-closed order plus the
+sigma-twist's action on sublattices.
+
+Action: remove the parenthetical from the appendix; record the
+correction here per MANIFESTO Section 12. Save a memory entry so the
+mis-framing is not reintroduced by future turns.
+
+Done:
+- Removed parenthetical from main.tex Appendix B opening sentence;
+  it now reads "The construction this paper builds on was developed
+  across four primary papers between 1923 and 1946. ..." (no
+  characterisation of the construction here -- the body of the paper
+  carries that load).
+- main.pdf 21 pp, compiles clean.
+
+Memory entry created:
+  /home/jens/.claude/projects/-home-jens-Projects-leech-alg/memory/
+    feedback_sigma_acts_on_sublattices.md
+  -- documenting the precise role of sigma (three things: σ(L)=L,
+  algebra iso of the octonions, action on sublattices Ls and L bar s;
+  only the third is load-bearing) so the "an order repaired by a
+  transposition" mis-framing is not reintroduced. Indexed in
+  MEMORY.md.
+
+Status: COMPLETE.

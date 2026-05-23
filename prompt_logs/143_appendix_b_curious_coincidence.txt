@@ -1,0 +1,30 @@
+Prompt 143 -- Appendix B: drop redundant count line; reword "historical precedent"
+Date: 2026-05-23
+
+User: "In appendix B, remove 'The count converges 3 → 8 → 7.' (redundant).
+Also in appendix B, remove 'The Coxeter–Bruck transposition – a
+transposition of two imaginary coordinate axes – is the historical
+precedent for the present paper's σ.' -- this statement is wrong. While
+the twist is the same, it now acts on a different object. Reword it to
+state that it is a curious coincidence that the same twist would now come
+in useful on the Leech lattice. Say, 'It is curious to find that the
+Coxeter–Bruck transposition would come in useful here: ' and then continue
+essentially with the remainder of the paragraph (don't fluff it any more
+than it already is; no more redundancies)."
+
+Why "historical precedent" was wrong: it implied a causal/derivative
+chain (the paper's sigma was *informed by* Coxeter-Bruck). Actually the
+two are the same map but applied to different objects -- the
+maximal-order candidate in Coxeter-Bruck's case, the sublattice Ls in
+ours -- a coincidence, not a derivation.
+
+Applied: count line removed; the paragraph now opens with the user's
+literal lead "It is curious to find that the Coxeter--Bruck transposition
+would come in useful here: the same linear involution of R^8, acting now
+on a different object." and continues with the existing remainder
+(maximal-order candidate vs. coordinate-symmetric placement; sublattice
+Ls; see Remarks rem:kirmse and rem:sigma-vs-fano).
+
+main.pdf 21 pp, compiles clean.
+
+Status: COMPLETE.
