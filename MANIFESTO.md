@@ -89,7 +89,26 @@ The AI agent operates in the role of a highly knowledgeable and thorough mathema
 
 ---
 
-## 11. Forward-Evolving Corrections
+## 11. Editorial Standards
+
+- Every prose change to every **durable artifact** in this repository ---
+  the main paper and the rest of `paper/`, governance and methodology
+  files (this manifesto, `evidence_and_reasoning/terminology.md`,
+  `evidence_and_reasoning/editorial_standards.md`, `README.md`), plan
+  documents and research statements, and the prose parts of verification
+  scripts and their notes --- is governed by the five editorial
+  standards recorded in
+  [evidence_and_reasoning/editorial_standards.md](evidence_and_reasoning/editorial_standards.md):
+  lead programmatically; introduce one thing at a time in dependency
+  order; cut every redundancy; one consistent vocabulary; precision over
+  good-sounding vagueness.
+- The standards file is the canonical statement (including the precise
+  scope and the carve-out for prompt logs); this section is the
+  governance pointer.
+
+---
+
+## 12. Forward-Evolving Corrections
 
 - When a mistake is discovered — whether in a claim, a computation, a classification, or the framing of a question — **it must be corrected forward, not by altering the historical record**.
 - Prompt logs, key claim files, and other artifacts that are already committed must be left as they were at the time of writing.  A new entry (new prompt log, amended claim, or explicit correction note) is created to record the correction and its rationale.

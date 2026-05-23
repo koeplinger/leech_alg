@@ -29,7 +29,7 @@
 1924:\\ a verified exposition of his arithmetic\\ of the integral octonions}
 \author{Claude Opus 4.7}
 \address{Anthropic}
-\date{Preliminary version --- 20 May 2026}
+\date{Preliminary version -- 20 May 2026}
 
 \begin{document}
 \maketitle
@@ -43,8 +43,8 @@ prompt~100 of that record.  Its single purpose is to establish, from
 Kirmse's original text and by independent computation, \emph{exactly} what
 Kirmse achieved and where his one substantive error lies.
 
-The conclusion is this.  Kirmse built, essentially in full, the arithmetic
-theory of the integral octonions: the units and the multiplication table,
+The conclusion is this.  Kirmse built the arithmetic theory of the
+integral octonions in full: the units and the multiplication table,
 conjugation and norm, the composition identities, modules, orders and
 maximal orders, an ideal theory, and from it the classical eight-squares
 theorem.  His one substantive error is a miscount: he states
@@ -54,9 +54,9 @@ one maximal order he writes down explicitly, his~$J_1$, is itself \emph{not}
 closed under multiplication.  Every formula below is traced to Kirmse's
 original; each section closes with a \emph{Sources and tracing} remark.
 
-This is a preliminary version.  The companion historical questions --- who
+This is a preliminary version.  The companion historical questions -- who
 corrected the count, in what form, and where the error first entered the
-later literature --- require Coxeter's 1946 paper and are deliberately left
+later literature -- require Coxeter's 1946 paper and are deliberately left
 untouched here.  An appendix records, as explicit speculation and at the
 suggestion of J.~K\"oplinger, one possible human provenance of the error.
 \end{abstract}
@@ -74,8 +74,8 @@ arithmetic of the octonions.
 
 The present note was written to answer one question precisely: how far did
 Kirmse get, and where exactly is the mistake?  It follows the methodology of
-the repository~\cite{repo} in which it was produced: no claim --- Kirmse's,
-or anyone's --- is taken on trust; every assertion is either traced to
+the repository~\cite{repo} in which it was produced: no claim -- Kirmse's,
+or anyone's -- is taken on trust; every assertion is either traced to
 Kirmse's printed text or verified from scratch by exact computation.  The
 two are kept strictly separate.  Sections~\ref{sec:arith}--\ref{sec:after}
 expound Kirmse's paper and trace every formula to it.  Section~\ref{sec:verify}
@@ -83,8 +83,8 @@ reports an independent computation, owing nothing to Kirmse or to any later
 author, that tests his central claim.  Section~\ref{sec:assess} draws the
 balance.
 
-We write $\OO$ for the real algebra Kirmse studies --- the Graves--Cayley
-octonions --- and reserve the symbols $J_0$, $J_1$ for the two lattices he
+We write $\OO$ for the real algebra Kirmse studies -- the Graves--Cayley
+octonions -- and reserve the symbols $J_0$, $J_1$ for the two lattices he
 names.
 
 % ===============================================================
@@ -129,8 +129,8 @@ i_7 & i_6  & i_4  & i_5  & -i_2 & -i_3 & -i_1 & -1
 
 \noindent
 This is Kirmse's table~(1) in full.  He notes that the problem he set
-himself --- an eight-unit system containing the quaternions and carrying the
-fourth power of the sum of squares as a norm --- admits ``several, but not
+himself -- an eight-unit system containing the quaternions and carrying the
+fourth power of the sum of squares as a norm -- admits ``several, but not
 essentially different'' solutions, of which~(1) is one.
 
 To each $a$ Kirmse associates the \emph{symmetric} number (the conjugate)
@@ -166,7 +166,7 @@ Specialising $c=ab$ gives the two \emph{composition identities}
   (a b)\,\cj b = \Nm(b)\,a,
 \end{equation}
 so that ``for products of three factors in which two consecutive factors are
-conjugate, the associative law holds'' --- in particular
+conjugate, the associative law holds'' -- in particular
 $(\cj a a)b = \cj a(ab)$ and $a(b\cj b) = (ab)\cj b$.  Finally Kirmse calls
 $a_1,a_2,a_3$ \emph{coplanar} when corresponding imaginary components are
 proportional; coplanar numbers commute and associate, every power $a^m$ is
@@ -194,17 +194,17 @@ Kirmse's \S1, ``Die elementare Arithmetik der Cayleyschen Zahlen.''
 \section{Modules, orders, and the count of maximal orders}\label{sec:orders}
 % ===============================================================
 
-Kirmse now restricts to the rational octonions $K$ --- those $a$ with all
-$\alpha_j\in\QQ$ --- and develops a theory of lattices in $K$.
+Kirmse now restricts to the rational octonions $K$ -- those $a$ with all
+$\alpha_j\in\QQ$ -- and develops a theory of lattices in $K$.
 
 \begin{definition}
 A \emph{module} is a subset of $K$ closed under integer linear combinations.
 It is \emph{finite} if it consists of all $\gamma_0 a_0 + \cdots + \gamma_7 a_7$
 ($\gamma_j\in\ZZ$) for eight independent numbers $a_0,\ldots,a_7$.  A finite
-module is an \emph{Integrit\"atsbereich} --- an \emph{order} --- if with any
+module is an \emph{Integrit\"atsbereich} -- an \emph{order} -- if with any
 two numbers $a,b$ it also contains the products $ab$ and $ba$.  An order is a
 \emph{most-comprehensive order} (\emph{umfassendster Integrit\"atsbereich})
---- a \emph{maximal order} --- if it contains
+-- a \emph{maximal order} -- if it contains
 \begin{equation}\label{eq:J0}
   J_0 = [\,1, i_1, i_2, i_3, i_4, i_5, i_6, i_7\,]
 \end{equation}
@@ -292,8 +292,8 @@ theory.
 In \S3 (``Die ungeraden Ideale\ldots'') he develops one- and two-sided ideals,
 their norms, and primitive and primary ideals.  In \S4 (``Die Einheiten und
 die geraden Ideale in $J_1$'') he finds the units: \emph{sixteen} in $J_0$
-(the $\pm i_j$) and \emph{two hundred and forty} in $J_1$ ---
-the $\pm i_j$ together with $224$ half-integer units --- and observes that
+(the $\pm i_j$) and \emph{two hundred and forty} in $J_1$ --
+the $\pm i_j$ together with $224$ half-integer units -- and observes that
 they ``form a group in an extended sense, in which all group-theoretic
 theorems hold except the associative law and its consequences,'' i.e.\ a
 Moufang loop; he counts $2160 = 240\cdot 9$ numbers of norm~2.  In \S5 (``Die
@@ -311,8 +311,8 @@ odd $n>0$ as a sum of eight integer squares is
 A postscript adds a Minkowski geometry-of-numbers proof that all ideals are
 principal.
 
-These results --- the $240$ units, \eqref{eq:zeta}, \eqref{eq:eightsquares}
---- are correct.  They are facts about the $E_8$ lattice as a quadratic form
+These results -- the $240$ units, \eqref{eq:zeta}, \eqref{eq:eightsquares}
+-- are correct.  They are facts about the $E_8$ lattice as a quadratic form
 and, as Section~\ref{sec:verify} will make clear, do not depend on the one
 claim that fails.
 
@@ -331,7 +331,7 @@ notation.
 \section{Independent verification}\label{sec:verify}
 % ===============================================================
 
-Kirmse asserts~\eqref{eq:eight} --- eight maximal orders --- ``durch eine
+Kirmse asserts~\eqref{eq:eight} -- eight maximal orders -- ``durch eine
 einfache endliche Rechnung,'' but prints no part of that computation.  We
 carry it out, in exact arithmetic, from his data alone: the multiplication
 table~(1) of Section~\ref{sec:arith} and the order $J_1$
@@ -377,13 +377,13 @@ one, and the representative he chose was one of the non-orders.
 candidate lattice is the conjunction of two independent sub-conditions: that
 every product of a unit with a half-integer element again lies in the
 lattice, and that every product of two half-integer elements does.  The
-first sub-condition alone --- invariance under multiplication by the units
---- is satisfied by exactly \emph{eight} of the thirty candidates; imposing
+first sub-condition alone -- invariance under multiplication by the units
+-- is satisfied by exactly \emph{eight} of the thirty candidates; imposing
 the second removes exactly one.  The eight unit-invariant lattices are
 precisely the seven genuine maximal orders together with Kirmse's~$J_1$, and
 $J_1$ is the unique one of the eight that is not an order.  Concordantly,
 every one of $J_1$'s closure failures is a product of two half-integer
-elements --- ten of the sixteen products $a_i\cdot a_j$ --- while all $128$
+elements -- ten of the sixteen products $a_i\cdot a_j$ -- while all $128$
 products involving a unit close.  The count ``eight'' is thus not arbitrary:
 it is exactly the number delivered by the first, weaker sub-condition.
 
@@ -416,7 +416,7 @@ the eight-squares theorem~\eqref{eq:eightsquares}.  Much of the modern
 arithmetic of the integral octonions is already here, in 1924.
 
 His one substantive error is exactly located.  It is not in the algebra, nor
-in the ideal theory, nor in the final theorem --- all of which concern the
+in the ideal theory, nor in the final theorem -- all of which concern the
 $E_8$ lattice as a quadratic form and stand.  It is the single claim,
 \eqref{eq:eight}, that there are \emph{eight} maximal orders over $J_0$.
 There are seven.  And the one maximal order Kirmse wrote down and used,
@@ -435,7 +435,7 @@ shows that ``eight'' is exactly the number of candidate lattices invariant
 under multiplication by the units, and that those eight are the seven genuine
 maximal orders together with~$J_1$.  Since Kirmse printed no computation, the
 identification of his ``simple finite computation'' with this unit-invariance
-test is a reconstruction, not a quotation --- but it reproduces both his
+test is a reconstruction, not a quotation -- but it reproduces both his
 count and his choice of~$J_1$ exactly.  What is \emph{not} recoverable from
 his text is the route by which Kirmse himself arrived there.  A frankly
 speculative reconstruction of that route, contributed by J.~K\"oplinger, is
@@ -465,8 +465,8 @@ H.~S.~M.~Coxeter, \emph{Integral Cayley numbers}, Duke Math.\ J.~\textbf{13}
 
 \emph{This appendix differs in kind from the body.  Everything above is
 either traced to Kirmse's printed text or verified by computation; what
-follows is neither.  It is an openly speculative reconstruction --- proposed
-by Jens K\"oplinger --- of how a human being might have been led to the error
+follows is neither.  It is an openly speculative reconstruction -- proposed
+by Jens K\"oplinger -- of how a human being might have been led to the error
 of Section~\ref{sec:orders}.  It is placed in an appendix, and marked
 plainly, so that it cannot be mistaken for the record.}
 
@@ -475,34 +475,34 @@ plainly, so that it cannot be mistaken for the record.}
 Kirmse's paper states its general claim first and only afterwards descends to
 the particular order~$J_1$.  Human inquiry often runs the other way: a
 concrete instance, found and checked, comes first, and the general statement
-is distilled from it.  One may therefore picture --- and it is only a
-picture --- Kirmse proceeding in that order: a worked example in hand; a
+is distilled from it.  One may therefore picture -- and it is only a
+picture -- Kirmse proceeding in that order: a worked example in hand; a
 generalisation drawn from it to the form ``$J_0$, half-integer middle
 elements, $\tfrac12\sum i_k$''; a count of the resulting class; and a
 representative chosen from it.  On this reading the misstep enters at the
-generalisation.  Not in the \emph{form}, which is correct --- every genuine
-maximal order has it --- but in the leap from a single instance to a complete
+generalisation.  Not in the \emph{form}, which is correct -- every genuine
+maximal order has it -- but in the leap from a single instance to a complete
 classification, asserted on a criterion left unspoken.
 Section~\ref{sec:verify}(d) gives that unspoken criterion a definite shape:
 closure under the units, a condition necessary for an order but not
 sufficient, which admits eight lattices where seven are orders.  The
 representative Kirmse then exhibited, $J_1$, would on this reading have been
-drawn from a class delimited by a test he never stated --- and which does
+drawn from a class delimited by a test he never stated -- and which does
 not, in fact, delimit the orders.
 
 What the paper permits, and what it does not, must be said plainly.  It does
 \emph{not} permit the story above to be told as history.  Kirmse exhibits
 exactly one concrete realisation, $J_1$, and $J_1$ is not an order; if a
 working first example ever existed, it has left no trace.  The order of
-\emph{exposition} --- general, then particular --- is not evidence of the
+\emph{exposition} -- general, then particular -- is not evidence of the
 order of \emph{discovery}.  What is certain is only the logical content of
 Section~\ref{sec:verify}: closure is a two-part test, and the second part was
 not carried through.  The reconstruction above is consistent with that
 content, and is offered for no stronger reason than consistency.
 
-Why record a speculation at all.  The anatomy of an error --- how it is
+Why record a speculation at all.  The anatomy of an error -- how it is
 made, how it survives a careful reader, how it is at last detected and
-corrected --- is itself worth study, and a candid hypothesis about the human
+corrected -- is itself worth study, and a candid hypothesis about the human
 step, marked unmistakably as hypothesis, can serve that study better than
 silence.  That is the spirit in which this appendix is offered, and the
 reason it is quarantined from the body.
@@ -512,9 +512,9 @@ This appendix traces to no source.  The speculative reconstruction of a human
 provenance was contributed by Jens K\"oplinger; the present author has
 rendered it in a form consistent with the verified findings of
 Sections~\ref{sec:verify}--\ref{sec:assess} and with the rule that
-speculation be labelled as such.  Its only factual anchors --- the two-part
+speculation be labelled as such.  Its only factual anchors -- the two-part
 closure test, the eight unit-invariant lattices, and the block in which
-$J_1$ fails --- are those of Section~\ref{sec:verify}(d).
+$J_1$ fails -- are those of Section~\ref{sec:verify}(d).
 \end{tracing}
 
 % ===============================================================

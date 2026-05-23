@@ -36,7 +36,7 @@ repository
      {\texttt{bitbucket.org/jenskoeplinger/leech\_alg}},
 intended as a learning tool for the principal investigator and for
 other readers who approach this construction with the kind of
-questions --- and, candidly, misconceptions --- that arose throughout
+questions -- and, candidly, misconceptions -- that arose throughout
 the investigation.  Authorship and intellectual leadership of the
 main paper and the research programme belong to K\"oplinger, with AI
 collaboration as acknowledged there; the present companion is solely
@@ -182,15 +182,15 @@ $s \cdot s \in L$.
 
 \subsection*{What Kirmse did, and where it went wrong}
 
-Kirmse (1924) fixed one octonion multiplication --- call it
-$\cdot_K$ --- given by the seven Fano triples
+Kirmse (1924) fixed one octonion multiplication -- call it
+$\cdot_K$ -- given by the seven Fano triples
 \[
   (1,2,3),\ (1,5,4),\ (1,6,7),\ (2,4,7),\ (2,6,5),\ (3,4,6),\ (3,5,7)
 \]
 (read cyclically, as in \eqref{eq:fano}; this labelling differs
 from~\eqref{eq:fano}).  He then looked for the \emph{maximal orders}:
 the largest lattices in $(\RR^8, \cdot_K)$ closed under multiplication.
-His table $\cdot_K$ is itself a perfectly correct octonion algebra ---
+His table $\cdot_K$ is itself a perfectly correct octonion algebra --
 that is \emph{not} where the error lies.  He listed eight candidate
 maximal orders and described one of them, $J_1$, in detail.
 
@@ -221,19 +221,19 @@ Coxeter identified the mistake; R.~H.~Bruck supplied the remedy.
 
 Bruck's correction, as Coxeter reports it, is to ``transpose two of
 the $i$'s.''  Concretely: pick a transposition of two imaginary
-basis axes --- a linear involution of~$\RR^8$ that swaps
+basis axes -- a linear involution of~$\RR^8$ that swaps
 $e_a \leftrightarrow e_b$ and fixes the other six.  \emph{Any} of
 the $\binom72 = 21$ such transpositions repairs~$J_1$ (Coxeter; the 21
-fall into 7 triples of equal effect, giving the 7 maximal orders ---
+fall into 7 triples of equal effect, giving the 7 maximal orders --
 verified).
 
 We write~$\sigma$ for such a transposition, the \emph{same} symbol the
-main paper uses --- because it is the same kind of map, and disguising
+main paper uses -- because it is the same kind of map, and disguising
 that with two symbols would only obscure the point of this note.  What
 differs between the Kirmse--Coxeter use and the main paper's use is
 never the map: it is the \emph{algebra and lattice the map is applied
 to}, and we keep that explicit at every step.  For definiteness take
-$\sigma = (1\;2)$, the swap $e_1 \leftrightarrow e_2$ --- which is at
+$\sigma = (1\;2)$, the swap $e_1 \leftrightarrow e_2$ -- which is at
 once one of the 21 transpositions that repair Kirmse's~$J_1$ and the
 transposition the main paper twists by.
 
@@ -241,14 +241,14 @@ The repair has two equivalent descriptions, and it is worth being
 completely explicit about \emph{which object each one moves.}
 
 \smallskip
-\noindent\emph{Framing A --- $\sigma$ acts on the lattice (on the vector
+\noindent\emph{Framing A -- $\sigma$ acts on the lattice (on the vector
 space).}  Keep the product~$\cdot_K$.  Replace the lattice~$J_1$ by its
 image $J := \sigma(J_1)$.  Then $(J, \cdot_K)$ \emph{is} a maximal order:
 $J$ is closed under~$\cdot_K$.  The algebra is untouched; what changed
 is the subset of~$\RR^8$ being tested.
 
 \smallskip
-\noindent\emph{Framing B --- $\sigma$ acts on the product (on the
+\noindent\emph{Framing B -- $\sigma$ acts on the product (on the
 algebra).}  Keep the lattice~$J_1$.  Replace~$\cdot_K$ by its
 $\sigma$-conjugate
 \[
@@ -264,7 +264,7 @@ and $\sigma\colon (\RR^8, \cdot_K^{\,\sigma}) \to (\RR^8, \cdot_K)$ is an
 algebra \emph{isomorphism}, so it carries closed sublattices to closed
 sublattices: $J_1$ is closed under~$\cdot_K^{\,\sigma}$ \emph{iff}
 $\sigma(J_1)$ is closed under~$\cdot_K$.  Because~$\sigma$ is orthogonal,
-$\cdot_K^{\,\sigma}$ is again a \emph{composition} algebra --- again an
+$\cdot_K^{\,\sigma}$ is again a \emph{composition} algebra -- again an
 octonion algebra; the ``corrected table'' is just another octonion
 table, isomorphic to Kirmse's via~$\sigma$.
 
@@ -284,7 +284,7 @@ products that involve a swapped axis, and leaves the rest alone
       & i_3 \cdot_K^{\,\sigma} i_4 = +i_6 \quad (\text{unchanged}).
   \end{array}
 \]
-And on the very pair that broke closure --- the same two
+And on the very pair that broke closure -- the same two
 elements~$a_1, a_3$ of the same lattice~$J_1$:
 \[
   a_1 \cdot_K a_3 = \tfrac12(i_1{+}i_2{+}i_4{+}i_7) \notin J_1,
@@ -308,15 +308,15 @@ and Coxeter got right.
 \subsection*{A concrete lattice where the story does matter}
 
 From here on we return to the multiplication~$\cdot$ of
-\eqref{eq:fano} --- one of Coxeter's seven corrected octonion tables
---- and to the lattice~$L$, which closes under it.
+\eqref{eq:fano} -- one of Coxeter's seven corrected octonion tables
+-- and to the lattice~$L$, which closes under it.
 
 Whether a transposition twist changes anything depends entirely on the
 lattice it is asked about.  For the lattice~$L$ itself the twist is
 invisible: $L$ is symmetric under every coordinate permutation, so
 transposing two axes produces an algebra under which $L$ also closes
 (this is made precise in Section~10).  Kirmse's~$J_1$, by contrast, is
-\emph{not} symmetric under such a swap --- which is exactly why the
+\emph{not} symmetric under such a swap -- which is exactly why the
 twist moved it.  A second lattice of that non-symmetric kind, the one
 that drives the rest of this note, appears naturally in Wilson's Leech
 construction: the sublattice
@@ -342,7 +342,7 @@ octonion product, computed under the Fano convention
 \[
   a \cdot b = (0,\, -2,\, 2,\, 1,\, -2,\, -1,\, -1,\, -1).
 \]
-This vector has integer coordinates and lies in~$L$ --- but it is
+This vector has integer coordinates and lies in~$L$ -- but it is
 \emph{not} an integer combination of a $\ZZ$-basis of~$Ls$.  The
 verification is carried out with exact rational arithmetic in the
 script
@@ -663,7 +663,7 @@ what allows the twist to change the closure question for~$\LL$.
 
 A natural concern.  Coxeter's correction of Kirmse and the
 present~$\sigma$ are both transpositions of two imaginary coordinate
-axes --- the same kind of map, a linear involution of~$\RR^8$
+axes -- the same kind of map, a linear involution of~$\RR^8$
 (Section~\ref{sec:kirmse}); indeed $\sigma = (1\;2)$ is one of the
 $21$ transpositions that repair Kirmse's~$J_1$.  Could a poor choice
 of~$\sigma$, then, reverse Coxeter's correction and return the $E_8$
@@ -697,12 +697,12 @@ proposition returns each block to~$L$.  Condition~(1) holding
 \emph{is} Coxeter's closure carried through the twist; the
 construction depends on the correction, it does not undo it.
 
-The twist does act non-trivially --- but only on the lattices
+The twist does act non-trivially -- but only on the lattices
 $\sigma$ does \emph{not} fix.  $L$ is fixed; the sublattices $Ls$ and
 $L\bar s$ are not, and that is where Wilson's conditions~(2) and~(3)
 are redirected.  There is no tension between ``$\sigma$ fixes~$L$'' and
 ``$\sigma$ moves Kirmse's~$J_1$'': $L$ and~$J_1$ are both copies
-of~$E_8$, but \emph{placed} differently in~$\RR^8$ --- $L = D_8^+$ is
+of~$E_8$, but \emph{placed} differently in~$\RR^8$ -- $L = D_8^+$ is
 the coordinate-symmetric placement, $J_1$ is not (it is fixed by none
 of the $21$ transpositions).  Whether a transposition fixes a lattice
 is a property of the lattice's placement, not of the map.  Taking the

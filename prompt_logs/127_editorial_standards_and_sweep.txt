@@ -1,0 +1,58 @@
+Prompt 127 -- Adopt editorial_standards.md and sweep live artifacts
+Date: 2026-05-22
+
+User: "One quick thing before moving on: in the project ../leech_alg_ternary_o
+there is a file evidence_and_reasoning/editorial_standard.md - incorporate
+this into the current project also, by copying it over here as well, and
+tieing it into the documented methodology. Then I want you to do an
+editorial sweep on all the live artifacts (i.e., the ones that are not
+frozen in time)."
+
+Source file is /home/jens/Projects/leech_alg_ternary_o/evidence_and_reasoning/
+editorial_standards.md (plural -- the user wrote singular).
+
+Plan:
+1. Copy editorial_standards.md to this repo's evidence_and_reasoning/, lightly
+   adapted (the corollary "do not copy phrasing from ../leech_alg" doesn't
+   apply here -- this IS leech_alg).
+2. Tie it into MANIFESTO.md so the standards are governance, not just a file.
+3. Editorial sweep on live artifacts (non-frozen):
+     paper/companion.tex
+     paper/update_brief_2026-04-29_v3.tex
+     paper/update_brief_2026-04-29_v3_kirmse.tex
+     paper/historical_appendix.tex
+     paper/kirmse_1924_exposition.tex
+     paper/reviews/2026-05-* notes
+   main.tex is frozen v3 (under review) -- out of scope.
+
+Done:
+- Copied editorial_standards.md (note: plural) to evidence_and_reasoning/,
+  scope subsequently broadened (per user message mid-turn) to ALL durable
+  artifacts -- the main paper, briefs, companion, historical appendix,
+  exposition, governance/methodology files, plan documents, verification
+  notes, README, and prose parts of verification scripts. Ephemeral working
+  notes (e.g. /tmp scratch) excluded. Prompt logs durable but forward-
+  evolving (MANIFESTO Section 12).
+- MANIFESTO.md gains Section 11 "Editorial Standards" as governance pointer;
+  "Forward-Evolving Corrections" renumbered to Section 12.
+
+Editorial sweep on live artifacts (companion, brief I, brief II, historical
+appendix, exposition, plan):
+- Standard 4 (dash convention `--' never `---'): 90 em-dashes across the 5
+  live .tex artifacts converted via sed; all recompile clean (10/2/2/4/7
+  pages respectively).
+- Standard 4 (compound author names): consistent en-dash use throughout;
+  no single-hyphen violations.
+- Standard 5 (vagueness): 2 genuine hedges removed --
+    exposition L46: "essentially in full" -> "in full"
+    plan L39:     "essentially the whole" -> "in full"
+  Remaining flagged terms ("very pair/existence", "very artificial", "rather
+  than") are idiomatic, comparison usage, or direct source quotations -- not
+  violations.
+- Standards 1, 2, 3: spot-checked; no glaring issues in the recently
+  rewritten sections (companion Section 10, brief II, historical appendix).
+- Markdown files (MANIFESTO.md, editorial_standards.md, plan): not subject
+  to .tex dash convention (Markdown semantics differ); their internal
+  consistency unchanged.
+
+Status: COMPLETE.
