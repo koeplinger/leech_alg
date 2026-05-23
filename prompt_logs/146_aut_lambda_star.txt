@@ -1,0 +1,31 @@
+Prompt 146 -- Aut(Lambda, +, star) probe
+Date: 2026-05-23
+
+User: "Since we have GAP, can we try to answer this open question?
+'The automorphism group of (Lambda, +, star) and its relationship to the
+Conway group Co_0.'"
+
+Approach: bound Aut(Lambda, +, star) by testing candidate elements of
+Co_0 = Aut(Lambda, +). Candidates that DO preserve star -> in
+Aut(Lambda, +, star); candidates that DO NOT -> excluded.
+
+First-step candidates to test in exact arithmetic (Python, using the
+existing 24-vector Z-basis of Lambda and the star machinery):
+
+1. Z_3 block-cyclic permutation: (x,y,z) -> (y,z,x). Built-in symmetry,
+   expected to preserve star.
+2. S_3 transposition of blocks, e.g., (x,y,z) -> (y,x,z). Check
+   whether the full S_3 symmetry holds, or only the Z_3 subgroup.
+3. Componentwise negation -I_{24}: trivially in Aut(Lambda, +); does
+   NOT preserve star (bilinearity: g(u).g(v) = u.v, but g(u.v) = -u.v).
+   Confirms Aut(Lambda, +, star) is a proper subgroup of Co_0.
+4. sigma block-wise: (sigma(x), sigma(y), sigma(z)). May not even
+   preserve Lambda (sigma moves Ls).
+5. Optional: diagonal octonion automorphism g applied to each block,
+   for various g in the finite subgroup of G_2 preserving L = D_8^+.
+
+GAP step (later, if the first step is informative): use AtlasRep to
+load Co_0 as 24x24 integer matrices, then characterise the subgroup
+preserving the star tensor.
+
+Status: in progress.
