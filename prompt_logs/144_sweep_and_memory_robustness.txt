@@ -1,0 +1,100 @@
+Prompt 144 -- Sweep durable artifacts; harden the sigma-role memory
+Date: 2026-05-23
+
+User: "I've given you detailed instructions that essentially rewrote the
+entire abstract, and then significant parts of appendix B as they relate
+to the 'Kirmse twist' and our sigma transposition. Before I read in this
+level of detail through the actual paper, I need you to do a thorough
+sweep and check for the same framing, wording, and logical inconsistencies
+that we just fixed. I saw you made a memory, which is great --- but it is
+also powerful: Double-check that memory for preciseness, it must be
+robust, because you will rely on it going forward and it would be
+difficult for me to identify if some wrongness would over time creep back
+into the paper."
+
+Two tasks:
+(A) Audit and harden
+    /home/jens/.claude/projects/-home-jens-Projects-leech-alg/memory/
+      feedback_sigma_acts_on_sublattices.md
+    for precision and robustness. Specifically: it currently says
+    "the closure inclusions ... are what carry the triple product into
+    closure on Lambda", which is true for Wilson's conditions (2) and (3)
+    but condition (1) is carried by sigma(L)=L (the first action, not
+    the third). Sharpen the memory to attribute (1) to action 1, and
+    (2),(3) to action 3. Also fold in the "curious coincidence" framing
+    correction from prompt 143.
+
+(B) Sweep all durable artifacts for the same kinds of mis-framing we
+    just fixed:
+    - "historical precedent" (Coxeter-Bruck as precedent for our sigma)
+    - "repair of an order by transposition" attributed to our paper
+    - "Kirmse twist applied to our order" / "sigma turns L into an order"
+    - any other place that conflates the historical Coxeter-Bruck
+      situation with the present paper's situation.
+    Files to sweep: paper/main.tex, paper/companion.tex,
+    paper/update_brief_2026-04-29_v3_kirmse.tex,
+    paper/update_brief_2026-04-29_v3.tex, paper/historical_appendix.tex,
+    paper/historical_appendix_expanded.tex,
+    paper/kirmse_1924_exposition.tex,
+    evidence_and_reasoning/terminology.md,
+    evidence_and_reasoning/editorial_standards.md,
+    evidence_and_reasoning/2026-05-22_plan.md,
+    README.md.
+
+Done.
+
+Memory hardened
+(`/home/jens/.claude/projects/-home-jens-Projects-leech-alg/memory/feedback_sigma_acts_on_sublattices.md`):
+- Explicit attribution: action 1 (sigma(L)=L) carries Wilson condition
+  (1); action 2 (algebra iso) is automatic / carries nothing; action 3
+  (movement of Ls, L bar s) carries conditions (2) and (3) via Lemmas
+  4.3 and 4.4.
+- New "Mis-framings to avoid" subsection lists the specific phrasings
+  that conflate the historical Coxeter-Bruck situation with the
+  present paper's: "an order repaired by a transposition", "σ turns
+  E_8 candidate into order", "Coxeter-Bruck is the historical
+  precedent for σ" (the "curious coincidence" framing replaces it).
+- "How to apply" section maps each action to its load and reserves
+  "repair" language for the Coxeter-Bruck historical setting only.
+
+Sweep of durable artifacts (mis-framings fixed):
+
+- main.tex Introduction (paragraphs 4 and 5): "...closure on the
+  third requires Ls preserved under multiplication, and that
+  condition is sensitive to which Coxeter representation..." and
+  "main result is that ... product closes on Lambda once the
+  octonions are realised in the Coxeter representation aligned with
+  Wilson..." -> rewritten to the correct framing: obstruction is
+  Ls.Ls not subseteq Ls; sigma fixes L and is an algebra iso, but
+  moves L bar s and Ls; the obstruction becomes
+  sigma(Ls).sigma(Ls) <= sigma(Ls) and the parallel for L bar s.
+
+- main.tex Section 6 (Kirmse-Coxeter-Bruck paragraph): "The present
+  construction continues the same conceptual line" -> "The
+  Coxeter-Bruck transposition and the present sigma turn out to be
+  the same kind of map" (drops the "continues the conceptual line"
+  derivation framing).
+
+- paper/historical_appendix.tex: removed the "an integral-octonion
+  maximal order ... repaired by a transposition" parenthetical
+  (parallel to main.tex Appendix B); the count "3 -> 8 -> 7" line
+  removed; the "historical precedent" framing replaced by the
+  "curious coincidence" framing.
+
+- paper/historical_appendix_expanded.tex: same "historical precedent"
+  replacement applied; expanded version keeps the count line as part
+  of its more-detailed synthesis.
+
+- paper/companion.tex: abstract -- "where Coxeter's correction of
+  Kirmse provides the historical precedent" -> "where Coxeter's
+  correction of Kirmse is the historical example of the same kind of
+  operation". Section title 4 -- "The Kirmse-Coxeter precedent" ->
+  "The Kirmse-Coxeter example".
+
+- terminology.md, MANIFESTO.md, editorial_standards.md, plan:
+  re-read; no mis-framings to fix.
+
+Compile results: main 20 pp; companion 10 pp; historical_appendix 2
+pp; historical_appendix_expanded 4 pp. All clean.
+
+Status: COMPLETE.

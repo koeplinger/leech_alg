@@ -129,22 +129,23 @@ on~$\LL$ within the exceptional Jordan algebra~$\mathfrak{h}_3(\OO)$,
 finding closure under a doubled Jordan product.
 
 The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ -- using the
-same octonion multiplication in all three blocks with $\ZZ_3$-symmetric
-cross-block routing -- satisfies two of Wilson's three sublattice
-conditions automatically, but closure on the third requires a
-block-sum sublattice~$Ls$ to be preserved under octonion
-multiplication, and that condition is sensitive to which Coxeter
-representation of the octonions is used in~$\RR^{24}$.
+same octonion multiplication in all three blocks with
+$\ZZ_3$-symmetric cross-block routing -- satisfies two of Wilson's
+three sublattice conditions automatically.  The third (the block-sum
+condition, $x+y+z \in Ls$) requires the inclusion
+$Ls \cdot Ls \subseteq Ls$, which fails: $Ls$ is not closed under the
+octonion product.
 
-The main result of this paper is that the $\ZZ_3$-symmetric
-triple-octonion product closes on~$\LL$ once the octonions are
-realised in the Coxeter representation that is aligned with Wilson's
-sublattice description of~$\LL$.  Relative to the standard Fano-plane
-labelling we use throughout for the $E_8$ block, that representation is
-obtained by a single transposition~$\sigma$ of two imaginary basis
-indices: the resulting product maps the block-sum sublattice~$Ls$
-into~$\sigma(Ls)$, a different sublattice of~$L$ that \emph{is}
-closed under the underlying octonion multiplication.
+The main result of this paper is that closure on~$\LL$ is restored
+by twisting the octonion multiplication on each block by a
+transposition~$\sigma$ of two imaginary basis units.  The map
+$\sigma$ leaves the $E_8$ lattice~$L$ invariant and is an algebra
+isomorphism on the octonions, but it moves the sublattices $L\bar s$
+and~$Ls$ that Wilson's conditions invoke; the obstruction
+$Ls \cdot Ls \not\subseteq Ls$ becomes
+$\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$
+(Lemma~\ref{lem:sigmaLs-closed}), and a parallel inclusion holds for
+$L\bar s$ (Lemma~\ref{lem:L-sigmaLsbar}).
 
 \begin{theorem}\label{thm:main}
 Let\/ $\cdot_\sigma$ denote the transposition-twisted octonion
@@ -906,10 +907,9 @@ units sends $J_1$ to a closed maximal order.  Dickson
 one such order; Mahler \cite{Mahler1942} developed its arithmetic.
 A historical synthesis is in Appendix~\ref{app:history}.
 
-The present construction continues the same conceptual line.  The
-\emph{Coxeter--Bruck transposition} and the present~$\sigma$ are the
-same kind of map: a transposition of two imaginary coordinate axes,
-a linear involution of~$\RR^8$.  They differ only in the lattice on
+The \emph{Coxeter--Bruck transposition} and the present~$\sigma$
+turn out to be the same kind of map: a transposition of two
+imaginary coordinate axes, a linear involution of~$\RR^8$.  They differ only in the lattice on
 which they are applied.  Coxeter--Bruck act on a maximal-order
 candidate ($J_1$) that is not coordinate-symmetric, repairing it.
 The present~$\sigma$ acts where the order is~$L = D_8^+$, the
