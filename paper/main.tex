@@ -38,9 +38,9 @@
 
 \makeatother
 
-% ---------------------------------------------------------------
+% ---------
 % Theorem environments
-% ---------------------------------------------------------------
+% ---------
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -51,9 +51,9 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
-% ---------------------------------------------------------------
+% ---------
 % Notation
-% ---------------------------------------------------------------
+% ---------
 \newcommand{\OO}{\mathbb{O}}          % octonions
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\QQ}{\mathbb{Q}}
@@ -71,7 +71,7 @@
 \begin{document}
 \title{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product}
-\subtitle{29 April 2026 (v3)}
+\subtitle{23 May 2026 (v4)}
 \author{Jens K\"oplinger}
 \maketitle
 
@@ -88,8 +88,8 @@ concretely on Wilson's sublattice description of~$\LL \subset \RR^{24}$
 requires a particular Coxeter representation of the octonions,
 related to the standard Fano-plane labelling by a single
 transposition~$\sigma$ of two imaginary basis indices.  The chain
-Kirmse $\to$ Coxeter $\to$ $\sigma$ --- each step a transposition of
-two basis indices --- successively aligns the octonion multiplication
+Kirmse $\to$ Coxeter $\to$ $\sigma$ -- each step a transposition of
+two basis indices -- successively aligns the octonion multiplication
 with the lattice: Coxeter's transposition turns Kirmse's~$E_8$
 candidate into an order in the octonions, and~$\sigma$ aligns the
 triple-octonion product so that it closes on~$\LL$.
@@ -125,9 +125,9 @@ Baez and Egan \cite{Baez2014} explored Jordan-algebraic structures
 on~$\LL$ within the exceptional Jordan algebra~$\mathfrak{h}_3(\OO)$,
 finding closure under a doubled Jordan product.
 
-The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ --- using the
+The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ -- using the
 same octonion multiplication in all three blocks with $\ZZ_3$-symmetric
-cross-block routing --- satisfies two of Wilson's three sublattice
+cross-block routing -- satisfies two of Wilson's three sublattice
 conditions automatically, but closure on the third requires a
 block-sum sublattice~$Ls$ to be preserved under octonion
 multiplication, and that condition is sensitive to which Coxeter
@@ -149,12 +149,31 @@ multiplication on~$\RR^8$ (Definition~\ref{def:twist}), and let\/
 $\star$ denote the associated triple product on
 $\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ with $\ZZ_3$ cross-block
 routing (Definition~\ref{def:triple}).  Then for all
-$u, v \in \LL$, the product $u \star v$ lies in~$\LL$.
+$u, v \in \LL$, the product $u \star v$ lies
+in~$\LL$.\footnote{The construction extends to consecutive twists
+$\sigma_2 \circ \sigma_1$ by another transposition.  Composing
+$\sigma$ with the 21 transpositions yields, by cycle type, the
+identity (one case, the untwisted product, which does \emph{not}
+close on~$\LL$), 21 transpositions (which all close), 70 3-cycles
+(of which 35 close), and 105 $(2,2)$-double transpositions (of which
+42 close).  The closing 3-cycles are exactly the ones with one of
+each of two opposite cyclic orientations on each of the seven
+3-subsets fixed by~$\sigma$; the closing $(2,2)$'s are the 42 that
+do not act on a Fano line.  Verified by exact-arithmetic enumeration
+in \texttt{python\_project/src/verify\_consecutive\_twists\_exact.py};
+the closing-on-$\LL$ criterion turns on whether the resulting
+sublattice $\sigma_2\sigma_1(Ls)$ admits the same role
+that~$\sigma(Ls)$ does for~$\sigma$ alone.}
 \end{theorem}
 
 \begin{corollary}\label{cor:order}
 $(\LL, +, \star)$ is an order in the $\RR$-algebra
-$(\RR^{24}, +, \star)$.
+$(\RR^{24}, +, \star)$, in the sense that it is a $\ZZ$-subring of
+full rank -- a subgroup that is closed under~$\star$ and that is a
+free $\ZZ$-module of rank equal to the dimension of the ambient
+algebra.  The ambient algebra has no multiplicative identity
+(Section~\ref{sec:properties}), so the term ``order'' is used here in
+the non-unital sense.
 \end{corollary}
 
 \begin{proof}
@@ -172,8 +191,8 @@ in $\{16, 32, 48, 64, 80, 96, 112, 128\}$ (see
 Section~\ref{sec:properties}), none of which equals the minimal value
 $\Nrm = 8$: products of minimal vectors always land on strictly
 higher shells.  This is consistent with $(\LL, +, \star)$ being an
-order in the ring-theoretic sense --- a subring that is a free
-$\ZZ$-module of rank equal to the ambient algebra's dimension ---
+order in the ring-theoretic sense -- a subring that is a free
+$\ZZ$-module of rank equal to the ambient algebra's dimension --
 a property weaker than, and independent of, any shell-level closure.
 \end{remark}
 
@@ -213,23 +232,37 @@ coordinate sum, or all half-integers with odd coordinate sum
 multiplication, $L$~is a maximal order in~$\OO$: it is closed under
 multiplication \cite{Coxeter1946, ConwaySmith2003}.
 
-\begin{remark}[Kirmse's convention versus ours]\label{rem:kirmse}
-The closure $L \cdot L \subseteq L$ depends on which Fano-plane
-labelling defines the octonion product.  Kirmse~\cite{Kirmse1924}
-originally proposed a specific labelling under which $D_8^+$ is
-\emph{not} closed --- a subtle error corrected by
-Coxeter~\cite{Coxeter1946}, who showed that permuting two basis
-indices yields a different multiplication on the same~$\RR^8$ under
-which $D_8^+$ \emph{is} closed.  There are seven such
-Coxeter-corrected conventions, each giving one of the seven maximal
-orders of the integral octonions~\cite{ConwaySmith2003}; see
-also Petersson~\cite{Petersson2018} for a modern account.
+\begin{remark}[Kirmse's domain versus ours]\label{rem:kirmse}
+Kirmse~\cite{Kirmse1924} fixed an octonion multiplication on the
+basis $\{1,i_1,\ldots,i_7\}$ and stated that there are \emph{eight}
+maximal orders (his p.~70).  His multiplication table is itself a
+correct octonion algebra; his error is in the lattice $J_1$ he
+exhibited explicitly as one of the eight, which is \emph{not closed}
+under his own product.  The true number is seven.
+Coxeter~\cite{Coxeter1946}, in \S4 of \emph{Integral Cayley numbers},
+identified the failure with an explicit one-line witness and
+recorded the remedy supplied by R.\,H.~Bruck: ``Bruck's domain~$J$
+can be derived from~$J_1$ by transposing two of the~$i$'s'' -- a
+transposition of two imaginary basis units, a linear involution
+of~$\RR^8$.  The $\binom72=21$ such transpositions yield the seven
+maximal orders of the integral octonions; Dickson~\cite{Dickson1923},
+predating both, had reached three of them (Theorem~XV; the undercount
+is explained in Coxeter's postscript).  See Conway and
+Smith~\cite{ConwaySmith2003} for a modern account, Petersson
+\cite{Petersson2018} for a historical one, and
+Appendix~\ref{app:history} for a synthesis from the primary sources
+verified in this project.
 
-The ``standard'' Fano triples~\eqref{eq:fano} used in this paper are
-one of the Coxeter-corrected conventions, not Kirmse's.  We have
-verified $L \cdot L \subseteq L$ directly under our convention: using
-an explicit $\ZZ$-basis of $L$ and exact rational arithmetic, all 64
-basis products are integer combinations of the basis.
+The Fano triples~\eqref{eq:fano} used in this paper, together with
+the coordinate-symmetric placement $L = D_8^+$ of $E_8$ (Wilson
+\cite{Wilson2009}), are a closed (table, lattice) pair: we have
+verified $L \cdot L \subseteq L$ directly using an explicit
+$\ZZ$-basis of~$L$ and exact rational arithmetic, with all 64 basis
+products integer combinations of the basis.  Because $L = D_8^+$ is
+fixed by every coordinate permutation, this closure is invariant
+under any coordinate-transposition twist of the product -- including
+the Coxeter--Bruck transposition and the present~$\sigma$
+(Remark~\ref{rem:sigma-vs-fano}).
 \end{remark}
 
 \begin{remark}[Closure of the lattice, not the shells]\label{rem:shells}
@@ -264,8 +297,12 @@ computation, and the inclusion extends by $\ZZ$-linearity in the
 left factor. $L\bar s$ is therefore a $\ZZ$-subgroup of~$L$, and
 is moreover closed under left-multiplication by~$L$ (Wilson's
 condition~(2) for the untwisted product, implicit in the sublattice
-argument of~\cite[Section~3]{Wilson2009}). For~$Ls$ both properties
-are immediate from $s \in L$.} with
+argument of~\cite[Section~3]{Wilson2009}). For~$Ls$, the subgroup
+property is likewise immediate from $s \in L$. Closure under
+left-multiplication by~$L$, by contrast, holds for~$L\bar s$ but
+\emph{fails} for~$Ls$ -- and that failure is precisely the
+obstruction resolved by the twist (Remark~\ref{rem:Ls-not-closed}).}
+with
 $[L : L\bar{s}] = [L : Ls] = 16$,
 $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$
 \cite[Section~2]{Wilson2009}.
@@ -344,21 +381,30 @@ since $\sigma^2 = \mathrm{id}$.  Thus $\sigma: (\OO, \cdot) \to
 multiplication.  Composition follows.
 \end{proof}
 
-\begin{remark}[$\sigma$ vs.\ a Fano-line permutation]
+\begin{remark}[$\sigma$ and the Coxeter--Bruck correction]
 \label{rem:sigma-vs-fano}
-The map~$\sigma$ is a linear involution of~$\RR^8$, swapping two
-coordinate axes and preserving both the underlying vector space
-and the Euclidean norm.  This is structurally different from a
-permutation of Fano triples (such as the one Coxeter used to
-correct Kirmse's $E_8$ convention), which rewrites the
-multiplication table without being induced by a linear map
-on~$\RR^8$.  Most coordinate transpositions do not correspond to
-Fano-triple permutations: $\sigma = (1\;2)$ does not send the
-triple~$(2,3,5)$ in~\eqref{eq:fano} to any of the other six listed
-there, so the Fano line structure is not preserved by~$\sigma$.
-Coxeter's correction and the present~$\sigma$ thus act at
-different strata of the construction; we expand on this in
-Section~\ref{sec:related}.
+The Coxeter--Bruck correction of Kirmse's integral-octonion convention
+and the present~$\sigma$ are the same kind of map: a transposition of
+two imaginary coordinate axes, a linear involution of~$\RR^8$.  Like
+any coordinate transposition, each rewrites the multiplication table
+-- it does not preserve the Fano line structure (e.g.\ $\sigma =
+(1\;2)$ does not send the triple~$(2,3,5)$ in~\eqref{eq:fano} to any
+of the other six listed there) -- but each \emph{is} induced by a
+linear map.  The two differ only in the lattice on which they act.
+Coxeter--Bruck's transposition repairs a maximal-order candidate
+that sits asymmetrically in~$\RR^8$.  The present~$\sigma$ acts
+where the order is $L = D_8^+$, which is invariant under every
+coordinate permutation; hence $\sigma(L) = L$ and
+\[
+  L \cdot_\sigma L \;=\; \sigma(L \cdot L) \;\subseteq\; L,
+\]
+so the twist preserves the $E_8$-level closure automatically.  Its
+effect falls entirely on the sublattices $Ls$ and $L\bar s$, which
+are not $\sigma$-invariant: that is what redirects Wilson's
+sublattice conditions.  We expand on this in
+Section~\ref{sec:related}, and a historical synthesis of the
+1923--1946 development is in
+Appendix~\ref{app:history}.
 \end{remark}
 
 To make the action of~$\sigma$ on the multiplication concrete, we
@@ -656,34 +702,52 @@ This completes the proof of Theorem~\ref{thm:main}.
 % ===============================================================
 
 The order $(\LL, +, \star)$ has been tested for several standard
-algebraic properties.  All percentages below are over samples drawn
-uniformly from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$
-(or from $\operatorname{Min}(\LL)$, for power-associativity); sample
-sizes are 5{,}000 pairs for norm multiplicativity and 2{,}000 pairs
-(resp.\ 2{,}000 elements for power-associativity) for each remaining
-test.
+algebraic identities.  Samples are drawn uniformly (by family weight)
+from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
+binary identities, and from $\operatorname{Min}(\LL)$ for the cube and
+quartic identities.  Sample size is $N = 802{,}000$ per property;
+exact integer arithmetic throughout.  The standard error is
+$\mathrm{SE} = \sqrt{p(1-p)/N}$, where $p$ is the fraction of samples
+on which the identity holds; SE values below are at most $0.06\%$,
+so the figures are stable to the digits shown.
 
 \begin{center}
 \begin{tabular}{@{}lll@{}}
 \toprule
-Property & Holds? & Details \\
+Property & Holds? & Fraction of samples (\% $\pm$ SE) \\
 \midrule
 Multiplicative identity & No & the ambient algebra
   $(\RR^{24}, +, \star)$ has no identity element \\
-Commutativity & No & ${<}\,0.1\%$ of pairs commute \\
-Norm multiplicativity & No & $\approx 47\%$ of pairs satisfy
-  $\Nrm(u \star v) = \Nrm(u)\Nrm(v)$ \\
-Left alternativity & No & ${<}\,0.1\%$ of pairs satisfy
-  $(x \star x) \star y = x \star (x \star y)$ \\
-Right alternativity & No & ${<}\,0.1\%$ of pairs satisfy
-  $(x \star y) \star y = x \star (y \star y)$ \\
-Flexibility & No & $\approx 8.6\%$ of pairs satisfy
-  $(x \star y) \star x = x \star (y \star x)$ \\
-Power-associativity & No & $\approx 29\%$ of elements satisfy
-  $x^2 \star x = x \star x^2$ \\
+Commutativity $u\star v = v\star u$ & No &
+  $0.017\% \pm 0.0014\%$ \\
+Norm multiplicativity $\Nrm(u\star v) = \Nrm(u)\Nrm(v)$ & No &
+  $46.72\% \pm 0.056\%$ \\
+Left alternativity $(x\star x)\star y = x\star(x\star y)$ & No &
+  $0.187\% \pm 0.0048\%$ \\
+Right alternativity $(x\star y)\star y = x\star(y\star y)$ & No &
+  $0.185\% \pm 0.0048\%$ \\
+Flexibility $(x\star y)\star x = x\star(y\star x)$ & No &
+  $8.35\% \pm 0.031\%$ \\
+Cube power-associativity $x^2\star x = x\star x^2$ & No &
+  $30.73\% \pm 0.052\%$ \\
+Quartic power-associativity (all five parenthesisations of
+  $x\star x\star x\star x$ coincide) & No &
+  $12.75\% \pm 0.037\%$ \\
+Symmetric composition $\langle u\star v, w\rangle =
+  \langle u, v\star w\rangle$ (after Elduque) & No &
+  $25.45\% \pm 0.049\%$ \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+The norm-multiplicativity rate of $\approx 47\%$ and the
+symmetric-composition rate of $\approx 25\%$ together rule out
+$(\LL, +, \star)$ being a composition algebra and, more specifically,
+a symmetric composition algebra in the sense of Okubo and
+para-Hurwitz (Elduque \cite{Elduque1996, Elduque2023_IsotropicNorm};
+Okubo \cite{Okubo1995_Book}).  Cube and quartic
+power-associativity are reported separately, the cube identity being
+strictly weaker.
 
 \begin{remark}
 The product norm on $\operatorname{Min}(\LL) \times
@@ -755,10 +819,10 @@ Leech embeddings $L_L \subset \OO^3$ for which the associated
 27-dimensional lattice is closed under this doubled product
 (see part~10 of~\cite{Baez2014} for Egan's computational counts).
 Baez left open the question whether any such lattice is closed under
-the undoubled Jordan product --- which would remove the factor-of-2
-discrepancy --- and conjectures that the answer is negative.  We
+the undoubled Jordan product -- which would remove the factor-of-2
+discrepancy -- and conjectures that the answer is negative.  We
 have independently reproduced the full Baez--Egan verification chain
---- the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
+-- the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
 Leech-lattice theorem, the doubled-Jordan-product closure, the
 derivation of the lower bound $244{,}035{,}421$ on the number of
 $E_8^3$-orbit Leech embeddings, and Egan's sharper count of
@@ -804,7 +868,7 @@ block-pair Euclidean inner products of $u$ and $v$:
 so $\operatorname{tr} D = 8 \langle u, v\rangle$ recovers the
 $\RR^{24}$ inner product of $u$ and $v$.  Projecting onto the
 off-diagonal subspace defines a $\ZZ$-bilinear closed product
-$\varphi(u, v) := R$ on $\LL$ --- an order in the sense of
+$\varphi(u, v) := R$ on $\LL$ -- an order in the sense of
 Theorem~\ref{thm:main}, but obtained by projecting from a larger
 ambient with the inner-product shadow $D$ discarded.  For minimal
 Leech vectors $u \in \operatorname{Min}(\LL)$, squaring gives
@@ -832,29 +896,47 @@ integer form is generated by octave reflections.  Each of these
 constructions is additive or geometric: none defines or tests a
 bilinear product on~$\LL$.
 
-\textbf{Kirmse (1924)} \cite{Kirmse1924} exhibited the $E_8$ lattice
-as a unimodular integral quadratic lattice inside the real octonion
-algebra.  His lattice is not closed under multiplication, an error
-corrected by Coxeter~\cite{Coxeter1946} by swapping two basis indices
-in the Fano-plane labelling.
+\textbf{Kirmse (1924), Coxeter (1946), Bruck.}  Kirmse
+\cite{Kirmse1924} exhibited the $E_8$ lattice as a unimodular
+integral quadratic lattice inside the real octonion algebra and
+sought its maximal orders; his exhibited domain $J_1$ is not closed
+under multiplication, an error identified by
+Coxeter~\cite{Coxeter1946} and remedied by R.\,H.~Bruck (reported in
+\cite[\S4]{Coxeter1946}): transposing two of the imaginary basis
+units sends $J_1$ to a closed maximal order.  Dickson
+\cite{Dickson1923}, predating both, gave a correct construction of
+one such order; Mahler \cite{Mahler1942} developed its arithmetic.
+A historical synthesis is in Appendix~\ref{app:history}.
 
-The present construction continues the same conceptual line, but
-the two transpositions in the chain are structurally different.
-Coxeter's correction is a permutation of Fano \emph{triples}: it
-rewrites the multiplication table without being induced by a linear
-map on~$\RR^8$.  The present~$\sigma$ is a permutation of
-\emph{coordinate axes}: a linear involution of~$\RR^8$ that
-conjugates the multiplication, $\cdot \mapsto \cdot_\sigma$
-(Definition~\ref{def:twist}; cf.\ Remark~\ref{rem:sigma-vs-fano}).
-Both modify the bilinear product, but each resolves a closure
-obstruction at a different stratum: Coxeter's at the $E_8$ stratum,
-forcing $L \cdot L \subseteq L$;~$\sigma$ at a finer-grained
-sublattice stratum, forcing $\sigma(Ls) \cdot \sigma(Ls) \subseteq
-\sigma(Ls)$ (Lemma~\ref{lem:sigmaLs-closed}).  Because $\sigma(L)
-= L$, the $\sigma$-twist preserves Coxeter's closure automatically:
-$L \cdot_\sigma L = \sigma(L \cdot L) \subseteq L$.  No choice
-of~$\sigma$ can return the construction to Kirmse's pre-Coxeter
-regime.
+The present construction continues the same conceptual line.  The
+\emph{Coxeter--Bruck transposition} and the present~$\sigma$ are the
+same kind of map: a transposition of two imaginary coordinate axes,
+a linear involution of~$\RR^8$.  They differ only in the lattice on
+which they are applied.  Coxeter--Bruck act on a maximal-order
+candidate ($J_1$) that is not coordinate-symmetric, repairing it.
+The present~$\sigma$ acts where the order is~$L = D_8^+$, the
+coordinate-symmetric placement of~$E_8$ used by Wilson; here
+$\sigma(L) = L$, so the twist preserves the $E_8$-level closure
+automatically ($L \cdot_\sigma L = \sigma(L \cdot L) \subseteq L$)
+and acts non-trivially only on the sublattices $Ls$ and~$L\bar s$ of
+Wilson's construction, where it does the analogous work
+(turning a non-closed sublattice into a closed one;
+Lemma~\ref{lem:sigmaLs-closed}).  The same kind of operation at a
+different stratum -- the Leech-lattice stratum rather than the
+maximal-order stratum.  Because~$L$ is coordinate-symmetric, no
+$\sigma$-twist can return the construction to a Kirmse-type
+non-closure of~$L$.
+
+\textbf{Corradetti (2026).}  A thematically adjacent recent
+construction is Corradetti's order on~$E_8$ via the Okubo algebra
+\cite{Corradetti2026}: a different non-classical bilinear structure
+on~$E_8$, obtained by a $2$-adic conductor / saturation of an
+Okubo-algebra overlattice.  The two operations involved differ from
+the present mod-2 quotient (Appendix~\ref{sec:appendix-tables},
+\ref{app:mod2quotient}) -- Corradetti rescales an order and
+$2$-adically saturates a sublattice; the present paper passes to a
+quotient $L \to L/2L$ -- but both place $2$-primary structure at
+the centre of an octonion-derived order on~$E_8$.
 
 % ===============================================================
 \section{Conclusion}\label{sec:conclusion}
@@ -865,8 +947,8 @@ construction: a $\ZZ_3$-symmetric triple-octonion product on~$\RR^{24}$,
 realised in the Coxeter representation aligned with Wilson's
 sublattice description of~$\LL$.  The symbolic proof
 (Section~\ref{sec:proof}) reduces closure to four lemmas, of which
-the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice $\sigma(Ls)$ --- unlike~$Ls$
-itself --- is closed under the standard octonion product.  The twist
+the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice $\sigma(Ls)$ -- unlike~$Ls$
+itself -- is closed under the standard octonion product.  The twist
 maps the condition-3 sublattice to this closed sublattice, and the
 involutory nature of~$\sigma$ maps the result back.
 
@@ -908,8 +990,8 @@ algebras, as studied by
 Elduque~\cite{Elduque1996,Elduque2000_Triality,Elduque2023_IsotropicNorm}
 and others~\cite{SmithVojtechovsky2022,KamiyaOkubo2015,Okubo1995_Book},
 are typically non-associative, non-commutative, non-alternative, and
-non-power-associative --- the same negative classification $(\RR^{24},
-+, \star)$ satisfies --- yet carry high internal symmetry, with
+non-power-associative -- the same negative classification $(\RR^{24},
++, \star)$ satisfies -- yet carry high internal symmetry, with
 order-3 automorphisms playing the central role: the Okubo algebra has
 automorphism group $\mathrm{SU}(3)$, and its product is built from an
 order-3 automorphism of the octonions.  Hall's
@@ -931,8 +1013,13 @@ interest.
 \section*{Acknowledgments}
 % ===============================================================
 
-The author thanks Geoffrey M. Dixon and Robert A. Wilson for helpful discussions and advice
-on octonionic structures associated with the Leech lattice.
+The author thanks Geoffrey M. Dixon and Robert A. Wilson for helpful
+discussions and advice on octonionic structures associated with the
+Leech lattice; Matthew Barley for probing the paper and for help in
+improving it; and Petr Vojt\v{e}chovsk\'{y}, whose pointer to the
+$\sigma$-twist surfaced the imprecise description of the Kirmse twist
+in earlier drafts and prompted the historical synthesis of
+Appendix~\ref{app:history}.
 
 % ===============================================================
 \appendix
@@ -1280,6 +1367,127 @@ $i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
 \caption{Coefficients $c_k$ such that $M_i \cdot M_j = \sum_{k=1}^{8} c_k\, M_k$, for the bases defined above.}\label{tbl:appendix-MM}
 \end{table}
 
+\subsection*{The mod-2-quotient reading of Tables~\ref{tbl:appendix-LN}
+and~\ref{tbl:appendix-MM}}\label{app:mod2quotient}
+
+The integer tables above are the explicit certificates of
+Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed}; we now
+record the structural account of \emph{what} they certify.
+
+From $L\bar s \cap Ls = 2L$ (Section~\ref{subsec:wilson-leech}) one
+has $2L \subseteq L\bar s$ and $2L \subseteq Ls$, and applying
+$\sigma$ (which fixes $2L$),
+\[
+  2L \subseteq \sigma(L\bar s), \qquad 2L \subseteq \sigma(Ls).
+\]
+Because $L \cdot L \subseteq L$ (Lemma~\ref{lem:L-order}) and the
+octonion product is $\ZZ$-bilinear, $(a + 2c) \cdot b \equiv a \cdot
+b \pmod{2L}$ for $c \in L$, and likewise in the right factor.  The
+product therefore descends to a well-defined $\FF_2$-bilinear product
+$\bar\mu$ on the \emph{mod-2 quotient}
+\[
+  \bar L := L/2L \cong \FF_2^{\,8}, \qquad
+  \bar\mu \colon \bar L \times \bar L \to \bar L,
+\]
+the octonion algebra over~$\FF_2$; the structure constants of
+$\bar\mu$ are exactly the entries of Table~\ref{tbl:appendix-LL}
+reduced modulo~$2$.
+
+Since $2L$ lies in both $\sigma(L\bar s)$ and~$\sigma(Ls)$, those
+sublattices are \emph{full preimages}, under $L \to \bar L$, of
+$\FF_2$-subspaces
+\[
+  V := \sigma(L\bar s)/2L, \qquad W := \sigma(Ls)/2L,
+\]
+and from $\sigma(L\bar s) + \sigma(Ls) = L$ and
+$\sigma(L\bar s) \cap \sigma(Ls) = 2L$ one obtains $\bar L = V \oplus
+W$ with $\dim V = \dim W = 4$.  Reducing the closure statements
+modulo~$2L$ then gives
+\[
+  \text{Lemma~\ref{lem:L-sigmaLsbar}} \iff
+    \bar\mu(\bar L, V) \subseteq V, \qquad
+  \text{Lemma~\ref{lem:sigmaLs-closed}} \iff
+    \bar\mu(W, W) \subseteq W.
+\]
+That is: Table~\ref{tbl:appendix-LN} certifies that $V$ is a
+\textbf{left ideal} of the octonion $\FF_2$-algebra $L/2L$;
+Table~\ref{tbl:appendix-MM} certifies that $W$ is a
+\textbf{subalgebra} of it.  The integer tables and this mod-2-quotient
+description are complementary: the tables verify, the quotient
+explains.  The descent and both equivalences were checked in exact
+arithmetic
+(\texttt{python\_project/src/verify\_mod2\_quotient.py}).
+
+A note on terminology: the construction is a \emph{quotient}, the
+surjection $L \to L/2L$, and is named the \emph{mod-2 quotient}.  It
+is kept verbally distinct from a $2$-adic scaling or saturation;
+Corradetti's \cite{Corradetti2026} thematically adjacent $2$-primary
+conductor sublattice of~$E_8$ rescales an order and $2$-adically
+saturates a \emph{sub}lattice rather than passing to a quotient.
+Both works find $2$-primary structure governing octonion-derived
+orders, but the operations differ.
+
+% ===============================================================
+\section{Historical note: integral Cayley numbers,
+1923--1946}\label{app:history}
+% ===============================================================
+
+The construction this paper builds on -- an integral-octonion
+maximal order supported on the $E_8$ lattice, repaired by a
+transposition of two imaginary basis units -- was developed across
+four primary papers between 1923 and 1946.  Each was obtained in the
+original and re-derived in exact arithmetic in this project
+(\texttt{python\_project/src/verify\_\{dickson\_1923,kirmse\_1924,%
+mahler\_1942,coxeter\_1946\}.py}; verification notes in
+\texttt{paper/reviews/}).
+
+\noindent\textbf{Dickson (1923) \cite{Dickson1923}} gave the first
+construction: the Cayley--Dickson doubled product and an explicit
+8-element basis of an order $O_D$, with all 64 basis products
+closing.  His Theorem~XV states three maximal orders; the true count
+is \emph{seven}.  The cause is in his derivation (p.~321): he assumes
+the orders contain the Hurwitz quaternions
+$\tfrac12(\pm 1 \pm i \pm j \pm k)$, and exactly three of the seven
+do.
+
+\noindent\textbf{Kirmse (1924) \cite{Kirmse1924}} took up the problem
+independently.  His multiplication table is itself a correct
+octonion algebra.  He stated eight maximal orders and exhibited one,
+$J_1$ (p.~70); $J_1$ is not closed,
+$\tfrac12(1{+}i_1{+}i_2{+}i_3)\cdot\tfrac12(1{+}i_1{+}i_4{+}i_5)
+=\tfrac12(i_1{+}i_2{+}i_4{+}i_7)\notin J_1$.  The true count is
+again seven.
+
+\noindent\textbf{Mahler (1942) \cite{Mahler1942}} developed the
+arithmetic of a maximal order: for every Cayley number~$X$ there is
+an integral~$G$ with $\Nrm(X-G)\le\tfrac12$ (sharper than Dickson's
+$5/4$), and every left or right ideal is principal, generated by an
+integral Cayley number of norm $1$, $2$, or $4$.
+
+\noindent\textbf{Coxeter (1946) \cite{Coxeter1946}} identifies
+Kirmse's error with the same non-closure witness and records that
+the remedy is due to R.\,H.~Bruck: ``Bruck's domain $J$ can be
+derived from $J_1$ by transposing two of the $i$'s'' (\S4).  This is
+a transposition of two imaginary basis units, a linear involution
+of~$\RR^8$; the $\binom72 = 21$ such transpositions yield the seven
+maximal orders in seven sets of three.  His \S\S6--13 develop the
+$E_8/5_{21}$ geometry of the corrected order.  A postscript (\S14)
+records his after-the-fact awareness of Dickson and Mahler and
+identifies Dickson's undercount with exactly the cause above.
+
+The count converges $3 \to 8 \to 7$.  The \emph{Coxeter--Bruck
+transposition} -- a transposition of two imaginary coordinate axes
+-- is the historical precedent for the present paper's~$\sigma$.
+The two are the same kind of map, a linear involution of~$\RR^8$,
+and differ only in what they are asked about: the Coxeter--Bruck
+transposition acts on a maximal-order candidate that sits
+asymmetrically in~$\RR^8$; the present~$\sigma$ acts on the
+coordinate-symmetric placement $L = D_8^+$ (where it is inert at the
+$E_8$ stratum) and does its work on the sublattice~$Ls$ of Wilson's
+Leech construction.  See Remarks~\ref{rem:kirmse}
+and~\ref{rem:sigma-vs-fano} for the implications used in the body
+of the paper.
+
 % ===============================================================
 \section{Research methodology}\label{sec:methodology}
 % ===============================================================
@@ -1289,9 +1497,9 @@ researcher and an AI agent (Claude, Anthropic) over a series of
 directed prompts, governed by a written methodology (the
 ``Manifesto'') established at the outset.
 
-The human researcher (the author) brought the initial hypothesis ---
+The human researcher (the author) brought the initial hypothesis --
 motivated by prior work on Okubo algebras and autotopies of normed
-composition algebras --- established the research methodology, and
+composition algebras -- established the research methodology, and
 maintained control of the inquiry through prompt-by-prompt review.
 The AI agent performed the computational work: implementing octonion
 algebras, Wilson's Leech lattice construction, trial algebras, and
@@ -1337,29 +1545,29 @@ The methodology required:
 
 The path to the result was not direct.  Six trial algebra families
 were explored and ruled out before the transposition twist was
-identified in trial~007.  The systematic methodology ---
+identified in trial~007.  The systematic methodology --
 understanding the anatomy of failure (which conditions fail, for which
-vector types, and why) before trying the next approach --- was
+vector types, and why) before trying the next approach -- was
 essential.  The failure analysis of the untwisted product (Wilson's
 condition~(3) per Definition~\ref{def:wilson-leech}, exclusively
 type-3$\times$type-3) directly pointed to the
 mechanism that the twist needed to correct.
 
-Iterative convergence toward a robust result --- including learning
-along the way what it is we are actually doing --- is how study,
+Iterative convergence toward a robust result -- including learning
+along the way what it is we are actually doing -- is how study,
 research, and discovery have always proceeded.  Mistakes were made
 on both sides: the AI agent occasionally departed from the agreed
 protocol or produced incorrect intermediate analyses, and the human
 author at times framed prompts under misconceptions or accepted
 intermediate results without sufficient scrutiny.  In each case, the
 error was caught by the systematic cross-checking that the
-methodology requires --- explicit verification, prompt-by-prompt
+methodology requires -- explicit verification, prompt-by-prompt
 review, and independent reimplementation in two computer-algebra
-systems --- and corrected forward.  What is novel here is the
+systems -- and corrected forward.  What is novel here is the
 ability to trace the entire path, beginning to end, through the
 complete list of prompts.
 
-The full record --- all prompts, code, evidence, and git history ---
+The full record -- all prompts, code, evidence, and git history --
 is available at the repository~\cite{repo}.  The reader can form
 their own assessment of what this means for questions of discovery
 and attribution.
@@ -1401,10 +1609,21 @@ J.\,H.~Conway and D.\,A.~Smith,
 Symmetry},
 A.\,K.~Peters, 2003.
 
+\bibitem[Corradetti2026]{Corradetti2026}
+D.~Corradetti,
+\emph{Integral elements of Okubo algebra and the $E_8$-lattice},
+arXiv:2605.09333, 2026.
+\href{https://arxiv.org/abs/2605.09333}{arXiv:2605.09333}.
+
 \bibitem[Coxeter1946]{Coxeter1946}
 H.\,S.\,M.~Coxeter,
 \emph{Integral Cayley numbers},
 Duke Math.\ J.\ \textbf{13} (1946), 561--578.
+
+\bibitem[Dickson1923]{Dickson1923}
+L.\,E.~Dickson,
+\emph{A new simple theory of hypercomplex integers},
+J.~Math.\ Pures Appl.\ (9) \textbf{2} (1923), 281--326.
 
 \bibitem[Dixon1995]{Dixon1995}
 G.\,M.~Dixon,
@@ -1472,6 +1691,11 @@ preprint, 2023.
 J.~Lepowsky and A.~Meurman,
 \emph{An\/ $E_8$-approach to the Leech lattice and the Conway group},
 J.~Algebra \textbf{77} (1982), no.~2, 484--504.
+
+\bibitem[Mahler1942]{Mahler1942}
+K.~Mahler,
+\emph{On ideals in the Cayley--Dickson algebra},
+Proc.\ Roy.\ Irish Acad.\ Sect.\ A \textbf{48} (1942), 123--133.
 
 \bibitem[Okubo1995\_Book]{Okubo1995_Book}
 S.~Okubo,

@@ -1,0 +1,82 @@
+Prompt 132 -- Phase C: assemble v4
+Date: 2026-05-23
+
+User: "Word."
+
+(Confirmation to proceed with Phase C per
+evidence_and_reasoning/2026-05-22_plan.md.)
+
+Plan for Phase C (in order):
+1. Read main.tex; map every edit point.
+2. Brief 1 application:
+   a. Section 2.3 footnote fix (the L\bar{s} / Ls closure mis-statement).
+   b. Mod-2-quotient description added to Appendix A alongside
+      Tables A.2/A.3 (DP2: keep-and-augment).
+3. Brief 2 application:
+   a. Replace Remark rem:sigma-vs-fano with the corrected text.
+   b. Correct the Section 6 historical paragraph (keep "different
+      strata", drop "not a linear map").
+   c. Sharpen Remark rem:kirmse: locate Kirmse's error in the lattice
+      J_1 (not the table); state 8-vs-7 clearly; credit Bruck.
+4. Decision A: brief clarifying phrase for "order" terminology
+   (non-unital usage).
+5. Decision H: Section 5 -- replace with the 802k-sample table; split
+   power-associativity into cube/quartic; add Elduque row; SE column.
+6. (1c) consecutive-sigma-twist finding -- compact footnote (DP7).
+7. (3) Corradetti citation -- context pointer in the style of Dixon and
+   Furey-Hughes (DP5).
+8. Add short historical appendix (paper/historical_appendix.tex body)
+   as an appendix; pre-empt the sigma-vs-Kirmse-twist confusion at the
+   point sigma is introduced.
+9. Decision C: bibliography -- add Dickson (1923) and Mahler (1942);
+   fix Kirmse journal name to "Sächsische Akademie".
+10. Acknowledgments: add Matthew Barley and Petr Vojtěchovský to the
+    existing Geoffrey Dixon / Robert Wilson list.
+11. Convert remaining --- to -- in main.tex (editorial standards).
+12. Bump version v3 -> v4; re-date to 23 May 2026.
+13. Recompile; check warnings.
+14. Companion: bump to v4-compatible re-versioning if user signals.
+
+Done. All 17 todo items completed:
+
+main.tex (v3 -> v4, 23 May 2026, 21 pages, compiles clean):
+1. Section 2.3 footnote fix applied (brief 1 a).
+2. Mod-2-quotient subsection added at end of Appendix A (brief 1 b).
+3. Remark rem:sigma-vs-fano replaced with corrected text
+   (sigma = Coxeter-Bruck transposition; same kind of map; differ in
+   the lattice acted on).
+4. Section 6 historical paragraph rewritten: "different strata" kept;
+   "not a linear map" removed; Bruck credited; Dickson/Mahler cited.
+5. Remark rem:kirmse sharpened: error in lattice J_1, not the table;
+   8-vs-7; Bruck credited; pre-empt note that L = D_8^+ is
+   coordinate-symmetric so closure is invariant under any
+   coordinate-transposition twist.
+6. Corollary cor:order: added "non-unital sense" clarifier (decision A).
+7. Section 5: 802,000-sample table; cube + quartic power-associativity
+   split; Elduque symmetric-composition row; SE column; Okubo and
+   Elduque citations (decision H).
+8. Theorem thm:main footnote: consecutive sigma-twists -- compact
+   footnote with cycle-type breakdown (1 + 21 + 70 + 105 -> closes:
+   0 + 21 + 35 + 42); cites verify_consecutive_twists_exact.py (DP7).
+9. New paragraph in Section 6 on Corradetti (2026) as a context
+   pointer (DP5).
+10. New appendix "Historical note: integral Cayley numbers, 1923-1946"
+    -- the condensed body of paper/historical_appendix.tex; situated
+    between basis-tables appendix and methodology appendix.
+11. Bibliography: added Dickson1923, Mahler1942, Corradetti2026.
+12. Acknowledgments: added Matthew Barley and Petr Vojtěchovský.
+13. Editorial standard 4: 121 em-dashes (---) converted to en-dashes
+    (--) in prose; the four remaining "---" are LaTeX preamble
+    comment-line separators, not prose.
+14. Title block: \subtitle{29 April 2026 (v3)} -> {23 May 2026 (v4)}.
+
+companion.tex (v4 companion, 23 May 2026, 10 pages, compiles clean):
+- date updated: "16 April 2026; revised 23 May 2026 (v4 companion)".
+- abstract revision-by line updated accordingly.
+
+main.pdf 21 pp, 632500 bytes. companion.pdf 10 pp, 425152 bytes.
+
+Phase D pending: full referee-style review passes of the assembled
+v4. Per user, stopping here.
+
+Status: COMPLETE.
