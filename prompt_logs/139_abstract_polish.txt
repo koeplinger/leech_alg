@@ -1,0 +1,28 @@
+Prompt 139 -- Abstract: three small polish edits
+Date: 2026-05-23
+
+User: three edits in the abstract --
+(1) "but it moves the condition-(2) and condition-(3) sublattices"
+    -> "but it moves Wilson's conditions on the sublattices"
+(2) remove the redundant "and that movement is what carries the
+    triple product into closure on Λ".
+(3) replace the Kirmse-twist sentence with the user's exact wording:
+    "We show that the map σ is exactly the Kirmse twist, i.e., the
+    same kind of transposition that, applied by Bruck to a non-closed
+    candidate of Kirmse, led Coxeter to produce the first verified
+    maximal order of integral octonions."
+
+Done. Abstract now reads (Kirmse-twist portion):
+
+  "In Wilson's sublattice description of Lambda, closure turns on a
+  transposition sigma of two imaginary basis units: sigma leaves the
+  E_8 lattice invariant and is an algebra isomorphism of the
+  octonions, but it moves Wilson's conditions on the sublattices
+  L bar s and Ls. We show that the map sigma is exactly the *Kirmse
+  twist*, i.e., the same kind of transposition that, applied by
+  Bruck to a non-closed candidate of Kirmse, led Coxeter to produce
+  the first verified maximal order of integral octonions."
+
+main.pdf 20 pp, compiles clean.
+
+Status: COMPLETE.

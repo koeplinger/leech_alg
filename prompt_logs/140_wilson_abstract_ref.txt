@@ -1,0 +1,15 @@
+Prompt 140 -- Abstract: add Wilson 2009 abbreviated reference
+Date: 2026-05-23
+
+User: "In the abstract, 'In Wilson's sublattice description of Λ,' add a
+full abbreviated reference to that paper, i.e.: 'In R. A. Wilson's
+sublattice description of Λ [J. Algebra 322 (2009), 2186–2190],' --
+double-check this for correctness."
+
+Verification: matches the bibliography entry exactly --
+R.\,A.~Wilson, "Octonions and the Leech lattice", J.~Algebra **322**
+(2009), 2186--2190.
+
+Applied. main.pdf 20 pp, compiles clean.
+
+Status: COMPLETE.

@@ -1,0 +1,63 @@
+Prompt 138 -- Footnote (2,2) wording; Remark 2.1 deferral
+Date: 2026-05-23
+
+User (main): "minor wording in the footnote: instead of 'the closing (2,2)'s
+are the 42 that do not act on a Fano line.' how about 'act on the same Fano
+line'"
+
+User (mid-turn): "Instead of spelling out 'Remark 2.1 (Kirmse's domain versus
+ours).' just defer to the appendix with the historical account."
+
+Tasks:
+1. Footnote: the user's suggestion "act on the same Fano line" is
+   geometrically vacuous for a (2,2) -- two disjoint transpositions cannot
+   both lie on a 3-element Fano line. The original "do not act on a Fano
+   line" was ALSO imprecise: only HALF (42 of 84) of the (2,2)'s with
+   non-line fixed triple close; the original phrasing implied all 84.
+   The precise statement from the (1c) verification is: a (2,2) whose
+   fixed triple is a Fano line never closes (0 of 21); of the remaining
+   84, exactly half close. Rewrite the footnote to that precise form.
+2. Remark rem:kirmse: replace the long account with a one-line pointer
+   to the historical appendix.
+
+Done:
+
+Footnote (consecutive twists):
+- Rewritten to precise form. The composite pi = sigma_2 sigma_1 is the
+  identity, a 3-cycle, or a (2,2)-double transposition. Closure results:
+    pi = id: does NOT close.
+    70 3-cycles: exactly half close (one of two cyclic orientations per
+      3-subset).
+    105 (2,2)'s: the 21 whose fixed three indices form a Fano line all
+      fail; of the remaining 84, exactly half close (42 in all).
+  The user's "act on the same Fano line" suggestion was geometrically
+  vacuous for a (2,2); kept the precise "fixed three indices form a
+  Fano line" characterisation instead.
+
+Remark rem:kirmse (Kirmse's domain versus ours):
+- Substantially shortened.
+- Loud lead: "The transposition sigma of two imaginary basis units
+  used in this paper is *exactly* the **Kirmse twist**."
+- History deferred to Appendix app:history.
+- $\binom72=21$ removed (lives in the appendix Coxeter para).
+- Kept the L.L<=L verification and the sigma(L)=L corollary.
+
+Abstract:
+- Replaced the wrong claim ("requires a particular Coxeter
+  representation ... related to the standard Fano-plane labelling by
+  ... sigma") with the correct framing: closure turns on a
+  transposition sigma; sigma leaves L invariant and is an algebra
+  isomorphism, but moves the condition-(2) and condition-(3)
+  sublattices L bar s and Ls -- and that movement is what carries
+  closure on Lambda. Notes that sigma is exactly the Kirmse twist.
+
+Section 4 introduction:
+- Added a framing sentence: the lemmas pin down what sigma does and
+  does not do -- it fixes L, is an algebra isomorphism on the
+  octonions, but moves the sublattices Ls and L bar s; the
+  load-bearing inclusions are at the sublattice level
+  (Lemmas 4.3, 4.4).
+
+main.tex recompiles clean (20 pp, no undefined refs/citations).
+
+Status: COMPLETE.

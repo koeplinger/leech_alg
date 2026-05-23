@@ -83,16 +83,19 @@ We show that the Leech lattice~$\LL$ admits the structure of an order
 in a 24-dimensional real algebra.  The product is a
 $\ZZ_3$-symmetric triple-octonion product on~$\RR^{24}$, assembled
 from nine octonion-multiplication blocks under cyclic $\ZZ_3$
-permutation of three octonion factors.  Realising this product
-concretely on Wilson's sublattice description of~$\LL \subset \RR^{24}$
-requires a particular Coxeter representation of the octonions,
-related to the standard Fano-plane labelling by a single
-transposition~$\sigma$ of two imaginary basis indices.  The chain
-Kirmse $\to$ Coxeter $\to$ $\sigma$ -- each step a transposition of
-two basis indices -- successively aligns the octonion multiplication
-with the lattice: Coxeter's transposition turns Kirmse's~$E_8$
-candidate into an order in the octonions, and~$\sigma$ aligns the
-triple-octonion product so that it closes on~$\LL$.
+permutation of three octonion factors.  In R.\,A.~Wilson's sublattice
+description of~$\LL$ [J.~Algebra \textbf{322} (2009), 2186--2190],
+closure turns on a transposition~$\sigma$ of
+two imaginary basis units: $\sigma$ leaves the $E_8$ lattice
+invariant and is an algebra isomorphism of the octonions, but it
+moves Wilson's conditions on the sublattices $L\bar s$ and~$Ls$.
+Due to various miscounts and misattributions over the past century,
+we provide a historical account from the original sources
+(1923--1946) in Appendix~\ref{app:history}, and show that the
+map~$\sigma$ is exactly the \emph{Kirmse twist}, i.e., the same kind
+of transposition that, applied by Bruck to a non-closed candidate of
+Kirmse, led Coxeter to produce the first verified maximal order of
+integral octonions.
 
 This result was developed through a systematic human--AI collaboration;
 the complete research record is publicly available~\cite{repo}.
@@ -151,19 +154,18 @@ $\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ with $\ZZ_3$ cross-block
 routing (Definition~\ref{def:triple}).  Then for all
 $u, v \in \LL$, the product $u \star v$ lies
 in~$\LL$.\footnote{The construction extends to consecutive twists
-$\sigma_2 \circ \sigma_1$ by another transposition.  Composing
-$\sigma$ with the 21 transpositions yields, by cycle type, the
-identity (one case, the untwisted product, which does \emph{not}
-close on~$\LL$), 21 transpositions (which all close), 70 3-cycles
-(of which 35 close), and 105 $(2,2)$-double transpositions (of which
-42 close).  The closing 3-cycles are exactly the ones with one of
-each of two opposite cyclic orientations on each of the seven
-3-subsets fixed by~$\sigma$; the closing $(2,2)$'s are the 42 that
-do not act on a Fano line.  Verified by exact-arithmetic enumeration
-in \texttt{python\_project/src/verify\_consecutive\_twists\_exact.py};
-the closing-on-$\LL$ criterion turns on whether the resulting
-sublattice $\sigma_2\sigma_1(Ls)$ admits the same role
-that~$\sigma(Ls)$ does for~$\sigma$ alone.}
+$\sigma_2 \circ \sigma_1$ by another transposition.  The composite
+acts as a single twist by $\pi = \sigma_2 \sigma_1$; as a product of
+two transpositions, $\pi$ is the identity, a 3-cycle, or a
+$(2,2)$-double transposition.  Tested by exact-arithmetic
+enumeration on a $\ZZ$-basis of~$\LL$
+(\texttt{python\_project/src/verify\_consecutive\_twists\_exact.py}):
+$\pi = $~identity does \emph{not} close (the untwisted product); of
+the 70 3-cycles, exactly half close -- for each three-element subset
+of imaginary indices, one of the two cyclic orientations does; of
+the 105 $(2,2)$'s, the 21 whose fixed three indices form a Fano
+line all fail, and of the remaining 84 exactly half close
+(42 in all).}
 \end{theorem}
 
 \begin{corollary}\label{cor:order}
@@ -233,36 +235,24 @@ multiplication, $L$~is a maximal order in~$\OO$: it is closed under
 multiplication \cite{Coxeter1946, ConwaySmith2003}.
 
 \begin{remark}[Kirmse's domain versus ours]\label{rem:kirmse}
-Kirmse~\cite{Kirmse1924} fixed an octonion multiplication on the
-basis $\{1,i_1,\ldots,i_7\}$ and stated that there are \emph{eight}
-maximal orders (his p.~70).  His multiplication table is itself a
-correct octonion algebra; his error is in the lattice $J_1$ he
-exhibited explicitly as one of the eight, which is \emph{not closed}
-under his own product.  The true number is seven.
-Coxeter~\cite{Coxeter1946}, in \S4 of \emph{Integral Cayley numbers},
-identified the failure with an explicit one-line witness and
-recorded the remedy supplied by R.\,H.~Bruck: ``Bruck's domain~$J$
-can be derived from~$J_1$ by transposing two of the~$i$'s'' -- a
-transposition of two imaginary basis units, a linear involution
-of~$\RR^8$.  The $\binom72=21$ such transpositions yield the seven
-maximal orders of the integral octonions; Dickson~\cite{Dickson1923},
-predating both, had reached three of them (Theorem~XV; the undercount
-is explained in Coxeter's postscript).  See Conway and
-Smith~\cite{ConwaySmith2003} for a modern account, Petersson
-\cite{Petersson2018} for a historical one, and
-Appendix~\ref{app:history} for a synthesis from the primary sources
-verified in this project.
+The transposition $\sigma$ of two imaginary basis units used in this
+paper is \emph{exactly} the \textbf{Kirmse twist}: the same map
+that -- applied by R.\,H.~Bruck (recorded in
+Coxeter~\cite{Coxeter1946}) to a non-closed candidate domain $J_1$
+of Kirmse~\cite{Kirmse1924} -- produced the first verified maximal
+order of integral octonions.  Appendix~\ref{app:history} synthesises
+the 1923--1946 history from the primary sources verified in this
+project.
 
 The Fano triples~\eqref{eq:fano} used in this paper, together with
-the coordinate-symmetric placement $L = D_8^+$ of $E_8$ (Wilson
-\cite{Wilson2009}), are a closed (table, lattice) pair: we have
-verified $L \cdot L \subseteq L$ directly using an explicit
+the coordinate-symmetric placement $L = D_8^+$ of $E_8$
+(Wilson~\cite{Wilson2009}), are a closed (table, lattice) pair: we
+have verified $L \cdot L \subseteq L$ directly using an explicit
 $\ZZ$-basis of~$L$ and exact rational arithmetic, with all 64 basis
 products integer combinations of the basis.  Because $L = D_8^+$ is
 fixed by every coordinate permutation, this closure is invariant
-under any coordinate-transposition twist of the product -- including
-the Coxeter--Bruck transposition and the present~$\sigma$
-(Remark~\ref{rem:sigma-vs-fano}).
+under any Kirmse-twist of the product -- including the
+present~$\sigma$ (Remark~\ref{rem:sigma-vs-fano}).
 \end{remark}
 
 \begin{remark}[Closure of the lattice, not the shells]\label{rem:shells}
@@ -462,9 +452,17 @@ All nine block-pair products use the same multiplication~$\cdot_\sigma$.
 
 We prove Theorem~\ref{thm:main} by showing that the twisted product
 preserves each of Wilson's three conditions
-(Definition~\ref{def:wilson-leech}).  The proof rests on four
-lemmas about the interaction between the transposition~$\sigma$, the
-maximal order~$L$, and the sublattices $Ls$ and~$L\bar{s}$.
+(Definition~\ref{def:wilson-leech}).  The proof rests on four lemmas
+about the interaction between the transposition~$\sigma$, the
+maximal order~$L$, and the sublattices $Ls$ and~$L\bar{s}$.  The
+lemmas pin down what $\sigma$ does and does not do: it fixes~$L$
+(Lemma~\ref{lem:sigma-L}, so the maximal-order closure
+$L \cdot L \subseteq L$ is invariant under the Kirmse twist;
+Lemma~\ref{lem:L-order}) and acts on the octonion product by an
+algebra isomorphism (Proposition~\ref{prop:iso}), but it
+\emph{moves} the sublattices $L\bar s$ and $Ls$; the load-bearing
+inclusions are at the sublattice level
+(Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed}).
 
 \subsection{Reduction to standard products}
 
