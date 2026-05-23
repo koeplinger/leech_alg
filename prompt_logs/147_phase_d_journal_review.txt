@@ -1,0 +1,22 @@
+Prompt 147 -- Phase D: full journal-style review of v4
+Date: 2026-05-23
+
+User: "We're complete with Phase C of the plan, right? Next would be phase
+D: A full journal-style review. Do it."
+
+(Aut(Lambda,+,star) probe set aside per "let's not do it.")
+
+Phase D per evidence_and_reasoning/2026-05-22_plan.md:
+"10. Rebuild; **several** full referee-style review passes of v4; log to
+     paper/reviews/."
+
+Doing a first thorough referee-style pass now. Plan:
+- Read paper/main.tex section by section (abstract, intro, prelims,
+  construction, proof, algebraic properties, related work, conclusion,
+  outlook, appendices).
+- Flag substantive math issues (errors, gaps, unclear arguments), and
+  editorial issues (consistency, redundancy, vague claims). Be honest, not
+  rubber-stamp.
+- Write the review as paper/reviews/2026-05-23_claude_opus_4_7_review_v4.md.
+
+Status: in progress.

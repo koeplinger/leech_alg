@@ -1,0 +1,23 @@
+Prompt 148 -- v4 review revisions
+Date: 2026-05-23
+
+User responded to the eight items in the Phase D review:
+
+Required revisions:
+1. §5 "Multiplicative identity" row: KEEP the row, record "0%" as the
+   measurement outcome (instead of removing).
+2. §6 L739 "discussed below": DO IT (fix the orphaned cross-reference).
+3. Abstract L91 "moves Wilson's sublattices, not conditions": AGREED.
+4. Relocate Kirmse1924 to alphabetical position: DO IT.
+
+Optional:
+5. §5 credit each rate individually: USER ASKS WHAT THIS MEANS, explain.
+6. §6 (in fact S_3-symmetric): NO -- would open a group-theoretical
+   investigation the user does not want to undertake.
+7. §7 -I_24 not in Aut: NO -- same reason.
+
+Actions this turn:
+- Explain item 5 in plain prose.
+- Apply edits 1, 2, 3, 4 to paper/main.tex.
+
+Status: in progress.
