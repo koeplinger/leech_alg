@@ -1,0 +1,30 @@
+Prompt 150 -- Context-aware paper review
+Date: 2026-05-23
+
+User: "With all of this, do a 'context-aware' paper review, i.e. review
+the paper but also be aware of the context in the entire repo. Find
+inconsistencies."
+
+Distinct from the prior Phase D referee review (prompt 147), which read
+the paper in isolation. This pass cross-checks the paper against the
+repo's other artefacts: verification scripts, trial results, prompt
+logs, reference files, terminology doc, acknowledgments, and the
+historical-record key claims.
+
+Inconsistency categories to look for:
+1. File path / script name references in main.tex that don't match
+   actual files in python_project/src/ or gap_project/.
+2. Numerical claims (pairs tested, sample counts, percentages, page
+   counts) that conflict with the source records.
+3. Attribution: who did / verified / corrected what, vs prompt logs.
+4. Names and first names: full names I added match the references?
+5. Bibliographic accuracy (year, journal, pages, DOI/arXiv).
+6. Lemma numbering and statement consistency across paper, code,
+   key claims.
+7. Stated "what was done" vs what the prompt logs and trials show.
+8. Acknowledgments completeness vs project record.
+9. Open questions: any "open" that has been answered? Any answered
+   claim presented as open?
+10. Terminology consistency between paper and terminology.md.
+
+Status: in progress.

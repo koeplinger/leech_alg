@@ -10,11 +10,11 @@ half-integer coordinates produces half-integer coordinates, so doubled
 coordinates stay integer under multiplication (after dividing by 4 and
 re-doubling — see multiply_doubled()).
 
-Lemma A: σ(L) = L
-Lemma B: L·L ⊆ L  (maximal order)
-Lemma C: L · σ(Ls̄) ⊆ σ(Ls̄)
-Lemma D: σ(Ls) · σ(Ls) ⊆ σ(Ls)
-Remark (non-triviality): σ(Ls) ≠ Ls  (and Ls·Ls ⊄ Ls as counterexample)
+Lemma 4.1 (paper §4): σ(L) = L
+Lemma 4.2 (paper §4): L·L ⊆ L  (maximal order)
+Lemma 4.3 (paper §4): L · σ(Ls̄) ⊆ σ(Ls̄)
+Lemma 4.4 (paper §4): σ(Ls) · σ(Ls) ⊆ σ(Ls)
+Remark rem:Ls-not-closed (paper §4): σ(Ls) ≠ Ls  (witness: Ls·Ls ⊄ Ls)
 """
 
 import numpy as np
@@ -192,10 +192,10 @@ def main():
     print(f"  σ(Ls̄) basis: {len(sigma_Lsbar_basis)} vectors")
 
     # ===============================================================
-    # Lemma A: σ(L) = L
+    # Lemma 4.1: σ(L) = L
     # ===============================================================
     print("\n" + "=" * 70)
-    print("LEMMA A: σ(L) = L")
+    print("LEMMA 4.1: σ(L) = L")
     print("=" * 70)
     # Check that σ(b) ∈ L for each basis vector
     all_ok = True
@@ -209,10 +209,10 @@ def main():
         print("  Since σ is its own inverse, σ(L) = L. ✓")
 
     # ===============================================================
-    # Lemma E: σ(Ls) ≠ Ls
+    # Remark rem:Ls-not-closed: σ(Ls) ≠ Ls (paper records this as a remark, not a lemma)
     # ===============================================================
     print("\n" + "=" * 70)
-    print("LEMMA E: σ(Ls) ≠ Ls")
+    print("REMARK rem:Ls-not-closed: σ(Ls) ≠ Ls (paper §4: a remark, not a lemma)")
     print("=" * 70)
     found_diff = False
     for i, v in enumerate(sigma_Ls_basis):
@@ -265,10 +265,10 @@ def main():
         print("  UNEXPECTED: Ls IS closed — standard product should fail!")
 
     # ===============================================================
-    # Lemma D: σ(Ls) · σ(Ls) ⊆ σ(Ls)
+    # Lemma 4.4: σ(Ls) · σ(Ls) ⊆ σ(Ls)
     # ===============================================================
     print("\n" + "=" * 70)
-    print("LEMMA D: σ(Ls) · σ(Ls) ⊆ σ(Ls)")
+    print("LEMMA 4.4: σ(Ls) · σ(Ls) ⊆ σ(Ls)")
     print("=" * 70)
     failures_D = 0
     for i in range(8):
@@ -286,10 +286,10 @@ def main():
         print(f"  FAIL: {failures_D}/64 products not in σ(Ls).")
 
     # ===============================================================
-    # Lemma C: L · σ(Ls̄) ⊆ σ(Ls̄)
+    # Lemma 4.3: L · σ(Ls̄) ⊆ σ(Ls̄)
     # ===============================================================
     print("\n" + "=" * 70)
-    print("LEMMA C: L · σ(Ls̄) ⊆ σ(Ls̄)")
+    print("LEMMA 4.3: L · σ(Ls̄) ⊆ σ(Ls̄)")
     print("=" * 70)
     failures_C = 0
     for i in range(8):
@@ -331,12 +331,12 @@ def main():
     print("\n" + "=" * 70)
     print("SUMMARY")
     print("=" * 70)
-    print(f"  Lemma A (σ(L)=L):           {'PASS' if all_ok else 'FAIL'}")
-    print(f"  Lemma E (σ(Ls)≠Ls):         {'PASS' if found_diff else 'FAIL'}")
-    print(f"  Counterex (Ls·Ls⊄Ls):       {'PASS' if found_counter else 'FAIL'}")
-    print(f"  Lemma D (σ(Ls)·σ(Ls)⊆σ(Ls)):{' PASS' if failures_D==0 else ' FAIL'}")
-    print(f"  Lemma C (L·σ(Ls̄)⊆σ(Ls̄)):   {'PASS' if failures_C==0 else 'FAIL'}")
-    print(f"  Bonus (L·Ls̄⊆Ls̄):           {'PASS' if failures_bonus==0 else 'FAIL'}")
+    print(f"  Lemma 4.1 (σ(L)=L):            {'PASS' if all_ok else 'FAIL'}")
+    print(f"  Remark  (σ(Ls)≠Ls):            {'PASS' if found_diff else 'FAIL'}")
+    print(f"  Counterex (Ls·Ls⊄Ls):          {'PASS' if found_counter else 'FAIL'}")
+    print(f"  Lemma 4.4 (σ(Ls)·σ(Ls)⊆σ(Ls)): {' PASS' if failures_D==0 else ' FAIL'}")
+    print(f"  Lemma 4.3 (L·σ(Ls̄)⊆σ(Ls̄)):    {'PASS' if failures_C==0 else 'FAIL'}")
+    print(f"  Bonus (L·Ls̄⊆Ls̄):              {'PASS' if failures_bonus==0 else 'FAIL'}")
 
 
 if __name__ == "__main__":
