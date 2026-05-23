@@ -35,9 +35,13 @@ the isotopy triple (φ, φ, φ) where all three maps are the same.
 In this project: the transposition-twisted algebra swap(s,t) is isomorphic
 to the standard octonion algebra.  The map σ: e_s ↔ e_t (extended linearly)
 satisfies σ(x ·_std y) = σ(x) ·_swap σ(y) for all basis pairs.  Verified
-computationally: 0/64 mismatches.  However, σ does not preserve the E8
-lattice L (it moves half-integer basis vectors), so L is closed under the
-standard product but the swap product acts differently on L.
+computationally: 0/64 mismatches.  For the coordinate-symmetric placement
+L = D₈⁺ used throughout the paper, σ preserves L (it is a coordinate
+permutation, which preserves both integer/half-integer parity and the
+coordinate sum); σ moves the sublattices Ls and Ls̄ of L, and that is
+where the twist does its work.  See "Kirmse integers — Kirmse twist"
+below for the contrast with the axis-asymmetric placement of E₈ used
+by Kirmse (1924), where the twist moves the lattice itself.
 
 ### Isotopy (of algebras)
 
@@ -340,4 +344,5 @@ than the Wilson-condition-3 failure of the triple octonion product.
 
 ---
 
-Last updated: 2026-04-11 (isotopy/isomorphism, Leech lattice norm conventions added)
+Last updated: 2026-05-23 (σ-on-L statement corrected to match main paper v4
+Lemma 4.1; Kirmse-twist section synthesised from primary sources)

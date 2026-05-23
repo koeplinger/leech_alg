@@ -235,4 +235,28 @@ confirm the absence of multiplicative/ring/order structure on Λ.
 
 ---
 
-Last updated: 2026-04-14
+## Thematically adjacent — order on E₈, not on Λ
+
+### [Corradetti2026]
+
+- **Authors**: Daniele Corradetti
+- **Title**: Integral elements of Okubo algebra and the E₈-lattice
+- **Published in**: arXiv:2605.09333
+- **Year**: 2026
+- **URL / DOI**: https://arxiv.org/abs/2605.09333
+- **Topics**: octonions, okubo_algebra, e8_lattice, orders
+- **Originality note**: arXiv preprint; no dispute known.
+- **Notes**: Constructs an order on E₈ (not on Λ) via the Okubo algebra.
+  The construction operates 2-adically — it rescales an order and
+  saturates a sublattice — rather than passing to a mod-2 quotient as
+  in the present paper (Appendix A, "The mod-2-quotient reading").  The
+  two works land on different sides of the same 2-primary structure
+  governing octonion-derived orders.  Cited in `paper/main.tex`
+  §6 ("Related work") and Appendix A subsection on the mod-2 quotient,
+  alongside the present construction.  See also the analysis note in
+  `paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md`.
+
+---
+
+Last updated: 2026-05-23 (Corradetti 2026 added as thematically adjacent
+recent work — order on E₈ via the Okubo algebra)

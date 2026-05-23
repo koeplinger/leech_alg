@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-04-14
+Last updated: 2026-05-23
 
 This document is the entry point for anyone continuing this research — human or
 AI, with or without prior context.  It summarises what has been established,
@@ -49,15 +49,18 @@ All 21 transpositions give the same result up to GL(3,F₂) relabelling
 
 ### Verification status
 
-| Test | Pairs tested | Failures | File |
-|------|-------------|----------|------|
+| Test | Pairs / samples | Failures | File |
+|------|-----------------|----------|------|
 | Initial (trial 007 base) | 593,412 | 0 | `trial_007_triple_octonion_swap.py` |
 | Scaled (4M random) | 4,000,000 | 0 | `trial_007_scaled_test.py` |
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
-| Exhaustive (all 38.6B pairs) | **pending** | — | `trial_007_exhaust.py --exhaustive` |
+| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 basis products (exact) | 0 | `symbolic_proof_checks.py` (Python) + `gap_project/tests/test_lemmas.g` (GAP) |
+| §5 algebraic-properties test (N = 10⁶, paper §5) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
+| Exhaustive (all 38.6B pairs) | **not required** | — | `trial_007_exhaust.py --exhaustive` |
 
-**Zero failures across 12+ million tested pairs.**
+**Zero failures across 12+ million tested pairs**, plus a symbolic proof
+of closure (paper §4, Theorem 1.1) that does not depend on sampling.
 
 ### How it differs from the ruled-out triple-octonion (trial 001)
 
@@ -343,39 +346,74 @@ the trial, and prints detailed results.
    three sublattice conditions is established in `paper/main.tex`
    (Section 4, "Proof of closure").  The proof rests on four lemmas
    about the interaction between the transposition σ, the maximal
-   order L, and the sublattices Ls and Ls̄.  The finite-case
-   verifications (Lemmas C and D, 64 Z-basis products each) are
-   executed with exact rational arithmetic in
-   `python_project/src/symbolic_proof_checks.py`.  The earlier
-   fifth check, σ(Ls) ≠ Ls, is still verified by the script but is
-   now recorded as a remark in the paper rather than a lemma, since
-   it is a non-triviality observation about the sublattice, not a
-   step of the closure proof.
+   order L, and the sublattices Ls and Ls̄: Lemma 4.1 (σ(L) = L);
+   Lemma 4.2 (L · L ⊆ L); Lemma 4.3 (L · σ(Ls̄) ⊆ σ(Ls̄));
+   Lemma 4.4 (σ(Ls) · σ(Ls) ⊆ σ(Ls)).  The finite-case verifications
+   (Lemmas 4.2–4.4, 64 Z-basis products each) are executed with exact
+   rational arithmetic in `python_project/src/symbolic_proof_checks.py`,
+   and recomputed independently in `gap_project/tests/test_lemmas.g`.
+   The observation σ(Ls) ≠ Ls is recorded as a remark in the paper
+   (rem:Ls-not-closed): non-triviality of the construction, not a step
+   of the closure proof.
 
-2. **Formal paper written.**  `paper/main.tex` (12 pages) contains
+2. **Formal paper at v4.**  `paper/main.tex` (20 pages) contains
    abstract, preliminaries, construction, symbolic proof, algebraic
-   properties, methodology, related work, conclusion, outlook, and
-   bibliography.  Compiles clean with pdflatex.
+   properties at N = 10⁶ samples, related work, conclusion, outlook,
+   and three appendices: explicit basis tables with a mod-2-quotient
+   reading (Appendix A); a historical note synthesising the 1923–1946
+   integral-octonion literature from the primary sources, Dickson
+   (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946)
+   (Appendix B); and the research methodology (Appendix C).  v4 was
+   assembled per `evidence_and_reasoning/2026-05-22_plan.md` and has
+   undergone a full referee-style review (paper/reviews/).
 
 3. **Computational verification extended.**  Over 12,000,000 random
-   minimal-vector pairs tested across multiple test harnesses
-   (`trial_007_fast.py`, `trial_007_exhaust.py`) with zero failures.
+   minimal-vector pairs tested across multiple test harnesses with
+   zero failures.  In addition, all classical algebraic identities
+   (commutativity, norm multiplicativity, alternativity, flexibility,
+   cube and quartic power-associativity, symmetric composition) have
+   been tested on N = 10⁶ samples; rates are tabulated in §5.
+
+4. **σ identified as the Kirmse twist.**  The transposition σ used in
+   the paper is the same kind of linear involution that Bruck applied
+   (recorded in Coxeter 1946) to repair Kirmse's non-closed candidate
+   J₁.  In the paper's coordinate-symmetric placement L = D₈⁺, σ
+   leaves L invariant and is an algebra isomorphism of the octonions;
+   it does its work by moving Wilson's sublattices Ls and Ls̄.
 
 ## What remains open
 
-1. **Exhaustive verification** — all 38.6 billion pairs via
-   `trial_007_exhaust.py --exhaustive` (~2 hours with 16 cores).
-   Not required for the symbolic proof; useful as an independent
-   check.
+1. **The structural reason for Lemma 4.4** (σ(Ls) closed under the
+   standard octonion product).  The appendix tables certify the
+   inclusion, but do not explain *why*.  The mod-2-quotient reading
+   in Appendix A identifies what the tables certify — V := σ(Ls̄)/2L
+   is a left ideal and W := σ(Ls)/2L is a subalgebra of the
+   F₂-octonion-algebra L/2L — but stops short of naming V and W
+   inside that algebra.
 
-2. **Algebraic investigation** — further characterise the order:
-   automorphism group, relationship to Co₀, whether the order is
-   maximal, what quotient algebras arise.  Partial results are in
-   Section 5 of the paper.
+2. **The automorphism group of (Λ, +, ⋆)** and its relationship to
+   the Conway group Co₀ = Aut(Λ).  Currently open; a first-step probe
+   found −I₂₄ ∈ Co₀ but −I₂₄ ∉ Aut(Λ, +, ⋆), so the inclusion
+   Aut(Λ, +, ⋆) ⊆ Co₀ is strict, but the full group has not been
+   characterised.
 
-3. **Ternary reformulation** — explore whether the construction
-   factors naturally through a ternary composition algebra (Elduque),
-   in line with the Outlook section of the paper.
+3. **Maximality** of the order in any appropriate sense.
+
+4. **Classification** of the algebra (R²⁴, +, ⋆): it is
+   non-associative, non-alternative, non-flexible, and non-unital
+   (as an order).  A more natural classification may emerge from a
+   ternary rather than binary viewpoint (Elduque); §8 of the paper
+   sketches the direction.
+
+5. **Other linear coordinate permutations of R⁸** — beyond simple
+   transpositions of imaginary axes — that conjugate the octonion
+   multiplication into a triple product closing on Λ.  The
+   consecutive-twist footnote in §1 enumerates the result for
+   compositions of two transpositions; the general picture is open.
+
+6. **Exhaustive verification** of all 38.6 billion minimal-vector
+   pairs.  Not required given the symbolic proof; available as an
+   independent computational check.
 
 ---
 

@@ -2,6 +2,30 @@
 
 Date: 2026-04-11
 
+## Forward correction (2026-05-23)
+
+This file, as written on 2026-04-11, characterised the working twist
+candidates by two co-equal families: the 21 transpositions and the 7
+"index-doubling permutations σ_s(k) = 2k − s (mod 7)."  Per Manifesto
+§12, this record is preserved as written; the corrections live in
+paper/main.tex v4 and `evidence_and_reasoning/terminology.md`.
+
+What was later established from the primary sources (verifying Kirmse
+1924, Coxeter 1946; see `paper/reviews/`):
+
+- The σ used throughout the paper is a **transposition of two imaginary
+  basis units**, a linear involution of R⁸ — the same map Bruck applied
+  to repair Kirmse's J₁ (Coxeter 1946 §4, "transposing two of the i's").
+- The "index-doubling permutation" framing was a misconception (the
+  Fano-plane automorphism orbit happens to contain such permutations,
+  but the canonical name and historical referent is the transposition).
+- Index-doubling permutations remain among the working twists in the
+  trial's enumeration, but they should be read as Fano-equivalent
+  representatives of the same orbit as the transpositions, not as a
+  distinct mechanism.
+
+The closure claim and the trial's empirical findings are unchanged.
+
 ## Algebra tested
 
 Same triple-product structure as trial 001 (three copies of an octonion algebra

@@ -50,15 +50,19 @@ The same product on all three copies.
 
 ### Verification status
 
-| Test | Pairs | Failures |
+| Test | Pairs / samples | Failures |
 |---|---|---|
 | Trial 007 initial (swap(1,2)) | 593,400 | 0 |
 | Scaled test (4M random, all types) | 4,000,000 | 0 |
 | Scaled test (4M, multiprocessor) | 4,000,000 | 0 |
 | All 21 transpositions (small sample) | ~15,000 | 0 |
+| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 Z-basis products | 0 |
+| §5 algebraic-properties test (N = 10⁶) | 1,000,000 per property | n/a (rates) |
 
 Exhaustive verification of all 196,560² ≈ 3.86 × 10¹⁰ pairs is
-computationally feasible (~2 hours with 16 CPU cores) and is planned.
+computationally feasible (~2 hours with 16 CPU cores) but is **not
+required**: the symbolic proof in paper §4 establishes closure
+independently of sampling.
 
 All 21 transpositions of imaginary basis elements produce the same result.
 Since all transpositions lie in a single orbit under the Fano-plane
@@ -90,4 +94,5 @@ is not norm-multiplicative.
 
 ---
 
-Last updated: 2026-04-14
+Last updated: 2026-05-23 (verification table extended with the symbolic
+proof and the §5 N=10⁶ algebraic-properties test, both completed for v4)

@@ -62,11 +62,11 @@ change for the reader if it were deleted. A sentence whose deletion
 costs the reader nothing checkable is vague; cut it or make it
 concrete.
 
-## Note on `paper/main.tex` (frozen v3)
+## Note on `paper/main.tex` (v4 released)
 
-The main manuscript at the date of adoption is frozen v3 (29 April 2026,
-under review). These standards apply prospectively to the v4 revision
-and to every other durable artifact in this repository as defined above;
-they are not retroactively enforced on v3. Where the standards diverge
-from v3's existing prose (most visibly, the dash convention), the
-difference is to be resolved when v4 is assembled.
+The main manuscript at the date these standards were adopted was frozen
+v3 (29 April 2026). Standards were applied prospectively to the v4
+revision (23 May 2026), now the current state of the paper, and to every
+other durable artifact in this repository as defined above; they were
+not retroactively enforced on v3. The dash convention and other v3/v4
+differences were resolved when v4 was assembled.

@@ -44,8 +44,8 @@ multiplication.
   four lemmas on the interplay between the twist σ and the Leech sublattices
   Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
   executes the finite case verifications with exact integer arithmetic).
-- **Computational verification** on 4M+ random pairs of minimal vectors with
-  zero failures, plus tests from first principles on every foundation
+- **Computational verification** on 12M+ random pairs of minimal vectors
+  with zero failures, plus tests from first principles on every foundation
   (octonion properties, Wilson's construction).  197 tests pass.
 - **Independent GAP / LOOPS re-derivation** of the same verification tests
   ([gap_project/](gap_project/), 110 checks; uses the LOOPS package to

@@ -3,6 +3,28 @@ Title: The transposition-twisted triple octonion product is an order on the Leec
 Status: ESTABLISHED (symbolic proof + independent computational verification)
 Date: 2026-04-12
 
+--- FORWARD CORRECTION (2026-05-23) ---
+
+Two items in this file, as written on 2026-04-12, were corrected forward
+in the paper between v3 (29 April 2026) and v4 (23 May 2026).  Per
+Manifesto §12, this file is preserved as written; the corrections live
+in paper/main.tex v4.
+
+(i) The "STATEMENT" section below says "σ does not preserve the Wilson
+E8 lattice L."  This is incorrect for the coordinate-symmetric placement
+L = D₈⁺ used in the paper: σ is a coordinate permutation, which preserves
+both integer/half-integer parity and the coordinate sum, so σ(L) = L
+(paper Lemma 4.1).  σ moves the sublattices Ls and Ls̄ of L, and that
+is where the twist does its work.
+
+(ii) The "PROOF" section below enumerates five lemmas (4.1–4.5).  The
+fifth, σ(Ls) ≠ Ls, is now recorded in the paper as a remark
+(rem:Ls-not-closed), not a lemma: it is a non-triviality observation,
+not a step of the closure proof.  Paper v4 §4 has four lemmas plus
+three condition-propositions.
+
+The closure claim itself is unchanged.
+
 --- RELATION TO CLAIM 007 ---
 
 Claim 007 (2026-04-09) rules out the *untwisted* triple-octonion algebra,
