@@ -1,0 +1,21 @@
+Prompt 137 -- Concision: drop the witness and the Hurwitz formula
+Date: 2026-05-23
+
+User: "Conciseness: 'that is not an order: [witness].' remove the witness,
+just 'that is not an order.' Similarly Dickson 'the Hurwitz quaternions
+1/2 (±1 ±i ±j ±k),' to just 'the Hurwitz quaternions,'."
+
+Applied to:
+- paper/main.tex historical appendix (Kirmse + Dickson paragraphs)
+- paper/historical_appendix.tex (parallel short standalone)
+
+Left alone:
+- paper/historical_appendix_expanded.tex (intentionally detailed form;
+  keeps the witness and the Hurwitz formula for the reader who wants
+  the explicit numerics).
+- evidence_and_reasoning/terminology.md (the formula is part of
+  defining the Hurwitz quaternions there, not stylistic detail).
+
+Recompiles clean (main 21 pp, short 2 pp).
+
+Status: COMPLETE.

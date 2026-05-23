@@ -1,0 +1,15 @@
+Prompt 136 -- Confirmation that the Kirmse-account correction landed
+Date: 2026-05-23
+
+User: "This is _perfect_ you nailed it."
+
+No new task. Confirmation that the Kirmse historical account
+(necessary form, sufficiency not proved, eight stable under unit-
+multiplication, J_1 the spurious one of the eight, other seven the
+genuine maximal orders) lands as intended in the main paper, the
+short historical appendix, and the expanded one.
+
+Next planned step per the plan is Phase D (full referee-style review
+passes of v4). Awaiting user word.
+
+Status: COMPLETE.

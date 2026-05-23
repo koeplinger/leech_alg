@@ -1,0 +1,44 @@
+Prompt 135 -- Historical-appendix correction on what Kirmse did
+Date: 2026-05-23
+
+User: "Great -- small correction: in the historical Kirmse account, 'His
+multiplication table is itself a correct octonion algebra. He stated eight
+maximal orders and exhibited one,' add that he gave a correct formula that
+contains the correct 7 maximal orders, however, did not prove sufficiency;
+out of the eight that remain invariant under unit element multiplication
+(confirm and - if needed - fix my wording) he then exhibited exactly the
+one that isn't and order."
+
+Confirmation/clean wording: Kirmse derived a correct *necessary* form for
+the maximal orders -- 30 E8-type lattices realise it -- without proving
+sufficiency. He then narrowed (without saying so) to the eight that are
+stable under multiplication by units ("unit-multiplication" is our
+reconstruction, recorded in the plan and the standalone exposition). Of
+those eight, he exhibited J_1, the one that is not closed. The other seven
+of his eight are the genuine maximal orders.
+
+User's "remain invariant under unit element multiplication": essentially
+correct. Tightened to "stable under multiplication by units" for prose.
+
+Tasks:
+1. main.tex historical appendix Kirmse paragraph: add the new content.
+2. paper/historical_appendix.tex (short standalone): same update.
+3. paper/historical_appendix_expanded.tex: same update.
+4. Recompile.
+
+Done:
+- main.tex historical appendix Kirmse paragraph: rewritten to add
+  the "correct necessary form / 30 lattices realise it / sufficiency
+  not proved / 8 stable under unit-multiplication (our unstated
+  narrowing) / J_1 is the one that isn't an order / other 7 are the
+  genuine maximal orders" story.
+- paper/historical_appendix.tex (short standalone): same update.
+- paper/historical_appendix_expanded.tex: matching paragraph added
+  (one extra sentence connecting the necessary form to the eight,
+  consistent with the longer style).
+- "stable under multiplication by units" used as the cleaned-up
+  wording for the user's "remain invariant under unit element
+  multiplication" -- same content, tighter prose.
+- All three recompile clean: main 21 pp, short 2 pp, expanded 4 pp.
+
+Status: COMPLETE.
