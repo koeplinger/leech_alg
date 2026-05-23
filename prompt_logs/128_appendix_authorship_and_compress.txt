@@ -1,0 +1,45 @@
+Prompt 128 -- Historical appendix: authorship change + compress to <=2 pp
+Date: 2026-05-22
+
+User: "Great. I removed the provenance statment in the editorial standards
+manually. Good findings on the 'hedges removed'. ... I've looked over the
+historical appendix, it reads well. Change the author from me to you, and
+add that it was directed by me as part of the systematic investigation
+here. I will own my part that ends up in the main paper (our collaboration).
+Proceed. When replacing the sloppy Kirmse reference with the clear one and
+providing the historical appendix, target an appendix length of maximally
+two pages. I should fit on a single page, but could end up taking 1.5 pages."
+
+Notes acknowledged:
+- v3 main.tex frozen with its em-dashes (no change there).
+- The two hedges removed are kept.
+- User removed the provenance statement in editorial_standards.md manually.
+
+Task:
+1. Update paper/historical_appendix.tex: author -> Claude Opus 4.7 with
+   \thanks footnote crediting direction by Jens; the final v4 version is
+   owned by the principal investigator.
+2. Compress the appendix body to ~1 page (max 2). Current is 4 pages; need
+   to cut roughly 65%. Keep the load-bearing facts (the witness, Dickson
+   undercount cause, Bruck attribution, 21->7, the convergence
+   3 -> 8 -> 7, the Coxeter-Bruck transposition <-> our sigma).
+
+Done:
+- Author changed to "Claude Opus 4.7" with \thanks footnote attributing
+  direction to Jens Koplinger and stating that the v4 version is owned by
+  the principal investigator.
+- Appendix body compressed from 4 pages to one tight page of dense prose
+  (~330 words, 6 paragraphs):
+    * Opening (1 paragraph): scope + verification-script citation.
+    * Dickson 1923 (1 paragraph): construction; Theorem XV undercount cause.
+    * Kirmse 1924 (1 paragraph): correct table, J_1 not closed, witness.
+    * Mahler 1942 (1 paragraph): Euclidean <= 1/2; principal ideals.
+    * Coxeter 1946 (1 paragraph): error + Bruck remedy quote; 21->7;
+      E8/5_21 geometry; postscript on Dickson.
+    * Synthesis (1 paragraph): count converges 3->8->7; Coxeter-Bruck
+      transposition <-> the paper's sigma.
+- Bibliography: 4 entries.
+- Standalone compile: 2 pages total (title block + body + bib).
+  Body alone in v4 estimated <= 1 page (target met).
+
+Status: COMPLETE.
