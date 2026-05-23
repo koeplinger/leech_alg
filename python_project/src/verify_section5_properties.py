@@ -116,7 +116,8 @@ if __name__ == "__main__":
     t0 = time.time()
     keys = ["commutativity","norm multiplicativity","left alternativity",
             "right alternativity","flexibility","cube power-assoc",
-            "quartic power-assoc","symmetric (Elduque)"]
+            "quartic power-assoc","cube AND quartic","quartic only (not cube)",
+            "cube only (not quartic)","symmetric (Elduque)"]
     cnt = {k:0 for k in keys}
     N = 0
     while time.time()-t0 < budget and N < target_N:
@@ -131,11 +132,15 @@ if __name__ == "__main__":
             if eq(star(uv,v), star(u,vv)):      cnt["right alternativity"] += 1
             if eq(star(uv,u), star(u,vu)):      cnt["flexibility"] += 1
             A = star(uu,u); B = star(u,uu)      # the two cubes
-            if eq(A,B):                         cnt["cube power-assoc"] += 1
+            cube_ok = eq(A,B)
+            if cube_ok:                         cnt["cube power-assoc"] += 1
             p1=star(A,u); p2=star(B,u); p3=star(uu,uu)
             p4=star(u,A); p5=star(u,B)
-            if eq(p1,p2) and eq(p1,p3) and eq(p1,p4) and eq(p1,p5):
-                cnt["quartic power-assoc"] += 1
+            quartic_ok = eq(p1,p2) and eq(p1,p3) and eq(p1,p4) and eq(p1,p5)
+            if quartic_ok:                      cnt["quartic power-assoc"] += 1
+            if cube_ok and quartic_ok:          cnt["cube AND quartic"] += 1
+            if quartic_ok and not cube_ok:      cnt["quartic only (not cube)"] += 1
+            if cube_ok and not quartic_ok:      cnt["cube only (not quartic)"] += 1
             if ip(uv,w)==ip(u,star(v,w)):       cnt["symmetric (Elduque)"] += 1
             N += 1
     el = time.time()-t0
