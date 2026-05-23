@@ -1,0 +1,33 @@
+Prompt 129 -- Restore expanded historical appendix, move plan, status check
+Date: 2026-05-22
+
+User: "Misunderstanding! I'm ok with the 'historical_appendix.pdf' file to be
+longer; just when we merge it into the paper it should be shorter. Restore
+the previous version of the historical appendix paper, just replacing author
+/ instruction attribution (rename it to 'historical_appendix_expanded' if
+you wish).
+
+Then, when I meant 'proceed' I meant to proceed with the overal plan we're
+executing (2026-05-22_plan.md at the repo root ... which is not a good
+place, btw, move it e.g. in the 'evidence_and_reasoning' folder). Read the
+plan, compare with where we're at now, and prepare a status and suggested
+next steps."
+
+Tasks:
+1. Restore the expanded (4-page) historical_appendix as a separate file
+   historical_appendix_expanded.tex (Claude as author, Jens directs).
+   Keep the current short historical_appendix.tex as the v4-merge form.
+2. Move 2026-05-22_plan.md from repo root to evidence_and_reasoning/.
+3. Read the plan; compare with current state; produce status + next steps.
+
+Done:
+- Created paper/historical_appendix_expanded.tex (4 pp): full long form
+  restored from the prior draft, with author = Claude Opus 4.7 and \thanks
+  footnote attributing direction to Jens. Compiles clean.
+- Kept paper/historical_appendix.tex (2 pp, body ~1 pp): the compressed
+  v4-merge form. Both files coexist.
+- Moved 2026-05-22_plan.md from repo root to
+  evidence_and_reasoning/2026-05-22_plan.md.
+- Read the plan; prepared status reconciliation against current state.
+
+Status: COMPLETE.
