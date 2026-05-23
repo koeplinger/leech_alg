@@ -1,0 +1,27 @@
+Prompt 126 -- Allow pdflatex compound build commands without authorization
+Date: 2026-05-22
+
+User (mid-turn): "Update the Claude configuration that commands like this
+always execute without requiring my authorization: 'cd /home/jens/Projects/
+leech_alg/paper && pdflatex -interaction=nonstopmode -halt-on-error
+historical_appendix.tex > /tmp/ha1.log 2>&1 && pdflatex -interaction=
+nonstopmode -halt-on-error historical_appendix.tex > /tmp/ha2.log 2>&1; echo
+\"exit: $?\"; grep -E \"LaTeX Warning: (Reference|Citation|Label)\"
+historical_appendix.log | head; grep \"Output written\" /tmp/ha2.log'"
+
+Task: add permissions broad enough that this whole family of LaTeX-build +
+log-inspection compound commands never prompts. Used the update-config skill.
+
+Resolution:
+- Asked the user for scope: chose Global user (~/.claude/settings.json).
+- ~/.claude/settings.json already had Bash(pdflatex *), Bash(grep *),
+  Bash(head *), Bash(cd *), Bash(echo *) etc. -- individual sub-commands all
+  covered.
+- Added compound-form patterns that the existing rules did not cover:
+    Bash(pdflatex:*)
+    Bash(cd * && pdflatex:*)
+    Bash(cd * && pdflatex * && pdflatex:*)
+  plus colon-form symmetry for lualatex/latexmk/xelatex.
+- jq -e validation passed.
+
+Status: COMPLETE.

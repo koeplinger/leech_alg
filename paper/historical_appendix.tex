@@ -1,0 +1,290 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\LL}{\Lambda}
+\newcommand{\Nrm}{N}
+
+\title[Historical appendix: integral Cayley numbers 1923--1946]%
+{Draft appendix for\\
+\emph{An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric
+triple-octonion product}\\
+\large Historical note: integral Cayley numbers, 1923--1946}
+\author{Jens K\"oplinger}
+\date{22 May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a draft of the historical appendix planned for v4.  It is written
+\emph{solely from the primary sources}: the four papers Dickson (1923),
+Kirmse (1924), Mahler (1942), and Coxeter (1946), each obtained and
+re-derived in exact arithmetic in this project
+(\texttt{python\_project/src/verify\_dickson\_1923.py},
+\texttt{verify\_kirmse\_1924.py},
+\texttt{verify\_mahler\_1942.py},
+\texttt{verify\_coxeter\_1946.py};
+companion notes in \texttt{paper/reviews/}).  No secondary source is taken on
+trust.
+\end{abstract}
+
+% ===================================================================
+\section*{Setting}
+% ===================================================================
+
+The integral-Cayley-number construction --- a maximal order in the real
+octonion algebra, supported on the $E_8$ lattice --- was developed in four
+papers between 1923 and 1946.  Each contributes one piece.  Together they
+fix three facts that underlie the present construction: there are
+\emph{seven} maximal orders; each is obtained from any one by a
+transposition of two imaginary basis units (a linear involution of~$\RR^8$);
+and the underlying lattice is~$E_8$.  The third fact and the count are
+already in Dickson; the second is the Coxeter--Bruck remedy of Kirmse.
+
+% ===================================================================
+\section*{Dickson 1923}
+% ===================================================================
+
+L.\,E.~Dickson \cite{Dickson1923}, in Section~19 of \emph{A new simple theory
+of hypercomplex integers}, gave the first construction.  He built the
+octonions by Cayley--Dickson doubling of the quaternions, $x = q + Qe$ with
+$q, Q$ quaternions, and the product (his equation~(24))
+\[
+  (q + Qe)(r + Re) \;=\; (qr - \bar R Q) + (Rq + Q \bar r)\, e,
+\]
+and then determined the maximal sets of integers closed under his three
+axioms --- closure C, contains unit~U, integral norm~N (his Section~6).
+From the norm form he derived that integer coordinates are either integers
+or half-integers, ran a case analysis, and exhibited (his~(29)) the basis
+\[
+  i,\; j,\; k,\; p,\; e,\; W,\; Z,\; V,
+  \qquad p = \tfrac{1}{2}(1 + i + j + k),
+\]
+of an order, his \emph{system~(30)} (here denoted~$O_D$).  All $64$ products
+of the basis~(29) lie in~$O_D$; the system is genuinely closed
+\cite{Dickson1923}.
+
+Dickson then stated as \textbf{Theorem~XV}:
+\begin{quote}
+\emph{The only maximal systems of integers of Cayley's algebra having
+properties~C, U, N are~(30) and the two systems obtained from it by
+cyclic permutations of~$i, j, k$.}
+\end{quote}
+This undercounts.  Re-derived in this project, the true number of maximal
+orders for Dickson's product is~\emph{seven}, not three.  The cause is in
+Dickson's own derivation: on p.\,321, having reached a case in which the
+order contains the Hurwitz quaternions $\tfrac{1}{2}(\pm 1 \pm i \pm j \pm
+k)$, he writes
+\begin{quote}
+\emph{``\ldots and hence all of Hurwitz's integral quaternions.  We shall
+assume that the latter occur in our set in all cases.''}
+\end{quote}
+The assumption that every maximal order contains the Hurwitz quaternions is
+stronger than C, U, N.  Of the seven maximal orders, \emph{three} contain
+those quaternions, and those three are precisely $O_D$ and its two
+$(i\,j\,k)$-cyclic images --- exactly Dickson's Theorem~XV triple.  The four
+he missed are exactly the maximal orders that do not contain the integral
+quaternions.
+
+So Dickson's \emph{construction} is correct; his \emph{count} is too small
+by four, by a qualifier that he stated openly in the derivation but that was
+absorbed into the theorem.
+
+% ===================================================================
+\section*{Kirmse 1924}
+% ===================================================================
+
+J.~Kirmse \cite{Kirmse1924}, working in Germany the following year, took up
+the problem with a different presentation.  He fixed an octonion
+multiplication on the basis $\{1, i_1, \ldots, i_7\}$ by seven cyclic Fano
+triples (his table~(1) on p.\,64) and sought the maximal sets of octonion
+integers closed under multiplication.  He stated that there are
+\emph{eight} such sets (\emph{``Man findet acht solche \ldots,''} p.\,70)
+and described one in detail, his system $J_1$ (p.\,70):
+\[
+  J_1 \;=\; \big[\, J_0,\; a_1,\; a_2,\; a_3,\; a_4\,\big],
+\]
+where $J_0 = \ZZ\langle 1, i_1, \ldots, i_7\rangle$ and
+\begin{align*}
+  a_1 &= \tfrac{1}{2}(1 + i_1 + i_2 + i_3), &
+  a_2 &= \tfrac{1}{2}(i_4 + i_5 + i_6 + i_7), \\
+  a_3 &= \tfrac{1}{2}(1 + i_1 + i_4 + i_5), &
+  a_4 &= \tfrac{1}{2}(1 + i_2 + i_4 + i_7).
+\end{align*}
+
+Kirmse's multiplication table is itself a correct octonion algebra: it is
+norm-multiplicative and satisfies all the Cayley identities.  His error is
+in the lattice~$J_1$: it is \emph{not closed} under his own multiplication.
+The witness, computed in this project and matching Coxeter (1946) verbatim,
+is
+\[
+  a_1 \cdot a_3
+  \;=\; \tfrac{1}{2}(1 + i_1 + i_2 + i_3) \cdot
+        \tfrac{1}{2}(1 + i_1 + i_4 + i_5)
+  \;=\; \tfrac{1}{2}(i_1 + i_2 + i_4 + i_7),
+\]
+and the product is not among the 240 elements of $J_1$ of unit norm
+(Kirmse p.\,76).  An enumeration of the $30$ candidate $E_8$-type lattices
+under Kirmse's table yields exactly \emph{seven} closed ones; $J_1$ is the
+spurious entry on Kirmse's list of eight.
+
+So Kirmse's \emph{table} is correct; his \emph{exhibited order} is the
+defective one, and his \emph{count} is too large by one.
+
+% ===================================================================
+\section*{Mahler 1942}
+% ===================================================================
+
+K.~Mahler \cite{Mahler1942}, eighteen years later, worked over a maximal
+order (one of the seven, to be made explicit by Coxeter in 1946) and
+developed its arithmetic.  His principal results are two.
+
+\begin{itemize}
+\item \textbf{Euclidean property} (his Theorem on p.\,127):
+\emph{for every Cayley number~$X$ there is an integral Cayley number~$G$
+with $\Nrm(X - G) \le \tfrac{1}{2}$.}  Mahler calls this ``not easy to
+prove.''  It is sharper than Dickson's earlier $5/4$ in place
+of~$\tfrac{1}{2}$.
+\item \textbf{Principal ideals}: \emph{every left (or right) ideal in the
+ring of integral Cayley numbers is principal, generated by a multiple (in
+the ordinary sense) of an integral Cayley number of norm~$1$, $2$, or~$4$.}
+\end{itemize}
+
+Re-derived in this project, Mahler's results are correct as stated; the
+printed paper contains one transcription error in equation~(10), without
+consequence for the theorems.  Mahler cites Dickson~(1923) but not Kirmse;
+that citation chain is how the priority of Dickson's construction reaches
+Coxeter in the following paper.
+
+% ===================================================================
+\section*{Coxeter 1946}
+% ===================================================================
+
+H.\,S.\,M.~Coxeter \cite{Coxeter1946}, in \emph{Integral Cayley numbers},
+identifies Kirmse's error and supplies a corrected order.  His Section~4
+(``Kirmse's mistake'') reproduces Kirmse's table as his~(4.1) (the two
+tables are identical, verified) and exhibits the same non-closure witness
+as above:
+\[
+  \tfrac{1}{2}(1 + i_1 + i_2 + i_3) \cdot
+  \tfrac{1}{2}(1 + i_1 + i_4 + i_5)
+  \;=\; \tfrac{1}{2}(i_1 + i_2 + i_4 + i_7),
+\]
+which, Coxeter notes, ``is not one of the 240 units.''  Of the count he
+writes: \emph{``Actually there are only seven, which presumably are the
+remaining seven of his eight''} (p.\,566).
+
+The remedy is due to \textbf{R.\,H.~Bruck}.  Coxeter writes:
+\emph{``When I pointed this out to Bruck, he sent me a revised description
+of such a domain.  Bruck's domain~$J$ can be derived from~$J_1$ by
+transposing two of the~$i$'s.''}  That is, the correction is a transposition
+of two imaginary basis units of the octonions --- a linear involution
+of~$\RR^8$.  Any of the $\binom{7}{2} = 21$ such transpositions repairs
+Kirmse's~$J_1$.  Coxeter further notes that the $21$ ``fall into $7$ sets of
+$3$, each set having the same effect,'' yielding the seven maximal orders;
+this combinatorial structure is verified in this project (each set of $3$
+is three disjoint transpositions fixing one common imaginary unit, the
+``special unit'' of the corresponding order).
+
+Coxeter then develops the geometry of the corrected order.  Its $240$
+norm-$1$ units are the vertices of Gosset's polytope~$4_{21}$; the order
+itself is the eight-dimensional honeycomb~$5_{21}$, the densest sphere
+packing in eight dimensions (his Sections~6--13).  He proves the corrected
+order maximal in his Section~11.
+
+A postscript (Section~14) records that Coxeter learned of Dickson and
+Mahler only after the manuscript was written, when Olga Taussky Todd drew
+his attention to Mahler, which in turn cites Dickson.  Coxeter there
+identifies the cause of Dickson's Theorem~XV undercount independently:
+\begin{quote}
+\emph{``\ldots\ he asserted [9; 334] that there are only three systems which
+include all the eight basic units \ldots\ He misused the remaining four of
+the seven systems by adding the very artificial requirement that the
+integral Cayley numbers should include the integral quaternions
+$\tfrac{1}{2}(\pm 1 \pm i \pm j \pm k)$.''}
+\end{quote}
+And of Mahler's ``not easy to prove'' Euclidean theorem, Coxeter observes
+that it is an immediate consequence of his own Section~11.  By 1946 the
+construction is complete.
+
+% ===================================================================
+\section*{Synthesis}
+% ===================================================================
+
+The four papers together fix the construction the present paper rests on:
+
+\begin{itemize}
+\item \textbf{1923 (Dickson).}  An integral-Cayley-number maximal order
+exists; the lattice is $E_8$; the count, in the form Dickson's theorem
+gives, is three (under his stated extra assumption).
+\item \textbf{1924 (Kirmse).}  An independent treatment; correct
+multiplication; an enumerated count of eight that includes one non-closed
+candidate.
+\item \textbf{1942 (Mahler).}  Arithmetic of the order: Euclidean
+with~$\Nrm(X-G) \le \tfrac{1}{2}$; principal ideals.
+\item \textbf{1946 (Coxeter, with Bruck).}  Kirmse's $J_1$ is not closed
+(an explicit one-line witness); Bruck's remedy is a transposition of two
+imaginary basis units; the $21$ such transpositions yield exactly the seven
+maximal orders; Coxeter's postscript supplies the missing connection to
+Dickson and Mahler.
+\end{itemize}
+
+\noindent
+The count converges over the four papers --- $3 \to 8 \to 7$ --- and the
+correction that turns Kirmse's~$J_1$ into a genuine order is the
+\emph{Coxeter--Bruck transposition} of two imaginary coordinate axes: a
+linear involution of~$\RR^8$.
+
+This transposition is the historical precedent for the present paper's
+$\sigma$ (Definition of the transposition-twisted product, Section~3).  The
+two are the same kind of map ---
+a coordinate transposition --- differing only in what they are applied to.
+Coxeter--Bruck is applied to a maximal-order candidate that sits
+asymmetrically in~$\RR^8$, and so changes which $E_8$ placement is
+considered.  The present~$\sigma$ is applied where the order is~$L = D_8^+$,
+the coordinate-symmetric placement; hence $\sigma(L) = L$ and the
+$E_8$-level closure is preserved automatically
+($L \cdot_\sigma L = \sigma(L \cdot L) \subseteq L$).  The
+\emph{Coxeter--Bruck transposition} thus appears below as the same operation
+at a different stratum: at the Leech-lattice level rather than at the
+maximal-order level, redirecting Wilson's sublattice conditions rather than
+repairing the choice of order.
+
+% ===================================================================
+\begin{thebibliography}{9}
+% ===================================================================
+
+\bibitem[Dickson1923]{Dickson1923}
+L.\,E.~Dickson,
+\emph{A new simple theory of hypercomplex integers},
+J.~Math.\ Pures Appl.\ (9) \textbf{2} (1923), 281--326.
+
+\bibitem[Kirmse1924]{Kirmse1924}
+J.~Kirmse,
+\emph{\"Uber die Darstellbarkeit nat\"urlicher ganzer Zahlen als Summen von
+acht Quadraten und \"uber ein mit diesem Problem zusammenh\"angendes
+nichtkommutatives und nichtassoziatives Zahlensystem},
+Ber.\ Verh.\ S\"achs.\ Akad.\ Wiss.\ Leipzig, Math.-Phys.\ Kl.\
+\textbf{76} (1924), 63--82.
+
+\bibitem[Mahler1942]{Mahler1942}
+K.~Mahler,
+\emph{On ideals in the Cayley--Dickson algebra},
+Proc.\ Roy.\ Irish Acad.\ Sect.\ A \textbf{48} (1942), 123--133.
+
+\bibitem[Coxeter1946]{Coxeter1946}
+H.\,S.\,M.~Coxeter,
+\emph{Integral Cayley numbers},
+Duke Math.\ J.\ \textbf{13} (1946), 561--578.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,39 @@
+Prompt 125 -- Draft the broad historical appendix (Kirmse + Dickson + Mahler + Coxeter)
+Date: 2026-05-22
+
+User: "Yes let's draft the broad historical appendix (Kirmse + Dickson +
+Mahler + Coxeter). This is a great synthesis solely from original sources."
+
+Task: produce a draft historical appendix to be folded into main.tex v4
+(plan item 1). It synthesises, in the paper's voice, what each of the four
+primary sources contributed -- working only from what was verified in this
+project, not from secondary literature. Approx. 3 pages, factual,
+paper-toned (per feedback_paper_tone memory: brevity, no editorialising;
+per feedback_kirmse_attribution: record positive contributions alongside
+errors).
+
+Outline:
+- Setting: the integral-octonion construction; verified across four
+  primary papers between 1923 and 1946.
+- Dickson 1923: first correct construction (order O_D); Theorem XV
+  undercounts (3 vs 7) due to his stated Hurwitz-quaternion assumption.
+- Kirmse 1924: independent treatment; correct multiplication table; J_1
+  (his exhibited order) not closed; claimed 8, true 7.
+- Mahler 1942: ideal theory; Euclidean with N(X-G)<=1/2; ideals principal.
+- Coxeter 1946: identifies Kirmse's error; Bruck's remedy = transposition
+  of two imaginary units (linear involution of R^8); 21 -> 7; geometric E8/
+  5_{21} development; postscript bringing in Dickson and Mahler.
+- Synthesis: by 1946 the construction is complete; the Coxeter--Bruck
+  transposition is the historical precedent for the present paper's sigma.
+
+Drafted as paper/historical_appendix.tex, dated 22 May 2026, compilable
+standalone.
+
+Drafted: paper/historical_appendix.tex, dated 22 May 2026; compiles clean
+in 4 pages (one Definition cross-ref to the main paper, replaced with
+descriptive text to compile standalone). Sections: Setting / Dickson 1923 /
+Kirmse 1924 / Mahler 1942 / Coxeter 1946 / Synthesis, plus a bibliography
+of the four primary sources. Written from the verification notes and
+scripts only -- no secondary source taken on trust.
+
+Status: COMPLETE.
