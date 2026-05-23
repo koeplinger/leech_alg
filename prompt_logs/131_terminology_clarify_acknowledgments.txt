@@ -1,0 +1,55 @@
+Prompt 131 -- Clarify Kirmse-twist terminology; add Vojtěchovský to acknowledgments
+Date: 2026-05-23
+
+User: "Before moving on to phase C: In the terminology for 'Kirmse twist'
+make it clear that the Kirmse twist _is_ our sigma transposition exactly;
+there is no difference other than terminology. Add that in Kirmse's work
+(and Coxeter's correction) that twist acts on a representation of the E8
+lattice that is not axis-symmetric, i.e., it always results in another
+representation that is likewise not axis symmetric. It is this axis-
+asymmetry that permits the twist to turn a lattice that does not close
+under the octonion product into one that does. This is in contrast to our
+representation (that is also Wilson's) which is axis symmetric and
+therefore invariant under the Kirmse twist. It closes under the octonion
+product right-away. We'll want to make this clear in the main paper as
+well, once we get to it, to pre-empt confusion.
+
+Then, next to the acknowledgments you're already tracking (Geoffrey Dixon
+and Robert Wilson from the v3 of the paper, and Matthew Barley from the
+update brief v3), also add Petr Vojtěchovský since he pointed me to the
+sigma twist, which I now understand (finally) as a confusion caused by my
+sloppy description of the Kirmse twist."
+
+Tasks:
+1. Update evidence_and_reasoning/terminology.md "Kirmse integers -- Kirmse
+   twist" section: state explicitly that the Kirmse twist IS our sigma
+   (same operation, only the terminology differs); explain the
+   axis-asymmetry mechanism in Kirmse's representation and contrast with
+   the axis-symmetric Wilson representation L = D_8^+ used here.
+2. Add Petr Vojtěchovský to the acknowledgments to be carried into v4 --
+   his pointer to sigma surfaced the sloppy description of the Kirmse
+   twist that drove the entire 117-128 chain of work.
+   Vehicle: brief 2 already has the corrections it carries; add an
+   Acknowledgments section there. Update the plan's item C entry too.
+3. Flag for Phase C: the main paper v4 should include the same
+   clarification (pre-empt confusion).
+
+Done:
+- evidence_and_reasoning/terminology.md, "Kirmse integers -- Kirmse twist":
+  the brief "shorthand" paragraph replaced with two paragraphs that (i) state
+  explicitly Kirmse twist = the present sigma (same operation, only the
+  name differs); (ii) explain the axis-asymmetry of Kirmse's representation
+  (stabiliser AGL(3,2), no transposition fixes it -- which is what makes the
+  twist's correction possible); (iii) contrast with Wilson's axis-symmetric
+  L = D_8^+ (sigma(L) = L; closes under . directly; twist acts on
+  sublattices Ls, Lsbar one stratum down).
+- paper/update_brief_2026-04-29_v3_kirmse.tex: added Acknowledgments
+  section thanking Petr Vojtěchovský for the sigma-twist pointer. Also
+  updated the closing Note: terminology.md and background_octonions.txt
+  have been brought forward (the wording was stale). Compiles clean, 3 pp.
+- evidence_and_reasoning/2026-05-22_plan.md: item C extended to record the
+  acknowledgments to carry into v4 (Dixon, Wilson, Barley, +Vojtěchovský).
+  Phase C entry gains an explicit pre-empt-confusion task (σ-vs-Kirmse-twist
+  clarification in the main paper).
+
+Status: COMPLETE.

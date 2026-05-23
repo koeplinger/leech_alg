@@ -135,9 +135,31 @@ in seven sets of three.  Verified from the originals in this project
 (\texttt{python\_project/src/verify\_kirmse\_1924.py},
 \texttt{verify\_coxeter\_1946.py}; notes in \texttt{paper/reviews/}).
 
-In this project, **Kirmse twist** is used as shorthand for the
-transposition of two imaginary basis units that corrects Kirmse's construction to a closed
-one.
+**Kirmse twist = the transposition $\sigma$ of the main paper.** The
+Kirmse twist is shorthand for the transposition of two imaginary basis
+units described above; it is the **same map** as the $\sigma$ used
+throughout the main paper — a linear involution of $\mathbb{R}^8$.
+There is no difference of operation, only of name.
+
+What differs is the lattice on which the twist is applied. Kirmse's
+$J_1$ (and the seven Kirmse–Coxeter–Bruck orders that the twist relates
+to it) are **axis-asymmetric** placements of $E_8$ in $\mathbb{R}^8$:
+their coordinate stabilisers in $S_8$ are of order $1344 \cong
+\mathrm{AGL}(3,2)$ and contain no transposition, so every transposition
+moves them. It is exactly this axis-asymmetry that lets the Kirmse
+twist turn a lattice not closed under the octonion product
+(Kirmse's $J_1$) into one that does (Bruck's $J$).
+
+The main paper, and the Leech-lattice construction of Wilson on which
+it builds, take the opposite representation: $L = D_8^+$ is the
+**axis-symmetric** placement of $E_8$, invariant under every
+coordinate permutation. The Kirmse twist therefore *fixes* $L$
+($\sigma(L) = L$), and $L$ closes under the octonion product directly.
+The twist's effect in the main paper lies entirely on sublattices
+of $L$ that are *not* $\sigma$-invariant — chiefly $Ls$ — where it
+plays the same kind of role (turning a non-closed sublattice into a
+closed one) that the Kirmse twist plays on Kirmse's $J_1$ one
+stratum up.
 
 **A note on attribution and fairness.**  The term "Kirmse integers" in
 modern usage refers exclusively to the non-closed system — Kirmse's error.
