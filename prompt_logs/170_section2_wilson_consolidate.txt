@@ -1,0 +1,38 @@
+Prompt 170 -- §2 cite Wilson 2009 only once (at start of §2.2)
+Date: 2026-05-24
+
+User: "In section 2 only cite Wilson once, at the beginning of section
+2.2. There, instead of 'In Wilson's setup [Wilson2009, Section 2]'
+just write 'In Wilson's setup [Wilson2009]' and then remove all other
+references into that same paper."
+
+§2 currently has 5 Wilson 2009 citations:
+  L219 (§2.2 start): "In Wilson's setup [Wilson2009, Section 2]"
+  L248 (§2.3 footnote): "...sublattice argument of [Wilson2009, Section 3]"
+  L256 (§2.3 paren): "...L\bar{s} ∩ Ls = 2L [Wilson2009, Section 2]"
+  L258 (def header): "\begin{definition}[Wilson {[Wilson2009, Section 3]}]"
+  L271 (post-Λ-def): "decompose into three families [Wilson2009, Section 3]"
+
+Keep L219 (simplified: drop "Section 2"). Remove other four.
+
+Section title "2.3 Wilson's Leech lattice" makes attribution obvious.
+
+Done. §2 now has exactly one Wilson 2009 citation, at L219 (start of §2.2):
+"In Wilson's setup~\cite{Wilson2009}, the E_8 lattice is L = D_8^+..."
+
+Removed:
+- L248 (footnote): "...sublattice argument of [Wilson2009, Section 3]"
+                -> "...sublattice argument."
+- L256 (paren after sublattice identities): cite dropped.
+- L258 (def header): "[Wilson {[Wilson2009, Section 3]}]" -> "[Wilson]"
+- L271 (post-Λ-def): cite dropped.
+
+Wilson 2009 citations remaining (outside §2; unchanged):
+- L129: intro (§1)
+- L514: §4 proof remark
+- L702, L714: §6 Related work
+- L1671: bibliography
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.
