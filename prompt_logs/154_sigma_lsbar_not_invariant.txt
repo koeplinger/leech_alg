@@ -1,0 +1,41 @@
+Prompt 154 -- Surgical: add sibling fact sigma(Lsbar) != Lsbar to Remark 4.6
+Date: 2026-05-24
+
+User: feedback flagged "Issue 2: sigma(Ls_bar) != Ls_bar not reported in
+paper. Already flagged in 1b above. Both Ls_bar and sigma(Ls_bar) are
+closed under both standard and twisted products (0/64 failures each),
+so condition (2) is unaffected. But this companion fact should be
+reported alongside sigma(Ls) != Ls (Remark 4.6) for completeness."
+
+User: "Make a surgical update to the v4 paper (current main version),
+updating the version date to today (24 May 2026), that states this
+property in the same concise way as its sibling property."
+
+Empirical confirmation: symbolic_proof_checks.py prints
+  "sigma(Lsbar) basis vector 1 is NOT in Lsbar: vector = [...]"
+under the LEMMA E / REMARK rem:Ls-not-closed section. So the fact is
+already independently verified by the project; only the paper needs
+the companion line.
+
+Action:
+1. Read the existing Remark 4.6 (label rem:Ls-not-closed).
+2. Add a sibling sentence stating sigma(Lsbar) != Lsbar in the same
+   concise form.
+3. Bump paper's date from 23 May 2026 -> 24 May 2026.
+4. Rebuild.
+
+Done:
+1. Bumped subtitle "23 May 2026 (v4)" -> "24 May 2026 (v4)".
+2. Added one sentence to Remark 4.6 (rem:Ls-not-closed) immediately
+   after the existing sigma(Ls) != Ls witness, parallel in form:
+
+     "The same holds for $L\bar s$: the element
+      $w = (0, 0, -1, 0, -1, 0, -1, -1)$ lies in $\sigma(L\bar s)$
+      but not in $L\bar s$, so $\sigma(L\bar s) \ne L\bar s$ as well."
+
+   The witness w = N_2 from the paper's appendix table A.2 basis
+   (already verified by symbolic_proof_checks.py).
+
+3. Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.
