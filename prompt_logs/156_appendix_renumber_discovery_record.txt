@@ -27,4 +27,60 @@ User:
     all v in V), V (+) W = L/2L, W has mixed isotropy (8 q=0, 8 q=1).
     Compare to the W nilpotent ideal we just verified.
 
-Status: in progress.
+Done:
+
+(1) Renumbered Appendix A subsection.
+    - Changed \subsection* (unnumbered) -> \subsection (numbered)
+      at paper/main.tex L1289.
+    - The label app:mod2quotient now renders as "A.1" (verified via
+      paper/main.aux: \newlabel{app:mod2quotient}{{A.1}{15}{...}{subsection.A.1}{}}).
+    - Updated two cross-references to use the more natural form:
+      L859: "(Appendix~A, Section~\ref{app:mod2quotient})" -> "(Appendix A, Section A.1)"
+      L885: "Section~\ref{app:mod2quotient}" -> "Section A.1"
+    - Paper rebuilds clean at 20 pages.
+
+(2) Wrote paper/hermes_mod2_structure_supplement.tex (5 pp PDF).
+    Structure:
+      - Title: "Subalgebra and ideal structure of the mod-2 quotient"
+      - Authors: Hermes (proposed) + Claude Opus 4.7 (verification)
+      - Attribution acknowledges Hermes used OpenCode + DeepSeek v4 flash.
+      - Section 1: Setting (recap of paper Section A.1).
+      - Section 2: Discovery 1 (W multiplication table). Verbatim
+        original proposal, then verification with two cell corrections
+        and one structural re-interpretation (w0 = s mod 2L, not e_0).
+      - Section 3: Discovery 2 (V totally isotropic left ideal).
+        Verbatim original, then verification:
+          * V basis correct, spans exactly V.
+          * V is left ideal: confirmed (already in paper).
+          * V totally isotropic under q = N/2 mod 2: confirmed.
+          * V (+) W = L/2L: confirmed.
+          * W has mixed isotropy: WRONG -- W is also totally isotropic.
+          * BONUS: V is also a right ideal (two-sided), new beyond paper.
+      - Witt decomposition picture: V and W are both maximal totally
+        isotropic (Lagrangian) subspaces of (L/2L, q) under the
+        plus-type form; V is the "ideal Lagrangian", W is the
+        "subalgebra Lagrangian", forming a Witt decomposition.
+      - Section 4: Discovery 1 vs Discovery 2 -- the W-internal
+        nilpotent ideal N is distinct from the L/2L-level two-sided
+        ideal V; |N intersect V| = 1.
+      - Section 5: relevance to paper's open question 1.
+      - Attribution and provenance section.
+      - Cross-references.
+
+(3) Discovery 2 verification (script: verify_discovery2_V_isotropic.py):
+    - Proposed V basis (v0, v1, v2, v3) is correct (spans exact V).
+    - V is a left ideal: True (already paper Lemma 4.3 mod-2).
+    - V is also a right ideal: True (NEW, beyond paper).
+    - V totally isotropic: True (all 16 elements have q=0).
+    - W's isotropy: ALSO totally isotropic (16/16), not 8/8 as proposed.
+    - L/2L isotropy: 136/120, confirming plus-type form.
+    - Comparison V vs N (Discovery 1's nilpotent ideal):
+      |N| = 8, |V| = 16, |N intersect V| = 1, |N intersect W| = 8.
+      V and N live in DIFFERENT summands of L/2L = V (+) W.
+      They are structurally distinct: V is the "ideal half", N is
+      the "radical-like piece inside the subalgebra half W".
+      Both are totally isotropic.
+
+Status: CLOSED -- supplement written, subsection renumbered, both
+discoveries verified with corrections. Hermes attribution preserved.
+No edits to the main paper beyond the subsection renumbering.

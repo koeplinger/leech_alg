@@ -1,0 +1,414 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\newcommand{\LL}{\Lambda}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\Nrm}{N}
+
+\newtheorem*{observation}{Observation}
+
+\title[Mod-2 structure of $L/2L$: external proposal, verification, corrections]%
+{Structural notes on $L/2L$ for\\
+\emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
+triple-octonion product}\\
+\large Subalgebra and ideal structure of the mod-2 quotient}
+
+\author{Hermes\,$^{1}$ (proposed discoveries) and Claude Opus~4.7\,$^{2}$ (verification)}
+\address{$^{1}$External contribution, via OpenCode + DeepSeek v4 (``flash'') tooling}
+\address{$^{2}$Anthropic, acting at the direction of Jens K\"oplinger}
+
+\date{24 May 2026}
+
+\thanks{This supplement records two structural proposals about the
+mod-2 quotient $L/2L$ communicated by an external contributor
+(``Hermes'') using OpenCode with DeepSeek~v4 (``flash'') as the
+underlying model, alongside an empirical verification carried out in
+this project. Where the proposals were correct or partially correct,
+the structure is recorded with attribution; where corrections were
+required, the original claim is reproduced verbatim and corrected
+forward. The supplement is companion material to the main paper
+(\texttt{paper/main.tex}, v4); it is not part of the paper and is not
+in its referee scope.}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The main paper's Appendix~A, Section~A.1 (``The mod-2-quotient reading
+of Tables~A.2 and~A.3'') stops at the structural statement: under the
+descended octonion product on $\bar L := L/2L$, the subspace
+$V := \sigma(L\bar s)/2L$ is a $4$-dimensional left ideal and
+$W := \sigma(Ls)/2L$ is a $4$-dimensional subalgebra, with
+$\bar L = V \oplus W$.
+
+External feedback (Hermes, via OpenCode + DeepSeek~v4 flash) proposed
+two finer structural descriptions: an explicit basis and
+multiplication table for $W$ (with a~3-dim nilpotent ideal and a
+universal zero divisor), and an explicit basis for~$V$ together with
+total isotropy under the natural quadratic form on~$\bar L$. We
+reproduce both proposals verbatim, then record the empirical
+verification carried out in this project
+(\texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py} and
+\texttt{python\_project/src/verify\_discovery2\_V\_isotropic.py}).
+
+Of the two proposals, one (Discovery~1, the $W$ multiplication table)
+required two cell corrections and one structural re-interpretation;
+the other (Discovery~2, $V$ totally isotropic) is correct in its
+asserted form and is sharpened here in two new directions: $V$~is
+in fact a \emph{two-sided} ideal of $\bar L$ (not only a left ideal,
+as in the paper), and~$W$ is also totally isotropic under the natural
+quadratic form (correcting the proposed ``mixed isotropy''
+claim). Together, $V$ and $W$ form a Witt decomposition of $\bar L$
+into a pair of maximal totally isotropic subspaces (Lagrangians) under
+the plus-type quadratic form induced by the norm on~$L$.
+\end{abstract}
+
+% ===================================================================
+\section{Setting}
+% ===================================================================
+
+Throughout, $L = D_8^+$ is the $E_8$ lattice in the
+coordinate-symmetric placement, $\sigma = (1\;2)$ is the transposition
+of two imaginary basis units of the paper, $L\bar s$ and~$Ls$ are
+Wilson's sublattices, and $\bar L := L/2L \cong \FF_2^{\,8}$
+is the mod-2 quotient with the descended (Z-bilinear $\to$ $\FF_2$-bilinear)
+octonion product~$\bar\mu$. The paper's Appendix~A,
+Section~A.1 establishes:
+
+\begin{enumerate}[label=(\arabic*)]
+\item $\bar L$ has an inherited $\FF_2$-bilinear product $\bar\mu$
+  whose structure constants are the entries of Table~A.1 reduced
+  modulo~$2$. The product is non-unital ($e_0 \notin L$) and
+  non-commutative in the paper's $L$-basis $L_1,\ldots,L_8$.
+\item $V := \sigma(L\bar s)/2L$ and $W := \sigma(Ls)/2L$ are
+  $4$-dimensional $\FF_2$-subspaces of $\bar L$ with
+  $\bar L = V \oplus W$.
+\item Lemma~4.3 $\iff$ $V$ is a left ideal of $(\bar L, \bar\mu)$.
+\item Lemma~4.4 $\iff$ $W$ is a subalgebra of $(\bar L, \bar\mu)$.
+\end{enumerate}
+
+The proposals below refine~(3) and~(4). All claims have been verified
+by exact-arithmetic enumeration on the paper's Appendix-A basis;
+verification scripts are in
+\texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py}
+and~\texttt{verify\_discovery2\_V\_isotropic.py}.
+
+% ===================================================================
+\section{Discovery 1 (Hermes): the multiplication table of $W$}
+% ===================================================================
+
+\subsection*{Original proposal (verbatim)}
+
+\begin{quote}
+\textbf{Discovery~1.}  $W = \sigma(Ls)/2L$ -- explicit subalgebra
+identified. I computed the multiplication table of $W = \sigma(Ls)/2L$
+as an $\FF_2$-algebra. This is the structural reason for Lemma~4.4.
+
+Basis in $L/2L$ coordinates:
+\begin{align*}
+  w_0 &= (1,1,1,0,0,0,0,0) \text{ -- contains identity of } L/2L \\
+  w_1 &= (0,1,0,1,1,0,1,0) \\
+  w_2 &= (0,0,0,1,0,1,1,1) \text{ -- universal zero divisor} \\
+  w_3 &= (0,0,0,0,1,0,1,1)
+\end{align*}
+Multiplication table:
+\[
+\begin{array}{c|cccc}
+ & w_0 & w_1 & w_2 & w_3 \\ \hline
+w_0 & w_0+w_1   & 0 & w_2 & 0 \\
+w_1 & w_1+w_2+w_3 & 0 & 0   & w_2 \\
+w_2 & 0         & 0 & 0   & 0 \\
+w_3 & w_3       & w_2 & 0 & 0 \\
+\end{array}
+\]
+Structural features:
+\begin{itemize}
+\item $N = \mathrm{span}\{w_1, w_2, w_3\}$ is a 3-dim nilpotent ideal,
+  $N^2 = \mathrm{span}\{w_2\}$, $N^3 = 0$.
+\item $w_2$ is a universal zero divisor.
+\item The identity of $L/2L$ is in $W$ but NOT idempotent in $W$
+  ($w_0^2 = w_0 + w_1$).
+\item Only 6/64 basis products are non-zero.
+\end{itemize}
+This replaces the appendix tables with an abstract structural reason:
+Lemma~4.4 holds because $W \in \mathrm{Subalg}(L/2L)$, provable
+structurally rather than by enumerating 64 coefficients.
+\end{quote}
+
+\subsection*{Verification result}
+
+The proposed basis of~$W$ is correct: the four vectors
+$(w_0, w_1, w_2, w_3)$ are in $W$ and span exactly the $4$-dimensional
+$\FF_2$-subspace $W = \sigma(Ls)/2L$.
+
+The multiplication table requires two cell corrections, and one
+structural claim is incorrect; the original framing as an
+``$\FF_2$-algebra in the conventional sense'' overstates the
+structure since the descended product on $\bar L$ is non-unital
+(the octonion identity $e_0 \notin L$) and non-commutative in the
+$L$-basis.
+
+\paragraph{Actual multiplication table.}
+Verified by direct computation of $\bar\mu(w_i, w_j)$ using the
+structure constants in the paper's Appendix-A $L$-basis:
+\[
+\begin{array}{c|cccc}
+\bar\mu(\cdot,\cdot) & w_0 & w_1 & w_2 & w_3 \\ \hline
+w_0 & w_0 & 0   & w_2 & 0   \\
+w_1 & w_1 & 0   & 0   & w_2 \\
+w_2 & 0   & 0   & 0   & 0   \\
+w_3 & w_3 & w_2 & 0   & 0   \\
+\end{array}
+\]
+Six non-zero entries; every non-zero entry is a single basis vector.
+
+\paragraph{Identity / idempotent claim.}
+In $L$-basis coordinates, $w_0 = L_1 + L_2 + L_3$. Since
+$L_2 + L_3 = (e_0 + e_1) + (e_0 - e_1) = 2 e_0 \in 2L$, this reduces
+modulo~$2L$ to $w_0 \equiv L_1 = s$. The octonion identity~$e_0$ is not
+in~$L$ (it has odd coordinate sum, so it lies outside~$D_8^+$), and
+$\bar L$ has no multiplicative identity. The corrected statement: $w_0$
+represents~$s$ modulo~$2L$ and is an \emph{idempotent in~$W$}
+($w_0^2 = w_0$), not an inherited identity of~$\bar L$.
+
+\paragraph{Structural features (corrected confirmations).}
+With the actual table:
+\begin{itemize}
+\item $N := \mathrm{span}_{\FF_2}\{w_1, w_2, w_3\}$ is a $3$-dimensional
+  two-sided ideal of~$W$.
+\item $N^2 = \FF_2 w_2$ and $N^3 = 0$.
+\item $w_2$ is a universal zero divisor of~$W$ (every product
+  $\bar\mu(w_2, w) = 0$ for all $w \in W$, and $\bar\mu(w, w_2)$ is
+  $0$ or $w_2$).
+\item $W$ decomposes as $W = \FF_2 w_0 \oplus N$, with $w_0$
+  idempotent.
+\end{itemize}
+
+\subsection*{Does this replace the appendix tables?}
+
+Not by itself. The mod-2 quotient subsection (paper Section~A.1) already
+converts Lemma~4.4 to ``$W$ is a subalgebra of $\bar L$''; the table
+above describes the internal structure of~$W$ as an algebra, which
+is a refinement. Verifying $W$~closes under $\bar\mu$ still requires
+checking $4 \times 4 = 16$ basis products in~$\FF_2$~--- a reduction
+from the appendix tables' $64$ integer products in $\ZZ$, but not an
+elimination. A genuine structural argument would identify~$W$
+intrinsically inside~$\bar L$ (kernel of a natural map, image of a
+canonical construction, Peirce component, radical-like piece) without
+referencing~$\sigma$ at all. That identification is not yet in hand.
+
+% ===================================================================
+\section{Discovery 2 (Hermes): $V$ totally isotropic left ideal}
+% ===================================================================
+
+\subsection*{Original proposal (verbatim)}
+
+\begin{quote}
+\textbf{Discovery~2.}  $V = \sigma(L\bar s)/2L$ is a totally isotropic
+left ideal. $V$ basis:
+\[ (0,1,1,0,0,0,0,0),\ (0,0,1,0,1,0,1,0),\ (0,0,0,1,0,0,1,1),\
+   (0,0,0,0,1,1,0,1). \]
+Properties verified:
+\begin{itemize}
+\item $V$ is a left ideal: $\bar\mu(L/2L, V) \subseteq V$
+  (Lemma~4.3 structurally).
+\item $V$ is totally isotropic: $q(v) = 0$ for all $v \in V$.
+\item $V \oplus W = L/2L$.
+\item $W$ has mixed isotropy ($8$ with $q=0$, $8$ with $q=1$).
+\end{itemize}
+\end{quote}
+
+\subsection*{The quadratic form}
+
+For an even unimodular lattice $L$ with norm form $\Nrm(v) =
+\sum v_i^2$, the descended $\FF_2$-valued quadratic form
+\[
+  q \colon L/2L \to \FF_2, \qquad
+  q(v + 2L) := \Nrm(v)/2 \pmod{2}
+\]
+is well-defined because $\Nrm(v + 2u) = \Nrm(v) + 4 \langle v, u\rangle
++ 4 \Nrm(u) \equiv \Nrm(v) \pmod{4}$, so the right-hand side is
+$\sigma$-independent of the chosen representative. For $L = D_8^+$
+this $q$ is the standard plus-type form on $\FF_2^{\,8}$: $136$
+isotropic vectors (including~$0$) and $120$ anisotropic vectors out
+of~$256$, Witt index~$4$.
+
+\subsection*{Verification result}
+
+The proposed basis of~$V$ is correct: the four vectors above are in
+$V = \sigma(L\bar s)/2L$ and span exactly it.
+
+The two correct claims and the four-by-four scoresheet:
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Claim & Verified \\
+\midrule
+$V$ is a left ideal of $\bar L$ & Yes (already paper Lemma~4.3) \\
+$V$ is totally isotropic, $q \equiv 0$ on $V$ & Yes (all $16$ elements)\\
+$V \oplus W = \bar L$ & Yes (already paper Section~A.1) \\
+$W$ has mixed isotropy ($8/8$) & \textbf{No} -- $W$ is totally isotropic \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{$W$ is totally isotropic (correction to proposed mixed
+isotropy).}
+Direct computation gives $q(w) = 0$ for all $16$ elements
+$w \in W$. This is empirically clean: $V$ and $W$ are \emph{both}
+$4$-dimensional totally isotropic subspaces of $\bar L$, and the
+proposed $8/8$ split for~$W$ is incorrect under the natural
+quadratic form $q(v) = \Nrm(v)/2 \pmod 2$. (The proposal may have used
+a different form; under the standard one, $W$ is totally isotropic.)
+
+\paragraph{Bonus structural fact: $V$ is also a right ideal.}
+The paper records $V$ as a left ideal (the mod-2 form of Lemma~4.3).
+Direct empirical test gives also
+\[ \bar\mu(V, \bar L) \subseteq V, \]
+so $V$ is in fact a \emph{two-sided ideal} of $\bar L$. This is a
+genuine structural fact not appearing in the paper's mod-2 reading,
+and the right-ideal direction does not follow from the left-ideal
+direction (the algebra $\bar\mu$ is non-commutative in the
+$L$-basis).
+
+\subsection*{The Witt decomposition picture}
+
+Putting the verified pieces together: under the plus-type quadratic
+form $q$ on $\bar L \cong \FF_2^{\,8}$,
+\begin{equation}\label{eq:witt}
+  \bar L \;=\; V \oplus W,
+\end{equation}
+where:
+\begin{itemize}
+\item $V$ is a $4$-dimensional \emph{maximal totally isotropic
+  two-sided ideal} of $(\bar L, \bar\mu)$;
+\item $W$ is a $4$-dimensional \emph{maximal totally isotropic
+  subalgebra} of $(\bar L, \bar\mu)$;
+\item $V \cap W = \{0\}$, and $V, W$ together span~$\bar L$;
+\item the Witt index of the plus-type form on $\FF_2^{\,8}$ is~$4$,
+  so each of $V$ and $W$ is a maximal isotropic subspace
+  (Lagrangian).
+\end{itemize}
+
+This is a clean orthogonal-geometry picture of what
+$\sigma$ accomplishes structurally: a transversal decomposition of
+$\bar L$ into a pair of complementary Lagrangians, one carrying the
+two-sided-ideal role and the other carrying the subalgebra role.
+
+\begin{observation}
+$V$ and $W$ are not only orthogonally placed -- they are
+geometrically related: under the bilinear form
+$b(x, y) := q(x+y) - q(x) - q(y)$ associated to~$q$, the pairing
+between $V$ and $W$ is non-degenerate (since their direct sum is
+$\bar L$ and both are isotropic), so $V$ and $W$ are dual Lagrangians
+of the orthogonal space~$(\bar L, q)$.
+\end{observation}
+
+% ===================================================================
+\section{Discovery 1 vs Discovery 2: are the ideals the same?}
+% ===================================================================
+
+The user (and a reader) might reasonably ask whether the
+$3$-dim nilpotent ideal $N \subset W$ from Discovery~1 is the same
+object as the $4$-dim two-sided ideal $V \subset \bar L$ from
+Discovery~2. \emph{They are not.} Their relationship is:
+
+\begin{itemize}
+\item $V$~lives in the complementary summand to~$W$ in the
+  decomposition $\bar L = V \oplus W$;
+\item $N$~lives \emph{inside}~$W$ (it is a sub-ideal of the
+  subalgebra~$W$), and is therefore disjoint from~$V$ except at~$0$
+  (empirical: $|N \cap V| = 1$).
+\end{itemize}
+
+The two ideals are structurally distinct components of the same
+overall mod-2 picture: $V$ is the ``ideal half'' of the
+$V \oplus W$ decomposition (it carries the left-multiplication
+action of $\bar L$), and $N$ is the radical-like core of the
+``subalgebra half''~$W$. Both are totally isotropic under~$q$;
+$V$~is in addition a two-sided ideal of all of~$\bar L$, whereas
+$N$~is only known to be a two-sided ideal of~$W$.
+
+% ===================================================================
+\section{Relevance to the paper's open question}
+% ===================================================================
+
+The paper's Section~7 records as open: \emph{a structural reason for
+Lemma~\ref{lem:sigmaLs-closed}}, asking specifically for an
+``identification of~$\sigma(Ls)$ with a left ideal, with the image
+under a norm-preserving octonion automorphism, or with some
+module-theoretic structure over~$L$, that would lift the mod-2
+picture''. The structure documented here is the next layer past
+Section~A.1: not the integer-level structural reason the open
+question targets, but a sharper account of the mod-2 picture itself
+--- specifically, the Witt-decomposition interpretation and the
+internal multiplication table of~$W$. These do not close the open
+question (the integer-level lift remains open) but they refine the
+target: any future intrinsic identification of $\sigma(Ls)$ should
+descend to recover the multiplication table of~$W$ recorded in
+\S2, with $w_0$ idempotent and $w_2$ a universal zero divisor.
+
+% ===================================================================
+\section*{Attribution and provenance}
+% ===================================================================
+
+Both structural proposals (\textbf{Discovery~1} and \textbf{Discovery~2})
+were communicated by an external contributor working under the name
+``Hermes'', using OpenCode (terminal-based interface) with DeepSeek~v4
+``flash'' as the underlying model. The proposals were communicated
+through review feedback on the main paper's Appendix~A
+mod-2-quotient subsection; the original wording is reproduced
+verbatim in \S2 and~\S3.
+
+The empirical verification (existence of~$V$ and~$W$ with the
+proposed bases, the multiplication table of~$W$, total isotropy
+of~$V$, total isotropy of~$W$ under the natural quadratic form,
+the two-sided-ideal property of~$V$, and the structural separation
+of~$N \subset W$ from~$V \subset \bar L$) was carried out in this
+project by Claude Opus~4.7 (Anthropic) at the direction of Jens
+K\"oplinger, using the scripts
+\texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py}
+and \texttt{verify\_discovery2\_V\_isotropic.py}.
+
+Corrections to the original Hermes proposals (the two-cell error in
+the $W$~multiplication table, the misidentification of $w_0$ with
+``the identity of $L/2L$'', and the mistaken ``$W$ has mixed
+isotropy'' claim) are recorded in \S2--\S3 with the verbatim
+originals preserved.
+
+% ===================================================================
+\section*{Cross-references}
+% ===================================================================
+
+\begin{itemize}
+\item Paper Appendix~A, Section~A.1 (``The mod-2-quotient reading of
+  Tables~A.2 and~A.3''): the level at which the paper's structural
+  account stops.
+\item Paper~\S7, open question~(1): the integer-level structural
+  reason for Lemma~4.4 (\emph{remains open}).
+\item \texttt{python\_project/src/verify\_mod2\_quotient.py}: paper-side
+  verification of $V$ as a left ideal and $W$ as a subalgebra.
+\item \texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py}:
+  verification of the $W$-multiplication table (with two-cell
+  corrections to the proposal).
+\item \texttt{python\_project/src/verify\_discovery2\_V\_isotropic.py}:
+  verification of $V$ totally isotropic, two-sided ideal, $W$ also
+  totally isotropic.
+\item \texttt{paper/reviews/2026-05-24\_claude\_opus\_4\_7\_W\_concrete.md}:
+  the project-internal record of the $W$ concrete example.
+\item \texttt{prompt\_logs/155\_W\_subalgebra\_concrete.txt} and
+  \texttt{156\_appendix\_renumber\_discovery\_record.txt}: prompt logs.
+\end{itemize}
+
+\end{document}
