@@ -1,0 +1,53 @@
+Prompt 171 -- §3 Definition 3.1 and Proposition 3.2: tighten and clarify
+Date: 2026-05-24
+
+User: "In section 3, 'Definition 3.1 (Transposition-twisted octonion
+algebra).' reads as if we're defining a new algebra. We're not, we're
+defining an operation that maps a representation of the octonions
+into another representation. Keep it concise and reword it
+accordingly. You're actually writing this already in proposition 3.2,
+make this flow properly: sigma is just a map (def 3.1) and its all
+between octonions (prop 3.2). The definition and proposition should
+be _shorter_ after your update, not longer."
+
+Action:
+- Retitle Def 3.1 from "Transposition-twisted octonion algebra" to
+  "Transposition twist" (it's an operation, not a new algebra).
+- Drop the "resulting triples define a new multiplication table"
+  language. The formula x .σ y = σ(σ(x).σ(y)) defines the product
+  directly.
+- Prop 3.2: state directly that σ is an algebra isomorphism O -> O,
+  with composition as immediate consequence. No need to introduce
+  "(R^8, .σ) is an octonion algebra" since after Def 3.1's reframing
+  it's clear we're working within O.
+
+Done. Definition 3.1 and Proposition 3.2 tightened to:
+
+  Definition 3.1 (Transposition twist).
+  Let sigma = (i j) be a transposition on {1,...,7}, extended to the
+  linear involution sigma : R^8 -> R^8 that fixes e_0 and swaps
+  e_i <-> e_j. The sigma-twisted product on O is
+       x .sigma y := sigma(sigma(x) . sigma(y)),
+  where . is the standard octonion product.
+
+  Proposition 3.2.
+  sigma : (O, .) -> (O, .sigma) is an algebra isomorphism:
+  sigma(x.y) = sigma(x) .sigma sigma(y) for all x, y in O.
+  Consequently .sigma is composition: N(x .sigma y) = N(x) N(y).
+
+  Proof. sigma(x).sigma sigma(y) = sigma(sigma^2(x) . sigma^2(y))
+  = sigma(x.y), since sigma^2 = id.
+
+Changes:
+- Title changed from "Transposition-twisted octonion algebra" to
+  "Transposition twist" -- sigma is a map, not a new algebra.
+- "Apply sigma to each Fano triple ... resulting triples define a
+  new multiplication table" removed (the formula x .sigma y =
+  sigma(sigma(x).sigma(y)) defines the product directly).
+- Prop 3.2: target/source both now O (was R^8 -> R^8 phrased as
+  R^8 with two products). Cleaner.
+- Proof shortened to single equality chain.
+
+Paper now 19 pages (down from 20).
+
+Status: CLOSED.

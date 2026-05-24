@@ -289,41 +289,27 @@ $j, k \in J = \{\pm e_t : 0 \le t \le 7\}$ (16~unit octonions).
 \section{The construction}\label{sec:construction}
 % ===============================================================
 
-\begin{definition}[Transposition-twisted octonion algebra]
-\label{def:twist}
-Let $\sigma = (i\; j)$ be a transposition on $\{1, \ldots, 7\}$.
-Extend~$\sigma$ to a linear map $\sigma: \RR^8 \to \RR^8$ that fixes
-$e_0$ and permutes $e_i \leftrightarrow e_j$.  Apply~$\sigma$ to each
-standard Fano triple: $(a,b,c) \mapsto (\sigma(a), \sigma(b), \sigma(c))$.
-The resulting triples define a new multiplication table on~$\RR^8$.
-Equivalently, the \emph{$\sigma$-twisted multiplication} is
+\begin{definition}[Transposition twist]\label{def:twist}
+Let $\sigma = (i\; j)$ be a transposition on $\{1, \ldots, 7\}$,
+extended to the linear involution $\sigma \colon \RR^8 \to \RR^8$
+that fixes $e_0$ and swaps $e_i \leftrightarrow e_j$.  The
+\emph{$\sigma$-twisted product} on~$\OO$ is
 \begin{equation}\label{eq:twist-formula}
-  x \cdot_\sigma y \;=\; \sigma\bigl(\sigma(x) \cdot \sigma(y)\bigr),
+  x \cdot_\sigma y \;:=\; \sigma\bigl(\sigma(x) \cdot \sigma(y)\bigr),
 \end{equation}
-where $\cdot$ denotes the standard octonion product.
+where $\cdot$ is the standard octonion product.
 \end{definition}
 
 \begin{proposition}\label{prop:iso}
-$(\RR^8, \cdot_\sigma)$ is an octonion algebra, isomorphic
-to~$(\OO, \cdot)$ via the map~$\sigma$ itself:
-\begin{equation}\label{eq:iso}
-  \sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)
-  \qquad \text{for all } x, y \in \RR^8.
-\end{equation}
-In particular, $\cdot_\sigma$ satisfies the composition property
+$\sigma \colon (\OO, \cdot) \to (\OO, \cdot_\sigma)$ is an algebra
+isomorphism: $\sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)$
+for all $x, y \in \OO$.  Consequently $\cdot_\sigma$ is composition:
 $\Nrm(x \cdot_\sigma y) = \Nrm(x)\Nrm(y)$.
 \end{proposition}
 
 \begin{proof}
-For any $x, y \in \RR^8$:
-\[
-  \sigma(x) \cdot_\sigma \sigma(y)
-  = \sigma\bigl(\sigma(\sigma(x)) \cdot \sigma(\sigma(y))\bigr)
-  = \sigma(x \cdot y),
-\]
-since $\sigma^2 = \mathrm{id}$.  Thus $\sigma: (\OO, \cdot) \to
-(\RR^8, \cdot_\sigma)$ is a vector-space isomorphism that preserves
-multiplication.  Composition follows.
+$\sigma(x) \cdot_\sigma \sigma(y) = \sigma(\sigma^2(x) \cdot
+\sigma^2(y)) = \sigma(x \cdot y)$, since $\sigma^2 = \mathrm{id}$.
 \end{proof}
 
 \begin{definition}[Triple product with $\ZZ_3$ routing]
