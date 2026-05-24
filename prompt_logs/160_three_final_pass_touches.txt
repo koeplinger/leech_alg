@@ -1,0 +1,39 @@
+Prompt 160 -- Three optional final-pass touches per journal-quality review
+Date: 2026-05-24
+
+User accepted all three optional touches from the journal-quality review
+(prompt 159, sections III.1/III.2/III.6):
+
+1. §7 bullet 1: pointer to Section A.1's polarization reframing.
+2. Footnote explaining why mu-bar is non-commutative in the L-basis.
+3. §5 multiplicative-identity row: "0%" -> "(structural)" or similar
+   marker, to distinguish from sampling rates.
+
+Done:
+
+(1) §7 bullet 1 (paper/main.tex around L892):
+    Added at end of bullet:
+    "(See the closing paragraphs of Section~\ref{app:mod2quotient}
+     for a Lagrangian-polarization reframing of this open question
+     as a research program.)"
+
+(2) Footnote on non-commutativity (paper/main.tex around L1362):
+    Attached to the sentence "...mu-bar is non-commutative in the
+    L-basis."  Explains: the standard F2-octonion-algebra (in the
+    {e_0,...,e_7} basis) IS commutative, because the antisymmetric
+    part vanishes mod 2. In the L-basis, L_1 = s is half-integer
+    while L_2..L_8 are integer, so the antisymmetric part of
+    L_1 . L_k involves half-integer coefficients whose doubling need
+    not lie in 2L; hence L_1 . L_k - L_k . L_1 need not vanish mod
+    2L, making mu-bar genuinely non-commutative in this basis.
+
+(3) §5 multiplicative-identity row:
+    "0%" -> "n/a (structural)".
+    Initial attempt used "--- (structural)" but editorial standard
+    forbids em-dash (editorial_standards.md item 4). Settled on
+    "n/a (structural)" -- no dash convention issue, clearly marks
+    the cell as a structural fact rather than a sampling rate.
+
+Paper rebuilds clean at 20 pages, 669230 bytes.
+
+Status: CLOSED.

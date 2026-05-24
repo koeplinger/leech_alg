@@ -662,7 +662,7 @@ identity holds.
 \toprule
 Property & Holds? & Fraction of samples (\% $\pm$ SE) \\
 \midrule
-Multiplicative identity & No & $0\%$ \\
+Multiplicative identity & No & n/a (structural) \\
 Commutativity $u\star v = v\star u$ & No &
   $(0.018 \pm 0.0014)\%$ \\
 Norm multiplicativity $\Nrm(u\star v) = \Nrm(u)\Nrm(v)$ & No &
@@ -889,7 +889,10 @@ Several questions remain immediately open:
   $\sigma(Ls)$ with a left ideal, with the image under a
   norm-preserving octonion automorphism, or with some module-theoretic
   structure over~$L$, that would lift the mod-2 picture -- would
-  replace the appendix tables by a structural argument.
+  replace the appendix tables by a structural argument.  (See the
+  closing paragraphs of Section~\ref{app:mod2quotient} for a
+  Lagrangian-polarization reframing of this open question as a
+  research program.)
 \item The automorphism group of $(\LL, +, \star)$ and its relationship
   to the Conway group~$\Co_0$.
 \item Whether the order is maximal in any appropriate sense.
@@ -1356,7 +1359,16 @@ decomposition $\bar L = V \oplus W$.  First, $V$ is in fact a
 $\bar\mu(V, \bar L) \subseteq V$ holds in addition to the left-ideal
 direction (Lemma~\ref{lem:L-sigmaLsbar}).  The right-ideal direction
 is not formally implied by the left-ideal direction, since $\bar\mu$
-is non-commutative in the $L$-basis.
+is non-commutative in the $L$-basis.\footnote{The standard
+$\FF_2$-octonion-algebra (in the basis $\{e_0,\ldots,e_7\}$) is
+commutative, because the antisymmetric part of the octonion product
+satisfies $e_i \cdot e_j - e_j \cdot e_i \in 2\OO$, which vanishes
+modulo~$2$. In the $L$-basis, however, $L_1 = s$ is half-integer
+while $L_2, \ldots, L_8$ are integer, so the antisymmetric part of
+$L_1 \cdot L_k$ involves half-integer coefficients whose doubling
+need not lie in $2L$. Hence $L_1 \cdot L_k - L_k \cdot L_1$ need not
+vanish modulo~$2L$, and $\bar\mu$ in the $L$-basis is genuinely
+non-commutative.}
 
 Second, equip $\bar L$ with the natural plus-type quadratic form
 \[

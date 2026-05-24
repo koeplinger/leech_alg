@@ -1,0 +1,33 @@
+Prompt 159 -- Journal-quality review of v4 toward resubmission
+Date: 2026-05-24
+
+User: "Make a journal-quality review of the paper in its current form.
+We're getting close to resubmission, going well beyond merely
+addressing quality issues in the previous v3."
+
+This is a pre-submission editorial-style review. Distinct from:
+- Prompt 147 (Phase D first journal-style review): pure paper-in-isolation
+- Prompt 150 (context-aware review): paper vs entire repo
+
+This pass asks the bigger question: is this paper ready for publication?
+Significance, originality, technical correctness, exposition,
+attribution, completeness.
+
+Will write to paper/reviews/2026-05-24_claude_opus_4_7_journal_quality_review_v4.md
+
+Done. Wrote paper/reviews/2026-05-24_claude_opus_4_7_journal_quality_review_v4.md.
+
+Headline: Accept -- publication-ready.
+
+Structure:
+- I. What's in the paper, why publishable (the result; novelty; exposition;
+  attribution/methodology)
+- II. Strengths (symbolic-not-statistical, scope honesty, independent
+  re-implementation, historical synthesis, discipline)
+- III. Editorial-level observations (8 minor points; all optional)
+- IV. What I would NOT change (6 things to keep)
+- V. Significance / venue suitability
+- VI. Comparison v3 -> v4 (the substantive changes)
+- VII. Verdict: ship it. Three optional final-pass touches highlighted.
+
+Status: CLOSED.
