@@ -938,7 +938,10 @@ interest.
 
 The author thanks Matthew Barley, Geoffrey M. Dixon, Petr
 Vojt\v{e}chovsk\'{y}, and Robert A. Wilson for valuable discussion,
-advice, feedback, and corrections.
+advice, feedback, and corrections.  The Lagrangian-decomposition
+framing recorded at the end of
+Section~\ref{app:mod2quotient} was prompted by feedback from Hermes,
+working with OpenCode and DeepSeek.
 
 % ===============================================================
 \appendix
@@ -1345,6 +1348,42 @@ conductor sublattice of~$E_8$ rescales an order and $2$-adically
 saturates a \emph{sub}lattice rather than passing to a quotient.
 Both works find $2$-primary structure governing octonion-derived
 orders, but the operations differ.
+
+\paragraph{Polarization of $\bar L$ by $\sigma$.}
+Direct verification yields two further structural facts about the
+decomposition $\bar L = V \oplus W$.  First, $V$ is in fact a
+\emph{two-sided} ideal of $\bar L$: the right-ideal direction
+$\bar\mu(V, \bar L) \subseteq V$ holds in addition to the left-ideal
+direction (Lemma~\ref{lem:L-sigmaLsbar}).  The right-ideal direction
+is not formally implied by the left-ideal direction, since $\bar\mu$
+is non-commutative in the $L$-basis.
+
+Second, equip $\bar L$ with the natural plus-type quadratic form
+\[
+  q \colon \bar L \to \FF_2, \qquad q(v + 2L) \;:=\; \Nrm(v)/2 \pmod 2,
+\]
+well-defined because $L$ is even
+($\Nrm(v + 2u) \equiv \Nrm(v) \pmod 4$).  For $L = D_8^+$ this is the
+standard plus-type form on~$\FF_2^{\,8}$ with Witt index~$4$.  Direct
+verification shows that \emph{both}~$V$ and~$W$ are totally isotropic
+under~$q$ (every element of either subspace has $q = 0$); each is
+therefore a maximal totally isotropic subspace -- a
+\emph{Lagrangian}.  The decomposition $\bar L = V \oplus W$ is thus a
+\emph{Witt decomposition of $(\bar L, q)$ into a complementary pair
+of Lagrangians}, a polarization of the orthogonal $\FF_2$-space.
+
+\paragraph{The structural reframing.}
+In this picture, Lemmas~\ref{lem:L-sigmaLsbar}
+and~\ref{lem:sigmaLs-closed} together express a single fact:
+\emph{the construction of Section~\ref{sec:construction} produces a
+polarization of $\bar L$}, with one Lagrangian carrying the
+two-sided-ideal role ($V$) and the other carrying the subalgebra
+role ($W$).  The open question recorded in
+Section~\ref{sec:conclusion} -- a structural reason for
+Lemma~\ref{lem:sigmaLs-closed} -- accordingly opens into a research
+program: which polarizations of $\bar L$ arise from this
+construction, and whether any such polarization lifts to a closed
+bilinear product on $\LL$ itself.
 
 % ===============================================================
 \section{Historical note: integral Cayley numbers,
