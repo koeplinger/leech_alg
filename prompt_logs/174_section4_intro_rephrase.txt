@@ -1,0 +1,20 @@
+Prompt 174 -- §4 intro: minor rewording
+Date: 2026-05-24
+
+User: "Remove the sentence 'The choice of octonion basis and Fano
+triples in Wilson's construction is therefore not arbitrary.' and
+instead change 'The load-bearing effect...' to: 'From the given
+choice of octonion basis and Fano triples, the load-bearing
+effect...'"
+
+Done. §4 intro now reads:
+"We prove Theorem 1.1 by showing that the sigma-twisted octonion
+product preserves each of Wilson's three conditions. From the given
+choice of octonion basis and Fano triples, the load-bearing effect
+of sigma is that it MOVES the sublattices L\bar s and Ls -- this is
+where the work of the proof lives -- while leaving the octonions and
+L themselves invariant."
+
+Paper still 19 pages, clean build.
+
+Status: CLOSED.
