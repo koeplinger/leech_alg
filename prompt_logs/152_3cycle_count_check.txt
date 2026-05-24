@@ -1,0 +1,63 @@
+Prompt 152 -- Feedback: 3-cycle count may be wrong (paper vs characterization)
+Date: 2026-05-23
+
+User: feedback flags a potential discrepancy.
+
+Paper's Theorem 1.1 footnote claims "of the 70 3-cycles, exactly half
+close -- for each three-element subset of imaginary indices, one of the
+two cyclic orientations does."
+
+But verify_twist_characterization.py (per the feedback) implements logic
+that would produce:
+- Fano-line 3-subsets (7): NEITHER orientation closes -> 0/14
+- Non-Fano 3-subsets (28): EXACTLY ONE orientation closes -> 28/56
+- Total: 28/70, not 35/70.
+
+Discrepancy: 7 (= number of Fano lines).
+
+Action: read the footnote; run verify_consecutive_twists_exact.py for
+the actual empirical count; read verify_twist_characterization.py;
+reconcile.
+
+Resolution: the feedback is incorrect; the paper stands.
+
+Ran both scripts:
+
+verify_consecutive_twists_exact.py:
+  3-cycles      : 35 of 70 close            <- matches paper
+  (2,2) doubles : 84 of 210 close           <- 210 = ordered (sigma_1, sigma_2)
+                                               pairs, = 42 distinct doubles
+
+verify_twist_characterization.py:
+  THREE-CYCLES (a 3-cycle = two transpositions sharing one index)
+    3-subsets by #closing orientations (of 2): {0: 0, 1: 35, 2: 0}
+      among the 7 Fano-line subsets:           {0: 0, 1: 7,  2: 0}
+      among the 28 non-line subsets:           {0: 0, 1: 28, 2: 0}
+
+  (2,2) DOUBLE TRANSPOSITIONS
+    fixed triple IS a Fano line:     0 of 21 close
+    fixed triple is NOT a Fano line: 42 of 84 close
+    total: 42 of 105 close
+
+What the feedback got wrong: applied the (2,2)-doubles Fano-line rule
+to the 3-cycles case. For (2,2)'s, Fano-line fixed-triples DO all fail.
+For 3-cycles, Fano-line 3-subsets contribute 7/14 close (one of two
+orientations each), exactly like the 28 non-Fano subsets contribute
+28/56. Total 35/70 = 7+28.
+
+The two cases have DIFFERENT Fano-line behaviour, and the paper's
+footnote captures both correctly:
+
+  "of the 70 3-cycles, exactly half close -- for each three-element
+   subset of imaginary indices, one of the two cyclic orientations
+   does; of the 105 (2,2)'s, the 21 whose fixed three indices form
+   a Fano line all fail, and of the remaining 84 exactly half close
+   (42 in all)."
+
+No change to the paper. Empirical count 35/70 is correct and matches
+the structural rule "one of two orientations per 3-subset closes,
+uniformly across all 35 3-subsets."
+
+Status: CLOSED -- paper stands; feedback's arithmetic (28/70) would
+require Fano-line 3-subsets to all fail, which is empirically false
+(7 of those 14 close).

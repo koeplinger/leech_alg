@@ -1,0 +1,59 @@
+Prompt 153 -- Double-check the 4-cycle total failure claim
+Date: 2026-05-23
+
+User: "The review found something that I overlooked. Double-check the
+4-cycle total failure. Is this really striking? I'll look at the nature
+of 3-cycles and 4-cycles in parallel, too, to see whether there's a
+structural argument that 4-cycles must always fail."
+
+Feedback claim: "The Phase 3 survey (trial_007_results.md) found 0/5
+4-cycles work. Meanwhile 5-cycles had 80% success and 7-cycles had 20%.
+The 4-cycle total failure is a striking outlier. Possibly because a
+4-cycle contains a transposition pattern that creates conflicting
+sublattice requirements."
+
+Action:
+1. Read trial_007_results.md to find the 4-cycle / 5-cycle / 7-cycle
+   counts the feedback refers to.
+2. Re-run the relevant verification with exact arithmetic (Z-basis,
+   no sampling) to confirm or correct the numbers.
+3. Put 4-cycles in context: structural pattern of which cycles close
+   vs. don't close.
+4. The user will look at the structural argument themselves.
+
+Resolution: 4-cycle total failure is REAL and EXHAUSTIVE.
+
+Wrote python_project/src/verify_all_cycles_exact.py to test all n-cycles
+in S_7 by exact arithmetic (24-vector Z-basis of Lambda, 576 basis-pair
+products per cycle, no sampling).
+
+Result:
+  cycle type      tested     close       pct
+  3-cycles            70        35    50.00%
+  4-cycles           210         0     0.00%   <-- exhaustive
+  5-cycles           504       252    50.00%
+  6-cycles           840       210    25.00%
+  7-cycles           720       336    46.67%
+  ------------------------------------------
+  total             2344       833    35.54%
+
+The trial_007 Phase 3 figure (0/5) is confirmed and generalised to
+0/210. 4-cycles are the unique pure-n-cycle type in S_7 with 0% closure.
+
+Structural notes (for the user to pursue):
+- pi^2 of a 4-cycle is a (2,2)-double on the same support.
+- (2,2)-double rule: Fano-line fixed triple -> never closes; otherwise
+  42 of 84.
+- Of 210 four-cycles, 42 inherit Fano-line non-closure (their square is
+  a Fano-line (2,2)). The other 168 have non-Fano squares; if (2,2)-
+  closure were the only obstruction, ~84 of these 168 would be expected
+  to close. The exhaustive count finds 0. So 4-cycles carry an
+  ADDITIONAL obstruction beyond what pi^2 inherits.
+- Neither sign nor order alone predicts closure (transposition and
+  4-cycle are both odd; one closes universally, the other never does).
+
+Saved findings to paper/reviews/2026-05-23_claude_opus_4_7_n_cycle_survey.md
+with cross-references to the related artefacts.
+
+Status: CLOSED -- empirical claim confirmed at full exhaustion;
+structural argument is open and the user will look at it.
