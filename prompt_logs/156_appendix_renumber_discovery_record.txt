@@ -1,0 +1,30 @@
+Prompt 156 -- (1) Renumber Appendix A subsection; (2) Record Hermes
+Discovery 1 with corrections as stand-alone supplement; (3) Verify
+Hermes Discovery 2 (V is totally isotropic left ideal) and compare
+to the W nilpotent backbone.
+
+Date: 2026-05-24
+
+User:
+(1) "fix a numbering issue of the existing Appendix A mod-2 quotient
+    subsection: I notice it's not distinctly labeled (so in a
+    cross-reference it simply shows as 'A' which reads like 'appendix
+    A section A'. Make this section individually numbered according
+    to typical conventions (like 'A.1' maybe?) and check
+    cross-references such that they read like 'see appendix section
+    A.1' (or similar)."
+
+(2) "record this finding as stand-alone supplemental TeX / PDF, the
+    original claim, together with the corrections and our analysis
+    for relevance; it was provided by Hermes using Opencode Deepseek
+    v4 flash, and requires attribution."
+
+(3) Discovery 2: V = sigma(Ls_bar)/2L is a totally isotropic left
+    ideal. Proposed basis:
+    (0,1,1,0,0,0,0,0), (0,0,1,0,1,0,1,0),
+    (0,0,0,1,0,0,1,1), (0,0,0,0,1,1,0,1)
+    Properties claimed: left ideal, totally isotropic (q(v)=0 for
+    all v in V), V (+) W = L/2L, W has mixed isotropy (8 q=0, 8 q=1).
+    Compare to the W nilpotent ideal we just verified.
+
+Status: in progress.
