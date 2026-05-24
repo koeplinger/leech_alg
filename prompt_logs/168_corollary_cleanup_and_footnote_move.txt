@@ -1,0 +1,57 @@
+Prompt 168 -- Corollary 1.2 cleanup + move footnote 1 to end of §4
+Date: 2026-05-24
+
+User:
+1. Corollary 1.2 reads quirky. The phrase "a subgroup that is closed
+   under * and that is a free Z-module of rank equal to the dimension
+   of the ambient algebra" conflates the additive-group structure
+   with the ring structure (and is mostly boring restatement). Scratch
+   it. Keep only the clarification about non-unital order usage.
+2. The footnote 1 to Theorem 1.1 (on consecutive twists, 70 3-cycles
+   / 105 (2,2)-doubles enumeration) is out-of-sequence at this point
+   in the paper. Move it to a remark at the end of §4 (just before
+   §5), or suggest a better place.
+
+Analysis on (2): The footnote's content is about extensions/extras
+beyond the main theorem -- an enumeration of which compositions of
+two transpositions close. Section 4 (the proof) ends with the three
+condition propositions. A remark at the end of §4 ("Beyond the main
+theorem: consecutive twists") naturally records the empirical
+extension. The footnote is also referenced from §5 conclusion in some
+papers, but here only stands as an extra observation. End of §4 is
+the right home.
+
+Actions:
+- Trim Corollary 1.2 to remove the additive-group / Z-module clause.
+- Cut the footnote 1 from Theorem 1.1.
+- Add a Remark at the end of §4 (after cond3 proposition, before §5),
+  labelled rem:consecutive-twists or similar, with the same content.
+
+Done.
+
+1. Corollary 1.2 trimmed:
+   Before: "...is an order in the R-algebra ..., in the sense that
+            it is a Z-subring of full rank -- a subgroup that is closed
+            under * and that is a free Z-module of rank equal to the
+            dimension of the ambient algebra. The ambient algebra has
+            no multiplicative identity..., so the term 'order' is used
+            here in the non-unital sense."
+   After:  "...is an order in the R-algebra ..., The ambient algebra
+            has no multiplicative identity..., so the term 'order' is
+            used here in the non-unital sense."
+
+2. Footnote 1 (on consecutive twists) removed from Theorem 1.1.
+
+3. Same content placed as a Remark at the end of §4 (right after
+   "This completes the proof of Theorem 1.1", just before §5),
+   labelled rem:consecutive-twists. Title: "Consecutive twists".
+   The empirical enumeration (70 3-cycles / 105 (2,2)-doubles, with
+   Fano-line structure) reads naturally as an extension-remark
+   immediately after the proof closes.
+
+No other cross-references in the paper used the footnote anchor, so
+no link updates needed.
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.

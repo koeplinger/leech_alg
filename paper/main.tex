@@ -156,30 +156,14 @@ multiplication on~$\RR^8$ (Definition~\ref{def:twist}), and let\/
 $\star$ denote the associated triple product on
 $\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ with $\ZZ_3$ cross-block
 routing (Definition~\ref{def:triple}).  Then for all
-$u, v \in \LL$, the product $u \star v$ lies
-in~$\LL$.\footnote{The construction extends to consecutive twists
-$\sigma_2 \circ \sigma_1$ by another transposition.  The composite
-acts as a single twist by $\pi = \sigma_2 \sigma_1$; as a product of
-two transpositions, $\pi$ is the identity, a 3-cycle, or a
-$(2,2)$-double transposition.  Tested by exact-arithmetic
-enumeration on a $\ZZ$-basis of~$\LL$
-(\texttt{python\_project/src/verify\_consecutive\_twists\_exact.py}):
-$\pi = $~identity does \emph{not} close (the untwisted product); of
-the 70 3-cycles, exactly half close -- for each three-element subset
-of imaginary indices, one of the two cyclic orientations does; of
-the 105 $(2,2)$'s, the 21 whose fixed three indices form a Fano
-line all fail, and of the remaining 84 exactly half close
-(42 in all).}
+$u, v \in \LL$, the product $u \star v$ lies in~$\LL$.
 \end{theorem}
 
 \begin{corollary}\label{cor:order}
 $(\LL, +, \star)$ is an order in the $\RR$-algebra
-$(\RR^{24}, +, \star)$, in the sense that it is a $\ZZ$-subring of
-full rank -- a subgroup that is closed under~$\star$ and that is a
-free $\ZZ$-module of rank equal to the dimension of the ambient
-algebra.  The ambient algebra has no multiplicative identity
-(Section~\ref{sec:properties}), so the term ``order'' is used here in
-the non-unital sense.
+$(\RR^{24}, +, \star)$.  The ambient algebra has no multiplicative
+identity (Section~\ref{sec:properties}), so the term ``order'' is
+used here in the non-unital sense.
 \end{corollary}
 
 \begin{proof}
@@ -652,6 +636,21 @@ Applying the outer~$\sigma$:
 \end{proof}
 
 This completes the proof of Theorem~\ref{thm:main}.
+
+\begin{remark}[Consecutive twists]\label{rem:consecutive-twists}
+The construction extends to consecutive twists $\sigma_2 \circ \sigma_1$
+by another transposition.  The composite acts as a single twist by
+$\pi = \sigma_2 \sigma_1$; as a product of two transpositions, $\pi$
+is the identity, a 3-cycle, or a $(2,2)$-double transposition.  Tested
+by exact-arithmetic enumeration on a $\ZZ$-basis of~$\LL$
+(\texttt{python\_project/src/verify\_consecutive\_twists\_exact.py}):
+$\pi = $~identity does \emph{not} close (the untwisted product); of
+the 70 3-cycles, exactly half close -- for each three-element subset
+of imaginary indices, one of the two cyclic orientations does; of
+the 105 $(2,2)$'s, the 21 whose fixed three indices form a Fano line
+all fail, and of the remaining 84 exactly half close (42 in all).
+\end{remark}
+
 % ===============================================================
 \section{Algebraic properties}\label{sec:properties}
 % ===============================================================
