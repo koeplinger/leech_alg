@@ -1,0 +1,48 @@
+Prompt 165 -- Abstract: add polarization sentence; rephrase historical part
+Date: 2026-05-24
+
+User: line-by-line read found regressions. Section 1: abstract.
+
+Three changes:
+1. Add a single sentence about the polarization framing as the natural
+   follow-up program, right before "Due to various ...".
+2. Remove "Due to various miscounts and misattributions over the past
+   century," and start a new paragraph (line break) with "We further
+   provide a historical ...".
+3. Fix incorrect "Coxeter to produce the first verified maximal order
+   of integral octonions" -- in fact Dickson's 1923 construction was
+   the first verified maximal order; Coxeter (1946) produced the
+   first correct account of all SEVEN possible maximal orders.
+   Rephrase the entire second part. End with expressing the goal of
+   providing correct proper account/attribution of the chain of
+   substantial discoveries that led to the modern understanding. Be
+   concise.
+
+Done. Abstract now has:
+
+Para 1 (closure): unchanged opening + sigma description + new closing
+sentence: "Reduced modulo 2L, the construction produces a Witt
+decomposition of L/2L into a complementary pair of Lagrangians,
+opening the natural research program of which polarizations of L/2L
+lift to a closed product on Lambda."
+
+Para 2 (historical): rewritten from "Due to various miscounts..." to:
+  "We further provide a historical account from the original sources
+   (1923--1946) in Appendix B: Leonard E. Dickson gave the first
+   verified maximal order of integral octonions (1923), with an
+   undercount of the total; Johannes Kirmse (1924) recovered the full
+   count of seven but exhibited one non-closed candidate; the Coxeter--
+   Bruck transposition repaired that candidate (1946), with
+   H.S.M. ('Donald') Coxeter providing the first correct account of
+   all seven maximal orders. The map sigma of the present construction
+   is exactly this Coxeter--Bruck transposition, acting on a different
+   sublattice. Our aim is to record this chain of discoveries with
+   proper attribution."
+
+Para 3 unchanged: "This result was developed through a systematic
+human-AI collaboration; the complete research record is publicly
+available."
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.

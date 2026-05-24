@@ -1,0 +1,22 @@
+Prompt 167 -- Abstract: reword "Coxeter-Bruck transposition" -> "a transposition provided by Richard H. Bruck"
+Date: 2026-05-24
+
+User: "Let's reword 'the Coxeter-Bruck transposition' to 'a
+transposition provided by Richard H. Bruck'"
+
+Done. In the abstract:
+- First occurrence: "the Coxeter--Bruck transposition repaired..."
+  -> "a transposition provided by Richard H. Bruck repaired..."
+- Second occurrence (one sentence later): "is exactly this
+  Coxeter--Bruck transposition" -> "is exactly this transposition"
+  (dropping the second naming since the antecedent is now established).
+
+Note: occurrences in Appendix B (L1455, L1457) still use
+"Coxeter--Bruck transposition" -- those are in-paper historical
+references where the joint naming is standard and matches the
+historical literature. Per the user's wording the change was for the
+abstract; Appendix B left unchanged unless user wants the same.
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.

@@ -1,0 +1,14 @@
+Prompt 166 -- Abstract: remove redundant "Our aim..." sentence
+Date: 2026-05-24
+
+User: "Keep most of it, and just scratch the phrase 'Our aim is to
+record this chain of discoveries with proper attribution.' -- the way
+you've phrased it is perfect and makes this superfluous."
+
+Done. Removed the final sentence; the historical paragraph now ends:
+"The map sigma of the present construction is exactly this Coxeter--
+Bruck transposition, acting on a different sublattice."
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.
