@@ -1,0 +1,77 @@
+Prompt 158 -- Attribution fix + project-wide consistency sweep
+Date: 2026-05-24
+
+User: "Change the attribution to read exactly 'OpenCode DeepSeek,
+Hermes'. Then, do a documentation consistency sweep across the
+project."
+
+Actions:
+1. Edit paper/main.tex acknowledgments to use exactly the string
+   "OpenCode DeepSeek, Hermes".
+2. Sweep:
+   - paper/hermes_mod2_structure_supplement.tex (has the same
+     attribution; harmonize).
+   - Other docs (CURRENT_STATE.md, terminology.md, research_result.md,
+     verify_mod2_quotient.py docstring) for any references to the
+     mod-2 quotient / V / W structural framing that should reflect
+     the new Lagrangian-decomposition picture and V being two-sided.
+   - Cross-references to Section A.1 and the open question.
+   - Prompt logs are historical (Manifesto §12); no retroactive
+     edits.
+
+Done:
+
+1. paper/main.tex: acknowledgments now read
+   "...prompted by feedback from OpenCode DeepSeek, Hermes." (exact).
+   Rebuilds clean at 20 pages.
+
+2. paper/hermes_mod2_structure_supplement.tex (5 pp): harmonized to
+   the same attribution. Specifically:
+   - Author byline: "OpenCode DeepSeek, Hermes (proposed discoveries)
+     and Claude Opus 4.7 (verification)"
+   - Address $^{1}$ simplified to "External contribution".
+   - \thanks: "communicated by an external contributor identified as
+     \emph{OpenCode DeepSeek, Hermes}".
+   - Section 2 header: "Discovery 1 (OpenCode DeepSeek, Hermes): ..."
+   - Section 3 header: "Discovery 2 (OpenCode DeepSeek, Hermes): ..."
+   - Attribution section: same identification.
+   - In-prose "External feedback (Hermes, via ...)" -> "External
+     feedback from \emph{OpenCode DeepSeek, Hermes}".
+   - Closing pointer added: "The Lagrangian-polarization framing
+     developed here is now recorded at the end of Section A.1 of
+     the main paper."
+   Builds clean.
+
+3. CURRENT_STATE.md: open question 1 rewritten to record the
+   Lagrangian-decomposition framing now in Section A.1 (V two-sided,
+   plus-type form q, both V and W Lagrangians, Witt decomposition,
+   polarization, research program). Integer-level lift remains open.
+
+4. python_project/src/verify_mod2_quotient.py: module docstring
+   extended with a paragraph noting the paper Section A.1 additions
+   (V two-sided, both V and W Lagrangians under q, Witt
+   decomposition / polarization). The existing description (V left
+   ideal, W subalgebra) is preserved as the script's primary content;
+   the upgrade is described as additional structure verified in
+   verify_discovery2_V_isotropic.py.
+
+5. paper/reviews/2026-05-24_claude_opus_4_7_W_concrete.md:
+   - Attribution updated: "External feedback from OpenCode DeepSeek,
+     Hermes proposed..." (was "External feedback proposed...").
+   - Closing paragraph updated to record that the companion
+     Discovery-2 finding led to the Witt-decomposition framing now in
+     Section A.1; this W-concrete note focuses on the W internal
+     structure (idempotent + 3-dim nilpotent ideal), which is not in
+     the paper.
+
+Not touched (historical artefacts, per Manifesto §12):
+- prompt_logs/* (155, 156, 157 cite the older attribution wording;
+  preserved as written).
+- paper/main_2026-04-29.tex (frozen v3).
+- paper/reviews/2026-05-16_*, 2026-05-23_* (historical reviews).
+- evidence_and_reasoning/2026-05-22_plan.md (planning record).
+
+Status: CLOSED -- attribution string "OpenCode DeepSeek, Hermes" now
+the canonical form across all live attribution points. Lagrangian
+framing recorded consistently across paper, supplement, CURRENT_STATE,
+script docstring, and W-concrete note.

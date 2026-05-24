@@ -5,18 +5,21 @@
 **Prompt:** 155
 **Script:** `python_project/src/verify_discovery1_W_subalgebra.py`
 
-External feedback proposed an explicit basis for W = σ(Ls)/2L and a
-multiplication table, claiming it gives a structural reason that replaces
-the appendix tables. This note records the verified concrete example
-(corrected from the proposal in two cells and in one structural claim).
-The "F₂-algebra" framing of the proposal is not used here: the structure
-on L/2L is the descended octonion product, which is non-commutative
-in the L-basis and has no multiplicative identity, so it does not fit
-the conventional F₂-algebra picture cleanly.
+External feedback from **OpenCode DeepSeek, Hermes** proposed an explicit
+basis for W = σ(Ls)/2L and a multiplication table, claiming it gives a
+structural reason that replaces the appendix tables. This note records
+the verified concrete example (corrected from the proposal in two cells
+and in one structural claim). The "F₂-algebra" framing of the proposal
+is not used here: the structure on L/2L is the descended octonion
+product, which is non-commutative in the L-basis and has no
+multiplicative identity, so it does not fit the conventional F₂-algebra
+picture cleanly.
 
-This is a project-internal record; the paper is unchanged. The mod-2
-quotient subsection in Appendix A continues to give the level at which
-the paper's structural account stops ("W is a subalgebra of L/2L").
+The companion finding about V = σ(Ls̄)/2L (totally isotropic, also a
+right ideal, hence a Lagrangian) led to the Witt-decomposition framing
+that is now recorded at the end of Section A.1 of the main paper. This
+note focuses on the W internal structure (idempotent + 3-dim nilpotent
+ideal), which is not propagated into the paper.
 
 ---
 

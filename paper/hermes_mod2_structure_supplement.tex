@@ -23,20 +23,19 @@
 triple-octonion product}\\
 \large Subalgebra and ideal structure of the mod-2 quotient}
 
-\author{Hermes\,$^{1}$ (proposed discoveries) and Claude Opus~4.7\,$^{2}$ (verification)}
-\address{$^{1}$External contribution, via OpenCode + DeepSeek v4 (``flash'') tooling}
+\author{OpenCode DeepSeek, Hermes\,$^{1}$ (proposed discoveries) and Claude Opus~4.7\,$^{2}$ (verification)}
+\address{$^{1}$External contribution}
 \address{$^{2}$Anthropic, acting at the direction of Jens K\"oplinger}
 
 \date{24 May 2026}
 
 \thanks{This supplement records two structural proposals about the
 mod-2 quotient $L/2L$ communicated by an external contributor
-(``Hermes'') using OpenCode with DeepSeek~v4 (``flash'') as the
-underlying model, alongside an empirical verification carried out in
-this project. Where the proposals were correct or partially correct,
-the structure is recorded with attribution; where corrections were
-required, the original claim is reproduced verbatim and corrected
-forward. The supplement is companion material to the main paper
+identified as \emph{OpenCode DeepSeek, Hermes}, alongside an empirical
+verification carried out in this project. Where the proposals were
+correct or partially correct, the structure is recorded with
+attribution; where corrections were required, the original claim is
+reproduced verbatim and corrected forward. The supplement is companion material to the main paper
 (\texttt{paper/main.tex}, v4); it is not part of the paper and is not
 in its referee scope.}
 
@@ -51,13 +50,13 @@ $V := \sigma(L\bar s)/2L$ is a $4$-dimensional left ideal and
 $W := \sigma(Ls)/2L$ is a $4$-dimensional subalgebra, with
 $\bar L = V \oplus W$.
 
-External feedback (Hermes, via OpenCode + DeepSeek~v4 flash) proposed
-two finer structural descriptions: an explicit basis and
-multiplication table for $W$ (with a~3-dim nilpotent ideal and a
-universal zero divisor), and an explicit basis for~$V$ together with
-total isotropy under the natural quadratic form on~$\bar L$. We
-reproduce both proposals verbatim, then record the empirical
-verification carried out in this project
+External feedback from \emph{OpenCode DeepSeek, Hermes} proposed two
+finer structural descriptions: an explicit basis and multiplication
+table for $W$ (with a~3-dim nilpotent ideal and a universal zero
+divisor), and an explicit basis for~$V$ together with total isotropy
+under the natural quadratic form on~$\bar L$. We reproduce both
+proposals verbatim, then record the empirical verification carried out
+in this project
 (\texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py} and
 \texttt{python\_project/src/verify\_discovery2\_V\_isotropic.py}).
 
@@ -71,6 +70,9 @@ quadratic form (correcting the proposed ``mixed isotropy''
 claim). Together, $V$ and $W$ form a Witt decomposition of $\bar L$
 into a pair of maximal totally isotropic subspaces (Lagrangians) under
 the plus-type quadratic form induced by the norm on~$L$.
+
+The Lagrangian-polarization framing developed here is now recorded
+at the end of Section~A.1 of the main paper.
 \end{abstract}
 
 % ===================================================================
@@ -104,7 +106,7 @@ verification scripts are in
 and~\texttt{verify\_discovery2\_V\_isotropic.py}.
 
 % ===================================================================
-\section{Discovery 1 (Hermes): the multiplication table of $W$}
+\section{Discovery 1 (OpenCode DeepSeek, Hermes): the multiplication table of $W$}
 % ===================================================================
 
 \subsection*{Original proposal (verbatim)}
@@ -208,7 +210,7 @@ canonical construction, Peirce component, radical-like piece) without
 referencing~$\sigma$ at all. That identification is not yet in hand.
 
 % ===================================================================
-\section{Discovery 2 (Hermes): $V$ totally isotropic left ideal}
+\section{Discovery 2 (OpenCode DeepSeek, Hermes): $V$ totally isotropic left ideal}
 % ===================================================================
 
 \subsection*{Original proposal (verbatim)}
@@ -364,9 +366,8 @@ descend to recover the multiplication table of~$W$ recorded in
 % ===================================================================
 
 Both structural proposals (\textbf{Discovery~1} and \textbf{Discovery~2})
-were communicated by an external contributor working under the name
-``Hermes'', using OpenCode (terminal-based interface) with DeepSeek~v4
-``flash'' as the underlying model. The proposals were communicated
+were communicated by an external contributor identified as
+\emph{OpenCode DeepSeek, Hermes}. The proposals reached this project
 through review feedback on the main paper's Appendix~A
 mod-2-quotient subsection; the original wording is reproduced
 verbatim in \S2 and~\S3.
@@ -381,7 +382,7 @@ K\"oplinger, using the scripts
 \texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py}
 and \texttt{verify\_discovery2\_V\_isotropic.py}.
 
-Corrections to the original Hermes proposals (the two-cell error in
+Corrections to the original proposals (the two-cell error in
 the $W$~multiplication table, the misidentification of $w_0$ with
 ``the identity of $L/2L$'', and the mistaken ``$W$ has mixed
 isotropy'' claim) are recorded in \S2--\S3 with the verbatim

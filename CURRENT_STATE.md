@@ -385,11 +385,18 @@ the trial, and prints detailed results.
 
 1. **The structural reason for Lemma 4.4** (σ(Ls) closed under the
    standard octonion product).  The appendix tables certify the
-   inclusion, but do not explain *why*.  The mod-2-quotient reading
-   in Appendix A identifies what the tables certify — V := σ(Ls̄)/2L
-   is a left ideal and W := σ(Ls)/2L is a subalgebra of the
-   F₂-octonion-algebra L/2L — but stops short of naming V and W
-   inside that algebra.
+   inclusion, but do not explain *why*.  Appendix Section A.1 lifts
+   this to the mod-2 quotient: V := σ(Ls̄)/2L is a two-sided ideal
+   and W := σ(Ls)/2L is a subalgebra of the descended product on
+   L/2L, and — equipped with the plus-type quadratic form
+   q(v + 2L) := N(v)/2 mod 2 — both V and W are Lagrangians (maximal
+   totally isotropic subspaces). The decomposition L/2L = V ⊕ W is
+   thus a Witt decomposition into a complementary pair of Lagrangians:
+   σ produces a polarization of (L/2L, q). The remaining open part is
+   the integer-level lift — an intrinsic identification of V and W
+   that does not reference σ — and the natural research program:
+   which polarizations of L/2L arise from this construction, and
+   whether any lifts to a closed bilinear product on Λ itself.
 
 2. **The automorphism group of (Λ, +, ⋆)** and its relationship to
    the Conway group Co₀ = Aut(Λ).  Currently open; a first-step probe

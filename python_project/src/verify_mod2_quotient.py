@@ -3,17 +3,25 @@
 Tables A.2 and A.3 are the explicit integer certificates for Lemmas 4.3 and
 4.4 (L . sigma(Ls_bar) <= sigma(Ls_bar)  and  sigma(Ls).sigma(Ls) <= sigma(Ls)).
 This script shows what those two lemmas *are*, structurally: statements about
-the 8-dimensional F2-algebra obtained from L by the mod-2 quotient L -> L/2L.
+the 8-dimensional F2-bilinear algebra obtained from L by the mod-2 quotient
+L -> L/2L.
 
   - L_bar s ∩ Ls = 2L (Wilson), so 2L is contained in sigma(Ls) and
     sigma(Ls_bar);
   - L.L <= L and Z-bilinearity make the octonion product descend to an
-    F2-bilinear product mu-bar on L_bar := L/2L = F2^8 (the octonion
-    F2-algebra; structure constants = Table A.1 reduced mod 2);
+    F2-bilinear product mu-bar on L_bar := L/2L = F2^8;
   - sigma(Ls_bar) and sigma(Ls) are full preimages of 4-dim subspaces
     V, W of L_bar, with L_bar = V (+) W;
   - Lemma 4.3  <=>  mu-bar(L_bar, V) <= V   (V a LEFT IDEAL of L_bar);
   - Lemma 4.4  <=>  mu-bar(W, W)     <= W   (W a SUBALGEBRA of L_bar).
+
+The paper's Section A.1 records two further structural facts (verified
+empirically in verify_discovery2_V_isotropic.py): V is in fact a TWO-SIDED
+ideal of L_bar; under the natural plus-type quadratic form
+q(v + 2L) := N(v)/2 mod 2, both V and W are LAGRANGIANS (maximal totally
+isotropic subspaces). The decomposition L_bar = V (+) W is a Witt
+decomposition into a complementary pair of Lagrangians -- a polarization
+of the orthogonal F2-space (L_bar, q).
 
 This is a mod-2 *quotient* (L -> L/2L) -- distinct from a 2-adic scaling or
 saturation.
