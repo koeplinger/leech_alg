@@ -1,0 +1,44 @@
+Prompt 163 -- Detailed bibliography reference check
+Date: 2026-05-24
+
+User: "Run a detailed reference check: Make sure the author name,
+title, journal, issue, year, page, DOI, URL, ... references are
+correct - to the best of your abilities. Make a report where you find
+discrepancies."
+
+Method:
+1. Read every bibitem from paper/main.tex
+2. Cross-check each against evidence_and_reasoning/references/*.txt
+3. Check what I can from my own knowledge / from the project record
+4. Where uncertain, mark with a flag for human verification
+5. Where web verification is appropriate, use WebFetch
+
+Output: paper/reviews/2026-05-24_claude_opus_4_7_reference_check.md
+
+Done. Wrote paper/reviews/2026-05-24_claude_opus_4_7_reference_check.md.
+
+Summary:
+- 27 bibliography entries checked.
+- Web-verified via arXiv (6): Baez2002, Dixon1995, Dixon2010,
+  FureyHughes2025, MarraniCorradettiZucconi2025, Corradetti2026.
+- Project-record cross-verified (20): all other journal/book/preprint
+  entries match evidence_and_reasoning/references/*.txt.
+- repo link verified (1).
+- Substantive errors: 0.
+
+One suggested change:
+- Petersson2018 entry has venue ("Lecture, Malaga Workshop ...") but
+  no URL. Project record has the URL; suggestion is to add it for
+  citation utility.
+
+Two wait-and-update items (no immediate action):
+- Corradetti2026 is preprint-only on arXiv; update bib with journal
+  citation if/when published.
+- Koeplinger2023 is self-deposited ResearchGate preprint; optional
+  arXiv mirror.
+
+Several low-grade observations (issue numbers omitted, DOIs absent
+where arXiv was used, city omitted for ConwaySmith2003) -- consistent
+within the bib; only act on if journal copy editor flags.
+
+Status: CLOSED.

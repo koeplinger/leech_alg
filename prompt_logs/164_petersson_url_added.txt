@@ -1,0 +1,11 @@
+Prompt 164 -- Add URL to Petersson 2018 reference
+Date: 2026-05-24
+
+User: "Yes add the Petersson URL."
+
+Done. Petersson2018 bibitem now includes:
+  \url{https://www.fernuni-hagen.de/mi/fakultaet/emeriti/docs/petersson/ass.-rem.-int.-oct.pdf}
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.
