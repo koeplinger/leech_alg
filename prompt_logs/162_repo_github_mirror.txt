@@ -1,0 +1,14 @@
+Prompt 162 -- Add GitHub mirror to [repo] reference
+Date: 2026-05-24
+
+User: "One more cleanup: our [repo] reference points to
+bitbucket.org/jenskoeplinger/leech_alg, but the work is also mirrored
+on github.com/koeplinger/leech_alg. Have both in the reference."
+
+Done: updated bibitem [repo] in paper/main.tex (L1703-1708) to list:
+  https://bitbucket.org/jenskoeplinger/leech_alg (primary),
+  mirrored at https://github.com/koeplinger/leech_alg, 2026.
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.
