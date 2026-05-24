@@ -1,0 +1,40 @@
+Prompt 172 -- §4 intro paragraph: declutter
+Date: 2026-05-24
+
+User: "I read the introductory paragraph way too often in order to
+unpack it. All we're saying is that the load bearing effect of the
+sigma twist is that it moves Ls̄ and Ls: octonions stay octonions,
+and L stays L. Declutter this paragraph to remove most of those
+cross-references. Let's assume it's still fresh with the reader that
+sigma swaps between octonions and leaves L invariant. A reader
+familiar with the topic will wonder at this point what such a sigma
+would do at all - and here we tell it: It moves Ls̄ and Ls. That's
+important, because it also means that the choice of octonion basis
+and Fano triples in Wilson's construction is not arbitrary. No need
+to dwell on it, stay concise."
+
+Done. §4 intro paragraph now reads:
+
+  "We prove Theorem 1.1 by showing that the twisted product preserves
+   each of Wilson's three conditions. The load-bearing effect of
+   sigma is that it MOVES the sublattices L\bar s and Ls -- this is
+   where the work of the proof lives -- while leaving the octonions
+   and L themselves invariant. The choice of octonion basis and Fano
+   triples in Wilson's construction is therefore not arbitrary."
+
+Removed:
+- Cross-references to Definition 2.3 (def:wilson-leech), Lemma 4.1
+  (lem:sigma-L), Lemma 4.2 (lem:L-order), Proposition 3.2 (prop:iso),
+  Lemma 4.3 (lem:L-sigmaLsbar), Lemma 4.4 (lem:sigmaLs-closed).
+- The verbose "pin down what sigma does and does not do" phrasing.
+- The compound clause structure (it fixes L ... and acts on octonion
+  product by an algebra isomorphism ... but moves sublattices).
+
+Added:
+- The non-arbitrariness observation about Wilson's basis/triples
+  choice -- per the user's hint, this gives the section's framing
+  some weight without dwelling.
+
+Paper still 19 pages, clean build.
+
+Status: CLOSED.

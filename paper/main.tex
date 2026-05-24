@@ -341,46 +341,13 @@ All nine block-pair products use the same multiplication~$\cdot_\sigma$.
 \section{Proof of closure}\label{sec:proof}
 % ===============================================================
 
-We prove Theorem~\ref{thm:main} by showing that the twisted product
-preserves each of Wilson's three conditions
-(Definition~\ref{def:wilson-leech}).  The proof rests on four lemmas
-about the interaction between the transposition~$\sigma$, the
-maximal order~$L$, and the sublattices $Ls$ and~$L\bar{s}$.  The
-lemmas pin down what $\sigma$ does and does not do: it fixes~$L$
-(Lemma~\ref{lem:sigma-L}, so the maximal-order closure
-$L \cdot L \subseteq L$ is invariant under~$\sigma$;
-Lemma~\ref{lem:L-order}) and acts on the octonion product by an
-algebra isomorphism (Proposition~\ref{prop:iso}), but it
-\emph{moves} the sublattices $L\bar s$ and $Ls$; the load-bearing
-inclusions are at the sublattice level
-(Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed}).
-
-\subsection{Reduction to standard products}
-
-Since each $\sigma$-twisted product has the form
-$a \cdot_\sigma b = \sigma(\sigma(a) \cdot \sigma(b))$, and $\sigma$
-is linear, each block $P_\alpha$ is $\sigma$ applied to a sum of
-standard octonion products of $\sigma$-images of the inputs.
-
-Write $X = \sigma(x)$, $Y = \sigma(y)$, $Z = \sigma(z)$,
-$X' = \sigma(x')$, $Y' = \sigma(y')$, $Z' = \sigma(z')$.  Then:
-\begin{align}
-  P_1 &= \sigma\bigl(X \cdot X' + Z \cdot Y' + Y \cdot Z'\bigr),
-  \label{eq:P1-std} \\
-  P_2 &= \sigma\bigl(Y \cdot Y' + X \cdot Z' + Z \cdot X'\bigr),
-  \label{eq:P2-std} \\
-  P_3 &= \sigma\bigl(Z \cdot Z' + Y \cdot X' + X \cdot Y'\bigr).
-  \label{eq:P3-std}
-\end{align}
-
-Taking sums:
-\begin{itemize}
-\item \textbf{Block sum.}
-  $P_1 + P_2 + P_3 = \sigma\bigl((X+Y+Z) \cdot (X'+Y'+Z')\bigr)$.
-\item \textbf{Pairwise sums.}  For example,
-  $P_1 + P_2 = \sigma\bigl(X \cdot (X'+Z') + Y \cdot (Y'+Z') +
-  Z \cdot (X'+Y')\bigr)$, and similarly for the other two pairs.
-\end{itemize}
+We prove Theorem~\ref{thm:main} by showing that the $\sigma$-twisted
+octonion product preserves each of Wilson's three conditions.  The load-bearing effect
+of $\sigma$ is that it \emph{moves} the sublattices $L\bar s$
+and~$Ls$ -- this is where the work of the proof lives -- while
+leaving the octonions and $L$ themselves invariant.  The choice of
+octonion basis and Fano triples in Wilson's construction is
+therefore not arbitrary.
 
 \subsection{The four lemmas}
 
@@ -470,6 +437,31 @@ useful: $\sigma$ is not the identity on the block-sum sublattice, so
 it can redirect a product into a different (and, as it turns out,
 closed) sublattice.
 \end{remark}
+
+\subsection{Blockwise form of the triple product}
+
+Since each $\sigma$-twisted product has the form
+$a \cdot_\sigma b = \sigma(\sigma(a) \cdot \sigma(b))$ and $\sigma$
+is linear, each block $P_\alpha$ is $\sigma$ applied to a sum of
+standard octonion products of $\sigma$-images of the inputs.
+Write $X = \sigma(x)$, $Y = \sigma(y)$, $Z = \sigma(z)$,
+$X' = \sigma(x')$, $Y' = \sigma(y')$, $Z' = \sigma(z')$:
+\begin{align}
+  P_1 &= \sigma\bigl(X \cdot X' + Z \cdot Y' + Y \cdot Z'\bigr),
+  \label{eq:P1-std} \\
+  P_2 &= \sigma\bigl(Y \cdot Y' + X \cdot Z' + Z \cdot X'\bigr),
+  \label{eq:P2-std} \\
+  P_3 &= \sigma\bigl(Z \cdot Z' + Y \cdot X' + X \cdot Y'\bigr).
+  \label{eq:P3-std}
+\end{align}
+Taking sums:
+\begin{itemize}
+\item \textbf{Block sum.}
+  $P_1 + P_2 + P_3 = \sigma\bigl((X+Y+Z) \cdot (X'+Y'+Z')\bigr)$.
+\item \textbf{Pairwise sums.}  For example,
+  $P_1 + P_2 = \sigma\bigl(X \cdot (X'+Z') + Y \cdot (Y'+Z') +
+  Z \cdot (X'+Y')\bigr)$, and similarly for the other two pairs.
+\end{itemize}
 
 \begin{remark}[Two equivalent framings]\label{rem:two-framings}
 Let $\star_0$ denote the analogous triple product built from the

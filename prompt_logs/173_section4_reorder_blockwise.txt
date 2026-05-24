@@ -1,0 +1,45 @@
+Prompt 173 -- §4 reorder + reword + rename
+Date: 2026-05-24
+
+User:
+1. "rephrase 'that the twisted product' to 'that the sigma-twisted
+    octonion product'"
+2. "section 4.1 appears out of place; it would seem more logical to me
+    to first have the section on the four lemmas (which work within
+    R^8 alone) and then have what's currently titled 'Reduction to
+    standard products' ... that title is quirky, all we're showing is
+    how to look at the triple-product component wise. Find a title
+    that says that."
+
+Done:
+1. §4 intro: "that the twisted product" -> "that the sigma-twisted
+   octonion product".
+2. Order swap:
+   Before:
+     §4.1 Reduction to standard products
+     §4.2 The four lemmas (incl. rem:Ls-not-closed and rem:two-framings)
+     §4.3-§4.5 Conditions (1), (2), (3)
+   After:
+     §4.1 The four lemmas (incl. rem:Ls-not-closed)
+     §4.2 Blockwise form of the triple product
+       (the moved content + rem:two-framings, which uses the equations)
+     §4.3-§4.5 Conditions (1), (2), (3)
+
+3. New §4.2 title: "Blockwise form of the triple product" -- matches
+   the user's "look at the triple-product component wise".
+
+4. rem:two-framings moved to be after the blockwise expansion (it
+   uses eq:P1-std..eq:P3-std, so it's a natural continuation of the
+   blockwise section). rem:Ls-not-closed stays where it was (a comment
+   on Lemma 4.4, no equation dependency).
+
+Cross-references checked:
+- eq:P1-std..eq:P3-std labels preserved at the same content (just
+  relocated). All forward/back-references will resolve.
+- The condition propositions (§4.3-§4.5) reference both the lemmas
+  and the blockwise equations. With the new order both are in scope
+  by the time the conditions are stated.
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.
