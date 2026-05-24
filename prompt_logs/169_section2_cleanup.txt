@@ -1,0 +1,66 @@
+Prompt 169 -- §2 cleanup: trim Baez cites; clarify division-algebra
+claim; sharpen maximal-order line; remove Remarks 2.1 and 2.2.
+
+Date: 2026-05-24
+
+User instructions:
+1. In §2.1 "the octonion algebra", reduce three quick-succession Baez
+   citations to one.
+2. Clarify "The algebra O is the unique real normed division algebra
+   of dimension 8" -- only true for unital algebras; when relaxing
+   "division algebra" to absence of zero divisors (or equivalently,
+   bijectivity of left/right multiplication by every nonzero element),
+   more algebras become permissible.
+3. Update §2.2 line "L is a maximal order in O: it is closed under
+   multiplication" -- closure is necessary but not sufficient. Append
+   "and admits no enlargement to a larger order."
+4. Remove Remark 2.1 (rem:kirmse) "Kirmse's domain versus ours" --
+   redundant with §1 / abstract material.
+5. Remove the paragraph starting "The Fano triples..." -- (part of
+   Remark 2.1; would be removed by (4) anyway, but called out as
+   ALSO incorrect because closure on D_8^+ doesn't depend on the
+   chosen multiplication table identifying R^8 basis with algebra
+   basis).
+6. Remove Remark 2.2 (rem:shells) -- redundant with rem:order-closure
+   in §1.
+
+Cross-reference update: Appendix B currently has "See Remark
+rem:kirmse for the implications used in the body of the paper." Need
+to remove or redirect this pointer once rem:kirmse is gone.
+
+Done.
+
+1. §2.1 octonion algebra:
+   - Three Baez2002 citations reduced to one (kept on the Fano-triples
+     rule; removed from the unique-normed-division-algebra sentence
+     and the composition-property sentence).
+   - "The algebra O is the unique real normed division algebra of
+     dimension 8" replaced with:
+     "Among UNITAL real algebras, O is the unique normed division
+      algebra of dimension 8 (Hurwitz); relaxing 'division algebra'
+      to the absence of zero divisors (equivalently, bijectivity of
+      left and right multiplication by every nonzero element) admits
+      further examples, including the non-unital Okubo algebra."
+
+2. §2.2 maximal-order line:
+   "L is a maximal order in O: it is closed under multiplication
+    AND admits no enlargement to a larger order."
+
+3. Removed Remark 2.1 (rem:kirmse) "Kirmse's domain versus ours" --
+   both paragraphs (the Kirmse-twist clarification, redundant with §1
+   and abstract, AND the "Fano triples..." paragraph that was
+   incorrect about why L closes).
+
+4. Removed Remark 2.2 (rem:shells) "Closure of the lattice, not the
+   shells" -- redundant with rem:order-closure in §1.
+
+5. Updated the dangling cross-reference in Appendix B (L1424--1432):
+   removed "See Remark rem:kirmse for the implications used in the
+   body of the paper." The paragraph now ends naturally at "...the
+   sublattice Ls of Wilson's Leech construction." The historical
+   context paragraph is self-contained without the back-reference.
+
+Paper rebuilds clean at 20 pages (618529 bytes; down from ~652k —
+content reduction is real).
+
+Status: CLOSED.

@@ -202,14 +202,17 @@ The multiplication is determined by the seven \emph{Fano triples}
 encoding the rule: for each triple $(a,b,c)$,
 $e_a \cdot e_b = +e_c$, with cyclic permutations carrying a positive
 sign and anti-cyclic permutations carrying a negative sign
-\cite{Baez2002}.  Every imaginary unit squares to $-e_0$.  The
-algebra~$\OO$ is the unique real normed division algebra of
-dimension~8 \cite{Baez2002}.
+\cite{Baez2002}.  Every imaginary unit squares to $-e_0$.  Among
+\emph{unital} real algebras, $\OO$ is the unique normed division
+algebra of dimension~8 (Hurwitz); relaxing ``division algebra'' to
+the absence of zero divisors (equivalently, bijectivity of left and
+right multiplication by every nonzero element) admits further
+examples, including the non-unital Okubo algebra.
 
 The \emph{norm form} is $\Nrm(x) = x \bar{x} = \sum_{i=0}^7 x_i^2$
 for $x = \sum_i x_i e_i$, where $\bar{x} = x_0 e_0 - \sum_{i=1}^7
 x_i e_i$ is the conjugate.  The composition property
-$\Nrm(xy) = \Nrm(x)\Nrm(y)$ holds \cite{Baez2002}.
+$\Nrm(xy) = \Nrm(x)\Nrm(y)$ holds.
 
 \subsection{The $E_8$ lattice}
 
@@ -220,41 +223,8 @@ coordinate sum, or all half-integers with odd coordinate sum
 \cite{ConwaySmith2003}.  It has
 240~roots (vectors of squared norm~2).  Under the standard octonion
 multiplication, $L$~is a maximal order in~$\OO$: it is closed under
-multiplication \cite{Coxeter1946, ConwaySmith2003}.
-
-\begin{remark}[Kirmse's domain versus ours]\label{rem:kirmse}
-The transposition $\sigma$ of two imaginary basis units used in this
-paper is \emph{exactly} the \textbf{Kirmse twist}: the same map
-that -- applied by R.\,H.~Bruck (recorded in
-Coxeter~\cite{Coxeter1946}) to a non-closed candidate domain $J_1$
-of Kirmse~\cite{Kirmse1924} -- produced the first verified maximal
-order of integral octonions.  Appendix~\ref{app:history} synthesises
-the 1923--1946 history from the primary sources verified in this
-project.
-
-The Fano triples~\eqref{eq:fano} used in this paper, together with
-the coordinate-symmetric placement $L = D_8^+$ of $E_8$
-(Wilson~\cite{Wilson2009}), are a closed (table, lattice) pair: we
-have verified $L \cdot L \subseteq L$ directly using an explicit
-$\ZZ$-basis of~$L$ and exact rational arithmetic, with all 64 basis
-products integer combinations of the basis.  Because $L = D_8^+$ is
-fixed by every coordinate permutation, this closure is invariant
-under any Kirmse-twist of the product -- including the
-present~$\sigma$.
-\end{remark}
-
-\begin{remark}[Closure of the lattice, not the shells]\label{rem:shells}
-When we say $L$ is closed under multiplication, we mean closure of the
-lattice~$L$, not of any individual shell.  Since the octonion product
-is norm-multiplicative, the product of two roots (squared norm~2) has
-squared norm~4 and lies on the second shell of~$L$, not among the
-roots.
-
-The same distinction will apply to $(\LL, +, \star)$ in
-Theorem~\ref{thm:main}: products of minimal Leech vectors land on
-higher shells of~$\LL$, not back in the minimal shell (see
-Section~\ref{sec:properties}).
-\end{remark}
+multiplication and admits no enlargement to a larger order
+\cite{Coxeter1946, ConwaySmith2003}.
 
 \subsection{Wilson's Leech lattice}\label{subsec:wilson-leech}
 
@@ -1457,9 +1427,7 @@ now on a different object.  The Coxeter--Bruck transposition acts
 on a maximal-order candidate that sits asymmetrically in~$\RR^8$;
 the present~$\sigma$ acts on the coordinate-symmetric placement
 $L = D_8^+$ (where it is inert at the $E_8$ stratum) and does its
-work on the sublattice~$Ls$ of Wilson's Leech construction.  See
-Remark~\ref{rem:kirmse} for the implications used in the body of the
-paper.
+work on the sublattice~$Ls$ of Wilson's Leech construction.
 
 % ===============================================================
 \section{Research methodology}\label{sec:methodology}
