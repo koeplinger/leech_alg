@@ -1,0 +1,38 @@
+Prompt 161 -- Add Marrani-Corradetti-Zucconi 2025 to physics outlook
+Date: 2026-05-24
+
+User: "oh in the physics outlook we also need to cite Marrani /
+Zucconi / Corradetti 2025's paper on the Okubo algebra! add it in the
+same concise way as the other two articles already pointed at"
+
+Reference (per evidence_and_reasoning/references/okubo_algebra.txt):
+- Authors: Alessio Marrani, Daniele Corradetti, Francesco Zucconi
+- Title: Physics with non-unital algebras? An invitation to the Okubo
+  algebra
+- Journal: J. Phys. A: Math. Theor. 58 (2025) 075202
+- arXiv: 2309.17435 [hep-th]
+- DOI: 10.1088/1751-8121/adafef
+
+Action:
+1. Add bibitem [MarraniCorradettiZucconi2025] to bibliography in
+   alphabetical order (between Lepowsky-Meurman and Mahler).
+2. Add citation to the §8 physics-outlook paragraph alongside
+   Koeplinger2023 and FureyHughes2025_TrioOfTrialities.
+
+Done:
+
+1. Added bibitem [MarraniCorradettiZucconi2025] between Lepowsky-Meurman
+   and Mahler in alphabetical order:
+
+     A. Marrani, D. Corradetti, and F. Zucconi,
+     "Physics with non-unital algebras? An invitation to the Okubo
+     algebra", J. Phys. A: Math. Theor. 58 (2025), 075202.
+     arXiv:2309.17435.
+
+2. §8 outlook physics paragraph now cites all three:
+   \cite{Koeplinger2023,FureyHughes2025_TrioOfTrialities,
+         MarraniCorradettiZucconi2025}
+
+Paper rebuilds clean at 20 pages.
+
+Status: CLOSED.
