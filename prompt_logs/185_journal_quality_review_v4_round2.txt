@@ -1,0 +1,66 @@
+Prompt 185 -- Journal-quality review of v4 (round 2)
+Date: 2026-05-24
+
+User: "Let's pause with the fine-comb updates for a minute, and make
+another journal-style review of the paper. The goal is to ensure
+that we're improving the paper, and not introducing new regressions."
+
+Since the prior journal review (prompt 159), the paper has undergone
+substantial revision:
+- §3 restructured (no more Prop 3.2)
+- Theorem 1.1 simplified
+- §4 intro rewritten + reordered (lemmas first, then blockwise)
+- Rem 4.5 merged, Rem 4.6 removed
+- §A.1 gained Baez/Egan credit paragraph
+- §1 intro tweak (generally not closed... including Wilson's)
+- §2 trimmed (Remarks 2.1, 2.2 removed; Wilson cite consolidated)
+- Bibliography: Marrani-Corradetti-Zucconi added; Petersson URL;
+  repo dual-URL
+- Abstract: polarization-program sentence; historical paragraph
+  rewritten with proper credit (Dickson first; Coxeter not "first");
+  "a transposition provided by Richard H. Bruck"
+- §7 bullet 1 gained pointer to Section A.1
+- §8 subsection headers removed
+- Cor 1.2 trimmed
+- §5 "0%" → "n/a (structural)"
+- Footnote on F_2 non-commutativity in L-basis
+- First-name additions; OpenCode DeepSeek Hermes attribution
+- Page count: 19
+
+Write to:
+paper/reviews/2026-05-24_claude_opus_4_7_journal_quality_review_v4_round2.md
+
+Done. Review at paper/reviews/2026-05-24_claude_opus_4_7_journal_quality_review_v4_round2.md.
+
+Verdict: Accept; materially better than round 1.
+
+Highlights of improvement:
+- §3 half as long, reads cleanly (Def 3.1 σ; Def 3.2 ·_σ; no Prop)
+- §4 reordered (lemmas → blockwise form) — pedagogically right
+- Rem 4.5 merged; Rem 4.6 removed
+- §A.1 Baez/Egan credit paragraph correctly attributes the
+  Lagrangian picture
+- Abstract historical chain in correct sequence
+- Cor 1.2 trimmed of the conflated language
+- First-name additions and Hermes attribution
+
+One required revision found:
+- L1344: em-dashes "---" in Appendix B Kirmse paragraph (editorial
+  standard 4 forbids em-dash). Single-Edit fix.
+
+Two optional consistency items flagged:
+- L124 §1 intro: drop "division" from "real octonion division
+  algebra" (now that §2.1 scopes "division algebra" to unital).
+- L183-184 rem:order-closure: still has "subring that is a free
+  Z-module of rank equal to the ambient algebra's dimension" --
+  similar to language trimmed from Cor 1.2.
+
+Three open-ended observations (not regressions, just for awareness):
+- §1 intro still describes σ as "twisting the octonion
+  multiplication" -- one of two roles. Reads OK.
+- §3 follow-on after Def 3.2: "by definition" assumes σ^2=id is
+  obvious to the reader.
+- Abstract closing: "this transposition" carries weight (Bruck's
+  specific transposition).
+
+Status: CLOSED.

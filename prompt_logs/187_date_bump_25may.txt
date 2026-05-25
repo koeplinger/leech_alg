@@ -1,0 +1,10 @@
+Prompt 187 -- Bump paper v4 date to 25 May 2026
+Date: 2026-05-25
+
+User: "Today is 25 May 2026, update the date of the v4 revision."
+
+Done. Subtitle "24 May 2026 (v4)" -> "25 May 2026 (v4)".
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.

@@ -1,0 +1,44 @@
+Prompt 186 -- Apply round-2 review fixes
+Date: 2026-05-24
+
+User:
+1. Fix em-dashes at L1344 (Appendix B).
+2. §1 intro: "in the real octonion division algebra" -> "in this algebra".
+3. Cor 1.2: move "The ambient algebra has no multiplicative identity
+   (Section 5), so the term 'order' is used here in the non-unital
+   sense." into a footnote attached to "order".
+4. Confirm whether "subring that is a free Z-module of rank equal to
+   the ambient algebra's dimension" in rem:order-closure is precise.
+
+Done.
+
+(1) Em-dash fix at L1344 (Appendix B Kirmse paragraph):
+    "for the maximal orders --- thirty E_8-type lattices realise it ---"
+    -> "for the maximal orders -- thirty E_8-type lattices realise it --"
+
+(2) §1 intro L123-124:
+    "...makes it a maximal order in the real octonion division algebra."
+    -> "...makes it a maximal order in this algebra."
+
+(3) Corollary 1.2: the non-unital-order disclosure moved into a
+    footnote attached to "order":
+      "(L, +, ⋆) is an order^[footnote] in the R-algebra (R^24, +, ⋆)."
+    Footnote: "The ambient algebra has no multiplicative identity
+    (Section 5), so the term 'order' is used here in the non-unital
+    sense."
+
+(4) On "subring that is a free Z-module of rank equal to the ambient
+    algebra's dimension" in rem:order-closure:
+
+    PRECISE. The standard non-unital order definition for a finite-
+    dimensional R-algebra A (here A = R^24): an order is a Z-subring
+    R of A that is a free Z-module of rank dim_R(A). The phrase
+    captures exactly:
+      - subring: closed under multiplication (the Theorem 1.1 content);
+      - free Z-module of rank = dim A: full-rank lattice in A.
+    For Λ ⊂ R^24, both hold (Λ has Z-rank 24 = dim_R(R^24); closure
+    under ⋆ is Theorem 1.1). The phrase is correct and precise.
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.
