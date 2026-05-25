@@ -1,0 +1,18 @@
+Prompt 182 -- Add Wilson Definition cross-reference at start of §4
+Date: 2026-05-24
+
+User: "In the opening line of section 4 we have to provide a
+cross-reference to Definition 2.1 (Wilson) ... add the cross-reference
+at the end of this sentence."
+
+Done. Opening sentence of §4 now reads:
+  "We prove Theorem 1.1 by showing that the σ-twisted octonion
+   product preserves each of Wilson's three conditions
+   (Definition 2.1)."
+
+(The label def:wilson-leech renders as "Definition 2.1" in the
+compiled paper.)
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.
