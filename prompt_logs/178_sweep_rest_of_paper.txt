@@ -1,0 +1,68 @@
+Prompt 178 -- Sweep rest of paper for σ-dual-role consistency
+Date: 2026-05-24
+
+User: "Good. Proceed with the rest of the paper sweep accordingly."
+
+Scope: §1 intro, §4 proof, §6 related work, appendices, references to
+σ throughout. Check that wording is consistent with the new §3
+framing:
+- σ is just a transposition
+- Definition 3.2 names ·_σ as the σ-twisted variant of the standard
+- σ on lattice/algebra is used naturally, not over-explained
+
+Specific patterns to watch for:
+- residual "transposition-twisted multiplication" wording (overly
+  specific to a representation)
+- redundant restatements of "σ is an algebra iso" (now in Def 3.2)
+- over-explanations of "moves Ls / fixes L" (now in proof where it
+  belongs)
+- "twisted product" generic vs "σ-twisted octonion product" specific
+
+Done. Swept the entire paper for σ-dual-role consistency with the
+new §3 framing (Def 3.1 = σ; Def 3.2 = ·_σ; no Prop 3.2; no
+interchangeability sentence).
+
+Findings: NO substantive edits needed in the rest of the paper.
+
+Specific places checked:
+- §1 abstract (L88-): "σ leaves E_8 invariant, is algebra iso, moves
+  sublattices" -- previews both roles concisely. CONSISTENT.
+- §1 intro (L146-151): "twisting the octonion multiplication ... by
+  a transposition σ" + "σ leaves L invariant ... moves Wilson's
+  sublattices". Same dual-role preview. CONSISTENT.
+- Theorem 1.1: just simplified in prompt 176; no σ reference now,
+  defers to def:triple which uses ·_σ. CONSISTENT.
+- §3: just restructured. Clean.
+- §4 intro: just decluttered in prompts 172/174. CONSISTENT.
+- §4 proof (Lemmas 4.1-4.4, condition propositions): uses σ
+  mathematically (σ(L), σ(Ls), σ(L\bar s), σ-twisted products).
+  Mathematically correct. CONSISTENT.
+- §4.2 Blockwise form: restates ·_σ = σ(σ(a)·σ(b)) once to set up
+  the X = σ(x) etc. substitution. CONSISTENT.
+- rem:Ls-not-closed: "the twist" generic. CONSISTENT.
+- rem:two-framings (in §4.2): uses σ blockwise as Σ. CONSISTENT.
+- rem:consecutive-twists (end of §4): "consecutive twists σ_2 ∘ σ_1"
+  uses σ as a transposition. CONSISTENT.
+- §5: no σ-specific description language.
+- §6 "Comparison": describes Baez-Egan's φ vs our σ-based ⋆;
+  CONSISTENT.
+- §7 Conclusion: "the twist maps the condition-3 sublattice to this
+  closed sublattice, and the involutory nature of σ maps the result
+  back" -- intuitive description of σ's lattice action.
+  CONSISTENT.
+- §8 Outlook: no σ-specific description.
+- Appendix A Section A.1 (mod-2 quotient + polarization paragraphs):
+  uses σ mathematically. CONSISTENT.
+- Appendix B (historical) closing paragraph: "the present σ acts on
+  the coordinate-symmetric placement L = D_8^+ (where it is inert
+  at the E_8 stratum) and does its work on the sublattice Ls" --
+  perfectly aligned with the new framing. CONSISTENT.
+- Appendix C (methodology): "Closure of the twisted product was first
+  observed..." -- generic phrasing, no change needed.
+
+The new §3 framing fits the rest of the paper naturally. No
+additional edits required.
+
+Paper still 19 pages.
+
+Status: CLOSED.
