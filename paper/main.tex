@@ -449,39 +449,6 @@ Taking sums:
   Z \cdot (X'+Y')\bigr)$, and similarly for the other two pairs.
 \end{itemize}
 
-\begin{remark}[Two equivalent framings]\label{rem:two-framings}
-Let $\star_0$ denote the analogous triple product built from the
-\emph{standard} (untwisted) octonion multiplication, i.e.\ with $\cdot$
-replacing $\cdot_\sigma$ in every block-pair product of
-Definition~\ref{def:triple}.  Applying $\sigma$ block-wise gives an
-algebra isomorphism $\Sigma := \sigma \oplus \sigma \oplus \sigma:
-(\RR^{24}, \star) \to (\RR^{24}, \star_0)$, since each block $P_\alpha$
-of $u \star v$ is by construction
-\eqref{eq:P1-std}--\eqref{eq:P3-std} the image under~$\sigma$ of the
-corresponding block of $\Sigma(u) \star_0 \Sigma(v)$.  Consequently
-the central Theorem~\ref{thm:main} has two equivalent readings:
-\[
-  \LL \,\star\, \LL \subseteq \LL
-  \quad\Longleftrightarrow\quad
-  \Sigma(\LL) \,\star_0\, \Sigma(\LL) \subseteq \Sigma(\LL).
-\]
-Neither reading asserts $\LL \,\star_0\, \LL \subseteq \LL$, which
-fails: the standard triple product obstructs Wilson's condition~(3),
-since it would require $Ls \cdot Ls \subseteq Ls$.  The twist does not
-rename a closure that was already present; it identifies a distinct
-Leech embedding $\Sigma(\LL) \ne \LL$ on which the standard triple
-product closes.  To see $\Sigma(\LL) \ne \LL$ explicitly: an element
-$(x',y',z') \in \Sigma(\LL)$ is by construction
-$(\sigma(x), \sigma(y), \sigma(z))$ for some $(x,y,z) \in \LL$, so
-its block sum $x'{+}y'{+}z' = \sigma(x{+}y{+}z)$ lies in
-$\sigma(Ls)$.  Since the block-sum map $\LL \to Ls$ is surjective
-(Wilson \cite[Section~3]{Wilson2009}) and $\sigma(Ls) \ne Ls$
-(Remark~\ref{rem:Ls-not-closed}), there exist $(x,y,z) \in \LL$ with
-$\sigma(x{+}y{+}z) \in \sigma(Ls) \setminus Ls$, and the
-corresponding triple in $\Sigma(\LL)$ violates Wilson's
-condition~(3) for membership in~$\LL$.
-\end{remark}
-
 \subsection{Condition~(1): each block lies in~$L$}
 
 \begin{proposition}\label{prop:cond1}

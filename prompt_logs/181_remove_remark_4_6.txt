@@ -1,0 +1,23 @@
+Prompt 181 -- Remove Remark 4.6 (rem:two-framings)
+Date: 2026-05-24
+
+User: "Remark 4.6 is redundant now. Remove it."
+
+Done. rem:two-framings (the "two equivalent framings" remark about
+Σ = σ⊕σ⊕σ and the equivalent readings Λ⋆Λ⊆Λ ⟺ Σ(Λ)⋆_0Σ(Λ)⊆Σ(Λ))
+removed entirely from §4.2 (Blockwise form).
+
+Cross-reference check:
+- rem:two-framings was referenced only at its definition site
+  (L452, now removed). No dangling references.
+- eq:P1-std, eq:P2-std, eq:P3-std labels still referenced in §4 condition
+  propositions (L515, L548); definitions kept; only the remark using
+  them in passing was removed.
+
+Side effect: the §4 proof remark also removes one Wilson 2009
+citation (L478 in the deleted remark), reducing the Wilson cite count
+further.
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.
