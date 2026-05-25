@@ -1,0 +1,21 @@
+Prompt 188 -- Rename §4 condition-1 subsection heading
+Date: 2026-05-25
+
+User: "Rename the subsection heading 'Condition (1): each block lies
+in L' to 'Wilson's condition (1): each block lies in L' so that it's
+clear that we refer to Wilson's conditions from Definition 2.1 as
+outlined in the section 4 introductory paragraph. No need to update
+the other subsection headings."
+
+Done. Only the first condition heading updated:
+  "Wilson's condition (1): each block lies in L"
+
+The §4 intro paragraph already refers to "Wilson's three conditions
+(Definition 2.1)", so this heading signals which definition the
+subsequent §4.3-§4.5 subsection headings are about. The (2) and (3)
+headings stay as "Condition (2): ..." and "Condition (3): ..." per
+the user's instruction.
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.
