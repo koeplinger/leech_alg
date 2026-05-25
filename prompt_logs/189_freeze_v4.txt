@@ -1,0 +1,51 @@
+Prompt 189 -- Top-level v3 -> v4 summary; freeze v4
+Date: 2026-05-25
+
+User: "I'm happy with the paper. Make a top-level summary of the
+differences between v3 and v4. Then freeze v4 in the documentation
+of this project."
+
+Tasks:
+1. Write a top-level v3 -> v4 changelog/summary. Save as
+   paper/v3_to_v4_summary.md (or similar).
+2. Freeze v4 source as paper/main_2026-05-25.tex (parallel to the
+   existing paper/main_2026-04-29.tex frozen v3 snapshot).
+3. Update editorial_standards.md to reflect v4 (25 May 2026) frozen.
+4. Update CURRENT_STATE.md to note v4 frozen.
+5. Update 2026-05-22_plan.md to mark v4 final.
+
+Done.
+
+1. paper/v3_to_v4_summary.md written (top-level changelog).
+   Sections: A (Mathematical content additions: §A.1 mod-2 quotient
+   reading, Appendix B historical, §5 N=10⁶, polarization paragraphs,
+   Remark 4.7 consecutive twists), B (Structural refinements without
+   new math: §3 streamlining, §4 reorder, §6 collapse, §1/§2/§5/§7/§8
+   wording, Thm 1.1 + Cor 1.2), C (References/attribution/editorial:
+   bibliography additions, first-name additions, Wilson cite
+   consolidation, acknowledgments, editorial standards adoption,
+   methodology), D (Verification artefacts), E (Companion artefacts
+   updated for v4), F (Page-count attribution table: 12 -> 19 pp),
+   G (cross-references between v3 and v4 frozen sources).
+
+2. paper/main_2026-05-25.tex created as frozen v4 source snapshot
+   (1632 lines, same as paper/main.tex). Subtitle = "25 May 2026 (v4)".
+
+3. evidence_and_reasoning/editorial_standards.md updated:
+   "Note on paper/main.tex (v4 frozen)" -- v4 (frozen 25 May 2026)
+   now the current released state; frozen source preserved at
+   paper/main_2026-05-25.tex; paper/main.tex continues as working
+   source.
+
+4. CURRENT_STATE.md updated: §2 of "What has been done since the
+   finding" rewritten to mention v4 frozen, 19 pages, two referee
+   rounds, frozen source location, changelog location.
+
+5. evidence_and_reasoning/2026-05-22_plan.md status note updated:
+   "Phases A-D complete; v4 frozen" with references to both review
+   rounds and frozen snapshot.
+
+6. README.md "finished write-up" sentence extended with frozen v4
+   date, snapshot path, and changelog pointer.
+
+Status: CLOSED.

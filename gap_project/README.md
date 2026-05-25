@@ -121,9 +121,9 @@ Lemma 4.1 ($\sigma(L)=L$); Remark 4.5 ($\sigma(Ls) \ne Ls$, $Ls\cdot Ls
 $(-1,0,1,0,0,1,0,1)\in\sigma(Ls)\setminus Ls$.
 
 ### `test_twist.g` — 8 checks
-$\sigma$ is an involution and an isometry; Proposition 3.2
-($\sigma(xy) = \sigma(x)\cdot_\sigma\sigma(y)$); composition law for
-$\cdot_\sigma$; $\cdot_\sigma$ disagrees with $\cdot$ on at least one basis
+$\sigma$ is an involution and an isometry; the algebra-isomorphism
+identity $\sigma(xy) = \sigma(x)\cdot_\sigma\sigma(y)$ from
+Definition 3.2 of the paper; composition law for $\cdot_\sigma$; $\cdot_\sigma$ disagrees with $\cdot$ on at least one basis
 pair; the twist resolves the $Ls$ obstruction
 ($Ls\cdot Ls\not\subseteq Ls$ but $Ls\cdot_\sigma Ls\subseteq Ls$);
 companion Section 8 ($L\cdot_\sigma L\subseteq L$, so the twist does not

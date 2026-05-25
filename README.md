@@ -12,7 +12,9 @@ evidence, and every conclusion is traceable.
 anyone continuing this research, with or without prior context.
 
 The finished write-up is in [paper/main.tex](paper/main.tex)
-(compiled: [paper/main.pdf](paper/main.pdf)).
+(compiled: [paper/main.pdf](paper/main.pdf)), frozen as v4 on
+25 May 2026 (source snapshot: [paper/main_2026-05-25.tex](paper/main_2026-05-25.tex);
+v3 → v4 changelog: [paper/v3_to_v4_summary.md](paper/v3_to_v4_summary.md)).
 
 ## Repository Structure
 

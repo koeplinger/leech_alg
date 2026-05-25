@@ -1,0 +1,51 @@
+Prompt 190 -- Post-freeze documentation consistency sweep
+Date: 2026-05-25
+
+User: "make a documentation consistency sweep across this project"
+
+Post-v4-freeze sweep. Looking for:
+- Stale page counts ("20 pages" -> "19 pages" where applicable).
+- Stale dates referring to v4 ("23/24 May 2026" -> "25 May 2026").
+- References to removed/changed remarks (rem:two-framings,
+  Proposition 3.2, "transposition-twisted octonion algebra" naming).
+- References that should reflect the current frozen v4.
+- Skip historical artifacts (prompt logs, frozen v3, dated reviews,
+  update briefs, kirmse exposition).
+
+Done. Three small edits applied; no further regressions found.
+
+1. evidence_and_reasoning/references/prior_art_orders_on_leech.txt L17:
+   "transposition-twisted octonion algebra" -> "transposition-twisted
+   octonion product" (matches the new §3 framing: there is no
+   "transposition-twisted octonion algebra" object; only the
+   octonion algebra and the σ-twisted product on it).
+
+2. gap_project/README.md L124: "Proposition 3.2" reference updated.
+   Was:
+     "Proposition 3.2 (σ(xy) = σ(x)·_σ σ(y))"
+   Now:
+     "the algebra-isomorphism identity σ(xy) = σ(x)·_σ σ(y) from
+      Definition 3.2 of the paper"
+   (Reflects the v4 §3 restructure: σ's algebra-iso property is now
+   stated as an immediate consequence of Def 3.2 rather than a
+   separate Proposition.)
+
+3. paper/v3_to_v4_summary.md: "Remark 4.7" -> "Remark 4.9" (three
+   occurrences). The consecutive-twists remark is numbered 4.9 in
+   v4's compiled paper (per paper/main.aux):
+     newlabel{rem:consecutive-twists}{{4.9}{6}...
+
+Verified clean (no remaining issues found):
+- All "20 pages" references are in historical artefacts (paper/reviews/
+  and prompt_logs/); CURRENT_STATE.md correctly says "19 pages".
+- All dated references (23 May, 24 May) in live docs are honest to
+  the artefact's own date.
+- The Baez-Egan addendum's internal references to "v4 (24 May 2026)"
+  are preserved per Manifesto §12 -- the addendum itself is dated
+  24 May and the citation reflects what was true then.
+- The hermes supplement's references to the main paper are generic
+  ("v4", no specific date inside the body).
+- companion.tex, historical_appendix.tex, historical_appendix_expanded.tex
+  all dated 23 May 2026 -- the actual date of their last revision.
+
+Status: CLOSED.

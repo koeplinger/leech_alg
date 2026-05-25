@@ -356,16 +356,19 @@ the trial, and prints detailed results.
    (rem:Ls-not-closed): non-triviality of the construction, not a step
    of the closure proof.
 
-2. **Formal paper at v4.**  `paper/main.tex` (20 pages) contains
-   abstract, preliminaries, construction, symbolic proof, algebraic
-   properties at N = 10⁶ samples, related work, conclusion, outlook,
-   and three appendices: explicit basis tables with a mod-2-quotient
-   reading (Appendix A); a historical note synthesising the 1923–1946
+2. **Formal paper at v4, frozen 25 May 2026.**  `paper/main.tex`
+   (19 pages) contains abstract, preliminaries, construction,
+   symbolic proof, algebraic properties at N = 10⁶ samples, related
+   work, conclusion, outlook, and three appendices: explicit basis
+   tables with a mod-2-quotient reading and a Lagrangian-polarization
+   framing (Appendix A); a historical note synthesising the 1923–1946
    integral-octonion literature from the primary sources, Dickson
    (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946)
    (Appendix B); and the research methodology (Appendix C).  v4 was
-   assembled per `evidence_and_reasoning/2026-05-22_plan.md` and has
-   undergone a full referee-style review (paper/reviews/).
+   assembled per `evidence_and_reasoning/2026-05-22_plan.md`, has
+   undergone two full referee-style review rounds (paper/reviews/),
+   and is frozen as `paper/main_2026-05-25.tex`.  A top-level
+   v3 → v4 changelog is in `paper/v3_to_v4_summary.md`.
 
 3. **Computational verification extended.**  Over 12,000,000 random
    minimal-vector pairs tested across multiple test harnesses with

@@ -14,7 +14,7 @@ before publishing our finding.
 under an octonion-derived bilinear product.**
 
 The specific construction in this project — three copies of a
-transposition-twisted octonion algebra with Z₃ cross-block routing —
+transposition-twisted octonion product with Z₃ cross-block routing —
 does not appear in the literature.
 
 The closest related work falls into four categories (listed
