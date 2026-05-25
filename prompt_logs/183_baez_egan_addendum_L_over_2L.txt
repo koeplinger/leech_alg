@@ -1,0 +1,85 @@
+Prompt 183 -- Dated addendum to Baez-Egan_Leech_Verification.pdf: L/2L parallel
+Date: 2026-05-24
+
+User: "Now I'm reading over prior art, Baez and Egan (2014), and
+notice the parallel between their L/2L treatment and ours (in
+appendix B). We have to be clear what the overlap is, and properly
+credit it. We need to go back to their original work, and analyze it
+with what we know now. Start with a dated addendum to the existing
+Baez-Egan_Leech_Verification.pdf"
+
+Note: the user said "appendix B" but the mod-2 quotient work is in
+Appendix A (Section A.1 in v4). Will use that.
+
+The existing PDF (paper/Baez-Egan_Leech_Verification.pdf, 8 pp, dated
+April 16, 2026, with addendum §10 from a subsequent Köplinger
+correction) has NO source .tex in the repo. So the new dated
+addendum will be a STANDALONE TeX file referencing the existing PDF,
+not an inline edit.
+
+Filename: paper/Baez-Egan_Leech_Verification_addendum_2026-05-24.tex
+
+The overlap to credit:
+
+Baez/Egan use the "key lemma" L_1 ∩ L_2 = 2 L_0 (per the original
+verification PDF §4) as a step in their geometric Leech-lattice
+theorem. Wilson (2009, Section 2) has the identical identity in his
+octonion-specific setup: L\bar s ∩ Ls = 2 L. These are the same
+algebraic fact in different notations.
+
+What we do that Baez/Egan did not: descend the octonion product
+modulo 2L to an F_2-bilinear product mu-bar on L/2L, identify
+V = sigma(L\bar s)/2L as a (two-sided) ideal and W = sigma(Ls)/2L
+as a subalgebra, and under the natural plus-type quadratic form
+recognize L/2L = V ⊕ W as a Witt decomposition into complementary
+Lagrangians.
+
+The addendum will:
+1. Identify the L_1 ∩ L_2 = 2 L_0 / L\bar s ∩ Ls = 2 L parallel.
+2. Note Wilson 2009 and Baez/Egan 2014 both rely on it (Wilson
+   octonion-specifically; Baez/Egan after Egan's geometric strip).
+3. State explicitly what our paper's Section A.1 builds on top of
+   this shared identity (the descended F_2-algebra picture).
+4. Credit the prior art accurately.
+
+Done. Wrote
+paper/Baez-Egan_Leech_Verification_addendum_2026-05-24.tex (3 pp).
+
+Structure of the addendum:
+1. Abstract: re-reading Baez/Egan in light of our Section A.1 reveals
+   an explicit parallel; this addendum credits the shared foundation
+   and delineates what's new in our use.
+2. §1 "The shared key lemma": states L_1 ∩ L_2 = 2 L_0 (Baez/Egan,
+   Egan's duality proof) and L\bar s ∩ Ls = 2L (Wilson 2009) side
+   by side. Same algebraic fact, different notations. Already in
+   the literature before this project.
+3. §2 "What Baez/Egan use it for, and what they did not do": Egan
+   Part 9 uses the key lemma as a step in proving the Leech-lattice
+   theorem (lattice-geometric); Baez/Egan do NOT descend the
+   octonion product modulo 2L_0 to read L_0/2L_0 as an F_2-algebra.
+4. §3 "What our Section A.1 builds on the same identity": five-step
+   account of how Section A.1 uses the same identity (eq:key) to:
+   (1) place 2L inside both sigma sublattices,
+   (2) descend the octonion product to mu-bar on L/2L,
+   (3) read sigma(L\bar s), sigma(Ls) as 4-dim F_2-subspaces with
+       V ⊕ W = L/2L,
+   (4) recognize V two-sided ideal and W subalgebra under mu-bar,
+   (5) recognize the Witt decomposition into a Lagrangian pair.
+   Step 1 uses the shared identity directly; steps 2-5 are new.
+5. §4 "Attribution and overlap": bullet list of what's shared vs
+   what's new, with explicit citation of Egan's duality argument
+   and Wilson 2009.
+6. §5 "What it would take to close the gap further": observes that
+   Egan's Part 9 abstracts away octonion multiplication, which is
+   why the F_2-algebra reading is absent there; the present work
+   continues the Wilson-side of the Wilson-Egan parallel. Part 10
+   goes a different direction (27-dim Jordan ambient), not in
+   competition.
+7. References: original verification PDF, our main paper Section A.1,
+   Wilson 2009, Baez/Egan 2014.
+
+PDF builds clean at 3 pages.
+
+Status: CLOSED -- addendum saved as a standalone TeX/PDF (no source
+.tex existed for the original 8-page verification PDF, so the addendum
+references the existing PDF rather than extending it inline).
