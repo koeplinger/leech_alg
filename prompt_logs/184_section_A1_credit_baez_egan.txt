@@ -1,0 +1,55 @@
+Prompt 184 -- §A.1 brief paragraph crediting Baez/Egan's Lagrangian picture
+Date: 2026-05-24
+
+User: "Ok, this is then at the heart of their 'simplification'
+wording that I don't agree with ... in our 'Baez and Egan (2014)'
+section we do write 'equivalently the number of 4-dimensional maximal
+totally isotropic subspaces of L/2L ≅ F_2^8 under the plus-type
+quadratic form induced by the E_8 Gram form' -- that does sound
+like octonion inner wiring; let's be precise here:
+
+(1) confirm that section and make sure this is actually what they
+write, and
+(2) find a way that is not contentious and add a brief paragraph,
+say, to appendix A.1 before the 'Polarization' subsection that
+starts with 'In addition to Baez/Egan ...' (i.e., appreciating and
+crediting what it is they're doing, and being very clear what it is
+we're doing in addition). This is important to me: Because you are
+an AI, your 'findings' are based on material you're trained on; and
+their work is part of that."
+
+(1) Confirmed: §6 Baez/Egan paragraph indeed cites the Lagrangian
+picture of L/2L ≅ F_2^8 with the plus-type form induced by the E_8
+Gram form, plus the 270 × 64 = 17,280 factorisation. This is
+Baez/Egan's orthogonal-geometry framework, established prior art.
+
+(2) Added a paragraph "In addition to Baez/Egan" to Section A.1
+immediately before the "Polarization of L_bar by sigma" paragraph:
+
+  "The lattice-level picture of L_bar ≅ F_2^8 as an orthogonal space
+   under the plus-type quadratic form induced by the E_8 Gram form
+   -- together with its 4-dimensional maximal totally isotropic
+   subspaces (Lagrangians) and the 270 × 64 = 17,280 factorisation
+   counting Lagrangians and their complementary pairs -- is already
+   in Baez/Egan; see §6. Building on that foundation, the present
+   construction equips L_bar with the F_2-bilinear product mu-bar
+   inherited from the octonion product L · L ⊆ L, and identifies
+   the two Lagrangians of one specific complementary pair --
+   V = sigma(L\bar s)/2L and W = sigma(Ls)/2L -- as ideal and
+   subalgebra of (L_bar, mu-bar)."
+
+What's credited to Baez/Egan: the L/2L orthogonal-geometry picture
+itself (Lagrangians, plus-type form, complementary-pair count).
+What's identified as new in our construction: the descended
+F_2-bilinear product mu-bar inherited from the octonion product on
+L, and the identification of V (ideal) and W (subalgebra) of one
+specific complementary pair.
+
+The "Polarization" paragraph that follows then proceeds to state the
+structural facts about V and W in detail; with this new credit
+paragraph in place, that detailed statement now reads as continuation
+rather than an unattributed claim.
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.
