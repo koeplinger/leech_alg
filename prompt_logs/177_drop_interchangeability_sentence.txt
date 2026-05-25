@@ -1,0 +1,18 @@
+Prompt 177 -- Drop the interchangeability sentence in §3
+Date: 2026-05-24
+
+User: "Close. Let's remove this sentence 'We use σ in both roles
+interchangeably: acting on the octonion product, and acting on the
+lattice representation of E8 and its sublattices.' and just do it."
+
+Done. The tail of Def 3.2 paragraph now reads only:
+
+  "This is another octonion product on O: by definition,
+   sigma : (O, .) -> (O, ·_sigma) is an algebra isomorphism,
+   sigma(x . y) = sigma(x) ·_sigma sigma(y)."
+
+Then directly into Definition 3.3 (triple product).
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.

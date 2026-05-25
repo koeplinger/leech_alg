@@ -1,0 +1,51 @@
+Prompt 176 -- §3 flow tighten: drop Prop 3.2, move ·_sigma definition first
+Date: 2026-05-24
+
+User:
+1. Theorem 1.1: simplify -- only reference def:triple, drop the
+   def:twisted-product cross-reference.
+2. §3 flow: keep Def 3.1 as is. Drop Prop 3.2 entirely. Bring
+   Def 3.3 (·_sigma) FIRST after Def 3.1. Then one sentence saying
+   "it's another octonion product; by definition sigma is an algebra
+   isomorphism." Then one sentence "we use sigma in both roles
+   interchangeably". No more wording before def:triple.
+
+Done.
+
+Theorem 1.1 now reads:
+  "Let ⋆ denote the Z_3-symmetric triple-octonion product on
+   R^24 = O_1 ⊕ O_2 ⊕ O_3 under Z_3 cross-block routing
+   (Definition 3.3). Then u ⋆ v ∈ Λ for all u, v ∈ Λ in Wilson's
+   representation [Wilson2009]."
+
+§3 now reads:
+
+  Definition 3.1 (Transposition). sigma = (i j) extended to linear
+  involution R^8 -> R^8 fixing e_0 and swapping e_i <-> e_j.
+
+  Definition 3.2 (·_sigma). The sigma-twisted octonion product
+  ·_sigma is the sigma-twisted variant of the standard:
+       x ·_sigma y := sigma(sigma(x) · sigma(y)).
+
+  This is another octonion product on O: by definition,
+  sigma : (O, ·) -> (O, ·_sigma) is an algebra isomorphism,
+  sigma(x · y) = sigma(x) ·_sigma sigma(y). We use sigma in both
+  roles interchangeably: acting on the octonion product, and acting
+  on the lattice representation of E_8 and its sublattices.
+
+  Definition 3.3 (Triple product with Z_3 routing): the triple
+  product ⋆.
+
+Removed:
+- Proposition 3.2 (prop:iso) and its proof.
+- Paragraph about D_8^+ symmetry / sigma(L) = L / sublattices moved
+  (user said "nothing else needs to be said before definition 3.4").
+
+prop:iso was referenced only in def:twisted-product itself (self-ref,
+removed in this edit). No dangling cross-references.
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED. The §3 flow now matches the user's intent: transposition
+defined; product defined; isomorphism noted as immediate; interchangeable
+use stated; triple product follows.

@@ -1,0 +1,83 @@
+Prompt 175 -- Restructure §3 and propagate σ-dual-role pattern through paper
+Date: 2026-05-24
+
+User: Sigma is JUST a transposition. It can act on:
+  - the octonion product (yielding another octonion product), or
+  - the lattice representation (yielding another representation).
+We use both interpretations INTERCHANGEABLY.
+
+Restructure §3 first:
+1. Def 3.1: just define sigma as a transposition (no operation
+   introduced yet).
+2. Prop 3.2: letting sigma act on the octonion product yields
+   another octonion product. (One-line proof.)
+3. After Prop 3.2: note that we use sigma interchangeably on
+   octonion product or lattice. Because of D_8^+ symmetry,
+   sigma(L) = L; sublattices Ls and L\bar s are moved.
+4. New definition (3.3): the sigma-twisted octonion product ·_σ
+   as the sigma-twisted variant of the standard multiplication
+   (eq:fano).
+
+Abstract is already worded properly (Wilson's rep first, then sigma
+acts on it).
+
+Theorem 1.1 needs rewording too:
+- "denote the transposition-twisted octonion multiplication" is too
+  representation-specific.
+- "Then for all u, v in Λ" should reference Wilson's representation.
+
+Then apply the pattern throughout the paper consistently.
+
+Phase 1 (this prompt): §3 restructure + Theorem 1.1 wording.
+Phase 2 (later prompts): sweep rest of paper for consistency.
+
+Phase 1 done.
+
+§3 restructured (def:twist, prop:iso, interchangeability note,
+def:twisted-product):
+
+  Definition 3.1 (Transposition): sigma = (i j) on {1,...,7},
+  extended to linear involution R^8 -> R^8 fixing e_0 and swapping
+  e_i <-> e_j.
+
+  Proposition 3.2: Acting on the standard octonion product, sigma
+  yields another octonion product on O, isomorphic to the standard
+  via sigma itself.
+  Proof: short.
+
+  [Interchangeability paragraph]: We use sigma in both roles
+  interchangeably -- on the octonion product, and on the lattice
+  representation of E_8 and its sublattices. sigma(L) = L because
+  D_8^+ is coordinate-symmetric; Ls and L\bar s are moved.
+
+  Definition 3.3 (sigma-twisted octonion product): ·_sigma is the
+  sigma-twisted variant of the standard product (Eq. 2.1):
+       x ·_sigma y := sigma(sigma(x) . sigma(y)).
+  Equivalently (Prop 3.2), sigma : (O, .) -> (O, ·_sigma) is an
+  algebra isomorphism.
+
+Theorem 1.1 reworded:
+
+  "Let ⋆ denote the Z_3-symmetric triple-octonion product on
+   R^24 = O_1 ⊕ O_2 ⊕ O_3 assembled from the sigma-twisted octonion
+   product (Definition 3.3) under Z_3 cross-block routing
+   (Definition 3.4). Then u ⋆ v ∈ Λ for all u, v ∈ Λ in Wilson's
+   representation."
+
+(Note: numbering shifts -- def:triple is now Def 3.4, not 3.3.)
+
+Cross-references checked: only def:twisted-product (just created)
+and def:triple (unchanged) are referenced. No dangling refs.
+
+Paper rebuilds clean at 19 pages.
+
+Phase 2 (next prompts): sweep rest of paper for σ-dual-role
+consistency. Items to check:
+- §1 introduction wording
+- §4 proof references (currently uses ".sigma" notation)
+- §6 related-work pointers
+- Appendix A basis tables intro
+- Companion/supplement docs
+
+Status: Phase 1 CLOSED; sweep deferred to follow-on prompts as user
+indicated.

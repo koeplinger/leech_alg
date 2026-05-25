@@ -151,12 +151,11 @@ isomorphism on the octonions, but it moves Wilson's sublattices
 such that inclusion holds.
 
 \begin{theorem}\label{thm:main}
-Let\/ $\cdot_\sigma$ denote the transposition-twisted octonion
-multiplication on~$\RR^8$ (Definition~\ref{def:twist}), and let\/
-$\star$ denote the associated triple product on
-$\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ with $\ZZ_3$ cross-block
-routing (Definition~\ref{def:triple}).  Then for all
-$u, v \in \LL$, the product $u \star v$ lies in~$\LL$.
+Let\/ $\star$ denote the $\ZZ_3$-symmetric triple-octonion product
+on~$\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$
+under $\ZZ_3$ cross-block routing (Definition~\ref{def:triple}).
+Then $u \star v \in \LL$ for all $u, v \in \LL$ in Wilson's
+representation~\cite{Wilson2009}.
 \end{theorem}
 
 \begin{corollary}\label{cor:order}
@@ -289,28 +288,24 @@ $j, k \in J = \{\pm e_t : 0 \le t \le 7\}$ (16~unit octonions).
 \section{The construction}\label{sec:construction}
 % ===============================================================
 
-\begin{definition}[Transposition twist]\label{def:twist}
+\begin{definition}[Transposition]\label{def:twist}
 Let $\sigma = (i\; j)$ be a transposition on $\{1, \ldots, 7\}$,
 extended to the linear involution $\sigma \colon \RR^8 \to \RR^8$
-that fixes $e_0$ and swaps $e_i \leftrightarrow e_j$.  The
-\emph{$\sigma$-twisted product} on~$\OO$ is
-\begin{equation}\label{eq:twist-formula}
-  x \cdot_\sigma y \;:=\; \sigma\bigl(\sigma(x) \cdot \sigma(y)\bigr),
-\end{equation}
-where $\cdot$ is the standard octonion product.
+that fixes $e_0$ and swaps $e_i \leftrightarrow e_j$.
 \end{definition}
 
-\begin{proposition}\label{prop:iso}
-$\sigma \colon (\OO, \cdot) \to (\OO, \cdot_\sigma)$ is an algebra
-isomorphism: $\sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)$
-for all $x, y \in \OO$.  Consequently $\cdot_\sigma$ is composition:
-$\Nrm(x \cdot_\sigma y) = \Nrm(x)\Nrm(y)$.
-\end{proposition}
+\begin{definition}[$\sigma$-twisted octonion product]\label{def:twisted-product}
+The \emph{$\sigma$-twisted octonion product}~$\cdot_\sigma$ on~$\OO$
+is the $\sigma$-twisted variant of the standard octonion
+product~\eqref{eq:fano}:
+\begin{equation}\label{eq:twist-formula}
+  x \cdot_\sigma y \;:=\; \sigma\bigl(\sigma(x) \cdot \sigma(y)\bigr).
+\end{equation}
+\end{definition}
 
-\begin{proof}
-$\sigma(x) \cdot_\sigma \sigma(y) = \sigma(\sigma^2(x) \cdot
-\sigma^2(y)) = \sigma(x \cdot y)$, since $\sigma^2 = \mathrm{id}$.
-\end{proof}
+This is another octonion product on $\OO$: by definition,
+$\sigma \colon (\OO, \cdot) \to (\OO, \cdot_\sigma)$ is an algebra
+isomorphism, $\sigma(x \cdot y) = \sigma(x) \cdot_\sigma \sigma(y)$.
 
 \begin{definition}[Triple product with $\ZZ_3$ routing]
 \label{def:triple}
