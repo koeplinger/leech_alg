@@ -1,0 +1,28 @@
+Prompt 180 -- Merge Remark 4.5 (rem:Ls-not-closed) into one concise remark
+Date: 2026-05-24
+
+User: "Remark 4.5 and the note that follows can be merged into a
+single, more concise remark (pulling the witness of sigma(Ls)
+closure violation into the first statment), and directly following
+up with L\bar s likewise."
+
+Done. The remark now reads:
+
+  "The sublattice Ls is NOT closed under the standard octonion
+   product, and sigma(Ls) ≠ Ls: with sigma = (1 2), the element
+   v = (-1, 0, 1, 0, 0, 1, 0, 1) lies in sigma(Ls) \ Ls. The twist
+   therefore moves the block-sum sublattice off Ls onto the closed
+   sublattice sigma(Ls) (Lemma 4.4). Likewise sigma(L\bar s) ≠
+   L\bar s: w = (0, 0, -1, 0, -1, 0, -1, -1) ∈ sigma(L\bar s) \
+   L\bar s."
+
+Down from two paragraphs (~15 lines of prose) to a single paragraph
+(~6 lines). Both witnesses kept; obstruction-resolution context
+appears once; the prose redundancies ("genuinely different from Ls
+(not just a relabelling)", "This distinction is what makes the twist
+useful: σ is not the identity on the block-sum sublattice, so it
+can redirect a product...") removed.
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.

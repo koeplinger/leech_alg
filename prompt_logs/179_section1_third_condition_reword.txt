@@ -1,0 +1,15 @@
+Prompt 179 -- §1 reword "third condition" sentence
+Date: 2026-05-24
+
+User: "In section 1, reword 'The third, however, is not closed under
+the octonion product.' to 'The third, however, is generally not
+closed under octonion products, including Wilson's.'"
+
+Done. The §1 intro paragraph at L140-144 now ends:
+  "...satisfies two of Wilson's three sublattice conditions
+   automatically. The third, however, is generally not closed under
+   octonion products, including Wilson's."
+
+Paper rebuilds clean at 19 pages.
+
+Status: CLOSED.

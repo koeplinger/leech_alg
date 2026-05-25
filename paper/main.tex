@@ -141,7 +141,7 @@ The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ -- using the
 same octonion multiplication in all three blocks with
 $\ZZ_3$-symmetric cross-block routing -- satisfies two of Wilson's
 three sublattice conditions automatically.  The third, however, is
-not closed under the octonion product.
+generally not closed under octonion products, including Wilson's.
 
 The main result of this paper is that closure on~$\LL$ is restored
 by twisting the octonion multiplication on each block by a
@@ -415,22 +415,13 @@ $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
 
 \begin{remark}\label{rem:Ls-not-closed}
 The sublattice~$Ls$ is \emph{not} closed under the standard octonion
-product: there exist basis vectors $a, b \in Ls$ with $a \cdot b
-\notin Ls$.  This is precisely the obstruction that the twist
-resolves: it moves the block-sum sublattice from~$Ls$ to~$\sigma(Ls)$,
-where closure holds by Lemma~\ref{lem:sigmaLs-closed}.
-
-Note that $\sigma(Ls)$ is genuinely different from~$Ls$ (not just a
-relabelling).  For example, with $\sigma = (1\;2)$, the element
-$v = (-1, 0, 1, 0, 0, 1, 0, 1)$ lies in~$\sigma(Ls)$ but direct
-computation shows it is not an integer combination of any $\ZZ$-basis
-for~$Ls$, so $v \notin Ls$.  The same holds for~$L\bar s$:
-the element $w = (0, 0, -1, 0, -1, 0, -1, -1)$ lies in~$\sigma(L\bar s)$
-but not in~$L\bar s$, so $\sigma(L\bar s) \ne L\bar s$ as well.
-This distinction is what makes the twist
-useful: $\sigma$ is not the identity on the block-sum sublattice, so
-it can redirect a product into a different (and, as it turns out,
-closed) sublattice.
+product, and $\sigma(Ls) \ne Ls$: with $\sigma = (1\;2)$, the
+element $v = (-1, 0, 1, 0, 0, 1, 0, 1)$ lies in~$\sigma(Ls)
+\setminus Ls$.  The twist therefore moves the block-sum sublattice
+off~$Ls$ onto the closed sublattice~$\sigma(Ls)$
+(Lemma~\ref{lem:sigmaLs-closed}).  Likewise $\sigma(L\bar s) \ne
+L\bar s$: $w = (0, 0, -1, 0, -1, 0, -1, -1) \in \sigma(L\bar s)
+\setminus L\bar s$.
 \end{remark}
 
 \subsection{Blockwise form of the triple product}
