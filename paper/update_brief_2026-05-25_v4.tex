@@ -1,0 +1,276 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\newcommand{\LL}{\Lambda}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\Nrm}{N}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Co}{\mathrm{Co}}
+
+\theoremstyle{remark}
+\newtheorem*{remarknote}{Remark}
+
+\title[Update brief: Petersson reference; $S_3$ symmetry]%
+{Update brief for\\
+\emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
+triple-octonion product}\\
+\large v4 (frozen 25 May 2026)}
+
+\author{Jens K\"oplinger}
+\date{26 May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The main paper is frozen at v4 (25 May 2026); the working source is
+\texttt{paper/main.tex} and the frozen snapshot is
+\texttt{paper/main\_2026-05-25.tex}.  This brief records two items
+for a future revision: (1) the Petersson 2018 reference is presently
+dangling in the bibliography and should be cited in the body text;
+(2) the triple-octonion construction is in fact $S_3$-symmetric on
+the three blocks, not merely $\ZZ_3$-symmetric.  Both items are
+documented here against v4 and are not yet folded into the
+manuscript.
+\end{abstract}
+
+% ===================================================================
+\section{Petersson 2018 -- dangling reference}
+% ===================================================================
+
+\subsection*{Status}
+
+The reference \texttt{Petersson2018} appears in the v4 bibliography
+(H.\,P.~Petersson, ``Integral octonions,'' lecture at the M\'alaga
+Workshop on Non-Associative Algebras, 2018) but is not cited
+anywhere in the body of v4.  This is a regression from earlier
+versions of the paper, where Petersson's lecture was cited as the
+key modern account of the integral-octonion history.
+
+\subsection*{Why this is important}
+
+Petersson's 2018 lecture is the link in the historical chain that
+brings the 1923--1946 narrative into the present:
+\begin{itemize}
+\item It is the source from which this project first identified
+  Kirmse's $J_1$ as a specific non-closed candidate (and not the
+  whole of Kirmse's work).
+\item It treats Kirmse with appropriate care -- calling his work
+  ``the bold attempt of a young mathematician'' -- and is therefore
+  the reference for the fair-attribution stance the present paper
+  takes in Appendix~B.
+\item It also flags Dickson's 1923 priority, which the paper now
+  records in Appendix~B's opening.
+\end{itemize}
+
+\subsection*{Proposed insertions for the next revision}
+
+\paragraph{End of paragraph in \S2.2 (\emph{The $E_8$ lattice}).}
+After the existing sentence ending ``\,closed under multiplication
+and admits no enlargement to a larger order'' (citing Coxeter 1946
+and Conway--Smith 2003), append a clause crediting Petersson:
+\begin{quote}
+``\ldots; for a modern survey of the integral-octonion history,
+see Petersson (2018).''
+\end{quote}
+
+\paragraph{Appendix B.}
+Petersson 2018 is the natural citation in the historical note where
+the project's stance on Kirmse is established.  Two natural spots:
+\begin{itemize}
+\item In the \textbf{Kirmse (1924)} paragraph, after ``The remaining
+  seven of his eight are the genuine maximal orders.'' add a
+  parenthetical: ``A modern account of Kirmse's contribution,
+  treating it as the bold work of a young mathematician on a topic
+  weird and bizarre even today, is in Petersson (2018).''
+\item Alternatively, at the start of Appendix B, in the opening
+  sentence ``The construction this paper builds on was developed
+  across four primary papers between 1923 and 1946,'' append a
+  pointer to Petersson (2018) as the modern source from which this
+  project first traced the chain.
+\end{itemize}
+
+Either placement (or both) closes the dangling reference and
+restores the credit that earlier versions had.
+
+% ===================================================================
+\section{Kirmse 1924 -- two further contributions worth crediting}
+% ===================================================================
+
+The author's reading of Kirmse 1924 in the original highlights two
+further contributions that the v4 Appendix B Kirmse paragraph does
+not currently capture and that deserve credit.
+
+\paragraph{(a) A nascent ideal theory on the $E_8$ lattice.}
+Kirmse 1924 develops an ideal-theoretic treatment of the integral
+octonions, working out divisibility and ideal-type structure on the
+lattice he has constructed.  This is an early and substantive
+companion contribution to the multiplicative-closure question that
+the v4 Kirmse paragraph focuses on -- and it is the first such
+development on an $E_8$-type lattice of integral octonions.  Mahler
+1942 takes up the ideal-theoretic line again with the Euclidean
+property and the principal-ideal theorem, but Kirmse's earlier
+work in this direction is currently underrepresented.
+
+\paragraph{(b) Algebra alternativity as a foundational building block.}
+Kirmse takes \emph{alternativity} -- the weakened associativity
+available in the octonions (and more generally, in alternative
+algebras) -- as a basic axiom on which to build his treatment,
+rather than working from full associativity and recovering
+alternativity as a consequence.  This is a methodological choice
+that deserves recognition in its own right: it suggests a
+programme of replacing associativity by alternativity at the
+foundation of an arithmetic of integral octonions, and it
+anticipates the structural role alternativity plays in Cayley--
+Dickson algebras and their integral arithmetic in the later
+literature.
+
+\subsection*{Proposed handling}
+
+In a future revision, extend the v4 Appendix B Kirmse paragraph
+with one or two sentences acknowledging both contributions.  A
+draft:
+
+\begin{quote}
+``Kirmse also develops an ideal-theoretic treatment of the integral
+octonions -- a substantive companion contribution that is taken up
+again in Mahler (1942) -- and methodically takes algebra
+alternativity as a foundational constraint, anticipating the
+structural role alternativity plays in later integral-octonion
+arithmetic.''
+\end{quote}
+
+This complements the Petersson 2018 citation proposed in \S1: the
+Petersson reference establishes the project's fair-attribution
+stance toward Kirmse, and these two sentences make that stance
+concrete by naming the specific further contributions that the
+narrowly-focused v4 paragraph leaves to the side.
+
+% ===================================================================
+\section{$S_3$ symmetry on the three blocks}
+% ===================================================================
+
+\subsection*{Finding}
+
+The triple-octonion product $\star$ (Definition~3.3 of v4) is in
+fact $S_3$-symmetric on the three blocks: every permutation in
+$S_3$ of the indices $\{1, 2, 3\}$ is an automorphism of
+$(\LL, +, \star)$.
+
+\subsection*{Verification}
+
+The two generators of $S_3$ are tested in
+\texttt{python\_project/src/probe\_aut\_lambda\_star.py} using the
+exact $\ZZ$-basis of $\LL$ from
+\texttt{verify\_consecutive\_twists\_exact.py}; for each candidate
+$g$ on the 24-vector basis $B$ of $\LL$, the script checks
+$g(B_i \star B_j) = g(B_i) \star g(B_j)$ for all $24 \times 24 = 576$
+basis pairs.
+
+\medskip
+\begin{tabular}{ll}
+\toprule
+candidate & verdict \\
+\midrule
+$\ZZ_3$ cyclic block permutation $(x,y,z) \mapsto (y,z,x)$
+  & preserves $\LL$ AND $\star$ \\
+$S_3$ transposition of blocks $1 \leftrightarrow 2$
+  & preserves $\LL$ AND $\star$ \\
+componentwise negation $-I_{24}$
+  & preserves $\LL$, does NOT preserve $\star$ \\
+$\sigma$ applied to each block
+  & does NOT preserve $\LL$ \\
+\bottomrule
+\end{tabular}
+\medskip
+
+\noindent
+The first two candidates generate $S_3$: a 3-cycle and a
+transposition on $\{1, 2, 3\}$ together generate the full $S_3$.
+Hence every $S_3$ permutation of the three octonion blocks is in
+$\Aut(\LL, +, \star)$.
+
+\subsection*{Why this is more than ``$\ZZ_3$-symmetric''}
+
+The paper's title and the definition of $\star$ both emphasise the
+$\ZZ_3$ routing: same multiplication in all three blocks, with a
+cyclic $\ZZ_3$ routing of cross-block products.  But $\ZZ_3$ is
+only the cyclic group of order three; the empirical finding here
+is that the construction is symmetric under the full $S_3$,
+which is generated by the cyclic $\ZZ_3$ plus any single
+block-transposition.
+
+In other words, the $\ZZ_3$ routing on the right-hand side of
+Definition 3.3 is consistent with a stronger $S_3$ symmetry of the
+resulting bilinear product on $\RR^{24}$.  This is empirically
+visible only by checking a block-transposition explicitly (a
+$\ZZ_3$-symmetry argument from the definition alone gives only the
+3-cycle).
+
+\subsection*{Bonus: strict subgroup of $\Co_0$}
+
+The same probe also records:
+\begin{itemize}
+\item $-I_{24} \in \Co_0 \setminus \Aut(\LL, +, \star)$: the
+  componentwise negation lies in the Conway group $\Co_0$
+  (preserves $\LL$), but does not preserve $\star$ (since
+  $\star$ is bilinear, $-I_{24}(u) \star -I_{24}(v) = u \star v$,
+  whereas $-I_{24}$ acting on the result of $u \star v$ would give
+  $-(u \star v)$; the two disagree unless $u \star v = 0$).
+\item Therefore $\Aut(\LL, +, \star) \subsetneq \Co_0$ is a
+  \emph{strict} inclusion.
+\end{itemize}
+
+This is consistent with the paper's \S7 open question on the
+automorphism group of $(\LL, +, \star)$: the question is still
+genuinely open, but the bound from below has improved (a copy of
+$S_3$ inside $\Aut$ rather than only $\ZZ_3$) and the bound from
+above has improved (strict inclusion $\Aut(\LL,+,\star) \subsetneq
+\Co_0$).
+
+\subsection*{Proposed handling}
+
+\begin{enumerate}
+\item Note the $S_3$ symmetry in v4's \S6 ``\textbf{Comparison.}''
+  paragraph, which currently says ``the cross-block $\ZZ_3$
+  symmetry is supplied by the routing of Definition 3.3
+  rather than by the octonion product itself'' -- replace ``$\ZZ_3$''
+  with ``$S_3$'' (or ``$S_3$ extending the $\ZZ_3$ routing'').
+\item Alternatively (or in addition), add a one-line remark at the
+  end of \S3 noting that the routing in Definition 3.3 induces an
+  $S_3$ symmetry on the three blocks, verified empirically.
+\item Update \S7's bullet on the automorphism group to record
+  $\Aut(\LL, +, \star) \supseteq S_3$ (block permutations) and
+  $\Aut(\LL, +, \star) \subsetneq \Co_0$ (strict inclusion from
+  $-I_{24}$).
+\end{enumerate}
+
+No retitling is needed: the paper's title ``$\ZZ_3$-symmetric
+triple-octonion product'' refers to the $\ZZ_3$ routing rule used
+to \emph{define} the product, not to the full symmetry of the
+resulting object.  $\ZZ_3$ in the title remains accurate as a
+description of the construction.
+
+% ===================================================================
+\section*{Cross-references}
+% ===================================================================
+
+\begin{itemize}
+\item Main paper: \texttt{paper/main.tex} (v4, frozen 25 May 2026
+  at \texttt{paper/main\_2026-05-25.tex}).
+\item v3 $\to$ v4 changelog: \texttt{paper/v3\_to\_v4\_summary.md}.
+\item $S_3$ probe script:
+  \texttt{python\_project/src/probe\_aut\_lambda\_star.py}.
+\item Petersson 2018 (URL preserved in v4 bibliography):
+  \texttt{https://www.fernuni-hagen.de/mi/fakultaet/emeriti/docs/petersson/ass.-rem.-int.-oct.pdf}.
+\end{itemize}
+
+\end{document}

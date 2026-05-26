@@ -1,0 +1,64 @@
+Prompt 191 -- Dangling Petersson + S_3 symmetry check; write update brief
+Date: 2026-05-26
+
+User:
+1. Petersson2018 reference is dangling in paper. Add to end of §2.2
+   paragraph and somewhere in Appendix B.
+2. Check whether the triple-octonion construction is S_3-symmetric
+   (not just Z_3-symmetric).
+3. Don't update the main paper yet; write an update_brief_... TeX
+   paper that references the v4 date and notes both findings.
+
+For (1): confirmed Petersson2018 is in bibliography (L1612) but has
+no \cite in the body. The reference doc background_octonions.txt
+records his lecture as the key modern account of the integral-
+octonion history -- the chain that led to clarifying that Kirmse's
+error sits among other contributions, and that Dickson predates
+both.
+
+For (2): need to re-run probe_aut_lambda_star.py to confirm S_3.
+Earlier (prompt 146) the test found block-swap (1↔2) preserves ⋆
+in addition to Z_3 cyclic; that's S_3 of block permutations.
+Need to re-confirm and write up.
+
+For (3): the brief will be named, e.g.,
+paper/update_brief_2026-05-25_v4.tex (dated 2026-05-26).
+
+Done. Wrote paper/update_brief_2026-05-25_v4.tex (3-page PDF).
+
+Findings recorded in the brief:
+
+(1) Petersson 2018 reference:
+    - Confirmed dangling: only in bibitem (L1612 of main.tex), no
+      \cite in body.
+    - Proposed insertions:
+      * §2.2 (end of paragraph): "...; for a modern survey of the
+        integral-octonion history, see Petersson [Petersson2018]."
+      * Appendix B Kirmse paragraph: parenthetical crediting
+        Petersson for the fair-attribution stance.
+      * (Alt) Appendix B opening, as a pointer to the modern
+        source from which this project first traced the chain.
+    - Significance: Petersson's 2018 lecture is the modern link
+      that brings the 1923-1946 chain into present. It's the source
+      from which this project's stance on Kirmse (fair attribution)
+      derives.
+
+(2) S_3 symmetry of the triple product:
+    - Re-ran probe_aut_lambda_star.py: confirmed Z_3 cyclic and
+      block transposition (1↔2) both preserve Λ AND ⋆.
+    - These two together generate S_3 on {1, 2, 3}. So all S_3
+      permutations of the three blocks are in Aut(Λ, +, ⋆).
+    - Bonus: -I_24 ∈ Co_0 but ∉ Aut(Λ, +, ⋆), so the inclusion
+      Aut(Λ, +, ⋆) ⊆ Co_0 is strict.
+    - Proposed handling (NO retitling needed; title's "Z_3-symmetric"
+      refers to the routing rule, not the full symmetry):
+      * §6 "Comparison" paragraph: replace "cross-block Z_3 symmetry"
+        with "cross-block S_3 symmetry".
+      * Or add a one-line §3 remark.
+      * Update §7's automorphism-group bullet: S_3 ⊆ Aut ⊊ Co_0.
+
+The brief is FOR v4 frozen 25 May 2026, dated 26 May 2026. Main
+paper is NOT updated; brief stands as the record of these two
+findings to be folded into a future revision.
+
+Status: CLOSED.

@@ -1,0 +1,56 @@
+Prompt 192 -- Brief: add Kirmse extras + spell out cross-references
+Date: 2026-05-26
+
+User: "When I read the Kirmse 1924 paper, I also think his
+contribution of developing an ideal theory on the E_8 lattice is
+underappreciated; and I like how he takes algebra alternativity as a
+building block (something that could be explored in itself, or
+generalized methodically). Add this to the update brief as well. -- A
+technical remark: The cross-references from the update brief into the
+main paper need to be spelled-out; the external paper's keys cannot
+be used."
+
+Done.
+
+Technical fix:
+- All \cite{Coxeter1946, ConwaySmith2003} and \cite{Petersson2018}
+  inside quoted "proposed insert" text changed to spelled-out form
+  ("Coxeter 1946 and Conway--Smith 2003", "Petersson (2018)").
+- \ref{def:triple} in §3 (S_3 section) changed to "Definition 3.3"
+  (the actual rendered number in v4 main.tex).
+
+New §2 added: "Kirmse 1924 -- two further contributions worth
+crediting". Covers:
+
+(a) Nascent ideal theory on the E_8 lattice. Kirmse develops an
+    ideal-theoretic treatment of integral octonions, an early
+    substantive companion contribution to the multiplicative-
+    closure question; first such development on an E_8-type
+    lattice. Mahler 1942 takes up this line again later with the
+    Euclidean property and principal-ideal theorem, but Kirmse's
+    earlier work in this direction is underrepresented in v4's
+    Kirmse paragraph.
+
+(b) Algebra alternativity as foundational building block. Kirmse
+    methodically takes alternativity as a basic axiom (not derived
+    from full associativity), suggesting a programme of replacing
+    associativity by alternativity at the foundation of integral-
+    octonion arithmetic. This anticipates the structural role
+    alternativity plays in Cayley--Dickson algebras and their
+    integral arithmetic in later literature.
+
+Proposed draft sentence for v4 Appendix B Kirmse paragraph
+(supplied in the brief):
+
+  "Kirmse also develops an ideal-theoretic treatment of the
+   integral octonions -- a substantive companion contribution that
+   is taken up again in Mahler (1942) -- and methodically takes
+   algebra alternativity as a foundational constraint, anticipating
+   the structural role alternativity plays in later integral-
+   octonion arithmetic."
+
+Renumbering: S_3 section is now §3 (was §2).
+
+Brief now 3 pages still (some white space). Builds clean.
+
+Status: CLOSED.
