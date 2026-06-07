@@ -1,0 +1,32 @@
+Prompt 195 -- Remove verification-script reference from §7 Aut bullet
+Date: 2026-06-07
+
+User: "In the main paper, remove ' (verification: python_project/src/
+probe_aut_lambda_star.py)'. Too detailed, they can always look in the
+repo or ask me. The word 'empirically' is already enough for a
+mathematician to probably want to figure it out symbolically by
+themselves anyway, which is all I can contribute anyway."
+
+Done.
+
+Edit:
+  Before: "Empirically (verification: python_project/src/probe_aut_
+           lambda_star.py), S_3 ⊆ Aut(Λ, +, ⋆) ⊊ Co_0: the
+           block-permutation S_3 acts..."
+  After:  "Empirically, S_3 ⊆ Aut(Λ, +, ⋆) ⊊ Co_0: the
+           block-permutation S_3 acts..."
+
+Page count unchanged at 20.
+
+Changelog updated:
+- Summary item 3: "pointer to probe_aut_lambda_star.py" clause
+  removed.
+- Per-change record (Change 3) "What changed" rewritten with
+  cleaner reasoning (witness now -I_24 ∈ Co_0 doesn't preserve ⋆,
+  matching paper wording).
+- Verification paragraph: trailing sentence about probe_aut_lambda_
+  star.py removed.
+
+v5 snapshot re-frozen at paper/main_2026-06-07.tex.
+
+Status: CLOSED.

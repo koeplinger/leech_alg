@@ -1,0 +1,24 @@
+Prompt 196 -- Acknowledge Holger P. Petersson in alphabetical order
+Date: 2026-06-07
+
+User: "Acknowledge Holger P. Petersson also (in alphabetical order)"
+
+Done. Acknowledgments now read:
+  "The author thanks Matthew Barley, Geoffrey M. Dixon, Holger P.
+   Petersson, Petr Vojtěchovský, and Robert A. Wilson for valuable
+   discussion, advice, feedback, and corrections."
+
+Alphabetical by last name: Barley (B), Dixon (D), Petersson (P) - new,
+Vojtěchovský (V), Wilson (W).
+
+Paper rebuilds clean at 20 pages.
+
+v5 snapshot re-frozen at paper/main_2026-06-07.tex.
+
+Changelog updated:
+- Summary list extended: Change 6 (Acknowledgments Petersson);
+  mechanical renumbered to Change 7.
+- Per-change record gains Change 6 with rationale linking to
+  Change 1 (Petersson cite restored).
+
+Status: CLOSED.

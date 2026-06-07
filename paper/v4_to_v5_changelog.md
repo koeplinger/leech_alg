@@ -12,10 +12,11 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 1. §2.2 — Petersson 2018 survey cited at the end of the integral-octonion-history sentence.
 2. §6 — "cross-block $\mathbb{Z}_3$ symmetry" replaced by "cross-block $S_3$ extending the $\mathbb{Z}_3$ routing".
-3. §7 — Automorphism-group bullet extended with the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ and a pointer to `probe_aut_lambda_star.py`.
+3. §7 — Automorphism-group bullet extended with the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$.
 4. Appendix B — Kirmse paragraph extended with one sentence on his ideal-theoretic treatment and the alternativity context picked up by Mahler.
 5. §8 — Outlook physics paragraph: "$S_3$ symmetry" added to the list of structural themes; Gresnigt–Gourlay–Varma 2023 (*Eur. Phys. J. C* 83 (2023), 747) added to the cite list with sorting by year of publication.
-6. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
+6. Acknowledgments — Holger P. Petersson added in alphabetical order.
+7. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
 
 ---
 
@@ -35,8 +36,8 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 ### Change 3 — §7 automorphism-group bullet extended
 
-- **What changed.** The bullet listing the open question on $\mathrm{Aut}(\Lambda,+,\star)$ now records the empirical containment $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ with the reasoning ($S_3$ from Change 2 above; strict inclusion in $\mathrm{Co}_0$ because $\star$ is not $\mathrm{Co}_0$-invariant) and points to `probe_aut_lambda_star.py` for the exact-arithmetic check.
-- **Where.** §7 conclusion, lines 806–812 of [paper/main.tex](main.tex).
+- **What changed.** The bullet listing the open question on $\mathrm{Aut}(\Lambda,+,\star)$ now records the empirical containment $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ with the reasoning ($S_3$ from Change 2 above; strict inclusion in $\mathrm{Co}_0$ because $-I_{24} \in \mathrm{Co}_0$ does not preserve $\star$).
+- **Where.** §7 conclusion, the bullet on $\mathrm{Aut}(\Lambda,+,\star)$.
 - **Rationale.** Update brief item 3 asked for the bound to be stated explicitly so readers can see what is and is not known before the question is posed.
 
 ### Change 4 — Appendix B Kirmse paragraph
@@ -51,7 +52,13 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 - **Where.** §8 outlook physics paragraph (sole-sentence paragraph after §8.1); new bibitem inserted in alphabetical order between FureyHughes 2025 and Hall 2019 in the bibliography.
 - **Rationale.** Change 3 establishes $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star)$; the Gresnigt–Gourlay–Varma 2023 paper is the closest physics-side reference using $S_3$ as a family-symmetry organising principle on a Cayley–Dickson algebra, and naturally belongs in the outlook list alongside the existing normed-division-algebra and triality references.
 
-### Change 6 — Mechanical preamble and subtitle
+### Change 6 — Acknowledgments: Holger P. Petersson added
+
+- **What changed.** The acknowledgments list now reads "Matthew Barley, Geoffrey M. Dixon, **Holger P. Petersson**, Petr Vojtěchovský, and Robert A. Wilson" — Petersson inserted in alphabetical order.
+- **Where.** §Acknowledgments of [paper/main.tex](main.tex).
+- **Rationale.** Petersson is the modern source whose 2018 lecture established the project's stance on Kirmse and the chain of 1923–1946 contributions; the citation added in Change 1 puts him in the bibliography, and the acknowledgment recognises his off-paper input alongside the other named collaborators.
+
+### Change 7 — Mechanical preamble and subtitle
 
 - **What changed.** Subtitle "25 May 2026 (v4)" → "7 June 2026 (v5)"; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble.
 - **Where.** Preamble line 70, title block line 75 of [paper/main.tex](main.tex).
@@ -67,7 +74,7 @@ Page count: v4 = 19, v5 = 20. The single added page is absorbed by the §7 bulle
 
 ## Verification
 
-The four content edits driven by the update brief were checked against the wording of the brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. An independent diff of [paper/main_2026-05-25.tex](main_2026-05-25.tex) against [paper/main.tex](main.tex) returned six hunks, all six classified as user-requested; no unintended differences were detected. Change 5 (Gresnigt–Gourlay–Varma 2023 plus the "$S_3$ symmetry" token in the §8 list) is a subsequent same-day addition, web-verified against arXiv:2306.13098 (Eur. Phys. J. C **83** (2023), 747) before insertion. The `probe_aut_lambda_star.py` reference added in Change 3 is a working script in the project's probe set.
+The four content edits driven by the update brief were checked against the wording of the brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. An independent diff of [paper/main_2026-05-25.tex](main_2026-05-25.tex) against [paper/main.tex](main.tex) returned six hunks, all six classified as user-requested; no unintended differences were detected. Change 5 (Gresnigt–Gourlay–Varma 2023 plus the "$S_3$ symmetry" token in the §8 list) is a subsequent same-day addition, web-verified against arXiv:2306.13098 (Eur. Phys. J. C **83** (2023), 747) before insertion.
 
 ---
 
