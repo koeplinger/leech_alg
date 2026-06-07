@@ -247,10 +247,11 @@ left factor. $L\bar s$ is therefore a $\ZZ$-subgroup of~$L$, and
 is moreover closed under left-multiplication by~$L$ (Wilson's
 condition~(2) for the untwisted product, implicit in the sublattice
 argument). For~$Ls$, the subgroup
-property is likewise immediate from $s \in L$. Closure under
-left-multiplication by~$L$, by contrast, holds for~$L\bar s$ but
-\emph{fails} for~$Ls$ -- and that failure is precisely the
-obstruction resolved in this paper (Remark~\ref{rem:Ls-not-closed}).}
+property is likewise immediate from $s \in L$.  Unlike~$L\bar s$,
+the sublattice~$Ls$ is not closed under the octonion product
+itself ($Ls \cdot Ls \not\subseteq Ls$) -- and that failure is
+precisely the obstruction resolved in this paper
+(Remark~\ref{rem:Ls-not-closed}).}
 with
 $[L : L\bar{s}] = [L : Ls] = 16$,
 $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$.
@@ -583,7 +584,7 @@ Flexibility $(x\star y)\star x = x\star(y\star x)$ & No &
   $(8.37 \pm 0.028)\%$ \\
 Cube power-associativity $x^2\star x = x\star x^2$ & No &
   $(30.70 \pm 0.046)\%$ \\
-Power-associativity & No &
+Quartic power-associativity & No &
   $(12.75 \pm 0.033)\%$ \\
 Symmetric composition $\langle u\star v, w\rangle =
   \langle u, v\star w\rangle$ & No &
@@ -701,9 +702,10 @@ Definition~\ref{def:triple} rather than by the octonion product
 itself: Dixon's XY-product
 \cite{Dixon1995, Dixon2010} is a useful device for describing each
 $E_8$ block, but it is not in itself $\ZZ_3$-symmetric across the
-three factors.  Whether $\Sigma(\LL)$ overlaps with one of the
-embeddings catalogued by Egan, or sits outside that family, is a
-question this paper does not address.
+three factors.  Whether the Leech embedding $\sigma(\LL) \subset
+\OO^3$ obtained by applying $\sigma$ block-wise overlaps with one of
+the embeddings catalogued by Egan, or sits outside that family, is
+a question this paper does not address.
 
 \textbf{Anatomy of the Baez--Egan closure on $\LL$.}  Egan and
 Baez's closure is on the ambient 27-dimensional lattice
@@ -1604,17 +1606,17 @@ J.~Lepowsky and A.~Meurman,
 \emph{An\/ $E_8$-approach to the Leech lattice and the Conway group},
 J.~Algebra \textbf{77} (1982), no.~2, 484--504.
 
+\bibitem[Mahler1942]{Mahler1942}
+K.~Mahler,
+\emph{On ideals in the Cayley--Dickson algebra},
+Proc.\ Roy.\ Irish Acad.\ Sect.\ A \textbf{48} (1942), 123--133.
+
 \bibitem[MarraniCorradettiZucconi2025]{MarraniCorradettiZucconi2025}
 A.~Marrani, D.~Corradetti, and F.~Zucconi,
 \emph{Physics with non-unital algebras? An invitation to the Okubo
 algebra},
 J.\ Phys.\ A: Math.\ Theor.\ \textbf{58} (2025), 075202.
 \href{https://arxiv.org/abs/2309.17435}{arXiv:2309.17435}.
-
-\bibitem[Mahler1942]{Mahler1942}
-K.~Mahler,
-\emph{On ideals in the Cayley--Dickson algebra},
-Proc.\ Roy.\ Irish Acad.\ Sect.\ A \textbf{48} (1942), 123--133.
 
 \bibitem[Okubo1995\_Book]{Okubo1995_Book}
 S.~Okubo,
@@ -1623,16 +1625,16 @@ Physics},
 Montroll Memorial Lecture Series in Mathematical Physics, vol.~2,
 Cambridge University Press, Cambridge, 1995.
 
-\bibitem[SmithVojtechovsky2022]{SmithVojtechovsky2022}
-J.\,D.\,H.~Smith and P.~Vojt\v{e}chovsk\'y,
-\emph{Okubo quasigroups},
-Doc.\ Math.\ \textbf{27} (2022), 535--580.
-
 \bibitem[Petersson2018]{Petersson2018}
 H.\,P.~Petersson,
 \emph{Integral octonions},
 Lecture, M\'alaga Workshop on Non-Associative Algebras, 2018.
 \url{https://www.fernuni-hagen.de/mi/fakultaet/emeriti/docs/petersson/ass.-rem.-int.-oct.pdf}.
+
+\bibitem[SmithVojtechovsky2022]{SmithVojtechovsky2022}
+J.\,D.\,H.~Smith and P.~Vojt\v{e}chovsk\'y,
+\emph{Okubo quasigroups},
+Doc.\ Math.\ \textbf{27} (2022), 535--580.
 
 \bibitem[Wilson2009]{Wilson2009}
 R.\,A.~Wilson,
@@ -1640,7 +1642,7 @@ R.\,A.~Wilson,
 J.~Algebra \textbf{322} (2009), 2186--2190.
 
 \bibitem[repo]{repo}
-J.~Koeplinger,
+J.~K\"oplinger,
 \emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product: research repository},
 \url{https://bitbucket.org/jenskoeplinger/leech_alg} (primary),

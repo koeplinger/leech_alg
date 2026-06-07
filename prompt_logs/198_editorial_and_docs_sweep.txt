@@ -1,0 +1,75 @@
+Prompt 198 -- Editorial sweep against paper + documentation sweep against project
+Date: 2026-06-07
+
+User: "do an editorial sweep against the paper, and a documentation
+sweep against the project"
+
+Ultracode mode: run a workflow with parallel verification agents
+against the v5 paper and the live project docs, then synthesize
+findings into actionable lists.
+
+Workflow design:
+- Phase 1 "Paper editorial sweep" (parallel):
+  - A: editorial standards (en-dash, em-dash, vocabulary)
+  - B: cross-references resolve (\ref, \cite)
+  - C: bibliography consistency (author format, journals)
+  - D: prose end-to-end (clarity, redundancy, stale framings)
+  - E: numerical/factual claims (pages, key numbers)
+- Phase 2 "Documentation sweep" (parallel):
+  - F: CURRENT_STATE.md vs v5
+  - G: README.md vs v5
+  - H: editorial_standards.md
+  - I: 2026-05-22_plan.md
+  - J: terminology.md, research_result.md, research_statement.md
+- Phase 3: Synthesize all findings into one structured report
+
+Then: apply fixes (small ones inline; large ones reported to user
+for decision).
+
+Workflow result: 45 findings across 10 sources, 7 required, 0 unintended
+diff hunks. Full report at:
+paper/reviews/2026-06-07_claude_opus_4_7_editorial_and_docs_sweep.md
+
+Applied inline (required fixes):
+1. Bibliography: Mahler1942 moved above MarraniCorradettiZucconi2025
+   (alphabetical).
+2. Bibliography: Petersson2018 moved above SmithVojtechovsky2022
+   (alphabetical).
+3. Bibliography: "J. Koeplinger" -> "J. K\"oplinger" in repo bibitem
+   (consistency with Koeplinger2023 and \author{}).
+4. §6 Comparison: $\Sigma(\LL)$ (undefined since rem:two-framings
+   removal in prompt 181) replaced with concrete "the Leech embedding
+   σ(Λ) ⊂ O^3 obtained by applying σ block-wise".
+5. §2.3 footnote: rewrote the obstruction misstatement. Was: "Closure
+   under left-multiplication by L holds for L̄s but fails for Ls". Now:
+   "Unlike L̄s, the sublattice Ls is not closed under the octonion
+   product itself (Ls·Ls ⊄ Ls)". Matches the bilinear-closure
+   statement Lemma 4.4 mod L resolves.
+6. §5 table: "Power-associativity" row relabeled to "Quartic
+   power-associativity" (matching the prose).
+7. CURRENT_STATE.md L3: "Last updated" 2026-05-23 -> 2026-06-07.
+8. terminology.md: "Last updated" 2026-05-23 -> 2026-06-07, "main
+   paper v4" -> "main paper v5".
+9. research_result.md: "Last updated" 2026-05-23 -> 2026-06-07,
+   "completed for v4" -> "completed for v4 and unchanged in v5".
+10. 2026-05-22_plan.md: added "Revision 5 (2026-06-07): v5 minimal
+    revision released..." line.
+
+Paper rebuilds clean at 19 pages.
+v5 snapshot re-frozen at paper/main_2026-06-07.tex.
+
+Not applied (reported to user for decision; see message body):
+- "octonion product" vs "octonion multiplication" consistency (4
+  spots).
+- Coxeter--Bruck vs Kirmse--Bruck--Coxeter ordering consistency.
+- Redundant 627-630 paragraph after §5 table.
+- §1 intro vagueness ("such that inclusion holds", "three octonion
+  factors").
+- §1 not previewing Witt decomposition (abstract does).
+- §6 Comparison S_3 phrasing minor awkwardness.
+- §7 last open-question bullet not pointing to Remark 4.9.
+- Test count mismatch in CURRENT_STATE (197 vs 157).
+- 2026-05-22_plan stale v3-era second paragraph.
+
+Status: CLOSED for required items; recommended items reported for
+user decision.

@@ -344,5 +344,5 @@ than the Wilson-condition-3 failure of the triple octonion product.
 
 ---
 
-Last updated: 2026-05-23 (σ-on-L statement corrected to match main paper v4
+Last updated: 2026-06-07 (σ-on-L statement corrected to match main paper v5
 Lemma 4.1; Kirmse-twist section synthesised from primary sources)

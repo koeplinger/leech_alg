@@ -94,5 +94,6 @@ is not norm-multiplicative.
 
 ---
 
-Last updated: 2026-05-23 (verification table extended with the symbolic
-proof and the §5 N=10⁶ algebraic-properties test, both completed for v4)
+Last updated: 2026-06-07 (verification table extended with the symbolic
+proof and the §5 N=10⁶ algebraic-properties test, completed for v4 and
+unchanged in v5)

@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-05-23
+Last updated: 2026-06-07
 
 This document is the entry point for anyone continuing this research — human or
 AI, with or without prior context.  It summarises what has been established,
