@@ -62,14 +62,14 @@ change for the reader if it were deleted. A sentence whose deletion
 costs the reader nothing checkable is vague; cut it or make it
 concrete.
 
-## Note on `paper/main.tex` (v4 frozen)
+## Note on `paper/main.tex` (current at v5)
 
 The main manuscript at the date these standards were adopted was frozen
-v3 (29 April 2026). Standards were applied prospectively to the v4
-revision and are reflected in v4 (frozen 25 May 2026), now the current
-released state of the paper. The frozen source is preserved at
-`paper/main_2026-05-25.tex`; `paper/main.tex` continues as the working
-source for any subsequent revision. A top-level summary of v3 → v4
-differences is in `paper/v3_to_v4_summary.md`. The standards were not
-retroactively enforced on v3; the dash convention and other v3/v4
-differences were resolved during v4 assembly.
+v3 (29 April 2026). Standards were applied prospectively to v4 (frozen
+25 May 2026, `paper/main_2026-05-25.tex`), and to the v5 minimal
+revision (dated 7 June 2026, `paper/main_2026-06-07.tex`). v5 is the
+current released state. `paper/main.tex` continues as the working
+source for any subsequent revision. Top-level changelogs:
+`paper/v3_to_v4_summary.md` and `paper/v4_to_v5_changelog.md`. The
+standards were not retroactively enforced on v3; the dash convention
+and other v3/v4 differences were resolved during v4 assembly.

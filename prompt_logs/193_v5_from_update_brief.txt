@@ -1,0 +1,84 @@
+Prompt 193 -- v4 -> v5: incorporate update brief 2026-05-25 in minimal fashion
+Date: 2026-06-07
+
+User: "Today is 7 June 2026. Make a new version (v5) of the main
+paper by incorporating the update brief from May 25 in minimal
+fashion:
+- §2.2 end of paragraph: append '; for a modern survey of the
+  integral-octonion history, see Petersson [Petersson2018]' after
+  the existing Coxeter/Conway-Smith citation.
+- §6 'Comparison' paragraph: replace 'cross-block Z_3 symmetry'
+  with 'S_3 extending the Z_3 routing'.
+- §7 automorphism-group bullet: record S_3 ⊆ Aut(Λ, +, ⋆) ⊊ Co_0.
+- add to Appendix B Kirmse paragraph: 'Kirmse also develops an
+  ideal-theoretic treatment of the integral octonions — a
+  substantive companion contribution that is taken up again in
+  Mahler (1942) — and methodically takes algebra alternativity as
+  a foundational constraint, anticipating the structural role
+  alternativity plays in later integral-octonion arithmetic.'
+
+Next to updating the main paper, also make a dated revision change
+log (since the paper is currently undergoing review, I may need to
+provide the concise differences between v4 and v5 if there's
+acceptance with revisions)."
+
+Ultracode mode: apply edits inline (precision), then run
+adversarial-verification workflow + changelog generation in
+parallel agents.
+
+Plan:
+1. Find + apply 4 edits inline.
+2. Bump subtitle 25 May 2026 (v4) -> 7 June 2026 (v5).
+3. Build PDF.
+4. Workflow: 4 verifiers (parallel) + changelog writer.
+5. Freeze v5 source as paper/main_2026-06-07.tex.
+6. Update CURRENT_STATE.md, README.md, editorial_standards.md, plan.
+7. Close prompt.
+
+Done.
+
+Edits applied inline (sequential, Edit tool):
+1. §2.2 (L227-228): appended "; for a modern survey of the
+   integral-octonion history, see Petersson~\cite{Petersson2018}."
+   to the existing Coxeter/Conway-Smith citation. Resolves the
+   dangling Petersson2018 reference.
+2. §6 "Comparison" (L698-701): "the cross-block Z_3 symmetry" ->
+   "the cross-block S_3 extending the Z_3 routing".
+3. §7 (L805-811): automorphism-group bullet extended with empirical
+   bound S_3 ⊆ Aut(Λ, +, ⋆) ⊊ Co_0, witness (-I_24 ∈ Co_0 doesn't
+   preserve ⋆), pointer to probe_aut_lambda_star.py. Required
+   \DeclareMathOperator{\Aut}{Aut} added to preamble (L70).
+4. Appendix B Kirmse paragraph (L1357-1362): appended one sentence
+   on ideal-theoretic treatment + alternativity as foundational
+   building block.
+
+Mechanical:
+- Subtitle bump (L75): "25 May 2026 (v4)" -> "7 June 2026 (v5)".
+- Page count: 19 -> 20 (the +1 page is absorbed by the §7 bullet
+  expansion; §2.2/§6/Appendix B each grow by one sentence without
+  reflow at page level).
+
+Workflow run (adversarial verification + changelog):
+- 4 parallel verifier agents confirmed each edit landed verbatim
+  (em-dashes in user request rendered as LaTeX en-dashes "--", per
+  editorial standard).
+- Independent diff of v4 vs v5: 6 hunks, all classified as
+  user-requested (4 content edits + subtitle + \Aut). No
+  unintended differences.
+- Changelog writer agent produced paper/v4_to_v5_changelog.md
+  (1.5 page; journal-editor-suitable revision response).
+
+Freeze + docs:
+- paper/main_2026-06-07.tex: v5 frozen source snapshot.
+- CURRENT_STATE.md: §2 updated to record v5 dated 7 June 2026, page
+  count 20, frozen-source path, v4 and v5 changelog paths.
+- README.md: "finished write-up" sentence updated to v5; v4 still
+  pointed to.
+- evidence_and_reasoning/editorial_standards.md: "Note on
+  paper/main.tex" now says "(current at v5)" with both frozen-source
+  paths and both changelog paths.
+- evidence_and_reasoning/2026-05-22_plan.md: status updated to
+  2026-06-07, v5 frozen, both changelogs cited, update brief items
+  named.
+
+Status: CLOSED.
