@@ -14,7 +14,8 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 2. §6 — "cross-block $\mathbb{Z}_3$ symmetry" replaced by "cross-block $S_3$ extending the $\mathbb{Z}_3$ routing".
 3. §7 — Automorphism-group bullet extended with the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ and a pointer to `probe_aut_lambda_star.py`.
 4. Appendix B — Kirmse paragraph extended with one sentence on his ideal-theoretic treatment and the alternativity context picked up by Mahler.
-5. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
+5. §8 — Outlook physics paragraph: "$S_3$ symmetry" added to the list of structural themes; Gresnigt–Gourlay–Varma 2023 (*Eur. Phys. J. C* 83 (2023), 747) added to the cite list with sorting by year of publication.
+6. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
 
 ---
 
@@ -44,7 +45,13 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 - **Where.** Appendix B (Historical note), lines 1357–1362 of [paper/main.tex](main.tex).
 - **Rationale.** Update brief item 4, in line with the fair-attribution standard adopted during v4: record positive contributions alongside the $J_1$ closure error.
 
-### Change 5 — Mechanical preamble and subtitle
+### Change 5 — §8 outlook: $S_3$ symmetry token and Gresnigt 2023 citation
+
+- **What changed.** The §8 outlook physics paragraph now reads "physics on normed-division-algebra, triality, $S_3$ symmetry, or symmetric-composition-algebra structures" (the inserted item being "$S_3$ symmetry"), and the accompanying citation list now sorts the four physics references by year of publication and adds the new one: Gresnigt–Gourlay–Varma 2023 — *Three generations of colored fermions with $S_3$ family symmetry from Cayley–Dickson sedenions*, Eur. Phys. J. C **83** (2023), 747 (arXiv:2306.13098).
+- **Where.** §8 outlook physics paragraph (sole-sentence paragraph after §8.1); new bibitem inserted in alphabetical order between FureyHughes 2025 and Hall 2019 in the bibliography.
+- **Rationale.** Change 3 establishes $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star)$; the Gresnigt–Gourlay–Varma 2023 paper is the closest physics-side reference using $S_3$ as a family-symmetry organising principle on a Cayley–Dickson algebra, and naturally belongs in the outlook list alongside the existing normed-division-algebra and triality references.
+
+### Change 6 — Mechanical preamble and subtitle
 
 - **What changed.** Subtitle "25 May 2026 (v4)" → "7 June 2026 (v5)"; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble.
 - **Where.** Preamble line 70, title block line 75 of [paper/main.tex](main.tex).
@@ -54,13 +61,13 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 ## Page count and structural impact
 
-Page count: v4 = 19, v5 = 20. The single added page is absorbed by the §7 bullet expansion (Change 3); §2.2, §6, and Appendix B each grow by one short sentence and produce no reflow at the page level. No sections were added, removed, renumbered, or reordered. The bibliography, figure/table inventory, theorem and lemma numbering, and cross-references are unchanged.
+Page count: v4 = 19, v5 = 20. The single added page is absorbed by the §7 bullet expansion (Change 3); §2.2, §6, §8, and Appendix B each grow by one short sentence and produce no reflow at the page level. No sections were added, removed, renumbered, or reordered. The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are unchanged.
 
 ---
 
 ## Verification
 
-The four content edits were checked against the wording of the update brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. An independent diff of [paper/main_2026-05-25.tex](main_2026-05-25.tex) against [paper/main.tex](main.tex) returned six hunks, all six classified as user-requested; no unintended differences were detected. The `probe_aut_lambda_star.py` reference added in Change 3 is a working script in the project's probe set.
+The four content edits driven by the update brief were checked against the wording of the brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. An independent diff of [paper/main_2026-05-25.tex](main_2026-05-25.tex) against [paper/main.tex](main.tex) returned six hunks, all six classified as user-requested; no unintended differences were detected. Change 5 (Gresnigt–Gourlay–Varma 2023 plus the "$S_3$ symmetry" token in the §8 list) is a subsequent same-day addition, web-verified against arXiv:2306.13098 (Eur. Phys. J. C **83** (2023), 747) before insertion. The `probe_aut_lambda_star.py` reference added in Change 3 is a working script in the project's probe set.
 
 ---
 
