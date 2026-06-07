@@ -1,0 +1,132 @@
+Prompt 199 -- Documentation consistency sweep across the project
+Date: 2026-06-07
+
+User: "Leave them open for now, I'd like to collect more outside
+feedback first before making revisions that are not strictly broken.
+-- Make a documentation consistency sweep across this project."
+
+The recent editorial sweep (prompt 198) covered:
+- CURRENT_STATE.md (touched: header date)
+- README.md (verified clean)
+- editorial_standards.md (verified clean)
+- 2026-05-22_plan.md (touched: Revision 5 line)
+- terminology.md (touched: date + v4->v5)
+- research_result.md (touched: date + v4->v5)
+- research_statement.md (verified)
+- paper/main.tex (multiple fixes)
+
+This new sweep focuses on documents NOT covered by that pass:
+- evidence_and_reasoning/references/*.txt (6 reference files)
+- evidence_and_reasoning/key_claims/*.txt (esp. 008 forward-correction)
+- evidence_and_reasoning/README.md
+- prompt_logs/README.md
+- gap_project/README.md
+- paper/v4_to_v5_changelog.md (verify post-fix accuracy)
+- paper/v3_to_v4_summary.md
+- Frozen-date paper artifacts (companion, historical_appendix*,
+  hermes supplement, Baez-Egan addendum, kirmse exposition,
+  update briefs)
+
+Workflow: parallel agents check each cluster; report findings;
+apply small fixes inline; leave decisions on bigger items to user.
+
+Workflow returned 36 findings across 5 clusters, 11 marked required.
+Full report at paper/reviews/2026-06-07_claude_opus_4_7_docs_consistency_sweep_post_v5.md.
+
+Applied inline (live docs only):
+
+1. CURRENT_STATE.md L54: trial filename fixed
+   "trial_007_triple_octonion_swap.py" -> "trial_007_kirmse_twist.py"
+   (file at first name doesn't exist; the canonical script is the
+   second name, which README.md already cites correctly).
+
+2. CURRENT_STATE.md L472: repository-map test count
+   "157 tests" -> "197 tests" (matches prose at L161 and actual
+   pytest count).
+
+3. gap_project/README.md paper cross-references (multiple stale
+   v3/v4 numberings):
+   - "Theorem 1.2" -> "Theorem 1.1" (3 places; the main theorem is
+     thm:main = 1.1 in v5).
+   - "Definition 2.4" -> "Definition 2.1" (def:wilson-leech is 2.1
+     in v5; def has no preceding theorem-env in §2).
+   - "Definition 3.1, Prop. 3.2" reworded -> "Definitions 3.1, 3.2 -
+     Transposition and sigma-twisted product" (Prop 3.2 was removed
+     in v4 §3 restructure; the algebra-iso identity is now stated
+     as immediate consequence in Def 3.2's prose).
+   - "Section 4 fix on multiplicative identity" -> "Section 5 (no
+     multiplicative identity)" (the multiplicative-identity
+     non-existence lives in §5 sec:properties, not §4).
+   - "companion Section 8" -> "companion Section 10" (the
+     undo-Coxeter analysis is companion §10, not §8).
+   - "Example 4.5 pair" -> "Example 4.2 pair" (the Ls-fails example
+     in the companion is 4.2).
+   - "Example 4.7" -> "Example 8.1" (the triple-fails example in
+     the companion is 8.1).
+   - "paper Remark 3.5 all transposition twists ..." reworded to a
+     direct reference to consistency_checks.py.
+
+4. evidence/references/prior_art_orders_on_leech.txt L17 (and date
+   stamp): "transposition-twisted octonion product" framing
+   replaced with v5-aligned "Z_3-symmetric triple-octonion product on
+   R^24, with sigma a coordinate transposition ... fixing L but
+   moving Ls and L\bar s". Date bumped to 2026-06-07.
+
+5. evidence/references/computer_algebra_systems.txt L36-37:
+   "Theorem 1.2" -> "Theorem 1.1"; "transposition-twisted triple
+   product" -> "Z_3-symmetric triple-octonion product"; "the
+   transposition twist" -> "the sigma-twisted octonion product".
+
+6. evidence/references/triality_and_algebraic_physics.txt: added
+   [GresnigtGourlayVarma2023] entry (was missing despite being cited
+   in the paper since prompt 194). Includes web-verified
+   bibliographic data, DOI, arXiv, S_3-family-symmetry connection
+   note. Date bumped to 2026-06-07.
+
+7. evidence/references/background_octonions.txt: date bumped from
+   2026-04-11 to 2026-06-07 with a note about Kirmse/Petersson
+   entry extensions during v4/v5 cycle.
+
+8. paper/v4_to_v5_changelog.md:
+   - Summary list extended with Change 8 "Editorial-sweep
+     refinements (same-day, 2026-06-07)" covering the 5 fixes from
+     prompt 198 (§2.3 footnote, §5 row label, §6 Sigma(Lambda)
+     rewording, bibliography re-alphabetisation, repo-bibitem
+     umlaut).
+   - Per-change record gains Change 8 with locations and rationale.
+   - Verification paragraph rewritten: acknowledges that the
+     original "six hunks" claim was accurate at v5 freeze, but
+     Change 8 fixes added more hunks; the cumulative diff now
+     contains the additional refinements, all enumerated.
+
+9. prompt_logs/README.md: replaced the full per-entry table for the
+   foundational phase 001-069 with explanatory text directing
+   readers to the directory listing for entries from 070 onward
+   (the table itself is unchanged; just the framing).
+
+Not applied — recommended items the user asked to leave open
+(prompt 198 + this sweep):
+
+  Paper-prose:
+  - "octonion product" vs "octonion multiplication" consistency
+  - "Coxeter--Bruck" vs "Kirmse--Bruck--Coxeter" ordering
+  - Redundant 627-630 paragraph
+  - §1 intro vagueness ("such that inclusion holds")
+  - §1 intro "three octonion factors" -> "blocks"
+  - §1 not previewing Witt decomposition
+  - §6 Comparison S_3 phrasing
+  - §7 last open-question bullet not pointing to Remark 4.9
+  - changelog line-number citations off by 1-2
+
+  Frozen artifacts (per Manifesto §12, NOT edited; recorded only):
+  - paper/Baez-Egan_Leech_Verification_addendum_2026-05-24.tex §5
+    has factually wrong "24-dimensional L/2L" (L/2L is 8-dim);
+    forward-correction note would be needed if user wants this
+    addressed.
+  - paper/hermes_mod2_structure_supplement.tex references "Tables
+    A.2 and A.3" but main.tex doesn't reset table counter in
+    appendix, so the actual tables are 1, 2, 3. Forward-correction
+    note possible.
+
+Status: CLOSED for required items; recommended items and
+frozen-artifact factual errors reported below for user decision.

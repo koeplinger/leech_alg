@@ -13,9 +13,11 @@ before publishing our finding.
 **No prior work was found establishing an order on the Leech lattice
 under an octonion-derived bilinear product.**
 
-The specific construction in this project — three copies of a
-transposition-twisted octonion product with Z₃ cross-block routing —
-does not appear in the literature.
+The specific construction in this project — a Z₃-symmetric
+triple-octonion product on R²⁴, with σ a coordinate transposition of
+two imaginary basis units that is an octonion-algebra isomorphism
+fixing the E₈ lattice L = D₈⁺ but moving Wilson's sublattices Ls and
+Ls̄ — does not appear in the literature.
 
 The closest related work falls into four categories (listed
 roughly by structural distance from the present construction):
@@ -258,5 +260,6 @@ confirm the absence of multiplicative/ring/order structure on Λ.
 
 ---
 
-Last updated: 2026-05-23 (Corradetti 2026 added as thematically adjacent
-recent work — order on E₈ via the Okubo algebra)
+Last updated: 2026-06-07 (summary reworded to align with the current
+Z₃-symmetric triple-octonion framing; Corradetti 2026 entry unchanged
+from 2026-05-23 addition)

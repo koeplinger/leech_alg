@@ -81,12 +81,13 @@ gap_project/
     ├── test_e8_wilson.g           paper Section 2.2 (with the corrected
     │                              "sbar notin L" finding from review 2.1)
     ├── test_sublattices.g         paper Section 2.3
-    ├── test_twist.g               paper Section 3 (Definition 3.1, Prop. 3.2)
+    ├── test_twist.g               paper Section 3 (Definitions 3.1, 3.2 —
+    │                              Transposition and σ-twisted product)
     ├── test_lemmas.g              paper Section 4 — the four lemmas of the
-    │                              proof of Theorem 1.2
-    ├── test_leech_wilson.g        paper Definition 2.4 / Wilson Section 3
-    ├── test_triple_product.g     paper Theorem 1.2 spot-check + Section 4
-    │                              fix on multiplicative identity
+    │                              proof of Theorem 1.1
+    ├── test_leech_wilson.g        paper Definition 2.1 / Wilson Section 3
+    ├── test_triple_product.g     paper Theorem 1.1 spot-check + Section 5
+    │                              (no multiplicative identity)
     └── test_companion_examples.g  the companion's explicit numerics
 ```
 
@@ -126,7 +127,7 @@ identity $\sigma(xy) = \sigma(x)\cdot_\sigma\sigma(y)$ from
 Definition 3.2 of the paper; composition law for $\cdot_\sigma$; $\cdot_\sigma$ disagrees with $\cdot$ on at least one basis
 pair; the twist resolves the $Ls$ obstruction
 ($Ls\cdot Ls\not\subseteq Ls$ but $Ls\cdot_\sigma Ls\subseteq Ls$);
-companion Section 8 ($L\cdot_\sigma L\subseteq L$, so the twist does not
+companion Section 10 ($L\cdot_\sigma L\subseteq L$, so the twist does not
 undo Coxeter).
 
 ### `test_lemmas.g` — 7 checks
@@ -148,20 +149,20 @@ conditions; non-members `(root, 0, 0)` and `(root, root, 0)` are correctly
 rejected.
 
 ### `test_triple_product.g` — 6 checks
-Theorem 1.2 spot-check: $u\star_\sigma v\in\Lambda$ for every type-1 $u$
+Theorem 1.1 spot-check: $u\star_\sigma v\in\Lambda$ for every type-1 $u$
 paired with a representative right operand from each of the three families
 (720 × 6 = 4{,}320 products), plus type-2 × {type-2, type-3} and
 type-3 × type-3 sample grids.  The standard (untwisted) triple product
-fails on the same Lambda × Lambda samples (companion Example 4.7).
+fails on the same Lambda × Lambda samples (companion Example 8.1).
 The non-existence of a multiplicative identity in $(\mathbb{R}^{24}, \star_\sigma)$
-is verified concretely (paper Section 4 fix from review 2.2):
+is verified concretely (paper Section 5):
 $(e_0,e_0,e_0)\star_\sigma v$ has block-1 equal to $x'+y'+z'$, not $x'$.
 
 ### `test_companion_examples.g` — 17 checks
 The explicit hand-checkable numerics in the companion:
 $e_1\cdot e_2 = e_4$, $e_1\cdot e_3 = e_7$, $e_2\cdot e_7 = -e_6$;
 $s\cdot s = -\tfrac32 e_0 - \tfrac12(e_1+\cdots+e_7) \in L$;
-the companion's Example 4.5 pair
+the companion's Example 4.2 pair
 $a = (-1,0,0,0,1,0,1,1)$, $b = (-1,1,0,0,0,1,0,1)$ in $Ls$ with
 $a\cdot b = (0,-2,2,1,-2,-1,-1,-1) \in L\setminus Ls$;
 $e_1\cdot_\sigma e_2 = -e_4$ (companion Section 5);
@@ -191,7 +192,7 @@ the companion's "Summary of concrete data" three-point list.
 - Coordinates are 1-indexed (GAP convention).  Position 1 holds the $e_0$
   coefficient, position 2 holds $e_1$, …, position 8 holds $e_7$.
 - The transposition $\sigma$ is $(e_1\;e_2)$ throughout (the canonical
-  choice, by paper Remark 3.5 all transposition twists are equivalent up
-  to relabelling).
+  choice; the 21 transpositions are equivalent up to GL(3, F_2)
+  relabelling, verified in `python_project/src/consistency_checks.py`).
 - All claims about lattice membership are verified by exact-rational
   Z-basis tests (no floating-point arithmetic anywhere).

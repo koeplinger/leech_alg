@@ -259,4 +259,6 @@ the public domain.
 
 ---
 
-Last updated: 2026-04-11
+Last updated: 2026-06-07 (Kirmse 1924 / Petersson 2018 entries
+extended during the v4 / v5 paper cycle; positive Kirmse
+contributions recorded alongside the J_1 closure error)

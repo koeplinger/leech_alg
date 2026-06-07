@@ -28,6 +28,17 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 
 ## Contents
 
+The curated table below summarises the **foundational phase**
+(prompts 001–069, project inception through to early paper drafting and
+the first round of circulated-feedback edits).  Entries from prompt 070
+onward (subsequent paper-revision cycles through the v5 freeze and
+beyond) are not enumerated here — the directory listing of `prompt_logs/`
+is the canonical record, and each file is self-describing (the prompt
+is the first content of every file, with a date stamp).  Per Manifesto
+§12, all enumerated prompt logs are immutable.
+
+### Foundational phase (prompts 001–069)
+
 | File | Description |
 |---|---|
 | [001_initial_setup.txt](001_initial_setup.txt) | Project structure and manifesto setup |

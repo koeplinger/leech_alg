@@ -51,7 +51,7 @@ All 21 transpositions give the same result up to GL(3,F₂) relabelling
 
 | Test | Pairs / samples | Failures | File |
 |------|-----------------|----------|------|
-| Initial (trial 007 base) | 593,412 | 0 | `trial_007_triple_octonion_swap.py` |
+| Initial (trial 007 base) | 593,412 | 0 | `trial_007_kirmse_twist.py` |
 | Scaled (4M random) | 4,000,000 | 0 | `trial_007_scaled_test.py` |
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
@@ -469,7 +469,7 @@ leech_alg/
 │   │   ├── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
 │   │   ├── trial_007_*.py         # Trial 007: transposition-twisted (THE FINDING)
 │   │   └── consistency_checks.py  # Pre-paper verification (checks 1-10)
-│   └── tests/                     # 157 tests verifying foundations
+│   └── tests/                     # 197 tests verifying foundations
 │
 ├── prompt_logs/                   # Chronological AI interaction log
 ├── paper/                         # Formal paper: main.tex, references.bib

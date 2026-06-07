@@ -17,6 +17,7 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 5. §8 — Outlook physics paragraph: "$S_3$ symmetry" added to the list of structural themes; Gresnigt–Gourlay–Varma 2023 (*Eur. Phys. J. C* 83 (2023), 747) added to the cite list with sorting by year of publication.
 6. Acknowledgments — Holger P. Petersson added in alphabetical order.
 7. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
+8. Editorial-sweep refinements (same-day): §2.3 footnote obstruction clarification ($L \cdot Ls$ wording → $Ls \cdot Ls \not\subseteq Ls$); §5 row label "Power-associativity" → "Quartic power-associativity"; §6 undefined $\Sigma(\Lambda)$ → "$\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise"; bibliography re-alphabetised (Mahler, Petersson positions; `repo` bibitem author spelling).
 
 ---
 
@@ -64,6 +65,16 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 - **Where.** Preamble line 70, title block line 75 of [paper/main.tex](main.tex).
 - **Rationale.** Version bookkeeping; the `\Aut` operator is needed to typeset Change 3.
 
+### Change 8 — Editorial-sweep refinements (same-day, 2026-06-07)
+
+Following the v5 freeze and the documentation-consistency sweep, five small editorial fixes were applied on the same day:
+
+- **§2.3 footnote (lines 250–254)**: the obstruction claim was rewritten from "Closure under left-multiplication by $L$ holds for $L\bar s$ but fails for $Ls$" to "$Ls$ is not closed under the octonion product itself ($Ls \cdot Ls \not\subseteq Ls$)", aligning the footnote with the bilinear-closure statement that Lemma 4.4 actually resolves.
+- **§5 properties table**: the row "Power-associativity" was relabeled "Quartic power-associativity" to match the surrounding prose, which distinguishes cube and quartic identities.
+- **§6 Comparison closing sentence**: the undefined symbol $\Sigma(\Lambda)$ (orphaned when Remark 4.6 was removed in the v4 cycle) was replaced with the explicit "the Leech embedding $\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise".
+- **Bibliography re-alphabetised**: Mahler1942 moved above MarraniCorradettiZucconi2025; Petersson2018 moved above SmithVojtechovsky2022; the `repo` bibitem now spells the author "J.~K\"oplinger" (matching `\author{}` and `Koeplinger2023`).
+- **§5 multiplicative-identity row**: was already "n/a (structural)" in the v5 freeze; no change.
+
 ---
 
 ## Page count and structural impact
@@ -74,7 +85,7 @@ Page count: v4 = 19, v5 = 19. The §7 bullet expansion (Change 3) and the four o
 
 ## Verification
 
-The four content edits driven by the update brief were checked against the wording of the brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. An independent diff of [paper/main_2026-05-25.tex](main_2026-05-25.tex) against [paper/main.tex](main.tex) returned six hunks, all six classified as user-requested; no unintended differences were detected. Change 5 (Gresnigt–Gourlay–Varma 2023 plus the "$S_3$ symmetry" token in the §8 list) is a subsequent same-day addition, web-verified against arXiv:2306.13098 (Eur. Phys. J. C **83** (2023), 747) before insertion.
+The four content edits driven by the update brief were checked against the wording of the brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. At the time of the v5 freeze the v4 → v5 diff was six hunks, all six classified as user-requested. Change 5 (Gresnigt–Gourlay–Varma 2023 plus the "$S_3$ symmetry" token in the §8 list) is a same-day addition web-verified against arXiv:2306.13098 (Eur. Phys. J. C **83** (2023), 747) before insertion. The editorial-sweep refinements in Change 8 were applied later the same day and verified by a second adversarial pass; the cumulative v4 → v5 diff now contains additional hunks for those refinements, all enumerated above.
 
 ---
 

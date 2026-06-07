@@ -66,4 +66,35 @@ technical claims.
 
 ---
 
-Last updated: 2026-04-12
+### [GresnigtGourlayVarma2023]
+
+- **Authors**: Niels G. Gresnigt, Liam Gourlay, Abhinav Varma
+- **Title**: Three generations of colored fermions with S_3 family
+  symmetry from Cayley-Dickson sedenions
+- **Published in**: European Physical Journal C, Volume 83 (2023),
+  Article 747
+- **Year**: 2023
+- **DOI**: 10.1140/epjc/s10052-023-11923-y
+- **arXiv**: 2306.13098 [hep-ph]
+- **Topics**: S_3 family symmetry, Cayley-Dickson algebras, sedenions,
+  three generations, algebraic physics
+- **Originality note**: Peer-reviewed journal article (Eur. Phys. J. C).
+  The arXiv preprint (June 2023) precedes the journal publication
+  (2023). No dispute over originality or priority is known at time
+  of writing.
+- **Notes**: Builds a three-generation colored-fermion model with
+  S_3 family symmetry from the Cayley-Dickson sedenions. Cited in
+  this paper's Outlook to accompany the empirical finding that the
+  σ-twisted triple-octonion product admits S_3 block-permutation
+  automorphisms (S_3 ⊆ Aut(Λ, +, ⋆), main paper Section 7); the
+  Outlook lists S_3 symmetry alongside triality and
+  symmetric-composition-algebra structures as a structural theme
+  in algebraic physics.
+- **Status**: Bibliographic entry only; not held in source_documents/.
+- **Verification**: arXiv identifier 2306.13098 and journal reference
+  Eur. Phys. J. C 83 (2023) 747 verified by WebFetch in prompt 194.
+
+---
+
+Last updated: 2026-06-07 (GresnigtGourlayVarma2023 added to accompany
+v5 paper bibliography update; S_3 family-symmetry context)

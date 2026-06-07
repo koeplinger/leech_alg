@@ -32,9 +32,9 @@ of which are recorded below.
   or purpose is known.
 - **Notes**: Used by gap_project/ for exact-rational verification of the
   octonion multiplication, the E_8 lattice L = D_8^+, the sublattices
-  Ls and Lsbar, the transposition twist, the four lemmas of paper
-  Section 4, and Theorem 1.2 (closure of the Leech lattice under the
-  transposition-twisted triple product).  The suite uses no
+  Ls and Lsbar, the σ-twisted octonion product, the four lemmas of
+  paper Section 4, and Theorem 1.1 (closure of the Leech lattice
+  under the Z₃-symmetric triple-octonion product).  The suite uses no
   floating-point arithmetic; all checks are exact over Q.
 
 ---
