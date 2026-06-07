@@ -2,7 +2,7 @@
 
 **v4** — frozen 25 May 2026, 19 pages. Source preserved at [paper/main_2026-05-25.tex](main_2026-05-25.tex).
 
-**v5** — dated 7 June 2026, 20 pages. Source at [paper/main.tex](main.tex).
+**v5** — dated 7 June 2026, 19 pages. Source at [paper/main.tex](main.tex).
 
 v5 is a minimal revision implementing the four issues recorded in [update_brief_2026-05-25_v4.pdf](update_brief_2026-05-25_v4.pdf). No mathematical content has been added or withdrawn; the four edits clarify three statements that were already in v4 and restore one citation that was dangling in the bibliography.
 
@@ -68,7 +68,7 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 ## Page count and structural impact
 
-Page count: v4 = 19, v5 = 20. The single added page is absorbed by the §7 bullet expansion (Change 3); §2.2, §6, §8, and Appendix B each grow by one short sentence and produce no reflow at the page level. No sections were added, removed, renumbered, or reordered. The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are unchanged.
+Page count: v4 = 19, v5 = 19. The §7 bullet expansion (Change 3) and the four one-sentence growths in §2.2, §6, §8, and Appendix B are absorbed by removing the `\clearpage` that previously forced the bibliography onto its own page — the references now start on the last page of Appendix C rather than on a fresh page. No sections were added, removed, renumbered, or reordered. The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are unchanged.
 
 ---
 

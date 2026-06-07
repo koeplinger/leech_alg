@@ -1,0 +1,28 @@
+Prompt 197 -- Remove \clearpage before bibliography; page count 20 -> 19
+Date: 2026-06-07
+
+User: "Don't start a new page before the references. This should
+bring the page count back to 19 (by making full use of page 18)."
+
+Done.
+
+Edit:
+- Removed \clearpage at paper/main.tex line 1473 (immediately before
+  the % References % section comment and \begin{thebibliography}).
+- Bibliography now begins on the last page of Appendix C (Research
+  methodology), filling page 19 fully.
+
+Page count: 20 -> 19 (the +1 page from v5 content growth absorbed by
+removing the forced page break that previously sent the bibliography
+to its own page).
+
+Files updated:
+- paper/main.tex: \clearpage removed.
+- paper/main_2026-06-07.tex: re-frozen with new content.
+- paper/v4_to_v5_changelog.md: header now says "19 pages" and the
+  "Page count and structural impact" paragraph rewritten to reflect
+  v5 = 19 pages (vs v4 = 19), explaining that the v5 content
+  additions are absorbed by removing the \clearpage.
+- CURRENT_STATE.md: paper page count "20" -> "19".
+
+Status: CLOSED.

@@ -357,7 +357,7 @@ the trial, and prints detailed results.
    of the closure proof.
 
 2. **Formal paper at v5, dated 7 June 2026.**  `paper/main.tex`
-   (20 pages) contains abstract, preliminaries, construction,
+   (19 pages) contains abstract, preliminaries, construction,
    symbolic proof, algebraic properties at N = 10⁶ samples, related
    work, conclusion, outlook, and three appendices: explicit basis
    tables with a mod-2-quotient reading and a Lagrangian-polarization
