@@ -39,9 +39,9 @@ an order in the 24-dimensional R-algebra (R²⁴, +, ·).
 
 The entire construction has three ingredients:
 
-1. **One octonion algebra**, modified by a single transposition of two
-   imaginary basis elements.
-2. **Three identical copies** of that algebra on R²⁴.
+1. **One octonion product** — related to Wilson's standard convention
+   by a single transposition σ of two imaginary basis elements.
+2. **Three identical copies** of that product on R²⁴.
 3. **Z₃ cross-block routing**: products of vectors from different blocks
    land in the third block.
 

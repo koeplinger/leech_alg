@@ -40,7 +40,7 @@ Each trial and verification script is self-contained and runnable directly:
 ```bash
 cd src
 python3 symbolic_proof_checks.py        # Verify the four lemmas behind the paper
-python3 trial_007_kirmse_twist.py       # Initial test of the transposition-twisted product
+python3 trial_007_kirmse_twist.py       # The winning trial: triple-octonion closure on Λ
 python3 trial_007_fast.py               # 4M-pair random closure check
 python3 trial_007_exhaust.py            # Multiprocessor harness for full 38.6B-pair sweep
 python3 trial_001_triple_octonion.py    # Any earlier trial; see src/README.md for the catalogue

@@ -85,7 +85,7 @@ technical claims.
 - **Notes**: Builds a three-generation colored-fermion model with
   S_3 family symmetry from the Cayley-Dickson sedenions. Cited in
   this paper's Outlook to accompany the empirical finding that the
-  σ-twisted triple-octonion product admits S_3 block-permutation
+  Z₃-symmetric triple-octonion product admits S_3 block-permutation
   automorphisms (S_3 ⊆ Aut(Λ, +, ⋆), main paper Section 7); the
   Outlook lists S_3 symmetry alongside triality and
   symmetric-composition-algebra structures as a structural theme

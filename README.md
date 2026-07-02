@@ -37,16 +37,18 @@ v4 is preserved at [paper/main_2026-05-25.tex](paper/main_2026-05-25.tex).
 
 **Research goal:** Find a highly symmetric order on the Leech lattice.
 
-**Result (trial 007):** The Leech lattice Λ admits an order under a bilinear
-product built from three identical copies of a *transposition-twisted* octonion
-algebra with Z₃-symmetric cross-block routing.  The twist is a single
-transposition of two imaginary basis elements of the standard Fano-plane
-multiplication.
+**Result (trial 007):** The Leech lattice Λ admits an order under a
+Z₃-symmetric triple-octonion product on R²⁴ — the same octonion product in
+all three blocks, with Z₃-symmetric cross-block routing.  In Wilson's
+representation of Λ, the fit of this octonion product with the
+representation is exhibited by a transposition σ of two imaginary basis
+units: σ leaves the E₈ lattice invariant and is an octonion-algebra
+isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
 
 **Evidence:**
 - **Symbolic proof** of closure on Wilson's three sublattice conditions, via
-  four lemmas on the interplay between the twist σ and the Leech sublattices
-  Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
+  four lemmas on the interplay between the transposition σ and the Leech
+  sublattices Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
   executes the finite case verifications with exact integer arithmetic).
 - **Computational verification** on 12M+ random pairs of minimal vectors
   with zero failures, plus tests from first principles on every foundation
@@ -58,9 +60,10 @@ multiplication.
 - **Formal write-up** with full proof, related work, and methodology in
   [paper/main.tex](paper/main.tex).
 - **Key claims:** [007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)
-  (untwisted triple-octonion ruled out) and
+  (the triple product over Wilson's own multiplication convention does
+  not close on Λ) and
   [008](evidence_and_reasoning/key_claims/008_transposition_twist_order.txt)
-  (the transposition-twisted product is an order on Λ).
+  (over the σ-related convention it does: (Λ, +, ⋆) is an order).
 
 **Open questions:**
 - Algebraic properties as a binary product have been characterised on

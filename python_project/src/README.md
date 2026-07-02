@@ -32,7 +32,7 @@ cd python_project/src && python3 trial_NNN_*.py
 | 004 | `trial_004_basis_automorphisms.py` | E8 automorphism basis changes | FAIL (identity already optimal) |
 | 005 | `trial_005_triple_okubo.py` | Triple Okubo/para-octonion (base + discrete variants) | FAIL (√3 leaves E8) |
 | 006 | `trial_006_triple_okubo_automorphisms.py` | Triple Okubo/para-octonion + E8 automorphisms | FAIL (√3 not absorbable) |
-| 007 | `trial_007_kirmse_twist.py` | Transposition-twisted triple octonion (the order on Λ) | **PASS** |
+| 007 | `trial_007_kirmse_twist.py` | Z₃-symmetric triple-octonion product (the order on Λ) | **PASS** |
 | 007 | `trial_007_explanation.py` | Worked-example exposition of the twist | — |
 | 007 | `trial_007_fast.py` | 4M-pair random closure check (vectorised) | PASS |
 | 007 | `trial_007_scaled_test.py` | 4M-pair scaled test harness | PASS |

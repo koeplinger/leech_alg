@@ -16,7 +16,8 @@ Symmetric composition algebra — Triality (D₄ triality)
 
 **Project-specific terms:**
 2+1 closure pattern — Petersson triality triple —
-Transposition-twisted triple octonion product — Triple octonion product —
+Triple octonion product — Z₃-symmetric triple-octonion product
+(historically: transposition-twisted triple octonion product) —
 √3 obstruction
 
 ---
@@ -32,9 +33,10 @@ A single map governs both input and output.
 Isomorphism is a special case of **isotopy** (see below): it corresponds to
 the isotopy triple (φ, φ, φ) where all three maps are the same.
 
-In this project: the transposition-twisted algebra swap(s,t) is isomorphic
-to the standard octonion algebra.  The map σ: e_s ↔ e_t (extended linearly)
-satisfies σ(x ·_std y) = σ(x) ·_swap σ(y) for all basis pairs.  Verified
+In this project: the octonion product ·_σ (main paper Definition 3.2)
+is isomorphic to the standard octonion product.  The map σ: e_s ↔ e_t
+(extended linearly)
+satisfies σ(x ·_std y) = σ(x) ·_σ σ(y) for all basis pairs.  Verified
 computationally: 0/64 mismatches.  For the coordinate-symmetric placement
 L = D₈⁺ used throughout the paper, σ preserves L (it is a coordinate
 permutation, which preserves both integer/half-integer parity and the
@@ -301,24 +303,35 @@ construction with non-trivial τ introduces irrational structure constants
 (cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
 lattice entirely.
 
-### Transposition-twisted triple octonion product
+### Z₃-symmetric triple-octonion product
+(historically: transposition-twisted triple octonion product)
 
-(Trial 007, prompt 025.)  The triple octonion product (see below) where the
-standard Fano-plane multiplication is replaced by a **transposition-twisted**
-multiplication: apply any transposition (s ↔ t) of two imaginary basis
-elements {1,...,7} to the standard Fano triples before building the
-OctonionAlgebra.  This changes the signs of certain structure constants,
-producing a different but isomorphic octonion algebra on the same R⁸.
+(Trial 007, prompt 025; current framing per main paper v5.)  The triple
+octonion product (see below) built from the octonion product ·_σ in
+all three blocks, where ·_σ is defined by x ·_σ y := σ(σ(x) · σ(y))
+for a transposition σ = (s t) of two imaginary basis elements
+{1,...,7}.  The product ·_σ is simply another octonion product on R⁸,
+isomorphic to the standard one via σ itself.  The transposition σ is
+the device that exhibits the fit of this octonion product with
+Wilson's representation of the Leech lattice: σ leaves L = D₈⁺
+invariant but moves Wilson's sublattices Ls and Ls̄.
 
 All 21 transpositions achieve **100% Leech lattice closure** on 593,400
 tested pairs (including 518,400 exhaustive type1×type1 and 50,000
 type3×type3).  This fixes the Wilson condition 3 failure of the
-(un-twisted) triple octonion product.
+triple octonion product taken over Wilson's own multiplication
+convention.
 
 Since all transpositions are in the same orbit under the Fano-plane
 automorphism group GL(3, F₂), they all produce the same multiplication
-table up to basis relabeling.  The transposition-twisted product is
-therefore essentially unique (up to Fano-plane automorphism).
+table up to basis relabeling.  The construction is therefore
+essentially unique (up to Fano-plane automorphism).
+
+The historical name "transposition-twisted triple octonion product"
+(used in trial 007 and key claim 008, both preserved per Manifesto
+§12) over-privileges the twist: the product is not an exotic twisted
+object but an ordinary octonion product; the twist concerns its fit
+with a chosen representation.
 
 ### Triple octonion product
 

@@ -1,0 +1,104 @@
+Prompt 200 -- Wording sweep: "sigma-twisted octonion product" framing
+Date: 2026-06-07
+
+User: "I just noticed that the top-level README still refers to the
+sigma-twisted octonion product; this isn't a fair description (it's
+simply an octonion product, and we show by means of the sigma twist
+how it fits with Wilson's representation of the Leech lattice). Check
+the README, and all other documentation in this project, for
+consistency with the state-of-the-art wording. Make a documentation
+consistency sweep."
+
+The state-of-the-art framing (per the paper v5 and the user's
+clarification here):
+- The product used in the construction is SIMPLY AN OCTONION PRODUCT
+  (one of the octonion products on R^8; all are isomorphic).
+- The sigma twist is the DEVICE by which we show how this octonion
+  product fits with Wilson's representation of the Leech lattice
+  (Wilson's representation fixes a particular standard product; sigma
+  relates ours to it).
+- So describing the construction's product as "the sigma-twisted
+  octonion product" over-privileges the twist: the twist is about the
+  fit with a chosen representation, not about the product being some
+  exotic twisted object.
+
+Sweep scope: README.md, CURRENT_STATE.md, evidence_and_reasoning/*,
+gap_project/README.md, python_project READMEs, live docs. NOT frozen
+artifacts (dated briefs, reviews, prompt logs) per Manifesto §12.
+
+Applied (live docs):
+
+1. README.md "Result (trial 007)" paragraph rewritten:
+   "bilinear product built from three identical copies of a
+   *transposition-twisted* octonion algebra" -> "Z_3-symmetric
+   triple-octonion product on R^24 -- the same octonion product in
+   all three blocks ... In Wilson's representation of Λ, the fit of
+   this octonion product with the representation is exhibited by a
+   transposition σ ...". Key-claims glosses updated: 007 = "the
+   triple product over Wilson's own multiplication convention does
+   not close"; 008 = "over the σ-related convention it does".
+   Evidence bullet: "the twist σ" -> "the transposition σ".
+
+2. LICENSE.md recommended citation: WRONG TITLE fixed.
+   "An order on the Leech lattice from transposition-twisted
+   octonions" -> "An order on the Leech lattice from a Z3-symmetric
+   triple-octonion product". GitHub mirror added to repository line.
+
+3. CURRENT_STATE.md:
+   - Status line: finding named "Z_3-symmetric triple-octonion
+     product" with historical-name parenthetical.
+   - Finding heading: "The finding: the Z_3-symmetric triple-octonion
+     product closes on Λ (trial 007)".
+   - Construction paragraph: ·_σ framed as "another octonion product
+     on R^8" + the σ-exhibits-the-fit sentence.
+   - Repo map: claim-008 and trial-007 comments updated.
+
+4. evidence_and_reasoning/README.md: research_result gloss, claim
+   007/008 table rows, trial-007 row -> current framing (historical
+   file title noted for 008).
+
+5. terminology.md:
+   - Project-specific term retitled: "Z_3-symmetric triple-octonion
+     product (historically: transposition-twisted triple octonion
+     product)" with fully rewritten entry: ·_σ is simply another
+     octonion product; σ exhibits the fit with Wilson's
+     representation; closing paragraph explains why the historical
+     name over-privileges the twist.
+   - Index updated.
+   - Isomorphism entry: "the transposition-twisted algebra
+     swap(s,t)" -> "the octonion product ·_σ (main paper
+     Definition 3.2)".
+
+6. research_result.md "What makes this simple" ingredient 1:
+   "One octonion algebra, modified by a single transposition" ->
+   "One octonion product -- related to Wilson's standard convention
+   by a single transposition σ".
+
+7. references/triality_and_algebraic_physics.txt Gresnigt entry:
+   "σ-twisted triple-octonion product" -> "Z_3-symmetric
+   triple-octonion product".
+
+8. python_project/src/README.md trial-007 row + python_project/
+   README.md run-comment updated.
+
+9. evidence_and_reasoning/key_claims/README.md claim-008 row:
+   current framing with historical-title note.
+
+Left as historical record (per Manifesto §12):
+- trial_007_results.md (has forward-correction note)
+- key_claims/008 body (has forward-correction note)
+- trial_007_*.py docstrings (era-appropriate framing of the
+  discovery-time scripts)
+- prompt_logs/*, paper/reviews/*, v3_to_v4_summary.md (v3-history
+  description), prior_art L217 search-term list
+- "σ-twisted octonion product" occurrences that refer to the paper's
+  own Definition 3.2 term ·_σ (gap_project/README,
+  computer_algebra_systems.txt) -- these are CORRECT usages of the
+  paper's defined term.
+
+Flagged to user (not edited):
+- paper/main.txt: stale v3-era text export (Apr 29), tracked in git.
+  Candidate for deletion or regeneration; deletion needs user
+  decision.
+
+Status: CLOSED.

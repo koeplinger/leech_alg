@@ -23,23 +23,30 @@ The order should be highly symmetric.  The Leech lattice's automorphism group
 would ideally respect or interact with this symmetry in a meaningful way.
 
 **Status: FOUND.**  Trial 007 identifies a bilinear product that closes on Λ:
-the *transposition-twisted triple octonion product*.  See "The finding" below.
+the *Z₃-symmetric triple-octonion product* (historically named the
+"transposition-twisted triple octonion product" during trial 007; the
+product is simply an octonion product in all three blocks, and the
+transposition σ is the device that exhibits its fit with Wilson's
+representation).  See "The finding" below.
 Two earlier candidate families were comprehensively ruled out before this
 discovery: the (untwisted) triple-octonion algebra and the triple
 Okubo/para-octonion algebra (Petersson isotopes).  See below.
 
 ---
 
-## The finding: transposition-twisted triple octonion product (trial 007)
+## The finding: the Z₃-symmetric triple-octonion product closes on Λ (trial 007)
 
 ### The construction
 
-Given a transposition σ = (s t) on {1,…,7}, define a new multiplication
-·_σ on R⁸ by applying σ to the standard Fano triples.  This gives an
-octonion algebra isomorphic to the standard one via σ itself:
-σ(x · y) = σ(x) ·_σ σ(y).
+Given a transposition σ = (s t) on {1,…,7}, the product
+·_σ defined by x ·_σ y := σ(σ(x) · σ(y)) is another octonion product
+on R⁸, isomorphic to the standard one via σ itself:
+σ(x · y) = σ(x) ·_σ σ(y).  In Wilson's representation of the Leech
+lattice — which fixes the standard product — the transposition σ is
+what exhibits the fit: σ leaves the E₈ lattice L = D₈⁺ invariant but
+moves Wilson's sublattices Ls and Ls̄.
 
-The **transposition-twisted triple octonion product** on R²⁴ = O₁ ⊕ O₂ ⊕ O₃
+The **Z₃-symmetric triple-octonion product** on R²⁴ = O₁ ⊕ O₂ ⊕ O₃
 uses ·_σ in all three blocks with Z₃-symmetric cross-block routing:
 - Same-block: Oα × Oα → Oα using ·_σ
 - Cross-block: Oα × Oβ → Oγ using ·_σ, where {α,β,γ} = {1,2,3}
@@ -443,7 +450,7 @@ leech_alg/
 │   ├── key_claims/                # Logical backbone: one file per major claim
 │   │   ├── 001–006                # Foundations (Wilson, Dixon, octonions)
 │   │   ├── 007                    # Untwisted triple-octonion ruled out
-│   │   └── 008                    # Transposition-twisted triple octonion: order on Λ
+│   │   └── 008                    # Z₃-symmetric triple-octonion product: order on Λ
 │   ├── references/                # Central reference registry
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
@@ -467,7 +474,7 @@ leech_alg/
 │   │   ├── trial_004_*.py         # Trial 004: automorphism basis changes
 │   │   ├── trial_005_*.py         # Trial 005: triple Okubo/para-octonion
 │   │   ├── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
-│   │   ├── trial_007_*.py         # Trial 007: transposition-twisted (THE FINDING)
+│   │   ├── trial_007_*.py         # Trial 007: the σ twist fit (THE FINDING)
 │   │   └── consistency_checks.py  # Pre-paper verification (checks 1-10)
 │   └── tests/                     # 197 tests verifying foundations
 │
