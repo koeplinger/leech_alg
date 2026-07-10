@@ -1,0 +1,78 @@
+Prompt 205 -- Span-defect clarity edits; upversion to v6
+Date: 2026-07-10
+
+User:
+1. In the §6 phi-comparison passage: drop the (en-)dashes; split into
+   smaller sentences, or footnote what is out of flow.
+2. User unclear on the span-defect comparison -- it reads as if
+   Baez-Egan's construction were not closed. Clarify: add a gentle
+   explanation or footnote, anchored at §5 Remark 5.4.
+   (Explanation: closure = products land IN Lambda, true for both
+   star and phi; span defect = how much of Lambda the products REACH;
+   the two are complementary; nothing touches Baez-Egan's actual
+   27-dim doubled-Jordan-product result; phi is our projection
+   read-off.)
+3. "All other updates look good. Today is 10 July 2026 and this
+   paper will be upversioned to v6."
+
+Actions:
+1. Remark 5.4: added clarifying sentence after "Closure does not
+   mean surjectivity.": Theorem 1.1 places every product inside
+   Lambda; the question here is the complementary one -- how much of
+   Lambda the products reach.
+2. §6: split the phi-comparison into three sentences (dashes
+   removed); added footnote: span defect is an attribute of the
+   induced product, not a qualification of closure; both star and
+   phi are closed; they differ in how large a sublattice their
+   images span; Baez-Egan's own result (doubled Jordan product on
+   the 27-dim lattice) is untouched.
+3. Subtitle -> "10 July 2026 (v6)". Frozen snapshot
+   paper/main_2026-07-10.tex. New changelog paper/v5_to_v6_changelog.md.
+   README/CURRENT_STATE/editorial_standards/plan updated to v6.
+
+Versioning note: v5 as frozen on disk (main_2026-06-07.tex) already
+includes the reviewer-response additions (Change 9 of the v4->v5
+changelog). v6 = v5 + today's clarity edits + version bump. The
+changelogs compose: v4->v5 then v5->v6.
+
+Done.
+
+1. Remark 5.4: clarifying sentence inserted after "Closure does not
+   mean surjectivity.":
+   "Theorem 1.1 places every product u ⋆ v inside Λ; the question
+    addressed here is the complementary one, namely how much of Λ
+    the products reach."
+
+2. §6 phi comparison restructured (dashes dropped, three sentences):
+   "The distinction is quantitative at the span level as well.
+    Computed by the same Hermite-normal-form method as for ⋆ (...),
+    the Z-span of φ(Λ, Λ) has index 2^25 in Λ.  Unlike for ⋆, that
+    span does not contain 2Λ: its index exceeds [Λ : 2Λ] = 2^24."
+   + footnote: span defect is an attribute of the induced product,
+   not a qualification of closure; both ⋆ and φ are closed on Λ;
+   they differ in how large a sublattice their images span; the
+   Baez-Egan result itself (doubled Jordan product on the 27-dim
+   lattice) is untouched; φ is the projection read-off described
+   in §6.
+
+3. Version bump: subtitle "7 June 2026 (v5)" -> "10 July 2026 (v6)".
+   Rebuilt clean at 20 pages. Frozen: paper/main_2026-07-10.tex
+   (1720 lines).
+
+4. paper/v5_to_v6_changelog.md written (3 changes; no math changed;
+   page count 20 unchanged; revision-chain footer).
+
+5. Project docs updated to v6:
+   - README.md: revision chain + all three freezes listed.
+   - CURRENT_STATE.md: header date 2026-07-10; paper item rewritten
+     for v6 incl. span defect 2^16 / phi 2^25 mentions and the full
+     revision chain.
+   - editorial_standards.md: "current at v6".
+   - 2026-05-22_plan.md: status block updated to v6; Revision 6 line
+     added.
+
+Versioning note: v5 frozen snapshot (main_2026-06-07.tex) includes
+the reviewer-response additions (v4->v5 changelog Change 9); v6 =
+v5 + clarity edits. The changelogs compose: v3->v4, v4->v5, v5->v6.
+
+Status: CLOSED.

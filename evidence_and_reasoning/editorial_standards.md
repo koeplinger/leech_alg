@@ -35,7 +35,11 @@ its place, and the logic should be followable on a first reading.
 4. **One consistent vocabulary.** Fixed conventions, used the same way
    throughout --- e.g. *division algebra* = no zero divisors;
    *third-/fourth-/power-associativity* kept distinct; `--` (en-dash)
-   never `---`.
+   never `---`.  Dash-as-punctuation (spaced ` -- ` asides) is avoided
+   altogether (adopted 2026-07-10): split the sentence in two, use a
+   colon or parentheses, or move the aside to a footnote if it is out
+   of the main flow.  Unspaced en-dashes remain for name joins
+   (Baez--Egan) and numeric ranges (1923--1946).
 
 5. **Precision over good-sounding vagueness.** Define terms; do not
    over-claim; state plainly what is open. A sentence that sounds
@@ -62,14 +66,15 @@ change for the reader if it were deleted. A sentence whose deletion
 costs the reader nothing checkable is vague; cut it or make it
 concrete.
 
-## Note on `paper/main.tex` (current at v5)
+## Note on `paper/main.tex` (current at v6)
 
 The main manuscript at the date these standards were adopted was frozen
 v3 (29 April 2026). Standards were applied prospectively to v4 (frozen
-25 May 2026, `paper/main_2026-05-25.tex`), and to the v5 minimal
-revision (dated 7 June 2026, `paper/main_2026-06-07.tex`). v5 is the
-current released state. `paper/main.tex` continues as the working
-source for any subsequent revision. Top-level changelogs:
-`paper/v3_to_v4_summary.md` and `paper/v4_to_v5_changelog.md`. The
+25 May 2026, `paper/main_2026-05-25.tex`), the v5 revision (7 June
+2026, `paper/main_2026-06-07.tex`), and the v6 clarity revision
+(10 July 2026, `paper/main_2026-07-10.tex`). v6 is the current
+released state. `paper/main.tex` continues as the working source for
+any subsequent revision. Revision chain: `paper/v3_to_v4_summary.md`,
+`paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`. The
 standards were not retroactively enforced on v3; the dash convention
 and other v3/v4 differences were resolved during v4 assembly.

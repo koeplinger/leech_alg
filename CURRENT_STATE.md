@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-06-07
+Last updated: 2026-07-10
 
 This document is the entry point for anyone continuing this research — human or
 AI, with or without prior context.  It summarises what has been established,
@@ -363,22 +363,26 @@ the trial, and prints detailed results.
    (rem:Ls-not-closed): non-triviality of the construction, not a step
    of the closure proof.
 
-2. **Formal paper at v5, dated 7 June 2026.**  `paper/main.tex`
+2. **Formal paper at v6, dated 10 July 2026.**  `paper/main.tex`
    (20 pages) contains abstract, preliminaries, construction,
-   symbolic proof, algebraic properties at N = 10⁶ samples, related
-   work, conclusion, outlook, and three appendices: explicit basis
-   tables with a mod-2-quotient reading and a Lagrangian-polarization
-   framing (Appendix A); a historical note synthesising the 1923–1946
+   symbolic proof, algebraic properties at N = 10⁶ samples (plus
+   exhaustive minimal-shell facts and the exact span defect
+   [Λ : span(Λ⋆Λ)] = 2¹⁶), related work (including the comparative
+   span defect 2²⁵ of the Baez–Egan induced product φ), conclusion,
+   outlook, and three appendices: explicit basis tables with a
+   mod-2-quotient reading and a Lagrangian-polarization framing
+   (Appendix A); a historical note synthesising the 1923–1946
    integral-octonion literature from the primary sources, Dickson
    (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946)
    (Appendix B); and the research methodology (Appendix C).  v4 was
    assembled per `evidence_and_reasoning/2026-05-22_plan.md` and
    frozen as `paper/main_2026-05-25.tex` after two full referee-style
-   review rounds (paper/reviews/); v5 is a minimal revision
-   incorporating `paper/update_brief_2026-05-25_v4.pdf` and is
-   frozen as `paper/main_2026-06-07.tex`.  Top-level changelogs:
-   v3 → v4 in `paper/v3_to_v4_summary.md`, v4 → v5 in
-   `paper/v4_to_v5_changelog.md`.
+   review rounds (paper/reviews/); v5 (frozen
+   `paper/main_2026-06-07.tex`) incorporated the update brief and
+   the reviewer-response additions; v6 (frozen
+   `paper/main_2026-07-10.tex`) is a clarity revision of the
+   span-defect material.  Revision chain: `paper/v3_to_v4_summary.md`,
+   `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`.
 
 3. **Computational verification extended.**  Over 12,000,000 random
    minimal-vector pairs tested across multiple test harnesses with

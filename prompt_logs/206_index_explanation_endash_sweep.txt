@@ -1,0 +1,70 @@
+Prompt 206 -- Explain "index" in Remark 5.4; paper-wide en-dash reduction
+Date: 2026-07-10
+
+User:
+1. The closure-vs-surjectivity part is now clear, but "index" is not
+   explained. Cut the repeated explanation of the obvious
+   (closure/reach), and instead explain what an index is. Suggest
+   describing how a surjective product would look (index 1).
+2. En-dashes: em-dashes were scrubbed earlier, but the many spaced
+   en-dash asides now bother the user. Remove at least most; split
+   sentences in two, or footnote the aside if it is out of the main
+   flow. (Name joins like Baez--Egan and numeric ranges like
+   1923--1946 are typographically standard and stay.)
+
+Actions:
+1. Remark 5.4 rewritten: drop the complementarity sentence added in
+   prompt 205; add coset explanation of index with the index-1
+   surjective baseline.
+2. Sweep all spaced " -- " asides in main.tex; rewrite by splitting
+   or footnoting; keep unspaced name-joins and ranges.
+3. Record the style rule in editorial_standards.md (standard 4) and
+   in auto-memory (user preference).
+4. Rebuild, re-freeze v6 (same-day), extend v5_to_v6_changelog.
+
+Done.
+
+1. Remark 5.4 rewritten:
+   - Dropped the prompt-205 complementarity sentence (user: obvious,
+     stop repeating).
+   - Added after the displayed index: "The index counts the cosets
+     of S in Λ: the lattice Λ decomposes into [Λ : S] disjoint
+     translates of S, and every product, together with every integer
+     combination of products, lies in a single one of them, namely S
+     itself. A span-surjective product would have index 1. Here,
+     2^16 − 1 of every 2^16 cosets are unreachable."
+   - "The defect is entirely 2-primary, at the same prime..." (dash
+     dropped).
+
+2. En-dash aside sweep, ~26 spots, ALL removed (verified: zero
+   spaced " -- " remain in non-comment lines). Rewrites by location:
+   §1 (triple-product intro split; scope paragraph parens + colon),
+   Remark 1.3 (colon + sentence split), §2.3 footnote (sentence
+   split), §4 intro (reordered into two sentences), Remark 4.9
+   (semicolons -> sentence splits + colon), §6 Baez (undoubled-
+   product clause moved after conjecture; verification-chain colon;
+   phi definition colon), §6 Corradetti (colon + split), §7 (crux
+   commas; bullet-1 restructured lead-first; Aut bullet commas), §8
+   (sentence split), A.1 Baez-credit paragraph (three sentences;
+   V/W pair commas), A.1 Lagrangian comma, A.1 reframing commas,
+   App B Kirmse (necessary-form split with semicolon; ideal-theory
+   sentence commas), App C (hypothesis parens; four-lemmas split;
+   methodology lead-first; iterative-convergence commas;
+   cross-checking parens; full-record colon).
+   KEPT: unspaced name joins (Baez--Egan, Cayley--Dickson,
+   Coxeter--Bruck, Kirmse--Bruck--Coxeter, human--AI) and numeric
+   ranges (1923--1946, page/lemma ranges) as standard typography.
+
+3. editorial_standards.md standard 4 extended: dash-as-punctuation
+   avoided altogether (adopted 2026-07-10); split / colon / parens /
+   footnote; unspaced joins and ranges stay.
+
+4. Memory saved: feedback_no_dash_asides.md + MEMORY.md index line.
+
+5. v5_to_v6_changelog.md: Changes 3 (index explanation) and 4
+   (dash sweep) inserted; version bump renumbered to Change 5.
+
+6. Paper rebuilt clean at 20 pages; v6 re-frozen at
+   paper/main_2026-07-10.tex.
+
+Status: CLOSED.
