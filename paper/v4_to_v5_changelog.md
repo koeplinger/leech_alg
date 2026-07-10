@@ -2,7 +2,7 @@
 
 **v4** — frozen 25 May 2026, 19 pages. Source preserved at [paper/main_2026-05-25.tex](main_2026-05-25.tex).
 
-**v5** — dated 7 June 2026, 19 pages. Source at [paper/main.tex](main.tex).
+**v5** — dated 7 June 2026, 20 pages. Source at [paper/main.tex](main.tex).
 
 v5 is a minimal revision implementing the four issues recorded in [update_brief_2026-05-25_v4.pdf](update_brief_2026-05-25_v4.pdf). No mathematical content has been added or withdrawn; the four edits clarify three statements that were already in v4 and restore one citation that was dangling in the bibliography.
 
@@ -18,6 +18,7 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 6. Acknowledgments — Holger P. Petersson added in alphabetical order.
 7. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
 8. Editorial-sweep refinements (same-day): §2.3 footnote obstruction clarification ($L \cdot Ls$ wording → $Ls \cdot Ls \not\subseteq Ls$); §5 row label "Power-associativity" → "Quartic power-associativity"; §6 undefined $\Sigma(\Lambda)$ → "$\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise"; bibliography re-alphabetised (Mahler, Petersson positions; `repo` bibitem author spelling).
+9. Reviewer-response additions (same-day; prompted by referee feedback from an abstract-algebra journal): **(a)** new Remark 5.4 (*Span of the image*) — the products $\Lambda \star \Lambda$ span a proper sublattice $S$ with $[\Lambda : S] = 2^{16}$, $2\Lambda \subseteq S$, $\Lambda/S \cong (\mathbb{Z}/2)^{16}$ (exact, Hermite normal form; `verify_product_span_{index,structure}.py`); one-sentence abstract addition; **(b)** new Remark 5.3 (*Exhaustive facts on the minimal shell*) — no idempotents and no square-nilpotents among all 196,560 minimal vectors, self-product norms in $\{16,\ldots,128\}\setminus\{112\}$, minimum 16 (exhaustive; `verify_idempotents_min_shell.py`); **(c)** §6 Baez–Egan anatomy extended with the comparative span defect of $\varphi$: $[\Lambda : \mathrm{span}\,\varphi(\Lambda,\Lambda)] = 2^{25}$, which — unlike for $\star$ — does not contain $2\Lambda$ (`verify_phi_span_index.py`, validated against the paper's $D$-formula, $\Lambda$-closure on all 576 basis pairs, and commutativity); **(d)** new closing paragraph of §1 stating the paper's deliberately bounded scope (existence + elementary proof; two structural readings offered as verified starting points; human–AI collaboration with end-to-end public record); **(e)** §7 automorphism bullet gains the reviewer's stabiliser formulation ("the stabiliser of the product tensor inside $\mathrm{Co}_0$"); **(f)** Appendix C correction: "each of the four lemmas is established by exhibiting … integer coefficients" → "three of the four lemmas … — the fourth, $\sigma(L) = L$, is a parity argument" (pre-existing miscount caught by the verification pass).
 
 ---
 
@@ -79,7 +80,7 @@ Following the v5 freeze and the documentation-consistency sweep, five small edit
 
 ## Page count and structural impact
 
-Page count: v4 = 19, v5 = 19. The §7 bullet expansion (Change 3) and the four one-sentence growths in §2.2, §6, §8, and Appendix B are absorbed by removing the `\clearpage` that previously forced the bibliography onto its own page — the references now start on the last page of Appendix C rather than on a fresh page. No sections were added, removed, renumbered, or reordered. The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are unchanged.
+Page count: v4 = 19, v5 = 20. Through Change 8 the count held at 19 — the §7 bullet expansion (Change 3) and the four one-sentence growths in §2.2, §6, §8, and Appendix B were absorbed by removing the `\clearpage` that previously forced the bibliography onto its own page. The reviewer-response additions (Change 9: two new §5 remarks, the §6 comparison, and the §1 scope paragraph) add one page, bringing v5 to 20. No sections were added, removed, renumbered, or reordered; §5 remark numbering extends to 5.4 (the new *Exhaustive facts* and *Span of the image* remarks). The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are otherwise unchanged.
 
 ---
 

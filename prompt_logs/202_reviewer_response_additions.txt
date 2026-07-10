@@ -1,0 +1,107 @@
+Prompt 202 -- Reviewer-response additions to the paper
+Date: 2026-06-07
+
+User decisions on the prompt-201 ideas:
+- Span-defect result -> INTO THE PAPER. ("yes! do it")
+- Baez-Egan phi same index -> COMPUTE + ADD, placed in §6 where their
+  construction is detailed (editorial standards: no jumping).
+- Zero-divisor census / multiplication-operator anatomy -> LEAVE OUT.
+- Idempotent/nilpotent exhaustive search on low shells -> DO IT; add
+  to §5 engineering-style presentation, no overclaiming.
+- Extending Aut bounds via Co_0 generators -> DO NOT ("clearly on the
+  other side of the border").
+- Aut group note: user checked -- GAP computed the full group
+  elsewhere (S_3 x C_2 x C_3), but user cannot honestly validate/own
+  it and will not study up; paper keeps OUR bounds only.
+- §1 contribution-boundary statement -> yes, short and concise.
+  Elements: we found the product many people had been looking for;
+  the proof is simple and the author understands it; done with AI;
+  research record shared end-to-end.
+- §1 very short preview of A.1 polarization -> yes, without
+  overclaiming.
+- §7 -> very gentle updates if helpful, or none. (Will add only the
+  reviewer's stabiliser phrasing as one clause.)
+- Public record as stated deliverable -> definitely.
+- Venues (AACA, Experimental Mathematics) -> noted by user.
+
+Execution plan:
+1. Workflow #1 (parallel): (A) implement Baez-Egan phi + compute
+   span index [Lambda : span(phi(Lambda,Lambda))] with validation
+   (D-formula match, Lambda-closure, commutativity); (B) exhaustive
+   idempotent/square-nilpotent search over all 196,560 minimal
+   vectors + norm histogram of self-products u star u.
+2. Paper edits (v5 working copy, same-day extension; changelog
+   extended; re-freeze):
+   - §5: exhaustive minimal-shell facts + span-defect paragraph.
+   - §6: phi span-defect comparison in the Baez-Egan anatomy.
+   - §1: contribution-boundary statement + one-sentence A.1/§5
+     structural preview.
+   - §7: one-clause stabiliser phrasing (gentle).
+   - Abstract: one short clause on the span defect (flagged to user;
+     easy to remove).
+3. Workflow #2: adversarial verification of edits + numbers.
+4. Update v4_to_v5_changelog.md; re-freeze main_2026-06-07.tex.
+
+Computations (workflow #1, two parallel agents, both validated):
+
+(A) Baez-Egan phi span index (verify_phi_span_index.py; agent's own
+    log: prompt_logs/203_baez_egan_phi_span_index.txt):
+    - Validations: D-formula match 20/20; Lambda-closure 576/576;
+      commutativity 20/20; independent second pass with the
+      alternative h3(O) parametrization gives the identical index
+      (block-permutation invariance confirmed).
+    - [Lambda : Z-span(phi(Lambda,Lambda))] = 2^25 = 33,554,432.
+    - 2Lambda NOT contained (18/24 doubled basis vectors only);
+      index 2^25 > 2^24 = [Lambda:2Lambda] forces this.
+    - HNF diagonal: one 1, twenty-one 2s, two 4s (2-primary, deeper
+      than star's all-2 defect).
+
+(B) Exhaustive Min(Lambda) search (verify_idempotents_min_shell.py):
+    - 196,560 distinct minimal vectors enumerated and asserted.
+    - 0 idempotents; 0 square-nilpotents.
+    - Self-product norm histogram: 16:9072, 32:37800, 48:78624,
+      64:51840, 80:9072, 96:9720, 128:432 (no 112!). Min = 16.
+    - Runtime ~7 s.
+
+Paper edits applied (v5 working copy, same-day extension):
+1. §5 Remark 5.3 "Exhaustive facts on the minimal shell".
+2. §5 Remark 5.4 "Span of the image" (rem:span-defect):
+   [Lambda:S] = 2^16, 2Lambda ⊆ S, preimage of 8-dim F_2-subspace,
+   Lambda/S = (Z/2)^16, structural identification open.
+3. §6 Baez-Egan anatomy: comparative phi span defect 2^25 with the
+   2Lambda non-containment contrast.
+4. §1 closing scope paragraph (deliberately bounded contribution;
+   two structural readings as verified starting points; human-AI
+   collaboration, end-to-end public record).
+5. §7 Aut bullet: reviewer's stabiliser formulation added as a
+   clause.
+6. Abstract: one sentence "The image of the product spans a proper
+   sublattice of index 2^16 in Lambda." (flagged to user as easy to
+   remove).
+
+Verification (workflow #2, five parallel adversarial verifiers;
+one verifier's own log: prompt_logs/204_verify_sec7_aut_bullet_
+build_health.txt):
+- 4/5 items verified correct on first pass.
+- CAUGHT: §1 "four sublattice inclusions" imprecise (Lemma 4.1 is an
+  equality by parity argument; only three lemmas are
+  inclusions-by-table). FIXED: "four short lemmas, reducing to
+  sublattice inclusions verified in exact arithmetic".
+- CAUGHT (pre-existing, since v3): Appendix C "each of the four
+  lemmas is established by exhibiting ... integer coefficients" has
+  the same three-vs-four miscount. FIXED: "three of the four lemmas
+  ... -- the fourth, sigma(L) = L, is a parity argument".
+- Citation completeness: rem:span-defect now cites
+  verify_product_span_{index,structure}.py (both scripts).
+- Stabiliser phrasing verified defensible; en-dash convention clean;
+  all cross-references resolve.
+
+Bookkeeping:
+- Paper rebuilt clean: 20 pages (up from 19; the Change-9 additions
+  add one page).
+- v5 snapshot re-frozen (paper/main_2026-06-07.tex).
+- v4_to_v5_changelog.md: Change 9 block added (items a-f); page-count
+  paragraph updated (19 -> 20 via Change 9); header updated.
+- CURRENT_STATE.md page count 19 -> 20.
+
+Status: CLOSED.

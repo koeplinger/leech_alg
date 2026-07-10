@@ -1,0 +1,50 @@
+Prompt 204 -- Verify Section 7 automorphism-group bullet and build health
+Date: 2026-07-10
+
+(Subagent task spawned by workflow orchestration; verification pass
+over today's edits to paper/main.tex.)
+
+Task as received:
+
+Verify the modified automorphism-group bullet in Section 7 of
+/home/jens/Projects/leech_alg/paper/main.tex and overall build health.
+
+Check: (a) the bullet now reads "The automorphism group of
+(Lambda, +, star) -- equivalently, the stabiliser of the product
+tensor inside Co_0 -- and its relationship to the Conway group." --
+verify the stabiliser phrasing is mathematically defensible:
+Aut(Lambda,+,star) as defined in the paper's context means lattice
+automorphisms preserving star, i.e., elements of Aut(Lambda,+) = Co_0
+preserving the product, which IS the stabiliser of the product tensor
+inside Co_0. Confirm the bullet still contains only the established
+bounds (S_3 lower, strict Co_0 upper via -I_24) and nothing stronger.
+(b) Grep the whole file for any new "---" (em-dash) introduced in
+prose by today's edits (LaTeX comments % --- exempt). (c) Confirm the
+theorem-environment numbering in Section 5 after the two new remarks:
+run pdflatex if needed or read main.aux to confirm no broken
+cross-references (rem:span-defect should resolve; check all \ref
+targets exist). (d) Confirm page count of main.pdf. Use the schema;
+item = "sec7-and-build-health".
+
+Outcome (recorded per Manifesto):
+
+(a) PASS. Bullet at main.tex lines 859-865 matches the quoted text.
+    The "stabiliser of the product tensor inside Co_0" gloss is
+    defensible: the paper's convention (Introduction, lines 121-123)
+    is that the automorphism group of the lattice is Co_0, so
+    Aut(Lambda, +, star) = {g in Co_0 : g(u star v) = g(u) star g(v)}
+    = Stab_{Co_0}(star-tensor). The gloss itself pins this reading.
+    Bullet contains only the established bounds: S_3 lower bound
+    (stated as empirical), strict inclusion in Co_0 via -I_24 (a
+    bilinearity fact: (-u) star (-v) = u star v != -(u star v) for
+    any nonzero product), and "Full identification ... is open."
+    Nothing stronger.
+(b) PASS. Only four "---" in the file, all "% ---------" comment
+    dividers (lines 41, 43, 54, 56). No em-dashes in prose.
+(c) PASS. Build is fresh (main.aux/main.pdf at 16:44:35, after
+    main.tex at 16:44:20). Section 5 remarks number 5.1-5.4;
+    rem:span-defect resolves to Remark 5.4 (page 7) in main.aux.
+    Every \ref/\eqref target in main.tex has a matching \label; no
+    undefined-reference or rerun warnings in main.log (only benign
+    hyperref PDF-string and geometry marginal-note warnings).
+(d) main.pdf has 20 pages (pdfinfo and main.log agree).

@@ -1,0 +1,37 @@
+Prompt 203 -- Baez-Egan projected Jordan product phi: span index
+Date: 2026-07-10
+
+(Subagent task spawned by workflow orchestration, per the prompt-202
+execution plan, Workflow #1 item (A).)
+
+Task as received:
+
+Implement the Baez-Egan projected Jordan product phi on the Leech
+lattice and compute the exact index
+[Lambda : Z-span(phi(Lambda, Lambda))], mirroring the computation in
+python_project/src/verify_product_span_index.py.
+
+Mathematical spec (paper Section 6, "Anatomy of the Baez--Egan
+closure"): for u = (x,y,z), v = (x',y',z') in Lambda subset O^3,
+represented as off-diagonal Hermitian 3x3 octonion matrices X, Y in
+h3(O), 2(XY + YX) = D + R with D in Z^3 diagonal,
+  D = 4(<x,x'> + <y,y'>, <x,x'> + <z,z'>, <y,y'> + <z,z'>),
+(tr D = 8<u,v>), and R the off-diagonal residue lying in Lambda.
+Define phi(u, v) := R.  Parametrization: X_12 = z, X_21 = zbar,
+X_13 = ybar, X_31 = y, X_23 = x, X_32 = xbar.
+
+Machinery reused from verify_consecutive_twists_exact.py (B, omul,
+l3, detB, inLambda, add).
+
+Required validations before the index computation:
+1. D-formula match on 20 random pairs.
+2. Lambda-closure of phi on all 576 basis pairs.
+3. Commutativity of phi on 20 random pairs.
+
+Then: Z-span of the 576 basis-pair products via sympy
+hermite_normal_form; report [L^3 : span], [Lambda : span] =
+[L^3 : span]/4096, and whether 2*Lambda is contained in the span
+(HNF-inverse membership test as in verify_product_span_structure.py).
+
+Deliverable: python_project/src/verify_phi_span_index.py, run, and
+report results via the orchestrator's structured-output schema.
