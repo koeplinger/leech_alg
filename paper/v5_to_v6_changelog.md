@@ -10,17 +10,15 @@ v6 is a clarity revision of the span-defect material introduced in v5. No mathem
 
 ## Changes
 
-### Change 1 — §6 φ span comparison: restructured, clarifying footnote added
+### Change 1 — §6 φ span comparison: restructured
 
-- **What changed.** The single dash-linked sentence comparing the span defects of $\star$ and $\varphi$ was split into three shorter sentences (dash construction removed). A footnote was added stating explicitly that a span defect is an attribute of the induced product, not a qualification of closure: closure places every product inside Λ, while the span measures how much of Λ the products reach; both $\star$ and $\varphi$ are closed on Λ and differ in how large a sublattice their images span; the Baez–Egan result itself (the doubled Jordan product on the 27-dimensional lattice $\widetilde\Lambda$) is untouched, $\varphi$ being the projection read-off described in §6.
+- **What changed.** The single dash-linked sentence comparing the span defects of $\star$ and $\varphi$ was split into three shorter sentences (dash construction removed). No clarifying footnote is attached: the possible misreading of the comparison (as if the Baez–Egan construction failed to close) is instead resolved at the source, by the index explanation added to Remark 5.4 (Change 3) together with the anatomy paragraph's own opening, which already states that the Baez–Egan closure lives on the 27-dimensional ambient lattice and that $\varphi$ is the projection read-off.
 - **Where.** §6, end of the "Anatomy of the Baez–Egan closure" paragraph.
-- **Rationale.** As written in v5, the comparison could be misread as claiming the Baez–Egan construction fails to close. The footnote pre-empts that misreading.
+- **Rationale.** As written in v5, the comparison could be misread as claiming the Baez–Egan construction fails to close; the fix grounds the reader in what a span defect is before the comparison arrives.
 
-### Change 2 — Remark 5.4 (*Span of the image*): complementarity sentence
+### Change 2 — (folded into Changes 1 and 3)
 
-- **What changed.** After the opening "Closure does not mean surjectivity.", one sentence was added: "Theorem 1.1 places every product $u \star v$ inside Λ; the question addressed here is the complementary one, namely how much of Λ the products reach."
-- **Where.** §5, Remark 5.4.
-- **Rationale.** Anchors the closure-versus-span distinction at the point where the span defect is first introduced, so the §6 comparison inherits the framing.
+An intermediate revision this same day added a complementarity sentence to Remark 5.4 and a clarifying footnote to §6; both were superseded within the v6 cycle by the sharper index explanation of Change 3 and removed as redundant. They do not appear in the v6 freeze.
 
 ### Change 3 — Remark 5.4: the index explained
 

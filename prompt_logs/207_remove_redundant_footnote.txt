@@ -1,0 +1,31 @@
+Prompt 207 -- Remove the now-redundant §6 span-defect footnote
+Date: 2026-07-10
+
+User: index is now clear from the Remark 5.4 explanation; en-dash
+removal approved. Question: is the §6 footnote still needed? "It
+doesn't add anything new (unless I overlooked something)."
+
+Assessment: nothing overlooked; all three footnote claims are covered
+elsewhere:
+1. Span defect vs closure -> Remark 5.4 (coset explanation).
+2. Both star and phi closed -> anatomy paragraph states phi is a
+   "Z-bilinear closed product ... an order in the sense of
+   Theorem 1.1".
+3. Baez-Egan untouched / phi is projection read-off -> the anatomy
+   paragraph OPENS with "Egan and Baez's closure is on the ambient
+   27-dimensional lattice ..., not on Lambda alone" and constructs
+   phi as the projection.
+
+Action: footnote removed (editorial standard 3, cut every
+redundancy). Paper rebuilt clean at 20 pages. v6 re-frozen at
+paper/main_2026-07-10.tex.
+
+Changelog: v5_to_v6_changelog.md Change 1 rewritten to describe the
+net v5->v6 state (restructured sentences, no footnote; the
+misreading is resolved at the source by the Remark 5.4 index
+explanation and the anatomy paragraph's own opening). Change 2
+converted to a note recording that the intermediate same-day
+complementarity sentence and footnote were superseded within the v6
+cycle and do not appear in the v6 freeze.
+
+Status: CLOSED.
