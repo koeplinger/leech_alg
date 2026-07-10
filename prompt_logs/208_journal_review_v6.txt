@@ -1,0 +1,81 @@
+Prompt 208 -- Journal-grade review of v6, applied-audience lens
+Date: 2026-07-10
+
+User: "make a journal-grade review of the new version v6, also in
+the light of a more 'engineering'-leaning (applied) audience (but
+still properly accounting for prior art and leaving just enough
+pointers into what may be interesting for a pure mathematician)"
+
+Context: v6 frozen today (paper/main_2026-07-10.tex, 20 pages).
+Target venues under consideration: Advances in Applied Clifford
+Algebras, Experimental Mathematics (per prompt 201 discussion).
+Applied interest so far: medical imaging, quantum cryptography,
+algebraic SM-symmetry modeling.
+
+Workflow: six parallel reviewers --
+1. applied-audience fit (engineering legibility of results),
+2. prior-art accounting (Wilson/Dixon/Baez-Egan/Corradetti/
+   historical/physics refs; fairness of the phi comparison),
+3. pure-math pointers (open questions well-scoped, inviting,
+   not overclaiming),
+4. technical correctness of v6-new content (indices 2^16/2^25,
+   exhaustive facts, cross-refs, build),
+5. editorial end-to-end (dash-free prose flow, standards),
+6. v5->v6 regression check.
+Then synthesis to
+paper/reviews/2026-07-10_claude_fable_5_journal_review_v6.md.
+
+Note: model is now Claude Fable 5 (user switched via /model earlier
+today); review signed accordingly.
+
+Done. Workflow: 6 parallel review dimensions + synthesis (7 agents,
+~455k tokens). Review saved at
+paper/reviews/2026-07-10_claude_fable_5_journal_review_v6.md.
+
+Headline: fit for both target venues (AACA; Experimental
+Mathematics). 48 findings: 6 required, 21 recommended, 19 notes
+(46 distinct after dedup).
+
+Required findings (paper edits, user to commission):
+R1. sigma = (1 2) never fixed in the main text; the generic
+    Theorem 1.1 lacks its anchor since rem:unique was removed in the
+    v4 cycle. Fix: one sentence fixing the running choice + state
+    the all-21-transpositions closure fact (verified in repo).
+R2. [Baez2014] bibliography: series dates and part pointer
+    (agent claims the 270x64/Lagrangian material is in part 11, not
+    parts 9-10, and that a 2023 Calderbank comment anticipates the
+    Lagrangian-preimage reading). EXTERNAL-SOURCE CLAIM: verify
+    against the live n-Category Cafe pages before editing.
+R3. Aut bullet asserts unproven containment Aut(Lambda,+,star) in
+    Co_0 via the "equivalently" gloss; ring automorphisms need not
+    preserve the norm (ambient GL_24(Z)). Fix: define
+    G := {g in Co_0 : g preserves star}, state S_3 <= G < Co_0,
+    flag Aut = G as open. Matches the human journal reviewer's own
+    parenthetical about infinite groups.
+R4. "octonion algebra over F_2" naming technically false: octonion
+    algebras are simple; L/2L has the proper two-sided ideal V.
+    Rename to "the reduction of the octonion order L modulo 2".
+R5. "Baez/Egan" slashes (2 spots) violate the name-join convention;
+    A.1 paragraph title fragment.
+R6. "the Coxeter representation" in the Conclusion: undefined term;
+    rest of paper says "Wilson's representation".
+
+Note: the review doc twice refers to the consecutive-twists remark
+as "Remark 4.6"; in the v6 build it is Remark 4.9 (4.1-4.4 lemmas,
+4.5 remark, 4.6-4.8 propositions, 4.9 consecutive twists). Account
+for this when applying R1/recommendation 8.
+
+Also of note (recommended): Petersson first-name miss at first
+mention (L244); Hermes/OpenCode word order per prompt-log 156;
+sigma(Ls) left-ideal candidate in §7 bullet 1 is already refuted
+mod 2 (W is a subalgebra, not an ideal) -- record the exclusion;
+"Empirically" mislabels proven facts; spelling -ise/-ize mixed;
+"remarkably simple" tone violation in Conclusion; overfull lines
+from long script paths.
+
+Verdict section: AACA = squarely in scope, bounded-contribution
+posture reads as strength; Experimental Mathematics = near genre
+exemplar (exact arithmetic, per-claim scripts, sampled-vs-exhaustive
+labeling, public record as deliverable).
+
+Status: CLOSED (review delivered; edits await user's decisions).
