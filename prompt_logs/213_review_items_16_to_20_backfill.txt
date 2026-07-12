@@ -1,0 +1,74 @@
+Prompt 213 -- v6 review items 16, 17, 18, 19, 20 (BACKFILL)
+Date: 2026-07-12
+
+BACKFILL NOTE. These five prompts were issued and applied earlier in the
+same session, between the work logged as 211 (US spelling) and 212 (items
+12/14/15), but were not logged at the time. Recorded here at the user's
+instruction ("Make sure to record all prompts, including the previous
+one(s)"). The log number is later than the work; the dates are correct.
+Manifesto compliance failure on my part, recorded rather than hidden.
+
+Item 16 -- Break one colon in the scope paragraph; name the index.
+  User: "implement as suggested."
+  Applied: "The scope of this paper is deliberately bounded: we establish
+  existence..." -> full stop ("...bounded.  We establish existence...").
+  Three consecutive colon-hinged sentences reduced to two, each of which
+  now does real work. And "a proper sublattice of exactly computed index"
+  -> "a proper sublattice of index~$2^{16}$", matching the abstract.
+
+Item 17 -- Deduplicate the Corradetti contrast.
+  User: "implement as suggested."
+  Applied: Section 6 keeps the full contrast (Corradetti rescales an order
+  and 2-adically saturates a sublattice; the present paper passes to a
+  quotient L -> L/2L; both place 2-primary structure at the center of an
+  octonion-derived order on E_8). The Appendix A.1 note is cut back to its
+  terminological point plus a pointer to Section 6.
+
+Item 18 -- Deduplicate the product-norm value set.
+  User: "implement as suggested."
+  Applied: Remark 1.3 (order-closure, not shell-closure) keeps only the
+  takeaway ("The product of two minimal vectors has norm at least 16
+  (Remark 5.1), never the minimal value N = 8") and cross-references the
+  specific remark. The eight-element value set, the mode at 64, and the
+  idempotent/nilpotent exclusions stay in Remark 5.1 in Section 5. Side
+  benefit: "Empirically" is gone from the introduction, which the review
+  had separately flagged as mislabelling exhaustively computed facts.
+
+Item 19 -- Drop "remarkably simple".
+  User: "yeah drop the vanity as you suggest."
+  Applied: the Conclusion now opens "The Leech lattice admits an order
+  under a Z_3-symmetric triple-octonion product on R^24, realized in
+  Wilson's sublattice representation of Lambda." The colon went with it:
+  the construction is named directly rather than announced and described.
+  Consistent with the standing tone memory (state what was accomplished;
+  do not praise the construction).
+
+Item 20 -- Reconcile the Kirmse count (two passes).
+  User, first pass: "ok but let's be truthful and concise, this is an
+  abstract: He demonstrated a larger count of thirty, which reduces to
+  eight in a narrowing he merely refers to in prose but does not describe
+  in formulas in his paper; those 8 do contain the 7 maximal orders, yet
+  he picked the one that isn't."
+  User, second pass (correcting himself): "'he states in prose' was my
+  mistake; we should characterize it as 'he hints at in prose' because he
+  gives no details whatsoever (he just writes something along the lines
+  that it can be done); the narrowing from 30 to eight is our own
+  reconstruction, with no indication or proof that this is what he was
+  thinking about."
+  FINAL abstract wording: "Johannes Kirmse (1924) derived a necessary form
+  met by thirty candidates and hinted, without detail, at a further
+  narrowing, which in our reconstruction leaves eight, containing all
+  seven maximal orders, though the one he exhibited is not closed".
+  This replaces the false claim that he "recovered the full count of
+  seven" (he never states the count; the seven are simply what remains of
+  the eight once J_1 falls). Three attributions are now correct: the
+  thirty candidates and the necessary form are his; the hint at a further
+  narrowing is his and is no more than a hint; the unit-stability criterion
+  that cuts thirty to eight is OURS, flagged as reconstruction. Appendix B
+  already hedged the criterion as "an unstated narrowing of the criterion,
+  in our reconstruction", so the two now tell the same story at two levels
+  of detail.
+
+Paper rebuilt clean after each item.
+
+Status: CLOSED.

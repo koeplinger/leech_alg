@@ -1,0 +1,41 @@
+Prompt 215 -- Propose wording for the remaining review items
+Date: 2026-07-12
+
+User: "Great - now for the remaining reviewer feedback items (required and
+suggested): Propose some wording while I read up on them again in
+parallel."
+
+Context: the automorphism workflow had just delivered (prompt log 209).
+Remaining items were R3 (Aut phrasing), recommended 8 (the "other
+permutations" bullet), 9 ("Empirically" in the Aut bullet), and 10 (the
+maximality bullet); plus 11 and 21 (changelog housekeeping, no wording
+needed).
+
+Key observation reported to the user: R3 and recommended 9 are no longer
+open questions. The Aut bullet sits in Section 7's list of questions that
+"remain immediately open", but the group is now determined (C_6 x S_3, order
+36) and the Co_0 containment is PROVED. So the honest move is to lift the
+material out of the open-questions list into Section 5 as a result, which
+also deletes "Empirically" automatically: nothing in it is empirical any
+more.
+
+Also reported: the review was itself out of date on item 8. It lists
+4- through 7-cycles as open; they were settled exhaustively in
+python_project/src/verify_all_cycles_exact.py (prompt 153). The genuine
+residue is a structural characterization of the closing pattern, the
+permutation types not yet enumerated, and linear maps of R^8 that are not
+coordinate permutations.
+
+Four wordings proposed (Section 5 Aut remark; Section 7 residual Aut
+question; Section 7 maximality bullet; Section 7 permutations bullet),
+plus an optional Section 5 census table of closing twists by cycle type,
+and one question put to the user: should the standalone automorphism note
+be cited as a companion document, or should the remark cite only the
+scripts?
+
+Verification note: the census figures quoted in the proposal (21/21, 35/70,
+0/210, 252/504, 210/840, 336/720) were taken from the project record
+(prompt log 153), not from a run observed in this session. Re-run launched
+before any of them go into the paper.
+
+Status: CLOSED (superseded by prompt 216, which carries the decisions).

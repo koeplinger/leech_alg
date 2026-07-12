@@ -1,0 +1,45 @@
+Prompt 214 -- v6 re-dated to 12 July; the 10 July snapshot deleted
+Date: 2026-07-12
+
+BACKFILL NOTE. Logged after the fact, at the user's instruction ("Make
+sure to record all prompts, including the previous one(s)").
+
+User (1): "Today is 12 July 2026. We're still working on v6 of the paper
+(keep that version fixed) but update the date to today"
+  Applied: \subtitle{10 July 2026 (v6)} -> \subtitle{12 July 2026 (v6)}.
+  Version number held at v6; only the date moves.
+
+User (2): "delete the 'frozen snapshot' main_2026-07-12.tex because v6 is
+not frozen yet. You have created a snapshot of v5 which is good"
+  Correction reported back: no main_2026-07-12.tex existed; I had only
+  said I WOULD create one at freeze time. The file actually in tension
+  with "v6 is not frozen yet" was paper/main_2026-07-10.tex, written on
+  10 July as a v6 freeze (prompt log 207) and since overtaken by the whole
+  journal-review pass. Two options were put to the user (delete it, since
+  v6 is one open version and deserves one freeze; or keep it, since it is
+  the state the journal review was performed against).
+
+User (3): "delete main_2026-07-10.tex"
+  Deleted (staged git removal; content recoverable at commit b8bf187).
+
+Documentation sweep for the five live documents that referenced it:
+  README.md                              -> v6 in revision, not yet frozen
+  CURRENT_STATE.md                       -> v6 = working source, 12 July;
+                                            notes the deletion and that v6
+                                            will have exactly one freeze
+  evidence_and_reasoning/editorial_standards.md -> v5 named as the last
+                                            frozen state
+  evidence_and_reasoning/2026-05-22_plan.md     -> same correction to its
+                                            freeze list
+  paper/v5_to_v6_changelog.md            -> v6 dated 12 July, 21 pages,
+                                            marked not yet frozen
+
+paper/reviews/2026-07-10_claude_fable_5_journal_review_v6.md is a dated
+artifact and was NOT rewritten. A forward note was added to its header
+instead: the snapshot it names was deleted, the reviewed state is at
+commit b8bf187, and its line numbers have since shifted.
+
+Prompt logs 205-208 still name the snapshot. They are immutable record and
+stay as written.
+
+Status: CLOSED.
