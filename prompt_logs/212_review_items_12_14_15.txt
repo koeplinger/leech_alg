@@ -1,0 +1,55 @@
+Prompt 212 -- v6 review items 12 (overfull lines), 14 (intro seams),
+15 (Section 4 preamble)
+Date: 2026-07-12
+
+User: take recommended items 12, 14, 15 while the automorphism workflow
+finishes; hold 8, 9, 10 for the Aut update (they sit in the same
+Conclusion open-questions list as the Aut bullet). Wording for 14 and 15
+presented first and approved verbatim: "All three terminology fixes read
+very precisely, apply them."
+
+Item 12 (overfull lines). Three overfull hboxes in v6 (56.0 pt, 16.0 pt,
+15.8 pt). Fixed by:
+  - \setlength{\emergencystretch}{3em} in the preamble (preferred over
+    \sloppy: \sloppy produced four loose lines, \emergencystretch two);
+  - Appendix B's brace-expanded script path
+    verify_{dickson_1923,kirmse_1924,mahler_1942,coxeter_1946}.py split
+    into four separate \texttt items so TeX has legal break points.
+Result: zero overfull boxes, still 21 pages. Residual cost: two loose
+lines (the three-key Elduque citation and the Appendix B script list are
+unbreakable chunks near the text width). The remaining underfull warnings
+are in the bibliography and predate this change.
+
+Item 14 (two introduction seams).
+  (a) "The third, however, is generally not closed under octonion
+      products" -> "The third, however, generally fails: the sublattice
+      it involves is not closed under octonion products, including
+      Wilson's."  A condition is not the kind of thing that is closed
+      under a product; the sublattice is.  (The old wording was the
+      user's own from an earlier pass, so the repair was shown before
+      applying.)
+  (b) "The map sigma leaves the E_8 lattice L invariant and is an algebra
+      isomorphism on the octonions, but it moves Wilson's sublattices
+      such that inclusion holds." -> "The map sigma fixes the E_8 lattice
+      L setwise and is an octonion-algebra isomorphism, but it moves
+      Wilson's sublattices L s_bar and Ls onto sublattices for which the
+      required closure inclusions do hold."  Names the inclusion.
+
+Item 15 (Section 4 preamble).  "while leaving the octonions and L
+themselves invariant.  This is where the work of the proof lives." ->
+"while fixing L setwise (Lemma 4.1) and carrying the octonion product to
+an isomorphic one (Definition 3.2).  Lemmas 4.3 and 4.4, the closure
+inclusions for the moved sublattices, are where the work of the proof
+lives."  Two repairs: sigma does NOT leave the octonion product invariant
+(it is not an automorphism of O; it carries the product to the isomorphic
+product x .sigma y = sigma(sigma x . sigma y)), and "this" now has a
+concrete antecedent.
+
+This is the same terminology sweep as memory
+feedback_sigma_acts_on_sublattices: sigma acts on Ls / L s_bar, not on L,
+and it is an octonion-algebra isomorphism, not an octonion automorphism.
+
+Paper rebuilt clean: 21 pages, no undefined references or citations, zero
+overfull boxes.
+
+Status: CLOSED.

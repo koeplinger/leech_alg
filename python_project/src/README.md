@@ -46,6 +46,10 @@ All trials use fixed random seeds for reproducibility.  Results are recorded in 
 |---|---|
 | `symbolic_proof_checks.py` | Exact-rational-arithmetic verification of the four lemmas in Section 4 of the paper (σ(L) = L; L · L ⊆ L; L · σ(Lš) ⊆ σ(Lš); σ(Ls) · σ(Ls) ⊆ σ(Ls)), plus the accompanying non-triviality check σ(Ls) ≠ Ls now recorded as a remark in Section 4.  No floating-point. |
 | `consistency_checks.py` | Ten pre-paper consistency checks: construction well-definedness, isomorphism claim, table differences, exhaustive verification harness, generation arguments, claimed algebraic properties, transposition independence, untwisted-vs-twisted comparison, cross-reference with Wilson's paper, code correctness. |
+| `verify_ideal_decomposition.py` | The ideal decomposition R²⁴ = D ⊕ T of (R²⁴, ⋆): both are two-sided ideals, D ⋆ T = T ⋆ D = 0, and (D, ⋆) ≅ (O, ⋆ₛ) rescaled by 3. |
+| `verify_star_algebra_structure.py` | The ambient algebraic group Aut(R²⁴, ⋆): annihilator characterisation of D and T; the C₃-Fourier normal form over Q(ζ₃); h_{A,B} = P⊗A + Q⊗B and the block permutations; dim Der = 28; the ⋆-intrinsic trace form (signature (3,21), **not** the Leech form). |
+| `verify_aut_lambda_star.py` | **Aut(Λ, +, ⋆): exact order 36, structure C₆ × S₃.** Λ∩D and Λ∩T; complete enumeration of the octonion-automorphism stabilisers of L, Ls, Ls̄ (orders 1344, 168, 12096); the surviving pairs (A,B) by two independent methods; all 36 elements verified against Λ, ⋆ and the Leech Gram matrix (so the group lies inside Co₀). Writes the GAP generators. |
+| `verify_aut_octonion_crosscheck.py` | Independent cross-checks of those three stabiliser enumerations: re-run from a different generating triple, and an assumption-free brute force over all 645 120 signed permutations for Stab(L). Writes 8×8 GAP generators. |
 
 ## Guidelines
 

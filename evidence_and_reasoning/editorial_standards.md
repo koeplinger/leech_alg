@@ -40,6 +40,9 @@ its place, and the logic should be followable on a first reading.
    colon or parentheses, or move the aside to a footnote if it is out
    of the main flow.  Unspaced en-dashes remain for name joins
    (Baez--Egan) and numeric ranges (1923--1946).
+   Spelling is US English (adopted 2026-07-12): *-ize*/*-ization*
+   (characterize, polarization, stabilizer), *center*, *labeled*.
+   Quoted titles and verbatim quotations keep their source spelling.
 
 5. **Precision over good-sounding vagueness.** Define terms; do not
    over-claim; state plainly what is open. A sentence that sounds

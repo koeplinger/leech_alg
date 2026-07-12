@@ -1,0 +1,39 @@
+Prompt 211 -- Spelling convention: US English
+Date: 2026-07-12
+
+User: 'Re recommendation "Pick one spelling convention. (-ise at L687,
+700, 709, 839, 867, 1337, 1415; "polarization(s)" at L95, 197, 864,
+1376-1388) Least churn: polarisation(s) to match the -ise majority."
+pick the US English convention'
+
+Decision: US English. The paper's -ization spellings stay; the -ise
+minority is converted.
+
+Changes in paper/main.tex (8 words, one occurrence each):
+  characterises    -> characterizes
+  characterisation -> characterization
+  specialises      -> specializes
+  realised         -> realized
+  realise          -> realize
+  stabiliser       -> stabilizer
+  centre           -> center        ("the centre of an octonion-derived order")
+  labelled         -> labeled       ("the row labelled (i,j)")
+
+Left unchanged (deliberately):
+  - "analyses" (plural of analysis; identical in US English).
+  - "Towards autotopies of normed composition algebras ..." in the
+    bibliography: a source title, not our prose.
+
+Sweep method: regex inventory of -ise/-ised/-ises/-ising/-isation/-iser
+and -yse forms, minus the words where -ise is not a suffix (otherwise,
+precise, comprise, arise, ...), then a second pass for other British
+spellings (labelled, modelling, behaviour, colour, centre, favour). No
+further hits.
+
+Also recorded in evidence_and_reasoning/editorial_standards.md,
+standard 4: spelling is US English (adopted 2026-07-12); quoted titles
+and verbatim quotations keep their source spelling.
+
+Paper rebuilt clean: 21 pages, no undefined references or citations.
+
+Status: CLOSED.

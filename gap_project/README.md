@@ -187,6 +187,25 @@ the companion's "Summary of concrete data" three-point list.
 | `tests/test_triple_product.g`     | parts of `python_project/src/trial_007_kirmse_twist.py`     |
 | `tests/test_companion_examples.g` | (the companion paper, hand-checked here)                    |
 
+## Standalone group-identification scripts
+
+Two scripts sit outside the `run_all.g` suite because they consume matrices
+produced by the Python side (they are the group-theoretic half of the
+automorphism-group calculation, and GAP's Schreier–Sims machinery is the
+independent second opinion on the orders):
+
+| Script | Input | What it reports |
+|---|---|---|
+| `aut_lambda_star.g` | `aut_lambda_star_gens.g` (written by `python_project/src/verify_aut_lambda_star.py`) | `Size` and `StructureDescription` of Aut(Λ, +, ⋆) from three 24×24 integer generators: **order 36, C6 x S3** |
+| `octonion_stabilisers.g` | `octonion_stabilisers_gens.g` (written by `python_project/src/verify_aut_octonion_crosscheck.py`) | identification of the three octonion-automorphism lattice stabilisers: Stab(L) = 2³·L₃(2) of order 1344, Stab(Ls) = 2³:(7:3) of order 168, Stab(Ls̄) = U₃(3).2 = G₂(2) of order 12096 |
+
+Run them from inside `gap_project/`:
+
+```bash
+cd gap_project && gap -q -b aut_lambda_star.g
+cd gap_project && gap -q -b octonion_stabilisers.g
+```
+
 ## Notes on conventions
 
 - Coordinates are 1-indexed (GAP convention).  Position 1 holds the $e_0$

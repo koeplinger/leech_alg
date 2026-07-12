@@ -1,0 +1,42 @@
+Prompt 210 -- Section 7: record the left-ideal exclusion for sigma(Ls)
+Date: 2026-07-12
+
+User (verbatim): "Help me understand this recommendation: 'Record the
+left-ideal exclusion or replace the candidate. (L859-862) sigma(Ls) is
+not a left ideal of L (32/64 basis-pair products leave the span); say
+so, or offer a candidate not already refuted.'"
+
+Then, after the explanation: "Yes, do the first fix recommendation,
+because it pairs the candidate exclusion with a structural reason we
+already described."
+
+Background: the v6 journal review (paper/reviews/
+2026-07-10_claude_fable_5_journal_review_v6.md) flagged that Section 7's
+first open question offers three candidate shapes for a structural reason
+for Lemma 4.4, the first of which -- "an identification of sigma(Ls) with
+a left ideal" -- is already refuted by this project's own computations.
+
+Independent verification (this turn, exact rational arithmetic on the
+paper's basis; recorded in
+python_project/src/verify_sigma_Ls_ideal_exclusion.py):
+
+  L . sigma(Ls)      <= sigma(Ls)   :  32/64   (NOT a left ideal)
+  sigma(Ls) . L      <= sigma(Ls)   :  21/64   (NOT a right ideal)
+  sigma(Ls) . sigma(Ls) <= sigma(Ls):  64/64   (Lemma 4.4, subalgebra)
+  L . sigma(Ls_bar)  <= sigma(Ls_bar): 64/64   (Lemma 4.3, left ideal)
+  sigma(Ls_bar) . L  <= sigma(Ls_bar): 64/64   (two-sided)
+  control: L . Ls    <= Ls          :  24/64
+
+The review's 32/64 is confirmed exactly. The exclusion is also implied by
+the mod-2 picture (an integer-level ideal would reduce to a mod-2 ideal;
+W = sigma(Ls)/2L is only a subalgebra), but is verified here directly at
+the integer level.
+
+Action: Section 7 bullet 1 rewritten to record the exclusion as a
+verified negative result, contrasted against the two-sided ideal
+sigma(Ls_bar) of Lemma 4.3, and to retain only the two unrefuted
+candidate shapes. Editorial: the exclusion tells a would-be prover where
+NOT to look, and names the asymmetry (ideal vs mere subalgebra) that
+makes Lemma 4.4 the hard one.
+
+Status: in progress.

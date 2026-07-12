@@ -69,6 +69,8 @@
 \DeclareMathOperator{\Co}{Co}
 \DeclareMathOperator{\Aut}{Aut}
 
+\setlength{\emergencystretch}{3em}
+
 \begin{document}
 \title{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product}
@@ -81,8 +83,9 @@ jenskoeplinger@gmail.com}
 
 \begin{abstract}
 We show that the Leech lattice~$\LL$ admits the structure of an order
-in a 24-dimensional real algebra.  The product is a
-$\ZZ_3$-symmetric triple-octonion product on~$\RR^{24}$, assembled
+in a 24-dimensional real algebra: the lattice is closed under a
+bilinear product on~$\RR^{24}$.  The product is a
+$\ZZ_3$-symmetric triple-octonion product, assembled
 from nine octonion-multiplication blocks under cyclic $\ZZ_3$
 permutation of three octonion factors.  In Robert A.~Wilson's sublattice
 description of~$\LL$ [J.~Algebra \textbf{322} (2009), 2186--2190],
@@ -99,8 +102,11 @@ index $2^{16}$ in~$\LL$.
 We further provide a historical account from the original sources
 (1923--1946) in Appendix~\ref{app:history}: Leonard E.~Dickson gave
 the first verified maximal order of integral octonions (1923), with
-an undercount of the total; Johannes Kirmse (1924) recovered the full
-count of seven but exhibited one non-closed candidate; a
+an undercount of the total; Johannes Kirmse (1924) derived a
+necessary form met by thirty candidates and hinted, without detail,
+at a further narrowing, which in our reconstruction leaves eight,
+containing all seven maximal orders, though the one he exhibited is
+not closed; a
 transposition provided by Richard H.~Bruck repaired that candidate
 (1946), with H.\,S.\,M.~(``Donald'') Coxeter providing the first
 correct account of all seven maximal orders.  The map~$\sigma$ of
@@ -142,15 +148,17 @@ Jordan product.
 The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ uses the
 same octonion multiplication in all three blocks with
 $\ZZ_3$-symmetric cross-block routing.  It satisfies two of Wilson's
-three sublattice conditions automatically.  The third, however, is
-generally not closed under octonion products, including Wilson's.
+three sublattice conditions automatically.  The third, however,
+generally fails: the sublattice it involves is not closed under
+octonion products, including Wilson's.
 
 The main result of this paper is that closure on~$\LL$ is restored
 by twisting the octonion multiplication on each block by a
 transposition~$\sigma$ of two imaginary basis units.  The map
-$\sigma$ leaves the $E_8$ lattice~$L$ invariant and is an algebra
-isomorphism on the octonions, but it moves Wilson's sublattices
-such that inclusion holds.
+$\sigma$ fixes the $E_8$ lattice~$L$ setwise and is an
+octonion-algebra isomorphism, but it moves Wilson's sublattices
+$L\bar s$ and~$Ls$ onto sublattices for which the required closure
+inclusions do hold.
 
 \begin{theorem}\label{thm:main}
 Let\/ $\star$ denote the $\ZZ_3$-symmetric triple-octonion product
@@ -176,19 +184,17 @@ into~$\LL$.
 \begin{remark}[Order-closure, not shell-closure]\label{rem:order-closure}
 The closure statement $\LL \star \LL \subseteq \LL$ means that
 products land somewhere in~$\LL$; it does not assert that the
-minimal shell is preserved.  Empirically, the product norm on
-$\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ takes values
-in $\{16, 32, 48, 64, 80, 96, 112, 128\}$ (see
-Section~\ref{sec:properties}), none of which equals the minimal value
-$\Nrm = 8$: products of minimal vectors always land on strictly
-higher shells.  This is consistent with $(\LL, +, \star)$ being an
+minimal shell is preserved.  The product of two minimal vectors has
+norm at least~16 (Remark~\ref{rem:product-norms}), never the minimal
+value $\Nrm = 8$: such products always land on strictly higher
+shells.  This is consistent with $(\LL, +, \star)$ being an
 order in the ring-theoretic sense: a subring that is a free
 $\ZZ$-module of rank equal to the ambient algebra's dimension.
 That property is weaker than, and independent of, any shell-level
 closure.
 \end{remark}
 
-The scope of this paper is deliberately bounded: we establish
+The scope of this paper is deliberately bounded.  We establish
 existence of the order, with a proof that is elementary (four
 short lemmas, reducing to sublattice inclusions verified in exact
 arithmetic).  Two
@@ -196,7 +202,7 @@ structural readings are recorded as verified facts and offered as
 starting points for further investigation: reduced modulo~$2L$, the
 construction produces a polarization of $L/2L$ into a complementary
 pair of Lagrangians (Section~\ref{app:mod2quotient}), and the image
-of the product spans a proper sublattice of exactly computed index
+of the product spans a proper sublattice of index~$2^{16}$
 (Remark~\ref{rem:span-defect}).  The result was developed through a
 systematic human--AI collaboration, and the complete research record
 is public~\cite{repo}: every prompt, computation, and verification,
@@ -241,7 +247,7 @@ coordinate sum, or all half-integers with odd coordinate sum
 multiplication, $L$~is a maximal order in~$\OO$: it is closed under
 multiplication and admits no enlargement to a larger order
 \cite{Coxeter1946, ConwaySmith2003}; for a modern survey of the
-integral-octonion history, see Petersson~\cite{Petersson2018}.
+integral-octonion history, see Holger P.~Petersson~\cite{Petersson2018}.
 
 \subsection{Wilson's Leech lattice}\label{subsec:wilson-leech}
 
@@ -357,11 +363,22 @@ All nine block-pair products use the same multiplication~$\cdot_\sigma$.
 
 We prove Theorem~\ref{thm:main} by showing that the $\sigma$-twisted
 octonion product preserves each of Wilson's three conditions
-(Definition~\ref{def:wilson-leech}).  From
+(Definition~\ref{def:wilson-leech}).  Throughout, and without loss of
+generality, $\sigma = (1\;2)$: this is the choice for which the
+appendix tables are computed, and the 21 transpositions of imaginary
+basis units are equivalent up to relabelling of the Fano
+triples\footnote{They form a single orbit under the Fano-plane
+automorphism group $\GL(3, \FF_2)$; each of the 21 is verified to
+close on~$\LL$
+(\texttt{python\_project/src/consistency\_checks.py}).}.  From
 the given choice of octonion basis and Fano triples, the
 load-bearing effect of $\sigma$ is that it \emph{moves} the
-sublattices $L\bar s$ and~$Ls$, while leaving the octonions and $L$
-themselves invariant.  This is where the work of the proof lives.
+sublattices $L\bar s$ and~$Ls$, while fixing~$L$ setwise
+(Lemma~\ref{lem:sigma-L}) and carrying the octonion product to an
+isomorphic one (Definition~\ref{def:twisted-product}).
+Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed}, the
+closure inclusions for the moved sublattices, are where the work of
+the proof lives.
 
 \subsection{The four lemmas}
 
@@ -577,7 +594,9 @@ algebraic identities.  Samples are drawn uniformly (by family weight)
 from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
 binary identities, and from $\operatorname{Min}(\LL)$ for the cube and
 quartic identities.  Sample size is $N = 10^6$ per property; exact
-integer arithmetic throughout.  The standard error is $\mathrm{SE} =
+integer arithmetic throughout
+(\texttt{python\_project/src/verify\_section5\_properties.py}).  The
+standard error is $\mathrm{SE} =
 \sqrt{p(1-p)/N}$, where $p$ is the fraction of samples on which the
 identity holds.
 
@@ -620,24 +639,13 @@ $3 \times 10^5$ samples, every quartic-passing sample also satisfied
 the cube identity, while the cube-passing set was roughly
 $2.4\times$ larger.
 
-\begin{remark}
+\begin{remark}\label{rem:product-norms}
 The product norm on $\operatorname{Min}(\LL) \times
 \operatorname{Min}(\LL)$ takes values in
 $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16.
 The mode is~64 (the norm-multiplicative value
-$\Nrm(u)\Nrm(v) = 8 \times 8$).
-\end{remark}
-
-\begin{remark}[Exhaustive facts on the minimal shell]
-Beyond the sampled rates above, two facts were checked
-\emph{exhaustively} over all 196{,}560 minimal vectors
-(\texttt{python\_project/src/verify\_idempotents\_min\_shell.py},
-exact integer arithmetic): the minimal shell contains no
-idempotents ($u \star u = u$ has no solution) and no square
-nilpotents ($u \star u = 0$ has no solution).  Every self-product
-$u \star u$ is a nonzero lattice vector of norm in
-$\{16, 32, 48, 64, 80, 96, 128\}$, with minimum~16; in particular
-no minimal vector squares back onto the minimal shell.
+$\Nrm(u)\Nrm(v) = 8 \times 8$).  Neither $0$ nor $8$ occurs, so the
+order has no idempotents and no square nilpotents.
 \end{remark}
 
 \begin{remark}
@@ -684,7 +692,7 @@ inside $\LL/2\LL$ structurally is open.
 \section{Related work}\label{sec:related}
 % ===============================================================
 
-\textbf{Wilson (2009)} \cite{Wilson2009} characterises~$\LL$ as
+\textbf{Wilson (2009)} \cite{Wilson2009} characterizes~$\LL$ as
 $\{(x,y,z) \in L^3 : \text{conditions 1--3}\}$, gives an explicit
 listing of the 196{,}560 minimal vectors in the form
 $3 \times 240 \times (1 + 16 + 16 \times 16)$, and proves that~$\LL$
@@ -697,7 +705,7 @@ in Dixon~\cite{Dixon1995}, where a closely related octonionic
 description of~$\LL$ is proposed.  The formula there required a small
 correction in the third family of minimal vectors, which Wilson
 \cite[end of \S5]{Wilson2009} supplied in a footnote-style remark
-while independently deriving the sublattice characterisation.  The
+while independently deriving the sublattice characterization.  The
 situation is similar to the Kirmse--Bruck--Coxeter relationship recorded
 in Appendix~\ref{app:history}: an early, structurally correct proposal
 needing correction.}
@@ -706,14 +714,14 @@ needing correction.}
 \]
 where $X, Y \in \OO$ are chosen so that $Y X^{\dagger}$ is a unit
 octonion (the identity of the new multiplication).  When $Y^{\dagger} = X^{-1}$
-the XY-product specialises to the X-product $A \circ_X B = (AX)(X^{-1}
+the XY-product specializes to the X-product $A \circ_X B = (AX)(X^{-1}
 B)$; Dixon uses this X-product with $X = \ell_0 = \frac{1}{2}(1 + e_1
 + \cdots + e_7)$ to obtain~$E_8$, and general XY-products for
 higher-dimensional laminated lattices including~$\LL$.  We have
 independently reproduced this construction in the supplemental
 code~\cite{repo}.
 
-\textbf{Baez and Egan (2014)} \cite{Baez2014} study closure
+\textbf{Baez--Egan (2014)} \cite{Baez2014} study closure
 properties of integer sublattices of the exceptional Jordan algebra
 $\mathfrak{h}_3(\OO)$.  In parts~9--10 of the series, Baez considers
 the 27-dimensional lattice $\ZZ^3 \oplus L_L \subset \mathfrak{h}_3(\OO)$,
@@ -736,9 +744,11 @@ derivation of the lower bound $244{,}035{,}421$ on the number of
 $E_8^3$-orbit Leech embeddings, and Egan's sharper count of
 $17{,}280$ Jordan rings.  This last factors as $17{,}280 = 270
 \times 64$: the $270$ is the number of sublattices $L_1 \subset L$
-isometric to $\sqrt{2}\,L$, equivalently the number of $4$-dimensional
-maximal totally isotropic subspaces of $L/2L \cong \FF_2^8$ under the
-plus-type quadratic form induced by the $E_8$ Gram form; the $64$ is
+isometric to $\sqrt{2}\,L$ (part~11 of \cite{Baez2014}), equivalently
+the number of $4$-dimensional maximal totally isotropic subspaces of
+$L/2L \cong \FF_2^8$ under the plus-type quadratic form induced by the
+$E_8$ Gram form; that mod-2 orthogonal-space picture is Tim
+Silverman's (part~12 of \cite{Baez2014}).  The $64$ is
 the number of $L_2$ in this collection that meet a given $L_1$ only
 in $2L$, equivalently the number of $4$-dimensional complementary
 isotropic subspaces.  All Baez--Egan claims hold under our reading.
@@ -758,8 +768,8 @@ three factors.  Whether the Leech embedding $\sigma(\LL) \subset
 the embeddings catalogued by Egan, or sits outside that family, is
 a question this paper does not address.
 
-\textbf{Anatomy of the Baez--Egan closure on $\LL$.}  Egan and
-Baez's closure is on the ambient 27-dimensional lattice
+\textbf{Anatomy of the Baez--Egan closure on $\LL$.}  The
+Baez--Egan closure is on the ambient 27-dimensional lattice
 $\widetilde{\LL} = \ZZ^3 \oplus \LL \subset \mathfrak{h}_3(\OO)$,
 not on $\LL$ alone.  For off-diagonal Hermitian matrices $X, Y \in
 \mathfrak{h}_3(\OO)$ representing $u = (x,y,z)$ and $v = (x',y',z')$
@@ -828,16 +838,15 @@ the present mod-2 quotient (Appendix~\ref{sec:appendix-tables},
 Section~\ref{app:mod2quotient}): Corradetti rescales an order and
 $2$-adically saturates a sublattice, while the present paper passes
 to a quotient $L \to L/2L$.  Both place $2$-primary structure at
-the centre of an octonion-derived order on~$E_8$.
+the center of an octonion-derived order on~$E_8$.
 
 % ===============================================================
 \section{Conclusion}\label{sec:conclusion}
 % ===============================================================
 
-The Leech lattice admits an order under a remarkably simple
-construction: a $\ZZ_3$-symmetric triple-octonion product on~$\RR^{24}$,
-realised in the Coxeter representation aligned with Wilson's
-sublattice description of~$\LL$.  The symbolic proof
+The Leech lattice admits an order under a $\ZZ_3$-symmetric
+triple-octonion product on~$\RR^{24}$, realized in Wilson's
+sublattice representation of~$\LL$.  The symbolic proof
 (Section~\ref{sec:proof}) reduces closure to four lemmas, of which
 the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice
 $\sigma(Ls)$, unlike~$Ls$ itself, is closed under the standard
@@ -854,17 +863,28 @@ Several questions remain immediately open:
   under the standard octonion product while $Ls$ is not.  The mod-2
   reduction in Section~\ref{app:mod2quotient} identifies what the
   appendix tables certify after reduction modulo~$2L$: $W :=
-  \sigma(Ls)/2L$ is a subalgebra of the $\FF_2$-octonion-algebra
-  $L/2L$.  An integer-level structural reason would replace the
-  appendix tables by a structural argument: an identification of
-  $\sigma(Ls)$ with a left ideal, with the image under a
+  \sigma(Ls)/2L$ is a subalgebra of $L/2L$, the reduction of the
+  octonion order~$L$ modulo~$2$.  One candidate shape for an
+  integer-level reason is ruled out: $\sigma(Ls)$ is not an ideal
+  of~$L$ on either side.  Of the 64 basis-pair products, 32 of
+  $L \cdot \sigma(Ls)$ and 43 of $\sigma(Ls) \cdot L$ lie outside
+  $\sigma(Ls)$
+  (\texttt{python\_project/src/verify\_sigma\_Ls\_ideal\_exclusion.py}).
+  The companion sublattice $\sigma(L\bar s)$ is by contrast a
+  \emph{two-sided} ideal of~$L$, of which
+  Lemma~\ref{lem:L-sigmaLsbar} is the left-handed half, and the same
+  asymmetry survives reduction modulo~$2L$: $V$ is an ideal
+  of~$L/2L$, $W$ only a subalgebra.  An integer-level structural
+  reason would replace the appendix tables by a structural argument
+  resting on something other than an ideal property: an
+  identification of $\sigma(Ls)$ with the image under a
   norm-preserving octonion automorphism, or with some
   module-theoretic structure over~$L$ that lifts the mod-2 picture.  (See the
   closing paragraphs of Section~\ref{app:mod2quotient} for a
   Lagrangian-polarization reframing of this open question as a
   research program.)
 \item The automorphism group of $(\LL, +, \star)$, equivalently
-  the stabiliser of the product tensor inside~$\Co_0$, and its
+  the stabilizer of the product tensor inside~$\Co_0$, and its
   relationship to the Conway group.  Empirically,
   $S_3 \subseteq \Aut(\LL, +, \star) \subsetneq \Co_0$: the
   block-permutation $S_3$ acts by automorphisms, and the inclusion
@@ -919,8 +939,8 @@ The author thanks Matthew Barley, Geoffrey M. Dixon, Holger P.
 Petersson, Petr Vojt\v{e}chovsk\'{y}, and Robert A. Wilson for
 valuable discussion, advice, feedback, and corrections.  The Lagrangian-decomposition
 framing recorded at the end of
-Section~\ref{app:mod2quotient} was prompted by feedback from
-OpenCode DeepSeek, Hermes.
+Section~\ref{app:mod2quotient} was prompted by feedback from Hermes
+(using OpenCode with DeepSeek).
 
 % ===============================================================
 \appendix
@@ -933,7 +953,7 @@ $\sigma(L\bar s)$, and tabulate the integer coefficients of the
 basis-by-basis products called for in the proofs of
 Lemmas~\ref{lem:L-order}, \ref{lem:L-sigmaLsbar},
 and~\ref{lem:sigmaLs-closed}.  Each table has 64 entries and is
-arranged so that the row labelled $(i,j)$ gives the unique 8-tuple
+arranged so that the row labeled $(i,j)$ gives the unique 8-tuple
 $(c_1,\ldots,c_8) \in \ZZ^8$ representing the corresponding product
 in the basis indicated.  All entries are integer; closure under the
 standard octonion product follows by $\ZZ$-bilinearity.  The same
@@ -1290,9 +1310,12 @@ $\bar\mu$ on the \emph{mod-2 quotient}
   \bar L := L/2L \cong \FF_2^{\,8}, \qquad
   \bar\mu \colon \bar L \times \bar L \to \bar L,
 \]
-the octonion algebra over~$\FF_2$; the structure constants of
-$\bar\mu$ are exactly the entries of Table~\ref{tbl:appendix-LL}
-reduced modulo~$2$.
+the reduction of the octonion order~$L$ modulo~$2$, an
+eight-dimensional $\FF_2$-algebra.\footnote{It is not an octonion
+algebra in the composition-algebra sense: those are simple, whereas
+$\bar L$ has the proper two-sided ideal~$V$ exhibited below.}  The
+structure constants of $\bar\mu$ are exactly the entries of
+Table~\ref{tbl:appendix-LL} reduced modulo~$2$.
 
 Since $2L$ lies in both $\sigma(L\bar s)$ and~$\sigma(Ls)$, those
 sublattices are \emph{full preimages}, under $L \to \bar L$, of
@@ -1311,7 +1334,7 @@ modulo~$2L$ then gives
     \bar\mu(W, W) \subseteq W.
 \]
 That is: Table~\ref{tbl:appendix-LN} certifies that $V$ is a
-\textbf{left ideal} of the octonion $\FF_2$-algebra $L/2L$;
+\textbf{left ideal} of $\bar L$;
 Table~\ref{tbl:appendix-MM} certifies that $W$ is a
 \textbf{subalgebra} of it.  The integer tables and this mod-2-quotient
 description are complementary: the tables verify, the quotient
@@ -1321,22 +1344,22 @@ arithmetic
 
 A note on terminology: the construction is a \emph{quotient}, the
 surjection $L \to L/2L$, and is named the \emph{mod-2 quotient}.  It
-is kept verbally distinct from a $2$-adic scaling or saturation;
-Corradetti's \cite{Corradetti2026} thematically adjacent $2$-primary
-conductor sublattice of~$E_8$ rescales an order and $2$-adically
-saturates a \emph{sub}lattice rather than passing to a quotient.
-Both works find $2$-primary structure governing octonion-derived
-orders, but the operations differ.
+is kept verbally distinct from a $2$-adic scaling or saturation, the
+operations behind Corradetti's thematically adjacent construction
+\cite{Corradetti2026}, which is contrasted with the present one in
+Section~\ref{sec:related}.
 
-\paragraph{In addition to Baez/Egan.}
+\paragraph{Relation to prior work.}
 The lattice-level picture of $\bar L \cong \FF_2^{\,8}$ as an
 orthogonal space under the plus-type quadratic form induced by the
-$E_8$ Gram form is already in Baez/Egan~\cite{Baez2014}; see
-Section~\ref{sec:related}.  That picture includes the
-$4$-dimensional maximal totally isotropic subspaces (Lagrangians)
-and the $270 \times 64 = 17{,}280$ factorisation counting
-Lagrangians and their complementary pairs.  Building on that
-foundation, the present construction equips $\bar L$ with the
+$E_8$ Gram form, together with its $4$-dimensional maximal totally
+isotropic subspaces (Lagrangians), is Silverman's (part~12
+of~\cite{Baez2014}); see Section~\ref{sec:related}.  The reading of
+the Leech construction in terms of the preimages in~$L$ of a
+\emph{complementary pair} of such Lagrangians is David Calderbank's,
+in the discussion thread of part~9 \cite{Calderbank2023}.  Building
+on those posts and their surrounding discussion, the present
+construction equips $\bar L$ with the
 $\FF_2$-bilinear product $\bar\mu$ inherited from the octonion
 product $L \cdot L \subseteq L$, and identifies the two Lagrangians
 of one specific complementary pair, $V = \sigma(L\bar s)/2L$ and
@@ -1350,16 +1373,15 @@ decomposition $\bar L = V \oplus W$.  First, $V$ is in fact a
 $\bar\mu(V, \bar L) \subseteq V$ holds in addition to the left-ideal
 direction (Lemma~\ref{lem:L-sigmaLsbar}).  The right-ideal direction
 is not formally implied by the left-ideal direction, since $\bar\mu$
-is non-commutative in the $L$-basis.\footnote{The standard
-$\FF_2$-octonion-algebra (in the basis $\{e_0,\ldots,e_7\}$) is
-commutative, because the antisymmetric part of the octonion product
-satisfies $e_i \cdot e_j - e_j \cdot e_i \in 2\OO$, which vanishes
-modulo~$2$. In the $L$-basis, however, $L_1 = s$ is half-integer
-while $L_2, \ldots, L_8$ are integer, so the antisymmetric part of
-$L_1 \cdot L_k$ involves half-integer coefficients whose doubling
-need not lie in $2L$. Hence $L_1 \cdot L_k - L_k \cdot L_1$ need not
-vanish modulo~$2L$, and $\bar\mu$ in the $L$-basis is genuinely
-non-commutative.}
+is non-commutative.\footnote{Commutativity is a property of the
+algebra, not of a basis; what matters is \emph{which order} is being
+reduced.  Reducing the Gravesian order
+$\ZZ\langle e_0,\ldots,e_7\rangle$ gives a commutative
+$\FF_2$-algebra, since $e_i \cdot e_j - e_j \cdot e_i =
+2\,e_i \cdot e_j$ lies in twice that order.  The maximal order~$L$
+also contains half-integer elements such as~$s$, and for these the
+commutator $a \cdot b - b \cdot a$ need not lie in~$2L$; direct
+computation confirms that $\bar\mu$ is non-commutative.}
 
 Second, equip $\bar L$ with the natural plus-type quadratic form
 \[
@@ -1396,8 +1418,9 @@ bilinear product on $\LL$ itself.
 The construction this paper builds on was developed across four
 primary papers between 1923 and 1946.  Each was obtained in the
 original and re-derived in exact arithmetic in this project
-(\texttt{python\_project/src/verify\_\{dickson\_1923,kirmse\_1924,%
-mahler\_1942,coxeter\_1946\}.py}; verification notes in
+(\texttt{python\_project/src/} \texttt{verify\_dickson\_1923.py},
+\texttt{verify\_kirmse\_1924.py}, \texttt{verify\_mahler\_1942.py},
+\texttt{verify\_coxeter\_1946.py}; verification notes in
 \texttt{paper/reviews/}).
 
 \noindent\textbf{Dickson (1923) \cite{Dickson1923}} gave the first
@@ -1412,7 +1435,7 @@ seven do.
 independently.  His multiplication table is itself a correct
 octonion algebra, and he derived a correct \emph{necessary} form
 for the maximal orders, without proving sufficiency; thirty
-$E_8$-type lattices realise the form.  Among the eight of those lattices that
+$E_8$-type lattices realize the form.  Among the eight of those lattices that
 are stable under multiplication by units (an unstated narrowing of
 the criterion, in our reconstruction), he exhibited the one,
 $J_1$ (p.~70), that is not an order.  The remaining seven of his
@@ -1545,12 +1568,24 @@ Bull.\ Amer.\ Math.\ Soc.\ \textbf{39} (2002), 145--205.
 \href{https://arxiv.org/abs/math/0105155}{arXiv:math/0105155}.
 
 \bibitem[Baez2014]{Baez2014}
-J.\,C.~Baez (with contributions by G.~Egan and others),
+J.\,C.~Baez (with contributions by G.~Egan, T.~Silverman and others),
 \emph{Integral octonions} (parts 1--12),
-The $n$-Category Caf\'e, November--December 2014.
-The material discussed here appears in parts 9 and 10:
+The $n$-Category Caf\'e, 2013--2016.
+The material discussed here appears in parts 9--12: Egan's Leech
+construction (part~9, 23 November 2014) and the Jordan-ring count
+(part~10, 1 December 2014),
 \url{https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html},
-\url{https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html}.
+\url{https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html};
+the 270 rescaled copies of the first $E_8$ shell (part~11, 12 December
+2014) and Tim Silverman's account of the integral octonions modulo~2
+(part~12, 31 January 2016),
+\url{http://math.ucr.edu/home/baez/octonions/integers/integers_11.html},
+\url{http://math.ucr.edu/home/baez/octonions/integers/integers_12.html}.
+
+\bibitem[Calderbank2023]{Calderbank2023}
+D.~Calderbank,
+comment of 2 April 2023 on Baez~\cite{Baez2014}, part~9,
+\url{https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html}.
 
 \bibitem[ConwaySloane1982]{ConwaySloane1982}
 J.\,H.~Conway and N.\,J.\,A.~Sloane,
