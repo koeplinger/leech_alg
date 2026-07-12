@@ -589,6 +589,8 @@ all fail, and of the remaining 84 exactly half close (42 in all).
 \section{Algebraic properties}\label{sec:properties}
 % ===============================================================
 
+\subsection{Identities}\label{sec:identities}
+
 The order $(\LL, +, \star)$ has been tested for several standard
 algebraic identities.  Samples are drawn uniformly (by family weight)
 from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
@@ -644,8 +646,11 @@ The product norm on $\operatorname{Min}(\LL) \times
 \operatorname{Min}(\LL)$ takes values in
 $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16.
 The mode is~64 (the norm-multiplicative value
-$\Nrm(u)\Nrm(v) = 8 \times 8$).  Neither $0$ nor $8$ occurs, so the
-order has no idempotents and no square nilpotents.
+$\Nrm(u)\Nrm(v) = 8 \times 8$).  Neither $0$ nor $8$ occurs among these
+values, so no minimal vector is idempotent and none squares to zero.
+Both questions are settled on all of~$\LL$ in
+Section~\ref{sec:idempotents}: the order has no idempotent at all, but
+it does contain square-zero vectors, at norm~12.
 \end{remark}
 
 \begin{remark}
@@ -664,6 +669,63 @@ The order does not satisfy any of the classical algebraic identities
 (associativity, alternativity, flexibility, power-associativity,
 commutativity).  The defining property is \emph{closure}: the Leech
 lattice is stable under the product.
+
+\subsection{Idempotents and square-zero elements}\label{sec:idempotents}
+
+\begin{remark}[Idempotents]\label{rem:idempotents}
+The ambient algebra $(\RR^{24}, +, \star)$ has exactly eight
+idempotents, and the classification is complete
+(\texttt{python\_project/src/verify\_idempotent\_classification.py}).
+Writing $\varepsilon_1 = (e_0, 0, 0)$, $\varepsilon_2 = (0, e_0, 0)$,
+$\varepsilon_3 = (0, 0, e_0)$ and $\omega = \varepsilon_1 +
+\varepsilon_2 + \varepsilon_3$, they are
+\[
+  0, \qquad \varepsilon_1, \ \varepsilon_2, \ \varepsilon_3, \qquad
+  \tfrac13 \omega, \qquad
+  \varepsilon_i - \tfrac13 \omega \ \ (i = 1, 2, 3).
+\]
+Every block of every one of them is a multiple of~$e_0$: there is no
+idempotent with a nonzero imaginary part, and no positive-dimensional
+family.
+
+None lies in~$\LL$, because $e_0 \notin L$; the order $(\LL, +, \star)$
+therefore has no idempotent.  Each nonzero idempotent does span a
+rational ray that meets~$\LL$, and the least positive multiple that
+does is
+\[
+  4\varepsilon_i \ (\Nrm = 16), \qquad
+  6\bigl(\varepsilon_i - \tfrac13\omega\bigr) \ (\Nrm = 24), \qquad
+  4\omega \ (\Nrm = 48),
+\]
+each satisfying $u \star u = n\,u$ for its own multiplier~$n$.  The
+passage from the algebra to the lattice is thus a rescaling, and it is
+already visible on the minimal shell: for each of the 84 purely
+imaginary roots~$\lambda$ of~$L$, the minimal vector $u = (2\lambda, 0,
+0)$ of~$\LL$ has $u \star u = (-8e_0, 0, 0) = -8\varepsilon_1$, again
+in~$\LL$
+(\texttt{python\_project/src/verify\_idempotent\_lattice\_rescaling.py}).
+\end{remark}
+
+\begin{remark}[Square-zero elements]\label{rem:nilpotents}
+In the ambient algebra, $u = (x, y, z)$ satisfies $u \star u = 0$ if
+and only if $x$, $y$, $z$ are purely imaginary, of equal norm, and sum
+to zero: a hexagonal triple in $\Im(\OO) = \RR^7$.  The solution set is
+a cone of dimension~12; it lies in~$T$ and meets~$D$ only in~$0$
+(\texttt{python\_project/src/verify\_square\_zero\_classification.py}).
+
+The lattice does contain such elements.  A vector $(x, y, z) \in \LL$
+squares to zero exactly when $x$, $y$, $z$ lie in $L\bar s \cap
+\Im(\OO)$, have equal norms and sum to zero.  The 126 vectors of norm~4
+in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system, whose hexagonal
+triples give $4{,}032$ square-zero vectors of~$\LL$, all of norm~12.
+None is minimal, and the reason is arithmetic: $\Nrm(u) = 3\Nrm(x)$
+with $\Nrm(x) \in 2\ZZ$, while every norm of~$\LL$ lies in $4\ZZ$, so
+every square-zero vector of~$\LL$ has norm in $12\ZZ$, and the minimal
+norm is~$8$.  The exhaustive minimal-shell search of
+Remark~\ref{rem:product-norms} could not have found them.
+\end{remark}
+
+\subsection{The automorphism group}\label{sec:autgroup}
 
 \begin{remark}[Automorphism group]\label{rem:aut}
 $\Aut(\LL, +, \star)$ is finite, of order~$36$, with structure
@@ -705,6 +767,8 @@ $(T, \star)$ (Section~4 of the note); the lower bound $C_6 \times S_3
 on it.
 \end{remark}
 
+\subsection{Span of the image}\label{sec:span}
+
 \begin{remark}[Span of the image]\label{rem:span-defect}
 Closure does not mean surjectivity.  Let $S :=
 \ZZ\text{-span}\{u \star v : u, v \in \LL\}$.  By bilinearity, $S$ is
@@ -727,6 +791,8 @@ at the same prime that governs the mod-2 structure of
 Section~\ref{app:mod2quotient}.  Identifying the subspace $S/2\LL$
 inside $\LL/2\LL$ structurally is open.
 \end{remark}
+
+\subsection{Which twists close}\label{sec:census}
 
 \begin{remark}[Which twists close]\label{rem:cycle-census}
 The transposition~$\sigma$ is not the only permutation of the imaginary

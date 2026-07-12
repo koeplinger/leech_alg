@@ -1,0 +1,86 @@
+Prompt 217 -- Section 5 restructured into subsections; idempotents and
+square-zero elements added
+Date: 2026-07-12
+
+User (1): "I'm reading §5 but can't find anything about idempotents. To me
+it feels like Remarks 5.3 (automorphism), 5.4 (span), and 5.5 (which twists
+close) should become subsections instead. Idempotents and nilpotents would
+also be subsections, possible even before the automorphism subsection."
+Also: the stale remark numbers / changelog items are real but were not part
+of the review scope; they go into a documentation consistency sweep at the
+end, once the paper is updated.
+
+FINDING SURFACED BEFORE APPLYING. The merged Remark 5.1 ended: "Neither 0
+nor 8 occurs, so the order has no idempotents and no square nilpotents."
+The premise is about Min(Lambda) x Min(Lambda); the conclusion, as written,
+reads globally. Globally the nilpotent half is FALSE, and the workflow's
+square-zero classification refutes it: Lambda contains 4,032 nonzero
+square-zero vectors, all of norm 12, from the hexagonal triples of the E_7
+root system formed by the 126 norm-4 vectors of (L sbar) ^ Im(O). Re-run and
+confirmed in this session, with an explicit witness verified in Lambda by two
+independently coded implementations of star. The minimal shell cannot see
+them for an arithmetic reason: N(u) = 3 N(x) with N(x) in 2Z, and every
+Lambda-norm is in 4Z, so every square-zero vector of Lambda has norm in 12Z,
+while the minimal norm is 8.
+
+User (2), ruling on the scope question: "I don't see this as a confusion. If
+you feel that the conclusion is stated globally (which it is not supposed to
+in that remark) then just add a few words like 'on the lattice' or so. For me
+there is no confusion because the sentences are adjacent, and it is therefore
+clear that we're on Min(Lambda). So, apply your subsection suggestions."
+
+APPLIED. Remark 5.1 is scope-qualified rather than rewritten: "Neither 0 nor
+8 occurs among these values, so no minimal vector is idempotent and none
+squares to zero. Both questions are settled on all of Lambda in Section 5.2:
+the order has no idempotent at all, but it does contain square-zero vectors,
+at norm 12." The premise stays on the minimal shell; the forward pointer stops
+a reader from over-extending it.
+
+Section 5 is now five subsections:
+  5.1 Identities                          (property table; composition-algebra
+                                           consequences; Remark 5.1 product
+                                           norms; Remark 5.2 no multiplicative
+                                           identity)
+  5.2 Idempotents and square-zero elements (NEW: Remarks 5.3, 5.4)
+  5.3 The automorphism group               (Remark 5.5)
+  5.4 Span of the image                    (Remark 5.6)
+  5.5 Which twists close                   (Remark 5.7, the census table)
+
+Remark 5.3 (Idempotents). The ambient algebra has EXACTLY EIGHT idempotents,
+a complete classification: 0; eps_1, eps_2, eps_3; omega/3; and the three
+eps_i - omega/3. Every block of every one is a multiple of e_0: no idempotent
+has a nonzero imaginary part, and there is no positive-dimensional family.
+None lies in Lambda (e_0 is not in L), so the ORDER has no idempotent -- now
+a consequence of the classification, no longer an inference from a shell
+census. The user's predicted "rescaling" is exact: each nonzero idempotent
+spans a rational ray meeting Lambda, with least positive multiples
+4 eps_i (norm 16), 6(eps_i - omega/3) (norm 24), 4 omega (norm 48), each
+satisfying u star u = n u; and on the minimal shell, for each of the 84 purely
+imaginary roots lambda of L, (2 lambda, 0, 0) star (2 lambda, 0, 0) =
+-8 eps_1, again in Lambda.
+
+Remark 5.4 (Square-zero elements). Ambient classification: u = (x,y,z) squares
+to zero iff x, y, z are purely imaginary, of equal norm, and sum to zero (a
+hexagonal triple in Im(O) = R^7); the solution set is a 12-dimensional cone
+inside T, meeting D only in 0. Lattice: the 4,032 norm-12 vectors described
+above, with the 12Z argument for why the minimal shell sees none.
+
+Scripts cited: verify_idempotent_classification.py,
+verify_idempotent_lattice_rescaling.py, verify_square_zero_classification.py.
+
+This closes item 2 of prompt 209.
+
+Paper: 23 pages (was 22), builds clean, no undefined references, zero overfull
+boxes. All cross-references re-resolved: Section 1 still points at the
+product-norm remark; Sections 6 and 7 picked up the new remark numbers.
+
+User (3): "if you're done, then make sure every prompt is recorded to the
+prompt log" -- prompt logs 213, 214, 215, 216, 217 written this session;
+213 and 214 are backfills, with the Manifesto lapse recorded rather than
+hidden.
+
+REMAINING: documentation consistency sweep (including review recommendations
+11 and 21, the stale remark numbers and the superseded changelog sentence),
+then the v6 freeze.
+
+Status: CLOSED.

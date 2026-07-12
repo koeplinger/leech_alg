@@ -69,7 +69,7 @@ Phase 2: adversarial verification (independent re-derivations).
 Phase 3: self-contained TeX for the automorphism-group calculation.
 Then (orchestrator): the §5 paper edits, using only verified facts.
 
-Status: in progress.
+Status: CLOSED (see the results and closure recorded below).
 
 --------------------------------------------------------------------------
 TASK B RESULT (automorphism group of the product) -- computed 2026-07-12
@@ -185,6 +185,9 @@ paper/automorphism_group_2026-07-12.tex / .pdf -- 11 pages, dated 12 July 2026,
 self-contained, builds clean (zero overfull boxes, no undefined references).
 Awaiting the user's review; he will decide how it is worked into the paper.
 
-Status: computation and write-up CLOSED.  Paper edits (item 2 of the prompt:
-describe the idempotents in §5; and review findings R3 / recommended 8, 9, 10
-in the Conclusion) PENDING the user's review of the note.
+Status: CLOSED.  Computation, write-up, and all resulting paper edits are
+done.  Item 2 (the idempotents in Section 5) landed as Remarks 5.3 and 5.4 of
+the new Section 5.2 (prompt log 217).  Review findings R3 and recommended 8,
+9, 10 landed as Remark 5.5 (Section 5.3) and the rewritten Conclusion bullets
+(prompt log 216).  The square-zero half of the classification also corrected a
+false statement in the paper; see prompt log 217.

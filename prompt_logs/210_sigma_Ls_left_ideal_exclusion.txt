@@ -39,4 +39,4 @@ candidate shapes. Editorial: the exclusion tells a would-be prover where
 NOT to look, and names the asymmetry (ideal vs mere subalgebra) that
 makes Lemma 4.4 the hard one.
 
-Status: in progress.
+Status: CLOSED.
