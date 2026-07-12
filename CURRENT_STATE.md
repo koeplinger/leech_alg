@@ -379,9 +379,12 @@ the trial, and prints detailed results.
    frozen as `paper/main_2026-05-25.tex` after two full referee-style
    review rounds (paper/reviews/); v5 (frozen
    `paper/main_2026-06-07.tex`) incorporated the update brief and
-   the reviewer-response additions; v6 (frozen
-   `paper/main_2026-07-10.tex`) is a clarity revision of the
-   span-defect material.  Revision chain: `paper/v3_to_v4_summary.md`,
+   the reviewer-response additions; v6 (working source
+   `paper/main.tex`, dated 12 July 2026, not yet frozen) is a clarity
+   revision of the span-defect material plus the journal-review pass of
+   10--12 July.  A 10 July snapshot of v6 existed briefly and was
+   deleted on 12 July: v6 is a single open version and will be frozen
+   once.  Revision chain: `paper/v3_to_v4_summary.md`,
    `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`.
 
 3. **Computational verification extended.**  Over 12,000,000 random

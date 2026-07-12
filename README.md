@@ -13,7 +13,8 @@ anyone continuing this research, with or without prior context.
 
 The finished write-up is in [paper/main.tex](paper/main.tex)
 (compiled: [paper/main.pdf](paper/main.pdf)), now at v6
-(10 July 2026; source snapshot: [paper/main_2026-07-10.tex](paper/main_2026-07-10.tex)).
+(12 July 2026), in revision; the working source is the only copy, and
+v6 is not yet frozen.
 Revision chain: [v3 → v4](paper/v3_to_v4_summary.md),
 [v4 → v5](paper/v4_to_v5_changelog.md),
 [v5 → v6](paper/v5_to_v6_changelog.md).  Prior freezes:

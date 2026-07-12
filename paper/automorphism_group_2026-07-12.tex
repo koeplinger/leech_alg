@@ -1,0 +1,979 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\newcommand{\LL}{\Lambda}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nrm}{N}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Co}{Co}
+\DeclareMathOperator{\Tr}{tr}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\Rea}{Re}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title[The automorphism group of the triple-octonion product]%
+{The automorphism group of the\\
+$\ZZ_3$-symmetric triple-octonion product\\
+\large Companion calculation to
+\emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
+triple-octonion product}}
+
+\author{Claude Opus 4.8}
+\address{Anthropic}
+\date{12 July 2026}
+
+\thanks{This note was computed at the direction of Jens K\"oplinger and is
+companion material to the main paper \emph{An order on the Leech lattice
+from a $\ZZ_3$-symmetric triple-octonion product} (v6). It is not part of
+that paper and is not in its referee scope; the author of the main paper
+will decide how, and how much of, this material is worked into it.
+Every nontrivial statement below is either proved here or reproduced by a
+named script in the project repository. Two independent computational
+passes were run: a first pass that produced the result, and a second pass
+that rebuilt the lattice, the product and the generators from the paper's
+definitions without reusing any code from the first. Where the two passes
+disagreed, the disagreement is recorded in \S\ref{sec:corrections}.}
+
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The main paper leaves open the identification of $\Aut(\LL, +, \star)$,
+the group of $\ZZ$-linear bijections of the Leech lattice that preserve the
+$\ZZ_3$-symmetric $\sigma$-twisted triple-octonion product~$\star$.
+That group has order~$36$ and is isomorphic to $C_6 \times S_3$: every
+element is a blockwise octonion automorphism composed with a permutation
+of the three octonion blocks, the blockwise part running over a cyclic
+group of order~$6$ of signed permutations of the octonion basis.
+It is contained in the Conway group~$\Co_0$, and this containment is a
+theorem rather than an observation: the ambient algebraic group
+$\Aut(\RR^{24}, \star)$ is the compact group $G_2 \times G_2 \times S_3$
+of dimension~$28$, and compactness forces every $\star$-automorphism to be
+a Euclidean isometry.
+\end{abstract}
+
+% ===================================================================
+\section{Setting}\label{sec:setting}
+% ===================================================================
+
+The objects are those of the main paper, restated here only far enough to
+make this note self-contained.
+
+$\OO$ is the real octonion algebra on $\RR^8$ with basis
+$e_0, \ldots, e_7$, unit~$e_0$, and the standard Fano triples
+$(1,2,4)$, $(2,3,5)$, $(3,4,6)$, $(4,5,7)$, $(5,6,1)$, $(6,7,2)$,
+$(7,1,3)$: for each cyclic triple $(a,b,c)$ one has $e_a e_b = +e_c$, for
+each anticyclic one $e_a e_b = -e_c$, and $e_i^2 = -e_0$ for
+$i = 1, \ldots, 7$. Write $\Nrm$ for the norm form and $\Rea(x)$ for the
+$e_0$-component of~$x$.
+
+$\sigma = (1\;2)$ is the linear involution of $\RR^8$ fixing $e_0$ and
+interchanging $e_1$ and~$e_2$. The $\sigma$-twisted octonion product is
+\[
+  x \cdot_s y \;:=\; \sigma\bigl(\sigma(x)\,\sigma(y)\bigr),
+\]
+which is again an octonion product on $\RR^8$, and $\sigma$ is by
+construction an algebra isomorphism
+$(\OO, \cdot) \to (\OO, \cdot_s)$.
+
+$L = D_8^+$ is the $E_8$ lattice realized in octonion coordinates,
+$s = \tfrac12(-e_0 + e_1 + \cdots + e_7)$,
+$\bar s = \tfrac12(-e_0 - e_1 - \cdots - e_7)$, and
+$Ls = \{\ell \cdot s : \ell \in L\}$,
+$L\bar s = \{\ell \cdot \bar s : \ell \in L\}$, both formed with the
+\emph{untwisted} octonion product. Wilson's description of the Leech
+lattice inside $L^3$ is
+\begin{equation}\label{eq:wilson}
+  \LL \;=\; \bigl\{ (x,y,z) \in L^3 \;:\;
+    x + y,\; x + z,\; y + z \in L\bar s; \;\;
+    x + y + z \in Ls \bigr\}.
+\end{equation}
+
+On $\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ the product of the main
+paper is
+\begin{equation}\label{eq:star}
+  (x,y,z) \star (x',y',z') \;=\;
+  \bigl(\,
+    x \cdot_s x' + z \cdot_s y' + y \cdot_s z',\;\;
+    y \cdot_s y' + x \cdot_s z' + z \cdot_s x',\;\;
+    z \cdot_s z' + y \cdot_s x' + x \cdot_s y'
+  \,\bigr),
+\end{equation}
+and the main paper's Theorem~1.1 is $\LL \star \LL \subseteq \LL$.
+
+Throughout, blocks are indexed by $\ZZ/3 = \{0,1,2\}$ and a vector of
+$\RR^{24}$ is written $u = (u_0, u_1, u_2)$ with $u_\alpha \in \OO$. The
+object under study is
+\[
+  \Aut(\LL, +, \star) \;:=\;
+  \bigl\{\, g : \LL \to \LL \;\text{a $\ZZ$-linear bijection with}\;
+    g(u \star v) = g(u) \star g(v) \;\text{for all}\; u,v \in \LL \,\bigr\}.
+\]
+The ambient group here is $\mathrm{GL}_{24}(\ZZ)$ and not $\Co_0$: that
+every such~$g$ is in fact an isometry is one of the things settled below
+(\S\ref{sec:co0}), not something assumed.
+
+Two conventions should be flagged. First, $\star$ is bilinear and
+$\LL$-membership is $\ZZ$-linear, so a check carried out on all
+$24 \times 24 = 576$ pairs of basis vectors is a \emph{proof} for all of
+$\RR^{24}$, not a sample; every ``exhaustive basis check'' below is of
+this kind. Second, $\LL$ as realized by~\eqref{eq:wilson} has minimal norm
+$8$, Gram determinant $2^{24}$ and index $4096$ in~$L^3$: it is a copy of
+$\sqrt2\,\LL_{\mathrm{Leech}}$ rather than the unimodular Leech lattice.
+Nothing below depends on the scale ($\Co_0$ is scale invariant), but no
+claim of unimodularity should be attached to this realization.
+
+% ===================================================================
+\section{The routing identity and the ideal decomposition}\label{sec:ideals}
+% ===================================================================
+
+The nine octonion blocks in~\eqref{eq:star} are routed by a single
+congruence.
+
+\begin{lemma}[Routing]\label{lem:routing}
+For $u, v \in \RR^{24}$ and $\gamma \in \ZZ/3$,
+\[
+  (u \star v)_\gamma \;=\;
+  \sum_{\substack{\alpha, \beta \in \ZZ/3 \\ \alpha + \beta \equiv 2\gamma}}
+    u_\alpha \cdot_s v_\beta .
+\]
+\end{lemma}
+
+\begin{proof}
+Read off~\eqref{eq:star} with $(u_0,u_1,u_2) = (x,y,z)$. The first block
+collects the index pairs $(0,0), (2,1), (1,2)$, all with
+$\alpha + \beta \equiv 0 = 2\cdot 0$; the second collects
+$(1,1), (0,2), (2,0)$, all with $\alpha + \beta \equiv 2 = 2 \cdot 1$; the
+third collects $(2,2), (1,0), (0,1)$, all with
+$\alpha + \beta \equiv 1 \equiv 2 \cdot 2$.
+\end{proof}
+
+Since $2$ is invertible modulo~$3$, each of the nine pairs $(\alpha,\beta)$
+occurs in exactly one block, namely $\gamma \equiv 2(\alpha+\beta)$. Two
+consequences are immediate.
+
+\begin{proposition}[Ideal decomposition]\label{prop:ideals}
+Let
+\[
+  D \;:=\; \{(a,a,a) : a \in \OO\}, \qquad
+  T \;:=\; \{(p,q,r) \in \OO^3 : p + q + r = 0\},
+\]
+and let $\Sigma(u) := u_0 + u_1 + u_2$. Then
+\begin{enumerate}[label=(\arabic*)]
+\item $\Sigma(u \star v) = \Sigma(u) \cdot_s \Sigma(v)$, so $\Sigma$ is a
+  surjective algebra homomorphism $(\RR^{24}, \star) \to (\OO, \cdot_s)$;
+\item $(a,a,a) \star v = \bigl(a \cdot_s \Sigma(v)\bigr)^{\mathrm{diag}}$
+  and $v \star (a,a,a) = \bigl(\Sigma(v) \cdot_s a\bigr)^{\mathrm{diag}}$,
+  where $w^{\mathrm{diag}} := (w,w,w)$;
+\item $D$ and $T = \ker \Sigma$ are two-sided ideals,
+  $D \star T = T \star D = 0$, and $\RR^{24} = D \oplus T$;
+\item $\varphi(a) := \tfrac13 (a,a,a)$ is an algebra isomorphism
+  $(\OO, \cdot_s) \to (D, \star)$; equivalently
+  $(a,a,a) \star (b,b,b) = 3\,(a \cdot_s b,\, a \cdot_s b,\, a \cdot_s b)$;
+\item $D \perp T$ for the standard Euclidean form of $\RR^{24}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(1) Summing Lemma~\ref{lem:routing} over $\gamma$ collects each pair
+$(\alpha,\beta)$ exactly once, giving
+$\sum_{\alpha,\beta} u_\alpha \cdot_s v_\beta
+ = \Sigma(u) \cdot_s \Sigma(v)$ by bilinearity. Surjectivity is clear from
+$\Sigma(a,0,0) = a$.
+(2) With $u = (a,a,a)$ the inner sum of Lemma~\ref{lem:routing} is
+$\sum_{\beta} a \cdot_s v_\beta = a \cdot_s \Sigma(v)$ for every~$\gamma$,
+independent of~$\gamma$; the right-multiplication case is the same
+computation.
+(3) $T$ is a two-sided ideal because it is the kernel of the homomorphism
+$\Sigma$; $D$ is a two-sided ideal by~(2). If $v \in T$ then $\Sigma(v)=0$,
+so~(2) gives $D \star T = T \star D = 0$. Finally
+$\Sigma|_D : (a,a,a) \mapsto 3a$ is bijective onto~$\OO$ and $T = \ker\Sigma$,
+so $\RR^{24} = D \oplus T$.
+(4) Immediate from~(2) with $v = (b,b,b)$.
+(5) $\ip{(a,a,a)}{(p,q,r)} = \ip{a}{p+q+r} = 0$.
+\end{proof}
+
+All five items were additionally checked by exhaustive basis computation in
+exact rational arithmetic, and re-checked against an independently coded
+nine-term expansion of~$\star$
+(\texttt{python\_project/src/verify\_ideal\_decomposition.py}).
+
+\begin{remark}
+The same script verifies that
+$\sigma^{\oplus 3} : (x,y,z) \mapsto (\sigma x, \sigma y, \sigma z)$ is an
+algebra isomorphism from the $\sigma$-twisted triple product onto the
+untwisted one. The twist is invisible to the algebra: only the lattice
+$\LL$ sees it. Consequently everything in
+\S\ref{sec:ideals}--\S\ref{sec:ambient} could be stated without~$\sigma$;
+$\sigma$ re-enters in \S\ref{sec:lattice}, where the lattice conditions do.
+\end{remark}
+
+\subsection*{Every $\star$-automorphism preserves $D$ and $T$}
+
+Because $D \star T = T \star D = 0$, the two projections
+$\pi_D, \pi_T$ associated with $\RR^{24} = D \oplus T$ are algebra
+homomorphisms: for $u = u_D + u_T$ and $v = v_D + v_T$,
+$u \star v = u_D \star v_D + u_T \star v_T$ with the first term in~$D$ and
+the second in~$T$, so
+$\pi_T(u \star v) = \pi_T(u) \star \pi_T(v)$ and likewise for~$\pi_D$.
+
+\begin{lemma}\label{lem:simple}
+$(D, \star)$ and $(T, \star)$ are simple algebras.
+\end{lemma}
+
+\begin{proof}[Proof and computation]
+$D \cong (\OO, \cdot_s)$ by Proposition~\ref{prop:ideals}(4), and the real
+octonions form a division algebra: if $I \subseteq \OO$ is a nonzero ideal
+and $0 \neq a \in I$, then right multiplication $R_a$ is invertible and
+$R_a(\OO) \subseteq I$, so $I = \OO$. This is a proof.
+
+For $T$ the statement is established by exact linear algebra: the
+multiplication algebra of~$T$, that is the unital associative subalgebra of
+$\End(T)$ generated by all left and right $\star$-multiplications by
+elements of~$T$, has dimension~$256 = \dim \End(T)$, so it is all of
+$\End(T) \cong M_{16}(\RR)$. Any ideal of~$T$ is invariant under the
+multiplication algebra, hence under all of $\End(T)$, hence is $0$ or~$T$.
+The dimension is a rank of an explicit rational matrix; it was computed
+exactly, with a full-rank certificate modulo a prime as a rigorous lower
+bound. (Second pass, independent rebuild; the same computation gives
+dimension~$64 = \dim\End(D)$ for~$D$, reproving the first paragraph.)
+\end{proof}
+
+\begin{proposition}\label{prop:preserve}
+Every $g \in \Aut(\RR^{24}, \star)$ satisfies $g(D) = D$ and $g(T) = T$, and
+consequently
+\[
+  \Aut(\RR^{24}, \star) \;=\; \Aut(D, \star) \times \Aut(T, \star),
+\]
+the two restrictions being independently choosable.
+\end{proposition}
+
+\begin{proof}
+$g(D)$ is an ideal of $\RR^{24}$ of dimension~$8$. Applying the surjective
+algebra homomorphism~$\pi_T$, the image $\pi_T(g(D))$ is an ideal of~$T$ of
+dimension at most~$8 < 16$. By Lemma~\ref{lem:simple} it is therefore~$0$,
+so $g(D) \subseteq \ker \pi_T = D$, and $g(D) = D$ by bijectivity.
+
+Next, $T = \Ann(D) := \{u : u \star D = D \star u = 0\}$. Indeed
+$T \subseteq \Ann(D)$ by Proposition~\ref{prop:ideals}(3); conversely, write
+$u = d + t$ with $d \in D$, $t \in T$, and note that
+$u \star (a,a,a) = d \star (a,a,a)$ for every~$a$, so $u \in \Ann(D)$ forces
+$d$ to annihilate the division algebra $(D,\star) \cong (\OO, \cdot_s)$,
+whence $d = 0$. (Confirmed as an exact nullspace computation:
+$\dim \Ann(D) = 16$ and $\dim \Ann(T) = 8$.) Since $g(D) = D$ is now known,
+$g(T) = g(\Ann(D)) = \Ann(g(D)) = \Ann(D) = T$.
+
+Finally, since $D \star T = T \star D = 0$, any pair of algebra automorphisms
+of $D$ and of~$T$ assembles to an automorphism of~$\RR^{24}$, and by the
+above every automorphism arises this way.
+\end{proof}
+
+\begin{remark}[A correction, recorded]\label{rem:circular}
+The first computational pass justified Proposition~\ref{prop:preserve} by
+``$\Ann(T) = D$ and $\Ann(D) = T$; annihilators are intrinsic, so every
+automorphism preserves $D$ and~$T$''. As written that is circular:
+$g(\Ann(D)) = \Ann(g(D))$ yields $g(T) = T$ only \emph{after} $g(D) = D$ is
+known, and the annihilator relations alone do not establish that~$D$ is
+intrinsic. The simplicity argument above is the non-circular replacement and
+is what the second pass verified. The conclusion is unaffected. The
+docstring of \texttt{python\_project/src/verify\_star\_algebra\_structure.py}
+still carries the circular wording and should be corrected.
+\end{remark}
+
+% ===================================================================
+\section{The $C_3$-Fourier normal form}\label{sec:fourier}
+% ===================================================================
+
+The routing identity diagonalizes under the discrete Fourier transform of
+the block index. Let $\zeta$ be a primitive cube root of unity and, for
+$u \in \RR^{24} \otimes \CC$, put
+\[
+  \hat u_j \;:=\; \sum_{\alpha \in \ZZ/3} \zeta^{\,j\alpha}\, u_\alpha
+  \;\in\; \OO_\CC, \qquad j \in \ZZ/3 .
+\]
+
+\begin{proposition}\label{prop:fourier}
+For all $u, v$,
+\[
+  \widehat{(u \star v)}_k \;=\; \hat u_{2k} \cdot_s \hat v_{2k},
+  \qquad k \in \ZZ/3 .
+\]
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:routing}, the block $\gamma$ receiving the pair
+$(\alpha,\beta)$ is $\gamma \equiv 2(\alpha+\beta)$. Hence
+\[
+  \widehat{(u \star v)}_k
+  = \sum_{\gamma} \zeta^{\,k\gamma} (u \star v)_\gamma
+  = \sum_{\alpha, \beta} \zeta^{\,2k(\alpha+\beta)}\, u_\alpha \cdot_s v_\beta
+  = \Bigl(\sum_\alpha \zeta^{\,2k\alpha} u_\alpha\Bigr) \cdot_s
+    \Bigl(\sum_\beta \zeta^{\,2k\beta} v_\beta\Bigr)
+  = \hat u_{2k} \cdot_s \hat v_{2k}. \qedhere
+\]
+\end{proof}
+
+The identity was also verified exactly on all $576$ basis pairs over
+$\QQ(\zeta)$, elements being carried as pairs $p + q\zeta$ with
+$\zeta^2 = -1 - \zeta$
+(\texttt{python\_project/src/verify\_star\_algebra\_structure.py}); the
+second pass verified the equivalent statement in its own coordinates.
+
+The case $k = 0$ is Proposition~\ref{prop:ideals}(1). The cases $k = 1, 2$
+say that on $T \otimes \CC$, with coordinates $(\hat u_1, \hat u_2) \in
+\OO_\CC \oplus \OO_\CC$, the product is the \emph{swap-twisted} algebra
+\begin{equation}\label{eq:swap}
+  S : \qquad (a_1, a_2) \cdot (b_1, b_2) \;=\;
+    (a_2 \cdot_s b_2,\; a_1 \cdot_s b_1)
+  \qquad \text{on } \OO_\CC \oplus \OO_\CC ,
+\end{equation}
+and that the real structure on $S$ is
+$(a_1, a_2) \mapsto (\overline{a_2}, \overline{a_1})$, since
+$\hat u_2 = \overline{\hat u_1}$ for real~$u$.
+
+This is the structural engine of the calculation: the $16$-dimensional
+piece~$T$, which is where all the interesting automorphisms live, is a real
+form of a pair of complexified octonion algebras glued by a swap.
+
+% ===================================================================
+\section{The automorphism group of the ambient algebra}\label{sec:ambient}
+% ===================================================================
+
+For $A, B \in \Aut(\OO, \cdot_s)$ define $h_{A,B} := P \otimes A + Q \otimes B$,
+where $P$ is the orthogonal projection of $\RR^{24}$ onto~$D$ and
+$Q = I - P$ the projection onto~$T$; concretely
+\begin{equation}\label{eq:hAB}
+  h_{A,B}(u)_\alpha \;=\; B\,u_\alpha
+    \;+\; (A - B)\,\tfrac{1}{3}\,(u_0 + u_1 + u_2).
+\end{equation}
+For $\pi \in S_3$ let $\rho_\pi(u)_\alpha := u_{\pi^{-1}(\alpha)}$ be the
+corresponding permutation of the three blocks.
+
+\begin{theorem}\label{thm:ambient}
+\[
+  \Aut(\RR^{24}, \star)
+  \;=\; \{\, h_{A,B}\, \rho_\pi \;:\;
+      A, B \in \Aut(\OO, \cdot_s),\; \pi \in S_3 \,\}
+  \;\cong\; G_2 \times G_2 \times S_3 ,
+\]
+a \emph{direct} product, where $G_2$ denotes the compact real form. The
+group is compact of dimension~$28$; $h_{A,B}$ and $\rho_\pi$ commute.
+\end{theorem}
+
+The proof has three parts.
+
+\medskip
+\noindent\textbf{(a) The $D$ factor.}
+$\Aut(D, \star) = \Aut(\OO, \cdot_s)$ by
+Proposition~\ref{prop:ideals}(4), and $\Aut(\OO, \cdot_s)$ is the compact
+real form of~$G_2$ (classical; see also \S\ref{sec:co0}). The rescaling by~$3$
+does not affect the automorphism group.
+
+\medskip
+\noindent\textbf{(b) The identity component of the $T$ factor.}
+Exact nullspace computations give $\dim \Der(\OO, \cdot_s) = 14$ and
+$\dim \Der(\RR^{24}, \star) = 28$: $28$ explicit derivations of the form
+$P \otimes X + Q \otimes Y$ with $X, Y \in \Der(\OO, \cdot_s)$ are exhibited
+and shown to be linearly independent over~$\QQ$, giving $\dim \geq 28$, and
+a rank bound modulo a prime (full rank over $\FF_p$ is a rigorous lower
+bound for the rank over~$\QQ$, hence the mod-$p$ nullity of the derivation
+system is a rigorous upper bound for its rank over~$\QQ$) gives
+$\dim \leq 28$. Hence
+$\Der(\RR^{24}, \star) = \mathfrak{g}_2 \oplus \mathfrak{g}_2$; the second
+pass additionally computed the Killing form of $\Der(\OO, \cdot_s)$ and found
+it negative definite, so both summands are of compact type. In particular
+$\Aut(T, \star)^{\,0}$ is the blockwise compact~$G_2$.
+(\texttt{verify\_star\_algebra\_structure.py}; second pass independently.)
+
+\medskip
+\noindent\textbf{(c) The component group of the $T$ factor.}
+Two independent derivations agree.
+
+\emph{Route~1 (over $\CC$, via~\eqref{eq:swap}).}
+In $S$, for $w = (a_1, a_2)$ the left multiplication $L_w$ has rank~$4$
+exactly when one component vanishes and the other is a nonzero null vector
+of~$\OO_\CC$. An automorphism preserves that rank condition, so it permutes
+the two irreducible punctured null cones $N_1, N_2$ and hence their
+spans~$V_1, V_2$. The component-preserving automorphisms solve out exactly to
+$(\phi_1, \phi_2) = (c^2\theta,\, c\theta)$ with
+$\theta \in \Aut(\OO_\CC)$ and $c^3 = 1$; the swap
+$\tau(a_1,a_2) = (a_2,a_1)$ is an automorphism, fixes~$\theta$ and inverts~$c$.
+Hence $\Aut(S) = G_2(\CC) \times S_3$. Passing to real points, the real
+structure $(a_1,a_2) \mapsto (\overline{a_2}, \overline{a_1})$ forces
+$\theta$ to be fixed by conjugation, that is $\theta$ lies in the compact
+$G_2$, while $c$ is unconstrained among the cube roots of unity. So
+$\Aut(T, \star)(\RR) = G_2 \times S_3$, the $G_2$ acting blockwise and the
+$S_3$ being the block permutations restricted to~$T$.
+
+\emph{Route~2 (finite and machine-checkable).}
+$\Aut(G_2) = \mathrm{Inn}(G_2)$ and $Z(G_2) = 1$, so the component group of
+$\Aut(T,\star)$ is the centralizer of the identity component
+$\Aut(T,\star)^{\,0}$ inside $\Aut(T,\star)$. The commutant of the blockwise
+$\mathfrak{g}_2$ inside $\End(T)$ was computed exactly and is
+$8$-dimensional ($\cong M_2 \oplus M_2$); imposing the automorphism condition
+on it yields $32$ distinct polynomial equations in $8$ unknowns, solved
+exactly, with exactly $6$ invertible solutions. They are closed under
+composition and have orders $1, 2, 2, 2, 3, 3$, hence form~$S_3$. There are
+no further components.
+
+Route~2 was carried out in the second, independent pass and does not share a
+step with Route~1. Route~1 is the derivation recorded in
+\texttt{verify\_star\_algebra\_structure.py}. The two agree.
+
+\medskip
+\noindent\textbf{Assembly.}
+By Proposition~\ref{prop:preserve},
+$\Aut(\RR^{24},\star) = \Aut(D,\star) \times \Aut(T,\star)
+= G_2 \times (G_2 \times S_3)$. Writing an element as $h_{A,B}\rho_\pi$ uses
+$A$ for the action on~$D$ and $B$ for the blockwise action on~$T$; the block
+permutations act trivially on~$D$ and commute with blockwise maps, so the
+product is direct and $h_{A,B}\rho_\pi = \rho_\pi h_{A,B}$. That every
+$h_{A,B}$ and every $\rho_\pi$ \emph{is} a $\star$-automorphism was checked
+exhaustively on all $576$ basis pairs. $\square$
+
+\begin{remark}[What deserves a human reading]\label{rem:humanread}
+Everything in Theorem~\ref{thm:ambient} is either an exact finite computation
+or elementary, with one exception: the classification of $\Aut(S)$ over~$\CC$
+in Route~1, specifically the rank-of-$L_w$ / null-cone step. It is the only
+genuinely non-mechanical argument in this note. The second pass deliberately
+did \emph{not} reproduce it, taking Route~2 instead, and reached the same
+group. If Route~1 is printed anywhere, it should be re-read by hand; Route~2
+is the safer thing to publish.
+\end{remark}
+
+% ===================================================================
+\section{The lattice stabilizer}\label{sec:lattice}
+% ===================================================================
+
+Since $\LL$ spans $\RR^{24}$, a $\ZZ$-linear bijection of~$\LL$ extends
+uniquely to $\RR^{24}$, and $\star$-multiplicativity on~$\LL$ extends by
+bilinearity to all of~$\RR^{24}$. Hence
+\[
+  \Aut(\LL, +, \star)
+  \;=\; \{\, g \in \Aut(\RR^{24}, \star) : g(\LL) = \LL \,\}
+  \;=\; \{\, h_{A,B}\, \rho_\pi \;:\; h_{A,B}(\LL) = \LL,\ \pi \in S_3 \,\},
+\]
+the last equality because every $\rho_\pi$ preserves $\LL$: Wilson's three
+conditions in~\eqref{eq:wilson} are symmetric in $x, y, z$. So the whole
+problem is the determination of
+\[
+  K \;:=\; \bigl\{ (A,B) \in \Aut(\OO,\cdot_s)^2 \;:\;
+    h_{A,B}(\LL) = \LL \bigr\},
+  \qquad
+  \Aut(\LL,+,\star) \;\cong\; K \times S_3 .
+\]
+
+\subsection{The two lattice slices}
+
+\begin{lemma}\label{lem:slices}
+$\LL \cap T = \{(p,q,r) \in (L\bar s)^3 : p + q + r = 0\}$, and
+$\LL \cap D = \{(a,a,a) : a \in Ls\}$.
+\end{lemma}
+
+\begin{proof}[Proof of the first, computation of the second]
+If $(p,q,r) \in \LL$ with $p+q+r = 0$, then $p + q = -r \in L\bar s$ and
+likewise for the other two pairwise sums, and $L\bar s \subseteq L$, so
+$p, q, r \in L\bar s$; the condition $p+q+r = 0 \in Ls$ is automatic. The
+converse is the same reading. This is a proof.
+
+For the second slice, $(a,a,a) \in \LL$ says $a \in L$, $2a \in L\bar s$ and
+$3a \in Ls$. All three conditions are constant on the classes of $L/2L$
+(because $2L \subseteq L\bar s$ and $2L \subseteq Ls$, both verified), so
+they may be tested on the $256$ classes; exactly $16$ survive, and they are
+precisely the classes of $Ls$, which has index $16$ in~$L$. The inclusion
+$\supseteq$ is immediate ($a \in Ls$ gives $3a \in Ls$ and $2a \in 2L
+\subseteq L\bar s$); the reverse inclusion is the computation.
+(\texttt{python\_project/src/verify\_aut\_lambda\_star.py}, reproduced in the
+second pass from an independently built $\ZZ$-basis of~$\LL$.)
+\end{proof}
+
+\begin{corollary}[Finiteness]\label{cor:finite}
+If $h_{A,B}\rho_\pi \in \Aut(\LL,+,\star)$ then $A(Ls) = Ls$ and
+$B(L\bar s) = L\bar s$. Both stabilizers are finite, so
+$\Aut(\LL,+,\star)$ is finite.
+\end{corollary}
+
+\begin{proof}
+$h_{A,B}$ acts on $D$ as $(a,a,a) \mapsto (Aa,Aa,Aa)$ and preserves $D$ and
+$T$; block permutations act trivially on~$D$. By Lemma~\ref{lem:slices},
+preserving $\LL \cap D$ forces $A(Ls) = Ls$. On $T$, $h_{A,B}$ acts
+blockwise by~$B$; every $p \in L\bar s$ occurs as the first component of
+$(p,-p,0) \in \LL \cap T$, so preserving $\LL \cap T$ forces
+$B(L\bar s) = L\bar s$. A lattice stabilizer inside the orthogonal group is
+finite. (Alternatively: $\Aut(\RR^{24},\star)$ is compact by
+Theorem~\ref{thm:ambient} and $\Aut(\LL,+,\star)$ is a discrete subgroup of
+it.)
+\end{proof}
+
+\subsection{The three octonion-automorphism stabilizers}
+
+Corollary~\ref{cor:finite} reduces the search to the two finite groups
+\[
+  \Stab(Ls) := \Aut(\OO,\cdot_s) \cap \{A : A(Ls) = Ls\},
+  \qquad
+  \Stab(L\bar s) := \Aut(\OO,\cdot_s) \cap \{B : B(L\bar s) = L\bar s\},
+\]
+and it is convenient to have $\Stab(L)$ as well. All three were enumerated
+completely, in exact arithmetic.
+
+\begin{center}
+\begin{tabular}{lrl}
+\toprule
+Group & Order & Structure (GAP) \\
+\midrule
+$\Stab(L)$        & $1344$  & $(C_2 \times C_2 \times C_2).\mathrm{PSL}(3,2)$ \\
+$\Stab(Ls)$       & $168$   & $(C_2 \times C_2 \times C_2){:}(C_7{:}C_3)$ \\
+$\Stab(L\bar s)$  & $12096$ & $\mathrm{PSU}(3,3){:}C_2 = U_3(3).2 = G_2(2)$ \\
+\midrule
+$\Stab(L) \cap \Stab(Ls) \cap \Stab(L\bar s)$ & $6$ & $C_6$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The identifications are GAP's, from
+$8 \times 8$ generators exported by the Python enumeration
+(\texttt{octonion\_stabilisers.g}); the $12096$ was additionally
+confirmed isomorphic to the ATLAS group $U_3(3).2$.
+
+Completeness of the enumerations rests on the following. An automorphism
+of~$\OO$ fixes~$e_0$, is orthogonal (\S\ref{sec:co0}), permutes the minimal
+vectors of any lattice it stabilizes, and is determined by the images of
+\emph{three} elements that generate $\OO$ as an algebra. Three, not two: by
+Artin's theorem any two octonions generate an associative, hence at most
+quaternionic, subalgebra, so a search over the images of two generators
+undercounts the constraints and returns a much larger set. A backtracking
+search over ordered generating triples drawn from the minimal-vector shell,
+with Gram-matrix filters, is therefore exhaustive.
+
+The enumerations were checked in three further ways.
+(i)~Re-running the backtracking search from a different first generator, which
+produces a different generating triple, different Gram filters and a different
+candidate list, returns the identical \emph{set} of matrices in all three
+cases (\texttt{python\_project/src/verify\_aut\_octonion\_crosscheck.py}).
+(ii)~For $\Stab(L)$ an assumption-free brute force over all
+$2^7 \cdot 7! = 645{,}120$ signed permutations of $e_1, \ldots, e_7$ returns
+the same $1344$ matrices. This is legitimate because every element of
+$\Stab(L)$ \emph{is} such a signed permutation: $e_0 \pm e_j$ are roots of~$L$
+and are the only roots of $L$ of the form $e_0 + (\text{imaginary unit})$, so
+$A(e_0 \pm e_j) = e_0 \pm A(e_j)$ forces $A(e_j) = \pm e_k$. (The forcing
+argument uses roots of norm~$2$ and does not apply to $Ls$ or $L\bar s$, whose
+minimal vectors have norm~$4$; and indeed those two stabilizers do contain
+non-monomial elements.)
+(iii)~The second pass re-enumerated all three from scratch, by its own shell
+and triple search, and obtained the same three orders.
+
+\begin{remark}[A prior expectation refuted]\label{rem:12096}
+It is natural to expect the order-$12096$ group $G_2(2)$ to appear as the
+stabilizer of the integral-octonion order~$L$. In the paper's normalization it
+does not. $L$ has minimal norm~$2$ and does not contain~$e_0$, so it is not a
+unital maximal order in these coordinates; its octonion-automorphism
+stabilizer has order~$1344$ and consists entirely of monomial signed
+permutations. It is $L\bar s$, not~$L$, whose stabilizer is the full
+$G_2(2)$. The asymmetry between $Ls$ (order $168$) and $L\bar s$ (order
+$12096$) is the sharpest single fact in this computation.
+\end{remark}
+
+\subsection{The pair set $K$ and the group}
+
+\begin{theorem}\label{thm:main}
+$|K| = 6$, every element of $K$ has $A = B$, and
+\[
+  \Aut(\LL, +, \star) \;\cong\; C_6 \times S_3, \qquad
+  \bigl|\Aut(\LL,+,\star)\bigr| \;=\; 36 .
+\]
+\end{theorem}
+
+The diagonal part of~$K$ is identified by a proof: when $A = B$, $h_{A,A}$ is
+just the blockwise map $(x,y,z) \mapsto (Ax,Ay,Az)$, and since $A$ is an
+octonion-algebra automorphism it commutes with the sublattice conditions of
+\eqref{eq:wilson} in the sense that $h_{A,A}(\LL) = \LL$ holds if and only if
+$A$ stabilizes each of $L$, $L\bar s$ and $Ls$. So the diagonal part of $K$ is
+exactly the triple intersection $\Stab(L) \cap \Stab(Ls) \cap \Stab(L\bar s)$,
+which the enumeration above gives as a $C_6$. What is \emph{computed} is that
+$K$ has no other elements: no pair with $A \neq B$ survives. The lattice kills
+every genuinely asymmetric pair, even though the ambient algebra permits them
+freely (Theorem~\ref{thm:ambient} has two independent $G_2$ factors).
+
+The search over all $168 \times 12096 = 2{,}032{,}128$ candidate pairs was done
+by two independent methods, which return the identical $6$ pairs
+(\texttt{python\_project/src/verify\_aut\_lambda\_star.py}):
+
+\begin{enumerate}[label=\textbf{M\arabic*.}, leftmargin=*]
+\item \emph{The mod-3 glue code.} $\LL_0 := (\LL \cap D) \oplus (\LL \cap T)$
+  has index $[\LL : \LL_0] = 6561 = 3^8$ in~$\LL$, and the quotient
+  $\LL/\LL_0$ is an $8$-dimensional $\FF_3$-subspace of $\FF_3^{24}$. Any
+  $h_{A,B}$ with $A \in \Stab(Ls)$, $B \in \Stab(L\bar s)$ preserves $\LL_0$
+  automatically, so $h_{A,B}(\LL) = \LL$ if and only if the induced
+  $\FF_3$-linear map $\mathrm{diag}(M_A, M_B, M_B)$ preserves the glue code.
+  Matching the $168$ classes against the $12096$ classes gives exactly~$6$
+  pairs.
+\item \emph{Direct integrality.} With no reference to $\LL_0$, no lattice
+  quotient and no $\FF_3$ linear algebra: the matrix of $h_{A,B}$ in a Hermite
+  $\ZZ$-basis of~$\LL$ must be integral, and that condition, tested modulo the
+  common denominator~$96$ over all $2{,}032{,}128$ pairs, returns the same~$6$.
+\end{enumerate}
+
+The second pass repeated the search in its own coordinates (hashing the
+$\LL$-basis integrality condition over all $2{,}032{,}128$ pairs) and again got
+exactly the same $6$ pairs, all with $A = B$, forming a $C_6$ of monomial
+signed permutations fixing~$e_0$.
+
+\subsection{Generators}
+
+Three generators suffice. Written intrinsically:
+
+\begin{enumerate}[label=(\arabic*), leftmargin=*]
+\item \textbf{The blockwise $C_6$ generator}, of order~$6$: apply
+  $A_6$ to each of the three octonion blocks, where $A_6$ is the signed
+  permutation of the octonion basis fixing~$e_0$ and acting by
+  \[
+    e_1 \mapsto -e_5, \quad e_2 \mapsto -e_7, \quad e_3 \mapsto +e_2, \quad
+    e_4 \mapsto -e_4, \quad e_5 \mapsto +e_6, \quad e_6 \mapsto +e_1, \quad
+    e_7 \mapsto -e_3 .
+  \]
+  $A_6$ is an automorphism of $(\OO, \cdot_s)$ and stabilizes $L$, $Ls$ and
+  $L\bar s$. Its underlying permutation is $(1\,5\,6)(2\,7\,3)$; its cube is
+  the sign flip $e_1, e_4, e_5, e_6 \mapsto -e_1, -e_4, -e_5, -e_6$, and its
+  square is a monomial automorphism of order~$3$. All six elements of $K$ are
+  monomial signed permutations fixing~$e_0$.
+\item \textbf{The block $3$-cycle}, of order~$3$: $(x,y,z) \mapsto (y,z,x)$.
+\item \textbf{The block transposition}, of order~$2$: $(x,y,z) \mapsto (y,x,z)$.
+\end{enumerate}
+
+Generators (2) and (3) generate the $S_3$ of block permutations. Under the
+Fourier normal form of \S\ref{sec:fourier} they have a clean reading: the block
+$3$-cycle is the cube-root-of-unity scaling
+$(\hat u_1, \hat u_2) \mapsto (\zeta^2 \hat u_1, \zeta \hat u_2)$, and the block
+transposition is the Fourier conjugation $\hat u_1 \leftrightarrow \hat u_2$.
+That $A_6$ is not an automorphism of the \emph{untwisted} octonion product was
+checked in the second pass; the $C_6$ is a feature of $\cdot_s$.
+
+\subsection{Structure}
+
+The three generators, converted to $24 \times 24$ integer matrices in a Hermite
+$\ZZ$-basis of~$\LL$, are exported to
+\texttt{aut\_lambda\_star\_gens.g}. GAP, running its own
+Schreier--Sims machinery and knowing nothing of the Python enumeration, reports
+(\texttt{aut\_lambda\_star.g}):
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+$|G|$ & $36$ \\
+$\mathrm{StructureDescription}(G)$ & \texttt{C6 x S3} \\
+abelian & no \\
+center & $C_6$ \\
+derived subgroup & $C_3$ \\
+$-I_{24} \in G$ & no \\
+conjugacy classes & $18$ \\
+element orders & $1\ (\times 1)$, \; $2\ (\times 7)$, \;
+                 $3\ (\times 8)$, \; $6\ (\times 20)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The second pass rebuilt the three generators from their intrinsic description
+above, in \emph{standard} $\RR^{24}$ coordinates rather than in the Hermite
+basis, closed the group by hand (order~$36$), and ran GAP again on its own
+matrices, obtaining the same order, the same structure description, the same
+center and derived subgroup, and the same exclusion of~$-I_{24}$.
+
+All $36$ elements were also verified one at a time, in exact arithmetic and
+twice independently: each preserves~$\LL$, each satisfies
+$g(u \star v) = g(u) \star g(v)$ on all $576$ basis pairs (hence, by
+bilinearity, everywhere), each preserves the Leech inner product, and the $36$
+are pairwise distinct linear maps.
+
+That $-I_{24} \notin \Aut(\LL,+,\star)$ is not a surprise: negation is an
+isometry but is not multiplicative for a bilinear product. It is the reason the
+containment in $\Co_0$ of \S\ref{sec:co0} is strict, and it is already noted in
+the main paper.
+
+\begin{remark}[A mislabeled datum, recorded]
+The first pass reported the element orders as
+``$1,2,2,2,3,3,3,3,3,6(\times 9)$''. That is the multiset of orders of the $18$
+\emph{conjugacy class representatives}, which is what the GAP script prints, and
+not the element-order multiset of the group. The correct element-order
+distribution is the one tabulated above. Both are consistent with
+$C_6 \times S_3$, but the former must not be copied into the paper as an
+element-order list.
+\end{remark}
+
+% ===================================================================
+\section{Containment in $\Co_0$}\label{sec:co0}
+% ===================================================================
+
+\begin{theorem}\label{thm:co0}
+$\Aut(\RR^{24}, \star) \subseteq O(24)$, and consequently
+$\Aut(\LL, +, \star) \subseteq \Co_0$.
+\end{theorem}
+
+\begin{proof}
+Let $A$ be an algebra automorphism of the real octonions. The trace
+$t(x) := \tfrac18 \Tr(L_x)$ and hence the conjugation
+$\bar x = t(x)\,e_0 - x$ are determined by the algebra alone, so $A$ commutes
+with conjugation; and $\Nrm(x)\,e_0 = x \bar x$, so $A$ preserves the
+positive-definite norm form~$\Nrm$. Hence
+$\Aut(\OO, \cdot_s) \subseteq O(8)$, and it is the compact real form
+of~$G_2$.
+
+By Theorem~\ref{thm:ambient} every element of $\Aut(\RR^{24}, \star)$ is
+$h_{A,B}\rho_\pi$ with $A, B \in \Aut(\OO, \cdot_s)$. By
+Proposition~\ref{prop:ideals}(5), $D \perp T$ in the standard Euclidean form
+of $\RR^{24}$. On $D$ the map $h_{A,B}$ acts as $(a,a,a) \mapsto (Aa,Aa,Aa)$,
+which is orthogonal for the induced form ($3\Nrm(a)$); on $T$ it acts
+blockwise by~$B$, also orthogonal; and $\rho_\pi$ merely permutes the three
+orthogonal octonion blocks. So $h_{A,B}\rho_\pi \in O(24)$.
+
+Finally, a $\ZZ$-linear bijection of~$\LL$ extends uniquely to $\RR^{24}$ and
+its $\star$-multiplicativity extends by bilinearity, so
+$\Aut(\LL,+,\star) \subseteq \Aut(\RR^{24},\star) \subseteq O(24)$. Together
+with $g(\LL) = \LL$ this gives
+$\Aut(\LL,+,\star) \subseteq O(24) \cap \mathrm{GL}(\LL)
+ = \Aut(\LL, +, \ip{\cdot}{\cdot}) = \Co_0$.
+\end{proof}
+
+Computational confirmation: all $36$ elements were tested against the Gram
+matrix of the $\LL$-basis and all preserve $\ip{u}{v}$ exactly; in the second
+pass, in standard coordinates, all $36$ satisfy $g^{\!\top} g = I_{24}$
+(\texttt{verify\_aut\_lambda\_star.py}, and GAP).
+
+Note where the weight of the argument sits. Compactness of
+$\Aut(\RR^{24},\star)$ is what makes $\Aut(\LL,+,\star)$ finite in the first
+place (Corollary~\ref{cor:finite} gives an independent finiteness proof via the
+lattice stabilizers), and it is what forces the isometry property. It is load
+bearing and cannot be replaced by the trace form.
+
+\subsection{The trace form does not do this job}
+
+It is tempting to argue that any $\star$-automorphism preserves the
+$\star$-intrinsic trace form
+$B(u,v) := \Tr(L_u L_v)$, and that $B$ is (a multiple of) the Leech form.
+The second half is false. Computed exactly
+(\texttt{verify\_star\_algebra\_structure.py}), $B$ is diagonal with entries
+$+24$ on the three $e_0$-coordinates and $-24$ on the twenty-one imaginary
+coordinates:
+\[
+  B(u,v) \;=\; 24 \sum_{\alpha \in \ZZ/3} \Rea\bigl(u_\alpha \cdot_s v_\alpha\bigr),
+  \qquad \text{signature } (3, 21).
+\]
+It is not a scalar multiple of the Leech Gram matrix, and it is not even of the
+shape $\alpha \ip{u_D}{v_D} + \beta \ip{u_T}{v_T}$: it is blind to the $D/T$
+split and separates real from imaginary parts instead. Preservation of~$B$
+therefore implies neither preservation of the Leech form nor finiteness of the
+automorphism group. The trace-form route fails, even though its intended
+conclusion is true. This was confirmed independently in the second pass.
+
+\subsection{Relation to what the main paper (v6) asserts}
+\label{sec:v6}
+
+The v6 Conclusion lists as an open problem: ``The automorphism group of
+$(\LL, +, \star)$, equivalently the stabilizer of the product tensor
+inside~$\Co_0$, and its relationship to the Conway group. Empirically,
+$S_3 \subseteq \Aut(\LL, +, \star) \subsetneq \Co_0$: the block-permutation
+$S_3$ acts by automorphisms, and the inclusion in $\Co_0$ is strict because
+$-I_{24} \in \Co_0$ does not preserve $\star$. Full identification of
+$\Aut(\LL, +, \star)$ is open.'' Against the present calculation:
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{``Full identification is open'' is now closed.}
+  $\Aut(\LL,+,\star) \cong C_6 \times S_3$, of order~$36$, with the three
+  explicit generators of \S\ref{sec:lattice}. The open-problem list should be
+  updated.
+\item \textbf{$S_3 \subseteq \Aut(\LL,+,\star)$ is correct}, and the $S_3$ is
+  exactly the block-permutation subgroup. It is a proper subgroup of index~$6$:
+  the blockwise $C_6$ was missed.
+\item \textbf{The containment $\Aut(\LL,+,\star) \subseteq \Co_0$ is correct
+  and is now a theorem}, not an empirical observation. But the paper's phrasing
+  presents it as if it were free: the phrase ``equivalently the stabilizer of
+  the product tensor inside~$\Co_0$'' already presupposes that every
+  $\star$-automorphism of $\LL$ is an isometry. That presupposition is true, by
+  Theorem~\ref{thm:co0}, and the only proof we have of it goes through the
+  compactness of $\Aut(\OO,\cdot_s)$. If the sentence stays, it needs that
+  justification attached.
+\item \textbf{The strictness $\subsetneq \Co_0$ is correct}, and the reason
+  given ($-I_{24}$ is not multiplicative) is correct. It is a considerable
+  understatement: $36$ against $|\Co_0| = 8{,}315{,}553{,}613{,}086{,}720{,}000$.
+\end{itemize}
+
+% ===================================================================
+\section{Proved, computed, and corrected}\label{sec:corrections}
+% ===================================================================
+
+\subsection{What is proved and what is computed}
+
+In the table, \textsc{proof} means a mathematical argument given above;
+\textsc{exact} means a finite computation in exact rational or integer
+arithmetic which, being exhaustive on a basis of a bilinear structure or on a
+finite set, settles the statement outright; \textsc{gap} means an independent
+group-theoretic identification.
+
+\begin{center}
+\small
+\begin{longtable}{p{0.60\textwidth}p{0.10\textwidth}p{0.22\textwidth}}
+\toprule
+Statement & Status & Where \\
+\midrule
+\endhead
+Routing identity, Lemma~\ref{lem:routing} & \textsc{proof} & \S\ref{sec:ideals}, also \textsc{exact} \\
+$\Sigma$ is an algebra homomorphism; $D, T$ are two-sided ideals; $D \star T = T \star D = 0$; $\RR^{24} = D \oplus T$ & \textsc{proof} & \S\ref{sec:ideals}, also \textsc{exact} \\
+$\varphi : (\OO,\cdot_s) \to (D,\star)$ is an algebra isomorphism & \textsc{proof} & \S\ref{sec:ideals} \\
+$(D,\star)$ is simple & \textsc{proof} & \S\ref{sec:ideals} \\
+$(T,\star)$ is simple (multiplication algebra is all of $\End(T)$, dimension $256$) & \textsc{exact} & \S\ref{sec:ideals} \\
+Every $\star$-automorphism preserves $D$ and $T$; $\Aut(\RR^{24},\star) = \Aut(D,\star) \times \Aut(T,\star)$ & \textsc{proof} & \S\ref{sec:ideals} \\
+Fourier identity $\widehat{(u\star v)}_k = \hat u_{2k} \cdot_s \hat v_{2k}$; $T \otimes \CC \cong$ swap-twisted algebra & \textsc{proof} & \S\ref{sec:fourier}, also \textsc{exact} over $\QQ(\zeta)$ \\
+$\dim \Der(\OO,\cdot_s) = 14$, Killing form negative definite; $\dim \Der(\RR^{24},\star) = 28$ & \textsc{exact} & \S\ref{sec:ambient} \\
+Component group of $\Aut(T,\star)$ is $S_3$ (centralizer of the identity component has exactly $6$ elements) & \textsc{exact} & \S\ref{sec:ambient}, Route~2 \\
+$\Aut(\RR^{24},\star) = G_2 \times G_2 \times S_3$, compact, $\dim 28$ & \textsc{proof} & \S\ref{sec:ambient} \\
+Every octonion-algebra automorphism is orthogonal; hence $\Aut(\RR^{24},\star) \subseteq O(24)$ and $\Aut(\LL,+,\star) \subseteq \Co_0$ & \textsc{proof} & \S\ref{sec:co0}, also \textsc{exact} on all $36$ \\
+$\LL \cap T = \{(p,q,r) \in (L\bar s)^3 : p+q+r=0\}$ & \textsc{proof} & \S\ref{sec:lattice} \\
+$\LL \cap D = \{(a,a,a) : a \in Ls\}$ & \textsc{exact} & \S\ref{sec:lattice} \\
+$[\LL : (\LL \cap D) \oplus (\LL \cap T)] = 3^8 = 6561$ & \textsc{exact} & \S\ref{sec:lattice} \\
+$A(Ls) = Ls$ and $B(L\bar s) = L\bar s$ are necessary; hence $\Aut(\LL,+,\star)$ is finite & \textsc{proof} & \S\ref{sec:lattice} \\
+$\rho_\pi(\LL) = \LL$ for all six $\pi$ & \textsc{proof} & \S\ref{sec:lattice} \\
+Every element of $\Stab(L)$ is a signed permutation of $e_1,\ldots,e_7$ fixing $e_0$ & \textsc{proof} & \S\ref{sec:lattice} \\
+$|\Stab(L)| = 1344$, $|\Stab(Ls)| = 168$, $|\Stab(L\bar s)| = 12096$ & \textsc{exact} & \S\ref{sec:lattice} \\
+Structure of the three stabilizers; $12096 \cong G_2(2) = U_3(3).2$ & \textsc{gap} & \S\ref{sec:lattice} \\
+$|K| = 6$; every element of $K$ has $A = B$ & \textsc{exact} & \S\ref{sec:lattice} \\
+Diagonal part of $K$ equals $\Stab(L) \cap \Stab(Ls) \cap \Stab(L\bar s)$ & \textsc{proof} & \S\ref{sec:lattice} \\
+$|\Aut(\LL,+,\star)| = 36$; structure $C_6 \times S_3$; center $C_6$; derived subgroup $C_3$; $-I_{24} \notin G$ & \textsc{exact} + \textsc{gap} & \S\ref{sec:lattice} \\
+Trace form $\Tr(L_u L_v) = 24 \sum_\alpha \Rea(u_\alpha \cdot_s v_\alpha)$, signature $(3,21)$, not the Leech form & \textsc{exact} & \S\ref{sec:co0} \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+Nothing load bearing is left open. The one step that is neither an exact finite
+computation nor elementary is Route~1 of \S\ref{sec:ambient}(c), the
+classification of $\Aut(S)$ over~$\CC$; see Remark~\ref{rem:humanread}. It is
+not load bearing, because Route~2 reaches the same conclusion by an entirely
+finite and machine-checkable path.
+
+\subsection{Corrections made during verification}
+
+Five points where the first computational pass, or the expectation that
+launched it, had to be corrected. All are recorded here rather than quietly
+fixed.
+
+\begin{enumerate}[label=\textbf{C\arabic*.}, leftmargin=*]
+\item \textbf{The intrinsic-annihilator argument is circular as first stated}
+  (Remark~\ref{rem:circular}). The conclusion survives; the proof is now via
+  simplicity of the two ideals and a dimension count. The docstring of
+  \texttt{verify\_star\_algebra\_structure.py} still carries the circular
+  wording.
+\item \textbf{The order-$12096$ group stabilizes $L\bar s$, not $L$}
+  (Remark~\ref{rem:12096}). The prior expectation that the maximal-order
+  stabilizer would be $G_2(2)$, cut down by the extra sublattice conditions, is
+  wrong in the paper's normalization.
+\item \textbf{The trace-form route to $\Co_0$ fails} (\S\ref{sec:co0}). Its
+  conclusion is true, but for the compactness reason instead.
+\item \textbf{The element-order list first reported was the list of conjugacy
+  class representative orders}, not of group elements.
+\item \textbf{Scale.} The $\LL$ realized by~\eqref{eq:wilson} has minimal
+  norm~$8$ and Gram determinant $2^{24}$: it is $\sqrt2$ times the unimodular
+  Leech lattice. This is irrelevant to $\Aut$ but no unimodularity claim should
+  be attached to it.
+\end{enumerate}
+
+% ===================================================================
+\section{Reproduction}\label{sec:repro}
+% ===================================================================
+
+All scripts use exact arithmetic (Python \texttt{Fraction}s or integers)
+throughout; no claim in this note rests on floating-point computation. Runtimes
+are on the project's reference machine. Python scripts live in
+\texttt{python\_project/src/} and GAP scripts in \texttt{}; both
+are named below by file name alone.
+
+\begin{center}
+\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.39\textwidth}>{\raggedright\arraybackslash}p{0.53\textwidth}}
+\toprule
+Script & Certifies \\
+\midrule
+\endhead
+\texttt{verify\_ideal\_decomposition.py}
+  & $\Sigma$ is an algebra homomorphism; $\RR^{24} = D \oplus T$ as mutually
+    annihilating two-sided ideals; $(\OO,\cdot_s) \cong (D,\star)$; the twist
+    is an algebra isomorphism onto the untwisted triple product. \\
+\addlinespace
+\texttt{verify\_star\_algebra\_structure.py}
+  & The routing identity; $\Ann(T) = D$ and $\Ann(D) = T$; the $C_3$-Fourier
+    normal form checked exactly over $\QQ(\zeta)$ on all $576$ basis pairs;
+    $h_{A,B}$ and the block permutations are automorphisms;
+    $\dim \Der(\OO,\cdot_s) = 14$ and $\dim \Der(\RR^{24},\star) = 28$; the
+    $\star$-intrinsic trace form. About $2$ minutes. \\
+\addlinespace
+\texttt{verify\_aut\_lambda\_star.py}
+  & The main script. $\LL \cap D$ and $\LL \cap T$; complete enumeration of the
+    three octonion-automorphism stabilizers; the pair set $K$ by the two
+    independent methods M1 and M2; the $36$ group elements verified one at a
+    time against $\LL$, against $\star$ on all $576$ basis pairs, and against
+    the Leech Gram matrix; writes the GAP generators. About $5$ minutes. \\
+\addlinespace
+\texttt{verify\_aut\_octonion\_crosscheck.py}
+  & Independent cross-checks of the three stabilizer enumerations: re-run from a
+    different generating triple, and an assumption-free brute force over all
+    $645{,}120$ signed permutations for $\Stab(L)$; writes $8 \times 8$ GAP
+    generators. About $9$ minutes. \\
+\addlinespace
+\texttt{aut\_lambda\_star.g}
+  & Reads three explicit $24\times24$ integer matrices and reports
+    $\mathrm{Size} = 36$, $\mathrm{StructureDescription} = $ \texttt{C6 x S3},
+    center $C_6$, derived subgroup $C_3$, and $-I_{24} \notin G$. \\
+\addlinespace
+\texttt{octonion\_stabilisers.g}
+  & Identifies $\Stab(L) = (C_2{\times}C_2{\times}C_2).\mathrm{PSL}(3,2)$ of
+    order $1344$; $\Stab(Ls) = (C_2{\times}C_2{\times}C_2){:}(C_7{:}C_3)$ of
+    order $168$; $\Stab(L\bar s) = \mathrm{PSU}(3,3){:}C_2$ of order $12096$,
+    confirmed isomorphic to the ATLAS group $U_3(3).2 = G_2(2)$. \\
+\addlinespace
+\texttt{aut\_lambda\_star\_gens.g},
+\texttt{octonion\_stabilisers\_gens.g}
+  & Machine-generated generator files. Do not edit. \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+The earlier probe \texttt{python\_project/src/probe\_aut\_lambda\_star.py}
+recorded the $S_3$ of block permutations and the exclusion of $-I_{24}$; those
+observations are subsumed here.
+
+The independent second pass rebuilt the octonions, $\sigma$, $\cdot_s$, $L$,
+$s$, $\bar s$, $Ls$, $L\bar s$ and a $\ZZ$-basis of~$\LL$ from the definitions
+in \S\ref{sec:setting} (the $\LL$-basis from the defining congruences, by an
+$\FF_2$-linear solve followed by Hermite reduction, rather than from a
+generating set), rebuilt the three generators in standard coordinates from
+their intrinsic description, and re-derived the ambient group by Route~2. It
+used none of the scripts above. Its working files are not part of the
+repository.
+
+\end{document}

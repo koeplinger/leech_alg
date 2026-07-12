@@ -33,8 +33,11 @@ G := Group(gens);
 Print("Size(G) = ", Size(G), "\n");
 Print("StructureDescription(G) = ", StructureDescription(G), "\n");
 Print("IsAbelian(G) = ", IsAbelian(G), "\n");
-Print("element orders: ", SortedList(List(ConjugacyClasses(G),
-        c -> Order(Representative(c)))), "\n");
+Print("orders of conjugacy class representatives: ",
+      SortedList(List(ConjugacyClasses(G), c -> Order(Representative(c)))),
+      "\n");
+Print("orders of all 36 elements: ",
+      Collected(SortedList(List(Elements(G), Order))), "\n");
 Print("centre: ", StructureDescription(Centre(G)), "\n");
 Print("derived subgroup: ", StructureDescription(DerivedSubgroup(G)), "\n");
 Print("-I_24 in G: ", -IdentityMat(24) in G, "  (expect false)\n");

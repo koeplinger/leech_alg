@@ -74,10 +74,9 @@ concrete.
 The main manuscript at the date these standards were adopted was frozen
 v3 (29 April 2026). Standards were applied prospectively to v4 (frozen
 25 May 2026, `paper/main_2026-05-25.tex`), the v5 revision (7 June
-2026, `paper/main_2026-06-07.tex`), and the v6 clarity revision
-(10 July 2026, `paper/main_2026-07-10.tex`). v6 is the current
-released state. `paper/main.tex` continues as the working source for
-any subsequent revision. Revision chain: `paper/v3_to_v4_summary.md`,
+2026, `paper/main_2026-06-07.tex`), and the v6 revision (in progress,
+working source `paper/main.tex`, dated 12 July 2026). v5 is the last
+frozen state; v6 is not yet frozen. Revision chain: `paper/v3_to_v4_summary.md`,
 `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`. The
 standards were not retroactively enforced on v3; the dash convention
 and other v3/v4 differences were resolved during v4 assembly.

@@ -11,8 +11,20 @@ basis-exhaustive check below is a PROOF, not a sample.
   (2) IDEALS.    D = {(a,a,a)} (dim 8) and T = {(p,q,r) : p+q+r = 0} (dim 16)
       are two-sided ideals, D star T = T star D = 0, R^24 = D (+) T, and
               Ann(T) = D    and    Ann(D) = T.              [checked]
-      Ann is intrinsic, so EVERY automorphism of (R^24, star) maps D onto D
-      and T onto T.  (No dimension count is needed.)  Consequently
+      CORRECTION (12 July 2026, from the independent verification pass).
+      An earlier version of this docstring argued: "Ann is intrinsic, so
+      every automorphism maps D onto D and T onto T; no dimension count is
+      needed."  That is CIRCULAR: g(Ann(D)) = Ann(g(D)) yields g(T) = T only
+      once g(D) = D is already known.  The correct, non-circular route, and
+      the one printed in paper/automorphism_group_2026-07-12.tex:
+        - D star T = T star D = 0, so the projections pi_D, pi_T are algebra
+          homomorphisms;
+        - D and T are SIMPLE (their multiplication algebras <L_u, R_u> are the
+          full matrix algebras, of dimensions 64 and 256, computed exactly);
+        - hence pi_T(g(D)) is an ideal of T of dimension <= 8 < 16, so it is 0,
+          so g(D) <= D and therefore g(D) = D;
+        - only THEN does g(T) = g(Ann(D)) = Ann(g(D)) = Ann(D) = T follow.
+      The conclusion is unchanged:
               Aut(R^24, star) = Aut(D, star) x Aut(T, star),
       the two factors being independently choosable because the cross
       products vanish.                                      [checked]
@@ -319,7 +331,9 @@ def main():
           aD.shape[1] == 16 and Matrix.hstack(aD, MT).rank() == 16)
     print("    dim Ann(T) =", aT.shape[1], " and Ann(T) = D:",
           aT.shape[1] == 8 and Matrix.hstack(aT, MD).rank() == 8)
-    print("    => every automorphism of (R^24, star) preserves D and T setwise.")
+    print("    => with SIMPLICITY of D and T (dim 8 < dim 16), every automorphism")
+    print("       of (R^24, star) preserves D and T setwise; see the docstring for")
+    print("       why the annihilator relation alone does not suffice.")
 
     print("(3) Fourier  (u*v)^_k = u^_{2k} .s v^_{2k}  exactly over Q(zeta_3):",
           fourier_ok())

@@ -4,6 +4,8 @@
 **Reviewer:** Claude Fable 5 (Anthropic), at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v6 (10 July 2026), 20 pp.; frozen copy `paper/main_2026-07-10.tex` (byte-identical to working source)
 **Prompt:** 208.
+
+> **Note added 12 July 2026.** The `paper/main_2026-07-10.tex` snapshot named above was deleted on 12 July: v6 remained open, so it will have exactly one freeze rather than two. The state this review was performed against is preserved in git at commit `b8bf187`. Line numbers cited below refer to that state and have since shifted. This review is otherwise unchanged.
 **Lens:** journal-readiness for an applied/computational venue (Advances in Applied Clifford Algebras, Experimental Mathematics), with dedicated passes on prior-art accounting and on the pointers offered to pure mathematicians. Six independent dimension reviews (applied-audience fit, prior art, pure-math pointers, technical correctness, editorial, v5-to-v6 regression) are synthesised here.
 
 ---

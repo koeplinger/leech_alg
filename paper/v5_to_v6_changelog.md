@@ -2,7 +2,7 @@
 
 **v5** — dated 7 June 2026, 20 pages. Frozen at [paper/main_2026-06-07.tex](main_2026-06-07.tex). The v5 freeze includes the reviewer-response additions recorded as Change 9 of [paper/v4_to_v5_changelog.md](v4_to_v5_changelog.md) (span-defect remarks, exhaustive minimal-shell facts, φ comparison, §1 scope paragraph, §7 stabiliser clause).
 
-**v6** — dated 10 July 2026, 20 pages. Source at [paper/main.tex](main.tex); frozen snapshot [paper/main_2026-07-10.tex](main_2026-07-10.tex).
+**v6** — dated 12 July 2026, 21 pages. Source at [paper/main.tex](main.tex). **Not yet frozen:** v6 is still open, and this changelog is updated as it develops. (A 10 July snapshot existed briefly and was deleted on 12 July, so that v6 has exactly one freeze when it comes.)
 
 v6 is a clarity revision of the span-defect material introduced in v5. No mathematical content was added or changed; the computed indices ($2^{16}$ for $\star$, $2^{25}$ for $\varphi$) and all other v5 content are unchanged.
 

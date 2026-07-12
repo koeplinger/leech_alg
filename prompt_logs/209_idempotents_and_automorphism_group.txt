@@ -102,3 +102,89 @@ TASK B RESULT (automorphism group of the product) -- computed 2026-07-12
            python_project/src/verify_aut_lambda_star.py,
            python_project/src/verify_aut_octonion_crosscheck.py,
            gap_project/aut_lambda_star.g, gap_project/octonion_stabilisers.g
+
+--------------------------------------------------------------------------
+TASK A RESULT (idempotents) -- computed 2026-07-12
+--------------------------------------------------------------------------
+  (R^24, +, star) has EXACTLY EIGHT idempotents.  Complete classification,
+  not a count over a sample or a shell.  All eight are real and lie in the
+  3-dimensional subalgebra A_3 = span{eps_1, eps_2, eps_3}:
+
+      0;   eps_1 = (e_0,0,0), eps_2 = (0,e_0,0), eps_3 = (0,0,e_0);
+      w/3 = (1/3)(e_0,e_0,e_0);
+      eps_i - w/3 = (1/3)(2e_0, -e_0, -e_0)  and its two block-cyclings.
+
+  The variety is FINITE (8 reduced points): no positive-dimensional families,
+  no idempotent with a nonzero imaginary part.  The user's three "immediate"
+  idempotents (octonion unit in one block, zeros elsewhere) are eps_1, eps_2,
+  eps_3, and the classification shows they generate the rest.
+
+  Engine: R^24 = D (+) T, mutually annihilating two-sided ideals, so u = d + t
+  is idempotent iff d and t are; (D, star) = (O, .s) via phi(a) = (1/3)(a,a,a);
+  O is a division algebra, so the only D-idempotents are 0 and w/3; the
+  imaginary part is then killed by an exact eigenvalue argument plus an exact
+  solve over C.
+
+  The algebra has NO identity element.  w = (e_0,e_0,e_0) is NOT idempotent
+  (w star w = 3w).
+
+  LATTICE CONNECTION (the user's "rescaling"): no idempotent lies in Lambda
+  (e_0 is not in L), but each spans a rational ray that MEETS Lambda.  Least
+  positive multiples in Lambda:  4 eps_i (norm 16); 6(eps_i - w/3) (norm 24);
+  12(w/3) (norm 48).  In each case u = nE satisfies u star u = n u.
+  Witness confirmed exhaustively for all 84 purely imaginary E_8 roots:
+  u = (2 lambda, 0, 0) is in Min(Lambda) and u star u = (-8 e_0, 0, 0) =
+  -8 eps_1, which is in Lambda.  CORRECTION to the plan's framing above:
+  the minimal lattice point on the eps_1 ray is -4 eps_1, not -8 eps_1.
+
+  Scripts: python_project/src/verify_ideal_decomposition.py,
+           verify_idempotent_classification.py,
+           verify_square_zero_classification.py,
+           verify_idempotent_lattice_rescaling.py
+
+--------------------------------------------------------------------------
+ADVERSARIAL VERIFICATION -- 2026-07-12
+--------------------------------------------------------------------------
+Two independent verifiers rebuilt both results from the paper's definitions
+without running or importing any first-pass script.  All load-bearing claims
+CONFIRMED (order 36, structure C_6 x S_3, generators, ambient group, the Co_0
+containment, the eight idempotents).  Four disagreements, recorded rather than
+papered over:
+
+ 1. PROOF GAP (conclusion correct, stated reason CIRCULAR).  The Task B block
+    above says "D and T are recovered as Ann(T) and Ann(D), so every
+    star-automorphism preserves them."  That is circular: g(Ann(D)) = Ann(g(D))
+    yields g(T) = T only once g(D) = D is already known, and the annihilator
+    relation alone does not make D intrinsic.  CORRECTED ROUTE (now printed in
+    the note and in the docstring of verify_star_algebra_structure.py): D and T
+    are SIMPLE ideals of different dimension (their multiplication algebras are
+    the full matrix algebras, dim 64 and 256, computed exactly), and D star T =
+    T star D = 0 makes the projections algebra homomorphisms; hence pi_T(g(D))
+    is an ideal of T of dimension <= 8 < 16, so it is 0, so g(D) = D, and only
+    THEN does g(T) = T follow.
+ 2. MISLABELLED DATA.  The first pass reported element orders
+    "1,2,2,2,3,3,3,3,3,6(x9)".  Those are the orders of the 18 conjugacy-class
+    REPRESENTATIVES, not of the 36 elements.  True distribution: 1(x1), 2(x7),
+    3(x8), 6(x20).  gap_project/aut_lambda_star.g now prints both, labelled.
+ 3. Artin's theorem (any two octonions generate only a quaternion subalgebra)
+    is WHY the stabiliser enumerations must use generating TRIPLES; a reader
+    checking with pairs gets a wrong, much larger count.  Stated in the note.
+ 4. Lambda as realized by Wilson's conditions is sqrt(2) x Leech (minimal norm
+    8, Gram determinant 2^24), so no unimodularity claim should attach to it.
+    Does not affect Aut (Co_0 is scale-invariant).
+
+Orchestrator's own independent confirmation (not the workflow's): GAP run
+directly on gap_project/aut_lambda_star.g reports Size = 36,
+StructureDescription = C6 x S3, centre C6, derived subgroup C3, -I_24 not in G,
+element orders 1(x1) 2(x7) 3(x8) 6(x20).
+
+--------------------------------------------------------------------------
+DELIVERABLE
+--------------------------------------------------------------------------
+paper/automorphism_group_2026-07-12.tex / .pdf -- 11 pages, dated 12 July 2026,
+self-contained, builds clean (zero overfull boxes, no undefined references).
+Awaiting the user's review; he will decide how it is worked into the paper.
+
+Status: computation and write-up CLOSED.  Paper edits (item 2 of the prompt:
+describe the idempotents in §5; and review findings R3 / recommended 8, 9, 10
+in the Conclusion) PENDING the user's review of the note.
