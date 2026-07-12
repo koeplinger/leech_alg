@@ -56,7 +56,7 @@ The same product on all three copies.
 
 | Test | Pairs / samples | Failures |
 |---|---|---|
-| Trial 007 initial (swap(1,2)) | 593,400 | 0 |
+| Trial 007 base (per transposition) | 900 | 0 |
 | Scaled test (4M random, all types) | 4,000,000 | 0 |
 | Scaled test (4M, multiprocessor) | 4,000,000 | 0 |
 | All 21 transpositions (small sample) | ~15,000 | 0 |

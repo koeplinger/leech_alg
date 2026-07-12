@@ -26,6 +26,25 @@ What was later established from the primary sources (verifying Kirmse
 
 The closure claim and the trial's empirical findings are unchanged.
 
+## Forward correction (2026-07-12)
+
+Three things below are overtaken.  This file is preserved as written (Manifesto
+§12); the current statements live in `paper/main.tex` and in
+`evidence_and_reasoning/key_claims/README.md`.
+
+- **The verdict is no longer conditional.**  Closure of the Z₃-symmetric
+  triple-octonion product on Λ is *proved* symbolically (paper §4, four lemmas
+  on a Z-basis).  It does not rest on sampling.
+- **The "what remains open" list below is closed.**  Exhaustive verification is
+  moot (the proof supersedes it); the algebraic properties are in paper §5; the
+  automorphism group is Aut(Λ, +, ⋆) ≅ C₆ × S₃ of order 36, strictly inside Co₀.
+- **The pair counts below are not reproducible.**  They were produced by
+  `trial_007_triple_octonion_swap.py`, which no longer exists.  The current
+  harness is `trial_007_kirmse_twist.py` and it tests 900 pairs per
+  transposition.  The 12M+ pairs of `trial_007_{scaled_test,fast,exhaust}.py`
+  stand.  The 21/21 transposition result is established exactly, on a Z-basis,
+  by `verify_consecutive_twists_exact.py`.
+
 ## Algebra tested
 
 Same triple-product structure as trial 001 (three copies of an octonion algebra

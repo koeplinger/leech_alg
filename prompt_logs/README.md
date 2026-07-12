@@ -34,8 +34,8 @@ the first round of circulated-feedback edits).  Entries from prompt 070
 onward (subsequent paper-revision cycles through the v5 freeze and
 beyond) are not enumerated here — the directory listing of `prompt_logs/`
 is the canonical record, and each file is self-describing (the prompt
-is the first content of every file, with a date stamp).  Per Manifesto
-§12, all enumerated prompt logs are immutable.
+is the first content of every file, with a date stamp).  Per Manifesto §12 and
+`DOCUMENT_GENRES.md`, *every* prompt log is immutable, enumerated here or not.
 
 ### Foundational phase (prompts 001–069)
 

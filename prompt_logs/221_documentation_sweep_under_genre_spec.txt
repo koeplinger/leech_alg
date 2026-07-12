@@ -1,0 +1,137 @@
+Prompt 221 -- Documentation consistency sweep, under the new genre spec
+Date: 2026-07-12
+
+User: "great - now, armed with the updated methodology, do another
+documentation consistency sweep"
+
+Method, per DOCUMENT_GENRES.md and MANIFESTO Sections 13 and 14 (both written
+in prompt 220):
+
+  1. Log the prompt first (Manifesto Section 1). Done: this file.
+  2. Run tools/lint_docs.py. The mechanical checks come first; anything it can
+     decide, it decides, and no agent tokens are spent on it.
+  3. Read-only audit. Subagents get NO WRITE ACCESS (Manifesto Section 14).
+     They read, search, compute and report. Every edit is made by the main
+     thread and shown to the user.
+  4. Agents audit what the linter CANNOT: factual staleness, cross-document
+     contradictions, index descriptions that are wrong rather than missing,
+     genre violations that no regex will catch, and gaps in the denormalized
+     artifacts (which the spec explicitly permits filling).
+  5. Findings first, diffstat second, edits third.
+
+The sweep MAY add to the indexes, summaries and ledgers when they have fallen
+behind: DOCUMENT_GENRES.md, "Denormalization is deliberate". What it must not
+do is put content of the wrong genre into an artifact.
+
+Status: in progress.
+
+RESULT.
+
+Step 1, the machine: tools/lint_docs.py -- 0 errors, 0 warnings. 370 artifacts
+classified (219 immutable, 132 frozen, 18 current-state, 1 exempt). No agent
+tokens spent on anything it can decide.
+
+Step 2, four READ-ONLY auditors (Manifesto Section 14; no write access): 44
+findings, 34 at "certain". Every edit below made by the main thread.
+
+=== THE SERIOUS ONE, NOT FIXED, FOR THE USER ===
+THE FROZEN v5 SNAPSHOT WAS REWRITTEN IN PLACE.
+Commit bae2d0a (Fri 10 Jul 2026) added 62 lines to paper/main_2026-06-07.tex --
+the span-defect sentence, the Section 1 scope paragraph, and an "Exhaustive
+facts on the minimal shell" remark. That file is supposed to BE the 7 June v5.
+It no longer is: it now carries v6-era content. The v5 text as released is at
+commit 38054f3. This is exactly the failure DOCUMENT_GENRES.md now forbids, and
+it happened before the spec existed. NOT TOUCHED: restoring a frozen artifact
+that the user committed is his call, not mine.
+
+=== APPLIED: current-state corrections (facts and contradictions) ===
+ - README.md: "NumPy and SciPy" -> NumPy and SymPy. SciPy is not a dependency
+   and is imported nowhere; requirements.txt is numpy, sympy, pytest.
+ - README.md: symbolic_proof_checks.py runs exact RATIONAL arithmetic
+   (fractions.Fraction), not "exact integer arithmetic". Two other documents
+   already said rational; the root README was the odd one out.
+ - The retired 12.5M pair total (= 12M + the 593,412 of the deleted
+   trial_007_triple_octonion_swap.py) -> 12M+, in evidence_and_reasoning/
+   README.md and key_claims/README.md. research_result.md's "Trial 007 initial
+   593,400" row -> "Trial 007 base (per transposition) 900".
+ - terminology.md: the 593,400 / 518,400 / 50,000 figures are not reproducible
+   from any program now in the repo. Replaced with what IS: the symbolic proof
+   for sigma = (1 2), the exact Z-basis test of all 21 transpositions, and the
+   sampling that agrees.
+ - CURRENT_STATE.md: two different failure rates for the SAME phenomenon,
+   200 lines apart (73.4% and 74.8%). Both are sample estimates from different
+   scripts. Now stated once, as "roughly three quarters", with both samples
+   named.
+ - CURRENT_STATE.md: "{alpha,beta,gamma} = {0,1,2}" -> {1,2,3} (the blocks are
+   O_1, O_2, O_3 on the line above).
+ - CURRENT_STATE.md: "consistency_checks.py (checks 1-10)" -> (checks 1-3,
+   5-10). There is no check 4.
+ - python_project/src/README.md: "sigma(L-s-caron)" -> "sigma(Ls-bar)". The
+   caron is not an object in this project.
+ - prompt_logs/README.md: immutability is NOT conditional on being enumerated
+   in the index. Every prompt log is immutable, indexed or not.
+
+=== APPLIED: a wrong attribution, in five places AND in the paper ===
+The 21/21 transposition-closure result was credited to consistency_checks.py
+check 7. Check 7 samples THREE transpositions in floating point. The exact
+Z-basis test over all 21 is verify_consecutive_twists_exact.py, which I ran:
+"transpositions: 21 of 21 close". Corrected in CURRENT_STATE.md (twice),
+terminology.md, key_claims/README.md (claim 014), python_project/src/README.md,
+and in paper/main.tex Remark 5.7 (the paper is current-state, not frozen; it
+rebuilds clean at 23 pages).
+
+=== APPLIED: navigation gaps (the spec licenses filling these) ===
+ - paper/README.md CREATED. paper/ was the only major directory with no index,
+   and nine frozen standalone artifacts lived there that a reader following any
+   index would never find (the automorphism note, the Hermes supplement, the
+   Kirmse exposition, the Baez-Egan verification and its addendum, the
+   historical-appendix drafts, three update briefs). Registered in the linter.
+ - CURRENT_STATE.md repository map: added DOCUMENT_GENRES.md and tools/.
+ - key_claims/README.md: claim 009's "verified by" column was missing
+   verify_aut_lambda_star.py, which is what supplies the Lambda-slices and the
+   (Z/3)^8 glue.
+ - python_project/src/README.md: probe_aut_lambda_star.py was described by its
+   position in the project's history ("the exploratory probe that preceded the
+   above") rather than by what it does.
+
+=== APPLIED: dated addenda on frozen artifacts (never a rewrite) ===
+ - key_claims/006: the OPEN item (does Lambda admit a closed bilinear product?)
+   was answered on 2026-04-12 by claim 008.
+ - key_claims/007: scope restated so the title cannot mislead. What is ruled
+   out is the family built from the STANDARD octonion table; the sigma-twisted
+   product was not in it, and it closes (claim 008).
+ - trial_007_results.md: the verdict is no longer conditional (closure is
+   proved); the "what remains open" list is closed; the pair counts are not
+   reproducible from any current script.
+ - python_project/src/leech_wilson.py: the docstring still posed closure as the
+   project's open central question. Dated correction block added; the module is
+   unchanged.
+ - gap_project/src/{triple_product,twist,leech_wilson}.g: header comments cite
+   v3 definition numbers (3.6, 3.1/eq.3, 2.4). Dated correction lines added
+   giving the v4+ numbers (3.3, 3.1/3.2 eq.2, 2.1). All three still load.
+
+=== FIXED IN MY OWN SPEC ===
+DOCUMENT_GENRES.md did not classify evidence_and_reasoning/research_result.md.
+Added to the current-state table and to the linter's list. The linter now
+covers paper/README.md too.
+
+=== NOT APPLIED, awaiting the user ===
+ (1) The rewritten v5 freeze (above).
+ (2) paper/v3_to_v4_summary.md carries the Kirmse sentence that the v6 cycle
+     found unsupported ("recovered the full count of seven"). It is frozen; the
+     remedy is a dated addendum, but it is a changelog of a released version and
+     the user may prefer it left alone.
+ (3) paper/hermes_mod2_structure_supplement.tex quotes the v4 wording of the
+     Section 7 open question, which offered "a left ideal" as a candidate. That
+     candidate is now excluded. Needs a dated addendum.
+ (4) paper/companion.tex still gives the old paper title.
+ (5) prompt_logs/README.md enumerates only logs 001-069; the tail (070-221) is
+     unindexed by an explicit past decision.
+ (6) evidence_and_reasoning/2026-05-22_plan.md: its Status block has been
+     rewritten in place across several sessions rather than appended to. Frozen
+     genre says: append dated revision lines, do not rewrite.
+
+Paper rebuilt: 23 pages, clean. Linter: 0 errors, 0 warnings.
+Diffstat: 19 files, +104 / -33.
+
+Status: CLOSED (edits applied; six items await the user).

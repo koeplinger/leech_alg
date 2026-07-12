@@ -426,10 +426,12 @@ the device that exhibits the fit of this octonion product with
 Wilson's representation of the Leech lattice: σ leaves L = D₈⁺
 invariant but moves Wilson's sublattices Ls and Ls̄.
 
-All 21 transpositions achieve **100% Leech lattice closure** on 593,400
-tested pairs (including 518,400 exhaustive type1×type1 and 50,000
-type3×type3).  This fixes the Wilson condition 3 failure of the
-triple octonion product taken over Wilson's own multiplication
+All 21 transpositions close on Λ.  The evidence is the symbolic proof of
+paper §4 for σ = (1 2), together with the exact Z-basis test of all 21
+(`verify_consecutive_twists_exact.py`); random-pair sampling
+(`trial_007_kirmse_twist.py`, 900 pairs per transposition, and the 12M+ pairs
+of the scaled harnesses) agrees.  This fixes the Wilson condition 3 failure of
+the triple octonion product taken over Wilson's own multiplication
 convention.
 
 Since all transpositions are in the same orbit under the Fano-plane

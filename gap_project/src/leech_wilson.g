@@ -2,6 +2,8 @@
 ##
 ##  leech_wilson.g — Wilson's Leech lattice Lambda inside L^3, and the
 ##  three-condition membership test (paper Definition 2.4).
+##  CORRECTION (2026-07-12): "Definition 2.4" is the v3 numbering. In v4 and
+##  later, Wilson's three conditions are Definition 2.1 (label def:wilson-leech).
 ##
 ##  Lambda = { (x, y, z) in L^3  :
 ##              (1) x, y, z in L;

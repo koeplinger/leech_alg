@@ -17,7 +17,7 @@ This folder serves two functions:
 ```
 evidence_and_reasoning/
 ├── key_claims/             # One file per major claim or lemma, with argument and references
-│                           #   (README.md is the ledger, incl. the post-v5 claims 009–015)
+│                           #   (README.md is the ledger; claims 009–015 are ledger-only rows, with no dedicated file)
 ├── references/             # Central registry of all cited works, organized by topic
 ├── trial_NNN_*.md          # Results of each computational trial (001–007)
 ├── research_statement.md   # The research goal as posed, with its resolution
@@ -45,7 +45,7 @@ Claims with a dedicated argument have their own `NNN_*.txt` file in that folder.
 | 004 | Triple-octonion + E8 automorphism basis changes | FAIL: identity is optimal | [trial_004_results.md](trial_004_results.md) |
 | 005 | Triple Okubo/para-octonion (base + 1,536 discrete variants) | FAIL: √3 leaves E8 | [trial_005_results.md](trial_005_results.md) |
 | 006 | Triple Okubo/para-octonion + E8 automorphism basis changes | FAIL: √3 not absorbable | [trial_006_results.md](trial_006_results.md) |
-| 007 | Z₃-symmetric triple-octonion product (the order on Λ) | **PASS**: 12.5M+ random pairs, 0 failures; symbolic proof in [paper/main.tex](../paper/main.tex) | [trial_007_results.md](trial_007_results.md) |
+| 007 | Z₃-symmetric triple-octonion product (the order on Λ) | **PASS**: 12M+ random pairs, 0 failures; symbolic proof in [paper/main.tex](../paper/main.tex) | [trial_007_results.md](trial_007_results.md) |
 
 ## Guidelines
 

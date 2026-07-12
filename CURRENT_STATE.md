@@ -51,9 +51,10 @@ uses ·_σ in all three blocks with Z₃-symmetric cross-block routing:
 - Same-block: Oα × Oα → Oα using ·_σ
 - Cross-block: Oα × Oβ → Oγ using ·_σ, where {α,β,γ} = {1,2,3}
 
-All 21 transpositions give the same result up to GL(3,F₂) relabeling
-(`consistency_checks.py`, check 7).  They are not the only twists that close:
-see the cycle census below.
+All 21 transpositions close on Λ, verified exactly on a Z-basis
+(`verify_consecutive_twists_exact.py`); they are equivalent up to relabeling of
+the Fano triples under GL(3,F₂).  They are not the only twists that close: see
+the cycle census below.
 
 ### Verification status
 
@@ -72,8 +73,10 @@ of closure (paper §4, Theorem 1.1) that does not depend on sampling.
 
 ### How it differs from the ruled-out triple-octonion (trial 001)
 
-The standard (untwisted) triple-octonion product fails on 73.4% of
-type3×type3 products, all due to Wilson condition 3 (x+y+z ∉ Ls).
+The standard (untwisted) triple-octonion product fails on roughly three
+quarters of type3×type3 products, all due to Wilson condition 3 (x+y+z ∉ Ls).
+The rate is a sample estimate: 73.4% on the 5,000-pair sample of
+`consistency_checks.py` check 8, 74.8% on trial 001's own sample.
 The transposition twist changes 30 of 64 multiplication table entries.
 This fixes condition 3 precisely — all other conditions were already
 satisfied by the untwisted product (`consistency_checks.py`, check 8).
@@ -162,8 +165,8 @@ sides), of which Lemma 4.3 is the left-handed half.  Control: L · Ls ⊆ Ls
 holds for only 24 of 64.
 
 **Which twists close — exhaustive cycle census** (`verify_all_cycles_exact.py`
-for 3- through 7-cycles, `consistency_checks.py` for transpositions; paper
-§5.5).  Writing x ·_π y := π(π(x) · π(y)) for a permutation π of e₁,…,e₇ and
+for 3- through 7-cycles, `verify_consecutive_twists_exact.py` for the
+transpositions and the (2,2)-doubles; paper §5.5).  Writing x ·_π y := π(π(x) · π(y)) for a permutation π of e₁,…,e₇ and
 testing closure exactly on the 576 basis-pair products of a Z-basis of Λ:
 
 | Cycle type of π | Permutations | Close | Rate |
@@ -282,13 +285,13 @@ mapping to paper sections and to the Python suite.
 Three copies of the standard octonion algebra on R²⁴:
 - O₁ at indices 0–7, O₂ at indices 8–15, O₃ at indices 16–23
 - Same-block: Oα × Oα → Oα (standard octonion product)
-- Cross-block: Oα × Oβ → Oγ where {α,β,γ} = {0,1,2} (Z₃-symmetric routing)
+- Cross-block: Oα × Oβ → Oγ where {α,β,γ} = {1,2,3} (Z₃-symmetric routing)
 
 ### What was tested (4 trials)
 
 | Trial | What it tests | File | Result |
 |---|---|---|---|
-| 001 | Base algebra, no modifications | `trial_001_triple_octonion.py` | FAIL: 74.8% of t3×t3 products leave Λ |
+| 001 | Base algebra, no modifications | `trial_001_triple_octonion.py` | FAIL: ~3/4 of t3×t3 products leave Λ |
 | 002 | Per-block scaling (s₁, s₂, s₃) | `trial_002_scaled_triple_octonion.py` | FAIL: norm obstruction (min ≈ 14.6 > 8) + lattice obstruction |
 | 003 | Conjugation × sign × routing (1,536 variants, exhaustive) | `trial_003_discrete_variants.py` | FAIL: all 1,536 variants fail; best = baseline |
 | 004 | E8 automorphism basis changes (1,128 tested) | `trial_004_basis_automorphisms.py` | FAIL: identity is already optimal; changes make it worse |
@@ -582,7 +585,9 @@ the trial, and prints detailed results.
 ```
 leech_alg/
 ├── MANIFESTO.md                   # Operating rules for AI-assisted research
+├── DOCUMENT_GENRES.md             # Immutable / frozen / current-state: how each artifact may change
 ├── TRIAL_METHODOLOGY.md           # Structure and philosophy for trial files
+├── tools/                         # lint_docs.py: enforces the document genres mechanically
 ├── CURRENT_STATE.md               # THIS FILE — the entry point
 ├── README.md                      # General repository description
 │
@@ -629,7 +634,7 @@ leech_alg/
 │   │   ├── verify_all_cycles_exact.py            # Cycle census (3- to 7-cycles)
 │   │   ├── verify_*.py            # Further exact verifications (span, mod 2,
 │   │   │                          #   historical sources, consecutive twists)
-│   │   └── consistency_checks.py  # Pre-paper verification (checks 1-10)
+│   │   └── consistency_checks.py  # Pre-paper verification (checks 1-3, 5-10)
 │   └── tests/                     # 197 tests verifying foundations
 │
 ├── gap_project/                   # Independent GAP / LOOPS re-derivation

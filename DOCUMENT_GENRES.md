@@ -67,6 +67,7 @@ preserve.
 | every indexing `README.md` | what is in this folder, and what each file does |
 | `evidence_and_reasoning/terminology.md` | the glossary |
 | `evidence_and_reasoning/editorial_standards.md` | the prose standards |
+| `evidence_and_reasoning/research_result.md` | the condensed summary of the finding |
 | `LICENSE.md`, `LICENSE-CODE` | the licenses |
 
 **Git is the history of these files.**  They carry no history of their own.

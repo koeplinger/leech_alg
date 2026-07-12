@@ -6,9 +6,14 @@ The Leech lattice as an integral octonion lattice
 The Leech lattice Λ is a rank-24 lattice embedded inside L³, where L = E8 =
 the integral octonions (the Coxeter–Dickson order, the unique maximal order of
 the real octonion division algebra).  Because L carries the octonion product,
-L³ inherits candidate algebraic structure; the central question is whether
-some product makes Λ an order.  The membership conditions (1)–(3) below
-characterise exactly which elements of L³ belong to Λ.
+L³ inherits candidate algebraic structure.  The membership conditions (1)–(3)
+below characterise exactly which elements of L³ belong to Λ.
+
+CORRECTION (2026-07-12).  The docstring below poses the closure question as the
+project's open central question.  It is ANSWERED: Λ is closed under the
+Z₃-symmetric triple-octonion product, and closure is proved symbolically (paper
+Section 4).  This module is unchanged and remains the reference construction of
+Λ; only the framing below is historical.
 
 The central research question of this project: whether a proposed
 octonion-based multiplication rule on R^24 restricts to a product on Λ that

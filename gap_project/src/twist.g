@@ -2,6 +2,8 @@
 ##
 ##  twist.g — The transposition sigma = (1 2) and the resulting twisted
 ##  octonion product (paper Definition 3.1 with the canonical choice
+##  CORRECTION (2026-07-12): in v4 and later, sigma alone is Definition 3.1
+##  and the sigma-twisted octonion product is Definition 3.2, equation (2).
 ##  s = 1, t = 2; all transposition twists are equivalent up to relabelling
 ##  by Remark 3.5).
 ##

@@ -49,7 +49,7 @@ isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
 - **Symbolic proof** of closure on Wilson's three sublattice conditions, via
   four lemmas on the interplay between the transposition σ and the Leech
   sublattices Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
-  executes the finite case verifications with exact integer arithmetic).
+  executes the finite case verifications with exact rational arithmetic).
 - **Computational verification** on 12M+ random pairs of minimal vectors
   with zero failures, plus tests from first principles on every foundation
   (octonion properties, Wilson's construction).  197 tests pass.
@@ -108,7 +108,7 @@ python3 verify_square_zero_classification.py    # The 4,032 square-zero vectors 
 python3 verify_all_cycles_exact.py              # Which twists close (cycle census)
 ```
 
-Requires Python 3.x with NumPy and SciPy.
+Requires Python 3.x with NumPy and SymPy (see [python_project/requirements.txt](python_project/requirements.txt)).
 
 ### GAP / LOOPS suite
 

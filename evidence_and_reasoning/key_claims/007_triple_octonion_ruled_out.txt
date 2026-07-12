@@ -3,6 +3,24 @@ Title: The triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃) is comprehensively r
 Status: ESTABLISHED
 Date: 2026-04-09
 
+--- FORWARD CORRECTION (2026-07-12) ---
+
+Per Manifesto Section 12, this file is preserved as written.
+
+SCOPE, restated so that the title cannot mislead.  What is ruled out below is
+the triple-octonion algebra built from the STANDARD octonion multiplication in
+all three blocks, together with the discrete and continuous variants tested at
+the time (conjugations, signs, routings, per-block scalings, E8 basis
+automorphisms).  It is NOT ruled out that some OTHER octonion product in the
+three blocks closes on Lambda.  One does: claim 008 records the Z_3-symmetric
+triple-octonion product, which uses the sigma-twisted octonion product
+x .sigma y := sigma(sigma(x) . sigma(y)) in all three blocks.  That product was
+not in the family exhausted here.
+
+The project's current name for the construction that DOES close is the
+"Z_3-symmetric triple-octonion product" (paper title).  Nothing in the ruling
+out below is retracted.
+
 --- STATEMENT ---
 
 The triple-octonion algebra — three copies of the standard octonion algebra

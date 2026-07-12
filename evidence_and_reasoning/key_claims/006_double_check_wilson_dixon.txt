@@ -3,6 +3,19 @@ Title: Double-check of Wilson and Dixon Leech lattice conclusions; integral alge
 Status: ESTABLISHED (for claims 1a, 1b); OPEN (for claim 2)
 Date: 2026-04-07
 
+--- FORWARD CORRECTION (2026-07-12) ---
+
+Per Manifesto Section 12, this file is preserved as written; the current
+statements live in paper/main.tex and in the ledger
+evidence_and_reasoning/key_claims/README.md.
+
+The OPEN item recorded below -- whether Lambda admits a bilinear product under
+which it is closed -- was ANSWERED on 2026-04-12 by claim 008: the
+Z_3-symmetric triple-octonion product closes on Lambda, and closure is proved
+symbolically (paper Section 4, four lemmas on a Z-basis).  The status line
+above ("OPEN for claim 2") is therefore historical.  The parts of this file
+that double-check Wilson and Dixon stand as written.
+
 --- STATEMENT ---
 
 This claim records the results of a systematic double-check of all
