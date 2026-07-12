@@ -31,33 +31,9 @@ evidence_and_reasoning/
 
 ## Key claims (logical backbone)
 
-See [key_claims/README.md](key_claims/README.md) for the full index.
-
-| # | Claim | Status |
-|---|---|---|
-| 001 | Wilson and Dixon use identical octonion multiplication tables | ESTABLISHED |
-| 002 | Wilson's 240-element octonionic construction is a valid E8 lattice | ESTABLISHED |
-| 003 | Dixon's two 240-element constructions are valid E8 minimal-vector shells | ESTABLISHED |
-| 004 | Wilson's three families give the 196,560 Leech lattice minimal vectors | ESTABLISHED |
-| 005 | Dixon's three families give a different embedding of the Leech minimal shell | ESTABLISHED |
-| 006 | Double-check of Wilson/Dixon; order question confirmed OPEN (answered by claim 008) | ESTABLISHED |
-| 007 | Triple-octonion product over Wilson's own multiplication convention comprehensively ruled out | ESTABLISHED |
-| 008 | **Z₃-symmetric triple-octonion product is an order on Λ** (historical file title: "transposition-twisted") | ESTABLISHED |
-
-Claims 009–015 have no dedicated file yet; they are
-recorded in the ledger at [key_claims/README.md](key_claims/README.md), each
-with the script that verifies it:
-
-| # | Claim | Status |
-|---|---|---|
-| 009 | Ideal decomposition R²⁴ = D ⊕ T (mutually annihilating two-sided ideals, dim 8 + 16) | ESTABLISHED |
-| 010 | **Aut(Λ, +, ⋆) is finite of order 36, C₆ × S₃, and ⊊ Co₀** (was OPEN through v5) | ESTABLISHED (completeness caveat stated) |
-| 011 | Idempotents: exactly eight in R²⁴, **none in Λ**; the order has no idempotent | ESTABLISHED |
-| 012 | Square-zero elements: **Λ contains 4,032 of them, all of norm 12**; Min(Λ) contains none | ESTABLISHED |
-| 012a | The unscoped claim "Λ has no nilpotents" | **REFUTED** (scoped to Min(Λ) it holds) |
-| 013 | σ(Ls) is *not* an ideal of L (candidate explanation of Lemma D excluded) | ESTABLISHED |
-| 014 | Cycle census: 854 of the 2,365 single-cycle permutations of the imaginary axes close (36.1%) | ESTABLISHED |
-| 015 | Span of the image: [Λ : S] = 2¹⁶; structural identification of S/2Λ | ESTABLISHED / OPEN |
+The claims ledger is [key_claims/README.md](key_claims/README.md): one row per
+claim, with its status, the script that verifies it, and where it is recorded.
+Claims with a dedicated argument have their own `NNN_*.txt` file in that folder.
 
 ## Trial results
 

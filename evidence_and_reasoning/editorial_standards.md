@@ -68,17 +68,3 @@ A practical test for standard 5: for each sentence, ask what would
 change for the reader if it were deleted. A sentence whose deletion
 costs the reader nothing checkable is vague; cut it or make it
 concrete.
-
-## Note on `paper/main.tex` (current at v6)
-
-The main manuscript at the date these standards were adopted was frozen
-v3 (29 April 2026). Standards were applied prospectively to v4 (frozen
-25 May 2026, `paper/main_2026-05-25.tex`), the v5 revision (7 June
-2026, `paper/main_2026-06-07.tex`), and the v6 revision (in progress,
-working source `paper/main.tex`, dated 12 July 2026, 23 pages). v5 is
-the last frozen state; v6 is not yet frozen, and no v6 snapshot exists:
-v6 will be frozen exactly once, when it is released.
-Revision chain: `paper/v3_to_v4_summary.md`,
-`paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`. The
-standards were not retroactively enforced on v3; the dash convention
-and other v3/v4 differences were resolved during v4 assembly.

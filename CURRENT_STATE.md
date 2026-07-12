@@ -59,7 +59,7 @@ see the cycle census below.
 
 | Test | Pairs / samples | Failures | File |
 |------|-----------------|----------|------|
-| Initial (trial 007 base) | 593,412 | 0 | `trial_007_kirmse_twist.py` |
+| Initial (trial 007 base) | 900 per transposition | 0 | `trial_007_kirmse_twist.py` |
 | Scaled (4M random) | 4,000,000 | 0 | `trial_007_scaled_test.py` |
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |

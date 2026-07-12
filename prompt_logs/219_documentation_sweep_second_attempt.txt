@@ -117,3 +117,84 @@ NOT APPLIED -- put to the user instead:
      decides.
 
 Status: CLOSED (edits applied; five items await the user's decision).
+
+---
+
+USER DECISIONS ON THE FIVE HELD-BACK ITEMS (same day):
+
+"ok much better
+ (1) about trial_007_kirmse_twist.py update to 900 (even if we ran more; it's
+     ok, given that we've subsequently run millions more, as detailed)
+ (2) in editorial_standards.md: drop the version-history section. In
+     research_statement.md the corrections applied are ok
+ (3) 'work log' framing of CURRENT_STATE.md is OK
+ (4) the evidence_and_reasoning/key_claims/README.md contains a section
+     '## Structure of the order -- claims settled 12 July 2026' -- change this
+     into a current-state, as-is description of what is; in the parent
+     folder's README, don't duplicate key claims but instead refer to the
+     README.md in the key_claims folder."
+
+APPLIED:
+(1) CURRENT_STATE.md verification table: the trial_007_kirmse_twist.py row now
+    reads "900 per transposition" (what the script actually tests, confirmed by
+    running it). The 593,412 / 593,400 figures came from the original harness,
+    trial_007_triple_octonion_swap.py, which no longer exists. The 12M+ later
+    pairs stand as recorded in the rows below it.
+(2) editorial_standards.md: the "## Note on paper/main.tex (current at v6)"
+    section deleted in full. research_statement.md left as it is.
+(3) CURRENT_STATE.md: no change.
+(4a) key_claims/README.md: heading "## Structure of the order -- claims settled
+     12 July 2026" -> "## Structure of the order". Lead-in rewritten as an
+     as-is description. Claim 010 "Automorphism group -- SETTLED (was OPEN)" ->
+     "Automorphism group"; "is proved" -> ", proved". Claim 012 "Square-zero
+     elements -- Λ DOES contain them" -> "Square-zero elements". Claim 012a
+     rewritten from a strikethrough-and-refutation narrative into the statement
+     that holds: "Min(Λ) contains no idempotent and no square-zero vector",
+     ESTABLISHED (scoped to Min(Λ)). The trailing "Note on Section 5 remark
+     numbers" section (a renumbering history) deleted; the ledger rows already
+     cite the current numbers. The "Superseded text in the claim files" note
+     kept, date removed: it warns that a live claim file (008) still lists the
+     automorphism group as open, which a reader needs.
+(4b) evidence_and_reasoning/README.md: both claim tables deleted. The section
+     is now a pointer to key_claims/README.md and nothing else.
+
+Status: CLOSED.
+
+---
+
+FOLLOW-UP (same day).
+
+User: "Key claims files should be updated with a _dated_ addendum. Do so for
+claim file 008 so that it's up-to-date."
+
+Applied to evidence_and_reasoning/key_claims/008_transposition_twist_order.txt,
+following the convention the file already carries (a dated
+"--- FORWARD CORRECTION (2026-05-23) ---" block, with the original body
+preserved beneath it per Manifesto Section 12). A second dated block was added:
+
+  --- FORWARD CORRECTION (2026-07-12) ---
+  (iii) NAME. The construction is now called the Z_3-symmetric triple-octonion
+        product; the file's title, "transposition-twisted", is the historical
+        name and is preserved.
+  (iv)  The "Does NOT follow" section lists the automorphism group and the
+        relationship to Co_0 as open. BOTH ARE NOW ANSWERED: order 36,
+        C_6 x S_3, strictly inside Co_0 (proved via compactness of the real
+        octonion automorphisms and D perp T), with the completeness caveat
+        stated. Maximality and uniqueness up to isomorphism remain open, as
+        that section says.
+  (v)   The same section's "unitality" item is still correct and now sharper:
+        no identity element at all; exactly eight idempotents, none in Lambda;
+        4,032 square-zero vectors of norm 12 in Lambda, so an unscoped "no
+        nilpotents" would be FALSE.
+  (vi)  SCRIPT NAMES. trial_007_triple_octonion_swap.py no longer exists; the
+        harness is trial_007_kirmse_twist.py and it tests 900 pairs per
+        transposition, not the 593,412 recorded in the file. The old figure is
+        preserved as written and flagged as not reproducible from the current
+        script. The 12M+ pairs from the other three harnesses are unaffected,
+        and closure rests on the symbolic proof regardless.
+
+Consequence: the ledger's "Superseded text in the claim files" warning is now
+redundant (008 carries its own dated correction) and was removed from
+key_claims/README.md.
+
+Status: CLOSED.

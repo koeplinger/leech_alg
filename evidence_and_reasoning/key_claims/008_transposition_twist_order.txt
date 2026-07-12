@@ -25,6 +25,65 @@ three condition-propositions.
 
 The closure claim itself is unchanged.
 
+--- FORWARD CORRECTION (2026-07-12) ---
+
+Per Manifesto Section 12, this file is preserved as written; the current
+statements live in paper/main.tex, in the standalone note
+paper/automorphism_group_2026-07-12.tex, and in the ledger
+evidence_and_reasoning/key_claims/README.md (claims 009-015).
+
+(iii) NAME.  The construction is now called the Z_3-symmetric
+triple-octonion product.  The title of this file, "transposition-twisted",
+is the historical name and is preserved.  The product is simply an
+octonion product in all three blocks; the transposition sigma is the
+device that exhibits its fit with Wilson's representation, not a new
+algebra.
+
+(iv) The "Does NOT follow" section below lists the automorphism group of
+the order and its relationship to Co_0 as open questions.  Both are now
+answered:
+
+    Aut(Lambda, +, star) is FINITE of ORDER 36, with structure C_6 x S_3
+    (centre C_6, derived subgroup C_3; -I_24 is not in it).  Every element
+    is a blockwise octonion automorphism composed with a permutation of the
+    three blocks.  The ambient group is Aut(R^24, star) = G_2 x G_2 x S_3,
+    compact, of dimension 28.
+
+    Aut(Lambda, +, star) is STRICTLY CONTAINED in Co_0, and this is proved:
+    an automorphism of the real octonions preserves the positive-definite
+    norm, and the two ideals D and T are orthogonal, so every
+    star-automorphism of R^24 is orthogonal.  The inclusion is strict
+    because -I_24 in Co_0 does not preserve star.
+
+    Completeness of the classification rests on one non-enumerative step
+    (the automorphisms of the complexification of (T, star)); the lower
+    bound C_6 x S_3 <= Aut and the strictness witness do not depend on it.
+
+    Verified by python_project/src/verify_aut_lambda_star.py and
+    verify_aut_octonion_crosscheck.py, and independently in
+    gap_project/aut_lambda_star.g.  Ledger claims 010, 010a.
+
+The remaining items of that section stand: maximality of the order and
+uniqueness up to isomorphism are still open.
+
+(v) The same section says no claim follows about "unitality".  That is
+still correct, and it is now sharper: the ambient algebra (R^24, +, star)
+has NO identity element at all, and it has exactly EIGHT idempotents, none
+of which lies in Lambda -- so the order has no idempotent.  It does,
+however, contain 4,032 nonzero square-zero elements, all of norm 12.  An
+unscoped claim that the order "has no nilpotents" would be FALSE; the
+statement that holds is that Min(Lambda) contains no idempotent and no
+square-zero vector.  Ledger claims 011, 012, 012a.
+
+(vi) SCRIPT NAMES in the EVIDENCE section below.
+trial_007_triple_octonion_swap.py no longer exists: the trial-007 harness
+is now python_project/src/trial_007_kirmse_twist.py, and it tests 900 pairs
+per transposition, not the 593,412 recorded below.  The 593,412 figure is
+the original harness's run and is preserved here as written; it is not
+reproducible from the current script.  The 12,000,000+ pairs from
+trial_007_{scaled_test,fast,exhaust}.py are unaffected, and the closure
+claim rests on the symbolic proof in any case (paper Section 4).
+
 --- RELATION TO CLAIM 007 ---
 
 Claim 007 (2026-04-09) rules out the *untwisted* triple-octonion algebra,
