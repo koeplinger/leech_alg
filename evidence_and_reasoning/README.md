@@ -56,7 +56,7 @@ with the script that verifies it:
 | 012 | Square-zero elements: **Λ contains 4,032 of them, all of norm 12**; Min(Λ) contains none | ESTABLISHED |
 | 012a | The unscoped claim "Λ has no nilpotents" | **REFUTED** (scoped to Min(Λ) it holds) |
 | 013 | σ(Ls) is *not* an ideal of L (candidate explanation of Lemma D excluded) | ESTABLISHED |
-| 014 | Cycle census: 854 of the 2,365 non-identity permutations of the imaginary axes close (36.1%) | ESTABLISHED |
+| 014 | Cycle census: 854 of the 2,365 single-cycle permutations of the imaginary axes close (36.1%) | ESTABLISHED |
 | 015 | Span of the image: [Λ : S] = 2¹⁶; structural identification of S/2Λ | ESTABLISHED / OPEN |
 
 ## Trial results

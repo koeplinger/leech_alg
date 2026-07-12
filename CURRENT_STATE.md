@@ -610,7 +610,7 @@ leech_alg/
 │   │   ├── e8_dixon.py            # Dixon's E8 lattice (shared tool)
 │   │   ├── leech_wilson.py        # Wilson's Leech lattice (shared tool)
 │   │   ├── leech_dixon.py         # Dixon's Leech lattice (shared tool)
-│   │   ├── okubo.py               # Okubo algebra (shared tool, not yet trialed)
+│   │   ├── okubo.py               # Okubo algebra (shared tool)
 │   │   ├── okubo_samples.py       # Okubo examples
 │   │   ├── trial_001_*.py         # Trial 001: base triple-octonion
 │   │   ├── trial_002_*.py         # Trial 002: per-block scaling

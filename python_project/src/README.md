@@ -44,10 +44,37 @@ All trials use fixed random seeds for reproducibility.  Results are recorded in 
 
 | File | Purpose |
 |---|---|
-| `symbolic_proof_checks.py` | Exact-rational-arithmetic verification of the four lemmas in Section 4 of the paper (σ(L) = L; L · L ⊆ L; L · σ(Lš) ⊆ σ(Lš); σ(Ls) · σ(Ls) ⊆ σ(Ls)), plus the accompanying non-triviality check σ(Ls) ≠ Ls now recorded as a remark in Section 4.  No floating-point. |
-| `consistency_checks.py` | Ten pre-paper consistency checks: construction well-definedness, isomorphism claim, table differences, exhaustive verification harness, generation arguments, claimed algebraic properties, transposition independence, untwisted-vs-twisted comparison, cross-reference with Wilson's paper, code correctness. |
+| `symbolic_proof_checks.py` | Exact-rational-arithmetic verification of the four lemmas in Section 4 of the paper (σ(L) = L; L · L ⊆ L; L · σ(Lš) ⊆ σ(Lš); σ(Ls) · σ(Ls) ⊆ σ(Ls)), plus the accompanying non-triviality check σ(Ls) ≠ Ls recorded as a remark in Section 4.  No floating-point. |
+| `consistency_checks.py` | Pre-paper consistency checks 1-3 and 5-10 (check 4, the exhaustive harness, is `trial_007_exhaust.py`): construction well-definedness, isomorphism claim, table differences, generation arguments, transposition independence, untwisted-vs-twisted comparison, cross-reference with Wilson's paper, code correctness. |
 | `verify_all_cycles_exact.py` | The cycle census of paper Section 5.5: which twists close.  Exhaustive (not sampled) over the 3- to 7-cycles; the transpositions are in `consistency_checks.py`.  Of the 2,365 permutations of the seven imaginary units that are a **single cycle**, 854 close (36.1%): transpositions 21/21, 3-cycles 35/70, 4-cycles 0/210, 5-cycles 252/504, 6-cycles 210/840, 7-cycles 336/720.  The (2,2)-double transpositions are counted separately (42/105 close, paper Remark 4.9). |
 | `verify_sigma_Ls_ideal_exclusion.py` | Excludes the "ideal" explanation of Lemma 4.4: σ(Ls) is **not** an ideal of L (32/64 basis-pair products on the left, 21/64 on the right), while σ(Ls̄) **is** a two-sided ideal (64/64 both sides). Control: L · Ls ⊆ Ls is 24/64. |
+| `verify_section5_properties.py` | The Section-5 identity table: commutativity, norm multiplicativity, alternativity, flexibility, cube and quartic power-associativity, symmetric composition, on N = 10⁶ samples each, exact integer arithmetic. |
+| `verify_consecutive_twists_exact.py` | Which consecutive σ-twists close on Λ (paper Remark 4.9): exact test on a Z-basis, 3-cycles 35/70 and (2,2)-doubles 42/105. |
+| `verify_twist_characterization.py` | Characterizes *which* of them close, against the Fano-line structure. |
+| `verify_product_span_index.py` | The span index [Λ : S] = 65,536 = 2¹⁶ for S = Z-span(Λ ⋆ Λ), by Hermite normal form (paper Remark 5.6). |
+| `verify_product_span_structure.py` | The structure of that span: 2Λ ⊆ S and Λ/S ≅ (Z/2)¹⁶. |
+| `verify_phi_span_index.py` | The same index for the Baez–Egan projected Jordan product φ: [Λ : S_φ] = 2²⁵, which does not contain 2Λ (paper Section 6). |
+| `verify_mod2_quotient.py` | Appendix Tables A.2/A.3 as statements about the F₂-algebra L/2L: V a two-sided ideal, W a subalgebra. |
+| `verify_discovery1_W_subalgebra.py` | The multiplication table of W = σ(Ls)/2L inside L/2L. |
+| `verify_discovery2_V_isotropic.py` | V = σ(Ls̄)/2L totally isotropic; V and W as a complementary pair of Lagrangians. |
+
+### Historical verification: paper Appendix B
+
+Each of the four primary papers re-derived from the original, in exact arithmetic.
+
+| File | Purpose |
+|---|---|
+| `verify_dickson_1923.py` | Dickson 1923, §19: his 8-element basis and the closure of all 64 basis products; his Theorem XV undercount (three maximal orders; the true count is seven). |
+| `verify_kirmse_1924.py` | Kirmse 1924: his multiplication table (1), p. 64, and his order J₁, p. 70, which is not closed. |
+| `verify_kirmse_1924_forensic.py` | Reconstruction of Kirmse's count of eight, using only his own data: the necessary form (thirty candidates) and the unit-stability narrowing. |
+| `verify_mahler_1942.py` | Mahler 1942, on ideals in the Cayley–Dickson algebra. |
+| `verify_coxeter_1946.py` | Coxeter 1946, §4, "Kirmse's mistake": Bruck's transposition, checked against Kirmse's own data. |
+
+### Prior art
+
+| File | Purpose |
+|---|---|
+| `egan_baez_count.py` | Independent check of Egan's count of 17,280 Jordan rings (17,280 = 270 × 64) in the Baez–Egan construction. |
 
 ### The structure of (R²⁴, +, ⋆): paper Section 5
 
@@ -66,6 +93,7 @@ All trials use fixed random seeds for reproducibility.  Results are recorded in 
 | `verify_star_algebra_structure.py` | The ambient group Aut(R²⁴, ⋆) = G₂ × G₂ × S₃, compact, of dimension 28. D and T are two-sided ideals that annihilate each other and are **simple**, which is what forces g(D) = D for every automorphism (a dimension count on ideals of T; an annihilator argument alone would be circular, as the module docstring explains); the C₃-Fourier normal form over Q(ζ₃); h_{A,B} = P⊗A + Q⊗B and the block permutations; dim Der = 28; the ⋆-intrinsic trace form (signature (3,21), **not** the Leech form, so the trace-form route to Co₀ fails). |
 | `verify_aut_lambda_star.py` | **Aut(Λ, +, ⋆): exact order 36, structure C₆ × S₃.** Center C₆, derived subgroup C₃, −I₂₄ ∉ it; element orders 1(×1), 2(×7), 3(×8), 6(×20). Λ∩D = {(a,a,a) : a ∈ Ls} and Λ∩T = {(p,q,r) ∈ (Ls̄)³, sum zero}, with glue (Z/3)⁸ of order 6,561; complete enumeration of the octonion-automorphism stabilizers of L, Ls, Ls̄ (orders 1344, 168, 12096); the surviving pairs (A,B) by two independent methods; all 36 elements re-verified against Λ and ⋆. Containment in Co₀ is **proved**, not assumed: every octonion automorphism preserves the positive-definite norm and D ⊥ T, so every ⋆-automorphism of R²⁴ is orthogonal (confirmed elementwise on the Leech Gram matrix). Writes the GAP generators. |
 | `verify_aut_octonion_crosscheck.py` | Independent cross-checks of those three stabilizer enumerations: re-run from a different generating triple, and an assumption-free brute force over all 645,120 signed permutations for Stab(L). Writes 8×8 GAP generators. |
+| `probe_aut_lambda_star.py` | The exploratory probe that preceded the above: tests candidate Co₀ elements against ⋆ on all 576 basis-pair products. |
 
 The group-theoretic half of the automorphism calculation (`Size`, `StructureDescription`) is done independently in GAP: see [`../../gap_project/README.md`](../../gap_project/README.md). The derivation is written up in `paper/automorphism_group_2026-07-12.tex`.
 

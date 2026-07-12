@@ -36,11 +36,11 @@ its place, and the logic should be followable on a first reading.
    throughout. For example: *division algebra* = no zero divisors;
    *third-/fourth-/power-associativity* kept distinct; `--` (en-dash)
    never `---`.  Dash-as-punctuation (spaced ` -- ` asides) is avoided
-   altogether (adopted 2026-07-10): split the sentence in two, use a
+   altogether: split the sentence in two, use a
    colon or parentheses, or move the aside to a footnote if it is out
    of the main flow.  Unspaced en-dashes remain for name joins
    (Baez--Egan) and numeric ranges (1923--1946).
-   Spelling is US English (adopted 2026-07-12): *-ize*/*-ization*
+   Spelling is US English: *-ize*/*-ization*
    (characterize, polarization, stabilizer), *center*, *labeled*.
    Quoted titles and verbatim quotations keep their source spelling.
 

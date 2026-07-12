@@ -416,7 +416,7 @@ lattice entirely.
 ### Z₃-symmetric triple-octonion product
 (historically: transposition-twisted triple octonion product)
 
-(Trial 007, prompt 025; current framing per main paper v6.)  The triple
+(Trial 007, prompt 025.)  The triple
 octonion product (see below) built from the octonion product ·_σ in
 all three blocks, where ·_σ is defined by x ·_σ y := σ(σ(x) · σ(y))
 for a transposition σ = (s t) of two imaginary basis elements

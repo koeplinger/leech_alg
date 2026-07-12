@@ -94,8 +94,7 @@ gap_project/
 │                          sigma-twisted forms
 └── tests/                 test files (one CHECK per claim)
     ├── test_octonion.g            paper Section 2.1, plus LOOPS check
-    ├── test_e8_wilson.g           paper Section 2.2 (with the corrected
-    │                              "sbar notin L" finding from review 2.1)
+    ├── test_e8_wilson.g           paper Section 2.2
     ├── test_sublattices.g         paper Section 2.3
     ├── test_twist.g               paper Section 3 (Definitions 3.1, 3.2 —
     │                              Transposition and σ-twisted product)
@@ -124,8 +123,8 @@ library's `MoufangLoop(16, 3)`.
 Root counts (112, 128, 240), distinctness, coordinate structure, all roots
 of squared norm 2, lattice membership predicate, single $e_i \notin L$,
 $2e_i \in L$, integer Gram matrix, rank 8, unimodular Z-basis with $|\det|=1$,
-$s\in L$ with norm 2, $\bar s \notin L$ with norm 2 (paper Section 2.3,
-review 2.1 fix), even-lattice property, $L\cdot L \subseteq L$ on all
+$s\in L$ with norm 2, $\bar s \notin L$ with norm 2 (paper Section 2.3),
+even-lattice property, $L\cdot L \subseteq L$ on all
 $240^2 = 57{,}600$ root pairs (Coxeter / Lemma 4.2), and $r\cdot s, r\cdot \bar s\in L$
 for all 240 roots ($Ls, L\bar s\subseteq L$).
 

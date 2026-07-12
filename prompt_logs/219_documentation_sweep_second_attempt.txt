@@ -1,0 +1,119 @@
+Prompt 219 -- Documentation consistency sweep (second attempt)
+Date: 2026-07-12
+
+User: "make a documentation consistency sweep"
+
+Context: the first attempt (prompt log 218) failed. Five agents were given
+edit access and a brief that told them to record corrections with dates.
+They wrote ABOUT the documentation INSIDE the documentation, added sections
+outside each document's purpose, and denormalized content across files. The
+user caught it document by document. I then compounded it by reverting his
+corrections along with the damage; everything was restored from a backup
+patch.
+
+METHOD THIS TIME, chosen deliberately to make that failure impossible:
+
+1. Agents get READ-ONLY access. They REPORT; they do not edit. Every edit
+   is made by the orchestrator, by hand, and shown to the user.
+2. A finding is only a finding if it is one of:
+     (a) a FACT that is wrong or out of date (a claim the computations have
+         since settled or refuted; a number that changed; a page count);
+     (b) a DANGLING REFERENCE (a file, script, section, remark number or
+         numbered check that does not exist);
+     (c) a MISSING ENTRY in an index (a script that exists but is not
+         listed in the index whose job is to list it);
+     (d) a GENRE VIOLATION: content that describes the project's paperwork
+         rather than the project. See the prohibitions below.
+3. PROHIBITED, absolutely, in any state-genre document (README.md,
+   CURRENT_STATE.md, folder READMEs, terminology.md, research_result.md,
+   research_statement.md):
+     - "Corrected on <date>", "settled on <date>", "was open through v5",
+       "supersedes", "an earlier claim refuted", "Correction of record"
+     - "Last updated: <date> (what changed ...)" footers. Git carries the
+       history. A bare date stamp is acceptable where one already exists.
+     - status blocks or sections restating another document's content
+     - new sections that are not about the thing the document is about
+     - denormalizing a table or ledger into a second copy elsewhere
+   These documents state what IS. Nothing else.
+4. Documents whose genre IS history keep their dates and status markers:
+   the changelogs, the claims ledger (key_claims/README.md), the prompt
+   logs, the dated reviews, the planning record. Do not "fix" those.
+5. IMMUTABLE, not to be touched: prompt_logs/**, paper/reviews/**,
+   paper/main_2026-*.tex, paper/v3_to_v4_summary.md, paper/main.tex,
+   paper/automorphism_group_2026-07-12.tex, LICENSE.md.
+
+Status: in progress.
+
+RESULT.
+
+Audit: 3 read-only agents, 24 findings (7 wrong facts, 4 missing index
+entries, 13 genre violations). No agent had edit access. Every edit below
+was made by hand by the orchestrator.
+
+APPLIED (17 edits across 7 files, +39 / -12 lines):
+
+Wrong facts:
+ - CURRENT_STATE.md: okubo.py described as "not yet trialed"; it is trialed
+   (trial_005 imports it).
+ - evidence_and_reasoning/README.md (claims ledger row 014): "854 of the
+   2,365 non-identity permutations" -> "single-cycle permutations". S_7 has
+   5,039 non-identity permutations; 2,365 is the single-cycle count
+   (21+70+210+504+840+720).
+ - python_project/src/README.md and python_project/README.md:
+   consistency_checks.py described as running "ten checks"; it runs checks
+   1-3 and 5-10 (check 4, the exhaustive harness, is trial_007_exhaust.py).
+
+Missing index entries: sixteen scripts existed in python_project/src/ and
+were listed in no index. All now indexed, each with one line from its own
+docstring: verify_section5_properties, verify_consecutive_twists_exact,
+verify_twist_characterization, verify_product_span_{index,structure},
+verify_phi_span_index, verify_mod2_quotient,
+verify_discovery{1_W_subalgebra,2_V_isotropic}, probe_aut_lambda_star, and
+two new subsections: "Historical verification: paper Appendix B"
+(verify_{dickson_1923,kirmse_1924,kirmse_1924_forensic,mahler_1942,
+coxeter_1946}.py) and "Prior art" (egan_baez_count.py).
+Only __init__.py remains unindexed, correctly.
+
+Genre violations (deletions only):
+ - editorial_standards.md: "(adopted 2026-07-10)" and "(adopted
+   2026-07-12)" adoption-date stamps deleted. A standards document states
+   the standard, not when it was adopted.
+ - terminology.md: "; current framing per main paper v6" deleted from the
+   Z_3-symmetric entry. A glossary states the term, not which manuscript
+   revision adopted it.
+ - gap_project/README.md: two pointers into the review trail deleted
+   ("with the corrected 'sbar notin L' finding from review 2.1";
+   ", review 2.1 fix"). An index says what a test checks, not what a past
+   review corrected.
+ - python_project/src/README.md: "now recorded as a remark" -> "recorded
+   as a remark".
+
+NOT APPLIED -- put to the user instead:
+
+ (1) UNRESOLVED FACT. CURRENT_STATE.md line 62 credits
+     trial_007_kirmse_twist.py with 593,412 pairs. The script, run in this
+     session, tests 900 pairs per transposition. The 593,400 figure in
+     trial_007_results.md belongs to swap(1,2) under the ORIGINAL harness,
+     trial_007_triple_octonion_swap.py, which no longer exists in the repo
+     (it was renamed). key_claims/008 and a 2026-05-23 review both carry
+     593,412. So the record holds two different numbers, and neither is
+     reproducible from the script now named. This needs the user's
+     decision; it was NOT silently "fixed".
+ (2) terminology.md line 429: "All 21 transpositions achieve 100% closure
+     on 593,400 tested pairs". Per trial_007_results.md the 593,400 run was
+     swap(1,2) alone; the other 20 were tested on 500-900 pairs each. Same
+     unresolved number as (1).
+ (3) Four larger deletions the auditors proposed in documents the user has
+     already reviewed tonight, held back rather than acted on unilaterally:
+       - editorial_standards.md 72-84: the manuscript version-history
+         section inside a prose-standards document.
+       - research_statement.md 66-95: the "Corrections applied" section.
+       - CURRENT_STATE.md 440-520: the "what has been done since" work-log
+         framing, and the manuscript revision history duplicated from the
+         changelogs.
+       - evidence_and_reasoning/README.md 36-60: the claims tables
+         duplicated out of key_claims/README.md.
+     Each is a judgement call about what a document is FOR. The user
+     decides.
+
+Status: CLOSED (edits applied; five items await the user's decision).

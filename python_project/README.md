@@ -44,7 +44,7 @@ python3 trial_007_kirmse_twist.py       # The winning trial: triple-octonion clo
 python3 trial_007_fast.py               # 4M-pair random closure check
 python3 trial_007_exhaust.py            # Multiprocessor harness for full 38.6B-pair sweep
 python3 trial_001_triple_octonion.py    # Any earlier trial; see src/README.md for the catalogue
-python3 consistency_checks.py           # Pre-paper consistency sweep (10 checks)
+python3 consistency_checks.py           # Pre-paper consistency sweep (checks 1-3, 5-10)
 ```
 
 The algebraic properties reported in Section 5 of the paper are certified by their own scripts, each stating what it proves:
