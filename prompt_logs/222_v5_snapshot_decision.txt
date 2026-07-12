@@ -1,0 +1,43 @@
+Prompt 222 -- Decision on the rewritten v5 snapshot
+Date: 2026-07-12
+
+User: 're "your frozen v5 snapshot isn't v5. Commit bae2d0a (10 July) added 62
+lines to paper/main_2026-06-07.tex" -- that's ok, keep it; it's dated, the git
+history tells the details; but you are correct in bringing these kinds of
+decisions to my attention
+
+otherwise it's perfect'
+
+DECISION: paper/main_2026-06-07.tex stays as it is. Not restored to its 7 June
+text (commit 38054f3). The rationale is the user's: the file is dated, and the
+git history carries the detail of what was added on 10 July and when.
+
+This is a one-time decision about one file, NOT a change to the rule.
+DOCUMENT_GENRES.md Section 2 stands as written: a frozen artifact is never
+rewritten in place; it takes a dated addendum, or is marked deprecated and
+superseded. The v5 rewrite happened on 10 July, before the spec existed, and
+tools/lint_docs.py check 3 would now catch a repeat of it in the working tree.
+
+Process note, and the reason the finding was surfaced rather than acted on: the
+snapshot is the user's own committed work, and restoring it would have been a
+destructive edit to a released artifact. Prompt 218 established the rule the
+hard way -- do not point a destructive command at a file whose contents you did
+not author. The user confirmed the escalation was right: "you are correct in
+bringing these kinds of decisions to my attention."
+
+STILL OPEN from prompt 221 (the user has not ruled on these):
+ (2) paper/v3_to_v4_summary.md: the Kirmse sentence the v6 cycle found
+     unsupported ("recovered the full count of seven"). Frozen; remedy is a
+     dated addendum, if wanted at all.
+ (3) paper/hermes_mod2_structure_supplement.tex: quotes the v4 wording of the
+     Section 7 open question, which offered "a left ideal" as a candidate shape
+     for a structural reason. That candidate is now excluded. Needs a dated
+     addendum.
+ (4) paper/companion.tex: still gives the old paper title.
+ (5) prompt_logs/README.md: enumerates logs 001-069 only; the tail (070-222) is
+     unindexed by an explicit past decision.
+ (6) evidence_and_reasoning/2026-05-22_plan.md: its Status block has been
+     rewritten in place across sessions rather than appended to. The frozen
+     genre says: append dated revision lines.
+
+Status: CLOSED.
