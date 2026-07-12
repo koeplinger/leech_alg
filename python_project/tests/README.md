@@ -8,6 +8,8 @@ Run the full suite from `python_project/`:
 python3 -m pytest tests/ -v
 ```
 
+Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech constructions of Wilson and Dixon, the Okubo algebra), so that no trial or proof rests on an unverified tool.  It does not cover the paper's own results.  Those are certified one by one by the standalone verification scripts in [`../src/`](../src/README.md), which are run directly and print their own pass/fail report, and independently in [`../../gap_project/`](../../gap_project/README.md).
+
 ## Contents
 
 | File | Subject |
@@ -29,5 +31,5 @@ python3 -m pytest tests/ -v
 
 - Tests are self-contained and runnable without external services.
 - Each test file corresponds to a source module.
-- Test names describe the property or behaviour being verified.
+- Test names describe the property or behavior being verified.
 - Random tests use fixed seeds for reproducibility.

@@ -34,7 +34,7 @@ cd python_project/src && python3 trial_NNN_*.py
 | 006 | `trial_006_triple_okubo_automorphisms.py` | Triple Okubo/para-octonion + E8 automorphisms | FAIL (√3 not absorbable) |
 | 007 | `trial_007_kirmse_twist.py` | Z₃-symmetric triple-octonion product (the order on Λ) | **PASS** |
 | 007 | `trial_007_explanation.py` | Worked-example exposition of the twist | — |
-| 007 | `trial_007_fast.py` | 4M-pair random closure check (vectorised) | PASS |
+| 007 | `trial_007_fast.py` | 4M-pair random closure check (vectorized) | PASS |
 | 007 | `trial_007_scaled_test.py` | 4M-pair scaled test harness | PASS |
 | 007 | `trial_007_exhaust.py` | Multiprocessor harness, supports `--exhaustive` (38.6B pairs) | PASS |
 
@@ -46,10 +46,30 @@ All trials use fixed random seeds for reproducibility.  Results are recorded in 
 |---|---|
 | `symbolic_proof_checks.py` | Exact-rational-arithmetic verification of the four lemmas in Section 4 of the paper (σ(L) = L; L · L ⊆ L; L · σ(Lš) ⊆ σ(Lš); σ(Ls) · σ(Ls) ⊆ σ(Ls)), plus the accompanying non-triviality check σ(Ls) ≠ Ls now recorded as a remark in Section 4.  No floating-point. |
 | `consistency_checks.py` | Ten pre-paper consistency checks: construction well-definedness, isomorphism claim, table differences, exhaustive verification harness, generation arguments, claimed algebraic properties, transposition independence, untwisted-vs-twisted comparison, cross-reference with Wilson's paper, code correctness. |
-| `verify_ideal_decomposition.py` | The ideal decomposition R²⁴ = D ⊕ T of (R²⁴, ⋆): both are two-sided ideals, D ⋆ T = T ⋆ D = 0, and (D, ⋆) ≅ (O, ⋆ₛ) rescaled by 3. |
-| `verify_star_algebra_structure.py` | The ambient algebraic group Aut(R²⁴, ⋆): annihilator characterisation of D and T; the C₃-Fourier normal form over Q(ζ₃); h_{A,B} = P⊗A + Q⊗B and the block permutations; dim Der = 28; the ⋆-intrinsic trace form (signature (3,21), **not** the Leech form). |
-| `verify_aut_lambda_star.py` | **Aut(Λ, +, ⋆): exact order 36, structure C₆ × S₃.** Λ∩D and Λ∩T; complete enumeration of the octonion-automorphism stabilisers of L, Ls, Ls̄ (orders 1344, 168, 12096); the surviving pairs (A,B) by two independent methods; all 36 elements verified against Λ, ⋆ and the Leech Gram matrix (so the group lies inside Co₀). Writes the GAP generators. |
-| `verify_aut_octonion_crosscheck.py` | Independent cross-checks of those three stabiliser enumerations: re-run from a different generating triple, and an assumption-free brute force over all 645 120 signed permutations for Stab(L). Writes 8×8 GAP generators. |
+| `verify_all_cycles_exact.py` | The cycle census of paper Section 5.5: which twists close.  Exhaustive (not sampled) over the 3- to 7-cycles; the transpositions are in `consistency_checks.py`.  Of the 2,365 permutations of the seven imaginary units that are a **single cycle**, 854 close (36.1%): transpositions 21/21, 3-cycles 35/70, 4-cycles 0/210, 5-cycles 252/504, 6-cycles 210/840, 7-cycles 336/720.  The (2,2)-double transpositions are counted separately (42/105 close, paper Remark 4.9). |
+| `verify_sigma_Ls_ideal_exclusion.py` | Excludes the "ideal" explanation of Lemma 4.4: σ(Ls) is **not** an ideal of L (32/64 basis-pair products on the left, 21/64 on the right), while σ(Ls̄) **is** a two-sided ideal (64/64 both sides). Control: L · Ls ⊆ Ls is 24/64. |
+
+### The structure of (R²⁴, +, ⋆): paper Section 5
+
+| File | Purpose |
+|---|---|
+| `verify_ideal_decomposition.py` | The ideal decomposition R²⁴ = D ⊕ T of (R²⁴, ⋆): both are two-sided ideals, D ⋆ T = T ⋆ D = 0, and (D, ⋆) ≅ (O, ⋆ₛ) rescaled by 3. Here D = {(a,a,a) : a ∈ O} is the 8-dimensional diagonal copy of the **octonions** (a is an octonion, not a real number) and T = {(p,q,r) : p+q+r = 0} is 16-dimensional. |
+| `verify_idempotent_classification.py` | **Complete** classification of the idempotents of (R²⁴, +, ⋆): there are exactly **eight**: 0; ε₁, ε₂, ε₃; ω/3; and εᵢ − ω/3 (i = 1,2,3), where εᵢ is e₀ in block i and ω = ε₁+ε₂+ε₃. All are real (every block a multiple of e₀); there is no positive-dimensional family, and no identity element. |
+| `verify_idempotent_lattice_rescaling.py` | How those eight sit relative to Λ: **none of them lies in Λ** (e₀ ∉ L), so the order has no idempotent. Least positive lattice multiples: 4εᵢ (norm 16), 6(εᵢ − ω/3) (norm 24), 4ω (norm 48), each satisfying u ⋆ u = n u. Minimal-shell witness: for each of the 84 purely imaginary roots λ of L, (2λ,0,0) ⋆ (2λ,0,0) = −8ε₁ ∈ Λ. |
+| `verify_square_zero_classification.py` | **Complete** classification of the square-zero elements. u = (x,y,z) has u ⋆ u = 0 iff x, y, z are purely imaginary, of equal norm, and sum to zero (a hexagonal triple in Im(O) = R⁷): a 12-dimensional cone inside T. **Λ does contain nonzero square-zero elements**: 4,032 of them, all of norm 12, from the hexagonal triples of the E₇ root system formed by the 126 norm-4 vectors of (Ls̄) ∩ Im(O). The minimal shell sees none for an arithmetic reason: every square-zero vector of Λ has norm in 12Z, and the minimal norm is 8. |
+| `verify_idempotents_min_shell.py` | The exhaustive minimal-shell search: Min(Λ) contains no idempotent and no square-zero vector. The shell search supports that scoped statement only; Λ itself does contain square-zero vectors (see `verify_square_zero_classification.py` above). |
+
+### The automorphism group: paper Section 5.3
+
+| File | Purpose |
+|---|---|
+| `verify_star_algebra_structure.py` | The ambient group Aut(R²⁴, ⋆) = G₂ × G₂ × S₃, compact, of dimension 28. D and T are two-sided ideals that annihilate each other and are **simple**, which is what forces g(D) = D for every automorphism (a dimension count on ideals of T; an annihilator argument alone would be circular, as the module docstring explains); the C₃-Fourier normal form over Q(ζ₃); h_{A,B} = P⊗A + Q⊗B and the block permutations; dim Der = 28; the ⋆-intrinsic trace form (signature (3,21), **not** the Leech form, so the trace-form route to Co₀ fails). |
+| `verify_aut_lambda_star.py` | **Aut(Λ, +, ⋆): exact order 36, structure C₆ × S₃.** Center C₆, derived subgroup C₃, −I₂₄ ∉ it; element orders 1(×1), 2(×7), 3(×8), 6(×20). Λ∩D = {(a,a,a) : a ∈ Ls} and Λ∩T = {(p,q,r) ∈ (Ls̄)³, sum zero}, with glue (Z/3)⁸ of order 6,561; complete enumeration of the octonion-automorphism stabilizers of L, Ls, Ls̄ (orders 1344, 168, 12096); the surviving pairs (A,B) by two independent methods; all 36 elements re-verified against Λ and ⋆. Containment in Co₀ is **proved**, not assumed: every octonion automorphism preserves the positive-definite norm and D ⊥ T, so every ⋆-automorphism of R²⁴ is orthogonal (confirmed elementwise on the Leech Gram matrix). Writes the GAP generators. |
+| `verify_aut_octonion_crosscheck.py` | Independent cross-checks of those three stabilizer enumerations: re-run from a different generating triple, and an assumption-free brute force over all 645,120 signed permutations for Stab(L). Writes 8×8 GAP generators. |
+
+The group-theoretic half of the automorphism calculation (`Size`, `StructureDescription`) is done independently in GAP: see [`../../gap_project/README.md`](../../gap_project/README.md). The derivation is written up in `paper/automorphism_group_2026-07-12.tex`.
+
+**Completeness caveat** (also stated in the paper): the order-36 claim and the Co₀ containment rest on one non-enumerative step, the classification of Aut of the complexification of (T, ⋆). The machine-verified lower bound C₆ × S₃ ≤ Aut and the strictness witness do not depend on it.
 
 ## Guidelines
 

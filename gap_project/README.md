@@ -3,7 +3,10 @@
 A GAP re-implementation of the verification tests that went into the paper
 [`paper/main.tex`](../paper/main.tex) and the companion note
 [`paper/companion.tex`](../paper/companion.tex), running in parallel to the
-Python suite in [`python_project/`](../python_project/).
+Python suite in [`python_project/`](../python_project/).  The two standalone
+scripts described at the end of this file also supply the group-theoretic half
+of the automorphism-group note
+[`paper/automorphism_group_2026-07-12.tex`](../paper/automorphism_group_2026-07-12.tex).
 
 The goal of this directory is independent re-derivation: the same
 mathematical claims, executed in a different language, with a different
@@ -20,6 +23,10 @@ LOOPS-library `MoufangLoop(16, 3)` (the standard octonion loop).
 - **GAP 4.x.**  On Debian/Ubuntu:  `sudo apt install gap`.
 - **The LOOPS package.**  Bundled with `gap-pkg-loops` on Debian/Ubuntu, or
   install in GAP via `LoadPackage("PackageManager"); InstallPackage("loops");`.
+- **The AtlasRep package** (usually autoloaded with GAP) for one line of
+  `octonion_stabilisers.g`, which confirms Stab(Ls̄) ≅ U₃(3).2 = G₂(2) against
+  `AtlasGroup("U3(3).2")`.  Only that single cross-check needs it; the orders
+  and structure descriptions do not.
 
 To check that both are available:
 
@@ -63,7 +70,16 @@ gap -q -c 'GAP_PROJECT_ROOT := "/abs/path/to/leech_alg/gap_project";' \
 ```
 gap_project/
 ├── README.md              this file
-├── run_all.g              driver — runs every tests/*.g
+├── run_all.g              driver: runs every tests/*.g
+├── aut_lambda_star.g          standalone: Size / StructureDescription of
+│                              Aut(Lambda, +, star)  (order 36, C6 x S3)
+├── aut_lambda_star_gens.g     its input: 3 generators, 24x24 integer matrices
+│                              in the Z-basis of Lambda, written by
+│                              verify_aut_lambda_star.py
+├── octonion_stabilisers.g     standalone: identifies Stab(L), Stab(Ls),
+│                              Stab(Lsbar) inside the compact G_2
+├── octonion_stabilisers_gens.g  its input: 8x8 rational generators, written
+│                              by verify_aut_octonion_crosscheck.py
 ├── src/                   shared modules (loaded by every test)
 │   ├── harness.g          tiny CHECK/PrintTestSummary harness, LoadAllSrc()
 │   ├── octonion.g         Fano triples, OctMult, OctConjugate, OctNormSq,
@@ -155,8 +171,11 @@ paired with a representative right operand from each of the three families
 type-3 × type-3 sample grids.  The standard (untwisted) triple product
 fails on the same Lambda × Lambda samples (companion Example 8.1).
 The non-existence of a multiplicative identity in $(\mathbb{R}^{24}, \star_\sigma)$
-is verified concretely (paper Section 5):
+is verified concretely (paper Section 5.1, Remark 5.2):
 $(e_0,e_0,e_0)\star_\sigma v$ has block-1 equal to $x'+y'+z'$, not $x'$.
+The complete classification behind that remark (an identity would have to be
+an idempotent; there are exactly eight, and none of them acts as one) is on
+the Python side: `python_project/src/verify_idempotent_classification.py`.
 
 ### `test_companion_examples.g` — 17 checks
 The explicit hand-checkable numerics in the companion:
@@ -186,6 +205,8 @@ the companion's "Summary of concrete data" three-point list.
 | `tests/test_twist.g`              | (paper Section 3)                                           |
 | `tests/test_triple_product.g`     | parts of `python_project/src/trial_007_kirmse_twist.py`     |
 | `tests/test_companion_examples.g` | (the companion paper, hand-checked here)                    |
+| `aut_lambda_star.g`               | `python_project/src/verify_aut_lambda_star.py`              |
+| `octonion_stabilisers.g`          | `python_project/src/verify_aut_octonion_crosscheck.py`      |
 
 ## Standalone group-identification scripts
 
@@ -196,8 +217,8 @@ independent second opinion on the orders):
 
 | Script | Input | What it reports |
 |---|---|---|
-| `aut_lambda_star.g` | `aut_lambda_star_gens.g` (written by `python_project/src/verify_aut_lambda_star.py`) | `Size` and `StructureDescription` of Aut(Λ, +, ⋆) from three 24×24 integer generators: **order 36, C6 x S3** |
-| `octonion_stabilisers.g` | `octonion_stabilisers_gens.g` (written by `python_project/src/verify_aut_octonion_crosscheck.py`) | identification of the three octonion-automorphism lattice stabilisers: Stab(L) = 2³·L₃(2) of order 1344, Stab(Ls) = 2³:(7:3) of order 168, Stab(Ls̄) = U₃(3).2 = G₂(2) of order 12096 |
+| `aut_lambda_star.g` | `aut_lambda_star_gens.g` (written by `python_project/src/verify_aut_lambda_star.py`) | `Size` and `StructureDescription` of Aut(Λ, +, ⋆) from three 24×24 integer generators: **order 36, C₆ × S₃**.  Also the center (C₆), the derived subgroup (C₃), and the fact that −I₂₄ is **not** in the group (so the containment in Co₀ is strict) |
+| `octonion_stabilisers.g` | `octonion_stabilisers_gens.g` (written by `python_project/src/verify_aut_octonion_crosscheck.py`) | identification of the three octonion-automorphism lattice stabilizers: Stab(L) = 2³·L₃(2) of order 1344, Stab(Ls) = 2³:(7:3) of order 168, Stab(Ls̄) = U₃(3).2 = G₂(2) of order 12096 |
 
 Run them from inside `gap_project/`:
 
@@ -206,12 +227,30 @@ cd gap_project && gap -q -b aut_lambda_star.g
 cd gap_project && gap -q -b octonion_stabilisers.g
 ```
 
+Reading the output of `aut_lambda_star.g`: it prints **two** lists of orders,
+and they are not the same list.
+
+- `orders of all 36 elements` is the element-order distribution, printed
+  `Collected`: 1 (×1), 2 (×7), 3 (×8), 6 (×20).  This is the one to quote for
+  the group.
+- `orders of conjugacy class representatives` is a list of 18 numbers, one per
+  conjugacy class.  It is *not* the multiset of element orders, and must not be
+  quoted as such.
+
 ## Notes on conventions
 
 - Coordinates are 1-indexed (GAP convention).  Position 1 holds the $e_0$
   coefficient, position 2 holds $e_1$, …, position 8 holds $e_7$.
 - The transposition $\sigma$ is $(e_1\;e_2)$ throughout (the canonical
   choice; the 21 transpositions are equivalent up to GL(3, F_2)
-  relabelling, verified in `python_project/src/consistency_checks.py`).
+  relabeling, verified in `python_project/src/consistency_checks.py`).
+- What $\sigma$ is, and is not.  It is a transposition of two imaginary basis
+  units, extended linearly and fixing $e_0$.  It is **not** an octonion
+  automorphism.  It carries the octonion product to the isomorphic twisted
+  product $x \cdot_\sigma y := \sigma(\sigma(x) \cdot \sigma(y))$, so
+  $\cdot_\sigma$ is again an octonion product and not a new algebra; the twist
+  is how it fits Wilson's representation.  $\sigma$ fixes $L$ setwise
+  ($\sigma(L) = L$, `test_sublattices.g`) but **moves** the sublattices $Ls$
+  and $L\bar s$, which is the whole point (`test_twist.g`).
 - All claims about lattice membership are verified by exact-rational
   Z-basis tests (no floating-point arithmetic anywhere).

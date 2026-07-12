@@ -2,9 +2,30 @@
 
 **v4** — frozen 25 May 2026, 19 pages. Source preserved at [paper/main_2026-05-25.tex](main_2026-05-25.tex).
 
-**v5** — dated 7 June 2026, 20 pages. Source at [paper/main.tex](main.tex).
+**v5** — dated 7 June 2026, 20 pages. Frozen at [paper/main_2026-06-07.tex](main_2026-06-07.tex). While this document was written, that state was the working [paper/main.tex](main.tex); the working source has since moved on to v6, so every "lines *n*–*m* of paper/main.tex" pointer below refers to the v5 source, not to the current file.
 
 v5 is a minimal revision implementing the four issues recorded in [update_brief_2026-05-25_v4.pdf](update_brief_2026-05-25_v4.pdf). No mathematical content has been added or withdrawn; the four edits clarify three statements that were already in v4 and restore one citation that was dangling in the bibliography.
+
+---
+
+## Forward corrections (12 July 2026)
+
+This document is the record of the v4 → v5 revision and is not rewritten. Three statements below have since been superseded by the v6 cycle; they are corrected here rather than in place.
+
+**1. Section 5 was restructured on 12 July 2026, and its remark numbers changed.** Section 5 is now divided into five subsections (5.1 Identities, 5.2 Idempotents and square-zero elements, 5.3 The automorphism group, 5.4 Span of the image, 5.5 Which twists close). The v5 remark numbers map onto the current ones as follows:
+
+| v5 (Section 5) | current (v6) |
+|---|---|
+| Remark 5.1 (product norms) | Remark 5.1 |
+| Remark 5.2 (*Exhaustive facts on the minimal shell*) | deleted; absorbed into Remark 5.1 |
+| Remark 5.3 (no multiplicative identity) | Remark 5.2 |
+| Remark 5.4 (*Span of the image*) | Remark 5.6 |
+
+Change 9(b) below originally cited the *Exhaustive facts* remark as "Remark 5.3"; in the v5 build it was Remark **5.2**, and it is corrected in place below. Change 9(a)'s *Span of the image* remark, Remark 5.4 in v5, is Remark 5.6 in v6.
+
+**2. "No square nilpotents" holds only on the minimal shell.** The exhaustive minimal-shell finding recorded in Change 9(b) stands: none of the 196,560 minimal vectors is idempotent, and none squares to zero. Read as a statement about all of Λ, it is false. Λ contains 4,032 square-zero vectors, all of norm 12, arising from the hexagonal triples of the $E_7$ root system formed by the 126 norm-4 vectors of $L\bar{s} \cap \mathrm{Im}(\mathbb{O})$; the minimal shell cannot see them, because every square-zero vector of Λ has norm in $12\mathbb{Z}$ while the minimal norm is 8 (`verify_square_zero_classification.py`). The idempotent half of the statement does extend: the ambient algebra has exactly eight idempotents, none of them in Λ, so the order has no idempotent at all (`verify_idempotent_classification.py`). Both classifications are now Section 5.2 of the paper.
+
+**3. The automorphism group is no longer open.** Changes 3 and 5 record the v5 bullet stating the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ with full identification left open. Settled on 12 July 2026: $\mathrm{Aut}(\Lambda,+,\star)$ is finite of order 36, with structure $C_6 \times S_3$, and the containment in $\mathrm{Co}_0$ is *proved* rather than asserted. The ambient algebra $\mathbb{R}^{24} = \mathbb{O}^3$ splits into the mutually annihilating two-sided ideals $D = \{(a,a,a)\}$ and $T = \{(p,q,r) : p+q+r=0\}$; a real octonion automorphism preserves the positive-definite norm, and $D \perp T$, so every $\star$-automorphism of $\mathbb{R}^{24}$ is orthogonal. The inclusion is strict because $-I_{24}$ does not preserve $\star$. Completeness rests on one non-enumerative step, the classification of the automorphisms of the complexification of $(T, \star)$; the lower bound $C_6 \times S_3$ and the strictness witness do not. Recorded as Remark 5.5 of the paper and derived in full in [paper/automorphism_group_2026-07-12.tex](automorphism_group_2026-07-12.tex) (`verify_aut_lambda_star.py`, `gap_project/aut_lambda_star.g`).
 
 ---
 
@@ -12,13 +33,13 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 1. §2.2 — Petersson 2018 survey cited at the end of the integral-octonion-history sentence.
 2. §6 — "cross-block $\mathbb{Z}_3$ symmetry" replaced by "cross-block $S_3$ extending the $\mathbb{Z}_3$ routing".
-3. §7 — Automorphism-group bullet extended with the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$.
+3. §7 — Automorphism-group bullet extended with the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ (superseded 12 July 2026; see forward correction 3).
 4. Appendix B — Kirmse paragraph extended with one sentence on his ideal-theoretic treatment and the alternativity context picked up by Mahler.
 5. §8 — Outlook physics paragraph: "$S_3$ symmetry" added to the list of structural themes; Gresnigt–Gourlay–Varma 2023 (*Eur. Phys. J. C* 83 (2023), 747) added to the cite list with sorting by year of publication.
 6. Acknowledgments — Holger P. Petersson added in alphabetical order.
 7. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
-8. Editorial-sweep refinements (same-day): §2.3 footnote obstruction clarification ($L \cdot Ls$ wording → $Ls \cdot Ls \not\subseteq Ls$); §5 row label "Power-associativity" → "Quartic power-associativity"; §6 undefined $\Sigma(\Lambda)$ → "$\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise"; bibliography re-alphabetised (Mahler, Petersson positions; `repo` bibitem author spelling).
-9. Reviewer-response additions (same-day; prompted by referee feedback from an abstract-algebra journal): **(a)** new Remark 5.4 (*Span of the image*) — the products $\Lambda \star \Lambda$ span a proper sublattice $S$ with $[\Lambda : S] = 2^{16}$, $2\Lambda \subseteq S$, $\Lambda/S \cong (\mathbb{Z}/2)^{16}$ (exact, Hermite normal form; `verify_product_span_{index,structure}.py`); one-sentence abstract addition; **(b)** new Remark 5.3 (*Exhaustive facts on the minimal shell*) — no idempotents and no square-nilpotents among all 196,560 minimal vectors, self-product norms in $\{16,\ldots,128\}\setminus\{112\}$, minimum 16 (exhaustive; `verify_idempotents_min_shell.py`); **(c)** §6 Baez–Egan anatomy extended with the comparative span defect of $\varphi$: $[\Lambda : \mathrm{span}\,\varphi(\Lambda,\Lambda)] = 2^{25}$, which — unlike for $\star$ — does not contain $2\Lambda$ (`verify_phi_span_index.py`, validated against the paper's $D$-formula, $\Lambda$-closure on all 576 basis pairs, and commutativity); **(d)** new closing paragraph of §1 stating the paper's deliberately bounded scope (existence + elementary proof; two structural readings offered as verified starting points; human–AI collaboration with end-to-end public record); **(e)** §7 automorphism bullet gains the reviewer's stabiliser formulation ("the stabiliser of the product tensor inside $\mathrm{Co}_0$"); **(f)** Appendix C correction: "each of the four lemmas is established by exhibiting … integer coefficients" → "three of the four lemmas … — the fourth, $\sigma(L) = L$, is a parity argument" (pre-existing miscount caught by the verification pass).
+8. Editorial-sweep refinements (same-day): §2.3 footnote obstruction clarification ($L \cdot Ls$ wording → $Ls \cdot Ls \not\subseteq Ls$); §5 row label "Power-associativity" → "Quartic power-associativity"; §6 undefined $\Sigma(\Lambda)$ → "$\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise"; bibliography re-alphabetized (Mahler, Petersson positions; `repo` bibitem author spelling).
+9. Reviewer-response additions (same-day; prompted by referee feedback from an abstract-algebra journal): **(a)** new Remark 5.4 (*Span of the image*) — the products $\Lambda \star \Lambda$ span a proper sublattice $S$ with $[\Lambda : S] = 2^{16}$, $2\Lambda \subseteq S$, $\Lambda/S \cong (\mathbb{Z}/2)^{16}$ (exact, Hermite normal form; `verify_product_span_{index,structure}.py`); one-sentence abstract addition; **(b)** new Remark 5.2 (*Exhaustive facts on the minimal shell*) — no idempotents and no square-nilpotents among all 196,560 minimal vectors, self-product norms in $\{16,\ldots,128\}\setminus\{112\}$, minimum 16 (exhaustive; `verify_idempotents_min_shell.py`); **(c)** §6 Baez–Egan anatomy extended with the comparative span defect of $\varphi$: $[\Lambda : \mathrm{span}\,\varphi(\Lambda,\Lambda)] = 2^{25}$, a span that, unlike the span of $\star$, does not contain $2\Lambda$ (`verify_phi_span_index.py`, validated against the paper's $D$-formula, $\Lambda$-closure on all 576 basis pairs, and commutativity); **(d)** new closing paragraph of §1 stating the paper's deliberately bounded scope (existence + elementary proof; two structural readings offered as verified starting points; human–AI collaboration with end-to-end public record); **(e)** §7 automorphism bullet gains the reviewer's stabilizer formulation ("the stabiliser of the product tensor inside $\mathrm{Co}_0$", quoted with the v5 source spelling); **(f)** Appendix C correction: "each of the four lemmas is established by exhibiting … integer coefficients" → "three of the four lemmas … the fourth, $\sigma(L) = L$, is a parity argument" (pre-existing miscount caught by the verification pass).
 
 ---
 
@@ -41,6 +62,7 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 - **What changed.** The bullet listing the open question on $\mathrm{Aut}(\Lambda,+,\star)$ now records the empirical containment $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ with the reasoning ($S_3$ from Change 2 above; strict inclusion in $\mathrm{Co}_0$ because $-I_{24} \in \mathrm{Co}_0$ does not preserve $\star$).
 - **Where.** §7 conclusion, the bullet on $\mathrm{Aut}(\Lambda,+,\star)$.
 - **Rationale.** Update brief item 3 asked for the bound to be stated explicitly so readers can see what is and is not known before the question is posed.
+- **Superseded (12 July 2026).** The question is now answered: $\mathrm{Aut}(\Lambda,+,\star) \cong C_6 \times S_3$, of order 36, and the containment in $\mathrm{Co}_0$ is proved. See forward correction 3 above; the v6 bullet asks instead where the group sits inside $\mathrm{Co}_0$ up to conjugacy.
 
 ### Change 4 — Appendix B Kirmse paragraph
 
@@ -52,13 +74,13 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 - **What changed.** The §8 outlook physics paragraph now reads "physics on normed-division-algebra, triality, $S_3$ symmetry, or symmetric-composition-algebra structures" (the inserted item being "$S_3$ symmetry"), and the accompanying citation list now sorts the four physics references by year of publication and adds the new one: Gresnigt–Gourlay–Varma 2023 — *Three generations of colored fermions with $S_3$ family symmetry from Cayley–Dickson sedenions*, Eur. Phys. J. C **83** (2023), 747 (arXiv:2306.13098).
 - **Where.** §8 outlook physics paragraph (sole-sentence paragraph after §8.1); new bibitem inserted in alphabetical order between FureyHughes 2025 and Hall 2019 in the bibliography.
-- **Rationale.** Change 3 establishes $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star)$; the Gresnigt–Gourlay–Varma 2023 paper is the closest physics-side reference using $S_3$ as a family-symmetry organising principle on a Cayley–Dickson algebra, and naturally belongs in the outlook list alongside the existing normed-division-algebra and triality references.
+- **Rationale.** Change 3 establishes $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star)$; the Gresnigt–Gourlay–Varma 2023 paper is the closest physics-side reference using $S_3$ as a family-symmetry organizing principle on a Cayley–Dickson algebra, and naturally belongs in the outlook list alongside the existing normed-division-algebra and triality references.
 
 ### Change 6 — Acknowledgments: Holger P. Petersson added
 
 - **What changed.** The acknowledgments list now reads "Matthew Barley, Geoffrey M. Dixon, **Holger P. Petersson**, Petr Vojtěchovský, and Robert A. Wilson" — Petersson inserted in alphabetical order.
 - **Where.** §Acknowledgments of [paper/main.tex](main.tex).
-- **Rationale.** Petersson is the modern source whose 2018 lecture established the project's stance on Kirmse and the chain of 1923–1946 contributions; the citation added in Change 1 puts him in the bibliography, and the acknowledgment recognises his off-paper input alongside the other named collaborators.
+- **Rationale.** Petersson is the modern source whose 2018 lecture established the project's stance on Kirmse and the chain of 1923–1946 contributions; the citation added in Change 1 puts him in the bibliography, and the acknowledgment recognizes his off-paper input alongside the other named collaborators.
 
 ### Change 7 — Mechanical preamble and subtitle
 
@@ -73,14 +95,14 @@ Following the v5 freeze and the documentation-consistency sweep, five small edit
 - **§2.3 footnote (lines 250–254)**: the obstruction claim was rewritten from "Closure under left-multiplication by $L$ holds for $L\bar s$ but fails for $Ls$" to "$Ls$ is not closed under the octonion product itself ($Ls \cdot Ls \not\subseteq Ls$)", aligning the footnote with the bilinear-closure statement that Lemma 4.4 actually resolves.
 - **§5 properties table**: the row "Power-associativity" was relabeled "Quartic power-associativity" to match the surrounding prose, which distinguishes cube and quartic identities.
 - **§6 Comparison closing sentence**: the undefined symbol $\Sigma(\Lambda)$ (orphaned when Remark 4.6 was removed in the v4 cycle) was replaced with the explicit "the Leech embedding $\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise".
-- **Bibliography re-alphabetised**: Mahler1942 moved above MarraniCorradettiZucconi2025; Petersson2018 moved above SmithVojtechovsky2022; the `repo` bibitem now spells the author "J.~K\"oplinger" (matching `\author{}` and `Koeplinger2023`).
+- **Bibliography re-alphabetized**: Mahler1942 moved above MarraniCorradettiZucconi2025; Petersson2018 moved above SmithVojtechovsky2022; the `repo` bibitem now spells the author "J.~K\"oplinger" (matching `\author{}` and `Koeplinger2023`).
 - **§5 multiplicative-identity row**: was already "n/a (structural)" in the v5 freeze; no change.
 
 ---
 
 ## Page count and structural impact
 
-Page count: v4 = 19, v5 = 20. Through Change 8 the count held at 19 — the §7 bullet expansion (Change 3) and the four one-sentence growths in §2.2, §6, §8, and Appendix B were absorbed by removing the `\clearpage` that previously forced the bibliography onto its own page. The reviewer-response additions (Change 9: two new §5 remarks, the §6 comparison, and the §1 scope paragraph) add one page, bringing v5 to 20. No sections were added, removed, renumbered, or reordered; §5 remark numbering extends to 5.4 (the new *Exhaustive facts* and *Span of the image* remarks). The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are otherwise unchanged.
+Page count: v4 = 19, v5 = 20. Through Change 8 the count held at 19 — the §7 bullet expansion (Change 3) and the four one-sentence growths in §2.2, §6, §8, and Appendix B were absorbed by removing the `\clearpage` that previously forced the bibliography onto its own page. The reviewer-response additions (Change 9: two new §5 remarks, the §6 comparison, and the §1 scope paragraph) add one page, bringing v5 to 20. No sections were added, removed, renumbered, or reordered; §5 remark numbering extends to 5.4, the new *Exhaustive facts* remark landing at 5.2 and *Span of the image* at 5.4 (both renumbered again in v6: see forward correction 1). The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are otherwise unchanged.
 
 ---
 

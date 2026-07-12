@@ -8,8 +8,14 @@ isometry of Lambda is one of the things settled here (it is -- see step 6).
 
 INPUT FACTS (from verify_star_algebra_structure.py, all proved there):
   R^24 = D (+) T with D = {(a,a,a)}, T = {sum zero}, two-sided ideals with
-  D star T = T star D = 0, Ann(D) = T, Ann(T) = D.  Hence every element of
-  Aut(R^24, star) preserves D and T, and
+  D star T = T star D = 0, Ann(D) = T, Ann(T) = D.  Every element of
+  Aut(R^24, star) preserves D and T.  NOTE the route to that last statement
+  (12 July 2026): it is NOT "Ann is intrinsic, so g permutes D and T" -- that
+  is circular, since g(Ann(D)) = Ann(g(D)) gives g(T) = T only once g(D) = D
+  is known.  It is: D and T are SIMPLE and annihilate each other, so pi_T . g
+  restricted to D is an algebra map onto an ideal of T of dimension <= 8 < 16,
+  hence 0; so g(D) <= D, and only then does g(T) = T follow.  See the
+  CORRECTION block in verify_star_algebra_structure.py.  Consequently
         Aut(R^24, star) = { h_{A,B} rho_pi : A,B in Aut(O,.s), pi in S_3 },
         h_{A,B}(u)_alpha = B u_alpha + (A - B)(u_0+u_1+u_2)/3,
         rho_pi(u)_alpha  = u_{pi^{-1}(alpha)},

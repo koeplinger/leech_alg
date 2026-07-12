@@ -1,5 +1,19 @@
 # Research Statement
 
+> **Status.**  The question posed below is **answered in the
+> affirmative**.  Λ does admit an order: the Z₃-symmetric
+> triple-octonion product ⋆, built from a single octonion product ·_σ
+> on all three Wilson blocks with Z₃ cross-block routing.  Closure is
+> proved symbolically (paper §4, four lemmas on a Z-basis).  See
+> `research_result.md` for the finding and `paper/main.tex` for the
+> proof.  The statement below is retained as
+> the record of the question as originally posed; it is not rewritten.
+>
+> Structure of the resulting order:
+> Aut(Λ, +, ⋆) is finite of order 36 (C₆ × S₃) and is contained in Co₀;
+> the order has no idempotent; it does contain 4,032 square-zero vectors,
+> all of norm 12, none of them minimal.  Details in `research_result.md`.
+
 ## English
 
 In the Leech lattice Λ, the minimal vectors Min(Λ) — the 196,560 vectors
@@ -20,12 +34,20 @@ an order under some bilinear product — is not known.
 - Coxeter, H.S.M., "Integral Cayley numbers", Duke Math. J. 13 (1946),
   561–578.  [Correction of Kirmse's non-closed integers.]
 - Wilson, R.A., "Octonions and the Leech lattice", J. Algebra 322 (2009),
-  2186–2190.  [Wilson's characterisation of Λ using three copies of the
+  2186–2190.  [Wilson's characterization of Λ using three copies of the
   octonion algebra.]
 
 ---
 
 ## German (Deutsch)
+
+> **Stand.**  Die unten gestellte Frage ist
+> **bejaht**: Λ lässt eine Ordnung zu, nämlich das Z₃-symmetrische
+> Tripel-Oktonionen-Produkt ⋆, gebildet aus einem einzigen
+> Oktonionenprodukt ·_σ in allen drei Wilson-Blöcken mit
+> Z₃-Blockroutierung.  Der Abschluss ist symbolisch bewiesen
+> (Aufsatz §4).  Der folgende Text bleibt als Aufzeichnung der
+> ursprünglich gestellten Frage erhalten.
 
 Im Leech-Gitter Λ spielen die Minimalvektoren Min(Λ) — die 196.560
 Vektoren mit Normquadrat 8 — eine strukturelle Rolle, die der des
@@ -70,9 +92,3 @@ eine Ordnung zulässt — ist nicht bekannt.
    contains the identity, and is maximal with respect to inclusion.  The 7
    orders obtained via the Kirmse construction are maximal.  "Integral order"
    is less precise.
-
----
-
-Last updated: 2026-05-23 (σ-description corrected from "index-doubling
-permutation" to "transposition of two imaginary basis units", in both the
-English and German texts and in the corrections section)

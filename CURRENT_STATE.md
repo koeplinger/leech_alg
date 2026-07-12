@@ -1,9 +1,9 @@
 # Current State of the Research
 
-Last updated: 2026-07-10
+Last updated: 2026-07-12
 
 This document is the entry point for anyone continuing this research — human or
-AI, with or without prior context.  It summarises what has been established,
+AI, with or without prior context.  It summarizes what has been established,
 what has been ruled out, and what remains open.  All claims are backed by
 evidence in the files referenced below.
 
@@ -23,14 +23,14 @@ The order should be highly symmetric.  The Leech lattice's automorphism group
 would ideally respect or interact with this symmetry in a meaningful way.
 
 **Status: FOUND.**  Trial 007 identifies a bilinear product that closes on Λ:
-the *Z₃-symmetric triple-octonion product* (historically named the
-"transposition-twisted triple octonion product" during trial 007; the
-product is simply an octonion product in all three blocks, and the
-transposition σ is the device that exhibits its fit with Wilson's
-representation).  See "The finding" below.
-Two earlier candidate families were comprehensively ruled out before this
-discovery: the (untwisted) triple-octonion algebra and the triple
-Okubo/para-octonion algebra (Petersson isotopes).  See below.
+the *Z₃-symmetric triple-octonion product*.  It is simply an octonion product
+in all three blocks; the transposition σ is the device that exhibits its fit
+with Wilson's representation.  (The trial files and the older evidence
+documents call it the "transposition-twisted triple octonion product".)
+See "The finding" below.
+Two other candidate families are comprehensively ruled out: the (untwisted)
+triple-octonion algebra and the triple Okubo/para-octonion algebra
+(Petersson isotopes).  See below.
 
 ---
 
@@ -46,13 +46,14 @@ lattice — which fixes the standard product — the transposition σ is
 what exhibits the fit: σ leaves the E₈ lattice L = D₈⁺ invariant but
 moves Wilson's sublattices Ls and Ls̄.
 
-The **Z₃-symmetric triple-octonion product** on R²⁴ = O₁ ⊕ O₂ ⊕ O₃
+The **Z₃-symmetric triple-octonion product** ⋆ on R²⁴ = O₁ ⊕ O₂ ⊕ O₃
 uses ·_σ in all three blocks with Z₃-symmetric cross-block routing:
 - Same-block: Oα × Oα → Oα using ·_σ
 - Cross-block: Oα × Oβ → Oγ using ·_σ, where {α,β,γ} = {1,2,3}
 
-All 21 transpositions give the same result up to GL(3,F₂) relabelling
-(consistency check 1c, check 7).
+All 21 transpositions give the same result up to GL(3,F₂) relabeling
+(`consistency_checks.py`, check 7).  They are not the only twists that close:
+see the cycle census below.
 
 ### Verification status
 
@@ -63,7 +64,7 @@ All 21 transpositions give the same result up to GL(3,F₂) relabelling
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
 | Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 basis products (exact) | 0 | `symbolic_proof_checks.py` (Python) + `gap_project/tests/test_lemmas.g` (GAP) |
-| §5 algebraic-properties test (N = 10⁶, paper §5) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
+| Identity-test suite (N = 10⁶, paper §5.1) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
 | Exhaustive (all 38.6B pairs) | **not required** | — | `trial_007_exhaust.py --exhaustive` |
 
 **Zero failures across 12+ million tested pairs**, plus a symbolic proof
@@ -75,20 +76,109 @@ The standard (untwisted) triple-octonion product fails on 73.4% of
 type3×type3 products, all due to Wilson condition 3 (x+y+z ∉ Ls).
 The transposition twist changes 30 of 64 multiplication table entries.
 This fixes condition 3 precisely — all other conditions were already
-satisfied by the untwisted product (consistency check 8).
+satisfied by the untwisted product (`consistency_checks.py`, check 8).
 
-### Algebraic properties (consistency check 6)
+### Algebraic properties (paper §5.1)
 
-The order (Λ, +, ·_σ) is:
-- **Non-unital**: the ambient identity (1,0..0, 1,0..0, 1,0..0) has N=3 and
-  is not in Λ.
+The order (Λ, +, ⋆) is:
+- **Non-unital**: the ambient algebra (R²⁴, +, ⋆) has *no* multiplicative
+  identity at all.  In particular (e₀, e₀, e₀) is not one: it sends
+  (x', y', z') to (x'+y'+z', x'+y'+z', x'+y'+z').
 - **Non-commutative**: <0.1% of Min(Λ) pairs commute.
 - **Not norm-multiplicative**: product norms distribute across
   {16, 32, 48, 64, 80, 96, 112, 128}, with 64 = N(u)·N(v) as the mode
   (~47%).
-- **Not alternative, not flexible, not power-associative** (numerically).
+- **Not alternative, not flexible, not power-associative** (numerically,
+  N = 10⁶ samples per property).
 
 The key property is closure, not any classical algebraic identity.
+
+### Structure of the algebra (paper §5.2–§5.5)
+
+These results are exact and exhaustive.
+
+**Ideal decomposition** (`verify_ideal_decomposition.py`,
+`verify_star_algebra_structure.py`).  As a real algebra, R²⁴ = O³ splits as
+D ⊕ T, where D = {(a, a, a) : a ∈ O} is the 8-dimensional diagonal copy of
+the octonions (a is an *octonion*, not a real number) and
+T = {(p, q, r) ∈ O³ : p + q + r = 0} is 16-dimensional.  Both are two-sided
+ideals and they annihilate each other: D ⋆ T = T ⋆ D = 0.
+
+**The automorphism group** (`verify_aut_lambda_star.py`,
+`verify_aut_octonion_crosscheck.py`, `gap_project/aut_lambda_star.g`;
+full derivation in `paper/automorphism_group_2026-07-12.pdf`).
+
+- Aut(Λ, +, ⋆) is **finite of order 36**, with structure **C₆ × S₃**
+  (center C₆, derived subgroup C₃).  Element orders: 1 (×1), 2 (×7),
+  3 (×8), 6 (×20).  −I₂₄ is not in it.
+- Every automorphism is a blockwise octonion automorphism followed by a
+  permutation of the three blocks.  The S₃ is the block permutation; the
+  C₆ is generated by the signed permutation fixing e₀ and sending
+  e₁ ↦ −e₅, e₂ ↦ −e₇, e₃ ↦ e₂, e₄ ↦ −e₄, e₅ ↦ e₆, e₆ ↦ e₁, e₇ ↦ −e₃.
+- Ambient: Aut(R²⁴, ⋆) = G₂ × G₂ × S₃, compact, of dimension 28.
+- **Aut(Λ, +, ⋆) ⊊ Co₀**, proved from the ambient algebra and before
+  the lattice is imposed: an automorphism of the *real* octonions preserves
+  the positive-definite norm, and D ⊥ T, so every ⋆-automorphism of R²⁴ is
+  orthogonal.  The inclusion is strict because −I₂₄ ∈ Co₀ does not
+  preserve ⋆.  (The trace-form route fails: tr(L_u L_v) has signature
+  (3, 21), not the Leech form.)
+- Octonion-automorphism stabilizers: |Stab(L)| = 1344 = 2³·L₃(2);
+  |Stab(Ls)| = 168 = 2³:(7:3); |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)
+  (`gap_project/octonion_stabilisers.g`).
+- Completeness caveat, stated in the paper: the order-36 count and the Co₀
+  containment rest on one non-enumerative step, the classification of the
+  automorphisms of the complexification of (T, ⋆).  The machine-verified
+  lower bound C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and the strictness witness do not
+  depend on it.
+
+**Idempotents — complete classification** (`verify_idempotent_classification.py`,
+`verify_idempotent_lattice_rescaling.py`).  (R²⁴, +, ⋆) has exactly eight
+idempotents.  With ε₁ = (e₀,0,0), ε₂ = (0,e₀,0), ε₃ = (0,0,e₀) and
+ω = ε₁+ε₂+ε₃, they are 0; ε₁, ε₂, ε₃; ω/3; and ε_i − ω/3 (i = 1,2,3).
+Every block of every one of them is a multiple of e₀: no imaginary part, no
+positive-dimensional family.  **None lies in Λ** (because e₀ ∉ L), so the
+order has no idempotent.  Each nonzero idempotent spans a rational ray that
+meets Λ; the least positive multiples that do are 4ε_i (N = 16),
+6(ε_i − ω/3) (N = 24) and 4ω (N = 48), each satisfying u ⋆ u = n·u.  The
+rescaling is already visible on the minimal shell: for each of the 84 purely
+imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
+
+**Square-zero elements** (`verify_square_zero_classification.py`).  In the ambient algebra,
+u = (x, y, z) satisfies u ⋆ u = 0 exactly when x, y, z are purely imaginary,
+of equal norm, and sum to zero: a hexagonal triple in Im(O) = R⁷, giving a
+12-dimensional cone inside T.  **Λ does contain nonzero square-zero
+elements**: 4,032 of them, all of norm 12, coming from the hexagonal triples
+of the E₇ root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O).  The
+minimal shell sees none for an arithmetic reason: N(u) = 3·N(x) with
+N(x) ∈ 2Z, and every Λ-norm lies in 4Z, so every square-zero vector of Λ has
+norm in 12Z, while the minimal norm is 8.  Min(Λ) itself contains no
+idempotent and no square-zero vector.
+
+**σ(Ls) is not an ideal of L** (`verify_sigma_Ls_ideal_exclusion.py`).  A
+candidate structural explanation for Lemma 4.4 is excluded: of the 64
+basis-pair products, only 32 of L · σ(Ls) and only 21 of σ(Ls) · L land
+inside σ(Ls).  By contrast σ(Ls̄) *is* a two-sided ideal of L (64/64 on both
+sides), of which Lemma 4.3 is the left-handed half.  Control: L · Ls ⊆ Ls
+holds for only 24 of 64.
+
+**Which twists close — exhaustive cycle census** (`verify_all_cycles_exact.py`
+for 3- through 7-cycles, `consistency_checks.py` for transpositions; paper
+§5.5).  Writing x ·_π y := π(π(x) · π(y)) for a permutation π of e₁,…,e₇ and
+testing closure exactly on the 576 basis-pair products of a Z-basis of Λ:
+
+| Cycle type of π | Permutations | Close | Rate |
+|---|---|---|---|
+| Transposition | 21 | 21 | 100% |
+| 3-cycle | 70 | 35 | 50% |
+| 4-cycle | 210 | 0 | 0% |
+| 5-cycle | 504 | 252 | 50% |
+| 6-cycle | 840 | 210 | 25% |
+| 7-cycle | 720 | 336 | 46.7% |
+| **Total** | **2,365** | **854** | **36.1%** |
+
+Exhaustive, not sampled.  The (2,2)-double transpositions are counted
+separately (42 of 105 close; paper Remark 4.9,
+`verify_consecutive_twists_exact.py`).
 
 ### Evidence files
 
@@ -155,7 +245,7 @@ confirmed as OPEN by both Wilson [Wilson2009] and Dixon [Dixon2010].
 `python_project/src/octonions.py` implements the standard octonion algebra
 (Fano-plane rule: e_a · e_{a+1} = e_{a+3}) and Dixon's X-product variant.
 Key claim 001 establishes that Wilson and Dixon use the same multiplication
-table (up to index relabelling).
+table (up to index relabeling).
 
 ### Okubo algebra
 
@@ -363,15 +453,17 @@ the trial, and prints detailed results.
    (rem:Ls-not-closed): non-triviality of the construction, not a step
    of the closure proof.
 
-2. **Formal paper at v6, dated 10 July 2026.**  `paper/main.tex`
-   (20 pages) contains abstract, preliminaries, construction,
-   symbolic proof, algebraic properties at N = 10⁶ samples (plus
-   exhaustive minimal-shell facts and the exact span defect
-   [Λ : span(Λ⋆Λ)] = 2¹⁶), related work (including the comparative
+2. **Formal paper at v6, dated 12 July 2026 (in progress, not frozen).**
+   `paper/main.tex` (23 pages) contains abstract, preliminaries,
+   construction, symbolic proof, algebraic properties (Section 5, in
+   five subsections: §5.1 identities at N = 10⁶ samples;
+   §5.2 idempotents and square-zero elements; §5.3 the automorphism
+   group; §5.4 span of the image, [Λ : span(Λ⋆Λ)] = 2¹⁶; §5.5 which
+   twists close), related work (including the comparative
    span defect 2²⁵ of the Baez–Egan induced product φ), conclusion,
    outlook, and three appendices: explicit basis tables with a
    mod-2-quotient reading and a Lagrangian-polarization framing
-   (Appendix A); a historical note synthesising the 1923–1946
+   (Appendix A); a historical note synthesizing the 1923–1946
    integral-octonion literature from the primary sources, Dickson
    (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946)
    (Appendix B); and the research methodology (Appendix C).  v4 was
@@ -380,11 +472,12 @@ the trial, and prints detailed results.
    review rounds (paper/reviews/); v5 (frozen
    `paper/main_2026-06-07.tex`) incorporated the update brief and
    the reviewer-response additions; v6 (working source
-   `paper/main.tex`, dated 12 July 2026, not yet frozen) is a clarity
-   revision of the span-defect material plus the journal-review pass of
-   10--12 July.  A 10 July snapshot of v6 existed briefly and was
-   deleted on 12 July: v6 is a single open version and will be frozen
-   once.  Revision chain: `paper/v3_to_v4_summary.md`,
+   `paper/main.tex`, dated 12 July 2026, not yet frozen) carries a
+   clarity revision of the span-defect material and the Section 5
+   restructuring that records the structure results below.  Frozen
+   snapshots: `paper/main_2026-04-29.tex` (v3),
+   `paper/main_2026-05-25.tex` (v4), `paper/main_2026-06-07.tex` (v5, the
+   last frozen state).  Revision chain: `paper/v3_to_v4_summary.md`,
    `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`.
 
 3. **Computational verification extended.**  Over 12,000,000 random
@@ -398,8 +491,33 @@ the trial, and prints detailed results.
    the paper is the same kind of linear involution that Bruck applied
    (recorded in Coxeter 1946) to repair Kirmse's non-closed candidate
    J₁.  In the paper's coordinate-symmetric placement L = D₈⁺, σ
-   leaves L invariant and is an algebra isomorphism of the octonions;
-   it does its work by moving Wilson's sublattices Ls and Ls̄.
+   leaves L invariant (σ(L) = L) and is an algebra isomorphism
+   (O, ·) → (O, ·_σ) between two octonion products, not an octonion
+   automorphism; it does its work by moving Wilson's sublattices Ls
+   and Ls̄.
+
+5. **Structure of the algebra.**  The ideal
+   decomposition, the automorphism group, the idempotents, the
+   square-zero elements, the exclusion of the σ(Ls)-as-ideal
+   explanation, and the exhaustive cycle census are recorded under
+   "Structure of the algebra" above.  Scripts:
+   `verify_ideal_decomposition.py`, `verify_star_algebra_structure.py`,
+   `verify_aut_lambda_star.py`, `verify_aut_octonion_crosscheck.py`,
+   `verify_idempotent_classification.py`,
+   `verify_idempotent_lattice_rescaling.py`,
+   `verify_square_zero_classification.py`,
+   `verify_sigma_Ls_ideal_exclusion.py`, `verify_all_cycles_exact.py`
+   (all in `python_project/src/`); `aut_lambda_star.g`,
+   `aut_lambda_star_gens.g`, `octonion_stabilisers.g`,
+   `octonion_stabilisers_gens.g` (in `gap_project/`).
+
+6. **Standalone note on the automorphism group.**
+   `paper/automorphism_group_2026-07-12.tex` / `.pdf` ("The automorphism
+   group of the triple-octonion product", 11 pages, 12 July 2026) gives
+   the full derivation, the complete enumerations, and an independent
+   second computational pass.  It is self-contained and records what
+   failed verification (the trace-form route to Co₀) as well as what
+   passed.  It is companion material, not part of the paper.
 
 ## What remains open
 
@@ -417,26 +535,41 @@ the trial, and prints detailed results.
    that does not reference σ — and the natural research program:
    which polarizations of L/2L arise from this construction, and
    whether any lifts to a closed bilinear product on Λ itself.
+   One candidate shape for an integer-level reason is excluded:
+   σ(Ls) is not an ideal of L on either side (see "Structure of the
+   algebra" above).  A structural argument must therefore rest on
+   something other than an ideal property.
 
-2. **The automorphism group of (Λ, +, ⋆)** and its relationship to
-   the Conway group Co₀ = Aut(Λ).  Currently open; a first-step probe
-   found −I₂₄ ∈ Co₀ but −I₂₄ ∉ Aut(Λ, +, ⋆), so the inclusion
-   Aut(Λ, +, ⋆) ⊆ Co₀ is strict, but the full group has not been
-   characterised.
+2. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
+   whether the order-6 octonion automorphism generating the C₆ admits an
+   intrinsic description.  The group itself and the strict containment
+   Aut(Λ, +, ⋆) ⊊ Co₀ are known (see "Structure of the algebra" above).
+   Also open: an enumerative proof of the one
+   non-enumerative step in the completeness argument (the automorphisms
+   of the complexification of (T, ⋆)).
 
-3. **Maximality** of the order in any appropriate sense.
+3. **Maximality** of the order in any appropriate sense: is there a
+   lattice Λ' ⊋ Λ of finite index with Λ' ⋆ Λ' ⊆ Λ'?  Any such Λ' lies
+   inside (1/n)Λ for some integer n, so for each n the question is a
+   finite check of the kind already used here.
 
 4. **Classification** of the algebra (R²⁴, +, ⋆): it is
    non-associative, non-alternative, non-flexible, and non-unital
-   (as an order).  A more natural classification may emerge from a
+   (as an order), placing it outside the classical families.  Its
+   idempotents, square-zero elements, ideal decomposition and
+   automorphism group are known (above), but no classification follows
+   from them.  A more natural classification may emerge from a
    ternary rather than binary viewpoint (Elduque); §8 of the paper
    sketches the direction.
 
-5. **Other linear coordinate permutations of R⁸** — beyond simple
-   transpositions of imaginary axes — that conjugate the octonion
-   multiplication into a triple product closing on Λ.  The
-   consecutive-twist footnote in §1 enumerates the result for
-   compositions of two transpositions; the general picture is open.
+5. **A structural characterization of which twists close.**  Every cycle
+   type of S₇ has now been enumerated exactly (the census above), as have
+   the (2,2)-double transpositions, but the pattern is explained only for
+   the 3-cycles (for each three-element subset of imaginary indices, one
+   of the two cyclic orientations closes).  Open: a reason for the total
+   failure of the 4-cycles and for the exact one-half rates; the
+   permutation types not yet enumerated; and linear maps of R⁸ that are
+   not coordinate permutations at all.
 
 6. **Exhaustive verification** of all 38.6 billion minimal-vector
    pairs.  Not required given the symbolic proof; available as an
@@ -464,7 +597,11 @@ leech_alg/
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
 │   ├── trial_004_results.md       # Automorphism basis changes: identity optimal
 │   ├── trial_005_results.md       # Triple Okubo/para-octonion: √3 leaves E8
-│   └── trial_006_results.md       # Okubo + automorphisms: √3 not absorbable
+│   ├── trial_006_results.md       # Okubo + automorphisms: √3 not absorbable
+│   ├── trial_007_results.md       # The σ twist: closure on Λ (THE FINDING)
+│   ├── editorial_standards.md     # The five prose standards (US English)
+│   ├── terminology.md             # Project-specific and established terms
+│   └── research_result.md         # Condensed summary of the finding
 │
 ├── python_project/
 │   ├── src/
@@ -482,10 +619,28 @@ leech_alg/
 │   │   ├── trial_005_*.py         # Trial 005: triple Okubo/para-octonion
 │   │   ├── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
 │   │   ├── trial_007_*.py         # Trial 007: the σ twist fit (THE FINDING)
+│   │   ├── symbolic_proof_checks.py  # The four lemmas, exact arithmetic
+│   │   ├── verify_aut_*.py        # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
+│   │   ├── verify_idempotent_*.py # The eight idempotents; lattice rescaling
+│   │   ├── verify_square_zero_classification.py  # The 4,032 square-zero vectors
+│   │   ├── verify_ideal_decomposition.py         # R²⁴ = D ⊕ T
+│   │   ├── verify_star_algebra_structure.py      # Ambient algebra structure
+│   │   ├── verify_sigma_Ls_ideal_exclusion.py    # σ(Ls) is not an ideal of L
+│   │   ├── verify_all_cycles_exact.py            # Cycle census (3- to 7-cycles)
+│   │   ├── verify_*.py            # Further exact verifications (span, mod 2,
+│   │   │                          #   historical sources, consecutive twists)
 │   │   └── consistency_checks.py  # Pre-paper verification (checks 1-10)
 │   └── tests/                     # 197 tests verifying foundations
 │
+├── gap_project/                   # Independent GAP / LOOPS re-derivation
+│   ├── aut_lambda_star*.g         # Automorphism group, second pass
+│   ├── octonion_stabilisers*.g    # Stabilizers of L, Ls, Ls̄ in G₂(Q)
+│   └── run_all.g                  # 110 checks, exact rational arithmetic
+│
 ├── prompt_logs/                   # Chronological AI interaction log
-├── paper/                         # Formal paper: main.tex, references.bib
+├── paper/                         # main.tex (v6, 23 pp., in revision; bibliography
+│                                  #   inline via \bibitem), frozen snapshots
+│                                  #   main_2026-{04-29,05-25,06-07}.tex,
+│                                  #   automorphism_group_2026-07-12.tex, reviews/
 └── source_documents/              # Primary source PDFs (freely redistributable)
 ```

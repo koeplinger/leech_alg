@@ -1,7 +1,7 @@
 # Editorial standards
 
 *The five principles below govern every prose
-change to every *durable artifact* in this repository --- the main
+change to every *durable artifact* in this repository: the main
 paper and any other documents under `paper/` (update briefs, companion,
 historical appendix, exposition, verification and review notes);
 governance and methodology files (`MANIFESTO.md`, this file,
@@ -33,7 +33,7 @@ its place, and the logic should be followable on a first reading.
    If a fact is stated where it belongs, do not restate it elsewhere.
 
 4. **One consistent vocabulary.** Fixed conventions, used the same way
-   throughout --- e.g. *division algebra* = no zero divisors;
+   throughout. For example: *division algebra* = no zero divisors;
    *third-/fourth-/power-associativity* kept distinct; `--` (en-dash)
    never `---`.  Dash-as-punctuation (spaced ` -- ` asides) is avoided
    altogether (adopted 2026-07-10): split the sentence in two, use a
@@ -60,7 +60,7 @@ its place, and the logic should be followable on a first reading.
 
 Check every prose change against all five. A practical test for
 standard 2: read the paragraph as a first-time reader and, at each
-sentence, ask --- *do I have every term used here, and is this sentence
+sentence, ask: *do I have every term used here, and is this sentence
 still on the topic the paragraph announced?* If the answer is no, the
 logical order is wrong, or a side topic has intruded.
 
@@ -75,8 +75,10 @@ The main manuscript at the date these standards were adopted was frozen
 v3 (29 April 2026). Standards were applied prospectively to v4 (frozen
 25 May 2026, `paper/main_2026-05-25.tex`), the v5 revision (7 June
 2026, `paper/main_2026-06-07.tex`), and the v6 revision (in progress,
-working source `paper/main.tex`, dated 12 July 2026). v5 is the last
-frozen state; v6 is not yet frozen. Revision chain: `paper/v3_to_v4_summary.md`,
+working source `paper/main.tex`, dated 12 July 2026, 23 pages). v5 is
+the last frozen state; v6 is not yet frozen, and no v6 snapshot exists:
+v6 will be frozen exactly once, when it is released.
+Revision chain: `paper/v3_to_v4_summary.md`,
 `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`. The
 standards were not retroactively enforced on v3; the dash convention
 and other v3/v4 differences were resolved during v4 assembly.

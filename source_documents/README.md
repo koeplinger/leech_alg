@@ -7,7 +7,7 @@ This folder holds primary source materials that are freely redistributable. For 
 | File | Reference key | Description | License |
 |---|---|---|---|
 | SmithVojtechovsky_Okubo_2022_DocMath.pdf | [SmithVojtechovsky2022] | Okubo quasigroups (Doc. Math. 2022) | CC BY (diamond open access) |
-| 2023_FureyHughesTrialityOkuboBrief.pdf | [Koeplinger2023] | Autotopies of normed composition algebras (author's preprint 2023) | Author holds distribution rights |
+| 2023_FureyHughesTrialityOkuboBrief.pdf | [Koeplinger2023] | J. Köplinger, "Towards autotopies of normed composition algebras in algebraic Quantum Field Theory", Rev. B, November 2023 (author's preprint).  The filename names the Furey–Hughes paper this preprint responds to, not its author; the document itself is Köplinger's. | Author holds distribution rights |
 
 ## Externally hosted sources
 

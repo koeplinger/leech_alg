@@ -1,6 +1,6 @@
 # Python Project
 
-Self-contained Python project for the computational work of this repository: lattice constructions, octonion / Okubo algebras, trial experiments testing candidate orders on the Leech lattice Λ, exact-arithmetic verification of the symbolic-proof lemmas, and the foundation test suite.
+Self-contained Python project for the computational work of this repository: lattice constructions, octonion / Okubo algebras, trial experiments testing candidate orders on the Leech lattice Λ, exact-arithmetic verification of the symbolic-proof lemmas and of the algebraic structure of the resulting order (ideals, idempotents, square-zero elements, automorphism group), and the foundation test suite.
 
 ## Structure
 
@@ -9,7 +9,7 @@ python_project/
 ├── src/                # Source code (see src/README.md)
 ├── tests/              # Test suite (see tests/README.md)
 ├── conftest.py         # pytest configuration (puts src/ on sys.path)
-├── requirements.txt    # numpy, pytest
+├── requirements.txt    # numpy, sympy, pytest
 └── README.md           # This file
 ```
 
@@ -21,7 +21,7 @@ Requires Python 3.x.  Install dependencies:
 pip install -r requirements.txt
 ```
 
-The only external dependencies are `numpy` (used for fast array arithmetic in the trial harnesses) and `pytest` (test runner).  All other imports are standard-library (`fractions`, `itertools`, `collections`, `typing`, `multiprocessing`, `argparse`).
+The external dependencies are `numpy` (fast array arithmetic in the trial harnesses), `sympy` (exact linear algebra over Q and Q(ζ₃) in the structure and automorphism verification scripts), and `pytest` (test runner).  All other imports are standard-library (`fractions`, `itertools`, `collections`, `typing`, `multiprocessing`, `argparse`).
 
 ## Running the tests
 
@@ -47,10 +47,27 @@ python3 trial_001_triple_octonion.py    # Any earlier trial; see src/README.md f
 python3 consistency_checks.py           # Pre-paper consistency sweep (10 checks)
 ```
 
+The algebraic properties reported in Section 5 of the paper are certified by their own scripts, each stating what it proves:
+
+```bash
+cd src
+python3 verify_ideal_decomposition.py          # R^24 = D + T, two annihilating two-sided ideals
+python3 verify_idempotent_classification.py    # exactly eight idempotents; no identity element
+python3 verify_idempotent_lattice_rescaling.py # none of them lies in Λ; least lattice multiples
+python3 verify_square_zero_classification.py   # the square-zero cone; Λ has 4,032 of norm 12
+python3 verify_star_algebra_structure.py       # Aut(R^24, ⋆) = G_2 x G_2 x S_3, dimension 28
+python3 verify_aut_lambda_star.py              # Aut(Λ, +, ⋆): order 36, C_6 x S_3; inside Co_0
+python3 verify_aut_octonion_crosscheck.py      # independent re-derivation of the stabilizers
+python3 verify_sigma_Ls_ideal_exclusion.py     # σ(Ls) is not an ideal of L (excludes a candidate)
+python3 verify_all_cycles_exact.py             # cycle census: which twists close (854 of 2,365)
+```
+
+See [`src/README.md`](src/README.md) for what each one certifies, and [`../gap_project/README.md`](../gap_project/README.md) for the independent GAP determination of the automorphism group's order and structure.
+
 ## Design Principles
 
 - Self-contained and runnable without internet access after `pip install`.
 - All computations are deterministic and reproducible (fixed seeds wherever randomness is used).
-- The symbolic-proof lemmas (`symbolic_proof_checks.py`) use exact rational arithmetic via `fractions.Fraction` — no floating-point.
-- Test coverage is sufficient to validate every mathematical claim used in the paper.
+- The symbolic-proof lemmas (`symbolic_proof_checks.py`) use exact rational arithmetic via `fractions.Fraction`, with no floating-point.
+- The pytest suite covers the foundations (octonions, E8, Leech, Okubo) that everything else is built on.  Each claim the paper makes on top of them names the script that reproduces it; those scripts are run directly, not through pytest.
 - No personal or sensitive information is stored in this project.

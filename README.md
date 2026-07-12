@@ -11,15 +11,10 @@ evidence, and every conclusion is traceable.
 **Start here: [CURRENT_STATE.md](CURRENT_STATE.md)** — the entry point for
 anyone continuing this research, with or without prior context.
 
-The finished write-up is in [paper/main.tex](paper/main.tex)
-(compiled: [paper/main.pdf](paper/main.pdf)), now at v6
-(12 July 2026), in revision; the working source is the only copy, and
-v6 is not yet frozen.
-Revision chain: [v3 → v4](paper/v3_to_v4_summary.md),
-[v4 → v5](paper/v4_to_v5_changelog.md),
-[v5 → v6](paper/v5_to_v6_changelog.md).  Prior freezes:
-v4 at [paper/main_2026-05-25.tex](paper/main_2026-05-25.tex),
-v5 at [paper/main_2026-06-07.tex](paper/main_2026-06-07.tex).
+The write-up is in [paper/main.tex](paper/main.tex) (compiled:
+[paper/main.pdf](paper/main.pdf)), at v6, in revision.  [paper/](paper/)
+also holds the earlier frozen versions with their changelogs, the
+companion material, and the review record.
 
 ## Repository Structure
 
@@ -28,7 +23,7 @@ v5 at [paper/main_2026-06-07.tex](paper/main_2026-06-07.tex).
 | [CURRENT_STATE.md](CURRENT_STATE.md) | **Entry point** — what's established, what's ruled out, what's next |
 | [MANIFESTO.md](MANIFESTO.md) | Operating rules for AI-assisted research |
 | [TRIAL_METHODOLOGY.md](TRIAL_METHODOLOGY.md) | Structure and philosophy for trial files |
-| [paper/main.tex](paper/main.tex), [paper/main.pdf](paper/main.pdf) | Formal write-up: LaTeX source (bibliography inline via \bibitem) and compiled PDF |
+| [paper/](paper/) | Formal write-up (`main.tex`, `main.pdf`), earlier frozen versions and changelogs, companion material, and the review record |
 | [evidence_and_reasoning/](evidence_and_reasoning/) | Key claims, trial results, and references |
 | [python_project/](python_project/) | Python code: shared tools, trial experiments, symbolic-proof verification |
 | [gap_project/](gap_project/) | GAP / LOOPS independent re-derivation of the paper's verification tests |
@@ -60,6 +55,14 @@ isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
   ([gap_project/](gap_project/), 110 checks; uses the LOOPS package to
   cross-verify the octonion multiplication as the unique non-associative
   Moufang loop of order 16).  All arithmetic exact (rational); no floating point.
+- **Structure of the algebra**, exact and exhaustive (Section 5 of the
+  paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
+  annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
+  triples); it has exactly eight idempotents, none of them in Λ; Λ contains
+  4,032 square-zero vectors, all of norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
+  finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
+  ([python_project/src/verify_aut_lambda_star.py](python_project/src/verify_aut_lambda_star.py)
+  and [gap_project/aut_lambda_star.g](gap_project/aut_lambda_star.g)).
 - **Formal write-up** with full proof, related work, and methodology in
   [paper/main.tex](paper/main.tex).
 - **Key claims:** [007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)
@@ -69,15 +72,17 @@ isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
   (over the σ-related convention it does: (Λ, +, ⋆) is an order).
 
 **Open questions:**
-- Algebraic properties as a binary product have been characterised on
-  Min(Λ): the order is non-unital, non-commutative, not
-  norm-multiplicative, and fails alternativity, flexibility, and
-  power-associativity (see Section 5 of the paper and
-  [CURRENT_STATE.md](CURRENT_STATE.md)).  Open: whether any of these
-  negative findings admits a tighter structural statement on Λ
-  itself rather than on random samples of Min(Λ).
-- Maximality of the order.
-- Relationship to the Conway group Co₀ = Aut(Λ).
+- A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
+  octonion product, while Ls is not).  One candidate shape is excluded:
+  σ(Ls) is not an ideal of L on either side.
+- Maximality of the order: is there a lattice Λ' ⊋ Λ of finite index with
+  Λ' ⋆ Λ' ⊆ Λ'?
+- Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
+  and whether the order-6 octonion automorphism generating the C₆ has an
+  intrinsic description.
+- A structural characterization of which twists close.  All cycle types of
+  S₇ have been enumerated exactly (854 of 2,365 permutations close), but
+  the pattern is explained only for the 3-cycles.
 - Whether a **ternary** reformulation (via composition algebras in the
   sense of Elduque, or via Okubo's ternary structure) gives a more
   natural classification — the rigid Z₃ cross-block routing and the
@@ -95,6 +100,10 @@ cd src
 python3 symbolic_proof_checks.py                # Verify the four lemmas
 python3 trial_007_kirmse_twist.py               # The winning trial
 python3 trial_001_triple_octonion.py            # Any earlier trial
+python3 verify_aut_lambda_star.py               # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
+python3 verify_idempotent_classification.py     # The eight idempotents
+python3 verify_square_zero_classification.py    # The 4,032 square-zero vectors of Λ
+python3 verify_all_cycles_exact.py              # Which twists close (cycle census)
 ```
 
 Requires Python 3.x with NumPy and SciPy.
@@ -103,6 +112,8 @@ Requires Python 3.x with NumPy and SciPy.
 
 ```bash
 gap -q gap_project/run_all.g                    # 110 checks across 8 files
+gap -q gap_project/aut_lambda_star.g            # Automorphism group, second pass
+gap -q gap_project/octonion_stabilisers.g       # Stabilizers of L, Ls, Ls̄
 ```
 
 Requires GAP 4.x with the LOOPS package
@@ -118,4 +129,5 @@ octonion multiplication as a Moufang loop of order 16.  See
 cd paper
 pdflatex main.tex
 pdflatex companion.tex
+pdflatex automorphism_group_2026-07-12.tex
 ```

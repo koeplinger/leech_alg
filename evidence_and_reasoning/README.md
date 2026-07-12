@@ -16,13 +16,17 @@ This folder serves two functions:
 
 ```
 evidence_and_reasoning/
-├── key_claims/           # One file per major claim or lemma, with argument and references
-├── references/           # Central registry of all cited works, organized by topic
-├── trial_NNN_*.md        # Results of each computational trial (001–007)
-├── research_statement.md # Refined statement of the research goal
-├── research_result.md    # Condensed summary of the finding (Z₃-symmetric triple-octonion product)
-├── terminology.md        # Authoritative glossary of terms used across the corpus
-└── README.md             # This file
+├── key_claims/             # One file per major claim or lemma, with argument and references
+│                           #   (README.md is the ledger, incl. the post-v5 claims 009–015)
+├── references/             # Central registry of all cited works, organized by topic
+├── trial_NNN_*.md          # Results of each computational trial (001–007)
+├── research_statement.md   # The research goal as posed, with its resolution
+├── research_result.md      # Condensed summary of the finding (Z₃-symmetric triple-octonion
+│                           #   product) and of the structure of the resulting order
+├── terminology.md          # Authoritative glossary of terms used across the corpus
+├── editorial_standards.md  # The five prose standards; spelling and dash conventions
+├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
+└── README.md               # This file
 ```
 
 ## Key claims (logical backbone)
@@ -36,9 +40,24 @@ See [key_claims/README.md](key_claims/README.md) for the full index.
 | 003 | Dixon's two 240-element constructions are valid E8 minimal-vector shells | ESTABLISHED |
 | 004 | Wilson's three families give the 196,560 Leech lattice minimal vectors | ESTABLISHED |
 | 005 | Dixon's three families give a different embedding of the Leech minimal shell | ESTABLISHED |
-| 006 | Double-check of Wilson/Dixon; order question confirmed OPEN | ESTABLISHED / OPEN |
+| 006 | Double-check of Wilson/Dixon; order question confirmed OPEN (answered by claim 008) | ESTABLISHED |
 | 007 | Triple-octonion product over Wilson's own multiplication convention comprehensively ruled out | ESTABLISHED |
 | 008 | **Z₃-symmetric triple-octonion product is an order on Λ** (historical file title: "transposition-twisted") | ESTABLISHED |
+
+Claims 009–015 have no dedicated file yet; they are
+recorded in the ledger at [key_claims/README.md](key_claims/README.md), each
+with the script that verifies it:
+
+| # | Claim | Status |
+|---|---|---|
+| 009 | Ideal decomposition R²⁴ = D ⊕ T (mutually annihilating two-sided ideals, dim 8 + 16) | ESTABLISHED |
+| 010 | **Aut(Λ, +, ⋆) is finite of order 36, C₆ × S₃, and ⊊ Co₀** (was OPEN through v5) | ESTABLISHED (completeness caveat stated) |
+| 011 | Idempotents: exactly eight in R²⁴, **none in Λ**; the order has no idempotent | ESTABLISHED |
+| 012 | Square-zero elements: **Λ contains 4,032 of them, all of norm 12**; Min(Λ) contains none | ESTABLISHED |
+| 012a | The unscoped claim "Λ has no nilpotents" | **REFUTED** (scoped to Min(Λ) it holds) |
+| 013 | σ(Ls) is *not* an ideal of L (candidate explanation of Lemma D excluded) | ESTABLISHED |
+| 014 | Cycle census: 854 of the 2,365 non-identity permutations of the imaginary axes close (36.1%) | ESTABLISHED |
+| 015 | Span of the image: [Λ : S] = 2¹⁶; structural identification of S/2Λ | ESTABLISHED / OPEN |
 
 ## Trial results
 
