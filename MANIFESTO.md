@@ -114,6 +114,22 @@ The AI agent operates in the role of a highly knowledgeable and thorough mathema
 - Prompt logs, key claim files, and other artifacts that are already committed must be left as they were at the time of writing.  A new entry (new prompt log, amended claim, or explicit correction note) is created to record the correction and its rationale.
 - This applies equally to mistakes made by the AI agent and to mistakes made by the human researcher.  The research record must reflect what was actually believed and done at each step, so that the methodology remains auditable.
 - The git commit history is the ultimate source of truth for what changed and when.
+- **Forward correction applies to frozen artifacts, not to current-state ones.**  A frozen artifact (a released paper version, a claim file, a review, a plan, a referenced program) takes a *dated addendum*, or is marked deprecated and superseded; its original text stays as written.  A current-state artifact (this manifesto, the methodology, `CURRENT_STATE.md`, every indexing README, the terminology, the editorial standards) is simply corrected in place, with no notice, no date, and no supersession narrative: it describes what **is**, and git carries what it used to say.  The full taxonomy is [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and it is enforced mechanically by [`tools/lint_docs.py`](tools/lint_docs.py).
+
+---
+
+## 13. Document Genres
+
+- Every artifact belongs to exactly one genre — **immutable**, **frozen**, or **current state** — and the genre determines how it may be changed.  See [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md).
+- Run `python3 tools/lint_docs.py` before handing work back and before any commit that touches documentation.  It is the mechanical check for this section and for §8, §11 and §12.
+
+---
+
+## 14. Subagents
+
+- **A subagent gets no write access to prose.**  A subagent may read, search, compute, run programs and report.  Every edit to a document is made by the main thread, which carries the conversation and the human's standing instructions, and is shown to the human.
+- A parallel fleet of agents given one bad instruction produces many bad edits at once, and the cost of reviewing them lands on the human.  A subagent's leverage is in *finding*, not in *writing*.
+- A sweep reports before it writes: findings first, diffstat second, edits third.
 
 ---
 

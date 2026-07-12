@@ -22,6 +22,8 @@ companion material, and the review record.
 |---|---|
 | [CURRENT_STATE.md](CURRENT_STATE.md) | **Entry point** — what's established, what's ruled out, what's next |
 | [MANIFESTO.md](MANIFESTO.md) | Operating rules for AI-assisted research |
+| [DOCUMENT_GENRES.md](DOCUMENT_GENRES.md) | What each artifact is for, and how it may be changed: immutable, frozen, or current state |
+| [tools/](tools/) | Project scaffolding; `lint_docs.py` enforces the document genres mechanically |
 | [TRIAL_METHODOLOGY.md](TRIAL_METHODOLOGY.md) | Structure and philosophy for trial files |
 | [paper/](paper/) | Formal write-up (`main.tex`, `main.pdf`), earlier frozen versions and changelogs, companion material, and the review record |
 | [evidence_and_reasoning/](evidence_and_reasoning/) | Key claims, trial results, and references |

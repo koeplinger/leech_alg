@@ -7,6 +7,17 @@ under the proposed product).
 
 ---
 
+## Document genre
+
+A `trial_*.py` file, and its `trial_NNN_results.md`, are **frozen** artifacts
+once the trial is closed: they record what was tried and what came out, on the
+day it was run.  They are never rewritten.  If a later result changes what the
+trial means, that goes in a dated addendum, or in a new trial.  The rules for
+every artifact class are in [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and
+`python3 tools/lint_docs.py` enforces them.
+
+---
+
 ## Goal
 
 Find a highly symmetric order on the Leech lattice Λ — a bilinear product
