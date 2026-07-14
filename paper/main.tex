@@ -69,12 +69,21 @@
 \DeclareMathOperator{\Co}{Co}
 \DeclareMathOperator{\Aut}{Aut}
 
+% Verification scripts are cited in footnotes, hot-linked into the public
+% research record.  Argument: the LaTeX-escaped file name.
+\newcommand{\scriptref}[1]{Verified in
+  \href{https://github.com/koeplinger/leech\_alg/blob/main/python\_project/src/#1}%
+  {\texttt{python\_project/src/#1}}, in the public research record~\cite{repo}.}
+\newcommand{\gapref}[1]{Verified in
+  \href{https://github.com/koeplinger/leech\_alg/blob/main/gap\_project/#1}%
+  {\texttt{gap\_project/#1}}, in the public research record~\cite{repo}.}
+
 \setlength{\emergencystretch}{3em}
 
 \begin{document}
 \title{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product}
-\subtitle{12 July 2026 (v6)}
+\subtitle{14 July 2026 (v6)}
 \author{Jens K\"oplinger}
 \maketitle
 
@@ -87,31 +96,33 @@ in a 24-dimensional real algebra: the lattice is closed under a
 bilinear product on~$\RR^{24}$.  The product is a
 $\ZZ_3$-symmetric triple-octonion product, assembled
 from nine octonion-multiplication blocks under cyclic $\ZZ_3$
-permutation of three octonion factors.  In Robert A.~Wilson's sublattice
+permutation of three octonion factors.  Using Robert A.~Wilson's sublattice
 description of~$\LL$ [J.~Algebra \textbf{322} (2009), 2186--2190],
 closure turns on a transposition~$\sigma$ of
 two imaginary basis units: $\sigma$ leaves the $E_8$ lattice
 invariant and is an algebra isomorphism of the octonions, but it
-moves Wilson's sublattices $L\bar s$ and~$Ls$.  Reduced modulo~$2L$,
-the construction produces a Witt decomposition of $L/2L$ into a
-complementary pair of Lagrangians, opening the natural research
-program of which polarizations of $L/2L$ lift to a closed product
-on~$\LL$.  The image of the product spans a proper sublattice of
-index $2^{16}$ in~$\LL$.
+moves Wilson's sublattices $L\bar s$ and~$Ls$.
+
+Using mostly exact arithmetic and computer proof, we offer a compact
+exposition for the applied researcher: the algebraic properties of this
+product, its idempotents and square-zero elements, its automorphisms, the
+span of its image and the index of that span, and which further twists also
+close.  Reduced modulo~$2L$, the construction also produces a Witt
+decomposition of $L/2L$ into a complementary pair of Lagrangians, opening
+the natural research program of which polarizations of $L/2L$ lift to a
+closed product on~$\LL$.
 
 We further provide a historical account from the original sources
-(1923--1946) in Appendix~\ref{app:history}: Leonard E.~Dickson gave
-the first verified maximal order of integral octonions (1923), with
-an undercount of the total; Johannes Kirmse (1924) derived a
-necessary form met by thirty candidates and hinted, without detail,
-at a further narrowing, which in our reconstruction leaves eight,
-containing all seven maximal orders, though the one he exhibited is
-not closed; a
-transposition provided by Richard H.~Bruck repaired that candidate
-(1946), with H.\,S.\,M.~(``Donald'') Coxeter providing the first
-correct account of all seven maximal orders.  The map~$\sigma$ of
-the present construction is exactly this transposition, acting on a
-different sublattice.
+(1923--1946) in Appendix~\ref{app:history}.  Leonard E.~Dickson gave the
+first verified maximal order of integral octonions (1923), with an
+undercount of the total.  Johannes Kirmse (1924) derived a necessary form
+met by thirty candidates, and hinted, without detail, at a further
+narrowing; in our reconstruction it leaves eight, containing all seven
+maximal orders, though the one he exhibited is not closed.  A transposition
+provided by Richard H.~Bruck repaired that candidate (1946), and
+H.\,S.\,M.~(``Donald'') Coxeter gave the first correct account of all seven
+maximal orders.  The map~$\sigma$ of the present construction is exactly
+this transposition, acting on a different sublattice.
 
 This result was developed through a systematic human--AI collaboration;
 the complete research record is publicly available~\cite{repo}.
@@ -197,13 +208,14 @@ closure.
 The scope of this paper is deliberately bounded.  We establish
 existence of the order, with a proof that is elementary (four
 short lemmas, reducing to sublattice inclusions verified in exact
-arithmetic).  Two
-structural readings are recorded as verified facts and offered as
-starting points for further investigation: reduced modulo~$2L$, the
-construction produces a polarization of $L/2L$ into a complementary
-pair of Lagrangians (Section~\ref{app:mod2quotient}), and the image
-of the product spans a proper sublattice of index~$2^{16}$
-(Remark~\ref{rem:span-defect}).  The result was developed through a
+arithmetic).  Further structural readings are verified facts, and are
+offered as starting points for further investigation in
+Section~\ref{sec:properties} and Appendix~\ref{sec:appendix-tables}.
+Nowhere do we claim or advertise these computer proofs as a substitute
+for mathematical understanding: they are listed as machine-obtained
+facts, to provide pointers for a reader interested in applications such
+as medical imaging, cryptography, quantum computing, or phenomenology in
+the physics of fundamental particles.  The result was developed through a
 systematic human--AI collaboration, and the complete research record
 is public~\cite{repo}: every prompt, computation, and verification,
 end to end (Appendix~\ref{sec:methodology}).
@@ -257,10 +269,10 @@ norm~$\Nrm(s) = \Nrm(\bar{s}) = 2$.  Then $s \in L$ (it is a
 type-2 root, with an odd coordinate sum), while $\bar{s} \notin L$
 (its coordinate sum is~$-4$, which falls in the excluded even
 branch of the half-integer case).  Let
-\[
+\begin{equation}\label{eq:disp1}
   L\bar{s} = \{ \ell \cdot \bar{s} : \ell \in L \}, \qquad
   Ls = \{ \ell \cdot s : \ell \in L \}.
-\]
+\end{equation}
 Both $L\bar{s}$ and~$Ls$ are sublattices of~$L$,\footnote{$L\bar
 s \subseteq L$ even though $\bar s \notin L$: each $\ell \cdot
 \bar s$ with $\ell$ a root of~$L$ lies in~$L$ by direct
@@ -280,13 +292,13 @@ $L\bar{s} + Ls = L$, and $L\bar{s} \cap Ls = 2L$.
 
 \begin{definition}[Wilson]\label{def:wilson-leech}
 The \emph{Leech lattice} is
-\[
+\begin{equation}\label{eq:disp2}
   \LL = \bigl\{ (x,y,z) \in L^3 :
     \text{(1) } x,y,z \in L;\;
     \text{(2) } x{+}y,\, x{+}z,\, y{+}z \in L\bar{s};\;
     \text{(3) } x{+}y{+}z \in Ls
   \bigr\}.
-\]
+\end{equation}
 \end{definition}
 
 The 196{,}560 minimal vectors of~$\LL$ decompose into three families:
@@ -369,8 +381,7 @@ appendix tables are computed, and the 21 transpositions of imaginary
 basis units are equivalent up to relabelling of the Fano
 triples\footnote{They form a single orbit under the Fano-plane
 automorphism group $\GL(3, \FF_2)$; each of the 21 is verified to
-close on~$\LL$
-(\texttt{python\_project/src/consistency\_checks.py}).}.  From
+close on~$\LL$.  \scriptref{verify\_consecutive\_twists\_exact.py}}.  From
 the given choice of octonion basis and Fano triples, the
 load-bearing effect of $\sigma$ is that it \emph{moves} the
 sublattices $L\bar s$ and~$Ls$, while fixing~$L$ setwise
@@ -516,10 +527,10 @@ We show $P_1 + P_2 \in L\bar{s}$; the other two cases follow by the
 $\ZZ_3$ symmetry of the routing.
 
 From \eqref{eq:P1-std}--\eqref{eq:P2-std}:
-\[
+\begin{equation}\label{eq:disp3}
   P_1 + P_2 = \sigma\bigl(X \cdot (X' + Z') + Y \cdot (Y' + Z')
     + Z \cdot (X' + Y')\bigr).
-\]
+\end{equation}
 
 Since $v \in \LL$, condition~(2) gives $x' + z' \in L\bar{s}$, so
 $X' + Z' = \sigma(x' + z') \in \sigma(L\bar{s})$.  Similarly
@@ -529,10 +540,10 @@ Since $u \in \LL$, we have $X, Y, Z \in L$ (by Lemma~\ref{lem:sigma-L}).
 By Lemma~\ref{lem:L-sigmaLsbar}, each product $X \cdot (X'+Z')$, $Y \cdot (Y'+Z')$,
 $Z \cdot (X'+Y')$ lies in~$\sigma(L\bar{s})$.  Their sum lies
 in~$\sigma(L\bar{s})$.  Applying the outer~$\sigma$:
-\[
+\begin{equation}\label{eq:disp4}
   P_1 + P_2 = \sigma(\text{element of } \sigma(L\bar{s}))
   \in \sigma(\sigma(L\bar{s})) = L\bar{s},
-\]
+\end{equation}
 since $\sigma^2 = \mathrm{id}$.
 \end{proof}
 
@@ -549,24 +560,24 @@ For all $u, v \in \LL$, the block sum $P_1 + P_2 + P_3$ lies in~$Ls$.
 
 \begin{proof}
 From \eqref{eq:P1-std}--\eqref{eq:P3-std}:
-\[
+\begin{equation}\label{eq:disp5}
   P_1 + P_2 + P_3 = \sigma\bigl((X+Y+Z) \cdot (X'+Y'+Z')\bigr).
-\]
+\end{equation}
 
 Since $u \in \LL$, condition~(3) gives $x + y + z \in Ls$, so
-\[
+\begin{equation}\label{eq:disp6}
   X + Y + Z = \sigma(x+y+z) \in \sigma(Ls).
-\]
+\end{equation}
 Similarly $X' + Y' + Z' \in \sigma(Ls)$.
 
 By Lemma~\ref{lem:sigmaLs-closed}, $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$, so
-\[
+\begin{equation}\label{eq:disp7}
   (X+Y+Z) \cdot (X'+Y'+Z') \in \sigma(Ls).
-\]
+\end{equation}
 Applying the outer~$\sigma$:
-\[
+\begin{equation}\label{eq:disp8}
   P_1 + P_2 + P_3 \in \sigma(\sigma(Ls)) = Ls. \qedhere
-\]
+\end{equation}
 \end{proof}
 
 This completes the proof of Theorem~\ref{thm:main}.
@@ -576,8 +587,8 @@ The construction extends to consecutive twists $\sigma_2 \circ \sigma_1$
 by another transposition.  The composite acts as a single twist by
 $\pi = \sigma_2 \sigma_1$; as a product of two transpositions, $\pi$
 is the identity, a 3-cycle, or a $(2,2)$-double transposition.  Tested
-by exact-arithmetic enumeration on a $\ZZ$-basis of~$\LL$
-(\texttt{python\_project/src/verify\_consecutive\_twists\_exact.py}):
+by exact-arithmetic enumeration on a $\ZZ$-basis
+of~$\LL$:\footnote{\scriptref{verify\_consecutive\_twists\_exact.py}}
 $\pi = $~identity does \emph{not} close (the untwisted product).  Of
 the 70 3-cycles, exactly half close: for each three-element subset
 of imaginary indices, one of the two cyclic orientations does.  Of
@@ -596,8 +607,8 @@ algebraic identities.  Samples are drawn uniformly (by family weight)
 from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
 binary identities, and from $\operatorname{Min}(\LL)$ for the cube and
 quartic identities.  Sample size is $N = 10^6$ per property; exact
-integer arithmetic throughout
-(\texttt{python\_project/src/verify\_section5\_properties.py}).  The
+integer arithmetic
+throughout.\footnote{\scriptref{verify\_section5\_properties.py}}  The
 standard error is $\mathrm{SE} =
 \sqrt{p(1-p)/N}$, where $p$ is the fraction of samples on which the
 identity holds.
@@ -648,9 +659,9 @@ $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16.
 The mode is~64 (the norm-multiplicative value
 $\Nrm(u)\Nrm(v) = 8 \times 8$).  Neither $0$ nor $8$ occurs among these
 values, so no minimal vector is idempotent and none squares to zero.
-Both questions are settled on all of~$\LL$ in
-Section~\ref{sec:idempotents}: the order has no idempotent at all, but
-it does contain square-zero vectors, at norm~12.
+Both questions are settled on all of~$\LL$ below: the order has no
+idempotent at all (Section~\ref{sec:idempotents}), but it does contain
+square-zero vectors, at norm~12 (Section~\ref{sec:squarezero}).
 \end{remark}
 
 \begin{remark}
@@ -670,59 +681,30 @@ The order does not satisfy any of the classical algebraic identities
 commutativity).  The defining property is \emph{closure}: the Leech
 lattice is stable under the product.
 
-\subsection{Idempotents and square-zero elements}\label{sec:idempotents}
+\subsection{Idempotents}\label{sec:idempotents}
 
 \begin{remark}[Idempotents]\label{rem:idempotents}
 The ambient algebra $(\RR^{24}, +, \star)$ has exactly eight
-idempotents, and the classification is complete
-(\texttt{python\_project/src/verify\_idempotent\_classification.py}).
+idempotents.\footnote{\scriptref{verify\_idempotent\_classification.py}}
 Writing $\varepsilon_1 = (e_0, 0, 0)$, $\varepsilon_2 = (0, e_0, 0)$,
 $\varepsilon_3 = (0, 0, e_0)$ and $\omega = \varepsilon_1 +
 \varepsilon_2 + \varepsilon_3$, they are
-\[
+\begin{equation}\label{eq:idempotents}
   0, \qquad \varepsilon_1, \ \varepsilon_2, \ \varepsilon_3, \qquad
   \tfrac13 \omega, \qquad
   \varepsilon_i - \tfrac13 \omega \ \ (i = 1, 2, 3).
-\]
-Every block of every one of them is a multiple of~$e_0$: there is no
-idempotent with a nonzero imaginary part, and no positive-dimensional
-family.
+\end{equation}
+Note that every block of every one of them is a multiple of~$e_0$.
 
-None lies in~$\LL$, because $e_0 \notin L$; the order $(\LL, +, \star)$
-therefore has no idempotent.  Each nonzero idempotent does span a
-rational ray that meets~$\LL$, and the least positive multiple that
-does is
-\[
+Each nonzero idempotent spans a rational ray that meets~$\LL$, and the
+least positive multiple that does is
+\begin{equation}\label{eq:idempotent-multiples}
   4\varepsilon_i \ (\Nrm = 16), \qquad
-  6\bigl(\varepsilon_i - \tfrac13\omega\bigr) \ (\Nrm = 24), \qquad
-  4\omega \ (\Nrm = 48),
-\]
-each satisfying $u \star u = n\,u$ for its own multiplier~$n$.  The
-passage from the algebra to the lattice is thus a rescaling, and it is
-already visible on the minimal shell: for each of the 84 purely
-imaginary roots~$\lambda$ of~$L$, the minimal vector $u = (2\lambda, 0,
-0)$ of~$\LL$ has $u \star u = (-8e_0, 0, 0) = -8\varepsilon_1$, again
-in~$\LL$
-(\texttt{python\_project/src/verify\_idempotent\_lattice\_rescaling.py}).
-\end{remark}
-
-\begin{remark}[Square-zero elements]\label{rem:nilpotents}
-In the ambient algebra, $u = (x, y, z)$ satisfies $u \star u = 0$ if
-and only if $x$, $y$, $z$ are purely imaginary, of equal norm, and sum
-to zero: a hexagonal triple in $\Im(\OO) = \RR^7$.  The solution set is
-a cone of dimension~12; it lies in~$T$ and meets~$D$ only in~$0$
-(\texttt{python\_project/src/verify\_square\_zero\_classification.py}).
-
-The lattice does contain such elements.  A vector $(x, y, z) \in \LL$
-squares to zero exactly when $x$, $y$, $z$ lie in $L\bar s \cap
-\Im(\OO)$, have equal norms and sum to zero.  The 126 vectors of norm~4
-in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system, whose hexagonal
-triples give $4{,}032$ square-zero vectors of~$\LL$, all of norm~12.
-None is minimal, and the reason is arithmetic: $\Nrm(u) = 3\Nrm(x)$
-with $\Nrm(x) \in 2\ZZ$, while every norm of~$\LL$ lies in $4\ZZ$, so
-every square-zero vector of~$\LL$ has norm in $12\ZZ$, and the minimal
-norm is~$8$.  The exhaustive minimal-shell search of
-Remark~\ref{rem:product-norms} could not have found them.
+  4\omega \ (\Nrm = 48), \qquad
+  6\bigl(\varepsilon_i - \tfrac13\omega\bigr) \ (\Nrm = 24),
+\end{equation}
+in the order of~\eqref{eq:idempotents}, each satisfying $u \star u =
+n\,u$ for its own multiplier~$n$.\footnote{\scriptref{verify\_idempotent\_lattice\_rescaling.py}}
 \end{remark}
 
 \subsection{The automorphism group}\label{sec:autgroup}
@@ -749,22 +731,42 @@ $\Aut(\RR^{24}, \star) = G_2 \times G_2 \times S_3$.  An automorphism of
 the \emph{real} octonions preserves the positive-definite octonion norm,
 and $D \perp T$; hence every $\star$-automorphism of $\RR^{24}$ is
 orthogonal, and
-\[
+\begin{equation}\label{eq:disp9}
   \Aut(\LL, +, \star) \;\subsetneq\; \Co_0 .
-\]
+\end{equation}
 The inclusion is strict because $-I_{24} \in \Co_0$ does not
 preserve~$\star$.  The derivation, the complete enumerations, and an
-independent verification are recorded separately in the note
-\texttt{paper/automorphism\_group\_2026-07-12.pdf}; the scripts are
-\texttt{verify\_aut\_lambda\_star.py} (in
-\texttt{python\_project/src/}) and \texttt{aut\_lambda\_star.g} (in
-\texttt{gap\_project/}).  Completeness of this classification, that no
+independent verification are recorded separately in the companion note
+\texttt{automorphism\_group\_2026-07-12.pdf}.\footnote{%
+\scriptref{verify\_aut\_lambda\_star.py}
+\gapref{aut\_lambda\_star.g}}  Completeness of this classification, that no
 further automorphisms exist, rests on the identification of
 $\Aut(\RR^{24}, \star)$ above, whose one non-enumerative step is the
 classification of the automorphisms of the complexification of
 $(T, \star)$ (Section~4 of the note); the lower bound $C_6 \times S_3
 \subseteq \Aut(\LL, +, \star)$ and the strictness witness do not depend
 on it.
+\end{remark}
+
+\subsection{Square-zero elements}\label{sec:squarezero}
+
+\begin{remark}[Square-zero elements]\label{rem:nilpotents}
+In the ambient algebra, $u = (x, y, z)$ satisfies $u \star u = 0$ if
+and only if $x$, $y$, $z$ are purely imaginary, of equal norm, and sum
+to zero: a hexagonal triple in $\Im(\OO) = \RR^7$.  The solution set is
+a cone of dimension~12; it lies in~$T$ and meets~$D$ only
+in~$0$.\footnote{\scriptref{verify\_square\_zero\_classification.py}}
+
+The lattice does contain such elements.  A vector $(x, y, z) \in \LL$
+squares to zero exactly when $x$, $y$, $z$ lie in $L\bar s \cap
+\Im(\OO)$, have equal norms and sum to zero.  The 126 vectors of norm~4
+in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system, whose hexagonal
+triples give $4{,}032$ square-zero vectors of~$\LL$, all of norm~12.
+None is minimal, and the reason is arithmetic: $\Nrm(u) = 3\Nrm(x)$
+with $\Nrm(x) \in 2\ZZ$, while every norm of~$\LL$ lies in $4\ZZ$, so
+every square-zero vector of~$\LL$ has norm in $12\ZZ$, and the minimal
+norm is~$8$.  The exhaustive minimal-shell search of
+Remark~\ref{rem:product-norms} could not have found them.
 \end{remark}
 
 \subsection{Span of the image}\label{sec:span}
@@ -774,11 +776,12 @@ Closure does not mean surjectivity.  Let $S :=
 \ZZ\text{-span}\{u \star v : u, v \in \LL\}$.  By bilinearity, $S$ is
 generated by the $24 \times 24 = 576$ basis-pair products of a
 $\ZZ$-basis of~$\LL$, so its index in~$\LL$ is exactly computable
-(Hermite normal form, exact arithmetic;
-\texttt{python\_project/src/verify\_product\_span\_\{index,structure\}.py}):
-\[
+(Hermite normal form, exact
+arithmetic):\footnote{\scriptref{verify\_product\_span\_index.py}
+\scriptref{verify\_product\_span\_structure.py}}
+\begin{equation}\label{eq:span-index}
   [\LL : S] \;=\; 65{,}536 \;=\; 2^{16}.
-\]
+\end{equation}
 The index counts the cosets of~$S$ in~$\LL$: the lattice~$\LL$
 decomposes into $[\LL : S]$ disjoint translates of~$S$, and every
 product, together with every integer combination of products, lies
@@ -799,10 +802,10 @@ The transposition~$\sigma$ is not the only permutation of the imaginary
 axes whose twist closes on~$\LL$.  Writing $x \cdot_\pi y :=
 \pi(\pi(x) \cdot \pi(y))$ for a permutation~$\pi$ of $e_1, \ldots, e_7$,
 and testing closure exactly on the 576 basis-pair products of a
-$\ZZ$-basis of~$\LL$, every cycle type of~$S_7$ has been enumerated
-(\texttt{verify\_all\_cycles\_exact.py} for the $3$- through
-$7$-cycles, \texttt{verify\_consecutive\_twists\_exact.py} for the
-transpositions, both in \texttt{python\_project/src/}):
+$\ZZ$-basis of~$\LL$, every cycle type of~$S_7$ has been
+enumerated:\footnote{\scriptref{verify\_all\_cycles\_exact.py} (the $3$-
+through $7$-cycles) \scriptref{verify\_consecutive\_twists\_exact.py} (the
+transpositions and the $(2,2)$-doubles)}
 \begin{center}
 \begin{tabular}{@{}lrrr@{}}
 \toprule
@@ -849,9 +852,9 @@ while independently deriving the sublattice characterization.  The
 situation is similar to the Kirmse--Bruck--Coxeter relationship recorded
 in Appendix~\ref{app:history}: an early, structurally correct proposal
 needing correction.}
-\[
+\begin{equation}\label{eq:disp10}
   A \circ_{XY} B \;=\; (A X)(Y^{\dagger} B),
-\]
+\end{equation}
 where $X, Y \in \OO$ are chosen so that $Y X^{\dagger}$ is a unit
 octonion (the identity of the new multiplication).  When $Y^{\dagger} = X^{-1}$
 the XY-product specializes to the X-product $A \circ_X B = (AX)(X^{-1}
@@ -914,17 +917,17 @@ $\widetilde{\LL} = \ZZ^3 \oplus \LL \subset \mathfrak{h}_3(\OO)$,
 not on $\LL$ alone.  For off-diagonal Hermitian matrices $X, Y \in
 \mathfrak{h}_3(\OO)$ representing $u = (x,y,z)$ and $v = (x',y',z')$
 in $\LL \subset \OO^3$, direct computation gives
-\[
+\begin{equation}\label{eq:disp11}
   2(XY + YX) \;=\; D \;+\; R,
-\]
+\end{equation}
 where $R$ is an off-diagonal residue lying in $\LL$ and $D \in
 \ZZ^3$ is a diagonal piece whose entries are four times the
 block-pair Euclidean inner products of $u$ and $v$:
-\[
+\begin{equation}\label{eq:disp12}
   D \;=\; 4\bigl(\langle x, x'\rangle + \langle y, y'\rangle,\;
                   \langle x, x'\rangle + \langle z, z'\rangle,\;
                   \langle y, y'\rangle + \langle z, z'\rangle\bigr),
-\]
+\end{equation}
 so $\operatorname{tr} D = 8 \langle u, v\rangle$ recovers the
 $\RR^{24}$ inner product of $u$ and $v$.  Projecting onto the
 off-diagonal subspace defines a $\ZZ$-bilinear closed product
@@ -941,9 +944,8 @@ distinct bilinear products on $\RR^{24}$ that both close on $\LL$,
 reaching that closure through different ambient algebras.  The
 distinction is quantitative at the span level as well.  Computed by
 the same Hermite-normal-form method as for~$\star$
-(Remark~\ref{rem:span-defect};
-\texttt{python\_project/src/verify\_phi\_span\_index.py}), the
-$\ZZ$-span of $\varphi(\LL, \LL)$ has index $2^{25}$ in~$\LL$.
+(Remark~\ref{rem:span-defect}),\footnote{\scriptref{verify\_phi\_span\_index.py}}
+the $\ZZ$-span of $\varphi(\LL, \LL)$ has index $2^{25}$ in~$\LL$.
 Unlike for~$\star$, that span does not contain~$2\LL$: its index
 exceeds $[\LL : 2\LL] = 2^{24}$.
 
@@ -1008,8 +1010,7 @@ Several questions remain immediately open:
   integer-level reason is ruled out: $\sigma(Ls)$ is not an ideal
   of~$L$ on either side.  Of the 64 basis-pair products, 32 of
   $L \cdot \sigma(Ls)$ and 43 of $\sigma(Ls) \cdot L$ lie outside
-  $\sigma(Ls)$
-  (\texttt{python\_project/src/verify\_sigma\_Ls\_ideal\_exclusion.py}).
+  $\sigma(Ls)$.\footnote{\scriptref{verify\_sigma\_Ls\_ideal\_exclusion.py}}
   The companion sublattice $\sigma(L\bar s)$ is by contrast a
   \emph{two-sided} ideal of~$L$, of which
   Lemma~\ref{lem:L-sigmaLsbar} is the left-handed half, and the same
@@ -1110,7 +1111,7 @@ Coordinates throughout are with respect to the basis
 $\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
 
 \paragraph{The basis $\{L_k\}$.} Concretely: $L_1 = s = \tfrac12(-e_0+e_1+\cdots+e_7)$, $L_2 = e_0+e_1$, $L_3 = e_0-e_1$, and $L_{k+2} = e_0+e_k$ for $k=2,\ldots,6$. The eight vectors are linearly independent over $\QQ$ and span $L$ over $\ZZ$.
-\begin{align*}
+\begin{align}
   L_{1} &= (\tfrac{-1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2}) \\
   L_{2} &= (1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
   L_{3} &= (1,\ -1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
@@ -1119,10 +1120,10 @@ $\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
   L_{6} &= (1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0) \\
   L_{7} &= (1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0) \\
   L_{8} &= (1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0)
-\end{align*}
+\end{align}
 
 \paragraph{The basis $\{M_k\}$.} Defined by $M_k := \sigma(L_k \cdot s)$ with $\sigma = (1\;2)$ acting on coordinates by swapping $e_1$ and $e_2$. Spans $\sigma(Ls)$ over $\ZZ$.
-\begin{align*}
+\begin{align}
   M_{1} &= (\tfrac{-3}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2}) \\
   M_{2} &= (-1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1,\ 1) \\
   M_{3} &= (0,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 0) \\
@@ -1131,10 +1132,10 @@ $\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
   M_{6} &= (-1,\ 1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1) \\
   M_{7} &= (-1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0) \\
   M_{8} &= (-1,\ 1,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0)
-\end{align*}
+\end{align}
 
 \paragraph{The basis $\{N_k\}$.} Defined by $N_k := \sigma(L_k \cdot \bar s)$. Spans $\sigma(L\bar s)$ over $\ZZ$.
-\begin{align*}
+\begin{align}
   N_{1} &= (2,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
   N_{2} &= (0,\ 0,\ -1,\ 0,\ -1,\ 0,\ -1,\ -1) \\
   N_{3} &= (-1,\ -1,\ 0,\ -1,\ 0,\ -1,\ 0,\ 0) \\
@@ -1143,7 +1144,7 @@ $\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
   N_{6} &= (0,\ -1,\ 0,\ -1,\ -1,\ 0,\ 0,\ -1) \\
   N_{7} &= (0,\ 0,\ -1,\ -1,\ -1,\ -1,\ 0,\ 0) \\
   N_{8} &= (0,\ -1,\ 0,\ 0,\ -1,\ -1,\ -1,\ 0)
-\end{align*}
+\end{align}
 
 \begin{table}[H]
 \centering
@@ -1443,18 +1444,18 @@ record the structural account of \emph{what} they certify.
 From $L\bar s \cap Ls = 2L$ (Section~\ref{subsec:wilson-leech}) one
 has $2L \subseteq L\bar s$ and $2L \subseteq Ls$, and applying
 $\sigma$ (which fixes $2L$),
-\[
+\begin{equation}\label{eq:disp13}
   2L \subseteq \sigma(L\bar s), \qquad 2L \subseteq \sigma(Ls).
-\]
+\end{equation}
 Because $L \cdot L \subseteq L$ (Lemma~\ref{lem:L-order}) and the
 octonion product is $\ZZ$-bilinear, $(a + 2c) \cdot b \equiv a \cdot
 b \pmod{2L}$ for $c \in L$, and likewise in the right factor.  The
 product therefore descends to a well-defined $\FF_2$-bilinear product
 $\bar\mu$ on the \emph{mod-2 quotient}
-\[
+\begin{equation}\label{eq:disp14}
   \bar L := L/2L \cong \FF_2^{\,8}, \qquad
   \bar\mu \colon \bar L \times \bar L \to \bar L,
-\]
+\end{equation}
 the reduction of the octonion order~$L$ modulo~$2$, an
 eight-dimensional $\FF_2$-algebra.\footnote{It is not an octonion
 algebra in the composition-algebra sense: those are simple, whereas
@@ -1465,27 +1466,26 @@ Table~\ref{tbl:appendix-LL} reduced modulo~$2$.
 Since $2L$ lies in both $\sigma(L\bar s)$ and~$\sigma(Ls)$, those
 sublattices are \emph{full preimages}, under $L \to \bar L$, of
 $\FF_2$-subspaces
-\[
+\begin{equation}\label{eq:disp15}
   V := \sigma(L\bar s)/2L, \qquad W := \sigma(Ls)/2L,
-\]
+\end{equation}
 and from $\sigma(L\bar s) + \sigma(Ls) = L$ and
 $\sigma(L\bar s) \cap \sigma(Ls) = 2L$ one obtains $\bar L = V \oplus
 W$ with $\dim V = \dim W = 4$.  Reducing the closure statements
 modulo~$2L$ then gives
-\[
+\begin{equation}\label{eq:disp16}
   \text{Lemma~\ref{lem:L-sigmaLsbar}} \iff
     \bar\mu(\bar L, V) \subseteq V, \qquad
   \text{Lemma~\ref{lem:sigmaLs-closed}} \iff
     \bar\mu(W, W) \subseteq W.
-\]
+\end{equation}
 That is: Table~\ref{tbl:appendix-LN} certifies that $V$ is a
 \textbf{left ideal} of $\bar L$;
 Table~\ref{tbl:appendix-MM} certifies that $W$ is a
 \textbf{subalgebra} of it.  The integer tables and this mod-2-quotient
 description are complementary: the tables verify, the quotient
 explains.  The descent and both equivalences were checked in exact
-arithmetic
-(\texttt{python\_project/src/verify\_mod2\_quotient.py}).
+arithmetic.\footnote{\scriptref{verify\_mod2\_quotient.py}}
 
 A note on terminology: the construction is a \emph{quotient}, the
 surjection $L \to L/2L$, and is named the \emph{mod-2 quotient}.  It
@@ -1529,9 +1529,9 @@ commutator $a \cdot b - b \cdot a$ need not lie in~$2L$; direct
 computation confirms that $\bar\mu$ is non-commutative.}
 
 Second, equip $\bar L$ with the natural plus-type quadratic form
-\[
+\begin{equation}\label{eq:disp17}
   q \colon \bar L \to \FF_2, \qquad q(v + 2L) \;:=\; \Nrm(v)/2 \pmod 2,
-\]
+\end{equation}
 well-defined because $L$ is even
 ($\Nrm(v + 2u) \equiv \Nrm(v) \pmod 4$).  For $L = D_8^+$ this is the
 standard plus-type form on~$\FF_2^{\,8}$ with Witt index~$4$.  Direct
@@ -1562,11 +1562,11 @@ bilinear product on $\LL$ itself.
 
 The construction this paper builds on was developed across four
 primary papers between 1923 and 1946.  Each was obtained in the
-original and re-derived in exact arithmetic in this project
-(\texttt{python\_project/src/} \texttt{verify\_dickson\_1923.py},
-\texttt{verify\_kirmse\_1924.py}, \texttt{verify\_mahler\_1942.py},
-\texttt{verify\_coxeter\_1946.py}; verification notes in
-\texttt{paper/reviews/}).
+original and re-derived in exact arithmetic in this
+project.\footnote{\scriptref{verify\_dickson\_1923.py}
+\scriptref{verify\_kirmse\_1924.py} \scriptref{verify\_mahler\_1942.py}
+\scriptref{verify\_coxeter\_1946.py} Verification notes accompany each,
+in \texttt{paper/reviews/}.}
 
 \noindent\textbf{Dickson (1923) \cite{Dickson1923}} gave the first
 construction: the Cayley--Dickson doubled product and an explicit
@@ -1654,10 +1654,10 @@ or sampled arithmetic enters the proof.  Independently, the same
 basis-by-basis identities that constitute the appendix tables were
 recomputed in two separate computer-algebra implementations as a
 cross-check: a Python implementation using
-\texttt{fractions.Fraction} exact rationals
-(\texttt{python\_project/src/symbolic\_proof\_checks.py}), and a
-GAP/LOOPS implementation using GAP's native exact rational arithmetic
-(\texttt{gap\_project/tests/test\_lemmas.g}).  Both implementations
+\texttt{fractions.Fraction} exact rationals, and a GAP/LOOPS
+implementation using GAP's native exact rational
+arithmetic.\footnote{\scriptref{symbolic\_proof\_checks.py}
+\gapref{tests/test\_lemmas.g}}  Both implementations
 reproduce the same integer coefficients displayed in the appendix.
 This redundancy is validation, not proof: it serves to detect
 transcription or implementation errors in the appendix tables, but

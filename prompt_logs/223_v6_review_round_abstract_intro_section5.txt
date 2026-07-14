@@ -1,0 +1,140 @@
+Prompt 223 -- v6 review round: date, abstract, Section 1, script footnotes,
+numbered equations, Section 5.2 refactor
+Date: 2026-07-14
+
+User: "The draft version v6 is not yet closed, update it with today's date
+(14 July 2026) and apply the following updates from my review:"
+
+DATE. v6, 14 July 2026 (version number held at v6; the draft is not closed).
+
+ABSTRACT
+ - "In Robert A. Wilson's sublattice" -> "Using Robert A. Wilson's sublattice".
+ - After "...but it moves Wilson's sublattices Ls-bar and Ls.": paragraph break,
+   then a grammar-corrected version of: "Using mostly exact arithmetic and
+   computer proof, we offer a compact exposition for the applied researcher:
+   Algebraic properties of this product, idempotents and square-zero elements,
+   automorphisms, span of the image, index, and which twists also close."
+   Then continue with the "Reduced modulo..." sentence, adjusting a word or two
+   so it flows.
+ - Remove the now-superfluous "The image of the product spans a proper
+   sublattice of index 2^16 in Lambda."
+ - Break up the "We further provide..." sentence: it currently carries seven
+   commas and two semicolons.
+
+SECTION 1
+ - Replace "Two structural readings are recorded as verified facts and offered
+   as starting points for further investigation: ... (Remark 5.6)." with
+   something similar to: "Further structural readings are verified facts and
+   offered as starting points for further investigation in Section 5 and
+   Appendix A. Never do we claim or advertise these computer proofs as a
+   substitute for mathematical understanding; they are merely listed as
+   machine-obtained facts, to provide pointers to a reader interested in
+   applications such as medical imaging, cryptography, quantum computing, or
+   phenomenology in the physics of fundamental particles."
+ - Keep the sentence "The result was developed through a systematic human-AI
+   collaboration, and the complete research record is public [repo]: every
+   prompt, computation, and verification, end to end (Appendix C)."
+
+SCRIPT REFERENCES (paper-wide)
+ - Every in-line script reference moves to a footnote (unless it already is
+   one), with a pointer to [repo], and is made hot-clickable via its
+   github.com URL. Rationale, the user's: visually out of the reader's way,
+   but the honest provenance as computer proof stays auditable.
+
+EQUATIONS (from Section 2.3 onward, and everywhere else)
+ - Every display formula that is not in-line with the prose must be numbered.
+
+SECTION 5.2
+ - Scratch "and the classification is complete": completeness is the NORM.
+   The paper says explicitly when a test was NOT exhaustive; otherwise a
+   matter-of-fact statement is complete by default, and the reference is always
+   given.
+ - "Every block of every one of them is a multiple of e_0: there is no
+   idempotent with a nonzero imaginary part, and no positive-dimensional
+   family." -> "Note that every block of every one of them is a multiple of
+   e_0." The rest is redundant.
+ - Scratch "None lies in Lambda, because e_0 not in L; the order therefore has
+   no idempotent." -- already said.
+ - "Each nonzero idempotent does span a rational ray" -> "spans".
+ - In the formula that follows, the order of the least lattice multiples must
+   match the order in which the idempotents were listed.
+ - Scratch the whole "The passage from the algebra to the lattice is thus a
+   rescaling ... (verify_idempotent_lattice_rescaling.py)" passage: it is a
+   basic property of the lattice.
+ - REFACTOR: square-zero elements move OUT of "Idempotents and square-zero
+   elements" into their own subsection, placed AFTER "The automorphism group"
+   and BEFORE "Span of the image". Reason: Remark 5.4 uses D and T, which are
+   not defined until the automorphism subsection.
+
+Status: in progress.
+
+APPLIED.
+
+DATE: v6, 14 July 2026.
+
+ABSTRACT
+ - "In Robert A. Wilson's" -> "Using Robert A. Wilson's".
+ - New second paragraph, after the sigma sentence: "Using mostly exact
+   arithmetic and computer proof, we offer a compact exposition for the applied
+   researcher: the algebraic properties of this product, its idempotents and
+   square-zero elements, its automorphisms, the span of its image and the index
+   of that span, and which further twists also close."  The "Reduced modulo 2L"
+   sentence follows in the same paragraph, joined with "also" so it reads as a
+   continuation of the list rather than a new topic.
+ - The standalone "The image of the product spans a proper sublattice of index
+   2^16" sentence is gone (now covered by "the span of its image and the index
+   of that span").
+ - The historical paragraph, which carried seven commas and two semicolons in
+   one sentence, is now four sentences: Dickson; Kirmse; Bruck and Coxeter; the
+   identification of sigma with Bruck's transposition.
+
+SECTION 1: the "Two structural readings" sentence replaced. It now points to
+Section 5 and Appendix A generally, and adds the boundary statement the user
+asked for: "Nowhere do we claim or advertise these computer proofs as a
+substitute for mathematical understanding: they are listed as machine-obtained
+facts, to provide pointers for a reader interested in applications such as
+medical imaging, cryptography, quantum computing, or phenomenology in the
+physics of fundamental particles."  The human-AI / public-record sentence is
+kept verbatim.
+
+SCRIPT REFERENCES: two macros added to the preamble, \scriptref and \gapref.
+Each renders as "Verified in <path>, in the public research record [repo]", with
+the path hot-linked to its github.com/koeplinger/leech_alg blob URL. ALL twelve
+in-line script citations are now footnotes: zero remain in the prose (grep
+verified). 22 script citations across the footnotes.
+
+EQUATIONS: every display formula is numbered. 17 unnumbered \[ ... \] displays
+converted to \begin{equation} with labels; the three starred display
+environments (align*, equation*, gather*) unstarred. 23 numbered equations in
+total. Zero overfull boxes.
+
+SECTION 5.2 -> refactored into two subsections.
+ - "and the classification is complete" scratched. Completeness is the norm; the
+   paper says explicitly when a test was not exhaustive.
+ - "Every block ... : there is no idempotent with a nonzero imaginary part, and
+   no positive-dimensional family." -> "Note that every block of every one of
+   them is a multiple of e_0."
+ - "None lies in Lambda, because e_0 not in L; the order therefore has no
+   idempotent." -> scratched (already said in Remark 5.1).
+ - "does span" -> "spans".
+ - The least-multiple formula reordered to match the order of the idempotents in
+   the equation above it: 4 eps_i (N=16), 4 omega (N=48), 6(eps_i - omega/3)
+   (N=24), with "in the order of (eq)" added so the correspondence is explicit.
+ - The "passage from the algebra to the lattice is thus a rescaling ... 84 purely
+   imaginary roots ..." passage scratched entirely.
+
+SECTION 5 STRUCTURE (square-zero moved out, because Remark 5.5 uses D and T,
+which are not defined until the automorphism subsection):
+   5.1 Identities
+   5.2 Idempotents
+   5.3 The automorphism group
+   5.4 Square-zero elements      <- moved here
+   5.5 Span of the image
+   5.6 Which twists close
+Remark numbers shifted accordingly (square-zero is now Remark 5.5). The forward
+pointer in Remark 5.1 was split so it names both destinations.
+
+Paper: 23 pages, builds clean, no undefined references or citations, zero
+overfull boxes.
+
+Status: CLOSED.
