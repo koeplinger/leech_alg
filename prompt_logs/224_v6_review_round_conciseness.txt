@@ -1,0 +1,70 @@
+Prompt 224 -- v6 review round: Section 1 paragraph, footnote conciseness,
+Section 5 trims
+Date: 2026-07-14
+
+User review items:
+
+SECTION 1
+ - Insert a new paragraph before "The result was developed", and reword its
+   opening to "All results were developed".
+
+FOOTNOTE CONCISENESS (paper-wide)
+ - Change the \scriptref / \gapref rendering from "Verified in
+   python_project/src/<file>, in the public research record [repo]" to simply
+   "[repo] python_project/src/<file>". The [repo] tag and the monospace font
+   already say what it is. Keep the hyperlinks.
+
+SECTION 5.2
+ - Scratch "in the order of (5.1), each satisfying u star u = n u for its own
+   multiplier n." (self-apparent).
+
+SECTION 5.3
+ - "in the companion note automorphism_group_2026-07-12.pdf.[fn]" -> "in a
+   companion note", and move the filename into the footnote with its full repo
+   path, like the other computation references.
+ - Scratch the entire "Completeness of this classification ... do not depend on
+   it." sentence: it gives little on its own, and the companion note has it all.
+
+SECTION 5.4
+ - Scratch "None is minimal, and the reason is arithmetic: N(u) = 3N(x) ...
+   minimal norm is 8. The exhaustive minimal-shell search of Remark 5.1 could
+   not have found them." (redundant).
+
+SECTION 5.5
+ - Scratch "Closure does not mean surjectivity."
+ - Scratch ", namely S itself".
+
+Status: in progress.
+
+APPLIED.
+
+SECTION 1: the public-record sentence is now its own paragraph, opening "All
+results were developed through a systematic human-AI collaboration..."
+
+FOOTNOTE CONCISENESS: \scriptref / \gapref now render as "[repo]
+python_project/src/<file>" (the [repo] citation, a tie, then the path), dropping
+"Verified in ... in the public research record". Hyperlinks kept. Also switched
+the visible path from \texttt to \nolinkurl so the long paths break at slashes;
+this removed a 49pt overfull footnote line. 22 footnote citations, 0 inline
+script references remain in the prose.
+
+SECTION 5.2: "in the order of (5.1), each satisfying u star u = n u for its own
+multiplier n." scratched. The rescaling script is now footnoted on the lead-in
+"the least positive multiple that does is".
+
+SECTION 5.3: "in the companion note automorphism_group_2026-07-12.pdf" -> "in a
+companion note", with the filename moved into the footnote as a hot-linked full
+repo path (paper/automorphism_group_2026-07-12.pdf), alongside the two scripts.
+The "Completeness of this classification ... do not depend on it." sentence
+scratched entirely; the companion note carries it.
+
+SECTION 5.4: "None is minimal, and the reason is arithmetic: ... could not have
+found them." scratched (two sentences).
+
+SECTION 5.5: "Closure does not mean surjectivity." scratched; ", namely S
+itself" scratched.
+
+Paper: 23 pages, builds clean, no undefined references or citations, zero
+overfull boxes. 23 numbered equations. Linter clean.
+
+Status: CLOSED.
