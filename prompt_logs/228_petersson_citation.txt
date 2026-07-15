@@ -1,0 +1,17 @@
+Prompt 228 -- Drop the name from the passing Petersson citation
+Date: 2026-07-15
+
+User: replace "integral-octonion history, see Holger P. Petersson
+[Petersson2018]." with "integral-octonion history, see [Petersson2018]." (no
+name in a passing citation); but keep the convention that the first by-name
+reference to Petersson states his full name (Holger P.).
+
+Applied: Section 2.2, "see Holger P.~Petersson~\cite{Petersson2018}." ->
+"see~\cite{Petersson2018}."
+
+First-by-name check: after this removal the only remaining by-name reference to
+Petersson is the Acknowledgments, which already reads "Holger P. Petersson"
+(full name). The bibliography entry [Petersson2018] is H.\,P.~Petersson, as is
+standard. No further change needed.
+
+Status: CLOSED.

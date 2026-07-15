@@ -1,0 +1,22 @@
+Prompt 229 -- Bruck full name at first occurrence
+Date: 2026-07-15
+
+User: "The full name of R. H. Bruck is Richart H. Bruck; use his full name in
+the first occurrence"
+
+VERIFIED, no edit needed. The first occurrence of Bruck (abstract, historical
+paragraph) already reads "Richard H.~Bruck". Later occurrences correctly use
+surname or initials per the paper's convention: "Kirmse--Bruck--Coxeter" and
+"Bruck and Coxeter (1946)" (name-joins/surname, Section 6), and "R.\,H.~Bruck"
+(Appendix B, a later occurrence).
+
+Spelling note: the correct first name is "Richard" (Richard Hubert Bruck,
+1914-1991). The user's "Richart" is a typo; the paper correctly has "Richard".
+No change made.
+
+Status: CLOSED.
+
+Follow-up: since the first occurrence (abstract) already carries the full name,
+the later Appendix B initials form "R.\,H.~Bruck" is redundant. User: "just
+write 'that the remedy is due to Bruck'". Applied: "the remedy is due to
+R.\,H.~Bruck:" -> "the remedy is due to Bruck:".

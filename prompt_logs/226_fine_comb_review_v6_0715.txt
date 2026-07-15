@@ -1,0 +1,63 @@
+Prompt 226 -- Fine-comb review of v6 (15 July 2026)
+Date: 2026-07-15
+
+User: "great. Let's both make a fine-comb review of today's version of the main
+paper (v6, dated 15 July 2026)"
+
+Both the user and I review in parallel. My job is the machine-thorough
+complement: verify every number against the scripts, catch every stale
+cross-reference and numbering artifact from today's heavy edits (un-remarking
+5.2-5.5, deleting Remark 4.9, moving square-zero to 5.4, renumbering, the
+footnote/equation conversions), and flag prose seams.
+
+Method:
+  1. Log first (this file).
+  2. Mechanical pre-check by the main thread: build health, undefined refs,
+     overfull boxes, grep for stale patterns (Remark 4.9, old remark numbers,
+     inline script refs, "twist" for non-swaps), equation/number spot-checks.
+  3. READ-ONLY review fan-out (Manifesto Section 14: no agent write access):
+     parallel reviewers across dimensions -- technical correctness,
+     editorial/prose flow, today's-edits regression, terminology consistency,
+     applied-audience fit and honesty boundary. Each verifies numbers itself.
+  4. Adversarial verification of any flagged correctness claim.
+  5. Synthesis to paper/reviews/2026-07-15_<model>_fine_comb_review_v6.md
+     (a frozen artifact once written).
+
+Status: in progress.
+
+RESULT.
+
+Mechanical pre-check: build clean, 0 undefined refs, 0 overfull, no stale
+"Remark 4.9", 0 orphaned rem: labels from the un-remarking, 0 inline script
+refs. Today's surgery left no structural wreckage.
+
+Review fan-out: 6 agents (5 dimensions + 1 verification), 452k tokens. 17
+findings (7 should-fix, 10 nits). The technical dimension re-ran the scripts and
+reproduced every number; no math error, no wrong number. The one
+correctness-flavoured finding (abstract topic order) verified PARTIAL: the
+ordering mismatch is real but it is not a broken cross-reference.
+
+Synthesis written to
+paper/reviews/2026-07-15_claude_opus_4_8_fine_comb_review_v6.md (frozen).
+
+The two findings of any substance are honesty-boundary items and both are the
+author's call, not errors:
+ S1. §6 lists 244,035,421 under "independently reproduced". No runnable artifact
+     reproduces it; prompt 089 verified only the DERIVATION. But the paper
+     already says "the derivation of the lower bound 244,035,421", which matches
+     089 -- the wording is defensible; the residual risk is the umbrella
+     "reproduced". Verified: grep finds 244035421 only in prompt 089 and the
+     references .txt, nowhere in python_project/src.
+ S2. §1's four-application list (medical imaging, cryptography, quantum
+     computing, particle physics) -- only particle physics has a pointer in the
+     paper. This is the author's own wording from prompt 223, deliberately
+     chosen; flagged for his judgment, not applied.
+
+Clean mechanical fixes recommended before freeze: S3 "Programmes"->"Programs";
+S4 the duplicated §5.6 title (a real regression from the un-remarking pass -- 5.6
+kept both a heading and a titled Remark while 5.2-5.5 became prose); S5 the
+abstract "also/also" echo.
+
+NOTHING APPLIED. Presented for the user to compare against his own read.
+
+Status: CLOSED (review delivered).

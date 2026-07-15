@@ -1,0 +1,20 @@
+Prompt 227 -- Update date to today; Section 1 wording
+Date: 2026-07-15
+
+User: "Update the date of the paper to today. Replace 'Further structural
+readings are verified facts, and are offered' with 'Further structural readings
+are offered'"
+
+DATE: the subtitle read "14 July 2026 (v6)" -- it had not been updated in the
+15 July round (prompt log 225 recorded the intent but the \subtitle edit was
+missed). Corrected to "15 July 2026 (v6)". Today's date is 2026-07-15.
+
+SECTION 1: "Further structural readings are verified facts, and are offered as
+starting points for further investigation..." -> "Further structural readings
+are offered as starting points for further investigation..."
+
+Note: the fine-comb review workflow (prompt 226, task w3vgg7db6) is running
+read-only while these two small user-directed edits are applied; neither
+affects a review dimension materially.
+
+Status: CLOSED.
