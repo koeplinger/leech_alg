@@ -75,6 +75,7 @@ Each of the four primary papers re-derived from the original, in exact arithmeti
 | File | Purpose |
 |---|---|
 | `egan_baez_count.py` | Independent check of Egan's count of 17,280 Jordan rings (17,280 = 270 × 64) in the Baez–Egan construction. |
+| `verify_egan_lower_bound.py` | Reproduces Egan's lower bound 244,035,421 on Leech copies in (E₈)³ as the orbit-stabilizer ceiling ⌈3!·\|W(E₈)\|³ / \|Co₀\|⌉ (paper §6). Egan's derivation, not his enumeration. |
 
 ### The structure of (R²⁴, +, ⋆): paper Section 5
 

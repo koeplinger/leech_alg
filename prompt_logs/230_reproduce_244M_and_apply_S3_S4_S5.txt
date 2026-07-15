@@ -1,0 +1,59 @@
+Prompt 230 -- Reproduce the 244,035,421 lower bound; apply review fixes S3/S4/S5
+Date: 2026-07-15
+
+User: "Re S1 (the 244,035,421 figure) go ahead and actually reproduce the lower
+bound. Re S2 (the four-application list) -- yes this is from interest by
+researchers in earlier versions who work in these respective fields; leave it.
+Apply S3, S4, S5. I'll have a look at the nits in the mean time."
+
+S2: LEFT AS-IS. The application list reflects real prior interest from
+researchers in those fields; the author keeps it deliberately.
+
+S1: reproduce Egan's lower bound 244,035,421 (E_8^3-orbit Leech embeddings) with
+a runnable artifact, so the paper's "independently reproduced" list has a script
+behind that item too. New script: python_project/src/verify_egan_lower_bound.py.
+Once it reproduces the number, add it to the §6 script footnote / cite it.
+
+S3: "Programmes" -> "Programs" (Section 8, US spelling).
+S4: Section 5.6 duplicated title: drop the Remark's bracketed title so the
+   heading is not immediately echoed by "Remark (Closure of permutation cycles)".
+S5: abstract "also close ... also produces" -> drop one "also".
+
+Status: in progress.
+
+APPLIED.
+
+S1 -- REPRODUCED. New script python_project/src/verify_egan_lower_bound.py
+reproduces Egan's 244,035,421 exactly, as the orbit-stabiliser ceiling
+  ceil( |Isom(O^3)| / |Co_0| ) = ceil( 3! * |W(E_8)|^3 / |Co_0| )
+  = ceil( 2,029,289,625,631,919,702,016,000,000 / 8,315,553,613,086,720,000 )
+  = ceil( 244,035,420.857... ) = 244,035,421.
+Inputs are standard and computed from structure/factorisation:
+  |W(E_8)| = product of the invariant degrees (2,8,12,14,18,20,24,30) = 696,729,600;
+  |Co_0|   = 2^22*3^9*5^4*7^2*11*13*23 = 8,315,553,613,086,720,000.
+Derivation obtained from the primary source (Baez, Integral Octonions Part 10,
+Egan) via WebFetch and verified by exact integer arithmetic. It reproduces
+Egan's DERIVATION (the orbit-stabiliser bound), not his enumeration -- the
+script docstring says so. Paper Section 6: the 244,035,421 item now carries a
+footnote giving the formula and citing the script, so every item in the
+"independently reproduced" list has a runnable artifact. Script indexed in
+python_project/src/README.md (Prior art).
+
+S2: left as-is (author's deliberate application list).
+S3: "Programmes" -> "Programs" (Section 8).
+S4: Section 5.6 Remark's bracketed title "[Closure of permutation cycles]"
+    dropped; the subsection heading is no longer echoed.
+S5: abstract "the construction also produces" -> "the construction produces".
+
+N2 (user directed mid-turn): abstract now names L at first use -- "$\sigma$
+leaves the $E_8$ lattice~$L$ invariant" -- so the later $2L$, $L/2L$ have an
+antecedent.
+
+N4 (user correction): REFUTED. The reviewer claimed the total "seven" is never
+stated in the abstract; it is ("containing all seven maximal orders", abstract
+line 120). Left unchanged.
+
+Paper: 23 pages, builds clean, no undefined references, zero overfull boxes.
+Linter clean.
+
+Status: CLOSED.

@@ -1,0 +1,29 @@
+Prompt 231 -- Un-wrap the census remark (subsections carry prose, not a hidden remark)
+Date: 2026-07-15
+
+User: "subsections have prose, not a hidden remark; if you need to label
+something, label the subsection: '\subsection{Closure of permutation cycles}
+\label{sec:census} \begin{remark}\label{rem:cycle-census}'"
+
+Context: in prompt 230 (fix S4) I only dropped the census remark's bracketed
+title but left the \begin{remark} wrapper -- so 5.6 was still a subsection whose
+whole body was a single (now untitled) remark, unlike 5.2-5.5 which are plain
+prose. This finishes the job.
+
+Applied:
+ - Removed \begin{remark}\label{rem:cycle-census} ... \end{remark} around the
+   census; the body (including the table) is now plain prose.
+ - The label lives on the subsection, \label{sec:census} (already there).
+ - rem:cycle-census removed entirely; the one reference to it (Section 7
+   outlook) repointed from "Remark~\ref{rem:cycle-census}" to
+   "Section~\ref{sec:census}".
+
+Section 5 now: 5.2-5.6 are plain prose; the only remaining \begin{remark}
+environments in Section 5 are the two INSIDE 5.1 (product norms; no
+multiplicative identity), which are genuine remarks within a subsection that
+also carries the property table and surrounding prose -- not
+subsections-masquerading-as-remarks.
+
+Paper: 23 pages, builds clean, no undefined references. Linter clean.
+
+Status: CLOSED.

@@ -99,7 +99,7 @@ from nine octonion-multiplication blocks under cyclic $\ZZ_3$
 permutation of three octonion factors.  Using Robert A.~Wilson's sublattice
 description of~$\LL$ [J.~Algebra \textbf{322} (2009), 2186--2190],
 closure turns on a transposition~$\sigma$ of
-two imaginary basis units: $\sigma$ leaves the $E_8$ lattice
+two imaginary basis units: $\sigma$ leaves the $E_8$ lattice~$L$
 invariant and is an algebra isomorphism of the octonions, but it
 moves Wilson's sublattices $L\bar s$ and~$Ls$.
 
@@ -107,7 +107,7 @@ Using mostly exact arithmetic and computer proof, we offer a compact
 exposition for the applied researcher: the algebraic properties of this
 product, its idempotents and square-zero elements, its automorphisms, the
 span of its image and the index of that span, and which permutation cycles,
-beyond the transposition~$\sigma$, also close.  Reduced modulo~$2L$, the construction also produces a Witt
+beyond the transposition~$\sigma$, also close.  Reduced modulo~$2L$, the construction produces a Witt
 decomposition of $L/2L$ into a complementary pair of Lagrangians, opening
 the natural research program of which polarizations of $L/2L$ lift to a
 closed product on~$\LL$.
@@ -769,7 +769,6 @@ inside $\LL/2\LL$ structurally is open.
 
 \subsection{Closure of permutation cycles}\label{sec:census}
 
-\begin{remark}[Closure of permutation cycles]\label{rem:cycle-census}
 The transposition~$\sigma$ is a special case.  For a general
 permutation~$\pi$ of the imaginary axes $e_1, \ldots, e_7$, the product
 $x \cdot_\pi y := \pi(\pi(x) \cdot \pi(y))$ may or may not close
@@ -799,7 +798,6 @@ closing half admits a description: for each three-element subset of
 imaginary indices, one of the two cyclic orientations closes.  No such
 description is known for the other cycle types, and none is known for
 the $0\%$ of the $4$-cycles.
-\end{remark}
 
 % ===============================================================
 \section{Related work}\label{sec:related}
@@ -854,7 +852,7 @@ have independently reproduced the full Baez--Egan verification chain:
 the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
 Leech-lattice theorem, the doubled-Jordan-product closure, the
 derivation of the lower bound $244{,}035{,}421$ on the number of
-$E_8^3$-orbit Leech embeddings, and Egan's sharper count of
+$E_8^3$-orbit Leech embeddings,\footnote{An orbit-stabiliser bound, $\lceil 3!\,\lvert W(E_8)\rvert^3 / \lvert\Co_0\rvert\rceil$; \scriptref{verify\_egan\_lower\_bound.py}} and Egan's sharper count of
 $17{,}280$ Jordan rings.  This last factors as $17{,}280 = 270
 \times 64$: the $270$ is the number of sublattices $L_1 \subset L$
 isometric to $\sqrt{2}\,L$ (part~11 of \cite{Baez2014}), equivalently
@@ -1008,7 +1006,7 @@ Several questions remain immediately open:
   (as an order), placing it outside the classical families.
 \item A structural characterization of which permutation cycles close.
   Every cycle type of~$S_7$ has been enumerated exactly
-  (Remark~\ref{rem:cycle-census}), but the pattern in the table is
+  (Section~\ref{sec:census}), but the pattern in the table is
   explained only for the $3$-cycles.  Open: a reason for the total
   failure of the $4$-cycles and for the exact one-half rates; and
   linear maps of~$\RR^8$ that are not coordinate permutations.
@@ -1038,7 +1036,7 @@ $\star$ as a trace-like reduction of a ternary operation compatible
 with the $\ZZ_3$-block symmetry is a natural direction for further
 work.
 
-Programmes that model fundamental physics on normed-division-algebra,
+Programs that model fundamental physics on normed-division-algebra,
 triality, $S_3$ symmetry, or symmetric-composition-algebra structures
 \cite{GresnigtGourlayVarma2023, Koeplinger2023,
 FureyHughes2025_TrioOfTrialities, MarraniCorradettiZucconi2025}
