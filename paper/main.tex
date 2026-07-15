@@ -106,8 +106,8 @@ moves Wilson's sublattices $L\bar s$ and~$Ls$.
 Using mostly exact arithmetic and computer proof, we offer a compact
 exposition for the applied researcher: the algebraic properties of this
 product, its idempotents and square-zero elements, its automorphisms, the
-span of its image and the index of that span, and which further twists also
-close.  Reduced modulo~$2L$, the construction also produces a Witt
+span of its image and the index of that span, and which permutation cycles,
+beyond the transposition~$\sigma$, also close.  Reduced modulo~$2L$, the construction also produces a Witt
 decomposition of $L/2L$ into a complementary pair of Lagrangians, opening
 the natural research program of which polarizations of $L/2L$ lift to a
 closed product on~$\LL$.
@@ -378,12 +378,8 @@ All nine block-pair products use the same multiplication~$\cdot_\sigma$.
 We prove Theorem~\ref{thm:main} by showing that the $\sigma$-twisted
 octonion product preserves each of Wilson's three conditions
 (Definition~\ref{def:wilson-leech}).  Throughout, and without loss of
-generality, $\sigma = (1\;2)$: this is the choice for which the
-appendix tables are computed, and the 21 transpositions of imaginary
-basis units are equivalent up to relabelling of the Fano
-triples\footnote{They form a single orbit under the Fano-plane
-automorphism group $\GL(3, \FF_2)$; each of the 21 is verified to
-close on~$\LL$.  \scriptref{verify\_consecutive\_twists\_exact.py}}.  From
+generality, $\sigma = (1\;2)$.\footnote{They form a single orbit under
+the Fano-plane automorphism group $\GL(3, \FF_2)$.}  From
 the given choice of octonion basis and Fano triples, the
 load-bearing effect of $\sigma$ is that it \emph{moves} the
 sublattices $L\bar s$ and~$Ls$, while fixing~$L$ setwise
@@ -584,19 +580,6 @@ Applying the outer~$\sigma$:
 
 This completes the proof of Theorem~\ref{thm:main}.
 
-\begin{remark}[Consecutive twists]\label{rem:consecutive-twists}
-The construction extends to consecutive twists $\sigma_2 \circ \sigma_1$
-by another transposition.  The composite acts as a single twist by
-$\pi = \sigma_2 \sigma_1$; as a product of two transpositions, $\pi$
-is the identity, a 3-cycle, or a $(2,2)$-double transposition.  Tested
-by exact-arithmetic enumeration on a $\ZZ$-basis
-of~$\LL$:\footnote{\scriptref{verify\_consecutive\_twists\_exact.py}}
-$\pi = $~identity does \emph{not} close (the untwisted product).  Of
-the 70 3-cycles, exactly half close: for each three-element subset
-of imaginary indices, one of the two cyclic orientations does.  Of
-the 105 $(2,2)$'s, the 21 whose fixed three indices form a Fano line
-all fail, and of the remaining 84 exactly half close (42 in all).
-\end{remark}
 
 % ===============================================================
 \section{Algebraic properties}\label{sec:properties}
@@ -660,10 +643,11 @@ The product norm on $\operatorname{Min}(\LL) \times
 $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16.
 The mode is~64 (the norm-multiplicative value
 $\Nrm(u)\Nrm(v) = 8 \times 8$).  Neither $0$ nor $8$ occurs among these
-values, so no minimal vector is idempotent and none squares to zero.
-Both questions are settled on all of~$\LL$ below: the order has no
-idempotent at all (Section~\ref{sec:idempotents}), but it does contain
-square-zero vectors, at norm~12 (Section~\ref{sec:squarezero}).
+values: the minimal shell has no idempotent and no square-zero vector.
+Both questions are settled on all of~$\LL$ in
+Sections~\ref{sec:idempotents} and~\ref{sec:squarezero}.  The order has
+no idempotent at all; it does, however, contain square-zero vectors, at
+norm~12.
 \end{remark}
 
 \begin{remark}
@@ -685,7 +669,6 @@ lattice is stable under the product.
 
 \subsection{Idempotents}\label{sec:idempotents}
 
-\begin{remark}[Idempotents]\label{rem:idempotents}
 The ambient algebra $(\RR^{24}, +, \star)$ has exactly eight
 idempotents.\footnote{\scriptref{verify\_idempotent\_classification.py}}
 Writing $\varepsilon_1 = (e_0, 0, 0)$, $\varepsilon_2 = (0, e_0, 0)$,
@@ -706,11 +689,9 @@ is\footnote{\scriptref{verify\_idempotent\_lattice\_rescaling.py}}
   4\omega \ (\Nrm = 48), \qquad
   6\bigl(\varepsilon_i - \tfrac13\omega\bigr) \ (\Nrm = 24).
 \end{equation}
-\end{remark}
 
 \subsection{The automorphism group}\label{sec:autgroup}
 
-\begin{remark}[Automorphism group]\label{rem:aut}
 $\Aut(\LL, +, \star)$ is finite, of order~$36$, with structure
 $C_6 \times S_3$.  Every automorphism is a blockwise octonion
 automorphism followed by a permutation of the three blocks: the~$S_3$
@@ -720,8 +701,9 @@ $e_1 \mapsto -e_5$, $e_2 \mapsto -e_7$, $e_3 \mapsto e_2$,
 $e_4 \mapsto -e_4$, $e_5 \mapsto e_6$, $e_6 \mapsto e_1$,
 $e_7 \mapsto -e_3$, with $e_0$ fixed.
 
-The containment in the Conway group is settled by the ambient algebra,
-before the lattice is imposed.  As a real algebra, $\RR^{24} = \OO^3$
+The containment in the Conway group can already be settled at the level
+of the ambient algebra, before the lattice is imposed.  As a real
+algebra, $\RR^{24} = \OO^3$
 splits as $D \oplus T$, where $D = \{(a,a,a) : a \in \OO\}$ (of
 dimension~8) and $T = \{(p,q,r) \in \OO^3 : p+q+r = 0\}$ (of
 dimension~16) are two-sided ideals with $D \star T = T \star D = 0$;
@@ -743,27 +725,28 @@ note.\footnote{\cite{repo}~%
 {\texttt{paper/automorphism\_group\_2026-07-12.pdf}};
 \scriptref{verify\_aut\_lambda\_star.py}
 \gapref{aut\_lambda\_star.g}}
-\end{remark}
 
 \subsection{Square-zero elements}\label{sec:squarezero}
 
-\begin{remark}[Square-zero elements]\label{rem:nilpotents}
 In the ambient algebra, $u = (x, y, z)$ satisfies $u \star u = 0$ if
 and only if $x$, $y$, $z$ are purely imaginary, of equal norm, and sum
-to zero: a hexagonal triple in $\Im(\OO) = \RR^7$.  The solution set is
+to zero.  Three vectors of equal length summing to zero lie at $120^\circ$
+to one another; with their negatives they are the six vertices of a
+regular hexagon, and $x$, $y$, $z$ are three alternating vertices, a
+\emph{hexagonal triple} in $\Im(\OO) = \RR^7$.  The solution set is
 a cone of dimension~12; it lies in~$T$ and meets~$D$ only
 in~$0$.\footnote{\scriptref{verify\_square\_zero\_classification.py}}
 
 The lattice does contain such elements.  A vector $(x, y, z) \in \LL$
 squares to zero exactly when $x$, $y$, $z$ lie in $L\bar s \cap
 \Im(\OO)$, have equal norms and sum to zero.  The 126 vectors of norm~4
-in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system, whose hexagonal
-triples give $4{,}032$ square-zero vectors of~$\LL$, all of norm~12.
-\end{remark}
+in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system.  Each of its 126
+roots has exactly 32 roots at $120^\circ$; the third block is then
+forced, so the ordered hexagonal triples number $126 \times 32 = 4{,}032$,
+one square-zero vector of~$\LL$ each, all of norm~12.
 
 \subsection{Span of the image}\label{sec:span}
 
-\begin{remark}[Span of the image]\label{rem:span-defect}
 Let $S := \ZZ\text{-span}\{u \star v : u, v \in \LL\}$.  By bilinearity, $S$ is
 generated by the $24 \times 24 = 576$ basis-pair products of a
 $\ZZ$-basis of~$\LL$, so its index in~$\LL$ is exactly computable
@@ -784,19 +767,17 @@ and $\LL/S \cong (\ZZ/2)^{16}$.  The defect is entirely 2-primary,
 at the same prime that governs the mod-2 structure of
 Section~\ref{app:mod2quotient}.  Identifying the subspace $S/2\LL$
 inside $\LL/2\LL$ structurally is open.
-\end{remark}
 
-\subsection{Which twists close}\label{sec:census}
+\subsection{Closure of permutation cycles}\label{sec:census}
 
-\begin{remark}[Which twists close]\label{rem:cycle-census}
-The transposition~$\sigma$ is not the only permutation of the imaginary
-axes whose twist closes on~$\LL$.  Writing $x \cdot_\pi y :=
-\pi(\pi(x) \cdot \pi(y))$ for a permutation~$\pi$ of $e_1, \ldots, e_7$,
-and testing closure exactly on the 576 basis-pair products of a
-$\ZZ$-basis of~$\LL$, every cycle type of~$S_7$ has been
-enumerated:\footnote{\scriptref{verify\_all\_cycles\_exact.py} (the $3$-
+\begin{remark}[Closure of permutation cycles]\label{rem:cycle-census}
+The transposition~$\sigma$ is a special case.  For a general
+permutation~$\pi$ of the imaginary axes $e_1, \ldots, e_7$, the product
+$x \cdot_\pi y := \pi(\pi(x) \cdot \pi(y))$ may or may not close
+on~$\LL$.  Testing closure exactly on the 576 basis-pair products of a
+$\ZZ$-basis of~$\LL$, we find for every cycle type of~$S_7$:\footnote{\scriptref{verify\_all\_cycles\_exact.py} (the $3$-
 through $7$-cycles) \scriptref{verify\_consecutive\_twists\_exact.py} (the
-transpositions and the $(2,2)$-doubles)}
+transpositions)}
 \begin{center}
 \begin{tabular}{@{}lrrr@{}}
 \toprule
@@ -813,10 +794,9 @@ Total         & $2{,}365$ & $854$ & $36.1\%$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-The counts are exhaustive, not sampled.  The $4$-cycles are the outlier:
-they fail without exception, while the $3$- and $5$-cycles close at
-exactly half.  For the $3$-cycles the closing half is described in
-Remark~\ref{rem:consecutive-twists}: for each three-element subset of
+The $4$-cycles are the outlier: they fail without exception, while
+the $3$- and $5$-cycles close at exactly half.  For the $3$-cycles the
+closing half admits a description: for each three-element subset of
 imaginary indices, one of the two cyclic orientations closes.  No such
 description is known for the other cycle types, and none is known for
 the $0\%$ of the $4$-cycles.
@@ -935,7 +915,7 @@ distinct bilinear products on $\RR^{24}$ that both close on $\LL$,
 reaching that closure through different ambient algebras.  The
 distinction is quantitative at the span level as well.  Computed by
 the same Hermite-normal-form method as for~$\star$
-(Remark~\ref{rem:span-defect}),\footnote{\scriptref{verify\_phi\_span\_index.py}}
+(Section~\ref{sec:span}),\footnote{\scriptref{verify\_phi\_span\_index.py}}
 the $\ZZ$-span of $\varphi(\LL, \LL)$ has index $2^{25}$ in~$\LL$.
 Unlike for~$\star$, that span does not contain~$2\LL$: its index
 exceeds $[\LL : 2\LL] = 2^{24}$.
@@ -1016,7 +996,7 @@ Several questions remain immediately open:
   Lagrangian-polarization reframing of this open question as a
   research program.)
 \item Where $\Aut(\LL, +, \star) \cong C_6 \times S_3$
-  (Remark~\ref{rem:aut}) sits inside~$\Co_0$ up to conjugacy, and
+  (Section~\ref{sec:autgroup}) sits inside~$\Co_0$ up to conjugacy, and
   whether the order-6 octonion automorphism generating the~$C_6$
   admits an intrinsic description.
 \item Whether the order is maximal: is there a larger lattice
@@ -1027,13 +1007,11 @@ Several questions remain immediately open:
 \item Classification of the algebra $(\RR^{24}, +, \star)$: it is
   non-associative, non-alternative, non-flexible, and non-unital
   (as an order), placing it outside the classical families.
-\item A structural characterization of which twists close.  Every
-  cycle type of~$S_7$ has been enumerated exactly
-  (Remark~\ref{rem:cycle-census}), as have the $(2,2)$-double
-  transpositions (Remark~\ref{rem:consecutive-twists}), but the
-  pattern in the table is explained only for the $3$-cycles.  Open:
-  a reason for the total failure of the $4$-cycles and for the exact
-  one-half rates; the permutation types not yet enumerated; and
+\item A structural characterization of which permutation cycles close.
+  Every cycle type of~$S_7$ has been enumerated exactly
+  (Remark~\ref{rem:cycle-census}), but the pattern in the table is
+  explained only for the $3$-cycles.  Open: a reason for the total
+  failure of the $4$-cycles and for the exact one-half rates; and
   linear maps of~$\RR^8$ that are not coordinate permutations.
 \end{itemize}
 

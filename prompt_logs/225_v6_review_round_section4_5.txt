@@ -1,0 +1,127 @@
+Prompt 225 -- v6 review round: Section 4/4.5/7 trims, Section 5 prose,
+two explanation requests
+Date: 2026-07-15
+
+v6, 15 July 2026 (not yet frozen).
+
+SECTION 4 lead-in
+ - Scratch ": this is the choice for which the appendix tables are computed,
+   and the 21 transpositions of imaginary basis units are equivalent up to
+   relabelling of the Fano triples[fn3]".
+ - In footnote 3, scratch "; each of the 21 is verified to close on Lambda.
+   [repo] .../verify_consecutive_twists_exact.py" -- redundant prose, trivial
+   proof.
+
+SECTION 4.5
+ - Scratch the entire Remark 4.9 (Consecutive twists): confusing, and the
+   material is now brought at the appropriate later point (Section 5.6) with no
+   need to forward-reference.
+ - Consequence in Section 7 outlook: scratch "as have the (2,2)-double
+   transpositions (Remark 4.9),".
+
+SECTION 5.1
+ - Scratch "Both questions are settled on all of Lambda below: the order has no
+   idempotent at all (Section 5.2), but it does contain square-zero vectors, at
+   norm 12 (Section 5.4)." Replace with "This extends to all of Lambda due to
+   bilinearity of the product."
+
+SECTION 5.2, 5.3, 5.4, 5.5
+ - These are regular prose, not "Remark N (Title)." environments. Un-remark
+   them.
+
+SECTION 5.3 -- USER QUESTION (answered, then applied):
+ "'The containment in the Conway group is settled by the ambient algebra,
+  before the lattice is imposed.' This means that the containment in the Conway
+  group _can already be_ settled by the ambient algebra, right?"
+ YES. The ambient group Aut(R^24, star) = G_2 x G_2 x S_3 is COMPACT, so every
+ star-automorphism of R^24 is orthogonal -- established WITHOUT reference to
+ Lambda. Aut(Lambda,+,star) is a subgroup of that, and the subgroup that also
+ fixes Lambda setwise lands in O(24) ^ GL(Lambda) = Co_0. So the containment is
+ forced at the ambient-algebra level, before Lambda is imposed. Rephrased to say
+ exactly that.
+
+SECTION 5.4 -- USER QUESTION (answered, then applied):
+ "explain what you mean with 'a hexagonal triple' ... and concisely explain how
+  126 and 4032 (=32*126) relate."
+ The user's geometric reading is CORRECT: three octonions of equal norm summing
+ to zero lie in a plane at 120 degrees to one another; with their negatives they
+ are the six vertices of a regular hexagon (an A_2 root configuration), and a
+ hexagonal triple is a set of three alternating vertices. Relation of the
+ numbers: each of the 126 norm-4 roots of the E_7 system has exactly 32 roots at
+ 120 degrees (inner product -2 at norm 4); the third block is then forced, so
+ there are 126 x 32 = 4,032 ordered triples (x,y,z), one square-zero vector of
+ Lambda each. VERIFIED computationally (see below).
+
+SECTION 5.6
+ - Rename "Which twists close" -> "Closure of permutation cycles". In this paper
+   "twist" always and only means a swap (2-cycle).
+ - "every cycle type of S_7 has been enumerated:" -> "we find for every cycle
+   type of S_7:".
+ - Scratch "The counts are exhaustive, not sampled." (redundant; "for every"
+   already says it).
+
+Status: in progress.
+
+APPLIED.
+
+DATE: v6, 15 July 2026.
+
+SECTION 4 lead-in: reduced to "Throughout, and without loss of generality,
+sigma = (1 2).[fn]" The footnote now reads only "They form a single orbit under
+the Fano-plane automorphism group GL(3, F_2)." (dropped the redundant closure
+prose and the trivial script citation).
+
+REMARK 4.9 (Consecutive twists): deleted in full. Two cross-references repaired:
+ - Section 5.6 census: the 3-cycle description that pointed at Remark 4.9 now
+   states the description inline ("for each three-element subset ... one of the
+   two cyclic orientations closes").
+ - Section 7 outlook: "as have the (2,2)-double transpositions (Remark 4.9),"
+   scratched; the bullet now reads "which permutation cycles close".
+The (2,2)-double-transposition data lived only in Remark 4.9 and is now out of
+the paper, consistent with confining "twist" to swaps.
+
+SECTION 5.2, 5.3, 5.4, 5.5: converted from Remark environments to plain prose
+(the rem: labels removed). The two external references were repointed to the
+subsections: the phi-span comparison -> Section 5.5; the Section 7 Aut bullet ->
+Section 5.3.
+
+SECTION 5.3 containment: "is settled by the ambient algebra, before the lattice
+is imposed" -> "can already be settled at the level of the ambient algebra,
+before the lattice is imposed." (Confirmed to the user: the ambient group
+G_2 x G_2 x S_3 is compact, so every star-automorphism of R^24 is orthogonal,
+established without reference to Lambda; the lattice stabilizer inside it lands
+in Co_0.)
+
+SECTION 5.4: "hexagonal triple" glossed at first use ("Three vectors of equal
+length summing to zero lie at 120 degrees to one another; with their negatives
+they are the six vertices of a regular hexagon, and x, y, z are three
+alternating vertices, a hexagonal triple"). This matches the user's geometric
+reading. The 126/4032 relation made explicit: "Each of its 126 roots has
+exactly 32 roots at 120 degrees; the third block is then forced, so the ordered
+hexagonal triples number 126 x 32 = 4,032." VERIFIED computationally this
+session: the E_7 inner-product distribution from any root is
+{-4:1, -2:32, 0:60, +2:32, +4:1}, and the square-zero script confirms 126 roots
+and 4,032 ordered triples.
+
+SECTION 5.6: subsection and remark title "Which twists close" -> "Closure of
+permutation cycles". Opening reworded so pi is named a "permutation" (per the
+user's mid-turn note), not a "twist"; "twist" is reserved for the swap sigma.
+"every cycle type of S_7 has been enumerated:" -> "we find for every cycle type
+of S_7:". "The counts are exhaustive, not sampled." scratched. Footnote no
+longer claims verify_consecutive_twists_exact.py covers the (2,2)-doubles.
+
+ABSTRACT: "which further twists also close" -> "which permutation cycles,
+beyond the transposition sigma, also close" (same twist=swap consistency).
+
+SECTION 5.1 (resolved): the user agreed the "extends by bilinearity" wording was
+a mistake (Lambda DOES contain square-zero vectors) and dictated the correction.
+Final text: "Neither 0 nor 8 occurs among these values: the minimal shell has no
+idempotent and no square-zero vector. Both questions are settled on all of Lambda
+in Sections 5.2 and 5.4. The order has no idempotent at all; it does, however,
+contain square-zero vectors, at norm 12." The minimal-shell clause is folded into
+the preceding sentence so it is not stated twice.
+
+Paper: 23 pages, builds clean, no undefined references, zero overfull boxes.
+Linter clean.
+
+Status: CLOSED.
