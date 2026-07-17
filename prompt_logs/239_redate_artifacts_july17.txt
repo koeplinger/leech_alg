@@ -1,0 +1,14 @@
+Prompt 239 -- Correct today's artifact dates to 17 July 2026
+Date: 2026-07-17
+
+User: "Today is July 17. Date today's artifacts (and only today's) properly."
+
+Context: this session's work carried the date 15 July 2026 forward; today is
+actually 17 July 2026. Only artifacts created or updated TODAY (this session
+segment) are re-dated; artifacts genuinely produced on earlier days keep their
+dates, per DOCUMENT_GENRES.md (frozen artifacts keep the date of their making).
+
+To determine "today's": git status (uncommitted work of this session) plus the
+artifacts this session wrote.
+
+Status: in progress.

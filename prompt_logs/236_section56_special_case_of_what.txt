@@ -1,5 +1,5 @@
 Prompt 236 -- Section 5.6 opening: special case of what
-Date: 2026-07-15
+Date: 2026-07-17
 
 User: 'Section 5.6 starts with "The transposition sigma is a special case." ...
 a special case of what? extend that sentence with the permutations of the seven

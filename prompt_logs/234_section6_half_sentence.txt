@@ -1,5 +1,5 @@
 Prompt 234 -- Section 6: scratch the factor-of-2 half-sentence
-Date: 2026-07-15
+Date: 2026-07-17
 
 User: 'scratch the half-sentence in section 6: "; an undoubled closure would
 remove the factor-of-2 discrepancy" (redundant / obvious from the remaining

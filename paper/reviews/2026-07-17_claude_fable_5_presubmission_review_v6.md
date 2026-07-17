@@ -1,8 +1,8 @@
-# Pre-resubmission journal-style review of v6 (15 July 2026)
+# Pre-resubmission journal-style review of v6 (17 July 2026)
 
-**Date:** 2026-07-15
+**Date:** 2026-07-17
 **Reviewer:** Claude Fable 5, at the direction of Jens Köplinger
-**Manuscript:** `paper/main.tex`, v6 (15 July 2026), 23 pp., not frozen
+**Manuscript:** `paper/main.tex`, v6 (17 July 2026), 23 pp., not frozen
 **Prompt:** 232.
 **Method:** eight read-only review dimensions matching the author's checklist
 (references; formal math; computer-proof reproducibility; logic;

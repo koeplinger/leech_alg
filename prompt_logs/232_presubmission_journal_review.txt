@@ -1,5 +1,5 @@
 Prompt 232 -- Pre-resubmission journal-style review of v6 (15 July 2026)
-Date: 2026-07-15
+Date: 2026-07-17
 
 User (verbatim intent): "I think we're close for a resubmission, having
 answered the topics that the reviewer of the first abstract algebra journal was
@@ -46,7 +46,7 @@ Plan (workflow; Manifesto Section 14, all reviewers READ-ONLY):
   (7) prior art: fairness and distinction (Wilson, Dixon, Baez-Egan-Silverman-
       Calderbank, Corradetti, the 1923-1946 historical chain, physics refs).
   Then adversarial verification of severe findings, and synthesis to
-  paper/reviews/2026-07-15_claude_fable_5_presubmission_review_v6.md.
+  paper/reviews/2026-07-17_claude_fable_5_presubmission_review_v6.md.
 
 Status: in progress.
 
@@ -68,7 +68,7 @@ which the orchestrator then CONFIRMED by direct construction:
   terminology.md) states the census form and needs scoping.
 
 Review delivered to
-paper/reviews/2026-07-15_claude_fable_5_presubmission_review_v6.md (frozen).
+paper/reviews/2026-07-17_claude_fable_5_presubmission_review_v6.md (frozen).
 
 Blockers: B1 square-zero stratum-vs-census; B2 "L is a maximal order" at the
 root-norm-2 normalization (e_0 not in L; it is a sqrt2-scaled copy of one);

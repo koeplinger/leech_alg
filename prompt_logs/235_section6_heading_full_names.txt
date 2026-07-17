@@ -1,5 +1,5 @@
 Prompt 235 -- Section 6 historical sub-heading: full names for all authors
-Date: 2026-07-15
+Date: 2026-07-17
 
 User: 'A nit in section 6: While we have a convention to write an author's full
 name on first occurrence, and then omit the first name going forward, this

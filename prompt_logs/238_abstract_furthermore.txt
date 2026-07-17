@@ -1,5 +1,5 @@
 Prompt 238 -- Abstract: scope the computer-proof sentence to what follows
-Date: 2026-07-15
+Date: 2026-07-17
 
 User: 'In the abstract: "Using mostly exact arithmetic and computer proof, we
 offer a compact exposition for the applied researcher:" -- make it clear that
@@ -17,7 +17,7 @@ result (Theorem 1.1 via the four lemmas), so the computer-proof qualifier
 scopes only to the Section 5 material that follows.
 
 Note: the pre-submission review (paper/reviews/
-2026-07-15_claude_fable_5_presubmission_review_v6.md, should-fix item under
+2026-07-17_claude_fable_5_presubmission_review_v6.md, should-fix item under
 dimension 5) flags the same sentence from the other side: "mostly exact
 arithmetic" hedges the wrong axis (everything load-bearing IS exact; the real
 split is exhaustive-vs-sampled). If the user later takes that suggestion, the

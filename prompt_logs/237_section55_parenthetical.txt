@@ -1,5 +1,5 @@
 Prompt 237 -- Section 5.5: scratch "(Hermite normal form, exact arithmetic)"
-Date: 2026-07-15
+Date: 2026-07-17
 
 User: 'In section 5.5, the bracketed clarification is well-intended: "(Hermite
 normal form, exact arithmetic)" -- however, Hermite normal form comes a bit
