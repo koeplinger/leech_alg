@@ -1,0 +1,23 @@
+Date: 2026-07-17
+Task: Subagent verification of pre-submission reviewer finding (READ-ONLY, no paper edits).
+
+Prompt (verbatim, abridged): A pre-submission reviewer flagged this finding in
+paper/main.tex (v6, 15 July 2026). Determine independently whether it is REAL
+and correctly characterized.
+
+DIMENSION: prior-art
+SEVERITY: should-fix
+LOCATION: paper/main.tex lines 850-856 (Section 6, Baez-Egan paragraph)
+QUOTE: the derivation of the lower bound $244{,}035{,}421$ on the number of
+$E_8^3$-orbit Leech embeddings,\footnote{...} and Egan's sharper count of
+$17{,}280$ Jordan rings.
+PROBLEM: "Sharper count" misdescribes the relation between Egan's two results.
+In part 10, 244,035,421 is a lower bound on ALL sublattices of E8^3 isometric
+to the Leech lattice, while 17,280 is Baez-Egan's "at least 17,280" for the
+different, more constrained set of those whose 27-dimensional extension is
+closed under 2(xy+yx) (Baez's Puzzle 3 explicitly leaves open whether there
+are more). So 17,280 neither sharpens the 244M bound nor is it an exact count;
+the paper's own earlier sentence correctly says "at least 17,280", which this
+later phrase silently drops.
+
+Outcome: recorded in this session's StructuredOutput (verdict + evidence).

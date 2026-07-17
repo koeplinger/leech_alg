@@ -1,0 +1,16 @@
+Prompt 233 -- Conclusion: scratch the condition-3 sentence
+Date: 2026-07-15
+
+User: 'In the conclusion, scratch this sentence: "The twist maps the
+condition-3 sublattice to this closed sublattice, and the involutory nature of
+sigma maps the result back." -- it's redundant (and the reader won't recognize
+what "condition-3" refers to)'
+
+Applied. The Conclusion's opening paragraph now ends at "...the sublattice
+sigma(Ls), unlike Ls itself, is closed under the standard octonion product."
+The scratched sentence's content is carried by Section 4 (the
+condition-propositions), where "condition (3)" has its context.
+
+Paper: 23 pages, builds clean.
+
+Status: CLOSED.

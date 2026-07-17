@@ -1,0 +1,16 @@
+Prompt 237 -- Section 5.5: scratch "(Hermite normal form, exact arithmetic)"
+Date: 2026-07-15
+
+User: 'In section 5.5, the bracketed clarification is well-intended: "(Hermite
+normal form, exact arithmetic)" -- however, Hermite normal form comes a bit
+abrupt, and exact arithmetic is obvious from following the footnote - and there
+it is described coherently in the comments what that actually means and is.
+Therefore, scratch "(Hermite normal form, exact arithmetic)".'
+
+Applied. The sentence now reads "...so its index in Lambda is exactly
+computable:" followed directly by the script footnote and equation (12). The
+method detail lives in the scripts' own comments, where it is coherent.
+
+Paper: 23 pages, builds clean.
+
+Status: CLOSED.

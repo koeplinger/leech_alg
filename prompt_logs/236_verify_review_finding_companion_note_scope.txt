@@ -1,0 +1,25 @@
+Date: 2026-07-17
+Task: Subagent verification of pre-submission review finding (submission-readiness, should-fix).
+Finding: Sec 5.3 (main.tex ~692-726) states Aut(Lambda,+,star) = C_6 x S_3 (order 36) as flat fact;
+completeness argument lives in companion PDF automorphism_group_2026-07-12.pdf which is
+(a) authored by "Claude Opus 4.8", (b) self-declares outside referee scope, (c) cited only via
+footnote file path, not a bibliography entry. Claimed: the paper's machine-fact labeling posture
+is unprotected here; awkward under Springer/COPE AI-authorship policies for AACA.
+Instruction: READ-ONLY, independent verdict with evidence, StructuredOutput.
+
+Conclusion (2026-07-17): CONFIRMED with two minor overstatements.
+- main.aux: sec:autgroup is subsection 5.3. Lines 694-701 state Aut = C_6 x S_3, order 36,
+  as flat fact, no theorem env, no proof of completeness in main text; lines 720-722 defer
+  "derivation, complete enumerations, independent verification" to the companion note.
+- automorphism_group_2026-07-12.tex lines 48-49: \author{Claude Opus 4.8}, \address{Anthropic};
+  lines 52-56 \thanks: "It is not part of that paper and is not in its referee scope".
+- Companion PDF referenced only at main.tex:723-724; no bib entry of its own (footnote does
+  open with \cite{repo}, the repository bib entry, so "not a bibliography entry" is slightly
+  overstated).
+- "Rests entirely on a repo PDF" overstated: footnote also cites verify_aut_lambda_star.py
+  (claims exhaustive enumeration + independent cross-check) and gap_project/aut_lambda_star.g;
+  but none of these are refereeable either, so the substantive point stands.
+- Ambient-algebra part (G2 x G2 x S3, strict containment in Co_0) IS derived inline; only
+  completeness of the finite enumeration (blockwise part = C_6) is offstage.
+- AACA confirmed as target venue (reviews/2026-07-10_claude_fable_5_journal_review_v6.md).
+Verdict: CONFIRMED.

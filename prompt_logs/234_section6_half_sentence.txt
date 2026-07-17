@@ -1,0 +1,14 @@
+Prompt 234 -- Section 6: scratch the factor-of-2 half-sentence
+Date: 2026-07-15
+
+User: 'scratch the half-sentence in section 6: "; an undoubled closure would
+remove the factor-of-2 discrepancy" (redundant / obvious from the remaining
+part of the sentence)'
+
+Applied. The sentence now ends: "Baez left open the question whether any such
+lattice is closed under the undoubled Jordan product, and conjectures that the
+answer is negative."
+
+Paper: 23 pages, builds clean.
+
+Status: CLOSED.

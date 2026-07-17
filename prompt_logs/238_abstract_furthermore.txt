@@ -1,0 +1,29 @@
+Prompt 238 -- Abstract: scope the computer-proof sentence to what follows
+Date: 2026-07-15
+
+User: 'In the abstract: "Using mostly exact arithmetic and computer proof, we
+offer a compact exposition for the applied researcher:" -- make it clear that
+this applies to what follows, e.g. by starting with "Furthermore, using mostly
+exactly ..." or similar. Otherwise the reader may think that _all_ of the paper
+is computer proof; whereas we've shown the properties from the first paragraph
+in the abstract symbolically.'
+
+Status: in progress.
+
+Applied: "Furthermore, using mostly exact arithmetic and computer proof, we
+offer a compact exposition for the applied researcher: ..."  The "Furthermore"
+marks the paragraph as additional to the first paragraph's symbolically proved
+result (Theorem 1.1 via the four lemmas), so the computer-proof qualifier
+scopes only to the Section 5 material that follows.
+
+Note: the pre-submission review (paper/reviews/
+2026-07-15_claude_fable_5_presubmission_review_v6.md, should-fix item under
+dimension 5) flags the same sentence from the other side: "mostly exact
+arithmetic" hedges the wrong axis (everything load-bearing IS exact; the real
+split is exhaustive-vs-sampled). If the user later takes that suggestion, the
+two edits compose naturally, e.g. "Furthermore, using exact arithmetic
+throughout (sampled statistics identified as such) and computer proof, ...".
+
+Paper: 23 pages, builds clean.
+
+Status: CLOSED.

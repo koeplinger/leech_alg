@@ -1,0 +1,17 @@
+Prompt 236 -- Section 5.6 opening: special case of what
+Date: 2026-07-15
+
+User: 'Section 5.6 starts with "The transposition sigma is a special case." ...
+a special case of what? extend that sentence with the permutations of the seven
+imaginary octonion basis elements, described by the symmetric group S_7.'
+
+Applied. The opening now reads: "The transposition sigma is a special case of
+the permutations of the seven imaginary octonion basis elements, described by
+the symmetric group S_7.  For a general such permutation pi, the product
+x .pi y := pi(pi(x) . pi(y)) may or may not close on Lambda."  The following
+sentence's "of the imaginary axes e_1, ..., e_7" was absorbed into the new
+first sentence ("a general such permutation") to avoid saying it twice.
+
+Paper: 23 pages, builds clean.
+
+Status: CLOSED.

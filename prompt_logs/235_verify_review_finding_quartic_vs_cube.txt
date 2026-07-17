@@ -1,0 +1,22 @@
+Date: 2026-07-17
+Task: Subagent verification of pre-submission reviewer finding (READ-ONLY, no paper edits).
+
+Prompt (verbatim, abridged): A pre-submission reviewer flagged this finding in
+paper/main.tex (v6, 15 July 2026). Determine independently whether it is REAL
+and correctly characterized.
+
+DIMENSION: proof-vs-computation
+SEVERITY: should-fix
+LOCATION: paper/main.tex:633-637 (Section 5.1, paragraph after the table)
+QUOTE: the quartic identity being strictly stronger: in a joint exact-arithmetic
+test on $3 \times 10^5$ samples, every quartic-passing sample also satisfied the
+cube identity
+PROBLEM: (a) 'Strictly stronger' asserts quartic => cube universally; algebra
+has zero divisors, no proof of the implication in the repo; support is sampled
+(quartic-only count = 0). (b) Sample size 3x10^5 is stale: the reviewed record
+(paper/reviews/2026-05-23_claude_opus_4_7_context_aware_review_v4.md) runs the
+joint counters over the SAME N=10^6 two-seed run as the table (quartic-only =
+0 of 10^6; ratio 306,966/127,526 = 2.407), conflicting with the preamble's
+'N = 10^6 per property'.
+
+Outcome: recorded in this session's StructuredOutput (verdict + evidence).

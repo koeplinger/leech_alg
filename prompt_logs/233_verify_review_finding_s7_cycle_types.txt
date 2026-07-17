@@ -1,0 +1,22 @@
+Date: 2026-07-17
+Task: Subagent verification of pre-submission reviewer finding (READ-ONLY, no paper edits).
+
+Prompt (verbatim, abridged): A pre-submission reviewer flagged this finding in
+paper/main.tex (v6, 15 July 2026). Determine independently whether it is REAL
+and correctly characterized.
+
+DIMENSION: logic
+SEVERITY: should-fix
+LOCATION: paper/main.tex, Section 5.6 (line 776) and Conclusion bullet (lines 1007-1009)
+QUOTE: "Testing closure exactly on the 576 basis-pair products of a Z-basis of L,
+we find for every cycle type of S7: [...] Every cycle type of S7 has been
+enumerated exactly"
+PROBLEM: 'Cycle type of S7' means conjugacy class (partition of 7), of which
+there are 14 non-identity ones; the census covers only the six single-cycle
+types (2,365 of the 5,039 non-identity permutations). Mixed types such as
+(2,2), (2,3), (3,3), (2,2,3) — 2,674 permutations — are absent from the table.
+Repo contains exact (2,2) data (verify_consecutive_twists_exact.py: 84/210
+generated double transpositions close, 42/105 distinct, 40%) that the paper
+does not report.
+
+Outcome: recorded in this session's StructuredOutput (verdict + evidence).

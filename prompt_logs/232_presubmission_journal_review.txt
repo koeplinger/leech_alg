@@ -1,0 +1,101 @@
+Prompt 232 -- Pre-resubmission journal-style review of v6 (15 July 2026)
+Date: 2026-07-15
+
+User (verbatim intent): "I think we're close for a resubmission, having
+answered the topics that the reviewer of the first abstract algebra journal was
+interested in, but providing them in the similar fashion as the other
+properties, in the form of a computer proof, that is suitable for an
+'engineering-type' audience and not claiming to replace a deeper mathematical
+understanding. We'll submit for such a journal next, in the hope that future
+work may provide such deeper understanding: I'm very interested in it, but not
+qualified to provide it.
+
+With that in mind, let's do another journal-style review of the paper. Check in
+particular:
+ (1) Are the references valid? Check authors, titles, journals, volumes, pages,
+     years, hyperlinks, DOIs, ...
+ (2) Is the math we derive in the paper formally correct?
+ (3) Can the computer-proofs in the paper be performed independently? (and are
+     they correct?)
+ (4) Is the argument executed logically?
+ (5) Do we clearly separate and characterize the formal proof as compared to
+     direct computation (computer-proof)?
+ (6) Do we follow our own editorial standard reasonably?
+ (7) Have we connected properly to prior art (and distinguished it)? Have we
+     represented it fairly?
+Check for more if you like, but these are the highest hitters on my list. Put
+your review in the paper/reviews folder as usual."
+
+Plan (workflow; Manifesto Section 14, all reviewers READ-ONLY):
+  Seven dimensions matching the user's list, plus an eighth catch-all
+  (submission readiness: abstract/keywords/structure/venue fit).
+  (1) references: verify each bibliography entry against the live web
+      (WebFetch/WebSearch: DOIs, arXiv, journal pages, n-Category Cafe URLs);
+      flag any field that cannot be confirmed.
+  (2) formal math: re-derive every displayed derivation in the paper by hand
+      (not the computer-proof claims: the human-checkable chains).
+  (3) computer-proof reproducibility: actually RUN every script the paper
+      cites, from the repo, and check the printed result against the claim in
+      the paper; also check runnability (imports, no missing files).
+  (4) logic: does the argument chain from definitions to Theorem 1.1 to the
+      Section 5 facts without gaps or circularity.
+  (5) proof-vs-computation separation: for every claim, is it labeled
+      correctly as proved / computed-exhaustively / sampled?
+  (6) editorial standards: against evidence_and_reasoning/
+      editorial_standards.md (five standards + dash + US spelling).
+  (7) prior art: fairness and distinction (Wilson, Dixon, Baez-Egan-Silverman-
+      Calderbank, Corradetti, the 1923-1946 historical chain, physics refs).
+  Then adversarial verification of severe findings, and synthesis to
+  paper/reviews/2026-07-15_claude_fable_5_presubmission_review_v6.md.
+
+Status: in progress.
+
+RESULT.
+
+8 read-only dimensions, 40 agents, ~2.24M tokens. 59 findings: 4 blockers, 28
+should-fix, 27 nits. 31 of 32 adversarial verifications CONFIRMED, 0 REFUTED;
+the one lost verification (infrastructure outage) was the sharpest blocker,
+which the orchestrator then CONFIRMED by direct construction:
+
+  LAMBDA CONTAINS SQUARE-ZERO VECTORS OF NORM 24 (sum of two blockwise
+  orthogonal hexagonal triples; verified in Lambda with u*u = 0 using the
+  repo's own membership test and star). The 4,032 at norm 12 are exactly the
+  norm-12 STRATUM (that count is exhaustive); "Lambda contains 4,032
+  square-zero vectors, all of norm 12" read as a census is FALSE. The
+  norms-in-12Z claim survives (24 is in 12Z). Paper Section 5.4's literal
+  sentence is true; Remark 5.1's framing invites the census reading; the
+  DOCUMENTATION (CURRENT_STATE.md, ledger claim 012, research_result.md,
+  terminology.md) states the census form and needs scoping.
+
+Review delivered to
+paper/reviews/2026-07-15_claude_fable_5_presubmission_review_v6.md (frozen).
+
+Blockers: B1 square-zero stratum-vs-census; B2 "L is a maximal order" at the
+root-norm-2 normalization (e_0 not in L; it is a sqrt2-scaled copy of one);
+B3 "every cycle type of S_7" covers only the six single-cycle types (14
+non-identity types exist); B4 the product-norm remark states sampled facts
+flatly with no script/N/SE (the only Section 5 claim with no evidence class).
+
+Clean: all 27 bibliography entries verified field-by-field against live
+sources; the full symbolic chain re-derived independently including all 192
+appendix certificate rows; every cited script run with output matched; the
+argument's dependency graph acyclic and complete; prior-art credits accurate
+against the sources. One reference misattribution (Wilson's correction targets
+Dixon's 2005 preprint, not Dixon 2010), one Corradetti mischaracterization
+(his abstract disclaims an Okubo Z-order on E8), one "sharper count" imprecision
+(244M and 17,280 count different things).
+
+Submission apparatus flagged: no MSC/keywords; abstract not standalone
+(\cite and \ref inside); repo permanence (suggest Zenodo DOI at submission
+commit); companion-note completeness dependency worth one main-text sentence;
+declarations block missing.
+
+Findings already ruled by the user during or before the review, recorded as
+decided: the four-application list stays (prompt 230); the Section 6 heading
+full-name exception (prompt 235) obsoletes the heading finding.
+
+NOTHING APPLIED to the paper from this review; edits await the user's
+direction. (Prompts 233-237, applied during the review window, were separate
+user-directed edits.)
+
+Status: CLOSED (review delivered).
