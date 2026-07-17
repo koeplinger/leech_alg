@@ -12,3 +12,37 @@ To determine "today's": git status (uncommitted work of this session) plus the
 artifacts this session wrote.
 
 Status: in progress.
+
+APPLIED.
+
+Determination of "today's artifacts": git history. Commits of 15 July carry
+prompts 226-231 and the fine-comb review (2026-07-15_claude_opus_4_8_...); they
+are genuinely of the 15th and keep their dates. Today's commit ("another
+computer review", 2026-07-17) carries prompts 232-238, the pre-submission
+review, and the paper edits; those were mis-dated 15 July inside.
+
+Re-dated to 2026-07-17:
+ - prompt logs 232, 233 (conclusion_scratch), 234 (section6_half_sentence),
+   235 (section6_heading_full_names), 236 (section56_special_case_of_what),
+   237, 238: the Date: header only. (The user's own verify logs
+   233/234/235/236_verify_* were already correctly dated 2026-07-17.)
+ - paper/reviews/2026-07-15_claude_fable_5_presubmission_review_v6.md RENAMED
+   (git mv) to 2026-07-17_claude_fable_5_presubmission_review_v6.md; internal
+   title, **Date:** and manuscript-date lines updated; the two path references
+   in prompt logs 232 and 238 updated to the new name. One "15 July" inside the
+   review body kept: it is a factual statement about when the "stabiliser"
+   spelling entered the paper (prompt 230, committed 15 July).
+ - paper/main.tex subtitle: 15 July 2026 (v6) -> 17 July 2026 (v6). Rebuilt
+   clean, 23 pages.
+
+Untouched (correctly dated, not today's): everything dated on or before
+15 July, including the fine-comb review, prompts 226-231, and the
+automorphism note (2026-07-12).
+
+NOTE on the linter: check 2 (prompt-log immutability) flags the seven
+re-dated logs as modified until the user commits; this is the expected
+signature of a user-directed date correction, recorded here. The date edits
+touch ONLY the Date: header and the review-file path references; no log
+content was altered.
+
+Status: CLOSED.
