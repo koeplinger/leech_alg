@@ -1,0 +1,51 @@
+Prompt 266 -- Rulings on the forensic review: B1, B2, S1-S9
+Date: 2026-07-18
+
+User: 'Definitely fix B1 which we just introduced. Also, definitely fix B2.
+Yes, we're faced with different norm conventions in the literature. I
+overlooked it.
+Re should fix optinos:
+S1: (a) drop the hot link and cite the preprint by its locator only:
+"preprint, 10 March 2005; reference [12] of [Wilson2009]"
+S2: no, instead scratch all the specifics: "that octonion multiplication
+satisfies the composition property N(xy) = N(x)N(y), that Wilson's
+construction produces a lattice with the correct minimal shell of 196,560
+vectors, and that the E8 lattice is indeed a maximal order."
+S3 yes, funny but true. Fix.
+S4 good catch; fix exactly as you suggest.
+S5 sure, fix as you suggest
+S6 sure add a witness to the remark (one sentence); no need to write and
+reference yet another script
+S7 ok, fix as you suggest
+S8 yes that's nice; fix as you suggest
+S9 great catch, fix as you suggest'
+
+Rulings applied:
+ - B1: Section 5.6 product printed as pi^{-1}(pi(x) pi(y)), phrased as the
+   triple product assembled blockwise from it, with the involution note
+   tying it back to Definition 3.2. No table number changes.
+ - B2: scaling clause added in Section 1 (sqrt(2)-scaled copy of the
+   unimodular lattice); Section 6 Wilson self-duality qualified by his
+   halved-norm convention.
+ - S1: Dixon2005 hot link dropped; locator-only citation.
+ - S2: Appendix C sentence reduced by scratching the three specifics
+   (user's own wording choice, differing from the review's suggestion).
+ - S3: "no idempotent at all" -> "no nonzero idempotent".
+ - S4: new clean script verify_polarization_lagrangians.py (V two-sided
+   ideal; V, W both Lagrangian; mu-bar non-commutative; ALL PASS), cited in
+   the Appendix A.1 footnote in place of the two discovery scripts, which
+   remain untouched in the repo (frozen-genre referenced programs).
+ - S5: Appendix B re-derivation sentence qualified (Mahler covering radius
+   by exact-arithmetic sampling).
+ - S6: witness sentence added to Remark 4.5: u1 = (-1,0,0,0,1,0,1,1),
+   u2 = (-1,1,0,0,0,1,0,1) in Ls, u1*u2 = (0,-2,2,1,-2,-1,-1,-1) in
+   Lsbar \ Ls. No new script (user ruling).
+ - S7: Section 1 "octonion products, including Wilson's" -> "the standard
+   octonion product, Wilson's included".
+ - S8: two bare \cite{repo} reproduction claims get script footnotes
+   (Dixon: leech_dixon.py, e8_dixon.py; Baez-Egan: named entry points).
+ - S9: "catalogued" -> "cataloged".
+
+S10-S13 and the nit list await the user's rulings.
+
+Status: CLOSED (for these rulings; review iteration continues).

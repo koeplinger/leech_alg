@@ -59,6 +59,7 @@ All trials use fixed random seeds for reproducibility.  Results are recorded in 
 | `verify_mod2_quotient.py` | Appendix Tables A.2/A.3 as statements about the F₂-algebra L/2L: V a two-sided ideal, W a subalgebra. |
 | `verify_discovery1_W_subalgebra.py` | The multiplication table of W = σ(Ls)/2L inside L/2L. |
 | `verify_discovery2_V_isotropic.py` | V = σ(Ls̄)/2L totally isotropic; V and W as a complementary pair of Lagrangians. |
+| `verify_polarization_lagrangians.py` | The Polarization paragraph of paper Appendix A.1 in one clean run: V a two-sided ideal; V and W both Lagrangian, V ⊕ W a Witt decomposition of (L/2L, q); μ̄ non-commutative. |
 
 ### Historical verification: paper Appendix B
 

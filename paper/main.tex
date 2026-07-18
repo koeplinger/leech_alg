@@ -144,7 +144,9 @@ proof.
 
 The Leech lattice~$\LL$ is the unique even unimodular lattice of
 rank~24 with no vectors of squared norm~2
-\cite{ConwaySloane1999}.  Its minimal shell $\operatorname{Min}(\LL)$
+\cite{ConwaySloane1999}.  In the normalization used throughout this
+paper, with $E_8$ roots of squared norm~2, $\LL$ is realized as the
+$\sqrt{2}$-scaled copy of this unimodular lattice.  Its minimal shell $\operatorname{Min}(\LL)$
 consists of 196{,}560 vectors of squared norm~8, and its automorphism
 group is the Conway group~$\Co_0$, a double cover of the sporadic
 simple group~$\Co_1$.
@@ -170,8 +172,8 @@ The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ uses the
 same octonion multiplication in all three blocks with
 $\ZZ_3$-symmetric cross-block routing.  It satisfies two of Wilson's
 three sublattice conditions automatically.  The third, however,
-generally fails: the sublattice it involves is not closed under
-octonion products, including Wilson's.
+generally fails: the sublattice it involves is not closed under the
+standard octonion product, Wilson's included.
 
 The main result of this paper is that closure on~$\LL$ is restored
 by twisting the octonion multiplication on each block by a
@@ -480,7 +482,11 @@ $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
 
 \begin{remark}\label{rem:Ls-not-closed}
 The sublattice~$Ls$ is \emph{not} closed under the standard octonion
-product, and $\sigma(Ls) \ne Ls$: with $\sigma = (1\;2)$, the
+product: $u_1 = (-1, 0, 0, 0, 1, 0, 1, 1)$ and
+$u_2 = (-1, 1, 0, 0, 0, 1, 0, 1)$ lie in~$Ls$, while
+$u_1 \cdot u_2 = (0, -2, 2, 1, -2, -1, -1, -1)$ lies in
+$L\bar{s} \setminus Ls$.  Moreover $\sigma(Ls) \ne Ls$: with
+$\sigma = (1\;2)$, the
 element $v = (-1, 0, 1, 0, 0, 1, 0, 1)$ lies in~$\sigma(Ls)
 \setminus Ls$.  The twist therefore moves the block-sum sublattice
 off~$Ls$ onto the closed sublattice~$\sigma(Ls)$
@@ -675,7 +681,7 @@ $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16, with
 mode~64 (the norm-multiplicative value $\Nrm(u)\Nrm(v) = 8 \times
 8$).\footnote{\scriptref{verify\_pair\_norm\_histogram.py}.}  Both shell questions are settled on all of~$\LL$ in
 Sections~\ref{sec:idempotents} and~\ref{sec:squarezero}: the order has
-no idempotent at all; it does, however, contain square-zero vectors,
+no nonzero idempotent; it does, however, contain square-zero vectors,
 the smallest at norm~12.
 \end{remark}
 
@@ -809,9 +815,12 @@ inside $\LL/2\LL$ structurally is open.
 
 The transposition~$\sigma$ is a special case of the permutations of the
 seven imaginary octonion basis elements, described by the symmetric
-group~$S_7$.  For a general such permutation~$\pi$, the product
-$x \cdot_\pi y := \pi(\pi(x) \cdot \pi(y))$ may or may not close
-on~$\LL$.  Testing closure exactly on the 576 basis-pair products of a
+group~$S_7$.  For a general such permutation~$\pi$, the triple
+product assembled blockwise from
+$x \cdot_\pi y := \pi^{-1}(\pi(x) \cdot \pi(y))$ may or may not close
+on~$\LL$; for the involution~$\sigma$, with $\sigma^{-1} = \sigma$,
+the factor $x \cdot_\sigma y$ is the product of
+Definition~\ref{def:twisted-product}.  Testing closure exactly on the 576 basis-pair products of a
 $\ZZ$-basis of~$\LL$, we find for every cycle type of~$S_7$:\footnote{\scriptref{verify\_all\_permutations\_exact.py}.}
 \begin{center}
 \begin{tabular}{@{}lrrr@{}}
@@ -854,7 +863,8 @@ $4$-cycles.
 $\{(x,y,z) \in L^3 : \text{conditions 1--3}\}$, gives an explicit
 listing of the 196{,}560 minimal vectors in the form
 $3 \times 240 \times (1 + 16 + 16 \times 16)$, and proves that~$\LL$
-is even and self-dual.  The sublattice framework is
+is even and self-dual in his halved-norm convention (the
+$\sqrt{2}$-scaled copy used here has determinant~$2^{24}$).  The sublattice framework is
 the setting used in the present paper.
 
 \textbf{Dixon (2010)} \cite{Dixon2010} constructs~$\LL$ using the
@@ -877,8 +887,9 @@ the XY-product specializes to the X-product $A \circ_X B = (AX)(X^{-1}
 B)$; Dixon uses this X-product with $X = \ell_0 = \frac{1}{2}(1 + e_1
 + \cdots + e_7)$ to obtain~$E_8$, and general XY-products for
 higher-dimensional laminated lattices including~$\LL$.  We have
-independently reproduced this construction in the supplemental
-code~\cite{repo}.
+independently reproduced this
+construction.\footnote{\scriptref{leech\_dixon.py}
+\scriptref{e8\_dixon.py}.}
 
 \textbf{Baez--Egan (2014)} \cite{Baez2014} study closure
 properties of integer sublattices of the exceptional Jordan algebra
@@ -909,8 +920,9 @@ $E_8$ Gram form; that mod-2 orthogonal-space picture is Tim
 Silverman's (part~12 of \cite{Baez2014}).  The $64$ is
 the number of $L_2$ in this collection that meet a given $L_1$ only
 in $2L$, equivalently the number of $4$-dimensional complementary
-isotropic subspaces.  All Baez--Egan claims hold under our reading.
-Details and code are in~\cite{repo}.
+isotropic subspaces.  All Baez--Egan claims hold under our
+reading.\footnote{\scriptref{egan\_baez\_count.py}
+\scriptref{verify\_phi\_span\_index.py}.}
 
 \textbf{Comparison.}  The product~$\star$ is bilinear on~$\RR^{24}$
 itself.  It does not require an enclosing 27-dimensional
@@ -923,7 +935,7 @@ itself: Dixon's XY-product
 $E_8$ block, but it is not in itself $\ZZ_3$-symmetric across the
 three factors.  Whether the Leech embedding $\sigma(\LL) \subset
 \OO^3$ obtained by applying $\sigma$ blockwise overlaps with one of
-the embeddings catalogued by Egan, or sits outside that family, is
+the embeddings cataloged by Egan, or sits outside that family, is
 a question this paper does not address.
 
 \textbf{Anatomy of the Baez--Egan closure on $\LL$.}  The
@@ -1542,8 +1554,7 @@ $(\bar L, \bar\mu)$.
 
 \paragraph{Polarization of $\bar L$ by $\sigma$.}
 Direct verification yields two further structural facts about the
-decomposition $\bar L = V \oplus W$.\footnote{\scriptref{verify\_discovery1\_W\_subalgebra.py}
-\scriptref{verify\_discovery2\_V\_isotropic.py}.}  First, $V$ is in fact a
+decomposition $\bar L = V \oplus W$.\footnote{\scriptref{verify\_polarization\_lagrangians.py}.}  First, $V$ is in fact a
 \emph{two-sided} ideal of $\bar L$: the right-ideal direction
 $\bar\mu(V, \bar L) \subseteq V$ holds in addition to the left-ideal
 direction (Lemma~\ref{lem:L-sigmaLsbar}).  The right-ideal direction
@@ -1592,8 +1603,9 @@ bilinear product on $\LL$ itself.
 
 The construction this paper builds on was developed across four
 primary papers between 1923 and 1946.  Each was obtained in the
-original and re-derived in exact arithmetic in this
-project.\footnote{\scriptref{verify\_dickson\_1923.py}
+original, and its key computational content re-derived in exact
+arithmetic in this project (for Mahler's covering-radius theorem, by
+exact-arithmetic sampling).\footnote{\scriptref{verify\_dickson\_1923.py}
 \scriptref{verify\_kirmse\_1924.py}
 \scriptref{verify\_kirmse\_1924\_forensic.py} \scriptref{verify\_mahler\_1942.py}
 \scriptref{verify\_coxeter\_1946.py} Verification notes accompany each,
@@ -1665,11 +1677,7 @@ algebras, Wilson's Leech lattice construction, trial algebras, and
 closure tests, and contributed mathematical analysis.
 
 Tests were written from first principles to independently verify
-every foundation: that octonion multiplication satisfies the
-composition property $\Nrm(xy) = \Nrm(x)\Nrm(y)$, that Wilson's
-construction produces a lattice with the correct minimal shell of
-196{,}560 vectors, and that the $E_8$ lattice is indeed a maximal
-order.  This independent verification is how we know that the
+every foundation.  This independent verification is how we know that the
 properties stated in the literature are correctly implemented.
 Closure of the twisted product was first observed on over
 12{,}000{,}000 random pairs of minimal vectors with zero failures,
@@ -1804,9 +1812,8 @@ preprint, 1995.
 \bibitem[Dixon2005]{Dixon2005}
 G.\,M.~Dixon,
 \emph{Integral octonions, octonion multiplication and the Leech
-lattice}, preprint, 10 March 2005.
-\href{http://www.7stones.com/Homepage/8Lattice.pdf}{www.7stones.com/Homepage/8Lattice.pdf};
-reference~[12] of~\cite{Wilson2009}.
+lattice}, preprint, 10 March 2005; reference~[12]
+of~\cite{Wilson2009}.
 
 \bibitem[Dixon2010]{Dixon2010}
 G.\,M.~Dixon,
