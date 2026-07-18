@@ -1,0 +1,23 @@
+Prompt 258 -- Section 1: soften the four-application list
+Date: 2026-07-17
+
+User: 'Sure, soften this last one: [quoting the review's recorded softening
+option for the Section 1 application list: ground it as "fields from which
+interest in earlier versions of this work came."]'
+
+This revises the prompt-230 ruling (list stays as prospective applications) to
+the softened grounding the review offered.
+
+Applied. Section 1 now reads: "...they are listed as machine-obtained facts,
+to provide pointers for the applied reader.  Interest in earlier versions of
+this work came from researchers in medical imaging, cryptography, quantum
+computing, and phenomenology in the physics of fundamental particles."
+
+The four fields stay, but as a factual statement about where interest actually
+came from -- which is what they always were -- rather than as suggested
+application domains. This removes the one sentence two review dimensions
+flagged as reading like overclaim, without dropping the information.
+
+Paper: 23 pages, builds clean.
+
+Status: CLOSED.

@@ -11,6 +11,12 @@ Counts of n-cycles in S_7:
   5-cycles:  C(7,5) * 4!  =  21 *  24 = 504
   6-cycles:  C(7,6) * 5!  =   7 * 120 = 840
   7-cycles:  C(7,7) * 6!  =   1 * 720 = 720
+
+
+RUNTIME NOTE (2026-07-17): about 15-20 minutes single-threaded on the
+project's reference machine (2,344 permutations x 576 exact basis-pair
+products).  For the full-S_7 census, including all mixed cycle types and
+multiprocessing, see verify_all_permutations_exact.py.
 """
 from itertools import combinations, permutations
 from verify_consecutive_twists_exact import closes

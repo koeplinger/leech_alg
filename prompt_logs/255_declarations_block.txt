@@ -1,0 +1,26 @@
+Prompt 255 -- Declarations block
+Date: 2026-07-17
+
+User: 'The expert from the private communication is in the acknowledgments,
+thank you for the reminder nevertheless.
+
+Re "Declarations block" yes, add it: I received no funding, there are no
+competing interests, data availability is public; and use of AI is in itself
+a stated material part of the paper per appendix C.'
+
+Note: the expert who privately confirmed the automorphism result (prompt 254)
+is already among those thanked in the Acknowledgments; nothing to add there.
+
+Applied: a Declarations section after Acknowledgments, before the appendices,
+with four statements:
+  Funding -- none received.
+  Competing interests -- none to declare.
+  Data and code availability -- all public; the complete research record,
+  including every verification script cited in the paper, at the repositories
+  of [repo].
+  Use of AI -- a stated, material part of the work; methodology, the role of
+  AI, and the human-run verification protocol documented in Appendix C.
+
+Paper: 23 pages, builds clean.
+
+Status: CLOSED.

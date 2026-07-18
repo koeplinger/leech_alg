@@ -1,0 +1,50 @@
+Prompt 242 -- Resolve blocker B3 by computing ALL of S_7
+Date: 2026-07-17
+
+User: "Regarding blocker B3, I think it's actually cheap to demonstrate all
+permutations in S_7. I retract my earlier instruction not to include them.
+Perform the calculation, and update this section (and section 7 accordingly)."
+
+This retracts the prompt-225 decision to keep the (2,2)-doubles (and other
+mixed types) out of the paper. B3 is resolved by EXTENDING coverage to the
+full symmetric group rather than narrowing the claim.
+
+New script python_project/src/verify_all_permutations_exact.py: all 5,040
+permutations of the seven imaginary units, grouped by cycle type (the 15
+partitions of 7), each tested exactly on the 576 basis-pair products of a
+Z-basis of Lambda (closes() from verify_consecutive_twists_exact.py, reused
+unchanged; multiprocessing over cores). Sanity checks built in: class sizes
+must match S_7, and the previously published single-cycle and (2,2) counts
+must be reproduced.
+
+Paper updates (Section 5.6 table extended to all cycle types, Section 7
+bullet) FOLLOW THE RUN -- no number enters the paper before the computation
+reports it.
+
+Status: in progress (census running).
+
+RESULT. The full census completed, ALL PASS, both built-in sanity checks green
+(class sizes match S_7; the previously published single-cycle and (2,2) counts
+reproduced exactly). Complete table (close/tested):
+
+  2-cycle 21/21 (100%); 3-cycle 35/70 (50%); (2,2) 42/105 (40%);
+  4-cycle 0/210 (0%); (3,2) 126/420 (30%); 5-cycle 252/504 (50%);
+  (2,2,2) 21/105 (20%); (3,3) 112/280 (40%); (4,2) 294/630 (46.7%);
+  6-cycle 210/840 (25%); (3,2,2) 105/210 (50%); (4,3) 168/420 (40%);
+  (5,2) 42/504 (8.3%); 7-cycle 336/720 (46.7%).
+  Non-identity total: 1,764 of 5,039 (35.0%). Identity: does not close.
+
+Notable: the 4-cycles remain the ONLY total failure across all 14 types; the
+(5,2) type is the lowest nonzero rate (8.3%); three types sit at exactly half.
+
+Paper Section 5.6: table extended to all 14 cycle types with the new total;
+prose updated (identity noted; 4-cycles the only total failure; (5,2) the
+lowest nonzero rate; the 3-cycle description kept). Footnote now cites
+verify_all_permutations_exact.py (which reproduces the earlier per-type
+scripts' counts as a built-in cross-check). Section 7's bullet "Every cycle
+type of S_7 has been enumerated exactly" is now literally true and stands
+unchanged. Script indexed in python_project/src/README.md. Blocker B3 is
+resolved by extension, and the earlier (2,2) exclusion (prompt 225) is
+formally superseded by the user's retraction here.
+
+Status: CLOSED.

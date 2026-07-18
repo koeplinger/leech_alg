@@ -1,0 +1,15 @@
+Prompt 253 -- [repo] bibitem: equal mirrors, no DOI snapshot
+Date: 2026-07-17
+
+User: 're "Repo permanence: the bibliography names Bitbucket primary," remove
+the "primary" designation from bitbucket; both are equal mirrors; don't
+introduce a Zenodo DOI snapshot, the repos are forward-evolving; the reader
+can obtain an authoritative snapshot of the repo from the git history. No
+need to dwell on it.'
+
+Applied: the [repo] bibitem now lists both URLs joined by "and", with no
+primary/mirror designation. The review's Zenodo-DOI suggestion is declined by
+the user and will not be pursued: the repositories are forward-evolving and
+git history is the authoritative snapshot mechanism.
+
+Status: CLOSED.

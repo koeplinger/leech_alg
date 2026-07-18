@@ -2,6 +2,11 @@
 ##
 ##  aut_lambda_star.g -- structure of Aut(Lambda, +, star)
 ##
+##  REQUIREMENT NOTE (2026-07-17): StructureDescription and IdGroup need
+##  GAP's Small Groups library (SmallGrp).  Without it (e.g. gap -A or a
+##  minimal build) the script prints Size(G) = 36 and then aborts in a
+##  break loop.
+##
 ##  Reads the 24x24 integer matrices produced by
 ##      python_project/src/verify_aut_lambda_star.py
 ##  (three generators, expressed in the Z-basis of Wilson's Leech lattice

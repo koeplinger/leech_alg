@@ -187,12 +187,14 @@ imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
   are purely imaginary, of equal norm, and sum to zero: a hexagonal
   triple in Im(O) = R⁷.  The solution set is a 12-dimensional cone
   inside T, meeting D only in 0.
-- **Λ does contain nonzero square-zero elements: 4,032 of them, all of
-  norm 12.**  They come from the hexagonal triples of the E₇ root
-  system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O).
-- The minimal shell sees none for an arithmetic reason: N(u) = 3 N(x)
-  with N(x) ∈ 2Z, and every Λ-norm lies in 4Z, so every square-zero
-  vector of Λ has norm in 12Z, while the minimal norm is 8.
+- **Λ does contain nonzero square-zero elements, with norms in 12Z**
+  (N(u) = 3 N(x) with N(x) ∈ 2Z, and every Λ-norm lies in 4Z).  The
+  norm-12 stratum is exactly the 4,032 hexagonal triples of the E₇
+  root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O); higher
+  strata are realized (norm-24 witness:
+  `verify_square_zero_norm24_witness.py`).
+- The minimal shell sees none: the minimal norm is 8, not a multiple
+  of 12.
 
 Min(Λ) itself contains no idempotent and no square-zero vector.
 

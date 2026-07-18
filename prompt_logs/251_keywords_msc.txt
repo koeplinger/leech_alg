@@ -1,0 +1,15 @@
+Prompt 251 -- Keywords and MSC 2020 codes
+Date: 2026-07-17
+
+User: 'Re "No MSC 2020 codes, no keywords" -- yes! add those'
+
+Added after the abstract (class-agnostic block; the document class is "paper",
+not amsart, and journals re-key these at submission):
+  Keywords: Leech lattice; integral octonions; E_8 lattice; nonassociative
+  algebra; non-unital order; computer-assisted proof.
+  MSC 2020: Primary 11H56, 17A75; Secondary 11R52, 17D05, 68V05.
+(11H56 automorphism groups of lattices; 17A75 composition algebras; 11R52
+orders in division algebras; 17D05 alternative rings; 68V05 computer-assisted
+proofs.)
+
+Status: CLOSED.

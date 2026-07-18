@@ -1,0 +1,21 @@
+Prompt 249 -- Editorial residues (dimension 6)
+Date: 2026-07-17
+
+User: 'fix the suggested "(6) Editorial standards" residues'
+
+Applied:
+ - "orbit-stabiliser" -> "orbit-stabilizer" (the Egan-bound footnote; the
+   paper's one British spelling).
+ - The Section 4 footnote's dangling "They": already fixed by prompt 245's M1
+   rewrite (the footnote is now self-contained).
+ - Section 2.3 "type-2 root" -> "root in the half-integer branch" (collision
+   with the Type 1/2/3 minimal-vector vocabulary removed).
+ - "block-wise" -> "blockwise" (Section 6; the lone hyphenated occurrence).
+ - The Section 2.3 family table now says "cyclic permutations" in all three
+   rows (was "cyclic perms" in rows 2-3).
+ - [Corradetti2026] bibitem: arXiv identifier printed once ("preprint, 2026."
+   plus the single hyperlinked arXiv id), matching the other preprint entries.
+ - Footnote punctuation unified: all 14 citation-only script footnotes now end
+   with a terminal period.
+
+Status: CLOSED.

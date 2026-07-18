@@ -23,6 +23,10 @@ LOOPS-library `MoufangLoop(16, 3)` (the standard octonion loop).
 - **GAP 4.x.**  On Debian/Ubuntu:  `sudo apt install gap`.
 - **The LOOPS package.**  Bundled with `gap-pkg-loops` on Debian/Ubuntu, or
   install in GAP via `LoadPackage("PackageManager"); InstallPackage("loops");`.
+- **The Small Groups library (SmallGrp)** (usually bundled with GAP) for
+  `StructureDescription`/`IdGroup` in `aut_lambda_star.g` and
+  `octonion_stabilisers.g`; without it the scripts print the group orders and
+  then abort in a break loop at the structure identification.
 - **The AtlasRep package** (usually autoloaded with GAP) for one line of
   `octonion_stabilisers.g`, which confirms Stab(Ls̄) ≅ U₃(3).2 = G₂(2) against
   `AtlasGroup("U3(3).2")`.  Only that single cross-check needs it; the orders

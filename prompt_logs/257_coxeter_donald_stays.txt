@@ -1,0 +1,20 @@
+Prompt 257 -- Review item 59 ("Donald" in the abstract): stays
+Date: 2026-07-17
+
+User: 're ""(Donald)" in the abstract: charming, but abstracts are indexed
+verbatim; consider moving the nickname to Appendix B." -- no, Coxeter's use
+of "Donald" is dominant, beyond typical nickname use. This is in contrast to
+Richard Bruck, who did use the nickname "Dick" but not in formal announcements
+or publications.'
+
+DECISION: H.S.M. ("Donald") Coxeter stays as written in the abstract. The
+distinction the user draws: for Coxeter, "Donald" was the dominant name in use
+(beyond a casual nickname), so including it is informative identification, not
+color; Bruck's "Dick", by contrast, was informal only and is correctly absent
+from the paper. No change.
+
+This closes the last ruled item of the pre-submission review
+(paper/reviews/2026-07-17_claude_fable_5_presubmission_review_v6.md): every
+finding is now either applied or explicitly ruled by the author.
+
+Status: CLOSED.

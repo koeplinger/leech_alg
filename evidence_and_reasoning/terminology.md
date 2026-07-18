@@ -281,12 +281,14 @@ In this project (main paper §5.2, Remark 5.4;
   **iff** x, y, z are purely imaginary, of equal norm, and sum to zero:
   a hexagonal triple in Im(O) = R⁷.  The solution set is a cone of
   dimension 12; it lies in T and meets D only in 0.
-- **The order (Λ, +, ⋆) does contain square-zero elements: 4,032 of
-  them, all of norm 12.**  They arise from the hexagonal triples of the
-  E₇ root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O).
-- **Min(Λ) contains none**, for an arithmetic reason: N(u) = 3 N(x)
-  with N(x) ∈ 2Z, and every norm of Λ lies in 4Z, so every square-zero
-  vector of Λ has norm in 12Z, while the minimal norm is 8.
+- **The order (Λ, +, ⋆) does contain square-zero elements, with norms
+  in 12Z** (N(u) = 3 N(x) with N(x) ∈ 2Z, and every norm of Λ lies in
+  4Z).  The norm-12 stratum is exactly the 4,032 hexagonal triples of
+  the E₇ root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O);
+  higher strata are realized (norm-24 witness:
+  `verify_square_zero_norm24_witness.py`).
+- **Min(Λ) contains none**: the minimal norm is 8, not a multiple
+  of 12.
 
 ### Symmetric composition algebra
 

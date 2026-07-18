@@ -1,0 +1,17 @@
+Prompt 250 -- Prior art: Egan count clarification only
+Date: 2026-07-17
+
+User: 'in the suggested "(7) Prior art" implement only the "Egan's sharper
+count of 17,280" clarification. It's ok to leave the Corradetti reference
+generic (the reader would be intrigued and should read the whole paper, in my
+opinion); and the factor 1/2 is a cosmetic rescaling, distinguishing "doubled"
+vs "quadrupled" would distract from the fact that we're talking about the same
+thing'
+
+Applied: "Egan's sharper count of 17,280 Jordan rings" -> "Egan's count of at
+least 17,280 Jordan rings" (the 244M and 17,280 count different things;
+"sharper" implied refinement).
+NOT applied, per the user: the Corradetti rephrasing (P1) and the
+doubled/quadrupled normalization parenthetical.
+
+Status: CLOSED.

@@ -1,0 +1,32 @@
+Prompt 248 -- Proof-vs-computation: what remained after the blockers
+Date: 2026-07-17
+
+User: 'regarding should-fix "(5) Proof vs. computation": Now that we've
+implemented the required blockers, check whether additional wording updates
+are still needed.'
+
+Assessment: items 26 (the product-norm remark) and 27 (Remark 1.3 universals)
+were already resolved by blocker B4. Still needed and applied:
+ 28: abstract "using mostly exact arithmetic" -> "using exact arithmetic
+     (sampled statistics identified as such)" -- the hedge now sits on the
+     right axis (exhaustive-vs-sampled, not exact-vs-inexact).
+ 29: "the quartic identity being strictly stronger: ... on 3 x 10^5 samples"
+     -> "was strictly stronger on every sample: in the joint exact-arithmetic
+     count over the same 10^6 samples, no quartic-passing sample failed the
+     cube identity ..." -- observed rather than universal (the algebra has
+     zero divisors, so no cancellation proof exists), and the stale 3 x 10^5
+     replaced by the actual N = 10^6 joint run (numbers cross-checked against
+     the user's own verification log 235: quartic-only = 0 of 10^6, ratio
+     306,966/127,526 = 2.4).
+ 30: the two symbolic classifications now named as such: "exactly eight
+     idempotents, a symbolic classification carried out and verified in exact
+     arithmetic"; the square-zero iff "again a symbolic classification".
+ 32 (nit, applied as factual accuracy in the same sentence): the sampling
+     domains now include "and from Min(Lambda)^3 for the symmetric-composition
+     identity" (the ternary identity draws three vectors).
+Also in flight for the sampled half of Remark 5.1: a dedicated histogram
+script (verify_pair_norm_histogram.py, two-seed 10^6 convention), so the
+sampled value-set claim has a reproducing artifact; citation added once the
+run confirms.
+
+Status: CLOSED (histogram citation recorded in prompt 243's closure).

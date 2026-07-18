@@ -1,0 +1,20 @@
+Prompt 245 -- Fix the formal-math should-fixes (M1, M2)
+Date: 2026-07-17
+
+User: 'regarding should-fix "(2) Formal math" fix them'
+
+M1 (the Section 4 WLOG footnote did not transport the proof): the footnote now
+carries the actual argument -- the 21 transpositions form a single orbit under
+conjugation by the order-21 group of coordinate permutations preserving the
+oriented Fano triples, and each such permutation is an octonion automorphism
+fixing s and sbar and preserving L, so conjugation carries the (1 2) proof to
+any transposition. VERIFIED computationally before writing: the
+oriented-Fano-preserving subgroup of S_7 has order exactly 21, and its
+conjugation action on the 21 transpositions is a single orbit (orbit sizes
+[21]). This rewrite also fixes the editorial "They"-without-antecedent finding.
+
+M2: Section 5.3 "blockwise octonion automorphism" -> "blockwise automorphism of
+the twisted octonion algebra (O, .sigma) of Definition 3.2" -- the displayed
+C_6 generator preserves the twisted product, not the standard one.
+
+Status: CLOSED.

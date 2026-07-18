@@ -1,0 +1,14 @@
+Prompt 241 -- Resolve pre-submission blocker B2 (L "maximal order" at root-norm 2)
+Date: 2026-07-17
+
+User: "Resolve blocker B2 exactly as you suggest."
+
+B2 (paper/reviews/2026-07-17_claude_fable_5_presubmission_review_v6.md):
+At the paper's root-norm-2 normalization, e_0 not in L (L is even, N(e_0)=1),
+so L is not literally a maximal order in the unital sense of the cited
+classical works; it is a sqrt(2)-scaled copy of one. Fix per the review: say L
+is closed under multiplication (Table A.1) and is a sqrt(2)-scaled copy of a
+maximal order of the integral octonions; reserve unital maximality for the
+unit-scale octavians of the cited literature.
+
+Status: in progress.

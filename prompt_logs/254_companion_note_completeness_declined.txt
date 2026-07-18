@@ -1,0 +1,23 @@
+Prompt 254 -- Review item 52 (companion-note completeness sentence): declined
+Date: 2026-07-17
+
+User: 'Re "The companion note as sole completeness reference" -- not needed;
+it's already been independently confirmed to me by an expert mathematician in
+the field. These two points of evidence (computer proof, expert verification)
+offer enough trust to me that our writings are correct here. Conversely, a
+reader interested in the true math reason behind all of this would be better
+served to derive this from scratch.'
+
+DECISION: no change to Section 5.3. The review's suggestion (a one-sentence
+main-text statement of what the completeness of the order-36 enumeration
+rests on) is declined. The author's grounds: the result is supported by two
+independent lines -- the computer proof recorded in the companion note, and a
+private confirmation by an expert mathematician in the field -- and a reader
+seeking the structural reason is better served deriving it from scratch than
+by an expanded pointer.
+
+Note for the record: the private expert confirmation is not citable material
+and is deliberately NOT added to the paper; it is the author's own basis for
+trust, recorded here only as the rationale for declining the edit.
+
+Status: CLOSED.

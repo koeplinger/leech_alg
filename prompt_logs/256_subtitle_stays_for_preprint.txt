@@ -1,0 +1,16 @@
+Prompt 256 -- Review item 58 (subtitle): stays in the preprint copy
+Date: 2026-07-17
+
+User: 're "Subtitle carries the working date/version -- drop in the submitted
+copy." -- will do; not here - this version is for ResearchGate, and versioning
+and dating is informative for preprints that are not yet stable.'
+
+DECISION: the \subtitle{17 July 2026 (v6)} stays in the repository/preprint
+version. The user will drop it himself in the copy prepared for journal
+submission. No change to main.tex.
+
+This also settles the intended distribution: the current v6 build is destined
+for ResearchGate as a dated preprint, where version-and-date information is
+informative precisely because the document is not yet stable.
+
+Status: CLOSED.

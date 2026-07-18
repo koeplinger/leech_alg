@@ -1,0 +1,16 @@
+Prompt 247 -- Logic items: sigma scope in Section 5; quartic definition
+Date: 2026-07-17
+
+User: 'from "(4) Logic" implement only the first two updates, "throughout"
+clarified at the beginning of section 5 also, and define "quartic
+power-associativity" as you suggest. However, the 2^25 index of the Baez-Egan
+construction is a comparison result, no need to announce it elsewhere.'
+
+L1: Section 5 now opens "Throughout this section, sigma = (1 2), as in
+Section 4."
+L2: the table's "Quartic power-associativity" row carries a footnote: "All
+five degree-4 parenthesizations of x star x star x star x coincide."
+The 2^25 announcement suggestion: NOT implemented, per the user (it is a
+comparison result and stays local to Section 6).
+
+Status: CLOSED.

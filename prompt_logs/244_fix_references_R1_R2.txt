@@ -1,0 +1,15 @@
+Prompt 244 -- Fix the two reference findings (R1, R2)
+Date: 2026-07-17
+
+User: 'Fix the two references in your should-fix list "(1) References"'
+
+R1: the Dixon footnote in Section 6 misattributed Wilson's correction to
+Dixon 2010/1995. Retargeted: a 2005 preprint of Dixon's ("Integral octonions,
+octonion multiplication and the Leech lattice", Wilson's reference [12])
+carried the formula; Wilson supplied the correction in a bracketed note. The
+inexact "[end of S5]" locator dropped.
+
+R2: [Elduque2023_IsotropicNorm] "(NAART 2020)" -> "(NAART II, 2022)", matching
+the printed Springer book subtitle (conference postponed from 2020, held 2022).
+
+Status: CLOSED.

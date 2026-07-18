@@ -1,0 +1,25 @@
+Prompt 246 -- Fix the computer-proof reproducibility items (C1-C5)
+Date: 2026-07-17
+
+User: 'do should-fix "(3) Computer-proof reproducibility" as you say'
+
+C1: the Appendix A.1 polarization paragraph (V two-sided ideal; both
+Lagrangians; mu-bar non-commutative) now carries a footnote citing
+verify_discovery1_W_subalgebra.py and verify_discovery2_V_isotropic.py.
+C2: verify_kirmse_1924_forensic.py added to the Appendix B footnote (it is
+the script that verifies the thirty-to-eight reconstruction).
+C3: Appendix C "Both implementations reproduce the same integer coefficients
+displayed in the appendix" -> "verify the same basis-pair identities as the
+appendix tables" (neither prints coefficients; the GAP basis differs by sign
+on 7 of 8 vectors).
+C4: the two invocations reproducing the paper's N = 10^6 table recorded in
+python_project/src/README.md: seeds 20260601 and 20260602 at target 500,000
+each, counts summed (matches prompt log 134; the no-argument default
+reproduces the earlier 802k run).
+C5: dated runtime note (2026-07-17) added to verify_all_cycles_exact.py's
+docstring (15-20 min single-threaded; points to the new full-census script);
+dated requirement note added to gap_project/aut_lambda_star.g (SmallGrp needed
+for StructureDescription, else break loop after Size(G) = 36); SmallGrp
+prerequisite added to gap_project/README.md.
+
+Status: CLOSED.

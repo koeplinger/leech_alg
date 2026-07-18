@@ -1,0 +1,15 @@
+Prompt 252 -- Abstract made standalone
+Date: 2026-07-17
+
+User: 're "The abstract does not stand alone" great catch -- remove the
+"[repo]" reference entirely, and replace the appendix A with the wording you
+suggest'
+
+Applied:
+ - "in Appendix~\ref{app:history}" -> "in a historical appendix".
+ - The abstract's closing sentence drops the \cite{repo}: "...the complete
+   research record is publicly available." (The [repo] citation remains
+   everywhere else in the body, including all 24 script footnotes.)
+The abstract now contains no \cite and no \ref and circulates standalone.
+
+Status: CLOSED.

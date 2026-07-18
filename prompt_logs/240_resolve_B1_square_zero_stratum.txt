@@ -1,0 +1,27 @@
+Prompt 240 -- Resolve pre-submission blocker B1 (square-zero: stratum, not census)
+Date: 2026-07-17
+
+User: 'Resolve blocker B1 exactly as you suggest (with "ripples").'
+
+B1 (paper/reviews/2026-07-17_claude_fable_5_presubmission_review_v6.md):
+Lambda contains square-zero vectors of norm 24 (sum of two blockwise
+orthogonal hexagonal triples; confirmed by direct construction during the
+review). The 4,032 at norm 12 are exactly the norm-12 STRATUM (exhaustive);
+the census reading of "4,032, all of norm 12" is false.
+
+Plan:
+ 1. New witness script verify_square_zero_norm24_witness.py (the paper's
+    standard: every computational claim names its script; the norm-24
+    existence is a computational claim). Run it; index it.
+ 2. Paper Section 5.4: add the scoping sentence -- norms lie in 12Z (with the
+    one-line arithmetic reason), the 4,032 root triples are exactly the
+    norm-12 stratum, higher strata exist (norm-24 witness, script cited).
+ 3. Paper Remark 5.1: "it does, however, contain square-zero vectors, at
+    norm 12" -> scoped ("the smallest at norm 12").
+ 4. Ripples (current-state docs stating the census form): CURRENT_STATE.md,
+    key_claims/README.md (claim 012), research_result.md, terminology.md,
+    python_project/src/README.md (script row). Frozen artifacts
+    (verify_square_zero_classification.py docstring, prompt logs) reviewed:
+    the script's docstring makes no census claim -- left as is.
+
+Status: in progress.

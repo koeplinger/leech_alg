@@ -150,12 +150,13 @@ imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 u = (x, y, z) satisfies u ⋆ u = 0 exactly when x, y, z are purely imaginary,
 of equal norm, and sum to zero: a hexagonal triple in Im(O) = R⁷, giving a
 12-dimensional cone inside T.  **Λ does contain nonzero square-zero
-elements**: 4,032 of them, all of norm 12, coming from the hexagonal triples
-of the E₇ root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O).  The
-minimal shell sees none for an arithmetic reason: N(u) = 3·N(x) with
-N(x) ∈ 2Z, and every Λ-norm lies in 4Z, so every square-zero vector of Λ has
-norm in 12Z, while the minimal norm is 8.  Min(Λ) itself contains no
-idempotent and no square-zero vector.
+elements**, with norms in 12Z (N(u) = 3·N(x) with N(x) ∈ 2Z, and every
+Λ-norm lies in 4Z).  The norm-12 stratum is exactly the 4,032 hexagonal
+triples of the E₇ root system formed by the 126 norm-4 vectors of
+Ls̄ ∩ Im(O); higher strata are realized (norm-24 witness:
+`verify_square_zero_norm24_witness.py`).  Min(Λ) itself contains no
+idempotent and no square-zero vector (minimal norm 8, not a multiple
+of 12).
 
 **σ(Ls) is not an ideal of L** (`verify_sigma_Ls_ideal_exclusion.py`).  A
 candidate structural explanation for Lemma 4.4 is excluded: of the 64
