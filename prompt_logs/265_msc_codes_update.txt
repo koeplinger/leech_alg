@@ -1,0 +1,19 @@
+Prompt 265 -- Update the MSC 2020 codes
+Date: 2026-07-18
+
+User: 'I like the following MSC better:
+Primary
+11H06 Lattices and convex bodies (number-theoretic aspects)
+17A75 composition algebras
+Secondary
+17D05 alternative rings
+68V05 Computer assisted proofs of proofs-by-exhaustion type'
+
+Change relative to the previous block ("Primary 11H56, 17A75; Secondary
+11R52, 17D05, 68V05"): primary 11H56 -> 11H06; secondary 11R52 dropped;
+17A75, 17D05, 68V05 unchanged.
+
+Applied to the MSC line after the abstract in paper/main.tex; rebuilt;
+linter clean.
+
+Status: CLOSED.

@@ -1,0 +1,43 @@
+Prompt 264 -- Forensic review of v6 before freezing (step 1 of 3)
+Date: 2026-07-18
+
+User: 'Great. Let's prep for freezing v6 in three steps:
+(1) make another forensic review of the paper, to ensure it is
+publication-grade in a journal aiming at mathematical experiments; we'll
+iterate further findings until we're happy;
+(2) once happy, freeze v6 of the paper, and
+(3) make a documentation consistency sweep across this project (because it
+is in the public record after all).
+Engage!'
+
+Plan of record:
+ - Step 1 (this prompt): multi-agent forensic review of paper/main.tex,
+   targeted at an experimental-mathematics venue. Per Manifesto Section 14,
+   review agents get NO write access to prose; they report findings only.
+   I verify each finding against the paper and the scripts before it enters
+   the review document, then write the review to paper/reviews/ myself.
+ - Findings iterate with the user until they declare the paper ready.
+ - Steps 2 (freeze v6) and 3 (documentation consistency sweep) follow only
+   after the user is happy with step 1. Not started in this prompt.
+
+Outcome of the review run (18 July 2026): 85 agents, 49 raw findings, 38
+after dedup, 31 confirmed / 5 split / 2 refuted by two adversarial refuters
+each. Every blocker- and should-fix-level finding, and every script/build
+claim, was then re-verified first-hand by the orchestrator (spot-check
+scripts in the session scratchpad; both discovery scripts executed; live
+fetches for the two URL claims; main.out bookmarks decoded; main.log
+re-scanned in Python after grep silently treated it as binary).
+
+Review document written:
+  paper/reviews/2026-07-18_claude_fable_5_forensic_review_v6.md
+Findings: 2 blockers (B1 pi-vs-pi^{-1} in the Section 5.6 product
+definition; B2 unimodular-vs-norm-8 normalization clash in Section 1 and
+Section 6), 13 should-fix (S1-S13), 19 nits (N1-N19), 2 refuted (recorded).
+Notable: B1 confirmed by three independent recomputations (no table number
+changes; the fix is one inverse); the Dixon2005 URL now serves the 2010
+XY-product paper (S1); an explicit witness for "Ls not closed" was found:
+u1 = (-1,0,0,0,1,0,1,1), u2 = (-1,1,0,0,0,1,0,1) in Ls with
+u1*u2 = (0,-2,2,1,-2,-1,-1,-1) in Lsbar \ Ls (S6).
+
+Status: OPEN (awaiting the user's item-by-item rulings; freeze and
+documentation sweep follow after).
