@@ -1,0 +1,29 @@
+Prompt 263 -- Add Dixon's 2005 preprint to the references
+Date: 2026-07-18
+
+User: 'Let's also add this to our references also: "A 2005 preprint of
+Dixon's (Integral octonions, octonion multiplication and the Leech lattice,
+Wilson's reference [12])". Keep the 1995 Dixon reference also, to demonstrate
+first appearance in the public record.'
+
+VERIFIED AGAINST THE PRIMARY SOURCE before writing the entry. Wilson's
+reference [12], quoted verbatim from his published PDF
+(webspace.maths.qmul.ac.uk/r.a.wilson/pubs_files/octoLeech1rev.pdf):
+  "[12] G. M. Dixon, Integral octonions, octonion multiplication and the
+  Leech lattice, Preprint, http://www.7stones.com/Homepage/8Lattice.pdf,
+  10th March 2005."
+The 7stones URL was checked live this session: HTTP 200, serving the PDF.
+Wilson's bracketed correction note also re-confirmed verbatim ("[Note: After
+this paper was submitted, I became aware of some work in progress by
+Geoffrey Dixon [12] ... his conjectured formula for the last set of vectors
+needs modification ...]").
+
+Applied:
+ - New \bibitem[Dixon2005], placed between Dixon1995 and Dixon2010, in the
+   paper's preprint-entry style: title, "preprint, 10 March 2005", the
+   hot-linked 7stones URL, and the locator "reference [12] of [Wilson2009]"
+   (which keeps the entry findable even if the personal-site URL ever dies).
+ - The Section 6 footnote now cites \cite{Dixon2005} instead of describing
+   the preprint inline; Dixon1995 stays as the first public appearance.
+
+Status: CLOSED.

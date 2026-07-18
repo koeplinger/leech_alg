@@ -1,0 +1,30 @@
+Prompt 260 -- Proof-reading question: why "twisted octonion algebra" in 5.3?
+Date: 2026-07-18
+
+User: 'Help me understand this change: [the Section 5.3 wording "Every
+automorphism is a blockwise automorphism of the twisted octonion algebra
+(O, .sigma) of Definition 3.2"] Why are you referring to the _twisted_
+octonion algebra? Is this because the explicit demonstration of C_6 uses the
+sigma(1,2)-twisted version of the standard representation given at the
+beginning? Or do you want to imply a deeper reason?'
+
+ANSWER (the first reading; no deeper implication):
+The triple product star is assembled from ._sigma in its nine blocks, so a
+blockwise map u_alpha -> A(u_alpha) commutes with star exactly when A
+preserves ._sigma, i.e. A in Aut(O, ._sigma). The displayed C_6 generator is
+such an A. Verified again this session on all 64 basis pairs:
+    A6 preserves the STANDARD product:  False
+    A6 preserves the TWISTED product:   True
+    sigma A6 sigma preserves the STANDARD product: True
+So writing plain "octonion automorphism" would send a checking reader to test
+A6 against the standard Fano table of Section 2.1, where it FAILS -- that was
+review finding M2 (prompt 245).
+
+Nothing deeper: Aut(O, ._sigma) = sigma Aut(O, .) sigma is a conjugate copy of
+the same compact G_2 inside O(8). One could equivalently display the
+conjugated generator sigma A6 sigma and call it an automorphism of the
+standard product, but then the blockwise action on star would carry the
+sigma-conjugation instead. In the coordinates the paper fixes (sigma = (1 2)
+throughout), the self-consistent statement is the one printed.
+
+Status: CLOSED (question answered; no paper change).

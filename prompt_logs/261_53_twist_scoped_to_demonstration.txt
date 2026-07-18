@@ -1,0 +1,24 @@
+Prompt 261 -- Section 5.3: scope the sigma-twist to the explicit demonstration
+Date: 2026-07-18
+
+User: 'Ok - insert just a few words that make it clear that the sigma-twist is
+for the chosen explicit demonstration, e.g. "Every automorphism is a blockwise
+automorphism of the octonions, here in the explicit demonstration of the
+twisted octonion algebra" ... or even more concise if you find a better
+wording.
+
+By the way, great catch of the norm-24 witnesses for square-zero product.'
+
+Applied. Section 5.3 now reads: "Every automorphism is a blockwise octonion
+automorphism followed by a permutation of the three blocks; in the explicit
+demonstration below, blockwise means with respect to the twisted algebra
+(O, .sigma) of Definition 3.2."
+
+Structure: the first clause states the coordinate-free fact (blockwise
+octonion automorphism -- true in any representation, since Aut(O, .sigma) is a
+conjugate copy of the same compact G_2); the second clause pins the twist to
+the displayed generator's coordinates, so a checking reader tests the signed
+permutation against the right multiplication table (review finding M2, prompts
+245/260).
+
+Status: CLOSED.

@@ -1,0 +1,22 @@
+Prompt 262 -- Date to 18 July 2026; census footnote trimmed
+Date: 2026-07-18
+
+User: "We've still updating the v6 version of the main paper, it is not frozen
+yet. Update the paper's date with today's date (18 July 2026).
+
+Then, scratch this footnote text (in-code comments are sufficient; and in
+general it's not that interesting that we've done something less comprehensive
+at some time earlier ... who cares ... what counts is the current quality, and
+for our methodology, to always learn from feedback and become better than
+before): 'All 5,040 permutations; the run reproduces the per-type counts of
+the earlier single-cycle scripts as a built-in cross-check.'"
+
+Applied:
+ - \subtitle{17 July 2026 (v6)} -> \subtitle{18 July 2026 (v6)}. Version held
+   at v6, not frozen.
+ - The Section 5.6 census footnote is now just the script citation
+   "[repo] python_project/src/verify_all_permutations_exact.py." The
+   cross-check provenance stays in the script's own docstring and assertions,
+   where it belongs.
+
+Status: CLOSED.
