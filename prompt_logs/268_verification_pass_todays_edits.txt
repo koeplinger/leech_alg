@@ -1,0 +1,59 @@
+Prompt 268 -- Verification pass over the 18 July 2026 edits
+Date: 2026-07-18
+
+User: 'Great. Let's do another verification pass over today's edits first.
+I'll review the paper in whole in the meantime.'
+
+Scope: every change of 18 July 2026 (the working-tree diff against the last
+commit), i.e. prompts 260-267: the Section 5.3 twist-scoping words, the date
+update, the census-footnote scratch, the Dixon2005 bibitem (later reduced to
+locator-only), the MSC update, the forensic-review fixes B1, B2, S1-S12, and
+nits N1-N15, including the new script verify_polarization_lagrangians.py and
+the two script docstring edits.
+
+Method: focused multi-agent verification (read-only agents per Manifesto
+Section 14): ruling fidelity (each hunk vs the recorded ruling), in-context
+regression reading, independent recomputation of the mathematical content of
+the new text (B1 formula, B2 scaling clauses, the S6 witness, the new
+polarization script), PDF-level rendering checks, and a repository ripple
+scan for now-stale quotations of changed phrases. Findings adversarially
+checked before reporting.
+
+Outcome (18 July 2026): 18 agents; 13 findings, all 13 confirmed by
+adversarial refuters, 0 refuted; plus one finding by the orchestrator
+before the workflow reported (the replace-all of prompt 267 had
+de-hyphenated the published title "Physics with non-unital algebras?" in
+the MarraniCorradettiZucconi2025 bibliography entry; title verified
+verbatim against arXiv:2309.17435 and restored).
+
+The 13 findings cluster into three defects:
+ (1) PAPER REGRESSION, fixed now: the S6 witness sentence (Remark 4.5)
+     introduced the build's only overfull hbox (8.44pt, page 5).  Applied
+     the refuter-verified remedy: ", while" -> ";" so the line reflows.
+     Rebuild: 0 overfull, 23 pages, linter clean.  (The refuter verified
+     that lengthening fixes cascade to 24 pages; the semicolon does not.)
+ (2) B1 RIPPLE, deferred to the step-3 documentation sweep: three
+     current-state documents still print the old pi-outside census
+     formula: evidence_and_reasoning/key_claims/README.md:63 (claim 014),
+     CURRENT_STATE.md:170, evidence_and_reasoning/terminology.md:445.
+ (3) S3 RIPPLE, deferred to the step-3 documentation sweep: eight
+     documents still say the order has "no idempotent" where the paper
+     now says "no nonzero idempotent" (0 is an idempotent and 0 lies in
+     Lambda): key_claims/README.md:59 (claim 011), terminology.md:46,
+     research_result.md:176, CURRENT_STATE.md:142,
+     research_statement.md:14, README.md:63 (top level),
+     python_project/src/README.md:89, and key_claims/
+     008_transposition_twist_order.txt (frozen genre: takes a DATED
+     ADDENDUM, not an in-place edit).
+
+All other checks passed: ruling fidelity for prompts 264-267 (nothing
+skipped, nothing smuggled, declined items untouched, exceptions honored);
+seam-by-seam regression reading; independent recomputation of the S6
+witness, the pi^{-1} formula vs the census, the scaling clauses, and a
+line-by-line audit plus run of verify_polarization_lagrangians.py; PDF
+rendering (pi^{-1} on p. 9, bookmarks "L s-bar"/"Ls", the five plain
+bibliography labels unique and resolving, Dixon2005 URL-free, Appendix B
+footnote period, MSC line, abstract standalone, hyperref warnings down 4
+and underfull boxes down 3 vs baseline).
+
+Status: CLOSED (doc ripples carried forward to the step-3 sweep).
