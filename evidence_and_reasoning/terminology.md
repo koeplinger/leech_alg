@@ -32,7 +32,7 @@ Triple octonion product — Z₃-symmetric triple-octonion product
 An element u of an algebra (A, ·) with u · u = u.  (0 is always one; a
 *nonzero* idempotent is the interesting case.)
 
-In this project (main paper §5.2, Remark 5.3;
+In this project (main paper §5.2;
 `verify_idempotent_classification.py`): the ambient algebra
 (R²⁴, +, ⋆) has **exactly eight** idempotents.  Throughout this file, ⋆
 is the Z₃-symmetric triple-octonion product (see the project-specific
@@ -43,8 +43,9 @@ section below), in the paper's notation.  With ε₁ = (e₀, 0, 0),
 
 Every block of every one is a real multiple of e₀: there is no
 idempotent with a nonzero imaginary part, and no positive-dimensional
-family.  **None lies in Λ**, because e₀ ∉ L; the order (Λ, +, ⋆)
-therefore has *no idempotent at all*.  Each nonzero idempotent does
+family.  **None of the seven nonzero idempotents lies in Λ**, because
+e₀ ∉ L; the order (Λ, +, ⋆)
+therefore has *no nonzero idempotent*.  Each nonzero idempotent does
 span a rational ray meeting Λ, the least positive lattice multiples
 being 4εᵢ (norm 16), 6(εᵢ − ω/3) (norm 24) and 4ω (norm 48), each
 satisfying u ⋆ u = n u for its own multiplier n
@@ -120,8 +121,8 @@ we translate to the standard convention above.
 
 The Leech lattice is constructed in this project via Wilson's
 characterization:  Λ = {(x, y, z) ∈ L³ : conditions 1–3}, where L is the
-E8 lattice (= D₈⁺, the Coxeter–Dickson maximal order of integral
-octonions).  See `leech_wilson.py` for the implementation.
+E8 lattice (= D₈⁺, a √2-scaled copy of the Coxeter–Dickson maximal
+order of integral octonions).  See `leech_wilson.py` for the implementation.
 
 References:
 - Conway, J.H. and Sloane, N.J.A., "Sphere Packings, Lattices and Groups"
@@ -274,7 +275,7 @@ non-associative algebra the general word "nilpotent" is ambiguous
 (powers must be bracketed), so this project says **square-zero** and
 means exactly u ⋆ u = 0.
 
-In this project (main paper §5.2, Remark 5.4;
+In this project (main paper §5.4;
 `verify_square_zero_classification.py`):
 
 - In the ambient algebra (R²⁴, +, ⋆), u = (x, y, z) satisfies u ⋆ u = 0
@@ -339,7 +340,7 @@ in Wilson's Leech lattice construction.
 
 The group of additive bijections of Λ that preserve the product ⋆
 (`verify_aut_lambda_star.py`, `verify_aut_octonion_crosscheck.py`,
-`gap_project/aut_lambda_star.g`; main paper §5.3, Remark 5.5;
+`gap_project/aut_lambda_star.g`; main paper §5.3;
 standalone note `paper/automorphism_group_2026-07-12.pdf`):
 
 - Aut(Λ, +, ⋆) is **finite of order 36**, of structure C₆ × S₃.
@@ -442,15 +443,20 @@ table up to basis relabeling.  The construction is therefore
 essentially unique (up to Fano-plane automorphism).
 
 Transpositions are not the only permutations of the imaginary axes
-whose twist closes.  Writing x ·_π y := π(π(x) · π(y)) for any
-permutation π of e₁, …, e₇ and testing exactly on a Z-basis of Λ, the
-census over all cycle types of S₇ is: transposition 21/21 (100%),
-3-cycle 35/70 (50%), 4-cycle 0/210 (0%), 5-cycle 252/504 (50%),
-6-cycle 210/840 (25%), 7-cycle 336/720 (46.7%); total 854/2,365
-(36.1%).  Exhaustive, not sampled (`verify_all_cycles_exact.py`,
-`consistency_checks.py`; main paper §5.5, Remark 5.7).  Of the 105
-(2,2)-double transpositions, 42 close (main paper Remark 4.9,
-`verify_consecutive_twists_exact.py`).
+for which the assembled triple product closes.  Writing
+x ·_π y := π⁻¹(π(x) · π(y)) for any
+permutation π of e₁, …, e₇ (for an involution this coincides with the
+paper's twisted product) and testing exactly on a Z-basis of Λ, the
+census over all 5,040 permutations of S₇ is: transposition 21/21
+(100%), 3-cycle 35/70 (50%), (2,2) 42/105 (40%), 4-cycle 0/210 (0%),
+(3,2) 126/420 (30%), 5-cycle 252/504 (50%), (2,2,2) 21/105 (20%),
+(3,3) 112/280 (40%), (4,2) 294/630 (46.7%), 6-cycle 210/840 (25%),
+(3,2,2) 105/210 (50%), (4,3) 168/420 (40%), (5,2) 42/504 (8.3%),
+7-cycle 336/720 (46.7%); total 1,764/5,039 (35.0%); the identity does
+not close.  Exhaustive, not sampled
+(`verify_all_permutations_exact.py`; earlier partial runs
+`verify_all_cycles_exact.py`, `consistency_checks.py`; main paper
+§5.6).
 
 The historical name "transposition-twisted triple octonion product"
 (used in trial 007 and key claim 008, both preserved per Manifesto

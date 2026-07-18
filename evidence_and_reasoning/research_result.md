@@ -57,8 +57,7 @@ The same product on all three copies.
 | Test | Pairs / samples | Failures |
 |---|---|---|
 | Trial 007 base (per transposition) | 900 | 0 |
-| Scaled test (4M random, all types) | 4,000,000 | 0 |
-| Scaled test (4M, multiprocessor) | 4,000,000 | 0 |
+| Scaled tests (three harnesses: `trial_007_{scaled_test,fast,exhaust}.py`) | 12,000,000+ | 0 |
 | All 21 transpositions (small sample) | ~15,000 | 0 |
 | Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 Z-basis products | 0 |
 | §5 algebraic-properties test (N = 10⁶) | 1,000,000 per property | n/a (rates) |
@@ -73,22 +72,31 @@ Since all transpositions lie in a single orbit under the Fano-plane
 automorphism group GL(3, F₂), the construction is essentially unique up
 to basis relabeling.
 
-Transpositions are not the only permutations of the imaginary axes whose
-twist closes.  The census over all cycle types of S₇ is exhaustive
-(`verify_all_cycles_exact.py` for 3- to 7-cycles,
-`consistency_checks.py` for transpositions; paper §5.5):
+Transpositions are not the only permutations of the imaginary axes for
+which the assembled triple product closes.  The census over all 5,040
+permutations of S₇ is exhaustive
+(`verify_all_permutations_exact.py`; earlier partial runs
+`verify_all_cycles_exact.py`, `consistency_checks.py`; paper §5.6):
 
 | Cycle type of π | Permutations | Close | Rate |
 |---|---|---|---|
 | transposition | 21 | 21 | 100% |
 | 3-cycle | 70 | 35 | 50% |
+| (2,2) | 105 | 42 | 40% |
 | 4-cycle | 210 | 0 | 0% |
+| (3,2) | 420 | 126 | 30% |
 | 5-cycle | 504 | 252 | 50% |
+| (2,2,2) | 105 | 21 | 20% |
+| (3,3) | 280 | 112 | 40% |
+| (4,2) | 630 | 294 | 46.7% |
 | 6-cycle | 840 | 210 | 25% |
+| (3,2,2) | 210 | 105 | 50% |
+| (4,3) | 420 | 168 | 40% |
+| (5,2) | 504 | 42 | 8.3% |
 | 7-cycle | 720 | 336 | 46.7% |
-| **total** | **2,365** | **854** | **36.1%** |
+| **total** | **5,039** | **1,764** | **35.0%** |
 
-Of the 105 (2,2)-double transpositions, 42 close (paper Remark 4.9).
+The identity (the untwisted product) does not close.
 
 ### Symbolic proof
 
@@ -96,7 +104,7 @@ Closure is proved symbolically via four lemmas (exact arithmetic,
 `symbolic_proof_checks.py`):
 
 - **Lemma A**: σ(L) = L (coordinate permutation preserves D₈⁺).
-- **Lemma B**: L·L ⊆ L (L is a maximal order — Coxeter 1946).
+- **Lemma B**: L·L ⊆ L (L is a √2-scaled copy of a maximal order — Coxeter 1946).
 - **Lemma C**: L · σ(Ls̄) ⊆ σ(Ls̄) (64 basis products verified exactly).
 - **Lemma D**: σ(Ls) · σ(Ls) ⊆ σ(Ls) (64 basis products verified exactly).
 
@@ -163,7 +171,7 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
   |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)
   (`gap_project/octonion_stabilisers.g`).
 
-**Idempotents — complete classification** (paper §5.2, Remark 5.3;
+**Idempotents — complete classification** (paper §5.2;
 `verify_idempotent_classification.py`,
 `verify_idempotent_lattice_rescaling.py`).  The ambient algebra
 (R²⁴, +, ⋆) has **exactly eight** idempotents.  With ε₁ = (e₀, 0, 0),
@@ -173,14 +181,15 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
 
 Every block of every one is a multiple of e₀: no imaginary part, no
 positive-dimensional family, and the algebra has no identity element.
-**None lies in Λ** (because e₀ ∉ L), so the order has no idempotent.
+**None of the seven nonzero idempotents lies in Λ** (because e₀ ∉ L), so
+the order has no nonzero idempotent.
 Each nonzero idempotent spans a rational ray meeting Λ; the least
 positive lattice multiples are 4εᵢ (norm 16), 6(εᵢ − ω/3) (norm 24),
 and 4ω (norm 48), each satisfying u ⋆ u = n u.  The rescaling is
 already visible on the minimal shell: for each of the 84 purely
 imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 
-**Square-zero elements** (paper §5.2, Remark 5.4;
+**Square-zero elements** (paper §5.4;
 `verify_square_zero_classification.py`).
 
 - In the ambient algebra, u = (x, y, z) satisfies u ⋆ u = 0 iff x, y, z
@@ -198,7 +207,7 @@ imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 
 Min(Λ) itself contains no idempotent and no square-zero vector.
 
-**Span of the image** (paper §5.4, Remark 5.6;
+**Span of the image** (paper §5.5;
 `verify_product_span_index.py`, `verify_product_span_structure.py`).
 S := Z-span{u ⋆ v : u, v ∈ Λ} has index [Λ : S] = 65,536 = 2¹⁶, with
 2Λ ⊆ S and Λ/S ≅ (Z/2)¹⁶.  Closure is not surjectivity.

@@ -42,7 +42,7 @@ A frozen artifact is **never rewritten in place.**  It changes in exactly two wa
 
 - **A dated addendum.**  A block headed with its date, placed at the top of the
   body (below the header), stating what is now known.  The original text stays
-  as written, beneath it.  Example: the two `--- FORWARD CORRECTION (date) ---`
+  as written, beneath it.  Example: the dated `--- FORWARD CORRECTION (date) ---`
   blocks in `key_claims/008_transposition_twist_order.txt`.  For a program, the
   addendum is a dated correction block in the module docstring.
 - **Deprecation.**  Marked deprecated and superseded, naming what supersedes it.
@@ -115,7 +115,7 @@ when they have fallen behind.  What it must not do is add content of the wrong
 
 ## Rules for AI assistance
 
-1. **Log the prompt first.**  Before any other action.  (Manifesto §1.)
+1. **Log the prompt first.**  Before any other action.  (Manifesto §8.)
 2. **Subagents get no write access to prose.**  A subagent may read, search,
    compute and report.  Edits to any document are made by the main thread,
    which carries the full context of the conversation and the user's standing

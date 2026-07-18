@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-07-12
+Last updated: 2026-07-18
 
 This document is the entry point for anyone continuing this research — human or
 AI, with or without prior context.  It summarizes what has been established,
@@ -96,7 +96,7 @@ The order (Λ, +, ⋆) is:
 
 The key property is closure, not any classical algebraic identity.
 
-### Structure of the algebra (paper §5.2–§5.5)
+### Structure of the algebra (paper §5.2–§5.6)
 
 These results are exact and exhaustive.
 
@@ -128,19 +128,23 @@ full derivation in `paper/automorphism_group_2026-07-12.pdf`).
 - Octonion-automorphism stabilizers: |Stab(L)| = 1344 = 2³·L₃(2);
   |Stab(Ls)| = 168 = 2³:(7:3); |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)
   (`gap_project/octonion_stabilisers.g`).
-- Completeness caveat, stated in the paper: the order-36 count and the Co₀
-  containment rest on one non-enumerative step, the classification of the
-  automorphisms of the complexification of (T, ⋆).  The machine-verified
-  lower bound C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and the strictness witness do not
-  depend on it.
+- Completeness: the order-36 count and the Co₀ containment are established
+  by two independent routes in the companion note
+  (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
+  classification of the automorphisms of the complexification of (T, ⋆)
+  (non-enumerative); Route 2 is entirely finite and machine-checkable, so
+  nothing load-bearing is left open.  The machine-verified lower bound
+  C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and the strictness witness are independent of
+  both.
 
 **Idempotents — complete classification** (`verify_idempotent_classification.py`,
 `verify_idempotent_lattice_rescaling.py`).  (R²⁴, +, ⋆) has exactly eight
 idempotents.  With ε₁ = (e₀,0,0), ε₂ = (0,e₀,0), ε₃ = (0,0,e₀) and
 ω = ε₁+ε₂+ε₃, they are 0; ε₁, ε₂, ε₃; ω/3; and ε_i − ω/3 (i = 1,2,3).
 Every block of every one of them is a multiple of e₀: no imaginary part, no
-positive-dimensional family.  **None lies in Λ** (because e₀ ∉ L), so the
-order has no idempotent.  Each nonzero idempotent spans a rational ray that
+positive-dimensional family.  **None of the seven nonzero idempotents lies
+in Λ** (because e₀ ∉ L), so the order has no nonzero idempotent.  Each
+nonzero idempotent spans a rational ray that
 meets Λ; the least positive multiples that do are 4ε_i (N = 16),
 6(ε_i − ω/3) (N = 24) and 4ω (N = 48), each satisfying u ⋆ u = n·u.  The
 rescaling is already visible on the minimal shell: for each of the 84 purely
@@ -165,24 +169,36 @@ inside σ(Ls).  By contrast σ(Ls̄) *is* a two-sided ideal of L (64/64 on both
 sides), of which Lemma 4.3 is the left-handed half.  Control: L · Ls ⊆ Ls
 holds for only 24 of 64.
 
-**Which twists close — exhaustive cycle census** (`verify_all_cycles_exact.py`
-for 3- through 7-cycles, `verify_consecutive_twists_exact.py` for the
-transpositions and the (2,2)-doubles; paper §5.5).  Writing x ·_π y := π(π(x) · π(y)) for a permutation π of e₁,…,e₇ and
-testing closure exactly on the 576 basis-pair products of a Z-basis of Λ:
+**Closure of permutation cycles — the full S₇ census**
+(`verify_all_permutations_exact.py`, all 5,040 permutations, reusing the
+per-permutation test of `verify_consecutive_twists_exact.py`; earlier
+partial runs `verify_all_cycles_exact.py`; paper §5.6).  Writing
+x ·_π y := π⁻¹(π(x) · π(y)) for a permutation π of e₁,…,e₇ (for the
+involution σ this is the paper's twisted product) and testing closure of
+the assembled triple product exactly on the 576 basis-pair products of a
+Z-basis of Λ:
 
 | Cycle type of π | Permutations | Close | Rate |
 |---|---|---|---|
 | Transposition | 21 | 21 | 100% |
 | 3-cycle | 70 | 35 | 50% |
+| (2,2) | 105 | 42 | 40% |
 | 4-cycle | 210 | 0 | 0% |
+| (3,2) | 420 | 126 | 30% |
 | 5-cycle | 504 | 252 | 50% |
+| (2,2,2) | 105 | 21 | 20% |
+| (3,3) | 280 | 112 | 40% |
+| (4,2) | 630 | 294 | 46.7% |
 | 6-cycle | 840 | 210 | 25% |
+| (3,2,2) | 210 | 105 | 50% |
+| (4,3) | 420 | 168 | 40% |
+| (5,2) | 504 | 42 | 8.3% |
 | 7-cycle | 720 | 336 | 46.7% |
-| **Total** | **2,365** | **854** | **36.1%** |
+| **Total** | **5,039** | **1,764** | **35.0%** |
 
-Exhaustive, not sampled.  The (2,2)-double transpositions are counted
-separately (42 of 105 close; paper Remark 4.9,
-`verify_consecutive_twists_exact.py`).
+Exhaustive, not sampled.  The identity (the untwisted product) does not
+close.  For the 3-cycles the closing half admits a description: one of the
+two cyclic orientations per three-element index subset.
 
 ### Evidence files
 
@@ -267,8 +283,9 @@ cd python_project && python3 -m pytest tests/ -v
 A parallel **GAP / LOOPS** verification suite re-derives the paper's and
 companion's key claims independently — same mathematical content, different
 language and runtime.  110 checks, all arithmetic exact (rational); the
-LOOPS package is used to cross-verify the octonion multiplication as the
-unique non-associative Moufang loop of order 16.  Run with:
+LOOPS package is used to cross-verify the octonion multiplication as a
+nonassociative Moufang loop of order 16, isomorphic to the standard
+octonion loop MoufangLoop(16, 3).  Run with:
 ```
 gap -q gap_project/run_all.g
 ```
@@ -457,16 +474,19 @@ the trial, and prints detailed results.
    (rem:Ls-not-closed): non-triviality of the construction, not a step
    of the closure proof.
 
-2. **Formal paper at v6, dated 12 July 2026 (in progress, not frozen).**
-   `paper/main.tex` (23 pages) contains abstract, preliminaries,
+2. **Formal paper at v6, dated 18 July 2026, frozen as
+   `paper/main_2026-07-18.tex`.**
+   `paper/main.tex` (23 pages) contains abstract (standalone, with
+   keywords and MSC 2020 codes), preliminaries,
    construction, symbolic proof, algebraic properties (Section 5, in
-   five subsections: §5.1 identities at N = 10⁶ samples;
-   §5.2 idempotents and square-zero elements; §5.3 the automorphism
-   group; §5.4 span of the image, [Λ : span(Λ⋆Λ)] = 2¹⁶; §5.5 which
-   twists close), related work (including the comparative
+   six subsections: §5.1 identities at N = 10⁶ samples;
+   §5.2 idempotents; §5.3 the automorphism group; §5.4 square-zero
+   elements; §5.5 span of the image, [Λ : span(Λ⋆Λ)] = 2¹⁶; §5.6
+   closure of permutation cycles, the full S₇ census), related work
+   (including the comparative
    span defect 2²⁵ of the Baez–Egan induced product φ), conclusion,
-   outlook, and three appendices: explicit basis tables with a
-   mod-2-quotient reading and a Lagrangian-polarization framing
+   outlook, declarations, and three appendices: explicit basis tables
+   with a mod-2-quotient reading and a Lagrangian-polarization framing
    (Appendix A); a historical note synthesizing the 1923–1946
    integral-octonion literature from the primary sources, Dickson
    (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946)
@@ -475,12 +495,15 @@ the trial, and prints detailed results.
    frozen as `paper/main_2026-05-25.tex` after two full referee-style
    review rounds (paper/reviews/); v5 (frozen
    `paper/main_2026-06-07.tex`) incorporated the update brief and
-   the reviewer-response additions; v6 (working source
-   `paper/main.tex`, dated 12 July 2026, not yet frozen) carries a
-   clarity revision of the span-defect material and the Section 5
-   restructuring that records the structure results below.  Frozen
+   the reviewer-response additions; v6 (frozen
+   `paper/main_2026-07-18.tex`, dated 18 July 2026) carries a
+   clarity revision of the span-defect material, the Section 5
+   restructuring that records the structure results below, the full
+   S₇ closure census, the submission apparatus, and the review rounds
+   of 15–18 July (paper/reviews/).  Frozen
    snapshots: `paper/main_2026-04-29.tex` (v3),
-   `paper/main_2026-05-25.tex` (v4), `paper/main_2026-06-07.tex` (v5, the
+   `paper/main_2026-05-25.tex` (v4), `paper/main_2026-06-07.tex` (v5),
+   `paper/main_2026-07-18.tex` (v6, the
    last frozen state).  Revision chain: `paper/v3_to_v4_summary.md`,
    `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`.
 
@@ -510,7 +533,7 @@ the trial, and prints detailed results.
    `verify_idempotent_classification.py`,
    `verify_idempotent_lattice_rescaling.py`,
    `verify_square_zero_classification.py`,
-   `verify_sigma_Ls_ideal_exclusion.py`, `verify_all_cycles_exact.py`
+   `verify_sigma_Ls_ideal_exclusion.py`, `verify_all_permutations_exact.py`
    (all in `python_project/src/`); `aut_lambda_star.g`,
    `aut_lambda_star_gens.g`, `octonion_stabilisers.g`,
    `octonion_stabilisers_gens.g` (in `gap_project/`).
@@ -548,9 +571,6 @@ the trial, and prints detailed results.
    whether the order-6 octonion automorphism generating the C₆ admits an
    intrinsic description.  The group itself and the strict containment
    Aut(Λ, +, ⋆) ⊊ Co₀ are known (see "Structure of the algebra" above).
-   Also open: an enumerative proof of the one
-   non-enumerative step in the completeness argument (the automorphisms
-   of the complexification of (T, ⋆)).
 
 3. **Maximality** of the order in any appropriate sense: is there a
    lattice Λ' ⊋ Λ of finite index with Λ' ⋆ Λ' ⊆ Λ'?  Any such Λ' lies
@@ -566,13 +586,14 @@ the trial, and prints detailed results.
    ternary rather than binary viewpoint (Elduque); §8 of the paper
    sketches the direction.
 
-5. **A structural characterization of which twists close.**  Every cycle
-   type of S₇ has now been enumerated exactly (the census above), as have
-   the (2,2)-double transpositions, but the pattern is explained only for
+5. **A structural characterization of which permutation cycles close.**
+   All 5,040 permutations
+   of S₇ have now been enumerated exactly (the census above), but the
+   pattern is described only for
    the 3-cycles (for each three-element subset of imaginary indices, one
    of the two cyclic orientations closes).  Open: a reason for the total
-   failure of the 4-cycles and for the exact one-half rates; the
-   permutation types not yet enumerated; and linear maps of R⁸ that are
+   failure of the 4-cycles and for the exact one-half rates beyond the
+   3-cycles; and linear maps of R⁸ that are
    not coordinate permutations at all.
 
 6. **Exhaustive verification** of all 38.6 billion minimal-vector
@@ -628,7 +649,7 @@ leech_alg/
 │   │   ├── symbolic_proof_checks.py  # The four lemmas, exact arithmetic
 │   │   ├── verify_aut_*.py        # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
 │   │   ├── verify_idempotent_*.py # The eight idempotents; lattice rescaling
-│   │   ├── verify_square_zero_classification.py  # The 4,032 square-zero vectors
+│   │   ├── verify_square_zero_classification.py  # Square-zero classification (norm-12 stratum)
 │   │   ├── verify_ideal_decomposition.py         # R²⁴ = D ⊕ T
 │   │   ├── verify_star_algebra_structure.py      # Ambient algebra structure
 │   │   ├── verify_sigma_Ls_ideal_exclusion.py    # σ(Ls) is not an ideal of L
@@ -644,9 +665,9 @@ leech_alg/
 │   └── run_all.g                  # 110 checks, exact rational arithmetic
 │
 ├── prompt_logs/                   # Chronological AI interaction log
-├── paper/                         # main.tex (v6, 23 pp., in revision; bibliography
+├── paper/                         # main.tex (v6, 23 pp., frozen 2026-07-18; bibliography
 │                                  #   inline via \bibitem), frozen snapshots
-│                                  #   main_2026-{04-29,05-25,06-07}.tex,
+│                                  #   main_2026-{04-29,05-25,06-07,07-18}.tex,
 │                                  #   automorphism_group_2026-07-12.tex, reviews/
 └── source_documents/              # Primary source PDFs (freely redistributable)
 ```

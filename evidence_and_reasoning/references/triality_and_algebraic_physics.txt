@@ -98,3 +98,10 @@ technical claims.
 
 Last updated: 2026-06-07 (GresnigtGourlayVarma2023 added to accompany
 v5 paper bibliography update; S_3 family-symmetry context)
+
+---
+
+Addendum (2026-07-18): the "Last updated: 2026-06-07" footer above is
+incomplete; the file was also edited in place on 2026-07-02 (terminology
+alignment; see git history).  Recorded here as a dated marker per
+DOCUMENT_GENRES.md; future changes to this file take dated addenda.

@@ -11,8 +11,9 @@
 >
 > Structure of the resulting order:
 > Aut(Λ, +, ⋆) is finite of order 36 (C₆ × S₃) and is contained in Co₀;
-> the order has no idempotent; it does contain 4,032 square-zero vectors,
-> all of norm 12, none of them minimal.  Details in `research_result.md`.
+> the order has no nonzero idempotent; its square-zero vectors have norms
+> in 12Z, with exactly 4,032 of norm 12, none of them minimal.  Details in
+> `research_result.md`.
 
 ## English
 

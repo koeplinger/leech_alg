@@ -29,6 +29,18 @@ Change 9(b) below originally cited the *Exhaustive facts* remark as "Remark 5.3"
 
 ---
 
+## Forward corrections (18 July 2026)
+
+v6 was frozen on 18 July 2026 ([main_2026-07-18.tex](main_2026-07-18.tex)); parts of the 12 July corrections above describe intermediate v6 states and are superseded as follows. The authority for the final state is [v5_to_v6_changelog.md](v5_to_v6_changelog.md).
+
+**On correction 1:** final v6 has **six** subsections (§5.1 Identities, §5.2 Idempotents, §5.3 The automorphism group, §5.4 Square-zero elements, §5.5 Span of the image, §5.6 Closure of permutation cycles), and the 12 July remarks were recast as plain prose on 15 July: only Remarks 5.1 and 5.2 survive, both in §5.1. The v5 *Span of the image* remark is §5.5 prose, not "Remark 5.6". Full map in §1.1 of the v5 → v6 changelog.
+
+**On correction 2:** "none of them in Λ, so the order has no idempotent at all" overlooked that the zero vector is one of the eight idempotents and lies in Λ; the correct statement (final v6, §5.2) is that none of the seven **nonzero** idempotents lies in Λ, so the order has no nonzero idempotent. And "4,032 square-zero vectors, all of norm 12" is the **norm-12 stratum**: every square-zero norm of Λ lies in 12ℤ and higher strata are realized (norm-24 witness, `verify_square_zero_norm24_witness.py`). The classifications are §5.2 and §5.4 of the final paper.
+
+**On correction 3:** the automorphism result is §5.3 of the final paper (not "Remark 5.5"), and completeness is established by two independent routes in the standalone note: Route 1 via the classification of the automorphisms of the complexification of $(T,\star)$ (non-enumerative), Route 2 entirely finite and machine-checkable, so nothing load-bearing rests on the non-enumerative step.
+
+---
+
 ## Summary of changes
 
 1. §2.2 — Petersson 2018 survey cited at the end of the integral-octonion-history sentence.

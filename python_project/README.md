@@ -53,13 +53,13 @@ The algebraic properties reported in Section 5 of the paper are certified by the
 cd src
 python3 verify_ideal_decomposition.py          # R^24 = D + T, two annihilating two-sided ideals
 python3 verify_idempotent_classification.py    # exactly eight idempotents; no identity element
-python3 verify_idempotent_lattice_rescaling.py # none of them lies in Λ; least lattice multiples
-python3 verify_square_zero_classification.py   # the square-zero cone; Λ has 4,032 of norm 12
+python3 verify_idempotent_lattice_rescaling.py # no nonzero idempotent lies in Λ; least lattice multiples
+python3 verify_square_zero_classification.py   # the square-zero cone; norm-12 stratum of Λ is 4,032
 python3 verify_star_algebra_structure.py       # Aut(R^24, ⋆) = G_2 x G_2 x S_3, dimension 28
 python3 verify_aut_lambda_star.py              # Aut(Λ, +, ⋆): order 36, C_6 x S_3; inside Co_0
 python3 verify_aut_octonion_crosscheck.py      # independent re-derivation of the stabilizers
 python3 verify_sigma_Ls_ideal_exclusion.py     # σ(Ls) is not an ideal of L (excludes a candidate)
-python3 verify_all_cycles_exact.py             # cycle census: which twists close (854 of 2,365)
+python3 verify_all_permutations_exact.py       # closure census over all of S₇ (1,764 of 5,039)
 ```
 
 See [`src/README.md`](src/README.md) for what each one certifies, and [`../gap_project/README.md`](../gap_project/README.md) for the independent GAP determination of the automorphism group's order and structure.

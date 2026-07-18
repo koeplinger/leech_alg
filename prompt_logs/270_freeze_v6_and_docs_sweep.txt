@@ -1,0 +1,105 @@
+Prompt 270 -- Freeze v6 (step 2), then project-wide documentation
+consistency sweep (step 3)
+Date: 2026-07-18
+
+User: 'I'm ready for the freeze (step 2) followed by the project-wide
+documentation consistency sweep (step 3).'
+
+Plan:
+ - Step 2: dated frozen snapshot of paper/main.tex following the v5
+   convention (main_2026-06-07.tex); complete the v5-to-v6 changelog;
+   rebuild; linter.
+ - Step 3: apply the eleven documented ripples from prompt log 268
+   (current-state docs in place; key_claims/008 by dated addendum), then a
+   read-only multi-agent residual scan per Manifesto Sections 13/14 (no
+   agent write access to prose; all edits by the orchestrator, shown to
+   the user; linter after).
+
+Step 2 complete (18 July 2026):
+ - v5_to_v6_changelog.md completed through the freeze: header freeze block;
+   Section 1 updated to the final six-subsection/plain-prose state (map,
+   census section rewritten to the full S_7 run with the pi^{-1} formula,
+   stratum scoping and norm-24 witness added); new Section 8 records the
+   15/17/18 July review rounds, blocker resolutions, submission apparatus,
+   Dixon2005 history, and the verification pass; artifacts, page-count,
+   verification, and signature sections updated.
+ - Frozen snapshot paper/main_2026-07-18.tex created, verified identical
+   to main.tex.  Build: 23 pages, 0 errors, 0 overfull.  Linter clean.
+
+Step 3 complete (18 July 2026):
+
+Round 1 (the eleven ripples of prompt log 268, plus grep residuals found
+around them): census updated to the full S_7 table with the pi^{-1}
+formula in CURRENT_STATE.md, research_result.md, terminology.md, and
+ledger row 014; "no nonzero idempotent" in all eight documents (frozen
+key_claims/008 by dated FORWARD CORRECTION block, which also corrects its
+"all of norm 12" phrasing); square-zero stratum phrasing in
+research_statement.md and README.md; all stale section/remark anchors
+(Remarks 5.3-5.7, 4.9; "which twists close") repointed and reworded;
+runnable-example lines point at verify_all_permutations_exact.py;
+CURRENT_STATE freeze status, header date, and tree updated;
+2026-05-22_plan.md got a dated status addition (placed after the 07-12
+status paragraph).
+
+Round 2 (read-only residual verification workflow, 6 scanners + 1
+adversarial refuter per finding; 41 agents; 35 raw, 32 confirmed, 3
+refuted), all confirmed findings applied:
+ - Two factual blockers: README.md and CURRENT_STATE.md claimed the
+   octonion loop is "the unique non-associative Moufang loop of order
+   16"; there are five (LOOPS library), ours is isomorphic to
+   MoufangLoop(16,3).  Both fixed to match gap_project/README.md.
+ - Completeness-caveat cluster: CURRENT_STATE (two places), ledger row
+   010, src/README, and the v5-to-v6 changelog all said completeness
+   "rests on one non-enumerative step" and (in two places) that the
+   caveat is "stated in the paper"; the frozen paper states no caveat,
+   and the companion note establishes completeness by two routes, Route
+   2 finite and machine-checkable, nothing load-bearing open.  All
+   reworded accordingly; the stale "Also open: an enumerative proof..."
+   item removed.
+ - Freeze staleness: README.md, paper/README.md (snapshot table row for
+   main_2026-07-18.tex added; "last released version" moved to v6).
+ - Maximal-order scoping in research_result Lemma B and terminology's
+   Leech entry (sqrt(2)-scaled copy).
+ - "4,032 square-zero vectors of Lambda" comment labels rescoped to the
+   norm-12 stratum (README, CURRENT_STATE map, python_project/README).
+ - My own round-1 error fixed: the verify_all_cycles_exact.py index row
+   had said "854 of 2,365 single-cycle permutations"; the script tests
+   the 3- to 7-cycles only: 833 of 2,344 (854/2,365 included the
+   transpositions from another script).
+ - Seven errors in the v5-to-v6 changelog I wrote at the freeze: "three
+   remarks" -> four; the -8*eps1 shell witness no longer attributed to
+   the final paper; the Petersson bullet, the R1 footnote description,
+   and the scope-paragraph clause updated to the final state; "Remark
+   5.5"/"Remark 5.6" -> Section 5.3 / Section 5.5.
+ - paper/v4_to_v5_changelog.md (frozen): new "Forward corrections (18
+   July 2026)" section superseding the stale parts of its 12 July
+   corrections (subsection count, idempotent phrase, norm-12 stratum,
+   completeness, remark anchor).
+ - references/triality_and_algebraic_physics.txt (frozen): dated
+   addendum recording the undocumented 2026-07-02 in-place edit.
+ - DOCUMENT_GENRES.md: Manifesto section reference corrected (Section 8,
+   not Section 1); the 008 example de-counted ("the dated blocks").
+ - research_result verification table: the two 4M rows replaced by the
+   accurate three-harness 12,000,000+ line
+   (trial_007_{scaled_test,fast,exhaust}.py).
+ - Prompt log 264 closure: my in-place status edit was correctly
+   rejected by the linter (immutable genre); reverted byte-identical.
+   FOR THE RECORD, HERE, IN A LATER ENTRY: prompt 264's review was fully
+   resolved on 18 July 2026 (rulings in prompts 266-267, verification in
+   268, freeze in 270); its "Status: OPEN" line describes 264's state at
+   its last legitimate update and is superseded by this note.
+
+Deliberately NOT applied (for the user to rule):
+ - TRIAL_METHODOLOGY.md vs DOCUMENT_GENRES.md give different freeze
+   triggers for trial code ("once the trial is closed" vs "once
+   referenced by a paper, note, or claim").  Policy question.
+ - editorial_standards.md standard 4's example vocabulary
+   ("third-/fourth-/power-associativity kept distinct") names terms the
+   frozen paper does not use.  Reviewer called it a nit; the standard is
+   guidance, not a paper mirror.
+ - Refuted-by-design: duplicate NNN prefixes 233-236 exist because the
+   user's own verify logs coexist with mine (known); frozen reference
+   file computer_algebra_systems.txt's 2026-06-07 edit predates the
+   genre rules.
+
+Linter clean after all edits.  Status: CLOSED.

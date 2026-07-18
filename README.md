@@ -12,8 +12,9 @@ evidence, and every conclusion is traceable.
 anyone continuing this research, with or without prior context.
 
 The write-up is in [paper/main.tex](paper/main.tex) (compiled:
-[paper/main.pdf](paper/main.pdf)), at v6, in revision.  [paper/](paper/)
-also holds the earlier frozen versions with their changelogs, the
+[paper/main.pdf](paper/main.pdf)), at v6, frozen 18 July 2026 as
+[paper/main_2026-07-18.tex](paper/main_2026-07-18.tex).  [paper/](paper/)
+also holds the frozen versions with their changelogs, the
 companion material, and the review record.
 
 ## Repository Structure
@@ -55,13 +56,15 @@ isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
   (octonion properties, Wilson's construction).  197 tests pass.
 - **Independent GAP / LOOPS re-derivation** of the same verification tests
   ([gap_project/](gap_project/), 110 checks; uses the LOOPS package to
-  cross-verify the octonion multiplication as the unique non-associative
-  Moufang loop of order 16).  All arithmetic exact (rational); no floating point.
+  cross-verify the octonion multiplication as a nonassociative Moufang
+  loop of order 16, isomorphic to the standard octonion loop
+  MoufangLoop(16, 3)).  All arithmetic exact (rational); no floating point.
 - **Structure of the algebra**, exact and exhaustive (Section 5 of the
   paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
-  triples); it has exactly eight idempotents, none of them in Λ; Λ contains
-  4,032 square-zero vectors, all of norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
+  triples); it has exactly eight idempotents, of which only 0 lies in Λ; Λ
+  contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
+  norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
   ([python_project/src/verify_aut_lambda_star.py](python_project/src/verify_aut_lambda_star.py)
   and [gap_project/aut_lambda_star.g](gap_project/aut_lambda_star.g)).
@@ -82,9 +85,10 @@ isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.
-- A structural characterization of which twists close.  All cycle types of
-  S₇ have been enumerated exactly (854 of 2,365 permutations close), but
-  the pattern is explained only for the 3-cycles.
+- A structural characterization of which permutation cycles close.  All
+  5,040 permutations of S₇ have been enumerated exactly (1,764 of the
+  5,039 non-identity permutations close), but the pattern is described
+  only for the 3-cycles.
 - Whether a **ternary** reformulation (via composition algebras in the
   sense of Elduque, or via Okubo's ternary structure) gives a more
   natural classification — the rigid Z₃ cross-block routing and the
@@ -104,8 +108,8 @@ python3 trial_007_kirmse_twist.py               # The winning trial
 python3 trial_001_triple_octonion.py            # Any earlier trial
 python3 verify_aut_lambda_star.py               # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
 python3 verify_idempotent_classification.py     # The eight idempotents
-python3 verify_square_zero_classification.py    # The 4,032 square-zero vectors of Λ
-python3 verify_all_cycles_exact.py              # Which twists close (cycle census)
+python3 verify_square_zero_classification.py    # Square-zero classification (norm-12 stratum: 4,032)
+python3 verify_all_permutations_exact.py        # Closure census over all of S₇
 ```
 
 Requires Python 3.x with NumPy and SymPy (see [python_project/requirements.txt](python_project/requirements.txt)).

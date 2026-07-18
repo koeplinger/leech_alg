@@ -84,6 +84,23 @@ reproducible from the current script.  The 12,000,000+ pairs from
 trial_007_{scaled_test,fast,exhaust}.py are unaffected, and the closure
 claim rests on the symbolic proof in any case (paper Section 4).
 
+--- FORWARD CORRECTION (2026-07-18) ---
+
+Two statements in item (v) of the 2026-07-12 correction above were
+sharpened at the v6 freeze (18 July 2026); the frozen paper is the
+authority:
+
+ - "none of which lies in Lambda -- so the order has no idempotent":
+   the zero vector is one of the eight idempotents and lies in Lambda.
+   The correct statement (paper Section 5.2): none of the seven NONZERO
+   idempotents lies in Lambda (e_0 not in L), so the order has no
+   nonzero idempotent.
+ - "4,032 nonzero square-zero elements, all of norm 12": the 4,032
+   elements are exactly the norm-12 stratum.  Every square-zero norm of
+   Lambda lies in 12Z, and higher strata are realized (norm-24 witness,
+   python_project/src/verify_square_zero_norm24_witness.py).  Ledger
+   claim 012 carries the stratum statement.
+
 --- RELATION TO CLAIM 007 ---
 
 Claim 007 (2026-04-09) rules out the *untwisted* triple-octonion algebra,
