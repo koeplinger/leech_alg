@@ -2,8 +2,10 @@
 Leech lattice in O^3 = (E_8)^3.
 
 Source: Greg Egan, in J. C. Baez, "Integral octonions (Part 10)",
-The n-Category Cafe, 12 December 2014,
+The n-Category Cafe, 1 December 2014,
 https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html
+(Correction, 18 July 2026: the part-10 date fixed from 12 December to
+1 December 2014; 12 December is part 11's date.)
 
 This is Egan's DERIVATION, an orbit-stabiliser lower bound; it is NOT a
 re-run of his enumeration (which counts the embeddings one by one, and which

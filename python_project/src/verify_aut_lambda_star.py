@@ -1,5 +1,9 @@
 """Task B, part 2: Aut(Lambda, +, star) -- exact order, structure, generators.
 
+Runtime: long -- well over ten minutes single-threaded (the complete
+stabilizer enumerations dominate); the script prints its own runtime at
+the end.
+
     Aut(Lambda, +, star) := { g : Lambda -> Lambda  Z-linear bijection
                               with  g(u star v) = g(u) star g(v) }.
 

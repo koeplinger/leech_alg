@@ -1,0 +1,26 @@
+Prompt 267 -- Rulings on the forensic review: S10-S13 and the nit list
+Date: 2026-07-18
+
+User rulings:
+ - Conciseness: scratch "(the sqrt(2)-scaled copy used here has
+   determinant 2^24)" from the Section 6 Wilson entry; the paragraph is
+   about Wilson's convention, self-contained, and "here" confuses.
+ - S10: prefer NON-HYPHENATED forms mostly: noncommutative,
+   nonassociative, nonunital, nonflexible, nonalternative.  Exception:
+   non-power-associative.
+ - S11: smooth the abstract as suggested (historical...historical;
+   Furthermore/further stack).
+ - S12: fix the Section 4.4 PDF bookmark as suggested (texorpdfstring).
+ - S13: accept the whitespace (no change).
+ - Nits: fix N1, N2, N3, N4, N5, N7, N8, N11, N12, N13 as described.
+   N6: make the tense consistent with the surrounding paragraphs.
+   N9: keep the first occurrence, change the other three to FF_2^8.
+   N10: the more common journal style (unhyphenated symbol-noun
+   compounds) throughout.
+   N14: Type~1/2/3 capitalization throughout.
+   N15: light rewording the second time ("Likewise independently
+   reproduced"), checking surroundings for regressions.
+   N16, N17, N18, N19: no fix.
+
+Status: CLOSED after application (see diff summary in the conversation;
+paper rebuilt, bookmark fix verified by decoding main.out, linter clean).

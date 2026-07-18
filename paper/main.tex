@@ -113,8 +113,8 @@ decomposition of $L/2L$ into a complementary pair of Lagrangians, opening
 the natural research program of which polarizations of $L/2L$ lift to a
 closed product on~$\LL$.
 
-We further provide a historical account from the original sources
-(1923--1946) in a historical appendix.  Leonard E.~Dickson gave the
+A historical appendix gives an account from the original sources
+(1923--1946).  Leonard E.~Dickson gave the
 first verified maximal order of integral octonions (1923), with an
 undercount of the total.  Johannes Kirmse (1924) derived a necessary form
 met by thirty candidates, and hinted, without detail, at a further
@@ -131,7 +131,7 @@ the complete research record is publicly available.
 
 \medskip
 \noindent\textbf{Keywords:} Leech lattice; integral octonions; $E_8$
-lattice; nonassociative algebra; non-unital order; computer-assisted
+lattice; nonassociative algebra; nonunital order; computer-assisted
 proof.
 
 \smallskip
@@ -194,7 +194,7 @@ representation~\cite{Wilson2009}.
 \begin{corollary}\label{cor:order}
 $(\LL, +, \star)$ is an order\footnote{The ambient algebra has no
 multiplicative identity (Section~\ref{sec:properties}), so the term
-``order'' is used here in the non-unital sense.} in the $\RR$-algebra
+``order'' is used here in the nonunital sense.} in the $\RR$-algebra
 $(\RR^{24}, +, \star)$.
 \end{corollary}
 
@@ -220,7 +220,7 @@ closure.
 The scope of this paper is deliberately bounded.  We establish
 existence of the order, with a proof that is elementary (four
 short lemmas, reducing to sublattice inclusions verified in exact
-arithmetic).  Further structural readings are offered as starting points for further investigation in
+arithmetic).  Further structural readings are offered as starting points for investigation in
 Section~\ref{sec:properties} and Appendix~\ref{sec:appendix-tables}.
 Nowhere do we claim or advertise these computer proofs as a substitute
 for mathematical understanding: they are listed as machine-obtained
@@ -255,11 +255,12 @@ sign and anti-cyclic permutations carrying a negative sign
 algebra of dimension~8 (Hurwitz); relaxing ``division algebra'' to
 the absence of zero divisors (equivalently, bijectivity of left and
 right multiplication by every nonzero element) admits further
-examples, including the non-unital Okubo algebra.
+examples, including the nonunital Okubo algebra.
 
 The \emph{norm form} is $\Nrm(x) = x \bar{x} = \sum_{i=0}^7 x_i^2$
 for $x = \sum_i x_i e_i$, where $\bar{x} = x_0 e_0 - \sum_{i=1}^7
-x_i e_i$ is the conjugate.  The composition property
+x_i e_i$ is the conjugate.  Throughout, \emph{norm} means this
+squared Euclidean length.  The composition property
 $\Nrm(xy) = \Nrm(x)\Nrm(y)$ holds.
 
 \subsection{The $E_8$ lattice}
@@ -273,7 +274,7 @@ coordinate sum, or all half-integers with odd coordinate sum
 multiplication, $L$~is closed: $L \cdot L \subseteq L$
 (Lemma~\ref{lem:L-order}, certified in Table~\ref{tbl:appendix-LL}).
 At this normalization $e_0 \notin L$ (the lattice is even), so $L$~is
-a non-unital order; as a lattice it is a $\sqrt{2}$-scaled copy of a
+a nonunital order; as a lattice it is a $\sqrt{2}$-scaled copy of a
 maximal order of the integral octonions, the unit-scale octavians,
 for which closure and maximality hold in the classical unital sense
 \cite{Coxeter1946, ConwaySmith2003}.  For a modern survey of the
@@ -539,7 +540,8 @@ $P_1 \in L$.  The same argument applies to
 $P_2$ and~$P_3$.
 \end{proof}
 
-\subsection{Condition~(2): pairwise sums lie in~$L\bar{s}$}
+\subsection{Condition~(2): pairwise sums lie
+in~\texorpdfstring{$L\bar{s}$}{L s-bar}}
 
 \begin{proposition}\label{prop:cond2}
 For all $u, v \in \LL$, the pairwise sums $P_\alpha + P_\beta$ lie
@@ -571,7 +573,8 @@ in~$\sigma(L\bar{s})$.  Applying the outer~$\sigma$:
 since $\sigma^2 = \mathrm{id}$.
 \end{proof}
 
-\subsection{Condition~(3): the block sum lies in~$Ls$}
+\subsection{Condition~(3): the block sum lies
+in~\texorpdfstring{$Ls$}{Ls}}
 
 This is the crux of the proof.  For the standard (untwisted) product
 the block sum would require $Ls \cdot Ls \subseteq Ls$, which does
@@ -694,7 +697,7 @@ $\bigl(\begin{smallmatrix} a & c & b \\ c & b & a \\ b & a & c
 in~$\OO$), and no triple $(a,b,c)$ makes this the identity on all
 three blocks simultaneously.  In particular, $(e_0, e_0, e_0)$ is
 not an identity: it maps $(x', y', z')$ to $(x'+y'+z',\, x'+y'+z',\,
-x'+y'+z')$.  Consequently $(\LL, +, \star)$ is a non-unital order.
+x'+y'+z')$.  Consequently $(\LL, +, \star)$ is a nonunital order.
 \end{remark}
 
 The order does not satisfy any of the classical algebraic identities
@@ -778,7 +781,7 @@ in~$0$.\footnote{\scriptref{verify\_square\_zero\_classification.py}.}
 
 The lattice does contain such elements.  A vector $(x, y, z) \in \LL$
 squares to zero exactly when $x$, $y$, $z$ lie in $L\bar s \cap
-\Im(\OO)$, have equal norms and sum to zero.  The 126 vectors of norm~4
+\Im(\OO)$, have equal norms, and sum to zero.  The 126 vectors of norm~4
 in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system.  Each of its 126
 roots has exactly 32 roots at $120^\circ$; the third block is then
 forced, so the ordered hexagonal triples number $126 \times 32 = 4{,}032$,
@@ -848,7 +851,7 @@ Total         & $5{,}039$ & $1{,}764$ & $35.0\%$ \\
 \end{center}
 The identity (the untwisted product) does not close.  The $4$-cycles
 are the only type failing without exception; the $(5,2)$ type has the
-lowest nonzero rate.  The $3$-cycles, $5$-cycles and $(3,2,2)$ types
+lowest nonzero rate.  The $3$-cycles, $5$-cycles, and $(3,2,2)$ types
 close at exactly half.  For the $3$-cycles the closing half admits a
 description: for each three-element subset of imaginary indices, one
 of the two cyclic orientations closes.  No such description is known
@@ -863,8 +866,7 @@ $4$-cycles.
 $\{(x,y,z) \in L^3 : \text{conditions 1--3}\}$, gives an explicit
 listing of the 196{,}560 minimal vectors in the form
 $3 \times 240 \times (1 + 16 + 16 \times 16)$, and proves that~$\LL$
-is even and self-dual in his halved-norm convention (the
-$\sqrt{2}$-scaled copy used here has determinant~$2^{24}$).  The sublattice framework is
+is even and self-dual in his halved-norm convention.  The sublattice framework is
 the setting used in the present paper.
 
 \textbf{Dixon (2010)} \cite{Dixon2010} constructs~$\LL$ using the
@@ -899,14 +901,14 @@ with integers on the diagonal and an off-diagonal Leech sublattice
 $L_L \cong \LL$ embedded as an octonionic triple.  This lattice is
 \emph{not} closed under the Jordan product $x \circ y = xy + yx$,
 but \emph{is} closed under the doubled product $2(xy + yx)$.
-Egan further enumerated at least $17{,}280$ distinct off-diagonal
+Egan further enumerates at least $17{,}280$ distinct off-diagonal
 Leech embeddings $L_L \subset \OO^3$ for which the associated
 27-dimensional lattice is closed under this doubled product
 (see part~10 of~\cite{Baez2014} for Egan's computational counts).
-Baez left open the question whether any such lattice is closed under
+Baez leaves open the question whether any such lattice is closed under
 the undoubled Jordan product, and conjectures that the answer is
-negative.  We
-have independently reproduced the full Baez--Egan verification chain:
+negative.  We have likewise
+independently reproduced the full Baez--Egan verification chain:
 the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
 Leech-lattice theorem, the doubled-Jordan-product closure, the
 derivation of the lower bound $244{,}035{,}421$ on the number of
@@ -1059,13 +1061,14 @@ Several questions remain immediately open:
   $\tfrac{1}{n}\LL$ for some integer~$n$, so for each~$n$ the question
   is a finite check of the same kind used here.
 \item Classification of the algebra $(\RR^{24}, +, \star)$: it is
-  non-associative, non-alternative, non-flexible, and non-unital
+  nonassociative, nonalternative, nonflexible, and nonunital
   (as an order), placing it outside the classical families.
 \item A structural characterization of which permutation cycles close.
   Every cycle type of~$S_7$ has been enumerated exactly
   (Section~\ref{sec:census}), but the pattern in the table is
-  explained only for the $3$-cycles.  Open: a reason for the total
-  failure of the $4$-cycles and for the exact one-half rates; and
+  described only for the $3$-cycles.  Open: a reason for the total
+  failure of the $4$-cycles and for the exact one-half rates beyond
+  the $3$-cycles; and
   linear maps of~$\RR^8$ that are not coordinate permutations.
 \end{itemize}
 
@@ -1075,13 +1078,13 @@ Several questions remain immediately open:
 
 A more natural classification of $(\RR^{24}, +, \star)$ may emerge
 from a \emph{ternary} rather than binary viewpoint.  The Leech lattice
-carries a prominent $\ZZ_3$-symmetry (the cyclic permutation of the
+carries a prominent $\ZZ_3$ symmetry (the cyclic permutation of the
 three octonion blocks), and~$\star$ is assembled from nine bilinear
-building blocks routed by that $\ZZ_3$-action.  Ternary composition
+building blocks routed by that $\ZZ_3$ action.  Ternary composition
 algebras, as studied by
 Elduque~\cite{Elduque1996,Elduque2000_Triality,Elduque2023_IsotropicNorm}
 and others~\cite{SmithVojtechovsky2022,KamiyaOkubo2015,Okubo1995_Book},
-are typically non-associative, non-commutative, non-alternative, and
+are typically nonassociative, noncommutative, nonalternative, and
 non-power-associative, the same negative classification $(\RR^{24},
 +, \star)$ satisfies.  Yet they carry high internal symmetry, with
 order-3 automorphisms playing the central role: the Okubo algebra has
@@ -1142,7 +1145,7 @@ Lemmas~\ref{lem:L-order}, \ref{lem:L-sigmaLsbar},
 and~\ref{lem:sigmaLs-closed}.  Each table has 64 entries and is
 arranged so that the row labeled $(i,j)$ gives the unique 8-tuple
 $(c_1,\ldots,c_8) \in \ZZ^8$ representing the corresponding product
-in the basis indicated.  All entries are integer; closure under the
+in the basis indicated.  All entries are integers; closure under the
 standard octonion product follows by $\ZZ$-bilinearity.  The same
 identities have been recomputed in two independent computer-algebra
 implementations as a cross-check
@@ -1494,7 +1497,7 @@ b \pmod{2L}$ for $c \in L$, and likewise in the right factor.  The
 product therefore descends to a well-defined $\FF_2$-bilinear product
 $\bar\mu$ on the \emph{mod-2 quotient}
 \begin{equation}\label{eq:disp14}
-  \bar L := L/2L \cong \FF_2^{\,8}, \qquad
+  \bar L := L/2L \cong \FF_2^8, \qquad
   \bar\mu \colon \bar L \times \bar L \to \bar L,
 \end{equation}
 the reduction of the octonion order~$L$ modulo~$2$, an
@@ -1536,7 +1539,7 @@ operations behind Corradetti's thematically adjacent construction
 Section~\ref{sec:related}.
 
 \paragraph{Relation to prior work.}
-The lattice-level picture of $\bar L \cong \FF_2^{\,8}$ as an
+The lattice-level picture of $\bar L \cong \FF_2^8$ as an
 orthogonal space under the plus-type quadratic form induced by the
 $E_8$ Gram form, together with its $4$-dimensional maximal totally
 isotropic subspaces (Lagrangians), is Silverman's (part~12
@@ -1559,7 +1562,7 @@ decomposition $\bar L = V \oplus W$.\footnote{\scriptref{verify\_polarization\_l
 $\bar\mu(V, \bar L) \subseteq V$ holds in addition to the left-ideal
 direction (Lemma~\ref{lem:L-sigmaLsbar}).  The right-ideal direction
 is not formally implied by the left-ideal direction, since $\bar\mu$
-is non-commutative.\footnote{Commutativity is a property of the
+is noncommutative.\footnote{Commutativity is a property of the
 algebra, not of a basis; what matters is \emph{which order} is being
 reduced.  Reducing the Gravesian order
 $\ZZ\langle e_0,\ldots,e_7\rangle$ gives a commutative
@@ -1567,7 +1570,7 @@ $\FF_2$-algebra, since $e_i \cdot e_j - e_j \cdot e_i =
 2\,e_i \cdot e_j$ lies in twice that order.  The order~$L$
 also contains half-integer elements such as~$s$, and for these the
 commutator $a \cdot b - b \cdot a$ need not lie in~$2L$; direct
-computation confirms that $\bar\mu$ is non-commutative.}
+computation confirms that $\bar\mu$ is noncommutative.}
 
 Second, equip $\bar L$ with the natural plus-type quadratic form
 \begin{equation}\label{eq:disp17}
@@ -1575,7 +1578,7 @@ Second, equip $\bar L$ with the natural plus-type quadratic form
 \end{equation}
 well-defined because $L$ is even
 ($\Nrm(v + 2u) \equiv \Nrm(v) \pmod 4$).  For $L = D_8^+$ this is the
-standard plus-type form on~$\FF_2^{\,8}$ with Witt index~$4$.  Direct
+standard plus-type form on~$\FF_2^8$ with Witt index~$4$.  Direct
 verification shows that \emph{both}~$V$ and~$W$ are totally isotropic
 under~$q$ (every element of either subspace has $q = 0$); each is
 therefore a maximal totally isotropic subspace, a
@@ -1608,7 +1611,7 @@ arithmetic in this project (for Mahler's covering-radius theorem, by
 exact-arithmetic sampling).\footnote{\scriptref{verify\_dickson\_1923.py}
 \scriptref{verify\_kirmse\_1924.py}
 \scriptref{verify\_kirmse\_1924\_forensic.py} \scriptref{verify\_mahler\_1942.py}
-\scriptref{verify\_coxeter\_1946.py} Verification notes accompany each,
+\scriptref{verify\_coxeter\_1946.py}.  Verification notes accompany each,
 in \texttt{paper/reviews/}.}
 
 \noindent\textbf{Dickson (1923) \cite{Dickson1923}} gave the first
@@ -1652,7 +1655,7 @@ records his after-the-fact awareness of Dickson and Mahler and
 identifies Dickson's undercount with exactly the cause above.
 
 It is curious to find that the Coxeter--Bruck transposition would
-come in useful here: the same linear involution of~$\RR^8$, acting
+prove useful here: the same linear involution of~$\RR^8$, acting
 now on a different object.  The Coxeter--Bruck transposition acts
 on a maximal-order candidate that sits asymmetrically in~$\RR^8$;
 the present~$\sigma$ acts on the coordinate-symmetric placement
@@ -1717,7 +1720,7 @@ identified in trial~007.  The systematic methodology was essential:
 understanding the anatomy of failure (which conditions fail, for
 which vector types, and why) before trying the next approach.  The failure analysis of the untwisted product (Wilson's
 condition~(3) per Definition~\ref{def:wilson-leech}, exclusively
-type-3$\times$type-3) directly pointed to the
+Type~3$\times$Type~3) directly pointed to the
 mechanism that the twist needed to correct.
 
 Iterative convergence toward a robust result, including learning
@@ -1826,13 +1829,13 @@ A.~Elduque,
 \emph{On a class of ternary composition algebras},
 J.~Korean Math.\ Soc.\ \textbf{33} (1996), no.~1, 183--203.
 
-\bibitem[Elduque2000\_Triality]{Elduque2000_Triality}
+\bibitem[Elduque2000]{Elduque2000_Triality}
 A.~Elduque,
 \emph{On triality and automorphisms and derivations of composition
 algebras},
 Linear Algebra Appl.\ \textbf{314} (2000), no.~1--3, 49--74.
 
-\bibitem[Elduque2023\_IsotropicNorm]{Elduque2023_IsotropicNorm}
+\bibitem[Elduque2023]{Elduque2023_IsotropicNorm}
 A.~Elduque,
 \emph{Okubo algebras with isotropic norm},
 in: Non-Associative Algebras and Related Topics (NAART II, 2022),
@@ -1845,7 +1848,7 @@ N.\,D.~Elkies and B.\,H.~Gross,
 \emph{The exceptional cone and the Leech lattice},
 Internat.\ Math.\ Res.\ Notices \textbf{1996}, no.~14, 665--698.
 
-\bibitem[FureyHughes2025\_TrioOfTrialities]{FureyHughes2025_TrioOfTrialities}
+\bibitem[FureyHughes2025]{FureyHughes2025_TrioOfTrialities}
 N.~Furey and M.\,J.~Hughes,
 \emph{Three generations and a trio of trialities},
 Phys.\ Lett.\ B \textbf{865} (2025), 139473.
@@ -1858,7 +1861,7 @@ symmetry from Cayley--Dickson sedenions},
 Eur.\ Phys.\ J.\ C \textbf{83} (2023), 747.
 \href{https://arxiv.org/abs/2306.13098}{arXiv:2306.13098}.
 
-\bibitem[Hall2019\_Moufang]{Hall2019_Moufang}
+\bibitem[Hall2019]{Hall2019_Moufang}
 J.\,I.~Hall,
 \emph{Moufang Loops and Groups with Triality are Essentially the
 Same Thing},
@@ -1898,12 +1901,12 @@ Proc.\ Roy.\ Irish Acad.\ Sect.\ A \textbf{48} (1942), 123--133.
 
 \bibitem[MarraniCorradettiZucconi2025]{MarraniCorradettiZucconi2025}
 A.~Marrani, D.~Corradetti, and F.~Zucconi,
-\emph{Physics with non-unital algebras? An invitation to the Okubo
+\emph{Physics with nonunital algebras? An invitation to the Okubo
 algebra},
 J.\ Phys.\ A: Math.\ Theor.\ \textbf{58} (2025), 075202.
 \href{https://arxiv.org/abs/2309.17435}{arXiv:2309.17435}.
 
-\bibitem[Okubo1995\_Book]{Okubo1995_Book}
+\bibitem[Okubo1995]{Okubo1995_Book}
 S.~Okubo,
 \emph{Introduction to Octonion and Other Non-Associative Algebras in
 Physics},
