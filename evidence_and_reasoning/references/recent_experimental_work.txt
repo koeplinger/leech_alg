@@ -124,3 +124,25 @@ author publication lists) before inclusion.
   nonassociative algebras through computer experiment, with conjectural
   generalizations. Cited as recent experimental work on identities in
   nonassociative algebra, the setting of the present paper.
+
+---
+
+### [BremnerMadariagaPeresi2016]
+
+- **Authors**: Murray R. Bremner, Sara Madariaga, Luiz A. Peresi
+- **Title**: Structure theory for the group algebra of the symmetric group, with
+  applications to polynomial identities for the octonions
+- **Published in**: Commentationes Mathematicae Universitatis Carolinae,
+  Volume 57, Issue 4, 2016, pages 413–452
+- **Year**: 2016
+- **DOI**: 10.14712/1213-7243.2015.188
+- **Source**: Open access via the journal / EUDML.
+  Canonical DOI: https://doi.org/10.14712/1213-7243.2015.188
+- **Topics**: octonions, background, algorithms
+- **Originality note**: Published in a peer-reviewed journal (Comment. Math.
+  Univ. Carolin.). No dispute over priority or originality known to this project.
+- **Notes**: Uses the structure theory of the group algebra of the symmetric
+  group, by computer, to determine the polynomial identities satisfied by the
+  octonions. Cited alongside Dotsenko as computational work on identities in
+  nonassociative algebra, directly relevant to the octonionic setting of the
+  present paper.

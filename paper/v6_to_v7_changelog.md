@@ -29,6 +29,20 @@ v7 is a publication-preparation revision aimed at an experimental-mathematics ve
 
 ---
 
+## 3. Journal-quality review response (19 July 2026)
+
+A journal-quality review of v7 for the Experimental Mathematics audience ([reviews/2026-07-19_claude_opus_4_8_experimental_math_review_v7.md](reviews/2026-07-19_claude_opus_4_8_experimental_math_review_v7.md); 2 should-fix, 1 split, 11 refuted, all adversarially verified) produced these changes:
+
+- **Remark 1.3 (§1), epistemic hygiene.** "such products *always* land on strictly higher shells" → "such products land on strictly higher shells, exhaustively for the self-products and on $10^6$ sampled distinct pairs." The distinct-pair bound is sampled (only the self-products are exhaustive, per Remark 4.5); flagging it honors the paper's own sampled-vs-exhaustive rule. This also resolves the 15 July fine-comb's item N1.
+- **Section 6, Nebe header.** "Gabriele Nebe and Markus Kirschmer (2022)" → "Gabriele Nebe (2022)", featuring the researcher and no longer reversing the published Kirschmer–Nebe byline that the sentence and bibitem both give.
+- **Nebe's 72-dimensional lattice** is now described precisely as "a tensor product of the Barnes lattice and the Leech lattice" (was "built from the Leech lattice").
+- **Bremner added.** The Dotsenko paragraph becomes a joint "Vladimir Dotsenko (2025) and Murray R. Bremner (2016)" mention pointing to computational nonassociative algebra: Dotsenko's experimental identities, and the Bremner–Madariaga–Peresi computer determination of the polynomial identities of the octonions (*Comment. Math. Univ. Carolin.* 57 (2016), no. 4, 413–452, DOI 10.14712/1213-7243.2015.188, verified field-by-field). New `\bibitem` BremnerMadariagaPeresi2016, in its alphabetical slot; registered in `evidence_and_reasoning/references/recent_experimental_work.txt`.
+- **Conclusion (§7) cross-reference.** "the pattern in the table" → "the pattern in the census table", making the reference to the Section 5.6 table precise.
+
+Page count unchanged at 24.
+
+---
+
 *Revision chain: [v3 → v4](v3_to_v4_summary.md), [v4 → v5](v4_to_v5_changelog.md), [v5 → v6](v5_to_v6_changelog.md), v6 → v7 (this file).*
 
 — Claude (Anthropic), at the direction of Jens Köplinger; opened 2026-07-19, in progress

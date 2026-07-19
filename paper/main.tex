@@ -189,8 +189,9 @@ The closure statement $\LL \star \LL \subseteq \LL$ means that
 products land somewhere in~$\LL$; it does not assert that the
 minimal shell is preserved.  The product of two minimal vectors has
 norm at least~16 (Remark~\ref{rem:product-norms}), never the minimal
-value $\Nrm = 8$: such products always land on strictly higher
-shells.  This is consistent with $(\LL, +, \star)$ being an
+value $\Nrm = 8$: such products land on strictly higher shells,
+exhaustively for the self-products and on $10^6$ sampled distinct
+pairs.  This is consistent with $(\LL, +, \star)$ being an
 order in the ring-theoretic sense: a subring that is a free
 $\ZZ$-module of rank equal to the ambient algebra's dimension.
 That property is weaker than, and independent of, any shell-level
@@ -984,11 +985,11 @@ historical account, see Appendix~\ref{app:history}.
 in lattice theory and in nonassociative algebra are currently pursued
 through computer-assisted experiment, the method used here.
 
-\textbf{Gabriele Nebe and Markus Kirschmer (2022).}  In computational
+\textbf{Gabriele Nebe (2022).}  In computational
 lattice theory, Kirschmer and Nebe classify binary Hermitian lattices
 over number fields by computer~\cite{KirschmerNebe2022}; Nebe's extremal
-even unimodular $72$-dimensional lattice of minimum~$8$ is built from
-the Leech lattice~\cite{Nebe2012}.
+even unimodular $72$-dimensional lattice of minimum~$8$ is a tensor
+product of the Barnes lattice and the Leech lattice~\cite{Nebe2012}.
 
 \textbf{Gerald H\"ohn and Geoffrey Mason (2023).}  H\"ohn and Mason
 determine the $290$ fixed-point sublattices of the Leech lattice
@@ -998,9 +999,12 @@ $N=4$ superconformal structure~\cite{HohnMason2023}; H\"ohn and Seysen
 give a computer-assisted determination of the order of the
 Monster~\cite{HohnSeysen2025}.
 
-\textbf{Vladimir Dotsenko (2025).}  Dotsenko investigates identities in
-nonassociative algebras by computer experiment, with conjectures on
-nilpotence and the nil property~\cite{Dotsenko2025}.
+\textbf{Vladimir Dotsenko (2025) and Murray R.~Bremner (2016).}  In
+computational nonassociative algebra, Dotsenko investigates identities
+by computer experiment, with conjectures on nilpotence and the nil
+property~\cite{Dotsenko2025}; Bremner, Madariaga, and Peresi determine
+polynomial identities for the octonions using the representation theory
+of the symmetric group~\cite{BremnerMadariagaPeresi2016}.
 
 \textbf{Daniele Corradetti (2026).}  A thematically adjacent recent
 construction is Corradetti's order on~$E_8$ via the Okubo algebra
@@ -1067,7 +1071,7 @@ Several questions remain immediately open:
   (as an order), placing it outside the classical families.
 \item A structural characterization of which permutation cycles close.
   Every cycle type of~$S_7$ has been enumerated exactly
-  (Section~\ref{sec:census}), but the pattern in the table is
+  (Section~\ref{sec:census}), but the pattern in the census table is
   described only for the $3$-cycles.  Open: a reason for the total
   failure of the $4$-cycles and for the exact one-half rates beyond
   the $3$-cycles; and
@@ -1770,6 +1774,14 @@ the 270 rescaled copies of the first $E_8$ shell (part~11, 12 December
 (part~12, 31 January 2016),
 \url{http://math.ucr.edu/home/baez/octonions/integers/integers_11.html},
 \url{http://math.ucr.edu/home/baez/octonions/integers/integers_12.html}.
+
+\bibitem[BremnerMadariagaPeresi2016]{BremnerMadariagaPeresi2016}
+M.\,R.~Bremner, S.~Madariaga, and L.\,A.~Peresi,
+\emph{Structure theory for the group algebra of the symmetric group,
+with applications to polynomial identities for the octonions},
+Comment.\ Math.\ Univ.\ Carolin.\ \textbf{57} (2016), no.~4, 413--452.
+\href{https://doi.org/10.14712/1213-7243.2015.188}%
+{doi:10.14712/1213-7243.2015.188}.
 
 \bibitem[Calderbank2023]{Calderbank2023}
 D.~Calderbank,
