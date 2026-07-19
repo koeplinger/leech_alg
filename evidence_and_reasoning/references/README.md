@@ -31,6 +31,7 @@ Each topic has its own file:
 | [prior_art_orders_on_leech.txt](prior_art_orders_on_leech.txt) | Prior art on multiplicative orders on the Leech lattice |
 | [triality_and_algebraic_physics.txt](triality_and_algebraic_physics.txt) | Soft references: triality in physics, division-algebra approaches to the Standard Model |
 | [computer_algebra_systems.txt](computer_algebra_systems.txt) | GAP and LOOPS — the systems used in the GAP verification suite |
+| [recent_experimental_work.txt](recent_experimental_work.txt) | Recent computer-assisted experimental work in adjacent areas (Section 6 of the paper) |
 
 ## Format for Each Entry
 

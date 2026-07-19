@@ -8,12 +8,12 @@ current-state; every released version, note, brief and review is frozen.
 
 | File | |
 |---|---|
-| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** v6, frozen 18 July 2026. Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` twice. |
+| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** v7, in progress (19 July 2026); v6 frozen as `main_2026-07-18.tex`. Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` twice. |
 | [`main_2026-04-29.tex`](main_2026-04-29.tex) | v3, frozen |
 | [`main_2026-05-25.tex`](main_2026-05-25.tex) | v4, frozen |
 | [`main_2026-06-07.tex`](main_2026-06-07.tex) | v5, frozen |
 | [`main_2026-07-18.tex`](main_2026-07-18.tex) | v6, frozen; the last released version |
-| [`v3_to_v4_summary.md`](v3_to_v4_summary.md), [`v4_to_v5_changelog.md`](v4_to_v5_changelog.md), [`v5_to_v6_changelog.md`](v5_to_v6_changelog.md) | what changed between versions |
+| [`v3_to_v4_summary.md`](v3_to_v4_summary.md), [`v4_to_v5_changelog.md`](v4_to_v5_changelog.md), [`v5_to_v6_changelog.md`](v5_to_v6_changelog.md), [`v6_to_v7_changelog.md`](v6_to_v7_changelog.md) | what changed between versions |
 
 ## Companion and standalone notes
 

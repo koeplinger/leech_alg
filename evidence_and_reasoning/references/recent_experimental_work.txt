@@ -1,0 +1,126 @@
+Topic: Recent computer-assisted experimental work in adjacent areas
+=========================================================
+
+This file collects references for recent works, in lattice theory and in
+nonassociative algebra, that pursue related questions through computer-assisted
+experiment. They are cited in Section 6 (Related work) of the paper as adjacent
+experimental efforts, not as prior art the present construction builds on. All
+bibliographic fields were verified against live sources (journal pages, arXiv,
+author publication lists) before inclusion.
+
+---
+
+### [KirschmerNebe2022]
+
+- **Authors**: Markus Kirschmer, Gabriele Nebe
+- **Title**: Binary Hermitian lattices over number fields
+- **Published in**: Experimental Mathematics, Volume 31, Issue 1, 2022, pages 280–301
+- **Year**: 2022
+- **DOI**: 10.1080/10586458.2019.1618756
+- **Source**: Not redistributed locally (Taylor & Francis copyright).
+  Canonical DOI: https://doi.org/10.1080/10586458.2019.1618756
+- **Topics**: leech_lattice, algorithms
+- **Originality note**: Published in a peer-reviewed journal (Experimental
+  Mathematics). No dispute over priority or originality known to this project.
+- **Notes**: Classifies binary Hermitian lattices over number fields by computer,
+  with an application to the classification of 48-dimensional extremal even
+  unimodular lattices admitting a semilarge automorphism. Cited as computational
+  lattice theory in the target venue.
+
+---
+
+### [Nebe2012]
+
+- **Authors**: Gabriele Nebe
+- **Title**: An even unimodular 72-dimensional lattice of minimum 8
+- **Published in**: Journal für die reine und angewandte Mathematik (Crelle),
+  Volume 673, 2012, pages 237–247
+- **Year**: 2012
+- **DOI**: 10.1515/crelle.2011.175
+- **Preprint**: arXiv:1008.2862 (https://arxiv.org/abs/1008.2862)
+- **Source**: Not redistributed locally (De Gruyter copyright); preprint public on arXiv.
+- **Topics**: leech_lattice, e8_lattice
+- **Originality note**: Published in a peer-reviewed journal (Crelle). No dispute
+  over priority or originality known to this project.
+- **Notes**: Constructs the first known extremal even unimodular 72-dimensional
+  lattice of minimum 8, as a tensor product of the Barnes lattice and the Leech
+  lattice over the ring of integers of Q(sqrt(-7)). Cited as a Leech-derived
+  construction alongside the Kirschmer–Nebe experimental work.
+
+---
+
+### [HohnMason2016]
+
+- **Authors**: Gerald Höhn, Geoffrey Mason
+- **Title**: The 290 fixed-point sublattices of the Leech lattice
+- **Published in**: Journal of Algebra, Volume 448, 2016, pages 618–637
+- **Year**: 2016
+- **DOI**: 10.1016/j.jalgebra.2015.08.028
+- **Preprint**: arXiv:1505.06420 (https://arxiv.org/abs/1505.06420)
+- **Source**: Not redistributed locally (Elsevier copyright); preprint public on arXiv.
+- **Topics**: leech_lattice
+- **Originality note**: Published in a peer-reviewed journal (Journal of Algebra,
+  Elsevier). No dispute over priority or originality known to this project.
+- **Notes**: Determines, by computer, the 290 orbits of fixed-point sublattices of
+  the Leech lattice under the action of the Conway group Co_0, with the
+  corresponding coinvariant lattices and stabilizing subgroups. Directly relevant
+  as a computational census of Leech sublattices.
+
+---
+
+### [HohnMason2023]
+
+- **Authors**: Gerald Höhn, Geoffrey Mason
+- **Title**: Most vertex superalgebras associated to an odd unimodular lattice of
+  rank 24 have an N=4 superconformal structure
+- **Published in**: Experimental Mathematics, Volume 32, Issue 3, 2023, pages 502–504
+- **Year**: 2023
+- **DOI**: 10.1080/10586458.2021.1980458
+- **Preprint**: arXiv:1810.00254 (https://arxiv.org/abs/1810.00254)
+- **Source**: Not redistributed locally (Taylor & Francis copyright); preprint public on arXiv.
+- **Topics**: leech_lattice, background
+- **Originality note**: Published in a peer-reviewed journal (Experimental
+  Mathematics). No dispute over priority or originality known to this project.
+- **Notes**: Establishes, by computer, that at least 267 of the 273 vertex
+  superalgebras associated to odd unimodular lattices of rank 24 carry an N=4
+  superconformal subalgebra. Cited as experimental work in the target venue on
+  rank-24 unimodular lattices.
+
+---
+
+### [HohnSeysen2025]
+
+- **Authors**: Gerald Höhn, Martin Seysen
+- **Title**: The order of the Monster finite simple group
+- **Published in**: Preprint (arXiv), 2025
+- **Year**: 2025
+- **Preprint**: arXiv:2508.01037 (https://arxiv.org/abs/2508.01037)
+- **Source**: Preprint public on arXiv.
+- **Topics**: background, algorithms
+- **Originality note**: Preprint, not yet in a peer-reviewed journal at the time of
+  writing. No dispute over priority or originality known to this project.
+- **Notes**: A self-contained, computer-assisted determination of the order of the
+  Monster (and the Baby Monster), by counting idempotent axes in the Griess
+  algebra using the mmgroup software package. Cited as computer-assisted work by
+  the same group.
+
+---
+
+### [Dotsenko2025]
+
+- **Authors**: Vladimir Dotsenko
+- **Title**: Nilpotence, weak nilpotence, and the nil property in the nonassociative
+  world: computations and conjectures
+- **Published in**: Experimental Mathematics, Volume 34, Issue 4, 2025, pages 745–753
+  (published online October 2024)
+- **Year**: 2025
+- **DOI**: 10.1080/10586458.2024.2410985
+- **Preprint**: arXiv:2306.11362 (https://arxiv.org/abs/2306.11362)
+- **Source**: Not redistributed locally (Taylor & Francis copyright); preprint public on arXiv.
+- **Topics**: octonions, background, algorithms
+- **Originality note**: Published in a peer-reviewed journal (Experimental
+  Mathematics). No dispute over priority or originality known to this project.
+- **Notes**: Studies identities expressing nilpotence and the nil property in
+  nonassociative algebras through computer experiment, with conjectural
+  generalizations. Cited as recent experimental work on identities in
+  nonassociative algebra, the setting of the present paper.

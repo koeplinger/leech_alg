@@ -1,0 +1,62 @@
+Prompt 275 -- Documentation consistency sweep across the project (v7)
+Date: 2026-07-19
+
+User: 'Make a documentation consistency sweep across the project.'
+
+Context: v7 is now the working paper (main.tex, 19 July 2026, 24 pp.):
+shorter abstract + three experimental researchers in Section 6 with six new
+bibitems.  v6 remains frozen at main_2026-07-18.tex (23 pp., last released).
+
+Sweep rules (as established):
+ - Frozen v6 artifacts (main_2026-07-18.tex, v5_to_v6_changelog.md and
+   earlier changelogs, plans, key_claims NNN, reviews, trial results,
+   referenced programs) get NO v7 content; dated addenda only if a frozen
+   claim is now wrong.
+ - v6_to_v7_changelog.md is the self-contained v7 record.
+ - Current-state docs (CURRENT_STATE, READMEs, terminology, research_result,
+   editorial_standards, key_claims/README, DOCUMENT_GENRES, MANIFESTO,
+   research_statement) edited in place to reflect the current state: v7 the
+   working version, v6 the last frozen release.
+ - Per Manifesto Section 14, any scanning subagents are READ-ONLY; the
+   orchestrator applies every edit and shows it to the user; linter after.
+
+Expected v7 deltas to propagate: paper version/date/page-count references
+(v6/18 July/23pp -> v7/19 July/24pp working, v6 frozen); revision-chain and
+directory-tree listings (+ v6_to_v7_changelog.md); any bibliography count
+(+6 entries); nothing math-content changed in v7, so terminology / ledger /
+research_result math stays as-is.
+
+Applied (known v7 deltas):
+ - README.md: working paper -> v7 in progress (19 July 2026); v6 frozen
+   (main_2026-07-18.tex) as last released.
+ - paper/README.md: main.tex row -> v7 in progress; v6_to_v7_changelog.md
+   added to the changelog row.
+ - CURRENT_STATE.md: Last updated -> 2026-07-19; paper-status block ->
+   v7-in-progress (24 pp.) over v6-frozen, with the v7 goal noted;
+   v6_to_v7_changelog.md added to the revision chain; directory-tree
+   annotation -> v7, 24 pp., in progress.
+ - Confirmed unaffected: no bibliography count in any current-state doc; v7
+   added no scripts (code indexes unchanged); math-content docs untouched
+   (v7 changed no mathematics); frozen v6 artifacts not touched.
+
+Read-only verification workflow (wj5ww0nv3): 4 scanners + adversarial
+refute; 3 scanners clean, 1 confirmed finding (0 refuted):
+ - REGISTRY GAP (I had missed it): evidence_and_reasoning/references/ is a
+   living registry whose README states "Every work cited anywhere in this
+   repository must have an entry here," but the six new v7 citations were
+   unregistered.  None fits an existing topical file's stated scope (the
+   Leech file is octonionic constructions; Monster and nonassociative-
+   identities fit nowhere), so I created a new topical file
+   references/recent_experimental_work.txt with all six verified entries
+   (KirschmerNebe2022, Nebe2012, HohnMason2016, HohnMason2023,
+   HohnSeysen2025, Dotsenko2025) in the registry's standard format, and
+   added a row to references/README.md.  All six now resolve; linter clean.
+   Organizational choice (new file vs distributing into existing files)
+   flagged to the user for adjustment.
+
+The workflow also confirmed: version/date/page-count fully propagated; the
+v6_to_v7_changelog claims match the actual main_2026-07-18 -> main.tex diff;
+frozen v6 artifacts carry no v7 content; DOCUMENT_GENRES and lint_docs.py
+agree on the in-progress-changelog rule.
+
+Status: CLOSED.
