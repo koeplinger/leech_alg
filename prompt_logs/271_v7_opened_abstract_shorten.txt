@@ -1,0 +1,62 @@
+Prompt 271 -- Open v7; check and shorten the abstract to < 150 words
+Date: 2026-07-18
+
+User: 'We need to do a few more publication prep items, since we're now
+targeting an audience that is open to experimentation that may then lead
+to deeper structural understanding, focusing on the experimentation and
+methodology.  To do so, open up the main paper for a new revision v7 which
+will now work on.  All v6 artifacts are frozen.  Don't update v6 artifacts
+(or earlier; like change logs or plans) with anything v7 related.  We'll
+create a self-contained v6-to-v7 changelog instead that has it all.
+First, we need to shorten the abstract to a maximum of 150 words.  To be on
+the safe side, here's one with 149 words.  Check it for accuracy, grammar,
+and count the words to make sure that we're _below_ 150 words:'
+[candidate abstract pasted, see conversation]
+
+Constraints for the v7 cycle:
+ - main.tex becomes the v7 working source; v6 is frozen at
+   paper/main_2026-07-18.tex and NOT to be touched.
+ - No v7 content in any v6-or-earlier artifact (changelogs, plans, etc.).
+ - A single self-contained paper/v6_to_v7_changelog.md will record v7.
+ - Audience: experimental-mathematics; foreground experimentation and
+   methodology as a path toward deeper structural understanding.
+
+This prompt: verify the candidate abstract (accuracy vs the frozen paper
+and scripts, grammar, word count < 150), report, then apply on the user's
+go.
+
+Outcome (applied):
+ - Word count 149 (each $...$ math blob = 1 word; 148 if the "A." initial
+   is not counted).  Below 150.  texcount not installed; own tokenizer used.
+ - Grammar clean.  Standalone (no \cite, no \ref); v6's inline "[J. Algebra
+   322 ...]" locator dropped, Wilson stays in the bibliography.
+ - Accuracy verified point by point:
+   * "exact integer arithmetic" -- accurate and more concrete than v6's
+     "exact arithmetic": symbolic_proof_checks.py doubles all coordinates
+     "to avoid fractions entirely", and the Appendix A tables are integer
+     8-tuples.
+   * "over 12 million random pairs" matches Appendix C (>12,000,000).
+   * "four lemmas" = Lemmas 4.1-4.4.
+   * "octonion-algebra isomorphism" = v6's "algebra isomorphism of the
+     octonions"; precise form is Definition 3.2.
+   * "leaves L invariant ... but moves Ls-bar and Ls" = Lemma 4.1 +
+     Remark 4.5; consistent with the sigma-acts-on-sublattices note.
+   * Witt/Lagrangians/"which polarizations lift" -- accurate compression.
+ - ONE consideration surfaced to the user (not applied): the compression
+   "Bruck's repair of Kirmse's integral octonions" reduces Kirmse to the
+   repaired object, touching the fair-attribution standard
+   ([[feedback_kirmse_attribution]]); the full Appendix B still balances
+   it.  User to decide whether to keep or soften.
+ - DATE FLAG: v7 subtitle and this changelog stamped "18 July 2026" to
+   match the session and the freeze day; system currentDate reads
+   2026-07-19.  Flagged to the user for confirmation; one edit fixes it if
+   the calendar has rolled.
+
+Applied to the v7 working source paper/main.tex:
+ - subtitle "18 July 2026 (v6)" -> "(v7)";
+ - abstract replaced (309 -> 149 words).
+Created paper/v6_to_v7_changelog.md (self-contained; frozen v6 artifacts
+untouched, confirmed by git).  Build 23 pp., 0 errors/overfull/undefined;
+linter clean.
+
+Status: CLOSED (pending the user's date confirmation and Kirmse ruling).
