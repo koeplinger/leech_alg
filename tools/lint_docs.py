@@ -205,6 +205,12 @@ ADDENDUM = re.compile(
     re.I,
 )
 
+# A version changelog freezes only "on release of the later version"
+# (DOCUMENT_GENRES.md).  While it declares itself in progress it is a living
+# document, edited in place like the current-state docs; the marker is removed
+# when its version is frozen, at which point the frozen check re-engages.
+IN_PROGRESS = re.compile(r"in progress, not frozen|not yet frozen", re.I)
+
 
 def check_frozen() -> None:
     changed = [
@@ -216,6 +222,10 @@ def check_frozen() -> None:
     for rel in changed:
         if rel not in fz:
             continue
+        if rel.endswith(("_changelog.md", "_summary.md")) and IN_PROGRESS.search(
+            (ROOT / rel).read_text(encoding="utf-8")
+        ):
+            continue  # in-progress changelog: living until its version freezes
         diff = git("diff", "HEAD", "--", rel)
         added = [l[1:] for l in diff.splitlines() if l.startswith("+") and not l.startswith("+++")]
         removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]

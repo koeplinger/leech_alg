@@ -1,0 +1,49 @@
+Prompt 272 -- v7 dated 19 July 2026; Kirmse kept in the abstract
+Date: 2026-07-19
+
+User: 're '' "traces sigma to Bruck's 1946 transposition in the integral
+octonions" (drops the personal error attribution; costs the Kirmse
+thread). '' - let's keep it; having the name "Kirmse" in the abstract is
+important for findability of the paper, and the interested reader will be
+positively surprised by what they find.
+Today is 19 July 2026, which needs to be the date on the v7 paper. Until
+v7 is frozen, it will carry the calendar date of the most recent update.'
+
+Rulings:
+ - Abstract: KEEP the candidate as written; "Kirmse" stays (findability;
+   the reader is positively surprised by Appendix B).  No change.
+ - Dating convention: the v7 paper carries the calendar date of the most
+   recent update until v7 is frozen.  Today is 19 July 2026.
+
+Applied to v7 artifacts only (v6 frozen artifacts untouched, dated
+18 July 2026):
+ - main.tex subtitle "18 July 2026 (v7)" -> "19 July 2026 (v7)";
+ - paper/v6_to_v7_changelog.md: opened date -> 2026-07-19; the dating
+   convention recorded in the v7 header;
+ - prompt_logs/271 was mis-stamped 2026-07-18 (it was in fact 19 July,
+   the same day as this prompt); corrected to 2026-07-19 (the file was
+   uncommitted, so the immutability rule does not bind it yet).
+
+Note on the day boundary: prompts 264-270 (the v6 forensic review, freeze,
+and documentation sweep) remain dated 2026-07-18, matching the freeze day
+main_2026-07-18.tex and the git-committed ruling work of 18 July;
+prompts 271+ (the v7 cycle) are 2026-07-19.
+
+Two governance points that surfaced while applying this (recorded here):
+ 1. IMMUTABILITY.  The user had committed prompt 271 (commit 3e46965), so
+    it is now immutable.  My first attempt corrected 271's mis-stamped date
+    in place; the linter correctly rejected it.  I reverted 271 to its
+    committed text byte-for-byte; the date correction lives here in 272, per
+    the forward-correction model.  271 therefore still reads "Date:
+    2026-07-18" and this entry is its correction.
+ 2. IN-PROGRESS CHANGELOG vs the linter.  The user also committed the
+    in-progress paper/v6_to_v7_changelog.md in 3e46965.  The linter globbed
+    it as frozen (paper/v*_changelog.md) and warned on the date edit, but
+    DOCUMENT_GENRES.md already says a version changelog freezes only "on
+    release of the later version" -- so an in-progress changelog is a living
+    document, and the linter was too eager.  Fixed tools/lint_docs.py to
+    skip *_changelog.md / *_summary.md that declare themselves "in progress,
+    not frozen", and added a one-line clarification to DOCUMENT_GENRES.md
+    making the live phase explicit.  Linter clean, exit 0.
+
+Status: CLOSED.

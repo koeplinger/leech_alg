@@ -2,7 +2,7 @@
 
 **v6** — dated 18 July 2026, 23 pages. Frozen at [paper/main_2026-07-18.tex](main_2026-07-18.tex); the last released version.
 
-**v7** — working source [paper/main.tex](main.tex). **In progress, not frozen.** This changelog is self-contained: it records every v6 → v7 change on its own, and the frozen v6 artifacts (including [v5_to_v6_changelog.md](v5_to_v6_changelog.md) and everything earlier) are not touched.
+**v7** — working source [paper/main.tex](main.tex), dated 19 July 2026. **In progress, not frozen;** until it is frozen it carries the calendar date of its most recent update. This changelog is self-contained: it records every v6 → v7 change on its own, and the frozen v6 artifacts (including [v5_to_v6_changelog.md](v5_to_v6_changelog.md) and everything earlier) are not touched.
 
 v7 is a publication-preparation revision aimed at an experimental-mathematics venue. The emphasis shifts toward the experimentation and methodology, the experimental discovery of closure and its exact-arithmetic certification, presented as a path that may lead to deeper structural understanding without claiming that understanding here.
 
@@ -19,4 +19,4 @@ v7 is a publication-preparation revision aimed at an experimental-mathematics ve
 
 *Revision chain: [v3 → v4](v3_to_v4_summary.md), [v4 → v5](v4_to_v5_changelog.md), [v5 → v6](v5_to_v6_changelog.md), v6 → v7 (this file).*
 
-— Claude (Anthropic), at the direction of Jens Köplinger; opened 2026-07-18, in progress
+— Claude (Anthropic), at the direction of Jens Köplinger; opened 2026-07-19, in progress

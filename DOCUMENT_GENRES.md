@@ -47,6 +47,12 @@ A frozen artifact is **never rewritten in place.**  It changes in exactly two wa
   addendum is a dated correction block in the module docstring.
 - **Deprecation.**  Marked deprecated and superseded, naming what supersedes it.
 
+**In-progress changelogs are the one exception with a live phase.**  A version
+changelog freezes only *on release of the later version*.  Until then it is a
+living document: it declares itself *in progress, not frozen* and is edited in
+place, like a current-state document.  When its version is frozen the
+declaration is dropped and the changelog is frozen with it.
+
 The reason is not ceremony.  A frozen artifact is *evidence*: it records what
 was believed on the day it was written, and a reader must be able to see both
 the belief and its correction.  Rewriting it destroys the thing it exists to
