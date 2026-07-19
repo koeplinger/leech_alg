@@ -1,0 +1,69 @@
+Prompt 276 -- Journal-quality review of v7 for the experimental-mathematics
+audience
+Date: 2026-07-19
+
+User: 'Perfect - you found the item that I knew was missing (the paper
+registry updates), and then a few more.
+re "grouped the six new references into a single new registry file" -- fine
+for now.
+re "TRIAL_METHODOLOGY vs DOCUMENT_GENRES freeze trigger; the
+editorial-standards vocabulary example" -- that's ok; I'll call out if I see
+something that needs changing (my responsibility; let's not
+over-proceduralize).
+re "dropping the \subtitle at journal submission" -- that's a
+journal-specific item, not part of the forward-evolving updates here. We'll
+tailor to each specific journal once we've identified one.
+Now perform a journal-quality review of the v7 paper. The target audience
+is the one we just added to the paper.'
+
+Thread closures recorded:
+ - Registry grouping into one new file: accepted "for now".
+ - The two deferred v6 policy items: DROPPED by the user (will self-flag if
+   needed; do not over-proceduralize).
+ - Subtitle drop: deferred to journal-submission time, tailored per venue;
+   not a forward-evolving item now.
+
+Task: journal-quality review of paper/main.tex (v7, 24 pp.) as an
+Experimental Mathematics referee would judge it, for the experimental /
+computational-mathematics audience just added to Section 6 (Hoehn, Nebe,
+Kirschmer, Dotsenko, Seysen circle).  Read-only review agents per Manifesto
+Section 14; the orchestrator verifies findings and writes the review to
+paper/reviews/.  Focus: reproducibility, the experiment<->proof
+relationship and epistemic honesty, correctness/consistency after the v7
+changes, substantive engagement with the newly cited experimental-math
+literature, Exp. Math. presentation standards, and an overall referee
+verdict.  Do not re-litigate items already resolved in the prior reviews
+(paper/reviews/, esp. the 2026-07-18 forensic round).
+
+Outcome (19 July 2026): 36 agents, 17 raw findings, 14 after dedup, 2
+confirmed / 1 split / 11 refuted by two adversarial refuters each.  The
+safety classifier was down for 7 verify agents, so both confirmed findings
+were re-verified first-hand by the orchestrator against the paper and
+scripts.
+
+Review written: paper/reviews/2026-07-19_claude_opus_4_8_experimental_math_review_v7.md
+
+Two should-fix findings, both epistemic/citation hygiene (no math error):
+ - SF1: Remark 1.3 (lines 190-193) states "product of two minimal vectors
+   ... never 8 ... always higher shells" categorically, but the
+   distinct-pair case is 10^6-sampled (only self-products are exhaustive
+   in rem:product-norms); corroborates the 15 July fine-comb N1, still
+   unapplied.  Fix: restrict to self-products (exhaustive, serves the
+   purpose), or flag the pair case as sampled.  NOTE: this remark's wording
+   was deliberately set by the user (prompt 259 revert) -- present for
+   ruling, do not auto-apply.
+ - SF2: Section 6 header "Gabriele Nebe and Markus Kirschmer (2022)"
+   reverses the published byline / the sentence beneath / the bibitem
+   (Kirschmer, Nebe).  Fix: "Markus Kirschmer and Gabriele Nebe (2022)" or
+   feature Nebe alone "Gabriele Nebe (2022)".  NOTE: user approved the
+   current header; present for ruling.
+Split nit: Nebe 72-dim "built from the Leech lattice" omits the Barnes
+tensor factor (optional precision).
+Refuted-but-worth-noting: Bremner citation alongside Dotsenko (audience
+resonance, optional); numbering the two in-body tables (optional).
+Verdict: minor revision; venue-ready after SF1/SF2.
+
+Nothing applied to main.tex (both confirmed items touch user-approved /
+user-reverted text; awaiting rulings).
+
+Status: CLOSED (review delivered; awaiting the user's item-by-item rulings).
