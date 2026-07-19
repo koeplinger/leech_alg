@@ -107,6 +107,18 @@ analogous to the Kirmse–Coxeter one: an early, structurally correct
 proposal refined by a later author's short correction.  Dixon 1995
 does not test or claim closure of Λ under any bilinear product.
 
+### [Dixon2005] — Integral octonions, octonion multiplication and the Leech lattice
+
+Dixon's 2005 preprint (dated 10 March 2005), cited as reference [12] of
+Wilson 2009.  Its conjectured formula for the third family of minimal
+vectors required a small correction, which Wilson supplied in a bracketed
+note at the end of §5 of Wilson 2009 while independently deriving the
+sublattice characterisation above.  The preprint was posted at
+www.7stones.com/Homepage/8Lattice.pdf; that URL now serves Dixon's later
+2010 paper, so the 2005 preprint is cited by its locator through Wilson
+2009 rather than by a live link.  Like Dixon's other works here, it does
+not test or claim closure of Λ under a bilinear product.
+
 ### [ElkiesGross1996] — The exceptional cone and the Leech lattice
 
 Elkies and Gross (Internat. Math. Res. Notices 1996, no. 14,
@@ -198,6 +210,16 @@ This is the closest prior art to our finding, but uses a fundamentally
 different algebraic framework (commutative Jordan product in 27
 dimensions) rather than a non-commutative, non-associative
 octonion-derived product in 24 dimensions.
+
+### [Calderbank2023] — Complementary-Lagrangians reading (comment on Baez, part 9)
+
+David Calderbank, in a comment of 2 April 2023 on part 9 of Baez's
+Integral Octonions series (golem.ph.utexas.edu), observes that the Leech
+construction can be read in terms of the preimages in L of a
+complementary pair of Lagrangians of L/2L.  This project arrived at
+the same reading independently (prompt-log record), so the citation is
+completeness, not repair.  It is credited in Appendix A.1 of the paper,
+alongside Silverman's mod-2 orthogonal-space picture of L/2L.
 
 ### [WilsonConway] — Conway's group and octonions
 

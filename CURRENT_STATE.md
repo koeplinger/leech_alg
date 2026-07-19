@@ -474,9 +474,9 @@ the trial, and prints detailed results.
    (rem:Ls-not-closed): non-triviality of the construction, not a step
    of the closure proof.
 
-2. **Formal paper at v7, dated 19 July 2026, in progress (working source
-   `paper/main.tex`, 24 pages); v6 is frozen as
-   `paper/main_2026-07-18.tex`, the last released version.**
+2. **Formal paper at v7, dated 19 July 2026, frozen as
+   `paper/main_2026-07-19.tex` (24 pages), the last released version;
+   the working source is `paper/main.tex`.**
    The paper contains abstract (standalone, with
    keywords and MSC 2020 codes), preliminaries,
    construction, symbolic proof, algebraic properties (Section 5, in
@@ -501,14 +501,15 @@ the trial, and prints detailed results.
    clarity revision of the span-defect material, the Section 5
    restructuring that records the structure results below, the full
    S₇ closure census, the submission apparatus, and the review rounds
-   of 15–18 July (paper/reviews/); v7 (working source
-   `paper/main.tex`, dated 19 July 2026, in progress) prepares the
+   of 15–18 July (paper/reviews/); v7 (frozen
+   `paper/main_2026-07-19.tex`, dated 19 July 2026) prepares the
    paper for an experimental-mathematics venue, with a shortened
    abstract and recent computer-assisted experimental work in adjacent
    fields cited in the related-work section.  Frozen
    snapshots: `paper/main_2026-04-29.tex` (v3),
    `paper/main_2026-05-25.tex` (v4), `paper/main_2026-06-07.tex` (v5),
-   `paper/main_2026-07-18.tex` (v6, the
+   `paper/main_2026-07-18.tex` (v6),
+   `paper/main_2026-07-19.tex` (v7, the
    last frozen state).  Revision chain: `paper/v3_to_v4_summary.md`,
    `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`,
    `paper/v6_to_v7_changelog.md`.
@@ -671,9 +672,9 @@ leech_alg/
 │   └── run_all.g                  # 110 checks, exact rational arithmetic
 │
 ├── prompt_logs/                   # Chronological AI interaction log
-├── paper/                         # main.tex (v7, 24 pp., in progress; v6 frozen
-│                                  #   2026-07-18); bibliography inline via \bibitem;
-│                                  #   frozen snapshots main_2026-{04-29,05-25,06-07,07-18}.tex,
+├── paper/                         # main.tex (v7, 24 pp., frozen 2026-07-19);
+│                                  #   bibliography inline via \bibitem;
+│                                  #   frozen snapshots main_2026-{04-29,05-25,06-07,07-18,07-19}.tex,
 │                                  #   automorphism_group_2026-07-12.tex, reviews/
 └── source_documents/              # Primary source PDFs (freely redistributable)
 ```

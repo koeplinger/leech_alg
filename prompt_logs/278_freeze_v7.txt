@@ -1,0 +1,69 @@
+Prompt 278 -- Freeze v7 of the paper
+Date: 2026-07-19
+
+User: 'Nice. Freeze v7 of the paper.'
+
+Freeze steps (same pattern as the v6 freeze, prompt 270):
+ - Snapshot paper/main_2026-07-19.tex = main.tex, verified identical.
+ - Finalize v6_to_v7_changelog.md: header "In progress, not frozen" ->
+   "Frozen at main_2026-07-19.tex (19 July 2026)"; drop the
+   most-recent-update-date clause; signature -> frozen.
+ - Current-state docs to v7-frozen / last-released: README.md,
+   paper/README.md (+ snapshot row), CURRENT_STATE.md (paper-status,
+   version tail, directory tree, snapshots list).
+ - Rebuild; linter.  NOTE: removing the changelog's "in progress, not
+   frozen" marker turns it frozen; the freeze-transition edit may trip the
+   linter's frozen-rewrite check (the marker exemption keys on the working
+   text).  If so, extend the exemption to also honor the HEAD (committed)
+   in-progress marker, so the one-time freeze transition is allowed while
+   post-freeze rewrites are still caught.
+
+User (mid-turn): '... and make another documentation consistency sweep
+across the project.'  So: freeze v7, then a full documentation consistency
+sweep (same read-only-verification pattern as prompts 270 and 275).
+
+Freeze done (19 July 2026):
+ - Snapshot paper/main_2026-07-19.tex = main.tex, verified identical
+   (24 pp., 0 errors).
+ - v6_to_v7_changelog.md finalized: header "In progress, not frozen" ->
+   "Frozen at main_2026-07-19.tex (19 July 2026); the last released
+   version"; signature -> "opened and frozen 2026-07-19".
+ - Linter: extended the in-progress-changelog exemption to also honor the
+   HEAD (committed) in-progress marker, so the one-time freeze transition
+   (which drops the marker) is allowed; post-freeze rewrites still caught.
+   Verified: linter exit 0 through the transition.
+ - Current-state docs -> v7 frozen / last released: README.md,
+   paper/README.md (+ main_2026-07-19.tex snapshot row; v7 now last
+   released), CURRENT_STATE.md (paper-status block, version tail, frozen-
+   snapshots list, directory tree).
+ - Discovery grep clean: no stale "in progress"/"23 pp"/v6-last-released;
+   all 7 recent refs (incl. Bremner) cited once + registered once.
+
+Sweep: read-only verification workflow launched (see below).
+
+Sweep verification (workflow wr7juhfvy): 4 scanners + adversarial refute;
+7 raw findings, 4 confirmed / 3 refuted.  Then a full cited-vs-registered
+diff by the orchestrator to get every registry gap at once.  Confirmed and
+fixed:
+ - v6_to_v7_changelog.md:3 -- the v6 line still said "the last released
+   version" (v7 now holds that); self-contradiction with line 5.  Removed
+   the clause from the v6 line (part of the same uncommitted freeze
+   finalization; the linter's HEAD-marker exemption covers it).
+ - REGISTRY GAPS (both PRE-EXISTING, missed by the prompt-270 and -275
+   sweeps): Dixon2005 and Calderbank2023 are cited in the paper but had no
+   registry entry, violating the exhaustiveness invariant.  Added both to
+   evidence_and_reasoning/references/prior_art_orders_on_leech.txt in the
+   file's narrative style (Dixon2005 = the 2005 preprint Wilson corrected,
+   verified in prompt 263; Calderbank2023 = the complementary-Lagrangians
+   comment credited in Appendix A.1).
+ - Full cited-vs-registered diff now shows only 'repo' unregistered (the
+   repository self-citation, not a literature work) -- registry exhaustive.
+Refuted (recorded): changelog "309->149 words" not reproducible with
+standard tools (only "<150" is load-bearing); the subtitle version/date
+stamp not itemized in the changelog (inherent to the version bump);
+the duplicate Calderbank finding at main.tex:1786 (same as the confirmed
+one).
+
+Linter clean throughout; build 24 pp.  Frozen v6 artifacts untouched.
+
+Status: CLOSED.

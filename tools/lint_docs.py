@@ -222,10 +222,16 @@ def check_frozen() -> None:
     for rel in changed:
         if rel not in fz:
             continue
-        if rel.endswith(("_changelog.md", "_summary.md")) and IN_PROGRESS.search(
-            (ROOT / rel).read_text(encoding="utf-8")
+        if rel.endswith(("_changelog.md", "_summary.md")) and (
+            IN_PROGRESS.search((ROOT / rel).read_text(encoding="utf-8"))
+            or IN_PROGRESS.search(git("show", f"HEAD:{rel}"))
         ):
-            continue  # in-progress changelog: living until its version freezes
+            # In-progress changelog: a living document until its version
+            # freezes.  The working-text match covers the development phase;
+            # the HEAD-text match covers the one-time freeze transition (the
+            # edit that drops the marker and stamps the freeze).  Once frozen
+            # is committed, neither has the marker and the check re-engages.
+            continue
         diff = git("diff", "HEAD", "--", rel)
         added = [l[1:] for l in diff.splitlines() if l.startswith("+") and not l.startswith("+++")]
         removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]

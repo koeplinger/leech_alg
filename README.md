@@ -12,10 +12,10 @@ evidence, and every conclusion is traceable.
 anyone continuing this research, with or without prior context.
 
 The write-up is in [paper/main.tex](paper/main.tex) (compiled:
-[paper/main.pdf](paper/main.pdf)), at v7, in progress (19 July 2026);
-v6 is frozen as [paper/main_2026-07-18.tex](paper/main_2026-07-18.tex),
-the last released version.  [paper/](paper/)
-also holds the frozen versions with their changelogs, the
+[paper/main.pdf](paper/main.pdf)), at v7, frozen 19 July 2026 as
+[paper/main_2026-07-19.tex](paper/main_2026-07-19.tex), the last
+released version.  [paper/](paper/)
+also holds the earlier frozen versions with their changelogs, the
 companion material, and the review record.
 
 ## Repository Structure
