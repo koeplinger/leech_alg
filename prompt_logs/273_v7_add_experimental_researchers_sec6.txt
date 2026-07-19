@@ -1,0 +1,75 @@
+Prompt 273 -- v7: add Hoehn, Dotsenko, Nebe to Section 6 (related work)
+Date: 2026-07-19
+
+User: 'Next we need to point out researchers who recently have worked in an
+experimental fashion on related topics. Here are some:
+ - Gerald Hoehn (Kansas State University): rank-24 unimodular lattices,
+   Exp. Math. 32 (2023, with G. Mason); census of the 290 fixed-point
+   sublattices of the Leech lattice (J. Algebra 448, 2016); computer-
+   verified determination of the order of the Monster (2025).
+ - Vladimir Dotsenko (Universite de Strasbourg): computational experiments
+   and conjectures on identities in nonassociative algebras, Exp. Math. 34
+   (2024).
+ - Gabriele Nebe (RWTH Aachen): computational lattice theory; the extremal
+   even unimodular 72-dimensional lattice, constructed from the Leech
+   lattice; Exp. Math. 31 (2022, with M. Kirschmer).
+List all three in Section 6, chronological order, right before the
+Corradetti reference (puts computer-assisted experimentation center-stage;
+Appendix C would make it a sideline). Confirm authors contributions,
+references, relevance; if I agree, incorporate as suggested; if not, stop
+and report the tension.'
+
+Task: (1) verify every citation field against live sources (venue, volume,
+year, co-authors, title, pages) -- accuracy is the gate; (2) assess
+relevance to the experimental-mathematics framing; (3) if all sound,
+incorporate as three brief, non-editorializing mentions + \bibitem entries,
+chronologically, before Corradetti in Section 6; (4) if any reference is
+off, STOP and report the tension rather than insert a wrong citation.
+
+Note the volume-year map to watch: Exp. Math. vol 31 = 2022, 32 = 2023,
+33 = 2024, 34 = 2025 -- so "Exp. Math. 34 (2024)" for Dotsenko needs a close
+look (online-first vs print).
+
+Verification outcome (live sources; see conversation for URLs):
+
+CONFIRMED:
+ - Hoehn & Geoffrey Mason, "The 290 fixed-point sublattices of the Leech
+   lattice," J. Algebra 448 (2016), 618-637 (arXiv 1505.06420).  Exactly as
+   cited.
+ - Hoehn & Martin Seysen, "The order of the Monster finite simple group,"
+   arXiv:2508.01037 (Aug 2025).  Real, but a PREPRINT and co-authored with
+   Seysen (user said "Hoehn ... 2025" without the co-author/preprint note).
+ - Vladimir Dotsenko (SOLE author), "Nilpotence, weak nilpotence, and the
+   nil property in the nonassociative world: computations and conjectures,"
+   Exp. Math. 34 (2025), no. 4, 745-753 (arXiv 2306.11362).  Volume 34 is
+   YEAR 2025 (online-first 2024); user wrote "34 (2024)".
+
+TENSIONS (why I stopped):
+ 1. Hoehn Exp. Math. 32 (2023) with Mason on rank-24 unimodular lattices:
+    COULD NOT VERIFY.  His KSU publications page lists no Experimental
+    Mathematics paper at all; two targeted searches found none.  Cannot
+    cite a paper I cannot confirm exists.
+ 2. Nebe entry is CONFLATED.  Two distinct papers merged:
+    (a) the extremal even unimodular 72-dim lattice FROM the Leech lattice
+        = Nebe, "An even unimodular 72-dimensional lattice of minimum 8,"
+        J. Reine Angew. Math. 673 (2012), 237-247 -- SOLE author, NOT
+        Exp. Math., NOT 2022, NOT with Kirschmer;
+    (b) Exp. Math. 31 (2022) with Kirschmer = "Binary Hermitian lattices
+        over number fields," 280-301 -- a DIFFERENT topic (classifying
+        48-dim extremal even unimodular lattices via Hermitian lattices),
+        NOT the 72-dim, NOT "from the Leech lattice."
+ 3. Dotsenko year (34 -> 2025 not 2024) and Monster co-author/preprint
+    (minor, above).
+
+Relevance: all three researchers are apt for a Section 6 that foregrounds
+computer-assisted experimentation (Hoehn: Leech sublattices, Monster;
+Dotsenko: computational nonassociative identities in the target venue;
+Nebe: computational lattice theory, 72-dim from Leech).  The issue is
+citation ACCURACY, not relevance.
+
+Action: STOPPED per the user's instruction; reported the tensions and
+proposed accurate citations.  Nothing incorporated into main.tex yet.
+
+Status: OPEN (awaiting the user: exact Hoehn Exp. Math. reference or drop
+it; choice of Nebe paper(s); confirmation of corrected Dotsenko/Monster
+citations and ordering).
