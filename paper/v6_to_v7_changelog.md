@@ -17,6 +17,18 @@ v7 is a publication-preparation revision aimed at an experimental-mathematics ve
 
 ---
 
+## 2. Section 6: recent computer-assisted experimental work in adjacent fields
+
+- **What changed.** Three groups working experimentally in nearby fields are added to Section 6 (Related work), before the Corradetti entry, introduced by a one-line framing sentence and ordered chronologically by their *Experimental Mathematics* contribution:
+  - **Kirschmer–Nebe (2022):** binary Hermitian lattices over number fields, classified by computer (*Exp. Math.* 31); together with Nebe's extremal even unimodular 72-dimensional lattice of minimum 8, built from the Leech lattice (*Crelle* 673, 2012).
+  - **Höhn–Mason (2023):** the 290 fixed-point sublattices of the Leech lattice (*J. Algebra* 448, 2016) and the $N=4$ superconformal structure on most vertex superalgebras of odd unimodular rank-24 lattices (*Exp. Math.* 32); together with the Höhn–Seysen computer-assisted determination of the order of the Monster (arXiv:2508.01037, 2025).
+  - **Dotsenko (2025):** identities in nonassociative algebras by computer experiment, with conjectures on nilpotence and the nil property (*Exp. Math.* 34).
+- **Where.** Section 6; six new `\bibitem` entries (Dotsenko2025, HohnMason2016, HohnMason2023, HohnSeysen2025, KirschmerNebe2022, Nebe2012). Page count 23 → 24.
+- **Rationale.** Placing computer-assisted experimentalists in the body rather than the historical appendix keeps the experimentation-and-methodology approach of nearby fields prominent, matching the venue.
+- **Verification.** Every field of every reference was checked against live sources (journal pages, arXiv, author publication lists) before insertion. Two discrepancies in the initial list were corrected: Höhn's *Exp. Math.* paper is the odd-unimodular / $N=4$ vertex-superalgebra paper (not an "even unimodular rank-24" paper), and the Nebe entry was split into the two distinct works it had conflated — the 2012 *Crelle* 72-dimensional lattice and the 2022 Kirschmer–Nebe *Exp. Math.* paper on binary Hermitian lattices. The Dotsenko article is volume 34, the 2025 volume (online-first 2024); the citation and its label use 2025 for volume-year consistency.
+
+---
+
 *Revision chain: [v3 → v4](v3_to_v4_summary.md), [v4 → v5](v4_to_v5_changelog.md), [v5 → v6](v5_to_v6_changelog.md), v6 → v7 (this file).*
 
 — Claude (Anthropic), at the direction of Jens Köplinger; opened 2026-07-19, in progress

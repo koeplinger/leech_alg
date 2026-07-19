@@ -1,0 +1,42 @@
+Prompt 274 -- v7: incorporate the three experimental researchers (Section 6
++ bibliography), Dotsenko year resolved to 2025
+Date: 2026-07-19
+
+User: 'Re Dotsenko year: your recommendation is the standard approach, go
+with it (2025). Do make sure to log all prompts. Today is 19 July 2026.
+Bibliography edits: Perfect. Section 6 edits: perfect (lead chronologically
+by topic relevance for this current paper, with references to supporting
+earlier predecessors as applicable). Yes, do add a one-line framing
+sentence, so that the reader isn't confused. We want to keep these efforts
+prominent, not in an appendix, because of their method in nearby fields.'
+
+Decisions:
+ - Dotsenko: Exp. Math. 34 (2025), no. 4, 745-753 (volume-year corrected
+   from the user's draft 2024 -> 2025).  For consistency the bibitem
+   label/key and the Section 6 bold-lead year also become 2025
+   (Dotsenko2025); every other bib label's year matches its entry, and
+   [Dotsenko2024] on a (2025) entry would not.  Noted to the user.
+ - Section 6: one framing sentence + three bold-led mentions before the
+   Corradetti entry, chronological by Exp. Math. year
+   (Nebe/Kirschmer 2022 -> Hoehn/Mason 2023 -> Dotsenko 2025), each citing
+   the topic-relevant work first and earlier predecessors as applicable.
+ - Six new \bibitem entries in alphabetical slots (Corradetti2026 already
+   present, unchanged): Dotsenko2025, HohnMason2016, HohnMason2023,
+   HohnSeysen2025, KirschmerNebe2022, Nebe2012.
+
+All references verified field-by-field against live sources (arXiv, journal
+pages, author publication lists) in prompt 273.
+
+Incorporated (all of prompt 273's open items resolved here; 273 is
+committed/immutable, so its closure is recorded in this later entry):
+ - Six \bibitem entries inserted in alphabetical slots; each new key is
+   cited exactly once and defined exactly once (verified).
+ - Section 6: framing sentence + three bold-led mentions before Corradetti,
+   chronological (Nebe/Kirschmer 2022, Hoehn/Mason 2023, Dotsenko 2025).
+ - Dotsenko rendered as Exp. Math. 34 (2025), no. 4, 745-753; label/key
+   Dotsenko2025; bold-lead year 2025.
+ - Build: 24 pages (23 -> 24), 0 errors, 0 overfull, 0 undefined/multiply-
+   defined citations.  Linter clean.
+ - v6_to_v7_changelog.md Section 2 records the change and the verification.
+
+Status: CLOSED.
