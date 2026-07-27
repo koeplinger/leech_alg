@@ -297,7 +297,9 @@ An 8-dimensional composition algebra (V, *, n) satisfying
 (x * y) * x = x * (y * x) = n(x) y for all x, y.  Over a field of
 characteristic ≠ 2, 3, these are exactly the **para-Hurwitz algebras** and
 the **Okubo algebras**.
-Reference: [Elduque2000_Triality], [KMRT, Chapter VIII].
+Reference: [Elduque2000_Triality]; M.-A. Knus, A. Merkurjev, M. Rost and
+J.-P. Tignol, *The Book of Involutions*, AMS Colloquium Publications 44,
+1998, Chapter VIII.
 
 ### Triality (D₄ triality)
 
@@ -359,11 +361,14 @@ standalone note `paper/automorphism_group_2026-07-12.pdf`):
   of R²⁴ is orthogonal.  The inclusion is strict because −I₂₄ ∈ Co₀
   does not preserve ⋆.  (The trace-form route fails: tr(L_u L_v) has
   signature (3, 21), not the Leech form.)
-- **Completeness caveat**, as stated in the paper: the order-36 claim
-  and the Co₀ containment rest on one non-enumerative step, the
+- **Completeness**: the order-36 count and the Co₀ containment are
+  established by two independent routes in the companion note
+  (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
   classification of the automorphisms of the complexification of
-  (T, ⋆).  The machine-verified lower bound C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and
-  the strictness witness do not depend on it.
+  (T, ⋆) (non-enumerative); Route 2 is entirely finite and
+  machine-checkable, so nothing load-bearing is left open.  The
+  machine-verified lower bound C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and
+  the strictness witness are independent of both.
 
 Related, and not to be confused with the above: the octonion-automorphism
 stabilizers of the Wilson sublattices, |Stab(L)| = 1344 = 2³·L₃(2),

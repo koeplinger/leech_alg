@@ -2,6 +2,8 @@
 
 This folder contains a chronological, enumerated record of every prompt submitted to the AI agent during this research project.
 
+The log runs from prompt 001 to the closing note; the effort is closed (see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md)).  The discovery is at [prompt 025](025_triple_kirmse_twisted_octonions.txt) (11 April 2026), where the construction was proposed; the prompts that follow trace how the result was checked and verified.
+
 ## Purpose
 
 The prompt log serves as:

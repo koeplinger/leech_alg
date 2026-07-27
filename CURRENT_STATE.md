@@ -1,11 +1,16 @@
 # Current State of the Research
 
-Last updated: 2026-07-19
+Last updated: 2026-07-27
 
-This document is the entry point for anyone continuing this research — human or
-AI, with or without prior context.  It summarizes what has been established,
-what has been ruled out, and what remains open.  All claims are backed by
-evidence in the files referenced below.
+**This effort is closed; see [CLOSING_NOTE.md](CLOSING_NOTE.md).**  The result
+is published: J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
+triple-octonion product*, [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
+(ResearchGate).
+
+This document is the technical summary of the research — for a human or an AI,
+with or without prior context.  It records what was established, what was ruled
+out, and what remains open.  All claims are backed by evidence in the files
+referenced below.  The open questions are no longer pursued here.
 
 ---
 
@@ -476,7 +481,8 @@ the trial, and prints detailed results.
 
 2. **Formal paper at v7, dated 19 July 2026, frozen as
    `paper/main_2026-07-19.tex` (24 pages), the last released version;
-   the working source is `paper/main.tex`.**
+   the working source is `paper/main.tex`.  Published on ResearchGate:
+   doi:10.13140/RG.2.2.22093.19686.**
    The paper contains abstract (standalone, with
    keywords and MSC 2020 codes), preliminaries,
    construction, symbolic proof, algebraic properties (Section 5, in
@@ -555,6 +561,10 @@ the trial, and prints detailed results.
 
 ## What remains open
 
+These questions are the ones the paper leaves open (Sections 7 and 8), together
+with further detail recorded here.  They remain open, and are no longer pursued
+in this repository (see [CLOSING_NOTE.md](CLOSING_NOTE.md)).
+
 1. **The structural reason for Lemma 4.4** (σ(Ls) closed under the
    standard octonion product).  The appendix tables certify the
    inclusion, but do not explain *why*.  Appendix Section A.1 lifts
@@ -617,7 +627,8 @@ leech_alg/
 ├── DOCUMENT_GENRES.md             # Immutable / frozen / current-state: how each artifact may change
 ├── TRIAL_METHODOLOGY.md           # Structure and philosophy for trial files
 ├── tools/                         # lint_docs.py: enforces the document genres mechanically
-├── CURRENT_STATE.md               # THIS FILE — the entry point
+├── CLOSING_NOTE.md                # Why this effort is closed; what the repository is now
+├── CURRENT_STATE.md               # THIS FILE — technical summary of the research
 ├── README.md                      # General repository description
 │
 ├── evidence_and_reasoning/

@@ -1,33 +1,50 @@
-# Exploring an Order on the Leech Lattice
+# An Order on the Leech Lattice
 
-This repository documents the exploration of a specific mathematical hypothesis:
-whether the Leech lattice Λ admits an **order** structure — a bilinear
-multiplication making (Λ, +, ·) an order in a 24-dimensional real algebra.
+The Leech lattice Λ admits an **order**: it is closed under a bilinear product
+on R²⁴, a Z₃-symmetric triple-octonion product assembled from nine
+octonion-multiplication blocks under cyclic Z₃ permutation of three octonion
+factors.  In Robert A. Wilson's sublattice description of Λ, closure turns on a
+transposition σ of two imaginary basis units: σ leaves the E₈ lattice invariant
+and is an octonion-algebra isomorphism, but it moves Wilson's sublattices Ls̄
+and Ls.
 
-The research is conducted with AI assistance under a strict integrity protocol
-([MANIFESTO.md](MANIFESTO.md)).  Every step is logged, every claim is backed by
-evidence, and every conclusion is traceable.
+**The result is published:**
 
-**Start here: [CURRENT_STATE.md](CURRENT_STATE.md)** — the entry point for
-anyone continuing this research, with or without prior context.
+> J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
+> triple-octonion product*,
+> [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
+> (ResearchGate).
 
-The write-up is in [paper/main.tex](paper/main.tex) (compiled:
-[paper/main.pdf](paper/main.pdf)), at v7, frozen 19 July 2026 as
-[paper/main_2026-07-19.tex](paper/main_2026-07-19.tex), the last
-released version.  [paper/](paper/)
-also holds the earlier frozen versions with their changelogs, the
-companion material, and the review record.
+**This effort is closed.** See [CLOSING_NOTE.md](CLOSING_NOTE.md) for the
+result, the reasons for closing, and what this repository is from here on.
+The mathematical questions the paper leaves open remain open; they are simply
+no longer pursued here.
+
+The paper's source is frozen as
+[paper/main_2026-07-19.tex](paper/main_2026-07-19.tex) (v7, 24 pages;
+compiled: [paper/main.pdf](paper/main.pdf)).  [paper/](paper/) also holds the
+earlier frozen versions with their changelogs, the companion material, and the
+review record.
+
+This repository is the complete record of how the result was obtained.  The
+research was conducted with AI assistance under a strict integrity protocol
+([MANIFESTO.md](MANIFESTO.md)): every prompt is logged, every claim is backed
+by evidence, and every conclusion is traceable.  The construction was proposed
+in [prompt 025](prompt_logs/025_triple_kirmse_twisted_octonions.txt)
+(11 April 2026); the prompts that follow trace how the result was checked and
+verified.
 
 ## Repository Structure
 
 | Path | Purpose |
 |---|---|
-| [CURRENT_STATE.md](CURRENT_STATE.md) | **Entry point** — what's established, what's ruled out, what's next |
+| [CLOSING_NOTE.md](CLOSING_NOTE.md) | **Why this effort is closed**, and what the repository is now |
+| [CURRENT_STATE.md](CURRENT_STATE.md) | Technical summary: what was established, what was ruled out, what remains open |
 | [MANIFESTO.md](MANIFESTO.md) | Operating rules for AI-assisted research |
 | [DOCUMENT_GENRES.md](DOCUMENT_GENRES.md) | What each artifact is for, and how it may be changed: immutable, frozen, or current state |
 | [tools/](tools/) | Project scaffolding; `lint_docs.py` enforces the document genres mechanically |
 | [TRIAL_METHODOLOGY.md](TRIAL_METHODOLOGY.md) | Structure and philosophy for trial files |
-| [paper/](paper/) | Formal write-up (`main.tex`, `main.pdf`), earlier frozen versions and changelogs, companion material, and the review record |
+| [paper/](paper/) | Formal write-up (`main.tex`, `main.pdf`), frozen versions and changelogs, companion material, and the review record |
 | [evidence_and_reasoning/](evidence_and_reasoning/) | Key claims, trial results, and references |
 | [python_project/](python_project/) | Python code: shared tools, trial experiments, symbolic-proof verification |
 | [gap_project/](gap_project/) | GAP / LOOPS independent re-derivation of the paper's verification tests |
@@ -35,19 +52,13 @@ companion material, and the review record.
 | [source_documents/](source_documents/) | Primary source PDFs (freely redistributable only; others listed by DOI) |
 | [LICENSE.md](LICENSE.md), [LICENSE-CODE](LICENSE-CODE) | CC BY 4.0 for text / evidence / paper; MIT for source code |
 
-## Current Status
-
-**Research goal:** Find a highly symmetric order on the Leech lattice.
+## The Result and Its Evidence
 
 **Result (trial 007):** The Leech lattice Λ admits an order under a
 Z₃-symmetric triple-octonion product on R²⁴ — the same octonion product in
-all three blocks, with Z₃-symmetric cross-block routing.  In Wilson's
-representation of Λ, the fit of this octonion product with the
-representation is exhibited by a transposition σ of two imaginary basis
-units: σ leaves the E₈ lattice invariant and is an octonion-algebra
-isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
+all three blocks, with Z₃-symmetric cross-block routing.  The transposition σ
+exhibits the fit of this octonion product with Wilson's representation.
 
-**Evidence:**
 - **Symbolic proof** of closure on Wilson's three sublattice conditions, via
   four lemmas on the interplay between the transposition σ and the Leech
   sublattices Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
@@ -69,15 +80,18 @@ isomorphism, but it moves Wilson's sublattices Ls and Ls̄.
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
   ([python_project/src/verify_aut_lambda_star.py](python_project/src/verify_aut_lambda_star.py)
   and [gap_project/aut_lambda_star.g](gap_project/aut_lambda_star.g)).
-- **Formal write-up** with full proof, related work, and methodology in
-  [paper/main.tex](paper/main.tex).
 - **Key claims:** [007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)
   (the triple product over Wilson's own multiplication convention does
   not close on Λ) and
   [008](evidence_and_reasoning/key_claims/008_transposition_twist_order.txt)
   (over the σ-related convention it does: (Λ, +, ⋆) is an order).
 
-**Open questions:**
+## What Remains Open
+
+These are the questions the paper leaves open (Sections 7 and 8), with further
+detail in [CURRENT_STATE.md](CURRENT_STATE.md).  They remain open, and are no
+longer pursued in this repository.
+
 - A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
   octonion product, while Ls is not).  One candidate shape is excluded:
   σ(Ls) is not an ideal of L on either side.
@@ -134,7 +148,10 @@ octonion multiplication as a Moufang loop of order 16.  See
 
 ```bash
 cd paper
-pdflatex main.tex
-pdflatex companion.tex
-pdflatex automorphism_group_2026-07-12.tex
+pdflatex main.tex && pdflatex main.tex           # twice: resolves refs and citations
+pdflatex companion.tex && pdflatex companion.tex
+pdflatex automorphism_group_2026-07-12.tex && pdflatex automorphism_group_2026-07-12.tex
 ```
+
+The bibliography is inline via `\bibitem`, so no BibTeX pass is needed; the
+second `pdflatex` run resolves cross-references and citations.

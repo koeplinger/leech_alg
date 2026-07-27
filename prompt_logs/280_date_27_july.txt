@@ -1,0 +1,45 @@
+Prompt 280 -- Today is 27 July 2026
+Date: 2026-07-27
+
+User: 'Today is 27 July 2026'
+(IDE context: the user has CLOSING_NOTE.md open.)
+
+The closure work of the previous turn was dated 19 July 2026 at the user's
+direction ("Today is 19 July 2026", prompt 272).  The user now states the
+current date as 27 July 2026.
+
+Question this raises: CLOSING_NOTE.md is a FROZEN, dated record ("19 July
+2026. This effort is closed.").  Whether its date is correct depends on
+whether the closure was finalized on 19 July or is being finalized now.
+Checking the git state before touching anything: if the closure was
+committed on 19 July, that date is the honest record and only new artifacts
+take today's date; if it is still uncommitted, the closure lands today and
+the note (plus the trackers that carry the closure date) should say
+27 July 2026.
+
+Finding: the closure has NOT landed.  The last commit is 59bfd23,
+2026-07-19 15:14 (the v7 freeze and its sweep); CLOSING_NOTE.md is still
+untracked and all 14 closure edits are uncommitted.  So the paper's freeze
+genuinely belongs to 19 July, but the closure itself takes effect now.
+
+Applied (only the stamps that record the closure):
+ - CLOSING_NOTE.md: "**19 July 2026.** This effort is closed" -> 27 July
+   2026; signature 2026-07-19 -> 2026-07-27.  Per DOCUMENT_GENRES, this
+   note "records why the effort was closed, on the day it was closed", and
+   it is unfrozen until committed, so it carries today.
+ - CURRENT_STATE.md: "Last updated: 2026-07-19" -> 2026-07-27 (edited
+   today).
+
+Deliberately NOT changed, because they belong to 19 July:
+ - paper/main_2026-07-19.tex, the \subtitle "19 July 2026 (v7)", and every
+   reference to the frozen v7 across README, CURRENT_STATE, paper/README,
+   CLOSING_NOTE: the paper was frozen and committed that day.
+ - prompt_logs/279 (the closure request and the work done that day), the
+   registry addendum stamp (2026-07-19), and the GAP correction block
+   stamp (2026-07-19): these record work performed on the 19th.
+   If the closure request was in fact made today, 279 and those two stamps
+   should move to 2026-07-27; flagged to the user, one-line change.
+
+Verified: linter exit 0; the four v7-frozen references intact.
+
+Status: CLOSED.

@@ -1,5 +1,11 @@
 #############################################################################
 ##
+##  CORRECTION (2026-07-19): the paper's numbering changed after this file
+##  was written.  Every "Theorem 1.2" below is Theorem 1.1 of the published
+##  paper (doi:10.13140/RG.2.2.22093.19686, frozen source
+##  paper/main_2026-07-19.tex), and "Definition 3.6" is Definition 3.3 there.
+##  The mathematics and the tests are unaffected.
+##
 ##  test_triple_product.g — The Z_3-routed triple product on R^24 (paper
 ##  Definition 3.6) and the main theorem (Theorem 1.2: closure of Lambda
 ##  under *_sigma).

@@ -1,5 +1,9 @@
 # Research Result
 
+Published: J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
+triple-octonion product*, [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
+(ResearchGate).  This effort is closed; see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md).
+
 ## Summary
 
 The Leech lattice Λ admits an order under a bilinear product derived from
@@ -161,11 +165,14 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
   ⋆-automorphism of R²⁴ is orthogonal.  The inclusion is strict
   because −I₂₄ ∈ Co₀ does not preserve ⋆.  (The trace-form route
   fails: tr(L_u L_v) has signature (3, 21), not the Leech form.)
-- Completeness caveat, stated in the paper: the order-36 claim and
-  the Co₀ containment rest on one non-enumerative step, the
+- Completeness: the order-36 count and the Co₀ containment are
+  established by two independent routes in the companion note
+  (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
   classification of the automorphisms of the complexification of
-  (T, ⋆).  The machine-verified lower bound C₆ × S₃ ⊆ Aut and the
-  strictness witness do not depend on it.
+  (T, ⋆) (non-enumerative); Route 2 is entirely finite and
+  machine-checkable, so nothing load-bearing is left open.  The
+  machine-verified lower bound C₆ × S₃ ⊆ Aut and the strictness
+  witness are independent of both.
 - Octonion-automorphism stabilizers of the Wilson sublattices:
   |Stab(L)| = 1344 = 2³·L₃(2); |Stab(Ls)| = 168 = 2³:(7:3);
   |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)

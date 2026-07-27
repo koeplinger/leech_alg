@@ -1,0 +1,97 @@
+Prompt 279 -- Close out the effort; record the closing note; restructure
+the README around the published result
+Date: 2026-07-19
+
+User: 'I want to go ahead and close out the effort, for three reasons:
+(1) Journals appear to be swamped with AI-generated submissions these days,
+it's hard for me to differentiate my structured approach. The path forward
+would maybe to solidify and understand the approach itself, and advertise
+that instead.
+(2) There's been diminuishing value in logging all the incremental updates
+over the last 150 or so prompts: The actual discovery was made in prompt 25,
+and the next few dozen prompts were interesting to trace out how I checked
+-- and ultimated owned -- the result (and which parts I didn't).
+(3) Mathematical structure analysis is ongoing, with many thanks for the
+feedback and interest I've received in the work since; however, this is now
+done using largely conventional methods that are led by human understanding.
+AI remains a supporting tool.
+Therefore, record this as this project's closing note. Restructure the main
+README accordingly, and point to the main paper as this effort's result. The
+paper is published on ResearchGate:
+J. Koeplinger, "An order on the Leech lattice from a Z_3-symmetric
+triple-octonion product", https://doi.org/10.13140/RG.2.2.22093.19686
+Update the README, CURRENT_STATE, and other project-specific trackers. Then
+make a documentation consistency sweep across the project so that I can
+close it.'
+
+Plan:
+ - Verify the DOI resolves before citing it anywhere.
+ - CLOSING_NOTE.md (top level, dated, frozen genre): the closure, in the
+   user's own three reasons, plus the result and the published record.
+   Register the genre in DOCUMENT_GENRES.md and tools/lint_docs.py.
+ - README.md: restructure to lead with the result and the published paper
+   (DOI), then the repository as the record of how it was obtained; state
+   that the effort is closed.
+ - CURRENT_STATE.md: the current state is now "closed"; keep it a
+   description of what IS, not a narrative of how it got there.
+ - Other trackers as they need it (research_result, research_statement,
+   key_claims README, paper README, prompt_logs README).
+ - Then a documentation consistency sweep (read-only verification per
+   Manifesto Section 14), so the project can be closed.
+
+Tone: record the user's reasons faithfully and briefly; no editorializing,
+no praise of our own construction, fair attribution.
+
+Applied:
+ - DOI verified to resolve (302 -> researchgate.net).  The landing page
+   returns 403 to automated fetches (normal bot-blocking), so the citation
+   is recorded as the user gave it; not claimed as page-read.
+ - CLOSING_NOTE.md written (frozen genre; registered in DOCUMENT_GENRES.md
+   and lint_docs.py FROZEN_GLOBS; --list confirms "frozen").
+ - README.md restructured: result + publication first, "This effort is
+   closed" with pointer to the closing note, then the record; "Open
+   questions" -> "What Remains Open" (open, not pursued here).
+ - CURRENT_STATE.md, research_result.md, research_statement.md (English +
+   German status blocks), paper/README.md, prompt_logs/README.md,
+   evidence_and_reasoning/README.md, TRIAL_METHODOLOGY.md updated for
+   closure; prompt_logs/README notes the discovery at prompt 025.
+
+Final sweep (workflow wh4c2cx1k): 5 scanners + adversarial refute; 43 raw,
+24 confirmed / 19 refuted.  Deduplicated and applied:
+ - TWO BLOCKERS, same defect in two files: research_result.md and
+   terminology.md carried a "completeness caveat, stated in the paper" for
+   the order-36/Co_0 result.  The paper states no such caveat (0 hits in
+   any released version), the companion note says "Nothing load bearing is
+   left open" (two routes, Route 2 finite and machine-checkable), and
+   CURRENT_STATE / key_claims already carried the correct wording;
+   research_result even contradicted itself two bullets apart.  Both
+   rewritten to the two-route wording.  (This cluster was fixed elsewhere
+   in the prompt-270 sweep; these two files were missed then.)
+ - LICENSE.md recommended citation: was "preprint, 2026" with no DOI and
+   called bitbucket "(primary)", contradicting the user's equal-mirrors
+   ruling (prompt 253).  Now carries the DOI and lists both mirrors
+   equally.
+ - README "Compiling the paper": single pdflatex pass -> twice, with a note
+   that the inline bibliography needs no BibTeX pass.
+ - terminology.md: dangling citation key [KMRT] expanded inline to
+   Knus/Merkurjev/Rost/Tignol, The Book of Involutions, AMS Colloq. Publ.
+   44, 1998 (verified live).
+ - Registry: [Koeplinger2026] entry added for the project's own published
+   result, with a dated addendum line; registry now exhaustive (only the
+   'repo' self-citation is excluded, correctly).
+ - paper/README: "working source is current-state" -> main.tex is
+   byte-identical to the frozen v7 and not expected to change.
+ - CURRENT_STATE + README open-questions headers softened (not every item
+   is in paper Sections 7-8; some detail is repository-only).
+ - lint_docs.py: FROZEN_GLOBS gained paper/historical_appendix*.tex and
+   paper/Baez-Egan_*.tex (released notes paper/README calls frozen but the
+   linter did not protect); CURRENT_STATE_FILES gained LICENSE-CODE.
+ - gap_project/tests/test_triple_product.g (frozen): dated CORRECTION block
+   added to the header noting that its "Theorem 1.2"/"Definition 3.6" are
+   Theorem 1.1 / Definition 3.3 in the published paper (both verified
+   against main.aux).  Frozen artifact changed only by dated addendum.
+
+Verified after: linter exit 0; registry exhaustive; zero dangling relative
+markdown links across the nine key documents; no stale caveat remains.
+
+Status: CLOSED.

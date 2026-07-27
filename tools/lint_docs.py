@@ -41,12 +41,15 @@ ROOT = Path(__file__).resolve().parent.parent
 IMMUTABLE_DIRS = ["prompt_logs"]
 
 FROZEN_GLOBS = [
+    "CLOSING_NOTE.md",
     "paper/main_*.tex",
     "paper/companion.tex",
     "paper/automorphism_group_*.tex",
     "paper/hermes_mod2_structure_supplement.tex",
     "paper/update_brief_*.tex",
     "paper/kirmse_1924_exposition.tex",
+    "paper/historical_appendix*.tex",
+    "paper/Baez-Egan_*.tex",
     "paper/reviews/*.md",
     "paper/v*_summary.md",
     "paper/v*_changelog.md",
@@ -65,6 +68,7 @@ CURRENT_STATE_FILES = [
     "CURRENT_STATE.md",
     "README.md",
     "LICENSE.md",
+    "LICENSE-CODE",
     "evidence_and_reasoning/terminology.md",
     "evidence_and_reasoning/editorial_standards.md",
     "evidence_and_reasoning/research_result.md",

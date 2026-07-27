@@ -21,9 +21,9 @@ readable summary at https://creativecommons.org/licenses/by/4.0/.
 Recommended citation:
 
     Jens Koeplinger, "An order on the Leech lattice from a Z3-symmetric
-    triple-octonion product", preprint, 2026. Repository:
-    https://bitbucket.org/jenskoeplinger/leech_alg (primary), mirrored
-    at https://github.com/koeplinger/leech_alg
+    triple-octonion product", 2026. doi:10.13140/RG.2.2.22093.19686
+    Repository: https://bitbucket.org/jenskoeplinger/leech_alg and
+    https://github.com/koeplinger/leech_alg
 
 ## Source code
 

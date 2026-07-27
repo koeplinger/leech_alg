@@ -9,8 +9,11 @@ This folder serves two functions:
 
 1. **Transparency**: A reader can trace how each conclusion was reached, what
    assumptions were made, and what evidence supports them.
-2. **Paper preparation**: When writing the formal paper, this folder provides
-   the organized body of reasoning to draw from.
+2. **The body of reasoning behind the paper**: the organized material the
+   formal write-up draws on.
+
+The result is published (doi:10.13140/RG.2.2.22093.19686) and this effort is
+closed; see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md).
 
 ## Structure
 

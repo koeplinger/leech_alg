@@ -37,6 +37,7 @@ prompt log entry, never in the old one.
 | `evidence_and_reasoning/trial_NNN_results.md` | when the trial is closed |
 | research plans (`evidence_and_reasoning/YYYY-MM-DD_plan.md`) | once engaged |
 | computer programs (`python_project/src/**`, `gap_project/**`) | once referenced by a paper, note, or claim |
+| `CLOSING_NOTE.md` | on writing: it records why the effort was closed, on the day it was closed |
 
 A frozen artifact is **never rewritten in place.**  It changes in exactly two ways:
 

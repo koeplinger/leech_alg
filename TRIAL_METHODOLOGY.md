@@ -20,6 +20,11 @@ every artifact class are in [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and
 
 ## Goal
 
+This goal was met in trial 007 and the result is published
+(doi:10.13140/RG.2.2.22093.19686); the effort is closed, and no further trials
+are run (see [`CLOSING_NOTE.md`](CLOSING_NOTE.md)).  The methodology below
+stands as the record of how trials were conducted.
+
 Find a highly symmetric order on the Leech lattice Λ — a bilinear product
 · : R²⁴ × R²⁴ → R²⁴ such that (Λ, +, ·) is an order in the R-algebra
 (R²⁴, +, ·). Because lattices are closed under addition by definition, it is

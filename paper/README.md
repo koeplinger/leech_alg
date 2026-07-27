@@ -1,8 +1,16 @@
 # Paper
 
 The write-up and everything that supports it.  Genres per
-[`DOCUMENT_GENRES.md`](../DOCUMENT_GENRES.md): the working source is
-current-state; every released version, note, brief and review is frozen.
+[`DOCUMENT_GENRES.md`](../DOCUMENT_GENRES.md): every released version, note,
+brief and review is frozen.  With the effort closed, `main.tex` is
+byte-identical to the frozen v7 `main_2026-07-19.tex` and is not expected to
+change further.
+
+The paper is published: J. Köplinger, *An order on the Leech lattice from a
+Z₃-symmetric triple-octonion product*,
+[doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
+(ResearchGate), corresponding to the frozen v7 source `main_2026-07-19.tex`.
+This effort is closed; see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md).
 
 ## The paper
 

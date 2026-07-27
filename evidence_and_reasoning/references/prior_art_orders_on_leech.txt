@@ -280,8 +280,27 @@ confirm the absence of multiplicative/ring/order structure on Λ.
   alongside the present construction.  See also the analysis note in
   `paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md`.
 
+### [Koeplinger2026] — An order on the Leech lattice from a Z₃-symmetric triple-octonion product
+
+This project's own result, recorded here because the registry is exhaustive
+of works cited in this repository.
+
+J. Köplinger, "An order on the Leech lattice from a Z₃-symmetric
+triple-octonion product", 2026, doi:10.13140/RG.2.2.22093.19686
+(ResearchGate).  The Leech lattice Λ is closed under a Z₃-symmetric
+triple-octonion product on R²⁴; in Wilson's sublattice description of Λ,
+closure turns on a transposition σ of two imaginary basis units.  The
+corresponding source is frozen in this repository as
+`paper/main_2026-07-19.tex` (v7, 24 pages).  Originality note: the
+construction and its verification are original to this project; the prior
+art it builds on and is contrasted with is registered above.
+
 ---
 
 Last updated: 2026-06-07 (summary reworded to align with the current
 Z₃-symmetric triple-octonion framing; Corradetti 2026 entry unchanged
 from 2026-05-23 addition)
+
+Addendum (2026-07-19): entries [Dixon2005] and [Calderbank2023] added to
+close registry gaps found in the post-freeze sweep; entry [Koeplinger2026]
+added for this project's published result at the close of the effort.
