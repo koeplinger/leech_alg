@@ -12,8 +12,9 @@ This folder serves two functions:
 2. **The body of reasoning behind the paper**: the organized material the
    formal write-up draws on.
 
-The result is published (doi:10.13140/RG.2.2.22093.19686) and this effort is
-closed; see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md).
+The result is published (doi:10.13140/RG.2.2.22093.19686), as v7 of the paper;
+the v8 revision in progress is planned in
+[`2026-10-12_plan.md`](2026-10-12_plan.md).
 
 ## Structure
 
@@ -29,6 +30,7 @@ evidence_and_reasoning/
 ├── terminology.md          # Authoritative glossary of terms used across the corpus
 ├── editorial_standards.md  # The five prose standards; spelling and dash conventions
 ├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
+├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (in progress)
 └── README.md               # This file
 ```
 

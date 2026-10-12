@@ -2,7 +2,8 @@
 
 Published: J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
 triple-octonion product*, [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
-(ResearchGate).  This effort is closed; see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md).
+(ResearchGate); this is v7 of the paper.  v8 is in progress in
+`paper/main.tex`.
 
 ## Summary
 
@@ -192,7 +193,8 @@ positive-dimensional family, and the algebra has no identity element.
 the order has no nonzero idempotent.
 Each nonzero idempotent spans a rational ray meeting Λ; the least
 positive lattice multiples are 4εᵢ (norm 16), 6(εᵢ − ω/3) (norm 24),
-and 4ω (norm 48), each satisfying u ⋆ u = n u.  The rescaling is
+and 4ω (norm 48), satisfying u ⋆ u = 4u, 6u and 12u respectively.  The
+rescaling is
 already visible on the minimal shell: for each of the 84 purely
 imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 

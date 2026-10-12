@@ -1,16 +1,18 @@
 # Current State of the Research
 
-Last updated: 2026-07-27
+Last updated: 2026-10-12
 
-**This effort is closed; see [CLOSING_NOTE.md](CLOSING_NOTE.md).**  The result
-is published: J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
-triple-octonion product*, [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
-(ResearchGate).
+The result is published: J. Köplinger, *An order on the Leech lattice from a
+Z₃-symmetric triple-octonion product*,
+[doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
+(ResearchGate), the frozen v7 of the paper.  A further revision, v8, is in
+progress in `paper/main.tex`; its plan is
+`evidence_and_reasoning/2026-10-12_plan.md`.
 
 This document is the technical summary of the research — for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
 out, and what remains open.  All claims are backed by evidence in the files
-referenced below.  The open questions are no longer pursued here.
+referenced below.
 
 ---
 
@@ -151,7 +153,8 @@ positive-dimensional family.  **None of the seven nonzero idempotents lies
 in Λ** (because e₀ ∉ L), so the order has no nonzero idempotent.  Each
 nonzero idempotent spans a rational ray that
 meets Λ; the least positive multiples that do are 4ε_i (N = 16),
-6(ε_i − ω/3) (N = 24) and 4ω (N = 48), each satisfying u ⋆ u = n·u.  The
+6(ε_i − ω/3) (N = 24) and 4ω (N = 48), satisfying u ⋆ u = 4u, 6u and 12u
+respectively.  The
 rescaling is already visible on the minimal shell: for each of the 84 purely
 imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 
@@ -480,9 +483,10 @@ the trial, and prints detailed results.
    of the closure proof.
 
 2. **Formal paper at v7, dated 19 July 2026, frozen as
-   `paper/main_2026-07-19.tex` (24 pages), the last released version;
-   the working source is `paper/main.tex`.  Published on ResearchGate:
-   doi:10.13140/RG.2.2.22093.19686.**
+   `paper/main_2026-07-19.tex` (24 pages), the last released version,
+   published on ResearchGate: doi:10.13140/RG.2.2.22093.19686.  The
+   working source `paper/main.tex` is v8, in progress since
+   12 October 2026 per `evidence_and_reasoning/2026-10-12_plan.md`.**
    The paper contains abstract (standalone, with
    keywords and MSC 2020 codes), preliminaries,
    construction, symbolic proof, algebraic properties (Section 5, in
@@ -518,7 +522,8 @@ the trial, and prints detailed results.
    `paper/main_2026-07-19.tex` (v7, the
    last frozen state).  Revision chain: `paper/v3_to_v4_summary.md`,
    `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`,
-   `paper/v6_to_v7_changelog.md`.
+   `paper/v6_to_v7_changelog.md`, `paper/v7_to_v8_changelog.md` (in
+   progress).
 
 3. **Computational verification extended.**  Over 12,000,000 random
    minimal-vector pairs tested across multiple test harnesses with
@@ -562,8 +567,7 @@ the trial, and prints detailed results.
 ## What remains open
 
 These questions are the ones the paper leaves open (Sections 7 and 8), together
-with further detail recorded here.  They remain open, and are no longer pursued
-in this repository (see [CLOSING_NOTE.md](CLOSING_NOTE.md)).
+with further detail recorded here.
 
 1. **The structural reason for Lemma 4.4** (σ(Ls) closed under the
    standard octonion product).  The appendix tables certify the
@@ -627,7 +631,7 @@ leech_alg/
 ├── DOCUMENT_GENRES.md             # Immutable / frozen / current-state: how each artifact may change
 ├── TRIAL_METHODOLOGY.md           # Structure and philosophy for trial files
 ├── tools/                         # lint_docs.py: enforces the document genres mechanically
-├── CLOSING_NOTE.md                # Why this effort is closed; what the repository is now
+├── CLOSING_NOTE.md                # Closing note (27 July 2026) and the addendum reopening the effort (12 October 2026)
 ├── CURRENT_STATE.md               # THIS FILE — technical summary of the research
 ├── README.md                      # General repository description
 │
@@ -683,7 +687,7 @@ leech_alg/
 │   └── run_all.g                  # 110 checks, exact rational arithmetic
 │
 ├── prompt_logs/                   # Chronological AI interaction log
-├── paper/                         # main.tex (v7, 24 pp., frozen 2026-07-19);
+├── paper/                         # main.tex (v8, in progress); v7 frozen 2026-07-19 (24 pp.);
 │                                  #   bibliography inline via \bibitem;
 │                                  #   frozen snapshots main_2026-{04-29,05-25,06-07,07-18,07-19}.tex,
 │                                  #   automorphism_group_2026-07-12.tex, reviews/

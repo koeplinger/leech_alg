@@ -15,16 +15,18 @@ and Ls.
 > [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
 > (ResearchGate).
 
-**This effort is closed.** See [CLOSING_NOTE.md](CLOSING_NOTE.md) for the
-result, the reasons for closing, and what this repository is from here on.
-The mathematical questions the paper leaves open remain open; they are simply
-no longer pursued here.
+**A further revision of the paper (v8) is in progress** in
+[paper/main.tex](paper/main.tex); the published v7 stays frozen.
+[CLOSING_NOTE.md](CLOSING_NOTE.md) records the closure of the effort on
+27 July 2026 and, in its dated addendum, the reopening on 12 October 2026.
 
-The paper's source is frozen as
-[paper/main_2026-07-19.tex](paper/main_2026-07-19.tex) (v7, 24 pages;
-compiled: [paper/main.pdf](paper/main.pdf)).  [paper/](paper/) also holds the
-earlier frozen versions with their changelogs, the companion material, and the
-review record.
+The published version is frozen as
+[paper/main_2026-07-19.tex](paper/main_2026-07-19.tex) (v7, 24 pages; compiled:
+[paper/main_2026-07-19.pdf](paper/main_2026-07-19.pdf)); the working source is
+[paper/main.tex](paper/main.tex) (v8, in progress; compiled:
+[paper/main.pdf](paper/main.pdf)).  [paper/](paper/) also holds the earlier
+frozen versions with their changelogs, the companion material, and the review
+record.
 
 This repository is the complete record of how the result was obtained.  The
 research was conducted with AI assistance under a strict integrity protocol
@@ -38,7 +40,7 @@ verified.
 
 | Path | Purpose |
 |---|---|
-| [CLOSING_NOTE.md](CLOSING_NOTE.md) | **Why this effort is closed**, and what the repository is now |
+| [CLOSING_NOTE.md](CLOSING_NOTE.md) | The closing note of 27 July 2026, with the dated addendum of 12 October 2026 that reopens the effort |
 | [CURRENT_STATE.md](CURRENT_STATE.md) | Technical summary: what was established, what was ruled out, what remains open |
 | [MANIFESTO.md](MANIFESTO.md) | Operating rules for AI-assisted research |
 | [DOCUMENT_GENRES.md](DOCUMENT_GENRES.md) | What each artifact is for, and how it may be changed: immutable, frozen, or current state |
@@ -89,8 +91,7 @@ exhibits the fit of this octonion product with Wilson's representation.
 ## What Remains Open
 
 These are the questions the paper leaves open (Sections 7 and 8), with further
-detail in [CURRENT_STATE.md](CURRENT_STATE.md).  They remain open, and are no
-longer pursued in this repository.
+detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 
 - A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
   octonion product, while Ls is not).  One candidate shape is excluded:

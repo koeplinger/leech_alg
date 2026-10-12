@@ -2,7 +2,7 @@
 
 This folder contains a chronological, enumerated record of every prompt submitted to the AI agent during this research project.
 
-The log runs from prompt 001 to the closing note; the effort is closed (see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md)).  The discovery is at [prompt 025](025_triple_kirmse_twisted_octonions.txt) (11 April 2026), where the construction was proposed; the prompts that follow trace how the result was checked and verified.
+The discovery is at [prompt 025](025_triple_kirmse_twisted_octonions.txt) (11 April 2026), where the construction was proposed; the prompts that follow trace how the result was checked and verified.  The effort was closed at [prompt 279](279_project_closing_note.txt) (27 July 2026) and reopened at [prompt 281](281_reopen_project_v8_readthrough_comments.txt) (12 October 2026) for the v8 revision of the paper.
 
 ## Purpose
 

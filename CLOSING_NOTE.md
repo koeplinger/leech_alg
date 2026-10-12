@@ -1,5 +1,12 @@
 # Closing note
 
+**Addendum (12 October 2026).** The effort is reopened. After a cool-off
+period, the author has started a further revision of the paper, v8, in the
+working source `paper/main.tex`; v7 stays frozen and published as recorded
+below. The revision plan is `evidence_and_reasoning/2026-10-12_plan.md`, and
+the reopening is [prompt 281](prompt_logs/281_reopen_project_v8_readthrough_comments.txt).
+The text below stands as written: the record of the closure of 27 July 2026.
+
 **27 July 2026.** This effort is closed. What follows records the result, the
 reasons for closing, and what this repository is from here on.
 

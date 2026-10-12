@@ -15,8 +15,7 @@
 > in 12Z, with exactly 4,032 of norm 12, none of them minimal.  Details in
 > `research_result.md`.
 >
-> The result is published (doi:10.13140/RG.2.2.22093.19686) and this effort
-> is closed; see `CLOSING_NOTE.md`.
+> The result is published (doi:10.13140/RG.2.2.22093.19686).
 
 ## English
 
@@ -53,8 +52,7 @@ an order under some bilinear product — is not known.
 > (Aufsatz §4).  Der folgende Text bleibt als Aufzeichnung der
 > ursprünglich gestellten Frage erhalten.
 >
-> Das Ergebnis ist veröffentlicht (doi:10.13140/RG.2.2.22093.19686);
-> dieses Vorhaben ist abgeschlossen, siehe `CLOSING_NOTE.md`.
+> Das Ergebnis ist veröffentlicht (doi:10.13140/RG.2.2.22093.19686).
 
 Im Leech-Gitter Λ spielen die Minimalvektoren Min(Λ) — die 196.560
 Vektoren mit Normquadrat 8 — eine strukturelle Rolle, die der des

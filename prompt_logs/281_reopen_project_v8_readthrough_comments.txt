@@ -1,0 +1,187 @@
+Prompt 281 -- Reopen the project after a cool-off; open v8; record (not
+execute) the initial read-through comments on v7
+Date: 2026-10-12
+
+User: 'Earlier I had you write a closing note for the project, and declare
+v7 as "final". I now want you to reopen this project, and we'll make
+another attempt -- after what I consider a bit of a cool-off period. There
+are a few things in v7 that I don't like, and I'll give you specific
+instructions.
+
+In a first step, I want you to execute the needed updates to open the
+project again; and then go ahead and record the initial comments from a
+read-through that I'm about to give you (record, but don't yet execute).
+
+Today is 12 October 2026
+
+In the abstract, before "Reduced modulo 2L, the construction yields" insert
+something along the lines of what section 5 does, e.g. "We show select
+algebraic properties of the algebra, including idempotents, the
+automorphism group, square-zero elements, and the span of the image."
+
+Also in the abstract, we currently write "Reduced modulo 2L, the
+construction yields a Witt decomposition of L/2L into a complementary pair
+of Lagrangians, and we ask which polarizations lift." -- Here I didn't pay
+enough attention yet, I believe; let me describe my current understanding.
+The Witt decomposition lives on the E8 lattice alone, and we didn't yet
+look at what actually happens on the Leech lattice. The value of appendix
+A.1, in turn, is to provide the structure of the inner wiring of Wilson's
+construction that Baez/Egan drop in their "simplification". We point this
+out in the paragraph starting with "Relation to prior work". With that,
+the name-dropping in the abstract is too bold, and should be replaced with
+a statement that simply says that we discuss our construction with related
+work. That's what section 6 does. We should therefore add a reference to
+appendix A.1 to the paragraph in section 6 starting with "Baez-Egan
+(2014)". Correct me if I'm wrong.
+
+The main body of the paper, sections 1 through 4, read OK to me.
+
+At the beginning of section 5.1, gentrly reword the two lead-in sentences
+that several standard algebraic identities can be easily checked. In order
+to give an initial idea of the degree of their violation, we have drawn
+samples.
+
+In section 5.2 idempotents, scratch "a symbolic classification carried
+out and verified in exact arithmetic" (but leave footnote 8; the prose is
+redundant). Then, confirm that none of these idempotents can be made to
+lie on the innermost shell of the Leech lattice through uniform
+rescalilng in R^24, and add a brief sentence (remark 5.1 already has the
+foward-reference to section 5.2, and we do need to tell the reader that
+rescaling doesn't rescue the situation).
+
+In section 5.3 I'm confused when we're talking about the order and when
+we're talking about the ambient algebra. We start with a statement on the
+order, but the very next sentence is something I would only understand in
+the ambient algebra. The entire sentence "Every automorphism is a
+blockwise octonion automorphism followed by a permutation of the three
+blocks; in the explicit demonstration below, blockwise means with respect
+to the twisted algebra (O, ·σ ) of Definition 3.2." appears out-of-place,
+and is in fact stated in a way that I understand in the second paragraph.
+Unless there's something to be said here in the first paragraph, scratch
+that sentence. Conversely, make the signed C_6 permutations more readable
+by breaking them out into three numbered exquations: Two for the C_3 each
+(in order line as straight cyclic sequence), and then the sign flip of e_4
+in the third line. Move the closing sentence of section 5.3 into its own,
+new paragraph, since it applies to both the order and the ambient algebra.
+
+In the closing section 7, replace the bullet "Whether the order is
+maximal" with a statement whether the index of the span of the image can
+be improved further, from 2^24 (Baez-Egan) to 2^16 now. Then, add some
+brief wording that we already answer the maximality question negatively:
+a simple witness: ε₁ = (e₀,0,0) acts on either side as the swap of blocks
+2 and 3 (ε₁ ⋆ v = v ⋆ ε₁ = (x′,z′,y′)), and ε₁ ⋆ ε₁ = ε₁. Since 4ε₁ is the
+least multiple in Λ (Section 5.2), Λ + ℤε₁ is a ⋆-closed overlattice of
+index 4 that lies outside L³.
+
+In appendix C, after "and contributed mathematical analysis." add: "It
+also drafted the manuscript text and made every revision to it, at the
+author's prompt-by-prompt direction".
+
+In the acknowledgments, move the Hermes ack from the Acknowledgments to
+Appendix C, as "Structural proposals from a second AI system (the Hermes
+agent, Nous Research, running DeepSeek V4 Flash through OpenCode) prompted
+the Lagrangian framing of Section A.1; Claude Opus 4.7 verified and
+corrected them.
+
+In appendix C, change "two computer-algebra systems" (low). Python with
+fractions.Fraction is exact arithmetic, not a computer-algebra system.
+Write instead "independent reimplementation in Python and GAP".
+
+Appendix A.1, last clause (low). "whether any such polarization lifts to a
+closed bilinear product on Λ itself" reads as open although Theorem 1.1
+answers it for the constructed one. Write: "and which polarizations,
+beyond the one constructed here, lift to a closed bilinear product on Λ
+itself."
+
+Update the "use of AI" statement, to include something like: "The author
+directed the work prompt by prompt and reviewed the AI-assisted output;
+machine-obtained results were verified under the protocol documented in
+Appendix C. The author takes full responsibility for the content,
+including the accuracy of the references." -- also, instead of "Human-run
+verification protocol" write something like "Human-designed verification
+and governance process"'
+
+Two deliverables, in this order:
+ 1. Reopen the project: reverse the closure edits of prompts 279-280 in
+    every current-state tracker; add a dated addendum to the frozen
+    CLOSING_NOTE.md (frozen artifacts are never rewritten in place); open
+    the v8 working copy of the paper (subtitle, in-progress v7 -> v8
+    changelog), the same pattern as the v7 opening (prompt 271).
+ 2. Record the read-through comments as a plan document
+    (evidence_and_reasoning/2026-10-12_plan.md, the genre for a revision
+    plan), one numbered item per comment, none executed.  Where a comment
+    asks a question ("correct me if I'm wrong", "confirm that ..."), answer
+    it now, with verification, and record the answer with the item.
+
+Applied, part 1 (reopening):
+ - CLOSING_NOTE.md (frozen): dated addendum at the top of the body, "Addendum
+   (12 October 2026)": the effort is reopened, v8 in progress, the 27 July
+   text stands as written.  No line of the original text changed.
+ - Current-state trackers corrected in place (what IS, no narrative):
+   README.md (status paragraph, CLOSING_NOTE row, "What Remains Open"),
+   CURRENT_STATE.md (date stamp, header, paper-status item 2, open-questions
+   header, repository map), evidence_and_reasoning/README.md (+ plan row),
+   research_result.md, research_statement.md (English and German status
+   blocks), TRIAL_METHODOLOGY.md, paper/README.md (working source, table,
+   changelog row), prompt_logs/README.md (milestones: 025, 279, 281).
+ - paper/main.tex: subtitle "19 July 2026 (v7)" -> "12 October 2026 (v8)";
+   no other change.  Rebuilt: 24 pp., 0 errors, no undefined references, no
+   overfull boxes; main.pdf refreshed.
+ - paper/v7_to_v8_changelog.md created, "in progress, not frozen" (the
+   linter's live-changelog exemption), self-contained; frozen v7 artifacts
+   untouched.
+ - evidence_and_reasoning/2026-10-12_plan.md created: the twelve
+   read-through comments as work items, each with analysis; Section 2 lists
+   the questions for the author; Section 4 holds the verification record.
+ - Memory: project_reopened_v8 (reopened; execute only on the user's word).
+ - Linter: exit 0, 0 warnings.
+
+Nothing in the paper beyond the subtitle was changed: the comments are
+recorded, not executed.
+
+Applied, part 2 (the read-through comments, recorded, and the verification
+the comments asked for):
+ - evidence_and_reasoning/2026-10-12_plan.md: items (1)-(12) as given, with
+   analysis; item (13) for discrepancies found on the way; Section 2 the
+   questions for the author; Section 4 the verification record.
+ - Verification workflow (read-only; 6 verifiers + 4 adversarial refuters;
+   no subagent wrote to the repository): see the plan, Section 4.  In short:
+   * Non-maximality witness eps_1 = (e_0,0,0): CONFIRMED (verifier + two
+     refuters, hand derivation and an independent code path).  Lambda +
+     Z eps_1 is star-closed, index 4, not inside L^3; Lambda meets the ray
+     R eps_1 exactly in 4Z eps_1.
+   * No idempotent reaches Min(Lambda) by rescaling: CONFIRMED (verifier +
+     refuter; verify_idempotent_lattice_rescaling.py ALL PASS; exhaustive
+     over the 196,560 minimal vectors).
+   * The author's "2^24 (Baez-Egan)": REFUTED.  The record and both
+     re-run scripts give 2^25 for phi and 2^16 for star; 2^24 is [Lambda :
+     2 Lambda].
+   * C_6 generator: CONFIRMED (verifier + refuter).  Orbits e1 -> -e5 -> -e6
+     -> -e1 (cube = -1), e2 -> -e7 -> e3 -> e2, e4 -> -e4; preserves the
+     twisted product, not the standard one (review finding M2, prompts
+     245/260/261 stand).
+   * Closure-mention sweep: 19 must-change passages, all covered by part 1.
+   * Record check: abstract 149 -> 156 words with items (1)+(2); Hermes
+     sentence: Opus 4.7 / OpenCode / "prompted" supported, "DeepSeek V4
+     Flash" only from the author's words in prompt 156, "Nous Research" /
+     "Hermes agent" / "second AI system" not in the record.
+ - Discrepancies surfaced by the refuters (plan item 13):
+   * symbolic_proof_checks.py docstring claims doubled-integer arithmetic
+     and a multiply_doubled() that does not exist; the code uses
+     fractions.Fraction on undoubled coordinates.  The v6->v7 changelog
+     cites that docstring for the abstract's "exact integer arithmetic".
+     Flagged, not fixed (frozen program; author's decision).
+   * Remark 5.2: "left-multiplication in O" should read (O, .sigma).
+     Flagged for v8.
+   * "each satisfying u star u = n u" in CURRENT_STATE.md,
+     research_result.md, python_project/src/README.md: wrong for 4 omega
+     (scalar 12).  Corrected in place (current-state genre).
+ - paper/main_2026-07-19.pdf added: the committed main.pdf was the only
+   compiled v7 and the v8 build overwrites it; byte-identical to HEAD.
+   README.md and paper/README.md point to it.
+ - Third "computer-algebra" occurrence found by grep (Appendix A, before the
+   basis tables), added to plan item (10).
+ - Linter: exit 0, 0 warnings.  Not committed (the user commits).
+
+Status: CLOSED (comments recorded; execution waits for the author's word;
+five questions for the author in the plan, Section 2).

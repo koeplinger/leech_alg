@@ -2,27 +2,25 @@
 
 The write-up and everything that supports it.  Genres per
 [`DOCUMENT_GENRES.md`](../DOCUMENT_GENRES.md): every released version, note,
-brief and review is frozen.  With the effort closed, `main.tex` is
-byte-identical to the frozen v7 `main_2026-07-19.tex` and is not expected to
-change further.
+brief and review is frozen; the working source `main.tex` (v8, in progress)
+is edited in place, and each release is frozen as a dated snapshot.
 
 The paper is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
 [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
 (ResearchGate), corresponding to the frozen v7 source `main_2026-07-19.tex`.
-This effort is closed; see [`CLOSING_NOTE.md`](../CLOSING_NOTE.md).
 
 ## The paper
 
 | File | |
 |---|---|
-| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** v7, frozen 19 July 2026. Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` twice. |
+| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** Working source, v8 in progress (opened 12 October 2026). Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` twice. |
 | [`main_2026-04-29.tex`](main_2026-04-29.tex) | v3, frozen |
 | [`main_2026-05-25.tex`](main_2026-05-25.tex) | v4, frozen |
 | [`main_2026-06-07.tex`](main_2026-06-07.tex) | v5, frozen |
 | [`main_2026-07-18.tex`](main_2026-07-18.tex) | v6, frozen |
-| [`main_2026-07-19.tex`](main_2026-07-19.tex) | v7, frozen; the last released version |
-| [`v3_to_v4_summary.md`](v3_to_v4_summary.md), [`v4_to_v5_changelog.md`](v4_to_v5_changelog.md), [`v5_to_v6_changelog.md`](v5_to_v6_changelog.md), [`v6_to_v7_changelog.md`](v6_to_v7_changelog.md) | what changed between versions |
+| [`main_2026-07-19.tex`](main_2026-07-19.tex), [`main_2026-07-19.pdf`](main_2026-07-19.pdf) | v7, frozen; the last released version |
+| [`v3_to_v4_summary.md`](v3_to_v4_summary.md), [`v4_to_v5_changelog.md`](v4_to_v5_changelog.md), [`v5_to_v6_changelog.md`](v5_to_v6_changelog.md), [`v6_to_v7_changelog.md`](v6_to_v7_changelog.md), [`v7_to_v8_changelog.md`](v7_to_v8_changelog.md) (in progress) | what changed between versions |
 
 ## Companion and standalone notes
 
