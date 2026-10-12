@@ -1,0 +1,71 @@
+Prompt 283 -- Rulings on the three open items; docstring fix in place;
+engage the v8 review pass
+Date: 2026-10-12
+
+User: 'The incremental updates to the paper read well, I'll QC them
+independently. Regarding your items for my decision:
+
+re "The frozen Hermes supplement" -- leave as is, it's ok. Traceability is
+established through the paper, and the supplement is just such, more lab
+notes than publication.
+
+re "docstring of symbolic_proof_checks.py" -- fix it in place, and add
+"updated 12 October 2026" to flag the late correction
+
+re "key-claims ledger" -- I don't have a preference.
+
+Anything else remaining from the plan? "A review pass of the assembled v8
+(paper/reviews/), then the linter (python3 tools/lint_docs.py)." -- ready
+to engage? We'll also want a documentation consistency sweep across the
+project, but first we should finalize the main paper.'
+
+Plan of action:
+ - Hermes supplement: unchanged.  Ledger row 016: DERIVED stays.
+ - python_project/src/symbolic_proof_checks.py: docstring corrected in
+   place at the author's direction (the file is a frozen program; the
+   author chose the in-place fix with the flag "updated 12 October 2026"
+   over a dated addendum block).  Script re-run afterwards.
+ - Review pass of the assembled v8: read-only reviewer agents with
+   adversarial verification of every finding; the review file written by
+   the main thread to paper/reviews/ (dated, model in the filename);
+   dispositions are the author's.  Then the linter.
+ - Documentation consistency sweep: deferred until the paper is final.
+
+Applied:
+ - python_project/src/symbolic_proof_checks.py: docstring corrected in place
+   (exact rational arithmetic with fractions.Fraction; the doubled-integer
+   description and the nonexistent multiply_doubled() removed), with the
+   paragraph "Updated 12 October 2026 (correction): ...".  Re-run: all six
+   checks PASS.  Linter clean (the dated correction paragraph satisfies the
+   frozen-artifact rule).
+ - paper/v7_to_v8_changelog.md: "Record notes (12 October 2026)" on the
+   docstring correction (the abstract's "exact integer arithmetic" rests on
+   the Appendix A tables) and on the supplement's wording staying.
+ - Review pass of the assembled v8: workflow of 6 read-only referee
+   dimensions, 50 raw / 43 deduplicated findings, 24 verified by two
+   adversarial refuters each (9 confirmed, 14 split, 1 refuted), 19
+   unverified listed; the orchestrator re-verified the consequential items
+   first-hand in exact arithmetic (mirror lattice L' = -conj(L) closed under
+   the standard product and distinct from L; L closed under the twisted
+   product, hence L^3 star-closed; the dangling "again"; Appendix C's
+   three-of-four count).  Review written:
+   paper/reviews/2026-10-12_claude_fable_5_1_review_v8.md.
+   Must-fix: MF1 the new span-index bullet is settled trivially as posed
+   (index 1 attained by a degenerate product); MF2 "again a symbolic
+   classification" dangles in 5.4.  Should-fix: abstract "span of the image
+   of the algebra"; abstract "four lemmas certified in exact integer
+   arithmetic" (three carry certificates); non-maximality should lead with
+   L^3 (star-closed, index 2^12, immediate from Prop. 4.6) with eps_1 as the
+   second example; the Introduction's "seven octonion-multiplication
+   conventions" sentence is false for the paper's L (all 480 tables keep L
+   closed); Hermes verification without a locator; Declarations without the
+   drafting disclosure; "over 12,000,000 pairs" without a script footnote;
+   5.1 verdict stated twice; generator display layout; the ambient algebra
+   as (O, .sigma) tensor R[Z_3] with the inversion-twisted product (referee's
+   observation); a page-15 widow.  Five nits; one refuted (Theorem 1.1
+   without sigma: author ruling, prompt 175).
+ - Nothing applied to paper/main.tex: dispositions are the author's.
+ - Plan status block: pointer to the review.  Linter: see below.
+
+Status: CLOSED (review delivered; awaiting the author's item-by-item
+rulings; the documentation consistency sweep waits for the final paper).

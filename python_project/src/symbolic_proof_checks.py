@@ -4,11 +4,20 @@ needed for the symbolic proof of Leech lattice closure, plus the
 accompanying non-triviality check σ(Ls) ≠ Ls (recorded as a remark in
 Section 4 of the paper rather than a lemma).
 
-All arithmetic uses doubled-integer coordinates (multiply everything by 2)
-to avoid fractions entirely. The octonion product of two vectors with
-half-integer coordinates produces half-integer coordinates, so doubled
-coordinates stay integer under multiplication (after dividing by 4 and
-re-doubling — see multiply_doubled()).
+All arithmetic is exact rational arithmetic with fractions.Fraction on the
+coordinates as given: the octonion product is expanded over the Fano table
+in Fractions (frac_mul), and membership of a product in a lattice is
+decided by exact Gaussian elimination over Q, checking that the
+coefficients in the lattice's Z-basis are integers (is_integer_combination).
+The numpy coordinates of the foundation modules (E8 roots, s, s-bar) are
+converted to Fractions on entry (to_frac); they are integers or halves, so
+the conversion is exact.
+
+Updated 12 October 2026 (correction): the paragraph above previously
+described doubled-integer arithmetic and a multiply_doubled() helper; this
+file never had either.  The paper's Appendix A certificates are integer
+coefficient tables; this script re-derives them in exact rational
+arithmetic.
 
 Lemma 4.1 (paper §4): σ(L) = L
 Lemma 4.2 (paper §4): L·L ⊆ L  (maximal order)

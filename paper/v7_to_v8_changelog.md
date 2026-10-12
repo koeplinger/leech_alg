@@ -74,6 +74,11 @@ The planned changes are recorded item by item in [evidence_and_reasoning/2026-10
 
 `CURRENT_STATE.md` (open questions 1 and 3; "Structure of the algebra": non-maximality), `README.md` (result bullet; "What Remains Open"), `evidence_and_reasoning/research_result.md`, `evidence_and_reasoning/key_claims/README.md` (claim 016, ledger-only row; row 011 wording), `evidence_and_reasoning/README.md` (ledger-row range).
 
+## Record notes (12 October 2026)
+
+- `python_project/src/symbolic_proof_checks.py`: its docstring described doubled-integer arithmetic and a `multiply_doubled()` helper that the file never had; corrected in place at the author's direction, flagged "Updated 12 October 2026" (prompt 283). The script works in exact rational arithmetic (`fractions.Fraction`). The abstract's "four lemmas certified in exact integer arithmetic" rests on the Appendix A certificates, which are integer coefficient tables; the v6 → v7 changelog's justification by way of that docstring is superseded by this note.
+- The frozen supplement `paper/hermes_mod2_structure_supplement.tex` keeps its "external contributor" wording (author's ruling, prompt 283); traceability runs through the paper.
+
 ---
 
 *Revision chain: [v3 → v4](v3_to_v4_summary.md), [v4 → v5](v4_to_v5_changelog.md), [v5 → v6](v5_to_v6_changelog.md), [v6 → v7](v6_to_v7_changelog.md), v7 → v8 (this file).*
