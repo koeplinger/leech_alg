@@ -194,9 +194,11 @@ the order has no nonzero idempotent.
 Each nonzero idempotent spans a rational ray meeting Λ; the least
 positive lattice multiples are 4εᵢ (norm 16), 6(εᵢ − ω/3) (norm 24),
 and 4ω (norm 48), satisfying u ⋆ u = 4u, 6u and 12u respectively.  The
-rescaling is
-already visible on the minimal shell: for each of the 84 purely
-imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
+rescaling is already visible on the minimal shell: for each of the 84 purely
+imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.  The order is
+not maximal: ε₁ acts on either side as the swap of blocks 2 and 3, which
+preserves Λ, and ε₁ ⋆ ε₁ = ε₁, so Λ + Zε₁ is ⋆-closed, of index 4 over Λ
+(paper §7; key claim 016).
 
 **Square-zero elements** (paper §5.4;
 `verify_square_zero_classification.py`).

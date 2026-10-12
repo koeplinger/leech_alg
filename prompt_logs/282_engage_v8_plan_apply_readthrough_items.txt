@@ -1,0 +1,109 @@
+Prompt 282 -- Answers to the five questions; engage the v8 plan (apply the
+recorded read-through items, surgically)
+Date: 2026-10-12
+
+User: 'Regarding your five questions for me:
+
+re (a) "whether the 150-word abstract cap still applies" -- no, to the
+contrary: The next journal I'm envisioning recommends abstract length
+between 150 and 250 words.
+
+re (b) "2^25 versus 2^24" -- yes, my typo
+
+re (c) '"Nous Research", "Hermes agent" and "second AI system" are not in
+the record, which calls Hermes an external contributor' is both true ...
+Hermes submitted their findings as GitHub issues to the repo, and are
+available there in the public record. Have a look if you want, they're
+closed. Matthew Barley ran the Hermes checks, and he is credited in the
+acknowledgments. I think the move therefore is an honest improvement of
+the action chain (humans in the acknowledgments, driving the
+investigation; and AI tools at their disposal, including investigating
+points beyond the material at hand).
+
+re (d) 'The two further "computer-algebra" occurrences' -- leave
+
+re (e) follow your recommendation, it sounds good; I want to review it in
+the flow of the remainder
+
+Engage the plan. Surgical updates only. Focused wording (but not
+compressed to the degree of becoming incomprehensible). Neutral, to the
+point. No new spin, no babbling, no side swipes, no new references
+elsewhere in the edits (but do point out to me in the update summary if
+you think something is amiss).'
+
+Plan of action: apply items (1)-(12) of evidence_and_reasoning/
+2026-10-12_plan.md to paper/main.tex with the author's answers folded in
+(abstract may exceed 150 words; 2^25; the Hermes sentence as given, on the
+author's authority; the two further "computer-algebra" occurrences stay;
+Section 5.3 per the recommendation), plus the one-word Remark 5.2 fix of
+item (13); the docstring correction of item (13) stays open (frozen
+program, no decision given).  Then: rebuild; changelog entries; trackers
+that follow the paper (CURRENT_STATE, README, research_result, key-claims
+ledger); plan status; linter; a read-only second-pass check of the diff.
+
+Applied to paper/main.tex (15 exact-match edits; the diff was audited
+hunk by hunk against the plan, read-only, by three agents; no agent wrote
+to the repository):
+ - Abstract: Section 5 sentence added ("We determine the idempotents, the
+   automorphism group, the square-zero elements, and the span of the image
+   of the algebra."; the author's draft "We show select algebraic
+   properties ... including ..." reworded for idiom, same content); the
+   Witt-decomposition sentence replaced by "We discuss the construction in
+   the context of related work."  149 -> 155 words (prompt-271 count).
+ - 5.1 lead-in reworded per item (4).
+ - Remark 5.2: "left-multiplication in O" -> "in (O, .sigma)" (item 13).
+ - 5.2: redundant clause cut; one sentence added: the lattice points on
+   the line spanned by a nonzero idempotent are the integer multiples kw
+   of the listed vector w, of norm 16k^2, 48k^2 or 24k^2; no real multiple
+   of an idempotent lies on the minimal shell.
+ - 5.3: the "Every automorphism is a blockwise ..." sentence removed; the
+   M2 scoping attached to the generator ("an automorphism of the twisted
+   algebra (O, .sigma) of Definition 3.2, applied in each block, with e_0
+   fixed"); the generator as three numbered equations (5.3)-(5.5):
+   e1->-e5, e5->e6, e6->e1 | e2->-e7, e7->-e3, e3->e2 | e4->-e4; the
+   companion-note sentence its own paragraph.  Later display numbers in
+   Section 5 shift by three (nothing cites them by number).
+ - 6, Baez-Egan paragraph: cross-reference to A.1 ("Section A.1 reads one
+   such pair, sigma(L sbar)/2L and sigma(Ls)/2L, as ideal and subalgebra
+   under the product that L/2L inherits from the octonion order L").
+ - 7: new paragraph "The order is not maximal." with the eps_1 witness
+   (swap of blocks 2 and 3; eps_1 idempotent; closure by bilinearity;
+   index 4 from the least positive multiple 4 eps_1; not inside L^3 since
+   e_0 not in L); the maximality bullet replaced by the span-index
+   question (2^25 for phi, 2^16 for star).
+ - A.1 last clause per item (11).
+ - Acknowledgments: Hermes sentence removed (five names stay).
+ - Declarations, Use of AI: per item (12), "human-designed verification
+   and governance process"; the two Appendix C references merged.
+ - Appendix C: drafting sentence (item 8); Hermes paragraph as given by
+   the author, with "the AI agent (Claude Opus 4.7)" tying the model name
+   to the agent named at the start of the appendix; "two computer-algebra
+   systems" -> "Python and GAP" (the two other occurrences stay, per the
+   author).
+ Not applied: the docstring correction of item (13) (frozen program;
+ awaiting the author's decision).
+
+Record checks for item (9): GitHub issue #1 of the repository (opened 11
+May 2026 by an outside reader, closed 25 May 2026, 14 comments) carries
+the proposals and refers to the reader's agent; it names the Hermes
+supplement by filename and none of Nous, DeepSeek, OpenCode.  "Nous
+Research", "the Hermes agent", "a second AI system" rest on the author's
+statement (this prompt).  The frozen supplement still says "an external
+contributor identified as Hermes"; noted in the changelog, left as
+released; harmonization is the author's call.
+
+Trackers: CURRENT_STATE.md (open questions 1 and 3; non-maximality
+paragraph under "Structure of the algebra"), README.md (result bullet;
+"What Remains Open"), research_result.md, key_claims/README.md (row 016,
+scoped: eps_1 witness second-pass verified; the eps_2/eps_3 and index-16
+extension single-pass; row 011 wording), evidence_and_reasoning/README.md
+(ledger range 009-016), paper/v7_to_v8_changelog.md (entries 1-10), plan
+status block (dated, additive; the prompt-281 text stands).
+
+Verification: build 24 pp., 0 errors, no undefined references, no
+overfull boxes; linter exit 0; the three-agent audit returned no must-fix
+and no error; its wording items were applied where the text was mine and
+flagged to the author where the text was theirs (abstract idiom; "the AI
+agent (Claude Opus 4.7)").  Not committed (the user commits).
+
+Status: CLOSED.

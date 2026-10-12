@@ -76,7 +76,8 @@ exhibits the fit of this octonion product with Wilson's representation.
 - **Structure of the algebra**, exact and exhaustive (Section 5 of the
   paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
-  triples); it has exactly eight idempotents, of which only 0 lies in Λ; Λ
+  triples); it has exactly eight idempotents, of which only 0 lies in Λ;
+  the order is not maximal (Λ + Zε₁ is ⋆-closed, of index 4); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
@@ -96,8 +97,8 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 - A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
   octonion product, while Ls is not).  One candidate shape is excluded:
   σ(Ls) is not an ideal of L on either side.
-- Maximality of the order: is there a lattice Λ' ⊋ Λ of finite index with
-  Λ' ⋆ Λ' ⊆ Λ'?
+- Whether the index of the span of the image can be improved further: it
+  is 2²⁵ for the Baez–Egan product φ and 2¹⁶ for ⋆.
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.
