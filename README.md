@@ -77,7 +77,8 @@ exhibits the fit of this octonion product with Wilson's representation.
   paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
-  the order is not maximal (Λ + Zε₁ is ⋆-closed, of index 4); Λ
+  the order is not maximal (L³ and Λ + Zε₁ are ⋆-closed overlattices, of
+  index 2¹² and 4); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀

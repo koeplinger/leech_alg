@@ -158,13 +158,16 @@ respectively.  The
 rescaling is already visible on the minimal shell: for each of the 84 purely
 imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 
-**The order is not maximal** (paper §7; claim 016; verification record
-`evidence_and_reasoning/2026-10-12_plan.md`, §4).  ε₁ = (e₀, 0, 0) acts on
-either side as the swap of blocks 2 and 3, which preserves Λ, and
-ε₁ ⋆ ε₁ = ε₁; since Λ ∩ Rε₁ = 4Zε₁, the lattice Λ + Zε₁ is ⋆-closed, of
-index 4 over Λ, and not contained in L³.  The same holds for ε₂ and ε₃,
-and Λ + Zε₁ + Zε₂ + Zε₃ is ⋆-closed of index 16 (single-pass machine
-check, recorded in the same place).
+**The order is not maximal** (paper §7; claim 016).  L³ itself is
+⋆-closed: the proof of Proposition 4.6 uses only Wilson's condition (1)
+(L closed under ·_σ, `symbolic_proof_checks.py`), so L³ is an even integral
+overlattice of Λ of index [L³ : Λ] = 2¹².  A second ⋆-closed overlattice is
+not contained in L³ and not integral: ε₁ = (e₀, 0, 0) acts on either side as
+the swap of blocks 2 and 3, which preserves Λ, and ε₁ ⋆ ε₁ = ε₁; since
+Λ ∩ Rε₁ = 4Zε₁, the lattice Λ + Zε₁ is ⋆-closed, of index 4 over Λ
+(verification record `evidence_and_reasoning/2026-10-12_plan.md`, §4).  The
+same holds for ε₂ and ε₃, and Λ + Zε₁ + Zε₂ + Zε₃ is ⋆-closed of index 16
+(single-pass machine check, recorded in the same place).
 
 **Square-zero elements** (`verify_square_zero_classification.py`).  In the ambient algebra,
 u = (x, y, z) satisfies u ⋆ u = 0 exactly when x, y, z are purely imaginary,

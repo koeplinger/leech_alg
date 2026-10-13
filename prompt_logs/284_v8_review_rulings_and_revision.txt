@@ -1,0 +1,120 @@
+Prompt 284 -- Rulings on the v8 review (2026-10-12_claude_fable_5_1_review_v8.md);
+revise the paper accordingly
+Date: 2026-10-13
+
+User: 'About the "span-index" must-fix item, apply your suggested correct
+mathematical wording.
+
+About the "again a symbolic classification" must-fix items, re-supply the
+antedecent to fix the dangling phrasing: ""has exactly eight idempotents, by
+symbolic classification""
+
+Regarding the should-fix items:
+
+SF1 as you suggest
+SF2 use "the proof reduces to four lemmas, three of them certified by
+integer coefficient tables"
+SF3 that is a finding that I didn't expect! fix as you suggest, "state L³
+first, then ε₁ as a second overlattice not contained in L³, of index 4 and
+not integral" -- I'll need to review your update after you wrote it, this
+is more than just bookkeeping or precise wording
+SF4 update to the accepted wording in v4; I'll have to review it in context
+once you're done
+SF5 good idea to point directly to the supplement, as is customary
+throughout, and honestly highlights the parts that are machine-contributed
+SF6 fine, update it (it's getting nitty though)
+SF7 don't update; to a human, "over 12 million" is sufficient, we don't
+need to know that there were an additional 593,412 tests ... it may be
+hard to accept by a machine, but we humans won't actually count or check
+them individually
+SF8 smoothen the wording as you suggest, to be more concise yet easy to
+read, and free of redundancy
+SF9 fix the layout, I'll have a look; keep in mind, though, that actual
+layout will be controlled by the journal and out of our control; we should
+avoid making too many heavy-handed layouting decisions, and remain as
+generic as possible so that a journal can reflow them using standard
+measures
+SF10 don't update; if a reviewer wants more algebraic structure, we'll have
+to revisit the symbolic parts more foundationally (idempotents,
+alternative subalgebras, automorphisms, isotropic subalgebras, ...); in
+the current verson, let's attempt to stay on the expository line and see
+whether a pure mathematician wants to pick it up and generalize
+SF11 be gentle with reflowing text as part of standard layouting; in this
+case, I would side with not forcing heavy-handed layout decisions, in
+order to remain generic in the preprint and not make journal publication
+more difficult
+
+Regarding the nits:
+
+Good catch with "§7, line 1074: V is used before any definition in the
+main text", fix as you suggest.
+Good catch re "§6, line 957: "an order in the sense of Theorem 1.1"", fix
+as you suggest.
+Great catch re "Declarations line 1154 "repositories"", fix to
+"repositories".
+re "- §6, line 969: "the same Hermite-normal-form method " this is valid,
+however, the method is the machine method, which is in the footnote; so
+I'm ok leaving it as is.
+
+Revise the paper accordingly.'
+
+Rulings to apply (paper/main.tex): MF1 (family named); MF2 ("by symbolic
+classification" in 5.2, 5.4 keeps "again"); SF1; SF2 (author's wording);
+SF3 (L^3 first, eps_1 second, not integral); SF4 (read as: the classical
+statement proposed in the review, Appendix B's wording; the author reviews
+in context); SF5 (supplement footnote in the path-citation convention);
+SF6; SF8; SF9 (one alignment point per line, standard amsmath, nothing
+journal-specific); nits V, Corollary 1.2, "repositories" in both places.
+Not applied: SF7, SF10, SF11, the Hermite nit.  Trackers follow SF3 (key
+claim 016, CURRENT_STATE, research_result, README); changelog item 11.
+
+Applied to paper/main.tex (13 exact-match edits plus the footnote's path
+form; diff reviewed line by line, nothing else changed):
+ - MF1: Section 7 bullet names the family ("built from octonion
+   multiplication, as phi and star both are").
+ - MF2: 5.2 "has exactly eight idempotents, by symbolic classification";
+   5.4 keeps "again a symbolic classification", now with its antecedent.
+ - SF1: abstract "We determine the idempotents, the automorphism group, and
+   the square-zero elements of the algebra, and the index of the span of
+   the products of the order."
+ - SF2: abstract "four lemmas, three of them certified by integer
+   coefficient tables" (author's wording).
+ - SF3: Section 7 leads with L^3 ("The order is not maximal: it is
+   properly contained in the star-closed lattice L^3"; the proof of
+   Proposition 4.6 uses only condition (1); even integral, index 2^12),
+   then eps_1 as a second overlattice, index 4, not contained in L^3, not
+   integral (eps_1 has half-integer inner products with vectors of Lambda:
+   first coordinate 3/2 on a Z-basis vector, checked exactly).  For the
+   author's review in context.
+ - SF4: Section 1 "Seven octonion-multiplication conventions ..." replaced
+   by the classical statement ("For a fixed octonion multiplication, the
+   integral octonions have seven maximal orders, each an E_8 lattice
+   [Coxeter1946, ConwaySmith2003] (Appendix B); the placement of L used
+   here is fixed in Section 2").  Read "the accepted wording in v4" as the
+   classical statement proposed in the review: the v4 review's reading
+   ("one lattice supports seven tables, each a maximal order") is the one
+   the computation excludes, and Section 2.2 already states L nonunital
+   and a sqrt2-scaled copy of a maximal order.  For the author's review in
+   context.
+ - SF5: Appendix C footnote to the supplement PDF and the two discovery
+   scripts, in the paper's path-citation convention (nolinkurl so the
+   path breaks; an overfull box from a texttt first attempt was removed).
+ - SF6: Declarations "including the drafting of the manuscript text; the
+   methodology, the role of AI, and the human-designed verification and
+   governance process are documented in Appendix C".
+ - SF8: 5.1 lead-in carries the list; closing paragraph reduced to "The
+   defining property of the order is closure: ...".
+ - SF9: generator display with one alignment point per line and \quad
+   separators (standard align; renders as three cyclic sequences).
+ - Nits: V defined inline in Section 7; "in the sense of Corollary 1.2";
+   "repositories of [repo]" in Appendix C.
+ Not applied, per the rulings: SF7, SF10, SF11, the Hermite nit.
+Trackers: key claim 016, CURRENT_STATE.md, research_result.md, README.md
+lead with L^3; paper/v7_to_v8_changelog.md item 11 (review response) with
+pointers from the superseded entries; plan: dated status line added (an
+earlier in-place line edit was reverted after the linter's frozen-file
+warning; the plan is committed and hence frozen).
+Verification: build 24 pp., 0 errors, 0 overfull, no undefined references;
+abstract 165 words; linter exit 0, 0 warnings.  Not committed.
+
+Status: CLOSED (SF3 and SF4 await the author's in-context review).

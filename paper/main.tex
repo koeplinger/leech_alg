@@ -101,10 +101,11 @@ basis units: $\sigma$ leaves the $E_8$ lattice~$L$ invariant and is
 an octonion-algebra isomorphism, but moves Wilson's sublattices
 $L\bar s$ and~$Ls$.  Closure was first observed experimentally, on
 over 12 million random pairs of minimal vectors; the proof reduces to
-four lemmas certified in exact integer arithmetic.  We determine the
-idempotents, the automorphism group, the square-zero elements, and the
-span of the image of the algebra.  We discuss the construction in the
-context of related work.  A historical appendix (1923--1946) traces
+four lemmas, three of them certified by integer coefficient tables.  We
+determine the idempotents, the automorphism group, and the square-zero
+elements of the algebra, and the index of the span of the products of
+the order.  We discuss the construction in the context of related work.
+A historical appendix (1923--1946) traces
 $\sigma$ to Bruck's repair of Kirmse's integral octonions.  The
 research record of this human--AI collaboration is public.
 \end{abstract}
@@ -132,11 +133,10 @@ group is the Conway group~$\Co_0$, a double cover of the sporadic
 simple group~$\Co_1$.
 
 In rank~8, the $E_8$ lattice~$L$ carries an octonionic multiplication
-under which it is closed.
-Seven octonion-multiplication conventions on~$\RR^8$ have this
-property; the resulting structures are in bijection with the seven
-maximal orders of the integral octonions
-\cite{Coxeter1946, ConwaySmith2003}.  Wilson
+under which it is closed.  For a fixed octonion multiplication, the
+integral octonions have seven maximal orders, each an $E_8$ lattice
+\cite{Coxeter1946, ConwaySmith2003} (Appendix~\ref{app:history}); the
+placement of~$L$ used here is fixed in Section~\ref{sec:prelim}.  Wilson
 \cite[Section~3]{Wilson2009} showed that $\LL$ embeds naturally
 in~$L^3$ via three sublattice conditions, raising the question: does
 $\LL$ inherit an algebraic structure from the octonion product?
@@ -600,9 +600,11 @@ Section~\ref{sec:proof}.
 
 \subsection{Identities}\label{sec:identities}
 
-Several standard algebraic identities are easily checked to fail on
-the order $(\LL, +, \star)$.  To give an initial idea of the degree of
-their violation, we have drawn samples uniformly (by family weight)
+Several standard algebraic identities, among them associativity,
+alternativity, flexibility, power-associativity and commutativity, are
+easily checked to fail on the order $(\LL, +, \star)$.  To give an
+initial idea of the degree of their violation, we have drawn samples
+uniformly (by family weight)
 from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
 binary identities, from $\operatorname{Min}(\LL)$ for the cube and
 quartic identities, and from $\operatorname{Min}(\LL)^3$ for the
@@ -682,15 +684,14 @@ not an identity: it maps $(x', y', z')$ to $(x'+y'+z',\, x'+y'+z',\,
 x'+y'+z')$.  Consequently $(\LL, +, \star)$ is a nonunital order.
 \end{remark}
 
-The order does not satisfy any of the classical algebraic identities
-(associativity, alternativity, flexibility, power-associativity,
-commutativity).  The defining property is \emph{closure}: the Leech
+The defining property of the order is \emph{closure}: the Leech
 lattice is stable under the product.
 
 \subsection{Idempotents}\label{sec:idempotents}
 
 The ambient algebra $(\RR^{24}, +, \star)$ has exactly eight
-idempotents.\footnote{\scriptref{verify\_idempotent\_classification.py}.}
+idempotents, by symbolic
+classification.\footnote{\scriptref{verify\_idempotent\_classification.py}.}
 Writing $\varepsilon_1 = (e_0, 0, 0)$, $\varepsilon_2 = (0, e_0, 0)$,
 $\varepsilon_3 = (0, 0, e_0)$ and $\omega = \varepsilon_1 +
 \varepsilon_2 + \varepsilon_3$, they are
@@ -725,11 +726,11 @@ the twisted algebra $(\OO, \cdot_\sigma)$ of
 Definition~\ref{def:twisted-product}, applied in each block, with
 $e_0$ fixed:
 \begin{align}
-  e_1 &\mapsto -e_5, & e_5 &\mapsto e_6, & e_6 &\mapsto e_1,
+  &e_1 \mapsto -e_5, \quad e_5 \mapsto e_6, \quad e_6 \mapsto e_1,
     \label{eq:c6-gen-1} \\
-  e_2 &\mapsto -e_7, & e_7 &\mapsto -e_3, & e_3 &\mapsto e_2,
+  &e_2 \mapsto -e_7, \quad e_7 \mapsto -e_3, \quad e_3 \mapsto e_2,
     \label{eq:c6-gen-2} \\
-  e_4 &\mapsto -e_4. \label{eq:c6-gen-3}
+  &e_4 \mapsto -e_4. \label{eq:c6-gen-3}
 \end{align}
 
 The containment in the Conway group can already be settled at the level
@@ -955,7 +956,7 @@ so $\operatorname{tr} D = 8 \langle u, v\rangle$ recovers the
 $\RR^{24}$ inner product of $u$ and $v$.  Projecting onto the
 off-diagonal subspace defines a $\ZZ$-bilinear closed product
 $\varphi(u, v) := R$ on $\LL$: an order in the sense of
-Theorem~\ref{thm:main}, but obtained by projecting from a larger
+Corollary~\ref{cor:order}, but obtained by projecting from a larger
 ambient with the inner-product shadow $D$ discarded.  For minimal
 Leech vectors $u \in \operatorname{Min}(\LL)$, squaring gives
 $\operatorname{tr} D = 8\Nrm(u) = 64$, so the projection is
@@ -1042,16 +1043,24 @@ the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice
 $\sigma(Ls)$, unlike~$Ls$ itself, is closed under the standard
 octonion product.
 
-The order is not maximal.  The idempotent $\varepsilon_1 = (e_0, 0, 0)$
-of Section~\ref{sec:idempotents} acts on either side as the swap of
-blocks~2 and~3, $\varepsilon_1 \star v = v \star \varepsilon_1 =
-(x', z', y')$ for $v = (x', y', z')$, a swap that preserves~$\LL$
-because Wilson's three conditions are symmetric in the blocks.
-Moreover $\varepsilon_1 \star \varepsilon_1 = \varepsilon_1$, so
-$\LL + \ZZ\varepsilon_1$ is $\star$-closed by bilinearity.  Since
-$4\varepsilon_1$ is the least positive multiple of~$\varepsilon_1$
-in~$\LL$ (Section~\ref{sec:idempotents}), this overlattice has
-index~$4$; it is not contained in~$L^3$ because $e_0 \notin L$.
+The order is not maximal: it is properly contained in the
+$\star$-closed lattice~$L^3$.  The proof of
+Proposition~\ref{prop:cond1} uses only Wilson's condition~(1), that
+the blocks of $u$ and~$v$ lie in~$L$, so it shows $L^3 \star L^3
+\subseteq L^3$; and $L^3$ is an even integral lattice
+containing~$\LL$ with index $[L^3 : \LL] = 2^{12}$.  A second
+$\star$-closed overlattice is not contained in~$L^3$.  The idempotent
+$\varepsilon_1 = (e_0, 0, 0)$ of Section~\ref{sec:idempotents} acts on
+either side as the swap of blocks~2 and~3, $\varepsilon_1 \star v =
+v \star \varepsilon_1 = (x', z', y')$ for $v = (x', y', z')$, a swap
+that preserves~$\LL$ because Wilson's three conditions are symmetric
+in the blocks, and $\varepsilon_1 \star \varepsilon_1 =
+\varepsilon_1$; so $\LL + \ZZ\varepsilon_1$ is $\star$-closed by
+bilinearity.  Since $4\varepsilon_1$ is the least positive multiple
+of~$\varepsilon_1$ in~$\LL$ (Section~\ref{sec:idempotents}), the index
+is $[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  This overlattice is not
+contained in~$L^3$, because $e_0 \notin L$, and it is not integral:
+$\varepsilon_1$ has half-integer inner products with vectors of~$\LL$.
 
 Several questions remain immediately open:
 \begin{itemize}
@@ -1071,8 +1080,8 @@ Several questions remain immediately open:
   The companion sublattice $\sigma(L\bar s)$ is by contrast a
   \emph{two-sided} ideal of~$L$, of which
   Lemma~\ref{lem:L-sigmaLsbar} is the left-handed half, and the same
-  asymmetry survives reduction modulo~$2L$: $V$ is an ideal
-  of~$L/2L$, $W$ only a subalgebra.  An integer-level structural
+  asymmetry survives reduction modulo~$2L$: $V := \sigma(L\bar s)/2L$
+  is an ideal of~$L/2L$, $W$ only a subalgebra.  An integer-level structural
   reason would replace the appendix tables by a structural argument
   resting on something other than an ideal property: an
   identification of $\sigma(Ls)$ with the image under a
@@ -1085,7 +1094,8 @@ Several questions remain immediately open:
   (Section~\ref{sec:autgroup}) sits inside~$\Co_0$ up to conjugacy, and
   whether the order-6 octonion automorphism generating the~$C_6$
   admits an intrinsic description.
-\item Whether a closed bilinear product on~$\LL$ can have a smaller
+\item Whether a closed bilinear product on~$\LL$ built from octonion
+  multiplication, as $\varphi$ and $\star$ both are, can have a smaller
   span index than~$\star$: the index (Section~\ref{sec:span}) is
   $2^{25}$ for the Baez--Egan product~$\varphi$
   (Section~\ref{sec:related}) and $2^{16}$ for~$\star$.
@@ -1154,9 +1164,9 @@ the complete research record, including every verification script
 cited in this paper, is available at the repositories of~\cite{repo}.
 
 \textbf{Use of AI.}  AI assistance is a stated, material part of this
-work; the methodology, including the role of AI and the human-designed
-verification and governance process, is documented in
-Appendix~\ref{sec:methodology}.  The author directed the work prompt
+work, including the drafting of the manuscript text; the methodology,
+the role of AI, and the human-designed verification and governance
+process are documented in Appendix~\ref{sec:methodology}.  The author directed the work prompt
 by prompt and reviewed the AI-assisted output; machine-obtained results
 were verified under the protocol documented there.  The author takes
 full responsibility for the content, including the accuracy of the
@@ -1714,7 +1724,12 @@ prompt-by-prompt direction.
 Structural proposals from a second AI system (the Hermes agent, Nous
 Research, running DeepSeek V4 Flash through OpenCode) prompted the
 Lagrangian framing of Section~\ref{app:mod2quotient}; the AI agent
-(Claude Opus~4.7) verified and corrected them.
+(Claude Opus~4.7) verified and corrected them.\footnote{The proposals
+verbatim, the verification, and the corrections: \cite{repo}~%
+\href{https://github.com/koeplinger/leech\_alg/blob/main/paper/hermes\_mod2\_structure\_supplement.pdf}%
+{\nolinkurl{paper/hermes_mod2_structure_supplement.pdf}};
+\scriptref{verify\_discovery1\_W\_subalgebra.py}
+\scriptref{verify\_discovery2\_V\_isotropic.py}.}
 
 Tests were written from first principles to independently verify
 every foundation.  This independent verification is how we know that the
@@ -1774,7 +1789,7 @@ corrected forward.  What is novel here is the
 ability to trace the entire path, beginning to end, through the
 complete list of prompts.
 
-The full record is available at the repository~\cite{repo}: all
+The full record is available at the repositories of~\cite{repo}: all
 prompts, code, evidence, and git history.  The reader can form
 their own assessment of what this means for questions of discovery
 and attribution.
