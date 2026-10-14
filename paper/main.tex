@@ -195,8 +195,8 @@ exhaustively for the self-products and on $10^6$ sampled distinct
 pairs.  This is consistent with $(\LL, +, \star)$ being an
 order in the ring-theoretic sense: a subring that is a free
 $\ZZ$-module of rank equal to the ambient algebra's dimension.
-That property is weaker than, and independent of, any shell-level
-closure.
+That property is weaker than closure of the minimal shell, which
+spans~$\LL$.
 \end{remark}
 
 The scope of this paper is deliberately bounded.  We establish
@@ -417,9 +417,7 @@ chosen pair of $\ZZ$-bases: if $\{a_i\}_{i=1}^8$ generates $A$ and
 $\{b_j\}_{j=1}^8$ generates $B$, then $A\cdot B \subseteq C$ is
 equivalent to each of the 64 products $a_i\cdot b_j$ lying in
 $\ZZ\langle c_1,\ldots,c_8\rangle$ for a chosen $\ZZ$-basis
-$\{c_k\}_{k=1}^8$ of~$C$.  (The forward direction is the substantive
-one and uses bilinearity; the reverse direction is immediate
-since each $a_i\in A$ and each $b_j\in B$.)  Each lemma below is
+$\{c_k\}_{k=1}^8$ of~$C$.  Each lemma below is
 proved by exhibiting that finite list of integer coefficients
 explicitly.  Concrete
 $\ZZ$-bases for $L$, $\sigma(Ls)$, and $\sigma(L\bar s)$ are fixed in
@@ -739,11 +737,10 @@ of the ambient algebra, before the lattice is imposed.  As a real
 algebra, $\RR^{24} = \OO^3$
 splits as $D \oplus T$, where $D = \{(a,a,a) : a \in \OO\}$ (of
 dimension~8) and $T = \{(p,q,r) \in \OO^3 : p+q+r = 0\}$ (of
-dimension~16) are two-sided ideals with $D \star T = T \star D = 0$;
-every
-$\star$-automorphism preserves them and acts on each by an octonion
-automorphism, composed with a permutation of the blocks, so that
-$\Aut(\RR^{24}, \star) = G_2 \times G_2 \times S_3$.  An automorphism of
+dimension~16).  Both are two-sided ideals, and $D \star T = T \star D
+= 0$.  Every $\star$-automorphism preserves them and acts on each by an
+octonion automorphism, composed with a permutation of the blocks, so
+that $\Aut(\RR^{24}, \star) = G_2 \times G_2 \times S_3$.  An automorphism of
 the \emph{real} octonions preserves the positive-definite octonion norm,
 and $D \perp T$; hence every $\star$-automorphism of $\RR^{24}$ is
 orthogonal, and
@@ -779,11 +776,11 @@ in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system.  Each of its 126
 roots has exactly 32 roots at $120^\circ$; the third block is then
 forced, so the ordered hexagonal triples number $126 \times 32 = 4{,}032$,
 one square-zero vector of~$\LL$ each, all of norm~12.  Every square-zero
-norm of~$\LL$ lies in $12\ZZ$ ($\Nrm(u) = 3\Nrm(x)$ with $\Nrm(x)$ even,
-and every norm of~$\LL$ lies in $4\ZZ$), and the $4{,}032$ root triples
-are exactly the norm-12 stratum; higher strata are realized, for
-example, the blockwise sum of two blockwise orthogonal root triples is
-square-zero of norm~24.\footnote{\scriptref{verify\_square\_zero\_norm24\_witness.py}.}
+norm of~$\LL$ lies in $12\ZZ$, since $\Nrm(u) = 3\Nrm(x)$ with $\Nrm(x)$
+even and every norm of~$\LL$ lies in $4\ZZ$.  The $4{,}032$ root
+triples are exactly the norm-12 stratum.  Higher strata are realized:
+for example, the blockwise sum of two blockwise orthogonal root triples
+is square-zero of norm~24.\footnote{\scriptref{verify\_square\_zero\_norm24\_witness.py}.}
 
 \subsection{Other twists: closure and span of the image}\label{sec:census}\label{sec:span}
 
@@ -921,9 +918,11 @@ Leech embeddings $L_L \subset \OO^3$ for which the associated
 (see part~10 of~\cite{Baez2014} for Egan's computational counts).
 Baez leaves open the question whether any such lattice is closed under
 the undoubled Jordan product, and conjectures that the answer is
-negative.  We have likewise
+negative.
+
+We have likewise
 independently reproduced the full Baez--Egan verification chain:
-the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L_0$, the
+the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L$, the
 Leech-lattice theorem, the doubled-Jordan-product closure, the
 derivation of the lower bound $244{,}035{,}421$ on the number of
 $E_8^3$-orbit Leech embeddings,\footnote{An orbit-stabilizer bound, $\lceil 3!\,\lvert W(E_8)\rvert^3 / \lvert\Co_0\rvert\rceil$; \scriptref{verify\_egan\_lower\_bound.py}.} and Egan's count of at least
@@ -1073,12 +1072,12 @@ the blocks of $u$ and~$v$ lie in~$L$, so it shows $L^3 \star L^3
 containing~$\LL$ with index $[L^3 : \LL] = 2^{12}$.  A second
 $\star$-closed overlattice is not contained in~$L^3$.  The idempotent
 $\varepsilon_1 = (e_0, 0, 0)$ of Section~\ref{sec:idempotents} acts on
-either side as the swap of blocks~2 and~3, $\varepsilon_1 \star v =
-v \star \varepsilon_1 = (x', z', y')$ for $v = (x', y', z')$, a swap
-that preserves~$\LL$ because Wilson's three conditions are symmetric
-in the blocks, and $\varepsilon_1 \star \varepsilon_1 =
-\varepsilon_1$; so $\LL + \ZZ\varepsilon_1$ is $\star$-closed by
-bilinearity.  Since $4\varepsilon_1$ is the least positive multiple
+either side as the swap of blocks~2 and~3: $\varepsilon_1 \star v =
+v \star \varepsilon_1 = (x', z', y')$ for $v = (x', y', z')$.  This
+swap preserves~$\LL$, because Wilson's three conditions are symmetric
+in the blocks.  With $\varepsilon_1 \star \varepsilon_1 =
+\varepsilon_1$, the lattice $\LL + \ZZ\varepsilon_1$ is therefore
+$\star$-closed by bilinearity.  Since $4\varepsilon_1$ is the least positive multiple
 of~$\varepsilon_1$ in~$\LL$ (Section~\ref{sec:idempotents}), the index
 is $[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  This overlattice is not
 contained in~$L^3$, because $e_0 \notin L$, and it is not integral:
@@ -1116,8 +1115,8 @@ Several questions remain immediately open:
   whether the order-6 octonion automorphism generating the~$C_6$
   admits an intrinsic description.
 \item Classification of the algebra $(\RR^{24}, +, \star)$: it is
-  nonassociative, nonalternative, nonflexible, and nonunital
-  (as an order), placing it outside the classical families.
+  nonassociative, nonalternative, nonflexible, and nonunital,
+  placing it outside the classical families.
 \item A structural characterization of which permutation cycles close.
   Every cycle type of~$S_7$ has been enumerated exactly
   (Section~\ref{sec:census}), but the pattern in the census table is
@@ -1587,13 +1586,6 @@ description are complementary: the tables verify, the quotient
 explains.  The descent and both equivalences were checked in exact
 arithmetic.\footnote{\scriptref{verify\_mod2\_quotient.py}.}
 
-A note on terminology: the construction is a \emph{quotient}, the
-surjection $L \to L/2L$, and is named the \emph{mod-2 quotient}.  It
-is kept verbally distinct from a $2$-adic scaling or saturation, the
-operations behind Corradetti's thematically adjacent construction
-\cite{Corradetti2026}, which is contrasted with the present one in
-Section~\ref{sec:related}.
-
 \paragraph{Relation to prior work.}
 The lattice-level picture of $\bar L \cong \FF_2^8$ as an
 orthogonal space under the plus-type quadratic form induced by the
@@ -1698,7 +1690,7 @@ $5/4$), and every left or right ideal is principal, generated by an
 integer multiple of an integral Cayley number of norm $1$, $2$, or $4$.
 
 \noindent\textbf{Coxeter (1946) \cite{Coxeter1946}} identifies
-Kirmse's error with the same non-closure witness and records that
+Kirmse's error with an explicit non-closure witness and records that
 the remedy is due to Bruck: ``Bruck's domain $J$ can be
 derived from $J_1$ by transposing two of the $i$'s'' (\S4).  This is
 a transposition of two imaginary basis units, a linear involution
@@ -1765,7 +1757,7 @@ cross-check: a Python implementation using
 \texttt{fractions.Fraction} exact rationals, and a GAP/LOOPS
 implementation using GAP's native exact rational
 arithmetic.\footnote{\scriptref{symbolic\_proof\_checks.py}
-\gapref{tests/test\_lemmas.g}.}  Both implementations
+\scriptref{verify\_appendix\_tables.py} \gapref{tests/test\_lemmas.g}.}  Both implementations
 verify the same basis-pair identities as the appendix tables.
 This redundancy is validation, not proof: it serves to detect
 transcription or implementation errors in the appendix tables, but
