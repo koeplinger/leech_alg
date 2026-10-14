@@ -1,0 +1,159 @@
+Prompt 291 -- The author's frustration with diverging edits; a plan to
+recover
+Date: 2026-10-14
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'regarding Section 2.2: "integral octonions" → "rational octonions".
+-- I want to make sure that we use the term "integral octonions" wherever
+possible, unless it is factually wrong; here, an "integral octonion"
+applies also to those where the lattice is rescaled, making all octonions
+trivially rational through a factor 1/2. If you have already started
+changing terms to "rational octonions" then un-do that change. I'm getting
+a bit frustrated because I'm looking for a point where you're happy with
+your edits, so that I can review them fine-comb. I am not an AI and every
+fine-comb review is taxing on me. Instead of converging, however, you
+appear to pick up new changes and different spins with each iteration,
+which is unfocussing the paper. This goes against the goal of tightening
+the paper and coming to a conclusion, focused.
+
+re Lemma 4.2's proof: "that the maximal orders of the integral octonions
+are closed" → "that the octavians are closed". -- You suggest introducing a
+new term, octavians, for the octonions. Introducing a new redundant term
+goes directly against the goal of tightening the paper for publication.
+Instead of helping me focus and work towards a consistent body of work, you
+are now diverging and introducing suggestions that go directly against my
+goal. You absolutely will not introduce the new term "octavians".
+
+The above are the "two sentences" that were fully opaque to me when you
+asked for my review earlier. Rather than providing clarity on simple edits,
+you set a trap for me to step into, which would have started diverging the
+project. This is very poor performance, and honestly, a bit upsetting since
+I declared the goal to you specifically.
+
+re "Point 3: the last bullet of Section 7" -- you are now incrementally
+providing fixes to the suggested fixes to the suggested fixes, all of which
+appeared good on the surface, and I was hoping for you to converge on a
+version that you are happy with so that I can fine-comb review it.
+Instead, however, you are now diverging, and the edits become unfocused.
+Just as with the other suggestions above, you are working against the goal
+of preparing a tight paper, and are derailing the effort. This is very
+frustrating.
+
+Regarding the new section 5.5, I have in the mean time read over it. It is
+very poorly written, and all over the place. It jumps back and forth
+between the swaps and the index, it doesn't explain in a simple sentence
+what the index is, and leaves the reader in a state of confusion. It is bad
+work, and now you are asking me to approve yet another incremental update
+to it. This is not working.
+
+re "Appendix B and L s̄" -- What you write is already contained in the
+paper elsewhere, I don't see why you're opening this up and wanting to
+update appendix B. This is diverging the scope of the edits, and is
+confusing to me. It is also frustrating, since you're working against the
+goal of finalizing the paper. No, we will not again introduce redundant
+references explaining "Kirmse's mistake", something we already clarify in
+much better details elsewhere in the paper. Making a poor (and incomplete)
+reference to Kirmse's mistake would derail the goal of wrapping up the
+paper and making a tight version.
+
+Summarizing, in these past prompts where I unsuccessfully attempted to have
+you converge on a version of the paper that I can fine-comb review, you
+have instead derailed the effort and are diverging into a confusing set of
+incremental changes that are cognitively demanding on me, twisted as they
+are off-target.
+
+I want you to do the following: Understand what's going on, understand why
+I am frustrated, and make a plan on how to recover from that. I will then
+review your plan, and decide what is next.'
+
+Rulings: "integral octonions" is the term wherever it is not factually
+wrong; changes to "rational octonions" are to be undone.  The term
+"octavians" is not to be introduced.  No addition to Appendix B on L sbar
+or Kirmse's mistake.  The point-3 proposals are rejected as unfocused.
+Section 5.5 as executed at prompt 289 is poorly written.  Task: understand
+the situation and the author's frustration, and write a recovery plan; no
+edits to the paper until the author has reviewed the plan.
+
+Diagnosis (as given to the author):
+ - The goal set at prompt 288 (wrap up; less is more; one version to
+   fine-comb) was not the working constraint.  After each step a broad
+   multi-agent check ran; its job is to find more, so every round produced
+   new items, passed to the author as decisions: divergence by design.
+ - Terms were changed unasked: the Section 1 fix needed one qualifier, but
+   "rational octonions" and "a scaled copy" came with it, and the next round
+   proposed spreading "rational octonions" and "octavians".
+ - Decisions were put as compressed labels ("Section 2.2 ... keep 'maximal
+   order(s) of the integral octonions'") without the change and its
+   consequence.
+ - Proposals were corrected in front of the author (point 3, twice).
+ - A redundant Appendix B sentence on Kirmse's mistake was proposed.
+ - Section 5.5 was assembled from plan fragments and checked for facts and
+   consistency, never read as a reader: closure and index interleave, the
+   span index is defined only in passing.
+ - Each round also touched many record files.
+
+Recovery plan (put to the author; nothing executed):
+Working rules until v8 is frozen: scope frozen to the list below; the
+paper's established terms ("integral octonions" wherever not factually
+wrong; no new terms); findings outside the list parked here, not put to the
+author, except a false statement in the paper (one fix, explained in full);
+no discovery sweeps, verification of own edits only; one hand-over (all
+edits, read as a reader, built clean, one old -> new list; no options);
+record files once, after the author's review.
+Paper changes still to make:
+ A. Section 1: undo "rational octonions"; the original sentence with only
+    the qualifier: "For a fixed octonion multiplication, the integral
+    octonions have exactly seven maximal orders containing the Gravesian
+    order Z<e_0,...,e_7>, each an E_8 lattice [Coxeter1946,
+    ConwaySmith2003] (Appendix B); ..."  ("Gravesian order" is in A.1
+    since v6.)  Section 2.2 and the proof of Lemma 4.2 stay unchanged (the
+    point-2 proposal was never applied).
+ B. Section 5.5 rewritten once, same facts: set-up (the permutations and
+    the two questions, the span index defined in one plain sentence); the
+    table (with its span-index column, as asked at prompt 288); closure;
+    the index (2^16 for star, parity rule); rho with index 1 and why it
+    matters (three non-isomorphic orders).  One topic per paragraph.
+ C. Section 7: the prompt-289 clause "the open question becomes why pO is
+    closed" is false (claim 021).  Smallest correct fix: the one-sentence
+    reason (p purely imaginary; a Moufang identity gives (pa)(pb) =
+    p((ap)b), so Lemma 4.4 follows from O . O in O); the item moves from
+    the open list to the paragraph before it; A.1's "The open question
+    recorded in Section 7 ... accordingly opens into a research program"
+    becomes "This opens a research program".  Alternative named to the
+    author: delete the clause only (the list would then call open a
+    question with a known answer).
+ D. Appendix B, Mahler: "generated by an integral Cayley number of norm
+    1, 2, or 4" -> "generated by an integer multiple of an integral Cayley
+    number of norm 1, 2, or 4".
+ Staying as applied: the merge, the deleted span-index bullet, "of the
+ standard octonion product", the date.  Not touched: everything else.
+Sequence: on the author's go, A to D in one pass; build; check the changed
+mathematics; read Sections 1, 5.5, 7, A.1 and the Mahler paragraph in the
+PDF as a reader; one hand-over (PDF and changed passages); the author's
+fine-comb review; the author's corrections only; then the records in one
+batch (changelog, ledger, CURRENT_STATE, README, terminology.md back to
+"integral octonions", python_project/src/README.md row 56, plan status),
+linted.
+Parked (not put to the author): Section 2.2 and Lemma 4.2's wording (no
+change, ruling); the last Section 7 bullet (no change); Appendix B on L sbar
+and Kirmse's mistake (no change, ruling); Appendix B "identifies Kirmse's
+error with the same non-closure witness" ("the same" lost its antecedent
+in commit 141f1a6); Mahler proves 15/16 and states 1/2 without proof (the
+text follows Coxeter); Dickson's "the true count is seven" (right in
+context); Section 6's "same Hermite-normal-form method as for star (Section
+5.5)" (5.5 does not name the method); Section 1 uses e_0..e_7 before
+Section 2.1; the census does not cover permutations that move e_0 (an
+unverified single sweep found closing ones); code comments call Wilson's B
+the Coxeter-Dickson ring (python_project/src/e8_wilson.py lines 31, 124;
+leech_wilson.py line 60; python_project/tests/test_leech_wilson.py line
+159); the frozen docstring of verify_sigma_sublattice_maximal_order.py says
+"rational octonions"; the Coxeter verification note quotes "misused" for
+"missed" and drops "a multiple of" in its Section 14 paraphrase;
+historical_appendix_expanded.tex calls the 1/2 bound "his Theorem on p.
+127".
+Uncommitted from prompt 290, outside the paper: ledger rows 013, 019 (Wilson
+credited), 021; CURRENT_STATE.md; evidence_and_reasoning/README.md; the
+dated addendum to the 14 October note; the closing append of log 290.
+Memory: feedback_wrapup_convergence.md (the working rules above).
+
+Status: CLOSED.  Plan with the author; no paper edits.
