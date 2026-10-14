@@ -133,12 +133,11 @@ group is the Conway group~$\Co_0$, a double cover of the sporadic
 simple group~$\Co_1$.
 
 In rank~8, the $E_8$ lattice~$L$ carries an octonionic multiplication
-under which it is closed.  For a fixed octonion multiplication,
-exactly seven maximal orders of the rational octonions contain the
-Gravesian order $\ZZ\langle e_0, \ldots, e_7\rangle$, each a scaled copy
-of the $E_8$ lattice \cite{Coxeter1946, ConwaySmith2003}
-(Appendix~\ref{app:history}); the placement of~$L$ used here is fixed in
-Section~\ref{sec:prelim}.  Wilson
+under which it is closed.  For a fixed octonion multiplication, the
+integral octonions have exactly seven maximal orders containing the
+Gravesian order $\ZZ\langle e_0, \ldots, e_7\rangle$, each an $E_8$
+lattice \cite{Coxeter1946, ConwaySmith2003} (Appendix~\ref{app:history});
+the placement of~$L$ used here is fixed in Section~\ref{sec:prelim}.  Wilson
 \cite[Section~3]{Wilson2009} showed that $\LL$ embeds naturally
 in~$L^3$ via three sublattice conditions, raising the question: does
 $\LL$ inherit an algebraic structure from the octonion product?
@@ -788,21 +787,41 @@ square-zero of norm~24.\footnote{\scriptref{verify\_square\_zero\_norm24\_witnes
 
 \subsection{Other twists: closure and span of the image}\label{sec:census}\label{sec:span}
 
-The transposition~$\sigma$ is a special case of the permutations of the
-seven imaginary octonion basis elements, described by the symmetric
-group~$S_7$.  For a general such permutation~$\pi$, the triple
-product~$\star_\pi$ assembled blockwise from
-$x \cdot_\pi y := \pi^{-1}(\pi(x) \cdot \pi(y))$ may or may not close
-on~$\LL$; for the involution~$\sigma$, with $\sigma^{-1} = \sigma$,
-the factor $x \cdot_\sigma y$ is the product of
-Definition~\ref{def:twisted-product}.  When $\star_\pi$ closes, its
-\emph{span index} is the index in~$\LL$ of the $\ZZ$-span of the
-products $u \star_\pi v$ ($u, v \in \LL$).  By bilinearity, closure and
-span index are decided by the 576 basis-pair products of a
-$\ZZ$-basis of~$\LL$.  For $\star = \star_\sigma$ the span index
-is~$2^{16}$, and the span contains~$2\LL$.\footnote{\scriptref{verify\_product\_span\_index.py}
-\scriptref{verify\_product\_span\_structure.py}.}  For every cycle type
-of~$S_7$ we find:\footnote{\scriptref{verify\_all\_permutations\_exact.py}
+The construction twists the octonion product by one
+transposition,~$\sigma$.  This subsection replaces~$\sigma$ by other
+maps and tests two properties of the resulting triple product: whether
+it still closes on~$\LL$, and how much of~$\LL$ its products reach.
+
+A \emph{twist} is an invertible linear map~$g$ of~$\RR^8$.  It defines
+the twisted product $x \cdot_g y := g^{-1}\bigl(g(x) \cdot g(y)\bigr)$
+on~$\OO$.  The triple product~$\star_g$ is that of
+Definition~\ref{def:triple}, with $\cdot_g$ in all nine block
+products.  Since $\sigma^{-1} = \sigma$, the twist $g = \sigma$ gives
+the product of Definition~\ref{def:twisted-product}, and
+$\star_\sigma = \star$.
+
+When $\star_g$ closes on~$\LL$, the integer combinations of its
+products $u \star_g v$ ($u, v \in \LL$) form a sublattice of~$\LL$,
+the \emph{span} of~$\star_g$.  The \emph{span index} of~$\star_g$ is
+the index of the span in~$\LL$: the number of disjoint translates of
+the span that make up~$\LL$.  Span index~$1$ means that every vector
+of~$\LL$ is an integer combination of products.  An order that
+contains a multiplicative identity always has span index~$1$, since
+every vector $u = u \cdot 1$ is a product; the ambient algebra here
+has no multiplicative identity, and the span index can be larger.
+
+Both properties are decided by finitely many products.  By
+bilinearity it suffices to take the $24 \times 24 = 576$ products of
+pairs of vectors from a $\ZZ$-basis of~$\LL$: $\star_g$ closes on~$\LL$
+if and only if all of them lie in~$\LL$, and the span index is the
+index of the lattice they span, computed exactly by Hermite normal
+form.
+
+The first family of twists consists of the permutations~$\pi$ of the
+seven imaginary basis units $e_1, \ldots, e_7$, each fixing~$e_0$.
+They form the symmetric group~$S_7$, whose $2$-cycles are the
+transpositions, $\sigma$ among them.  For every cycle type of~$S_7$ we
+find:\footnote{\scriptref{verify\_all\_permutations\_exact.py}
 \scriptref{verify\_twist\_span\_index\_census.py}.}
 \begin{center}
 \begin{tabular}{@{}lrrrr@{}}
@@ -828,24 +847,30 @@ Total         & $5{,}039$ & $1{,}764$ & $35.0\%$ & \\
 \bottomrule
 \end{tabular}
 \end{center}
-The identity (the untwisted product) does not close.  The $4$-cycles
-are the only type failing without exception; the $(5,2)$ type has the
-lowest nonzero rate.  The $3$-cycles, $5$-cycles, and $(3,2,2)$ types
-close at exactly half.  For the $3$-cycles the closing half admits a
-description: for each three-element subset of imaginary indices, one
-of the two cyclic orientations closes.  No such description is known
-for the other cycle types, and none is known for the $0\%$ of the
-$4$-cycles.  The span index depends only on the parity of~$\pi$.
+The identity permutation (the untwisted product) does not close.  The
+$4$-cycles are the only type failing without exception; the $(5,2)$
+type has the lowest nonzero rate.  The $3$-cycles, $5$-cycles, and
+$(3,2,2)$ types close at exactly half.  For the $3$-cycles the closing
+half admits a description: for each three-element subset of imaginary
+indices, one of the two cyclic orientations closes.  No such
+description is known for the other cycle types, and none is known for
+the $0\%$ of the $4$-cycles.
+
+The span index of a closing permutation depends only on its parity:
+it is $2^{16}$ for every odd one and $2^{10}$ for every even one (last
+column).  In particular, $\star$ has span index $2^{16} = 65{,}536$, and
+its span contains~$2\LL$.\footnote{\scriptref{verify\_product\_span\_index.py}
+\scriptref{verify\_product\_span\_structure.py}.}
 
 The transposition~$\sigma$ is also the reflection in the root
-$e_1 - e_2$ of~$L$.  With the reflection~$\rho$ in the root
-$r = \tfrac12(e_0 + e_1 + \cdots + e_6 - e_7)$ of~$L$ in place
-of~$\pi$, the triple product~$\star_\rho$ closes on~$\LL$ with span
-index~$1$: its products span~$\LL$.\footnote{\scriptref{verify\_twist\_span\_index\_census.py}.}
-The span index is invariant under ring isomorphism (for a unital order
-it would always be~$1$), so $\star_\sigma$, $\star_\pi$ for an even
-closing~$\pi$, and~$\star_\rho$ make~$\LL$ into three pairwise
-non-isomorphic orders.
+$e_1 - e_2$ of~$L$, and reflections in the other roots of~$L$ are
+twists as well.  For the reflection~$\rho$ in the root
+$r = \tfrac12(e_0 + e_1 + \cdots + e_6 - e_7)$, the triple
+product~$\star_\rho$ closes on~$\LL$ with span
+index~$1$.\footnote{\scriptref{verify\_twist\_span\_index\_census.py}.}
+The span index is invariant under ring isomorphism.  Hence
+$\star_\sigma$, $\star_\pi$ for an even closing~$\pi$, and~$\star_\rho$
+make~$\LL$ into three pairwise non-isomorphic orders.
 
 % ===============================================================
 \section{Related work}\label{sec:related}
@@ -1059,32 +1084,33 @@ is $[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  This overlattice is not
 contained in~$L^3$, because $e_0 \notin L$, and it is not integral:
 $\varepsilon_1$ has half-integer inner products with vectors of~$\LL$.
 
+The proof of Lemma~\ref{lem:sigmaLs-closed} in
+Appendix~\ref{sec:appendix-tables} exhibits the 64 integer
+coefficients certifying $\sigma(Ls)\cdot\sigma(Ls) \subseteq
+\sigma(Ls)$, but does not explain \emph{why} $\sigma(Ls)$ is closed
+under the standard octonion product while $Ls$ is not.  The mod-2
+reduction in Section~\ref{app:mod2quotient} identifies what the
+appendix tables certify after reduction modulo~$2L$:
+$\sigma(Ls)/2L$ is a subalgebra of $L/2L$, the reduction of the
+octonion order~$L$ modulo~$2$.  One candidate shape for an
+integer-level reason is ruled out: $\sigma(Ls)$ is not an ideal
+of~$L$ on either side.  Of the 64 basis-pair products, 32 of
+$L \cdot \sigma(Ls)$ and 43 of $\sigma(Ls) \cdot L$ lie outside
+$\sigma(Ls)$.\footnote{\scriptref{verify\_sigma\_Ls\_ideal\_exclusion.py}.}
+The companion sublattice $\sigma(L\bar s)$ is by contrast a
+\emph{two-sided} ideal of~$L$, of which
+Lemma~\ref{lem:L-sigmaLsbar} is the left-handed half, and this ideal
+property has a structural reason: $\sigma(L\bar s) = 2O$ for a maximal
+order $O \supseteq L$ of the standard octonion product, so
+Lemma~\ref{lem:L-sigmaLsbar} follows from $O \cdot O \subseteq O$.
+Likewise $\sigma(Ls) = pO$ with $p = e_2 - e_4 + e_5 - e_6 \in L$.
+Since $p$ is purely imaginary, the Moufang identities
+\cite{ConwaySmith2003} give $(pa)(pb) = p((ap)b)$ for all octonions
+$a, b$, so $pO$ is closed and Lemma~\ref{lem:sigmaLs-closed} also
+follows from $O \cdot O \subseteq O$.\footnote{\scriptref{verify\_sigma\_sublattice\_maximal\_order.py}.}
+
 Several questions remain immediately open:
 \begin{itemize}
-\item A structural reason for Lemma~\ref{lem:sigmaLs-closed}.  The
-  proof in Appendix~\ref{sec:appendix-tables} exhibits the 64
-  integer coefficients certifying $\sigma(Ls)\cdot\sigma(Ls) \subseteq
-  \sigma(Ls)$, but does not explain \emph{why} $\sigma(Ls)$ is closed
-  under the standard octonion product while $Ls$ is not.  The mod-2
-  reduction in Section~\ref{app:mod2quotient} identifies what the
-  appendix tables certify after reduction modulo~$2L$:
-  $\sigma(Ls)/2L$ is a subalgebra of $L/2L$, the reduction of the
-  octonion order~$L$ modulo~$2$.  One candidate shape for an
-  integer-level reason is ruled out: $\sigma(Ls)$ is not an ideal
-  of~$L$ on either side.  Of the 64 basis-pair products, 32 of
-  $L \cdot \sigma(Ls)$ and 43 of $\sigma(Ls) \cdot L$ lie outside
-  $\sigma(Ls)$.\footnote{\scriptref{verify\_sigma\_Ls\_ideal\_exclusion.py}.}
-  The companion sublattice $\sigma(L\bar s)$ is by contrast a
-  \emph{two-sided} ideal of~$L$, of which
-  Lemma~\ref{lem:L-sigmaLsbar} is the left-handed half, and this ideal
-  property has a structural reason: $\sigma(L\bar s) = 2O$ for a maximal
-  order $O \supseteq L$ of the standard octonion product, so
-  Lemma~\ref{lem:L-sigmaLsbar} follows from $O \cdot O \subseteq O$.  Likewise $\sigma(Ls) = pO$ with
-  $p = e_2 - e_4 + e_5 - e_6$, and the open question becomes why~$pO$ is
-  closed.\footnote{\scriptref{verify\_sigma\_sublattice\_maximal\_order.py}.}  (See the
-  closing paragraphs of Section~\ref{app:mod2quotient} for a
-  Lagrangian-polarization reframing of this open question as a
-  research program.)
 \item Where $\Aut(\LL, +, \star) \cong C_6 \times S_3$
   (Section~\ref{sec:autgroup}) sits inside~$\Co_0$ up to conjugacy, and
   whether the order-6 octonion automorphism generating the~$C_6$
@@ -1622,12 +1648,10 @@ and~\ref{lem:sigmaLs-closed} together express a single fact:
 \emph{the construction of Section~\ref{sec:construction} produces a
 polarization of $\bar L$}, with one Lagrangian carrying the
 two-sided-ideal role ($V$) and the other carrying the subalgebra
-role ($W$).  The open question recorded in
-Section~\ref{sec:conclusion}, a structural reason for
-Lemma~\ref{lem:sigmaLs-closed}, accordingly opens into a research
-program: which polarizations of $\bar L$ arise from this
-construction, and which polarizations, beyond the one constructed
-here, lift to a closed bilinear product on $\LL$ itself.
+role ($W$).  This opens a research program: which polarizations of
+$\bar L$ arise from this construction, and which polarizations,
+beyond the one constructed here, lift to a closed bilinear product
+on $\LL$ itself.
 
 % ===============================================================
 \section{Historical note: integral Cayley numbers,
@@ -1671,7 +1695,7 @@ later integral-octonion arithmetic.
 arithmetic of a maximal order: for every Cayley number~$X$ there is
 an integral~$G$ with $\Nrm(X-G)\le\tfrac12$ (sharper than Dickson's
 $5/4$), and every left or right ideal is principal, generated by an
-integral Cayley number of norm $1$, $2$, or $4$.
+integer multiple of an integral Cayley number of norm $1$, $2$, or $4$.
 
 \noindent\textbf{Coxeter (1946) \cite{Coxeter1946}} identifies
 Kirmse's error with the same non-closure witness and records that
