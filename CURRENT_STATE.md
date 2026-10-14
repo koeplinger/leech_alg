@@ -1,13 +1,14 @@
 # Current State of the Research
 
-Last updated: 2026-10-13
+Last updated: 2026-10-14
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
 [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
 (ResearchGate), the frozen v7 of the paper.  A further revision, v8, is in
-progress in `paper/main.tex`; its plan is
-`evidence_and_reasoning/2026-10-12_plan.md`.
+progress in `paper/main.tex`; its plans are
+`evidence_and_reasoning/2026-10-12_plan.md` and
+`evidence_and_reasoning/2026-10-14_plan.md`.
 
 This document is the technical summary of the research — for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
@@ -106,7 +107,7 @@ The order (Λ, +, ⋆) is:
 
 The key property is closure, not any classical algebraic identity.
 
-### Structure of the algebra (paper §5.2–§5.6 and §7)
+### Structure of the algebra (paper §5.2–§5.5 and §7)
 
 These results are exact and exhaustive.
 
@@ -194,7 +195,7 @@ holds for only 24 of 64.
 **Closure of permutation cycles — the full S₇ census**
 (`verify_all_permutations_exact.py`, all 5,040 permutations, reusing the
 per-permutation test of `verify_consecutive_twists_exact.py`; earlier
-partial runs `verify_all_cycles_exact.py`; paper §5.6).  Writing
+partial runs `verify_all_cycles_exact.py`; paper §5.5).  Writing
 x ·_π y := π⁻¹(π(x) · π(y)) for a permutation π of e₁,…,e₇ (for the
 involution σ this is the paper's twisted product) and testing closure of
 the assembled triple product exactly on the 576 basis-pair products of a
@@ -222,7 +223,7 @@ Exhaustive, not sampled.  The identity (the untwisted product) does not
 close.  For the 3-cycles the closing half admits a description: one of the
 two cyclic orientations per three-element index subset.
 
-**The span index depends on the twist** (claims 017, 018; the external review
+**The span index depends on the twist** (paper §5.5, v8; claims 017, 018; the external review
 of v8 in `paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`, second pass
 `verify_twist_span_index_census.py` and the note
 `paper/reviews/2026-10-14_claude_fable_5_1_index_one_verification.md`).  For
@@ -249,11 +250,13 @@ gluing alone rules out maximality (claim 018, single-pass strengthening).  Open:
 two sublattice factors take only the values 1, 2⁵ and 2⁸ in the review's
 census over all of W(E₈)), and the ring structure of the index-1 orders.
 
-**Wilson's sublattices are Kirmse's set and Bruck's order, scaled** (claim
-019; the verification note above, §4).  With J₁ = Z⁸ + C_K/2 Kirmse's set and
-O⁽⁴⁾ = Z⁸ + (0 4)C_K/2 the octavian order obtained from it by transposing the
-coordinates 0 and 4: Ls̄ = 2J₁, L = J₁·s, Ls = J₁·s², σ(Ls̄) = 2O⁽⁴⁾ and
-σ(Ls) = p·O⁽⁴⁾ with p = e₂ − e₄ + e₅ − e₆.  Since all seven octavian orders
+**Wilson's sublattices are Kirmse's set and Bruck's order, scaled** (paper §7,
+v8; claim 019; `verify_sigma_sublattice_maximal_order.py`; the verification
+note above, §4).  With J₁ = Z⁸ + C_K/2, the analogue of Kirmse's set for
+(2.1), and O⁽⁴⁾ = Z⁸ + (0 4)C_K/2 the octavian order obtained from it by
+transposing the coordinates 0 and 4: Ls̄ = 2J₁, L = J₁·s, Ls = J₁·s²,
+σ(Ls̄) = 2O⁽⁴⁾ and σ(Ls) = p·O⁽⁴⁾ with p = e₂ − e₄ + e₅ − e₆.  Since all
+seven octavian orders
 are closed and contain L, Lemma 4.3 follows from Coxeter's theorem, two-sided,
 with no table; the factor 2⁸ in σ's span index is [2O⁽⁴⁾ : 4O⁽⁴⁾].  Lemma 4.4
 becomes closure of the principal set p·O⁽⁴⁾ and remains a finite check.
@@ -539,14 +542,17 @@ the trial, and prints detailed results.
    `paper/main_2026-07-19.tex` (24 pages), the last released version,
    published on ResearchGate: doi:10.13140/RG.2.2.22093.19686.  The
    working source `paper/main.tex` is v8, in progress since
-   12 October 2026 per `evidence_and_reasoning/2026-10-12_plan.md`.**
+   12 October 2026 per `evidence_and_reasoning/2026-10-12_plan.md` and
+   `evidence_and_reasoning/2026-10-14_plan.md`.**
    The paper contains abstract (standalone, with
    keywords and MSC 2020 codes), preliminaries,
    construction, symbolic proof, algebraic properties (Section 5, in
-   six subsections: §5.1 identities at N = 10⁶ samples;
+   five subsections in v8: §5.1 identities at N = 10⁶ samples;
    §5.2 idempotents; §5.3 the automorphism group; §5.4 square-zero
-   elements; §5.5 span of the image, [Λ : span(Λ⋆Λ)] = 2¹⁶; §5.6
-   closure of permutation cycles, the full S₇ census), related work
+   elements; §5.5 other twists, closure and span of the image: the
+   full S₇ census with the span index of each closing permutation,
+   2¹⁶ for σ and the odd ones and 2¹⁰ for the even ones, and a
+   reflection twist with span index 1), related work
    (including the comparative
    span defect 2²⁵ of the Baez–Egan induced product φ), conclusion,
    outlook, declarations, and three appendices: explicit basis tables
@@ -659,9 +665,7 @@ with further detail recorded here.
    a structural proof of the values beyond the exhaustive computation, and
    the ring structure of the index-1 orders.  The order itself is not
    maximal under any twist by an isometry of L (claims 016, 018).  The
-   paper's Section 7 (v8, in progress) still poses the question in its
-   pre-review form; `evidence_and_reasoning/2026-10-14_plan.md` proposes
-   stating the answer in Section 5 instead.
+   paper (v8) states the values in §5.5.
 
 4. **Classification** of the algebra (R²⁴, +, ⋆): it is
    non-associative, non-alternative, non-flexible, and non-unital
@@ -709,7 +713,7 @@ leech_alg/
 │   ├── references/                # Central reference registry
 │   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
-│   ├── 2026-10-14_plan.md         # Proposal: the span-index findings in v8 (proposed)
+│   ├── 2026-10-14_plan.md         # Plan: the span-index findings in v8 (executed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail

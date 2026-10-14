@@ -14,7 +14,8 @@ This folder serves two functions:
 
 The result is published (doi:10.13140/RG.2.2.22093.19686), as v7 of the paper;
 the v8 revision in progress is planned in
-[`2026-10-12_plan.md`](2026-10-12_plan.md).
+[`2026-10-12_plan.md`](2026-10-12_plan.md) and, for the span-index findings,
+[`2026-10-14_plan.md`](2026-10-14_plan.md).
 
 ## Structure
 
@@ -31,7 +32,7 @@ evidence_and_reasoning/
 ├── editorial_standards.md  # The five prose standards; spelling and dash conventions
 ├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
 ├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (in progress)
-├── 2026-10-14_plan.md      # Proposal: the span-index findings in v8, for the wrap-up (proposed)
+├── 2026-10-14_plan.md      # Plan: the span-index findings in v8, for the wrap-up (executed)
 └── README.md               # This file
 ```
 

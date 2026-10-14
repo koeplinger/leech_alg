@@ -4,13 +4,13 @@
 
 **v8** — **in progress, not frozen.** Opened 12 October 2026 ([prompt 281](../prompt_logs/281_reopen_project_v8_readthrough_comments.txt)), after the closure of the effort on 27 July 2026 ([CLOSING_NOTE.md](../CLOSING_NOTE.md), with its dated addendum). The working source is [paper/main.tex](main.tex). This changelog is self-contained: it records every v7 → v8 change on its own, and the frozen v7 artifacts (including [v6_to_v7_changelog.md](v6_to_v7_changelog.md) and everything earlier) are not touched.
 
-The planned changes are recorded item by item in [evidence_and_reasoning/2026-10-12_plan.md](../evidence_and_reasoning/2026-10-12_plan.md); each enters this changelog when it is applied.
+The planned changes are recorded item by item in [evidence_and_reasoning/2026-10-12_plan.md](../evidence_and_reasoning/2026-10-12_plan.md) and, for item 12, in [evidence_and_reasoning/2026-10-14_plan.md](../evidence_and_reasoning/2026-10-14_plan.md); each enters this changelog when it is applied.
 
 ---
 
 ## 0. Opening of v8 (12 October 2026)
 
-- **What changed.** Subtitle "19 July 2026 (v7)" → "12 October 2026 (v8)"; set to "13 October 2026 (v8)" at prompt 286. No change to the text.
+- **What changed.** Subtitle "19 July 2026 (v7)" → "12 October 2026 (v8)"; set to "13 October 2026 (v8)" at prompt 286 and to "14 October 2026 (v8)" at prompt 289. No change to the text.
 - **Where.** Title block.
 - **Rationale.** Marks the working source as diverging from the frozen, published v7.
 
@@ -60,6 +60,8 @@ The planned changes are recorded item by item in [evidence_and_reasoning/2026-10
 
 *Revised in part at prompt 284 (review response); the wording now in the paper is in item 11.*
 
+*The span-index bullet was deleted at prompt 289; see item 12.*
+
 - **What changed.** New paragraph after the opening one: "The order is not maximal. The idempotent $\varepsilon_1 = (e_0, 0, 0)$ of Section 5.2 acts on either side as the swap of blocks 2 and 3, $\varepsilon_1 \star v = v \star \varepsilon_1 = (x', z', y')$ for $v = (x', y', z')$, a swap that preserves $\Lambda$ because Wilson's three conditions are symmetric in the blocks. Moreover $\varepsilon_1 \star \varepsilon_1 = \varepsilon_1$, so $\Lambda + \mathbb{Z}\varepsilon_1$ is $\star$-closed by bilinearity. Since $4\varepsilon_1$ is the least positive multiple of $\varepsilon_1$ in $\Lambda$ (Section 5.2), this overlattice has index 4; it is not contained in $L^3$ because $e_0 \notin L$." The bullet "Whether the order is maximal ..." is replaced by "Whether a closed bilinear product on $\Lambda$ can have a smaller span index than $\star$: the index (Section 5.5) is $2^{25}$ for the Baez--Egan product $\varphi$ (Section 6) and $2^{16}$ for $\star$."
 - **Where.** Section 7.
 - **Verification.** The witness was checked by hand from Definition 3.3 and in exact arithmetic on two independent code paths (plan, Section 4; key claim 016). Both span indices were re-run: `verify_phi_span_index.py` gives $2^{25}$, `verify_product_span_index.py` gives $2^{16}$.
@@ -90,6 +92,8 @@ The planned changes are recorded item by item in [evidence_and_reasoning/2026-10
 
 ## 11. Journal-quality review response (13 October 2026)
 
+*Revised in part at prompt 289: the Section 7 span-index bullet (MF1) was deleted, and the Section 1 sentence (SF4) was corrected; see item 12.*
+
 A journal-quality review of the assembled v8 ([reviews/2026-10-12_claude_fable_5_1_review_v8.md](reviews/2026-10-12_claude_fable_5_1_review_v8.md); 2 must-fix, 11 should-fix, 5 nits, 1 refuted; every verified finding adversarially checked twice) and the author's rulings (prompt 284) produced these changes:
 
 - **MF1, Section 7 bullet.** The span-index question names its family: "Whether a closed bilinear product on $\Lambda$ built from octonion multiplication, as $\varphi$ and $\star$ both are, can have a smaller span index than $\star$: ...". As posed before, index 1 is attained by a degenerate product.
@@ -106,6 +110,19 @@ A journal-quality review of the assembled v8 ([reviews/2026-10-12_claude_fable_5
 - **Not applied, by the author's ruling.** SF7 (a script footnote for "over 12,000,000 pairs"); SF10 (the ambient algebra as $(\mathbb{O}, \cdot_\sigma) \otimes \mathbb{R}[\mathbb{Z}_3]$ with the inversion-twisted product; the paper stays on its expository line); SF11 (a page-15 widow; no forced layout in the preprint); the Hermite-normal-form nit (the method is the machine method of the footnote); the Remark 1.3 "distinct" nit (left as settled at prompt 277).
 
 Abstract 165 words. Page count unchanged at 24.
+
+## 12. The span-index findings, and Section 1's seven maximal orders (14 October 2026)
+
+The external review of v8 by Claude Opus 5.5 ([reviews/2026-10-13_claude_opus_5_5_review_v8.md](reviews/2026-10-13_claude_opus_5_5_review_v8.md), with its evidence) and the second pass on it ([reviews/2026-10-14_claude_fable_5_1_index_one_verification.md](reviews/2026-10-14_claude_fable_5_1_index_one_verification.md)) showed that the span index depends on the twist. The author's goal for the wrap-up was "less is more"; the plan is [../evidence_and_reasoning/2026-10-14_plan.md](../evidence_and_reasoning/2026-10-14_plan.md), approved at prompt 289.
+
+- **Sections 5.5 and 5.6 merged** into one subsection, "Other twists: closure and span of the image" (5.5; both labels kept, so every reference resolves). It defines the *span index* in words; states the span index $2^{16}$ of $\star$ and that the span contains $2\Lambda$; adds a span-index column to the census table ($2^{16}$ for the closing odd cycle types, $2^{10}$ for the even ones, n/a for the 4-cycles, none of which closes) and the sentence "The span index depends only on the parity of $\pi$"; and closes with one paragraph: $\sigma$ is the reflection in the root $e_1 - e_2$, the reflection $\rho$ in the root $r = \tfrac12(e_0 + e_1 + \cdots + e_6 - e_7)$ gives a triple product $\star_\rho$ that closes on $\Lambda$ with span index 1, and "The span index is invariant under ring isomorphism (for a unital order it would always be 1), so $\star_\sigma$, $\star_\pi$ for an even closing $\pi$, and $\star_\rho$ make $\Lambda$ into three pairwise non-isomorphic orders." Removed from the old Section 5.5: its opening, which defined the symbol $S$ ("Let $S := \mathbb Z$-span$\{u \star v : u, v \in \Lambda\}$.  By bilinearity, $S$ is generated by the $24 \times 24 = 576$ basis-pair products of a $\mathbb Z$-basis of $\Lambda$, so its index in $\Lambda$ is exactly computable:"; $S$ no longer appears in the paper), the displayed equation (5.7), the coset sentences ("The index counts the cosets ... unreachable"), "span-surjective", "$S$ is the full preimage of an 8-dimensional $\mathbb F_2$-subspace of $\Lambda/2\Lambda$, and $\Lambda/S \cong (\mathbb Z/2)^{16}$", the 2-primary remark tying the index to Section A.1, and "Identifying the subspace $S/2\Lambda$ inside $\Lambda/2\Lambda$ structurally is open" (answered by the review, $S_\sigma = \Delta(Ls) + 2\Lambda$). That opening and the old census lead-in "Testing closure exactly on the 576 basis-pair products ..." became the one bilinearity sentence; the lead-in now names the product $\star_\pi$; the paragraph after the table is kept word for word, with the parity sentence appended. New script citation: `verify_twist_span_index_census.py`.
+- **Section 7: the span-index bullet deleted.** It is answered by Section 5.5.
+- **Section 7, first bullet: the structural pointer.** "... and the same asymmetry survives reduction modulo $2L$: $V := \sigma(L\bar s)/2L$ is an ideal of $L/2L$, $W$ only a subalgebra.  An integer-level structural reason would replace the appendix tables by a structural argument resting on something other than an ideal property: an identification of $\sigma(Ls)$ with the image under a norm-preserving octonion automorphism, or with some module-theoretic structure over $L$ that lifts the mod-2 picture." → "... and this ideal property has a structural reason: $\sigma(L\bar s) = 2O$ for a maximal order $O \supseteq L$, so Lemma 4.3 follows from $O \cdot O \subseteq O$.  Likewise $\sigma(Ls) = pO$ with $p = e_2 - e_4 + e_5 - e_6$, and the open question becomes why $pO$ is closed." Earlier in the bullet, "$W := \sigma(Ls)/2L$ is a subalgebra" → "$\sigma(Ls)/2L$ is a subalgebra", since $W$ is no longer used in Section 7. New script: `verify_sigma_sublattice_maximal_order.py`.
+- **Section 1: the seven maximal orders.** "For a fixed octonion multiplication, the integral octonions have seven maximal orders, each an $E_8$ lattice" → "For a fixed octonion multiplication, exactly seven maximal orders of the rational octonions contain the Gravesian order $\mathbb Z\langle e_0, \ldots, e_7\rangle$, each a scaled copy of the $E_8$ lattice". The old sentence was false as stated: the rational octonion algebra has infinitely many maximal orders, and the classical seven are those containing the Gravesian order (review, Section 6.1(a)). Verified for the multiplication (2.1) by `verify_sigma_sublattice_maximal_order.py`, exhaustively: of all 902 doubly-even codes $C$ of length 8, exactly 16 give lattices $\mathbb Z^8 + \tfrac12 C$ closed under the product, each inside one of seven, and the seven are unimodular for the trace form.
+- **Not changed:** "ozone algebra" stays out of the paper (the author's ruling, prompt 289). Appendix B keeps "acting now on a different object" (the author's wording, prompt 143); the plan, Section 4, notes a possible qualification for $L\bar s$ and leaves it to the author. Section 2.2 and the proof of Lemma 4.2 keep "maximal order(s) of the integral octonions": the request covered Section 1 only.
+- **Subtitle:** "14 October 2026 (v8)".
+
+Build: 24 pages, no errors, no undefined references, no overfull boxes; two more underfull boxes than before (no action, per the author's generic-layout ruling).
 
 ## Record notes (12 October 2026)
 

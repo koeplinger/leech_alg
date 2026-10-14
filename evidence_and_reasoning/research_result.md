@@ -83,7 +83,7 @@ Transpositions are not the only permutations of the imaginary axes for
 which the assembled triple product closes.  The census over all 5,040
 permutations of S₇ is exhaustive
 (`verify_all_permutations_exact.py`; earlier partial runs
-`verify_all_cycles_exact.py`, `consistency_checks.py`; paper §5.6):
+`verify_all_cycles_exact.py`, `consistency_checks.py`; paper §5.5):
 
 | Cycle type of π | Permutations | Close | Rate |
 |---|---|---|---|
@@ -130,6 +130,10 @@ Only 32 of 64 basis-pair products satisfy L · σ(Ls) ⊆ σ(Ls), and only
 24 of 64.)  By contrast σ(Ls̄) *is* a two-sided ideal of L, 64/64 on
 both sides; Lemma C above is its left-handed half.  So the closure of
 σ(Ls) under its own product is not inherited from an ideal property.
+The ideal property of σ(Ls̄) has a structural reason (claim 019; paper
+v8, §7; `verify_sigma_sublattice_maximal_order.py`): σ(Ls̄) = 2O for a
+maximal order O ⊇ L.  Likewise σ(Ls) = p·O with p = e₂ − e₄ + e₅ − e₆,
+and Lemma D becomes the closure of p·O.
 
 ### Algebraic properties
 
@@ -228,7 +232,7 @@ Min(Λ) itself contains no idempotent and no square-zero vector.
 S := Z-span{u ⋆ v : u, v ∈ Λ} has index [Λ : S] = 65,536 = 2¹⁶, with
 2Λ ⊆ S and Λ/S ≅ (Z/2)¹⁶.  Closure is not surjectivity.
 
-The index depends on the twist (claims 017, 018): among the closing
+The index depends on the twist (paper §5.5, v8; claims 017, 018): among the closing
 permutation twists, every even permutation gives 2¹⁰ and every odd one 2¹⁶;
 the reflection in the root (e₀+e₁+⋯+e₆−e₇)/2 of L closes on Λ with index 1,
 its products Z-spanning Λ.  L³ is a closed overlattice for every twist by an

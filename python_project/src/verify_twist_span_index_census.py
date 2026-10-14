@@ -1,6 +1,11 @@
 """Span index of twisted triple products: the permutation census and the
 index-1 reflection (prompt 287, 14 October 2026).
 
+Updated 14 October 2026 (prompt 289): in the paper's v8 the census is
+Section 5.5 ("Other twists: closure and span of the image"), which cites this
+script for the span-index column and for the reflection, there called rho;
+"Section 5.6" below refers to v7.
+
 Second pass, in this repository, on the external review of v8 by Claude Opus
 5.5 (paper/reviews/2026-10-13_claude_opus_5_5_review_v8/), written from the
 paper's definitions with the exact lattice machinery of

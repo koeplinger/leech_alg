@@ -58,5 +58,6 @@ verbatim: its write-up (also at
 the reviewer's working scripts, and four independent reproductions in Python,
 GAP and PARI/GP with their outputs.  Its `reproduction/final/run_all.sh` reads
 the paper's source through the environment variable `MAIN_TEX`; from that
-folder the working source is `MAIN_TEX=../../../../main.tex`.  The folder is
-frozen as a whole.
+folder the working source is `MAIN_TEX=../../../../main.tex`.  Its GAP
+extractor reads Appendix A by line range; for an exact rerun use the paper as
+reviewed, `git show 6f7b37c:paper/main.tex`.  The folder is frozen as a whole.

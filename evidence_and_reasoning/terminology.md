@@ -11,7 +11,7 @@ specific to this project, terms are marked as **(project-specific)**.
 **Established terms:**
 Idempotent — Isomorphism (of algebras) — Isotopy (of algebras) —
 Kirmse integers — Kirmse twist (project shorthand; the paper's Coxeter–Bruck transposition) — Leech lattice Λ —
-Maximal order (of integral octonions) — Okubo algebra —
+Maximal order (in the rational octonions) — Okubo algebra —
 Para-Hurwitz algebra — Petersson construction —
 Square-zero element (square nilpotent) —
 Symmetric composition algebra — Triality (D₄ triality)
@@ -218,15 +218,18 @@ References:
 - Conway, J.H. and Smith, D.A., "On Quaternions and Octonions" (2003),
   Chapter 9.
 
-### Maximal order (of integral octonions)
+### Maximal order (in the rational octonions)
 
-A lattice Γ ⊂ O (the real octonion algebra) that is closed under
-multiplication, contains the identity, and is maximal with respect to
-inclusion among such lattices.  The rational octonion algebra has
-infinitely many maximal orders, all conjugate; exactly **seven** of them
-contain the Gravesian order $\mathbb{Z}\langle e_0, \ldots, e_7\rangle$, each
-isometric to the $E_8$ root lattice (Coxeter 1946; Conway--Smith 2003,
-Ch. 9).  The
+A lattice Γ in the rational octonion algebra (the Q-span of e₀, …, e₇)
+that is closed under multiplication, contains the identity, and is maximal
+with respect to inclusion among such lattices.  The rational octonion
+algebra has infinitely many maximal orders (G₂(Q) is infinite, and only
+finitely many of its elements preserve a given maximal order; the external
+review of v8, §6.1(a)); exactly **seven** of them contain the
+Gravesian order $\mathbb{Z}\langle e_0, \ldots, e_7\rangle$, each a scaled
+copy of the $E_8$ root lattice (Coxeter 1946; Conway--Smith 2003, Ch. 9;
+for the multiplication of the paper's eq. (2.1), exhaustively by
+`verify_sigma_sublattice_maximal_order.py`).  The
 $\binom{7}{2}=21$ transpositions of pairs of imaginary basis units, applied
 to Kirmse's $J_1$, yield the seven (Coxeter 1946, §4); they fall into seven sets
 of three, with each set fixing one common imaginary unit (Coxeter's
@@ -463,7 +466,7 @@ census over all 5,040 permutations of S₇ is: transposition 21/21
 not close.  Exhaustive, not sampled
 (`verify_all_permutations_exact.py`; earlier partial runs
 `verify_all_cycles_exact.py`, `consistency_checks.py`; main paper
-§5.6).
+§5.5).
 
 The historical name "transposition-twisted triple octonion product"
 (used in trial 007 and key claim 008, both preserved per Manifesto

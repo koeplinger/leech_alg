@@ -80,7 +80,9 @@ exhibits the fit of this octonion product with Wilson's representation.
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
   the order is not maximal (Section 7: L³ and Λ + Zε₁ are ⋆-closed
-  overlattices, of index 2¹² and 4); Λ
+  overlattices, of index 2¹² and 4); the span index of the products depends
+  on the twist (Section 5.5: 2¹⁶ for σ, 2¹⁰ for the even closing
+  permutations, 1 for a reflection twist); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
@@ -99,12 +101,9 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 
 - A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
   octonion product, while Ls is not).  One candidate shape is excluded:
-  σ(Ls) is not an ideal of L on either side.
-- The span index depends on the twist (claim 017): 2¹⁶ for σ and every odd
-  closing permutation, 2¹⁰ for every even one, and 1 for the reflection
-  twists found by the external review of v8; a structural proof of these
-  values is open.  No twist by an isometry of L makes the order maximal
-  (claim 018).
+  σ(Ls) is not an ideal of L on either side.  Section 7 reduces the
+  question: σ(Ls̄) = 2O for a maximal order O ⊇ L, and σ(Ls) = pO with
+  p = e₂ − e₄ + e₅ − e₆, so it becomes why pO is closed.
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.

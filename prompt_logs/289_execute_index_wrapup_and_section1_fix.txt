@@ -1,0 +1,119 @@
+Prompt 289 -- Execute the span-index wrap-up (plan of 2026-10-14) and fix the
+Section 1 sentence on the seven maximal orders
+Date: 2026-10-14
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'I approve the three items, put the pointer into section 7, keep "ozone
+algebra" out of the paper. Fix section 1's "seven maximal orders" sentence
+to be mathematically correct. Update the paper, today is 14 October 2026,
+keep version v8.'
+
+Rulings (evidence_and_reasoning/2026-10-14_plan.md, Section 5): (a) items
+(1) to (3) approved; (b) the pointer goes into Section 7's first bullet;
+(c) "ozone algebra" stays out of the paper (and out of the glossary for
+now).  New: Section 1's sentence "For a fixed octonion multiplication, the
+integral octonions have seven maximal orders, each an E_8 lattice" is to be
+made mathematically correct.  Subtitle date 14 October 2026, version v8.
+
+Plan of action: (1) write and run the script item (3) cites,
+python_project/src/verify_sigma_sublattice_maximal_order.py, extended to
+check the corrected Section 1 statement in the paper's convention; (2)
+apply items (1) to (3) and the Section 1 fix to paper/main.tex, date the
+subtitle; rebuild; (3) changelog item 12 and the trackers listed in the
+plan, Section 3 (6); (4) a read-only second pass on the diff, the new
+sentence and the script; (5) linter.
+
+Applied:
+ - New script python_project/src/verify_sigma_sublattice_maximal_order.py
+   (exact; ALL PASS in about 3 s): (A) for the multiplication (2.1),
+   exactly seven maximal orders of the rational octonions contain
+   Z<e0..e7>: of all 902 doubly-even codes of length 8, 16 give lattices
+   Z^8 + C/2 closed under the product, every one inside one of the seven
+   O^(n), which are unimodular for the trace form (the first version relied
+   on the classical unimodularity of maximal orders; replaced by this
+   exhaustive check before use); (B) the seven are O^(n) = Z^8 + (0 n)C_K/2,
+   and J_1 = Z^8 + C_K/2 is unit-stable but not closed; (C) L inside each;
+   (D) L sbar = 2 J_1, sigma(L sbar) = 2 O^(4) and no other n; (E) Lemma 4.3
+   on both sides as a consequence; (F) sigma(Ls) = p O^(4), p = e2-e4+e5-e6;
+   (G) [2O : <2O.2O>] = 2^8.  Indexed in python_project/src/README.md.
+ - paper/main.tex: items (1) to (3) of the plan (the revised text of
+   prompt 288, with the symbol W removed from Section 7); Section 1:
+   "For a fixed octonion multiplication, exactly seven maximal orders of
+   the rational octonions contain the Gravesian order Z<e_0,...,e_7>, each
+   a scaled copy of the E_8 lattice [Coxeter1946, ConwaySmith2003]
+   (Appendix B)"; subtitle "14 October 2026 (v8)".  Build: 24 pp., 0
+   errors, 0 undefined, 0 overfull.
+ - Record: changelog item 12 (with pointers in items 0, 7 and 11);
+   CURRENT_STATE.md (date stamp; section numbers; the five-subsection
+   description of Section 5; open question 3; claim-019 paragraph cites the
+   paper and the script; plan executed), README.md (span index moved from
+   the open questions to the Section 5 result bullet), research_result.md,
+   terminology.md (section number; "all conjugate" removed: it was
+   unverified, added at prompt 287 from an agent's unchecked recollection;
+   "isometric to E_8" made "a scaled copy"), the ledger (rows 014, 015:
+   S = Delta(Ls) + 2 Lambda; 017; 019: the script), evidence README, the
+   plan's status (executed), a dated note in the docstring of the cited
+   verify_twist_span_index_census.py (Section 5.5 since v8), paper/README.md
+   (rerun note for the review's GAP extractor: use git show 6f7b37c).
+ - The review's extractor still reads identical Appendix A tables (3 x 64
+   rows) from the edited paper; its line ranges now tolerate almost no
+   further shift above Appendix A.
+
+Second pass (read-only; three agents: the diff against the approved text,
+the mathematics and the script, the consistency of the record).  No error
+in the paper.  Re-derived independently: the Section 1 sentence (902
+doubly-even codes, 16 closed lattices, 7 maximal, unimodular); sigma(L sbar)
+= 2 O^(4) and sigma(Ls) = p O^(4); S_sigma = Delta(Ls) + 2 Lambda (HNF).  A
+fresh build gives 24 pp., clean; "ozone" does not occur in the paper.
+Applied from it, outside the paper:
+ - The script, still uncommitted, amended in place: it now also checks
+   L = J_1 . s and Ls = J_1 . s^2 (stated in ledger row 019, not covered
+   before), and that the 30 codes of size 16 are exactly those of its own
+   enumeration.  Docstring: (E) is checked directly on the basis products
+   and also follows from (A), (C), (D); in (G), h_W = 1 and the formula
+   come from verify_twist_span_index_census.py.  ALL PASS, about 3 s.  Read
+   the "Applied" entry above with these changes.
+ - Attribution.  The author's answer to (c) concerns the paper.  The
+   glossary question of decision (c), the Appendix B qualification (plan,
+   Section 4) and the Section 2.2 wording were not ruled on; "(and out of
+   the glossary for now)" above describes what was done, not a ruling.
+   Changelog item 12 ("Not changed") and the plan's status say so.
+ - Changelog item 12: the removed opening of the old Section 5.5 (the
+   symbol S and its bilinearity sentence) added to the removal list; the
+   span-index column described exactly (the 4-cycles are odd and none
+   closes); the lead-in's symbol star_pi and the appended parity sentence
+   recorded.  The changelog header names this plan.
+ - Ledger: row 015 (provenance: re-checked by HNF in this pass; paper
+   column: the index and 2 Lambda in S); row 018 (evidence: the exact check
+   of prompt 288 replaces the wrong chain); row 019 (J_1 named the analogue
+   of Kirmse's set for (2.1); the script covers every identity of the row).
+   CURRENT_STATE.md (J_1; "no longer poses" removed; both plans named),
+   evidence_and_reasoning/README.md (both plans), README.md ("even closing
+   permutations"; Section 7's reduction of the Lemma 4.4 question),
+   research_result.md (one sentence on claim 019), terminology.md (maximal
+   order "in the rational octonions", defined over Q; "infinitely many"
+   sourced to review 6.1(a)), python_project/src/README.md (the two new
+   checks), the plan's status (open items; the extractor correction).
+ - The extractor.  The plan's "(checked)" (Section 3, (6)) holds for the
+   executed source only: items (1) to (3) alone would have dropped 3 of the
+   192 rows; the two lines added in Section 1 keep the ranges aligned, with
+   one line of slack (first rows at main.tex lines 1234, 1330, 1426).
+   Re-run into scratch: identical to the review's paper_tables.g, 192 rows.
+   A first run from the repository root wrote an empty paper_tables.g there;
+   deleted at once, no tracked file touched.
+For the author, not changed (the request covered Section 1 only; the
+approved text of item (3) stands):
+ - Section 7, first bullet: "a maximal order O containing L" does not name
+   the product; it is the standard one (O^(4) is not closed under the
+   twisted product).  Possible fix: "... O containing L of the standard
+   product".
+ - Section 2.2 and the proof of Lemma 4.2: "maximal order(s) of the
+   integral octonions".
+ - Section 7, last bullet: "linear maps of R^8 that are not coordinate
+   permutations" stays open as a question, though Section 5.5 now shows
+   one such map (rho) that closes.
+ - The new script is untracked; it must be committed with paper/main.tex
+   and paper/main.pdf, or the Section 7 footnote links to nothing.
+Linter: documentation clean (0 warnings), exit 0.
+
+Status: CLOSED.
