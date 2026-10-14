@@ -15,6 +15,16 @@ Z₃-symmetric triple-octonion product, and closure is proved symbolically (pape
 Section 4).  This module is unchanged and remains the reference construction of
 Λ; only the framing below is historical.
 
+CORRECTION (2026-10-13).  The first paragraph above calls L "the Coxeter–Dickson
+order, the unique maximal order of the real octonion division algebra".  For a
+fixed octonion multiplication the integral octonions have seven maximal orders,
+each an E8 lattice (Coxeter 1946; Conway–Smith 2003; paper Section 1 and
+Appendix B; verify_coxeter_1946.py).  The L of this module is D8+ at root norm 2
+(e8_wilson.is_in_L): e_0 is not in L, so L is a nonunital order and, as a
+lattice, a √2-scaled copy of one of those maximal orders (paper Section 2.2).
+The identification "L = the Coxeter–Dickson order" and the word "unique" above
+are historical.  The module is unchanged.
+
 The central research question of this project: whether a proposed
 octonion-based multiplication rule on R^24 restricts to a product on Λ that
 closes — i.e., whether Λ forms a 24-dimensional integral algebra under some

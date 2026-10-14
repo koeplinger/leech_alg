@@ -62,7 +62,7 @@ the public domain.
   division algebras
 - **Originality note**: Survey article; no dispute known.  Widely cited as the
   definitive modern survey of the octonions and their applications.
-- **Notes**: Not yet cited directly in the project but listed here as the
+- **Notes**: Cited in Section 2.1 of the paper for the octonion algebra basics; listed here also as the
   authoritative reference for historical and structural background on octonions,
   including the Fano plane description, the connection to triality, and the role
   of octonions in E8 and related structures.
@@ -232,10 +232,10 @@ the public domain.
 
 ### [Baez2014_IntegralOctonions]
 
-- **Authors**: John C. Baez (with contributions by Greg Egan and others)
+- **Authors**: John C. Baez (with contributions by Greg Egan, Tim Silverman and others)
 - **Title**: Integral Octonions, Parts 1–12
-- **Published in**: The n-Category Café (group blog), 2014
-- **Year**: 2014
+- **Published in**: The n-Category Café (group blog), 2013–2016
+- **Year**: 2013–2016 (parts 1–6: 2013; parts 7–11: November–December 2014; part 12: January 2016)
 - **URL**: https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html
   (Part 9); https://math.ucr.edu/home/baez/octonions/integers/index.html
   (series index)
@@ -262,3 +262,9 @@ the public domain.
 Last updated: 2026-06-07 (Kirmse 1924 / Petersson 2018 entries
 extended during the v4 / v5 paper cycle; positive Kirmse
 contributions recorded alongside the J_1 closure error)
+
+Addendum (2026-10-13): [Baez2002] note updated (the paper cites it in Section
+2.1); [Baez2014_IntegralOctonions] extended to the series' span 2013–2016 with
+Tim Silverman among the contributors; the paper uses part 11 (the 270 rescaled
+copies behind 17,280 = 270 × 64) and part 12 (Silverman's integral octonions
+modulo 2) in Section 6 and Appendix A.1.

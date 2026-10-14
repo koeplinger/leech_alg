@@ -9,7 +9,7 @@ governance and methodology files (`MANIFESTO.md`, this file,
 research statements; and the prose parts of verification scripts and
 their accompanying notes (docstrings, headers, comment blocks of any
 length). Ephemeral working notes (e.g. /tmp scratch) are out of scope.
-Prompt logs are durable but forward-evolving (MANIFESTO §12): the
+Prompt logs are durable but immutable (DOCUMENT_GENRES §1, MANIFESTO §12): the
 standards apply to newly written logs but are not retroactively enforced
 on past ones.*
 

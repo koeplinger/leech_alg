@@ -203,7 +203,7 @@ the companion's "Summary of concrete data" three-point list.
 | `tests/test_octonion.g`           | `python_project/tests/test_octonions.py`                    |
 | `tests/test_e8_wilson.g`          | `python_project/tests/test_e8_wilson.py`                    |
 | `tests/test_leech_wilson.g`       | `python_project/tests/test_leech_wilson.py`                 |
-| `tests/test_sublattices.g`        | (companion Example 4.5 + `leech_wilson.py` invariants)      |
+| `tests/test_sublattices.g`        | (companion Example 4.2 + `leech_wilson.py` invariants)      |
 | `tests/test_lemmas.g`             | `python_project/src/symbolic_proof_checks.py`               |
 | `tests/test_twist.g`              | (paper Section 3)                                           |
 | `tests/test_triple_product.g`     | parts of `python_project/src/trial_007_kirmse_twist.py`     |

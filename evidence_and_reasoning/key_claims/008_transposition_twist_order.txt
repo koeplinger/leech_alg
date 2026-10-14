@@ -3,6 +3,17 @@ Title: The transposition-twisted triple octonion product is an order on the Leec
 Status: ESTABLISHED (symbolic proof + independent computational verification)
 Date: 2026-04-12
 
+--- FORWARD CORRECTION (2026-10-13) ---
+
+The statement below that "maximality of the order ... [is] still open" (in the
+2026-07-12 block) and the "Does NOT follow" item on maximality are answered:
+the order is NOT maximal.  L^3 is itself star-closed (the proof of the paper's
+Proposition 4.6 uses only Wilson's condition (1)), an even integral
+overlattice of Lambda of index 2^12; and Lambda + Z eps_1, with
+eps_1 = (e_0, 0, 0), is a second star-closed overlattice, of index 4, not
+contained in L^3 and not integral.  Paper Section 7 (v8); ledger claim 016;
+verification record evidence_and_reasoning/2026-10-12_plan.md, Section 4.
+
 --- FORWARD CORRECTION (2026-05-23) ---
 
 Two items in this file, as written on 2026-04-12, were corrected forward

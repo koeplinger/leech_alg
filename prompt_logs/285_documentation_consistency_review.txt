@@ -1,0 +1,110 @@
+Prompt 285 -- Documentation consistency review of the repository
+Date: 2026-10-13
+
+User: 'Make a documentation consistency review of this repo. Today is 13
+October 2026.'
+
+Plan: the project's sweep pattern (Manifesto Section 14; DOCUMENT_GENRES
+"a sweep reports before it writes"): read-only scanner agents by angle
+(paper <-> trackers; code <-> indexes and test counts; reference registry
+<-> citations; governance and genre documents <-> the repository state;
+cross-document paths, dates, counts, version strings), then adversarial
+refutation of every finding, then: findings first, diffstat second, edits
+third.  Edits only to current-state documents, in place; anything that
+touches a frozen artifact or needs a judgment call is reported, not
+applied.  Context since the last sweep (prompts 279-280): the reopening
+(281), the v8 edits (282, 284), the docstring correction and the v8 review
+(283), key claim 016 and the L^3 fact.
+
+Review (workflow of 55 agents: 6 scanners, 1 completeness critic, 48
+adversarial refuters over the 40 highest-severity findings): 95 raw
+findings, 84 after deduplication; verified 24 confirmed / 15 split / 1
+refuted; 44 of lower severity reported unverified.  Both suites reproduced
+their documented counts: pytest 197 passed; GAP run_all.g 110 passed, 0
+failed (per-file counts as documented); 38 documented scripts re-run with
+results matching the READMEs; all 28 Python and 2 GAP script citations of
+the paper resolve.  The orchestrator re-established the headline facts
+first-hand (symbolic_proof_checks.py has no Lemma 4.2 block; the GAP
+structures of the three stabilizers; the Crossref records of the two
+newly registered works).
+
+Headline finding: python_project/src/symbolic_proof_checks.py checks
+Lemmas 4.1, 4.3, 4.4 (plus the remark and the counterexample) but NOT
+Lemma 4.2 (L.L <= L); only gap_project/tests/test_lemmas.g checks all
+four.  Documents attributing all four to the Python script were
+corrected (CURRENT_STATE.md x3, README.md x2, research_result.md,
+key_claims/README.md row 016, python_project/src/README.md,
+python_project/README.md).  The paper's Appendix C sentence "Both
+implementations verify the same basis-pair identities as the appendix
+tables" is false for the Python side (must_fix, split 1:1 on the fix):
+NOT applied; put to the author with two options (text fix, or add the 64
+L.L products to the frozen script under a dated note, which makes the
+sentence true).
+
+Applied (findings first, then edits; diffstat 25 files before the two
+registry entries, 27 after):
+ - Current-state, in place: CURRENT_STATE.md (date stamp 2026-10-13;
+   verification table row; GL(3,F2) orbit statement -> conjugation by the
+   order-21 oriented-Fano group, as the paper's footnote; "Structure"
+   heading range; L closed under .sigma by Lemmas 4.1-4.2; "the maximal
+   order L" -> "the order L (a sqrt2-scaled copy of a maximal order)";
+   open question 3 names the family; repository map: ledger rows, plans,
+   PDF snapshot, changelogs, notes).  README.md (Lemma coverage at the
+   symbolic-proof bullet and the run command; "(Section 7: ...)" for
+   non-maximality; span-index bullet names the family; the two
+   standalone GAP commands now run from gap_project/ with -b, as
+   gap_project/README.md documents; the root-relative form failed).
+   MANIFESTO.md section 13 (the linter covers sections 8, 12, 13; not
+   11).  research_result.md (lemma attribution; GL(3,F2) statement).
+   key_claims/README.md row 016 (L^3 verification cells).
+   python_project/src/README.md (symbolic_proof_checks row;
+   verify_mod2_quotient row: Tables 2 and 3, left ideal, two-sidedness by
+   the polarization script; the (2,2) count printed as 84 of 210).
+   python_project/README.md (run comment).  gap_project/README.md
+   (companion Example 4.2).  terminology.md (Kirmse-twist index and lead
+   name the paper's Coxeter--Bruck transposition; "act transitively on the
+   seven" -> "applied to Kirmse's J_1, yield the seven"; GL(3,F2)
+   paragraph; citations by key [Petersson1969],
+   [KnusMerkurjevRostTignol1998]).  editorial_standards.md (prompt logs
+   immutable, not forward-evolving).  references/README.md (the [repo]
+   self-citation stated as the one unregistered key).
+   prompt_logs/README.md (closed at prompts 279 and 280).
+ - Registry (in place plus dated addendum lines, the files' practice):
+   okubo_algebra.txt (Elduque 2023 venue NAART II, 2022; entries
+   [KnusMerkurjevRostTignol1998] and [Petersson1969] added, DOIs verified
+   via Crossref; footer 2026-10-13).  background_octonions.txt (Baez2002
+   cited in Section 2.1; Baez2014 2013-2016, Silverman, parts 11-12;
+   addendum).  prior_art_orders_on_leech.txt (Baez2014 parts 9-12;
+   Elkies--Gross is Wilson's [13]; Dixon1995 misattribution superseded by
+   addendum).  triality_and_algebraic_physics.txt (Hall 2019 ISBN
+   978-1-4704-3622-3, xiv+186 pp., "to be confirmed" closed; addendum).
+ - Frozen, dated addenda only: paper/v6_to_v7_changelog.md (item 1's
+   doubled-integer justification); python_project/src/leech_wilson.py
+   ("unique maximal order"); verify_discovery1_W_subalgebra.py (L/2L is
+   noncommutative; the printed "contradiction" line is wrong);
+   verify_aut_octonion_crosscheck.py (Stab(L) = 2^3.L_3(2) non-split,
+   Stab(Ls) = 2^3:(7:3), per GAP); key_claims/008 (maximality answered:
+   claim 016).
+ - In-progress changelog: SF3 verification attributed to prompts 283 and
+   284; the Remark 1.3 "distinct" nit listed as not applied; record note
+   points to the v6->v7 addendum.
+ - tools/lint_docs.py: frozen PDFs classified (12) and a modified frozen
+   PDF reported; the addendum marker must open its line and carry a date
+   (the prompt-283 in-place rewrite of the plan's status block, commit
+   e169f96, had passed only on the prose word "correction"; recorded
+   here forward).  Self-test on eight positive and four negative lines.
+   Linter: exit 0, 0 warnings, over all edits above.
+Not applied, for the author's ruling: the Appendix C sentence (above); a
+genre for the seven registry files (none assigned; Branch A current-state
+or Branch B frozen); originality notes for seven prose entries of
+prior_art_orders_on_leech.txt (needs verification, not a sweep edit);
+"non-unital" in the Markdown documents versus "nonunital" in the paper (a
+style choice across all trackers); a parallel docstring note for
+verify_discovery2_V_isotropic.py; symbolic_proof_checks.py's docstring
+list still names Lemma 4.2 (resolved either way by the Appendix C
+ruling); the 44 unverified lower-severity items (registry nits, stale
+section numbers in frozen GAP test headers, dash asides in governance
+prose, LICENSE scope, source-document naming), listed in the review
+output.  Not committed.
+
+Status: CLOSED (edits applied; four rulings pending).

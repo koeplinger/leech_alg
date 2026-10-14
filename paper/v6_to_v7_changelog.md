@@ -4,6 +4,8 @@
 
 **v7** — dated 19 July 2026, 24 pages. **Frozen at [paper/main_2026-07-19.tex](main_2026-07-19.tex)** (19 July 2026); the last released version. The working source is [paper/main.tex](main.tex). This changelog is self-contained: it records every v6 → v7 change on its own, and the frozen v6 artifacts (including [v5_to_v6_changelog.md](v5_to_v6_changelog.md) and everything earlier) are not touched.
 
+**Addendum (13 October 2026).** Item 1's Accuracy note rested on the module docstring of `python_project/src/symbolic_proof_checks.py`, which was wrong: the script works in exact rational arithmetic (`fractions.Fraction`) on the coordinates as given, never doubled them, and has no `multiply_doubled()` (docstring corrected in place on 12 October 2026, prompt 283). The note's second clause stands: the Appendix A certificate tables are integer coefficient tables, and the v7 abstract's "certified in exact integer arithmetic" rests on them (three of the four lemmas; the fourth, $\sigma(L) = L$, is a parity argument). See [v7_to_v8_changelog.md](v7_to_v8_changelog.md), Record notes (12 October 2026). The text below stands as written.
+
 v7 is a publication-preparation revision aimed at an experimental-mathematics venue. The emphasis shifts toward the experimentation and methodology, the experimental discovery of closure and its exact-arithmetic certification, presented as a path that may lead to deeper structural understanding without claiming that understanding here.
 
 ---

@@ -1,0 +1,12 @@
+Prompt 286 -- Set the paper's date to today and compile the PDF
+Date: 2026-10-13
+
+User: 'Go ahead and fix the main paper's date to today right-away; and
+compile the PDF. This way I can continue with busywork while you bring the
+remainder of the project in sync.'
+
+Applied: paper/main.tex subtitle "12 October 2026 (v8)" -> "13 October 2026
+(v8)"; rebuilt twice; changelog item 0 notes the date.  The documentation
+consistency review of prompt 285 continues in the background.
+
+Status: CLOSED.

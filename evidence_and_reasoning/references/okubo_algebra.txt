@@ -99,7 +99,7 @@ and derivations of composition algebras, and applications.
 
 - **Authors**: Alberto Elduque
 - **Title**: Okubo algebras with isotropic norm
-- **Published in**: Non-Associative Algebras and Related Topics (NAART 2020),
+- **Published in**: Non-Associative Algebras and Related Topics (NAART II, 2022),
   pages 287–301. Edited by H. Albuquerque, J. Brox, C. Martínez, and
   P. Saraiva. Springer Proceedings in Mathematics & Statistics, Volume 427.
   Springer, Cham, 2023.
@@ -186,4 +186,46 @@ and derivations of composition algebras, and applications.
 
 ---
 
-Last updated: 2026-04-12
+### [KnusMerkurjevRostTignol1998]
+
+- **Authors**: Max-Albert Knus, Alexander Merkurjev, Markus Rost, Jean-Pierre Tignol
+- **Title**: The Book of Involutions
+- **Published in**: American Mathematical Society Colloquium Publications,
+  vol. 44. American Mathematical Society, Providence, RI.
+- **Year**: 1998
+- **URL / DOI**: https://doi.org/10.1090/coll/044 (verified via Crossref,
+  2026-10-13; print ISBN 978-0-8218-0904-4)
+- **Topics**: okubo_algebra, octonions, background
+- **Originality note**: Standard reference monograph; no dispute over
+  originality or priority known.
+- **Notes**: Chapter VIII treats composition algebras and triality, including
+  the symmetric composition algebras (para-Hurwitz and Okubo).  Cited by the
+  glossary entry "Symmetric composition algebra" in terminology.md.
+- **Status**: Not held in source_documents/; listed by bibliographic
+  information only.
+
+---
+
+### [Petersson1969]
+
+- **Authors**: Holger P. Petersson
+- **Title**: Eine Identität fünften Grades, der gewisse Isotope von
+  Kompositions-Algebren genügen
+- **Published in**: Mathematische Zeitschrift, vol. 109, no. 3, pp. 217–238
+- **Year**: 1969
+- **URL / DOI**: https://doi.org/10.1007/BF01111407 (verified via Crossref,
+  2026-10-13)
+- **Topics**: okubo_algebra, octonions, background
+- **Originality note**: Peer-reviewed journal article.  The isotopes
+  x ∗ y = τ(x̄) · τ²(ȳ) of a composition algebra by an automorphism τ of
+  order 3 (the Petersson construction of the glossary) originate here, as
+  [MarraniCorradettiZucconi2025] record; no dispute over originality or
+  priority known.
+- **Notes**: Origin of the "Petersson construction" used in trials 005/006
+  and python_project/src/okubo.py.
+- **Status**: Not held in source_documents/; listed by bibliographic
+  information only.
+
+---
+
+Last updated: 2026-10-13

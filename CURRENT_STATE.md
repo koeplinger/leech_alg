@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-10-12
+Last updated: 2026-10-13
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
@@ -60,7 +60,10 @@ uses ·_σ in all three blocks with Z₃-symmetric cross-block routing:
 
 All 21 transpositions close on Λ, verified exactly on a Z-basis
 (`verify_consecutive_twists_exact.py`); they are equivalent up to relabeling of
-the Fano triples under GL(3,F₂).  They are not the only twists that close: see
+the Fano triples: the 21 transpositions form a single orbit under conjugation
+by the order-21 group of coordinate permutations preserving the oriented Fano
+triples, and conjugation carries the proof for σ = (1 2) to every
+transposition (paper §4, footnote).  They are not the only twists that close: see
 the cycle census below.
 
 ### Verification status
@@ -71,7 +74,7 @@ the cycle census below.
 | Scaled (4M random) | 4,000,000 | 0 | `trial_007_scaled_test.py` |
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
-| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 basis products (exact) | 0 | `symbolic_proof_checks.py` (Python) + `gap_project/tests/test_lemmas.g` (GAP) |
+| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 basis products (exact): all four lemmas in GAP; Lemmas 4.1, 4.3, 4.4 in Python | 0 | `gap_project/tests/test_lemmas.g` (GAP) + `symbolic_proof_checks.py` (Python) |
 | Identity-test suite (N = 10⁶, paper §5.1) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
 | Exhaustive (all 38.6B pairs) | **not required** | — | `trial_007_exhaust.py --exhaustive` |
 
@@ -103,7 +106,7 @@ The order (Λ, +, ⋆) is:
 
 The key property is closure, not any classical algebraic identity.
 
-### Structure of the algebra (paper §5.2–§5.6)
+### Structure of the algebra (paper §5.2–§5.6 and §7)
 
 These results are exact and exhaustive.
 
@@ -160,7 +163,7 @@ imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 
 **The order is not maximal** (paper §7; claim 016).  L³ itself is
 ⋆-closed: the proof of Proposition 4.6 uses only Wilson's condition (1)
-(L closed under ·_σ, `symbolic_proof_checks.py`), so L³ is an even integral
+(L closed under ·_σ, by Lemmas 4.1 and 4.2), so L³ is an even integral
 overlattice of Λ of index [L³ : Λ] = 2¹².  A second ⋆-closed overlattice is
 not contained in L³ and not integral: ε₁ = (e₀, 0, 0) acts on either side as
 the swap of blocks 2 and 3, which preserves Λ, and ε₁ ⋆ ε₁ = ε₁; since
@@ -482,13 +485,16 @@ the trial, and prints detailed results.
 1. **Symbolic proof complete.**  A symbolic proof of closure on Wilson's
    three sublattice conditions is established in `paper/main.tex`
    (Section 4, "Proof of closure").  The proof rests on four lemmas
-   about the interaction between the transposition σ, the maximal
-   order L, and the sublattices Ls and Ls̄: Lemma 4.1 (σ(L) = L);
+   about the interaction between the transposition σ, the order L
+   (a √2-scaled copy of a maximal order), and the sublattices Ls and Ls̄:
+   Lemma 4.1 (σ(L) = L);
    Lemma 4.2 (L · L ⊆ L); Lemma 4.3 (L · σ(Ls̄) ⊆ σ(Ls̄));
    Lemma 4.4 (σ(Ls) · σ(Ls) ⊆ σ(Ls)).  The finite-case verifications
-   (Lemmas 4.2–4.4, 64 Z-basis products each) are executed with exact
-   rational arithmetic in `python_project/src/symbolic_proof_checks.py`,
-   and recomputed independently in `gap_project/tests/test_lemmas.g`.
+   of Lemmas 4.3 and 4.4 (64 Z-basis products each), with Lemma 4.1 on
+   the 8 basis vectors, are executed with exact rational arithmetic in
+   `python_project/src/symbolic_proof_checks.py`; all four lemmas,
+   including the 64 basis products of Lemma 4.2, are checked
+   independently in `gap_project/tests/test_lemmas.g`.
    The observation σ(Ls) ≠ Ls is recorded as a remark in the paper
    (rem:Ls-not-closed): non-triviality of the construction, not a step
    of the closure proof.
@@ -605,8 +611,9 @@ with further detail recorded here.
    intrinsic description.  The group itself and the strict containment
    Aut(Λ, +, ⋆) ⊊ Co₀ are known (see "Structure of the algebra" above).
 
-3. **Whether the index of the span of the image can be improved
-   further**: it is 2²⁵ for the Baez–Egan product φ (paper §6,
+3. **Whether a closed bilinear product on Λ built from octonion
+   multiplication, as φ and ⋆ both are, can have a smaller span index
+   than ⋆**: the index is 2²⁵ for the Baez–Egan product φ (paper §6,
    `verify_phi_span_index.py`) and 2¹⁶ for ⋆ (claim 015).  The order
    itself is not maximal (claim 016; see
    "Structure of the algebra" above).
@@ -652,8 +659,11 @@ leech_alg/
 │   ├── key_claims/                # Logical backbone: one file per major claim
 │   │   ├── 001–006                # Foundations (Wilson, Dixon, octonions)
 │   │   ├── 007                    # Untwisted triple-octonion ruled out
-│   │   └── 008                    # Z₃-symmetric triple-octonion product: order on Λ
+│   │   ├── 008                    # Z₃-symmetric triple-octonion product: order on Λ
+│   │   └── README.md              # The ledger; claims 009–016 are ledger-only rows
 │   ├── references/                # Central reference registry
+│   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
+│   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
@@ -702,7 +712,8 @@ leech_alg/
 ├── prompt_logs/                   # Chronological AI interaction log
 ├── paper/                         # main.tex (v8, in progress); v7 frozen 2026-07-19 (24 pp.);
 │                                  #   bibliography inline via \bibitem;
-│                                  #   frozen snapshots main_2026-{04-29,05-25,06-07,07-18,07-19}.tex,
-│                                  #   automorphism_group_2026-07-12.tex, reviews/
+│                                  #   frozen snapshots main_2026-{04-29,05-25,06-07,07-18,07-19}.tex
+│                                  #   and main_2026-07-19.pdf; changelogs v3→v4 … v7→v8 (in progress);
+│                                  #   companion and standalone notes, reviews/
 └── source_documents/              # Primary source PDFs (freely redistributable)
 ```

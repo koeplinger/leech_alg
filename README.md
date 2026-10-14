@@ -64,7 +64,9 @@ exhibits the fit of this octonion product with Wilson's representation.
 - **Symbolic proof** of closure on Wilson's three sublattice conditions, via
   four lemmas on the interplay between the transposition σ and the Leech
   sublattices Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
-  executes the finite case verifications with exact rational arithmetic).
+  executes the finite case verifications of Lemmas 4.1, 4.3 and 4.4 with exact
+  rational arithmetic; [gap_project/tests/test_lemmas.g](gap_project/tests/test_lemmas.g)
+  covers all four).
 - **Computational verification** on 12M+ random pairs of minimal vectors
   with zero failures, plus tests from first principles on every foundation
   (octonion properties, Wilson's construction).  197 tests pass.
@@ -77,8 +79,8 @@ exhibits the fit of this octonion product with Wilson's representation.
   paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
-  the order is not maximal (L³ and Λ + Zε₁ are ⋆-closed overlattices, of
-  index 2¹² and 4); Λ
+  the order is not maximal (Section 7: L³ and Λ + Zε₁ are ⋆-closed
+  overlattices, of index 2¹² and 4); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
@@ -98,8 +100,9 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 - A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
   octonion product, while Ls is not).  One candidate shape is excluded:
   σ(Ls) is not an ideal of L on either side.
-- Whether the index of the span of the image can be improved further: it
-  is 2²⁵ for the Baez–Egan product φ and 2¹⁶ for ⋆.
+- Whether a closed bilinear product on Λ built from octonion multiplication,
+  as φ and ⋆ both are, can have a smaller span index than ⋆: the index is
+  2²⁵ for the Baez–Egan product φ and 2¹⁶ for ⋆.
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.
@@ -121,7 +124,7 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 cd python_project
 python3 -m pytest tests/ -v                     # Run all foundation tests
 cd src
-python3 symbolic_proof_checks.py                # Verify the four lemmas
+python3 symbolic_proof_checks.py                # Lemmas 4.1, 4.3, 4.4 (Lemma 4.2: gap_project/tests/test_lemmas.g)
 python3 trial_007_kirmse_twist.py               # The winning trial
 python3 trial_001_triple_octonion.py            # Any earlier trial
 python3 verify_aut_lambda_star.py               # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
@@ -136,8 +139,8 @@ Requires Python 3.x with NumPy and SymPy (see [python_project/requirements.txt](
 
 ```bash
 gap -q gap_project/run_all.g                    # 110 checks across 8 files
-gap -q gap_project/aut_lambda_star.g            # Automorphism group, second pass
-gap -q gap_project/octonion_stabilisers.g       # Stabilizers of L, Ls, Ls̄
+cd gap_project && gap -q -b aut_lambda_star.g   # Automorphism group, second pass
+cd gap_project && gap -q -b octonion_stabilisers.g   # Stabilizers of L, Ls, Ls̄
 ```
 
 Requires GAP 4.x with the LOOPS package

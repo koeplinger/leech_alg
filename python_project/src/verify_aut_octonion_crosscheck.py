@@ -1,6 +1,15 @@
 """Task B, part 3: independent cross-checks of the three octonion-automorphism
 stabilisers that drive the Aut(Lambda,+,star) enumeration.
 
+CORRECTION (13 October 2026).  The GAP identification
+(gap_project/octonion_stabilisers.g; paper/automorphism_group_2026-07-12.tex)
+refutes two of the three structure expectations at the end of this docstring;
+the three orders are unchanged.  Stab(L), order 1344, is the non-split
+extension 2^3.L_3(2) (GAP: (C2 x C2 x C2) . PSL(3,2)), not AGL(3,2) =
+2^3:L_3(2).  Stab(Ls), order 168, is the solvable group 2^3:(7:3) (GAP:
+(C2 x C2 x C2) : (C7 : C3)), not the simple group L_3(2).  12096 = G_2(2) =
+U_3(3).2 is confirmed.  Code and printed output are unchanged.
+
 verify_aut_lambda_star.py enumerates, completely,
         Stab(L)      := Aut(O,.s) ^ {A : A(L)     = L}      order  1344
         Stab(Ls)     := Aut(O,.s) ^ {A : A(Ls)    = Ls}     order   168

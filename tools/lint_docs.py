@@ -12,7 +12,8 @@ Checks
                not be modified or deleted.  (New entries are fine.)
 3. FROZEN      Frozen artifacts must not be rewritten in place: if one is
                modified relative to HEAD, the diff must ADD a dated addendum
-               (or a deprecation marker), and must not merely rewrite prose.
+               marker line (or a deprecation marker), and must not merely
+               rewrite prose.  A modified frozen PDF is reported.
 4. DANGLING    Every repository path named in a current-state document must
                exist.
 5. INDEX       Every program in python_project/src/ and gap_project/ must
@@ -43,7 +44,15 @@ IMMUTABLE_DIRS = ["prompt_logs"]
 FROZEN_GLOBS = [
     "CLOSING_NOTE.md",
     "paper/main_*.tex",
+    "paper/main_[0-9]*.pdf",
     "paper/companion.tex",
+    "paper/companion.pdf",
+    "paper/automorphism_group_*.pdf",
+    "paper/hermes_mod2_structure_supplement.pdf",
+    "paper/update_brief_*.pdf",
+    "paper/kirmse_1924_exposition.pdf",
+    "paper/historical_appendix*.pdf",
+    "paper/Baez-Egan_*.pdf",
     "paper/automorphism_group_*.tex",
     "paper/hermes_mod2_structure_supplement.tex",
     "paper/update_brief_*.tex",
@@ -204,8 +213,12 @@ def check_immutable() -> None:
 # check 3: frozen artifacts are not rewritten in place
 # ----------------------------------------------------------------------------
 
+# A dated addendum marker opens its line (after list, heading, bold or quote
+# decoration) and carries a date within a few words; the deprecation markers
+# stand on their own.
 ADDENDUM = re.compile(
-    r"(FORWARD CORRECTION|ADDENDUM|CORRECTION|Note added|DEPRECATED|SUPERSEDED)",
+    rf"^[\s\-#*>(\"']*(?:(?:FORWARD\s+)?CORRECTIONS?|ADDENDUM|Note added|Updated|Status|Revision\s*\d*)\b.{{0,40}}?{DATE}"
+    rf"|^[\s\-#*>(\"']*(?:DEPRECATED|SUPERSEDED)\b",
     re.I,
 )
 
@@ -237,6 +250,10 @@ def check_frozen() -> None:
             # is committed, neither has the marker and the check re-engages.
             continue
         diff = git("diff", "HEAD", "--", rel)
+        if any(l.startswith("Binary files ") for l in diff.splitlines()):
+            warn(f"{rel}: frozen binary artifact modified.\n"
+                 f"    A frozen PDF changes only when its source takes a dated addendum and is rebuilt.")
+            continue
         added = [l[1:] for l in diff.splitlines() if l.startswith("+") and not l.startswith("+++")]
         removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
         has_addendum = any(ADDENDUM.search(l) for l in added)

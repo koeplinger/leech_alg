@@ -50,4 +50,4 @@ Each topic has its own file:
 
 ## Integrity Note
 
-Per the [AI Agent Manifesto](../../MANIFESTO.md), originality of each reference is verified before inclusion. Any known dispute over priority or authorship is noted. This registry is not exhaustive of all literature; it is exhaustive of all works *cited in this project*.
+Per the [AI Agent Manifesto](../../MANIFESTO.md), originality of each reference is verified before inclusion. Any known dispute over priority or authorship is noted. This registry is not exhaustive of all literature; it is exhaustive of all works *cited in this project*. The one exception is the paper's self-citation of this repository (bibliography key [repo]: https://bitbucket.org/jenskoeplinger/leech_alg and https://github.com/koeplinger/leech_alg); it points at this record itself and is not registered as a work.

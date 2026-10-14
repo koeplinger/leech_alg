@@ -73,9 +73,11 @@ required**: the symbolic proof in paper §4 establishes closure
 independently of sampling.
 
 All 21 transpositions of imaginary basis elements produce the same result.
-Since all transpositions lie in a single orbit under the Fano-plane
-automorphism group GL(3, F₂), the construction is essentially unique up
-to basis relabeling.
+The 21 transpositions form a single orbit under conjugation by the order-21
+group of coordinate permutations preserving the oriented Fano triples; each
+such permutation is an octonion automorphism fixing s and s̄ and preserving
+L, so conjugation carries the proof for σ = (1 2) to every transposition
+(paper §4, footnote).
 
 Transpositions are not the only permutations of the imaginary axes for
 which the assembled triple product closes.  The census over all 5,040
@@ -105,8 +107,9 @@ The identity (the untwisted product) does not close.
 
 ### Symbolic proof
 
-Closure is proved symbolically via four lemmas (exact arithmetic,
-`symbolic_proof_checks.py`):
+Closure is proved symbolically via four lemmas (exact arithmetic:
+`symbolic_proof_checks.py` for Lemmas A, C and D; `gap_project/tests/test_lemmas.g`
+for all four):
 
 - **Lemma A**: σ(L) = L (coordinate permutation preserves D₈⁺).
 - **Lemma B**: L·L ⊆ L (L is a √2-scaled copy of a maximal order — Coxeter 1946).

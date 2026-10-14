@@ -10,7 +10,7 @@ specific to this project, terms are marked as **(project-specific)**.
 
 **Established terms:**
 Idempotent — Isomorphism (of algebras) — Isotopy (of algebras) —
-Kirmse integers — Kirmse twist — Leech lattice Λ —
+Kirmse integers — Kirmse twist (project shorthand; the paper's Coxeter–Bruck transposition) — Leech lattice Λ —
 Maximal order (of integral octonions) — Okubo algebra —
 Para-Hurwitz algebra — Petersson construction —
 Square-zero element (square nilpotent) —
@@ -171,7 +171,7 @@ in seven sets of three.  Verified from the originals in this project
 (\texttt{python\_project/src/verify\_kirmse\_1924.py},
 \texttt{verify\_coxeter\_1946.py}; notes in \texttt{paper/reviews/}).
 
-**Kirmse twist = the transposition $\sigma$ of the main paper.** The
+**Kirmse twist (this project's shorthand, used in the trial record) = the Coxeter–Bruck transposition of the main paper's Appendix B = the transposition $\sigma$ of Definition 3.1.** The
 Kirmse twist is shorthand for the transposition of two imaginary basis
 units described above; it is the **same map** as the $\sigma$ used
 throughout the main paper — a linear involution of $\mathbb{R}^8$.
@@ -224,8 +224,8 @@ A lattice Γ ⊂ O (the real octonion algebra) that is closed under
 multiplication, contains the identity, and is maximal with respect to
 inclusion among such lattices.  There are exactly **seven** maximal
 orders in the octonions, each isometric to the $E_8$ root lattice.  The
-$\binom{7}{2}=21$ transpositions of pairs of imaginary basis units act
-transitively on the seven (Coxeter 1946, §4); they fall into seven sets
+$\binom{7}{2}=21$ transpositions of pairs of imaginary basis units, applied
+to Kirmse's $J_1$, yield the seven (Coxeter 1946, §4); they fall into seven sets
 of three, with each set fixing one common imaginary unit (Coxeter's
 "special unit" — one of $i_1,\ldots,i_7$).
 
@@ -266,7 +266,7 @@ x *_τ y = τ(x̄) · τ²(ȳ).  The resulting algebra is always a symmetric
 composition algebra.  When τ = id, this gives the para-Hurwitz algebra;
 when τ ≠ id, it gives an Okubo algebra.
 Reference: [MarraniCorradettiZucconi2025] eq. (1.5); originally due to
-H. Petersson (1969).
+H. Petersson [Petersson1969].
 
 ### Square-zero element (square nilpotent)
 
@@ -297,9 +297,7 @@ An 8-dimensional composition algebra (V, *, n) satisfying
 (x * y) * x = x * (y * x) = n(x) y for all x, y.  Over a field of
 characteristic ≠ 2, 3, these are exactly the **para-Hurwitz algebras** and
 the **Okubo algebras**.
-Reference: [Elduque2000_Triality]; M.-A. Knus, A. Merkurjev, M. Rost and
-J.-P. Tignol, *The Book of Involutions*, AMS Colloquium Publications 44,
-1998, Chapter VIII.
+Reference: [Elduque2000_Triality]; [KnusMerkurjevRostTignol1998], Chapter VIII.
 
 ### Triality (D₄ triality)
 
@@ -442,10 +440,11 @@ of the scaled harnesses) agrees.  This fixes the Wilson condition 3 failure of
 the triple octonion product taken over Wilson's own multiplication
 convention.
 
-Since all transpositions are in the same orbit under the Fano-plane
-automorphism group GL(3, F₂), they all produce the same multiplication
-table up to basis relabeling.  The construction is therefore
-essentially unique (up to Fano-plane automorphism).
+The 21 transpositions form a single orbit under conjugation by the
+order-21 group of coordinate permutations preserving the oriented Fano
+triples.  Each such permutation is an octonion automorphism that fixes s
+and s̄ and preserves L, so conjugation carries the paper's §4 proof for
+σ = (1 2) to every transposition (paper §4, footnote).
 
 Transpositions are not the only permutations of the imaginary axes
 for which the assembled triple product closes.  Writing

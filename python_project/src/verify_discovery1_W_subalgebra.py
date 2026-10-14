@@ -1,6 +1,19 @@
 """Verify the proposed Discovery 1: explicit subalgebra structure of
 W = sigma(Ls)/2L inside the F2-octonion-algebra L/2L.
 
+CORRECTION (13 October 2026).  Test (a)'s "(Expected: yes.)" below was the
+proposal's expectation; the test itself prints False, and that is right: the
+descended product mu-bar on L/2L is NOT commutative (54 of the 64 ordered
+L-basis commutators lie outside 2L; paper Appendix A.1 footnote;
+verify_polarization_lagrangians.py prints a witness;
+paper/hermes_mod2_structure_supplement.tex).  The sentence printed at step (e),
+"(But L/2L itself is commutative from (a) -- contradiction.)", is wrong: there
+is no contradiction, and a non-symmetric table for W is what a noncommutative
+algebra allows.  The computed results of this script (the basis of W, the actual
+table, the two cell corrections, N, N^2, N^3, w2) stand.  See also
+paper/reviews/2026-07-18_claude_fable_5_forensic_review_v6.md, S4.  Code and
+printed output are unchanged.
+
 Tests:
   (a) Is the F2-octonion-algebra L/2L commutative? (Expected: yes.)
   (b) Does the proposed basis (w0, w1, w2, w3) really span W?

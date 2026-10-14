@@ -121,7 +121,7 @@ The AI agent operates in the role of a highly knowledgeable and thorough mathema
 ## 13. Document Genres
 
 - Every artifact belongs to exactly one genre — **immutable**, **frozen**, or **current state** — and the genre determines how it may be changed.  See [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md).
-- Run `python3 tools/lint_docs.py` before handing work back and before any commit that touches documentation.  It is the mechanical check for this section and for §8, §11 and §12.
+- Run `python3 tools/lint_docs.py` before handing work back and before any commit that touches documentation.  It is the mechanical check for this section and for §8 and §12.
 
 ---
 
