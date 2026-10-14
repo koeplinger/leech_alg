@@ -1,0 +1,13 @@
+basis of L valid (all in L, |det| = 1): 1
+[L : L s] = 16,  [L : L sbar] = 16
+[L^3 : Lambda] = 2^12  (each of L/Lsbar, L/Ls has order 16 = 2^4; image rank 12 of 12)
+certificate basis: all 24 rows in Lambda: 1,  det Gram = 2^24 (exact: 1)
+untwisted: does not close (Wilson-definition test agrees: 1)
+sigma = (1 2): closes (Wilson-definition test agrees: 1); #HNF columns = 24; elementary divisors: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]; index = 2^16
+pi: e5->e6->e7->e5: closes (Wilson-definition test agrees: 1); #HNF columns = 24; elementary divisors: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; index = 2^10
+pi: e5->e7->e6->e5: does not close (Wilson-definition test agrees: 1)
+reflection s_r, r = (e0+..+e6-e7)/2: closes (Wilson-definition test agrees: 1); #HNF columns = 24; elementary divisors: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; index = 2^0
+set A: products match the listed ones: 1, all in Lambda: 1, det(coordinates) = 17592186044416 (listed 17592186044416), det Gram = 2^24 * det^2: 1
+set B: products match the listed ones: 1, all in Lambda: 1, det(coordinates) = 25406131120965 (listed 25406131120965), det Gram = 2^24 * det^2: 1
+DET_A = 2^44 * 1;  DET_B odd: 1;  gcd(DET_A, DET_B) = 1
+CERTIFICATE VALID (S = Lambda for the reflection twist): 1

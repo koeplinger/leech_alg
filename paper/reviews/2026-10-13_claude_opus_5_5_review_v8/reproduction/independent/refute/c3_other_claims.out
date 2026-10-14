@@ -1,0 +1,25 @@
+==============================================================================
+C4: signed permutations of e1..e7 as twists
+==============================================================================
+signed permutations: 645120 | distinct twisted tables: 480 (10 s)
+closure / index over the distinct tables: {'no closure': 312, 'index 65536': 56, 'index 1024': 112} (72 s)
+split by whether the table class contains a twist g with g(L) = L:
+   every representative has g(L)=L'   index 1024     56
+   every representative has g(L)=L'   index 65536    28
+   every representative has g(L)=L'   no closure     156
+   some representative has g(L)=L     index 1024     56
+   some representative has g(L)=L     index 65536    28
+   some representative has g(L)=L     no closure     156
+
+==============================================================================
+C5: Lagrangians of L/2L and their algebra properties
+==============================================================================
+nonzero singular vectors: 135 (O+(8,2): 135)
+Lagrangians (4-dim totally singular subspaces): 270
+subalgebras: 142 | two-sided ideals: 8
+ordered complementary pairs: 17280 | with both members subalgebras: 4704
+identity     V_g Lagrangian: True, W_g Lagrangian: True, complementary: True, V sub: True, V ideal: True, W sub: False, W ideal: False
+sigma        V_g Lagrangian: True, W_g Lagrangian: True, complementary: True, V sub: True, V ideal: True, W sub: True, W ideal: False
+s_r witness  V_g Lagrangian: True, W_g Lagrangian: True, complementary: True, V sub: True, V ideal: False, W sub: True, W ideal: False
+
+runtime 85 s

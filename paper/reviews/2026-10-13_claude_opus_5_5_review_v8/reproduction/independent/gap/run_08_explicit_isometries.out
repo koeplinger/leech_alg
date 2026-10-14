@@ -1,0 +1,17 @@
+=== run_08_explicit_isometries.g ===
+  depth 1: 121 pairs reached, classes found 2
+  depth 2: 2501 pairs reached, classes found 4
+  depth 3: 2707 pairs reached, classes found 5
+
+explicit twists (g = product of reflections s_r, applied left to right), verified directly on Wilson's Lambda:
+  class (dim V.V, delta V, dim W.W, delta W) = [ 0, 0, 4, 4 ]: roots [ [ 1, 1, 0, 0, 0, 0, 0, 0 ] ]
+    det g = -1, g(L) = L: true, closes: true, elementary divisors 1^8 2^16, predicted index 2^16
+  class (dim V.V, delta V, dim W.W, delta W) = [ 4, 4, 4, 4 ]: roots [ [ 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2 ] ]
+    det g = -1, g(L) = L: true, closes: true, elementary divisors 1^24, predicted index 2^0
+  class (dim V.V, delta V, dim W.W, delta W) = [ 1, 2, 4, 4 ]: roots [ [ 1, 1, 0, 0, 0, 0, 0, 0 ], [ 1, 0, 1, 0, 0, 0, 0, 0 ] ]
+    det g = 1, g(L) = L: true, closes: true, elementary divisors 1^14 2^10, predicted index 2^10
+  class (dim V.V, delta V, dim W.W, delta W) = [ 4, 4, 1, 2 ]: roots [ [ 1, 1, 0, 0, 0, 0, 0, 0 ], [ 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, -1/2, -1/2 ] ]
+    det g = 1, g(L) = L: true, closes: true, elementary divisors 1^19 2^5, predicted index 2^5
+  class (dim V.V, delta V, dim W.W, delta W) = [ 4, 4, 0, 0 ]: roots [ [ 1, 1, 0, 0, 0, 0, 0, 0 ], [ 1, 0, 1, 0, 0, 0, 0, 0 ], [ 1/2, -1/2, -1/2, 1/2, 1/2, 1/2, -1/2, 1/2 ] ]
+    det g = -1, g(L) = L: true, closes: true, elementary divisors 1^16 2^8, predicted index 2^8
+=== end run_08 ===

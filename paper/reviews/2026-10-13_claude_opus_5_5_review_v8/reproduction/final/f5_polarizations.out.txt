@@ -1,0 +1,23 @@
+1. L/2L: nonzero singular vectors: 135 ; eps = [2e0] singular: True ; eps in Lsbar/2L: True ; eps in Ls/2L: False
+   totally singular subspaces of dims 1..4: [135, 1575, 2025, 270]
+   Lagrangians: 270; family sizes {1: 135, 0: 135} (family 0 = that of Lsbar/2L; Ls/2L in family 0)
+   subalgebras: 142 (by family {1: 71, 0: 71}); left ideals: 8; right ideals: 16; two-sided: 8
+   Lsbar/2L: subalgebra True, left ideal True, right ideal True, square-zero True; Ls/2L: subalgebra False
+3. h(U) = [U~ : <U~.U~>] over the 142 subalgebra Lagrangians: {1: 120, 32: 15, 256: 7}
+   eps lemma on the 30 Lagrangians containing eps: (U~ integral, Re(U~.U~) even) -> {(True, True): 30}
+   rule  h = 1 if eps not in U;  2^5 if eps in U, family 0;  2^8 if eps in U, family 1:  holds for all: True
+   (eps in U, family, h, 2^(d+m)) counts: {(False, 1, 1, 1): 64, (False, 0, 1, 1): 56, (True, 0, 32, 32): 14, (True, 1, 256, 256): 7, (True, 0, 32, 256): 1}
+   h(Lsbar/2L) = 32, 2^(d+m)(Lsbar/2L) = 256
+2. ordered complementary pairs: 17280 ; complements per Lagrangian: {64: 270} ; same family always: True
+   pairs with both members subalgebras: 4704
+   direct computation on all 17280 pairs: 4704 close
+   closure <=> both subalgebras, on every pair: True
+   index census over the closing pairs: {1: 3360, 32: 448, 256: 224, 1024: 448, 65536: 224}
+   Lambda/S elementary abelian and 2Lambda <= S on every closing pair: True
+   index = h(W) * h(V)^2 on every closing pair: True
+   closing pairs containing Lsbar/2L (as V or W): 0
+   Wilson's own pair (Lsbar/2L, Ls/2L), untwisted: closes = False (failing basis products: 40)
+4. orbit of Wilson's pair under the 120 reflections (W(E8) acting on L/2L): 17280 = all ordered complementary pairs: True
+   |W(E8)| / 17280 = 40320 elements of W(E8) realize each pair
+   twists g in W(E8) by index: 1: 135475200, 32: 18063360, 256: 9031680, 1024: 18063360, 65536: 9031680; closing: 189665280 of 696729600
+   det g = +1  <=>  V_g in the family of Lsbar/2L: holds for all 5040 permutations and 120 reflections: True

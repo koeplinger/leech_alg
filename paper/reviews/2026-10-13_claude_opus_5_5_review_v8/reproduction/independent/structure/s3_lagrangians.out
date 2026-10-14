@@ -1,0 +1,40 @@
+singular nonzero vectors of q: 135
+totally singular subspaces by dimension 0..4: [1, 135, 1575, 2025, 270]
+Lagrangians (4-dim totally singular): 270
+V0 = Lsbar/2L is Lagrangian #39, W0 = Ls/2L is Lagrangian #76
+families (relative to V0): {'other': 135, 'same': 135}
+subalgebras: 142 | left ideals: 8 | right ideals: 16 | two-sided ideals: 8
+subalgebras by family: {'other': 71, 'same': 71}
+
+classes of Lagrangians: (family, subalgebra, left ideal, right ideal, dim span(UU), h(U)) : count
+    ('other', True, False, False, 4, 1) : 56
+    ('other', True, False, True, 4, 1) : 8
+    ('other', True, True, True, 0, 256) : 7
+    ('other', False, False, False, 3, None) : 8
+    ('other', False, False, False, 7, None) : 56
+    ('same', True, False, False, 1, 32) : 14
+    ('same', True, False, False, 4, 1) : 56
+    ('same', True, True, True, 0, 32) : 1
+    ('same', False, False, False, 7, None) : 64
+
+V0 properties: {'subalgebra': True, 'left_ideal': True, 'right_ideal': True, 'two_sided': True, 'dimUU': 0, 'family': 'same', 'meetV0': 4, 'meetW0': 0, 'h_in_L': 512, 'UU_inside': True, 'h': 32}
+W0 properties: {'subalgebra': False, 'left_ideal': False, 'right_ideal': False, 'two_sided': False, 'dimUU': 7, 'family': 'same', 'meetV0': 0, 'meetW0': 4, 'h_in_L': 2, 'UU_inside': False, 'h': None}
+
+ordered complementary pairs: 17280
+complements per Lagrangian: {64}
+ordered complementary pairs with both members subalgebras: 4704
+pairs by family of V: {'other': 8640, 'same': 8640} (V and W always in the same family: True )
+direct closure computed for all 17280 pairs (16s)
+closed pairs: 4704 | criterion (V, W subalgebras) agrees with direct closure on 17280 of 17280 pairs
+non-closed pairs where exactly V fails / exactly W fails / both fail: 4384 4384 3808
+formula [Lambda:S] = h(W) h(V)^2 holds on 4704 of 4704 closed pairs
+2Lambda in S on 4704 of 4704 closed pairs
+index distribution over closed pairs (log2 index : count): {0: 3360, 5: 448, 8: 224, 10: 448, 16: 224}
+(2Lambda in S means Lambda/S = (Z/2)^k with 2^k the index, k = 24 - F_2-rank of S in Lambda/2Lambda)
+index by family of (V,W): {'same': {0: 1344, 5: 448, 10: 448}, 'other': {0: 2016, 8: 224, 16: 224}}
+(h(V), h(W)) combinations over closed pairs: {(1, 1): 3360, (1, 32): 448, (1, 256): 224, (32, 1): 448, (256, 1): 224}
+index by (V two-sided ideal?, W two-sided ideal?): {(True, True): {}, (True, False): {16: 224}, (False, True): {8: 224}, (False, False): {0: 3360, 5: 448, 10: 448}}
+index by (dim VV, dim WW): {(0, 4): {16: 224}, (1, 4): {10: 448}, (4, 0): {8: 224}, (4, 1): {5: 448}, (4, 4): {0: 3360}}
+
+Wilson's own pair (V0, W0): closed = False failing products: 40 of 576
+total time 17s

@@ -1,0 +1,197 @@
+
+==================================================================
+Twist id (untwisted)
+==================================================================
+  G (row convention, g(x) = x*G):
+    [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 1, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 1, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 0, 1, 0, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 1, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 0, 1 ]
+    [ok]   g(L) = L  (G maps a basis of L into L and |det G| = 1)
+    [ok]   G is orthogonal (G G^T = I), so ._g is norm-multiplicative
+    identity element of ._g is g^{-1}(e0) = [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ok]   g^{-1}(e0) is a two-sided identity of ._g (20 random tests)
+  CLOSURE (576 basis products have integral Lambda-coordinates): false
+    witness: b_1 * b_2 = [ -24, 8, 1, -2, 3, 1, -3, 4, -20, 6, 3, 2, 3, -1, -5, 4, -38, 8, 5, 2, 5, -1, -5, 4 ]
+    violated: [ "(3) x+y+z not in L s" ]
+    number of the 576 basis products outside Lambda: 42
+    [ok]   naive P1,P2,P3 formula reproduces all 576 products (vs. coordinates * basis)
+    [ok]   naive products in Lambda by Wilson's definition <=> closure verdict
+    300 random pairs of Lambda-vectors: product in Lambda for 106 of 300
+    [ok]   Lambda_g = g^3(Lambda) as lattices (bases differ by a unimodular matrix)
+    [ok]   untwisted product on Lambda_g: same closure verdict
+  MOD-2 READING (L/2L with the product inherited from L.L in L):
+    V_g = g(L sbar)/2L: dim 4, totally singular true, subalgebra true, left ideal true, right ideal true, dim span(V.V) = 0
+    W_g = g(L s)/2L:    dim 4, totally singular true, subalgebra false, left ideal false, right ideal false, dim span(W.W) = 7
+    [ok]   criterion: closes <=> V_g and W_g both subalgebras
+
+==================================================================
+Twist sigma = (1,2): e1 <-> e2
+==================================================================
+  G (row convention, g(x) = x*G):
+    [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+    [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 1, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 1, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 0, 1, 0, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 1, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 0, 1 ]
+    [ok]   g(L) = L  (G maps a basis of L into L and |det G| = 1)
+    [ok]   G is orthogonal (G G^T = I), so ._g is norm-multiplicative
+    identity element of ._g is g^{-1}(e0) = [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ok]   g^{-1}(e0) is a two-sided identity of ._g (20 random tests)
+  CLOSURE (576 basis products have integral Lambda-coordinates): true
+    [ok]   naive P1,P2,P3 formula reproduces all 576 products (vs. coordinates * basis)
+    [ok]   naive products in Lambda by Wilson's definition <=> closure verdict
+    300 random pairs of Lambda-vectors: product in Lambda for 300 of 300
+    [ok]   Lambda_g = g^3(Lambda) as lattices (bases differ by a unimodular matrix)
+    [ok]   untwisted product on Lambda_g: same closure verdict
+    [ok]   untwisted product on Lambda_g: same elementary divisors
+  MOD-2 READING (L/2L with the product inherited from L.L in L):
+    V_g = g(L sbar)/2L: dim 4, totally singular true, subalgebra true, left ideal true, right ideal true, dim span(V.V) = 0
+    W_g = g(L s)/2L:    dim 4, totally singular true, subalgebra true, left ideal false, right ideal false, dim span(W.W) = 4
+    [ok]   criterion: closes <=> V_g and W_g both subalgebras
+  SPAN S = Z-span of all products:
+    elementary divisors of the 576x24 coordinate matrix: 1^8 2^16
+    Lambda/S = Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2
+    [Lambda : S] = 65536 = 2^16
+    [ok]   2*Lambda <= S (every elementary divisor divides 2)
+    dim_F2 S/2Lambda = 8
+    det Gram(Z-basis of S) = 2^56  (= 2^24 * index^2 = 2^56)
+    [ok]   basis-free index check det Gram(S) = det Gram(Lambda) * index^2
+    dim (S + 2L^3)/2L^3 = 4;  predicted dim span(W.W) + 2 dim span(V.V) = 4
+    [ok]   prediction holds
+    index factorization: [Lambda : S + 2L^3] = 2^8,  [2L^3 : S cap 2L^3] = 2^8
+    [ok]   V.V = 0, so every product has its three blocks congruent mod 2L (all 576 basis products)
+
+==================================================================
+Twist pi = GAP (5,6,7): e5 -> e6 -> e7 -> e5
+==================================================================
+  G (row convention, g(x) = x*G):
+    [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 1, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 1, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 1, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 0, 1 ]
+    [ 0, 0, 0, 0, 0, 1, 0, 0 ]
+    [ok]   g(L) = L  (G maps a basis of L into L and |det G| = 1)
+    [ok]   G is orthogonal (G G^T = I), so ._g is norm-multiplicative
+    identity element of ._g is g^{-1}(e0) = [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ok]   g^{-1}(e0) is a two-sided identity of ._g (20 random tests)
+  CLOSURE (576 basis products have integral Lambda-coordinates): true
+    [ok]   naive P1,P2,P3 formula reproduces all 576 products (vs. coordinates * basis)
+    [ok]   naive products in Lambda by Wilson's definition <=> closure verdict
+    300 random pairs of Lambda-vectors: product in Lambda for 300 of 300
+    [ok]   Lambda_g = g^3(Lambda) as lattices (bases differ by a unimodular matrix)
+    [ok]   untwisted product on Lambda_g: same closure verdict
+    [ok]   untwisted product on Lambda_g: same elementary divisors
+  MOD-2 READING (L/2L with the product inherited from L.L in L):
+    V_g = g(L sbar)/2L: dim 4, totally singular true, subalgebra true, left ideal false, right ideal false, dim span(V.V) = 1
+    W_g = g(L s)/2L:    dim 4, totally singular true, subalgebra true, left ideal false, right ideal false, dim span(W.W) = 4
+    [ok]   criterion: closes <=> V_g and W_g both subalgebras
+  SPAN S = Z-span of all products:
+    elementary divisors of the 576x24 coordinate matrix: 1^14 2^10
+    Lambda/S = Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2
+    [Lambda : S] = 1024 = 2^10
+    [ok]   2*Lambda <= S (every elementary divisor divides 2)
+    dim_F2 S/2Lambda = 14
+    det Gram(Z-basis of S) = 2^44  (= 2^24 * index^2 = 2^44)
+    [ok]   basis-free index check det Gram(S) = det Gram(Lambda) * index^2
+    dim (S + 2L^3)/2L^3 = 6;  predicted dim span(W.W) + 2 dim span(V.V) = 6
+    [ok]   prediction holds
+    index factorization: [Lambda : S + 2L^3] = 2^6,  [2L^3 : S cap 2L^3] = 2^4
+
+==================================================================
+Twist pi = GAP (5,7,6): e5 -> e7 -> e6 -> e5 (inverse of the above)
+==================================================================
+  G (row convention, g(x) = x*G):
+    [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 1, 0, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 1, 0, 0, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 0, 1 ]
+    [ 0, 0, 0, 0, 0, 1, 0, 0 ]
+    [ 0, 0, 0, 0, 0, 0, 1, 0 ]
+    [ok]   g(L) = L  (G maps a basis of L into L and |det G| = 1)
+    [ok]   G is orthogonal (G G^T = I), so ._g is norm-multiplicative
+    identity element of ._g is g^{-1}(e0) = [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+    [ok]   g^{-1}(e0) is a two-sided identity of ._g (20 random tests)
+  CLOSURE (576 basis products have integral Lambda-coordinates): false
+    witness: b_1 * b_2 = [ -24, 2, -3, 0, -7, 4, 1, 5, -20, 4, -3, 4, -5, 4, 3, 3, -38, 6, -5, 4, -7, 4, 3, 3 ]
+    violated: [ "(3) x+y+z not in L s" ]
+    number of the 576 basis products outside Lambda: 40
+    [ok]   naive P1,P2,P3 formula reproduces all 576 products (vs. coordinates * basis)
+    [ok]   naive products in Lambda by Wilson's definition <=> closure verdict
+    300 random pairs of Lambda-vectors: product in Lambda for 99 of 300
+    [ok]   Lambda_g = g^3(Lambda) as lattices (bases differ by a unimodular matrix)
+    [ok]   untwisted product on Lambda_g: same closure verdict
+  MOD-2 READING (L/2L with the product inherited from L.L in L):
+    V_g = g(L sbar)/2L: dim 4, totally singular true, subalgebra true, left ideal false, right ideal false, dim span(V.V) = 1
+    W_g = g(L s)/2L:    dim 4, totally singular true, subalgebra false, left ideal false, right ideal false, dim span(W.W) = 7
+    [ok]   criterion: closes <=> V_g and W_g both subalgebras
+
+==================================================================
+Twist s_r, r = (e0+e1+e2+e3+e4+e5+e6-e7)/2
+==================================================================
+  G (row convention, g(x) = x*G):
+    [ 3/4, -1/4, -1/4, -1/4, -1/4, -1/4, -1/4, 1/4 ]
+    [ -1/4, 3/4, -1/4, -1/4, -1/4, -1/4, -1/4, 1/4 ]
+    [ -1/4, -1/4, 3/4, -1/4, -1/4, -1/4, -1/4, 1/4 ]
+    [ -1/4, -1/4, -1/4, 3/4, -1/4, -1/4, -1/4, 1/4 ]
+    [ -1/4, -1/4, -1/4, -1/4, 3/4, -1/4, -1/4, 1/4 ]
+    [ -1/4, -1/4, -1/4, -1/4, -1/4, 3/4, -1/4, 1/4 ]
+    [ -1/4, -1/4, -1/4, -1/4, -1/4, -1/4, 3/4, 1/4 ]
+    [ 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 3/4 ]
+    [ok]   g(L) = L  (G maps a basis of L into L and |det G| = 1)
+    [ok]   G is orthogonal (G G^T = I), so ._g is norm-multiplicative
+    identity element of ._g is g^{-1}(e0) = [ 3/4, -1/4, -1/4, -1/4, -1/4, -1/4, -1/4, 1/4 ]
+    [ok]   g^{-1}(e0) is a two-sided identity of ._g (20 random tests)
+  CLOSURE (576 basis products have integral Lambda-coordinates): true
+    [ok]   naive P1,P2,P3 formula reproduces all 576 products (vs. coordinates * basis)
+    [ok]   naive products in Lambda by Wilson's definition <=> closure verdict
+    300 random pairs of Lambda-vectors: product in Lambda for 300 of 300
+    [ok]   Lambda_g = g^3(Lambda) as lattices (bases differ by a unimodular matrix)
+    [ok]   untwisted product on Lambda_g: same closure verdict
+    [ok]   untwisted product on Lambda_g: same elementary divisors
+  MOD-2 READING (L/2L with the product inherited from L.L in L):
+    V_g = g(L sbar)/2L: dim 4, totally singular true, subalgebra true, left ideal false, right ideal true, dim span(V.V) = 4
+    W_g = g(L s)/2L:    dim 4, totally singular true, subalgebra true, left ideal false, right ideal false, dim span(W.W) = 4
+    [ok]   criterion: closes <=> V_g and W_g both subalgebras
+  SPAN S = Z-span of all products:
+    elementary divisors of the 576x24 coordinate matrix: 1^24
+    Lambda/S = 
+    [Lambda : S] = 1 = 2^0
+    [ok]   2*Lambda <= S (every elementary divisor divides 2)
+    dim_F2 S/2Lambda = 24
+    det Gram(Z-basis of S) = 2^24  (= 2^24 * index^2 = 2^24)
+    [ok]   basis-free index check det Gram(S) = det Gram(Lambda) * index^2
+    dim (S + 2L^3)/2L^3 = 12;  predicted dim span(W.W) + 2 dim span(V.V) = 12
+    [ok]   prediction holds
+    index factorization: [Lambda : S + 2L^3] = 2^0,  [2L^3 : S cap 2L^3] = 2^0
+
+==================================================================
+Certificate for [Lambda : S] = 1 (reflection witness)
+==================================================================
+  subset A: basis pairs (a,c) of products b_a * b_c:
+    [ [ 19, 24 ], [ 14, 20 ], [ 22, 7 ], [ 20, 3 ], [ 6, 13 ], [ 22, 4 ], [ 16, 22 ], [ 3, 14 ], [ 17, 13 ], [ 10, 2 ], [ 12, 11 ], 
+  [ 24, 4 ], [ 17, 12 ], [ 16, 12 ], [ 10, 23 ], [ 22, 12 ], [ 21, 16 ], [ 17, 24 ], [ 4, 9 ], [ 6, 21 ], [ 17, 20 ], [ 8, 8 ], [ 14, 4 ], [ 20, 11 ] ]
+    det of the Lambda-coordinate matrix of A: 17592186044416 = 2^44
+  subset B: basis pairs (a,c):
+    [ [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 1, 5 ], [ 1, 6 ], [ 1, 7 ], [ 1, 8 ], [ 1, 10 ], [ 1, 11 ], [ 1, 12 ], 
+  [ 1, 16 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ], [ 2, 4 ], [ 2, 5 ], [ 2, 6 ], [ 2, 7 ], [ 2, 8 ], [ 2, 10 ], [ 2, 16 ], [ 3, 2 ], [ 4, 2 ] ]
+    det of the Lambda-coordinate matrix of B: 25406131120965 = [ 3, 3, 3, 3, 5, 7, 8961598279 ] (odd)
+    [ok]   all 48 products lie in Lambda (Wilson's definition, naive product formula)
+    [ok]   basis-free: det Gram(A) = 2^24 * detA^2 and det Gram(B) = 2^24 * detB^2
+    [ok]   gcd(detA, detB) = 1, hence 2^a*Lambda + m*Lambda = Lambda <= S, i.e. S = Lambda
+  certificate written to cert_index1_reflection.txt
+  PARI/GP copy written to cert_index1_reflection.gp
+
+=== end run_02 ===

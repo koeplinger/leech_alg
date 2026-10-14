@@ -1,0 +1,17 @@
+Lagrangians containing eps: 30 | by family: {'same': 15, 'other': 15} | subalgebras among them: 22
+Lemma (i)  U~ has integer coordinates, all 30: True
+Lemma (ii) Re(xy) even on all 64 basis products, all 30: True
+Lemma (iii) 2s in U~ with real part -1, all 30: True
+h(U) over the 142 subalgebra Lagrangians by (family, eps in U): {('other', False, 1): 64, ('same', False, 1): 56, ('same', True, 32): 15, ('other', True, 256): 7}
+
+C3 witness r = (e0+...+e6-e7)/2: 2*1_g = s_r(2e0) = ['3/2', '-1/2', '-1/2', '-1/2', '-1/2', '-1/2', '-1/2', '1/2'] | in L: True | in Lsbar: False | in Ls: False | det g = -1
+   => rule predicts index 1; direct computation (s4, s5, s6) gives 1.
+sigma: 2*1_g = 2e0 = s.sbar: True | in Lsbar: True | det g = -1 => rule predicts 2^16
+
+120 reflections: (location of 2*1_g = s_r(2e0), closure, log2 index) : count
+    ('Ls', 'no close', '') : 8
+    ('Lsbar', 'closes', '16') : 28
+    ('Lsbar', 'no close', '') : 28
+    ('neither', 'closes', '0') : 28
+    ('neither', 'no close', '') : 28
+rule (det = -1, k = 8) matches the directly computed index on 56 of 56 closing reflections

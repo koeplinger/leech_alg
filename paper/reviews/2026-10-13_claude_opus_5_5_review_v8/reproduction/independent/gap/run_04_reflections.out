@@ -1,0 +1,125 @@
+=== run_04_reflections.g ===
+roots: 240, reflections (one root per +- pair): 120
+computation time: 1774 ms
+
+Claim C3, counts by verdict (closes, elementary divisors of S):
+  [ true, "1^24" ] : 28
+  [ true, "1^8 2^16" ] : 28
+  [ false, "-" ] : 64
+
+by root kind:
+  integer, orthogonal to e0 (42 reflections): [ [ [ true, "1^8 2^16" ], 21 ], [ [ false, "-" ], 21 ] ]
+  integer, involves e0 (14 reflections): [ [ [ true, "1^8 2^16" ], 7 ], [ [ false, "-" ], 7 ] ]
+  half-integer (64 reflections): [ [ [ true, "1^24" ], 28 ], [ [ false, "-" ], 36 ] ]
+
+sigma = (1,2) equals the reflection in e1 - e2: true
+  its verdict: closes true, 1^8 2^16
+witness r = (e0+e1+...+e6-e7)/2: closes true, 1^24
+
+Index-1 reflections (S = Lambda), roots r:
+  [ 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, -1/2, -1/2, 1/2, -1/2, 1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, -1/2, 1/2, -1/2, -1/2, 1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, -1/2, 1/2, -1/2, 1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, -1/2, 1/2, 1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, 1/2, -1/2, -1/2, -1/2, 1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, 1/2, -1/2, -1/2, 1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, 1/2, -1/2, 1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, -1/2, 1/2, 1/2, -1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, 1/2, -1/2, -1/2, -1/2, -1/2, 1/2 ]   (half-integer)
+  [ 1/2, -1/2, 1/2, -1/2, -1/2, -1/2, 1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, 1/2, -1/2, -1/2, 1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, 1/2, -1/2, 1/2, -1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, 1/2, 1/2, -1/2, -1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2 ]   (half-integer)
+  [ 1/2, 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2 ]   (half-integer)
+  [ 1/2, 1/2, -1/2, -1/2, -1/2, -1/2, 1/2, -1/2 ]   (half-integer)
+  [ 1/2, 1/2, -1/2, -1/2, -1/2, 1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, 1/2, -1/2, -1/2, 1/2, -1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, 1/2, -1/2, 1/2, -1/2, -1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2 ]   (half-integer)
+  [ 1/2, 1/2, 1/2, -1/2, -1/2, -1/2, -1/2, -1/2 ]   (half-integer)
+  [ 1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2 ]   (half-integer)
+  [ 1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2 ]   (half-integer)
+  [ 1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2 ]   (half-integer)
+  [ 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2 ]   (half-integer)
+  [ 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2 ]   (half-integer)
+
+Index-2^16 reflections, roots r:
+  [ 1, 1, 0, 0, 0, 0, 0, 0 ]   (integer, involves e0)
+  [ 1, 0, 1, 0, 0, 0, 0, 0 ]   (integer, involves e0)
+  [ 1, 0, 0, 1, 0, 0, 0, 0 ]   (integer, involves e0)
+  [ 1, 0, 0, 0, 1, 0, 0, 0 ]   (integer, involves e0)
+  [ 1, 0, 0, 0, 0, 1, 0, 0 ]   (integer, involves e0)
+  [ 1, 0, 0, 0, 0, 0, 1, 0 ]   (integer, involves e0)
+  [ 1, 0, 0, 0, 0, 0, 0, 1 ]   (integer, involves e0)
+  [ 0, 1, -1, 0, 0, 0, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 1, 0, -1, 0, 0, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 1, 0, 0, -1, 0, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 1, 0, 0, 0, -1, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 1, 0, 0, 0, 0, -1, 0 ]   (integer, orthogonal to e0)
+  [ 0, 1, 0, 0, 0, 0, 0, -1 ]   (integer, orthogonal to e0)
+  [ 0, 0, 1, -1, 0, 0, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 1, 0, -1, 0, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 1, 0, 0, -1, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 1, 0, 0, 0, -1, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 1, 0, 0, 0, 0, -1 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 1, -1, 0, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 1, 0, -1, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 1, 0, 0, -1, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 1, 0, 0, 0, -1 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 0, 1, -1, 0, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 0, 1, 0, -1, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 0, 1, 0, 0, -1 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 0, 0, 1, -1, 0 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 0, 0, 1, 0, -1 ]   (integer, orthogonal to e0)
+  [ 0, 0, 0, 0, 0, 0, 1, -1 ]   (integer, orthogonal to e0)
+
+closing reflections with other indices: 0
+
+All closing reflections have 2*Lambda <= S: true
+Mod-2 criterion (C5) closes <=> V and W subalgebras: true
+Mod-2 prediction dim (S+2L^3)/2L^3 = dim W.W + 2 dim V.V: true
+Closing reflections by (dim V.V, dim W.W, V left ideal, V right ideal, W left, W right, elementary divisors):
+  [ 0, 4, true, true, false, false, "1^8 2^16" ] : 28
+  [ 4, 4, false, true, false, false, "1^24" ] : 28
+Non-closing reflections by (V subalgebra, W subalgebra): [ [ [ true, false ], 64 ] ]
+
+class of r split as v + w (v in L sbar/2L, w in L s/2L): every r has v <> 0 and w <> 0: true
+  number of distinct v: 15, distinct (v,w): 120
+  verdict by v (15 nonzero v, 8 reflections each):
+    v = [ 0, 0, 0, 0, 0, 0, 0, 1 ] : [ [ "-", 8 ] ]
+    v = [ 0, 0, 0, 1, 0, 1, 1, 0 ] : [ [ "-", 8 ] ]
+    v = [ 0, 0, 0, 1, 0, 1, 1, 1 ] : [ [ "1^24", 4 ], [ "1^8 2^16", 4 ] ]
+    v = [ 0, 0, 1, 0, 1, 1, 1, 0 ] : [ [ "1^24", 4 ], [ "1^8 2^16", 4 ] ]
+    v = [ 0, 0, 1, 0, 1, 1, 1, 1 ] : [ [ "-", 8 ] ]
+    v = [ 0, 0, 1, 1, 1, 0, 0, 0 ] : [ [ "-", 8 ] ]
+    v = [ 0, 0, 1, 1, 1, 0, 0, 1 ] : [ [ "1^24", 4 ], [ "1^8 2^16", 4 ] ]
+    v = [ 0, 1, 0, 0, 1, 0, 1, 0 ] : [ [ "-", 8 ] ]
+    v = [ 0, 1, 0, 0, 1, 0, 1, 1 ] : [ [ "1^24", 4 ], [ "1^8 2^16", 4 ] ]
+    v = [ 0, 1, 0, 1, 1, 1, 0, 0 ] : [ [ "1^24", 4 ], [ "1^8 2^16", 4 ] ]
+    v = [ 0, 1, 0, 1, 1, 1, 0, 1 ] : [ [ "-", 8 ] ]
+    v = [ 0, 1, 1, 0, 0, 1, 0, 0 ] : [ [ "-", 8 ] ]
+    v = [ 0, 1, 1, 0, 0, 1, 0, 1 ] : [ [ "1^24", 4 ], [ "1^8 2^16", 4 ] ]
+    v = [ 0, 1, 1, 1, 0, 0, 1, 0 ] : [ [ "1^24", 4 ], [ "1^8 2^16", 4 ] ]
+    v = [ 0, 1, 1, 1, 0, 0, 1, 1 ] : [ [ "-", 8 ] ]
+  verdict by w:
+    w = [ 0, 0, 0, 1, 1, 1, 0, 1 ] : [ [ "-", 4 ], [ "1^8 2^16", 4 ] ]
+    w = [ 0, 0, 1, 0, 0, 1, 1, 1 ] : [ [ "-", 4 ], [ "1^8 2^16", 4 ] ]
+    w = [ 0, 0, 1, 1, 1, 0, 1, 0 ] : [ [ "-", 4 ], [ "1^8 2^16", 4 ] ]
+    w = [ 0, 1, 0, 0, 1, 1, 1, 0 ] : [ [ "-", 4 ], [ "1^8 2^16", 4 ] ]
+    w = [ 0, 1, 0, 1, 0, 0, 1, 1 ] : [ [ "-", 4 ], [ "1^8 2^16", 4 ] ]
+    w = [ 0, 1, 1, 0, 1, 0, 0, 1 ] : [ [ "-", 4 ], [ "1^8 2^16", 4 ] ]
+    w = [ 0, 1, 1, 1, 0, 1, 0, 0 ] : [ [ "-", 4 ], [ "1^8 2^16", 4 ] ]
+    w = [ 1, 0, 0, 0, 1, 0, 1, 1 ] : [ [ "-", 4 ], [ "1^24", 4 ] ]
+    w = [ 1, 0, 0, 1, 0, 1, 1, 0 ] : [ [ "-", 4 ], [ "1^24", 4 ] ]
+    w = [ 1, 0, 1, 0, 1, 1, 0, 0 ] : [ [ "-", 4 ], [ "1^24", 4 ] ]
+    w = [ 1, 0, 1, 1, 0, 0, 0, 1 ] : [ [ "-", 4 ], [ "1^24", 4 ] ]
+    w = [ 1, 1, 0, 0, 0, 1, 0, 1 ] : [ [ "-", 4 ], [ "1^24", 4 ] ]
+    w = [ 1, 1, 0, 1, 1, 0, 0, 0 ] : [ [ "-", 4 ], [ "1^24", 4 ] ]
+    w = [ 1, 1, 1, 0, 0, 0, 1, 0 ] : [ [ "-", 4 ], [ "1^24", 4 ] ]
+    w = [ 1, 1, 1, 1, 1, 1, 1, 1 ] : [ [ "-", 8 ] ]
+
+per-reflection table written to refl_census_table.txt
+=== end run_04 ===

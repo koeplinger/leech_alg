@@ -222,6 +222,42 @@ Exhaustive, not sampled.  The identity (the untwisted product) does not
 close.  For the 3-cycles the closing half admits a description: one of the
 two cyclic orientations per three-element index subset.
 
+**The span index depends on the twist** (claims 017, 018; the external review
+of v8 in `paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`, second pass
+`verify_twist_span_index_census.py` and the note
+`paper/reviews/2026-10-14_claude_fable_5_1_index_one_verification.md`).  For
+an isometry g of R⁸ with g(L) = L, write x ·_g y := g⁻¹(g(x)·g(y)), ⋆_g for
+the triple product of Definition 3.3 built from ·_g, and S_g for the Z-span of
+the products u ⋆_g v.  Among the 1,764 closing permutation twists above, every
+even permutation gives [Λ : S_π] = 2¹⁰ and every odd one (σ among them) 2¹⁶.
+The reflection s_r in the root r = (e₀+e₁+⋯+e₆−e₇)/2 of L gives a product that
+closes on Λ with [Λ : S_r] = 1: its products Z-span Λ.  Of the 120 root
+reflections, 56 close, 28 with index 2¹⁶ and 28 with index 1.  Two statements
+of the review hold on all 5,040 permutations and all 120 reflections (checked
+exhaustively; the first has a short proof in the review, the second a sketch):
+⋆_g closes on Λ iff Ls̄ and Ls are both closed under ·_g, and
+[Λ : S_g] = [Ls : ⟨Ls ·_g Ls⟩]·[Ls̄ : ⟨Ls̄ ·_g Ls̄⟩]².  Index 1 concerns the
+span of the products, not maximality: L ·_g L ⊆ L for every such g (g(L) = L
+and L · L ⊆ L), so L³ is a ⋆_g-closed overlattice of Λ of index 2¹² for every
+twist in this family, and (Λ, ⋆_g) is never a maximal order; for the index-1
+reflection, Λ ⊂ Λ + Z(1_r, 0, 0) ⊂ L³ is a chain of ⋆_r-closed lattices with
+indices 4 and 2¹⁰.  An explicit maximal order above L³, of index 2²⁴·3⁸
+over Λ, decomposable and non-integral, was constructed in the second pass
+(claim 020, two machine passes).  Independently of the twist, the closed
+lattice proj_D(Λ) ⊕ proj_T(Λ) contains Λ with index 3⁸, so Wilson's 3-adic
+gluing alone rules out maximality (claim 018, single-pass strengthening).  Open: a structural proof of the index values (the
+two sublattice factors take only the values 1, 2⁵ and 2⁸ in the review's
+census over all of W(E₈)), and the ring structure of the index-1 orders.
+
+**Wilson's sublattices are Kirmse's set and Bruck's order, scaled** (claim
+019; the verification note above, §4).  With J₁ = Z⁸ + C_K/2 Kirmse's set and
+O⁽⁴⁾ = Z⁸ + (0 4)C_K/2 the octavian order obtained from it by transposing the
+coordinates 0 and 4: Ls̄ = 2J₁, L = J₁·s, Ls = J₁·s², σ(Ls̄) = 2O⁽⁴⁾ and
+σ(Ls) = p·O⁽⁴⁾ with p = e₂ − e₄ + e₅ − e₆.  Since all seven octavian orders
+are closed and contain L, Lemma 4.3 follows from Coxeter's theorem, two-sided,
+with no table; the factor 2⁸ in σ's span index is [2O⁽⁴⁾ : 4O⁽⁴⁾].  Lemma 4.4
+becomes closure of the principal set p·O⁽⁴⁾ and remains a finite check.
+
 ### Evidence files
 
 - `evidence_and_reasoning/research_result.md` — condensed summary
@@ -604,19 +640,27 @@ with further detail recorded here.
    One candidate shape for an integer-level reason is excluded:
    σ(Ls) is not an ideal of L on either side (see "Structure of the
    algebra" above).  A structural argument must therefore rest on
-   something other than an ideal property.
+   something other than an ideal property.  For Lemma 4.3 such an
+   argument exists (claim 019): σ(Ls̄) = 2O⁽⁴⁾ is twice an octavian
+   maximal order containing L, so Coxeter's theorem gives the two-sided
+   ideal property; for Lemma 4.4 the same identification gives σ(Ls) =
+   p·O⁽⁴⁾ with p of norm 4, and closure of that principal set is the
+   remaining finite check.
 
 2. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
    whether the order-6 octonion automorphism generating the C₆ admits an
    intrinsic description.  The group itself and the strict containment
    Aut(Λ, +, ⋆) ⊊ Co₀ are known (see "Structure of the algebra" above).
 
-3. **Whether a closed bilinear product on Λ built from octonion
-   multiplication, as φ and ⋆ both are, can have a smaller span index
-   than ⋆**: the index is 2²⁵ for the Baez–Egan product φ (paper §6,
-   `verify_phi_span_index.py`) and 2¹⁶ for ⋆ (claim 015).  The order
-   itself is not maximal (claim 016; see
-   "Structure of the algebra" above).
+3. **The span index.**  Answered: it depends on the twist (claim 017):
+   2¹⁶ for σ and every odd closing permutation, 2¹⁰ for every even one,
+   and 1 for the reflection twists of claim 017; for comparison, 2²⁵ for
+   the Baez–Egan product φ (paper §6, `verify_phi_span_index.py`).  Open:
+   a structural proof of the values beyond the exhaustive computation, and
+   the ring structure of the index-1 orders.  The order itself is not
+   maximal under any twist by an isometry of L (claims 016, 018).  The
+   paper's Section 7 (v8, in progress) still poses the question in its
+   pre-review form.
 
 4. **Classification** of the algebra (R²⁴, +, ⋆): it is
    non-associative, non-alternative, non-flexible, and non-unital
@@ -660,7 +704,7 @@ leech_alg/
 │   │   ├── 001–006                # Foundations (Wilson, Dixon, octonions)
 │   │   ├── 007                    # Untwisted triple-octonion ruled out
 │   │   ├── 008                    # Z₃-symmetric triple-octonion product: order on Λ
-│   │   └── README.md              # The ledger; claims 009–016 are ledger-only rows
+│   │   └── README.md              # The ledger; claims 009–020 are ledger-only rows
 │   ├── references/                # Central reference registry
 │   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)

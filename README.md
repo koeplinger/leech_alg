@@ -100,9 +100,11 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 - A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
   octonion product, while Ls is not).  One candidate shape is excluded:
   σ(Ls) is not an ideal of L on either side.
-- Whether a closed bilinear product on Λ built from octonion multiplication,
-  as φ and ⋆ both are, can have a smaller span index than ⋆: the index is
-  2²⁵ for the Baez–Egan product φ and 2¹⁶ for ⋆.
+- The span index depends on the twist (claim 017): 2¹⁶ for σ and every odd
+  closing permutation, 2¹⁰ for every even one, and 1 for the reflection
+  twists found by the external review of v8; a structural proof of these
+  values is open.  No twist by an isometry of L makes the order maximal
+  (claim 018).
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.

@@ -1,0 +1,10 @@
+closing ordered pairs (both members subalgebras): 4704
+index of the pair, ideal type of V (first member), number of pairs:
+   index 1       V neither      3136
+   index 1       V right only    224
+   index 32      V neither       448
+   index 256     V neither       224
+   index 1024    V neither       448
+   index 65536   V two-sided     224
+V is a left ideal  <=>  index = 2^16, on every closing pair: True
+index-1 pairs: 3360; V neither left nor right ideal on 3136; V right (not left) ideal on 224

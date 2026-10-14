@@ -1,0 +1,9 @@
+signed permutations: 645120; distinct twisted tables: 480; fibre sizes: {1344: 480}
+each fibre has a single parity of the number of sign changes: True
+tables from even / odd sign count: 240 / 240
+even sign count: 240 tables, 84 close; indices {'2^10': 56, '2^16': 28}
+odd  sign count: 240 tables, 84 close; indices {'2^10': 56, '2^16': 28}
+all 480 tables: 168 close; indices {'2^10': 112, '2^16': 56}
+2 Lambda <= S for every closing table (index = 2^(24 - F2-rank)): True
+g and conj o g (opposite twisted product) have identical closure and index for all tables: True
+total time 5.4 s

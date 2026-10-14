@@ -1,0 +1,129 @@
+============================================================================
+C1: sigma = (1 2), i.e. pi = (2,1,3,4,5,6,7)
+============================================================================
+  closes                           True
+  n_products_not_in_Lambda         0
+  span_index                       65536
+  log2_span_index                  16
+  elementary_divisors_nontrivial   [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+  f2_rank_S_mod_2Lambda            8
+  two_Lambda_in_S                  True
+  index_S_plus_2L3                 256
+  V_g_subalgebra                   True
+  W_g_subalgebra                   True
+  V_g_left_ideal                   True
+  V_g_right_ideal                  True
+  dim_span_VgVg                    0
+  dim_span_WgWg                    4
+  [reference] identity (untwisted): closes = False, products not in Lambda = 42/576, V subalgebra True, W subalgebra False
+
+============================================================================
+C2: all 5,039 non-identity permutations of e1..e7
+============================================================================
+  cycle type parity  total  close       paper  span indices of closing twists
+  2-cycle    odd        21     21    (21, 21)  2^16: 21
+  3-cycle    even       70     35    (70, 35)  2^10: 35
+  (2,2)      even      105     42   (105, 42)  2^10: 42
+  4-cycle    odd       210      0    (210, 0)  
+  (3,2)      odd       420    126  (420, 126)  2^16: 126
+  5-cycle    even      504    252  (504, 252)  2^10: 252
+  (2,2,2)    odd       105     21   (105, 21)  2^16: 21
+  (3,3)      even      280    112  (280, 112)  2^10: 112
+  (4,2)      even      630    294  (630, 294)  2^10: 294
+  6-cycle    odd       840    210  (840, 210)  2^16: 210
+  (3,2,2)    even      210    105  (210, 105)  2^10: 105
+  (4,3)      odd       420    168  (420, 168)  2^16: 168
+  (5,2)      odd       504     42   (504, 42)  2^16: 42
+  7-cycle    even      720    336  (720, 336)  2^10: 336
+  total               5039   1764   all cycle types match the paper's table: True
+  closing even permutations: 1176;  (index, elementary divisors != 1, 2Lambda<=S) -> count:
+      index 1024 = 2^10, divisors {2^1 x 10} (all = 2), 2Lambda<=S: True  ->  1176
+  closing odd permutations: 588;  (index, elementary divisors != 1, 2Lambda<=S) -> count:
+      index 65536 = 2^16, divisors {2^1 x 16} (all = 2), 2Lambda<=S: True  ->  588
+  C2 witness pi = (5 6 7), i.e. pi(5)=6, pi(6)=7, pi(7)=5: pi = (1, 2, 3, 4, 6, 7, 5), closes = True, index = 1024 (2^10), F2-rank = 14, 2Lambda<=S: True
+  its inverse (5 7 6): pi = (1, 2, 3, 4, 7, 5, 6), closes = False, index = None (2^None), F2-rank = None, 2Lambda<=S: None
+  closure <=> (V_g and W_g subalgebras of L/2L) on all 5,040 permutations: True
+  3-cycles: number of 3-subsets where exactly one of the two orientations closes: 35 of 35
+
+============================================================================
+C3: the 120 root reflections s_r
+============================================================================
+  closes          index      1  half-integral              : 28
+  closes          index  65536  integral (+-e_i +- e_j)    : 28
+  does not close  index   None  half-integral              : 36
+  does not close  index   None  integral (+-e_i +- e_j)    : 28
+  roots r with index 1 (28):
+     r = (1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2)    F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2)    F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2)    F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2)    F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2)    F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, 1/2, -1/2, -1/2, -1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2)    F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, -1/2, 1/2, -1/2, -1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, -1/2, -1/2, 1/2, -1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, -1/2, -1/2, -1/2, 1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, -1/2, -1/2, -1/2, -1/2, 1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2)    F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, 1/2, 1/2, -1/2, -1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, 1/2, -1/2, 1/2, -1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, 1/2, -1/2, -1/2, 1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, 1/2, -1/2, -1/2, -1/2, 1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, 1/2, -1/2, -1/2, -1/2, -1/2, 1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, 1/2, 1/2, -1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, 1/2, -1/2, 1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, 1/2, -1/2, -1/2, 1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, 1/2, -1/2, -1/2, -1/2, 1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, -1/2, 1/2, 1/2, -1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, -1/2, 1/2, -1/2, 1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, -1/2, 1/2, -1/2, -1/2, 1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2, -1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, -1/2, -1/2, 1/2, -1/2, 1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+     r = (1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2) F2-rank 24, divisors [], dim VgVg 4, WgWg 4, [Lam:S+(2L)^3] 1
+  roots r with index 2^16 (28):
+     r = (1, 1, 0, 0, 0, 0, 0, 0)                     F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (1, 0, 1, 0, 0, 0, 0, 0)                     F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (1, 0, 0, 1, 0, 0, 0, 0)                     F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (1, 0, 0, 0, 1, 0, 0, 0)                     F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (1, 0, 0, 0, 0, 1, 0, 0)                     F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (1, 0, 0, 0, 0, 0, 1, 0)                     F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (1, 0, 0, 0, 0, 0, 0, 1)                     F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 1, -1, 0, 0, 0, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 1, 0, -1, 0, 0, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 1, 0, 0, -1, 0, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 1, 0, 0, 0, -1, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 1, 0, 0, 0, 0, -1, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 1, 0, 0, 0, 0, 0, -1)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 1, -1, 0, 0, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 1, 0, -1, 0, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 1, 0, 0, -1, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 1, 0, 0, 0, -1, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 1, 0, 0, 0, 0, -1)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 1, -1, 0, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 1, 0, -1, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 1, 0, 0, -1, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 1, 0, 0, 0, -1)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 0, 1, -1, 0, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 0, 1, 0, -1, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 0, 1, 0, 0, -1)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 0, 0, 1, -1, 0)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 0, 0, 1, 0, -1)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+     r = (0, 0, 0, 0, 0, 0, 1, -1)                    F2-rank  8, divisors 2^1 x 16, dim VgVg 0, WgWg 4, [Lam:S+(2L)^3] 256
+  other indices among closing reflections: []
+  C3 witness r = (e0+...+e6-e7)/2: closes = True, index = 1, F2-rank = 24
+  reflection in e1-e2 (= sigma): closes = True, index = 65536
+  closure <=> (V_g and W_g subalgebras of L/2L) on all 120 reflections: True
+
+============================================================================
+Mod-2 structure of the closing twists: [Lambda : S + (2L)^3] vs dims of span(VgVg), span(WgWg)
+============================================================================
+  prediction [Lambda : S+(2L)^3] = 2^((4 - dim WgWg) + 2 (4 - dim VgVg)) holds for all closing twists: True
+  (kind, parity/root type, index, F2-rank, dim VgVg, dim WgWg, [Lam:S+(2L)^3], Vg 2-sided ideal, Wg 2-sided ideal) : count
+    ('permutation', 'even', 1024, 14, 1, 4, 64, False, False) : 1176
+    ('permutation', 'odd', 65536, 8, 0, 4, 256, True, False) : 588
+    ('reflection', 'half-integral', 1, 24, 4, 4, 1, False, False) : 28
+    ('reflection', 'integral (+-e_i +- e_j)', 65536, 8, 0, 4, 256, True, False) : 28
+
+exported 108 product matrices for the PARI/GP cross-check (sigma, C2 witness, C3 witness, the other 55 closing reflections, 50 random closing permutations, seed 13102026)
+total time 12.6 s

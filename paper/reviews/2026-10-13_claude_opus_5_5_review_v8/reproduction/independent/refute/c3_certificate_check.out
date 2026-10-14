@@ -1,0 +1,6 @@
+factors read: 48
+all 48 factors satisfy Wilson's conditions: True
+all 24 products u_k *_g v_k satisfy Wilson's conditions: True
+Gram determinant of the 24 products: 16777216 (det Lambda = 2^24 = 16777216 )
+=> the 24 products form a Z-basis of Lambda: True
+norms of the products: [28, 28, 28, 28, 28, 32, 32, 32, 32, 32, 40, 40, 40, 40, 48, 48, 56, 64, 64, 64, 64, 144, 144, 2464]

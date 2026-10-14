@@ -1,0 +1,4 @@
+date: 2026-10-14T00:13:46Z
+Python 3.12.3
+numpy 1.26.4  sympy 1.12
+PARI/GP [2, 15, 4]

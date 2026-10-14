@@ -1,0 +1,121 @@
+root_r(e-coords)	type	closed	log2_index	V_sub	V_left	V_right	V_2sided	W_sub	W_left	W_right	W_2sided	dimVV	dimWW	hV	hW	eps_in_V	eps_in_W
+1,1,0,0,0,0,0,0	int, +-e0+-ej	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1,-1,0,0,0,0,0,0	int, +-e0+-ej	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+1,0,1,0,0,0,0,0	int, +-e0+-ej	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1,0,-1,0,0,0,0,0	int, +-e0+-ej	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+1,0,0,1,0,0,0,0	int, +-e0+-ej	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1,0,0,-1,0,0,0,0	int, +-e0+-ej	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+1,0,0,0,1,0,0,0	int, +-e0+-ej	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1,0,0,0,-1,0,0,0	int, +-e0+-ej	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+1,0,0,0,0,1,0,0	int, +-e0+-ej	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1,0,0,0,0,-1,0,0	int, +-e0+-ej	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+1,0,0,0,0,0,1,0	int, +-e0+-ej	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1,0,0,0,0,0,-1,0	int, +-e0+-ej	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+1,0,0,0,0,0,0,1	int, +-e0+-ej	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1,0,0,0,0,0,0,-1	int, +-e0+-ej	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,1,1,0,0,0,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,1,-1,0,0,0,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,1,0,1,0,0,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,1,0,-1,0,0,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,1,0,0,1,0,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,1,0,0,-1,0,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,1,0,0,0,1,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,1,0,0,0,-1,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,1,0,0,0,0,1,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,1,0,0,0,0,-1,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,1,0,0,0,0,0,1	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,1,0,0,0,0,0,-1	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,1,1,0,0,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,1,-1,0,0,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,1,0,1,0,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,1,0,-1,0,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,1,0,0,1,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,1,0,0,-1,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,1,0,0,0,1,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,1,0,0,0,-1,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,1,0,0,0,0,1	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,1,0,0,0,0,-1	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,1,1,0,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,1,-1,0,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,1,0,1,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,1,0,-1,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,1,0,0,1,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,1,0,0,-1,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,1,0,0,0,1	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,1,0,0,0,-1	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,0,1,1,0,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,0,1,-1,0,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,0,1,0,1,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,0,1,0,-1,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,0,1,0,0,1	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,0,1,0,0,-1	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,0,0,1,1,0	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,0,0,1,-1,0	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,0,0,1,0,1	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,0,0,1,0,-1	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+0,0,0,0,0,0,1,1	int, e0 not involved	False		True	True	True	True	False	False	False	False	0	7	256	None	True	False
+0,0,0,0,0,0,1,-1	int, e0 not involved	True	16	True	True	True	True	True	False	False	False	0	4	256	1	True	False
+1/2,1/2,1/2,1/2,1/2,1/2,1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,1/2,1/2,1/2,1/2,-1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,1/2,1/2,1/2,-1/2,1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,1/2,1/2,1/2,-1/2,-1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,1/2,-1/2,1/2,1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,1/2,1/2,-1/2,1/2,-1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True
+1/2,1/2,1/2,1/2,-1/2,-1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,1/2,-1/2,-1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,-1/2,1/2,1/2,1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,1/2,-1/2,1/2,1/2,-1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,-1/2,1/2,-1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,-1/2,1/2,-1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True
+1/2,1/2,1/2,-1/2,-1/2,1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,-1/2,-1/2,1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,-1/2,-1/2,-1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,1/2,-1/2,-1/2,-1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,-1/2,1/2,1/2,1/2,1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,-1/2,1/2,1/2,1/2,-1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,1/2,1/2,-1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,1/2,1/2,-1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,1/2,-1/2,1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,1/2,-1/2,1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,1/2,-1/2,-1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True
+1/2,1/2,-1/2,1/2,-1/2,-1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,-1/2,-1/2,1/2,1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True
+1/2,1/2,-1/2,-1/2,1/2,1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,-1/2,1/2,-1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,-1/2,1/2,-1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,-1/2,-1/2,-1/2,1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,1/2,-1/2,-1/2,-1/2,1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,-1/2,-1/2,-1/2,-1/2,1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,1/2,-1/2,-1/2,-1/2,-1/2,-1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,1/2,1/2,1/2,1/2,1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,1/2,1/2,1/2,1/2,-1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,1/2,1/2,-1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True
+1/2,-1/2,1/2,1/2,1/2,-1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,1/2,-1/2,1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,1/2,-1/2,1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,1/2,-1/2,-1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,1/2,-1/2,-1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,1/2,-1/2,1/2,1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,-1/2,1/2,1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,-1/2,1/2,-1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,1/2,-1/2,1/2,-1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,1/2,-1/2,-1/2,1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True
+1/2,-1/2,1/2,-1/2,-1/2,1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,1/2,-1/2,-1/2,-1/2,1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,1/2,-1/2,-1/2,-1/2,-1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,1/2,1/2,1/2,1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,-1/2,1/2,1/2,1/2,-1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True
+1/2,-1/2,-1/2,1/2,1/2,-1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,-1/2,1/2,1/2,-1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,1/2,-1/2,1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,-1/2,1/2,-1/2,1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,1/2,-1/2,-1/2,1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,1/2,-1/2,-1/2,-1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,-1/2,1/2,1/2,1/2,1/2	half-integer	False		True	False	True	False	False	False	False	False	4	7	1	None	False	False
+1/2,-1/2,-1/2,-1/2,1/2,1/2,-1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,-1/2,1/2,-1/2,1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,-1/2,1/2,-1/2,-1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,-1/2,-1/2,1/2,1/2,-1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,-1/2,-1/2,1/2,-1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,-1/2,-1/2,-1/2,1/2,1/2	half-integer	True	0	True	False	True	False	True	False	False	False	4	4	1	1	False	False
+1/2,-1/2,-1/2,-1/2,-1/2,-1/2,-1/2,-1/2	half-integer	False		True	False	True	False	False	False	False	False	4	3	1	None	False	True

@@ -222,8 +222,11 @@ References:
 
 A lattice Γ ⊂ O (the real octonion algebra) that is closed under
 multiplication, contains the identity, and is maximal with respect to
-inclusion among such lattices.  There are exactly **seven** maximal
-orders in the octonions, each isometric to the $E_8$ root lattice.  The
+inclusion among such lattices.  The rational octonion algebra has
+infinitely many maximal orders, all conjugate; exactly **seven** of them
+contain the Gravesian order $\mathbb{Z}\langle e_0, \ldots, e_7\rangle$, each
+isometric to the $E_8$ root lattice (Coxeter 1946; Conway--Smith 2003,
+Ch. 9).  The
 $\binom{7}{2}=21$ transpositions of pairs of imaginary basis units, applied
 to Kirmse's $J_1$, yield the seven (Coxeter 1946, §4); they fall into seven sets
 of three, with each set fixing one common imaginary unit (Coxeter's

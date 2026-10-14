@@ -1,0 +1,27 @@
+A. own certificate for [Lambda : S] = 1 under s_r, r = (e0+...+e6-e7)/2
+   all 576 basis-pair products lie in Lambda; F2-rank = 24
+   set 1: 24 products independent mod 2, det = 79194800595163 = 11 * 7199527326833;  running gcd = 79194800595163
+   set 2: 24 products independent mod 2, det = -81930166777915407 = 3^2 * 7 * 263 * 10037 * 492655819;  running gcd = 1
+   => [Lambda : S] divides gcd = 1, so S = Lambda (no HNF used).
+   cross-check: products recomputed from the definition in e-coordinates match, lie in Lambda,
+   and Gram det of each set = 2^24 * det^2 (basis-free form of the index).
+
+B. refute agent's 24-product Z-basis certificate (refute/c3_certificate.gp.out)
+   48 factors and 24 products satisfy Wilson's definition; det(Lambda-coords of products) = -1
+   Gram det of the 24 products = 16777216 (= 2^24: True)
+   => the 24 single products form a Z-basis of Lambda: S = Lambda.  VERIFIED.
+   norms (left, right, product): [(8, 8, 28), (8, 8, 64), (12, 8, 56), (8, 8, 32), (8, 8, 40), (8, 8, 40), (8, 44, 144), (8, 8, 48), (8, 44, 144), (8, 8, 40), (8, 8, 64), (8, 8, 28), (8, 8, 28), (8, 8, 32), (8, 8, 28), (12, 8, 32), (8, 8, 28), (12, 8, 32), (8, 8, 48), (8, 8, 40), (12, 8, 32), (8, 8, 64), (8, 8, 64), (8, 308, 2464)]
+
+C. GAP agent's certificate (gap/cert_index1_reflection.txt)
+   their BASIS2: 24 vectors in Lambda, det in this folder's Lambda-coordinates = 1 (a Z-basis)
+   set A: 24 products recomputed == listed, in Lambda; |det| = 17592186044416 (listed 17592186044416) = 2^44
+   set B: 24 products recomputed == listed, in Lambda; |det| = 25406131120965 (listed 25406131120965) = 3^4 * 5 * 7 * 8961598279
+   gcd = 1  => S = Lambda.  VERIFIED.
+
+D. structure agent's certificates (structure/cert_*_products_ecoords_doubled.txt)
+   their basis: 24 vectors in Lambda forming a Z-basis (det +-1 in this folder's coordinates)
+   sigma: 3 sets recomputed == listed; |det| = [64732069888, 1125384192, 1125384192]; gcd = 65536
+   c3   : 5 sets recomputed == listed; |det| = [1837543517184, 10942425088, 1189263360, 1189263360, 1189263360]; gcd = 1024
+   refl : 5 sets recomputed == listed; |det| = [769672205637, 250963408, 250963408, 250963408, 250963408]; gcd = 1
+   (the gcd is an UPPER bound for the index; the lower bounds 2^16, 2^10, 1 come from the
+    F2-ranks 8, 14, 24 in f2_witnesses.py; together: 2^16, 2^10, 1 exactly)

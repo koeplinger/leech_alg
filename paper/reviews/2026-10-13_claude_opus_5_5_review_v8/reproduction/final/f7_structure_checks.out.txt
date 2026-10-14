@@ -1,0 +1,38 @@
+PROOF 1: closure criterion identities (formal, mod 2)
+  P1+P2+P3 = ww': True   P1+P2 = aa'+ab'+ba': True   P1+P3 = ab'+ba'+bb': True
+  => closure iff W.W <= W and V.V <= V (take b = b' = 0, resp. a = b = 0, for necessity;
+     test vectors (v,0,v) and (w,w,w) lie in Lambda_g).
+
+PROOF 2: index formula
+  (i)   D*T = 0: True   T*D = 0: True   D*D = 3(ab,ab,ab): True
+  (ii)  routing products of T_Z basis: [(1, 1, -2), (1, -2, 1), (1, -2, 1), (-2, 1, 1)] -> [T_Z : <T_Z o T_Z>] = 3
+  (iii) Delta(Ls) and Lsbar (x) T_Z lie in Lambda; [Lambda : Delta(Ls) + Lsbar(x)T_Z] = 6561 = 3^8: True
+        (a,a,a) in Lambda <=> a in Ls, on all 256 classes mod 2L: True
+  (iv)  (4L)^3 <= S_g needs <L._g L> = L, checked for every twist in f2/f4 (and [L:<L.L>] = 1 in f1).
+
+TRIVIAL-EXPLANATION TESTS for S = Lambda under s_r
+  sigma: 924 vectors x (left, right): {'N^4 | det': 1832, 'nonzero cases': 1832, 'unimodular': 0, 'x+y+z = 0, det = 0': 16, 'x+y+z = 0': 16}
+  s_r  : 924 vectors x (left, right): {'N^4 | det': 1832, 'nonzero cases': 1832, 'unimodular': 0, 'x+y+z = 0, det = 0': 16, 'x+y+z = 0': 16}
+  => no element of Lambda acts unimodularly on either side (16 | det), so S = Lambda is not
+     produced by a single unit-like element; it needs genuinely many products.
+
+IDEAL PROPERTIES of V_g = g(Lsbar)/2L and W_g = g(Ls)/2L in L/2L (standard product mod 2)
+  sigma            V_g: subalgebra True, left ideal True, right ideal True
+                   W_g: subalgebra True, left ideal False, right ideal False
+  3-cycle (5 6 7)  V_g: subalgebra True, left ideal False, right ideal False
+                   W_g: subalgebra True, left ideal False, right ideal False
+  s_r              V_g: subalgebra True, left ideal False, right ideal True
+                   W_g: subalgebra True, left ideal False, right ideal False
+  => for s_r the analogue of the paper's Lemma 4.3 (L . g(Lsbar) <= g(Lsbar)) FAILS, yet *_g closes:
+     closure needs only the two subalgebra properties (PROOF 1).
+
+BASIS DEPENDENCE of failing-product counts (non-closing twists)
+  identity                     failing basis products: this folder 40, py 42, gap 42, structure 40, refute 40;  obstruction dimension in every basis: {3}
+  inverse 3-cycle e5->e7->e6   failing basis products: this folder 52, py 40, gap 40, structure 52, refute 52;  obstruction dimension in every basis: {3}
+
+RIGHT-MULTIPLE VARIANT: Lambda_R from sbar.l and s.l (NOT the paper's convention)
+  Lambda_R == Lambda: False ; det(L^3-coords) = 4096
+  sigma = (1 2): (True, 1024)
+  s_r, r = (e0+...+e6-e7)/2: (False, None)
+  120 reflections on Lambda_R: (closes, index) counts: {(True, 1024): 56, (False, None): 64}
+  5040 permutations (convention A) on Lambda_R: closing (sign, index) counts: {(-1, 1024): 1176, (1, 65536): 588}

@@ -1,0 +1,29 @@
+... 1000 permutations done (136 s)
+... 4500 permutations done (592 s)
+
+closure per cycle type (direct 576-product test):
+   (2,)           21 /   21
+   (3,)           35 /   70
+   (2, 2)         42 /  105
+   (4,)            0 /  210
+   (3, 2)        126 /  420
+   (5,)          252 /  504
+   (2, 2, 2)      21 /  105
+   (3, 3)        112 /  280
+   (4, 2)        294 /  630
+   (6,)          210 /  840
+   (3, 2, 2)     105 /  210
+   (4, 3)        168 /  420
+   (5, 2)         42 /  504
+   (7,)          336 /  720
+   total        1764 / 5039
+
+span index of the closing twists, by parity of pi:
+   even : index 1024 (=2^10): 1176
+   odd  : index 65536 (=2^16): 588
+
+factorisation [Lambda:S] = [B:B.B][A:A.A]^2 holds for 1764 closing twists; fails for 0
+
+criterion check (closes directly, both V and W subalgebras): counts {(True, True): 1764, (False, False): 3275}
+
+runtime 647 s

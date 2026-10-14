@@ -1,0 +1,22 @@
+(a) left+right alternative on 300 random pairs: True | N(xy)=N(x)N(y): True
+    sbar == conj(s): True | s^2 + s + 2 == 0: True
+    s in L: True | sbar in L: False | e0 in L: False
+(b) basis vectors in D8+: True | det(basis) = 1
+    Gram(L) det = 1 (exact: 1 ) even diagonal: True
+(c) L.L in L: 64 basis products integral in L-coords: True (asserted when building T_STD); root x root products outside D8+: 0 of 57600
+(d) [L : Z-span(L.L)] = 1
+(e) L_k.sbar in L for all k: True | L_k.s in L for all k: True
+    [L:Lsbar] = 16  [L:Ls] = 16
+    2L in Lsbar: True | 2L in Ls: True
+    [L : Lsbar + Ls] = 1  => [L : Lsbar cap Ls] = 16*16/1 = 256 = [L:2L], so Lsbar cap Ls = 2L
+(f) dim V0 = 4  dim W0 = 4  V0 cap W0 = {0}: True
+    q = 0 on V0: True  q = 0 on W0: True
+    V0 basis (bitmask, bit k <-> L_{k+1}): [6, 42, 88, 154]  W0 basis: [7, 50, 90, 138]
+(g) Lambda basis: 24 x 24 HNF in L^3-coords, [L^3 : Lambda] = 4096
+    every basis vector satisfies Wilson's conditions (exact membership): True
+    rank of the 12 mod-2 conditions on (L/2L)^3 = 12 => [L^3 : Lambda] = 2^12 = 4096, equal to the index of the HNF basis: so the basis spans Lambda
+    Gram(Lambda) det = 16777216 = 2^24
+    Gram/2 integral: True  diag(Gram/2) even: True  det(Gram/2) = 1
+    => Lambda/sqrt2 is even unimodular of rank 24 (min norm checked with PARI in s1_leech_min.gp)
+(h) A = L/2L: commutative: False | two-sided identity elements: []
+    dim span(A.A) = 8

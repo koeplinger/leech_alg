@@ -1,0 +1,30 @@
+PART 2  exact identity P1+P2+P3 == (x+y+z)(x'+y'+z') in the free bilinear algebra: True
+        Z3-equivariance (x,y,z)->(y,z,x) maps (P1,P2,P3) to (P2,P3,P1): True
+        P1+P2 == a a' + b b'  (mod 2): True
+        P2+P3 == b b' + c c'  (mod 2): True
+        P1+P3 == a a' + c c'  (mod 2): True
+        P1+P2+P3 == w w'      (mod 2): True
+        P1 == a a' + a b' + b a' + w w'  (mod 2): True
+   => if V.V in V and W.W in W then P1+P2, P2+P3, P1+P3 lie in V and P1+P2+P3 in W,
+      i.e. u*v satisfies Wilson's conditions for (V, W); with L.L in L this is closure.
+
+PART 3  necessity.  For a~, a~' in V~:  u = (a~,0,a~), v = (a~',0,a~') lie in Lambda_{V,W}
+        and u*v = (a~a~', 2a~a~', a~a~'), so P1+P2 = 3 a~a~' : closure forces V.V in V.
+        For w~, w~' in W~:  u = (w~,w~,w~), v = (w~',w~',w~') lie in Lambda_{V,W}
+        and u*v = 3(w~w~', w~w~', w~w~'), so P1+P2+P3 = 9 w~w~' : closure forces W.W in W.
+        Wilson's pair: u1 = [-1, 0, 0, 0, 1, 0, 1, 1] u2 = [-1, 1, 0, 0, 0, 1, 0, 1] in Ls: True True
+        u1.u2 = [0, -2, 2, 1, -2, -1, -1, -1] in Ls: False | in Lsbar: True
+        u = (u1,u1,u1), v = (u2,u2,u2) in Lambda: True | u*v in Lambda: False
+        V0 subalgebra: True | W0 subalgebra: False
+
+PART 4  2-adic splitting (shown for Wilson's Lambda; the argument is the same for every pair)
+        [Lambda : Delta(Ls) + (Lsbar (x) T)] = 6561 = 3^8
+        Delta(Ls) and Lsbar(x)T lie in Lambda: True | 3*Lambda inside their sum: True
+        Delta(a)*Delta(b) == Delta(3ab) on all basis pairs: True | Delta*T == T*Delta == 0: True
+        routing algebra on T_Z = {p+q+r = 0}: products [(1, 1, -2), (1, -2, 1), (1, -2, 1), (-2, 1, 1)] -> [T_Z : span(T_Z o T_Z)] = 3
+        (x (x) alpha)*(y (x) beta) == xy (x) (alpha o beta) on all basis elements x, y of V~ and alpha, beta of T_Z: True
+   => over Z_2 (3 a unit): Lambda'_2 = Delta(W~)_2 (+) (V~ (x) T_Z)_2 as rings, with
+      S'_2 = Delta(span W~W~)_2 (+) (span(V~V~) (x) T_Z)_2, hence closure <=> V~V~ in V~ and W~W~ in W~,
+      and [Lambda':S'] = [W~:W~W~] [V~:V~V~]^2 (odd primes: both sides equal [L:span LL]^3_odd = 1).
+
+PART 5  sigma = (1 2): closes: True | [Lambda:S] = 65536 | S == 2*Lambda + Delta(Ls) (equal HNF in L^3-coords): True

@@ -1,0 +1,9 @@
+sigma closes: True (576/576 integral: 576)   HNF index = 65536 = 2^16
+      LOWER: 16 independent mod-2 functionals vanish on all 576 products: True  => index >= 2^16
+      UPPER: 3 set(s) of 24 products; |det| = [64732069888, 1125384192, 1125384192]; gcd = 65536 = 2^16  => index divides 2^16
+c3    closes: True (576/576 integral: 576)   HNF index = 1024 = 2^10
+      LOWER: 10 independent mod-2 functionals vanish on all 576 products: True  => index >= 2^10
+      UPPER: 5 set(s) of 24 products; |det| = [1837543517184, 10942425088, 1189263360, 1189263360, 1189263360]; gcd = 1024 = 2^10  => index divides 2^10
+refl  closes: True (576/576 integral: 576)   HNF index = 1 = 2^0
+      LOWER: 0 independent mod-2 functionals vanish on all 576 products: True  => index >= 2^0
+      UPPER: 5 set(s) of 24 products; |det| = [769672205637, 250963408, 250963408, 250963408, 250963408]; gcd = 1 = 2^0  => index divides 2^0

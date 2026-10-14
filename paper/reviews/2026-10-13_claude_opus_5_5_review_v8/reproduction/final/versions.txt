@@ -1,0 +1,6 @@
+python: Python 3.12.3
+numpy: 1.26.4
+sympy: 1.12
+PARI/GP: [2, 15, 4]
+run started: 2026-10-14 01:43:06 UTC
+run finished: 2026-10-14 01:45:16 UTC

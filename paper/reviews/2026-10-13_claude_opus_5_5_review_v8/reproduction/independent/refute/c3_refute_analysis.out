@@ -1,0 +1,127 @@
+==============================================================================
+1. CONVENTIONS PINNED AGAINST THE PAPER
+==============================================================================
+L basis (Appendix A) in D8+: True | Gram det: 1
+s in L: True | sbar in L: False
+[L : L sbar] = 16 | [L : L s] = 16
+L sbar + L s = L: True
+2L in L sbar and in L s: True -> with 16*16/1 = 256 = [L:2L], L sbar cap L s = 2L
+Remark 4.6: u1,u2 in L s: True True | u1.u2 = ['0', '-2', '2', '1', '-2', '-1', '-1', '-1'] (paper (0,-2,2,1,-2,-1,-1,-1)) | in L sbar: True | in L s: False
+Appendix A: all 8 M_k = sigma(L_k.s) equal the paper's: True
+Appendix A: all 8 N_k = sigma(L_k.sbar) equal the paper's: True
+Table LL entries (1,1),(1,2),(5,2),(8,4),(7,6) reproduced: True
+
+==============================================================================
+2. WILSON'S LEECH LATTICE
+==============================================================================
+dim_F2 Lambda/2L^3 = 12 | Gram det = 16777216
+all 24 basis vectors satisfy Wilson's conditions: True
+paper's three families: distinct vectors = 196560 | all norm 8: True | all in Lambda: True
+(minimum 8 and the count 196560 of norm-8 vectors are also checked by qfminim in c3_witness.gp)
+
+==============================================================================
+3. THE REFLECTION s_r, r = (e0+e1+e2+e3+e4+e5+e6-e7)/2
+==============================================================================
+r in L: True | N(r) = 2
+s_r^2 = I: True | s_r orthogonal: True | det = -1
+s_r maps each L-basis vector into L, det +-1  =>  s_r(L) = L : True (asserted in Twist)
+s_r(s) = ['-1', '0', '0', '0', '0', '0', '0', '1'] | s_r(sbar) = ['1/4', '1/4', '1/4', '1/4', '1/4', '1/4', '1/4', '-5/4']
+identity element of ._g:  eps = s_r(e0) = ['3/4', '-1/4', '-1/4', '-1/4', '-1/4', '-1/4', '-1/4', '1/4']
+eps ._g e_k = e_k ._g eps = e_k for k = 0..7: True
+e0 is NOT the identity of ._g:  e0 ._g e1 = ['-1/4', '3/4', '-1/4', '1/4', '1/4', '-1/4', '1/4', '1/4']
+eps in L: False | 2 eps in L: True (so 4 eps in 2L and (4eps,0,0) in 2L^3 in Lambda)
+2 eps in L sbar: False | 2 eps in L s: False
+   (2eps,0,0)         in Lambda: False
+   (2eps,2eps,0)      in Lambda: False
+   (2eps,-2eps,0)     in Lambda: False
+   (2eps,2eps,2eps)   in Lambda: False
+on 300 random rational triples: composition N(x._g y)=N(x)N(y): 300/300; left alt: 300/300; right alt: 300/300; flexible: 300/300; Moufang ((zx)y)x=z((xy)x): 300/300
+associativity fails on a random triple (as it must): True
+L ._g L in L (64 basis products): True
+
+==============================================================================
+4. CLOSURE AND SPAN INDEX (576 basis-pair products, HNF + SNF)
+==============================================================================
+identity                                                     does NOT close (40 of 576 basis-pair products leave Lambda)
+sigma=(1 2)                                                  closes; [Lambda:S] = 65536 ; Lambda/S = Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2
+                                                             2*Lambda inside S: True
+s_r                                                          closes; [Lambda:S] = 1 ; Lambda/S = 0
+                                                             2*Lambda inside S: True
+3-cycle e5->e6->e7->e5 (C2 witness; pi(5)=6, pi(6)=7, pi(7)=5) closes; [Lambda:S] = 1024 ; Lambda/S = Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2 + Z/2
+                                                             2*Lambda inside S: True
+inverse 3-cycle e5->e7->e6->e5                               does NOT close (52 of 576 basis-pair products leave Lambda)
+
+==============================================================================
+5. STRUCTURAL 2-ADIC FACTORISATION
+==============================================================================
+Facts used (proved in the report): R^24 = D + T, D = {(a,a,a)}, T = {sum 0},
+D*T = T*D = 0 for ANY bilinear block product.  3*pi_D(Lambda) lies in Lambda, so
+[Lambda : (Lambda cap D) + (Lambda cap T)] is a power of 3 and, 2-adically,
+Lambda = Lambda_D + Lambda_T with Lambda_D = {(a,a,a): a in L s} and
+Lambda_T = {(x,y,-x-y): x,y in L sbar}.  With A = g(L sbar), B = g(L s) and the
+STANDARD product, (a,a,a)*(b,b,b) = 3(a.b)(1,1,1), and on Lambda_T the products
+contain (a,-2a), (a,a), so (0,3a) for a in A.A; hence
+      [Lambda : S]_2 = [B : span(B.B)]_2 * [A : span(A.A)]_2^2 .
+sigma=(1 2)                                                  [B:B^2] = 2^0*1, [A:A^2] = 2^8*1  ->  predicted v2 = 0+2*8 = 16; actual [Lambda:S] = 2^16*1
+s_r                                                          [B:B^2] = 2^0*1, [A:A^2] = 2^0*1  ->  predicted v2 = 0+2*0 = 0; actual [Lambda:S] = 2^0*1
+3-cycle e5->e6->e7->e5 (C2 witness; pi(5)=6, pi(6)=7, pi(7)=5) [B:B^2] = 2^0*1, [A:A^2] = 2^5*1  ->  predicted v2 = 0+2*5 = 10; actual [Lambda:S] = 2^10*1
+untwisted pair (A = L sbar, B = L s)                         [A:A^2] = 32, [B:B^2] = n/a (L s is not closed under the product: Remark 4.6)
+
+==============================================================================
+6. CENSUS OF THE 120 ROOT REFLECTIONS (one per +-r pair)
+==============================================================================
+  ('closes', 1)                  28
+  ('closes', 65536)              28
+  ('no closure',)                64
+  by root type:
+     +-e0 +- e_j                              ('closes', 65536)      7
+     +-e0 +- e_j                              ('no closure',)        7
+     +-e_i +- e_j (i,j>=1)                    ('closes', 65536)      21
+     +-e_i +- e_j (i,j>=1)                    ('no closure',)        21
+     half-integer (e0-coefficient +-1/2)      ('closes', 1)          28
+     half-integer (e0-coefficient +-1/2)      ('no closure',)        36
+  sigma's root e1-e2 is in the index-2^16 class: True
+  witness root (e0+...+e6-e7)/2 is in the index-1 class: True
+  the 28 index-1 roots (doubled coordinates):
+      [-1, 1, -1, -1, -1, -1, -1, -1]
+      [-1, -1, 1, -1, -1, -1, -1, -1]
+      [1, 1, 1, -1, -1, -1, -1, -1]
+      [-1, -1, -1, 1, -1, -1, -1, -1]
+      [1, 1, -1, 1, -1, -1, -1, -1]
+      [1, -1, 1, 1, -1, -1, -1, -1]
+      [-1, -1, -1, -1, 1, -1, -1, -1]
+      [1, 1, -1, -1, 1, -1, -1, -1]
+      [1, -1, 1, -1, 1, -1, -1, -1]
+      [1, -1, -1, 1, 1, -1, -1, -1]
+      [-1, -1, -1, -1, -1, 1, -1, -1]
+      [1, 1, -1, -1, -1, 1, -1, -1]
+      [1, -1, 1, -1, -1, 1, -1, -1]
+      [1, -1, -1, 1, -1, 1, -1, -1]
+      [1, -1, -1, -1, 1, 1, -1, -1]
+      [-1, 1, 1, 1, 1, 1, -1, -1]
+      [-1, -1, -1, -1, -1, -1, 1, -1]
+      [1, 1, -1, -1, -1, -1, 1, -1]
+      [1, -1, 1, -1, -1, -1, 1, -1]
+      [1, -1, -1, 1, -1, -1, 1, -1]
+      [1, -1, -1, -1, 1, -1, 1, -1]
+      [-1, 1, 1, 1, 1, -1, 1, -1]
+      [1, -1, -1, -1, -1, 1, 1, -1]
+      [-1, 1, 1, 1, -1, 1, 1, -1]
+      [-1, 1, 1, -1, 1, 1, 1, -1]
+      [-1, 1, -1, 1, 1, 1, 1, -1]
+      [-1, -1, 1, 1, 1, 1, 1, -1]
+      [1, 1, 1, 1, 1, 1, 1, -1]
+
+==============================================================================
+7. CONVENTION VARIANT: RIGHT MULTIPLES sbar.l, s.l INSTEAD OF LEFT MULTIPLES
+==============================================================================
+sbar.L == L.sbar: False | s.L == L.s: False
+variant lattice: Gram det = 16777216
+  identity                                 does not close (100 failing pairs)
+  sigma=(1 2)                              closes, index 1024
+  s_r                                      does not close (98 failing pairs)
+  all 120 root reflections under the right-multiple convention:
+     closes, index 1024             56
+     does not close                 64
+
+runtime 36.7 s

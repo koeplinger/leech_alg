@@ -1,0 +1,28 @@
+=== run_05_signed_permutations.g ===
+signature formula agrees with TwistedTensor on 200 random signed permutations: true
+enumerated 645120 signed permutations in 3444 ms
+distinct twisted tables: 480
+maps per table: [ [ 1344, 480 ] ]  (= order of the group of signed-permutation automorphisms of O)
+tables realized by an unsigned permutation: 240
+g(L) = L  <=>  even number of minus signs (checked on all 128 sign vectors): true
+tables with members of both sign parities: 0
+tables from L-preserving maps (even sign count): 240; of these realized by an unsigned permutation: 240
+tables from maps with g(L) <> L (odd sign count): 240
+
+representatives preserve L exactly for the even-sign tables: true
+closure/span computation for 480 tables: 4803 ms
+
+Claim C4 (one entry per distinct twisted table; closure tested on Wilson's Lambda for all):
+  closing tables: 168 of 480
+  by elementary divisors: [ [ "1^14 2^10", 112 ], [ "1^8 2^16", 56 ] ]
+  tables from L-preserving maps (= the 240 unsigned-permutation tables): [ [ "-", 156 ], [ "1^14 2^10", 56 ], [ "1^8 2^16", 28 ] ]
+  tables from maps with g(L) <> L: [ [ "-", 156 ], [ "1^14 2^10", 56 ], [ "1^8 2^16", 28 ] ]
+  split by det(g) = +-1 (closing tables):
+    det 1: [ [ "1^14 2^10", 56 ], [ "1^8 2^16", 28 ] ]
+    det -1: [ [ "1^14 2^10", 56 ], [ "1^8 2^16", 28 ] ]
+  mod-2 criterion (C5) closes <=> V,W subalgebras on all L-preserving tables: true
+  closing L-preserving tables by (dim V.V, dim W.W, elementary divisors): [ [ [ 0, 4, "1^8 2^16" ], 28 ], [ [ 1, 4, "1^14 2^10" ], 56 ] ]
+
+flipping all seven signs gives the opposite table (T'(i,j) = T(j,i)) for every table: true
+and the same verdict/elementary divisors: true
+=== end run_05 ===

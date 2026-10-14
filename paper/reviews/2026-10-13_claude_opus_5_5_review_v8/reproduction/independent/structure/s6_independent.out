@@ -1,0 +1,20 @@
+L: det(basis) = 1, Gram det = 1, e0 in L: 0
+L.L in L (64 basis products): 1
+Lsbar in L: 1  Ls in L: 1  [L:Lsbar] = 16  [L:Ls] = 16
+Lambda: 24 basis vectors satisfy Wilson's conditions: 1  Gram det = 16777216  [L^3:Lambda] = 4096
+vectors of norm <= 7: 0
+vectors of norm <= 8: 196560
+identity                      : does NOT close (30 of 576 products outside Lambda)
+sigma = (1 2)                 : closes, [Lambda:S] = 65536 = 2^16, Lambda/S has 16 cyclic factors [2]
+3-cycle conv A: g(e5)=e6,g(e6)=e7,g(e7)=e5: closes, [Lambda:S] = 1024 = 2^10, Lambda/S has 10 cyclic factors [2]
+3-cycle conv B: inverse       : does NOT close (40 of 576 products outside Lambda)
+reflection in r=(e0+...+e6-e7)/2: closes, [Lambda:S] = 1 = 2^0, Lambda/S has 0 cyclic factors []
+reflection in e1-e2 (= sigma) : closes, [Lambda:S] = 65536 = 2^16, Lambda/S has 16 cyclic factors [2]
+number of roots up to sign: 120
+120 reflections: [root type, log2 index] -> count:
+   ["half-integer", 0] : 28
+   ["half-integer", "no close"] : 36
+   ["int +-e0+-ej", 16] : 7
+   ["int +-e0+-ej", "no close"] : 7
+   ["int e0 not involved", 16] : 21
+   ["int e0 not involved", "no close"] : 21

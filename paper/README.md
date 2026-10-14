@@ -50,3 +50,13 @@ Drafted against a frozen version, then folded into the next one.
 [`reviews/`](reviews/) holds every review of the paper, dated, with the model
 that produced it named in the filename.  They are frozen on writing: a review
 records what was found on the day it was run.
+
+A review may come with its evidence.  [`reviews/2026-10-13_claude_opus_5_5_review_v8/`](reviews/2026-10-13_claude_opus_5_5_review_v8/)
+is the external review of v8 by Claude Opus 5.5 (13 October 2026), incorporated
+verbatim: its write-up (also at
+[`reviews/2026-10-13_claude_opus_5_5_review_v8.md`](reviews/2026-10-13_claude_opus_5_5_review_v8.md)),
+the reviewer's working scripts, and four independent reproductions in Python,
+GAP and PARI/GP with their outputs.  Its `reproduction/final/run_all.sh` reads
+the paper's source through the environment variable `MAIN_TEX`; from that
+folder the working source is `MAIN_TEX=../../../../main.tex`.  The folder is
+frozen as a whole.

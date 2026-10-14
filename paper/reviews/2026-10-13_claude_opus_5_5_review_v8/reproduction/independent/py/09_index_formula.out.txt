@@ -1,0 +1,11 @@
+log2 index | d(V) m(V) | d(W) m(W) | formula d(W)+2d(V)+m(W)+2m(V) holds | number of ordered pairs
+    0      |  0    0   |  0    0   |  True  |  3360
+    5      |  0    0   |  3    2   |  True  |  448
+    8      |  0    0   |  4    4   |  True  |  224
+   10      |  3    2   |  0    0   |  True  |  448
+   16      |  4    4   |  0    0   |  True  |  224
+
+formula holds on 4704 of 4704 closing polarizations
+
+per-Lagrangian invariants among the 142 subalgebras: (d, m) -> count
+   {(0, 0): 120, (3, 2): 14, (4, 4): 8}

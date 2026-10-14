@@ -1,0 +1,42 @@
+[0;31m  ***   Warning: new maximum stack size = 4000002048 (3814.699 Mbytes).[0m
+[0;31m  *** qfminim: Warning: increasing stack size to 16000000.[0m
+[0;31m  *** qfminim: Warning: increasing stack size to 32000000.[0m
+[0;31m  *** qfminim: Warning: increasing stack size to 64000000.[0m
+[0;31m  *** qfminim: Warning: increasing stack size to 128000000.[0m
+minimal vectors: 196560 (stored 98280, one per +-pair)
+
+== s_r, r = (e0+...+e6-e7)/2 ==  closes: 1, [Lambda:S] = 1
+   minimal vectors with |det L_u| = 1 or |det R_u| = 1: 0
+   violations of N(x+y+z)^4 | det: 0
+   singular L_u: 20520 ; singular R_u: 20520 (these are the u with x+y+z = 0)
+   smallest nonzero |det L_u| = 16777216 = 2^24 ; smallest nonzero |det R_u| = 16777216 = 2^24
+   largest odd part of a nonzero det L_u: 1 ; of a nonzero det R_u: 1 (1 = every nonzero det is a power of 2)
+   distribution of v_2(det L_u) (key -1 = singular): [-1, 24, 28, 32, 36; 20520, 25920, 45360, 3240, 3240]
+   distribution of v_2(det R_u) (key -1 = singular): [-1, 24, 28, 32, 36; 20520, 25920, 45360, 3240, 3240]
+   left identity in Lambda (x) Q exists: 0 ; right identity exists: 0
+   eps = g^{-1}(e0) = [3/4, -1/4, -1/4, -1/4, -1/4, -1/4, -1/4, 1/4] ; 2eps in L: 1 ; 4eps in 2L: 1
+   (4eps,0,0)         in Lambda: det L = Mat([2, 48]), det R = Mat([2, 48])
+   (0,4eps,0)         in Lambda: det L = Mat([2, 48]), det R = Mat([2, 48])
+   (0,0,4eps)         in Lambda: det L = Mat([2, 48]), det R = Mat([2, 48])
+   (4eps,4eps,4eps)   in Lambda: det L = Mat([0, 1]), det R = Mat([0, 1])
+   (2eps,2eps,0)      not in Lambda
+   (2eps,2eps,2eps)   not in Lambda
+   (2eps,-2eps,0)     not in Lambda
+
+== sigma = (1 2) ==  closes: 1, [Lambda:S] = 65536
+   minimal vectors with |det L_u| = 1 or |det R_u| = 1: 0
+   violations of N(x+y+z)^4 | det: 0
+   singular L_u: 20520 ; singular R_u: 20520 (these are the u with x+y+z = 0)
+   smallest nonzero |det L_u| = 16777216 = 2^24 ; smallest nonzero |det R_u| = 16777216 = 2^24
+   largest odd part of a nonzero det L_u: 1 ; of a nonzero det R_u: 1 (1 = every nonzero det is a power of 2)
+   distribution of v_2(det L_u) (key -1 = singular): [-1, 24, 28, 32, 36; 20520, 25920, 45360, 3240, 3240]
+   distribution of v_2(det R_u) (key -1 = singular): [-1, 24, 28, 32, 36; 20520, 25920, 45360, 3240, 3240]
+   left identity in Lambda (x) Q exists: 0 ; right identity exists: 0
+   eps = g^{-1}(e0) = [1, 0, 0, 0, 0, 0, 0, 0] ; 2eps in L: 1 ; 4eps in 2L: 1
+   (4eps,0,0)         in Lambda: det L = Mat([2, 48]), det R = Mat([2, 48])
+   (0,4eps,0)         in Lambda: det L = Mat([2, 48]), det R = Mat([2, 48])
+   (0,0,4eps)         in Lambda: det L = Mat([2, 48]), det R = Mat([2, 48])
+   (4eps,4eps,4eps)   in Lambda: det L = Mat([0, 1]), det R = Mat([0, 1])
+   (2eps,2eps,0)      in Lambda: det L = Mat([2, 32]), det R = Mat([2, 32])
+   (2eps,2eps,2eps)   not in Lambda
+   (2eps,-2eps,0)     in Lambda: det L = Mat([0, 1]), det R = Mat([0, 1])

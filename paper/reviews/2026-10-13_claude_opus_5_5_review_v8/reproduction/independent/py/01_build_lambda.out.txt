@@ -1,0 +1,48 @@
+========================================================================
+(a) Z-basis of L = D8+ (odd convention)
+========================================================================
+  l_1 = (1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 3/2)   in L: True   N = 4
+  l_2 = (0, 1, 0, 0, 0, 0, 0, 1)   in L: True   N = 2
+  l_3 = (0, 0, 1, 0, 0, 0, 0, 1)   in L: True   N = 2
+  l_4 = (0, 0, 0, 1, 0, 0, 0, 1)   in L: True   N = 2
+  l_5 = (0, 0, 0, 0, 1, 0, 0, 1)   in L: True   N = 2
+  l_6 = (0, 0, 0, 0, 0, 1, 0, 1)   in L: True   N = 2
+  l_7 = (0, 0, 0, 0, 0, 0, 1, 1)   in L: True   N = 2
+  l_8 = (0, 0, 0, 0, 0, 0, 0, 2)   in L: True   N = 4
+  det(2*BL) = 256  ->  |det BL| = 1  (= covolume of D8+ = 1)
+  Gram(L): det = 1, diagonal even: True
+  L.L <= L: all 512 structure constants of l_i . l_j in the L-basis are integers: True  (max |c| = 8)
+
+========================================================================
+(b) L.sbar, L.s and the mod-2 quotient
+========================================================================
+  L.sbar <= L (basis images l_k.sbar have integral L-coordinates): True; [L : L.sbar] = |det| = 16
+  L.s    <= L (basis images l_k.s    have integral L-coordinates): True; [L : L.s]    = |det| = 16
+  [L : L.sbar + L.s] = 1
+  2L <= L.sbar: True;  2L <= L.s: True
+  [L : L.sbar /\ L.s] = [L:L.sbar][L:L.s]/[L:L.sbar+L.s] = 256 = [L:2L] = 256  ->  L.sbar /\ L.s = 2L: True
+  |V| = 16, |W| = 16, |V /\ W| = 1
+  definitional tests x in L.sbar <=> (x.s)/2 in L, x in L.s <=> (x.sbar)/2 in L agree with the basis description on all 256 classes of L/2L: True
+  V and W totally singular for q = N/2 mod 2 (Lagrangians): True, True
+
+========================================================================
+(c) Lambda
+========================================================================
+  F2 condition matrix Q: 16 rows, rank 12  ->  [L^3 : Lambda] = 2^12
+  HNF basis of Lambda (L^3-coordinates): det = 4096 = 2^12
+  every basis vector satisfies Q u = 0 mod 2: True
+  every basis vector passes the definitional test (x,y,z in L; x+y,x+z,y+z in L.sbar; x+y+z in L.s): True
+  => the 24 rows are a Z-basis of Lambda (contained in Lambda, same index 2^12 in L^3)
+
+========================================================================
+(d) Gram matrix of Lambda (e-coordinates)
+========================================================================
+  det G = 16777216 = 2^24
+  all entries of G even: True
+  G/2: det = 1, all diagonal entries even: True
+  diagonal of G (norms of the basis vectors): [36, 48, 68, 20, 32, 24, 24, 8, 16, 24, 40, 24, 8, 8, 8, 8, 16, 8, 8, 8, 8, 8, 8, 16]
+  -> Lambda/sqrt2 (Gram G/2) is an even unimodular lattice of rank 24.  If min(G) = 8,
+     i.e. G/2 has no roots, it is the Leech lattice (unique such lattice without roots).
+     Minimum and minimal-vector count: see 02_qfminim.gp / 02_qfminim.out.txt.
+
+wrote lambda_gram.gp, lambda_basis.txt, L_basis.txt

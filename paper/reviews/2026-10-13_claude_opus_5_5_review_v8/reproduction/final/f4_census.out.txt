@@ -1,0 +1,79 @@
+1. ALL 5,040 PERMUTATION TWISTS
+  convention A (g = g_pi, the paper's):
+    cycle type (2,)         21 permutations,   21 close   paper:   21 /   21   ok
+    cycle type (3,)         70 permutations,   35 close   paper:   35 /   70   ok
+    cycle type (2, 2)      105 permutations,   42 close   paper:   42 /  105   ok
+    cycle type (4,)        210 permutations,    0 close   paper:    0 /  210   ok
+    cycle type (3, 2)      420 permutations,  126 close   paper:  126 /  420   ok
+    cycle type (5,)        504 permutations,  252 close   paper:  252 /  504   ok
+    cycle type (2, 2, 2)   105 permutations,   21 close   paper:   21 /  105   ok
+    cycle type (3, 3)      280 permutations,  112 close   paper:  112 /  280   ok
+    cycle type (4, 2)      630 permutations,  294 close   paper:  294 /  630   ok
+    cycle type (6,)        840 permutations,  210 close   paper:  210 /  840   ok
+    cycle type (3, 2, 2)   210 permutations,  105 close   paper:  105 /  210   ok
+    cycle type (4, 3)      420 permutations,  168 close   paper:  168 /  420   ok
+    cycle type (5, 2)      504 permutations,   42 close   paper:   42 /  504   ok
+    cycle type (7,)        720 permutations,  336 close   paper:  336 /  720   ok
+    identity closes: False (failing basis products: 40)
+    total closing: 1764;  matches paper table in all 14 rows: True
+    (parity, index) counts: {(-1, 65536): 588, (1, 1024): 1176}
+    all closing: Lambda/S elementary abelian: True ; 2Lambda <= S: True ; index formula hW*hV^2 holds: True
+    (hW, hV) values by parity: {(-1, 1, 256): 588, (1, 1, 32): 1176}
+    closure <=> (Lsbar and Ls both closed under ._g): holds for all 5040: True
+    exact integer HNF re-check on 1764 closing twists (all closing twists): all agree with the Z/4 index: True
+    3-cycles: 35 subsets, exactly one orientation closes for all: True
+  convention B (g = g_pi^{-1}):
+    cycle type (2,)         21 permutations,   21 close   paper:   21 /   21   ok
+    cycle type (3,)         70 permutations,   35 close   paper:   35 /   70   ok
+    cycle type (2, 2)      105 permutations,   42 close   paper:   42 /  105   ok
+    cycle type (4,)        210 permutations,    0 close   paper:    0 /  210   ok
+    cycle type (3, 2)      420 permutations,  126 close   paper:  126 /  420   ok
+    cycle type (5,)        504 permutations,  252 close   paper:  252 /  504   ok
+    cycle type (2, 2, 2)   105 permutations,   21 close   paper:   21 /  105   ok
+    cycle type (3, 3)      280 permutations,  112 close   paper:  112 /  280   ok
+    cycle type (4, 2)      630 permutations,  294 close   paper:  294 /  630   ok
+    cycle type (6,)        840 permutations,  210 close   paper:  210 /  840   ok
+    cycle type (3, 2, 2)   210 permutations,  105 close   paper:  105 /  210   ok
+    cycle type (4, 3)      420 permutations,  168 close   paper:  168 /  420   ok
+    cycle type (5, 2)      504 permutations,   42 close   paper:   42 /  504   ok
+    cycle type (7,)        720 permutations,  336 close   paper:  336 /  720   ok
+    identity closes: False (failing basis products: 40)
+    total closing: 1764;  matches paper table in all 14 rows: True
+    (parity, index) counts: {(-1, 65536): 588, (1, 1024): 1176}
+    all closing: Lambda/S elementary abelian: True ; 2Lambda <= S: True ; index formula hW*hV^2 holds: True
+    (hW, hV) values by parity: {(-1, 1, 256): 588, (1, 1, 32): 1176}
+    closure <=> (Lsbar and Ls both closed under ._g): holds for all 5040: True
+    exact integer HNF re-check on 22 closing twists (random sample): all agree with the Z/4 index: True
+    3-cycles: 35 subsets, exactly one orientation closes for all: True
+  distinct span lattices S (exact HNF, convention A): index 2^16 twists: 1;  index 2^10 twists: 14
+  witness pi(5)=6, pi(6)=7, pi(7)=5: convention A closes=True index=1024; convention B closes=False
+  permutations with the same closure verdict in A and B: 3864 / 5040
+
+2. ALL 120 ROOT REFLECTIONS s_r (one root per +-pair: first nonzero coordinate > 0)
+  e0+e_j                             7 roots; <r,s> values {0: 7}; close:   7; indices {65536: 7}; 2*1_g in {'Lsbar': 7}
+  e0-e_j                             7 roots; <r,s> values {-1: 7}; close:   0; indices {}; 2*1_g in {'Lsbar': 7}
+  e_i+e_j                           21 roots; <r,s> values {1: 21}; close:   0; indices {}; 2*1_g in {'Lsbar': 21}
+  e_i-e_j                           21 roots; <r,s> values {0: 21}; close:  21; indices {65536: 21}; 2*1_g in {'Lsbar': 21}
+  half, 1 minus among e1..e7         7 roots; <r,s> values {1: 7}; close:   7; indices {1: 7}; 2*1_g in {'neither': 7}
+  half, 3 minus among e1..e7        35 roots; <r,s> values {0: 35}; close:   0; indices {}; 2*1_g in {'neither': 28, 'Ls': 7}
+  half, 5 minus among e1..e7        21 roots; <r,s> values {-1: 21}; close:  21; indices {1: 21}; 2*1_g in {'neither': 21}
+  half, 7 minus among e1..e7         1 roots; <r,s> values {-2: 1}; close:   0; indices {}; 2*1_g in {'Ls': 1}
+  totals: 64 do not close, 28 close with index 2^16, 28 close with index 1
+  exact HNF agrees with the Z/4 index for all 56 closing reflections: True
+  index formula holds for all closing reflections: True ; closure <=> criterion for all 120: True
+  witness r = (e0+...+e6-e7)/2: closes=True index=1 hW=1 hV=1
+  sigma's root e1-e2: index 65536
+  the 28 index-2^16 reflections and the 588 odd closing permutations share ONE span lattice: True
+
+3. ALL 645,120 SIGNED PERMUTATIONS g(e0)=e0, g(e_a) = eps_a e_{pi(a)}
+  distinct twisted tables: 480; maps per table: {1344: 480}
+  sign-count parity constant on each table: True
+  tables from even sign count (these g preserve L): 240;  odd (g(L) != L): 240
+  even-sign tables containing an unsigned permutation: 240
+  every odd-sign table is the OPPOSITE table (T'[a,b] = T[b,a]) of an even-sign table: True
+  even (L-preserving)  tables: 84 close; indices {65536: 28, 1024: 56}
+  odd (opposite)       tables: 84 close; indices {65536: 28, 1024: 56}
+  total closing tables: 168; indices {65536: 56, 1024: 112}
+  opposite tables have identical closure and index: True
+  even-sign tables reproduce the permutation census (closure and index): True
+  => C4's 168 closing tables = 84 permutation tables (1764/21) + their 84 opposites.

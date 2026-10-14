@@ -1,0 +1,6 @@
+Fano table: e_a e_b = +e_c on cyclic orders of the 7 triples, -e_c anticyclic, e_i^2 = -e0: OK
+e1e2 = (1, 4)  e2e1 = (-1, 4)  e1e3 = (1, 7)  (sign, index)
+norm multiplicativity and left/right alternativity on 2000 random triples: OK
+non-associative triples among 200 random ones: 200
+hnf / hnf_index / snf_diagonal / det_bareiss / f2_rank agree with sympy on 66 random matrices (60 small, 6 of size 40 x 24): OK
+rank_mod_p (p = 2,3,5,7) and log2_order_mod4_span agree with the sympy SNF on random full-rank matrices: OK

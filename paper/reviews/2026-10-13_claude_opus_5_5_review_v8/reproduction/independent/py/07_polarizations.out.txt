@@ -1,0 +1,25 @@
+L/2L: 135 nonzero singular and 120 nonsingular vectors (expected 135 / 120)
+classes of the 240 roots mod 2L: 120, equal to the nonsingular set: True
+Lagrangians (orbit of L.sbar/2L under the 120 transvections): 270  (theory: 2*3*5*9 = 270)
+  subalgebras: 142; left ideals: 8; right ideals: 16; two-sided ideals: 8
+  subalgebras by (dim span(VV), left ideal, right ideal): {(0, True, True): 8, (1, False, False): 14, (4, False, False): 112, (4, False, True): 8}
+  L.sbar/2L: {'sub': True, 'left': True, 'right': True, 'dimVV': 0};  L.s/2L: {'sub': False, 'left': False, 'right': False, 'dimVV': 7}
+ordered complementary pairs (V, W): 17280  (each Lagrangian has 64 complements; theory 2^6 = 64)
+orbit of the Wilson pair (L.sbar/2L, L.s/2L) under the reflection group: 17280 ordered pairs; equal to the set of all ordered complementary pairs: True
+ordered complementary pairs with V and W both subalgebras: 4704
+closure of * on Lambda(V,W) tested on all 17280 ordered pairs (576 products each); closes <=> (V and W subalgebras) on every pair: True
+  all 17280 lattices Lambda(V,W) have Gram det 2^24 and even Gram/2 diagonal: True
+closing pairs: 4704
+  (index, F2-rank of S mod 2Lambda, dim VV, dim WW, [Lambda:S+(2L)^3], V left ideal, V right ideal, W left ideal, W right ideal) : number of ordered pairs
+    index      1 = 2^0  F2-rank 24  dimVV 4  dimWW 4  [Lam:S+(2L)^3]    1  V(l,r) False False  W(l,r) False False : 2912
+    index      1 = 2^0  F2-rank 24  dimVV 4  dimWW 4  [Lam:S+(2L)^3]    1  V(l,r) False False  W(l,r) False True  : 224
+    index      1 = 2^0  F2-rank 24  dimVV 4  dimWW 4  [Lam:S+(2L)^3]    1  V(l,r) False True   W(l,r) False False : 224
+    index     32 = 2^5  F2-rank 19  dimVV 4  dimWW 1  [Lam:S+(2L)^3]    8  V(l,r) False False  W(l,r) False False : 448
+    index    256 = 2^8  F2-rank 16  dimVV 4  dimWW 0  [Lam:S+(2L)^3]   16  V(l,r) False False  W(l,r) True  True  : 224
+    index   1024 = 2^10 F2-rank 14  dimVV 1  dimWW 4  [Lam:S+(2L)^3]   64  V(l,r) False False  W(l,r) False False : 448
+    index  65536 = 2^16 F2-rank  8  dimVV 0  dimWW 4  [Lam:S+(2L)^3]  256  V(l,r) True  True   W(l,r) False False : 224
+  span index distribution over the closing polarizations: {'2^0': 3360, '2^5': 448, '2^8': 224, '2^10': 448, '2^16': 224}
+  every index a power of 2 with 2Lambda <= S: True
+  [Lambda : S + (2L)^3] = 2^((4 - dim WW) + 2(4 - dim VV)) on every closing pair: True
+cross-check: for 5160 of 5160 census twists (5,040 permutations + 120 reflections) the closure and index of the polarization (V_g, W_g) equal the directly computed ones
+total time 97.2 s

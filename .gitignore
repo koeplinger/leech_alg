@@ -66,3 +66,7 @@ Thumbs.db
 *.nav
 *.snm
 *.vrb
+
+# Review evidence packages under paper/reviews/ keep their run logs and GAP/PARI outputs
+!paper/reviews/**/*.log
+!paper/reviews/**/*.out

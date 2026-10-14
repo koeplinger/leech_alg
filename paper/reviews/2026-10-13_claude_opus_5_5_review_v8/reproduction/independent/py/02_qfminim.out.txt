@@ -1,0 +1,10 @@
+calibration: det(E8 Cartan) = 1, qfminim(E8,2,0)[1] = 240 (expect 240)
+Gram matrix G of Lambda: size [24, 24], symmetric: 1
+det G = 16777216 = 2^24
+all entries even: 1   (content = 2)
+G/2 integral with even diagonal: 1
+LLL change of basis unimodular: 1
+number of nonzero vectors of norm <= 6: 0
+number of nonzero vectors of norm <= 8: 196560   max norm among them: 8
+minimum (qfminim without bound): 8  with 196560 minimal vectors
+time (ms): 104

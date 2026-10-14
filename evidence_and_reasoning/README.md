@@ -21,7 +21,7 @@ the v8 revision in progress is planned in
 ```
 evidence_and_reasoning/
 ├── key_claims/             # One file per major claim or lemma, with argument and references
-│                           #   (README.md is the ledger; claims 009–016 are ledger-only rows, with no dedicated file)
+│                           #   (README.md is the ledger; claims 009–020 are ledger-only rows, with no dedicated file)
 ├── references/             # Central registry of all cited works, organized by topic
 ├── trial_NNN_*.md          # Results of each computational trial (001–007)
 ├── research_statement.md   # The research goal as posed, with its resolution

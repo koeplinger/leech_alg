@@ -1,0 +1,14 @@
+=== run_07_two_reflection_twists.g ===
+mod-2 data for 14280 twists: 39492 ms
+full closure/span tests: 134581 ms
+
+twists passing the mod-2 criterion: 6720 of 14280
+  all of them close (576 basis products): true
+  300 random twists failing the criterion: none closes: true
+closing twists by (dim V.V, dim W.W, elementary divisors): [ [ [ 1, 4, "1^14 2^10" ], 1344 ], [ [ 4, 1, "1^19 2^5" ], 1344 ], [ [ 4, 4, "1^24" ], 4032 ] ]
+
+first witness (in the order of the loops) for each span-index class:
+  1^14 2^10   g = s_r2 o s_r1 with r1 = [ 1, 1, 0, 0, 0, 0, 0, 0 ], r2 = [ 1, 0, 1, 0, 0, 0, 0, 0 ]
+  1^19 2^5    g = s_r2 o s_r1 with r1 = [ 1, 1, 0, 0, 0, 0, 0, 0 ], r2 = [ 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, -1/2, -1/2 ]
+  1^24        g = s_r2 o s_r1 with r1 = [ 1, 1, 0, 0, 0, 0, 0, 0 ], r2 = [ 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2 ]
+=== end run_07 ===

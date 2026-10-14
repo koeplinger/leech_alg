@@ -1,0 +1,6 @@
+S_16 = span{(w,w,w), (0,2v,0), (0,0,2v) : w in L.s, v in L.sbar}: contained in Lambda; [Lambda : S_16] = 65536 = 2^16
+index 2^0: 28 closing twists, 1 distinct span lattice(s) S_g
+index 2^10: 1176 closing twists, 14 distinct span lattice(s) S_g
+index 2^16: 616 closing twists, 1 distinct span lattice(s) S_g
+   all of them equal S_16: True
+sigma, Fractions from the definitions: 576/576 products b_i *_sigma b_j satisfy x,y,z in L.s and (x-y)/2, (x-z)/2 in L.sbar  ->  S_sigma <= S_16, and equal indices give S_sigma = S_16

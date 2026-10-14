@@ -1,0 +1,29 @@
+1. roots of L: 240;  all in L: 1
+   det(L basis) = 1  (covolume of D8+ is 1)
+   [L:Lsbar] = 16   [L:Ls] = 16
+   Lambda basis: 24 columns, all satisfy Wilson's definition: 1
+   [L^3 : Lambda] = 4096
+   Gram det = 16777216 = 2^24
+   qfminim calibration: E8 = L at norm <= 2 gives count 240 (so the count includes both v and -v)
+   qfminim on Lambda: vectors of norm <= 7: 0;  of norm <= 8: 196560  -> minimum 8 with 196560 minimal vectors
+2. witnesses (failing products, [Lambda:S], elementary divisors > 1):
+   identity: failing = 30  (does not close)
+   sigma = (1 2): failing = 0  index = 65536 = 2^16  divisors: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+   3-cycle e5->e6->e7 (C2 witness): failing = 0  index = 1024 = 2^10  divisors: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+   inverse 3-cycle e5->e7->e6: failing = 40  (does not close)
+   reflection r=(e0+..+e6-e7)/2 (C3 witness): failing = 0  index = 1 = 2^0  divisors: []
+3. all 120 root reflections (one per +-pair, first nonzero coordinate > 0):
+   ["index 1", 28; "index 65536", 28; "no closure", 64]
+4. index formula factors [Ls:<Ls._g Ls>], [Lsbar:<Lsbar._g Lsbar>] and predicted index:
+   sigma = (1 2): 1, 256  -> 65536
+   3-cycle e5->e6->e7 (C2 witness): 1, 32  -> 1024
+   reflection r=(e0+..+e6-e7)/2 (C3 witness): 1, 1  -> 1
+5. checking cert_index1_final.gp (written by f3_certificates.py) from scratch:
+   its 24 basis vectors lie in Lambda: 1;  det of their coordinates in this script's Lambda basis: 1
+   set 1: 24 products recomputed, all in Lambda; det = 79194800595163  (listed 79194800595163)
+   set 2: 24 products recomputed, all in Lambda; det = -81930166777915407  (listed -81930166777915407)
+   gcd of the determinants = 1  =>  [Lambda : S] = 1
+6. PARI mathnf/matsnf of the Python coordinate matrices (f2_matrices.gp):
+   sigma: index 65536, divisors > 1: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+   3-cycle: index 1024, divisors > 1: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+   reflection: index 1, divisors > 1: []

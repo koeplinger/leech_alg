@@ -1,0 +1,65 @@
+[0;31m  ***   Warning: new maximum stack size = 2000003072 (1907.352 Mbytes).[0m
+[conv] L basis: all 8 vectors in D8+; Gram det = 1 (E8 is unimodular at root norm 2)
+[conv] s in L: 1, sbar in L: 0, N(s) = 2, N(sbar) = 2
+[conv] [L : L sbar] = 16, [L : L s] = 16
+[conv] L sbar + L s = L : 1
+[conv] 2L in both; with |A||B| = |A+B||A cap B| this gives L sbar cap L s = 2L : 1
+[conv] Remark 4.6: u1,u2 in Ls: 1 1; u1.u2 = [0, -2, 2, 1, -2, -1, -1, -1] (paper: [0,-2,2,1,-2,-1,-1,-1]); in L sbar: 1; in L s: 0
+[conv] Remark 4.6: v in sigma(Ls) \ Ls: 1 ; w in sigma(L sbar) \ L sbar: 1
+[conv] Appendix A: M_1 = [-3/2, -1/2, -1/2, -1/2, -1/2, -1/2, -1/2, -1/2] (paper [-3/2,-1/2,...]), M_2 = [-1, 0, 0, 0, 1, 0, 1, 1] (paper [-1,0,0,0,1,0,1,1])
+[conv] Appendix A: N_1 = [2, 0, 0, 0, 0, 0, 0, 0] (paper [2,0,...]),        N_2 = [0, 0, -1, 0, -1, 0, -1, -1] (paper [0,0,-1,0,-1,0,-1,-1])
+[Lambda] dim over F2 of Lambda/2L^3 = 12 (expect 12, i.e. [L^3 : Lambda] = 2^12)
+[Lambda] Gram determinant = 16777216 = 2^24
+[Lambda] number of nonzero vectors of norm <= 7: 0
+[Lambda] number of vectors of norm 8: 196560 (expect 196560)
+[Lambda] all 24 basis vectors pass Wilson's three conditions: 1
+
+[witness] r = [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2] : in L 1, N(r) = 2
+[witness] s_r^2 = I: 1; s_r(e0) = [3/4, -1/4, -1/4, -1/4, -1/4, -1/4, -1/4, 1/4] (identity element of ._g)
+
+== twist identity (untwisted product) ==
+   G maps L onto L: 1, G orthogonal: 1, det G = 1
+   basis-pair products failing Wilson's conditions: 40 of 576  =>  closes: 0
+
+== twist sigma = (1 2) = reflection in e1-e2 ==
+   G maps L onto L: 1, G orthogonal: 1, det G = -1
+   basis-pair products failing Wilson's conditions: 0 of 576  =>  closes: 1
+   rank of span = 24, [Lambda : S] = |det HNF| = 65536
+   elementary divisors of Lambda/S (matsnf, entries != 1): [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+   2*Lambda inside S: 1
+
+== twist s_r, r = (e0+e1+e2+e3+e4+e5+e6-e7)/2 ==
+   G maps L onto L: 1, G orthogonal: 1, det G = -1
+   basis-pair products failing Wilson's conditions: 0 of 576  =>  closes: 1
+   rank of span = 24, [Lambda : S] = |det HNF| = 1
+   elementary divisors of Lambda/S (matsnf, entries != 1): []
+   2*Lambda inside S: 1
+
+[certificate] run 1 (natural order): 23 of 24 selected
+[certificate] runs used: 1001 (last seed 1000), selected 23 basis pairs
+
+[Lambda basis] columns of LamB, each as 24 coordinates (x|y|z):
+b_1 = [-1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_2 = [2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_3 = [2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_4 = [2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_5 = [2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_6 = [2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_7 = [2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_8 = [2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_9 = [0, 0, 0, 0, 0, 0, 0, 0, -1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+b_10 = [0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_11 = [2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_12 = [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_13 = [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_14 = [3, 1, 1, 0, 1, 0, 0, 0, 3, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_15 = [3, 0, 1, 1, 0, 1, 0, 0, 3, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_16 = [4, 1, 1, 1, 0, 0, 1, 0, 4, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b_17 = [3/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+b_18 = [4, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+b_19 = [4, -1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, -1, 0, 0, 0, 0, 0, 0]
+b_20 = [4, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+b_21 = [3, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+b_22 = [3, 0, 1, 0, 0, 1, 1, 0, 2, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+b_23 = [4, 1, 1, 0, 1, 1, 0, 0, 2, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0]
+b_24 = [5, 1, 0, 1, 1, 1, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0]

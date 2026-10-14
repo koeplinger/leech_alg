@@ -1,0 +1,4 @@
+[0;31m  ***   Warning: new maximum stack size = 2000003072 (1907.352 Mbytes).[0m
+[L : sbar.L] = 16, [L : s.L] = 16 ; sbar.L = L.sbar: 0 ; s.L = L.s: 0
+Lambda_R: Gram det 16777216, vectors of norm <= 7: 0, vectors of norm 8: 196560
+Lambda_R = Lambda (the paper's lattice): 0

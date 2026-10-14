@@ -60,6 +60,7 @@ FROZEN_GLOBS = [
     "paper/historical_appendix*.tex",
     "paper/Baez-Egan_*.tex",
     "paper/reviews/*.md",
+    "paper/reviews/*/**/*",
     "paper/v*_summary.md",
     "paper/v*_changelog.md",
     "evidence_and_reasoning/key_claims/[0-9]*.txt",

@@ -1,0 +1,5 @@
+det(Gram) = 16777216 = 2^24
+Gram/2 integral: 1   det(Gram/2) = 1
+diagonal of Gram/2 all even: 1
+vectors of norm <= 7 (excluding 0): 0
+vectors of norm <= 8 (excluding 0): 196560   max norm found: 8

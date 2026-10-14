@@ -1,0 +1,5 @@
+(1) all 24 basis vectors satisfy Wilson's definition: True
+(2) Gram determinant: 16777216 (= 2^24 = det Lambda, so the vectors span Lambda)
+(3) sigma: closure 576/576 integral | 16 independent mod-2 functionals vanish: True (index >= 2^16) | gcd of 3 certificate determinants = 65536 (index divides it)  ==> [Lambda:S] = 65536
+(3) c3   : closure 576/576 integral | 10 independent mod-2 functionals vanish: True (index >= 2^10) | gcd of 5 certificate determinants = 1024 (index divides it)  ==> [Lambda:S] = 1024
+(3) refl : closure 576/576 integral | 0 independent mod-2 functionals vanish: True (index >= 2^0) | gcd of 5 certificate determinants = 1 (index divides it)  ==> [Lambda:S] = 1

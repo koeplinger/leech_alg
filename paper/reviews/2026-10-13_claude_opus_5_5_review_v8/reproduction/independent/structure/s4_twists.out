@@ -1,0 +1,68 @@
+PERMUTATIONS (5040 incl. identity), 47s
+  convention A (g = pi, the paper): closing permutations = 1764 (identity closes: False)
+    cycle type : closing / total : 2-cycle 21/21, 3-cycle 35/70, (2,2) 42/105, 4-cycle 0/210, (3,2) 126/420, 5-cycle 252/504, (2,2,2) 21/105, (3,3) 112/280, (4,2) 294/630, 6-cycle 210/840, (3,2,2) 105/210, (4,3) 168/420, (5,2) 42/504, 7-cycle 336/720
+    (parity, log2 index) of closing permutations: {(0, 10): 1176, (1, 16): 588}
+    criterion agrees with direct closure on 5040 of 5040 | formula h(W)h(V)^2 ok on 1764 | eps-rule ok on 1764 | 2Lambda in S on 1764 of 1764
+    eps = [2e0] lies in V_g for every permutation: True | det g = sign(pi) for all: True
+    (parity, closes, V sub, V left, V right, W sub, W left, W right) : count
+        (0, False, True, False, False, False, False, False) : 1176
+        (0, False, True, True, True, False, False, False) : 168
+        (0, True, True, False, False, True, False, False) : 1176
+        (1, False, False, False, False, False, False, False) : 588
+        (1, False, False, False, False, True, False, False) : 588
+        (1, False, False, False, False, True, False, True) : 168
+        (1, False, True, True, True, False, False, False) : 588
+        (1, True, True, True, True, True, False, False) : 588
+    distinct (V_g, W_g) pairs among all permutations: 240; among closing ones: 84
+  convention B (g = pi^-1): closing permutations = 1764 (identity closes: False)
+    cycle type : closing / total : 2-cycle 21/21, 3-cycle 35/70, (2,2) 42/105, 4-cycle 0/210, (3,2) 126/420, 5-cycle 252/504, (2,2,2) 21/105, (3,3) 112/280, (4,2) 294/630, 6-cycle 210/840, (3,2,2) 105/210, (4,3) 168/420, (5,2) 42/504, 7-cycle 336/720
+    (parity, log2 index) of closing permutations: {(0, 10): 1176, (1, 16): 588}
+    criterion agrees with direct closure on 5040 of 5040 | formula h(W)h(V)^2 ok on 1764 | eps-rule ok on 1764 | 2Lambda in S on 1764 of 1764
+    eps = [2e0] lies in V_g for every permutation: True | det g = sign(pi) for all: True
+    (parity, closes, V sub, V left, V right, W sub, W left, W right) : count
+        (0, False, True, False, False, False, False, False) : 1176
+        (0, False, True, True, True, False, False, False) : 168
+        (0, True, True, False, False, True, False, False) : 1176
+        (1, False, False, False, False, False, False, False) : 588
+        (1, False, False, False, False, True, False, False) : 588
+        (1, False, False, False, False, True, False, True) : 168
+        (1, False, True, True, True, False, False, False) : 588
+        (1, True, True, True, True, True, False, False) : 588
+    distinct (V_g, W_g) pairs among all permutations: 240; among closing ones: 84
+  C2 witness pi(5)=6, pi(6)=7, pi(7)=5:  convention A closes True index 1024 | convention B closes False index None
+  sigma = (1 2): closes True index 65536, V_sigma two-sided ideal True, dim V.V 0, h(V) 256, h(W) 1
+
+ROOT REFLECTIONS (120, one per +-r), 48s
+  closing: 56 | log2 index distribution: {16: 28, 'no close': 64, 0: 28}
+     ('half-integer', 'no close') : 36
+     ('half-integer', 0) : 28
+     ('int, +-e0+-ej', 'no close') : 7
+     ('int, +-e0+-ej', 16) : 7
+     ('int, e0 not involved', 'no close') : 21
+     ('int, e0 not involved', 16) : 21
+  (eps in V_g, eps in W_g, log2 index): {(False, False, 'no close'): 28, (False, False, 0): 28, (False, True, 'no close'): 8, (True, False, 'no close'): 28, (True, False, 16): 28}
+  (closes, log2 index, V sub, V left, V right, W sub, W left, W right) : count
+        (False, None, True, False, True, False, False, False) : 36
+        (False, None, True, True, True, False, False, False) : 28
+        (True, 0, True, False, True, True, False, False) : 28
+        (True, 16, True, True, True, True, False, False) : 28
+  criterion ok: 120 / 120 | formula ok: 56 | eps-rule ok: 56 | 2Lambda in S: 56 of 56
+  C3 witness r = (e0+...+e6-e7)/2: closes True, index 1, V_g subalgebra True (two-sided False, dim VV 4), W_g subalgebra True (dim WW 4), eps in V_g False, eps in W_g False
+    identity element of the twisted algebra: g^{-1}(e0) = s_r(e0) = ['3/4', '-1/4', '-1/4', '-1/4', '-1/4', '-1/4', '-1/4', '1/4'] | in L: False | 2*it in L: True
+
+SIGNED PERMUTATIONS of e1..e7 (e0 fixed): 2^7 * 7! = 645120
+  distinct twisted tables: 480
+  signed permutations preserving the standard table (automorphisms): 1344 | product of signs on them: {1: 1344}
+  representatives with even number of sign changes (g in W(D8), g(L) = L): 240; odd: 240
+  closing tables: 168 | log2 index distribution: {16: 56, 10: 112}
+  by sign parity: {(1, False, None): 156, (-1, False, None): 156, (1, True, 16): 28, (-1, True, 16): 28, (1, True, 10): 56, (-1, True, 10): 56}
+  odd-sign tables whose closure and index equal those of g' = conj o g: 240 of 240
+  even-sign closing tables by (det g, eps in V_g, log2 index, eps-rule ok): {(-1, True, 16, True): 28, (1, True, 10, True): 56}
+
+W(E8) ORBIT of (Lsbar/2L, Ls/2L) under the 120 reflections: 17280 ordered pairs (all complementary pairs: 17280)
+  index 2^0 realized by g = product of 1 reflection(s) [['1/2', '-1/2', '1/2', '-1/2', '1/2', '-1/2', '-1/2', '-1/2']]: direct closes True, log2 index 0, det -1, eps in V False, eps in W False
+  index 2^5 realized by g = product of 2 reflection(s) [['0', '1', '0', '0', '0', '1', '0', '0'], ['1/2', '-1/2', '1/2', '1/2', '-1/2', '-1/2', '-1/2', '-1/2']]: direct closes True, log2 index 5, det 1, eps in V False, eps in W True
+  index 2^8 realized by g = product of 3 reflection(s) [['0', '1', '0', '0', '0', '1', '0', '0'], ['0', '0', '0', '0', '0', '1', '0', '1'], ['1/2', '1/2', '1/2', '-1/2', '1/2', '-1/2', '-1/2', '1/2']]: direct closes True, log2 index 8, det -1, eps in V False, eps in W True
+  index 2^10 realized by g = product of 2 reflection(s) [['0', '1', '0', '0', '0', '-1', '0', '0'], ['0', '0', '0', '0', '0', '1', '0', '1']]: direct closes True, log2 index 10, det 1, eps in V True, eps in W False
+  index 2^16 realized by g = product of 1 reflection(s) [['0', '1', '0', '0', '0', '-1', '0', '0']]: direct closes True, log2 index 16, det -1, eps in V True, eps in W False
+total time 62s

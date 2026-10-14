@@ -227,3 +227,9 @@ Min(Λ) itself contains no idempotent and no square-zero vector.
 `verify_product_span_index.py`, `verify_product_span_structure.py`).
 S := Z-span{u ⋆ v : u, v ∈ Λ} has index [Λ : S] = 65,536 = 2¹⁶, with
 2Λ ⊆ S and Λ/S ≅ (Z/2)¹⁶.  Closure is not surjectivity.
+
+The index depends on the twist (claims 017, 018): among the closing
+permutation twists, every even permutation gives 2¹⁰ and every odd one 2¹⁶;
+the reflection in the root (e₀+e₁+⋯+e₆−e₇)/2 of L closes on Λ with index 1,
+its products Z-spanning Λ.  L³ is a closed overlattice for every twist by an
+isometry of L, so no such twist makes the order maximal.

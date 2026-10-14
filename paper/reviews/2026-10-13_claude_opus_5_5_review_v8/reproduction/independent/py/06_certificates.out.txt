@@ -1,0 +1,70 @@
+Lambda basis read from lambda_basis.txt: all 24 vectors pass the definitional test; Gram det = 2^24 = det(Lambda)  ->  Z-basis of Lambda.
+(T2) [L : span(L.L)] = 1  (64 products of the L-basis, Fractions)  ->  (4L)^3 <= S_g for every twist, so Lambda/S_g is a 2-group of exponent dividing 4
+
+--- sigma = (1 2): pi = (2,1,3,4,5,6,7)
+  1-2. products passing the definitional Lambda test: 576/576;  Lambda-coordinates integral: True
+  3. rank over F2 of the 576 coordinate rows: r2 = 8  ->  |A/2A| = 2^16
+  4. order of the Z/4-span of the rows: 2^32  ->  |A/4A| = 2^16  ->  2-part of A elementary abelian: True
+  5. 24 independent products T (pairs (i,j) of b_i*b_j): [(3, 21), (18, 6), (1, 19), (2, 1), (2, 4), (18, 1), (1, 1), (5, 1), (15, 8), (3, 3), (22, 8), (3, 18), (13, 21), (19, 1), (2, 20), (16, 20), (17, 7), (11, 24), (8, 1), (16, 2), (9, 16), (22, 4), (1, 3), (18, 18)]
+     |det T| = 24531788890112 = 2^20 * 7^1 * 101^1 * 33091^1
+     ranks of the 576 rows mod the odd primes of |det T|: {7: 24, 101: 24, 33091: 24}  ->  no odd torsion in A: True
+  => A = Lambda/S = (Z/2)^16,  [Lambda : S] = 65536  (and 2 Lambda <= S)
+  conceptual reading: V_g, W_g subalgebras: True, True; d(V) = 4, m(V) = 4, d(W) = 0, m(W) = 0
+     (T3) [Lambda : S + (2L)^3] = 2^8;  (T4) [Lambda : S + 2Lambda] <= 2^16  (F2-rank gives exactly 2^16)
+
+--- C2 witness pi = (5 6 7): pi(5)=6, pi(6)=7, pi(7)=5
+  1-2. products passing the definitional Lambda test: 576/576;  Lambda-coordinates integral: True
+  3. rank over F2 of the 576 coordinate rows: r2 = 14  ->  |A/2A| = 2^10
+  4. order of the Z/4-span of the rows: 2^38  ->  |A/4A| = 2^10  ->  2-part of A elementary abelian: True
+  5. 24 independent products T (pairs (i,j) of b_i*b_j): [(16, 2), (14, 6), (2, 6), (1, 7), (12, 3), (5, 4), (5, 8), (4, 1), (10, 5), (1, 13), (19, 1), (2, 1), (1, 3), (1, 1), (12, 14), (2, 16), (11, 2), (24, 14), (24, 6), (5, 24), (12, 1), (17, 16), (10, 24), (8, 5)]
+     |det T| = 10566937322323968 = 2^17 * 3^1 * 26873111273^1
+     ranks of the 576 rows mod the odd primes of |det T|: {3: 24, 26873111273: 24}  ->  no odd torsion in A: True
+  => A = Lambda/S = (Z/2)^10,  [Lambda : S] = 1024  (and 2 Lambda <= S)
+  conceptual reading: V_g, W_g subalgebras: True, True; d(V) = 3, m(V) = 2, d(W) = 0, m(W) = 0
+     (T3) [Lambda : S + (2L)^3] = 2^6;  (T4) [Lambda : S + 2Lambda] <= 2^10  (F2-rank gives exactly 2^10)
+
+--- inverse of the C2 witness, (5 7 6)  [expected NOT to close]
+  1-2. products passing the definitional Lambda test: 536/576;  Lambda-coordinates integral: False
+  -> the product does NOT close on Lambda; no index is defined.
+
+--- C3 witness: reflection in r = (1,1,1,1,1,1,1,-1)/2
+  1-2. products passing the definitional Lambda test: 576/576;  Lambda-coordinates integral: True
+  3. rank over F2 of the 576 coordinate rows: r2 = 24  ->  |A/2A| = 2^0
+  4. order of the Z/4-span of the rows: 2^48  ->  |A/4A| = 2^0  ->  2-part of A elementary abelian: True
+  5. 24 independent products T (pairs (i,j) of b_i*b_j): [(8, 5), (13, 6), (5, 4), (2, 22), (2, 5), (4, 8), (10, 12), (5, 6), (7, 11), (18, 12), (18, 7), (3, 12), (13, 3), (6, 5), (19, 2), (4, 5), (16, 16), (24, 1), (11, 12), (6, 1), (2, 3), (3, 6), (16, 3), (2, 2)]
+     |det T| = 4419506172039123 = 3^1 * 11^1 * 17^1 * 1141853^1 * 6899231^1
+     ranks of the 576 rows mod the odd primes of |det T|: {3: 24, 11: 24, 17: 24, 6899231: 24, 1141853: 24}  ->  no odd torsion in A: True
+  => A = Lambda/S = (Z/2)^0,  [Lambda : S] = 1  (S = Lambda)
+  conceptual reading: V_g, W_g subalgebras: True, True; d(V) = 0, m(V) = 0, d(W) = 0, m(W) = 0
+     (T3) [Lambda : S + (2L)^3] = 2^0;  (T4) [Lambda : S + 2Lambda] <= 2^0  (F2-rank gives exactly 2^0)  -> with (T2): S = Lambda
+
+--- the other 27 reflections with census index 1 (compact)
+  r = (1/2, 1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2)    closes True, r2 = 24, |det T| = 917621815995045 (odd primes ['3', '5', '7', '128971', '22587133'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2)    closes True, r2 = 24, |det T| = 146777737534587 (odd primes ['3', '157', '4243', '8160631'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2)    closes True, r2 = 24, |det T| = 79599849479635 (odd primes ['5', '15919969895927'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2)    closes True, r2 = 24, |det T| = 979043143504831 (odd primes ['17', '113', '6011', '4987453'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, 1/2, -1/2, -1/2, -1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 32497484081393023 (odd primes ['7', '11', '593', '12953', '54945731'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2)    closes True, r2 = 24, |det T| = 1279189555945619 (odd primes ['19', '3361', '61751', '324391'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, -1/2, 1/2, -1/2, -1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 220332861154093 (odd primes ['67', '199', '139609', '118369'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, -1/2, -1/2, 1/2, -1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 23094571241507247 (odd primes ['3', '19', '135055972172557'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, -1/2, -1/2, -1/2, 1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 3471897944606259 (odd primes ['3', '7', '151', '557533', '1963813'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, -1/2, -1/2, -1/2, -1/2, 1/2, -1/2) closes True, r2 = 24, |det T| = 3257891486852049 (odd primes ['3', '61', '2801', '78467063'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, 1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2) closes True, r2 = 24, |det T| = 49447955217683995 (odd primes ['5', '7', '41', '73', '47087', '10024727'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2)    closes True, r2 = 24, |det T| = 276649361274821 (odd primes ['139', '773', '7573', '339991'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, 1/2, 1/2, -1/2, -1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 14581780111801321 (odd primes ['67', '217638509131363'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, 1/2, -1/2, 1/2, -1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 10170024059000899 (odd primes ['10170024059000899'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, 1/2, -1/2, -1/2, 1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 81795090552458949 (odd primes ['3', '97', '199', '470825436187'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, 1/2, -1/2, -1/2, -1/2, 1/2, -1/2) closes True, r2 = 24, |det T| = 588335219213143 (odd primes ['588335219213143'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, 1/2, -1/2, -1/2, -1/2, -1/2, 1/2) closes True, r2 = 24, |det T| = 4801218294607693 (odd primes ['7', '61', '293', '38375668763'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, 1/2, 1/2, -1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 72837938971295429 (odd primes ['959323', '75926397023'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, 1/2, -1/2, 1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 18297212603250303 (odd primes ['3', '59', '443', '71191', '1092601'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, 1/2, -1/2, -1/2, 1/2, -1/2) closes True, r2 = 24, |det T| = 17178419927278107 (odd primes ['3', '2024339', '942882257'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, 1/2, -1/2, -1/2, -1/2, 1/2) closes True, r2 = 24, |det T| = 328886932850911 (odd primes ['457981', '718123531'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, -1/2, 1/2, 1/2, -1/2, -1/2) closes True, r2 = 24, |det T| = 28072717362433 (odd primes ['28072717362433'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, -1/2, 1/2, -1/2, 1/2, -1/2) closes True, r2 = 24, |det T| = 10133347226405791 (odd primes ['10133347226405791'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, -1/2, 1/2, -1/2, -1/2, 1/2) closes True, r2 = 24, |det T| = 213425234093213 (odd primes ['1398413', '152619601'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2, -1/2) closes True, r2 = 24, |det T| = 27763321255360635 (odd primes ['3', '5', '7', '19', '85781', '162232333'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, -1/2, -1/2, 1/2, -1/2, 1/2) closes True, r2 = 24, |det T| = 28274757219554335 (odd primes ['5', '7', '79', '2741', '92627', '40277'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+  r = (1/2, -1/2, -1/2, -1/2, -1/2, -1/2, 1/2, 1/2) closes True, r2 = 24, |det T| = 3970571035102411 (odd primes ['47', '631', '133883097923'], all ranks 24), index 1 certified: True; d,m of V,W = 0,0,0,0
+
+index 1 certified without any HNF for 28 of 28 reflections

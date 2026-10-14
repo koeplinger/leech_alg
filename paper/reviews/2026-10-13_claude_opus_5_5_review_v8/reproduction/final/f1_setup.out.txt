@@ -1,0 +1,16 @@
+[1] Fano table: composition and left/right alternativity hold on 2000 random pairs
+[2] det of doubled basis matrix = 256 -> covolume of span(L_k) = 1
+    240 roots found in L (doubled norm 8 <=> N = 2); all have integer L-coordinates
+    [L : span(L.L)] = 1
+[3] printed M_k = sigma(L_k.s) and N_k = sigma(L_k.sbar) reproduced (8 + 8 vectors)
+    Tables LL, LN, MM: 192 printed rows compared, mismatches = 0
+    Remark 4.5 reproduced: u1,u2 in Ls, u1.u2 = (0,-2,2,1,-2,-1,-1,-1) in Lsbar\Ls; v in sigma(Ls)\Ls; w in sigma(Lsbar)\Lsbar
+[4] [L:Ls] = 16  [L:Lsbar] = 16  [L : Ls+Lsbar] = 1
+    2L <= Ls and 2L <= Lsbar, hence Ls cap Lsbar = 2L (index count 16*16 = 256)
+    definitional tests (t.s)/2 in L, (t.sbar)/2 in L agree with the bases on 256 / 256 classes
+    Lsbar/2L and Ls/2L are totally singular for q = N/2 mod 2 (Lagrangians)
+[5] det of Lambda basis in L^3-coordinates = 4096 = 2^12 -> [L^3:Lambda] = 4096
+    all 24 basis vectors satisfy Wilson's definition (definitional test)
+    Gram determinant = 16777216 = 2^24: True
+    Gram/2 is integral, even, det 1 (Lambda/sqrt2 even unimodular)
+    paper's three families: 196560 distinct vectors, all of norm 8, in Lambda: True
