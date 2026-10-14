@@ -132,7 +132,7 @@ both sides; Lemma C above is its left-handed half.  So the closure of
 σ(Ls) under its own product is not inherited from an ideal property.
 The ideal property of σ(Ls̄) has a structural reason (claim 019; paper
 v8, §7; `verify_sigma_sublattice_maximal_order.py`): σ(Ls̄) = 2O for a
-maximal order O ⊇ L.  Likewise σ(Ls) = p·O with p = e₂ − e₄ + e₅ − e₆,
+maximal order O ⊇ L of the standard octonion product.  Likewise σ(Ls) = p·O with p = e₂ − e₄ + e₅ − e₆,
 and Lemma D becomes the closure of p·O.
 
 ### Algebraic properties

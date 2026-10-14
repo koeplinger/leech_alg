@@ -1,0 +1,79 @@
+Prompt 290 -- Fold in the author's answers to the open points of prompt 289
+Date: 2026-10-14
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'I glanced over the updates to the paper so far, and they appear
+good. Before I do a fine-comb read, let me answer the remaining questions
+so that you can fold them in.
+
+Point 1: Do your recommendation.
+Point 2: I don't understand what you want me to decide on.
+Point 3: I don't understand what you want me to decide on.
+Point 4: No, "ozone algebra" doesn't go into the glossary. Then, I don't
+understand what you mean with "... and the Appendix B qualification for
+L s̄.".'
+
+The points refer to the "Your call" list of the prompt-289 hand-off:
+(1) Section 7, first bullet, name the product of "a maximal order O
+containing L" (recommended: "of the standard product"); (2) Section 2.2
+and the proof of Lemma 4.2, "maximal order(s) of the integral octonions";
+(3) Section 7, last bullet, "linear maps of R^8 that are not coordinate
+permutations" next to the reflection rho of Section 5.5; (4) the glossary
+half of decision (c) of evidence_and_reasoning/2026-10-14_plan.md, and the
+Appendix B question of that plan, Section 4.
+
+Rulings: (1) apply the recommendation; (4) "ozone algebra" stays out of
+the glossary.  Points (2), (3) and the Appendix B question: the author
+asks what there is to decide; to be explained, nothing applied without
+the author's word.
+
+Applied (point 1):
+ - paper/main.tex, Section 7, first bullet: "for a maximal order
+   $O \supseteq L$ of the standard octonion product".  The author approved
+   "of the standard product"; "octonion" was added because the paper's term
+   for (2.1) is "standard octonion product" (Definition 3.2; "standard
+   product" occurs nowhere).  Rebuilt: 24 pp., no errors, no undefined
+   references, no overfull boxes; line count unchanged (2036), so the
+   review's GAP extractor reads identical tables (re-run into scratch).
+ - Record: changelog item 12 (the quoted new text and the wording note),
+   README.md and research_result.md (same words).  Memory: "ozone algebra"
+   out of the glossary (point 4).
+ - The prompt-289 work, including the new script, was committed and pushed
+   by the author (3ef65b6) before this prompt; the footnote link resolves.
+
+Read-only checks (workflow, five agents) of the applied edit and of the
+proposals for points 2, 3 and the Appendix B question:
+ - Point 1: correct and needed.  O^(4) is not closed under the twisted
+   product (witness a = (e3+e5+e6+e7)/2, b = (e0+e2+e5+e6)/2); no maximal
+   order of the twisted product equals sigma(L sbar)/2.
+ - Point 2: both proposals correct (Section 2.2 "of the rational
+   octonions"; Lemma 4.2's proof "that the octavians are closed under
+   multiplication").  "Norm-2-scale form" is accurate: L = (e0+e_n) O^(n)
+   for every n, and closure transfers by a Moufang identity.
+ - Point 3: the clause "linear maps of R^8 that are not coordinate
+   permutations" is not false but misleading after Section 5.5's rho, and
+   imprecise in scope (the census covers S_7, the permutations fixing e0;
+   permutations moving e0 are coordinate permutations never enumerated).
+   Proposed: "which other linear maps of R^8 close (the reflection rho of
+   Section 5.5 does)"; optional "closure pattern" in the same bullet.
+ - Appendix B: the paragraph is true for what it names (L, Ls) and silent
+   on L sbar.  With Kirmse's imaginary units relabeled to match (2.1) (all
+   168 line-preserving relabelings agree), L sbar = 2 J_1, J_1 the unique
+   unit-stable non-order of the thirty; sigma(J_1) = O^(4); all 21
+   transpositions send J_1 to maximal orders, (i j) J_1 = O^(k) for the
+   line {i,j,k}.  On L sbar nothing needs repair: L sbar = 2 J_1 is
+   already closed and L . L sbar lies in L sbar without the twist; sigma's
+   work is on Ls, which is not a scaled copy of any of the thirty.  J_1 is
+   a maximal order of the twisted product (Coxeter's "replace the table"
+   remark).  Recommendation of the checks: leave Appendix B unchanged.
+ - Found beyond the questions, under verification at this point: (i)
+   closure of pO is not open: for purely imaginary p, (pa)(pb) = p((ap)b)
+   (left Moufang identity), checked symbolically in (2.1) by the
+   orchestrator (and a control with real part fails); so Lemma 4.4 follows
+   from closure of O^(4), as Lemma 4.3 does; this contradicts the Section
+   7 sentence approved at prompt 289 ("the open question becomes why pO is
+   closed"), the review's "p does not normalize the order, so the Moufang
+   identity does not give it", and ledger row 019; (ii) Appendix B's
+   Mahler sentence omits the rational-integer factor of his principal-ideal
+   theorem.  A second workflow verifies both before they go to the author.
+

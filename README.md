@@ -102,8 +102,9 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 - A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
   octonion product, while Ls is not).  One candidate shape is excluded:
   σ(Ls) is not an ideal of L on either side.  Section 7 reduces the
-  question: σ(Ls̄) = 2O for a maximal order O ⊇ L, and σ(Ls) = pO with
-  p = e₂ − e₄ + e₅ − e₆, so it becomes why pO is closed.
+  question: σ(Ls̄) = 2O for a maximal order O ⊇ L of the standard octonion
+  product, and σ(Ls) = pO with p = e₂ − e₄ + e₅ − e₆, so it becomes why pO
+  is closed.
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.
