@@ -77,3 +77,72 @@ proposals for points 2, 3 and the Appendix B question:
    Mahler sentence omits the rational-integer factor of his principal-ideal
    theorem.  A second workflow verifies both before they go to the author.
 
+Second workflow (read-only, five agents): the pO finding, its impact, the
+literature, and the Mahler sentence.
+ - Confirmed by four agents and the orchestrator (sympy expansion in (2.1);
+   exact random checks; exact lattice checks with independent code): for
+   purely imaginary p, (pa)(pb) = p((ap)b) (write a = yp; flexibility and
+   the left Moufang identity give (pyp)(pb) = p(y(p^2 b)), p^2 = -N(p));
+   for general p the defect is [p^2, a, b] = 2 Re(p) [p, a, b].  Hence pM
+   is closed for every closed lattice M and imaginary p in M.  sigma(Ls) =
+   p O^(4), L = (e1+e2) O^(4), sigma(L sbar) = 2 O^(4): Lemmas 4.2 to 4.4
+   reduce to the closure of O^(4).  Twisted form: J_1 = sigma(O^(4)) is a
+   maximal order of the twisted product, Ls = sigma(p) ._sigma J_1.  The
+   contrary sentence is in the prompt-287 note (Fable 5.1, Section 4,
+   item 4), not in the Opus 5.5 review.  Clarification of the entry above:
+   "L = (e0+e_n) O^(n), closure transfers by a Moufang identity" holds
+   with the conjugate form (xa)(xbar b) = x((a xbar) b), since e0+e_n is
+   not imaginary; the imaginary multiplier e1+e2 avoids that.
+ - Literature: the identity is known in substance (Bol-Moufang identity
+   B23 of extra loops, Fenyves 1968 per Phillips-Vojtechovsky 2005, Prop.
+   4.2; McCrimmon 1971, Prop. 6, per Alsaody-Gille 2019, Prop. 2.4(1)); no
+   source found for the closure of pO or for sigma(Ls) = p O^(4)
+   (Conway-Smith 2003 not checked).  Wilson 2009 already states, in his
+   coordinates (B = J_1 in the paper's): "L sbar = 2B" with B the set whose
+   assumed closure "is known as Kirmse's mistake" (p. 2187), "Bs = L"
+   (p. 2189), L = (1 + i0)A, and the seven rings as B with 1 and i_t
+   swapped, after Coxeter.  Quotes checked by the orchestrator against the
+   published text (pdftotext of the downloaded PDF, scratch).
+ - Mahler (Appendix B): "every left or right ideal is principal, generated
+   by an integral Cayley number of norm 1, 2, or 4" is false as written;
+   Mahler's Theorem 2 (p. 133) has G_0 = delta G*, delta a rational
+   integer (the ideal 3O needs norm 9).  The qualifier was dropped when the
+   appendix was shortened (commit 6ea8ed9, prompt 128); Coxeter 1946, Sec.
+   14, has "a multiple (in the ordinary sense) of".  Also "identifies
+   Kirmse's error with the same non-closure witness" is dangling since
+   commit 141f1a6 removed the witness from the Kirmse paragraph.
+ - Impact: four passages of the paper call a solved question open (Section
+   7's list head and first bullet; its last clause, approved at prompt 289;
+   its pointer to A.1; A.1's "The open question recorded in Section 7 ...
+   opens into a research program").  No lemma, proof, table or number
+   becomes false.  Options A (bullet becomes a paragraph with the Moufang
+   clause; A.1 reworded; net +1 line above Appendix A) and B (a Remark
+   after the proof in Section 4; bullet deleted) both build in scratch, 24
+   pp., and keep the review's extractor aligned.
+Record corrected (current-state, in place; frozen note by dated addendum):
+ledger row 013 (structural reason: claim 021), row 019 (Lemma 4.4 follows
+likewise; Wilson credited for L sbar = 2 J_1 and L = J_1 s; new beyond
+Wilson: sigma(L sbar) = 2 O^(4), sigma(Ls) = p O^(4)), new row 021, header
+"009-021"; evidence_and_reasoning/README.md ("009-021"); CURRENT_STATE.md
+(claim-019 paragraph; open item 1: answered, paper wording awaits the
+author); paper/reviews/2026-10-14_claude_fable_5_1_index_one_verification.md
+(Addendum, prompt 290: Section 4 items 4 and 1).  Memory: the sigma-framing
+note (Wilson's attribution; no "repair" wording for L sbar).
+Put to the author, nothing applied: point 2 (recommended: apply both
+changes); point 3 (recommended: "which other linear maps of R^8 close (the
+reflection rho of Section 5.5 does)", optional "closure pattern"); Appendix
+B (recommended: one sentence crediting Wilson's "L sbar = 2B, Kirmse's
+mistake"); the pO answer (recommended: option A); Mahler (recommended: "a
+rational integer multiple of", and "an explicit non-closure witness").
+Side findings, not acted on: code comments label Wilson's B as the
+Coxeter-Dickson ring (python_project/src/e8_wilson.py lines 31, 124;
+leech_wilson.py line 60; python_project/tests/test_leech_wilson.py line
+159); Mahler proves 15/16 and states 1/2 without proof (the appendix's
+"<= 1/2" follows Coxeter); "the true count is seven" in the Dickson
+paragraph is right in context; the Coxeter verification note misquotes
+"missed" as "misused" and drops "a multiple of" in its Sec. 14 paraphrase;
+historical_appendix_expanded.tex calls the 1/2 bound "his Theorem on p.
+127".
+Linter: documentation clean (0 warnings), exit 0.
+
+Status: CLOSED.  Decisions with the author.

@@ -44,6 +44,27 @@ below stands as written.
    lies in a Wilson sublattice" has a short proof; the converse and the
    exact values are computed, not proved.
 
+**Addendum (14 October 2026, prompt 290).**  Two corrections; the text
+below stands as written.
+
+1. Section 4, item 4: "this remains a finite check ($p$ does not
+   normalize the order, so the Moufang identity does not give it)" is
+   wrong.  The premise holds ($pO^{(4)} \neq O^{(4)}p$), but closure needs
+   no normalizing.  For purely imaginary $p$, $p^2 = -N(p)$, and the left
+   Moufang identity gives $(pa)(pb) = p((ap)b)$ for all octonions $a, b$.
+   Since $p = e_2 - e_4 + e_5 - e_6$ is purely imaginary and lies in
+   $O^{(4)}$, $p\,O^{(4)}$ is closed, and Lemma 4.4 follows from the closure
+   of $O^{(4)}$ as Lemma 4.3 does (ledger claim 021; symbolic and exact
+   checks at prompt 290).
+2. Section 4, item 1: $L\bar s = 2J_1$ and $L = J_1 \cdot s$ are Wilson's,
+   and this note does not cite him: in his coordinates "$L\bar s = 2B$",
+   with $B$ the set whose assumed closure "is known as Kirmse's mistake"
+   (Wilson 2009, p. 2187), and "$Bs = L$" (p. 2189).  New beyond Wilson:
+   $\sigma(L\bar s) = 2O^{(4)}$ and $\sigma(Ls) = p\,O^{(4)}$, and the closure
+   argument of item 1.  The closing remark of Section 4 on "twice Bruck's
+   order" was not checked: $O^{(4)}$ is one of the seven, and which of them
+   is Coxeter's $J$ was not determined.
+
 Notation as in the paper (v8): $L = D_8^+$, Wilson's left-multiple sublattices
 $L\bar s$ and $Ls$, $\Lambda \subset L^3$; for an isometry $g$ of $\mathbb R^8$
 with $g(L) = L$, $x \cdot_g y := g^{-1}(g(x) \cdot g(y))$, $\star_g$ the triple

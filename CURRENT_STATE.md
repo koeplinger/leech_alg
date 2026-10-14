@@ -259,7 +259,11 @@ transposing the coordinates 0 and 4: Ls̄ = 2J₁, L = J₁·s, Ls = J₁·s²,
 seven octavian orders
 are closed and contain L, Lemma 4.3 follows from Coxeter's theorem, two-sided,
 with no table; the factor 2⁸ in σ's span index is [2O⁽⁴⁾ : 4O⁽⁴⁾].  Lemma 4.4
-becomes closure of the principal set p·O⁽⁴⁾ and remains a finite check.
+follows the same way: p is purely imaginary, so the left Moufang identity
+gives (pa)(pb) = p((ap)b) and p·O⁽⁴⁾ is closed (claim 021).  Ls̄ = 2J₁ and
+L = J₁·s are Wilson's (2009, pp. 2187, 2189: Ls̄ = 2B with B the set of
+"Kirmse's mistake", and Bs = L); σ(Ls̄) = 2O⁽⁴⁾ and σ(Ls) = p·O⁽⁴⁾ go
+beyond him.
 
 ### Evidence files
 
@@ -650,8 +654,11 @@ with further detail recorded here.
    argument exists (claim 019): σ(Ls̄) = 2O⁽⁴⁾ is twice an octavian
    maximal order containing L, so Coxeter's theorem gives the two-sided
    ideal property; for Lemma 4.4 the same identification gives σ(Ls) =
-   p·O⁽⁴⁾ with p of norm 4, and closure of that principal set is the
-   remaining finite check.
+   p·O⁽⁴⁾ with p purely imaginary of norm 4, and the left Moufang
+   identity, (pa)(pb) = p((ap)b), makes that set closed (claim 021).  The
+   integer-level reason for Lemma 4.4 is therefore known; the paper (v8)
+   still lists the question in Section 7, and its wording awaits the
+   author's decision.
 
 2. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
    whether the order-6 octonion automorphism generating the C₆ admits an
