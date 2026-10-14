@@ -12,6 +12,38 @@ in at least two independent implementations; the structural identification of
 Section 4 in two; the maximal order of Section 3.3 in two.  Not
 peer-reviewed.
 
+**Addendum (14 October 2026, prompt 288).**  Three corrections; the text
+below stands as written.
+
+1. Section 3.1's parenthesis "(the minimal vectors included, which are
+   never products, since product norms are at least 16)" gives the wrong
+   reason.  The bound $N \geq 16$ holds only for products of two minimal
+   vectors under $\sigma$ (paper, Remarks 1.3 and 5.1); under $s_r$ such
+   products have norms 20, 24, 28 and others.  The valid argument: the block
+   sum of $u \star_g v$ is $(x+y+z) \cdot_g (x'+y'+z')$, a product of two
+   vectors of $Ls$, whose norm lies in $16\mathbb Z$.  So the 189,360 minimal
+   vectors whose block sum has norm 4, 8 or 12 are never single products,
+   under any twist by an isometry of $L$ (count computed at prompt 288); the
+   remaining 7,200 were not settled.  Index 1 says that every vector of
+   $\Lambda$ is an integer combination of products, not that it is a
+   product.
+2. Section 3.2's "chain $\Lambda \subset \Lambda + \mathbb Z(1_r, 0, 0)
+   \subset L^3$ ... with indices 4 and $2^{10}$" is wrong: $1_r \notin L$,
+   so $\Lambda + \mathbb Z(1_r, 0, 0)$ is not contained in $L^3$.  It is
+   $\star_r$-closed of index 4 over $\Lambda$ and, like
+   $\Lambda + \mathbb Z\varepsilon_1$ for $\sigma$, not contained in $L^3$
+   (checked exactly at prompt 288).
+3. Section 2's "Not re-verified here: the review's spectrum ..., its rule
+   via $2 \cdot 1_g$" was overtaken after this note was written.  The
+   adversarial pass on the assessment (prompt 287) re-derived the spectrum
+   and, at the level of the 142 subalgebra Lagrangians, the rule
+   ($h = 1$ for all 120 not containing the class of $2e_0$; $2^5$ or $2^8$
+   otherwise).  At prompt 288 two further agents found the rule, Theorem A
+   and Theorem B to hold on random samples of $W(E_8)$ (1,115 and 439
+   closing twists).  The rule's direction "index $> 1$ when $2 \cdot 1_g$
+   lies in a Wilson sublattice" has a short proof; the converse and the
+   exact values are computed, not proved.
+
 Notation as in the paper (v8): $L = D_8^+$, Wilson's left-multiple sublattices
 $L\bar s$ and $Ls$, $\Lambda \subset L^3$; for an isometry $g$ of $\mathbb R^8$
 with $g(L) = L$, $x \cdot_g y := g^{-1}(g(x) \cdot g(y))$, $\star_g$ the triple

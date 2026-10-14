@@ -1,0 +1,107 @@
+Prompt 288 -- Feedback on the author's reading of the index-1 finding; why the
+span index matters; a durable proposal of targeted paper updates (wrap-up)
+Date: 2026-10-14
+Model: Claude Opus 5.5 (Anthropic), from this prompt on (the author switched
+the session model with /model before this prompt; prompts 281 to 287 ran on
+Claude Fable 5.1).  The external review incorporated at prompt 287 was also
+by Claude Opus 5.5, run by the author outside this repository.
+
+User: 'Ok - great. Now I understand. In a way, by moving the lattice around,
+we aligned lattice points such that -- in certain subspaces -- their behavior
+is similar to what the multiplicative unit would do in a unital algebra,
+i.e., to make the index trivial: Every lattice point can be reach by at least
+one product, and multiplying with the unit does that for all points. Index 1.
+In the "ozones" (which is how I call the Z_3-symmetric octonion-triple
+algebra in this construction now, from three-times-O; alternatively "ozone
+algebra") we have no multiplicative units, but we do have idempotents and
+there are likely hybrid sort of subspaces that provide a similar
+image-bounded mapping: Aligning the lattice basis just right, all lattice
+points are reachable, but it's not a maximal order because other products
+can very much fall outside the lattice. No basis alignment can fix that.
+
+Give me feedback on what I just wrote.
+
+Then, I want another look at the span of the image, and the index
+calculation altogether. Right now it takes a prominent place in its own
+section. Now I'm thinking that it should maybe better be merged together
+with section that contains the table of the permutations that close, and
+show the index there; together with a one-paragraph note on what flip
+generates index 1. Help me understand why the question for the index would
+even be interesting at this point; and if so, we should leave a one-sentence
+explanation in the paper likewise.
+
+The goal of this all is to wrap up the paper for publication, and avoid
+endless research into what's next. Yes, you've already pointed out the path
+towards the "why" the Wilson sublattices close; that's great and we're
+mentioning it in the outlook and next steps. From my end, at this point,
+less is more.
+
+As the result of this prompt, make a durable proposal on targetted updates
+to the paper to accomodate the index findings, given the goal I've
+sketched.'
+
+Plan: (1) feedback on the author's paragraph, checked against the record
+(claims 016 to 020, the verification note of prompt 287); (2) why the span
+index matters, with a one-sentence reason for the paper; (3) a durable
+proposal, evidence_and_reasoning/2026-10-14_plan.md, with the exact LaTeX of
+each targeted update, build-tested on a scratch copy; nothing applied to
+paper/main.tex.  Read-only second pass on the proposal before it is handed
+over.
+
+Done:
+ - Proposal: evidence_and_reasoning/2026-10-14_plan.md (proposed, not
+   executed): Section 1 the feedback on the author's reading, Section 2 why
+   the span index earns one sentence, Section 3 the exact LaTeX of three
+   targeted updates (Sections 5.5 and 5.6 merged into one subsection with a
+   span-index column, the index-1 reflection, and the ring-isomorphism
+   sentence; the answered Section 7 bullet deleted; a pointer in Section 7's
+   first bullet: sigma(L sbar) = 2O for a maximal order O containing L, so
+   Lemma 4.3 follows from O.O <= O, and sigma(Ls) = pO, p = e2-e4+e5-e6, the
+   remaining open question).  Build test on a scratch copy: 24 pp., 0
+   errors, 0 undefined references, 0 overfull boxes.  Indexed in
+   evidence_and_reasoning/README.md and CURRENT_STATE.md.
+ - Second pass (workflow, 4 read-only agents): an assessment of the
+   author's paragraph made without sight of the plan reached the same core
+   corrections; a mathematics check confirmed every statement and found one
+   provenance error and three imprecisions; a build check reproduced the
+   scratch build and listed the trackers to update at execution; a critic
+   asked for item 4 (Appendix B) to go, for a shorter merged subsection
+   ("span index" in words, no S-symbols next to S_7) and a shorter plan.
+   Adopted: all of it, with the reflection renamed rho (apart from Wilson's
+   s), "n/a" in the empty table cell, and the now unused symbol W removed
+   from Section 7.  Item 4 is now an observation for the author (the
+   phrase "acting now on a different object" is the author's own wording,
+   prompt 143).
+ - Corrections to the record (forward, Manifesto Section 12):
+   * Claim 018 (ledger, CURRENT_STATE, in place; the note by dated
+     addendum): "the chain Lambda < Lambda + Z(1_r,0,0) < L^3 with indices 4
+     and 2^10" was wrong: 1_r is not in L, so Lambda + Z(1_r,0,0) is
+     star_r-closed of index 4 and NOT contained in L^3 (checked exactly:
+     625 generator products, least multiple 4, 1_r not in L).
+   * The note's "minimal vectors are never products, since product norms
+     are at least 16": wrong reason (under the reflection twist, minimal-pair
+     products have norms 20, 24, 28, ...).  Valid argument: the block sum of
+     a product is a product of two vectors of Ls, of norm in 16Z; 189,360 of
+     the 196,560 minimal vectors have block-sum norm 4, 8 or 12 (computed
+     here exactly) and are never single products.  Dated addendum to the
+     note.
+   * The note's "not re-verified here: ... the rule via 2.1_g", and log
+     287's statement that the note was "updated accordingly" after the last
+     refuter: the refuter of prompt 287 had re-derived the rule at the level
+     of the 142 subalgebra Lagrangians, and the note was not updated on that
+     point.  Recorded in the note's addendum; two prompt-288 agents also
+     confirmed the rule on random samples of W(E8) (1,115 and 439 closing
+     twists).
+ - Naming check: "ozone group" is an established term (K. Chan, J. Gaddis,
+   R. Won, J. J. Zhang, "Ozone groups and centers of skew polynomial
+   rings", arXiv:2302.11471, verified live).  A reviewer's claim that
+   "ozone algebra" itself is in print was not confirmed: the paper it named
+   is "A family of algebras with trivial ozone group" (J. Gaddis, D. Yee,
+   arXiv:2512.09766, v2).
+ - Memory: user_ozone_naming (new); feedback_sigma_acts_on_sublattices
+   (refinement: L sbar = 2 J_1, sigma(L sbar) = 2 O; the "different object"
+   phrase holds for Ls, and only up to scale for L sbar; Appendix B left to
+   the author); project_reopened_v8 (wrap-up status).
+Nothing in paper/main.tex was changed.  Linter exit 0.  Not committed.
+
+Status: CLOSED (three decisions for the author in the plan, Section 5).

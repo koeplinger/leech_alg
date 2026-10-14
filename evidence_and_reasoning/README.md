@@ -31,6 +31,7 @@ evidence_and_reasoning/
 ├── editorial_standards.md  # The five prose standards; spelling and dash conventions
 ├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
 ├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (in progress)
+├── 2026-10-14_plan.md      # Proposal: the span-index findings in v8, for the wrap-up (proposed)
 └── README.md               # This file
 ```
 

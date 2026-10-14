@@ -240,8 +240,8 @@ exhaustively; the first has a short proof in the review, the second a sketch):
 span of the products, not maximality: L ·_g L ⊆ L for every such g (g(L) = L
 and L · L ⊆ L), so L³ is a ⋆_g-closed overlattice of Λ of index 2¹² for every
 twist in this family, and (Λ, ⋆_g) is never a maximal order; for the index-1
-reflection, Λ ⊂ Λ + Z(1_r, 0, 0) ⊂ L³ is a chain of ⋆_r-closed lattices with
-indices 4 and 2¹⁰.  An explicit maximal order above L³, of index 2²⁴·3⁸
+reflection, Λ + Z(1_r, 0, 0) is ⋆_r-closed of index 4 over Λ and, like
+Λ + Zε₁ for σ, not contained in L³ (1_r = s_r(e₀) is not in L).  An explicit maximal order above L³, of index 2²⁴·3⁸
 over Λ, decomposable and non-integral, was constructed in the second pass
 (claim 020, two machine passes).  Independently of the twist, the closed
 lattice proj_D(Λ) ⊕ proj_T(Λ) contains Λ with index 3⁸, so Wilson's 3-adic
@@ -660,7 +660,8 @@ with further detail recorded here.
    the ring structure of the index-1 orders.  The order itself is not
    maximal under any twist by an isometry of L (claims 016, 018).  The
    paper's Section 7 (v8, in progress) still poses the question in its
-   pre-review form.
+   pre-review form; `evidence_and_reasoning/2026-10-14_plan.md` proposes
+   stating the answer in Section 5 instead.
 
 4. **Classification** of the algebra (R²⁴, +, ⋆): it is
    non-associative, non-alternative, non-flexible, and non-unital
@@ -708,6 +709,7 @@ leech_alg/
 │   ├── references/                # Central reference registry
 │   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
+│   ├── 2026-10-14_plan.md         # Proposal: the span-index findings in v8 (proposed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
