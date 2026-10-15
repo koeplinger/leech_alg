@@ -1,0 +1,37 @@
+Prompt 307 -- Section 1, first paragraph: general facts first, then the
+paper's normalization (the author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'Read the first paragraph, it's choppy: "The Leech lattice is the
+unique even unimodular lattice of rank~24 with no vectors of squared
+length~2 \cite{ConwaySloane1999}.  Throughout this paper we use the
+normalization in which $E_8$ roots have squared length~2.  In this
+normalization the Leech lattice~$\LL$ is the $\sqrt{2}$-scaled copy of
+that unimodular lattice, and its minimal shell $\operatorname{Min}(\LL)$
+consists of 196{,}560 vectors of squared length~8.  Its automorphism group
+is the Conway group~$\Co_0$, a double cover of the sporadic simple
+group~$\Co_1$." -- You start with the Leech lattice, then give a property
+of the E8 lattice (where did that suddently come from?), then give a
+specification for what we do in this paper, and then you write about
+something general again (the number of vectors in the inner shell, the
+automorphism group. Restructure this logically: First bring the general
+facts (unique, even, unimodular, rank 24, no vectors of squared-length 2,
+196560 vectors on its innermost shell, automorphism group and of which it
+is the double cover. Then (and only then) bring the specializations in
+this paper: "Throughout this paper we use the normalization ..." and so
+on.'
+
+Applied: paper/main.tex, Section 1, paragraph 1, rewritten whole and read
+in the PDF: the general facts (unique even unimodular lattice of rank 24
+without vectors of squared length 2; minimal shell of 196,560 vectors of
+squared length 4; automorphism group Co_0, a double cover of Co_1), then
+the paper's normalization ("Throughout this paper, Lambda denotes the
+sqrt2-scaled copy of this lattice, at the scale of Wilson's construction
+(Section 2.3); its minimal shell Min(Lambda) consists of vectors of
+squared length 8.").  E_8 is no longer mentioned before paragraph 2
+introduces it; the scale is explained by Wilson's construction instead.
+Rebuilt: 24 pp., no errors, no undefined references, no overfull boxes.
+Changelog item 14: one bullet.  Linter clean.
+
+Status: CLOSED.

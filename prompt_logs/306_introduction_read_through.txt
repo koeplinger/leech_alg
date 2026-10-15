@@ -1,0 +1,46 @@
+Prompt 306 -- Introduction: the triple-product sentence, and a full
+read-through of the introduction (the author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'in the introduction, "which uses the same octonion multiplication in
+all three blocks with Z3 -symmetric cross-block routing." still reads
+clunky. Z_3 appears twice, and the reader doesn't yet know what "all three
+blocks" are. Rephrase it to something like "Here we introduce a product
+made from a direct sum of three octonion blocks, which uses the same
+multiplication each with Z3-symmetric cross-block routing." -- rephrase to
+be smooth. Also I'm noting that you are now doing micro-surgical updates
+again, to the degree of only updating part of a sentence without ever
+reading that entire sentence for good prose and grammar. Because we've
+since done several updates to the introduction, make a read-through the
+introduction for style, conciseness, editorial standards per this
+project's methodology, relevance, accuracy, completeness, and
+reasbility.'
+
+Applied: paper/main.tex, Section 1 rewritten as one pass (every sentence
+read whole; the PDF read as a reader after the rewrite, two further
+refinements made), same facts, the author's own wording kept where it was
+a ruling ("Wilson's included", prompt 266; the "Nowhere do we claim"
+sentence; the sentence on interest from applied researchers, prompt 281;
+the collaboration paragraph):
+ - Paragraph 1: the unimodular Leech lattice and the paper's scaled Lambda
+   no longer share the symbol Lambda.
+ - Paragraph 2: "is closed under an octonion multiplication"; "For a
+   fixed multiplication"; the placement of L in its own sentence.
+ - Paragraph 4: the author's suggestion, smoothed: "Here we introduce a
+   product on the direct sum O_1 + O_2 + O_3 of three octonion blocks: it
+   multiplies blocks pairwise with the same octonion multiplication and
+   routes each product to one block by a Z_3-symmetric rule.  Applied to
+   vectors of Lambda, it satisfies two of Wilson's three sublattice
+   conditions automatically."  Z_3 once; the blocks defined before use.
+ - Theorem 1.1: "under Z_3 cross-block routing" dropped (the name already
+   says Z_3-symmetric).
+ - Remark 1.3: rewritten, same facts; "norm" and N no longer used before
+   Section 2.1 defines them.
+ - The vague sentence on "further structural readings" replaced by a
+   concrete short paragraph pointing to Sections 5, 5.5, 7 and A.1 (the
+   double "and" avoided with a semicolon).
+Rebuilt: 24 pp., no errors, no undefined references, no overfull boxes.
+Changelog item 14: one bullet with every change.  Linter clean.
+
+Status: CLOSED.

@@ -122,21 +122,20 @@ proof.
 \section{Introduction}\label{sec:intro}
 % ===============================================================
 
-The Leech lattice~$\LL$ is the unique even unimodular lattice of
-rank~24 with no vectors of squared length~2
-\cite{ConwaySloane1999}.  In the normalization used throughout this
-paper, with $E_8$ roots of squared length~2, $\LL$ is realized as the
-$\sqrt{2}$-scaled copy of this unimodular lattice.  Its minimal shell $\operatorname{Min}(\LL)$
-consists of 196{,}560 vectors of squared length~8, and its automorphism
-group is the Conway group~$\Co_0$, a double cover of the sporadic
-simple group~$\Co_1$.
+The Leech lattice is the unique even unimodular lattice of rank~24
+with no vectors of squared length~2 \cite{ConwaySloane1999}.  Its
+minimal shell consists of 196{,}560 vectors of squared length~4, and its
+automorphism group is the Conway group~$\Co_0$, a double cover of the
+sporadic simple group~$\Co_1$.  Throughout this paper, $\LL$ denotes
+the $\sqrt{2}$-scaled copy of this lattice, at the scale of Wilson's
+construction (Section~\ref{subsec:wilson-leech}); its minimal shell
+$\operatorname{Min}(\LL)$ consists of vectors of squared length~8.
 
-In rank~8, the $E_8$ lattice~$L$ carries an octonionic multiplication
-under which it is closed.  For a fixed octonion multiplication, seven
-maximal orders of integral octonions contain all eight basis units, each
-an $E_8$ lattice \cite{Coxeter1946, ConwaySmith2003}
-(Appendix~\ref{app:history}); the placement of~$L$ used here is fixed in
-Section~\ref{sec:prelim}.  Wilson
+In rank~8, the $E_8$ lattice~$L$ is closed under an octonion
+multiplication.  For a fixed multiplication, seven maximal orders of
+integral octonions contain all eight basis units, each an $E_8$ lattice
+\cite{Coxeter1946, ConwaySmith2003} (Appendix~\ref{app:history}).  The
+placement of~$L$ used here is fixed in Section~\ref{sec:prelim}.  Wilson
 \cite[Section~3]{Wilson2009} showed that $\LL$ embeds naturally
 in~$L^3$ via three sublattice conditions, raising the question: does
 $\LL$ inherit an algebraic structure from the octonion product?
@@ -148,12 +147,14 @@ Jordan-algebraic structures on~$\LL$ within the exceptional Jordan
 algebra~$\mathfrak{h}_3(\OO)$, finding closure under a doubled
 Jordan product.
 
-The $\ZZ_3$-symmetric triple-octonion product on~$L^3$ uses the
-same octonion multiplication in all three blocks with
-$\ZZ_3$-symmetric cross-block routing.  It satisfies two of Wilson's
-three sublattice conditions automatically.  The third, however,
-generally fails: the sublattice it involves is not closed under the
-standard octonion product, Wilson's included.
+Here we introduce a product on the direct sum
+$\OO_1 \oplus \OO_2 \oplus \OO_3$ of three octonion blocks: it
+multiplies blocks pairwise with the same octonion multiplication and
+routes each product to one block by a $\ZZ_3$-symmetric rule.  Applied
+to vectors of~$\LL$, it satisfies two of Wilson's three sublattice
+conditions automatically.  The third, however, generally fails: the
+sublattice it involves is not closed under the standard octonion
+product, Wilson's included.
 
 The main result of this paper is that closure on~$\LL$ is restored
 by twisting the octonion multiplication on each block by a
@@ -165,10 +166,9 @@ inclusions do hold.
 
 \begin{theorem}\label{thm:main}
 Let\/ $\star$ denote the $\ZZ_3$-symmetric triple-octonion product
-on~$\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$
-under $\ZZ_3$ cross-block routing (Definition~\ref{def:triple}).
-Then $u \star v \in \LL$ for all $u, v \in \LL$ in Wilson's
-representation~\cite{Wilson2009}.
+on~$\RR^{24} = \OO_1 \oplus \OO_2 \oplus \OO_3$ of
+Definition~\ref{def:triple}.  Then $u \star v \in \LL$ for all
+$u, v \in \LL$ in Wilson's representation~\cite{Wilson2009}.
 \end{theorem}
 
 \begin{corollary}\label{cor:order}
@@ -185,30 +185,33 @@ into~$\LL$.
 \end{proof}
 
 \begin{remark}[Order-closure, not shell-closure]\label{rem:order-closure}
-The closure statement $\LL \star \LL \subseteq \LL$ means that
-products land somewhere in~$\LL$; it does not assert that the
-minimal shell is preserved.  The product of two minimal vectors has
-norm at least~16 (Remark~\ref{rem:product-norms}), never the minimal
-value $\Nrm = 8$: such products land on strictly higher shells,
-exhaustively for the self-products and on $10^6$ sampled distinct
-pairs.  This is consistent with $(\LL, +, \star)$ being an
+The closure $\LL \star \LL \subseteq \LL$ makes $(\LL, +, \star)$ an
 order in the ring-theoretic sense: a subring that is a free
-$\ZZ$-module of rank equal to the ambient algebra's dimension.
-That property is weaker than closure of the minimal shell, which
-spans~$\LL$.
+$\ZZ$-module of rank equal to the ambient algebra's dimension.  It does
+not preserve the minimal shell: products of two minimal vectors have
+squared length at least~16, never the minimal value~8, exhaustively for
+the self-products and on $10^6$ sampled pairs of distinct minimal
+vectors (Remark~\ref{rem:product-norms}).  Closure of the minimal
+shell, which spans~$\LL$, would be the stronger property.
 \end{remark}
 
 The scope of this paper is deliberately bounded.  We establish
 existence of the order, with a proof that is elementary (four
 short lemmas, reducing to sublattice inclusions verified in exact
-arithmetic).  Further structural readings are offered as starting points for investigation in
-Section~\ref{sec:properties} and Appendix~\ref{sec:appendix-tables}.
-Nowhere do we claim or advertise these computer proofs as a substitute
-for mathematical understanding: they are listed as machine-obtained
-facts, to provide pointers for the applied reader.  Interest in earlier
-versions of this work came from researchers in medical imaging,
-cryptography, quantum computing, and phenomenology in the physics of
-fundamental particles.
+arithmetic).  Nowhere do we claim or advertise these computer proofs
+as a substitute for mathematical understanding: they are listed as
+machine-obtained facts, to provide pointers for the applied reader.
+Interest in earlier versions of this work came from researchers in
+medical imaging, cryptography, quantum computing, and phenomenology in
+the physics of fundamental particles.
+
+Section~\ref{sec:properties} determines the idempotents, the
+automorphism group and the square-zero elements of the algebra;
+Section~\ref{sec:census} tests twists other than~$\sigma$.
+Section~\ref{sec:conclusion} derives
+Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed} from the
+closure of a maximal order, and Appendix~\ref{app:mod2quotient} reads
+them modulo~$2$.
 
 All results were developed through a systematic human--AI
 collaboration, and the complete research record is public~\cite{repo}:
@@ -1615,9 +1618,8 @@ direction (Lemma~\ref{lem:L-sigmaLsbar}).  The right-ideal direction
 is not formally implied by the left-ideal direction, since $\bar\mu$
 is noncommutative.\footnote{Commutativity is a property of the
 algebra, not of a basis; what matters is \emph{which order} is being
-reduced.  Reducing the Gravesian order
-$\ZZ\langle e_0,\ldots,e_7\rangle$ gives a commutative
-$\FF_2$-algebra, since $e_i \cdot e_j - e_j \cdot e_i =
+reduced.  Reducing the order spanned by the eight basis units gives a
+commutative $\FF_2$-algebra, since $e_i \cdot e_j - e_j \cdot e_i =
 2\,e_i \cdot e_j$ lies in twice that order.  The order~$L$
 also contains half-integer elements such as~$s$, and for these the
 commutator $a \cdot b - b \cdot a$ need not lie in~$2L$; direct

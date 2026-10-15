@@ -1,0 +1,30 @@
+Prompt 305 -- Appendix A.1 footnote in the introduction's terms; the
+introduction's lead-in to the triple-octonion product (the author's
+fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'Great. Also, good catch re "Appendix A.1's footnote on commutativity
+("Reducing the Gravesian order Z⟨e₀,…,e₇⟩ gives a commutative
+F₂-algebra")." -- that is imprecise, replace "Gravesian order Z⟨e₀,…,e₇⟩"
+with the same terminology as in the introduction.
+
+in the introduction a paragraph starts with "The Z_3 -symmetric
+triple-octonion product on L^3 uses" but we haven't even spoken about it
+yet. Rephrase that the paragraph start with a natural flow that in this
+paper we're introducing a Z_3-symmetric triple-octonion product.'
+
+Applied: paper/main.tex.  Section 1: "The Z_3-symmetric triple-octonion
+product on L^3 uses the same octonion multiplication in all three blocks
+with Z_3-symmetric cross-block routing." -> "Here we introduce a
+Z_3-symmetric triple-octonion product on L^3, which uses the same octonion
+multiplication in all three blocks with Z_3-symmetric cross-block
+routing."  ("Here we introduce" rather than "This paper introduces": the
+next paragraph opens "The main result of this paper".)  Appendix A.1
+footnote: "Reducing the Gravesian order Z<e0,...,e7> gives a commutative
+F_2-algebra" -> "Reducing the order spanned by the eight basis units gives
+a commutative F_2-algebra"; "Gravesian" no longer occurs in the paper.
+Rebuilt: 24 pp., no errors, no undefined references, no overfull boxes.
+Changelog item 14: two bullets.  Linter clean.
+
+Status: CLOSED.
