@@ -1,0 +1,42 @@
+Prompt 304 -- Section 1: the seven maximal orders in plain words (the
+author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'This reads convoluted in the introduction: "the integral octonions
+have exactly seven maximal orders containing the Gravesian order
+Z⟨e0 , . . . , e7 ⟩, each an E8 lattice" -- we never use the term "the
+Gravesian order Z⟨e0 , . . . , e7 ⟩" anymore (and I'm unclear, to be honest,
+why this even got here ... this may be one of your inventions where --
+instead of tightening and simplifying the paper -- you kept introducing
+new terms and concepts. From my end, I would simply write that the E_8
+lattice permits seven maximal orders built from integral octonions.'
+
+Where the term came from: at prompt 289 the author asked for the Section 1
+sentence to be made mathematically correct.  The external review (Section
+6.1(a)) had shown "the integral octonions have seven maximal orders"
+false as stated: the rational octonion algebra has infinitely many maximal
+orders (conjugates under G_2(Q)); the classical seven are those containing
+all eight basis units.  The qualifier entered at 289 under the review's
+name, "the Gravesian order Z<e0..e7>" (Conway and Smith's term for the
+lattice the units span); prompt 292 kept it.  The term was in the paper
+once before, in the Appendix A.1 footnote on commutativity (since v6).
+The author's suggested wording ("the E_8 lattice permits seven maximal
+orders built from integral octonions") drops the qualifier and would make
+the count false again, so the qualifier stays, in plain words and as
+Coxeter states it (1946, Section 14: "seven systems which include all the
+eight basic units").
+
+Applied: paper/main.tex, Section 1: "For a fixed octonion
+multiplication, seven maximal orders of integral octonions contain all
+eight basis units, each an E_8 lattice [Coxeter1946, ConwaySmith2003]
+(Appendix B); ..."  Rebuilt: 24 pp., no errors, no undefined references,
+no overfull boxes.  Record: changelog item 14;
+python_project/src/README.md row of verify_sigma_sublattice_maximal_order.py
+(the same wording); a dated line in that script's docstring (its 15
+October note quoted the old wording).  Left: Appendix A.1's footnote
+("Reducing the Gravesian order Z<e0,...,e7> gives a commutative
+F_2-algebra", since v6), the term's only remaining use in the paper.
+Linter clean.
+
+Status: CLOSED.

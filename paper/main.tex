@@ -83,7 +83,7 @@
 \begin{document}
 \title{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product}
-\subtitle{14 October 2026 (v8)}
+\subtitle{15 October 2026 (v8)}
 \author{Jens K\"oplinger}
 \maketitle
 
@@ -102,9 +102,8 @@ an octonion-algebra isomorphism, but moves Wilson's sublattices
 $L\bar s$ and~$Ls$.  Closure was first observed experimentally, on
 over 12 million random pairs of minimal vectors; the proof reduces to
 four lemmas, three of them certified by integer coefficient tables.  We
-determine the idempotents, the automorphism group, and the square-zero
-elements of the algebra, and the index of the span of the products of
-the order.  We discuss the construction in the context of related work.
+determine idempotents, automorphism group, square-zero elements of the
+algebra, and the index of the span of the products of the order.  We discuss the construction in the context of related work.
 A historical appendix (1923--1946) traces
 $\sigma$ to Bruck's repair of Kirmse's integral octonions.  The
 research record of this human--AI collaboration is public.
@@ -124,20 +123,20 @@ proof.
 % ===============================================================
 
 The Leech lattice~$\LL$ is the unique even unimodular lattice of
-rank~24 with no vectors of squared norm~2
+rank~24 with no vectors of squared length~2
 \cite{ConwaySloane1999}.  In the normalization used throughout this
-paper, with $E_8$ roots of squared norm~2, $\LL$ is realized as the
+paper, with $E_8$ roots of squared length~2, $\LL$ is realized as the
 $\sqrt{2}$-scaled copy of this unimodular lattice.  Its minimal shell $\operatorname{Min}(\LL)$
-consists of 196{,}560 vectors of squared norm~8, and its automorphism
+consists of 196{,}560 vectors of squared length~8, and its automorphism
 group is the Conway group~$\Co_0$, a double cover of the sporadic
 simple group~$\Co_1$.
 
 In rank~8, the $E_8$ lattice~$L$ carries an octonionic multiplication
-under which it is closed.  For a fixed octonion multiplication, the
-integral octonions have exactly seven maximal orders containing the
-Gravesian order $\ZZ\langle e_0, \ldots, e_7\rangle$, each an $E_8$
-lattice \cite{Coxeter1946, ConwaySmith2003} (Appendix~\ref{app:history});
-the placement of~$L$ used here is fixed in Section~\ref{sec:prelim}.  Wilson
+under which it is closed.  For a fixed octonion multiplication, seven
+maximal orders of integral octonions contain all eight basis units, each
+an $E_8$ lattice \cite{Coxeter1946, ConwaySmith2003}
+(Appendix~\ref{app:history}); the placement of~$L$ used here is fixed in
+Section~\ref{sec:prelim}.  Wilson
 \cite[Section~3]{Wilson2009} showed that $\LL$ embeds naturally
 in~$L^3$ via three sublattice conditions, raising the question: does
 $\LL$ inherit an algebraic structure from the octonion product?
@@ -252,7 +251,7 @@ $L = D_8^+$, the set of vectors in~$\RR^8$ whose coordinates (in the
 basis $\{e_0, \ldots, e_7\}$) are either all integers with even
 coordinate sum, or all half-integers with odd coordinate sum
 \cite{ConwaySmith2003}.  It has
-240~roots (vectors of squared norm~2).  Under the standard octonion
+240~roots (vectors of norm~2).  Under the standard octonion
 multiplication, $L$~is closed: $L \cdot L \subseteq L$
 (Lemma~\ref{lem:L-order}, certified in Table~\ref{tbl:appendix-LL}).
 At this normalization $e_0 \notin L$ (the lattice is even), so $L$~is
@@ -800,8 +799,7 @@ $\star_\sigma = \star$.
 When $\star_g$ closes on~$\LL$, the integer combinations of its
 products $u \star_g v$ ($u, v \in \LL$) form a sublattice of~$\LL$,
 the \emph{span} of~$\star_g$.  The \emph{span index} of~$\star_g$ is
-the index of the span in~$\LL$: the number of disjoint translates of
-the span that make up~$\LL$.  Span index~$1$ means that every vector
+the number of disjoint translates of the span that make up~$\LL$.  Span index~$1$ means that every vector
 of~$\LL$ is an integer combination of products.  An order that
 contains a multiplicative identity always has span index~$1$, since
 every vector $u = u \cdot 1$ is a product; the ambient algebra here
@@ -812,13 +810,13 @@ bilinearity it suffices to take the $24 \times 24 = 576$ products of
 pairs of vectors from a $\ZZ$-basis of~$\LL$: $\star_g$ closes on~$\LL$
 if and only if all of them lie in~$\LL$, and the span index is the
 index of the lattice they span, computed exactly by Hermite normal
-form.
+form.\footnote{\scriptref{verify\_product\_span\_index.py}.}
 
-The first family of twists consists of the permutations~$\pi$ of the
-seven imaginary basis units $e_1, \ldots, e_7$, each fixing~$e_0$.
-They form the symmetric group~$S_7$, whose $2$-cycles are the
-transpositions, $\sigma$ among them.  For every cycle type of~$S_7$ we
-find:\footnote{\scriptref{verify\_all\_permutations\_exact.py}
+As an experiment, we generalize from the transposition~$\sigma$ to all
+permutations~$\pi$ of the seven imaginary basis units
+$e_1, \ldots, e_7$, each fixing~$e_0$.  These form the symmetric
+group~$S_7$, with~$\sigma$ as a special case.  For every cycle type
+of~$S_7$ we find:\footnote{\scriptref{verify\_all\_permutations\_exact.py}
 \scriptref{verify\_twist\_span\_index\_census.py}.}
 \begin{center}
 \begin{tabular}{@{}lrrrr@{}}
@@ -865,9 +863,14 @@ twists as well.  For the reflection~$\rho$ in the root
 $r = \tfrac12(e_0 + e_1 + \cdots + e_6 - e_7)$, the triple
 product~$\star_\rho$ closes on~$\LL$ with span
 index~$1$.\footnote{\scriptref{verify\_twist\_span\_index\_census.py}.}
-The span index is invariant under ring isomorphism.  Hence
-$\star_\sigma$, $\star_\pi$ for an even closing~$\pi$, and~$\star_\rho$
-make~$\LL$ into three pairwise non-isomorphic orders.
+
+The span index is invariant under ring isomorphism, since an
+isomorphism maps products to products and hence the span onto the
+span.  Orders with different span indices are therefore not
+isomorphic.  By the parity split, an order $(\LL, +, \star_\pi)$ with
+$\pi$ odd (span index $2^{16}$, $\sigma$ among them) is not isomorphic
+to one with $\pi$ even (span index $2^{10}$), and neither is
+isomorphic to $(\LL, +, \star_\rho)$ (span index~$1$).
 
 % ===============================================================
 \section{Related work}\label{sec:related}

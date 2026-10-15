@@ -1,0 +1,24 @@
+Prompt 299 -- Unpack the last two sentences of Section 5.5 (the author's
+fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'Unpack the last two sentences in section 5.5 for me: "The span index
+is invariant under ring isomorphism. Hence ⋆σ , ⋆π for an even closing π,
+and ⋆ρ make Λ into three pairwise non-isomorphic orders." -- What does
+"Hence ⋆σ , ⋆π for an even closing π" mean? And why does it follow? Then
+"⋆ρ make Λ into three pairwise non-isomorphic orders" what three?'
+
+Answered in the conversation (no file changed): the sentence lists three
+products on the same lattice Lambda, each of which closes, so each makes
+(Lambda, +, star_g) a ring (an order): star_sigma = star (span index 2^16),
+star_pi for any even closing permutation pi (2^10), star_rho (1).  A ring
+isomorphism f between two of them is an additive bijection of Lambda with
+f(u star_g v) = f(u) star_h f(v); it maps products onto products, hence
+the span S_g onto S_h, and so [Lambda : S_g] = [Lambda : S_h].  Different
+indices, so no two of the three are isomorphic.  The invariant gives a
+lower bound only: equal indices (e.g. the odd closing permutations, all
+2^16) do not make orders isomorphic.  One clearer wording was offered,
+not applied.
+
+Status: CLOSED.

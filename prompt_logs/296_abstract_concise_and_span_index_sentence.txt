@@ -1,0 +1,21 @@
+Prompt 296 -- Abstract sentence made concise; Section 5.5's span-index
+definition shortened (the author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'That was too verbatim; let's make it more concise: "We determine
+idempotents, automorphism group, square-zero elements of the algebra, and
+the index of the span of the products of the order."
+
+Then, in section 5.5, shorten "The span index of ⋆g is the index of the
+span in Λ: the number of disjoint" to "The span index of ⋆g is the number
+of disjoint"'
+
+Applied, verbatim as given: the abstract sentence (161 words, the
+record's count) and the Section 5.5 sentence "The span index of star_g is
+the number of disjoint translates of the span that make up Lambda."
+Rebuilt (three runs): 24 pp., no errors, no undefined references, no
+overfull boxes.  Changelog item 14 updated (the abstract bullet now
+records the net change of prompts 295 and 296; a bullet for 5.5).
+
+Status: CLOSED.

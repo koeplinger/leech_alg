@@ -1,0 +1,31 @@
+Prompt 300 -- Section 5.5: the non-isomorphism conclusion rephrased (the
+author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'Ah ok, now I get it. In "The orders (Λ, +, ⋆_σ), (Λ, +, ⋆_π) for any
+even closing π," you underspecify that _any_ odd (Λ, +, ⋆_π) also has index
+2^16 (you only mention the single twist (Λ, +, ⋆_σ). So, rephrase this part
+to just say the the index splits exactly down odd or even (Λ, +, ⋆_π).
+Then, at the end "no two of them are isomorphic" is confusing because it
+could just as well mean any two of the (Λ, +, ⋆_π) where both are odd or
+even (which I don't think we can' conclude here, at least not from the
+index alone). So, make a statement in prose first that products with
+different index can't be isomorphic, and then describe how the 2^10 vs
+2^16 index splits along the odd and even product.'
+
+Applied: paper/main.tex, Section 5.5, the two closing sentences become
+their own paragraph: the invariance with its one-line reason (an
+isomorphism maps products to products, hence the span onto the span);
+"Orders with different span indices are therefore not isomorphic"; the
+consequence along the parity split, odd (2^16, sigma among them) versus
+even (2^10), and neither isomorphic to (Lambda, +, star_rho) (1); and what
+the index does not decide (isomorphism within one parity).  The parity
+rule itself stays stated once, in the paragraph after the table; the new
+paragraph refers to it ("By the parity split").  Rebuilt: 24 pp., no
+errors, no undefined references, no overfull boxes.  Record: changelog
+item 14; the glossary's "Span index" entry carried the old sentence and
+now states the same conclusion.  The frozen 2026-10-14 plan keeps its
+proposal text.  Linter clean.
+
+Status: CLOSED.

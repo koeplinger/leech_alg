@@ -1,0 +1,20 @@
+Prompt 297 -- Section 5.5: a footnote on the Hermite normal form
+computation (the author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'In section 5.5, directly after "computed exactly by Hermite normal
+form." reference in the footnote the computation where you already
+describe in the code comment up top what that means, Hermite normal form'
+
+Applied: paper/main.tex, Section 5.5, "computed exactly by Hermite normal
+form." gets the footnote \scriptref{verify_product_span_index.py}: that
+script's docstring opens with the computation (the Hermite normal form of
+the 576 basis-pair products in L^3 coordinates gives |det| = [L^3 : S];
+dividing by [L^3 : Lambda] = 4096 gives [Lambda : S]).  The same script is
+also cited two paragraphs later, with verify_product_span_structure.py, for
+the value 2^16 of star.  Rebuilt: 24 pp., no errors, no undefined
+references, no overfull boxes; footnotes renumber from 13.  Changelog item
+14: one bullet.  Linter clean.
+
+Status: CLOSED.

@@ -10,7 +10,7 @@ The planned changes are recorded item by item in [evidence_and_reasoning/2026-10
 
 ## 0. Opening of v8 (12 October 2026)
 
-- **What changed.** Subtitle "19 July 2026 (v7)" → "12 October 2026 (v8)"; set to "13 October 2026 (v8)" at prompt 286 and to "14 October 2026 (v8)" at prompt 289. No change to the text.
+- **What changed.** Subtitle "19 July 2026 (v7)" → "12 October 2026 (v8)"; set to "13 October 2026 (v8)" at prompt 286, to "14 October 2026 (v8)" at prompt 289, and to "15 October 2026 (v8)" at prompt 303. No change to the text.
 - **Where.** Title block.
 - **Rationale.** Marks the working source as diverging from the frozen, published v7.
 
@@ -134,6 +134,25 @@ Prompts 290 to 293. At prompt 291 the author found the edits of prompts 289 and 
 - **Not changed.** Section 2.2 and the proof of Lemma 4.2 keep "maximal order(s) of the integral octonions" (the author's ruling, prompt 291); the last Section 7 bullet is unchanged; Appendix B's paragraph on $\sigma$ is unchanged.
 
 Build: 24 pages, no errors, no undefined references, no overfull boxes. New script: `verify_appendix_tables.py`. Appendix A now lies outside the line ranges of the review's GAP extractor (see `paper/README.md`).
+
+## 14. The author's fine-comb read (15 October 2026)
+
+- **Abstract (prompts 295, 296).** "We determine the idempotents, the automorphism group, and the square-zero elements of the algebra, and the index of the span of the products of the order." → "We determine idempotents, automorphism group, square-zero elements of the algebra, and the index of the span of the products of the order." Abstract 161 words.
+- **Section 5.5 (prompt 296).** "The *span index* of $\star_g$ is the index of the span in $\Lambda$: the number of disjoint translates of the span that make up $\Lambda$." → "The *span index* of $\star_g$ is the number of disjoint translates of the span that make up $\Lambda$."
+
+- **Section 5.5 (prompt 297).** After "computed exactly by Hermite normal form." a footnote citing `verify_product_span_index.py`, whose docstring states what the computation is (the Hermite normal form of the 576 basis-pair products in $L^3$ coordinates gives $[L^3 : S]$; dividing by $[L^3 : \Lambda] = 4096$ gives the index).
+
+- **Section 5.5 (prompt 298).** "The first family of twists consists of the permutations $\pi$ of the seven imaginary basis units $e_1, \ldots, e_7$, each fixing $e_0$. They form the symmetric group $S_7$, whose 2-cycles are the transpositions, $\sigma$ among them." → "As an experiment, we generalize from the transposition $\sigma$ to all permutations $\pi$ of the seven imaginary basis units $e_1, \ldots, e_7$, each fixing $e_0$. These form the symmetric group $S_7$, with $\sigma$ as a special case." (no second family is studied; the census is an experiment, not a classification).
+
+- **Section 5.5, the closing sentences (prompts 300, 301).** "The span index is invariant under ring isomorphism.  Hence $\star_\sigma$, $\star_\pi$ for an even closing $\pi$, and $\star_\rho$ make $\Lambda$ into three pairwise non-isomorphic orders." → its own paragraph: "The span index is invariant under ring isomorphism, since an isomorphism maps products to products and hence the span onto the span.  Orders with different span indices are therefore not isomorphic.  By the parity split, an order $(\Lambda, +, \star_\pi)$ with $\pi$ odd (span index $2^{16}$, $\sigma$ among them) is not isomorphic to one with $\pi$ even (span index $2^{10}$), and neither is isomorphic to $(\Lambda, +, \star_\rho)$ (span index 1)." (prompt 301 dropped a further sentence, "Whether two odd, or two even, closing permutations give isomorphic orders is not decided by the span index.", as self-evident.) The old wording named $\sigma$ alone for the odd side and read as if any two of the orders were non-isomorphic.
+
+- **Section 1 and Section 2.2 (prompt 302).** Before Section 2.1 defines *norm* as the squared Euclidean length, the introduction said "squared norm": "no vectors of squared norm 2", "with $E_8$ roots of squared norm 2", "196,560 vectors of squared norm 8" → "squared length" in all three.  After the definition, Section 2.2's "240 roots (vectors of squared norm 2)" → "(vectors of norm 2)", the paper's convention.
+
+- **Subtitle (prompt 303).** "14 October 2026 (v8)" → "15 October 2026 (v8)".
+
+- **Section 1 (prompt 304).** "For a fixed octonion multiplication, the integral octonions have exactly seven maximal orders containing the Gravesian order $\mathbb Z\langle e_0, \ldots, e_7\rangle$, each an $E_8$ lattice" → "For a fixed octonion multiplication, seven maximal orders of integral octonions contain all eight basis units, each an $E_8$ lattice". The qualifier that makes the count true (without it there are infinitely many maximal orders) is kept in plain words, as Coxeter (1946, §14) states it: "seven systems which include all the eight basic units".
+
+Build: 24 pages, no errors, no undefined references, no overfull boxes.
 
 ## Trackers that follow the paper
 

@@ -1,0 +1,21 @@
+Prompt 302 -- "squared norm" -> "squared length" before the paper defines
+"norm" (the author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'Yes, change the ambiguous wording "squared norm" to "squared length"
+until "norm" is introduced and defined as exactly the "squared length".'
+
+Applied: paper/main.tex.  Before Section 2.1's definition ("Throughout,
+norm means this squared Euclidean length"): lines 126, 128, 130, "squared
+norm 2 / 2 / 8" -> "squared length 2 / 2 / 8".  After it: Section 2.2,
+"240 roots (vectors of squared norm 2)" -> "(vectors of norm 2)", since
+under the paper's own definition "squared norm 2" would mean squared
+length sqrt2.  No other "squared norm" remains in the paper.  Rebuilt: 24
+pp., no errors, no undefined references, no overfull boxes.  Changelog
+item 14: one bullet.  Noted for the author, not changed: Remark 1.3
+(Section 1, line 191) says "norm at least 16 ..., never the minimal value
+N = 8", i.e. "norm" and the symbol N before Section 2.1 defines them; the
+values agree with "squared length 8" in the introduction.
+
+Status: CLOSED.

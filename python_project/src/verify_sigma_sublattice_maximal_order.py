@@ -11,6 +11,9 @@ Note (15 October 2026): the paper's Section 1 (v8) states (A) as "the integral
 octonions have exactly seven maximal orders containing the Gravesian order
 Z<e0, ..., e7>, each an E_8 lattice"; the wording below is the mathematical
 statement behind it.  Code and output unchanged.
+Updated 15 October 2026 (prompt 304): Section 1 now reads "seven maximal
+orders of integral octonions contain all eight basis units, each an E_8
+lattice"; containing the eight units is containing Z<e0, ..., e7>.
 
 (A) Section 1.  For the multiplication (2.1), exactly seven maximal orders of
     the rational octonions contain the Gravesian order Z<e0, ..., e7>, each a

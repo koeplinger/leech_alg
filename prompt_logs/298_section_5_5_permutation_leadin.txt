@@ -1,0 +1,29 @@
+Prompt 298 -- Section 5.5: the permutation lead-in, without "family" (the
+author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 're "The first family of twists consists" sounds wrong; these are the
+only twists we investigate, there's no second family, I don't think we
+need to confuse what we're doing as some sort of classification with a
+class label "family". Instead, we're more experimental. So you could lead
+in like "For the sake of experimenting with twists that are permutations
+of two basis elements, we generalized to all permutations that make up the
+symmetric group S_7, where sigma is a special case therof." This suggested
+wording of mine is brittle, do rephrase it to have it flow nicely.'
+
+Applied: paper/main.tex, Section 5.5, the paragraph before the census
+table: "The first family of twists consists of the permutations pi of the
+seven imaginary basis units e_1, ..., e_7, each fixing e_0.  They form the
+symmetric group S_7, whose 2-cycles are the transpositions, sigma among
+them." -> "As an experiment, we generalize from the transposition sigma to
+all permutations pi of the seven imaginary basis units e_1, ..., e_7, each
+fixing e_0.  These form the symmetric group S_7, with sigma as a special
+case."  The author's wording, rephrased for flow; "each fixing e_0" kept
+for precision.  Rebuilt: 24 pp., no errors, no undefined references, no
+overfull boxes.  Record: changelog item 14; the glossary's "Twist" entry
+said "Two families are studied:" (written at prompt 294) and now says "The
+twists tested are", in line with the author's reading (an experiment, not
+a classification).  Linter clean.
+
+Status: CLOSED.

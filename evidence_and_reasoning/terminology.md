@@ -457,8 +457,10 @@ span S = Δ(Ls) + 2Λ contains 2Λ (claim 015); every odd closing permutation
 twist has span index 2¹⁶ and every even one 2¹⁰; the reflection ρ has span
 index 1 (claim 017); the Baez–Egan product φ of main paper §6 has span
 index 2²⁵ (`verify_phi_span_index.py`).  The span index is invariant under
-ring isomorphism, so ⋆_σ, ⋆_π for an even closing π, and ⋆_ρ make Λ into
-three pairwise non-isomorphic orders.  It is independent of maximality
+ring isomorphism, so orders with different span indices are not isomorphic:
+an order from an odd closing permutation (2¹⁶) is not isomorphic to one
+from an even closing permutation (2¹⁰), and neither is isomorphic to
+(Λ, +, ⋆_ρ) (span index 1).  It is independent of maximality
 (claim 018).
 
 ### Z₃-symmetric triple-octonion product
@@ -529,7 +531,7 @@ defines the **twisted octonion product** x ·_g y := g⁻¹(g(x) · g(y)) on O,
 another octonion product, isomorphic to the standard one via g; the triple
 product ⋆_g is that of main paper Definition 3.3 with ·_g in all nine block
 products.  The twist g = σ gives the σ-twisted product of Definition 3.2
-(σ⁻¹ = σ), and ⋆_σ = ⋆.  Two families are studied: the permutations π of
+(σ⁻¹ = σ), and ⋆_σ = ⋆.  The twists tested are the permutations π of
 e₁, …, e₇ (the S₇ census, under "Z₃-symmetric triple-octonion product"
 above) and the reflections in roots of L (see "Reflection ρ" above).  For
 an isometry g of R⁸ with g(L) = L, ⋆_g closes on Λ if and only if Ls̄ and Ls

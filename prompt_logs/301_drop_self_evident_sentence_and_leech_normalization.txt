@@ -1,0 +1,42 @@
+Prompt 301 -- Section 5.5: drop a self-evident sentence; check the
+introduction's normalization of the Leech lattice (the author's fine-comb
+read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'Scratch the self-evident "Whether two odd, or two even, closing
+permutations give isomorphic orders is not decided by the span index.".
+
+At the beginning, I read: "Λ is realized as the sqrt(2)-scaled copy of
+this unimodular lattice. Its minimal shell
+Min(Λ) consists of 196,560 vectors of squared norm 8," -- Check for
+precision: Our representation has squared norm 8 on its innermost shell,
+i.e., norm 2 sqrt(2), and is the sqrt(2)-scaled copy of the unimodular
+lattice. That would mean, in contrast, that the unique even unimodular
+lattice in 24 dimensions has Euclidean norm 4 on points of its innermost
+shell, which is squared-norm 16. This is not how I'm reading the canonical
+literature. Where is the error?'
+
+Applied: paper/main.tex, Section 5.5: the sentence "Whether two odd, or two
+even, closing permutations give isomorphic orders is not decided by the
+span index." deleted.  Rebuilt: 24 pp., no errors, no undefined
+references, no overfull boxes.  Record: changelog item 14 (the prompt-300
+bullet), the glossary's "Span index" entry (the matching clause dropped).
+
+The normalization question, answered in the conversation (no change to
+the paper): the introduction is correct.  "Lambda is the sqrt2-scaled copy
+of the unimodular lattice" means Lambda = sqrt2 * Lambda_0 with Lambda_0
+the even unimodular Leech lattice; scaling by sqrt2 doubles squared
+lengths.  Lambda_0 has minimal squared length 4 (Euclidean length 2), the
+canonical value (Conway-Sloane: minimal norm 4); Lambda has 8 (length
+2 sqrt2).  The author's reading divided the wrong way (2 sqrt2 * sqrt2 = 4
+instead of 2 sqrt2 / sqrt2 = 2).  Checked first-hand: the type-1 minimal
+vector (2 lambda, 0, 0) with lambda = e0 + e1 has squared length 8; and
+det(Lambda) = [L^3 : Lambda]^2 det(L)^3 = (2^12)^2 = 2^24 = det of a
+sqrt2-scaled unimodular lattice of rank 24.  Noted for the author: the
+introduction says "squared norm" (lines 126-130) where Section 2.1 then
+defines "norm" as the squared length itself; the intro's "squared norm 8"
+is the paper's "norm 8" (Section 2.2 likewise says "vectors of squared
+norm 2").  Not changed.
+
+Status: CLOSED.

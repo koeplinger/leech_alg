@@ -1,0 +1,20 @@
+Prompt 295 -- Abstract: two "and" in one sentence (the author's fine-comb
+read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic); the author switched the session model
+with /model before this prompt (prompt 294 ran on Claude Fable 5.1).
+
+User: 'In the abstract there are two "and": "We determine the idempotents,
+the automorphism group, and the square-zero elements of the algebra, and
+the index of the span of the products of the order."'
+
+Applied: paper/main.tex, abstract: "..., and the index of the span of the
+products of the order." -> "..., as well as the index of the span of the
+products of the order."  The smallest change that keeps every item and the
+sentence's order (the algebra's three objects, then the order's index).
+Rebuilt (three pdflatex runs): 24 pp., no errors, no undefined references,
+no overfull boxes.  Abstract 167 words (the record's count; +2).
+Record: paper/v7_to_v8_changelog.md, new item 14 "The author's fine-comb
+read (15 October 2026)", opened with this change.  Linter clean.
+
+Status: CLOSED.

@@ -1,0 +1,14 @@
+Prompt 303 -- Version date of the paper (the author's fine-comb read)
+Date: 2026-10-15
+Model: Claude Opus 5.5 (Anthropic).
+
+User: 'Today is 15 October 2026, update the version date'
+
+Applied: paper/main.tex, \subtitle{14 October 2026 (v8)} ->
+\subtitle{15 October 2026 (v8)}.  Rebuilt: 24 pp., no errors, no undefined
+references, no overfull boxes; the title page reads "15 October 2026
+(v8)".  Changelog: item 0 (the subtitle's date history) and item 14.  No
+current-state document states the paper's date (checked by grep).  Linter
+clean.
+
+Status: CLOSED.
