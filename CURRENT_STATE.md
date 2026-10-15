@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-10-14
+Last updated: 2026-10-15
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
@@ -10,7 +10,7 @@ progress in `paper/main.tex`; its plans are
 `evidence_and_reasoning/2026-10-12_plan.md` and
 `evidence_and_reasoning/2026-10-14_plan.md`.
 
-This document is the technical summary of the research — for a human or an AI,
+This document is the technical summary of the research, for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
 out, and what remains open.  All claims are backed by evidence in the files
 referenced below.
@@ -20,7 +20,7 @@ referenced below.
 ## Research goal
 
 Find a bilinear multiplication · : R²⁴ × R²⁴ → R²⁴ such that the Leech
-lattice Λ is closed under · — making (Λ, +, ·) an **order** in the R-algebra
+lattice Λ is closed under ·, making (Λ, +, ·) an **order** in the R-algebra
 (R²⁴, +, ·).
 
 Since Min(Λ) (the 196,560 minimal vectors at squared norm 8) generates Λ as a
@@ -50,7 +50,7 @@ Given a transposition σ = (s t) on {1,…,7}, the product
 ·_σ defined by x ·_σ y := σ(σ(x) · σ(y)) is another octonion product
 on R⁸, isomorphic to the standard one via σ itself:
 σ(x · y) = σ(x) ·_σ σ(y).  In Wilson's representation of the Leech
-lattice — which fixes the standard product — the transposition σ is
+lattice (which fixes the standard product), the transposition σ is
 what exhibits the fit: σ leaves the E₈ lattice L = D₈⁺ invariant but
 moves Wilson's sublattices Ls and Ls̄.
 
@@ -75,7 +75,7 @@ the cycle census below.
 | Scaled (4M random) | 4,000,000 | 0 | `trial_007_scaled_test.py` |
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
-| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 basis products (exact): all four lemmas in GAP; Lemmas 4.1, 4.3, 4.4 in Python | 0 | `gap_project/tests/test_lemmas.g` (GAP) + `symbolic_proof_checks.py` (Python) |
+| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 basis products (exact): all four lemmas in GAP; Lemmas 4.1, 4.3, 4.4 in `symbolic_proof_checks.py`; the three Appendix A tables (Lemmas 4.2–4.4) recomputed and compared entry by entry with the printed tables in `verify_appendix_tables.py` | 0 | `gap_project/tests/test_lemmas.g` (GAP) + `symbolic_proof_checks.py`, `verify_appendix_tables.py` (Python) |
 | Identity-test suite (N = 10⁶, paper §5.1) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
 | Exhaustive (all 38.6B pairs) | **not required** | — | `trial_007_exhaust.py --exhaustive` |
 
@@ -89,7 +89,7 @@ quarters of type3×type3 products, all due to Wilson condition 3 (x+y+z ∉ Ls).
 The rate is a sample estimate: 73.4% on the 5,000-pair sample of
 `consistency_checks.py` check 8, 74.8% on trial 001's own sample.
 The transposition twist changes 30 of 64 multiplication table entries.
-This fixes condition 3 precisely — all other conditions were already
+This fixes condition 3 precisely: all other conditions were already
 satisfied by the untwisted product (`consistency_checks.py`, check 8).
 
 ### Algebraic properties (paper §5.1)
@@ -231,8 +231,9 @@ an isometry g of R⁸ with g(L) = L, write x ·_g y := g⁻¹(g(x)·g(y)), ⋆_g
 the triple product of Definition 3.3 built from ·_g, and S_g for the Z-span of
 the products u ⋆_g v.  Among the 1,764 closing permutation twists above, every
 even permutation gives [Λ : S_π] = 2¹⁰ and every odd one (σ among them) 2¹⁶.
-The reflection s_r in the root r = (e₀+e₁+⋯+e₆−e₇)/2 of L gives a product that
-closes on Λ with [Λ : S_r] = 1: its products Z-span Λ.  Of the 120 root
+The reflection ρ in the root r = (e₀+e₁+⋯+e₆−e₇)/2 of L (the paper's symbol;
+s_r in the review) gives a product that closes on Λ with [Λ : S_ρ] = 1: its
+products Z-span Λ.  Of the 120 root
 reflections, 56 close, 28 with index 2¹⁶ and 28 with index 1.  Two statements
 of the review hold on all 5,040 permutations and all 120 reflections (checked
 exhaustively; the first has a short proof in the review, the second a sketch):
@@ -283,9 +284,9 @@ An algebra is **comprehensively ruled out** when:
 2. The failure mode has been identified precisely (which vector types fail,
    which lattice membership conditions are violated, and what the norm
    distribution of failing products looks like).
-3. All natural modifications of the algebra — discrete variants (conjugation,
-   sign flips, routing), continuous variants (basis scaling, basis changes via
-   lattice automorphisms) — have been tested and shown to fail.
+3. All natural modifications of the algebra (discrete variants: conjugation,
+   sign flips, routing; continuous variants: basis scaling, basis changes via
+   lattice automorphisms) have been tested and shown to fail.
 4. The failure has been shown to be **structural**: it persists across all
    tested modifications and is traceable to a specific architectural property
    of the algebra that no parameter change can fix.
@@ -346,7 +347,7 @@ cd python_project && python3 -m pytest tests/ -v
 ```
 
 A parallel **GAP / LOOPS** verification suite re-derives the paper's and
-companion's key claims independently — same mathematical content, different
+companion's key claims independently: same mathematical content, different
 language and runtime.  110 checks, all arithmetic exact (rational); the
 LOOPS package is used to cross-verify the octonion multiplication as a
 nonassociative Moufang loop of order 16, isomorphic to the standard
@@ -383,7 +384,7 @@ Three copies of the standard octonion algebra on R²⁴:
 
 Across all four trials, the failure is:
 - **Exclusively type3 × type3 products** (all other type combinations pass)
-- **Exclusively Wilson condition 3** (x+y+z ∈ Ls) — conditions 1 and 2 always pass
+- **Exclusively Wilson condition 3** (x+y+z ∈ Ls; conditions 1 and 2 always pass)
 - **Structurally invariant** under all tested modifications
 
 ### Why it fails (structural diagnosis)
@@ -442,7 +443,7 @@ Cross-block products use the target block's algebra: Bα × Bβ → Bγ using *_
 **Note on the original intent:** The user's idea was to take three Okubo
 algebras from the same Fano line by cyclically rotating the mediator.
 Computational verification showed that no Fano line admits all 3 cyclic
-mediators as valid automorphisms — only 1 or 2 work.  The Z₃ orbit above
+mediators as valid automorphisms: only 1 or 2 work.  The Z₃ orbit above
 is the closest valid construction.
 
 ### What was tested (2 trials)
@@ -475,7 +476,7 @@ succeeds (53.5%): type-1 vectors have only one nonzero block, so the
 same-block product in block 0 uses rational structure constants.
 
 No conjugation, sign, routing, or E8 automorphism change can eliminate
-irrational structure constants — this is a fundamental algebraic obstruction.
+irrational structure constants.  This is a fundamental algebraic obstruction.
 
 ### What this rules out
 
@@ -502,13 +503,15 @@ the failure mode analysis, and the verdict.
 
 ### Key claims
 
-`evidence_and_reasoning/key_claims/NNN_*.txt` — the logical backbone.
-Each claim has a status (ESTABLISHED / OPEN / etc.) and detailed evidence.
+`evidence_and_reasoning/key_claims/NNN_*.txt` and the ledger
+`key_claims/README.md` (rows 009–021): the logical backbone.  Each claim has a
+status and its evidence.
 
 ### Prompt logs
 
 `prompt_logs/NNN_*.txt` — chronological record of every research step.
-These are forward-evolving (never altered after commit) per the Manifesto.
+These are immutable (never altered after commit) per the Manifesto and
+`DOCUMENT_GENRES.md`.
 The README in that folder has a summary table.
 
 ### Trial code
@@ -535,9 +538,11 @@ the trial, and prints detailed results.
    Lemma 4.4 (σ(Ls) · σ(Ls) ⊆ σ(Ls)).  The finite-case verifications
    of Lemmas 4.3 and 4.4 (64 Z-basis products each), with Lemma 4.1 on
    the 8 basis vectors, are executed with exact rational arithmetic in
-   `python_project/src/symbolic_proof_checks.py`; all four lemmas,
-   including the 64 basis products of Lemma 4.2, are checked
-   independently in `gap_project/tests/test_lemmas.g`.
+   `python_project/src/symbolic_proof_checks.py`; the three Appendix A
+   tables (Lemmas 4.2 to 4.4) are recomputed and compared entry by entry
+   with the printed ones in `python_project/src/verify_appendix_tables.py`;
+   all four lemmas, including the 64 basis products of Lemma 4.2, are
+   checked independently in `gap_project/tests/test_lemmas.g`.
    The observation σ(Ls) ≠ Ls is recorded as a remark in the paper
    (rem:Ls-not-closed): non-triviality of the construction, not a step
    of the closure proof.
@@ -632,51 +637,37 @@ the trial, and prints detailed results.
 These questions are the ones the paper leaves open (Sections 7 and 8), together
 with further detail recorded here.
 
-1. **The structural reason for Lemma 4.4** (σ(Ls) closed under the
-   standard octonion product).  The appendix tables certify the
-   inclusion, but do not explain *why*.  Appendix Section A.1 lifts
-   this to the mod-2 quotient: V := σ(Ls̄)/2L is a two-sided ideal
-   and W := σ(Ls)/2L is a subalgebra of the descended product on
-   L/2L, and — equipped with the plus-type quadratic form
-   q(v + 2L) := N(v)/2 mod 2 — both V and W are Lagrangians (maximal
-   totally isotropic subspaces). The decomposition L/2L = V ⊕ W is
-   thus a Witt decomposition into a complementary pair of Lagrangians:
-   σ produces a polarization of (L/2L, q). The remaining open part is
-   the integer-level lift — an intrinsic identification of V and W
-   that does not reference σ — and the natural research program:
-   which polarizations of L/2L arise from this construction, and
-   which polarizations, beyond the one constructed, lift to a closed
-   bilinear product on Λ itself.
-   One candidate shape for an integer-level reason is excluded:
-   σ(Ls) is not an ideal of L on either side (see "Structure of the
-   algebra" above).  A structural argument must therefore rest on
-   something other than an ideal property.  For Lemma 4.3 such an
-   argument exists (claim 019): σ(Ls̄) = 2O⁽⁴⁾ is twice an octavian
-   maximal order containing L, so Coxeter's theorem gives the two-sided
-   ideal property; for Lemma 4.4 the same identification gives σ(Ls) =
-   p·O⁽⁴⁾ with p purely imaginary of norm 4, and the left Moufang
-   identity, (pa)(pb) = p((ap)b), makes that set closed (claim 021).  The
-   integer-level reason for Lemma 4.4 is therefore known; the paper (v8)
-   still lists the question in Section 7, and its wording awaits the
-   author's decision.
+1. **Which polarizations of L/2L lift** (paper, Appendix A.1).  Appendix
+   A.1 reads Lemmas 4.3 and 4.4, reduced modulo 2L, as a polarization:
+   V := σ(Ls̄)/2L is a two-sided ideal and W := σ(Ls)/2L a subalgebra of
+   the descended product on L/2L; under the plus-type quadratic form
+   q(v + 2L) := N(v)/2 mod 2 both are Lagrangians (maximal totally
+   isotropic subspaces), so L/2L = V ⊕ W is a Witt decomposition into a
+   complementary pair of Lagrangians.  Open: which polarizations of L/2L
+   arise from this construction, and which polarizations, beyond the one
+   constructed, lift to a closed bilinear product on Λ itself.
+   The integer-level reason for Lemmas 4.3 and 4.4 themselves is known
+   (paper §7; claims 019 and 021): σ(Ls̄) = 2O⁽⁴⁾ and σ(Ls) = p·O⁽⁴⁾ for
+   the maximal order O⁽⁴⁾ ⊇ L of the standard octonion product, with
+   p = e₂ − e₄ + e₅ − e₆ purely imaginary, so both follow from
+   O⁽⁴⁾·O⁽⁴⁾ ⊆ O⁽⁴⁾, the second by the left Moufang identity
+   (pa)(pb) = p((ap)b).  σ(Ls) is not an ideal of L on either side (claim
+   013), so its closure is not inherited from an ideal property.
 
 2. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
    whether the order-6 octonion automorphism generating the C₆ admits an
    intrinsic description.  The group itself and the strict containment
    Aut(Λ, +, ⋆) ⊊ Co₀ are known (see "Structure of the algebra" above).
 
-3. **The span index.**  Answered: it depends on the twist (claim 017):
-   2¹⁶ for σ and every odd closing permutation, 2¹⁰ for every even one,
-   and 1 for the reflection twists of claim 017; for comparison, 2²⁵ for
-   the Baez–Egan product φ (paper §6, `verify_phi_span_index.py`).  Open:
-   a structural proof of the values beyond the exhaustive computation, and
-   the ring structure of the index-1 orders.  The order itself is not
-   maximal under any twist by an isometry of L (claims 016, 018).  The
-   paper (v8) states the values in §5.5.
+3. **A structural proof of the span-index values** (2¹⁶ for the odd
+   closing permutations, 2¹⁰ for the even ones, 1 for the reflection ρ in
+   the root (e₀+e₁+⋯+e₆−e₇)/2 of L; claim 017; "Structure of the algebra"
+   above), and the ring structure of the index-1 orders.  Not posed in the
+   paper, which states the values in §5.5.
 
 4. **Classification** of the algebra (R²⁴, +, ⋆): it is
-   non-associative, non-alternative, non-flexible, and non-unital
-   (as an order), placing it outside the classical families.  Its
+   non-associative, non-alternative, non-flexible, and non-unital,
+   placing it outside the classical families.  Its
    idempotents, square-zero elements, ideal decomposition and
    automorphism group are known (above), but no classification follows
    from them.  A more natural classification may emerge from a
@@ -685,7 +676,7 @@ with further detail recorded here.
 
 5. **A structural characterization of which permutation cycles close.**
    All 5,040 permutations
-   of S₇ have now been enumerated exactly (the census above), but the
+   of S₇ have been enumerated exactly (the census above), but the
    pattern is described only for
    the 3-cycles (for each three-element subset of imaginary indices, one
    of the two cyclic orientations closes).  Open: a reason for the total
@@ -716,7 +707,7 @@ leech_alg/
 │   │   ├── 001–006                # Foundations (Wilson, Dixon, octonions)
 │   │   ├── 007                    # Untwisted triple-octonion ruled out
 │   │   ├── 008                    # Z₃-symmetric triple-octonion product: order on Λ
-│   │   └── README.md              # The ledger; claims 009–020 are ledger-only rows
+│   │   └── README.md              # The ledger; claims 009–021 are ledger-only rows
 │   ├── references/                # Central reference registry
 │   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
@@ -748,15 +739,17 @@ leech_alg/
 │   │   ├── trial_005_*.py         # Trial 005: triple Okubo/para-octonion
 │   │   ├── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
 │   │   ├── trial_007_*.py         # Trial 007: the σ twist fit (THE FINDING)
-│   │   ├── symbolic_proof_checks.py  # The four lemmas, exact arithmetic
+│   │   ├── symbolic_proof_checks.py  # Lemmas 4.1, 4.3, 4.4, exact arithmetic
+│   │   ├── verify_appendix_tables.py # Appendix A tables recomputed, compared with main.tex
 │   │   ├── verify_aut_*.py        # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
 │   │   ├── verify_idempotent_*.py # The eight idempotents; lattice rescaling
 │   │   ├── verify_square_zero_classification.py  # Square-zero classification (norm-12 stratum)
 │   │   ├── verify_ideal_decomposition.py         # R²⁴ = D ⊕ T
 │   │   ├── verify_star_algebra_structure.py      # Ambient algebra structure
 │   │   ├── verify_sigma_Ls_ideal_exclusion.py    # σ(Ls) is not an ideal of L
-│   │   ├── verify_all_cycles_exact.py            # Cycle census (3- to 7-cycles)
-│   │   ├── verify_*.py            # Further exact verifications (span, mod 2,
+│   │   ├── verify_all_permutations_exact.py      # Closure census over all of S₇ (earlier partial runs: verify_all_cycles_exact.py)
+│   │   ├── verify_*.py            # Further exact verifications (span and the twist span-index census,
+│   │   │                          #   the seven maximal orders and Wilson's sublattices, mod 2,
 │   │   │                          #   historical sources, consecutive twists)
 │   │   └── consistency_checks.py  # Pre-paper verification (checks 1-3, 5-10)
 │   └── tests/                     # 197 tests verifying foundations
@@ -764,6 +757,8 @@ leech_alg/
 ├── gap_project/                   # Independent GAP / LOOPS re-derivation
 │   ├── aut_lambda_star*.g         # Automorphism group, second pass
 │   ├── octonion_stabilisers*.g    # Stabilizers of L, Ls, Ls̄ in G₂(Q)
+│   ├── src/                       # Shared modules (octonions, E8, sublattices, twist, Leech, triple product)
+│   ├── tests/                     # 8 test files, one CHECK per claim
 │   └── run_all.g                  # 110 checks, exact rational arithmetic
 │
 ├── prompt_logs/                   # Chronological AI interaction log

@@ -27,8 +27,8 @@ twist is simply how this octonion product fits Wilson's representation
 of Λ.  In particular σ is *not* an octonion automorphism; it fixes
 L = D₈⁺ setwise but moves the sublattices Ls and Ls̄.
 
-Now set R²⁴ = O₁ ⊕ O₂ ⊕ O₃, three copies of (O, ·_σ) — all using the
-**same** swapped multiplication — with Z₃ cross-block routing:
+Now set R²⁴ = O₁ ⊕ O₂ ⊕ O₃, three copies of (O, ·_σ), all using the
+**same** swapped multiplication, with Z₃ cross-block routing:
 
     Same block:      O_α × O_α → O_α
     Cross block:     O_α × O_β → O_γ      where {α,β,γ} = {1,2,3}
@@ -48,7 +48,7 @@ an order in the 24-dimensional R-algebra (R²⁴, +, ·).
 
 The entire construction has three ingredients:
 
-1. **One octonion product** — related to Wilson's standard convention
+1. **One octonion product**, related to Wilson's standard convention
    by a single transposition σ of two imaginary basis elements.
 2. **Three identical copies** of that product on R²⁴.
 3. **Z₃ cross-block routing**: products of vectors from different blocks
@@ -108,11 +108,12 @@ The identity (the untwisted product) does not close.
 ### Symbolic proof
 
 Closure is proved symbolically via four lemmas (exact arithmetic:
-`symbolic_proof_checks.py` for Lemmas A, C and D; `gap_project/tests/test_lemmas.g`
-for all four):
+`symbolic_proof_checks.py` for Lemmas A, C and D; `verify_appendix_tables.py`
+for the paper's Appendix A tables of Lemmas B, C and D;
+`gap_project/tests/test_lemmas.g` for all four):
 
 - **Lemma A**: σ(L) = L (coordinate permutation preserves D₈⁺).
-- **Lemma B**: L·L ⊆ L (L is a √2-scaled copy of a maximal order — Coxeter 1946).
+- **Lemma B**: L·L ⊆ L (L is a √2-scaled copy of a maximal order; Coxeter 1946).
 - **Lemma C**: L · σ(Ls̄) ⊆ σ(Ls̄) (64 basis products verified exactly).
 - **Lemma D**: σ(Ls) · σ(Ls) ⊆ σ(Ls) (64 basis products verified exactly).
 
@@ -132,8 +133,10 @@ both sides; Lemma C above is its left-handed half.  So the closure of
 σ(Ls) under its own product is not inherited from an ideal property.
 The ideal property of σ(Ls̄) has a structural reason (claim 019; paper
 v8, §7; `verify_sigma_sublattice_maximal_order.py`): σ(Ls̄) = 2O for a
-maximal order O ⊇ L of the standard octonion product.  Likewise σ(Ls) = p·O with p = e₂ − e₄ + e₅ − e₆,
-and Lemma D becomes the closure of p·O.
+maximal order O ⊇ L of the standard octonion product.  Likewise
+σ(Ls) = p·O with p = e₂ − e₄ + e₅ − e₆, and since p is purely imaginary the
+left Moufang identity gives (pa)(pb) = p((ap)b), so p·O is closed: Lemma D
+also follows from O · O ⊆ O (claim 021).
 
 ### Algebraic properties
 
@@ -186,7 +189,7 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
   |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)
   (`gap_project/octonion_stabilisers.g`).
 
-**Idempotents — complete classification** (paper §5.2;
+**Idempotents: complete classification** (paper §5.2;
 `verify_idempotent_classification.py`,
 `verify_idempotent_lattice_rescaling.py`).  The ambient algebra
 (R²⁴, +, ⋆) has **exactly eight** idempotents.  With ε₁ = (e₀, 0, 0),

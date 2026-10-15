@@ -45,6 +45,18 @@ Three things below are overtaken.  This file is preserved as written (Manifesto
   stand.  The 21/21 transposition result is established exactly, on a Z-basis,
   by `verify_consecutive_twists_exact.py`.
 
+## Forward correction (2026-10-15)
+
+Phase 0 and item 1 of "What this establishes" call L "the Coxeter–Dickson
+order (a maximal order of integral octonions)" with the Kirmse twist "already
+applied".  Per the dated correction of `leech_wilson.py` (2026-10-13) and the
+paper (Section 2.2, Lemma 4.1, Appendix B): L = D₈⁺ at root norm 2 is a
+nonunital order (e₀ ∉ L), as a lattice a √2-scaled copy of one of the seven
+maximal orders of the integral octonions; σ fixes L and acts on Wilson's
+sublattices (L s̄ = 2J₁, σ(L s̄) = 2O⁽⁴⁾, σ(Ls) = p·O⁽⁴⁾; ledger claims 019,
+021).  The closure result of Phase 0 (L · L ⊆ L on all 57,600 root pairs)
+stands.
+
 ## Algebra tested
 
 Same triple-product structure as trial 001 (three copies of an octonion algebra

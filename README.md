@@ -57,7 +57,7 @@ verified.
 ## The Result and Its Evidence
 
 **Result (trial 007):** The Leech lattice Λ admits an order under a
-Z₃-symmetric triple-octonion product on R²⁴ — the same octonion product in
+Z₃-symmetric triple-octonion product on R²⁴: the same octonion product in
 all three blocks, with Z₃-symmetric cross-block routing.  The transposition σ
 exhibits the fit of this octonion product with Wilson's representation.
 
@@ -65,7 +65,9 @@ exhibits the fit of this octonion product with Wilson's representation.
   four lemmas on the interplay between the transposition σ and the Leech
   sublattices Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
   executes the finite case verifications of Lemmas 4.1, 4.3 and 4.4 with exact
-  rational arithmetic; [gap_project/tests/test_lemmas.g](gap_project/tests/test_lemmas.g)
+  rational arithmetic; [python_project/src/verify_appendix_tables.py](python_project/src/verify_appendix_tables.py)
+  recomputes the three Appendix A tables (Lemmas 4.2 to 4.4) and compares them
+  with the printed ones; [gap_project/tests/test_lemmas.g](gap_project/tests/test_lemmas.g)
   covers all four).
 - **Computational verification** on 12M+ random pairs of minimal vectors
   with zero failures, plus tests from first principles on every foundation
@@ -80,7 +82,11 @@ exhibits the fit of this octonion product with Wilson's representation.
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
   the order is not maximal (Section 7: L³ and Λ + Zε₁ are ⋆-closed
-  overlattices, of index 2¹² and 4); the span index of the products depends
+  overlattices, of index 2¹² and 4); Lemmas 4.3 and 4.4 have a structural
+  reason (Section 7: σ(Ls̄) = 2O and σ(Ls) = pO for a maximal order O ⊇ L of
+  the standard octonion product and p = e₂ − e₄ + e₅ − e₆ purely imaginary,
+  so both follow from O · O ⊆ O, the second by a Moufang identity); the span
+  index of the products depends
   on the twist (Section 5.5: 2¹⁶ for σ, 2¹⁰ for the even closing
   permutations, 1 for a reflection twist); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
@@ -99,12 +105,6 @@ exhibits the fit of this octonion product with Wilson's representation.
 These are the questions the paper leaves open (Sections 7 and 8), with further
 detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 
-- A structural reason for Lemma 4.4 (σ(Ls) is closed under the standard
-  octonion product, while Ls is not).  One candidate shape is excluded:
-  σ(Ls) is not an ideal of L on either side.  Section 7 reduces the
-  question: σ(Ls̄) = 2O for a maximal order O ⊇ L of the standard octonion
-  product, and σ(Ls) = pO with p = e₂ − e₄ + e₅ − e₆, so it becomes why pO
-  is closed.
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.
@@ -114,7 +114,7 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
   only for the 3-cycles.
 - Whether a **ternary** reformulation (via composition algebras in the
   sense of Elduque, or via Okubo's ternary structure) gives a more
-  natural classification — the rigid Z₃ cross-block routing and the
+  natural classification: the rigid Z₃ cross-block routing and the
   order-3 automorphism content of the construction both point that
   way.  This is the principal direction suggested for future work.
 
@@ -126,7 +126,8 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 cd python_project
 python3 -m pytest tests/ -v                     # Run all foundation tests
 cd src
-python3 symbolic_proof_checks.py                # Lemmas 4.1, 4.3, 4.4 (Lemma 4.2: gap_project/tests/test_lemmas.g)
+python3 symbolic_proof_checks.py                # Lemmas 4.1, 4.3, 4.4
+python3 verify_appendix_tables.py               # Appendix A tables (Lemmas 4.2 to 4.4) recomputed, compared with main.tex
 python3 trial_007_kirmse_twist.py               # The winning trial
 python3 trial_001_triple_octonion.py            # Any earlier trial
 python3 verify_aut_lambda_star.py               # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
@@ -156,10 +157,11 @@ octonion multiplication as a Moufang loop of order 16.  See
 
 ```bash
 cd paper
-pdflatex main.tex && pdflatex main.tex           # twice: resolves refs and citations
+pdflatex main.tex && pdflatex main.tex && pdflatex main.tex   # three times: refs, citations, PDF outline
 pdflatex companion.tex && pdflatex companion.tex
 pdflatex automorphism_group_2026-07-12.tex && pdflatex automorphism_group_2026-07-12.tex
 ```
 
 The bibliography is inline via `\bibitem`, so no BibTeX pass is needed; the
-second `pdflatex` run resolves cross-references and citations.
+second `pdflatex` run resolves cross-references and citations, and `main.tex`
+needs a third for its PDF outline (the two notes settle in two runs).

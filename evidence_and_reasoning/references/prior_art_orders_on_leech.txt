@@ -280,8 +280,7 @@ confirm the absence of multiplicative/ring/order structure on Λ.
   in the present paper (Appendix A, "The mod-2-quotient reading").  The
   two works land on different sides of the same 2-primary structure
   governing octonion-derived orders.  Cited in `paper/main.tex`
-  §6 ("Related work") and Appendix A subsection on the mod-2 quotient,
-  alongside the present construction.  See also the analysis note in
+  §6 ("Related work"), alongside the present construction.  See also the analysis note in
   `paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md`.
 
 ### [Koeplinger2026] — An order on the Leech lattice from a Z₃-symmetric triple-octonion product

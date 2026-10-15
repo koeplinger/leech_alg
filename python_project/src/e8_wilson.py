@@ -31,6 +31,15 @@ Key structural results from [Wilson2009] Section 2:
     Ls = 2B   (B = another copy of E8 / Coxeter-Dickson ring)
     2L ⊂ Ls ⊂ L
 
+CORRECTION (15 October 2026).  The line "Ls = 2B" above, and the comment at the
+definition of WILSON_S below, should read L s̄ = 2B: Wilson's identity is
+L s̄ = 2B (Wilson 2009, p. 2187), where B is his set whose assumed closure "is
+known as Kirmse's mistake"; B is stable under the 16 units but not closed under
+multiplication, so it is not the Coxeter–Dickson ring (that is Wilson's
+A = ½(1 + i₀)L, with L = (1 + i₀)A).  In the paper's coordinates L s̄ = 2J₁ and
+Ls = J₁·s² (ledger claim 019; verify_sigma_sublattice_maximal_order.py, item D).
+Code unchanged.
+
 Lattice membership criterion
 ------------------------------
 The lattice L equals the D8+ lattice in standard E8 coordinates:

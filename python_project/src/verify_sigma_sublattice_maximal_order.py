@@ -7,6 +7,11 @@ with s = (-e0 + e1 + ... + e7)/2 in L, Wilson's sublattices formed with left
 multiples, L sbar = {l . sbar} and L s = {l . s}, and sigma = (1 2).  Exact
 arithmetic throughout (fractions.Fraction; integer Hermite normal forms).
 
+Note (15 October 2026): the paper's Section 1 (v8) states (A) as "the integral
+octonions have exactly seven maximal orders containing the Gravesian order
+Z<e0, ..., e7>, each an E_8 lattice"; the wording below is the mathematical
+statement behind it.  Code and output unchanged.
+
 (A) Section 1.  For the multiplication (2.1), exactly seven maximal orders of
     the rational octonions contain the Gravesian order Z<e0, ..., e7>, each a
     scaled copy of the E_8 lattice.  Reduction to a finite check (standard):

@@ -11,7 +11,7 @@ specific to this project, terms are marked as **(project-specific)**.
 **Established terms:**
 Idempotent — Isomorphism (of algebras) — Isotopy (of algebras) —
 Kirmse integers — Kirmse twist (project shorthand; the paper's Coxeter–Bruck transposition) — Leech lattice Λ —
-Maximal order (in the rational octonions) — Okubo algebra —
+Maximal order (of integral octonions) — Okubo algebra —
 Para-Hurwitz algebra — Petersson construction —
 Square-zero element (square nilpotent) —
 Symmetric composition algebra — Triality (D₄ triality)
@@ -19,7 +19,8 @@ Symmetric composition algebra — Triality (D₄ triality)
 **Project-specific terms:**
 2+1 closure pattern — Automorphism group Aut(Λ, +, ⋆) —
 Ideal decomposition R²⁴ = D ⊕ T — Petersson triality triple —
-Triple octonion product — Z₃-symmetric triple-octonion product
+Reflection ρ — Span index — Triple octonion product — Twist —
+Z₃-symmetric triple-octonion product
 (historically: transposition-twisted triple octonion product) —
 √3 obstruction
 
@@ -89,7 +90,7 @@ In this project: the **Petersson construction** x *_τ y = τ(x̄) · τ²(ȳ)
 is an isotopy of the octonion algebra (O, ·), with f: x ↦ τ(x̄),
 g: y ↦ τ²(ȳ), and h = id.  Since f ≠ g (when τ ≠ id), it is a genuine
 isotopy that is not an isomorphism.  The resulting algebra (a symmetric
-composition algebra) has fundamentally different properties — for example,
+composition algebra) has fundamentally different properties: for example,
 it has no identity element.
 
 Reference: McCrimmon, K., "A Taste of Jordan Algebras" (2004), §5.3;
@@ -121,8 +122,8 @@ we translate to the standard convention above.
 
 The Leech lattice is constructed in this project via Wilson's
 characterization:  Λ = {(x, y, z) ∈ L³ : conditions 1–3}, where L is the
-E8 lattice (= D₈⁺, a √2-scaled copy of the Coxeter–Dickson maximal
-order of integral octonions).  See `leech_wilson.py` for the implementation.
+E8 lattice (= D₈⁺, a √2-scaled copy of a maximal order of the integral
+octonions; paper, Section 2.2).  See `leech_wilson.py` for the implementation.
 
 References:
 - Conway, J.H. and Sloane, N.J.A., "Sphere Packings, Lattices and Groups"
@@ -145,7 +146,7 @@ teacher in Apolda:
 
 In this paper Kirmse accomplished the following:
 
-1. **Kirmse's identities**: x(x̄y) = n(x)y = (yx̄)x — appearing in print
+1. **Kirmse's identities**: x(x̄y) = n(x)y = (yx̄)x, appearing in print
    presumably for the first time (Petersson 2018).
 2. He exhibited the E8 lattice as a positive definite unimodular integral
    quadratic lattice of rank 8 inside the real octonion algebra, by a
@@ -156,7 +157,7 @@ In this paper Kirmse accomplished the following:
    and Artin were students of Herglotz at Leipzig (Artin received his PhD
    in 1921, Kirmse in 1923).
 
-Kirmse then claimed — without proof — that his lattice is closed under
+Kirmse then claimed, without proof, that his lattice is closed under
 octonion multiplication.  In fact Kirmse stated that there are *eight*
 such maximal domains (his p. 70); the true number is **seven**, and the
 one he exhibited explicitly, $J_1$, is the spurious entry.  Coxeter
@@ -164,7 +165,7 @@ one he exhibited explicitly, $J_1$, is the spurious entry.  Coxeter
 $\tfrac12(1{+}i_1{+}i_2{+}i_3)\cdot\tfrac12(1{+}i_1{+}i_4{+}i_5)
 =\tfrac12(i_1{+}i_2{+}i_4{+}i_7)\notin J_1$, and recorded the remedy
 supplied by **R. H. Bruck**: "Bruck's domain $J$ can be derived from
-$J_1$ by transposing two of the $i$'s" — a **transposition of two
+$J_1$ by transposing two of the $i$'s": a **transposition of two
 imaginary basis units**, a linear involution of $\mathbb{R}^8$.  The
 $\binom{7}{2}=21$ such transpositions yield the seven maximal orders
 in seven sets of three.  Verified from the originals in this project
@@ -174,7 +175,7 @@ in seven sets of three.  Verified from the originals in this project
 **Kirmse twist (this project's shorthand, used in the trial record) = the Coxeter–Bruck transposition of the main paper's Appendix B = the transposition $\sigma$ of Definition 3.1.** The
 Kirmse twist is shorthand for the transposition of two imaginary basis
 units described above; it is the **same map** as the $\sigma$ used
-throughout the main paper — a linear involution of $\mathbb{R}^8$.
+throughout the main paper, a linear involution of $\mathbb{R}^8$.
 There is no difference of operation, only of name.
 
 What differs is the lattice on which the twist is applied. Kirmse's
@@ -192,13 +193,13 @@ it builds, take the opposite representation: $L = D_8^+$ is the
 coordinate permutation. The Kirmse twist therefore *fixes* $L$
 ($\sigma(L) = L$), and $L$ closes under the octonion product directly.
 The twist's effect in the main paper lies entirely on sublattices
-of $L$ that are *not* $\sigma$-invariant — chiefly $Ls$ — where it
+of $L$ that are *not* $\sigma$-invariant (chiefly $Ls$), where it
 plays the same kind of role (turning a non-closed sublattice into a
 closed one) that the Kirmse twist plays on Kirmse's $J_1$ one
 stratum up.
 
 **A note on attribution and fairness.**  The term "Kirmse integers" in
-modern usage refers exclusively to the non-closed system — Kirmse's error.
+modern usage refers exclusively to the non-closed system, Kirmse's error.
 This practice reduces the man to his one mistake and erases his actual
 contributions (the identities, the lattice construction, and the
 pioneering investigation of octonion arithmetic).  Petersson (2018), who
@@ -218,22 +219,23 @@ References:
 - Conway, J.H. and Smith, D.A., "On Quaternions and Octonions" (2003),
   Chapter 9.
 
-### Maximal order (in the rational octonions)
+### Maximal order (of integral octonions)
 
-A lattice Γ in the rational octonion algebra (the Q-span of e₀, …, e₇)
-that is closed under multiplication, contains the identity, and is maximal
-with respect to inclusion among such lattices.  The rational octonion
-algebra has infinitely many maximal orders (G₂(Q) is infinite, and only
-finitely many of its elements preserve a given maximal order; the external
-review of v8, §6.1(a)); exactly **seven** of them contain the
-Gravesian order $\mathbb{Z}\langle e_0, \ldots, e_7\rangle$, each a scaled
-copy of the $E_8$ root lattice (Coxeter 1946; Conway--Smith 2003, Ch. 9;
-for the multiplication of the paper's eq. (2.1), exhaustively by
-`verify_sigma_sublattice_maximal_order.py`).  The
+The integral octonions, for a fixed octonion multiplication, are the orders
+of the rational octonion algebra (the Q-span of e₀, …, e₇): lattices Γ that
+are closed under multiplication and contain the identity.  A maximal order
+is one maximal with respect to inclusion among them.  There are infinitely
+many maximal orders (G₂(Q) is infinite, and only finitely many of its
+elements preserve a given maximal order; the external review of v8,
+§6.1(a)); exactly **seven** of them contain the Gravesian order
+$\mathbb{Z}\langle e_0, \ldots, e_7\rangle$, each an $E_8$ lattice (at
+minimal norm 1, so a 1/√2-scaled copy of the norm-2 root lattice) (Coxeter
+1946; Conway–Smith 2003, Ch. 9; for the multiplication of the paper's eq.
+(2.1), exhaustively by `verify_sigma_sublattice_maximal_order.py`).  The
 $\binom{7}{2}=21$ transpositions of pairs of imaginary basis units, applied
 to Kirmse's $J_1$, yield the seven (Coxeter 1946, §4); they fall into seven sets
 of three, with each set fixing one common imaginary unit (Coxeter's
-"special unit" — one of $i_1,\ldots,i_7$).
+"special unit", one of $i_1,\ldots,i_7$).
 
 Note: Dickson (1923, Theorem XV) gave a correct construction of one
 maximal order more than twenty years before Coxeter; his theorem
@@ -389,9 +391,9 @@ Do not confuse either with Aut(Λ) = 2·Co₁, the isometry group of the
 R²⁴ = O³ under the Z₃-symmetric triple-octonion product ⋆ splits as a
 direct sum of two **mutually annihilating two-sided ideals**:
 
-- **D** = {(a, a, a) : a ∈ O} — the **diagonal copy of the octonions**,
+- **D** = {(a, a, a) : a ∈ O}, the **diagonal copy of the octonions**,
   of dimension 8.  Here a is an *octonion*, not a real number.
-- **T** = {(p, q, r) ∈ O³ : p + q + r = 0} — of dimension 16.
+- **T** = {(p, q, r) ∈ O³ : p + q + r = 0}, of dimension 16.
 
 D ⋆ T = T ⋆ D = 0, and D ⊥ T for the Euclidean form.  This
 decomposition is what settles the automorphism group and the Co₀
@@ -425,6 +427,40 @@ construction with non-trivial τ introduces irrational structure constants
 (cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
 lattice entirely.
 
+### Reflection ρ
+
+(Main paper §5.5; `verify_twist_span_index_census.py`; claims 017, 018.
+Written s_r in the external review of v8.)  The reflection of R⁸ in the
+root r = ½(e₀ + e₁ + ⋯ + e₆ − e₇) of L, a twist (see "Twist" below) with
+ρ(L) = L.  The triple product ⋆_ρ closes on Λ with span index 1.  The
+transposition σ is itself the reflection in the root e₁ − e₂ of L.  Of the
+120 reflections in roots of L, 56 close on Λ, 28 with span index 2¹⁶ and
+28 with span index 1 (claim 017).  Span index 1 does not make (Λ, +, ⋆_ρ)
+a maximal order: L³ is a ⋆_ρ-closed overlattice of Λ of index 2¹² (claim
+018).
+
+### Span index
+
+(Main paper §5.5; `verify_product_span_index.py`,
+`verify_product_span_structure.py`, `verify_twist_span_index_census.py`;
+claims 015, 017, 018.)  When a triple product ⋆_g (see "Twist" below)
+closes on Λ, the integer combinations of its products u ⋆_g v (u, v ∈ Λ)
+form a sublattice of Λ, the **span** of ⋆_g.  The **span index** of ⋆_g is
+the index of the span in Λ: the number of disjoint translates of the span
+that make up Λ.  Span index 1 means that every vector of Λ is an integer
+combination of products.  An order with a multiplicative identity has span
+index 1; the ambient algebra (R²⁴, +, ⋆) has none, and the index can be
+larger.  By bilinearity, closure and span index are decided by the 576
+products of pairs from a Z-basis of Λ; the index is computed exactly by
+Hermite normal form.  Values: ⋆ = ⋆_σ has span index 2¹⁶ = 65,536, and its
+span S = Δ(Ls) + 2Λ contains 2Λ (claim 015); every odd closing permutation
+twist has span index 2¹⁶ and every even one 2¹⁰; the reflection ρ has span
+index 1 (claim 017); the Baez–Egan product φ of main paper §6 has span
+index 2²⁵ (`verify_phi_span_index.py`).  The span index is invariant under
+ring isomorphism, so ⋆_σ, ⋆_π for an even closing π, and ⋆_ρ make Λ into
+three pairwise non-isomorphic orders.  It is independent of maximality
+(claim 018).
+
 ### Z₃-symmetric triple-octonion product
 (historically: transposition-twisted triple octonion product)
 
@@ -455,8 +491,8 @@ and s̄ and preserves L, so conjugation carries the paper's §4 proof for
 Transpositions are not the only permutations of the imaginary axes
 for which the assembled triple product closes.  Writing
 x ·_π y := π⁻¹(π(x) · π(y)) for any
-permutation π of e₁, …, e₇ (for an involution this coincides with the
-paper's twisted product) and testing exactly on a Z-basis of Λ, the
+permutation π of e₁, …, e₇ (the paper's twisted product ·_g with
+g = π; see "Twist" below) and testing exactly on a Z-basis of Λ, the
 census over all 5,040 permutations of S₇ is: transposition 21/21
 (100%), 3-cycle 35/70 (50%), (2,2) 42/105 (40%), 4-cycle 0/210 (0%),
 (3,2) 126/420 (30%), 5-cycle 252/504 (50%), (2,2,2) 21/105 (20%),
@@ -485,6 +521,20 @@ Same-block products Oα × Oα → Oα also use the standard octonion product.
 Trial 001 tested this product without rescaling.  Trial 002 tested it with
 per-block scaling.  Both failed, but trial 001 exhibited a distinctive
 **2+1 closure pattern** (see above).
+
+### Twist
+
+(Main paper §5.5.)  A **twist** is an invertible linear map g of R⁸.  It
+defines the **twisted octonion product** x ·_g y := g⁻¹(g(x) · g(y)) on O,
+another octonion product, isomorphic to the standard one via g; the triple
+product ⋆_g is that of main paper Definition 3.3 with ·_g in all nine block
+products.  The twist g = σ gives the σ-twisted product of Definition 3.2
+(σ⁻¹ = σ), and ⋆_σ = ⋆.  Two families are studied: the permutations π of
+e₁, …, e₇ (the S₇ census, under "Z₃-symmetric triple-octonion product"
+above) and the reflections in roots of L (see "Reflection ρ" above).  For
+an isometry g of R⁸ with g(L) = L, ⋆_g closes on Λ if and only if Ls̄ and Ls
+are both closed under ·_g (the external review's Theorem A, checked on all
+5,040 permutations and all 120 root reflections; claim 017).
 
 ### √3 obstruction
 

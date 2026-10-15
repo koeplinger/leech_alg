@@ -25,6 +25,16 @@ lattice, a √2-scaled copy of one of those maximal orders (paper Section 2.2).
 The identification "L = the Coxeter–Dickson order" and the word "unique" above
 are historical.  The module is unchanged.
 
+CORRECTION (15 October 2026).  Precisely: the integral octonions have exactly
+seven maximal orders containing the Gravesian order Z<e0, ..., e7> (paper
+Section 1, v8; verify_sigma_sublattice_maximal_order.py); without that
+qualifier there are infinitely many.  And the docstring line "(= 2B, the
+Coxeter–Dickson ring scaled by 2)" below is wrong on the same count as the
+comments of e8_wilson.py: L s̄ = 2B holds (Wilson 2009, p. 2187), but B is
+Wilson's set whose assumed closure "is known as Kirmse's mistake", not closed
+under multiplication, so not the Coxeter–Dickson ring (ledger claim 019).
+The module is unchanged.
+
 The central research question of this project: whether a proposed
 octonion-based multiplication rule on R^24 restricts to a product on Λ that
 closes — i.e., whether Λ forms a 24-dimensional integral algebra under some

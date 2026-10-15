@@ -7,6 +7,11 @@ below. The revision plan is `evidence_and_reasoning/2026-10-12_plan.md`, and
 the reopening is [prompt 281](prompt_logs/281_reopen_project_v8_readthrough_comments.txt).
 The text below stands as written: the record of the closure of 27 July 2026.
 
+**Addendum (15 October 2026).** A second plan,
+`evidence_and_reasoning/2026-10-14_plan.md`, covers the span-index findings of
+the external review of v8; the revision's changes are recorded in
+`paper/v7_to_v8_changelog.md`.
+
 **27 July 2026.** This effort is closed. What follows records the result, the
 reasons for closing, and what this repository is from here on.
 

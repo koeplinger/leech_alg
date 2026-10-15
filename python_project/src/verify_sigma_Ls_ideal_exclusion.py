@@ -5,6 +5,12 @@ under the standard octonion product (Lemma 4.4), where Ls is not.  One
 candidate shape for such a reason is that sigma(Ls) might be an ideal of the
 octonion order L.  This script refutes that candidate at the integer level.
 
+Note (15 October 2026): the structural reason is known (paper Section 7, v8;
+ledger claim 021): sigma(Ls) = p O^(4) for the maximal order O^(4) containing L
+and p = e2 - e4 + e5 - e6 purely imaginary, and the Moufang identity
+(pa)(pb) = p((ap)b) makes p O^(4) closed.  The exclusion below stands: sigma(Ls)
+is not an ideal of L.  Code and output unchanged.
+
 Counted here, for each pair of Z-bases (8 x 8 = 64 basis-pair products), is
 how many products land back in the target lattice:
 

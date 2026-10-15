@@ -31,7 +31,7 @@ evidence_and_reasoning/
 ├── terminology.md          # Authoritative glossary of terms used across the corpus
 ├── editorial_standards.md  # The five prose standards; spelling and dash conventions
 ├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
-├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (in progress)
+├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (engaged; items applied)
 ├── 2026-10-14_plan.md      # Plan: the span-index findings in v8, for the wrap-up (executed)
 └── README.md               # This file
 ```
@@ -56,7 +56,8 @@ Claims with a dedicated argument have their own `NNN_*.txt` file in that folder.
 
 ## Guidelines
 
-- Each key claim should be documented in its own file under `key_claims/`,
+- Each key claim is documented in its own file under `key_claims/` or, for
+  the structure claims 009 onward, as a row of the ledger `key_claims/README.md`,
   linking to its references in `references/`.
 - Claims must be stated precisely. Informal summaries are permitted as a
   companion to the formal statement, not as a substitute.

@@ -14,7 +14,7 @@ Z₃-symmetric triple-octonion product*,
 
 | File | |
 |---|---|
-| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** Working source, v8 in progress (opened 12 October 2026). Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` twice. |
+| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** Working source, v8 in progress (opened 12 October 2026). Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` three times (from a fresh checkout, two runs leave a rerun warning and an unsettled PDF outline). |
 | [`main_2026-04-29.tex`](main_2026-04-29.tex) | v3, frozen |
 | [`main_2026-05-25.tex`](main_2026-05-25.tex) | v4, frozen |
 | [`main_2026-06-07.tex`](main_2026-06-07.tex) | v5, frozen |
@@ -29,11 +29,11 @@ scope.
 
 | File | |
 |---|---|
-| [`companion.tex`](companion.tex) | Companion to the paper: worked examples and extended tables |
+| [`companion.tex`](companion.tex) | Companion to the paper: an expository note on the σ-twist, from the Kirmse–Coxeter example at the E₈ level to the twisted triple product on Λ, with worked examples (AI-authored training material) |
 | [`automorphism_group_2026-07-12.tex`](automorphism_group_2026-07-12.tex) | The automorphism group of the triple-octonion product. Aut(Λ, +, ⋆) ≅ C₆ × S₃ of order 36, the ambient group G₂ × G₂ × S₃, the containment in Co₀, and what failed verification |
 | [`hermes_mod2_structure_supplement.tex`](hermes_mod2_structure_supplement.tex) | The subalgebra and ideal structure of the mod-2 quotient L/2L: two externally proposed discoveries, verified and corrected |
 | [`kirmse_1924_exposition.tex`](kirmse_1924_exposition.tex) | Kirmse 1924, re-derived from the original, with the forensic reconstruction of his count |
-| [`historical_appendix.tex`](historical_appendix.tex), [`historical_appendix_expanded.tex`](historical_appendix_expanded.tex) | Drafts of the 1923–1946 historical synthesis, now Appendix B of the paper |
+| [`historical_appendix.tex`](historical_appendix.tex), [`historical_appendix_expanded.tex`](historical_appendix_expanded.tex) | Drafts of the 1923–1946 historical synthesis behind Appendix B of the paper |
 | [`Baez-Egan_Leech_Verification.pdf`](Baez-Egan_Leech_Verification.pdf) + [`_addendum_2026-05-24`](Baez-Egan_Leech_Verification_addendum_2026-05-24.tex) | Verification of the Baez–Egan construction, and the addendum comparing their L/2L treatment with ours |
 
 ## Update briefs
@@ -56,8 +56,18 @@ is the external review of v8 by Claude Opus 5.5 (13 October 2026), incorporated
 verbatim: its write-up (also at
 [`reviews/2026-10-13_claude_opus_5_5_review_v8.md`](reviews/2026-10-13_claude_opus_5_5_review_v8.md)),
 the reviewer's working scripts, and four independent reproductions in Python,
-GAP and PARI/GP with their outputs.  Its `reproduction/final/run_all.sh` reads
-the paper's source through the environment variable `MAIN_TEX`; from that
-folder the working source is `MAIN_TEX=../../../../main.tex`.  Its GAP
-extractor reads Appendix A by line range; for an exact rerun use the paper as
-reviewed, `git show 6f7b37c:paper/main.tex`.  The folder is frozen as a whole.
+GAP and PARI/GP with their outputs.  The second pass on that review, with the
+first-hand re-derivation of its index claims, is
+[`reviews/2026-10-14_claude_fable_5_1_index_one_verification.md`](reviews/2026-10-14_claude_fable_5_1_index_one_verification.md)
+(two dated addenda); ledger claims 017 to 020 cite it.  The package's
+`reproduction/final/run_all.sh` runs `f1_setup.py`, which reads the paper's
+source from the environment variable `MAIN_TEX`; from that folder the working
+source is `MAIN_TEX=../../../../main.tex`.  Its GAP extractor
+(`reproduction/independent/gap/extract_paper_tables.sh`) reads Appendix A by
+fixed line ranges, those of the paper as reviewed,
+`git show 6f7b37c:paper/main.tex`; on the working source they select the wrong
+rows.  To rerun it, save that source outside the repository and pass it as the
+first argument and an output path outside the repository as the second (by
+default it writes `paper_tables.g` into the current directory).  The folder is
+frozen as a whole: each `run_all.sh` regenerates its outputs in place, so a
+full rerun is made from a copy outside the repository.

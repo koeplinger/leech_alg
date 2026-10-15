@@ -19,6 +19,14 @@ file never had either.  The paper's Appendix A certificates are integer
 coefficient tables; this script re-derives them in exact rational
 arithmetic.
 
+Updated 15 October 2026 (correction): the first sentence above says "the
+four lemmas", and the list below names Lemma 4.2; this script checks
+Lemmas 4.1, 4.3 and 4.4 (and the bonus L·Ls̄ ⊆ Ls̄), not Lemma 4.2
+(L·L ⊆ L).  Lemma 4.2 is checked on the 64 basis products by
+gap_project/tests/test_lemmas.g, and by verify_appendix_tables.py, which
+also compares the paper's three printed Appendix A tables entry by entry
+with an exact recomputation.  Code and output unchanged.
+
 Lemma 4.1 (paper §4): σ(L) = L
 Lemma 4.2 (paper §4): L·L ⊆ L  (maximal order)
 Lemma 4.3 (paper §4): L · σ(Ls̄) ⊆ σ(Ls̄)

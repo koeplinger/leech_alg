@@ -6,6 +6,10 @@ This script shows what those two lemmas *are*, structurally: statements about
 the 8-dimensional F2-bilinear algebra obtained from L by the mod-2 quotient
 L -> L/2L.
 
+Note (15 October 2026): "Tables A.2 and A.3" here are the paper's Tables 2 and 3
+(Appendix A, labels tbl:appendix-LN and tbl:appendix-MM).  Code and output
+unchanged.
+
   - L_bar s ∩ Ls = 2L (Wilson), so 2L is contained in sigma(Ls) and
     sigma(Ls_bar);
   - L.L <= L and Z-bilinearity make the octonion product descend to an

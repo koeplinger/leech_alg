@@ -3,7 +3,7 @@ Topic: Computer algebra systems used in the verification suites
 
 This file collects references for the software systems used to verify the
 claims in the paper and the companion.  The Python suite in
-python_project/ uses standard scientific-Python libraries (NumPy, SciPy,
+python_project/ uses standard scientific-Python libraries (NumPy, SymPy,
 pytest) which are not listed individually here; the GAP suite in
 gap_project/ uses the GAP system together with the LOOPS package, both
 of which are recorded below.
@@ -82,9 +82,12 @@ intentionally redundant and rely on different runtimes, languages, and
 arithmetic primitives:
 
 - python_project/ uses Python with NumPy (floating-point) for the
-  exhaustive vector-counting tests, plus Python's fractions.Fraction
-  module for exact-arithmetic verification of the four lemmas in
-  python_project/src/symbolic_proof_checks.py.
+  exhaustive vector-counting tests, SymPy for the exact linear algebra of
+  the structure and automorphism scripts, and Python's fractions.Fraction
+  module for the exact-arithmetic verification of Lemmas 4.1, 4.3 and 4.4
+  in python_project/src/symbolic_proof_checks.py and of the three
+  Appendix A tables (Lemmas 4.2 to 4.4) in
+  python_project/src/verify_appendix_tables.py.
 
 - gap_project/ uses GAP's built-in Rationals throughout; no
   floating-point arithmetic is used anywhere in the GAP suite.  GAP's

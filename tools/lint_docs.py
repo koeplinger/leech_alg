@@ -302,7 +302,7 @@ def check_dangling() -> None:
 
 INDEXES = [
     ("python_project/src/*.py", "python_project/src/README.md"),
-    ("gap_project/*.g", "gap_project/README.md"),
+    ("gap_project/**/*.g", "gap_project/README.md"),
 ]
 INDEX_SKIP = {"__init__.py"}
 

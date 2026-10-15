@@ -84,9 +84,9 @@ technical claims.
   of writing.
 - **Notes**: Builds a three-generation colored-fermion model with
   S_3 family symmetry from the Cayley-Dickson sedenions. Cited in
-  this paper's Outlook to accompany the empirical finding that the
+  this paper's Outlook to accompany the result that the
   Z₃-symmetric triple-octonion product admits S_3 block-permutation
-  automorphisms (S_3 ⊆ Aut(Λ, +, ⋆), main paper Section 7); the
+  automorphisms (Aut(Λ, +, ⋆) ≅ C_6 × S_3, main paper Section 5.3); the
   Outlook lists S_3 symmetry alongside triality and
   symmetric-composition-algebra structures as a structural theme
   in algebraic physics.
@@ -115,3 +115,9 @@ The extent is xiv+186 pp., not vi+194 pp.  Title, series (Memoirs AMS vol. 260,
 no. 1252, 2019) and DOI 10.1090/memo/1252 are confirmed, which closes the
 entry's "to be confirmed" line.  The paper's bibliography entry carries none
 of the corrected fields.
+
+Addendum (2026-10-15): [GresnigtGourlayVarma2023] note updated: the S_3 block
+permutation is the S_3 factor of Aut(Λ, +, ⋆) ≅ C_6 × S_3, a result of the
+paper's Section 5.3 (derivation in paper/automorphism_group_2026-07-12.pdf).
+The note's "empirical finding" and "Section 7" followed the v5 Conclusion,
+which stated S_3 ⊆ Aut(Λ, +, ⋆) empirically and left the group open.

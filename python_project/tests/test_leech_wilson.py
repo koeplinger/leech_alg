@@ -157,6 +157,9 @@ class TestLsBarSublattice:
     Ls̄ = {λ × s̄ : λ ∈ L} is an index-16 sublattice of L.
 
     Wilson proves Ls̄ = LR = 2B (the Coxeter-Dickson ring scaled by 2).
+    (Note, 15 October 2026: B is Wilson's set whose assumed closure "is known
+    as Kirmse's mistake", not closed under multiplication, so not the
+    Coxeter–Dickson ring; L s̄ = 2B holds.  Ledger claim 019.  Test unchanged.)
     Gram matrix: ⟨λ₁s̄, λ₂s̄⟩ = N(s̄) × ⟨λ₁,λ₂⟩ = 2⟨λ₁,λ₂⟩.
     So det(Gram_Ls̄) = 2^8 × det(Gram_L) = 256 × 1 = 256.
     Reference: [Wilson2009] Sections 2–3.

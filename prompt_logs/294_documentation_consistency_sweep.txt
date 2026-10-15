@@ -1,0 +1,134 @@
+Prompt 294 -- Documentation consistency sweep of the project (during the
+author's fine-comb read of the paper)
+Date: 2026-10-14
+Model: Claude Fable 5.1 (Anthropic); the author switched the session model
+with /model before this prompt (prompts 288 to 293 ran on Claude Opus 5.5).
+
+User: 'Now that's good work. It seems that you've picked up on the need to
+wrap up the paper.
+
+While I do the fine-comb read on my end next, make a documentation
+consistency sweep of the project.'
+
+Scope: the documentation (current-state documents, the in-progress
+changelog, the ledger, the glossary, the plans' status lines, the script
+indexes, paper/README.md), brought into line with the paper as it stands
+after prompts 289 to 293.  The paper itself is not touched: the author is
+reading it.  Anything found in the paper is recorded here for the author,
+not applied.
+
+Method: the sweep pattern of prompt 285 (Manifesto Section 14; "a sweep
+reports before it writes").  Workflow of 112 agents: 6 read-only scanners
+by angle (paper <-> trackers; changelog <-> the v7 -> v8 diff; code <->
+indexes and documented results; reference registry <-> citations;
+governance and genre documents <-> the repository state; cross-document
+numbers, dates and versions), 1 completeness critic, 105 adversarial
+refuters (one per finding above nit level).  A network change killed the
+first run (5 scanners); it was resumed with the finished scanner cached.
+The session limit then stopped 42 of the 105 refuters; those findings were
+verified first-hand by the orchestrator before use.  Results: 155 raw
+findings, 168 after the critic and deduplication (105 should/must, 63
+nits); refuters: 16 confirmed, 40 corrected (the fix, not the finding), 7
+refuted, 42 unrefuted.  Reproduced on the side by the scanners: pytest 197
+passed; GAP run_all.g 110 passed, 0 failed; 26 of the 30 scripts the paper
+cites re-run with outputs matching the READMEs and the paper (the four
+long ones skipped); all 37 bibitems cited and all cite keys defined; every
+repository path in the current-state documents resolves.  The work ran
+from the evening of 14 October into 15 October 2026 (EDT); addenda and
+footers written on the 15th carry that date.
+
+Headline findings (all record; nothing in the paper was changed):
+ 1. Four current-state documents and the ledger still called Lemma 4.4's
+    structural reason open or "awaiting the author" (CURRENT_STATE open
+    item 1, README "What Remains Open", research_result.md, ledger row
+    021), while the paper's Section 7 states it since prompt 292.
+ 2. The changelog had no items for prompts 292 and 293, and item 12 quoted
+    Section 1, 5.5 and 7 text that prompt 292 replaced.
+ 3. The glossary and python_project/src/README.md row 57 kept the
+    prompt-289 "rational octonions" / "scaled copy" wording the author's
+    ruling of prompt 291 reversed.
+ 4. The 2026-10-14 plan's status listed three decisions since ruled, and
+    claimed the review's GAP extractor still aligned (it reads Appendix A
+    by fixed line ranges; on the working source they select the wrong
+    rows: 55/63/63 rows against 64/64/64 on the reviewed commit 6f7b37c).
+ 5. Five documents described the Python side of the lemma cross-check
+    without verify_appendix_tables.py (prompt 293).
+ 6. The reference registry: L called "the Coxeter-Dickson ring A" (Wilson's
+    A is the unit-scale ring; L = (1 + i_0)A); "SciPy" listed (nothing
+    imports it; SymPy omitted); "four lemmas" for symbolic_proof_checks.py;
+    a stale Appendix A citation for Corradetti2026; a stale "Section 7,
+    empirical finding" for the S_3 symmetry; Okubo1995's Section 5.1 use
+    omitted; six works cited in ledger row 021 and terminology.md without
+    an entry; the Baez 2014 entry under a key the paper does not use.
+ 7. Frozen code comments (e8_wilson.py, leech_wilson.py,
+    test_leech_wilson.py) call Wilson's B "the Coxeter-Dickson ring" and
+    one of them writes Ls = 2B for L sbar = 2B; symbolic_proof_checks.py's
+    docstring says "the four lemmas"; trial_007_results.md still "confirms"
+    L is the Coxeter-Dickson order with the Kirmse twist "already applied".
+ 8. Smaller: CURRENT_STATE's map said claims 009-020 and listed the
+    superseded census script; "forward-evolving" for the immutable logs;
+    "(as an order)" and a "now" in its open list; em-dash asides in the
+    trackers and the glossary; the build instruction "twice" (from a fresh
+    checkout a third pdflatex run settles the outline); the linter's index
+    glob covered only the top level of gap_project/; prompt_logs/README's
+    example filenames did not exist; UK spellings.
+
+Edits (30 files, +431/-180; the paper untouched; the linter clean before
+and after; pytest 197, symbolic_proof_checks.py and
+verify_appendix_tables.py re-run after the docstring notes):
+ - Current-state, in place: CURRENT_STATE.md (verification-table row and
+   lemma-coverage sentence; open items 1 and 3 rewritten, 4 and 5 aligned;
+   the span-index paragraph names rho; prompt logs "immutable"; the map:
+   ledger 009-021, scripts, gap_project/src and tests; eleven em-dash
+   asides; date 2026-10-15), README.md (the open bullet replaced by the
+   structural reason in the result bullet; lemma coverage; run commands;
+   build three times; two em-dashes), research_result.md (Lemma D
+   reason; lemma coverage; four em-dashes), key_claims/README.md (header;
+   rows 013, 016, 021), evidence_and_reasoning/README.md (plan status;
+   guideline on ledger-only claims), terminology.md ("Maximal order (of
+   integral octonions)", entry rewritten; new entries Reflection rho, Span
+   index, Twist; the Z3 entry's twisted-product clause; the E8 entry's
+   "Coxeter-Dickson" phrase; ten em-dashes), python_project/README.md
+   (cupy optional; verify_appendix_tables.py; "catalog"),
+   python_project/src/README.md (rows 47, 52, 57, 58), gap_project/README.md
+   (mapping row; nine dash separators), prompt_logs/README.md (examples;
+   US spelling), paper/README.md (build; companion description; "behind
+   Appendix B"; the second-pass note indexed; f1_setup.py; the extractor
+   note), paper/v7_to_v8_changelog.md (item 13; pointers under items 11
+   and 12; plan pointers; the trackers section moved after the last item
+   and completed), tools/lint_docs.py (gap_project/**/*.g).
+ - Reference registry, in place with dated footers or addenda (the files'
+   practice): leech_lattice_octonionic_constructions.txt (Wilson entry;
+   Dixon entry's framing), okubo_algebra.txt, prior_art_orders_on_leech.txt
+   (Corradetti), triality_and_algebraic_physics.txt (Gresnigt et al. +
+   addendum), computer_algebra_systems.txt (SymPy; the lemma coverage),
+   background_octonions.txt ([Baez2014]; Mahler and Conway-Smith notes;
+   six entries added + addendum).
+ - Frozen, by dated note: 2026-10-14_plan.md and 2026-10-12_plan.md
+   (status lines), CLOSING_NOTE.md (second addendum), trial_007_results.md
+   (forward correction), docstring notes in e8_wilson.py, leech_wilson.py,
+   symbolic_proof_checks.py, verify_mod2_quotient.py,
+   verify_sigma_Ls_ideal_exclusion.py,
+   verify_sigma_sublattice_maximal_order.py, tests/test_leech_wilson.py.
+ - Deleted: texput.log (a stray, ignored build log in the root).
+Not applied, for the author:
+ - Paper (report only; the author is reading it): Section 2.2 already
+   uses "octavians" once ("the unit-scale octavians", v7 text); Appendix C
+   "Six trial algebra families were explored" against the record's two
+   families in six trials (trials 001-004 triple-octonion, 005-006 triple
+   Okubo/para-octonion).
+ - Genre decisions: the reference registry files have no genre in
+   DOCUMENT_GENRES.md (the files' practice is in-place edits plus dated
+   addenda); the linter freezes every program, cited or not, while
+   DOCUMENT_GENRES freezes only cited ones; the registry files are not in
+   the linter's current-state list, so its footer check never runs on them.
+ - Governance prose: em-dash and " --- " asides in MANIFESTO.md,
+   DOCUMENT_GENRES.md and TRIAL_METHODOLOGY.md (the author's own text; left
+   as written); the changelog header's "**v7** —" label separators.
+ - Registry findings refuted by the refuters as judgment calls: in-place
+   rewrites of the [Hall2019_Moufang] fields and the [Dixon1995]/[Dixon2005]
+   locators whose dated addenda already carry the corrections.
+ - "non-unital" (trackers) against the paper's "nonunital": an open item
+   for the author since prompt 285.
+
+Status: CLOSED.

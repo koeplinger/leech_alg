@@ -21,8 +21,8 @@ NNN_short_description.txt
 
 Examples:
 - `001_initial_setup.txt`
-- `002_hypothesis_statement.txt`
-- `015_verification_step_3.txt`
+- `002_source_document_housekeeping.txt`
+- `015_trial_methodology_and_trial_001.txt`
 
 ## Format
 
@@ -30,11 +30,11 @@ Each log file contains the prompt as submitted, unedited. The date of the intera
 
 ## Contents
 
-The curated table below summarises the **foundational phase**
+The curated table below summarizes the **foundational phase**
 (prompts 001–069, project inception through to early paper drafting and
 the first round of circulated-feedback edits).  Entries from prompt 070
 onward (subsequent paper-revision cycles through the v5 freeze and
-beyond) are not enumerated here — the directory listing of `prompt_logs/`
+beyond) are not enumerated here: the directory listing of `prompt_logs/`
 is the canonical record, and each file is self-describing (the prompt
 is the first content of every file, with a date stamp).  Per Manifesto §12 and
 `DOCUMENT_GENRES.md`, *every* prompt log is immutable, enumerated here or not.
@@ -68,7 +68,7 @@ is the first content of every file, with a date stamp).  Per Manifesto §12 and
 | [023_triple_okubo_shifted_basis.txt](023_triple_okubo_shifted_basis.txt) | Triple Okubo/para-octonion algebra (trials 005–006): Petersson isotopes with Z₃ orbit; catastrophic failure from irrational √3 structure constants |
 | [024_terminology_and_research_statement.txt](024_terminology_and_research_statement.txt) | Terminology registry expanded; research statement refined |
 | [025_triple_kirmse_twisted_octonions.txt](025_triple_kirmse_twisted_octonions.txt) | Trial 007 conceived: transposition-twisted triple octonion; first closure test succeeds on 593k pairs |
-| [026_understanding_transposition_twist.txt](026_understanding_transposition_twist.txt) | Mechanism of the transposition twist analysed; why it fixes Wilson condition (3) |
+| [026_understanding_transposition_twist.txt](026_understanding_transposition_twist.txt) | Mechanism of the transposition twist analyzed; why it fixes Wilson condition (3) |
 | [027_isotopy_and_norm_conventions.txt](027_isotopy_and_norm_conventions.txt) | Isotopy framing clarified; norm conventions aligned with Wilson |
 | [028_scaled_closure_test.txt](028_scaled_closure_test.txt) | Scaled-up random closure test; 4M pairs, zero failures |
 | [029_performance_optimization.txt](029_performance_optimization.txt) | Fast implementation; parity with reference code confirmed |
@@ -88,7 +88,7 @@ is the first content of every file, with a date stamp).  Per Manifesto §12 and
 | [043_readme_update_and_abstract_tweaks.txt](043_readme_update_and_abstract_tweaks.txt) | README refreshed; abstract tightened; repository URL set |
 | [044_section1_narrative_trims.txt](044_section1_narrative_trims.txt) | Section 1 editorial asides removed; paper-tone memory saved |
 | [045_sections_2_and_3_trims.txt](045_sections_2_and_3_trims.txt) | Section 2 and 3 repetition removed; "single" → "same" |
-| [046_gitignore_claude_and_section4_tweaks.txt](046_gitignore_claude_and_section4_tweaks.txt) | .claude/ gitignored; Section 4 lemma-labelling simplified; Remark 4.11 removed |
+| [046_gitignore_claude_and_section4_tweaks.txt](046_gitignore_claude_and_section4_tweaks.txt) | .claude/ gitignored; Section 4 lemma-labeling simplified; Remark 4.11 removed |
 | [047_wilson_condition_headings.txt](047_wilson_condition_headings.txt) | Section 4.3–4.5 headings clarified with "Wilson Condition (N):" |
 | [048_drop_wilson_in_headings_and_bracket_condition_numbers_in_proofs.txt](048_drop_wilson_in_headings_and_bracket_condition_numbers_in_proofs.txt) | Section 4 headings trimmed; round-bracketed condition numbers in proofs |
 | [049_section_6_and_7_tweaks.txt](049_section_6_and_7_tweaks.txt) | Methodology paragraph reframed; Section 7 "what-others-didn't-do" phrases removed |
