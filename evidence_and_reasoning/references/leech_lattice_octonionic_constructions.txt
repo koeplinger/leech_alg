@@ -20,7 +20,7 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
 - **Source**: Not redistributed locally (Elsevier publisher copyright).
   Canonical DOI: https://doi.org/10.1016/j.jalgebra.2009.03.021
 - **Topics**: Leech lattice, octonions, E8 lattice, octonionic Leech lattice,
-  Coxeter–Dickson non-associative ring, minimal vectors, Conway group
+  Coxeter–Dickson nonassociative ring, minimal vectors, Conway group
 - **Originality note**: Published in a peer-reviewed journal (Journal of Algebra,
   Elsevier). Wilson claims this construction is "new" and provides "the first real
   explanation" of why the minimal vector count 196560 factors as

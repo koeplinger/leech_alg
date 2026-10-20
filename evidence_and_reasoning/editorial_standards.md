@@ -43,6 +43,9 @@ its place, and the logic should be followable on a first reading.
    Spelling is US English: *-ize*/*-ization*
    (characterize, polarization, stabilizer), *center*, *labeled*.
    Quoted titles and verbatim quotations keep their source spelling.
+   The prefix *non-* closes up (*nonunital*, *nonassociative*, *nontrivial*);
+   it keeps its hyphen before a hyphenated compound (*non-power-associative*)
+   and in quoted titles.
 
 5. **Precision over good-sounding vagueness.** Define terms; do not
    over-claim; state plainly what is open. A sentence that sounds

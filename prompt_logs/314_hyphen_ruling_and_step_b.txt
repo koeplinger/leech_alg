@@ -1,0 +1,108 @@
+Prompt 314 -- Two rulings (the glossary and L sbar; the prefix non-), and
+Step B of the 2026-10-20 plan
+Date: 2026-10-20
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "A glossary addition on L s̄ and Kirmse's set. You
+ruled against more material on that at prompt 291, and the fact stays in
+ledger row 19." -- you can remove the durable fact. In a next pass, if a
+glossary addition or update would be appropriate per our methodology, you
+can add one.
+
+re ""Non-unital" style hyphenation in the records. That has been open with
+you since prompt 285." -- let's drop the hyphen, just as we already do for
+nonassociative, noncommutative, nonalternative, nonflexible. The only
+exception should be the negation of power-associative, as
+non-power-associative, and then faithfult references to uses elsewhere
+(paper titles).
+
+Continiue with step B of the plan.'
+
+1. "You can remove the durable fact": read as follows.  The ruling of prompt
+   291 (no further material on L sbar and Kirmse's mistake) concerns the
+   paper's Appendix B; it is not a standing rule for the glossary.  The
+   reason given in the closed log 313 for not applying the glossary
+   addition is withdrawn here.  No memory note stated the stretched rule;
+   the project memory now records the glossary addition (L sbar = 2 J_1,
+   sigma(J_1) = 𝒪; ledger row 019) as open for the next documentation pass,
+   if the methodology calls for it.  Ledger row 019 keeps the verified fact.
+
+2. The prefix non-: applied in prose (paper: Appendix B "nonclosure";
+   CURRENT_STATE, README, MANIFESTO, research_result, terminology, the
+   ledger, the scripts and GAP indexes, prompt_logs/README, the registry,
+   the changelog's own prose), keeping non-power-associative, negations of
+   hyphenated compounds (non-block-decomposed, non-prompt-log), quoted
+   titles (Non-Associative Algebras ..., "Physics with non-unital
+   algebras?"), the license name "non-exclusive", and quotations of old
+   text in the changelog.  Frozen records untouched.  Recorded in
+   evidence_and_reasoning/editorial_standards.md, standard 4, and in memory.
+
+3. Step B (plan 2026-10-20), applied to paper/main.tex; changelog item 17
+   has every change.  Method: five read-only investigators (idempotents,
+   maximality, square-zero, Appendix A, identities and twists), each with an
+   adversarial reviewer, verified exactly which closed-form statements the
+   structural proof explains (10 agents); three read-only checks of the
+   result (mathematics with independent code, exhaustive where stated;
+   consistency with a scratch build; editorial standards).  All
+   mathematical statements confirmed; refinements of the new text applied
+   (a 5.6 sentence that read as contradicting the new 2-cycle sentence;
+   repetitions in Remark 5.1 and 5.3; definition order in Appendix A).
+   First-hand checks: least multiples 4, 4, 6 from the three facts; 2e0 in
+   V; 2𝒪 and p𝒪 totally isotropic; 126 imaginary units of sigma(𝒪) form E7
+   with 32 at 120 degrees.  Build: 21 pp., no errors, no undefined
+   references, no hyperref warnings; the 1.3 pt overfull vbox on page 7 is
+   back with the reflow.  pytest and the re-run scripts pass.
+   Decisions taken in Step B: non-maximality is Section 5.3, after 5.2
+   (decision (c)); Appendix A stays an appendix (ruling of prompt 311),
+   although it now fits on one page.
+   Not applied, kept as the author wrote or approved them: "The defining
+   property of the order is closure: ..." (SF8, prompt 284); the 5.6 lead,
+   parity paragraph and closing paragraph (prompts 298 to 301); "This opens
+   a research program" (approved at prompts 157 and 291/292).  The author's
+   call: C_6 -> Z_6 notation.  Excluded as new results: the review's
+   span-index factorization (h_W h_V^2, [2𝒪 : 4𝒪] = 2^8), the stabilizer
+   orders of the companion note, the D + T reading of the eight idempotents.
+   Records updated: ledger rows 009, 010, 012, 012a, 014 to 017; CURRENT_STATE
+   (section list, non-maximality, renumbering); README; research_result;
+   terminology; the scripts index; the triality registry note; the plan's
+   dated addendum (prompt 314); dated notes in
+   verify_square_zero_norm24_witness.py, verify_twist_span_index_census.py,
+   verify_discovery1_W_subalgebra.py (its prompt-313 note named the
+   footnote this step removed), verify_polarization_lagrangians.py.
+
+For Step C (Section 7 and Section 6), from the checks:
+ - Section 7's census bullet: 5.6 now explains the 2-cycle row (Theorem
+   1.1); the bullet says the pattern is described only for the 3-cycles.
+ - Appendix A's research-program question may move to Section 7's open
+   list (the plan's "polarization program").
+ - Section 6: recheck the sentence on Egan's catalog against sigma(Lambda)
+   being an Egan-type lattice for the pair (2𝒪, p𝒪); "D" names both the
+   ideal of 5.4 and the diagonal piece of (6.2)-(6.3).
+For Step D: "Lagrangian" has no glossary entry; Calderbank's comment also
+traces the construction to Tits 1980, Lepowsky-Meurman 1982 and
+Conway-Sloane 1982 (the paper cites the latter two in Section 6 only, not
+Tits); the scripts' "Appendix A.1" wording is noted by dated notes only.
+
+Parked (new result, not in the paper; single pass by the Appendix A
+reviewer, code in scratch only, p314/rev-appendix-a: rev_lagr.py,
+rev_lift.py, rev_census.py; not re-derived):
+ - For an ordered polarization (V', W') of Lbar = L/2L, the lattice
+   {(x,y,z) in L^3 : pairwise sums in the preimage of V', block sum in the
+   preimage of W'} contains (2L)^3, and the untwisted triple product
+   descends modulo 2; the lattice is closed exactly when V' and W' are both
+   subalgebras of (Lbar, mu-bar): 4,704 of the 17,280 ordered polarizations
+   (all 17,280 tested directly).  W(E8) acts transitively on the 17,280, so
+   for a twist g in W(E8), star_g closes on Lambda exactly when g(L sbar)/2L
+   and g(Ls)/2L are both subalgebras; this reproduces the census of Section
+   5.6 type by type (1,764 of 5,039).  Also: 8 of the 270 Lagrangians are
+   left ideals, all two-sided; 16 are right ideals; 142 are subalgebras;
+   224 ordered polarizations pair a two-sided ideal with a subalgebra;
+   Wilson's L sbar/2L is a two-sided ideal with no subalgebra complement.
+   Lemma 4.3 is sufficient, not necessary, for condition (2) (2𝒪 . 2𝒪 in
+   4𝒪 in 2L).  Bearing: Section 7's question on which permutations close,
+   and Appendix A's question on which polarizations lift (settled within
+   twisted triple products if confirmed; open for bilinear products in
+   general).  For the author to decide whether to pursue; nothing enters
+   the paper without a second derivation.
+
+Status: CLOSED.

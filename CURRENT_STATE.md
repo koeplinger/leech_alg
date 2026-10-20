@@ -98,10 +98,10 @@ satisfied by the untwisted product (`consistency_checks.py`, check 8).
 ### Algebraic properties (paper §5.1)
 
 The order (Λ, +, ⋆) is:
-- **Non-unital**: the ambient algebra (R²⁴, +, ⋆) has *no* multiplicative
+- **Nonunital**: the ambient algebra (R²⁴, +, ⋆) has *no* multiplicative
   identity at all.  In particular (e₀, e₀, e₀) is not one: it sends
   (x', y', z') to (x'+y'+z', x'+y'+z', x'+y'+z').
-- **Non-commutative**: <0.1% of Min(Λ) pairs commute.
+- **Noncommutative**: <0.1% of Min(Λ) pairs commute.
 - **Not norm-multiplicative**: product norms distribute across
   {16, 32, 48, 64, 80, 96, 112, 128}, with 64 = N(u)·N(v) as the mode
   (~47%).
@@ -110,7 +110,7 @@ The order (Λ, +, ⋆) is:
 
 The key property is closure, not any classical algebraic identity.
 
-### Structure of the algebra (paper §2.2, §4.1, §5.2–§5.5 and §7)
+### Structure of the algebra (paper §2.2, §4.1 and §5.2–§5.6)
 
 These results are exact and exhaustive.
 
@@ -146,7 +146,7 @@ full derivation in `paper/automorphism_group_2026-07-12.pdf`).
   by two independent routes in the companion note
   (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
   classification of the automorphisms of the complexification of (T, ⋆)
-  (non-enumerative); Route 2 is entirely finite and machine-checkable, so
+  (nonenumerative); Route 2 is entirely finite and machine-checkable, so
   nothing load-bearing is left open.  The machine-verified lower bound
   C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and the strictness witness are independent of
   both.
@@ -165,7 +165,7 @@ respectively.  The
 rescaling is already visible on the minimal shell: for each of the 84 purely
 imaginary roots λ of L, (2λ, 0, 0) ⋆ (2λ, 0, 0) = −8ε₁ ∈ Λ.
 
-**The order is not maximal** (paper §7; claim 016).  L³ itself is
+**The order is not maximal** (paper §5.3; claim 016).  L³ itself is
 ⋆-closed: the proof of Proposition 4.6 uses only Wilson's condition (1)
 (L closed under ·_σ, by Lemmas 4.1 and 4.2), so L³ is an even integral
 overlattice of Λ of index [L³ : Λ] = 2¹².  A second ⋆-closed overlattice is
@@ -199,7 +199,7 @@ holds for only 24 of 64.
 **Closure of permutation cycles: the full S₇ census**
 (`verify_all_permutations_exact.py`, all 5,040 permutations, reusing the
 per-permutation test of `verify_consecutive_twists_exact.py`; earlier
-partial runs `verify_all_cycles_exact.py`; paper §5.5).  Writing
+partial runs `verify_all_cycles_exact.py`; paper §5.6).  Writing
 x ·_π y := π⁻¹(π(x) · π(y)) for a permutation π of e₁,…,e₇ (for the
 involution σ this is the paper's twisted product) and testing closure of
 the assembled triple product exactly on the 576 basis-pair products of a
@@ -227,7 +227,7 @@ Exhaustive, not sampled.  The identity (the untwisted product) does not
 close.  For the 3-cycles the closing half admits a description: one of the
 two cyclic orientations per three-element index subset.
 
-**The span index depends on the twist** (paper §5.5, v8; claims 017, 018; the external review
+**The span index depends on the twist** (paper §5.6, v8; claims 017, 018; the external review
 of v8 in `paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`, second pass
 `verify_twist_span_index_census.py` and the note
 `paper/reviews/2026-10-14_claude_fable_5_1_index_one_verification.md`).  For
@@ -248,7 +248,7 @@ and L · L ⊆ L), so L³ is a ⋆_g-closed overlattice of Λ of index 2¹² for
 twist in this family, and (Λ, ⋆_g) is never a maximal order; for the index-1
 reflection, Λ + Z(1_r, 0, 0) is ⋆_r-closed of index 4 over Λ and, like
 Λ + Zε₁ for σ, not contained in L³ (1_r = s_r(e₀) is not in L).  An explicit maximal order above L³, of index 2²⁴·3⁸
-over Λ, decomposable and non-integral, was constructed in the second pass
+over Λ, decomposable and nonintegral, was constructed in the second pass
 (claim 020, two machine passes).  Independently of the twist, the closed
 lattice proj_D(Λ) ⊕ proj_T(Λ) contains Λ with index 3⁸, so Wilson's 3-adic
 gluing alone rules out maximality (claim 018, single-pass strengthening).  Open: a structural proof of the index values (the
@@ -429,7 +429,7 @@ The entire family of algebras with:
   (e.g., Okubo product, or a product defined by different structure constants)
 - Algebras where the 24-dimensional product is not built from 8-dimensional
   block products (e.g., a product defined directly on R²⁴)
-- Non-bilinear multiplication rules
+- Nonbilinear multiplication rules
 
 ---
 
@@ -472,7 +472,7 @@ This failure is **more severe** than the triple-octonion:
 
 ### Why it fails (structural diagnosis)
 
-The Petersson construction with any non-trivial order-3 automorphism τ
+The Petersson construction with any nontrivial order-3 automorphism τ
 introduces structure constants involving cos(2π/3) = −1/2 and sin(2π/3) = √3/2.
 When applied to E8 lattice vectors (integer or half-integer coordinates), the
 products acquire irrational √3 components that cannot lie in the E8 lattice.
@@ -488,7 +488,7 @@ irrational structure constants.  This is a fundamental algebraic obstruction.
 ### What this rules out
 
 Any 24-dimensional algebra built from Petersson isotopes of the octonion
-algebra (para-octonion and/or Okubo algebras) using a non-trivial order-3
+algebra (para-octonion and/or Okubo algebras) using a nontrivial order-3
 automorphism τ, with the same 8+8+8 block structure and cross-block routing.
 
 ### What this does NOT rule out
@@ -559,7 +559,7 @@ the trial, and prints detailed results.
    Appendix A (192 rows) are recomputed and compared entry by entry with
    the printed ones by `python_project/src/verify_appendix_tables_v7.py`.
    The observation σ(Ls) ≠ Ls is recorded as a remark in the paper
-   (Remark 4.5): non-triviality of the construction, not a step of the
+   (Remark 4.5): nontriviality of the construction, not a step of the
    closure proof.
 
 2. **Formal paper at v7, dated 19 July 2026, frozen as
@@ -572,9 +572,10 @@ the trial, and prints detailed results.
    The paper contains abstract (standalone, with
    keywords and MSC 2020 codes), preliminaries,
    construction, symbolic proof, algebraic properties (Section 5, in
-   five subsections in v8: §5.1 identities at N = 10⁶ samples;
-   §5.2 idempotents; §5.3 the automorphism group; §5.4 square-zero
-   elements; §5.5 other twists, closure and span of the image: the
+   six subsections in v8: §5.1 identities at n = 10⁶ samples;
+   §5.2 idempotents; §5.3 maximality (L³ and Λ + Zε₁ are ⋆-closed
+   overlattices); §5.4 the automorphism group; §5.5 square-zero
+   elements; §5.6 other twists, closure and span of the image: the
    full S₇ census with the span index of each closing permutation,
    2¹⁶ for σ and the odd ones and 2¹⁰ for the even ones, and a
    reflection twist with span index 1), related work
@@ -618,7 +619,7 @@ the trial, and prints detailed results.
 
 4. **σ identified as the Kirmse twist.**  The transposition σ used in
    the paper is the same kind of linear involution that Bruck applied
-   (recorded in Coxeter 1946) to repair Kirmse's non-closed candidate
+   (recorded in Coxeter 1946) to repair Kirmse's nonclosed candidate
    J₁.  In the paper's coordinate-symmetric placement L = D₈⁺, σ
    leaves L invariant (σ(L) = L) and is an algebra isomorphism
    (O, ·) → (O, ·_σ) between two octonion products, not an octonion
@@ -680,10 +681,10 @@ Appendix A for the first), together with further detail recorded here.
    closing permutations, 2¹⁰ for the even ones, 1 for the reflection ρ in
    the root (e₀+e₁+⋯+e₆−e₇)/2 of L; claim 017; "Structure of the algebra"
    above), and the ring structure of the index-1 orders.  Not posed in the
-   paper, which states the values in §5.5.
+   paper, which states the values in §5.6.
 
 4. **Classification** of the algebra (R²⁴, +, ⋆): it is
-   non-associative, non-alternative, non-flexible, and non-unital,
+   nonassociative, nonalternative, nonflexible, and nonunital,
    placing it outside the classical families.  Its
    idempotents, square-zero elements, ideal decomposition and
    automorphism group are known (above), but no classification follows

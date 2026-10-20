@@ -113,14 +113,14 @@ gap_project/
 ## What each test file verifies
 
 ### `test_octonion.g`: 20 checks
-Identity, imaginary squares, anticommutativity, non-commutativity,
-non-associativity, composition law on all 64 basis pairs, conjugate / norm
+Identity, imaginary squares, anticommutativity, noncommutativity,
+nonassociativity, composition law on all 64 basis pairs, conjugate / norm
 identities, left/right alternativity, flexibility, total antisymmetry of
 the associator on all 512 basis triples (this certifies alternativity for
 all of $\mathbb{R}^8$ by trilinearity), Moufang identity on 512 basis triples,
 division-algebra inverses, power-associativity, Dixon's standard rule
 $e_a e_{a+1} = e_{a+3}$.  LOOPS-package checks: the 16 signed basis units
-form an order-16 non-associative Moufang loop, isomorphic to the LOOPS
+form an order-16 nonassociative Moufang loop, isomorphic to the LOOPS
 library's `MoufangLoop(16, 3)`.
 
 ### `test_e8_wilson.g`: 22 checks
@@ -155,7 +155,7 @@ $\sigma(L)=L$; $L\cdot L\subseteq L$;
 $L\cdot\sigma(L\bar s)\subseteq\sigma(L\bar s)$;
 $\sigma(Ls)\cdot\sigma(Ls)\subseteq\sigma(Ls)$.
 Lemma 4.1 is checked on the eight basis vectors of $L$, Lemmas 4.2 to 4.4
-on their 8×8 = 64 basis-basis products each, all exactly.  Plus Remark 4.5 (two non-triviality witnesses) and
+on their 8×8 = 64 basis-basis products each, all exactly.  Plus Remark 4.5 (two nontriviality witnesses) and
 the bonus untwisted condition 2 ($L\cdot L\bar s\subseteq L\bar s$).
 
 ### `test_leech_wilson.g`: 14 checks
@@ -164,7 +164,7 @@ $\mathrm{IsInLsBar}, \mathrm{IsInLs}$ reject all roots; the 720 type-1
 minimal vectors of $\Lambda$ (full enumeration) all have ambient norm 8 and
 satisfy Wilson's three conditions; samples of type-2 and type-3 minimal
 vectors built from generators $\lambda, j, k$ all satisfy the three
-conditions; non-members `(root, 0, 0)` and `(root, root, 0)` are correctly
+conditions; nonmembers `(root, 0, 0)` and `(root, root, 0)` are correctly
 rejected.
 
 ### `test_triple_product.g`: 6 checks
@@ -173,7 +173,7 @@ paired with a representative right operand from each of the three families
 (720 × 6 = 4{,}320 products), plus type-2 × {type-2, type-3} and
 type-3 × type-3 sample grids.  The standard (untwisted) triple product
 fails on the same Lambda × Lambda samples (companion Example 8.1).
-The non-existence of a multiplicative identity in $(\mathbb{R}^{24}, \star_\sigma)$
+The nonexistence of a multiplicative identity in $(\mathbb{R}^{24}, \star_\sigma)$
 is verified concretely (paper Section 5.1, Remark 5.2):
 $(e_0,e_0,e_0)\star_\sigma v$ has block-1 equal to $x'+y'+z'$, not $x'$.
 The complete classification behind that remark (an identity would have to be

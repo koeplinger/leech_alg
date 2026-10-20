@@ -6,6 +6,10 @@ Section 5.5 ("Other twists: closure and span of the image"), which cites this
 script for the span-index column and for the reflection, there called rho;
 "Section 5.6" below refers to v7.
 
+Note (20 October 2026, prompt 314): v8 gained a subsection 5.3 (Maximality), so
+the census is now Section 5.6 of v8, as it was in v7.  Code and output
+unchanged.
+
 Second pass, in this repository, on the external review of v8 by Claude Opus
 5.5 (paper/reviews/2026-10-13_claude_opus_5_5_review_v8/), written from the
 paper's definitions with the exact lattice machinery of

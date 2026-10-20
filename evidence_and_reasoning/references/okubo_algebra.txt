@@ -87,7 +87,7 @@ and derivations of composition algebras, and applications.
 - **Originality note**: Unpublished arXiv preprint. Not peer-reviewed.
   Independent verification of claims is required before reliance in this
   project. No plagiarism dispute is known at time of writing.
-- **Notes**: Review of non-associative algebras, especially Lie algebras
+- **Notes**: Review of nonassociative algebras, especially Lie algebras
   satisfying the triality relation, and their connection to S₄ (symmetric
   group on 4 objects) symmetry. Authored by Susumu Okubo (the algebra's
   namesake) and Noriaki Kamiya. Relevant for understanding the triality
@@ -172,11 +172,11 @@ and derivations of composition algebras, and applications.
   Volume 2, Cambridge University Press, Cambridge, 1995
 - **Year**: 1995
 - **ISBN**: 0-521-47215-6
-- **Topics**: okubo_algebra, octonions, physics, non-associative algebras,
+- **Topics**: okubo_algebra, octonions, physics, nonassociative algebras,
   triality
 - **Originality note**: Monograph by Susumu Okubo, the originator of the
   algebra bearing his name. No dispute over originality known.
-- **Notes**: Seminal book-length treatment of non-associative algebras in
+- **Notes**: Seminal book-length treatment of nonassociative algebras in
   physics by the algebra's namesake. Cited in Section 5.1 (Identities) of
   the paper for symmetric composition algebras in the sense of Okubo and
   para-Hurwitz, and in the Outlook among the works on ternary composition

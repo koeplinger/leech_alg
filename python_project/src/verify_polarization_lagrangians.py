@@ -17,6 +17,12 @@ subsections, so "Appendix A.1" above and "(paper A.1)" in the printed
 heading mean Appendix A, whose Polarization paragraph cites this script.
 Code and output unchanged.
 
+Note (20 October 2026, prompt 314): Appendix A no longer has the footnote
+named in item (3); it derives (1) from the two-sided ideal 2O of L and (2)
+from N(2x) = N(px) = 4N(x) on O (O the maximal order of Section 2.2,
+V = 2O/2L, W = pO/2L).  The script checks all three items as before.  Code
+and output unchanged.
+
 Also certified along the way: q is the standard plus-type form on
 F_2^8 (value distribution 136 zeros, 120 ones over the 256 cosets).
 

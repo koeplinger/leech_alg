@@ -86,7 +86,7 @@ Transpositions are not the only permutations of the imaginary basis units for
 which the assembled triple product closes.  The census over all 5,040
 permutations of S₇ is exhaustive
 (`verify_all_permutations_exact.py`; earlier partial runs
-`verify_all_cycles_exact.py`, `consistency_checks.py`; paper §5.5):
+`verify_all_cycles_exact.py`, `consistency_checks.py`; paper §5.6):
 
 | Cycle type of π | Permutations | Close | Rate |
 |---|---|---|---|
@@ -138,7 +138,7 @@ maps the condition-3 sublattice from Ls to σ(Ls), where closure holds.
 The accompanying observation σ(Ls) ≠ Ls (verified by an explicit
 witness in `symbolic_proof_checks.py`) is recorded as a remark in
 Section 4 of the paper rather than a lemma: it confirms the construction
-is non-trivial, but is not used in the closure argument.
+is nontrivial, but is not used in the closure argument.
 
 One candidate explanation for Lemma 4.4 is **excluded**
 (`verify_sigma_Ls_ideal_exclusion.py`; paper Remark 4.5; claim 013):
@@ -151,7 +151,7 @@ under its own product is not inherited from an ideal property.
 
 ### Algebraic properties
 
-The order (Λ, +, ⋆) is non-unital, non-commutative, non-associative,
+The order (Λ, +, ⋆) is nonunital, noncommutative, nonassociative,
 not alternative, not flexible, and not power-associative.  The product
 is not norm-multiplicative, and it is not a symmetric composition
 algebra.  Sampled rates, N = 10⁶ per property, exact integer
@@ -171,7 +171,7 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
 
 **Automorphism group** (`verify_aut_lambda_star.py`, `verify_aut_octonion_crosscheck.py`,
 `gap_project/aut_lambda_star.g`; standalone note
-`paper/automorphism_group_2026-07-12.pdf`; paper §5.3).
+`paper/automorphism_group_2026-07-12.pdf`; paper §5.4).
 
 - Aut(Λ, +, ⋆) is **finite of order 36**, with structure C₆ × S₃.
   Center C₆, derived subgroup C₃; −I₂₄ is *not* in it.  Element
@@ -191,7 +191,7 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
   established by two independent routes in the companion note
   (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
   classification of the automorphisms of the complexification of
-  (T, ⋆) (non-enumerative); Route 2 is entirely finite and
+  (T, ⋆) (nonenumerative); Route 2 is entirely finite and
   machine-checkable, so nothing load-bearing is left open.  The
   machine-verified lower bound C₆ × S₃ ⊆ Aut and the strictness
   witness are independent of both.
@@ -221,9 +221,9 @@ not maximal: L³ is ⋆-closed (the proof of Proposition 4.6 uses only Wilson's
 condition (1)), an even integral overlattice of index 2¹²; and ε₁ acts on
 either side as the swap of blocks 2 and 3, which preserves Λ, with
 ε₁ ⋆ ε₁ = ε₁, so Λ + Zε₁ is a second ⋆-closed overlattice, of index 4, not
-contained in L³ and not integral (paper §7; key claim 016).
+contained in L³ and not integral (paper §5.3; key claim 016).
 
-**Square-zero elements** (paper §5.4;
+**Square-zero elements** (paper §5.5;
 `verify_square_zero_classification.py`).
 
 - In the ambient algebra, u = (x, y, z) satisfies u ⋆ u = 0 iff x, y, z
@@ -241,12 +241,12 @@ contained in L³ and not integral (paper §7; key claim 016).
 
 Min(Λ) itself contains no idempotent and no square-zero vector.
 
-**Span of the image** (paper §5.5;
+**Span of the image** (paper §5.6;
 `verify_product_span_index.py`, `verify_product_span_structure.py`).
 S := Z-span{u ⋆ v : u, v ∈ Λ} has index [Λ : S] = 65,536 = 2¹⁶, with
 2Λ ⊆ S and Λ/S ≅ (Z/2)¹⁶.  Closure is not surjectivity.
 
-The index depends on the twist (paper §5.5, v8; claims 017, 018): among the closing
+The index depends on the twist (paper §5.6, v8; claims 017, 018): among the closing
 permutation twists, every even permutation gives 2¹⁰ and every odd one 2¹⁶;
 the reflection in the root (e₀+e₁+⋯+e₆−e₇)/2 of L closes on Λ with index 1,
 its products Z-spanning Λ.  L³ is a closed overlattice for every twist by an

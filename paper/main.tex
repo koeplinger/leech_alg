@@ -193,9 +193,9 @@ multiplication, the $E_8$ lattice~$L$ and Wilson's description
 of~$\LL$.  Section~\ref{sec:construction} defines the product, and
 Section~\ref{sec:proof} proves Theorem~\ref{thm:main}.
 Section~\ref{sec:properties} determines the algebraic properties of the
-order: its identities, idempotents, automorphism group and square-zero
-elements, the index of the span of its products, and the behavior of
-twists other than~$\sigma$.
+order: its identities and idempotents; that it is not maximal; its
+automorphism group and square-zero elements; the index of the span of
+its products; and the behavior of twists other than~$\sigma$.
 Section~\ref{sec:related} places the construction among related work,
 Section~\ref{sec:conclusion} concludes with the open questions, and
 Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{sec:appendix-tables}
@@ -626,19 +626,19 @@ Section~\ref{sec:proof}.
 \subsection{Identities}\label{sec:identities}
 
 Several standard algebraic identities, among them associativity,
-alternativity, flexibility, power-associativity and commutativity, are
-easily checked to fail on the order $(\LL, +, \star)$.  To give an
-initial idea of the degree of their violation, we have drawn samples
-uniformly (by family weight)
+alternativity, flexibility, power-associativity and commutativity,
+fail on the order $(\LL, +, \star)$.  To estimate how often the
+identities in the table below hold, we have drawn samples uniformly
 from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
 binary identities, from $\operatorname{Min}(\LL)$ for the cube and
 quartic identities, and from $\operatorname{Min}(\LL)^3$ for the
-symmetric-composition identity.  Sample size is $N = 10^6$ per property; exact
-integer arithmetic
+symmetric-composition identity.  Sample size is $n = 10^6$ per
+property; exact integer arithmetic
 throughout.\footnote{\scriptref{verify\_section5\_properties.py}.}  The
-standard error is $\mathrm{SE} =
-\sqrt{p(1-p)/N}$, where $p$ is the fraction of samples on which the
-identity holds.
+standard error is $\mathrm{SE} = \sqrt{f(1-f)/n}$, where $f$ is the
+fraction of samples on which the identity holds.  The quartic identity
+requires all five parenthesizations of $u \star u \star u \star u$ to
+coincide.
 
 \begin{center}
 \begin{tabular}{@{}lll@{}}
@@ -650,15 +650,15 @@ Commutativity $u\star v = v\star u$ & No &
   $(0.018 \pm 0.0014)\%$ \\
 Norm multiplicativity $\Nrm(u\star v) = \Nrm(u)\Nrm(v)$ & No &
   $(46.77 \pm 0.050)\%$ \\
-Left alternativity $(x\star x)\star y = x\star(x\star y)$ & No &
+Left alternativity $(u\star u)\star v = u\star(u\star v)$ & No &
   $(0.188 \pm 0.0043)\%$ \\
-Right alternativity $(x\star y)\star y = x\star(y\star y)$ & No &
+Right alternativity $(u\star v)\star v = u\star(v\star v)$ & No &
   $(0.188 \pm 0.0043)\%$ \\
-Flexibility $(x\star y)\star x = x\star(y\star x)$ & No &
+Flexibility $(u\star v)\star u = u\star(v\star u)$ & No &
   $(8.37 \pm 0.028)\%$ \\
-Cube power-associativity $x^2\star x = x\star x^2$ & No &
+Cube power-associativity $(u\star u)\star u = u\star(u\star u)$ & No &
   $(30.70 \pm 0.046)\%$ \\
-Quartic power-associativity\footnotemark{} & No &
+Quartic power-associativity & No &
   $(12.75 \pm 0.033)\%$ \\
 Symmetric composition $\langle u\star v, w\rangle =
   \langle u, v\star w\rangle$ & No &
@@ -666,45 +666,38 @@ Symmetric composition $\langle u\star v, w\rangle =
 \bottomrule
 \end{tabular}
 \end{center}
-\footnotetext{All five degree-4 parenthesizations of $x \star x \star
-x \star x$ coincide.}
 
 The failure of norm multiplicativity rules out $(\LL, +, \star)$
-being a composition algebra; the failure of symmetric composition
+being a composition algebra.  The failure of symmetric composition
 rules out, independently, its being a symmetric composition algebra
 in the sense of Okubo and para-Hurwitz
 (Alberto Elduque \cite{Elduque1996, Elduque2023_IsotropicNorm};
-Susumu Okubo \cite{Okubo1995_Book}).  Cube and quartic
-power-associativity are reported separately; the quartic identity was
-strictly stronger on every sample: in the joint exact-arithmetic
-count over the same $10^6$ samples, no quartic-passing sample failed
-the cube identity, while the cube-passing set was roughly
-$2.4\times$ larger.
+Susumu Okubo \cite{Okubo1995_Book}).
+
+On the $10^6$ samples drawn for the cube and quartic identities, every sample that satisfied the
+quartic identity also satisfied the cube identity.
 
 \begin{remark}\label{rem:product-norms}
-Exhaustively over the minimal shell, the self-product norms
-$\Nrm(u \star u)$ of the 196{,}560 minimal vectors take values in
-$\{16, 32, 48, 64, 80, 96, 128\}$: neither $0$ nor $8$ occurs, so the
-minimal shell has no idempotent and no square-zero
-vector.\footnote{\scriptref{verify\_idempotents\_min\_shell.py}.}  On
+The product does not preserve the minimal shell: the self-product
+norms $\Nrm(u \star u)$ of all 196{,}560 minimal vectors take exactly
+the values $\{16, 32, 48, 64, 80, 96,
+128\}$.\footnote{\scriptref{verify\_idempotents\_min\_shell.py}.}  On
 $10^6$ sampled pairs, the pair-product norms
 $\Nrm(u \star v)$ took only the values
 $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16, with
 mode~64 (the norm-multiplicative value $\Nrm(u)\Nrm(v) = 8 \times
-8$).\footnote{\scriptref{verify\_pair\_norm\_histogram.py}.}  Both shell questions are settled on all of~$\LL$ in
-Sections~\ref{sec:idempotents} and~\ref{sec:squarezero}: the order has
-no nonzero idempotent; it does, however, contain square-zero vectors,
-the smallest at norm~12.
+8$).\footnote{\scriptref{verify\_pair\_norm\_histogram.py}.}
 \end{remark}
 
 \begin{remark}
 The ambient algebra $(\RR^{24}, +, \star)$ has no multiplicative
-identity: any putative left identity~$(a,b,c)$ would have to act on
-an arbitrary~$(x',y',z')$ by the block matrix
+identity.  A left identity~$(a,b,c)$ would act on~$(x',y',z')$ by the
+block matrix
 $\bigl(\begin{smallmatrix} a & c & b \\ c & b & a \\ b & a & c
-\end{smallmatrix}\bigr)$ (entries acting by left multiplication
-in $(\OO, \cdot_\sigma)$), and no triple $(a,b,c)$ makes this the identity on all
-three blocks simultaneously.  In particular, $(e_0, e_0, e_0)$ is
+\end{smallmatrix}\bigr)$, with entries acting by left multiplication
+in $(\OO, \cdot_\sigma)$; each of $a$, $b$, $c$ occurs both on and off
+the diagonal, so it would have to act both as the identity and as
+zero.  In particular, $(e_0, e_0, e_0)$ is
 not an identity: it maps $(x', y', z')$ to $(x'+y'+z',\, x'+y'+z',\,
 x'+y'+z')$.  Consequently $(\LL, +, \star)$ is a nonunital order.
 \end{remark}
@@ -727,19 +720,52 @@ $\varepsilon_3 = (0, 0, e_0)$ and $\omega = \varepsilon_1 +
 \end{equation}
 Note that every block of every one of them is a multiple of~$e_0$.
 
-Each nonzero idempotent spans a rational ray that meets~$\LL$, and the
-least positive multiple that does
-is\footnote{\scriptref{verify\_idempotent\_lattice\_rescaling.py}.}
+The order $(\LL, +, \star)$ has no nonzero
+idempotent:\footnote{\scriptref{verify\_idempotent\_lattice\_rescaling.py}.}
+each nonzero idempotent spans a rational ray that meets~$\LL$, and its
+least positive multiple in~$\LL$ is
 \begin{equation}\label{eq:idempotent-multiples}
   4\varepsilon_i \ (\Nrm = 16), \qquad
   4\omega \ (\Nrm = 48), \qquad
   6\bigl(\varepsilon_i - \tfrac13\omega\bigr) \ (\Nrm = 24).
 \end{equation}
+These multiples follow from Wilson's three conditions.  Since $L$,
+$L\bar s$ and~$Ls$ meet~$\RR e_0$ in $2\ZZ e_0$, $2\ZZ e_0$
+and~$4\ZZ e_0$, a real multiple of an idempotent lies in~$\LL$ exactly
+when its blocks lie in~$2\ZZ e_0$ (condition~(1), which then implies
+condition~(2)) and its block sum lies in~$4\ZZ e_0$ (condition~(3)).
+The intersections with $L\bar s$ and~$Ls$ follow from
+$2e_0 \in \sigma(2\MO) = L\bar s$ (by~\eqref{eq:multiples}, as $\sigma$
+fixes $e_0 \in \MO$) and from $L\bar s \cap Ls = 2L$, which contains
+$4e_0$ but not~$2e_0$.
 On the line spanned by a nonzero idempotent, the points of~$\LL$ are
 the integer multiples $kw$ of the corresponding vector~$w$
 in~\eqref{eq:idempotent-multiples}, of norm $16k^2$, $48k^2$ or $24k^2$;
 in particular, no real multiple of an idempotent lies on the minimal
 shell.
+
+\subsection{Maximality}\label{sec:maximality}
+
+The order $(\LL, +, \star)$ is not maximal: it is properly contained
+in the $\star$-closed lattice~$L^3$.  The proof of
+Proposition~\ref{prop:cond1} uses only Wilson's condition~(1), that
+the blocks of~$u$ and~$v$ lie in~$L$, so it shows $L^3 \star L^3
+\subseteq L^3$.  The lattice~$L^3$ is even and integral, and
+$[L^3 : \LL] = 2^{12}$.
+
+A second $\star$-closed overlattice, $\LL + \ZZ\varepsilon_1$, is not
+contained in~$L^3$, because $e_0 \notin L$.  The idempotent $\varepsilon_1 = (e_0, 0, 0)$ acts
+on either side as the swap of blocks~2 and~3: since $e_0$ is the
+identity of $(\OO, \cdot_\sigma)$, \eqref{eq:P1}--\eqref{eq:P3} give
+$\varepsilon_1 \star v = v \star \varepsilon_1 = (x', z', y')$ for
+$v = (x', y', z')$.  This swap preserves~$\LL$, because Wilson's three
+conditions are symmetric in the blocks.  With $\varepsilon_1 \star
+\varepsilon_1 = \varepsilon_1$, the lattice $\LL + \ZZ\varepsilon_1$ is
+therefore $\star$-closed by bilinearity.
+By~\eqref{eq:idempotent-multiples}, $4\varepsilon_1$ is the least
+positive multiple of~$\varepsilon_1$ in~$\LL$, so the index is
+$[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  This overlattice is not integral:
+$\varepsilon_1$ has half-integer inner products with vectors of~$\LL$.
 
 \subsection{The automorphism group}\label{sec:autgroup}
 
@@ -747,7 +773,7 @@ $\Aut(\LL, +, \star)$ is finite, of order~$36$, with structure
 $C_6 \times S_3$.  The~$S_3$ is the block permutation of
 Definition~\ref{def:triple}, and the~$C_6$ is generated by the
 following signed permutation of imaginary basis units, an automorphism of
-the twisted algebra $(\OO, \cdot_\sigma)$ of
+the algebra $(\OO, \cdot_\sigma)$ of
 Definition~\ref{def:twisted-product}, applied in each block, with
 $e_0$ fixed:
 \begin{align}
@@ -758,17 +784,17 @@ $e_0$ fixed:
   &e_4 \mapsto -e_4. \label{eq:c6-gen-3}
 \end{align}
 
-The containment in the Conway group can already be settled at the level
-of the ambient algebra, before the lattice is imposed.  As a real
-algebra, $\RR^{24} = \OO^3$
+The containment $\Aut(\LL, +, \star) \subseteq \Co_0$ can already be
+settled at the level of the ambient algebra, before the lattice is
+imposed.  As a real algebra, $\RR^{24} = \OO^3$
 splits as $D \oplus T$, where $D = \{(a,a,a) : a \in \OO\}$ (of
-dimension~8) and $T = \{(p,q,r) \in \OO^3 : p+q+r = 0\}$ (of
+dimension~8) and $T = \{(x,y,z) \in \OO^3 : x+y+z = 0\}$ (of
 dimension~16).  Both are two-sided ideals, and $D \star T = T \star D
 = 0$.  Every $\star$-automorphism preserves them and acts on each by an
 octonion automorphism, composed with a permutation of the blocks, so
 that $\Aut(\RR^{24}, \star) = G_2 \times G_2 \times S_3$.  An automorphism of
 the \emph{real} octonions preserves the positive-definite octonion norm,
-and $D \perp T$; hence every $\star$-automorphism of $\RR^{24}$ is
+and $D \perp T$; hence every $\star$-automorphism of~$\RR^{24}$ is
 orthogonal, and
 \begin{equation}\label{eq:disp9}
   \Aut(\LL, +, \star) \;\subsetneq\; \Co_0 .
@@ -788,25 +814,28 @@ note.\footnote{\cite{repo}~%
 
 In the ambient algebra, $u = (x, y, z)$ satisfies $u \star u = 0$ if
 and only if $x$, $y$, $z$ are purely imaginary, of equal norm, and sum
-to zero, again a symbolic classification.  Three vectors of equal length summing to zero lie at $120^\circ$
+to zero (again by symbolic classification).  Three vectors of equal norm summing to zero lie at $120^\circ$
 to one another; with their negatives they are the six vertices of a
 regular hexagon, and $x$, $y$, $z$ are three alternating vertices, a
-\emph{hexagonal triple} in $\Im(\OO) = \RR^7$.  The solution set is
-a cone of dimension~12; it lies in~$T$ and meets~$D$ only
-in~$0$.\footnote{\scriptref{verify\_square\_zero\_classification.py}.}
+\emph{hexagonal triple}.  The solution set is
+a cone of dimension~12, and it lies in~$T$.\footnote{\scriptref{verify\_square\_zero\_classification.py}.}
 
 The lattice does contain such elements.  A vector $(x, y, z) \in \LL$
-squares to zero exactly when $x$, $y$, $z$ lie in $L\bar s \cap
-\Im(\OO)$, have equal norms, and sum to zero.  The 126 vectors of norm~4
-in $L\bar s \cap \Im(\OO)$ form an $E_7$ root system.  Each of its 126
-roots has exactly 32 roots at $120^\circ$; the third block is then
+squares to zero exactly when $x$, $y$, $z$ are purely imaginary vectors
+of~$L\bar s$, have equal norms, and sum to zero (for $x + y + z = 0$,
+Wilson's three conditions reduce to $x, y, z \in L\bar s$).  The 126 purely imaginary
+vectors of norm~4 in~$L\bar s$ form an $E_7$ root system:
+by~\eqref{eq:multiples}, $L\bar s = \sigma(2\MO)$ is an $E_8$ lattice
+whose minimal vectors have norm~4 and include~$2e_0$, and these are its
+minimal vectors orthogonal to~$2e_0$.  Each of these roots has exactly
+32 roots at $120^\circ$; the third block is then
 forced, so the ordered hexagonal triples number $126 \times 32 = 4{,}032$,
-one square-zero vector of~$\LL$ each, all of norm~12.  Every square-zero
-norm of~$\LL$ lies in $12\ZZ$, since $\Nrm(u) = 3\Nrm(x)$ with $\Nrm(x)$
-even and every norm of~$\LL$ lies in $4\ZZ$.  The $4{,}032$ root
-triples are exactly the norm-12 stratum.  Higher strata are realized:
-for example, the blockwise sum of two blockwise orthogonal root triples
-is square-zero of norm~24.\footnote{\scriptref{verify\_square\_zero\_norm24\_witness.py}.}
+one square-zero vector of~$\LL$ each, all of norm~12.  The norm of
+every square-zero vector of~$\LL$ lies in~$12\ZZ$, since
+$\Nrm(u) = 3\Nrm(x)$ and every norm of~$L\bar s$ lies in~$4\ZZ$.  These
+$4{,}032$ vectors are exactly the square-zero vectors of norm~12, and
+norm~24 occurs as well: the sum of two of them that are blockwise
+orthogonal is square-zero of norm~24.\footnote{\scriptref{verify\_square\_zero\_norm24\_witness.py}.}
 
 \subsection{Other twists: closure and span of the image}\label{sec:census}\label{sec:span}
 
@@ -834,10 +863,10 @@ has no multiplicative identity, and the span index can be larger.
 
 Both properties are decided by finitely many products.  By
 bilinearity it suffices to take the $24 \times 24 = 576$ products of
-pairs of vectors from a $\ZZ$-basis of~$\LL$: $\star_g$ closes on~$\LL$
-if and only if all of them lie in~$\LL$, and the span index is the
-index of the lattice they span, computed exactly by Hermite normal
-form.\footnote{\scriptref{verify\_product\_span\_index.py}.}
+pairs of vectors from a $\ZZ$-basis of~$\LL$.  The product~$\star_g$
+closes on~$\LL$ if and only if all of them lie in~$\LL$, and the span
+index is the index of the lattice they span, computed exactly by
+Hermite normal form.\footnote{\scriptref{verify\_product\_span\_index.py}.}
 
 As an experiment, we generalize from the transposition~$\sigma$ to all
 permutations~$\pi$ of the seven imaginary basis units
@@ -869,14 +898,19 @@ Total         & $5{,}039$ & $1{,}764$ & $35.0\%$ & \\
 \bottomrule
 \end{tabular}
 \end{center}
-The identity permutation (the untwisted product) does not close.  The
-$4$-cycles are the only type failing without exception; the $(5,2)$
-type has the lowest nonzero rate.  The $3$-cycles, $5$-cycles, and
-$(3,2,2)$ types close at exactly half.  For the $3$-cycles the closing
-half admits a description: for each three-element subset of imaginary
-indices, one of the two cyclic orientations closes.  No such
-description is known for the other cycle types, and none is known for
-the $0\%$ of the $4$-cycles.
+The $2$-cycles, the transpositions of Definition~\ref{def:twist},
+close by Theorem~\ref{thm:main}.  The identity permutation does not
+close: for $a, b \in Ls$, the vectors $(a, a, -a)$ and $(b, b, -b)$
+lie in~$\LL$, and the block sum of their product is $a \cdot b$, so
+closure would require $Ls \cdot Ls \subseteq Ls$, which fails
+(Remark~\ref{rem:Ls-not-closed}).  Among the cycle types in the table,
+the $4$-cycles are the only one failing without exception; the $(5,2)$ type has the lowest
+nonzero rate.  The $3$-cycles, $5$-cycles, and $(3,2,2)$ types
+close at exactly half.  For the $3$-cycles the closing half admits a
+description: for each three-element subset of imaginary indices, one
+of the two cyclic orientations closes.  No such description is known
+for the other types that close in part, and no reason is known for the
+failure of every $4$-cycle.
 
 The span index of a closing permutation depends only on its parity:
 it is $2^{16}$ for every odd one and $2^{10}$ for every even one (last
@@ -967,8 +1001,8 @@ the number of $L_2$ in this collection that meet a given $L_1$ only
 in $2L$, equivalently the number of $4$-dimensional complementary
 isotropic subspaces; Appendix~\ref{app:mod2quotient} reads one such
 pair, $\sigma(L\bar s)/2L$ and $\sigma(Ls)/2L$, as ideal and
-subalgebra under the product that $L/2L$ inherits from the octonion
-order~$L$.  All Baez--Egan claims hold under our
+subalgebra under the product that $L/2L$ inherits from the standard
+octonion product.  All Baez--Egan claims hold under our
 reading.\footnote{\scriptref{egan\_baez\_count.py}
 \scriptref{verify\_phi\_span\_index.py}.}
 
@@ -1094,25 +1128,6 @@ the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice
 $\sigma(Ls)$, unlike~$Ls$ itself, is closed under the standard
 octonion product.
 
-The order is not maximal: it is properly contained in the
-$\star$-closed lattice~$L^3$.  The proof of
-Proposition~\ref{prop:cond1} uses only Wilson's condition~(1), that
-the blocks of $u$ and~$v$ lie in~$L$, so it shows $L^3 \star L^3
-\subseteq L^3$; and $L^3$ is an even integral lattice
-containing~$\LL$ with index $[L^3 : \LL] = 2^{12}$.  A second
-$\star$-closed overlattice is not contained in~$L^3$.  The idempotent
-$\varepsilon_1 = (e_0, 0, 0)$ of Section~\ref{sec:idempotents} acts on
-either side as the swap of blocks~2 and~3: $\varepsilon_1 \star v =
-v \star \varepsilon_1 = (x', z', y')$ for $v = (x', y', z')$.  This
-swap preserves~$\LL$, because Wilson's three conditions are symmetric
-in the blocks.  With $\varepsilon_1 \star \varepsilon_1 =
-\varepsilon_1$, the lattice $\LL + \ZZ\varepsilon_1$ is therefore
-$\star$-closed by bilinearity.  Since $4\varepsilon_1$ is the least positive multiple
-of~$\varepsilon_1$ in~$\LL$ (Section~\ref{sec:idempotents}), the index
-is $[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  This overlattice is not
-contained in~$L^3$, because $e_0 \notin L$, and it is not integral:
-$\varepsilon_1$ has half-integer inner products with vectors of~$\LL$.
-
 Several questions remain immediately open:
 \begin{itemize}
 \item Where $\Aut(\LL, +, \star) \cong C_6 \times S_3$
@@ -1202,14 +1217,8 @@ Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed} are
 statements about the sublattices $\sigma(L\bar s)$ and~$\sigma(Ls)$
 of~$L$; we now record what they say after reduction modulo~$2L$.
 
-From $L\bar s \cap Ls = 2L$ (Section~\ref{subsec:wilson-leech}) one
-has $2L \subseteq L\bar s$ and $2L \subseteq Ls$, and applying
-$\sigma$ (which fixes $2L$),
-\begin{equation}\label{eq:disp13}
-  2L \subseteq \sigma(L\bar s), \qquad 2L \subseteq \sigma(Ls).
-\end{equation}
 Because $L \cdot L \subseteq L$ (Lemma~\ref{lem:L-order}) and the
-octonion product is $\ZZ$-bilinear, $(a + 2c) \cdot b \equiv a \cdot
+standard octonion product is $\ZZ$-bilinear, $(a + 2c) \cdot b \equiv a \cdot
 b \pmod{2L}$ for $c \in L$, and likewise in the right factor.  The
 product therefore descends to a well-defined $\FF_2$-bilinear product
 $\bar\mu$ on the \emph{mod-2 quotient}
@@ -1217,22 +1226,23 @@ $\bar\mu$ on the \emph{mod-2 quotient}
   \bar L := L/2L \cong \FF_2^8, \qquad
   \bar\mu \colon \bar L \times \bar L \to \bar L,
 \end{equation}
-the reduction of the octonion order~$L$ modulo~$2$, an
-eight-dimensional $\FF_2$-algebra.\footnote{It is not an octonion
-algebra in the composition-algebra sense: those are simple, whereas
-$\bar L$ has the proper two-sided ideal~$V$ exhibited below.}  The
+the reduction of the order~$L$ modulo~$2$.  The
 structure constants of $\bar\mu$ are the coefficients, in a $\ZZ$-basis
 of~$L$, of the products of that basis, reduced modulo~$2$.
 
-Since $2L$ lies in both $\sigma(L\bar s)$ and~$\sigma(Ls)$, those
-sublattices are \emph{full preimages}, under $L \to \bar L$, of
-$\FF_2$-subspaces
+The sublattices $\sigma(L\bar s)$ and~$\sigma(Ls)$ contain~$2L$, since
+$L\bar s \cap Ls = 2L$ (Section~\ref{subsec:wilson-leech}) and
+$\sigma(2L) = 2L$ (Lemma~\ref{lem:sigma-L}).  They are therefore the \emph{full preimages}, under
+$L \to \bar L$, of the $\FF_2$-subspaces
 \begin{equation}\label{eq:disp15}
-  V := \sigma(L\bar s)/2L, \qquad W := \sigma(Ls)/2L,
+  V := \sigma(L\bar s)/2L = 2\MO/2L, \qquad
+  W := \sigma(Ls)/2L = p\MO/2L,
 \end{equation}
-and from $\sigma(L\bar s) + \sigma(Ls) = L$ and
-$\sigma(L\bar s) \cap \sigma(Ls) = 2L$ one obtains $\bar L = V \oplus
-W$ with $\dim V = \dim W = 4$.  Reducing the closure statements
+where the second equalities are~\eqref{eq:multiples}.  From
+$\sigma(L\bar s) + \sigma(Ls) = L$
+and $\sigma(L\bar s) \cap \sigma(Ls) = 2L$ one obtains
+$\bar L = V \oplus W$, with $\dim V = \dim W = 4$ since both
+sublattices have index~$16$ in~$L$.  Reducing the closure statements
 modulo~$2L$ then gives
 \begin{equation}\label{eq:disp16}
   \text{Lemma~\ref{lem:L-sigmaLsbar}} \iff
@@ -1241,67 +1251,52 @@ modulo~$2L$ then gives
     \bar\mu(W, W) \subseteq W.
 \end{equation}
 That is: Lemma~\ref{lem:L-sigmaLsbar} says that $V$ is a
-\textbf{left ideal} of $\bar L$, and Lemma~\ref{lem:sigmaLs-closed}
-that $W$ is a \textbf{subalgebra} of it.  The descent and both
+\emph{left ideal} of $\bar L$, and Lemma~\ref{lem:sigmaLs-closed}
+that $W$ is a \emph{subalgebra} of it.  The descent and both
 equivalences were checked in exact arithmetic.\footnote{\scriptref{verify\_mod2\_quotient.py}.}
 
-\paragraph{Relation to prior work.}
-The lattice-level picture of $\bar L \cong \FF_2^8$ as an
-orthogonal space under the plus-type quadratic form induced by the
-$E_8$ Gram form, together with its $4$-dimensional maximal totally
-isotropic subspaces (Lagrangians), is Silverman's (part~12
-of~\cite{Baez2014}); see Section~\ref{sec:related}.  The reading of
-the Leech construction in terms of the preimages in~$L$ of a
-\emph{complementary pair} of such Lagrangians is David Calderbank's,
-in the discussion thread of part~9 \cite{Calderbank2023}.  Building
-on those posts and their surrounding discussion, the present
-construction equips $\bar L$ with the
-$\FF_2$-bilinear product $\bar\mu$ inherited from the octonion
-product $L \cdot L \subseteq L$, and identifies the two Lagrangians
-of one specific complementary pair, $V = \sigma(L\bar s)/2L$ and
-$W = \sigma(Ls)/2L$, as ideal and subalgebra of
-$(\bar L, \bar\mu)$.
-
 \paragraph{Polarization of $\bar L$ by $\sigma$.}
-Direct verification yields two further structural facts about the
-decomposition $\bar L = V \oplus W$.\footnote{\scriptref{verify\_polarization\_lagrangians.py}.}  First, $V$ is in fact a
-\emph{two-sided} ideal of $\bar L$: the right-ideal direction
-$\bar\mu(V, \bar L) \subseteq V$ holds in addition to the left-ideal
-direction (Lemma~\ref{lem:L-sigmaLsbar}).  The right-ideal direction
-is not formally implied by the left-ideal direction, since $\bar\mu$
-is noncommutative.\footnote{Commutativity is a property of the
-algebra, not of a basis; what matters is \emph{which order} is being
-reduced.  Reducing the order spanned by the eight basis units gives a
-commutative $\FF_2$-algebra, since $e_i \cdot e_j - e_j \cdot e_i =
-2\,e_i \cdot e_j$ lies in twice that order.  The order~$L$
-also contains half-integer elements such as~$s$, and for these the
-commutator $a \cdot b - b \cdot a$ need not lie in~$2L$; direct
-computation confirms that $\bar\mu$ is noncommutative.}
+Two further facts follow
+from~\eqref{eq:disp15}.\footnote{\scriptref{verify\_polarization\_lagrangians.py}.}
+First, $V$ is a \emph{two-sided} ideal of~$\bar L$: since
+$L \subseteq \MO$ and $\MO$ is closed, $2\MO$ is a two-sided ideal
+of~$L$ (Remark~\ref{rem:Ls-not-closed}).\footnote{Hence
+$(\bar L, \bar\mu)$ is not an octonion algebra in the
+composition-algebra sense: those are simple.}
 
-Second, equip $\bar L$ with the natural plus-type quadratic form
+Second, equip $\bar L$ with the quadratic form
 \begin{equation}\label{eq:disp17}
   q \colon \bar L \to \FF_2, \qquad q(v + 2L) \;:=\; \Nrm(v)/2 \pmod 2,
 \end{equation}
 well-defined because $L$ is even
-($\Nrm(v + 2u) \equiv \Nrm(v) \pmod 4$).  For $L = D_8^+$ this is the
-standard plus-type form on~$\FF_2^8$ with Witt index~$4$.  Direct
-verification shows that \emph{both}~$V$ and~$W$ are totally isotropic
-under~$q$ (every element of either subspace has $q = 0$); each is
-therefore a maximal totally isotropic subspace, a
-\emph{Lagrangian}.  The decomposition $\bar L = V \oplus W$ is thus a
-\emph{Witt decomposition of $(\bar L, q)$ into a complementary pair
-of Lagrangians}, a polarization of the orthogonal $\FF_2$-space.
+($\Nrm(v + 2u) \equiv \Nrm(v) \pmod 4$).  A subspace of~$\bar L$ is
+\emph{totally isotropic} when $q$ vanishes on it.  For $L = D_8^+$, $q$
+is the standard plus-type form on~$\FF_2^8$, of Witt index~$4$: its
+maximal totally isotropic subspaces, the \emph{Lagrangians}, have
+dimension~$4$.  Both $V$ and~$W$ are totally isotropic: every vector
+of $2\MO$ and of~$p\MO$ has norm divisible by~$4$, since
+$\Nrm(2x) = \Nrm(px) = 4\Nrm(x)$ with $\Nrm(x) \in \ZZ$ for
+$x \in \MO$.  Being $4$-dimensional, each is a Lagrangian, and the
+decomposition $\bar L = V \oplus W$ is a Witt decomposition of
+$(\bar L, q)$ into a complementary pair of Lagrangians, a
+\emph{polarization} of the orthogonal $\FF_2$-space.
 
-\paragraph{The structural reframing.}
-In this picture, Lemmas~\ref{lem:L-sigmaLsbar}
-and~\ref{lem:sigmaLs-closed} together express a single fact:
-\emph{the construction of Section~\ref{sec:construction} produces a
-polarization of $\bar L$}, with one Lagrangian carrying the
-two-sided-ideal role ($V$) and the other carrying the subalgebra
-role ($W$).  This opens a research program: which polarizations of
-$\bar L$ arise from this construction, and which polarizations,
-beyond the one constructed here, lift to a closed bilinear product
-on $\LL$ itself.
+\paragraph{Relation to prior work.}
+The picture of $\bar L$ as an orthogonal space under~$q$, with its
+Lagrangians, is Silverman's (part~12 of~\cite{Baez2014}); see
+Section~\ref{sec:related}.  Egan's construction of~$\LL$ (part~9
+of~\cite{Baez2014}) simplifies Wilson's by eliminating the octonions.
+David Calderbank reads Egan's construction through a polarization
+of~$\bar L$: its two sublattices of~$L$ are the preimages of a
+complementary pair of Lagrangians (discussion thread of part~9
+\cite{Calderbank2023}).  The Lagrangians $V$ and~$W$ are one such
+pair; the present appendix adds the product~$\bar\mu$ inherited from
+the standard octonion product, under which they are a two-sided ideal
+and a subalgebra.  This opens a research
+program: which polarizations of~$\bar L$ arise from the construction
+of Section~\ref{sec:construction}, and which polarizations, beyond
+the one constructed here, lift to a closed bilinear product on~$\LL$
+itself.
 
 % ===============================================================
 \section{Historical note: integral Cayley numbers,
@@ -1348,7 +1343,7 @@ $5/4$), and every left or right ideal is principal, generated by an
 integer multiple of an integral Cayley number of norm $1$, $2$, or $4$.
 
 \noindent\textbf{Coxeter (1946) \cite{Coxeter1946}} identifies
-Kirmse's error with an explicit non-closure witness and records that
+Kirmse's error with an explicit nonclosure witness and records that
 the remedy is due to Bruck: ``Bruck's domain $J$ can be
 derived from $J_1$ by transposing two of the $i$'s'' (\S4).  This is
 a transposition of two imaginary basis units, a linear involution

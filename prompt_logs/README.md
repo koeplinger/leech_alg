@@ -94,7 +94,7 @@ is the first content of every file, with a date stamp).  Per Manifesto §12 and
 | [049_section_6_and_7_tweaks.txt](049_section_6_and_7_tweaks.txt) | Methodology paragraph reframed; Section 7 "what-others-didn't-do" phrases removed |
 | [050_section_8_outlook_and_frontmatter_tweaks.txt](050_section_8_outlook_and_frontmatter_tweaks.txt) | Outlook wording tweaked; frontmatter address and email filled in |
 | [051_consistency_check_and_cleanup.txt](051_consistency_check_and_cleanup.txt) | Corpus consistency check; key claim 008 added; research_output/ removed; cleanup flags raised |
-| [052_licensing_cleanup_and_repo_completion.txt](052_licensing_cleanup_and_repo_completion.txt) | 4 non-redistributable PDFs removed; DOIs recorded; README/paper-index completed; CC BY 4.0 + MIT licenses added |
+| [052_licensing_cleanup_and_repo_completion.txt](052_licensing_cleanup_and_repo_completion.txt) | 4 nonredistributable PDFs removed; DOIs recorded; README/paper-index completed; CC BY 4.0 + MIT licenses added |
 | [053_dixon_arxiv_and_doi_hotlink.txt](053_dixon_arxiv_and_doi_hotlink.txt) | Dixon 2010 pointed to arXiv:1011.2541 across refs/paper; Koeplinger 2023 DOI turned into a hotlink in the paper |
 | [054_remove_other_arxiv_pdfs.txt](054_remove_other_arxiv_pdfs.txt) | Correction to prompt 052: 3 remaining arXiv PDFs also under nonexclusive-distrib license; removed and relinked |
 | [055_gitignore_latex_artifacts_and_test_run.txt](055_gitignore_latex_artifacts_and_test_run.txt) | LaTeX build artifacts gitignored; requirements.txt confirmed; 197-test suite passes on HEAD; stale test counts updated |

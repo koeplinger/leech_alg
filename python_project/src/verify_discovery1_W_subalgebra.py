@@ -18,6 +18,11 @@ Note (20 October 2026, prompt 313): in v8 the footnote cited above as "paper
 Appendix A.1 footnote" is the commutativity footnote of the Polarization
 paragraph of Appendix A, which has no subsections.  Code and output unchanged.
 
+Note (20 October 2026, prompt 314): that footnote was removed from Appendix A
+at prompt 314: the appendix now derives the two-sidedness of V from the
+two-sided ideal 2O of L (O the maximal order of Section 2.2).  This script's
+computation of the commutators stands.  Code and output unchanged.
+
 Tests:
   (a) Is the F2-octonion-algebra L/2L commutative? (Expected: yes.)
   (b) Does the proposed basis (w0, w1, w2, w3) really span W?

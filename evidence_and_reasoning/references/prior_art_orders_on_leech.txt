@@ -27,8 +27,8 @@ roughly by structural distance from the present construction):
    commutative).  Finds that an integer sublattice of 𝔥₃(O) containing
    a Leech embedding is closed under the doubled Jordan product
    2(xy + yx), but this involves a factor-of-2 scaling and the Jordan
-   (commutative) product, not an octonion-derived (non-commutative,
-   non-associative) product.  The question of closure under the
+   (commutative) product, not an octonion-derived (noncommutative,
+   nonassociative) product.  The question of closure under the
    undoubled Jordan product is left open, with a conjectured negative
    answer.  The human researcher of this project (Koeplinger)
    participated in that discussion.
@@ -212,7 +212,7 @@ diagonal and a Leech sublattice L_L ≅ Λ off-diagonal.  Key findings:
 
 This is the closest prior art to our finding, but uses a fundamentally
 different algebraic framework (commutative Jordan product in 27
-dimensions) rather than a non-commutative, non-associative
+dimensions) rather than a noncommutative, nonassociative
 octonion-derived product in 24 dimensions.
 
 ### [Calderbank2023] — Complementary-Lagrangians reading (comment on Baez, part 9)
@@ -245,7 +245,7 @@ Searched for:
 - Dixon XY-product closure
 - Wilson octonion Leech product structure
 - n-Category Café integral octonions (Baez series)
-- arXiv searches for non-associative algebras + Leech lattice
+- arXiv searches for nonassociative algebras + Leech lattice
 - Conway–Sloane "Twenty-three constructions" 1982
 - Frenkel/Lepowsky/Meurman 1982 J. Algebra Leech (identified as
   Lepowsky–Meurman only)

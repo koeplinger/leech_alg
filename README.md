@@ -86,9 +86,9 @@ exhibits the fit of this octonion product with Wilson's representation.
   paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
-  the order is not maximal (Section 7: L³ and Λ + Zε₁ are ⋆-closed
+  the order is not maximal (Section 5.3: L³ and Λ + Zε₁ are ⋆-closed
   overlattices, of index 2¹² and 4); the span index of the products depends
-  on the twist (Section 5.5: 2¹⁶ for σ, 2¹⁰ for the even closing
+  on the twist (Section 5.6: 2¹⁶ for σ, 2¹⁰ for the even closing
   permutations, 1 for a reflection twist); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
@@ -111,7 +111,7 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
   intrinsic description.
 - A structural characterization of which permutation cycles close.  All
   5,040 permutations of S₇ have been enumerated exactly (1,764 of the
-  5,039 non-identity permutations close), but the pattern is described
+  5,039 nonidentity permutations close), but the pattern is described
   only for the 3-cycles.
 - Whether a **ternary** reformulation (via composition algebras in the
   sense of Elduque, or via Okubo's ternary structure) gives a more

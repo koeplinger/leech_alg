@@ -88,7 +88,7 @@ technical claims.
   S_3 family symmetry from the Cayley-Dickson sedenions. Cited in
   this paper's Outlook to accompany the result that the
   Z₃-symmetric triple-octonion product admits S_3 block-permutation
-  automorphisms (Aut(Λ, +, ⋆) ≅ C_6 × S_3, main paper Section 5.3); the
+  automorphisms (Aut(Λ, +, ⋆) ≅ C_6 × S_3, main paper Section 5.4); the
   Outlook lists S_3 symmetry alongside triality and
   symmetric-composition-algebra structures as a structural theme
   in algebraic physics.

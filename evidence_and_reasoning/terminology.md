@@ -56,7 +56,7 @@ satisfying u ⋆ u = n u for its own multiplier n
 (`verify_idempotent_lattice_rescaling.py`).
 
 Not to be confused with an **identity element**: (R²⁴, +, ⋆) has none,
-so the order is non-unital (main paper §5.1).
+so the order is nonunital (main paper §5.1).
 
 ### Isomorphism (of algebras)
 
@@ -98,7 +98,7 @@ it has no identity element.
 
 Reference: McCrimmon, K., "A Taste of Jordan Algebras" (2004), §5.3;
 Albert, A.A., "Non-associative algebras I", Ann. of Math. 43 (1942),
-685–707 (introduced the concept of isotopy for non-associative algebras).
+685–707 (introduced the concept of isotopy for nonassociative algebras).
 
 ### Leech lattice Λ — norm conventions
 
@@ -209,12 +209,12 @@ coordinate permutation. The Kirmse twist therefore *fixes* $L$
 ($\sigma(L) = L$), and $L$ closes under the octonion product directly.
 The twist's effect in the main paper lies entirely on sublattices
 of $L$ that are *not* $\sigma$-invariant (chiefly $Ls$), where it
-plays the same kind of role (turning a non-closed sublattice into a
+plays the same kind of role (turning a nonclosed sublattice into a
 closed one) that the Kirmse twist plays on Kirmse's $J_1$ one
 stratum up.
 
 **A note on attribution and fairness.**  The term "Kirmse integers" in
-modern usage refers exclusively to the non-closed system, Kirmse's error.
+modern usage refers exclusively to the nonclosed system, Kirmse's error.
 This practice reduces the man to his one mistake and erases his actual
 contributions (the identities, the lattice construction, and the
 pioneering investigation of octonion arithmetic).  Petersson (2018), who
@@ -301,7 +301,7 @@ References: Schafer (1966), Chapter III; Conway and Smith (2003).
 ### Okubo algebra (pseudo-octonion algebra)
 
 The symmetric composition algebra obtained from an octonion algebra (O, ·)
-via the **Petersson construction** with a non-trivial order-3 automorphism τ:
+via the **Petersson construction** with a nontrivial order-3 automorphism τ:
 x * y = τ(x̄) · τ²(ȳ).  Named after Susumu Okubo, who first constructed
 it on traceless 3×3 matrices over C.  Over R, there is (up to isomorphism)
 one Okubo algebra; over other fields there may be several.
@@ -319,7 +319,7 @@ sense" (Corollary 1.2, footnote).  (Λ, +, ⋆) is such an order, and so is L
 under the standard octonion product (L · L ⊆ L, Lemma 4.2; e₀ ∉ L).  An
 order is **maximal** when no larger order of the same algebra contains it;
 (Λ, +, ⋆) is not maximal, since L³ is a ⋆-closed overlattice of index 2¹²
-(claim 016).
+(claim 016; main paper §5.3).
 
 ### Para-Hurwitz algebra (para-octonion algebra)
 
@@ -341,11 +341,11 @@ H. Petersson [Petersson1969].
 ### Square-zero element (square nilpotent)
 
 An element u of an algebra (A, ·) with u · u = 0 and u ≠ 0.  In a
-non-associative algebra the general word "nilpotent" is ambiguous
+nonassociative algebra the general word "nilpotent" is ambiguous
 (powers must be bracketed), so this project says **square-zero** and
 means exactly u ⋆ u = 0.
 
-In this project (main paper §5.4;
+In this project (main paper §5.5;
 `verify_square_zero_classification.py`):
 
 - In the ambient algebra (R²⁴, +, ⋆), u = (x, y, z) satisfies u ⋆ u = 0
@@ -424,7 +424,7 @@ in Wilson's Leech lattice construction.
 
 The group of additive bijections of Λ that preserve the product ⋆
 (`verify_aut_lambda_star.py`, `verify_aut_octonion_crosscheck.py`,
-`gap_project/aut_lambda_star.g`; main paper §5.3;
+`gap_project/aut_lambda_star.g`; main paper §5.4;
 standalone note `paper/automorphism_group_2026-07-12.pdf`):
 
 - Aut(Λ, +, ⋆) is **finite of order 36**, of structure C₆ × S₃.
@@ -447,7 +447,7 @@ standalone note `paper/automorphism_group_2026-07-12.pdf`):
   established by two independent routes in the companion note
   (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
   classification of the automorphisms of the complexification of
-  (T, ⋆) (non-enumerative); Route 2 is entirely finite and
+  (T, ⋆) (nonenumerative); Route 2 is entirely finite and
   machine-checkable, so nothing load-bearing is left open.  The
   machine-verified lower bound C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and
   the strictness witness are independent of both.
@@ -462,7 +462,7 @@ Do not confuse either with Aut(Λ) = 2·Co₁, the isometry group of the
 
 ### Ideal decomposition R²⁴ = D ⊕ T
 
-(Main paper §5.3; `verify_ideal_decomposition.py`,
+(Main paper §5.4; `verify_ideal_decomposition.py`,
 `verify_star_algebra_structure.py`.)  As a real algebra,
 R²⁴ = O³ under the Z₃-symmetric triple-octonion product ⋆ splits as a
 direct sum of two **mutually annihilating two-sided ideals**:
@@ -499,13 +499,13 @@ of a Fano line) was shown to be mathematically impossible for all 7 Fano
 lines; the Petersson triality triple is the closest valid alternative.
 
 The construction failed due to a **√3 obstruction**: the Petersson
-construction with non-trivial τ introduces irrational structure constants
+construction with nontrivial τ introduces irrational structure constants
 (cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
 lattice entirely.
 
 ### Reflection ρ
 
-(Main paper §5.5; `verify_twist_span_index_census.py`; claims 017, 018.
+(Main paper §5.6; `verify_twist_span_index_census.py`; claims 017, 018.
 Written s_r in the external review of v8.)  The reflection of R⁸ in the
 root r = ½(e₀ + e₁ + ⋯ + e₆ − e₇) of L, a twist (see "Twist" below) with
 ρ(L) = L.  The triple product ⋆_ρ closes on Λ with span index 1.  The
@@ -517,7 +517,7 @@ a maximal order: L³ is a ⋆_ρ-closed overlattice of Λ of index 2¹² (claim
 
 ### Span index
 
-(Main paper §5.5; `verify_product_span_index.py`,
+(Main paper §5.6; `verify_product_span_index.py`,
 `verify_product_span_structure.py`, `verify_twist_span_index_census.py`;
 claims 015, 017, 018.)  When a triple product ⋆_g (see "Twist" below)
 closes on Λ, the integer combinations of its products u ⋆_g v (u, v ∈ Λ)
@@ -583,7 +583,7 @@ census over all 5,040 permutations of S₇ is: transposition 21/21
 not close.  Exhaustive, not sampled
 (`verify_all_permutations_exact.py`; earlier partial runs
 `verify_all_cycles_exact.py`, `consistency_checks.py`; main paper
-§5.5).
+§5.6).
 
 The historical name "transposition-twisted triple octonion product"
 (used in trial 007 and key claim 008, both preserved per Manifesto
@@ -604,13 +604,13 @@ per-block scaling.  Both failed, but trial 001 exhibited a distinctive
 **2+1 closure pattern** (see above).
 
 In the main paper's notation this product is ⋆_g with g the identity
-(see "Twist" below), which the paper calls the untwisted product (§5.5,
-Appendix C).  The paper's *triple product* (Definition 3.3) is the
+(see "Twist" below), which the paper calls the untwisted product
+(Appendix C).  The paper's *triple product* (Definition 3.3) is the
 Z₃-symmetric triple-octonion product ⋆ = ⋆_σ (see above).
 
 ### Twist
 
-(Main paper §5.5.)  A **twist** is an invertible linear map g of R⁸.  It
+(Main paper §5.6.)  A **twist** is an invertible linear map g of R⁸.  It
 defines the **twisted octonion product** x ·_g y := g⁻¹(g(x) · g(y)) on O,
 another octonion product, isomorphic to the standard one via g; the triple
 product ⋆_g is that of main paper Definition 3.3 with ·_g in all nine block
@@ -625,7 +625,7 @@ are both closed under ·_g (the external review's Theorem A, checked on all
 ### √3 obstruction
 
 The failure mode specific to the Petersson triality triple (trial 005):
-the Petersson construction with a non-trivial order-3 automorphism τ
+the Petersson construction with a nontrivial order-3 automorphism τ
 introduces structure constants involving cos(2π/3) = −1/2 and
 sin(2π/3) = √3/2.  Products of E8 lattice vectors (integer or
 half-integer coordinates) then acquire irrational √3 components and

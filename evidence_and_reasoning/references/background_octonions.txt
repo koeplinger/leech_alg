@@ -156,7 +156,7 @@ the public domain.
 - **Topics**: integral octonions, maximal orders, the Coxeter–Bruck
   transposition of two imaginary basis units
 - **Originality note**: Published in a peer-reviewed journal. Coxeter
-  identifies Kirmse's error in §4 with an explicit one-line non-closure
+  identifies Kirmse's error in §4 with an explicit one-line nonclosure
   witness, and reports the remedy due to R. H. Bruck. Postscript (§14)
   acknowledges Dickson (1923) as having given a correct construction
   more than two decades earlier. No dispute over originality or
@@ -259,7 +259,7 @@ the public domain.
   discussion, reporting that Jordan products did not close on the Leech
   inner shell. This is the closest prior art to the present finding, but
   uses a fundamentally different algebraic framework (commutative Jordan
-  product, 27-dimensional) rather than the non-commutative
+  product, 27-dimensional) rather than the noncommutative
   octonion-derived product in 24 dimensions used here.
 
 ### [Fenyves1968]
