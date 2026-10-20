@@ -34,6 +34,11 @@ verify_mod2_quotient.py), and it is what makes Lemma 4.4 the hard one.
 The mod-2 picture already implies the exclusion (an integer-level ideal
 would reduce to a mod-2 ideal), but the integer-level counts are recorded
 here directly.
+
+Note (20 October 2026, prompt 311): the Section 7 paragraph moved into Section
+4: the exclusion is now recorded in Remark 4.5 of the paper (v8), without the
+basis-dependent counts, and the structural reason for Lemma 4.4 is Section
+4.1.  Code and output unchanged.
 """
 import os
 import sys

@@ -23,6 +23,12 @@ read from paper/main.tex by its label (not by line numbers), and its 64 rows
 (i, j, c_1, ..., c_8) are compared entry by entry with the recomputation.
 
 Usage: python3 verify_appendix_tables.py   (under a second)
+
+Note (20 October 2026, prompt 311): v8 of the paper retired the three tables
+(the proof is now the structural one of Section 4), so this script, run on
+paper/main.tex, stops with a ValueError (the table labels are not found).  The tables are in the frozen v7 source
+paper/main_2026-07-19.tex; verify_appendix_tables_v7.py runs this script on
+that file.  Code unchanged.
 """
 import re
 from fractions import Fraction as F

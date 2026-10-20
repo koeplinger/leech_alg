@@ -40,7 +40,8 @@ Each trial and verification script is self-contained and runnable directly:
 ```bash
 cd src
 python3 symbolic_proof_checks.py        # Lemmas 4.1, 4.3, 4.4 behind the paper
-python3 verify_appendix_tables.py       # Appendix A tables (Lemmas 4.2 to 4.4) recomputed, compared with main.tex
+python3 verify_structural_proof.py           # Lemmas 4.2 to 4.4: the maximal order, the lattice identities, the Moufang identity
+python3 verify_appendix_tables_v7.py          # the Appendix A tables of v7, recomputed
 python3 trial_007_kirmse_twist.py       # The winning trial: triple-octonion closure on Λ
 python3 trial_007_fast.py               # 4M-pair random closure check
 python3 trial_007_exhaust.py            # Multiprocessor harness for full 38.6B-pair sweep

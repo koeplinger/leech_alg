@@ -29,6 +29,10 @@ of the orthogonal F2-space (L_bar, q).
 
 This is a mod-2 *quotient* (L -> L/2L) -- distinct from a 2-adic scaling or
 saturation.
+
+Note (20 October 2026, prompt 311): the tables are retired in v8; "Tables A.2
+and A.3" below are now Lemmas 4.3 and 4.4 read modulo 2 in Appendix A.  Code
+and output unchanged.
 """
 from fractions import Fraction as F
 from itertools import product as iproduct

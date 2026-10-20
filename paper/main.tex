@@ -55,6 +55,7 @@
 % Notation
 % ---------
 \newcommand{\OO}{\mathbb{O}}          % octonions
+\newcommand{\MO}{\mathcal{O}}         % the maximal order of Section 2.2
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\ZZ}{\mathbb{Z}}
@@ -99,8 +100,8 @@ three octonion factors.  In Robert A.~Wilson's sublattice description
 of~$\LL$, closure turns on a transposition~$\sigma$ of two imaginary
 basis units: $\sigma$ leaves the $E_8$ lattice~$L$ invariant and is
 an octonion-algebra isomorphism, but moves Wilson's sublattices
-$L\bar s$ and~$Ls$.  The proof reduces to four lemmas, three of them
-certified by integer coefficient tables.  We
+$L\bar s$ and~$Ls$.  The proof reduces to four lemmas, three of which
+follow from the closure of one maximal order of integral octonions.  We
 determine idempotents, automorphism group, square-zero elements of the
 algebra, and the index of the span of the products of the order.  We discuss the construction in the context of related work.
 A historical appendix (1923--1946) traces
@@ -186,8 +187,8 @@ property.
 
 The scope of this paper is deliberately bounded: we establish
 existence of the order, with a proof that is elementary (four short
-lemmas, reducing to sublattice inclusions verified in exact
-arithmetic).  Section~\ref{sec:prelim} fixes the octonion
+lemmas, three of which follow from the closure of one maximal
+order).  Section~\ref{sec:prelim} fixes the octonion
 multiplication, the $E_8$ lattice~$L$ and Wilson's description
 of~$\LL$.  Section~\ref{sec:construction} defines the product, and
 Section~\ref{sec:proof} proves Theorem~\ref{thm:main}.
@@ -196,8 +197,9 @@ order: its identities, idempotents, automorphism group and square-zero
 elements, and the behavior of twists other than~$\sigma$.
 Section~\ref{sec:related} places the construction among related work,
 Section~\ref{sec:conclusion} concludes with the open questions, and
-Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{app:history}
-traces the integral octonions from Dickson to Coxeter, and
+Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{sec:appendix-tables}
+reads two of the lemmas modulo~$2$, Appendix~\ref{app:history} traces
+the integral octonions from Dickson to Coxeter, and
 Appendix~\ref{sec:methodology} records the research methodology.
 
 All results were developed through a systematic human--AI
@@ -242,14 +244,25 @@ basis $\{e_0, \ldots, e_7\}$) are either all integers with even
 coordinate sum, or all half-integers with odd coordinate sum
 \cite{ConwaySmith2003}.  It has
 240~roots (vectors of norm~2).  Under the standard octonion
-multiplication, $L$~is closed: $L \cdot L \subseteq L$
-(Lemma~\ref{lem:L-order}, certified in Table~\ref{tbl:appendix-LL}).
-At this normalization $e_0 \notin L$ (the lattice is even), so $L$~is
-a nonunital order; as a lattice it is a $\sqrt{2}$-scaled copy of a
-maximal order of the integral octonions, the unit-scale octavians,
-for which closure and maximality hold in the classical unital sense
-\cite{Coxeter1946, ConwaySmith2003}.  For a modern survey of the
-integral-octonion history, see~\cite{Petersson2018}.
+product, $L$~is closed: $L \cdot L \subseteq L$
+(Lemma~\ref{lem:L-order}).  At this normalization $e_0 \notin L$ (the
+lattice is even), so $L$~is a nonunital order; as a lattice it is a
+$\sqrt{2}$-scaled copy of a maximal order of the integral octonions,
+the unit-scale octavians, for which closure and maximality hold in the
+classical unital sense \cite{Coxeter1946, ConwaySmith2003}.  One such
+order is used throughout:
+\begin{equation}\label{eq:MO}
+  \MO := \tfrac12\,(e_1 + e_2)\,L .
+\end{equation}
+Since $(e_1 + e_2)^2 = -2$ and $L = -L$, the alternative law
+$x(xy) = x^2 y$ gives $L = (e_1 + e_2)\,\MO$; the lattice $\MO$
+contains the eight basis units and is closed under the standard
+octonion product; it is one of the seven maximal orders of
+Section~\ref{sec:intro}, the ring $A_3$ of
+Wilson~\cite[Section~2]{Wilson2009}.\footnote{\scriptref{verify\_structural\_proof.py}
+\scriptref{verify\_sigma\_sublattice\_maximal\_order.py}.}  For a
+modern survey of the integral-octonion history,
+see~\cite{Petersson2018}.
 
 \subsection{Wilson's Leech lattice}\label{subsec:wilson-leech}
 
@@ -372,15 +385,15 @@ order-21 group of coordinate permutations preserving the oriented Fano
 triples~\eqref{eq:fano}.  Each such permutation is an octonion
 automorphism that fixes $s$ and~$\bar s$ and preserves~$L$, so
 conjugating by it carries the proof below for $(1\;2)$ to any other
-transposition.}  From
-the given choice of octonion basis and Fano triples, the
-load-bearing effect of $\sigma$ is that it \emph{moves} the
-sublattices $L\bar s$ and~$Ls$, while fixing~$L$ setwise
-(Lemma~\ref{lem:sigma-L}) and carrying the octonion product to an
-isomorphic one (Definition~\ref{def:twisted-product}).
-Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed}, the
-closure inclusions for the moved sublattices, are where the work of
-the proof lives.
+transposition.}  The map~$\sigma$ fixes~$L$ setwise
+(Lemma~\ref{lem:sigma-L}) and carries the octonion product to an
+isomorphic one (Definition~\ref{def:twisted-product}); its
+load-bearing effect is that it \emph{moves} the sublattices $L\bar s$
+and~$Ls$ onto left multiples of the maximal order~$\MO$
+of~\eqref{eq:MO}: $\sigma(L\bar s) = 2\MO$ and $\sigma(Ls) = p\MO$ for a
+purely imaginary $p \in \MO$.  Lemmas~\ref{lem:L-sigmaLsbar}
+and~\ref{lem:sigmaLs-closed}, the closure inclusions for the moved
+sublattices, then follow from the closure of~$\MO$.
 
 \subsection{The four lemmas}
 
@@ -398,33 +411,52 @@ $\sigma(L) \subseteq L$.  Since $\sigma$ is an involution,
 $\sigma(L) = L$.
 \end{proof}
 
-For each of the next three lemmas, $L$, $\sigma(L\bar s)$, and
-$\sigma(Ls)$ are full-rank $\ZZ$-lattices of rank~$8$ in~$\RR^8$.  By
-$\ZZ$-bilinearity of the octonion product, an inclusion $A \cdot B
-\subseteq C$ between such lattices holds if and only if it holds on a
-chosen pair of $\ZZ$-bases: if $\{a_i\}_{i=1}^8$ generates $A$ and
-$\{b_j\}_{j=1}^8$ generates $B$, then $A\cdot B \subseteq C$ is
-equivalent to each of the 64 products $a_i\cdot b_j$ lying in
-$\ZZ\langle c_1,\ldots,c_8\rangle$ for a chosen $\ZZ$-basis
-$\{c_k\}_{k=1}^8$ of~$C$.  Each lemma below is
-proved by exhibiting that finite list of integer coefficients
-explicitly.  Concrete
-$\ZZ$-bases for $L$, $\sigma(Ls)$, and $\sigma(L\bar s)$ are fixed in
-Appendix~\ref{sec:appendix-tables} (denoted there $L_k$, $M_k$, $N_k$
-respectively); the 64-entry coefficient tables for the three
-lemmas appear as Tables~\ref{tbl:appendix-LL},
-\ref{tbl:appendix-LN}, and~\ref{tbl:appendix-MM}.
+The remaining three lemmas rest on the maximal order~$\MO$
+of~\eqref{eq:MO}, which contains~$e_0$ and is closed under the standard
+octonion product, and on three facts.  First, two lattice identities:
+with $p := e_2 - e_4 + e_5 - e_6$, a purely imaginary element of~$\MO$
+of norm~$4$,
+\begin{equation}\label{eq:multiples}
+  \sigma(L\bar s) = 2\MO, \qquad \sigma(Ls) = p\,\MO .
+\end{equation}
+Both hold on a $\ZZ$-basis $\{b_k\}$ of~$\MO$: the eight vectors $2b_k$
+lie in $\sigma(L\bar s)$ and the eight products $p\,b_k$ in
+$\sigma(Ls)$, and the covolumes agree.  Left multiplication by~$x$
+scales inner products by $\Nrm(x)$ and hence covolumes by $\Nrm(x)^4$;
+since $L = (e_1 + e_2)\,\MO$ has covolume~$1$ ($E_8$ is unimodular),
+$\MO$ has covolume
+$\tfrac1{16}$, so $2\MO$ and $p\MO$ have covolume~$16$, and so do
+$\sigma(L\bar s)$ and~$\sigma(Ls)$, by $[L : L\bar s] = [L : Ls] = 16$
+(Section~\ref{subsec:wilson-leech}).  A sublattice of the same
+covolume is the whole
+lattice.\footnote{\scriptref{verify\_structural\_proof.py}.}
+Second, an identity in the octonions: for purely imaginary~$x$ and all
+$a, b \in \OO$,
+\begin{equation}\label{eq:moufang-imaginary}
+  (xa)(xb) = x\bigl((ax)b\bigr).
+\end{equation}
+Indeed, both sides vanish for $x = 0$; for $x \ne 0$ we have
+$x^2 = -\Nrm(x)$, so $a = yx$ with $y := -ax/\Nrm(x)$ by the right
+alternative law $(ax)x = ax^2$, and $xa = xyx$ by flexibility; the left
+Moufang identity $(xyx)z = x(y(xz))$ \cite{ConwaySmith2003} with
+$z = xb$ and the left alternative law $x(xb) = x^2 b$ give
+$(xa)(xb) = x\bigl(y(x^2 b)\bigr) = -\Nrm(x)\,x(yb) = x\bigl((ax)b\bigr)$.
+Third, its consequence for lattices: if $M \subseteq \OO$ is closed
+under the octonion product and $x \in M$ is purely imaginary, then
+by~\eqref{eq:moufang-imaginary}
+\begin{equation}\label{eq:multiple-closed}
+  (xM)(xM) \subseteq x\bigl((Mx)M\bigr) \subseteq xM .
+\end{equation}
 
 \begin{lemma}\label{lem:L-order}
 $L \cdot L \subseteq L$.
 \end{lemma}
 
 \begin{proof}
-The 64 products $L_i \cdot L_j$ are integer combinations of
-$\{L_1,\ldots,L_8\}$; the explicit coefficients are
-Table~\ref{tbl:appendix-LL}.  By $\ZZ$-bilinearity, $L \cdot L
-\subseteq L$.  This is the norm-2-scale form of the classical fact
-that the maximal orders of the integral octonions are closed under
+$L = (e_1 + e_2)\,\MO$ by~\eqref{eq:MO}, with $e_1 + e_2$ a purely
+imaginary element of~$\MO$; apply~\eqref{eq:multiple-closed} with
+$M = \MO$.  This is the norm-2-scale form of the classical fact that
+the maximal orders of the integral octonions are closed under
 multiplication \cite{Coxeter1946, ConwaySmith2003}.
 \end{proof}
 
@@ -433,10 +465,10 @@ $L \cdot \sigma(L\bar{s}) \subseteq \sigma(L\bar{s})$.
 \end{lemma}
 
 \begin{proof}
-The 64 products $L_i \cdot N_j$ are integer combinations of
-$\{N_1,\ldots,N_8\}$; the explicit coefficients are
-Table~\ref{tbl:appendix-LN}.  By $\ZZ$-bilinearity,
-$L \cdot \sigma(L\bar s) \subseteq \sigma(L\bar s)$.
+$L = (e_1 + e_2)\,\MO \subseteq \MO \cdot \MO \subseteq \MO$, so
+by~\eqref{eq:multiples}
+$L \cdot \sigma(L\bar s) = L \cdot 2\MO \subseteq 2\,(\MO \cdot \MO)
+\subseteq 2\MO = \sigma(L\bar s)$.
 \end{proof}
 
 \begin{lemma}\label{lem:sigmaLs-closed}
@@ -444,10 +476,9 @@ $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
 \end{lemma}
 
 \begin{proof}
-The 64 products $M_i \cdot M_j$ are integer combinations of
-$\{M_1,\ldots,M_8\}$; the explicit coefficients are
-Table~\ref{tbl:appendix-MM}.  By $\ZZ$-bilinearity,
-$\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
+$\sigma(Ls) = p\,\MO$ by~\eqref{eq:multiples}, with $p$ a purely
+imaginary element of~$\MO$; apply~\eqref{eq:multiple-closed} with
+$M = \MO$.
 \end{proof}
 
 \begin{remark}\label{rem:Ls-not-closed}
@@ -462,7 +493,12 @@ element $v = (-1, 0, 1, 0, 0, 1, 0, 1)$ lies in~$\sigma(Ls)
 off~$Ls$ onto the closed sublattice~$\sigma(Ls)$
 (Lemma~\ref{lem:sigmaLs-closed}).  Likewise $\sigma(L\bar s) \ne
 L\bar s$: $w = (0, 0, -1, 0, -1, 0, -1, -1) \in \sigma(L\bar s)
-\setminus L\bar s$.
+\setminus L\bar s$.  The closure of~$\sigma(Ls)$ is not inherited
+from an ideal property: $\sigma(Ls) = p\MO$ is not an ideal of~$L$ on
+either side, neither $L \cdot \sigma(Ls)$ nor $\sigma(Ls) \cdot L$
+lying in~$\sigma(Ls)$,\footnote{\scriptref{verify\_sigma\_Ls\_ideal\_exclusion.py}.}
+whereas $\sigma(L\bar s) = 2\MO$ is a two-sided ideal of~$L$, of which
+Lemma~\ref{lem:L-sigmaLsbar} is the left-handed half.
 \end{remark}
 
 \subsection{Blockwise form of the triple product}
@@ -490,7 +526,9 @@ Taking sums:
   Z \cdot (X'+Y')\bigr)$, and similarly for the other two pairs.
 \end{itemize}
 
-\subsection{Wilson's condition~(1): each block lies in~$L$}
+\subsection{Proof of Wilson's three conditions}
+
+\subsubsection{Condition~(1): each block lies in~\texorpdfstring{$L$}{L}}
 
 \begin{proposition}\label{prop:cond1}
 For all $u, v \in \LL$, each block $P_\alpha$ of $u \star v$ lies
@@ -509,7 +547,7 @@ $P_1 \in L$.  The same argument applies to
 $P_2$ and~$P_3$.
 \end{proof}
 
-\subsection{Condition~(2): pairwise sums lie
+\subsubsection{Condition~(2): pairwise sums lie
 in~\texorpdfstring{$L\bar{s}$}{L s-bar}}
 
 \begin{proposition}\label{prop:cond2}
@@ -542,7 +580,7 @@ in~$\sigma(L\bar{s})$.  Applying the outer~$\sigma$:
 since $\sigma^2 = \mathrm{id}$.
 \end{proof}
 
-\subsection{Condition~(3): the block sum lies
+\subsubsection{Condition~(3): the block sum lies
 in~\texorpdfstring{$Ls$}{Ls}}
 
 This is the crux of the proof.  For the standard (untwisted) product
@@ -928,7 +966,7 @@ $E_8$ Gram form; that mod-2 orthogonal-space picture is Tim
 Silverman's (part~12 of \cite{Baez2014}).  The $64$ is
 the number of $L_2$ in this collection that meet a given $L_1$ only
 in $2L$, equivalently the number of $4$-dimensional complementary
-isotropic subspaces; Section~\ref{app:mod2quotient} reads one such
+isotropic subspaces; Appendix~\ref{app:mod2quotient} reads one such
 pair, $\sigma(L\bar s)/2L$ and $\sigma(Ls)/2L$, as ideal and
 subalgebra under the product that $L/2L$ inherits from the octonion
 order~$L$.  All Baez--Egan claims hold under our
@@ -1039,8 +1077,8 @@ construction is Corradetti's order on~$E_8$ via the Okubo algebra
 \cite{Corradetti2026}: a different non-classical bilinear structure
 on~$E_8$, obtained by a $2$-adic conductor / saturation of an
 Okubo-algebra overlattice.  The two operations involved differ from
-the present mod-2 quotient (Appendix~\ref{sec:appendix-tables},
-Section~\ref{app:mod2quotient}): Corradetti rescales an order and
+the present mod-2 quotient (Appendix~\ref{sec:appendix-tables}):
+Corradetti rescales an order and
 $2$-adically saturates a sublattice, while the present paper passes
 to a quotient $L \to L/2L$.  Both place $2$-primary structure at
 the center of an octonion-derived order on~$E_8$.
@@ -1075,31 +1113,6 @@ of~$\varepsilon_1$ in~$\LL$ (Section~\ref{sec:idempotents}), the index
 is $[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  This overlattice is not
 contained in~$L^3$, because $e_0 \notin L$, and it is not integral:
 $\varepsilon_1$ has half-integer inner products with vectors of~$\LL$.
-
-The proof of Lemma~\ref{lem:sigmaLs-closed} in
-Appendix~\ref{sec:appendix-tables} exhibits the 64 integer
-coefficients certifying $\sigma(Ls)\cdot\sigma(Ls) \subseteq
-\sigma(Ls)$, but does not explain \emph{why} $\sigma(Ls)$ is closed
-under the standard octonion product while $Ls$ is not.  The mod-2
-reduction in Section~\ref{app:mod2quotient} identifies what the
-appendix tables certify after reduction modulo~$2L$:
-$\sigma(Ls)/2L$ is a subalgebra of $L/2L$, the reduction of the
-octonion order~$L$ modulo~$2$.  One candidate shape for an
-integer-level reason is ruled out: $\sigma(Ls)$ is not an ideal
-of~$L$ on either side.  Of the 64 basis-pair products, 32 of
-$L \cdot \sigma(Ls)$ and 43 of $\sigma(Ls) \cdot L$ lie outside
-$\sigma(Ls)$.\footnote{\scriptref{verify\_sigma\_Ls\_ideal\_exclusion.py}.}
-The companion sublattice $\sigma(L\bar s)$ is by contrast a
-\emph{two-sided} ideal of~$L$, of which
-Lemma~\ref{lem:L-sigmaLsbar} is the left-handed half, and this ideal
-property has a structural reason: $\sigma(L\bar s) = 2O$ for a maximal
-order $O \supseteq L$ of the standard octonion product, so
-Lemma~\ref{lem:L-sigmaLsbar} follows from $O \cdot O \subseteq O$.
-Likewise $\sigma(Ls) = pO$ with $p = e_2 - e_4 + e_5 - e_6 \in L$.
-Since $p$ is purely imaginary, the Moufang identities
-\cite{ConwaySmith2003} give $(pa)(pb) = p((ap)b)$ for all octonions
-$a, b$, so $pO$ is closed and Lemma~\ref{lem:sigmaLs-closed} also
-follows from $O \cdot O \subseteq O$.\footnote{\scriptref{verify\_sigma\_sublattice\_maximal\_order.py}.}
 
 Several questions remain immediately open:
 \begin{itemize}
@@ -1182,356 +1195,13 @@ references.
 
 % ===============================================================
 \appendix
-\section{Explicit basis tables for Lemmas
-\ref{lem:L-order}--\ref{lem:sigmaLs-closed}}\label{sec:appendix-tables}
+\section{The mod-2-quotient reading of Lemmas~\ref{lem:L-sigmaLsbar}
+and~\ref{lem:sigmaLs-closed}}\label{sec:appendix-tables}\label{app:mod2quotient}
 % ===============================================================
 
-We fix concrete $\ZZ$-bases for the lattices $L$, $\sigma(Ls)$, and
-$\sigma(L\bar s)$, and tabulate the integer coefficients of the
-basis-by-basis products called for in the proofs of
-Lemmas~\ref{lem:L-order}, \ref{lem:L-sigmaLsbar},
-and~\ref{lem:sigmaLs-closed}.  Each table has 64 entries and is
-arranged so that the row labeled $(i,j)$ gives the unique 8-tuple
-$(c_1,\ldots,c_8) \in \ZZ^8$ representing the corresponding product
-in the basis indicated.  All entries are integers; closure under the
-standard octonion product follows by $\ZZ$-bilinearity.  The same
-identities have been recomputed in two independent computer-algebra
-implementations as a cross-check
-(Appendix~\ref{sec:methodology}).
-
-Coordinates throughout are with respect to the basis
-$\{e_0,\ldots,e_7\}$ and the standard Fano triples~\eqref{eq:fano}.
-
-\paragraph{The basis $\{L_k\}$.} Concretely: $L_1 = s = \tfrac12(-e_0+e_1+\cdots+e_7)$, $L_2 = e_0+e_1$, $L_3 = e_0-e_1$, and $L_{k+2} = e_0+e_k$ for $k=2,\ldots,6$. The eight vectors are linearly independent over $\QQ$ and span $L$ over $\ZZ$.
-\begin{align}
-  L_{1} &= (\tfrac{-1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2},\ \tfrac{1}{2}) \\
-  L_{2} &= (1,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
-  L_{3} &= (1,\ -1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
-  L_{4} &= (1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0) \\
-  L_{5} &= (1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0) \\
-  L_{6} &= (1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0) \\
-  L_{7} &= (1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0) \\
-  L_{8} &= (1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0)
-\end{align}
-
-\paragraph{The basis $\{M_k\}$.} Defined by $M_k := \sigma(L_k \cdot s)$ with $\sigma = (1\;2)$ acting on coordinates by swapping $e_1$ and $e_2$. Spans $\sigma(Ls)$ over $\ZZ$.
-\begin{align}
-  M_{1} &= (\tfrac{-3}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2},\ \tfrac{-1}{2}) \\
-  M_{2} &= (-1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1,\ 1) \\
-  M_{3} &= (0,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 0) \\
-  M_{4} &= (-1,\ 0,\ 1,\ 0,\ 0,\ 1,\ 0,\ 1) \\
-  M_{5} &= (-1,\ 1,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0) \\
-  M_{6} &= (-1,\ 1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1) \\
-  M_{7} &= (-1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0) \\
-  M_{8} &= (-1,\ 1,\ 0,\ 0,\ 1,\ 1,\ 0,\ 0)
-\end{align}
-
-\paragraph{The basis $\{N_k\}$.} Defined by $N_k := \sigma(L_k \cdot \bar s)$. Spans $\sigma(L\bar s)$ over $\ZZ$.
-\begin{align}
-  N_{1} &= (2,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0) \\
-  N_{2} &= (0,\ 0,\ -1,\ 0,\ -1,\ 0,\ -1,\ -1) \\
-  N_{3} &= (-1,\ -1,\ 0,\ -1,\ 0,\ -1,\ 0,\ 0) \\
-  N_{4} &= (0,\ -1,\ -1,\ 0,\ 0,\ -1,\ 0,\ -1) \\
-  N_{5} &= (0,\ -1,\ -1,\ -1,\ 0,\ 0,\ -1,\ 0) \\
-  N_{6} &= (0,\ -1,\ 0,\ -1,\ -1,\ 0,\ 0,\ -1) \\
-  N_{7} &= (0,\ 0,\ -1,\ -1,\ -1,\ -1,\ 0,\ 0) \\
-  N_{8} &= (0,\ -1,\ 0,\ 0,\ -1,\ -1,\ -1,\ 0)
-\end{align}
-
-\begin{table}[H]
-\centering
-{\bfseries Lemma~\ref{lem:L-order}: $L \cdot L \subseteq L$.}\par\medskip
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tabular}{cc|rrrrrrrr}
-\toprule
-$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
-\midrule
-1 & 1 & -1 & -1 & -1 & 0 & 0 & 0 & 0 & 0 \\
-1 & 2 & 0 & -2 & -2 & 1 & 1 & 0 & 1 & 0 \\
-1 & 3 & 2 & 2 & 2 & -1 & -1 & 0 & -1 & 0 \\
-1 & 4 & 0 & -2 & -2 & 0 & 1 & 1 & 0 & 1 \\
-1 & 5 & 2 & 1 & 2 & -1 & -1 & 0 & 0 & -1 \\
-1 & 6 & 0 & -1 & -2 & 0 & 0 & 0 & 1 & 1 \\
-1 & 7 & 2 & 1 & 2 & 0 & -1 & -1 & -1 & 0 \\
-1 & 8 & 2 & 2 & 2 & -1 & 0 & -1 & -1 & -1 \\
-\midrule
-2 & 1 & 2 & 1 & 2 & -1 & -1 & 0 & -1 & 0 \\
-2 & 2 & 0 & 1 & -1 & 0 & 0 & 0 & 0 & 0 \\
-2 & 3 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-2 & 4 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
-2 & 5 & 2 & 3 & 3 & -1 & 0 & -1 & -1 & -1 \\
-2 & 6 & 0 & 1 & 0 & -1 & 0 & 1 & 0 & 0 \\
-2 & 7 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 1 \\
-2 & 8 & 0 & 1 & 0 & 0 & 0 & 0 & -1 & 1 \\
-\midrule
-3 & 1 & 0 & -1 & -2 & 1 & 1 & 0 & 1 & 0 \\
-3 & 2 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-3 & 3 & 0 & -1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-3 & 4 & 0 & 0 & 1 & 1 & 0 & -1 & 0 & 0 \\
-3 & 5 & -2 & -3 & -3 & 1 & 2 & 1 & 1 & 1 \\
-3 & 6 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
-3 & 7 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & -1 \\
-3 & 8 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & 1 \\
-\midrule
-4 & 1 & 2 & 2 & 2 & -1 & -1 & -1 & 0 & -1 \\
-4 & 2 & 0 & 1 & 0 & 1 & 0 & -1 & 0 & 0 \\
-4 & 3 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
-4 & 4 & 0 & -1 & -1 & 2 & 0 & 0 & 0 & 0 \\
-4 & 5 & 0 & -1 & -1 & 1 & 1 & 0 & 1 & 0 \\
-4 & 6 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
-4 & 7 & 0 & 0 & 0 & 1 & -1 & 0 & 1 & 0 \\
-4 & 8 & 2 & 2 & 3 & 0 & -1 & -1 & -1 & 0 \\
-\bottomrule
-\end{tabular}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tabular}{cc|rrrrrrrr}
-\toprule
-$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
-\midrule
-5 & 1 & 0 & -1 & -2 & 1 & 0 & 0 & 0 & 1 \\
-5 & 2 & -2 & -2 & -4 & 1 & 2 & 1 & 1 & 1 \\
-5 & 3 & 2 & 2 & 4 & -1 & 0 & -1 & -1 & -1 \\
-5 & 4 & 0 & 0 & 0 & 1 & 1 & 0 & -1 & 0 \\
-5 & 5 & 0 & -1 & -1 & 0 & 2 & 0 & 0 & 0 \\
-5 & 6 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
-5 & 7 & 0 & -1 & -1 & 1 & 1 & 0 & 1 & 0 \\
-5 & 8 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 1 \\
-\midrule
-6 & 1 & 2 & 1 & 2 & 0 & 0 & -1 & -1 & -1 \\
-6 & 2 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
-6 & 3 & 0 & 0 & 1 & -1 & 0 & 1 & 0 & 0 \\
-6 & 4 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
-6 & 5 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & -1 \\
-6 & 6 & 0 & -1 & -1 & 0 & 0 & 2 & 0 & 0 \\
-6 & 7 & 2 & 2 & 3 & -1 & -1 & 0 & 0 & -1 \\
-6 & 8 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
-\midrule
-7 & 1 & 0 & -1 & -2 & 0 & 1 & 1 & 0 & 0 \\
-7 & 2 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & -1 \\
-7 & 3 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & 1 \\
-7 & 4 & 0 & -1 & -1 & 1 & 1 & 0 & 1 & 0 \\
-7 & 5 & 0 & 0 & 0 & -1 & 1 & 0 & 1 & 0 \\
-7 & 6 & -2 & -3 & -4 & 1 & 1 & 2 & 2 & 1 \\
-7 & 7 & 0 & -1 & -1 & 0 & 0 & 0 & 2 & 0 \\
-7 & 8 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 1 \\
-\midrule
-8 & 1 & 0 & -2 & -2 & 1 & 0 & 1 & 1 & 0 \\
-8 & 2 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 1 \\
-8 & 3 & 0 & 0 & 1 & 0 & 0 & 0 & -1 & 1 \\
-8 & 4 & -2 & -3 & -4 & 2 & 1 & 1 & 1 & 2 \\
-8 & 5 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
-8 & 6 & 0 & 0 & 0 & 0 & -1 & 1 & 0 & 1 \\
-8 & 7 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & 1 \\
-8 & 8 & 0 & -1 & -1 & 0 & 0 & 0 & 0 & 2 \\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\caption{Coefficients $c_k$ such that $L_i \cdot L_j = \sum_{k=1}^{8} c_k\, L_k$, for the bases defined above.}\label{tbl:appendix-LL}
-\end{table}
-
-\begin{table}[H]
-\centering
-{\bfseries Lemma~\ref{lem:L-sigmaLsbar}: $L \cdot \sigma(L\bar s) \subseteq \sigma(L\bar s)$.}\par\medskip
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tabular}{cc|rrrrrrrr}
-\toprule
-$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
-\midrule
-1 & 1 & -1 & -1 & -1 & 0 & 0 & 0 & 0 & 0 \\
-1 & 2 & 0 & -2 & -2 & 0 & 1 & 1 & 0 & 1 \\
-1 & 3 & 2 & 2 & 2 & 0 & -1 & -1 & 0 & -1 \\
-1 & 4 & 0 & -1 & -2 & 0 & 1 & 0 & 1 & 0 \\
-1 & 5 & 2 & 1 & 2 & -1 & -1 & 0 & 0 & -1 \\
-1 & 6 & 0 & -2 & -2 & 1 & 0 & 0 & 1 & 1 \\
-1 & 7 & 2 & 2 & 2 & -1 & -1 & -1 & -1 & 0 \\
-1 & 8 & 2 & 1 & 2 & 0 & 0 & -1 & -1 & -1 \\
-\midrule
-2 & 1 & 2 & 2 & 2 & -1 & -1 & -1 & 0 & -1 \\
-2 & 2 & -1 & 0 & -2 & 0 & 0 & 1 & 0 & 1 \\
-2 & 3 & 1 & 1 & 2 & 0 & 0 & 0 & -1 & 0 \\
-2 & 4 & 0 & 0 & -1 & 1 & 0 & 0 & 0 & 1 \\
-2 & 5 & 0 & 0 & -1 & 0 & 1 & 1 & 0 & 0 \\
-2 & 6 & 1 & 1 & 1 & 0 & -1 & 1 & -1 & 0 \\
-2 & 7 & 1 & 2 & 2 & -1 & -1 & 0 & 0 & 0 \\
-2 & 8 & 1 & 1 & 1 & -1 & 0 & 0 & -1 & 1 \\
-\midrule
-3 & 1 & 0 & -2 & -2 & 1 & 1 & 1 & 0 & 1 \\
-3 & 2 & 1 & 2 & 2 & 0 & 0 & -1 & 0 & -1 \\
-3 & 3 & -1 & -1 & 0 & 0 & 0 & 0 & 1 & 0 \\
-3 & 4 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & -1 \\
-3 & 5 & 0 & 0 & 1 & 0 & 1 & -1 & 0 & 0 \\
-3 & 6 & -1 & -1 & -1 & 0 & 1 & 1 & 1 & 0 \\
-3 & 7 & -1 & -2 & -2 & 1 & 1 & 0 & 2 & 0 \\
-3 & 8 & -1 & -1 & -1 & 1 & 0 & 0 & 1 & 1 \\
-\midrule
-4 & 1 & 2 & 1 & 2 & -1 & -1 & 0 & -1 & 0 \\
-4 & 2 & 0 & 0 & -1 & 1 & 0 & 1 & 0 & 0 \\
-4 & 3 & 0 & 0 & 1 & 1 & 0 & -1 & 0 & 0 \\
-4 & 4 & 0 & -1 & -1 & 2 & 0 & 0 & 0 & 0 \\
-4 & 5 & 2 & 2 & 3 & 0 & 0 & -1 & -1 & -1 \\
-4 & 6 & 0 & -1 & 0 & 1 & 0 & 1 & 0 & 0 \\
-4 & 7 & 0 & -1 & -1 & 1 & 0 & 0 & 1 & 1 \\
-4 & 8 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 1 \\
-\bottomrule
-\end{tabular}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tabular}{cc|rrrrrrrr}
-\toprule
-$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
-\midrule
-5 & 1 & 0 & -1 & -2 & 1 & 0 & 0 & 0 & 1 \\
-5 & 2 & 0 & 1 & 0 & 0 & 1 & 0 & -1 & 0 \\
-5 & 3 & 0 & -1 & 0 & 0 & 1 & 0 & 1 & 0 \\
-5 & 4 & -2 & -3 & -4 & 2 & 2 & 1 & 1 & 1 \\
-5 & 5 & 0 & -1 & -1 & 0 & 2 & 0 & 0 & 0 \\
-5 & 6 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 1 \\
-5 & 7 & 0 & 0 & -1 & 0 & 1 & 0 & 1 & 0 \\
-5 & 8 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 1 \\
-\midrule
-6 & 1 & 2 & 1 & 2 & 0 & 0 & -1 & -1 & -1 \\
-6 & 2 & 1 & 2 & 1 & -1 & 0 & 0 & 0 & -1 \\
-6 & 3 & -1 & -1 & -1 & 1 & 0 & 1 & 1 & 0 \\
-6 & 4 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & -1 \\
-6 & 5 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & -1 \\
-6 & 6 & -1 & -2 & -3 & 1 & 1 & 2 & 1 & 0 \\
-6 & 7 & 1 & 1 & 1 & 0 & -1 & 0 & 1 & -1 \\
-6 & 8 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-\midrule
-7 & 1 & 0 & -1 & -2 & 0 & 1 & 1 & 0 & 0 \\
-7 & 2 & -1 & -1 & -2 & 0 & 1 & 1 & 1 & 1 \\
-7 & 3 & 1 & 0 & 2 & 0 & -1 & 0 & 0 & 0 \\
-7 & 4 & 0 & -1 & -1 & 1 & 0 & 1 & 1 & 0 \\
-7 & 5 & 0 & -1 & 0 & 0 & 1 & 1 & 0 & 0 \\
-7 & 6 & -1 & -2 & -2 & 0 & 0 & 2 & 1 & 1 \\
-7 & 7 & 1 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
-7 & 8 & -1 & -3 & -3 & 1 & 1 & 1 & 1 & 2 \\
-\midrule
-8 & 1 & 0 & -2 & -2 & 1 & 0 & 1 & 1 & 0 \\
-8 & 2 & -1 & -1 & -3 & 1 & 1 & 0 & 1 & 1 \\
-8 & 3 & 1 & 2 & 3 & -1 & -1 & -1 & 0 & 0 \\
-8 & 4 & 0 & 0 & 0 & 1 & 0 & -1 & 1 & 0 \\
-8 & 5 & 0 & -1 & -1 & 0 & 1 & 0 & 1 & 1 \\
-8 & 6 & -1 & -1 & -2 & 1 & 0 & 1 & 1 & 1 \\
-8 & 7 & -1 & -1 & -2 & 0 & 0 & 0 & 2 & 1 \\
-8 & 8 & 1 & 1 & 1 & 0 & -1 & -1 & 0 & 1 \\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\caption{Coefficients $c_k$ such that $L_i \cdot N_j = \sum_{k=1}^{8} c_k\, N_k$, for the bases defined above.}\label{tbl:appendix-LN}
-\end{table}
-
-\begin{table}[H]
-\centering
-{\bfseries Lemma~\ref{lem:sigmaLs-closed}: $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.}\par\medskip
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tabular}{cc|rrrrrrrr}
-\toprule
-$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
-\midrule
-1 & 1 & -1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-1 & 2 & 0 & 0 & 2 & 0 & -1 & -1 & 0 & -1 \\
-1 & 3 & -2 & -2 & -4 & 0 & 1 & 1 & 0 & 1 \\
-1 & 4 & 0 & 1 & 2 & -2 & -1 & 0 & -1 & 0 \\
-1 & 5 & -2 & -1 & -2 & 1 & -1 & 0 & 0 & 1 \\
-1 & 6 & 0 & 2 & 2 & -1 & 0 & -2 & -1 & -1 \\
-1 & 7 & -2 & -2 & -2 & 1 & 1 & 1 & -1 & 0 \\
-1 & 8 & -2 & -1 & -2 & 0 & 0 & 1 & 1 & -1 \\
-\midrule
-2 & 1 & -2 & -3 & -2 & 0 & 1 & 1 & 0 & 1 \\
-2 & 2 & 2 & -1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-2 & 3 & 2 & 3 & 3 & 0 & -2 & -2 & 0 & -2 \\
-2 & 4 & 2 & 1 & 2 & -1 & 0 & -1 & 0 & -2 \\
-2 & 5 & 4 & 4 & 7 & -2 & -3 & -2 & -1 & -2 \\
-2 & 6 & 0 & -2 & -1 & 1 & 0 & -1 & 2 & 0 \\
-2 & 7 & 2 & 1 & 2 & 0 & -1 & -2 & -1 & 0 \\
-2 & 8 & 2 & 1 & 3 & 1 & -1 & -1 & -1 & -2 \\
-\midrule
-3 & 1 & 0 & 1 & 0 & 0 & -1 & -1 & 0 & -1 \\
-3 & 2 & -2 & -3 & -5 & 0 & 2 & 2 & 0 & 2 \\
-3 & 3 & 2 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
-3 & 4 & -2 & -3 & -6 & 1 & 2 & 1 & 2 & 2 \\
-3 & 5 & 0 & -2 & -3 & 0 & 1 & 2 & 1 & 0 \\
-3 & 6 & 0 & -2 & -3 & 1 & 0 & 1 & 0 & 2 \\
-3 & 7 & 2 & 3 & 2 & -2 & -1 & 0 & -1 & 0 \\
-3 & 8 & 2 & 1 & 1 & -1 & 1 & -1 & -1 & 0 \\
-\midrule
-4 & 1 & -2 & -1 & -2 & -1 & 1 & 0 & 1 & 0 \\
-4 & 2 & 0 & -2 & -1 & -1 & 0 & 1 & 0 & 2 \\
-4 & 3 & 4 & 4 & 5 & -1 & -2 & -1 & -2 & -2 \\
-4 & 4 & 2 & 1 & 1 & -2 & 0 & 0 & 0 & 0 \\
-4 & 5 & 2 & 2 & 3 & -2 & -2 & 1 & -1 & -1 \\
-4 & 6 & 2 & 1 & 2 & -1 & -2 & -1 & 0 & 0 \\
-4 & 7 & 4 & 5 & 7 & -3 & -2 & -2 & -3 & -1 \\
-4 & 8 & 2 & 0 & 2 & -1 & 0 & 0 & -1 & -1 \\
-\bottomrule
-\end{tabular}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tabular}{cc|rrrrrrrr}
-\toprule
-$i$ & $j$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ & $c_7$ & $c_8$ \\
-\midrule
-5 & 1 & 0 & 1 & 2 & -1 & -2 & 0 & 0 & -1 \\
-5 & 2 & -2 & -5 & -6 & 2 & 1 & 2 & 1 & 2 \\
-5 & 3 & 2 & 3 & 2 & 0 & -1 & -2 & -1 & 0 \\
-5 & 4 & 0 & -1 & -2 & 0 & 0 & -1 & 1 & 1 \\
-5 & 5 & 2 & 1 & 1 & 0 & -2 & 0 & 0 & 0 \\
-5 & 6 & 0 & -1 & -1 & 2 & -1 & -1 & 0 & 1 \\
-5 & 7 & 0 & 0 & -1 & 0 & -1 & 0 & -1 & 2 \\
-5 & 8 & 2 & 2 & 2 & 0 & -1 & -1 & -2 & -1 \\
-\midrule
-6 & 1 & -2 & -2 & -2 & 1 & 0 & -1 & 1 & 1 \\
-6 & 2 & 2 & 1 & 2 & -1 & 0 & -1 & -2 & 0 \\
-6 & 3 & 2 & 3 & 2 & -1 & 0 & -1 & 0 & -2 \\
-6 & 4 & 0 & 0 & -1 & -1 & 2 & -1 & 0 & 0 \\
-6 & 5 & 2 & 2 & 2 & -2 & -1 & -1 & 0 & -1 \\
-6 & 6 & 2 & 1 & 1 & 0 & 0 & -2 & 0 & 0 \\
-6 & 7 & 2 & 4 & 3 & -1 & -1 & -2 & -2 & -1 \\
-6 & 8 & 4 & 5 & 7 & -2 & -1 & -3 & -2 & -3 \\
-\midrule
-7 & 1 & 0 & 2 & 2 & -1 & -1 & -1 & -2 & 0 \\
-7 & 2 & 0 & -2 & -1 & 0 & 1 & 2 & -1 & 0 \\
-7 & 3 & 0 & -2 & -3 & 2 & 1 & 0 & 1 & 0 \\
-7 & 4 & -2 & -4 & -6 & 1 & 2 & 2 & 1 & 1 \\
-7 & 5 & 2 & 1 & 2 & 0 & -1 & 0 & -1 & -2 \\
-7 & 6 & 0 & -3 & -2 & 1 & 1 & 0 & 0 & 1 \\
-7 & 7 & 2 & 1 & 1 & 0 & 0 & 0 & -2 & 0 \\
-7 & 8 & 0 & -1 & -1 & 1 & 2 & 0 & -1 & -1 \\
-\midrule
-8 & 1 & 0 & 1 & 2 & 0 & 0 & -1 & -1 & -2 \\
-8 & 2 & 0 & -2 & -2 & -1 & 1 & 1 & 1 & 0 \\
-8 & 3 & 0 & 0 & -2 & 1 & -1 & 1 & 1 & 0 \\
-8 & 4 & 0 & 1 & -1 & -1 & 0 & 0 & 1 & -1 \\
-8 & 5 & 0 & -1 & -1 & 0 & -1 & 1 & 2 & -1 \\
-8 & 6 & -2 & -4 & -6 & 2 & 1 & 1 & 2 & 1 \\
-8 & 7 & 2 & 2 & 2 & -1 & -2 & 0 & -1 & -1 \\
-8 & 8 & 2 & 1 & 1 & 0 & 0 & 0 & 0 & -2 \\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\caption{Coefficients $c_k$ such that $M_i \cdot M_j = \sum_{k=1}^{8} c_k\, M_k$, for the bases defined above.}\label{tbl:appendix-MM}
-\end{table}
-
-\subsection{The mod-2-quotient reading of Tables~\ref{tbl:appendix-LN}
-and~\ref{tbl:appendix-MM}}\label{app:mod2quotient}
-
-The integer tables above are the explicit certificates of
-Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed}; we now
-record the structural account of \emph{what} they certify.
+Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed} are
+statements about the sublattices $\sigma(L\bar s)$ and~$\sigma(Ls)$
+of~$L$; we now record what they say after reduction modulo~$2L$.
 
 From $L\bar s \cap Ls = 2L$ (Section~\ref{subsec:wilson-leech}) one
 has $2L \subseteq L\bar s$ and $2L \subseteq Ls$, and applying
@@ -1552,8 +1222,8 @@ the reduction of the octonion order~$L$ modulo~$2$, an
 eight-dimensional $\FF_2$-algebra.\footnote{It is not an octonion
 algebra in the composition-algebra sense: those are simple, whereas
 $\bar L$ has the proper two-sided ideal~$V$ exhibited below.}  The
-structure constants of $\bar\mu$ are exactly the entries of
-Table~\ref{tbl:appendix-LL} reduced modulo~$2$.
+structure constants of $\bar\mu$ are the coefficients, in a $\ZZ$-basis
+of~$L$, of the products of that basis, reduced modulo~$2$.
 
 Since $2L$ lies in both $\sigma(L\bar s)$ and~$\sigma(Ls)$, those
 sublattices are \emph{full preimages}, under $L \to \bar L$, of
@@ -1571,13 +1241,10 @@ modulo~$2L$ then gives
   \text{Lemma~\ref{lem:sigmaLs-closed}} \iff
     \bar\mu(W, W) \subseteq W.
 \end{equation}
-That is: Table~\ref{tbl:appendix-LN} certifies that $V$ is a
-\textbf{left ideal} of $\bar L$;
-Table~\ref{tbl:appendix-MM} certifies that $W$ is a
-\textbf{subalgebra} of it.  The integer tables and this mod-2-quotient
-description are complementary: the tables verify, the quotient
-explains.  The descent and both equivalences were checked in exact
-arithmetic.\footnote{\scriptref{verify\_mod2\_quotient.py}.}
+That is: Lemma~\ref{lem:L-sigmaLsbar} says that $V$ is a
+\textbf{left ideal} of $\bar L$, and Lemma~\ref{lem:sigmaLs-closed}
+that $W$ is a \textbf{subalgebra} of it.  The descent and both
+equivalences were checked in exact arithmetic.\footnote{\scriptref{verify\_mod2\_quotient.py}.}
 
 \paragraph{Relation to prior work.}
 The lattice-level picture of $\bar L \cong \FF_2^8$ as an
@@ -1721,7 +1388,7 @@ prompt-by-prompt direction.
 
 Structural proposals from a second AI system (the Hermes agent, Nous
 Research, running DeepSeek V4 Flash through OpenCode) prompted the
-Lagrangian framing of Section~\ref{app:mod2quotient}; the AI agent
+Lagrangian framing of Appendix~\ref{app:mod2quotient}; the AI agent
 (Claude Opus~4.7) verified and corrected them.\footnote{The proposals
 verbatim, the verification, and the corrections: \cite{repo}~%
 \href{https://github.com/koeplinger/leech\_alg/blob/main/paper/hermes\_mod2\_structure\_supplement.pdf}%
@@ -1738,22 +1405,24 @@ which prompted the search for a symbolic proof.
 
 \paragraph{Symbolic proof and numeric validation.}
 The proof of Theorem~\ref{thm:main} given in Section~\ref{sec:proof}
-is symbolic: three of the four lemmas are established by exhibiting a
-finite list of integer coefficients
-(Appendix~\ref{sec:appendix-tables}); the fourth, $\sigma(L) = L$,
-is a parity argument.  The conclusion follows by $\ZZ$-bilinearity.  No floating-point
-or sampled arithmetic enters the proof.  Independently, the same
-basis-by-basis identities that constitute the appendix tables were
-recomputed in two separate computer-algebra implementations as a
-cross-check: a Python implementation using
-\texttt{fractions.Fraction} exact rationals, and a GAP/LOOPS
-implementation using GAP's native exact rational
+is symbolic: Lemma~\ref{lem:sigma-L} is a parity argument, and
+Lemmas~\ref{lem:L-order} to~\ref{lem:sigmaLs-closed} follow from the
+closure of the maximal order~$\MO$, two lattice identities, and a
+Moufang identity.  The finite content of the proof, the closure
+of~$\MO$ on a $\ZZ$-basis and the two identities on eight products
+each, is verified in exact rational
+arithmetic.\footnote{\scriptref{verify\_structural\_proof.py}.}
+No floating-point or sampled arithmetic enters the proof.
+Independently, the four lemmas themselves were verified on
+$\ZZ$-bases, Lemma~\ref{lem:sigma-L} on the eight basis vectors of~$L$
+and Lemmas~\ref{lem:L-order} to~\ref{lem:sigmaLs-closed} basis pair by
+basis pair, in two separate computer-algebra implementations: a Python
+implementation using \texttt{fractions.Fraction} exact rationals, and a
+GAP/LOOPS implementation using GAP's native exact rational
 arithmetic.\footnote{\scriptref{symbolic\_proof\_checks.py}
-\scriptref{verify\_appendix\_tables.py} \gapref{tests/test\_lemmas.g}.}  Both implementations
-verify the same basis-pair identities as the appendix tables.
-This redundancy is validation, not proof: it serves to detect
-transcription or implementation errors in the appendix tables, but
-the logical content of the proof rests on the tables themselves.
+\scriptref{verify\_structural\_proof.py} \gapref{tests/test\_lemmas.g}.}  This redundancy is validation, not
+proof: it serves to detect implementation errors, but the logical
+content of the proof rests on Section~\ref{sec:proof}.
 
 The methodology required:
 \begin{itemize}

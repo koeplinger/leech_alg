@@ -127,7 +127,8 @@ cd python_project
 python3 -m pytest tests/ -v                     # Run all foundation tests
 cd src
 python3 symbolic_proof_checks.py                # Lemmas 4.1, 4.3, 4.4
-python3 verify_appendix_tables.py               # Appendix A tables (Lemmas 4.2 to 4.4) recomputed, compared with main.tex
+python3 verify_structural_proof.py           # Lemmas 4.2 to 4.4: the maximal order, the lattice identities, the Moufang identity
+python3 verify_appendix_tables_v7.py          # the Appendix A tables of v7, recomputed
 python3 trial_007_kirmse_twist.py               # The winning trial
 python3 trial_001_triple_octonion.py            # Any earlier trial
 python3 verify_aut_lambda_star.py               # Aut(Λ, +, ⋆) = C₆ × S₃, order 36

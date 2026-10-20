@@ -46,6 +46,10 @@ lattice"; containing the eight units is containing Z<e0, ..., e7>.
     verify_twist_span_index_census.py, Theorem B).
 
 Usage: python3 verify_sigma_sublattice_maximal_order.py   (a few seconds)
+
+Updated 20 October 2026 (prompt 311): cited in Section 2.2 (v8) for the closure
+and maximality of O = O^(4) = (1/2)(e1 + e2) L; the Section 7 paragraph moved
+into Section 4.  Code and output unchanged.
 """
 import itertools
 from fractions import Fraction as F
