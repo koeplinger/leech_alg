@@ -1,0 +1,99 @@
+Prompt 312 -- Editorial standards sweep over the paper
+Date: 2026-10-20
+Model: Claude Fable 5.1 (Anthropic).
+
+User: "Let's do a editorial standards sweep over the paper."
+
+Scope: paper/main.tex as it stands after Step A (prompt 311), against the
+five standards of evidence_and_reasoning/editorial_standards.md (lead
+programmatically; one thing at a time, in dependency order; cut
+redundancy; one vocabulary, US spelling, no dash asides; precision over
+vagueness), the paper-tone rule (no editorializing), and LaTeX hygiene.
+Editorial only: no mathematical content changes; the structural rework of
+Sections 5 to 7 and Appendix A (Steps B and C of the 2026-10-20 plan) is
+not pre-empted; mechanical fixes (spelling, dashes, vocabulary) are
+applied everywhere.  Method: read-only scanners by standard, adversarial
+refutation of every finding above nit level, then one application pass,
+a build, a read of the changed passages, the changelog.
+
+Note (mid-prompt): the sweep workflow's six scanners completed; 50 of its
+adversarial refuters failed when the Fable 5.1 quota ran out.  The author
+then switched the model (verbatim): "I'm out of Fable 5.1 quota. Continue
+with Opus 5.5".  From here on the model is Claude Opus 5.5 (Anthropic).
+The failed refutations are done first-hand before anything is applied.
+
+Result: 109 findings above nit level (59 with a verdict: 30 confirmed, 20
+confirmed with a corrected fix, 9 refuted; 50 checked first-hand) and 127
+nits.  Applied in one pass (38 replacements; changelog item 16):
+Sections 1 to 4, Appendix C and the bibliography editorially; Sections 5
+to 8 mechanically only.  Build: 20 pp., no errors, no undefined
+references, no hyperref warnings (eight before); the 1.3 pt vertical
+overfull box on page 7 remains.  The changed passages read in the PDF.
+
+Not applied, with the reason:
+ - Author-dictated or author-ruled wording: the abstract's "traces sigma
+   to Bruck's repair of Kirmse's integral octonions" (kept at prompt 272);
+   the division-algebra sentence of Section 2.1 (prompt 169); Kirmse's
+   ideal theory and alternativity sentence (prompt 193); "It is curious to
+   find ..." and "Wilson's Leech construction" in Appendix B (prompt 143);
+   "(for Mahler's covering-radius theorem, by exact-arithmetic sampling)"
+   (prompt 266, S5); "at the author's prompt-by-prompt direction" (prompt
+   281); "Iterative convergence ..." in Appendix C (prompt 049); the
+   Section 1 sentence on the twist (prompt 309) and the first sentence of
+   Remark 1.3 (prompt 309); Lemma 4.2's closing sentence on the classical
+   fact (the approved plan of 2026-10-20 keeps it); the bullets "Taking
+   sums" in Section 4.2 (the author's outline keeps Section 4.2 as the
+   pivot to the conditions); Section 8's wording (the author keeps its
+   liberties).
+ - Left open by the author at prompt 199, not reopened: octonion
+   "multiplication" versus "product" (the refuters found the paper's use
+   consistent: "multiplication" for the operation, "standard octonion
+   product" for (2.1)); the abstract's and Section 6's "three octonion
+   factors" for the blocks.
+ - Layout and front matter: \usepackage{xurl} for the underfull footnote
+   lines (the generic-layout ruling; it also breaks script names); the
+   keyword "computer-assisted proof" and MSC 68V05 (Section 5's results
+   are still exhaustive computations); ties before every \cite (invisible);
+   unused preamble packages.
+ - Refuted (nine): among them the Section 4 lead naming two lemmas, the
+   theorem's "Wilson's representation", the opening of Appendix C's
+   mistakes paragraph.
+ - Taste-level nits without a standard violated.
+
+Deferred to Steps B and C (rework sections), line numbers as at HEAD
+44a0bd5, for the rework to take up:
+  - L198 (lead-and-order): Corollary (compressed version): the non-maximality of the order (two witnesses, currently Section 7, lines 1098-1112) is stated nowhere in the abstrac
+  - L631 (precision-and-tone): Standard 5 and the tone rule: "easily checked" is an editorial adverb; "an initial idea of the degree of their violation" is vague where the table is 
+  - L637 (latex-hygiene): Standard 4 (one consistent vocabulary): the sample size is written $N$, which is exactly the glyph \Nrm prints for the norm; the same paragraph and th
+  - L662 (latex-hygiene): Standard 4 (hygiene, footnote placement): the \footnotemark is on page 7 (inside the identities table) but the matching \footnotetext at lines 670-671
+  - L673 (reader-flow): The first sentence (41 words) splits at its semicolon. The second is muddled: 'strictly stronger on every sample' is not a per-sample property, and th
+  - L680 (precision-and-tone): "strictly stronger on every sample" is not a meaningful statement (an identity is not stronger on a sample); "roughly $2.4\times$" is a number without
+  - L686 (lead-and-order): the remark opens with the data and reaches its claims at the end of the sentence; Remark 1.3 cites it for "does not preserve the minimal shell", which
+  - L695 (redundancy): Standard 3 (and a forward reference): Remark 5.1 pre-states the conclusions of Sections 5.2 and 5.4. "The smallest at norm 12" is stated in 5.4 (lines
+  - L713 (lead-and-order): Standards 1-2: a one-sentence paragraph after Remark 5.2 that belongs to no thread of Section 5.1 (identities), announces nothing that follows, and re
+  - L729 (precision-and-tone): Remark 5.1 (line 698) says the idempotent question is "settled on all of~$\LL$ in Section 5.2: the order has no nonzero idempotent", but Section 5.2 n
+  - L731 (lead-and-order): Remark 5.1 (lines 696-697) promises that Section 5.2 settles "the order has no nonzero idempotent", but the subsection never states it; the reader mus
+  - L738 (reader-flow): Dense by omission: Remark 5.1 says 'the order has no nonzero idempotent' is settled in Section 5.2, but Section 5.2 never states it; the reader must i
+  - L808 (precision-and-tone): Standard 5 (over-claim): plural "strata ... realized" with a single exhibited example; only norm 24 is shown and the cited script is a norm-24 witness
+  - L916 (precision-and-tone): Tone rule and standard 5: "closely related" asserts nothing checkable; the last sentence editorializes about another author's error by analogy and ass
+  - L955 (reader-flow): $L_1$ and $L_2$ are used before the reader is told what they are (standard 2); their description comes five lines later ('the number of sublattices $L
+  - L956 (lead-and-order): $L_1$, $L_2$, "the Leech-lattice theorem", "$E_8^3$-orbit Leech embeddings" and "Jordan rings" are used as labels before any of them is introduced; $L
+  - L972 (precision-and-tone): "all Baez--Egan claims" over-claims (the series makes many claims; the paper reproduced the listed chain), and "under our reading" hedges a checkable 
+  - L977 (redundancy): "the Baez--Egan closure lives in a 27-dimensional ambient, $\star$ on $\RR^{24}$" is stated here, in the Baez--Egan paragraph (941-945), and twice in 
+  - L977 (precision-and-tone): Tone rule (explicit targets "useful device", "not in itself"; "does not require ... (cf. Baez)" contrasts what others' constructions lack) and standar
+  - L978 (vocabulary): "the Leech" as a bare noun (once) for "the Leech lattice"/$\LL$; "ambient" as a noun (978, 1012) for the paper's "ambient algebra" (8 uses).
+  - L979 (lead-and-order): "the cross-block $S_3$ extending the $\ZZ_3$ routing" is a phrase defined nowhere; the only $S_3$ the reader has is the block permutation of Section 5
+  - L1010 (redundancy): within the Anatomy paragraph, "obtained by projecting from a larger ambient with $D$ discarded" restates the sentence before it (the decomposition $2(
+  - L1043 (precision-and-tone): Tone rule (explicit target "none defines or tests"): characterizes what others did not do. The citations and Section 4 do the contrasting.
+  - L1075 (precision-and-tone): "thematically adjacent" (explicit target) and "non-classical" are undefined; the closing sentence ("Both place $2$-primary structure at the center ...
+  - L1132 (precision-and-tone): Standard 5 (stated as open what is partly answered elsewhere): Section 5.5 already treats one twist that is not a coordinate permutation, the reflecti
+  - L1245 (vocabulary): Standard 4 (e): every other defined term in the body is \emph (218, 233, 235, 297, 338, 355, 795, 819, 829, 1216, 1229, 1256, 1292); these are the onl
+  - L1249 (lead-and-order): Standard 2 (dependency order): this paragraph uses the quadratic form, total isotropy, Lagrangians and complementary pairs, which the following paragr
+  - L1250 (redundancy): the first sentence restates Section 6, lines 963-966 (same attribution, same description of the form and the isotropic subspaces), and the last senten
+  - L1257 (precision-and-tone): Standard 5 (attribution precision): the construction of Section 3 was not built on the Silverman/Calderbank posts (it was found in trial 007; Appendix
+  - L1267 (lead-and-order): Standard 2 (dependency order; stale against Section 4): the two-sided ideal property of $V$ now follows from Remark 4.5 ($\sigma(L\bar s) = 2\MO$ is a
+  - L1268 (redundancy): Remark 4.5 (lines 500-501) now states at the lattice level that $\sigma(L\bar s) = 2\MO$ is a two-sided ideal of~$L$, with the structural reason; its 
+  - L1297 (redundancy): third statement within Appendix A of "$V$ ideal, $W$ subalgebra" (after 1244-1246 and 1258-1264) and second of "the decomposition is a polarization" (
+  - L1298 (precision-and-tone): Standard 5 (over-claim): the polarization (both $V$ and $W$ Lagrangian) is a separate fact, obtained by "direct verification" in the preceding paragra
+
+Status: CLOSED.
