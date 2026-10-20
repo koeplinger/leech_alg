@@ -712,6 +712,7 @@ leech_alg/
 │   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
 │   ├── 2026-10-14_plan.md         # Plan: the span-index findings in v8 (executed)
+│   ├── 2026-10-20_plan.md         # Plan: the symbolic proof replaces the tables (proposed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail

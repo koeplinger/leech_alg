@@ -1,0 +1,165 @@
+Prompt 309 -- Wording updates to the abstract and Section 1; a plan for
+replacing the table certificates by the symbolic proof
+Date: 2026-10-20
+Model: Claude Fable 5.1 (Anthropic).
+
+User (pasted text, verbatim):
+'This is fantastic. Our deep-dive into understanding the index of the span
+of the image, and helping me fix my initial understanding of the index a
+priori, led to a more focused description of maximality. By giving two
+witnesses that violate maximality (one was already given, another now
+explicitly given), you have found a closed-form, symbolic understanding
+that makes the given multiplication tables obsolete. This warrants a
+rewrite of the proof: Yes you can keep all numeric verifications, and I
+want you to. Also, because the entire research effort here is public, the
+reader can look at the git history and follow the provenance. But going
+forward, We have to make a plan for the rewrite of the affectect sections.
+
+This prompt has to aspects: 1) some wording updates in the abstract and in
+section 1 that I want you to do first; and 2) a plan for how to rework the
+paper.
+
+ASPECT 1: WORDING UPDATES
+
+In the abstract, scratch the historical detail "Closure was first observed
+experimentally, on over 12 million random pairs of minimal vectors;" --
+we'll describe the provenance in the main paper, in the abstract we only
+talk about the results.
+
+In section 1, we're making unneccessary forward-references by providing
+to much detail: "Applied to vectors of Λ, it satisfies two of Wilson's
+three sublattice conditions automatically. The third, however, generally
+fails: the sublattice it involves is not closed under the standard
+octonion product, Wilson's included. The main result of this paper is
+that closure on Λ is restored by twisting the octonion multiplication on
+each block by a transposition σ of two imaginary basis units. The map σ
+fixes the E8 lattice L setwise and is an octonion-algebra isomorphism, but
+it moves Wilson's sublattices Ls̄ and Ls onto sublattices for which the
+required closure inclusions do hold." We didn't introduce Wilson's
+sublattice conditions yet. We didn't introduce "s" yet so the reader has
+no reference on what "Ls̄" or "Ls" is. Replace this quoted text block with
+something much shorter, like the following: "Applied to vectors of Λ, we
+show how a transposition σ of two imaginary basis units satisfies Wilson's
+sublattice conditions, such that the required closure inclusions hold."
+
+In remark 1.3, scratch ": products of two minimal vectors have squared
+length at least 16, never the minimal value 8, exhaustively for the
+self-products and on 106 sampled pairs of distinct minimal vectors" and
+only leave the forward-reference "(Remark 5.1)."
+
+In section 1, scratch the apologetic "Nowhere do we claim or advertise
+these computer proofs as a substitute for mathematical understanding: they
+are listed as machine-obtained facts, to provide pointers for the applied
+reader. Interest in earlier versions of this work came from researchers in
+medical imaging, cryptography, quantum computing, and phenomenology in the
+physics of fundamental particles." -- we're fixing some of this right now,
+to the best of our abilities. Merge the single remaining sentence from
+this paragraph with the next paragraph; and expand that paragraph to a
+concise overview of all sections to come (but only major sections, not
+subsections).
+
+ASPECT 2: PLAN FOR UPDATED PROOFS
+
+I want you to replac the table-based certificates of the proof with the
+newly-found symbolic proof in closed form. You're using the symbol "O" for
+the maximal order of integral octonions. That is a problematic symbol, it
+clashes with the number zero and the blackboard O for octonions. We
+already have the symbol L for the E_8 lattice, how about using blackboard
+L? Or I suppose script-O could work (or script-L). Think about my
+suggestion, and also see whether the literature has a better convention.
+We may have to do a few tries.
+
+The paper outline should be as follows:
+
+Abstract -- minimal or no additional changes from this plan
+Section 1 -- minimal or no additional changes from this plan
+Section 2 -- in section 2.2 also give the symbol for the maximal order;
+and just to make sure we don't derail or proliferate unneccessarily again,
+note that the side-sentence "the unit-scale octavians" is to remain a
+single occurrence here, given as a full-text recognizable phrase from the
+literature that is references. Do not proliferate the term "octavians"
+across the current paper again.
+Section 3 -- minimal or no additional changes from this plan
+Section 4 -- keep the overall structure (intro paragraph, the four lemmas
+in section 4.1, the blockwise form of the triple product in section 4.2 as
+pivot to linking Wilson's conditions in section 4.3 (but do make it a
+single section "Proof of Wilson's three conditions" and then
+subsubsections for each condition, not a new subsection each).
+Section 5 -- It's ok to keep the experimental frequency table of algebraic
+relates. Review and update all closed-form, symbolic properties with the
+new insights we now have from the symbolic proof in section 4. Don't rush
+it. In particular, the relation between the idempotents, and the
+ideal-structure explaining the polarization, now is a prime candidate. Do
+we now have the structural understanding of making appendix A.1 a
+first-class citicen, and moving it as structural explanation up into
+section 5? When refactoring, make sure not to drop the remark that this
+polarization directly relates to the Baez2014 "simplification", and the
+acknowledging references in that discussion.
+In section 6, we've now moved away from experimental mathematics and the
+following references are now too far away from the paper (they were a
+friendly stretch before). We'll have to remove them, including their
+references (they may be confusing to a reader at this point): Gabriele
+Nebe (2022), Gerald Höhn and Geoffrey Mason (2023), and Vladimir Dotsenko
+(2025) and Murray R. Bremner (2016).
+Section 7 needs to be rewritten. There's a build-up of new findings in a
+section that should now be a conclusion. Move all substance up into the
+respective section. The section should summarize, and then give a concise
+bulleted list of open questions.
+Section 8 takes some liberties, which I feel ok keeping.
+Acknowledgments are good.
+Declarations are good.
+Appendix A: Unless they contribute to the proofs, the table certificates
+can be removed. If anyone asks, we'll point them to version 7 of the
+paper. The decision on appendix A.1 is pending the plan for section 5.
+Make your reasonable decision: If the structure can be understood and
+described in a compact way, such that it all becomes a natural candidate
+for the updated section 5, then the current appendix A and A.1 can be
+retired entirely. But if there is too much detail, that can't simply be
+displayed (or moved into a remark or a foot note), then make an appendix.
+A rough guid is: If it fitson a single page, then keep the property in
+section 5. If it needs 2 or more pages, make an appendix. Right now, I'm
+leaning to updating section 5.
+Appendix B ("Historical note:...") and C ("Research methodology") should
+be good to keep.'
+
+Applied (aspect 1), paper/main.tex, rebuilt (24 pp., no errors, no
+undefined references, no overfull boxes), the introduction read whole in
+the PDF:
+ - Abstract: "Closure was first observed experimentally, on over 12
+   million random pairs of minimal vectors; the proof reduces to four
+   lemmas, three of them certified by integer coefficient tables." ->
+   "The proof reduces to four lemmas, three of them certified by integer
+   coefficient tables."
+ - Section 1: the two paragraphs from "Applied to vectors of Lambda, it
+   satisfies two of Wilson's three sublattice conditions ..." to "... the
+   required closure inclusions do hold." -> "Applied to vectors of Lambda,
+   the product closes once the octonion multiplication is twisted by a
+   transposition sigma of two imaginary basis units: we show that, with
+   this twist, Wilson's sublattice conditions yield the required closure
+   inclusions."  (The author's suggested sentence, smoothed; the twist is
+   named because it is the main result and Theorem 1.1 follows directly.)
+ - Remark 1.3: "It does not preserve the minimal shell (Remark 5.1)."
+ - Section 1: "Nowhere do we claim ... fundamental particles." deleted; the
+   scope sentence merged with the overview, now of Sections 2 to 8 and
+   Appendices B and C (Appendix A not named: its fate is in the plan).
+ - Changelog item 14.
+Aspect 2: the plan is evidence_and_reasoning/2026-10-20_plan.md (proposed,
+not executed; indexed in evidence_and_reasoning/README.md and the
+CURRENT_STATE map): the finding (Section 0), the symbol (recommendation:
+script O, \mathcal{O}; the author's blackboard L and script L weighed;
+Coxeter and Kirmse write J, Wilson A), the section-by-section plan
+(Section 2.2 defines the order as (1/2)(e_1+e_2)L, so L = (e_1+e_2) times
+it is immediate; Section 4 keeps its structure and the lemma numbers, the
+three facts as numbered displays; Section 5 reviewed after an
+investigation step, with the candidates listed; Section 6's four
+paragraphs and seven bibitems removed; Section 7 a conclusion with a
+bulleted list; Appendix A's tables retired, A.1 decided with Section 5;
+Appendix C rewritten), scripts and records (a new structural script; the
+frozen table script run on v7's source by a wrapper), a four-step sequence
+with one hand-over each, and five decisions for the author.
+Note for the author: the clause "three of them certified by integer
+coefficient tables" (abstract) and "(four short lemmas, reducing to
+sublattice inclusions verified in exact arithmetic)" (Section 1) are left
+for the proof rewrite (Step A), as the plan says.
+
+Status: CLOSED.  The plan is with the author.

@@ -1,0 +1,13 @@
+Prompt 310 -- Version date of the paper (20 October 2026, v8)
+Date: 2026-10-20
+Model: Claude Fable 5.1 (Anthropic).
+
+User: 'update the paper version to today's date (keeping v8)'
+
+Applied: paper/main.tex, \subtitle{15 October 2026 (v8)} ->
+\subtitle{20 October 2026 (v8)}.  Rebuilt (three runs): 24 pp., no errors,
+no undefined references, no overfull boxes; the title page reads
+"20 October 2026 (v8)".  Changelog: item 0 (the subtitle's date history)
+and item 14.  Linter clean.
+
+Status: CLOSED.

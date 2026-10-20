@@ -83,7 +83,7 @@
 \begin{document}
 \title{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product}
-\subtitle{15 October 2026 (v8)}
+\subtitle{20 October 2026 (v8)}
 \author{Jens K\"oplinger}
 \maketitle
 
@@ -99,9 +99,8 @@ three octonion factors.  In Robert A.~Wilson's sublattice description
 of~$\LL$, closure turns on a transposition~$\sigma$ of two imaginary
 basis units: $\sigma$ leaves the $E_8$ lattice~$L$ invariant and is
 an octonion-algebra isomorphism, but moves Wilson's sublattices
-$L\bar s$ and~$Ls$.  Closure was first observed experimentally, on
-over 12 million random pairs of minimal vectors; the proof reduces to
-four lemmas, three of them certified by integer coefficient tables.  We
+$L\bar s$ and~$Ls$.  The proof reduces to four lemmas, three of them
+certified by integer coefficient tables.  We
 determine idempotents, automorphism group, square-zero elements of the
 algebra, and the index of the span of the products of the order.  We discuss the construction in the context of related work.
 A historical appendix (1923--1946) traces
@@ -151,18 +150,10 @@ Here we introduce a product on the direct sum
 $\OO_1 \oplus \OO_2 \oplus \OO_3$ of three octonion blocks: it
 multiplies blocks pairwise with the same octonion multiplication and
 routes each product to one block by a $\ZZ_3$-symmetric rule.  Applied
-to vectors of~$\LL$, it satisfies two of Wilson's three sublattice
-conditions automatically.  The third, however, generally fails: the
-sublattice it involves is not closed under the standard octonion
-product, Wilson's included.
-
-The main result of this paper is that closure on~$\LL$ is restored
-by twisting the octonion multiplication on each block by a
-transposition~$\sigma$ of two imaginary basis units.  The map
-$\sigma$ fixes the $E_8$ lattice~$L$ setwise and is an
-octonion-algebra isomorphism, but it moves Wilson's sublattices
-$L\bar s$ and~$Ls$ onto sublattices for which the required closure
-inclusions do hold.
+to vectors of~$\LL$, the product closes once the octonion
+multiplication is twisted by a transposition~$\sigma$ of two imaginary
+basis units: we show that, with this twist, Wilson's sublattice
+conditions yield the required closure inclusions.
 
 \begin{theorem}\label{thm:main}
 Let\/ $\star$ denote the $\ZZ_3$-symmetric triple-octonion product
@@ -188,30 +179,26 @@ into~$\LL$.
 The closure $\LL \star \LL \subseteq \LL$ makes $(\LL, +, \star)$ an
 order in the ring-theoretic sense: a subring that is a free
 $\ZZ$-module of rank equal to the ambient algebra's dimension.  It does
-not preserve the minimal shell: products of two minimal vectors have
-squared length at least~16, never the minimal value~8, exhaustively for
-the self-products and on $10^6$ sampled pairs of distinct minimal
-vectors (Remark~\ref{rem:product-norms}).  Closure of the minimal
-shell, which spans~$\LL$, would be the stronger property.
+not preserve the minimal shell (Remark~\ref{rem:product-norms}).
+Closure of the minimal shell, which spans~$\LL$, would be the stronger
+property.
 \end{remark}
 
-The scope of this paper is deliberately bounded.  We establish
-existence of the order, with a proof that is elementary (four
-short lemmas, reducing to sublattice inclusions verified in exact
-arithmetic).  Nowhere do we claim or advertise these computer proofs
-as a substitute for mathematical understanding: they are listed as
-machine-obtained facts, to provide pointers for the applied reader.
-Interest in earlier versions of this work came from researchers in
-medical imaging, cryptography, quantum computing, and phenomenology in
-the physics of fundamental particles.
-
-Section~\ref{sec:properties} determines the idempotents, the
-automorphism group and the square-zero elements of the algebra;
-Section~\ref{sec:census} tests twists other than~$\sigma$.
-Section~\ref{sec:conclusion} derives
-Lemmas~\ref{lem:L-sigmaLsbar} and~\ref{lem:sigmaLs-closed} from the
-closure of a maximal order, and Appendix~\ref{app:mod2quotient} reads
-them modulo~$2$.
+The scope of this paper is deliberately bounded: we establish
+existence of the order, with a proof that is elementary (four short
+lemmas, reducing to sublattice inclusions verified in exact
+arithmetic).  Section~\ref{sec:prelim} fixes the octonion
+multiplication, the $E_8$ lattice~$L$ and Wilson's description
+of~$\LL$.  Section~\ref{sec:construction} defines the product, and
+Section~\ref{sec:proof} proves Theorem~\ref{thm:main}.
+Section~\ref{sec:properties} determines the algebraic properties of the
+order: its identities, idempotents, automorphism group and square-zero
+elements, and the behavior of twists other than~$\sigma$.
+Section~\ref{sec:related} places the construction among related work,
+Section~\ref{sec:conclusion} concludes with the open questions, and
+Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{app:history}
+traces the integral octonions from Dickson to Coxeter, and
+Appendix~\ref{sec:methodology} records the research methodology.
 
 All results were developed through a systematic human--AI
 collaboration, and the complete research record is public~\cite{repo}:
