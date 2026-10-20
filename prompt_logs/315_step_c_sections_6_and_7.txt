@@ -1,0 +1,94 @@
+Prompt 315 -- Step C of the 2026-10-20 plan: Sections 6 and 7; the mod-2
+closure criterion recorded as an open question
+Date: 2026-10-20
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'It is OK that appendix A stays an appendix for now,
+because the mod 2 aspect has been on the side line, and we've merely
+demonstrated it because of its relation to prior art. Now that you suspect
+that "closure on Λ is equivalent to both mod-2 halves being subalgebras of
+L/2L" this may become a new dimension. For now, I want you to continue with
+the plan, and record it as an open question for step C. Nevertheless, we do
+want to revisit it before sending the paper for review, as we're now
+answering more and more structural questions. -- That doesn't mean that we
+loosen our approach and are now open again for venturing out. You've done
+the right thing, to keep the work compact, to replace table-based proofs
+with closed-form structural understanding where we have it; and merely
+_point out_ to me where something new may be happening. This permits me to
+have control over what's going on, focusing on fixing one thing at a time,
+and then work in new things that came along.
+
+Continue with step C, sections 6 and 7.'
+
+Rulings: Appendix A stays an appendix for now.  The suspected mod-2
+closure criterion (parked at prompt 314) is recorded as an open question in
+Step C, and is to be revisited before the paper is sent for review.  The
+approach stays compact: closed-form structure where we have it; new things
+are pointed out, not pursued.
+
+Applied (Step C; changelog item 18 has every change):
+ - Section 6: the four paragraphs and seven bibitems named at prompt 309
+   removed (each key cited once there; the registry keeps the entries and
+   says so).  Deferred editorial fixes of the prompt-312 sweep, where they
+   corrected something real and touched no wording of the author's:
+   Dixon's dagger defined, l_0 with e_0; L_1, L_2 defined before use; the
+   count said once; "All Baez--Egan claims hold under our reading"
+   removed; the Comparison paragraph reduced to two plain facts (tone);
+   the Anatomy without the reused symbols X, Y, D and without its
+   restatements, with "span index"; "Earlier precursors" lead; "none
+   defines or tests" removed (the tone rule); "For the history"; the
+   Corradetti lead and "conductor and saturation".
+ - Section 7: a summary and four open questions.
+ - Build: 20 pp., no errors, no undefined references, every bibitem
+   cited; the 1.3 pt overfull vbox on page 7.  Linter clean.
+Provenance checked before editing (git log -S, prompt logs): kept the
+Dixon footnote's analogy (the author's request of prompt 061); the other
+flagged Section 6 sentences were AI drafts.
+Checks (three read-only agents: facts with exact code, consistency with a
+scratch build, editorial standards): all facts in Sections 6 and 7
+confirmed, with two exceptions, both pointed out to the author:
+ 1. The mod-2 closure criterion is proved.  For a twist g with g(L) = L,
+    put G = g + g + g; then u *_g v = G^{-1}(Gu * Gv) with * the untwisted
+    triple product, so *_g closes on Lambda iff * closes on G(Lambda) =
+    {(x, y, z) in L^3 : pairwise sums in A = g(L sbar), block sum in
+    B = g(Ls)}.  A and B contain 2L, so G(Lambda) contains (2L)^3, and *
+    maps L^3 x (2L)^3 and (2L)^3 x L^3 into (2L)^3: closure is decided
+    modulo 2L.  Modulo (2L)^3, G(Lambda) is {(w+a+b, w+b, w+a) : w in
+    B/2L, a, b in A/2L}; for two such vectors the block sum of the
+    product is w w', and the pairwise sums are a b' + b a' + a a',
+    a b' + b a' + b b', a a' + b b'.  Hence *_g closes iff A/2L and B/2L
+    are both subalgebras of (L/2L, mu-bar) (necessity: b = b' = 0).
+    Isotropy is not used.  Checked exactly against direct closure: all
+    5,040 permutations (the census row by row), rho, 26 twists in GL(L)
+    that are not isometries, 300 random lifts of the identities, 1,500
+    complementary subalgebra pairs (two independent checkers; scratch
+    only).  The algebra was re-derived by hand by the orchestrator.  The
+    author's ruling was to record the criterion as an open question; it
+    is not open, so the last bullet of Section 7 records what stays open
+    (which polarizations lift to a closed bilinear product on Lambda, in
+    general), and the criterion with this proof waits for the author's
+    decision.  It settles that polarization question within twisted
+    triple products, gives the census a structural criterion, and shows
+    that Lemma 4.3 is stronger than condition (2) needs.
+ 2. Corradetti2026: the paragraph describes v1 of arXiv:2605.09333
+    (10 May 2026: 2-adic scaling, a Z[sqrt3]-order with a 2-primary
+    shadow, E_8 recovered by 2-adic saturation); the unversioned link
+    resolved to v2 (19 August 2026: an integral order-three automorphism
+    with the compact real Okubo algebra as Petersson isotope; one E_8
+    lattice carries octonionic, para-octonionic and Okubo structures; no
+    2-adic scaling).  Both abstracts read on arXiv.  Applied the minimal
+    truthful fix: the bibitem names v1.  Following v2 is the author's
+    call.
+Not applied, for the pre-review revisit or as taste: the Comparison
+paragraph's sentence on Egan's catalog (sigma(Lambda) has Egan's form for
+the pair (2O, pO); together with item 1); deleting the thin Comparison
+paragraph; the Wilson paragraph's restatement; a rewording of "E_8^3-orbit
+Leech embeddings"; the Section 7 summary's word order; "residue"/"piece";
+the Corradetti closing sentence and "nonclassical" (with item 2).
+Records: CURRENT_STATE (open item 1 with the criterion's status and
+proof sketch; item 4; item 5), README (open list), the registry
+(recent_experimental_work: no longer cited, ruling of 309, "Cited in
+v7"; references README; prior_art: Corradetti v1/v2), dated note in
+verify_phi_span_index.py, the plan's dated addendum (prompt 315), memory.
+
+Status: CLOSED.

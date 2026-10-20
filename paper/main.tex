@@ -958,10 +958,11 @@ needing correction.}
 \begin{equation}\label{eq:disp10}
   A \circ_{XY} B \;=\; (A X)(Y^{\dagger} B),
 \end{equation}
-where $X, Y \in \OO$ are chosen so that $Y X^{\dagger}$ is a unit
-octonion (the identity of the new multiplication).  When $Y^{\dagger} = X^{-1}$
+where Dixon writes $X^{\dagger}$ for the conjugate~$\bar X$, and
+$X, Y \in \OO$ are chosen so that $Y X^{\dagger}$ is a unit octonion
+(the identity of the new multiplication).  When $Y^{\dagger} = X^{-1}$
 the XY-product specializes to the X-product $A \circ_X B = (AX)(X^{-1}
-B)$; Dixon uses this X-product with $X = \ell_0 = \frac{1}{2}(1 + e_1
+B)$; Dixon uses this X-product with $X = \ell_0 = \frac{1}{2}(e_0 + e_1
 + \cdots + e_7)$ to obtain~$E_8$, and general XY-products for
 higher-dimensional laminated lattices including~$\LL$.  We have
 independently reproduced this
@@ -984,82 +985,74 @@ Baez leaves open the question whether any such lattice is closed under
 the undoubled Jordan product, and conjectures that the answer is
 negative.
 
-We have likewise
-independently reproduced the full Baez--Egan verification chain:
-the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L$, the
-Leech-lattice theorem, the doubled-Jordan-product closure, the
+Egan's construction of~$\LL$ uses a pair of sublattices
+$L_1, L_2 \subset L$, each isometric to~$\sqrt{2}\,L$.  We have
+likewise independently reproduced the full Baez--Egan verification
+chain: the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L$, the
+Leech-lattice theorem for that pair, the doubled-Jordan-product
+closure, the
 derivation of the lower bound $244{,}035{,}421$ on the number of
-$E_8^3$-orbit Leech embeddings,\footnote{An orbit-stabilizer bound, $\lceil 3!\,\lvert W(E_8)\rvert^3 / \lvert\Co_0\rvert\rceil$; \scriptref{verify\_egan\_lower\_bound.py}.} and Egan's count of at least
-$17{,}280$ Jordan rings.  This last factors as $17{,}280 = 270
-\times 64$: the $270$ is the number of sublattices $L_1 \subset L$
+$E_8^3$-orbit Leech embeddings,\footnote{An orbit-stabilizer bound, $\lceil 3!\,\lvert W(E_8)\rvert^3 / \lvert\Co_0\rvert\rceil$; \scriptref{verify\_egan\_lower\_bound.py}.} and Egan's
+count.\footnote{\scriptref{egan\_baez\_count.py}.}  The count factors as
+$17{,}280 = 270 \times 64$: the $270$ is the number of sublattices $L_1 \subset L$
 isometric to $\sqrt{2}\,L$ (part~11 of \cite{Baez2014}), equivalently
 the number of $4$-dimensional maximal totally isotropic subspaces of
 $L/2L \cong \FF_2^8$ under the plus-type quadratic form induced by the
 $E_8$ Gram form; that mod-2 orthogonal-space picture is Tim
 Silverman's (part~12 of \cite{Baez2014}).  The $64$ is
 the number of $L_2$ in this collection that meet a given $L_1$ only
-in $2L$, equivalently the number of $4$-dimensional complementary
-isotropic subspaces; Appendix~\ref{app:mod2quotient} reads one such
+in $2L$, equivalently the number of $4$-dimensional totally isotropic
+subspaces complementary to a given one; Appendix~\ref{app:mod2quotient} reads one such
 pair, $\sigma(L\bar s)/2L$ and $\sigma(Ls)/2L$, as ideal and
 subalgebra under the product that $L/2L$ inherits from the standard
-octonion product.  All Baez--Egan claims hold under our
-reading.\footnote{\scriptref{egan\_baez\_count.py}
-\scriptref{verify\_phi\_span\_index.py}.}
+octonion product.
 
 \textbf{Comparison.}  The product~$\star$ is bilinear on~$\RR^{24}$
-itself.  It does not require an enclosing 27-dimensional
-Jordan-algebraic ambient within which the Leech sits as a subspace
-(cf.~\cite{Baez2014}), and the cross-block $S_3$ extending the
-$\ZZ_3$ routing is supplied by the routing of
-Definition~\ref{def:triple} rather than by the octonion product
-itself: Dixon's XY-product
-\cite{Dixon1995, Dixon2010} is a useful device for describing each
-$E_8$ block, but it is not in itself $\ZZ_3$-symmetric across the
-three factors.  Whether the Leech embedding $\sigma(\LL) \subset
+itself, and its block-permutation symmetry~$S_3$ comes from the
+routing of Definition~\ref{def:triple}.  Whether the Leech embedding $\sigma(\LL) \subset
 \OO^3$ obtained by applying $\sigma$ blockwise overlaps with one of
 the embeddings cataloged by Egan, or sits outside that family, is
 a question this paper does not address.
 
 \textbf{Anatomy of the Baez--Egan closure on $\LL$.}  The
-Baez--Egan closure is on the ambient 27-dimensional lattice
-$\widetilde{\LL} = \ZZ^3 \oplus \LL \subset \mathfrak{h}_3(\OO)$,
-not on $\LL$ alone.  For off-diagonal Hermitian matrices $X, Y \in
-\mathfrak{h}_3(\OO)$ representing $u = (x,y,z)$ and $v = (x',y',z')$
-in $\LL \subset \OO^3$, direct computation gives
+Baez--Egan closure is on the 27-dimensional lattice
+$\ZZ^3 \oplus \LL \subset \mathfrak{h}_3(\OO)$, not on $\LL$ alone.
+For off-diagonal Hermitian matrices $M_u, M_v \in \mathfrak{h}_3(\OO)$
+representing $u = (x,y,z)$ and $v = (x',y',z')$ in $\LL \subset \OO^3$,
+direct computation gives
 \begin{equation}\label{eq:disp11}
-  2(XY + YX) \;=\; D \;+\; R,
+  2(M_u M_v + M_v M_u) \;=\; \Delta \;+\; R,
 \end{equation}
-where $R$ is an off-diagonal residue lying in $\LL$ and $D \in
+where $R$ is an off-diagonal residue lying in $\LL$ and $\Delta \in
 \ZZ^3$ is a diagonal piece whose entries are four times the
 block-pair Euclidean inner products of $u$ and $v$:
 \begin{equation}\label{eq:disp12}
-  D \;=\; 4\bigl(\langle x, x'\rangle + \langle y, y'\rangle,\;
+  \Delta \;=\; 4\bigl(\langle x, x'\rangle + \langle y, y'\rangle,\;
                   \langle x, x'\rangle + \langle z, z'\rangle,\;
                   \langle y, y'\rangle + \langle z, z'\rangle\bigr),
 \end{equation}
-so $\operatorname{tr} D = 8 \langle u, v\rangle$ recovers the
+so $\operatorname{tr} \Delta = 8 \langle u, v\rangle$ recovers the
 $\RR^{24}$ inner product of $u$ and $v$.  Projecting onto the
 off-diagonal subspace defines a $\ZZ$-bilinear closed product
 $\varphi(u, v) := R$ on $\LL$: an order in the sense of
-Corollary~\ref{cor:order}, but obtained by projecting from a larger
-ambient with the inner-product shadow $D$ discarded.  For minimal
-Leech vectors $u \in \operatorname{Min}(\LL)$, squaring gives
-$\operatorname{tr} D = 8\Nrm(u) = 64$, so the projection is
+Corollary~\ref{cor:order}.  For minimal vectors
+$u \in \operatorname{Min}(\LL)$, squaring gives
+$\operatorname{tr} \Delta = 8\Nrm(u) = 64$, so the projection is
 nontrivial on every minimal-vector input.  The induced product
 $\varphi$ is moreover commutative (the Jordan product is symmetric
 in its arguments), whereas $\star$ is not
-(Section~\ref{sec:properties}); the two orders are therefore
-distinct bilinear products on $\RR^{24}$ that both close on $\LL$,
-reaching that closure through different ambient algebras.  The
-distinction is quantitative at the span level as well.  Computed by
-the same Hermite-normal-form method as for~$\star$
+(Section~\ref{sec:identities}).  The products $\varphi$ and~$\star$
+are therefore distinct bilinear products on~$\RR^{24}$ that both close
+on~$\LL$.  Their spans differ as well.  Computed by the same
+Hermite-normal-form method as for~$\star$
 (Section~\ref{sec:span}),\footnote{\scriptref{verify\_phi\_span\_index.py}.}
-the $\ZZ$-span of $\varphi(\LL, \LL)$ has index $2^{25}$ in~$\LL$.
-Unlike for~$\star$, that span does not contain~$2\LL$: its index
-exceeds $[\LL : 2\LL] = 2^{24}$.
+the span index of~$\varphi$ is~$2^{25}$.  Unlike for~$\star$, the span
+of~$\varphi$ does not contain~$2\LL$: its index exceeds
+$[\LL : 2\LL] = 2^{24}$.
 
-\textbf{Earlier precursors.}  Further back, several constructions
-foreshadow the triple-octonion and Jordan-algebra frameworks above.
+\textbf{Earlier precursors.}  Three works of 1982 and 1996
+construct~$\LL$ from three copies of~$E_8$ or from the exceptional
+Jordan algebra.
 John H.~Conway and Neil J.\,A.~Sloane~\cite{ConwaySloane1982} give 23
 constructions of~$\LL$, one for each Niemeier lattice, including a
 Turyn-style construction from three copies of~$E_8$.  James Lepowsky
@@ -1070,45 +1063,18 @@ together with one extra automorphism.  Noam D.~Elkies and
 Benedict H.~Gross~\cite{ElkiesGross1996}
 obtain~$\LL$ from an integer form of the exceptional Jordan algebra
 $\mathfrak{h}_3(\OO)$ as the orthogonal complement of a distinguished
-identity element, and show that the automorphism group of this
+identity element.  They show that the automorphism group of this
 integer form is generated by octonion reflections (\emph{octave
-reflections}, in their terminology).  Each of these
-constructions is additive or geometric: none defines or tests a
-bilinear product on~$\LL$.
+reflections}, in their terminology).
 
 \textbf{Leonard E.~Dickson (1923), Johannes Kirmse (1924), Kurt Mahler
-(1942), Richard H.~Bruck and H.\,S.\,M.~Coxeter (1946).}  For a full
-historical account, see Appendix~\ref{app:history}.
+(1942), Richard H.~Bruck and H.\,S.\,M.~Coxeter (1946).}  For the
+history, see Appendix~\ref{app:history}.
 
-\textbf{Recent experimental work in adjacent areas.}  Related questions
-in lattice theory and in nonassociative algebra are currently pursued
-through computer-assisted experiment, the method used here.
-
-\textbf{Gabriele Nebe (2022).}  In computational
-lattice theory, Kirschmer and Nebe classify binary Hermitian lattices
-over number fields by computer~\cite{KirschmerNebe2022}; Nebe's extremal
-even unimodular $72$-dimensional lattice of minimum~$8$ is a tensor
-product of the Barnes lattice and the Leech lattice~\cite{Nebe2012}.
-
-\textbf{Gerald H\"ohn and Geoffrey Mason (2023).}  H\"ohn and Mason
-determine the $290$ fixed-point sublattices of the Leech lattice
-under~$\Co_0$~\cite{HohnMason2016} and establish, by computer, that most
-vertex superalgebras of odd unimodular lattices of rank~$24$ carry an
-$N=4$ superconformal structure~\cite{HohnMason2023}; H\"ohn and Seysen
-give a computer-assisted determination of the order of the
-Monster~\cite{HohnSeysen2025}.
-
-\textbf{Vladimir Dotsenko (2025) and Murray R.~Bremner (2016).}  In
-computational nonassociative algebra, Dotsenko investigates identities
-by computer experiment, with conjectures on nilpotence and the nil
-property~\cite{Dotsenko2025}; Bremner, Madariaga, and Peresi determine
-polynomial identities for the octonions using the representation theory
-of the symmetric group~\cite{BremnerMadariagaPeresi2016}.
-
-\textbf{Daniele Corradetti (2026).}  A thematically adjacent recent
-construction is Corradetti's order on~$E_8$ via the Okubo algebra
+\textbf{Daniele Corradetti (2026).}  A recent construction is
+Corradetti's order on~$E_8$ via the Okubo algebra
 \cite{Corradetti2026}: a different nonclassical bilinear structure
-on~$E_8$, obtained by a $2$-adic conductor / saturation of an
+on~$E_8$, obtained by a $2$-adic conductor and saturation of an
 Okubo-algebra overlattice.  The two operations involved differ from
 the present mod-2 quotient (Appendix~\ref{sec:appendix-tables}):
 Corradetti rescales an order and
@@ -1120,30 +1086,33 @@ the center of an octonion-derived order on~$E_8$.
 \section{Conclusion}\label{sec:conclusion}
 % ===============================================================
 
-The Leech lattice admits an order under a $\ZZ_3$-symmetric
-triple-octonion product on~$\RR^{24}$, realized in Wilson's
-sublattice description of~$\LL$.  The symbolic proof
-(Section~\ref{sec:proof}) reduces closure to four lemmas, of which
-the crux is Lemma~\ref{lem:sigmaLs-closed}: the sublattice
-$\sigma(Ls)$, unlike~$Ls$ itself, is closed under the standard
-octonion product.
+The Leech lattice~$\LL$ is an order under the $\ZZ_3$-symmetric
+triple-octonion product of Definition~\ref{def:triple}
+(Corollary~\ref{cor:order}), in Wilson's sublattice description.  The
+proof (Section~\ref{sec:proof}) rests on one maximal order~$\MO$ of
+integral octonions: the transposition~$\sigma$ fixes~$L$ and moves
+Wilson's sublattices $L\bar s$ and~$Ls$ onto the left multiples
+$2\MO$ and~$p\MO$, and the closure of~$\MO$ gives the inclusions the
+proof needs.  The order is nonunital, has no nonzero idempotent and is
+not maximal; its automorphism group is $C_6 \times S_3$, and its span
+index is~$2^{16}$, a value that depends on the twist
+(Section~\ref{sec:properties}).
 
-Several questions remain immediately open:
+Several questions remain open:
 \begin{itemize}
-\item Where $\Aut(\LL, +, \star) \cong C_6 \times S_3$
-  (Section~\ref{sec:autgroup}) sits inside~$\Co_0$ up to conjugacy, and
-  whether the order-6 octonion automorphism generating the~$C_6$
-  admits an intrinsic description.
-\item Classification of the algebra $(\RR^{24}, +, \star)$: it is
-  nonassociative, nonalternative, nonflexible, and nonunital,
-  placing it outside the classical families.
-\item A structural characterization of which permutation cycles close.
-  Every cycle type of~$S_7$ has been enumerated exactly
-  (Section~\ref{sec:census}), but the pattern in the census table is
-  described only for the $3$-cycles.  Open: a reason for the total
-  failure of the $4$-cycles and for the exact one-half rates beyond
-  the $3$-cycles; and
-  linear maps of~$\RR^8$ that are not coordinate permutations.
+\item Where $\Aut(\LL, +, \star)$ sits inside~$\Co_0$ up to conjugacy,
+  and whether the order-6 octonion automorphism generating its~$C_6$
+  (Section~\ref{sec:autgroup}) admits an intrinsic description.
+\item A classification of the algebra $(\RR^{24}, +, \star)$, which is
+  nonassociative, nonalternative, nonflexible, non-power-associative,
+  noncommutative and nonunital (Section~\ref{sec:identities}).
+\item A reason for the closure pattern of Section~\ref{sec:census}
+  beyond the $2$-cycles, in particular for the failure of every
+  $4$-cycle and for the exact one-half rates; and which twists other
+  than those of Section~\ref{sec:census} close on~$\LL$.
+\item Which polarizations of~$L/2L$, beyond the one of
+  Appendix~\ref{app:mod2quotient}, lift to a closed bilinear product
+  on~$\LL$.
 \end{itemize}
 
 % ===============================================================
@@ -1479,14 +1448,6 @@ the 270 rescaled copies of the first $E_8$ shell (part~11, 12 December
 \url{http://math.ucr.edu/home/baez/octonions/integers/integers_11.html},
 \url{http://math.ucr.edu/home/baez/octonions/integers/integers_12.html}.
 
-\bibitem[BremnerMadariagaPeresi2016]{BremnerMadariagaPeresi2016}
-M.\,R.~Bremner, S.~Madariaga, and L.\,A.~Peresi,
-\emph{Structure theory for the group algebra of the symmetric group,
-with applications to polynomial identities for the octonions},
-Comment.\ Math.\ Univ.\ Carolin.\ \textbf{57} (2016), no.~4, 413--452.
-\href{https://doi.org/10.14712/1213-7243.2015.188}%
-{doi:10.14712/1213-7243.2015.188}.
-
 \bibitem[Calderbank2023]{Calderbank2023}
 D.~Calderbank,
 comment of 2 April 2023 on Baez~\cite{Baez2014}, part~9,
@@ -1512,7 +1473,7 @@ A.\,K.~Peters, 2003.
 D.~Corradetti,
 \emph{Integral elements of Okubo algebra and the $E_8$-lattice},
 preprint, 2026.
-\href{https://arxiv.org/abs/2605.09333}{arXiv:2605.09333}.
+\href{https://arxiv.org/abs/2605.09333v1}{arXiv:2605.09333v1}.
 
 \bibitem[Coxeter1946]{Coxeter1946}
 H.\,S.\,M.~Coxeter,
@@ -1541,14 +1502,6 @@ G.\,M.~Dixon,
 \emph{Integral octonions, octonion XY-product, and the Leech lattice},
 preprint, 2010.
 \href{https://arxiv.org/abs/1011.2541}{arXiv:1011.2541}.
-
-\bibitem[Dotsenko2025]{Dotsenko2025}
-V.~Dotsenko,
-\emph{Nilpotence, weak nilpotence, and the nil property in the
-nonassociative world: computations and conjectures},
-Exp.\ Math.\ \textbf{34} (2025), no.~4, 745--753.
-\href{https://doi.org/10.1080/10586458.2024.2410985}%
-{doi:10.1080/10586458.2024.2410985}.
 
 \bibitem[Elduque1996]{Elduque1996}
 A.~Elduque,
@@ -1594,28 +1547,6 @@ Same Thing},
 Memoirs of the American Mathematical Society, vol.~260, no.~1252,
 Amer.\ Math.\ Soc., Providence, RI, 2019.
 
-\bibitem[HohnMason2016]{HohnMason2016}
-G.~H\"ohn and G.~Mason,
-\emph{The 290 fixed-point sublattices of the Leech lattice},
-J.\ Algebra \textbf{448} (2016), 618--637.
-\href{https://doi.org/10.1016/j.jalgebra.2015.08.028}%
-{doi:10.1016/j.jalgebra.2015.08.028}.
-
-\bibitem[HohnMason2023]{HohnMason2023}
-G.~H\"ohn and G.~Mason,
-\emph{Most vertex superalgebras associated to an odd unimodular lattice
-of rank~24 have an $N=4$ superconformal structure},
-Exp.\ Math.\ \textbf{32} (2023), no.~3, 502--504.
-\href{https://doi.org/10.1080/10586458.2021.1980458}%
-{doi:10.1080/10586458.2021.1980458},
-\href{https://arxiv.org/abs/1810.00254}{arXiv:1810.00254}.
-
-\bibitem[HohnSeysen2025]{HohnSeysen2025}
-G.~H\"ohn and M.~Seysen,
-\emph{The order of the Monster finite simple group},
-preprint, 2025.
-\href{https://arxiv.org/abs/2508.01037}{arXiv:2508.01037}.
-
 \bibitem[KamiyaOkubo2015]{KamiyaOkubo2015}
 N.~Kamiya and S.~Okubo,
 \emph{Algebras satisfying triality and\/ $S_4$-symmetry},
@@ -1629,13 +1560,6 @@ von acht Quadraten und \"uber ein mit diesem Problem zusammenh\"angendes
 nichtkommutatives und nichtassoziatives Zahlensystem},
 Ber.\ Verh.\ S\"achs.\ Akad.\ Wiss.\ Leipzig, Math.-Phys.\ Kl.\
 \textbf{76} (1924), 63--82.
-
-\bibitem[KirschmerNebe2022]{KirschmerNebe2022}
-M.~Kirschmer and G.~Nebe,
-\emph{Binary Hermitian lattices over number fields},
-Exp.\ Math.\ \textbf{31} (2022), no.~1, 280--301.
-\href{https://doi.org/10.1080/10586458.2019.1618756}%
-{doi:10.1080/10586458.2019.1618756}.
 
 \bibitem[Koeplinger2023]{Koeplinger2023}
 J.~K\"oplinger,
@@ -1660,14 +1584,6 @@ A.~Marrani, D.~Corradetti, and F.~Zucconi,
 algebra},
 J.\ Phys.\ A: Math.\ Theor.\ \textbf{58} (2025), 075202.
 \href{https://arxiv.org/abs/2309.17435}{arXiv:2309.17435}.
-
-\bibitem[Nebe2012]{Nebe2012}
-G.~Nebe,
-\emph{An even unimodular 72-dimensional lattice of minimum~8},
-J.\ Reine Angew.\ Math.\ \textbf{673} (2012), 237--247.
-\href{https://doi.org/10.1515/crelle.2011.175}%
-{doi:10.1515/crelle.2011.175},
-\href{https://arxiv.org/abs/1008.2862}{arXiv:1008.2862}.
 
 \bibitem[Okubo1995]{Okubo1995_Book}
 S.~Okubo,

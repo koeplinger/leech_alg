@@ -671,6 +671,23 @@ Appendix A for the first), together with further detail recorded here.
    a consequence of the left Moufang identity.  σ(Ls) is not an ideal of
    L on either side (paper Remark 4.5; claim 013), so its closure is not
    inherited from an ideal property.
+   Not in the paper, for the author's decision before the paper is sent
+   for review: for every twist g with g(L) = L, ⋆_g closes on Λ exactly
+   when g(Ls̄)/2L and g(Ls)/2L are both subalgebras of (L/2L, μ̄), as they
+   are for σ.  A five-line argument proves it (prompt 315; the
+   computation of prompt 314 had found it first): ⋆_g closes on Λ iff the
+   untwisted product closes on g(Λ), the lattice of Egan's form for the
+   pair (g(Ls̄), g(Ls)); g(Λ) contains (2L)³, so closure is decided
+   modulo 2L, where the block sum of a product is ww′ and the pairwise
+   sums are ab′ + ba′ + aa′, ab′ + ba′ + bb′ and aa′ + bb′ for
+   (w + a + b, w + b, w + a) with w in g(Ls)/2L and a, b in g(Ls̄)/2L.
+   Checked exactly against direct closure on all 5,040 permutations (the
+   census of §5.6 row by row), on ρ, and on 26 twists in GL(L) that are
+   not isometries.  It settles, within twisted triple products, the
+   question of §7 and Appendix A which polarizations lift; for bilinear
+   products in general that question stays open.  Related: by (4.1),
+   σ(Λ) has the form of Egan's construction for the pair (2𝒪, p𝒪), which
+   bears on §6's sentence on Egan's catalog.
 
 2. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
    whether the order-6 octonion automorphism generating the C₆ admits an
@@ -684,8 +701,8 @@ Appendix A for the first), together with further detail recorded here.
    paper, which states the values in §5.6.
 
 4. **Classification** of the algebra (R²⁴, +, ⋆): it is
-   nonassociative, nonalternative, nonflexible, and nonunital,
-   placing it outside the classical families.  Its
+   nonassociative, nonalternative, nonflexible, non-power-associative,
+   noncommutative and nonunital.  Its
    idempotents, square-zero elements, ideal decomposition and
    automorphism group are known (above), but no classification follows
    from them.  A more natural classification may emerge from a
@@ -693,14 +710,13 @@ Appendix A for the first), together with further detail recorded here.
    sketches the direction.
 
 5. **A structural characterization of which permutation cycles close.**
-   All 5,040 permutations
-   of S₇ have been enumerated exactly (the census above), but the
-   pattern is described only for
-   the 3-cycles (for each three-element subset of imaginary indices, one
-   of the two cyclic orientations closes).  Open: a reason for the total
-   failure of the 4-cycles and for the exact one-half rates beyond the
-   3-cycles; and linear maps of R⁸ that are
-   not coordinate permutations at all.
+   All 5,040 permutations of S₇ have been enumerated exactly (the census
+   above).  The 2-cycles close by Theorem 1.1, and for the 3-cycles the
+   closing half is described (for each three-element subset of imaginary
+   indices, one of the two cyclic orientations closes).  Open: a reason
+   for the failure of every 4-cycle and for the exact one-half rates
+   beyond the 3-cycles; and the closure of twists that are not coordinate
+   permutations, beyond the reflection ρ.
 
 6. **Exhaustive verification** of all 38.6 billion minimal-vector
    pairs.  Not required given the symbolic proof; available as an

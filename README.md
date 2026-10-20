@@ -111,8 +111,10 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
   intrinsic description.
 - A structural characterization of which permutation cycles close.  All
   5,040 permutations of S₇ have been enumerated exactly (1,764 of the
-  5,039 nonidentity permutations close), but the pattern is described
-  only for the 3-cycles.
+  5,039 nonidentity permutations close); the 2-cycles close by Theorem
+  1.1, and the pattern is described for the 3-cycles.
+- Which polarizations of L/2L, beyond the one of Appendix A, lift to a
+  closed bilinear product on Λ.
 - Whether a **ternary** reformulation (via composition algebras in the
   sense of Elduque, or via Okubo's ternary structure) gives a more
   natural classification: the rigid Z₃ cross-block routing and the

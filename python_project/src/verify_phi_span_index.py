@@ -39,6 +39,11 @@ gives |det| = [L^3 : S_phi]; dividing by [L^3 : Lambda] = 4096 gives
 [Lambda : S_phi].  Finally, as in verify_product_span_structure.py,
 checks whether 2*Lambda is contained in S_phi (membership of the 24
 doubled basis vectors via the exact HNF inverse).  All arithmetic exact.
+
+Note (20 October 2026, prompt 315): the paper's Section 6 now writes M_u, M_v
+for the Hermitian matrices X, Y and Delta for the diagonal piece D (D is the
+ideal of Section 5.4), and calls the index the span index of phi.  Code and
+output unchanged.
 """
 import sys, os, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

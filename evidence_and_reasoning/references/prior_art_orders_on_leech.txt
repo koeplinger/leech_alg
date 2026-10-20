@@ -269,9 +269,10 @@ confirm the absence of multiplicative/ring/order structure on Λ.
 
 - **Authors**: Daniele Corradetti
 - **Title**: Integral elements of Okubo algebra and the E₈-lattice
-- **Published in**: arXiv:2605.09333
+- **Published in**: arXiv:2605.09333 (v1, 10 May 2026; v2, 19 August 2026)
 - **Year**: 2026
-- **URL / DOI**: https://arxiv.org/abs/2605.09333
+- **URL / DOI**: https://arxiv.org/abs/2605.09333v1 (the version the paper
+  cites)
 - **Topics**: octonions, okubo_algebra, e8_lattice, orders
 - **Originality note**: arXiv preprint; no dispute known.
 - **Notes**: Constructs an order on E₈ (not on Λ) via the Okubo algebra.
@@ -280,7 +281,14 @@ confirm the absence of multiplicative/ring/order structure on Λ.
   in the present paper (Appendix A, "The mod-2-quotient reading").  The
   two works land on different sides of the same 2-primary structure
   governing octonion-derived orders.  Cited in `paper/main.tex`
-  §6 ("Related work"), alongside the present construction.  See also the analysis note in
+  §6 ("Related work"), alongside the present construction.  This
+  describes v1, which the paper cites.  v2 (19 August 2026) replaces the
+  2-adic scaling and saturation: an integral order-three automorphism of
+  the octonions has the compact real Okubo algebra as its Petersson
+  isotope, and the same Coxeter-Dickson E₈ lattice supports octonionic,
+  para-octonionic and Okubo integral structures (abstracts of both
+  versions read on arXiv at prompt 315).  Whether the paper follows v2 is
+  for the author.  See also the analysis note in
   `paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md`.
 
 ### [Koeplinger2026] — An order on the Leech lattice from a Z₃-symmetric triple-octonion product

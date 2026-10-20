@@ -3,8 +3,12 @@ Topic: Recent computer-assisted experimental work in adjacent areas
 
 This file collects references for recent works, in lattice theory and in
 nonassociative algebra, that pursue related questions through computer-assisted
-experiment. They are cited in Section 6 (Related work) of the paper as adjacent
-experimental efforts, not as prior art the present construction builds on. All
+experiment. The published v7 cites them in Section 6 (Related work) as adjacent
+experimental efforts, not as prior art the present construction builds on; v8
+no longer cites them (at prompt 309 the author ruled that, with the paper moved
+away from experimental mathematics, they are too far from its subject; they
+were removed at prompt 315, Step C of evidence_and_reasoning/2026-10-20_plan.md),
+and the entries are kept for the record. All
 bibliographic fields were verified against live sources (journal pages, arXiv,
 author publication lists) before inclusion.
 
@@ -24,7 +28,7 @@ author publication lists) before inclusion.
   Mathematics). No dispute over priority or originality known to this project.
 - **Notes**: Classifies binary Hermitian lattices over number fields by computer,
   with an application to the classification of 48-dimensional extremal even
-  unimodular lattices admitting a semilarge automorphism. Cited as computational
+  unimodular lattices admitting a semilarge automorphism. Cited in v7 as computational
   lattice theory in the target venue.
 
 ---
@@ -44,7 +48,7 @@ author publication lists) before inclusion.
   over priority or originality known to this project.
 - **Notes**: Constructs the first known extremal even unimodular 72-dimensional
   lattice of minimum 8, as a tensor product of the Barnes lattice and the Leech
-  lattice over the ring of integers of Q(sqrt(-7)). Cited as a Leech-derived
+  lattice over the ring of integers of Q(sqrt(-7)). Cited in v7 as a Leech-derived
   construction alongside the Kirschmer–Nebe experimental work.
 
 ---
@@ -83,7 +87,7 @@ author publication lists) before inclusion.
   Mathematics). No dispute over priority or originality known to this project.
 - **Notes**: Establishes, by computer, that at least 267 of the 273 vertex
   superalgebras associated to odd unimodular lattices of rank 24 carry an N=4
-  superconformal subalgebra. Cited as experimental work in the target venue on
+  superconformal subalgebra. Cited in v7 as experimental work in the target venue on
   rank-24 unimodular lattices.
 
 ---
@@ -101,7 +105,7 @@ author publication lists) before inclusion.
   writing. No dispute over priority or originality known to this project.
 - **Notes**: A self-contained, computer-assisted determination of the order of the
   Monster (and the Baby Monster), by counting idempotent axes in the Griess
-  algebra using the mmgroup software package. Cited as computer-assisted work by
+  algebra using the mmgroup software package. Cited in v7 as computer-assisted work by
   the same group.
 
 ---
@@ -122,7 +126,7 @@ author publication lists) before inclusion.
   Mathematics). No dispute over priority or originality known to this project.
 - **Notes**: Studies identities expressing nilpotence and the nil property in
   nonassociative algebras through computer experiment, with conjectural
-  generalizations. Cited as recent experimental work on identities in
+  generalizations. Cited in v7 as recent experimental work on identities in
   nonassociative algebra, the setting of the present paper.
 
 ---
