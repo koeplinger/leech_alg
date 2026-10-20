@@ -12,6 +12,11 @@ V = sigma(Ls_bar)/2L and W = sigma(Ls)/2L inside L_bar = L/2L,
       contains half-integer elements, for which the commutator need
       not lie in 2L).
 
+Note (20 October 2026, prompt 313): in v8 the paper's Appendix A has no
+subsections, so "Appendix A.1" above and "(paper A.1)" in the printed
+heading mean Appendix A, whose Polarization paragraph cites this script.
+Code and output unchanged.
+
 Also certified along the way: q is the standard plus-type form on
 F_2^8 (value distribution 136 zeros, 120 ones over the 256 cosets).
 

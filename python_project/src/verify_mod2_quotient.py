@@ -33,6 +33,11 @@ saturation.
 Note (20 October 2026, prompt 311): the tables are retired in v8; "Tables A.2
 and A.3" below are now Lemmas 4.3 and 4.4 read modulo 2 in Appendix A.  Code
 and output unchanged.
+
+Note (20 October 2026, prompt 313): "Section A.1" above is Appendix A in v8,
+which has no subsections; its Polarization paragraph cites
+verify_polarization_lagrangians.py for the two further facts.  Code and
+output unchanged.
 """
 from fractions import Fraction as F
 from itertools import product as iproduct

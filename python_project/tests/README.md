@@ -1,6 +1,6 @@
 # Tests
 
-Test suite for the Python project.  197 tests verify every shared tool used by the trials and by the symbolic proof.
+Test suite for the Python project.  197 tests verify every shared tool used by the trials and by `symbolic_proof_checks.py`.
 
 Run the full suite from `python_project/`:
 
@@ -8,7 +8,7 @@ Run the full suite from `python_project/`:
 python3 -m pytest tests/ -v
 ```
 
-Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech constructions of Wilson and Dixon, the Okubo algebra), so that no trial or proof rests on an unverified tool.  It does not cover the paper's own results.  Those are certified one by one by the standalone verification scripts in [`../src/`](../src/README.md), which are run directly and print their own pass/fail report, and independently in [`../../gap_project/`](../../gap_project/README.md).
+Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech constructions of Wilson and Dixon, the Okubo algebra), so that no trial rests on an unverified tool; the script behind the paper's proof, `verify_structural_proof.py`, uses its own implementation of the product (2.1) and checks the laws its proof uses symbolically.  It does not cover the paper's own results.  Those are certified one by one by the standalone verification scripts in [`../src/`](../src/README.md), which are run directly and print their own pass/fail report, and independently in [`../../gap_project/`](../../gap_project/README.md).
 
 ## Contents
 

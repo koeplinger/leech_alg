@@ -187,8 +187,9 @@ the public domain.
   integral octonion arithmetic. No dispute known.
 - **Notes**: Chapter 9 covers maximal orders of integral octonions and the
   Kirmse–Coxeter–Bruck correction. Cited by the paper, with Coxeter 1946, for
-  the seven maximal orders (Sections 1 and 2.2, Lemma 4.2) and for the Moufang
-  identities (Section 7). Used as a modern cross-check; the
+  the seven maximal orders (Sections 1 and 2.2, Lemma 4.2), and on its own for
+  L = D_8^+ (Section 2.2) and for the left Moufang identity in the proof of
+  (4.2) (Section 4.1). Used as a modern cross-check; the
   primary-source-verified account in this project is built directly from
   Dickson (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946).
 

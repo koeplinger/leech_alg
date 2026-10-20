@@ -14,7 +14,7 @@ the octonion algebra.
 
 Let O denote the real octonion algebra with standard Fano-plane
 multiplication, and let σ: O → O be the linear map that swaps two
-imaginary basis elements (any transposition of {e₁, …, e₇}).  Define a
+imaginary basis units (any transposition of {e₁, …, e₇}).  Define a
 second multiplication ·_σ on O by
 
     x ·_σ y  =  σ( σ(x) · σ(y) )        (†)
@@ -33,23 +33,25 @@ Now set R²⁴ = O₁ ⊕ O₂ ⊕ O₃, three copies of (O, ·_σ), all using t
     Same block:      O_α × O_α → O_α
     Cross block:     O_α × O_β → O_γ      where {α,β,γ} = {1,2,3}
 
-All nine block-pair products use the single multiplication ·_σ.
+All nine block-pair products use the single multiplication ·_σ.  The
+resulting product ⋆ on R²⁴ is the paper's Z₃-symmetric triple-octonion
+product (Definition 3.3).
 
 ### The claim
 
-For every u, v ∈ Min(Λ) (the 196,560 vectors of squared norm 8), the
-product u · v lies in Λ.
+For every u, v ∈ Min(Λ) (the 196,560 vectors of norm 8), the
+product u ⋆ v lies in Λ.
 
 Since Min(Λ) generates Λ over Z, bilinearity extends closure to all of Λ:
-for every u, v ∈ Λ, the product u · v lies in Λ.  Therefore (Λ, +, ·) is
-an order in the 24-dimensional R-algebra (R²⁴, +, ·).
+for every u, v ∈ Λ, the product u ⋆ v lies in Λ.  Therefore (Λ, +, ⋆) is
+an order in the 24-dimensional R-algebra (R²⁴, +, ⋆).
 
 ### What makes this simple
 
 The entire construction has three ingredients:
 
 1. **One octonion product**, related to Wilson's standard convention
-   by a single transposition σ of two imaginary basis elements.
+   by a single transposition σ of two imaginary basis units.
 2. **Three identical copies** of that product on R²⁴.
 3. **Z₃ cross-block routing**: products of vectors from different blocks
    land in the third block.
@@ -64,7 +66,8 @@ The same product on all three copies.
 | Trial 007 base (per transposition) | 900 | 0 |
 | Scaled tests (three harnesses: `trial_007_{scaled_test,fast,exhaust}.py`) | 12,000,000+ | 0 |
 | All 21 transpositions (small sample) | ~15,000 | 0 |
-| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 Z-basis products | 0 |
+| Symbolic proof (Lemmas 4.1–4.4, paper §4): its finite content, the closure of one maximal order (paper §2.2) and two lattice identities (paper §4.1) | 64 + 8 + 8 products, plus covolumes | 0 |
+| Lemma inclusions on Z-bases, in Python and GAP (validation) | 8 basis vectors (Lemma 4.1) + 192 basis products (Lemmas 4.2–4.4) | 0 |
 | §5 algebraic-properties test (N = 10⁶) | 1,000,000 per property | n/a (rates) |
 
 Exhaustive verification of all 196,560² ≈ 3.86 × 10¹⁰ pairs is
@@ -72,14 +75,14 @@ computationally feasible (~2 hours with 16 CPU cores) but is **not
 required**: the symbolic proof in paper §4 establishes closure
 independently of sampling.
 
-All 21 transpositions of imaginary basis elements produce the same result.
+All 21 transpositions of imaginary basis units produce the same result.
 The 21 transpositions form a single orbit under conjugation by the order-21
 group of coordinate permutations preserving the oriented Fano triples; each
 such permutation is an octonion automorphism fixing s and s̄ and preserving
 L, so conjugation carries the proof for σ = (1 2) to every transposition
 (paper §4, footnote).
 
-Transpositions are not the only permutations of the imaginary axes for
+Transpositions are not the only permutations of the imaginary basis units for
 which the assembled triple product closes.  The census over all 5,040
 permutations of S₇ is exhaustive
 (`verify_all_permutations_exact.py`; earlier partial runs
@@ -107,40 +110,48 @@ The identity (the untwisted product) does not close.
 
 ### Symbolic proof
 
-Closure is proved symbolically via four lemmas (exact arithmetic:
-`symbolic_proof_checks.py` for Lemmas A, C and D; `verify_appendix_tables.py`
-for the paper's Appendix A tables of Lemmas B, C and D;
-`gap_project/tests/test_lemmas.g` for all four):
+Closure is proved symbolically via four lemmas (paper §4):
 
-- **Lemma A**: σ(L) = L (coordinate permutation preserves D₈⁺).
-- **Lemma B**: L·L ⊆ L (L is a √2-scaled copy of a maximal order; Coxeter 1946).
-- **Lemma C**: L · σ(Ls̄) ⊆ σ(Ls̄) (64 basis products verified exactly).
-- **Lemma D**: σ(Ls) · σ(Ls) ⊆ σ(Ls) (64 basis products verified exactly).
+- **Lemma 4.1**: σ(L) = L (a coordinate permutation preserves D₈⁺).
+- **Lemma 4.2**: L · L ⊆ L.
+- **Lemma 4.3**: L · σ(Ls̄) ⊆ σ(Ls̄).
+- **Lemma 4.4**: σ(Ls) · σ(Ls) ⊆ σ(Ls).
+
+Lemmas 4.2 to 4.4 follow from the closure of one maximal order of integral
+octonions, 𝒪 := ½(e₁ + e₂)L (paper §2.2; Wilson's ring A₃).  Three lattice
+identities hold: L = (e₁ + e₂)𝒪, σ(Ls̄) = 2𝒪, and σ(Ls) = p𝒪 with
+p = e₂ − e₄ + e₅ − e₆ (claims 019, 021).  For purely imaginary x and all
+octonions a, b, the alternative, flexible and left Moufang laws give
+(xa)(xb) = x((ax)b), so x𝒪 is closed for every purely imaginary x ∈ 𝒪.
+Both e₁ + e₂ and p are such elements, which gives Lemmas 4.2 and 4.4;
+Lemma 4.3 reads L · 2𝒪 ⊆ 2𝒪, which holds because L ⊆ 𝒪.
+
+The finite content (the closure of 𝒪 on a Z-basis; σ(Ls̄) = 2𝒪 and
+σ(Ls) = p𝒪 on eight products each, plus the covolume count) is checked in
+exact arithmetic by `verify_structural_proof.py`.  The lemma inclusions
+themselves are checked on Z-bases by `symbolic_proof_checks.py`
+(Lemmas 4.1, 4.3, 4.4), `verify_structural_proof.py` (Lemmas 4.2 to 4.4)
+and `gap_project/tests/test_lemmas.g` (all four).
 
 The standard product fails condition 3 because Ls·Ls ⊄ Ls.  The twist
 maps the condition-3 sublattice from Ls to σ(Ls), where closure holds.
 The accompanying observation σ(Ls) ≠ Ls (verified by an explicit
-witness in the script) is recorded as a remark in Section 4 of the
-paper rather than a lemma: it confirms the construction is
-non-trivial, but is not used in the closure argument.
+witness in `symbolic_proof_checks.py`) is recorded as a remark in
+Section 4 of the paper rather than a lemma: it confirms the construction
+is non-trivial, but is not used in the closure argument.
 
-One candidate explanation for Lemma D is **excluded**
-(`verify_sigma_Ls_ideal_exclusion.py`): σ(Ls) is *not* an ideal of L.
-Only 32 of 64 basis-pair products satisfy L · σ(Ls) ⊆ σ(Ls), and only
-21 of 64 satisfy σ(Ls) · L ⊆ σ(Ls).  (Control: L · Ls ⊆ Ls holds on
-24 of 64.)  By contrast σ(Ls̄) *is* a two-sided ideal of L, 64/64 on
-both sides; Lemma C above is its left-handed half.  So the closure of
-σ(Ls) under its own product is not inherited from an ideal property.
-The ideal property of σ(Ls̄) has a structural reason (claim 019; paper
-v8, §7; `verify_sigma_sublattice_maximal_order.py`): σ(Ls̄) = 2O for a
-maximal order O ⊇ L of the standard octonion product.  Likewise
-σ(Ls) = p·O with p = e₂ − e₄ + e₅ − e₆, and since p is purely imaginary the
-left Moufang identity gives (pa)(pb) = p((ap)b), so p·O is closed: Lemma D
-also follows from O · O ⊆ O (claim 021).
+One candidate explanation for Lemma 4.4 is **excluded**
+(`verify_sigma_Ls_ideal_exclusion.py`; paper Remark 4.5; claim 013):
+σ(Ls) = p𝒪 is *not* an ideal of L on either side.  On the script's
+Z-bases, only 32 of 64 basis-pair products satisfy L · σ(Ls) ⊆ σ(Ls), and
+only 21 of 64 satisfy σ(Ls) · L ⊆ σ(Ls).  (Control: L · Ls ⊆ Ls holds on
+24 of 64.)  By contrast σ(Ls̄) = 2𝒪 *is* a two-sided ideal of L, 64/64 on
+both sides; Lemma 4.3 is its left-handed half.  So the closure of σ(Ls)
+under its own product is not inherited from an ideal property.
 
 ### Algebraic properties
 
-The order (Λ, +, ·) is non-unital, non-commutative, non-associative,
+The order (Λ, +, ⋆) is non-unital, non-commutative, non-associative,
 not alternative, not flexible, and not power-associative.  The product
 is not norm-multiplicative, and it is not a symmetric composition
 algebra.  Sampled rates, N = 10⁶ per property, exact integer

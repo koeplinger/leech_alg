@@ -2,7 +2,8 @@
 
 This file defines terminology used in this project. Where established
 mathematical terminology exists, it is cited. Where constructions are
-specific to this project, terms are marked as **(project-specific)**.
+specific to this project, the terms are listed under **Project-specific
+terms**.
 
 ---
 
@@ -11,9 +12,10 @@ specific to this project, terms are marked as **(project-specific)**.
 **Established terms:**
 Idempotent — Isomorphism (of algebras) — Isotopy (of algebras) —
 Kirmse integers — Kirmse twist (project shorthand; the paper's Coxeter–Bruck transposition) — Leech lattice Λ —
-Maximal order (of integral octonions) — Okubo algebra —
+Maximal order (of integral octonions; the paper's 𝒪) — Moufang identities;
+alternative and flexible laws — Okubo algebra — Order —
 Para-Hurwitz algebra — Petersson construction —
-Square-zero element (square nilpotent) —
+Square-zero element (square nilpotent) — Standard octonion product —
 Symmetric composition algebra — Triality (D₄ triality)
 
 **Project-specific terms:**
@@ -21,7 +23,8 @@ Symmetric composition algebra — Triality (D₄ triality)
 Ideal decomposition R²⁴ = D ⊕ T — Petersson triality triple —
 Reflection ρ — Span index — Triple octonion product — Twist —
 Z₃-symmetric triple-octonion product
-(historically: transposition-twisted triple octonion product) —
+(triple product for short; historically: transposition-twisted triple
+octonion product) —
 √3 obstruction
 
 ---
@@ -64,10 +67,10 @@ A single map governs both input and output.
 Isomorphism is a special case of **isotopy** (see below): it corresponds to
 the isotopy triple (φ, φ, φ) where all three maps are the same.
 
-In this project: the octonion product ·_σ (main paper Definition 3.2)
-is isomorphic to the standard octonion product.  The map σ: e_s ↔ e_t
-(extended linearly)
-satisfies σ(x ·_std y) = σ(x) ·_σ σ(y) for all basis pairs.  Verified
+In this project: the σ-twisted octonion product ·_σ (main paper
+Definition 3.2) is isomorphic to the standard octonion product · of eq.
+(2.1).  The map σ: e_i ↔ e_j (extended linearly, fixing e₀)
+satisfies σ(x · y) = σ(x) ·_σ σ(y) for all basis pairs.  Verified
 computationally: 0/64 mismatches.  For the coordinate-symmetric placement
 L = D₈⁺ used throughout the paper, σ preserves L (it is a coordinate
 permutation, which preserves both integer/half-integer parity and the
@@ -99,9 +102,12 @@ Albert, A.A., "Non-associative algebras I", Ann. of Math. 43 (1942),
 
 ### Leech lattice Λ — norm conventions
 
-The **Leech lattice** Λ is the unique even unimodular lattice of rank 24
-with no vectors of squared norm 2.  Its automorphism group is 2·Co₁, where
-Co₁ is Conway's first sporadic group.
+The **Leech lattice** is the unique even unimodular lattice of rank 24
+with no vectors of squared length 2.  Its automorphism group is the Conway
+group Co₀ = 2·Co₁, a double cover of the sporadic simple group Co₁.  As in
+the paper (§1), Λ denotes the √2-scaled copy of this lattice, at the scale
+of Wilson's construction; its minimal shell Min(Λ) consists of the 196,560
+vectors of squared length 8.
 
 **Norm convention used in this project.**  Throughout all code and
 documentation, we use the **standard squared Euclidean norm** in R²⁴:
@@ -121,9 +127,18 @@ shell has N_W = 4 and E8 roots have N_W = 1.  When citing Wilson's results,
 we translate to the standard convention above.
 
 The Leech lattice is constructed in this project via Wilson's
-characterization:  Λ = {(x, y, z) ∈ L³ : conditions 1–3}, where L is the
-E8 lattice (= D₈⁺, a √2-scaled copy of a maximal order of the integral
-octonions; paper, Section 2.2).  See `leech_wilson.py` for the implementation.
+characterization (paper §2.3), which starts from the E8 lattice L = D₈⁺ of
+paper §2.2, a √2-scaled copy of the maximal order 𝒪 of the same section
+(L = (e₁ + e₂)𝒪; see "Maximal order" below).  With
+s = ½(−e₀ + e₁ + ⋯ + e₇) ∈ L and s̄ = ½(−e₀ − e₁ − ⋯ − e₇) ∉ L,
+**Wilson's sublattices** are Ls̄ = {ℓ·s̄ : ℓ ∈ L} and Ls = {ℓ·s : ℓ ∈ L},
+each of index 16 in L, with Ls̄ + Ls = L and Ls̄ ∩ Ls = 2L.  Wilson's three
+conditions define the lattice (paper Definition 2.1):
+Λ = {(x, y, z) ∈ L³ : (1) x, y, z ∈ L; (2) x + y, x + z, y + z ∈ Ls̄;
+(3) x + y + z ∈ Ls}.  Its 196,560 minimal vectors fall into three types by
+the number of nonzero blocks: Type 1 (720), Type 2 (11,520) and Type 3
+(184,320); paper §2.3 lists their forms.  See `leech_wilson.py` for the
+implementation.
 
 References:
 - Conway, J.H. and Sloane, N.J.A., "Sphere Packings, Lattices and Groups"
@@ -169,8 +184,8 @@ $J_1$ by transposing two of the $i$'s": a **transposition of two
 imaginary basis units**, a linear involution of $\mathbb{R}^8$.  The
 $\binom{7}{2}=21$ such transpositions yield the seven maximal orders
 in seven sets of three.  Verified from the originals in this project
-(\texttt{python\_project/src/verify\_kirmse\_1924.py},
-\texttt{verify\_coxeter\_1946.py}; notes in \texttt{paper/reviews/}).
+(`python_project/src/verify_kirmse_1924.py`,
+`verify_coxeter_1946.py`; notes in `paper/reviews/`).
 
 **Kirmse twist (this project's shorthand, used in the trial record) = the Coxeter–Bruck transposition of the main paper's Appendix B = the transposition $\sigma$ of Definition 3.1.** The
 Kirmse twist is shorthand for the transposition of two imaginary basis
@@ -222,19 +237,19 @@ References:
 ### Maximal order (of integral octonions)
 
 The integral octonions, for a fixed octonion multiplication, are the orders
-of the rational octonion algebra (the Q-span of e₀, …, e₇): lattices Γ that
+of the octonion algebra over Q (the Q-span of e₀, …, e₇): lattices Γ that
 are closed under multiplication and contain the identity.  A maximal order
 is one maximal with respect to inclusion among them.  There are infinitely
 many maximal orders (G₂(Q) is infinite, and only finitely many of its
 elements preserve a given maximal order; the external review of v8,
-§6.1(a)); exactly **seven** of them contain the Gravesian order
-$\mathbb{Z}\langle e_0, \ldots, e_7\rangle$, each an $E_8$ lattice (at
+§6.1(a)); exactly **seven** of them contain all eight basis units (the
+lattice $\mathbb{Z}\langle e_0, \ldots, e_7\rangle$ they span), each an $E_8$ lattice (at
 minimal norm 1, so a 1/√2-scaled copy of the norm-2 root lattice) (Coxeter
 1946; Conway–Smith 2003, Ch. 9; for the multiplication of the paper's eq.
 (2.1), exhaustively by `verify_sigma_sublattice_maximal_order.py`).  The
 $\binom{7}{2}=21$ transpositions of pairs of imaginary basis units, applied
 to Kirmse's $J_1$, yield the seven (Coxeter 1946, §4); they fall into seven sets
-of three, with each set fixing one common imaginary unit (Coxeter's
+of three, with each set fixing one common imaginary basis unit (Coxeter's
 "special unit", one of $i_1,\ldots,i_7$).
 
 Note: Dickson (1923, Theorem XV) gave a correct construction of one
@@ -244,11 +259,44 @@ arising from an extra assumption he states openly in the derivation
 (p. 321: that the orders contain the Hurwitz quaternions
 $\tfrac12(\pm1\pm i\pm j\pm k)$).  Coxeter (1946, §14, postscript)
 identifies this cause independently.  Verified from the originals in
-this project (\texttt{verify\_dickson\_1923.py},
-\texttt{verify\_coxeter\_1946.py}).
+this project (`verify_dickson_1923.py`,
+`verify_coxeter_1946.py`).
+
+In this project (main paper §2.2, eq. (2.2); `verify_structural_proof.py`):
+the main paper uses one maximal order throughout, 𝒪 := ½(e₁ + e₂)L.  It
+contains the eight basis units, is closed under the standard octonion
+product, and is one of the seven maximal orders above, the ring A₃ of
+Wilson (2009, §2); the ledger (claims 019, 021) writes it O⁽⁴⁾.  Since
+(e₁ + e₂)² = −2 and L = −L, the alternative law gives L = (e₁ + e₂)𝒪, so
+L ⊆ 𝒪 and L is a √2-scaled copy of 𝒪.  Lemmas 4.2 to 4.4 of the main
+paper (§4.1) rest on three facts: σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 with
+p = e₂ − e₄ + e₅ − e₆ (eq. (4.1)); (xa)(xb) = x((ax)b) for every purely
+imaginary octonion x and all octonions a, b (eq. (4.2)); hence
+(xM)(xM) ⊆ xM, where xM := {x·m : m ∈ M}, for every lattice M closed under
+the standard octonion product and every purely imaginary x ∈ M (eq. (4.3)).
+With M = 𝒪, x = e₁ + e₂ gives Lemma 4.2 and x = p gives Lemma 4.4; Lemma
+4.3 follows from L ⊆ 𝒪 and the closure of 𝒪.  The lattice σ(Ls̄) = 2𝒪 is
+a two-sided ideal of L; σ(Ls) = p𝒪 is not an ideal of L on either side
+(Remark 4.5).
 
 References: Dickson (1923); Kirmse (1924); Coxeter (1946); Conway and
 Smith (2003), Chapter 9.
+
+### Moufang identities; alternative and flexible laws
+
+An algebra is **alternative** when it satisfies the left alternative law
+x(xy) = x²y and the right alternative law (yx)x = yx² for all x, y.  An
+alternative algebra is **flexible**, x(yx) = (xy)x, and satisfies the
+**Moufang identities**, among them the left Moufang identity
+(xyx)z = x(y(xz)).  The octonions are alternative.
+
+In this project (main paper §4.1; `verify_structural_proof.py`, item (D)):
+from these laws and x² = −N(x), the paper derives (4.2),
+(xa)(xb) = x((ax)b), for purely imaginary x and all octonions a, b.  For
+general x the two sides differ by 2 Re(x)[x, a, b], where
+[x, a, b] = (xa)b − x(ab).  Ledger claim 021 records the literature of (4.2).
+
+References: Schafer (1966), Chapter III; Conway and Smith (2003).
 
 ### Okubo algebra (pseudo-octonion algebra)
 
@@ -258,6 +306,20 @@ x * y = τ(x̄) · τ²(ȳ).  Named after Susumu Okubo, who first constructed
 it on traceless 3×3 matrices over C.  Over R, there is (up to isomorphism)
 one Okubo algebra; over other fields there may be several.
 References: [MarraniCorradettiZucconi2025], [Elduque2000_Triality].
+
+### Order
+
+(Main paper Corollary 1.2 with its footnote, and Remark 1.3.)  An
+**order** in a finite-dimensional real algebra is a subring that is a free
+Z-module of rank equal to the algebra's dimension: a full-rank lattice
+closed under the product.  The classical definition also asks for the
+identity element (see "Maximal order" above); the ambient algebra
+(R²⁴, +, ⋆) has none, and the paper uses the term "in the nonunital
+sense" (Corollary 1.2, footnote).  (Λ, +, ⋆) is such an order, and so is L
+under the standard octonion product (L · L ⊆ L, Lemma 4.2; e₀ ∉ L).  An
+order is **maximal** when no larger order of the same algebra contains it;
+(Λ, +, ⋆) is not maximal, since L³ is a ⋆-closed overlattice of index 2¹²
+(claim 016).
 
 ### Para-Hurwitz algebra (para-octonion algebra)
 
@@ -298,6 +360,20 @@ In this project (main paper §5.4;
   `verify_square_zero_norm24_witness.py`).
 - **Min(Λ) contains none**: the minimal norm is 8, not a multiple
   of 12.
+
+### Standard octonion product
+
+(Main paper §2.1, eq. (2.1).)  The multiplication of the real octonion
+algebra O with basis e₀, …, e₇, e₀ the identity, determined by the seven
+**Fano triples** (1,2,4), (2,3,5), (3,4,6), (4,5,7), (5,6,1), (6,7,2),
+(7,1,3): for each triple (a, b, c), e_a · e_b = e_c, cyclic permutations
+carrying a positive sign and anti-cyclic ones a negative sign [Baez2002];
+equivalently, e_a · e_{a+1} = e_{a+3} for a = 1, …, 7 (indices mod 7 in
+{1, …, 7}).  Each **imaginary basis unit** e₁, …, e₇ squares to −e₀.  An
+octonion x = Σ xᵢeᵢ is **purely imaginary** when x₀ = 0, that is, when
+x̄ = −x.  The σ-twisted octonion product ·_σ (main paper Definition 3.2)
+and the twisted octonion products ·_g (see "Twist" below) are defined
+from it.
 
 ### Symmetric composition algebra
 
@@ -356,7 +432,7 @@ standalone note `paper/automorphism_group_2026-07-12.pdf`):
   1 (×1), 2 (×7), 3 (×8), 6 (×20).
 - Every element is a blockwise octonion automorphism composed with a
   permutation of the three blocks.  The S₃ permutes the three blocks;
-  the C₆ is generated by the signed permutation of imaginary units
+  the C₆ is generated by the signed permutation of imaginary basis units
   fixing e₀:
   e₁ ↦ −e₅, e₂ ↦ −e₇, e₃ ↦ e₂, e₄ ↦ −e₄, e₅ ↦ e₆, e₆ ↦ e₁, e₇ ↦ −e₃.
 - **Ambient group**: Aut(R²⁴, ⋆) = G₂ × G₂ × S₃, compact, of
@@ -464,13 +540,16 @@ from an even closing permutation (2¹⁰), and neither is isomorphic to
 (claim 018).
 
 ### Z₃-symmetric triple-octonion product
-(historically: transposition-twisted triple octonion product)
+(triple product for short; historically: transposition-twisted triple
+octonion product)
 
-(Trial 007, prompt 025.)  The triple
-octonion product (see below) built from the octonion product ·_σ in
-all three blocks, where ·_σ is defined by x ·_σ y := σ(σ(x) · σ(y))
-for a transposition σ = (s t) of two imaginary basis elements
-{1,...,7}.  The product ·_σ is simply another octonion product on R⁸,
+(Trial 007, prompt 025; main paper Definition 3.3.)  The triple
+octonion product (see below) built from the σ-twisted octonion product
+·_σ in all three blocks, where ·_σ is defined by
+x ·_σ y := σ(σ(x) · σ(y)) for a transposition σ = (i j) on {1, …, 7},
+extended to the linear involution of R⁸ that fixes e₀ and swaps the
+imaginary basis units e_i and e_j (main paper Definitions 3.1 and 3.2).
+The product ·_σ is simply another octonion product on R⁸,
 isomorphic to the standard one via σ itself.  The transposition σ is
 the device that exhibits the fit of this octonion product with
 Wilson's representation of the Leech lattice: σ leaves L = D₈⁺
@@ -480,8 +559,8 @@ All 21 transpositions close on Λ.  The evidence is the symbolic proof of
 paper §4 for σ = (1 2), together with the exact Z-basis test of all 21
 (`verify_consecutive_twists_exact.py`); random-pair sampling
 (`trial_007_kirmse_twist.py`, 900 pairs per transposition, and the 12M+ pairs
-of the scaled harnesses) agrees.  This fixes the Wilson condition 3 failure of
-the triple octonion product taken over Wilson's own multiplication
+of the scaled harnesses) agrees.  This fixes the failure of Wilson's condition
+(3) for the triple octonion product taken over Wilson's own multiplication
 convention.
 
 The 21 transpositions form a single orbit under conjugation by the
@@ -490,7 +569,7 @@ triples.  Each such permutation is an octonion automorphism that fixes s
 and s̄ and preserves L, so conjugation carries the paper's §4 proof for
 σ = (1 2) to every transposition (paper §4, footnote).
 
-Transpositions are not the only permutations of the imaginary axes
+Transpositions are not the only permutations of the imaginary basis units
 for which the assembled triple product closes.  Writing
 x ·_π y := π⁻¹(π(x) · π(y)) for any
 permutation π of e₁, …, e₇ (the paper's twisted product ·_g with
@@ -524,6 +603,11 @@ Trial 001 tested this product without rescaling.  Trial 002 tested it with
 per-block scaling.  Both failed, but trial 001 exhibited a distinctive
 **2+1 closure pattern** (see above).
 
+In the main paper's notation this product is ⋆_g with g the identity
+(see "Twist" below), which the paper calls the untwisted product (§5.5,
+Appendix C).  The paper's *triple product* (Definition 3.3) is the
+Z₃-symmetric triple-octonion product ⋆ = ⋆_σ (see above).
+
 ### Twist
 
 (Main paper §5.5.)  A **twist** is an invertible linear map g of R⁸.  It
@@ -546,4 +630,4 @@ introduces structure constants involving cos(2π/3) = −1/2 and
 sin(2π/3) = √3/2.  Products of E8 lattice vectors (integer or
 half-integer coordinates) then acquire irrational √3 components and
 cannot lie in the E8 lattice.  This is a more fundamental obstruction
-than the Wilson-condition-3 failure of the triple octonion product.
+than the failure of Wilson's condition (3) for the triple octonion product.

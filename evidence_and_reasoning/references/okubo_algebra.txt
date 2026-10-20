@@ -146,7 +146,7 @@ and derivations of composition algebras, and applications.
 ### [Koeplinger2023]
 
 - **Authors**: Jens Köplinger
-- **Title**: Towards autotopies of normed composition algebras in algebraic QFT
+- **Title**: Towards autotopies of normed composition algebras in algebraic Quantum Field Theory
 - **Published in**: UNPUBLISHED PREPRINT. Self-published, Revision B,
   November 2023. Deposited on ResearchGate.
 - **Year**: 2023
@@ -228,4 +228,4 @@ and derivations of composition algebras, and applications.
 
 ---
 
-Last updated: 2026-10-15
+Last updated: 2026-10-20

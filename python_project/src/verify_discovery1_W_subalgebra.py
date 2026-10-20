@@ -14,6 +14,10 @@ table, the two cell corrections, N, N^2, N^3, w2) stand.  See also
 paper/reviews/2026-07-18_claude_fable_5_forensic_review_v6.md, S4.  Code and
 printed output are unchanged.
 
+Note (20 October 2026, prompt 313): in v8 the footnote cited above as "paper
+Appendix A.1 footnote" is the commutativity footnote of the Polarization
+paragraph of Appendix A, which has no subsections.  Code and output unchanged.
+
 Tests:
   (a) Is the F2-octonion-algebra L/2L commutative? (Expected: yes.)
   (b) Does the proposed basis (w0, w1, w2, w3) really span W?

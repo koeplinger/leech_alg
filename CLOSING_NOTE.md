@@ -12,6 +12,11 @@ The text below stands as written: the record of the closure of 27 July 2026.
 the external review of v8; the revision's changes are recorded in
 `paper/v7_to_v8_changelog.md`.
 
+**Addendum (20 October 2026).** A third plan,
+`evidence_and_reasoning/2026-10-20_plan.md`, replaces the coefficient tables
+of the closure proof by a structural proof from the closure of one maximal
+order of integral octonions (changelog item 15).
+
 **27 July 2026.** This effort is closed. What follows records the result, the
 reasons for closing, and what this repository is from here on.
 

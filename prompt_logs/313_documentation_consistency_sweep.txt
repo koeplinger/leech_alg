@@ -1,0 +1,140 @@
+Prompt 313 -- Project documentation consistency sweep
+Date: 2026-10-20
+Model: Claude Opus 5.5 (Anthropic).
+
+User: "Great. I'll start another fine-comb read. In the meantime, do a
+project documentation consistency sweep."
+(Invoked with the workflow-authoring skill; ultracode on.)
+
+Scope: every documentation file of the repository against the current
+state (v8 after Step A of the 2026-10-20 plan, prompt 311, and the
+editorial sweep, prompt 312).  paper/main.tex is NOT edited: the author is
+reading it.  Genre rules of DOCUMENT_GENRES.md apply: closed prompt logs
+are immutable, frozen artifacts take dated addenda only, current-state
+documents are corrected in place without narration.
+
+Method (Manifesto Section 14; "a sweep reports before it writes"): a
+read-only workflow of 108 agents: eight scanners by angle (paper against
+trackers; the changelog against the v7 to v8 diff; code against indexes,
+with runs; glossary and vocabulary; reference registry against citations;
+governance, plans and genres; numbers, dates and paths; frozen records), a
+completeness critic, and one adversarial refuter per finding above nit
+level.  Results: 99 findings above nit level (42 confirmed, 51 confirmed
+with a corrected fix, 6 refuted) and 93 nits; 4 nits concern the paper
+(report only).  Reproduced by the scanners and again after the edits:
+pytest 197 passed; GAP run_all.g 110 passed, 0 failed (run from the
+repository root); verify_structural_proof.py, verify_appendix_tables_v7.py,
+verify_polarization_lagrangians.py ALL PASS; symbolic_proof_checks.py,
+verify_mod2_quotient.py, verify_discovery1_W_subalgebra.py,
+verify_product_span_structure.py unchanged outputs.  The model switched to
+Claude Opus 5.5 at prompt 312; this prompt ran on it throughout.
+
+Headline findings:
+ 1. Step A (prompt 311) left the records describing the retired table
+    proof: CURRENT_STATE (verification row, done-item 1, appendix
+    description, open item 1, map), README (result bullets), research_result
+    (Lemmas A to D, "the paper's Appendix A tables"), ledger rows 013, 016,
+    019, 021 ("paper Table 1", "paper §7", "no repository script yet"),
+    paper/README.md (the review package's rerun note now fails), the
+    scripts and GAP indexes, the registry (Conway-Smith "Moufang identities
+    (Section 7)"; "Appendix A.1"; the computer-algebra note).
+ 2. The 2026-10-20 plan was engaged at prompt 311 but still read "proposed,
+    not executed", in the plan and in two indexes.
+ 3. Changelog: item 15 misquoted the Section 2.2 text of Step A (a
+    duplicated clause); items 1, 5, 6, 7, 9, 11 to 15 lacked pointers to
+    the later items that replaced their quoted text; item 16 claimed that
+    ruled passages were left as they stand, while the sweep dropped the
+    article in "maximal order(s) of the integral octonions" (Section 2.2,
+    Lemma 4.2), which items 12 and 13 record as kept by the ruling of
+    prompt 291 (the term itself is kept); its build line said "eight
+    before" (six at 44a0bd5).
+ 4. No ledger row recorded the proof as the paper now states it.
+ 5. The glossary lacked the paper's 𝒪, "order" in the nonunital sense,
+    "standard octonion product", "purely imaginary", and the Moufang and
+    alternative laws; it still used "Gravesian order", "octavian", "rational
+    octonion algebra", σ = (s t) (clashing with the vector s), and gave the
+    unimodular lattice the symbol Λ.
+ 6. Smaller: the GAP prerequisite check used a function GAP 4.12 lacks
+    (IsLoadedPackage; it is IsPackageLoaded, tested); a ledger row with a
+    settlement narrative; the Furey-Hughes registry note described the
+    Outlook as drafted in April; a registry title abbreviated; British
+    spellings; em-dash separators in CURRENT_STATE.
+
+Edits (29 files, +465/-241; paper/main.tex untouched; linter clean):
+ - Current-state, in place without narration: CURRENT_STATE.md (25 edits:
+   header and stamp, verification row, done-items 1 and 2, the sublattice
+   paragraph, open item 1, map, separators, wording), README.md (result
+   bullets, run list), research_result.md (product notation ⋆, verification
+   table, "Symbolic proof" section in the paper's lemma numbers),
+   key_claims/README.md (rows 006, 013, 016, 019, 020, 021; new row 022:
+   the proof of closure as the paper states it; range 009 to 022, also in
+   CURRENT_STATE and evidence_and_reasoning/README.md), terminology.md (20
+   edits: entries Order, Standard octonion product, Moufang identities and
+   alternative and flexible laws; the 𝒪 paragraph in "Maximal order"; the
+   Leech-lattice entry's symbol and scale; Wilson's sublattices and
+   conditions; "triple product for short"; σ = (i j); the paper's term
+   "imaginary basis units"; LaTeX in Markdown), evidence_and_reasoning/
+   README.md, paper/README.md (the rerun note: the reviewed source
+   6f7b37c for MAIN_TEX and for the extractor), python_project/README.md,
+   python_project/src/README.md, python_project/tests/README.md,
+   gap_project/README.md, tools/README.md, prompt_logs/README.md.
+ - In-progress changelog: header, ten pointers, item 15 corrected (the
+   Section 2.2 quotation, display renumbering, the script's scope, "Appendix
+   A's final form", the records now brought into line at prompt 313), item
+   16 corrected (the article in two ruled phrases; "six before"; "(Remark
+   5.2)"; the purely-imaginary rationale), the trackers list completed.
+ - Registry, in place (the files' practice): prior_art (Appendix A; US
+   spelling), background_octonions (the Conway-Smith citations),
+   computer_algebra_systems (the scripts), leech_lattice_octonionic_
+   constructions (𝒪 = Wilson's A_3; stamp), triality (header and the
+   Furey-Hughes note, with a dated addendum), okubo_algebra (title as in the
+   source PDF; stamp).
+ - Frozen, by dated addenda or notes: the 2026-10-20 plan (status: engaged;
+   the rulings of prompt 311; where Step A differs from the plan text),
+   CLOSING_NOTE.md (third plan), key claim 008 (forward correction: the
+   proof as v8 states it), docstrings of symbolic_proof_checks.py,
+   verify_polarization_lagrangians.py, verify_mod2_quotient.py,
+   verify_discovery1_W_subalgebra.py, verify_product_span_structure.py, and
+   the header of gap_project/src/leech_wilson.g.
+
+Not applied, with the reason:
+ - The glossary addition that on L sbar the twist acts on Kirmse's set
+   itself, up to scale (L sbar = 2 J_1, sigma(J_1) = 𝒪): the author ruled
+   at prompt 291 against further material on L sbar and Kirmse's mistake;
+   the fact stays in ledger row 019.
+ - "non-unital", "non-associative" and similar in the trackers: open for
+   the author since prompt 285.
+ - The author's governance prose (MANIFESTO.md, DOCUMENT_GENRES.md,
+   TRIAL_METHODOLOGY.md: dash asides, "squared norm"); additions of the
+   author's term rulings to editorial_standards.md; the research statement
+   (updated only on a significant deviation of the goal).
+ - The linter: it freezes plans and programs by filename, not by
+   engagement or citation, and its dated-note pattern does not list
+   "Note (...)"; a hard-coded path in egan_baez_count.py; the placement of
+   the prompt-311 docstring notes at the ends of docstrings.  Report only.
+ - Em-dash separators in the glossary index and the ledger's status
+   legend; the Appendix A terms (mod-2 quotient, Lagrangian, polarization)
+   for the glossary, after Step B fixes Appendix A.
+ - Refuted (six): conditional findings on the row-022 range (applied once
+   the row was added), and one on item 15's records sentence, whose remedy
+   was to update the records now, which this sweep did.
+
+Corrections to the closed log of prompt 312 (immutable; recorded here):
+ - "no hyperref warnings (eight before)" should read "six before": the
+   source the sweep started from (44a0bd5) had six; v7 had eight.
+ - Its "Not applied" list names Lemma 4.2's closing sentence: the
+   redundancy deletion was not applied, but the sentence's article was
+   changed ("maximal orders of the integral octonions" -> "maximal orders
+   of integral octonions"), as in Section 2.2 (changelog item 16).
+
+Paper items, report only (the author is reading the paper):
+ - Section 2.2 calls x(xy) = x^2 y "the alternative law"; the proof of
+   (4.2) in Section 4.1 names it "the left alternative law".  Both
+   wordings are from prompts 311 and 312; one term belongs in the next
+   paper hand-over.
+ - Parked: Appendix C names a GAP/LOOPS implementation with no
+   bibliography entry for GAP or LOOPS; the symbol J for the sixteen unit
+   octonions (Section 2.3) next to Bruck's J (Appendix B, a quotation); p
+   reused in Sections 5.1 and 5.3 after Section 4.1 fixes p.
+
+Status: CLOSED.

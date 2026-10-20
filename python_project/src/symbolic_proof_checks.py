@@ -27,6 +27,18 @@ gap_project/tests/test_lemmas.g, and by verify_appendix_tables.py, which
 also compares the paper's three printed Appendix A tables entry by entry
 with an exact recomputation.  Code and output unchanged.
 
+Updated 20 October 2026 (prompt 313): v8 of the paper retired the Appendix A
+tables at prompt 311 (they remain in the frozen v7 source
+paper/main_2026-07-19.tex) and proves Lemmas 4.2 to 4.4 from the closure of
+the maximal order O = (1/2)(e1 + e2) L (paper Sections 2.2 and 4.1).  The
+two dated paragraphs above are historical where they name the Appendix A
+certificates and verify_appendix_tables.py, which stops on paper/main.tex.
+In Python, Lemma 4.2 is checked on its 64 basis products by
+verify_structural_proof.py, item (E); the paper's Appendix C cites that
+script with this one and gap_project/tests/test_lemmas.g, and
+verify_appendix_tables_v7.py recomputes the v7 tables.  Code and output
+unchanged.
+
 Lemma 4.1 (paper §4): σ(L) = L
 Lemma 4.2 (paper §4): L·L ⊆ L  (maximal order)
 Lemma 4.3 (paper §4): L · σ(Ls̄) ⊆ σ(Ls̄)

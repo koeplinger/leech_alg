@@ -35,7 +35,7 @@ LOOPS-library `MoufangLoop(16, 3)` (the standard octonion loop).
 To check that both are available:
 
 ```bash
-echo 'LoadPackage("loops"); Print(IsLoadedPackage("loops"), "\n"); QUIT;' | gap -q
+echo 'LoadPackage("loops");; Print(IsPackageLoaded("loops"), "\n"); QUIT;' | gap -q
 ```
 
 This suite was developed against **GAP 4.12.1** and **LOOPS 3.4.4**.
@@ -125,7 +125,7 @@ library's `MoufangLoop(16, 3)`.
 
 ### `test_e8_wilson.g`: 22 checks
 Root counts (112, 128, 240), distinctness, coordinate structure, all roots
-of squared norm 2, lattice membership predicate, single $e_i \notin L$,
+of norm 2, lattice membership predicate, single $e_i \notin L$,
 $2e_i \in L$, integer Gram matrix, rank 8, unimodular Z-basis with $|\det|=1$,
 $s\in L$ with norm 2, $\bar s \notin L$ with norm 2 (paper Section 2.3),
 even-lattice property, $L\cdot L \subseteq L$ on all
@@ -154,8 +154,8 @@ The four lemmas of the symbolic proof (paper Section 4):
 $\sigma(L)=L$; $L\cdot L\subseteq L$;
 $L\cdot\sigma(L\bar s)\subseteq\sigma(L\bar s)$;
 $\sigma(Ls)\cdot\sigma(Ls)\subseteq\sigma(Ls)$.
-Each is reduced to a finite set of basis-basis products (8×8 = 64 each)
-and checked exactly.  Plus Remark 4.5 (two non-triviality witnesses) and
+Lemma 4.1 is checked on the eight basis vectors of $L$, Lemmas 4.2 to 4.4
+on their 8×8 = 64 basis-basis products each, all exactly.  Plus Remark 4.5 (two non-triviality witnesses) and
 the bonus untwisted condition 2 ($L\cdot L\bar s\subseteq L\bar s$).
 
 ### `test_leech_wilson.g`: 14 checks
@@ -204,7 +204,7 @@ the companion's "Summary of concrete data" three-point list.
 | `tests/test_e8_wilson.g`          | `python_project/tests/test_e8_wilson.py`                    |
 | `tests/test_leech_wilson.g`       | `python_project/tests/test_leech_wilson.py`                 |
 | `tests/test_sublattices.g`        | (companion Example 4.2 + `leech_wilson.py` invariants)      |
-| `tests/test_lemmas.g`             | `python_project/src/symbolic_proof_checks.py` (Lemmas 4.1, 4.3, 4.4) and `verify_appendix_tables.py` (the tables of Lemmas 4.2 to 4.4) |
+| `tests/test_lemmas.g`             | `python_project/src/symbolic_proof_checks.py` (Lemmas 4.1, 4.3, 4.4) and `verify_structural_proof.py` (Lemmas 4.2 to 4.4, item (E)) |
 | `tests/test_twist.g`              | (paper Section 3)                                           |
 | `tests/test_triple_product.g`     | parts of `python_project/src/trial_007_kirmse_twist.py`     |
 | `tests/test_companion_examples.g` | (the companion paper, hand-checked here)                    |

@@ -25,7 +25,8 @@ documentation.
    deleted.  New entries are fine.
 3. **Frozen.**  A frozen artifact (a released paper version, a claim file, a
    review, a referenced program) must not be rewritten in place: a change to
-   one must add a dated addendum, or mark it deprecated and superseded.
+   one must add a dated addendum, or mark it deprecated and superseded.  A
+   violation is reported as a warning, not an error.
 4. **Dangling paths.**  Every repository path named in a current-state document
    must exist.
 5. **Index coverage.**  Every program in `python_project/src/` and

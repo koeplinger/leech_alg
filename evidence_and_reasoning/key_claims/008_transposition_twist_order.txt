@@ -3,6 +3,27 @@ Title: The transposition-twisted triple octonion product is an order on the Leec
 Status: ESTABLISHED (symbolic proof + independent computational verification)
 Date: 2026-04-12
 
+--- FORWARD CORRECTION (2026-10-20) ---
+
+The PROOF section below justifies Lemma 4.2 by "L is a maximal order", and
+it calls Lemmas 4.3 and 4.4 finite verifications of 64 basis products each.
+L does not contain e_0: it is a nonunital order and, as a lattice, a
+sqrt(2)-scaled copy of a maximal order of integral octonions (paper
+Section 2.2).  v8 of the paper (prompt 311) defines one such maximal order,
+𝒪 := (1/2)(e_1 + e_2) L, with L = (e_1 + e_2)𝒪 (Section 2.2), and proves
+Lemmas 4.2 to 4.4 from the closure of 𝒪, the identities sigma(L sbar) = 2𝒪
+and sigma(Ls) = p𝒪 with p = e_2 - e_4 + e_5 - e_6, and the identity
+(xa)(xb) = x((ax)b) for purely imaginary x (Section 4.1); Lemma 4.1 is the
+parity argument.  The finite content of the proof is the closure of 𝒪 on a
+Z-basis and the two identities on eight products each
+(python_project/src/verify_structural_proof.py); the basis-pair checks of
+the lemmas are kept as validation (paper Appendix C).  Item 1 of the
+COMPUTATIONAL EVIDENCE section: symbolic_proof_checks.py checks Lemmas 4.1,
+4.3 and 4.4 and the remark sigma(Ls) != Ls, not Lemma 4.2, which is checked
+on its 64 basis products by verify_structural_proof.py and
+gap_project/tests/test_lemmas.g.  Ledger claims 019, 021 and 022.  The
+closure claim itself is unchanged.
+
 --- FORWARD CORRECTION (2026-10-13) ---
 
 The statement below that "maximality of the order ... [is] still open" (in the

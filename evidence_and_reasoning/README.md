@@ -14,15 +14,16 @@ This folder serves two functions:
 
 The result is published (doi:10.13140/RG.2.2.22093.19686), as v7 of the paper;
 the v8 revision in progress is planned in
-[`2026-10-12_plan.md`](2026-10-12_plan.md) and, for the span-index findings,
-[`2026-10-14_plan.md`](2026-10-14_plan.md).
+[`2026-10-12_plan.md`](2026-10-12_plan.md), for the span-index findings in
+[`2026-10-14_plan.md`](2026-10-14_plan.md), and for the symbolic proof that
+replaces the table certificates in [`2026-10-20_plan.md`](2026-10-20_plan.md).
 
 ## Structure
 
 ```
 evidence_and_reasoning/
 ├── key_claims/             # One file per major claim or lemma, with argument and references
-│                           #   (README.md is the ledger; claims 009–021 are ledger-only rows, with no dedicated file)
+│                           #   (README.md is the ledger; claims 009–022 are ledger-only rows, with no dedicated file)
 ├── references/             # Central registry of all cited works, organized by topic
 ├── trial_NNN_*.md          # Results of each computational trial (001–007)
 ├── research_statement.md   # The research goal as posed, with its resolution
@@ -33,7 +34,7 @@ evidence_and_reasoning/
 ├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
 ├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (engaged; items applied)
 ├── 2026-10-14_plan.md      # Plan: the span-index findings in v8, for the wrap-up (executed)
-├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (proposed)
+├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (engaged; Step A applied, Steps B to D pending)
 └── README.md               # This file
 ```
 

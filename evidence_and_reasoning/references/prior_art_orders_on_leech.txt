@@ -38,7 +38,7 @@ roughly by structural distance from the present construction):
    preprint, earlier versions going back to the 1995 arXiv preprints),
    but does not establish closure of Λ under any such product.
 
-3. **Wilson (2009)**: Characterises Λ as a sublattice of L³ using
+3. **Wilson (2009)**: Characterizes Λ as a sublattice of L³ using
    octonionic conditions, but does not define or test a multiplicative
    product on Λ.
 
@@ -102,7 +102,7 @@ octonionic description of Λ.  A conjectured formula for one of the
 three minimal-vector families needed a small correction: Wilson
 supplied this correction in a footnote-style remark at the end of §5
 of Wilson 2009, while independently deriving the sublattice
-characterisation above.  The Dixon–Wilson situation is structurally
+characterization above.  The Dixon–Wilson situation is structurally
 analogous to the Kirmse–Coxeter one: an early, structurally correct
 proposal refined by a later author's short correction.  Dixon 1995
 does not test or claim closure of Λ under any bilinear product.
@@ -113,7 +113,7 @@ Dixon's 2005 preprint (dated 10 March 2005), cited as reference [12] of
 Wilson 2009.  Its conjectured formula for the third family of minimal
 vectors required a small correction, which Wilson supplied in a bracketed
 note at the end of §5 of Wilson 2009 while independently deriving the
-sublattice characterisation above.  The preprint was posted at
+sublattice characterization above.  The preprint was posted at
 www.7stones.com/Homepage/8Lattice.pdf; that URL now serves Dixon's later
 2010 paper, so the 2005 preprint is cited by its locator through Wilson
 2009 rather than by a live link.  Like Dixon's other works here, it does
@@ -160,7 +160,7 @@ reference [20] of Wilson 2009 and submitted at the time) will
 generate Aut(Λ) using 3×3 octonionic matrices.  See the [WilsonConway]
 entry below for that follow-on.  Wilson 2009 does not define or test
 a bilinear product on Λ; it uses the octonionic structure for the
-sublattice characterisation only.
+sublattice characterization only.
 
 ### [Dixon2010] — Integral Octonions, Octonion XY-Product, and the Leech Lattice
 
@@ -186,7 +186,7 @@ exceptional Jordan algebra 𝔥₃(O) as a framework for the Leech lattice.
 Parts 9–10 contain the Leech-Jordan material; part 11 (12 December 2014)
 gives the 270 rescaled copies of the first E₈ shell, and part 12
 (31 January 2016, by Tim Silverman) the integral octonions modulo 2; the
-paper uses parts 11–12 in Section 6 (17,280 = 270 × 64) and Appendix A.1.  Baez considers the
+paper uses parts 11–12 in Section 6 (17,280 = 270 × 64) and Appendix A.  Baez considers the
 27-dimensional lattice ℤ³ ⊕ L_L ⊂ 𝔥₃(O) with integers on the
 diagonal and a Leech sublattice L_L ≅ Λ off-diagonal.  Key findings:
 
@@ -222,7 +222,7 @@ Integral Octonions series (golem.ph.utexas.edu), observes that the Leech
 construction can be read in terms of the preimages in L of a
 complementary pair of Lagrangians of L/2L.  This project arrived at
 the same reading independently (prompt-log record), so the citation is
-completeness, not repair.  It is credited in Appendix A.1 of the paper,
+completeness, not repair.  It is credited in Appendix A of the paper,
 alongside Silverman's mod-2 orthogonal-space picture of L/2L.
 
 ### [WilsonConway] — Conway's group and octonions

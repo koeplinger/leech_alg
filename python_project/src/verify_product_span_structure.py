@@ -11,6 +11,10 @@ Checks:
       2-primary structural statement in the same vein as Section A.1.
   (c) The HNF diagonal of S (in Lambda coordinates), showing where the
       index 2^16 sits.
+
+Note (20 October 2026, prompt 313): "Section A.1" in (b) above is Appendix A
+of the paper in v8 (the mod-2-quotient reading), which has no subsections.
+Code and output unchanged.
 """
 import sys, os, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

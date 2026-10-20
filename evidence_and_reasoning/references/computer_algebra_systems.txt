@@ -85,9 +85,12 @@ arithmetic primitives:
   exhaustive vector-counting tests, SymPy for the exact linear algebra of
   the structure and automorphism scripts, and Python's fractions.Fraction
   module for the exact-arithmetic verification of Lemmas 4.1, 4.3 and 4.4
-  in python_project/src/symbolic_proof_checks.py and of the three
-  Appendix A tables (Lemmas 4.2 to 4.4) in
-  python_project/src/verify_appendix_tables.py.
+  in python_project/src/symbolic_proof_checks.py, of the structural proof
+  of Lemmas 4.2 to 4.4 (the maximal order of Section 2.2, the identities
+  (4.1) and (4.2), and the three lemma inclusions; SymPy for the symbolic
+  check of (4.2)) in python_project/src/verify_structural_proof.py, and of
+  the three Appendix A tables of v7 in
+  python_project/src/verify_appendix_tables_v7.py.
 
 - gap_project/ uses GAP's built-in Rationals throughout; no
   floating-point arithmetic is used anywhere in the GAP suite.  GAP's

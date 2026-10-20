@@ -62,13 +62,18 @@ all three blocks, with Z₃-symmetric cross-block routing.  The transposition σ
 exhibits the fit of this octonion product with Wilson's representation.
 
 - **Symbolic proof** of closure on Wilson's three sublattice conditions, via
-  four lemmas on the interplay between the transposition σ and the Leech
-  sublattices Ls, Ls̄ ([python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py)
-  executes the finite case verifications of Lemmas 4.1, 4.3 and 4.4 with exact
-  rational arithmetic; [python_project/src/verify_appendix_tables.py](python_project/src/verify_appendix_tables.py)
-  recomputes the three Appendix A tables (Lemmas 4.2 to 4.4) and compares them
-  with the printed ones; [gap_project/tests/test_lemmas.g](gap_project/tests/test_lemmas.g)
-  covers all four).
+  four lemmas on the interplay between the transposition σ and Wilson's
+  sublattices Ls̄ and Ls of L (Section 4 of the paper).  Lemma 4.1, σ(L) = L,
+  is a parity argument; Lemmas 4.2 to 4.4 follow from the closure of one
+  maximal order of integral octonions, 𝒪 = ½(e₁ + e₂)L, through the lattice
+  identities σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 (p = e₂ − e₄ + e₅ − e₆) and the
+  identity (xa)(xb) = x((ax)b) for purely imaginary x
+  ([python_project/src/verify_structural_proof.py](python_project/src/verify_structural_proof.py)
+  checks each of these facts in exact arithmetic).  The lemma inclusions are
+  also checked on Z-bases: Lemmas 4.1, 4.3 and 4.4 in
+  [python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py),
+  Lemmas 4.2 to 4.4 in `verify_structural_proof.py`, and all four in
+  [gap_project/tests/test_lemmas.g](gap_project/tests/test_lemmas.g).
 - **Computational verification** on 12M+ random pairs of minimal vectors
   with zero failures, plus tests from first principles on every foundation
   (octonion properties, Wilson's construction).  197 tests pass.
@@ -82,11 +87,7 @@ exhibits the fit of this octonion product with Wilson's representation.
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
   the order is not maximal (Section 7: L³ and Λ + Zε₁ are ⋆-closed
-  overlattices, of index 2¹² and 4); Lemmas 4.3 and 4.4 have a structural
-  reason (Section 7: σ(Ls̄) = 2O and σ(Ls) = pO for a maximal order O ⊇ L of
-  the standard octonion product and p = e₂ − e₄ + e₅ − e₆ purely imaginary,
-  so both follow from O · O ⊆ O, the second by a Moufang identity); the span
-  index of the products depends
+  overlattices, of index 2¹² and 4); the span index of the products depends
   on the twist (Section 5.5: 2¹⁶ for σ, 2¹⁰ for the even closing
   permutations, 1 for a reflection twist); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
@@ -127,8 +128,8 @@ cd python_project
 python3 -m pytest tests/ -v                     # Run all foundation tests
 cd src
 python3 symbolic_proof_checks.py                # Lemmas 4.1, 4.3, 4.4
-python3 verify_structural_proof.py           # Lemmas 4.2 to 4.4: the maximal order, the lattice identities, the Moufang identity
-python3 verify_appendix_tables_v7.py          # the Appendix A tables of v7, recomputed
+python3 verify_structural_proof.py              # Lemmas 4.2 to 4.4: the maximal order, the lattice identities, the Moufang identity
+python3 verify_appendix_tables_v7.py            # the Appendix A tables of v7, recomputed
 python3 trial_007_kirmse_twist.py               # The winning trial
 python3 trial_001_triple_octonion.py            # Any earlier trial
 python3 verify_aut_lambda_star.py               # Aut(Λ, +, ⋆) = C₆ × S₃, order 36

@@ -59,15 +59,17 @@ the reviewer's working scripts, and four independent reproductions in Python,
 GAP and PARI/GP with their outputs.  The second pass on that review, with the
 first-hand re-derivation of its index claims, is
 [`reviews/2026-10-14_claude_fable_5_1_index_one_verification.md`](reviews/2026-10-14_claude_fable_5_1_index_one_verification.md)
-(two dated addenda); ledger claims 017 to 020 cite it.  The package's
+(two dated addenda); ledger claims 017 to 021 cite it.  The package's
 `reproduction/final/run_all.sh` runs `f1_setup.py`, which reads the paper's
-source from the environment variable `MAIN_TEX`; from that folder the working
-source is `MAIN_TEX=../../../../main.tex`.  Its GAP extractor
-(`reproduction/independent/gap/extract_paper_tables.sh`) reads Appendix A by
-fixed line ranges, those of the paper as reviewed,
-`git show 6f7b37c:paper/main.tex`; on the working source they select the wrong
-rows.  To rerun it, save that source outside the repository and pass it as the
-first argument and an output path outside the repository as the second (by
-default it writes `paper_tables.g` into the current directory).  The folder is
+source from the environment variable `MAIN_TEX` and parses its three Appendix A
+coefficient tables; the working source has none, and on it `f1_setup.py` stops
+with a `ValueError`.  The tables are those of the paper as reviewed,
+`git show 6f7b37c:paper/main.tex`: save that source outside the repository and
+pass its path as `MAIN_TEX`.  The GAP extractor
+(`reproduction/independent/gap/extract_paper_tables.sh`) reads the same tables
+by fixed line ranges of that source (on the working source it finds no rows):
+pass the saved source as the first argument and an output path outside the
+repository as the second (by default it writes `paper_tables.g` into the
+current directory).  The folder is
 frozen as a whole: each `run_all.sh` regenerates its outputs in place, so a
 full rerun is made from a copy outside the repository.

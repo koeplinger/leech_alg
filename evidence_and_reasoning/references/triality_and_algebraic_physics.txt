@@ -1,12 +1,13 @@
 Topic: Triality and algebraic approaches to physics
 =====================================================
 
-This file collects soft references for the broader programme of using
+This file collects soft references for the broader program of using
 triality and algebraic structures (normed division algebras, Moufang
 loops, composition algebras) in mathematical physics.  These references
-are cited in the Outlook section of the paper as context for the
-proposal that a ternary reformulation of the Leech-lattice order may
-be a natural direction.  Entries here are bibliographic pointers for
+are cited in the Outlook section of the paper: [Hall2019_Moufang] in the
+paragraph proposing a ternary reformulation of the Leech-lattice order,
+the other two among the programs that model fundamental physics on such
+structures.  Entries here are bibliographic pointers for
 intuition-building context rather than sources used to establish
 technical claims.
 
@@ -55,10 +56,11 @@ technical claims.
   generations of Standard-Model representations (with the third
   generation arising via a Cartan factorization that merges spinor
   representations into a set of scalar bosons including the Higgs
-  representation). Cited in this paper's Outlook as the contemporary
-  example showing that triality can be isolated as an algebraic
-  skeleton into which a variety of particle-family representations
-  fit (the authors' own being one specific realization).
+  representation). Cited in this paper's Outlook (Section 8), with
+  [GresnigtGourlayVarma2023], [Koeplinger2023] and
+  [MarraniCorradettiZucconi2025], among the programs that model
+  fundamental physics on normed-division-algebra, triality, S_3
+  symmetry, or symmetric-composition-algebra structures.
 - **Status**: Bibliographic entry only; not held in source_documents/.
 - **Verification**: arXiv identifier 2409.17948 and journal reference
   Phys. Lett. B 865 (2025) 139473 provided by the human researcher
@@ -121,3 +123,11 @@ permutation is the S_3 factor of Aut(Λ, +, ⋆) ≅ C_6 × S_3, a result of the
 paper's Section 5.3 (derivation in paper/automorphism_group_2026-07-12.pdf).
 The note's "empirical finding" and "Section 7" followed the v5 Conclusion,
 which stated S_3 ⊆ Aut(Λ, +, ⋆) empirically and left the group open.
+
+Addendum (2026-10-20): the header and the [FureyHughes2025_TrioOfTrialities]
+note updated to the paper's Outlook (Section 8): [Hall2019_Moufang] is cited in
+the paragraph on a ternary reformulation, Furey–Hughes and
+Gresnigt–Gourlay–Varma among the programs in algebraic physics.  The note's
+"contemporary example" and "algebraic skeleton" described the Outlook as first
+drafted (12 April 2026), which discussed the work at length; since 28 April
+2026 the paper has cited it only in that list.

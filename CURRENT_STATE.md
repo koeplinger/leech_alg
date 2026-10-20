@@ -1,14 +1,16 @@
 # Current State of the Research
 
-Last updated: 2026-10-15
+Last updated: 2026-10-20
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
 [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
 (ResearchGate), the frozen v7 of the paper.  A further revision, v8, is in
 progress in `paper/main.tex`; its plans are
-`evidence_and_reasoning/2026-10-12_plan.md` and
-`evidence_and_reasoning/2026-10-14_plan.md`.
+`evidence_and_reasoning/2026-10-12_plan.md`,
+`evidence_and_reasoning/2026-10-14_plan.md` and
+`evidence_and_reasoning/2026-10-20_plan.md` (Step A applied; Steps B to D
+pending).
 
 This document is the technical summary of the research, for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
@@ -23,7 +25,7 @@ Find a bilinear multiplication · : R²⁴ × R²⁴ → R²⁴ such that the Le
 lattice Λ is closed under ·, making (Λ, +, ·) an **order** in the R-algebra
 (R²⁴, +, ·).
 
-Since Min(Λ) (the 196,560 minimal vectors at squared norm 8) generates Λ as a
+Since Min(Λ) (the 196,560 minimal vectors, of norm 8) generates Λ as a
 lattice and · is bilinear, it suffices to verify closure on Min(Λ).
 
 The order should be highly symmetric.  The Leech lattice's automorphism group
@@ -46,7 +48,7 @@ triple-octonion algebra and the triple Okubo/para-octonion algebra
 
 ### The construction
 
-Given a transposition σ = (s t) on {1,…,7}, the product
+Given a transposition σ = (i j) on {1,…,7}, the product
 ·_σ defined by x ·_σ y := σ(σ(x) · σ(y)) is another octonion product
 on R⁸, isomorphic to the standard one via σ itself:
 σ(x · y) = σ(x) ·_σ σ(y).  In Wilson's representation of the Leech
@@ -75,7 +77,7 @@ the cycle census below.
 | Scaled (4M random) | 4,000,000 | 0 | `trial_007_scaled_test.py` |
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
-| Symbolic proof (Lemmas 4.1–4.4, paper §4) | 192 basis products (exact): all four lemmas in GAP; Lemmas 4.1, 4.3, 4.4 in `symbolic_proof_checks.py`; the three Appendix A tables (Lemmas 4.2–4.4) recomputed and compared entry by entry with the printed tables in `verify_appendix_tables.py` | 0 | `gap_project/tests/test_lemmas.g` (GAP) + `symbolic_proof_checks.py`, `verify_appendix_tables.py` (Python) |
+| Symbolic proof (Lemmas 4.1–4.4, paper §4) | exact: the proof's finite content (the closure of the maximal order 𝒪 = ½(e₁+e₂)L of paper §2.2 on its 64 basis products; σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪, with p = e₂ − e₄ + e₅ − e₆, on 8 products each plus covolumes) and the identity (xa)(xb) = x((ax)b) for purely imaginary x, symbolically, in `verify_structural_proof.py`; the four lemmas on Z-bases (Lemma 4.1 on the 8 basis vectors of L, Lemmas 4.2–4.4 on 64 basis products each): all four in GAP, Lemmas 4.1, 4.3, 4.4 in `symbolic_proof_checks.py`, Lemmas 4.2–4.4 in `verify_structural_proof.py` | 0 | `verify_structural_proof.py`, `symbolic_proof_checks.py` (Python) + `gap_project/tests/test_lemmas.g` (GAP) |
 | Identity-test suite (N = 10⁶, paper §5.1) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
 | Exhaustive (all 38.6B pairs) | **not required** | — | `trial_007_exhaust.py --exhaustive` |
 
@@ -87,7 +89,8 @@ of closure (paper §4, Theorem 1.1) that does not depend on sampling.
 The standard (untwisted) triple-octonion product fails on roughly three
 quarters of type3×type3 products, all due to Wilson condition 3 (x+y+z ∉ Ls).
 The rate is a sample estimate: 73.4% on the 5,000-pair sample of
-`consistency_checks.py` check 8, 74.8% on trial 001's own sample.
+`consistency_checks.py` check 8, 74.8% on the 5,000-pair sample recorded in
+`evidence_and_reasoning/trial_001_results.md`.
 The transposition twist changes 30 of 64 multiplication table entries.
 This fixes condition 3 precisely: all other conditions were already
 satisfied by the untwisted product (`consistency_checks.py`, check 8).
@@ -107,7 +110,7 @@ The order (Λ, +, ⋆) is:
 
 The key property is closure, not any classical algebraic identity.
 
-### Structure of the algebra (paper §5.2–§5.5 and §7)
+### Structure of the algebra (paper §2.2, §4.1, §5.2–§5.5 and §7)
 
 These results are exact and exhaustive.
 
@@ -148,7 +151,7 @@ full derivation in `paper/automorphism_group_2026-07-12.pdf`).
   C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and the strictness witness are independent of
   both.
 
-**Idempotents — complete classification** (`verify_idempotent_classification.py`,
+**Idempotents: complete classification** (`verify_idempotent_classification.py`,
 `verify_idempotent_lattice_rescaling.py`).  (R²⁴, +, ⋆) has exactly eight
 idempotents.  With ε₁ = (e₀,0,0), ε₂ = (0,e₀,0), ε₃ = (0,0,e₀) and
 ω = ε₁+ε₂+ε₃, they are 0; ε₁, ε₂, ε₃; ω/3; and ε_i − ω/3 (i = 1,2,3).
@@ -185,14 +188,15 @@ Ls̄ ∩ Im(O); higher strata are realized (norm-24 witness:
 idempotent and no square-zero vector (minimal norm 8, not a multiple
 of 12).
 
-**σ(Ls) is not an ideal of L** (`verify_sigma_Ls_ideal_exclusion.py`).  A
+**σ(Ls) is not an ideal of L** (paper Remark 4.5, without the counts, which
+depend on the bases; claim 013; `verify_sigma_Ls_ideal_exclusion.py`).  A
 candidate structural explanation for Lemma 4.4 is excluded: of the 64
 basis-pair products, only 32 of L · σ(Ls) and only 21 of σ(Ls) · L land
 inside σ(Ls).  By contrast σ(Ls̄) *is* a two-sided ideal of L (64/64 on both
 sides), of which Lemma 4.3 is the left-handed half.  Control: L · Ls ⊆ Ls
 holds for only 24 of 64.
 
-**Closure of permutation cycles — the full S₇ census**
+**Closure of permutation cycles: the full S₇ census**
 (`verify_all_permutations_exact.py`, all 5,040 permutations, reusing the
 per-permutation test of `verify_consecutive_twists_exact.py`; earlier
 partial runs `verify_all_cycles_exact.py`; paper §5.5).  Writing
@@ -251,28 +255,30 @@ gluing alone rules out maximality (claim 018, single-pass strengthening).  Open:
 two sublattice factors take only the values 1, 2⁵ and 2⁸ in the review's
 census over all of W(E₈)), and the ring structure of the index-1 orders.
 
-**Wilson's sublattices are Kirmse's set and Bruck's order, scaled** (paper §7,
-v8; claim 019; `verify_sigma_sublattice_maximal_order.py`; the verification
-note above, §4).  With J₁ = Z⁸ + C_K/2, the analogue of Kirmse's set for
-(2.1), and O⁽⁴⁾ = Z⁸ + (0 4)C_K/2 the octavian order obtained from it by
-transposing the coordinates 0 and 4: Ls̄ = 2J₁, L = J₁·s, Ls = J₁·s²,
-σ(Ls̄) = 2O⁽⁴⁾ and σ(Ls) = p·O⁽⁴⁾ with p = e₂ − e₄ + e₅ − e₆.  Since all
-seven octavian orders
-are closed and contain L, Lemma 4.3 follows from Coxeter's theorem, two-sided,
-with no table; the factor 2⁸ in σ's span index is [2O⁽⁴⁾ : 4O⁽⁴⁾].  Lemma 4.4
-follows the same way: p is purely imaginary, so the left Moufang identity
-gives (pa)(pb) = p((ap)b) and p·O⁽⁴⁾ is closed (claim 021).  Ls̄ = 2J₁ and
-L = J₁·s are Wilson's (2009, pp. 2187, 2189: Ls̄ = 2B with B the set of
-"Kirmse's mistake", and Bs = L); σ(Ls̄) = 2O⁽⁴⁾ and σ(Ls) = p·O⁽⁴⁾ go
-beyond him.
+**Wilson's sublattices are Kirmse's set and Bruck's order, scaled** (claims
+019 and 021; `verify_sigma_sublattice_maximal_order.py`,
+`verify_structural_proof.py`; the verification note above, §4).  With
+J₁ = Z⁸ + C_K/2, the analogue of Kirmse's set for (2.1), and
+O⁽⁴⁾ = Z⁸ + (0 4)C_K/2 the maximal order obtained from it by transposing the
+coordinates 0 and 4: Ls̄ = 2J₁, L = J₁·s, Ls = J₁·s², σ(Ls̄) = 2O⁽⁴⁾ and
+σ(Ls) = p·O⁽⁴⁾ with p = e₂ − e₄ + e₅ − e₆.  O⁽⁴⁾ is the paper's maximal
+order 𝒪 = ½(e₁ + e₂)L (paper §2.2, v8; Wilson's ring A₃), and
+L = (e₁ + e₂)𝒪 ⊆ 𝒪.  The paper's proof of Lemmas 4.2 to 4.4 (§4.1) uses
+σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 (its eq. (4.1)): Lemma 4.3 (L · 2𝒪 ⊆ 2𝒪) and its
+right-handed counterpart (2𝒪 · L ⊆ 2𝒪) follow from L ⊆ 𝒪 and the closure
+of 𝒪, and Lemmas 4.2 and 4.4 from (xa)(xb) = x((ax)b) for purely imaginary
+x, which makes x𝒪 closed for x = e₁ + e₂ and x = p.  The factor 2⁸ in σ's
+span index is [2𝒪 : 4𝒪].  Ls̄ = 2J₁ and L = J₁·s are Wilson's (2009,
+pp. 2187, 2189: Ls̄ = 2B with B the set of "Kirmse's mistake", and Bs = L);
+σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 go beyond him.
 
 ### Evidence files
 
-- `evidence_and_reasoning/research_result.md` — condensed summary
-- `evidence_and_reasoning/trial_007_results.md` — detailed trial results
-- `evidence_and_reasoning/references/prior_art_orders_on_leech.txt` —
+- `evidence_and_reasoning/research_result.md`: condensed summary
+- `evidence_and_reasoning/trial_007_results.md`: detailed trial results
+- `evidence_and_reasoning/references/prior_art_orders_on_leech.txt`:
   literature search confirming novelty
-- `python_project/src/consistency_checks.py` — all pre-paper checks
+- `python_project/src/consistency_checks.py`: all pre-paper checks
 
 ---
 
@@ -323,8 +329,9 @@ The 196,560 minimal vectors decompose as:
 - Type 3 (184,320): all three blocks nonzero
 
 Key claim 006 records a systematic double-check of all Wilson/Dixon
-conclusions.  The central research question (whether Λ admits an order) is
-confirmed as OPEN by both Wilson [Wilson2009] and Dixon [Dixon2010].
+conclusions.  Neither Wilson [Wilson2009] nor Dixon [Dixon2010] answers the
+central research question (whether Λ admits an order); Dixon poses it as open
+[Dixon2010, §7].
 
 ### Octonion algebra
 
@@ -504,25 +511,25 @@ the failure mode analysis, and the verdict.
 ### Key claims
 
 `evidence_and_reasoning/key_claims/NNN_*.txt` and the ledger
-`key_claims/README.md` (rows 009–021): the logical backbone.  Each claim has a
+`key_claims/README.md` (rows 009–022): the logical backbone.  Each claim has a
 status and its evidence.
 
 ### Prompt logs
 
-`prompt_logs/NNN_*.txt` — chronological record of every research step.
+`prompt_logs/NNN_*.txt`: chronological record of every research step.
 These are immutable (never altered after commit) per the Manifesto and
 `DOCUMENT_GENRES.md`.
 The README in that folder has a summary table.
 
 ### Trial code
 
-`python_project/src/trial_NNN_*.py` — self-contained, readable top-to-bottom.
+`python_project/src/trial_NNN_*.py`: self-contained, readable top-to-bottom.
 Each file has a docstring explaining the algebra, a main function that runs
 the trial, and prints detailed results.
 
 ### Methodology
 
-`TRIAL_METHODOLOGY.md` — defines the structure and philosophy for all trials.
+`TRIAL_METHODOLOGY.md`: defines the structure and philosophy for all trials.
 
 ---
 
@@ -535,24 +542,33 @@ the trial, and prints detailed results.
    (a √2-scaled copy of a maximal order), and the sublattices Ls and Ls̄:
    Lemma 4.1 (σ(L) = L);
    Lemma 4.2 (L · L ⊆ L); Lemma 4.3 (L · σ(Ls̄) ⊆ σ(Ls̄));
-   Lemma 4.4 (σ(Ls) · σ(Ls) ⊆ σ(Ls)).  The finite-case verifications
-   of Lemmas 4.3 and 4.4 (64 Z-basis products each), with Lemma 4.1 on
-   the 8 basis vectors, are executed with exact rational arithmetic in
-   `python_project/src/symbolic_proof_checks.py`; the three Appendix A
-   tables (Lemmas 4.2 to 4.4) are recomputed and compared entry by entry
-   with the printed ones in `python_project/src/verify_appendix_tables.py`;
-   all four lemmas, including the 64 basis products of Lemma 4.2, are
-   checked independently in `gap_project/tests/test_lemmas.g`.
+   Lemma 4.4 (σ(Ls) · σ(Ls) ⊆ σ(Ls)).  Lemma 4.1 is a parity argument;
+   Lemmas 4.2 to 4.4 follow from the closure of the maximal order
+   𝒪 = ½(e₁ + e₂)L of Section 2.2 (eq. (2.2)), with L = (e₁ + e₂)𝒪, the
+   lattice identities σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪, p = e₂ − e₄ + e₅ − e₆
+   (eq. (4.1)), and the identity (xa)(xb) = x((ax)b) for purely imaginary x
+   (eq. (4.2)) with its consequence for lattices (eq. (4.3)).  The finite
+   content of the proof (the closure of 𝒪 on its 64 basis products; the
+   identities (4.1) on eight products each, with covolumes) and the
+   identity (4.2), symbolically, are checked in
+   `python_project/src/verify_structural_proof.py`.  The lemmas themselves
+   are checked on Z-bases in exact rational arithmetic: Lemmas 4.1, 4.3
+   and 4.4 in `python_project/src/symbolic_proof_checks.py`, Lemmas 4.2
+   to 4.4 in `verify_structural_proof.py`, and all four in
+   `gap_project/tests/test_lemmas.g`.  The three coefficient tables of v7's
+   Appendix A (192 rows) are recomputed and compared entry by entry with
+   the printed ones by `python_project/src/verify_appendix_tables_v7.py`.
    The observation σ(Ls) ≠ Ls is recorded as a remark in the paper
-   (rem:Ls-not-closed): non-triviality of the construction, not a step
-   of the closure proof.
+   (Remark 4.5): non-triviality of the construction, not a step of the
+   closure proof.
 
 2. **Formal paper at v7, dated 19 July 2026, frozen as
    `paper/main_2026-07-19.tex` (24 pages), the last released version,
    published on ResearchGate: doi:10.13140/RG.2.2.22093.19686.  The
    working source `paper/main.tex` is v8, in progress since
-   12 October 2026 per `evidence_and_reasoning/2026-10-12_plan.md` and
-   `evidence_and_reasoning/2026-10-14_plan.md`.**
+   12 October 2026 per `evidence_and_reasoning/2026-10-12_plan.md`,
+   `evidence_and_reasoning/2026-10-14_plan.md` and
+   `evidence_and_reasoning/2026-10-20_plan.md`.**
    The paper contains abstract (standalone, with
    keywords and MSC 2020 codes), preliminaries,
    construction, symbolic proof, algebraic properties (Section 5, in
@@ -563,9 +579,9 @@ the trial, and prints detailed results.
    2¹⁶ for σ and the odd ones and 2¹⁰ for the even ones, and a
    reflection twist with span index 1), related work
    (including the comparative
-   span defect 2²⁵ of the Baez–Egan induced product φ), conclusion,
-   outlook, declarations, and three appendices: explicit basis tables
-   with a mod-2-quotient reading and a Lagrangian-polarization framing
+   span index 2²⁵ of the Baez–Egan induced product φ), conclusion,
+   outlook, declarations, and three appendices: the mod-2-quotient reading
+   of Lemmas 4.3 and 4.4, with a Lagrangian-polarization framing
    (Appendix A); a historical note synthesizing the 1923–1946
    integral-octonion literature from the primary sources, Dickson
    (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946)
@@ -634,11 +650,11 @@ the trial, and prints detailed results.
 
 ## What remains open
 
-These questions are the ones the paper leaves open (Sections 7 and 8), together
-with further detail recorded here.
+These questions are the ones the paper leaves open (Sections 7 and 8, and
+Appendix A for the first), together with further detail recorded here.
 
-1. **Which polarizations of L/2L lift** (paper, Appendix A.1).  Appendix
-   A.1 reads Lemmas 4.3 and 4.4, reduced modulo 2L, as a polarization:
+1. **Which polarizations of L/2L lift** (paper, Appendix A).  Appendix
+   A reads Lemmas 4.3 and 4.4, reduced modulo 2L, as a polarization:
    V := σ(Ls̄)/2L is a two-sided ideal and W := σ(Ls)/2L a subalgebra of
    the descended product on L/2L; under the plus-type quadratic form
    q(v + 2L) := N(v)/2 mod 2 both are Lagrangians (maximal totally
@@ -646,13 +662,14 @@ with further detail recorded here.
    complementary pair of Lagrangians.  Open: which polarizations of L/2L
    arise from this construction, and which polarizations, beyond the one
    constructed, lift to a closed bilinear product on Λ itself.
-   The integer-level reason for Lemmas 4.3 and 4.4 themselves is known
-   (paper §7; claims 019 and 021): σ(Ls̄) = 2O⁽⁴⁾ and σ(Ls) = p·O⁽⁴⁾ for
-   the maximal order O⁽⁴⁾ ⊇ L of the standard octonion product, with
-   p = e₂ − e₄ + e₅ − e₆ purely imaginary, so both follow from
-   O⁽⁴⁾·O⁽⁴⁾ ⊆ O⁽⁴⁾, the second by the left Moufang identity
-   (pa)(pb) = p((ap)b).  σ(Ls) is not an ideal of L on either side (claim
-   013), so its closure is not inherited from an ideal property.
+   Lemmas 4.3 and 4.4 themselves are proved in the paper (§4.1; claims
+   019 and 021): σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 for the maximal order
+   𝒪 = ½(e₁ + e₂)L ⊇ L of the standard octonion product (eq. (2.2); the
+   order O⁽⁴⁾ above), with p = e₂ − e₄ + e₅ − e₆ purely imaginary, so both
+   follow from 𝒪·𝒪 ⊆ 𝒪, the second by the identity (pa)(pb) = p((ap)b),
+   a consequence of the left Moufang identity.  σ(Ls) is not an ideal of
+   L on either side (paper Remark 4.5; claim 013), so its closure is not
+   inherited from an ideal property.
 
 2. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
    whether the order-6 octonion automorphism generating the C₆ admits an
@@ -699,7 +716,7 @@ leech_alg/
 ├── TRIAL_METHODOLOGY.md           # Structure and philosophy for trial files
 ├── tools/                         # lint_docs.py: enforces the document genres mechanically
 ├── CLOSING_NOTE.md                # Closing note (27 July 2026) and the addendum reopening the effort (12 October 2026)
-├── CURRENT_STATE.md               # THIS FILE — technical summary of the research
+├── CURRENT_STATE.md               # THIS FILE: technical summary of the research
 ├── README.md                      # General repository description
 │
 ├── evidence_and_reasoning/
@@ -707,12 +724,12 @@ leech_alg/
 │   │   ├── 001–006                # Foundations (Wilson, Dixon, octonions)
 │   │   ├── 007                    # Untwisted triple-octonion ruled out
 │   │   ├── 008                    # Z₃-symmetric triple-octonion product: order on Λ
-│   │   └── README.md              # The ledger; claims 009–021 are ledger-only rows
+│   │   └── README.md              # The ledger; claims 009–022 are ledger-only rows
 │   ├── references/                # Central reference registry
 │   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
 │   ├── 2026-10-14_plan.md         # Plan: the span-index findings in v8 (executed)
-│   ├── 2026-10-20_plan.md         # Plan: the symbolic proof replaces the tables (proposed)
+│   ├── 2026-10-20_plan.md         # Plan: the symbolic proof replaces the tables (engaged)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
@@ -741,7 +758,8 @@ leech_alg/
 │   │   ├── trial_006_*.py         # Trial 006: Okubo + E8 automorphisms
 │   │   ├── trial_007_*.py         # Trial 007: the σ twist fit (THE FINDING)
 │   │   ├── symbolic_proof_checks.py  # Lemmas 4.1, 4.3, 4.4, exact arithmetic
-│   │   ├── verify_appendix_tables.py # Appendix A tables recomputed, compared with main.tex
+│   │   ├── verify_structural_proof.py  # Lemmas 4.2 to 4.4: the maximal order 𝒪, the lattice identities, the Moufang identity (paper §2.2, §4.1)
+│   │   ├── verify_appendix_tables_v7.py  # v7's Appendix A tables recomputed (runs verify_appendix_tables.py on main_2026-07-19.tex)
 │   │   ├── verify_aut_*.py        # Aut(Λ, +, ⋆) = C₆ × S₃, order 36
 │   │   ├── verify_idempotent_*.py # The eight idempotents; lattice rescaling
 │   │   ├── verify_square_zero_classification.py  # Square-zero classification (norm-12 stratum)
