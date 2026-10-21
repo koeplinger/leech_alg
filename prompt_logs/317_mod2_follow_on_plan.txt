@@ -1,0 +1,103 @@
+Prompt 317 -- the follow-on plan for the mod-2 closure criterion (Sections
+5, 6, 7 and Appendix A)
+Date: 2026-10-20
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "When you give the word, I'll draft the follow-on plan
+for the mod-2 criterion across Section 5, Section 6 and Appendix A." -- go
+ahead and do so; at this point, the goal is to have a compact v8 that
+contains all of the new closed-form proofs. As before, we'll work
+carefully, addressing one finding at a time, and splitting the work for
+that item into a plan if it's not trivial. This way, I can stay ahead of
+the curve, control the changes, and also form an understanding of what
+I'll yet have to learn.'
+
+Rulings: (1) draft the follow-on plan now.  (2) Goal: a compact v8 that
+contains all of the new closed-form proofs.  (3) Method: one finding at a
+time; a finding whose work is not trivial gets its own plan.  (4) The plan
+should let the author stay ahead of the changes, control them, and see
+what remains to be learned.
+
+Follow-up from the author during the same turn (verbatim): 'Oh and one
+thing: Section 5 has all these great properties that are derived in
+symbolic form; yet it leads with an experimental table. Leave only the
+general properties in the section, where it's easily verifiable by the
+reader that the algebra doesn't satisfy many of the standard algebraic
+properties; and move the experimental data table into an appendix. The way
+it stands, leading with the experiment, detracts from the symbolic
+stricness we've already established. The experiment is still great,
+informational, and a nice appendix table.'
+
+Ruling (5): Section 5.1 keeps only the general properties, each failure
+verifiable by the reader; the sampled-frequency table moves to an appendix
+(it stays, as informational data).  Taken into the follow-on plan as an
+item of its own.
+
+Response:
+ 1. Plan drafted: evidence_and_reasoning/2026-10-20_closed_form_plan.md
+    (status: proposed, not executed).  Findings F1-F8, target structure,
+    seven items in order (five with their own plan files), what to learn
+    per item, decisions (a)-(q) with recommendations.  Indexed as proposed
+    in evidence_and_reasoning/README.md and CURRENT_STATE.  Nothing in the
+    paper changed.
+ 2. Evidence (scratch: /tmp/claude-1000/-home-jens-Projects-leech-alg/
+    7740dfe1-06a6-4587-9ddd-b66d3953b4fb/scratchpad/).
+    - Workflow mod2-plan-research (run wf_a73519e1-0f2, 14 agents): two
+      inventories (records; side documents), five verifications each
+      followed by an independent refuter (Egan's construction; the
+      criterion and the polarizations; the census; terms and attribution;
+      the span index), two structure designs.  Results: p317_main.json;
+      readable extracts p317_inv.txt, p317_egan.txt, p317_chains.txt,
+      p317_span.txt, p317_designs.txt; code and outputs in p317/<agent>/.
+    - Workflow s51-symbolic-witnesses (run wf_afbd1708-4bc, 4 agents):
+      witnesses, structure, placement, independent witness check.
+      Results: p317_s51.json; code in p317/witnesses, p317/structure,
+      p317/placement, p317/witness-check.
+    - First-hand checks: p317/mine/s51_check.py (the F5 witness set) and
+      p317/mine/crit_check.py (the exact parametrization of Lambda, the
+      routing identities, the criterion against direct closure on six
+      permutations): all pass.
+    - Workflow review-closed-form-plan (run wf_42757e53-3c0, 8 agents):
+      four readers (paper references, records, mathematics,
+      completeness), each with an independent checker; 72 findings, 71
+      upheld (17 with a corrected fix), 1 refuted (length, a matter of
+      taste).  All upheld findings applied to the plan.  Report:
+      p317_planreview.json, p317_planreview2.txt.
+    Counts and where they were checked: the census through the criterion
+    (5,040 permutations, row by row; verify-census, refute-census,
+    design-compact, check-records); 120 root reflections (56 close);
+    17,280 ordered pairs, 4,704 closing (verify-criterion: all 17,280 by
+    direct closure; refute-criterion; verify-egan); 270 / 142 / 16 / 8;
+    2,295 and 1,024 under the polar form (verify-terms, verify-criterion
+    s17); the e0-moving permutations, 12,348 of 35,280 (inv-documents
+    t13, inv-records); twists in GL(L) that are not isometries
+    (verify-criterion s06: 26; verify-census: 180; refute-census: 330);
+    S = (Lambda cap D) + 2 Lambda with index 2^16 by hand and by HNF
+    (verify-span, refute-span, check-completeness/span.py); the lemma
+    span{(ay)b} = C on O/2O for all 255 nonzero y (verify-span
+    check_lemma_f2.py, check-math/c06_span_lemma.py); the Section 5.1
+    witnesses (witnesses, witness-check, mine/s51_check.py).
+ 3. Provenance, corrected forward (prompt logs are immutable): the closure
+    criterion is Theorem A of the external review of 13 October 2026
+    (paper/reviews/2026-10-13_claude_opus_5_5_review_v8.md, lines
+    125-169), stated in lattice form for twists in W(E8), proved by
+    reduction modulo 2L, verified at prompt 287, ledger claim 017.  Prompt
+    logs 314 and 315 called it new and did not cite the review; the
+    "parked new result" of log 314 (4,704 of 17,280; 270/142/16/8;
+    transitivity) is printed in the review's package (f5, f8).  What
+    prompt 315 added: the statement for every g with g(L) = L; what
+    prompt 317 added: exact routing identities, so the criterion holds for
+    every bilinear mu with mu(L, L) in L.  Corrected in place: CURRENT_STATE
+    (open item 1), changelog item 18 (living); by a dated addendum:
+    2026-10-20_plan.md (frozen).
+ 4. Pointed out in the plan, not pursued: the near-closed-form census
+    through the Fano plane (F7); answers to Baez's Puzzles 1 and 3 (F7);
+    the identification of the eight two-sided ideals of (L/2L, mu-bar)
+    (F7); closed-form proofs of further Section 5 claims (F6(b)-(e));
+    records errors (F8: the 2e0 slip in the Hermes supplement and the
+    W-concrete review; the stabilizer orders without the product named;
+    the registry's Baez2014 sentence; floating point in
+    egan_baez_count.py).
+ 5. Lint: documentation clean.
+
+Status: CLOSED.

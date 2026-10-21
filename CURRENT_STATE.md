@@ -9,7 +9,9 @@ Z₃-symmetric triple-octonion product*,
 progress in `paper/main.tex`; its plans are
 `evidence_and_reasoning/2026-10-12_plan.md`,
 `evidence_and_reasoning/2026-10-14_plan.md` and
-`evidence_and_reasoning/2026-10-20_plan.md` (executed).
+`evidence_and_reasoning/2026-10-20_plan.md` (executed), and
+`evidence_and_reasoning/2026-10-20_closed_form_plan.md` (proposed: the closure
+criterion, Egan's construction and Section 5.1 by witnesses).
 
 This document is the technical summary of the research, for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
@@ -673,13 +675,21 @@ Appendix A for the first), together with further detail recorded here.
    Not in the paper, for the author's decision before the paper is sent
    for review: for every twist g with g(L) = L, ⋆_g closes on Λ exactly
    when g(Ls̄)/2L and g(Ls)/2L are both subalgebras of (L/2L, μ̄), as they
-   are for σ.  A five-line argument proves it (prompt 315; the
-   computation of prompt 314 had found it first): ⋆_g closes on Λ iff the
-   untwisted product closes on g(Λ), the lattice of Egan's form for the
-   pair (g(Ls̄), g(Ls)); g(Λ) contains (2L)³, so closure is decided
-   modulo 2L, where the block sum of a product is ww′ and the pairwise
-   sums are ab′ + ba′ + aa′, ab′ + ba′ + bb′ and aa′ + bb′ for
-   (w + a + b, w + b, w + a) with w in g(Ls)/2L and a, b in g(Ls̄)/2L.
+   are for σ.  This is Theorem A of the review of 13 October 2026
+   (paper/reviews/2026-10-13_claude_opus_5_5_review_v8.md, lines
+   125–169; claim 017), stated there in lattice form (⋆_g closes iff
+   Ls̄ and Ls are closed under ·_g) for twists in W(E₈), proved by
+   reduction modulo 2L using only g(L) = L, and read modulo 2.  The same
+   review computed the polarization counts below (its §3.3).  The proof:
+   ⋆_g closes on Λ iff the untwisted product closes on g(Λ), the lattice
+   of Egan's form for the pair (g(Ls̄), g(Ls)); g(Λ) contains (2L)³, so
+   closure is decided modulo 2L, where the block sum of a product is ww′
+   and the pairwise sums are ab′ + ba′ + aa′, ab′ + ba′ + bb′ and
+   aa′ + bb′ for (w + a + b, w + b, w + a) with w in g(Ls)/2L and a, b in
+   g(Ls̄)/2L.  The routing identities behind it hold exactly over Z, not
+   only modulo 2L, so the criterion holds for every bilinear product μ
+   with μ(L, L) ⊆ L (prompt 317; plan
+   evidence_and_reasoning/2026-10-20_closed_form_plan.md, F1).
    Checked exactly against direct closure on all 5,040 permutations (the
    census of §5.6 row by row), on ρ, and on 26 twists in GL(L) that are
    not isometries.  It settles, within twisted triple products, the
@@ -746,6 +756,7 @@ leech_alg/
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
 │   ├── 2026-10-14_plan.md         # Plan: the span-index findings in v8 (executed)
 │   ├── 2026-10-20_plan.md         # Plan: the symbolic proof replaces the tables (executed)
+│   ├── 2026-10-20_closed_form_plan.md  # Plan: closure criterion, Egan's construction, §5.1 by witnesses (proposed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
