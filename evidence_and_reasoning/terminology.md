@@ -21,6 +21,7 @@ Symmetric composition algebra — Triality (D₄ triality)
 **Project-specific terms:**
 2+1 closure pattern — Automorphism group Aut(Λ, +, ⋆) —
 Ideal decomposition R²⁴ = D ⊕ T — Petersson triality triple —
+Polarization of L/2L —
 Reflection ρ — Span index — Triple octonion product — Twist —
 Z₃-symmetric triple-octonion product
 (triple product for short; historically: transposition-twisted triple
@@ -212,6 +213,17 @@ of $L$ that are *not* $\sigma$-invariant (chiefly $Ls$), where it
 plays the same kind of role (turning a nonclosed sublattice into a
 closed one) that the Kirmse twist plays on Kirmse's $J_1$ one
 stratum up.
+
+On $L\bar s$ the twist acts on Kirmse's set itself, up to scale.  In the
+main paper's coordinates $L\bar s = 2J_1$, with $J_1$ the analogue of
+Kirmse's set for the multiplication of the paper's eq. (2.1) (Wilson's
+$L\bar s = 2B$, with $B$ the set of "Kirmse's mistake"; Wilson 2009,
+p. 2187), and $\sigma(J_1) = \mathcal O$, the maximal order of the main
+paper's §2.2, so that $\sigma(L\bar s) = 2\mathcal O$ (claim 019).  Unlike
+$J_1$, the lattice $L\bar s = 2J_1$ is already closed under that
+multiplication, and $L \cdot L\bar s \subseteq L\bar s$ holds without the
+twist (`symbolic_proof_checks.py`), so no closure on $L\bar s$ depends on
+the twist; the twist is needed for $Ls$ (main paper Lemma 4.4).
 
 **A note on attribution and fairness.**  The term "Kirmse integers" in
 modern usage refers exclusively to the nonclosed system, Kirmse's error.
@@ -502,6 +514,24 @@ The construction failed due to a **√3 obstruction**: the Petersson
 construction with nontrivial τ introduces irrational structure constants
 (cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
 lattice entirely.
+
+### Polarization of L/2L
+
+(Main paper Appendix A; `verify_mod2_quotient.py`,
+`verify_polarization_lagrangians.py`.)  Since L · L ⊆ L, the standard
+octonion product descends to an F₂-bilinear product μ̄ on the **mod-2
+quotient** L̄ := L/2L ≅ F₂⁸.  With q(v + 2L) := N(v)/2 mod 2, the standard
+plus-type quadratic form on F₂⁸ (Witt index 4), a subspace is **totally
+isotropic** when q vanishes on it; the 4-dimensional ones are the
+**Lagrangians**, and a decomposition of L̄ into two complementary
+Lagrangians (a Witt decomposition) is a **polarization**.  In the main
+paper, V := σ(Ls̄)/2L = 2𝒪/2L and W := σ(Ls)/2L = p𝒪/2L form a
+polarization: V is a two-sided ideal and W a subalgebra of (L̄, μ̄), and both
+are totally isotropic because every vector of 2𝒪 and of p𝒪 has norm
+divisible by 4.  Lemmas 4.3 and 4.4, read modulo 2L, say that V is a left
+ideal and W a subalgebra.  The orthogonal-space picture of L̄ is Silverman's
+(part 12 of [Baez2014]); the reading of Egan's construction of Λ through a
+complementary pair of Lagrangians is Calderbank's [Calderbank2023].
 
 ### Reflection ρ
 

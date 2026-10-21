@@ -189,13 +189,15 @@ The scope of this paper is deliberately bounded: we establish
 existence of the order, with a proof that is elementary (four short
 lemmas, three of which follow from the closure of one maximal
 order).  Section~\ref{sec:prelim} fixes the octonion
-multiplication, the $E_8$ lattice~$L$ and Wilson's description
-of~$\LL$.  Section~\ref{sec:construction} defines the product, and
+multiplication, the $E_8$ lattice~$L$, the maximal order on which the
+proof rests, and Wilson's description of~$\LL$.
+Section~\ref{sec:construction} defines the product, and
 Section~\ref{sec:proof} proves Theorem~\ref{thm:main}.
-Section~\ref{sec:properties} determines the algebraic properties of the
-order: its identities and idempotents; that it is not maximal; its
-automorphism group and square-zero elements; the index of the span of
-its products; and the behavior of twists other than~$\sigma$.
+Section~\ref{sec:properties} determines algebraic properties of the
+order: that standard identities fail on it; its idempotents; that it is
+not maximal; its automorphism group and square-zero elements; and the
+index of the span of its products.  It also tests twists other
+than~$\sigma$ for closure on~$\LL$.
 Section~\ref{sec:related} places the construction among related work,
 Section~\ref{sec:conclusion} concludes with the open questions, and
 Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{sec:appendix-tables}
@@ -266,8 +268,8 @@ the standard octonion product.  It is one of the seven maximal orders
 of Section~\ref{sec:intro}, the ring $A_3$ of
 Wilson~\cite[Section~2]{Wilson2009}.\footnote{\scriptref{verify\_structural\_proof.py}
 \scriptref{verify\_sigma\_sublattice\_maximal\_order.py}.}  Since
-$(e_1 + e_2)^2 = -2$ and $L = -L$, the alternative law $x(xy) = x^2 y$
-gives $L = (e_1 + e_2)\,\MO$.
+$(e_1 + e_2)^2 = -2$ and $L = -L$, the left alternative law
+$x(xy) = x^2 y$ gives $L = (e_1 + e_2)\,\MO$.
 
 \subsection{Wilson's Leech lattice}\label{subsec:wilson-leech}
 
@@ -416,17 +418,19 @@ of norm~$4$,
 \begin{equation}\label{eq:multiples}
   \sigma(L\bar s) = 2\MO, \qquad \sigma(Ls) = p\,\MO .
 \end{equation}
-Both hold on a $\ZZ$-basis $\{b_k\}$ of~$\MO$: the eight vectors $2b_k$
-lie in $\sigma(L\bar s)$ and the eight products $p\,b_k$ in
-$\sigma(Ls)$, and the covolumes agree.  Left multiplication by~$x$
-scales inner products by $\Nrm(x)$ and hence covolumes by $\Nrm(x)^4$;
-since $L = (e_1 + e_2)\,\MO$ has covolume~$1$ ($E_8$ is unimodular),
-$\MO$ has covolume
-$\tfrac1{16}$, so $2\MO$ and $p\MO$ have covolume~$16$, and so do
-$\sigma(L\bar s)$ and~$\sigma(Ls)$, by $[L : L\bar s] = [L : Ls] = 16$
-(Section~\ref{subsec:wilson-leech}).  A sublattice of the same
-covolume is the whole
+The inclusions $2\MO \subseteq \sigma(L\bar s)$ and
+$p\MO \subseteq \sigma(Ls)$ are checked on a $\ZZ$-basis $\{b_k\}$
+of~$\MO$: the eight vectors $2b_k$ lie in $\sigma(L\bar s)$, and the
+eight products $p\,b_k$ lie in $\sigma(Ls)$.  Both sides of each
+identity have covolume~$16$.  Left multiplication by~$x$ scales inner
+products by $\Nrm(x)$ and hence covolumes by $\Nrm(x)^4$.  Since
+$L = (e_1 + e_2)\,\MO$ has covolume~$1$ ($E_8$ is unimodular), $\MO$
+has covolume~$\tfrac1{16}$, so $2\MO$ and $p\MO$ have covolume~$16$.
+So do $\sigma(L\bar s)$ and~$\sigma(Ls)$, by
+$[L : L\bar s] = [L : Ls] = 16$ (Section~\ref{subsec:wilson-leech}).
+A sublattice of the same covolume is the whole
 lattice.\footnote{\scriptref{verify\_structural\_proof.py}.}
+
 Second, an identity in the octonions: for purely imaginary~$x$ and all
 $a, b \in \OO$,
 \begin{equation}\label{eq:moufang-imaginary}
@@ -439,6 +443,7 @@ law $x(yx) = (xy)x$.  The left Moufang identity $(xyx)z = x(y(xz))$
 \cite{ConwaySmith2003} with $z = xb$ and the left alternative law
 $x(xb) = x^2 b$ give
 $(xa)(xb) = x\bigl(y(x^2 b)\bigr) = -\Nrm(x)\,x(yb) = x\bigl((ax)b\bigr)$.
+
 Third, its consequence for lattices: if $M \subseteq \OO$ is closed
 under the standard octonion product and $x \in M$ is purely imaginary,
 then
@@ -669,8 +674,8 @@ Symmetric composition $\langle u\star v, w\rangle =
 
 The failure of norm multiplicativity rules out $(\LL, +, \star)$
 being a composition algebra.  The failure of symmetric composition
-rules out, independently, its being a symmetric composition algebra
-in the sense of Okubo and para-Hurwitz
+rules out, independently, its being a symmetric composition algebra,
+such as the Okubo and para-Hurwitz algebras
 (Alberto Elduque \cite{Elduque1996, Elduque2023_IsotropicNorm};
 Susumu Okubo \cite{Okubo1995_Book}).
 
@@ -1051,36 +1056,32 @@ of~$\varphi$ does not contain~$2\LL$: its index exceeds
 $[\LL : 2\LL] = 2^{24}$.
 
 \textbf{Earlier precursors.}  Three works of 1982 and 1996
-construct~$\LL$ from three copies of~$E_8$ or from the exceptional
-Jordan algebra.
+construct~$\LL$ from three copies of~$E_8$ or relate it to the
+exceptional Jordan algebra.
 John H.~Conway and Neil J.\,A.~Sloane~\cite{ConwaySloane1982} give 23
 constructions of~$\LL$, one for each Niemeier lattice, including a
 Turyn-style construction from three copies of~$E_8$.  James Lepowsky
 and Arne Meurman~\cite{LepowskyMeurman1982} describe~$\LL$ as a
-sublattice of~$E_8^3$ containing~$2 E_8^3$ and use this to generate
-the Conway group~$\Co_0$ via permutations of the three $E_8$ factors
-together with one extra automorphism.  Noam D.~Elkies and
-Benedict H.~Gross~\cite{ElkiesGross1996}
-obtain~$\LL$ from an integer form of the exceptional Jordan algebra
-$\mathfrak{h}_3(\OO)$ as the orthogonal complement of a distinguished
-identity element.  They show that the automorphism group of this
-integer form is generated by octonion reflections (\emph{octave
-reflections}, in their terminology).
+sublattice of~$E_8^3$ containing~$2 E_8^3$ and generate the Conway
+group~$\Co_0$ from a maximal $2$-local subgroup, which permutes the
+three $E_8$ factors, and one extra automorphism.  Noam D.~Elkies and
+Benedict H.~Gross~\cite{ElkiesGross1996} relate an integer form of the
+exceptional Jordan algebra $\mathfrak{h}_3(\OO)$, with a positive
+definite element of determinant~$1$ outside the orbit of the identity
+matrix, to~$\LL$ and to the even lattice of rank~$26$ and
+determinant~$3$ with no vectors of squared length~$2$.
 
 \textbf{Leonard E.~Dickson (1923), Johannes Kirmse (1924), Kurt Mahler
 (1942), Richard H.~Bruck and H.\,S.\,M.~Coxeter (1946).}  For the
 history, see Appendix~\ref{app:history}.
 
-\textbf{Daniele Corradetti (2026).}  A recent construction is
-Corradetti's order on~$E_8$ via the Okubo algebra
-\cite{Corradetti2026}: a different nonclassical bilinear structure
-on~$E_8$, obtained by a $2$-adic conductor and saturation of an
-Okubo-algebra overlattice.  The two operations involved differ from
-the present mod-2 quotient (Appendix~\ref{sec:appendix-tables}):
-Corradetti rescales an order and
-$2$-adically saturates a sublattice, while the present paper passes
-to a quotient $L \to L/2L$.  Both place $2$-primary structure at
-the center of an octonion-derived order on~$E_8$.
+\textbf{Daniele Corradetti (2026).}  Corradetti~\cite{Corradetti2026}
+studies integral structures on~$E_8$ through the Okubo algebra,
+introducing an integral order-3 automorphism of the octonions whose
+Petersson isotope is the compact real Okubo algebra.  The
+Coxeter--Dickson $E_8$ lattice then carries an octonionic, a
+para-octonionic and an Okubo integral structure, three multiplicative
+systems that are not isomorphic.
 
 % ===============================================================
 \section{Conclusion}\label{sec:conclusion}
@@ -1131,7 +1132,7 @@ are typically nonassociative, noncommutative, nonalternative, and
 non-power-associative, the same negative classification $(\RR^{24},
 +, \star)$ satisfies.  Yet they carry high internal symmetry, with
 order-3 automorphisms playing the central role: the Okubo algebra has
-automorphism group $\mathrm{SU}(3)$, and its product is built from an
+automorphism group $\mathrm{SU}(3)/\ZZ_3$, and its product is built from an
 order-3 automorphism of the octonions.  Jonathan I.~Hall's
 monograph~\cite{Hall2019_Moufang} establishes that Moufang loops and
 groups with triality are essentially the same object.  Recasting
@@ -1318,7 +1319,8 @@ derived from $J_1$ by transposing two of the $i$'s'' (\S4).  This is
 a transposition of two imaginary basis units, a linear involution
 of~$\RR^8$; the $\binom72 = 21$ such transpositions yield the seven
 maximal orders in seven sets of three.  His \S\S6--13 develop the
-$E_8/5_{21}$ geometry of the corrected order.  A postscript (\S14)
+geometry of the corrected order as the $E_8$ lattice, the vertex set of
+the honeycomb~$5_{21}$ in his notation.  A postscript (\S14)
 records his after-the-fact awareness of Dickson and Mahler and
 identifies Dickson's undercount with exactly the cause above.
 
@@ -1473,7 +1475,7 @@ A.\,K.~Peters, 2003.
 D.~Corradetti,
 \emph{Integral elements of Okubo algebra and the $E_8$-lattice},
 preprint, 2026.
-\href{https://arxiv.org/abs/2605.09333v1}{arXiv:2605.09333v1}.
+\href{https://arxiv.org/abs/2605.09333}{arXiv:2605.09333}.
 
 \bibitem[Coxeter1946]{Coxeter1946}
 H.\,S.\,M.~Coxeter,

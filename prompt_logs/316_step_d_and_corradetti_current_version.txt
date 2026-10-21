@@ -1,0 +1,184 @@
+Prompt 316 -- Step D of the 2026-10-20 plan (records batch, end-to-end
+read); Corradetti2026 described in its current version; the citation-version
+policy
+Date: 2026-10-20
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "The mod-2 closure criterion is not open; it has a
+short proof. " -- once we're done with the current plan, we need to draft a
+new plan on how to go about this. Right now we have algebraic related
+aspects in three sections: section 5 for facts that we know about and are
+structural insights, section 6 for the prior art tally, and appending A for
+things that we consider interesting but too far out of the main line of the
+paper in order to be in section 5. This mod-2 criterion touches all three,
+so we want to be astute in making a comprehensive update. Here,
+"comprehensive" doesn't need to mean substantial, but it means to result in
+a logically structured paper that follows the editorial standards well --
+as opposed to piecemeal edits that'll cost me my last nerve in trying to
+disentangle as they jump around cryptically.
+
+re "The Corradetti paragraph describes a superseded version of his paper. "
+-- good catch; we want to make sure to cite and talk about the current
+version. Remove the "v1" specifier that you added, you should not have done
+that; then tweak the paragraph into a proper description of the current
+state of the paper. It is a risk when providing a general reference to a
+paper where its version could be updated since. This applies to every arxiv
+reference without exact version, and every ResearchGate DOI reference
+without exact date. We accept that risk. When running a comprehensive
+review, the reviewer tasked with cross-checking references will find it.
+Our paper's date, in turn, narrows the point in time at which we've checked
+the references. The residual risk is accepted in favor of dealing with
+early-stage research in public ("preprints").
+
+I believe this addresses the "pre-review list" item you mentioned.
+
+Let's go ahead and close out the current plan, by executing step D. It'll
+contain an end-to-end read of the paper so far. After that, we'll tend to
+the follow-on plan about how to deal with the mod-2 fact.'
+
+Rulings: (1) after the current plan, a new plan for the mod-2 criterion,
+which touches Section 5 (structural facts), Section 6 (prior art) and
+Appendix A (side observations): one comprehensive, logically structured
+update, not piecemeal edits.  (2) Cite and describe the current version of
+Corradetti2026; no version specifier (the v1 pin of prompt 315 is reverted).
+Policy: arXiv references without a version and ResearchGate DOIs without a
+date may change after the check; the risk is accepted (preprints); the
+paper's date bounds when references were checked; a reviewer cross-checking
+references will find drift.  (3) The pre-review item (sigma(Lambda) of
+Egan's form for the pair (2O, pO), bearing on Section 6's sentence on
+Egan's catalog) belongs to the follow-on mod-2 plan.  (4) Execute Step D:
+the records batch and an end-to-end read of the paper.
+
+Response:
+ 1. Corradetti2026 (ruling 2).  The bibitem is again unversioned
+    (arXiv:2605.09333).  The paragraph now describes the current version
+    (v2, 19 August 2026): "Corradetti [Corradetti2026] studies integral
+    structures on E_8 through the Okubo algebra, introducing an integral
+    order-3 automorphism of the octonions whose Petersson isotope is the
+    compact real Okubo algebra.  The Coxeter--Dickson E_8 lattice then
+    carries an octonionic, a para-octonionic and an Okubo integral
+    structure, three multiplicative systems that are not isomorphic."
+    Registry entry updated (current version; v1 history).  The policy is
+    saved as a feedback memory (cite preprints unversioned; describe the
+    current version).
+ 2. Step D, records batch.  Glossary: the entry "Kirmse twist" gains
+    L sbar = 2 J_1, already closed, so that no closure on L sbar depends on
+    the twist (the twist is needed for Ls); new entry "Polarization of
+    L/2L".  Plan status "executed" in CURRENT_STATE (header, map) and in
+    evidence_and_reasoning/README.md; the plan's closing dated addendum;
+    changelog item 19; memory (project note and index).  The other records
+    the plan lists (ledger rows 013 to 022, research_result, README,
+    paper/README, the seven keys no longer cited) were brought into line
+    at prompts 313 to 315 and checked again here.
+ 3. Step D, end-to-end read (workflow w4yk36ydz, 18 agents).  Six readers
+    (front matter with Sections 1-2; Sections 3-4; Section 5; Sections
+    6-8; appendices and bibliography; the whole paper) each built a
+    scratch copy, recomputed the mathematics independently in exact
+    arithmetic, and checked the sources; an independent verifier then
+    tried to refute each finding.  Twelve findings: 8 confirmed, 3
+    corrected, 1 refuted.  Applied (whole sentences; changelog item 19):
+    - Section 1 overview: the Section 5 entry claimed Section 5 determines
+      the order's identities and the behavior of other twists (5.1 shows
+      only failures; Section 7 leaves twists open); now "that standard
+      identities fail on it ... It also tests twists other than sigma for
+      closure on Lambda."  The Section 2 entry names the maximal order.
+    - Section 2.2: "the left alternative law".
+    - Section 4.1: the covolume argument in separate sentences ("hold on a
+      Z-basis" said of an equality); each of the three facts opens a
+      paragraph.
+    - Section 5.1: "a symmetric composition algebra, such as the Okubo and
+      para-Hurwitz algebras" (was "in the sense of Okubo and
+      para-Hurwitz", which reads as two authors).
+    - Section 6, Elkies and Gross (false): the orthogonal complement of
+      the distinguished element has rank 26 and determinant 3, not Lambda;
+      the reflection theorem is Allcock's (J. Algebra 213 (1999)), on
+      other integral forms.  Sources: the zbMATH reviews of Elkies-Gross
+      1996 (Zbl 0863.11027) and 2001 and of Allcock 1999, read via the
+      zbMATH API; a verifier's exact computation of the rank-26 lattice
+      (117,936 = 144 x 819 vectors of norm 4).  The deleted sentence
+      carried the author's terminology edit of 23 May 2026 (commit
+      7b5353f, "octave" is our "octonion").  Registry entry corrected.
+    - Section 6, Lepowsky and Meurman (misleading): Co_0 is generated by a
+      maximal 2-local subgroup, which permutes the three E_8 factors, and
+      one extra automorphism (the indexed abstract of the 1982 paper; the
+      registry entry of prompt 064 already said so).
+    - Section 6, Corradetti: "order-3" (the paper's form).
+    - Section 8: Aut of the Okubo algebra is SU(3)/Z_3 (the center acts
+      trivially).
+    - Appendix B: "E_8/5_{21} geometry" -> "the geometry of the corrected
+      order as the E_8 lattice, the vertex set of the honeycomb 5_{21} in
+      his notation".
+    Refuted: Section 4's opening "the sigma-twisted octonion product
+    preserves each of Wilson's three conditions" (dictated at prompt 173;
+    true for the product of Definition 3.2, block by block).
+    Note: the published v7 carries both prior-work errors of Section 6.
+ 4. Parked for the follow-on mod-2 plan (ruling 1; tagged by the readers,
+    not applied):
+    a. Section 5.6, the sentence after the census table, with Section 7's
+       third question: the criterion of prompt 315 gives the structural
+       reason for twists that fix L; what stays open is why the 4-cycles
+       and the one-half rates give the subalgebra pairs they do.
+    b. Section 6, Comparison paragraph: its first sentence restates
+       Section 3 and Section 5.4 and breaks the Baez-Egan thread; its
+       sentence on Egan's catalog (sigma(Lambda) has Egan's form for the
+       pair (2O, pO)).
+    c. Section 6, Egan paragraph: three subjects (Egan's construction;
+       the reproduction chain; the mod-2 reading of the count).  In the
+       chain, "E_8^3-orbit Leech embeddings" and "the E_8 simple-roots
+       data" are undefined labels; a verified wording: "Egan's simple
+       roots of E_8 and the sublattices L_1, L_2 built from them, ...,
+       the derivation of the lower bound 244,035,421 on the number of
+       sublattices of L^3 isometric to Lambda" (Baez, part 10,
+       Theorem 1').
+    d. Attribution: the complementary-pair construction of Lambda goes
+       back to Lepowsky-Meurman 1982 (Corollary 2.3) and Tits 1980, as
+       Calderbank's comment itself says; Section 6 states the reading
+       without credit, Appendix A credits Calderbank; Silverman is
+       credited twice.
+    e. "Totally isotropic" (q vanishes) is used in Section 6 before
+       Appendix A defines it; the characteristic-2 literature (Silverman,
+       Shimakura) says "totally singular".  Under the bilinear-form
+       reading the counts would be 2295 and 1024, not 270 and 64.
+    f. Section 7, fourth question: "polarization" is defined only in
+       Appendix A, and "lift" nowhere (also Appendix A's last sentence);
+       within twisted triple products the criterion settles it.
+    g. Appendix A, "Polarization of L-bar by sigma": opens with the ideal
+       fact; Wilson's unmoved pair L sbar/2L, Ls/2L is already a
+       complementary pair of totally singular subspaces, and L sbar/2L
+       already a two-sided ideal; what sigma changes modulo 2 is that
+       W = sigma(Ls)/2L is a subalgebra (Ls/2L is not).  Verified exactly
+       by a reader.
+    h. Appendix A: "The structure constants of mu-bar are the
+       coefficients ... reduced modulo 2" (a leftover of the tables).
+    i. Section 6 and Appendix A repeat each other: "ideal and subalgebra"
+       three times; Egan's construction twice.
+    j. Baez2014 bibitem: parts 11 and 12 link to the math.ucr.edu copies
+       over http; the Cafe posts exist (part 11 there dated
+       11 December 2014).
+ 5. Parked nits in older text (the convergence rule; not applied):
+    - Section 2.2, "the ring A_3 of Wilson [Wilson2009, Section 2]": a
+      second Wilson citation in Section 2, against the ruling of prompt
+      170; the plan's wording, approved at prompt 311, carries it, and the
+      later approval governs.  The identification holds when Wilson's
+      i_0, ..., i_6 are read as e_1, ..., e_7 (verified exactly), which the
+      paper does not say.
+    - Section 2.3, footnote 3: "For Ls, the subgroup property is likewise
+      immediate from s in L" (the inclusion also uses L.L in L).
+    - Section 4.2, the "Taking sums" list repeats (4.7) and (4.9) (kept on
+      the author's outline at prompt 312).
+    - Remark 4.5: "with sigma = (1 2)" repeats the Section 4 convention.
+    - Display (4.8): a verbal middle term.
+    - Section 5.4: "Aut(R^24, star)" against "(R^24, +, star)" elsewhere.
+    - Appendix C: "the twisted product" for star (Section 5.6 uses the name
+      for x ._g y).
+    - Appendix B's opening, "The construction this paper builds on" (means
+      the integral octonions; the author edited this sentence at prompt
+      142).
+    - he/his for Wilson, Dickson, Kirmse and Coxeter (Section 6, Appendix
+      B; the author's dictation of prompt 135 uses "he").
+ 6. Build: 20 pages, no errors, no undefined references; the 1.3 pt
+    overfull vbox on page 7 remains; page 16 has an underfull vbox
+    (badness 3482) with no visible gap.  Changed pages (2, 3, 5, 8, 13,
+    14, 16) read in the rendered PDF.
+
+Status: CLOSED.

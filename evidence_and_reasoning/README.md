@@ -34,7 +34,7 @@ evidence_and_reasoning/
 ├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
 ├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (engaged; items applied)
 ├── 2026-10-14_plan.md      # Plan: the span-index findings in v8, for the wrap-up (executed)
-├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (engaged; Step A applied, Steps B to D pending)
+├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (executed)
 └── README.md               # This file
 ```
 
