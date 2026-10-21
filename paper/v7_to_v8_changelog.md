@@ -272,6 +272,25 @@ Plan: [evidence_and_reasoning/2026-10-21_plan.md](../evidence_and_reasoning/2026
 
 Script: `python_project/src/verify_identity_witnesses.py` (committed at 96f0895, before the paper cites it; ALL PASS).  Build: 21 pages (the 21st holds one bibliography entry), no undefined references, no overfull boxes (the 1.3 pt vertical overfull box of page 7 is gone with the reflow).
 
+## 21. Section 5.1 made readable (21 October 2026, prompt 320)
+
+The author's ruling of prompt 320, on the text of item 20: the table keeps only the identity and its witness, and the prose before it becomes two sentences.
+
+- **Section 5.1, before "The failure of norm multiplicativity".**  The lead of item 20 (the two observations, the definitions of $\varepsilon_\alpha$, $\omega$ and $\langle\cdot,\cdot\rangle$, the definition of the quartic identity) and the paragraph after its table (the sign convention, the quartic witness, the scaling into $\Lambda$, the pointer to Appendix D) → "Several standard algebraic identities, among them associativity, alternativity, flexibility, power-associativity and commutativity, fail on the order $(\Lambda, +, \star)$.  The table below lists a witness of each violation, which is easily checked by hand from Definitions 3.2 and 3.3." (footnote: `verify_identity_witnesses.py`).  The table "Identity | Witness | The two sides" → "Identity | Witness of violation $(u, v\,[, w])$", with the witnesses written as explicit vectors ($\varepsilon_1 \to (e_0, 0, 0)$, $\omega \to (e_0, e_0, e_0)$, $\varepsilon_1 - \varepsilon_2 \to (e_0, -e_0, 0)$, and so on); the quartic row carries the definition of the quartic identity ("the five parenthesizations of $u\star u\star u\star u$ coincide"); the last row reads "no identity element exists (Remark 5.2)".  From "The failure of norm multiplicativity" on, Section 5.1 is as in item 20.
+- **Section 5.2.**  Item 20's clause and block index are undone, since Section 5.1 no longer defines $\varepsilon_\alpha$ and $\omega$: "Writing $\varepsilon_1 = (e_0, 0, 0)$, ... and $\omega = \varepsilon_1 + \varepsilon_2 + \varepsilon_3$, they are", with $\varepsilon_i$ ($i = 1, 2, 3$) in displays (5.1) and (5.2), as before item 20.
+- **Appendix D** and Section 1's overview: unchanged.
+
+Script: a dated note in `verify_identity_witnesses.py` (the table no longer prints the two sides; the witnesses are unchanged; ALL PASS).  Build: 20 pages, no undefined references, no overfull boxes.
+
+## 22. Three precision points of Section 5.1 (21 October 2026, prompt 321)
+
+The three tensions pointed out at prompt 320, fixed at the author's ruling of prompt 321.
+
+- **Section 2.1.**  "Throughout, \emph{norm} means this squared Euclidean length." → "Throughout, \emph{norm} means this squared Euclidean length, and $\langle x, y\rangle$ is the Euclidean inner product, so that $\langle x, x\rangle = N(x)$; on $\mathbb R^{24}$ both are summed over the three blocks."  (The inner product, used in Section 5.1's symmetric-composition row, Section 5.3 and Section 6, was not defined.)
+- **Section 5.1.**  "fail on the order $(\Lambda, +, \star)$." → "fail on the ambient algebra $(\mathbb R^{24}, +, \star)$ and hence, by scaling, on the order $(\Lambda, +, \star)$."  (The witnesses lie in the ambient algebra.)  After the sentence with the table, new: "Appendix D estimates by sampling how often the identities from left alternativity to symmetric composition hold on minimal vectors."
+
+Build: 20 pages, no undefined references; the 1.3 pt vertical overfull box is back with the reflow, invisible on the page.
+
 ## Trackers that follow the paper
 
 `CURRENT_STATE.md` ("Verification status"; "Structure of the algebra"; "What has been done since the finding"; "What remains open"; "Repository map"), `README.md` (result bullets; "What Remains Open"; "Running the Code"), `evidence_and_reasoning/research_result.md`, `evidence_and_reasoning/key_claims/README.md` (ledger-only rows 009 to 022), `evidence_and_reasoning/README.md` (ledger-row range; the plans), `evidence_and_reasoning/terminology.md` (span index; maximal order; section numbers), `python_project/README.md` ("Running individual scripts"), `python_project/src/README.md` (the scripts the paper cites), `gap_project/README.md` ("Cross-references with the Python suite"), `paper/README.md` (the reviews; the rerun note for the review's extractor), and the status lines of `evidence_and_reasoning/2026-10-12_plan.md`, `2026-10-14_plan.md` and `2026-10-20_plan.md` (dated addenda).

@@ -1,0 +1,69 @@
+Prompt 320 -- Section 5.1 made readable: the table lists only the
+witnesses; the prose shrinks to two sentences
+Date: 2026-10-21
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'From a quick read, your edits look factually correct;
+however, section 5.1 is unreadable to a human. In the table, scratch the
+column "the two sides". Rename the column header "Witness" to "Witness of
+violation (u, v [, w])". In the prose, replace all that detail babble with
+a brief statement that it can easily be checked, and refer straight to the
+table. Don't repeat the table in prose. Scratch "and four times that
+witness lies in Λ (shown after the table)", it's an arbitrary property
+after choosing the witnesses. Unless I overlooked something, there should
+just be one or two sentences of prose remaining at the beginning of section
+5.1, before it continues with "The failure of norm multiplicativity..."
+after which we'll want to leave section 5.1 unchanged (for now; it's
+subject to updates in later steps in the plan). The new appendix D is good
+for now.
+
+Before we continue with the plan, do fix the glaring readability issues of
+section 5.1 per this prompt.'
+
+Rulings: in Section 5.1's table the column "The two sides" goes, and the
+header "Witness" becomes "Witness of violation (u, v [, w])"; the prose
+before the table becomes one or two sentences (a brief statement that the
+witnesses are easily checked, referring to the table), with no repetition
+of the table and without the scaling into Lambda; from "The failure of norm
+multiplicativity ..." on, Section 5.1 stays as it is for now; Appendix D
+stays.  This fix comes before the plan continues.
+
+Response:
+ 1. paper/main.tex, Section 5.1 before "The failure of norm
+    multiplicativity": two sentences ("Several standard algebraic
+    identities ... fail on the order (Lambda, +, star).  The table below
+    lists a witness of each violation, which is easily checked by hand
+    from Definitions 3.2 and 3.3.", with the footnote to
+    verify_identity_witnesses.py) and a two-column table "Identity |
+    Witness of violation (u, v [, w])".  The witnesses are written as
+    explicit vectors (eps_1 = (e0,0,0), omega = (e0,e0,e0), eps_1 - eps_2 =
+    (e0,-e0,0)), so Section 5.1 needs no definitions; the quartic row
+    carries the definition of the quartic identity; the last row reads "no
+    identity element exists (Remark 5.2)".  From "The failure of norm
+    multiplicativity" on, Section 5.1 is unchanged; Appendix D and Section
+    1's overview are unchanged.
+ 2. Section 5.2: back to its own definition of eps_i and omega (the text of
+    96f0895), since Section 5.1 no longer defines them; this undoes item
+    1's edit of 5.2, including the block index alpha.
+ 3. Build: 20 pages, no undefined references, no overfull boxes; pages 7
+    and 8 read in the PDF.  The script still runs ALL PASS; it is frozen
+    (committed, cited), so a dated note records that the table no longer
+    prints the two sides; its index line updated.
+ 4. Records: changelog item 21; addenda to 2026-10-21_plan.md and
+    2026-10-20_closed_form_plan.md; memory (paper tone: tables carry the
+    detail).  The author's commit e15dece holds item 1; this turn's changes
+    are uncommitted.
+ 5. Tensions pointed out, not acted on:
+    - <.,.> in the symmetric-composition row is undefined again (item 1
+      defined it in the prose that is now gone; v7 had the same gap).  A
+      clause in Section 2.1's notation sentence would define it.
+    - The first sentence says the identities fail "on the order (Lambda,
+      +, star)", while the witnesses lie in the ambient algebra (for
+      example (e0, 0, 0) is not in Lambda); the bridge (homogeneity, scale
+      by 4) was scratched by the ruling.
+    - Section 5.1 no longer points to Appendix D for the sampled
+      frequencies; Remark 5.1 points there for the norms, and Section 1's
+      overview names it.
+ 6. Lint: documentation clean.
+
+Status: CLOSED.

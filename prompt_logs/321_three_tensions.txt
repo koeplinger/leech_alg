@@ -1,0 +1,30 @@
+Prompt 321 -- the three tensions of prompt 320 fixed: the inner product
+defined, the failures stated on the ambient algebra, the pointer to
+Appendix D
+Date: 2026-10-21
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Before we continue, fix all three tensions with a
+focused, concise update.'
+
+Rulings: fix the three tensions named at prompt 320 (the undefined inner
+product; the failures stated on the order while the witnesses lie in the
+ambient algebra; no pointer from Section 5.1 to Appendix D's frequencies)
+in one focused, concise update, before the plan continues.
+
+Response:
+ 1. Section 2.1: the notation sentence now defines the Euclidean inner
+    product <x, y>, with <x, x> = N(x), both summed over the three blocks
+    on R^24.
+ 2. Section 5.1, first sentence: the identities fail on the ambient
+    algebra (R^24, +, star) and hence, by scaling, on the order
+    (Lambda, +, star).
+ 3. Section 5.1, new third sentence: Appendix D estimates by sampling how
+    often the identities from left alternativity to symmetric composition
+    hold on minimal vectors.
+ 4. Build: 20 pages, no undefined references; the 1.3 pt vertical overfull
+    box is back with the reflow, invisible on the page.  Pages 3 and 7
+    read.  Changelog item 22; addendum to the closed-form plan.
+ 5. Lint: documentation clean.
+
+Status: CLOSED.

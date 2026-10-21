@@ -1,5 +1,19 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Addendum (2026-10-21, prompt 321).**  The three tensions pointed out at
+prompt 320 are fixed (changelog item 22): Section 2.1 defines the Euclidean
+inner product; Section 5.1 states the failures on the ambient algebra and,
+by scaling, on the order; Section 5.1 points to Appendix D for the sampled
+frequencies.  Next, as before: item 2.
+
+**Addendum (2026-10-21, prompt 320).**  Section 5.1 was made readable at
+the author's ruling: the table lists each identity and a witness of its
+violation, written as explicit vectors, under two sentences of prose
+(changelog item 21; `2026-10-21_plan.md`, addendum).  The target structure
+of §2 for Sections 5.1 and 5.2 reads accordingly: Section 5.1 defines no
+$\varepsilon_\alpha$ or $\omega$, and Section 5.2 is unchanged.  Next, as
+before: item 2.
+
 **Status (2026-10-21, prompt 319): item 1 executed.**  Section 5.1 by
 witnesses and the new Appendix D, per `2026-10-21_plan.md` (changelog item
 20).  Next: item 2, the closure criterion in Section 5.6, with its own plan.

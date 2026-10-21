@@ -35,6 +35,15 @@ throughout (fractions.Fraction; sympy for one rank computation).
     identity (the 576 linear equations e star b_k = b_k, resp. b_k star e =
     b_k, over the standard basis b_k are inconsistent).
 
+Note (21 October 2026, prompt 320).  The paper's table in Section 5.1 now
+lists only the identities and their witnesses, written as explicit vectors
+(eps_1 = (e0, 0, 0), omega = (e0, e0, e0), eps_1 - eps_2 = (e0, -e0, 0));
+it no longer prints the two sides, and the paper no longer states the
+scaling into Lambda.  The witnesses are unchanged.  Item (D) checks the two
+sides as given in the table of prompt 319
+(evidence_and_reasoning/2026-10-21_plan.md, section 2.1), and item (E) the
+scaling stated there; both checks stand as a record.
+
 Usage: python3 verify_identity_witnesses.py   (a few seconds)
 """
 from fractions import Fraction as F
