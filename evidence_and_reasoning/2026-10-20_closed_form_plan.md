@@ -1,5 +1,17 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Status (2026-10-21, prompt 319): item 1 executed.**  Section 5.1 by
+witnesses and the new Appendix D, per `2026-10-21_plan.md` (changelog item
+20).  Next: item 2, the closure criterion in Section 5.6, with its own plan.
+The author's standing method for the remaining items (prompt 319): precision
+over adventure; tensions are brought to the author, not pursued; one
+significant update at a time, with notes and plans for later ones; a section
+may be revised several times; at every step the paper meets the editorial
+standards.  Note for later, pointed out at prompt 319: the keyword
+"computer-assisted proof" and the MSC code 68V05, kept at prompt 312 because
+Section 5 still rested on exhaustive computations, are to be reconsidered
+once the table-based proofs are replaced.
+
 **Status (2026-10-21, prompt 318): engaged.**  The author's decisions: (a)
 item 1 first; (b) as recommended (the witnesses as a short table;
 $\varepsilon_\alpha$ and $\omega$ defined in Section 5.1, with 5.2's clause

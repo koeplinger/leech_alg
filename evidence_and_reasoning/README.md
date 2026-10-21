@@ -39,7 +39,7 @@ evidence_and_reasoning/
 ├── 2026-10-14_plan.md      # Plan: the span-index findings in v8, for the wrap-up (executed)
 ├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (executed)
 ├── 2026-10-20_closed_form_plan.md  # Plan: the closure criterion, Egan's construction, Section 5.1 by witnesses (engaged)
-├── 2026-10-21_plan.md      # Item 1 of the closed-form plan: Section 5.1 by witnesses, the sampled data to Appendix D (proposed)
+├── 2026-10-21_plan.md      # Item 1 of the closed-form plan: Section 5.1 by witnesses, the sampled data to Appendix D (executed)
 └── README.md               # This file
 ```
 

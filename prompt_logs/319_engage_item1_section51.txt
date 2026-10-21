@@ -1,0 +1,64 @@
+Prompt 319 -- item 1 engaged and executed: Section 5.1 by witnesses, the
+sampled material to Appendix D
+Date: 2026-10-21
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'The plan reads good. Engage. Remember: Precision beats
+adventure, don't diverge on your own but do bring tensions to my attention.
+We're in the middle of a substantial upgrade of the proofs in this paper,
+replacing all the table-based computer proofs with closed-form symbolic
+proofs. While doing so, we're discovering new insights and new
+opportunities for simplification -- as it happens so often, of course. It
+is important not to conflate things, which means that we'll address one
+significant update at a time, and make a note and plans for subsequent
+updates. That can at times require a section to be updated and reviewed
+multiple times, only to be updated and reviewed again and again. That is
+ok. It is important that -- at any step in the process -- we're looking at
+a reasonably well-written paper. Here I'm looking for our editorial
+standards in particular, and not so much for a fine-comb reading. The goal
+is to lead you first through the discovery and refinement process, until
+you're satisfied; then have me absorb and own the work (or defer to
+AI-owned contributions clearly, as we have done multiple times already here
+in this repo); and then do a fine-comb read and updates into something that
+I am comfortable originating and that a human would enjoy reading.'
+
+Rulings: evidence_and_reasoning/2026-10-21_plan.md (item 1) is engaged and
+executed.  Standing method: precision over adventure; no divergence on my
+own, but tensions brought to the author's attention; one significant update
+at a time, with notes and plans for later updates; a section may be revised
+and reviewed several times; at every step the paper meets the editorial
+standards (not a fine-comb read); the process is AI discovery and
+refinement until satisfied, then the author absorbs and owns the work (or
+AI-owned contributions are marked clearly), then a fine-comb read toward a
+text the author is comfortable originating and a human enjoys reading.
+
+Response:
+ 1. The scratchpad had been cleared at the session restart, so the edit
+    script of prompt 318 was gone; the five edits were applied from the
+    approved plan file itself (evidence_and_reasoning/2026-10-21_plan.md,
+    its §2), each old block found exactly once (tool: scratch
+    p319/apply_from_plan.py).  The script verify_identity_witnesses.py and
+    its index line were already committed by the author at 96f0895, as the
+    plan required before the paper cites it.
+ 2. paper/main.tex: Section 5.1 by witnesses, Remarks 5.1 and 5.2, Section
+    5.2's clause and the block index alpha in (5.1) and (5.2), Section 1's
+    overview sentence, and the new Appendix D.  Build: 21 pages, no
+    undefined references, no overfull boxes (the old 1.3 pt vertical
+    overfull box is gone).  Pages 8 and 18 read in the PDF; identical to
+    the build reviewed at prompt 318.  Script: ALL PASS; its index line now
+    points to the paper.
+ 3. Records: changelog item 20; the item-1 plan's status (engaged and
+    executed); the parent plan's addendum (item 1 executed; next item 2;
+    the author's standing method; a note for later on the keyword
+    "computer-assisted proof" and MSC 68V05); the indexes in
+    evidence_and_reasoning/README.md and CURRENT_STATE; memory (a new
+    feedback note on the proof-upgrade process; the project note).
+ 4. Tensions pointed out to the author, not acted on: the records that
+    name the old Section 5.1 table (CURRENT_STATE's "Algebraic properties
+    (paper §5.1)", research_result, ledger row 012a, the README lines and
+    docstrings of verify_section5_properties.py and
+    verify_pair_norm_histogram.py) stay as they are until item 7, as the
+    plan provides; the keyword and MSC code as above.
+ 5. Lint: documentation clean.
+
+Status: CLOSED.

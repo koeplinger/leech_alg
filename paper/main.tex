@@ -202,8 +202,11 @@ Section~\ref{sec:related} places the construction among related work,
 Section~\ref{sec:conclusion} concludes with the open questions, and
 Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{sec:appendix-tables}
 reads two of the lemmas modulo~$2$, Appendix~\ref{app:history} traces
-the integral octonions from Dickson to Coxeter, and
-Appendix~\ref{sec:methodology} records the research methodology.
+the integral octonions from Dickson to Coxeter,
+Appendix~\ref{sec:methodology} records the research methodology, and
+Appendix~\ref{app:samples} gives sampled frequencies of identities of
+Section~\ref{sec:properties} and the norms of products of minimal
+vectors.
 
 All results were developed through a systematic human--AI
 collaboration, and the complete research record is public~\cite{repo}:
@@ -632,45 +635,78 @@ Section~\ref{sec:proof}.
 
 Several standard algebraic identities, among them associativity,
 alternativity, flexibility, power-associativity and commutativity,
-fail on the order $(\LL, +, \star)$.  To estimate how often the
-identities in the table below hold, we have drawn samples uniformly
-from $\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
-binary identities, from $\operatorname{Min}(\LL)$ for the cube and
-quartic identities, and from $\operatorname{Min}(\LL)^3$ for the
-symmetric-composition identity.  Sample size is $n = 10^6$ per
-property; exact integer arithmetic
-throughout.\footnote{\scriptref{verify\_section5\_properties.py}.}  The
-standard error is $\mathrm{SE} = \sqrt{f(1-f)/n}$, where $f$ is the
-fraction of samples on which the identity holds.  The quartic identity
-requires all five parenthesizations of $u \star u \star u \star u$ to
-coincide.
+fail on the order $(\LL, +, \star)$.  Each failure has a witness in the
+ambient algebra that can be checked by hand, and four times that witness
+lies in~$\LL$ (shown after the table).  Two observations make the check
+short.  First, if $u$ and~$v$
+each have a single nonzero block, $a$ in block~$\alpha$ and $b$ in
+block~$\beta$, then $u \star v$ has the single nonzero block $a
+\cdot_\sigma b$, placed by the routing rule of
+Definition~\ref{def:triple}.  Second, $\sigma$ fixes $e_0$, $e_3$,
+$e_4$ and~$e_6$, which span a subalgebra (the triple $(3,4,6)$
+of~\eqref{eq:fano}), so on it $\cdot_\sigma$ is the standard product.
+Write $\varepsilon_1 = (e_0, 0, 0)$, $\varepsilon_2 = (0, e_0, 0)$,
+$\varepsilon_3 = (0, 0, e_0)$ and $\omega = \varepsilon_1 +
+\varepsilon_2 + \varepsilon_3$.  By the first observation,
+$\varepsilon_\alpha \star \varepsilon_\alpha = \varepsilon_\alpha$, and
+$\varepsilon_\alpha \star \varepsilon_\beta = \varepsilon_\gamma$
+whenever $\{\alpha, \beta, \gamma\} = \{1, 2, 3\}$.  The quartic
+identity requires all five parenthesizations of $u \star u \star u
+\star u$ to coincide, and $\langle \cdot, \cdot \rangle$ denotes the
+Euclidean inner product on~$\RR^{24}$.
 
 \begin{center}
 \begin{tabular}{@{}lll@{}}
 \toprule
-Property & Holds? & Fraction of samples (\% $\pm$ SE) \\
+Identity & Witness & The two sides \\
 \midrule
-Multiplicative identity & No & n/a (structural) \\
-Commutativity $u\star v = v\star u$ & No &
-  $(0.018 \pm 0.0014)\%$ \\
-Norm multiplicativity $\Nrm(u\star v) = \Nrm(u)\Nrm(v)$ & No &
-  $(46.77 \pm 0.050)\%$ \\
-Left alternativity $(u\star u)\star v = u\star(u\star v)$ & No &
-  $(0.188 \pm 0.0043)\%$ \\
-Right alternativity $(u\star v)\star v = u\star(v\star v)$ & No &
-  $(0.188 \pm 0.0043)\%$ \\
-Flexibility $(u\star v)\star u = u\star(v\star u)$ & No &
-  $(8.37 \pm 0.028)\%$ \\
-Cube power-associativity $(u\star u)\star u = u\star(u\star u)$ & No &
-  $(30.70 \pm 0.046)\%$ \\
-Quartic power-associativity & No &
-  $(12.75 \pm 0.033)\%$ \\
+Associativity $(u\star v)\star w = u\star(v\star w)$ &
+  $\varepsilon_1, \varepsilon_2, \varepsilon_3$ &
+  $\varepsilon_3 \ne \varepsilon_1$ \\
+Left alternativity $(u\star u)\star v = u\star(u\star v)$ &
+  $\varepsilon_1, \varepsilon_2$ &
+  $\varepsilon_3 \ne \varepsilon_2$ \\
+Right alternativity $(u\star v)\star v = u\star(v\star v)$ &
+  $\varepsilon_2, \varepsilon_1$ &
+  $\varepsilon_2 \ne \varepsilon_3$ \\
+Flexibility $(u\star v)\star u = u\star(v\star u)$ &
+  $(e_3, e_4, 0), \varepsilon_1$ &
+  differ by $(0, -2e_6, 2e_6)$ \\
+Cube power-associativity $(u\star u)\star u = u\star(u\star u)$ &
+  $(e_0, e_3, e_4)$ &
+  differ by $(0, -4e_6, 4e_6)$ \\
+Quartic power-associativity &
+  $\varepsilon_1 - \varepsilon_2$ &
+  $3\,u\star u \ne -3\,u\star u$ \\
+Commutativity $u\star v = v\star u$ &
+  $(e_3, 0, 0), (e_4, 0, 0)$ &
+  $(e_6, 0, 0) \ne (-e_6, 0, 0)$ \\
+Norm multiplicativity $\Nrm(u\star v) = \Nrm(u)\Nrm(v)$ &
+  $\omega, \varepsilon_1 - \varepsilon_2$ &
+  $0 \ne 6$ \\
 Symmetric composition $\langle u\star v, w\rangle =
-  \langle u, v\star w\rangle$ & No &
-  $(25.37 \pm 0.044)\%$ \\
+  \langle u, v\star w\rangle$ &
+  $\varepsilon_1, (e_3, 0, 0), (e_3, 0, 0)$ &
+  $1 \ne -1$ \\
+Multiplicative identity &
+  \multicolumn{2}{l@{}}{none exists (Remark~\ref{rem:no-identity})} \\
 \bottomrule
 \end{tabular}
 \end{center}
+For flexibility and the cube identity, the table gives the left side
+minus the right side.  For the quartic identity, the two sides shown are $((u \star u)
+\star u) \star u$ and $(u \star u) \star (u \star u)$: with $u =
+\varepsilon_1 - \varepsilon_2$, $u \star u = \varepsilon_1 +
+\varepsilon_2 - 2\varepsilon_3$ and $(u \star u) \star u = 3u = u
+\star (u \star u)$, so the cube identity holds at this~$u$.  Each
+identity is homogeneous in its arguments, so multiplying a witness
+by~$4$ multiplies both sides by the same power of~$4$.  The scaled
+witness lies in $(2L)^3 \subseteq \LL$, since $4e_i \in 2L$ and $2L
+\subseteq L\bar s \cap Ls$ (Section~\ref{subsec:wilson-leech}), so the
+identities fail on~$\LL$ itself.\footnote{\scriptref{verify\_identity\_witnesses.py}.}
+Appendix~\ref{app:samples} estimates by sampling how often the
+identities from left alternativity to symmetric composition hold on
+minimal vectors.
 
 The failure of norm multiplicativity rules out $(\LL, +, \star)$
 being a composition algebra.  The failure of symmetric composition
@@ -679,22 +715,16 @@ such as the Okubo and para-Hurwitz algebras
 (Alberto Elduque \cite{Elduque1996, Elduque2023_IsotropicNorm};
 Susumu Okubo \cite{Okubo1995_Book}).
 
-On the $10^6$ samples drawn for the cube and quartic identities, every sample that satisfied the
-quartic identity also satisfied the cube identity.
-
 \begin{remark}\label{rem:product-norms}
-The product does not preserve the minimal shell: the self-product
-norms $\Nrm(u \star u)$ of all 196{,}560 minimal vectors take exactly
-the values $\{16, 32, 48, 64, 80, 96,
-128\}$.\footnote{\scriptref{verify\_idempotents\_min\_shell.py}.}  On
-$10^6$ sampled pairs, the pair-product norms
-$\Nrm(u \star v)$ took only the values
-$\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples of~16, with
-mode~64 (the norm-multiplicative value $\Nrm(u)\Nrm(v) = 8 \times
-8$).\footnote{\scriptref{verify\_pair\_norm\_histogram.py}.}
+The product does not preserve the minimal shell: for the minimal
+vector $u = (2\lambda, 0, 0)$ with $\lambda = e_3 + e_4$ (Type~1 in
+Section~\ref{subsec:wilson-leech}), $u \star u = (4\lambda^2, 0, 0) =
+(-8e_0, 0, 0)$, of norm~64.  Appendix~\ref{app:samples} records the
+self-product norms of all minimal vectors and the pair-product norms on
+sampled pairs.
 \end{remark}
 
-\begin{remark}
+\begin{remark}\label{rem:no-identity}
 The ambient algebra $(\RR^{24}, +, \star)$ has no multiplicative
 identity.  A left identity~$(a,b,c)$ would act on~$(x',y',z')$ by the
 block matrix
@@ -715,13 +745,12 @@ lattice is stable under the product.
 The ambient algebra $(\RR^{24}, +, \star)$ has exactly eight
 idempotents, by symbolic
 classification.\footnote{\scriptref{verify\_idempotent\_classification.py}.}
-Writing $\varepsilon_1 = (e_0, 0, 0)$, $\varepsilon_2 = (0, e_0, 0)$,
-$\varepsilon_3 = (0, 0, e_0)$ and $\omega = \varepsilon_1 +
-\varepsilon_2 + \varepsilon_3$, they are
+With $\varepsilon_1$, $\varepsilon_2$, $\varepsilon_3$ and~$\omega$ as
+in Section~\ref{sec:identities}, they are
 \begin{equation}\label{eq:idempotents}
   0, \qquad \varepsilon_1, \ \varepsilon_2, \ \varepsilon_3, \qquad
   \tfrac13 \omega, \qquad
-  \varepsilon_i - \tfrac13 \omega \ \ (i = 1, 2, 3).
+  \varepsilon_\alpha - \tfrac13 \omega \ \ (\alpha = 1, 2, 3).
 \end{equation}
 Note that every block of every one of them is a multiple of~$e_0$.
 
@@ -730,9 +759,9 @@ idempotent:\footnote{\scriptref{verify\_idempotent\_lattice\_rescaling.py}.}
 each nonzero idempotent spans a rational ray that meets~$\LL$, and its
 least positive multiple in~$\LL$ is
 \begin{equation}\label{eq:idempotent-multiples}
-  4\varepsilon_i \ (\Nrm = 16), \qquad
+  4\varepsilon_\alpha \ (\Nrm = 16), \qquad
   4\omega \ (\Nrm = 48), \qquad
-  6\bigl(\varepsilon_i - \tfrac13\omega\bigr) \ (\Nrm = 24).
+  6\bigl(\varepsilon_\alpha - \tfrac13\omega\bigr) \ (\Nrm = 24).
 \end{equation}
 These multiples follow from Wilson's three conditions.  Since $L$,
 $L\bar s$ and~$Ls$ meet~$\RR e_0$ in $2\ZZ e_0$, $2\ZZ e_0$
@@ -1422,6 +1451,53 @@ The full record is available at the repositories of~\cite{repo}: all
 prompts, code, evidence, and git history.  The reader can form
 their own assessment of what this means for questions of discovery
 and attribution.
+
+% ===============================================================
+\section{Identities and product norms on minimal
+vectors}\label{app:samples}
+% ===============================================================
+
+This appendix estimates, by sampling, how often the identities of
+Section~\ref{sec:identities} from left alternativity to symmetric
+composition hold on minimal vectors, and records the norms of products
+of minimal vectors.  Samples were drawn uniformly from
+$\operatorname{Min}(\LL) \times \operatorname{Min}(\LL)$ for the
+binary identities, from $\operatorname{Min}(\LL)$ for the cube and
+quartic identities, and from $\operatorname{Min}(\LL)^3$ for the
+symmetric-composition identity.  Sample size is $n = 10^6$ per
+identity; exact integer arithmetic
+throughout.\footnote{\scriptref{verify\_section5\_properties.py}.}  The
+standard error is $\mathrm{SE} = \sqrt{f(1-f)/n}$, where $f$ is the
+fraction of samples on which the identity holds.
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Identity & Fraction of samples (\% $\pm$ SE) \\
+\midrule
+Left alternativity & $(0.188 \pm 0.0043)\%$ \\
+Right alternativity & $(0.188 \pm 0.0043)\%$ \\
+Flexibility & $(8.37 \pm 0.028)\%$ \\
+Cube power-associativity & $(30.70 \pm 0.046)\%$ \\
+Quartic power-associativity & $(12.75 \pm 0.033)\%$ \\
+Commutativity & $(0.018 \pm 0.0014)\%$ \\
+Norm multiplicativity & $(46.77 \pm 0.050)\%$ \\
+Symmetric composition & $(25.37 \pm 0.044)\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+On the $10^6$ samples drawn for the cube and quartic identities, every
+sample that satisfied the quartic identity also satisfied the cube
+identity.
+
+The self-product norms $\Nrm(u \star u)$ of all 196{,}560 minimal
+vectors take exactly the values $\{16, 32, 48, 64, 80, 96,
+128\}$.\footnote{\scriptref{verify\_idempotents\_min\_shell.py}.}  On
+$10^6$ sampled pairs, the pair-product norms $\Nrm(u \star v)$ took
+only the values $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples
+of~16, with mode~64 (the norm-multiplicative value $\Nrm(u)\Nrm(v) = 8
+\times 8$).\footnote{\scriptref{verify\_pair\_norm\_histogram.py}.}
 
 % ===============================================================
 % References
