@@ -1,5 +1,13 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Status (2026-10-21, prompt 318): engaged.**  The author's decisions: (a)
+item 1 first; (b) as recommended (the witnesses as a short table;
+$\varepsilon_\alpha$ and $\omega$ defined in Section 5.1, with 5.2's clause
+edited; Remark 5.1's exhaustive value set to Appendix D); (c) no preference
+on lettering ("we can always regroup later"), so the new appendix is
+Appendix D; (h) Appendix A rebuilt around the criterion modulo 2.  Item 1's
+own plan is `2026-10-21_plan.md`.  The text below is the plan as engaged.
+
 **Status (2026-10-20, prompt 317): proposed, not executed.**  Drafted by
 Claude Opus 5.5 at the direction of Jens Köplinger, from the author's rulings
 of prompts 316 and 317, and reviewed before hand-over by four independent

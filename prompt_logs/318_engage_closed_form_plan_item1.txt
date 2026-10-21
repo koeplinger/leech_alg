@@ -1,0 +1,67 @@
+Prompt 318 -- the closed-form plan engaged; item 1 (Section 5.1 by
+witnesses, the sampled material to Appendix D) begins with its own plan
+Date: 2026-10-21
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'My decisions:
+(a) yes, your recommended order
+(b) that's a great idea
+(c) I have no preference about appendix lettering; we can always regroup
+later
+(h) ok sounds good
+Engage.'
+
+Rulings: the plan evidence_and_reasoning/2026-10-20_closed_form_plan.md is
+engaged.  (a) Item 1 first.  (b) As recommended: the witnesses as a short
+table; epsilon_alpha and omega defined in Section 5.1, with 5.2's clause
+edited; Remark 5.1's exhaustive value set moves to Appendix D with the
+sampled pair-product norms.  (c) No preference; the recommendation applies
+(Appendix D, no relettering), and the lettering can be regrouped later.
+(h) Appendix A is rebuilt around the criterion modulo 2 (item 3).
+
+Follow-up from the author (verbatim): 'I've had to switch networks. Check
+and make sure we're still ok. Anything still running?'
+
+Response:
+ 1. The plan evidence_and_reasoning/2026-10-20_closed_form_plan.md is
+    engaged: dated addendum with decisions (a), (b), (c), (h).  Indexed as
+    engaged in evidence_and_reasoning/README.md and CURRENT_STATE.
+ 2. Item 1's own plan drafted: evidence_and_reasoning/2026-10-21_plan.md
+    (proposed): the new Section 5.1 (witness table; the routing rule and
+    the units fixed by sigma; epsilon and omega defined there; the inner
+    product defined at its first use; witnesses scaled by 4 into
+    (2L)^3 in Lambda; Remark 5.1 with the witness (2 lam, 0, 0)), Section
+    5.2's clause and the block index alpha in (5.1) and (5.2), Section 1's
+    overview sentence, and the new Appendix D (the sampled table, trimmed
+    of the column "Holds?" and the unsampled row, the quartic-implies-cube
+    observation, the exhaustive self-product norms, the sampled
+    pair-product norms).  Exact old -> new LaTeX, generated from the edit
+    script (scratch: p318/apply_item1.py; first version kept as
+    apply_item1_v1.py).
+ 3. New script python_project/src/verify_identity_witnesses.py (not yet
+    cited; indexed in python_project/src/README.md, pointing to the plan):
+    ALL PASS in a few seconds; check (E) verifies the scaling by 4^degree
+    (a mutation test, degree 4 -> 3 for the quartic row, makes it fail).
+ 4. Review before hand-over (workflow review-item1-plan, run
+    wf_6ef28c62-322, 6 agents: mathematics, the paper as a reader sees it,
+    fidelity, each with a checker; report p318_review.json and
+    p318_review.txt in the scratchpad).  22 findings: 21 upheld (12 as
+    written, 9 with a corrected text), 1 refuted (the sign convention of
+    "differ by", called taste by one checker; the fidelity checker upheld
+    the same point as a nit, and the one-sentence convention was applied).
+    Applied: associativity is not pointed to Appendix D, which never
+    sampled it (Section 5.1, Appendix D's lead, Section 1); witnesses said
+    to lie in the ambient algebra before the table; <.,.> defined at its
+    first use; "none exists (Remark 5.2)" across two columns; the sign
+    convention; "per identity"; Remark 5.1's pointer keeps "sampled"; the
+    block index alpha in Section 5.2; the script's check (E); the plan's
+    description of the Appendix D move, the execution order (script
+    committed before the paper cites it), ledger row 012a, the timing.
+    Rebuilt: 21 pages, no undefined references, no overfull boxes; pages
+    7, 8 and 18 read.
+ 5. Mid-turn: the author switched networks; the running review workflow
+    was checked (agents alive, transcripts updating), paper/main.tex
+    unchanged, linter clean.
+ 6. Lint: documentation clean.
+
+Status: CLOSED.

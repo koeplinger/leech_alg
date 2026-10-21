@@ -10,8 +10,9 @@ progress in `paper/main.tex`; its plans are
 `evidence_and_reasoning/2026-10-12_plan.md`,
 `evidence_and_reasoning/2026-10-14_plan.md` and
 `evidence_and_reasoning/2026-10-20_plan.md` (executed), and
-`evidence_and_reasoning/2026-10-20_closed_form_plan.md` (proposed: the closure
-criterion, Egan's construction and Section 5.1 by witnesses).
+`evidence_and_reasoning/2026-10-20_closed_form_plan.md` (engaged: the closure
+criterion, Egan's construction and Section 5.1 by witnesses), with item 1 in
+`evidence_and_reasoning/2026-10-21_plan.md` (proposed).
 
 This document is the technical summary of the research, for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
@@ -756,7 +757,8 @@ leech_alg/
 │   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
 │   ├── 2026-10-14_plan.md         # Plan: the span-index findings in v8 (executed)
 │   ├── 2026-10-20_plan.md         # Plan: the symbolic proof replaces the tables (executed)
-│   ├── 2026-10-20_closed_form_plan.md  # Plan: closure criterion, Egan's construction, §5.1 by witnesses (proposed)
+│   ├── 2026-10-20_closed_form_plan.md  # Plan: closure criterion, Egan's construction, §5.1 by witnesses (engaged)
+│   ├── 2026-10-21_plan.md         # Item 1: §5.1 by witnesses, the sampled data to Appendix D (proposed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail

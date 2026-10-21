@@ -18,7 +18,8 @@ the v8 revision in progress is planned in
 [`2026-10-14_plan.md`](2026-10-14_plan.md), and for the symbolic proof that
 replaces the table certificates in [`2026-10-20_plan.md`](2026-10-20_plan.md),
 and for the closure criterion, Egan's construction and Section 5.1 in
-[`2026-10-20_closed_form_plan.md`](2026-10-20_closed_form_plan.md).
+[`2026-10-20_closed_form_plan.md`](2026-10-20_closed_form_plan.md), whose item 1
+has its own plan, [`2026-10-21_plan.md`](2026-10-21_plan.md).
 
 ## Structure
 
@@ -37,7 +38,8 @@ evidence_and_reasoning/
 ├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (engaged; items applied)
 ├── 2026-10-14_plan.md      # Plan: the span-index findings in v8, for the wrap-up (executed)
 ├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (executed)
-├── 2026-10-20_closed_form_plan.md  # Plan: the closure criterion, Egan's construction, Section 5.1 by witnesses (proposed)
+├── 2026-10-20_closed_form_plan.md  # Plan: the closure criterion, Egan's construction, Section 5.1 by witnesses (engaged)
+├── 2026-10-21_plan.md      # Item 1 of the closed-form plan: Section 5.1 by witnesses, the sampled data to Appendix D (proposed)
 └── README.md               # This file
 ```
 
