@@ -1,5 +1,12 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Addendum (2026-10-22, prompt 327).**  Item 3 executed per
+`2026-10-22_appendix_a_plan.md` (changelog item 24): decisions (i), (j) and
+(k) as recommended, and, at the author's direction, Silverman's comment of
+16 February 2016 cited as well (that online discussion gave the research a
+key impulse and is a fact-finding aid now).  Section 7 now has three open
+questions.  Next: item 4, Section 6's Baez–Egan block, with its own plan.
+
 **Addendum (2026-10-22, prompts 325 and 326).**  Item 3's own plan is
 `2026-10-22_appendix_a_plan.md` (proposed): Appendix A rebuilt around the
 criterion modulo 2, and Section 7's fourth question deleted.  Reading

@@ -1,5 +1,24 @@
 # 2026-10-22 — Plan: Appendix A around the closure criterion modulo 2
 
+**Status (2026-10-22, prompt 327): engaged and executed.**  The author:
+"most of your suggestions are good; also do this: 'also cite Silverman's
+comment of 16 February 2016'".  Decisions (i), (j) and (k) as recommended,
+with that addition to (j).  The seven edits of §3 were applied to
+`paper/main.tex` from this file, each old block found exactly once (the
+result equals the reviewed scratch build).  The addition was then applied
+as a separate edit: in the last paragraph of Appendix A, "(part~12
+of~\cite{Baez2014}) and found that Wilson's pair is a polarization
+\cite{Silverman2016}, and David Calderbank related Egan's construction to
+that of Lepowsky and Meurman \cite{Calderbank2023}." became "(part~12
+of~\cite{Baez2014}), read Egan's construction modulo~$2$, and found that
+Wilson's pair is a polarization \cite{Silverman2016}.  David Calderbank
+related Egan's construction to that of Lepowsky and Meurman
+\cite{Calderbank2023}."; the entry [Silverman2016] now names the
+comments of 16 and 19 February 2016, with both anchors (#c050266,
+#c050282).  Build: 21 pages, no undefined references or citations, no
+hyperref warnings.  Changelog item 24.  The records of §5 follow in item 7
+of the parent plan.
+
 **Status (2026-10-22, prompt 325): proposed, not executed.**  Item 3 of
 `2026-10-20_closed_form_plan.md` (engaged at prompt 318), as its own plan.
 Drafted by Claude Opus 5.5 at the direction of Jens Köplinger, and reviewed

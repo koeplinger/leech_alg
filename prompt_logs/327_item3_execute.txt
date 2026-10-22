@@ -1,0 +1,49 @@
+Prompt 327 -- item 3 of the closed-form plan executed (Appendix A around
+the closure criterion modulo 2), with Silverman's comment of 16 February
+2016 cited
+Date: 2026-10-22
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'most of your suggestions are good; also do this: "also
+cite Silverman's comment of 16 February 2016" (even if it's just a foot
+note; that online discussion provided key impulse for the research back
+then, and valuable context and fact-finding aid now).
+
+Continue as planned'
+
+Rulings: decisions (i), (j) and (k) of
+evidence_and_reasoning/2026-10-22_appendix_a_plan.md as recommended, with
+one addition to (j): Silverman's comment of 16 February 2016 (#c050266,
+his reading of Egan's construction modulo 2) is cited as well, in the text
+or a footnote.  The author's reason: that online discussion gave the
+research a key impulse back then, and is valuable context and a
+fact-finding aid now.  Execute item 3: the plan's seven edits as reviewed,
+then the addition as a separate, recorded edit.
+
+Response:
+ 1. Item 3 executed: the seven edits of section 3 of
+    evidence_and_reasoning/2026-10-22_appendix_a_plan.md applied to
+    paper/main.tex from the plan file; the result equals the reviewed
+    scratch build exactly.  Then the author's addition, as a separate
+    edit: in Appendix A's "Relation to prior work", Silverman "read Egan's
+    construction modulo 2" is added to his credit, and the sentence on
+    Calderbank becomes its own; the entry [Silverman2016] names his
+    comments of 16 and 19 February 2016, with both anchors (#c050266,
+    #c050282).  Cited in the text, not in a footnote.
+ 2. Build: 21 pages, no undefined references or citations, no hyperref
+    warnings; the known 1.3 pt overfull vbox and the space at the foot of
+    page 11.  Read: Appendix A (pages 15 and 16), Section 1's overview,
+    Section 6's sentence on the 270 (now "(Appendix A)", no "plus-type"),
+    Section 7 (three questions; "lift" gone from the paper), and the
+    bibliography.
+ 3. Records: changelog item 24; the item-3 plan's status line (engaged and
+    executed, with the addition quoted); a dated addendum to the parent
+    plan; the indexes (evidence_and_reasoning/README.md; CURRENT_STATE.md
+    header and map).  The records of the plan's section 5 wait for item 7.
+ 4. Memory: the v8 status; a new note that the author wants the Baez
+    discussion's contributors credited where it informed the work.
+ 5. Lint: documentation clean.
+ Next, on the author's word: item 4, Section 6's Baez-Egan block, with its
+ own plan.
+
+Status: CLOSED.

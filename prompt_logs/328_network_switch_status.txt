@@ -1,0 +1,26 @@
+Prompt 328 -- status check after a network switch
+Date: 2026-10-22
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'I've had to switch networks. How are we doing?'
+
+Recorded forward: two check-ins of the author during the work of prompt
+325 were answered but not entered in its log, which is now closed.  They
+were, verbatim: 'How's it going?' (answered with the research workflow's
+progress and the Lepowsky-Meurman access problem, which led to prompt 326),
+and 'I've had to switch networks; check and make sure you're still running
+ok.' (answered after checking both workflows; the leftover checker on
+Wilson's book was stopped).
+
+Response:
+ 1. Nothing is running: the item-3 workflows have all finished (the last
+    one stopped on purpose at the previous network switch), and no agent
+    processes are left.  The network switch interrupted nothing.
+ 2. State: item 3 is executed (prompt 327, changelog item 24); prompt logs
+    325 to 327 are closed; the linter is clean.  Uncommitted: paper/main.tex
+    and main.pdf, the changelog, the item-3 plan and the parent plan, the
+    two indexes, and prompt logs 327 and 328.
+ 3. Next, on the author's word: item 4, Section 6's Baez-Egan block, with
+    its own plan.
+
+Status: CLOSED.

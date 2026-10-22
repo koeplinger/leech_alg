@@ -1,0 +1,15 @@
+Prompt 329 -- item 4 of the closed-form plan (Section 6, the Baez-Egan
+block): its own plan
+Date: 2026-10-22
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Ok, it looks good on a high level, I'll save the exact
+read for later. Continue as planned.'
+
+Rulings: item 3 stands as executed; the author's exact read of it comes
+later.  The plan continues with item 4
+(evidence_and_reasoning/2026-10-20_closed_form_plan.md, §3): its own plan,
+with the exact old -> new text, for the author to read before anything is
+applied.  Decisions (l) and (m) are asked again in plain words, with facts,
+options and a recommendation.  The Baez discussion's contributors stay
+credited for what they did (prompt 327).
