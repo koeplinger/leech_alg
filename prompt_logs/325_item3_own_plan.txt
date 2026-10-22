@@ -1,0 +1,65 @@
+Prompt 325 -- item 3 of the closed-form plan (Appendix A around the
+criterion modulo 2): its own plan
+Date: 2026-10-22
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Great. Continue as planned.'
+
+Rulings: the plan continues with item 3
+(evidence_and_reasoning/2026-10-20_closed_form_plan.md, §3): its own plan,
+which first reads Lepowsky-Meurman's Corollary 2.3 in the original, with
+the exact old -> new text, for the author to read before anything is
+applied.  Decisions (i) to (k) are asked again in plain words, with facts,
+options and a recommendation.
+
+Response:
+ 1. Item 3's own plan: evidence_and_reasoning/2026-10-22_appendix_a_plan.md
+    (proposed, not executed).  Seven edits to paper/main.tex, old -> new:
+    Appendix A rebuilt as "The closure criterion modulo 2" (the descent
+    and the criterion read modulo 2; Lagrangians and polarizations;
+    Wilson's pair and sigma's pair; which polarizations close; relation to
+    prior work); Section 1's overview clause; one clause of Section 6 (the
+    credit of the mod-2 picture to Silverman becomes a pointer to Appendix
+    A, and "plus-type" goes); Section 7's fourth question deleted; the
+    bibliography (Wilson's The Finite Simple Groups and Silverman's comment
+    of 19 February 2016 added; Calderbank's comment anchored).  Decisions
+    (i) to (k) asked again in plain words, with facts, options and a
+    recommendation.
+ 2. Research (workflow, five gatherers and four checkers): the Baez series
+    (parts 11 and 12; the comments of Silverman, Calderbank, Egan and
+    Baez), Wilson's book Section 3.12.4 (publisher's preview and the 2007
+    draft), Elman-Karpenko-Merkurjev and Taylor on the terms; every
+    mathematical statement of the new appendix recomputed by two
+    independent programs in exact arithmetic.  Lepowsky-Meurman could not
+    be fetched (a captcha) and was read from the author's copy (prompt
+    326).  The last checker (Wilson's book) was stopped after the network
+    switch; its quotes had been verified and were re-checked in the review.
+ 3. The finding behind decision (j): Lepowsky and Meurman (1982, Section
+    2) prove the identification of the lattices between 2L and L
+    isometric to sqrt2 L with the maximal totally singular subspaces, and
+    build a lattice isometric to Lambda from any complementary pair; their
+    introduction credits Tits with the same construction.  Silverman's
+    part 12 (2016) found the identification independently.  The paper's
+    credit "that mod-2 orthogonal-space picture is Tim Silverman's" is
+    therefore inaccurate; the plan corrects it.
+ 4. Review (workflow, three lenses: mathematics and sources, the paper as
+    read, fidelity and credits; each finding checked by an agent trying to
+    refute it): no mathematical error.  Applied: Lepowsky-Meurman's credit
+    restricted to lattices between 2L and L, with the one-line containment
+    step; Silverman's credit stated exactly; "a lattice isometric to
+    Lambda"; the heading "Relation to prior work" and its closing sentence
+    on what the appendix adds kept (the author set that paragraph's role
+    at prompts 184 and 281); "associated bilinear form"; "the Weyl group of
+    E8" in words; "plus-type" dropped from Section 6; the title's math in
+    \texorpdfstring; "vol.~251"; decision (i) without a second name for
+    "totally isotropic" (rule of prompt 291); the facts and options of
+    (i) to (k); the records of section 5.  A second check of the revision:
+    one slip in the paper text (the note on Tits is in Lepowsky and
+    Meurman's introduction) and six points in the plan's prose, applied.
+ 5. Scratch build: 21 pages, no undefined references or citations, no
+    hyperref warnings; the known boxes.  Appendix A read on pages 15-16.
+ 6. Records: the plan indexed as proposed (evidence_and_reasoning/README.md;
+    CURRENT_STATE.md header and map); a dated addendum to the parent plan.
+    paper/main.tex unchanged.  Lint: documentation clean.
+
+Status: CLOSED.

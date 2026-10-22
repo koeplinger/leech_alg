@@ -1,0 +1,40 @@
+Prompt 324 -- decision (g) settled: no credit note at Proposition 5.3;
+the work is a human-AI collaboration and its results are joint
+Date: 2026-10-22
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Re "It credits no review for any result, including ρ's
+span index 1, which came from the same review. " and "The question is
+whether Proposition 5.3 should say where it came from." -- are you asking
+whether to credit you or me for finding the proposition? This is not
+needed: This work is _explicitly_ a human-AI collaboration, and I already
+acknowledge that some of the findings here are substantially yours. At
+the same time, I keep control not just of running prompts but also over
+the investigation, and feel as a equitable contributor. Two actors with
+different skills and roles, but the work is ours.'
+
+Rulings: decision (g) is settled: the paper carries no credit note for
+Proposition 5.3, and none is needed for any result found on the AI side of
+this collaboration.  The paper states the collaboration explicitly
+(Section 1, the declaration on the use of AI, Appendix C); the author
+directs the investigation and is an equitable contributor; the work is
+joint.  The repository's records keep tracing where each result came from,
+as before.
+
+Response:
+ 1. Answer: yes, in substance (g) asked whether the paper should mark that
+    the criterion came from the AI side (a Claude review session) rather
+    than from the author.  The author's answer settles it: no note.
+ 2. Records: changelog item 23 (the paper does not name the review, since
+    the work is a stated human-AI collaboration whose results are joint);
+    dated addenda to evidence_and_reasoning/2026-10-21_criterion_plan.md
+    and to the parent plan 2026-10-20_closed_form_plan.md, the latter
+    settling (g) for later items too (rho's index 1 among them).  The
+    paper is unchanged.
+ 3. Memory: a new note on joint credit (no per-result AI credit in the
+    paper; the records still trace provenance; the Hermes credit of
+    Appendix C, an outside system, stays at the author's request of prompt
+    157); the v8 status.
+ 4. Lint: documentation clean.
+
+Status: CLOSED.

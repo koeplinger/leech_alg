@@ -1,5 +1,11 @@
 # 2026-10-21 — Plan: the closure criterion in Section 5.6
 
+**Addendum (2026-10-22, prompt 324).**  Decision (g) is settled: the paper
+carries no credit note for Proposition 5.3.  The work is explicitly a
+human–AI collaboration (Section 1, the declaration on the use of AI,
+Appendix C), and its results are joint; the records keep tracing where each
+result came from.
+
 **Status (2026-10-22, prompt 323): executed.**  The author's decisions (d),
 (e) and (f) as recommended, and "is given here" for the tension of §1; the
 four edits of §3 are applied to `paper/main.tex` (changelog item 23).

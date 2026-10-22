@@ -1,0 +1,49 @@
+Prompt 326 -- the Lepowsky-Meurman paper provided for item 3
+Date: 2026-10-22
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Re Lepowsky-Meurman (1982) I've saved the PDF to:
+/home/jens/Downloads/1-s2.0-002186938290268X-main.pdf'
+
+Context: during item 3's own plan (prompt 325), the research workflow
+could not read J. Lepowsky and A. Meurman, "An E8-approach to the Leech
+lattice and the Conway group", J. Algebra 77 (1982), 484-504
+(doi:10.1016/0021-8693(82)90268-X): ScienceDirect answered automated
+access with a captcha, although the article is in Elsevier's open
+archive.  The parent plan's item 3 reads its Corollary 2.3 in the
+original before the paper cites it.
+
+Rulings: read Corollary 2.3 (and what it rests on) from the author's copy
+before decision (j) is drafted.  The PDF is the author's download and
+stays outside the repository; the records cite the published article.
+
+Response:
+ 1. Read: the author's copy (21 pages, a scan with a text layer), copied
+    into its own scratch folder; Section 2 read on the page images (pp.
+    485-488) and the reference list in the text layer.  The PDF is not
+    added to the repository.
+ 2. Corollary 2.3, verbatim: "The lattice 2^{-1/2} L is isometric to the
+    Leech lattice", where (Definition and Theorem 2.2) L = Phi_(12) +
+    Phi_(13) + Psi_(123) in Gamma^3 = {(x1+y, x2+y, x3+y) : xi in Phi, y in
+    Psi, x1+x2+x3 in 2 Gamma}, for any two lattices Phi, Psi between
+    2 Gamma and Gamma (Gamma = E8, roots of norm 2) with Phi + Psi = Gamma,
+    Phi cap Psi = 2 Gamma and norms in 4Z on both, that is, for any
+    decomposition of Gamma/2Gamma into two maximal totally singular
+    subspaces.  Proposition 2.1: for 2L < M < L, 2^{-1/2} M is even
+    unimodular iff M/2L is a maximal totally singular subspace;
+    Proposition 2.4: 2^{-1/2} Phi and 2^{-1/2} Psi are isometric to E8.
+    Their terms: "totally singular" (Q(T) = 0), "maximal index".  Their
+    introduction credits Tits (their refs. 18, 19) with "what amounts to
+    the same construction".  Their ref. 1 (Bourbaki, Lie groups, Chs.
+    4-6) is cited for the maximal index of the form on E8/2E8.
+ 3. Consequences for item 3: the construction of Lambda from a
+    complementary pair (Egan's, read modulo 2) and the identification of
+    the sublattices isometric to sqrt2 L with the maximal totally singular
+    subspaces are Lepowsky and Meurman's (1982); Wilson's Lambda is their
+    lattice for (L sbar, Ls).  Decision (j) is redrafted on these facts in
+    the item-3 plan.  Note: prompt log 316 (lines 133-136) says
+    "Corollary 2.3 ... as Calderbank's comment itself says"; the comment
+    names Lepowsky-Meurman without a theorem number (prompt 325's
+    research), so that attribution is corrected in the item-3 plan.
+
+Status: CLOSED.

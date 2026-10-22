@@ -1,5 +1,25 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Addendum (2026-10-22, prompts 325 and 326).**  Item 3's own plan is
+`2026-10-22_appendix_a_plan.md` (proposed): Appendix A rebuilt around the
+criterion modulo 2, and Section 7's fourth question deleted.  Reading
+Lepowsky and Meurman in the original (the author's copy, prompt 326) changed
+the facts behind decision (j): the identification of the lattices between
+$2L$ and $L$ isometric to $\sqrt2\,L$ with the maximal subspaces on which
+$q$ vanishes, and the construction of the Leech lattice from any
+complementary pair of them, are theirs (1982, §2), and they credit Tits
+with the same construction; Silverman found the identification
+independently in 2016.  The item-3 plan corrects the paper's credit
+accordingly and asks (i) to (k) again in plain words.  Nothing in the paper
+has changed.
+
+**Addendum (2026-10-22, prompt 324).**  Decision (g) is settled, also for
+later items: the paper carries no credit note for results found on the AI
+side of the work, Proposition 5.3 and $\rho$'s index 1 among them.  The work
+is explicitly a human–AI collaboration (Section 1, the declaration on the
+use of AI, Appendix C), and its results are joint; the records keep tracing
+where each result came from.  Next, as before: item 3, with its own plan.
+
 **Addendum (2026-10-22, prompt 323).**  Item 2 executed per
 `2026-10-21_criterion_plan.md` (changelog item 23): decisions (d), (e) and
 (f) as recommended, and "is given here" for the F7 tension.  Decision (g)
