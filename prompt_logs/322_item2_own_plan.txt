@@ -1,0 +1,51 @@
+Prompt 322 -- item 2 of the closed-form plan (the closure criterion in
+Section 5.6): its own plan
+Date: 2026-10-21
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Ok. That's good enough for now. Continue as planned.'
+
+Rulings: Section 5.1 stands as it is for now.  The plan continues with
+item 2 (evidence_and_reasoning/2026-10-20_closed_form_plan.md, §3): its
+own plan, with the exact old -> new text, for the author to read before
+anything is applied.
+
+
+Response:
+ 1. Item 2's own plan: evidence_and_reasoning/2026-10-21_criterion_plan.md
+    (proposed, not executed).  Four edits to paper/main.tex, old -> new:
+    Section 1's overview sentence; Section 5.6, the twist restricted to
+    g(L) = L and the new Proposition 5.3 (the closure criterion) with its
+    proof and the sigma instance; the reading of the census table, through
+    the proposition; Section 7's third question without its last clause.
+    Decisions (d) to (g) asked again, as recommended.  One tension pointed
+    out: F7 of the parent plan nearly gives what the sentence after the
+    census table says "is known" to be missing; recommended "is given here".
+ 2. First-hand checks: a scratch copy builds (21 pages, no undefined
+    references, the known 1.3 pt overfull vbox, two pages stretched by the
+    reflow, layout only); pages 10 and 11 read; the proof's identities, the
+    test vectors and the criterion against direct closure (22 permutations)
+    checked in exact arithmetic (scratch check script: ALL PASS).
+ 3. Review (workflow, three lenses: the mathematics, the paper as read,
+    fidelity; each finding checked by an agent trying to refute it), with
+    independent exact code: all 5,040 permutations (every Close count), the
+    120 root reflections (56 close), 600 non-isometric twists in GL(L).  No
+    mathematical error.  Applied: "the standard octonion product" for the
+    shortened "standard product" (four places); in the proof, the clause
+    keeping L s-bar and Ls in their meaning, L ._g L = g^{-1}(L . L), and the
+    step y + z = a + b - 2x; Lemma 4.1 cited for sigma and the permutations;
+    Proposition 5.3 cited for the identity's failure; "the column Close";
+    the qualifier "in terms of pi" dropped; the F7 tension; (d)'s
+    alternative; (g)'s options with the Hermes precedent of Appendix C; the
+    records list of section 5.  Refuted as taste: two points.  A second
+    check of the revision found nothing in the paper text and five
+    record-precision nits in the plan, applied.
+ 4. Records: the plan indexed as proposed (evidence_and_reasoning/README.md;
+    CURRENT_STATE.md header and map, last updated 2026-10-21); dated
+    addendum to the parent plan.  paper/main.tex unchanged.
+ 5. Parked, named at hand-over: the paragraph after the census table
+    restates three facts of the table in prose, the kind of restating that
+    prompt 320 removed from Section 5.1.
+ 6. Lint: documentation clean.
+
+Status: CLOSED.

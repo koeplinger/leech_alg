@@ -18,8 +18,9 @@ the v8 revision in progress is planned in
 [`2026-10-14_plan.md`](2026-10-14_plan.md), and for the symbolic proof that
 replaces the table certificates in [`2026-10-20_plan.md`](2026-10-20_plan.md),
 and for the closure criterion, Egan's construction and Section 5.1 in
-[`2026-10-20_closed_form_plan.md`](2026-10-20_closed_form_plan.md), whose item 1
-has its own plan, [`2026-10-21_plan.md`](2026-10-21_plan.md).
+[`2026-10-20_closed_form_plan.md`](2026-10-20_closed_form_plan.md), whose items 1
+and 2 have their own plans, [`2026-10-21_plan.md`](2026-10-21_plan.md) and
+[`2026-10-21_criterion_plan.md`](2026-10-21_criterion_plan.md).
 
 ## Structure
 
@@ -40,6 +41,7 @@ evidence_and_reasoning/
 ├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (executed)
 ├── 2026-10-20_closed_form_plan.md  # Plan: the closure criterion, Egan's construction, Section 5.1 by witnesses (engaged)
 ├── 2026-10-21_plan.md      # Item 1 of the closed-form plan: Section 5.1 by witnesses, the sampled data to Appendix D (executed)
+├── 2026-10-21_criterion_plan.md  # Item 2 of the closed-form plan: the closure criterion in Section 5.6 (executed)
 └── README.md               # This file
 ```
 

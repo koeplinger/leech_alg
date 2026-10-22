@@ -196,8 +196,8 @@ Section~\ref{sec:proof} proves Theorem~\ref{thm:main}.
 Section~\ref{sec:properties} determines algebraic properties of the
 order: that standard identities fail on it; its idempotents; that it is
 not maximal; its automorphism group and square-zero elements; and the
-index of the span of its products.  It also tests twists other
-than~$\sigma$ for closure on~$\LL$.
+index of the span of its products.  It also characterizes the twists
+other than~$\sigma$ that close on~$\LL$.
 Section~\ref{sec:related} places the construction among related work,
 Section~\ref{sec:conclusion} concludes with the open questions, and
 Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{sec:appendix-tables}
@@ -848,13 +848,49 @@ transposition,~$\sigma$.  This subsection replaces~$\sigma$ by other
 maps and tests two properties of the resulting triple product: whether
 it still closes on~$\LL$, and how much of~$\LL$ its products reach.
 
-A \emph{twist} is an invertible linear map~$g$ of~$\RR^8$.  It defines
-the twisted product $x \cdot_g y := g^{-1}\bigl(g(x) \cdot g(y)\bigr)$
-on~$\OO$.  The triple product~$\star_g$ is that of
-Definition~\ref{def:triple}, with $\cdot_g$ in all nine block
-products.  Since $\sigma^{-1} = \sigma$, the twist $g = \sigma$ gives
-the product of Definition~\ref{def:twisted-product}, and
-$\star_\sigma = \star$.
+A \emph{twist} is an invertible linear map~$g$ of~$\RR^8$ with
+$g(L) = L$.  It defines the twisted product $x \cdot_g y :=
+g^{-1}\bigl(g(x) \cdot g(y)\bigr)$ on~$\OO$.  The triple
+product~$\star_g$ is that of Definition~\ref{def:triple}, with
+$\cdot_g$ in all nine block products.  Since $\sigma^{-1} = \sigma$,
+the twist $g = \sigma$ (Lemma~\ref{lem:sigma-L}) gives the product of
+Definition~\ref{def:twisted-product}, and $\star_\sigma = \star$.
+
+\begin{proposition}\label{prop:criterion}
+For every twist~$g$, the product~$\star_g$ closes on~$\LL$ if and only
+if $L\bar s$ and~$Ls$ are closed under~$\cdot_g$, that is, if and only
+if $g(L\bar s)$ and~$g(Ls)$ are closed under the standard octonion
+product.
+\end{proposition}
+
+\begin{proof}
+Write $xy$ for $x \cdot_g y$, while $L\bar s$ and~$Ls$ remain the
+lattices of~\eqref{eq:disp1}.  Since $g(L) = L$,
+Lemma~\ref{lem:L-order} gives $L \cdot_g L = g^{-1}(L \cdot L)
+\subseteq L$, so every block of a product of vectors of~$L^3$ lies
+in~$L$.  For $u = (x, y, z) \in L^3$ put $a = x + y$, $b = x + z$ and
+$w = x + y + z$.  As $y + z = a + b - 2x$ and $2L \subseteq L\bar s$
+(Section~\ref{subsec:wilson-leech}), $u \in \LL$ exactly when $a, b
+\in L\bar s$ and $w \in Ls$, and then $u = (a + b - w,\ w - b,\ w -
+a)$.  For two such vectors $u$ and~$u'$, Definition~\ref{def:triple}
+gives
+\[
+  P_1 + P_2 + P_3 = ww', \qquad
+  P_1 + P_2 = ab' + ba' - aa' + 2(bb' - wb' + ww' - bw'),
+\]
+and the other two pairwise sums follow by the $\ZZ_3$ symmetry of the
+routing.  If $L\bar s$ and~$Ls$ are closed, the block sum lies in~$Ls$
+and, since $2L \subseteq L\bar s$, the pairwise sums lie in~$L\bar s$.
+Conversely, $(a, 0, -a)$ and $(w, w, -w)$ lie in~$\LL$ for $a \in L\bar
+s$ and $w \in Ls$; the product of two vectors of the first kind has $P_1
++ P_2 = -aa'$, and that of two of the second kind has block sum $ww'$,
+so closure forces both inclusions.
+\end{proof}
+
+For $g = \sigma$, the lattices $\sigma(L\bar s) = 2\MO$ and $\sigma(Ls) =
+p\MO$ of~\eqref{eq:multiples} are closed under the standard octonion
+product, by the closure of~$\MO$ and Lemma~\ref{lem:sigmaLs-closed}, so
+the proposition gives Theorem~\ref{thm:main} again.
 
 When $\star_g$ closes on~$\LL$, the integer combinations of its
 products $u \star_g v$ ($u, v \in \LL$) form a sublattice of~$\LL$,
@@ -903,18 +939,21 @@ Total         & $5{,}039$ & $1{,}764$ & $35.0\%$ & \\
 \end{tabular}
 \end{center}
 The $2$-cycles, the transpositions of Definition~\ref{def:twist},
-close by Theorem~\ref{thm:main}.  The identity permutation does not
-close: for $a, b \in Ls$, the vectors $(a, a, -a)$ and $(b, b, -b)$
-lie in~$\LL$, and the block sum of their product is $a \cdot b$, so
-closure would require $Ls \cdot Ls \subseteq Ls$, which fails
-(Remark~\ref{rem:Ls-not-closed}).  Among the cycle types in the table,
+close by Theorem~\ref{thm:main}.  By Proposition~\ref{prop:criterion},
+the identity permutation does not close, since $Ls$ is not closed
+under the standard octonion product (Remark~\ref{rem:Ls-not-closed}).
+Among the cycle types in the table,
 the $4$-cycles are the only one failing without exception; the $(5,2)$ type has the lowest
 nonzero rate.  The $3$-cycles, $5$-cycles, and $(3,2,2)$ types
 close at exactly half.  For the $3$-cycles the closing half admits a
 description: for each three-element subset of imaginary indices, one
-of the two cyclic orientations closes.  No such description is known
-for the other types that close in part, and no reason is known for the
-failure of every $4$-cycle.
+of the two cyclic orientations closes.  Each permutation~$\pi$
+preserves~$L$, as $\sigma$ does (Lemma~\ref{lem:sigma-L}), so by the
+same proposition the column ``Close'' counts the permutations~$\pi$
+for which $\pi(L\bar s)$ and~$\pi(Ls)$ are closed under the standard
+octonion product.  No description in terms of~$\pi$ like that of the
+$3$-cycles is given here for the other types that close in part, nor a
+reason for the failure of every $4$-cycle.
 
 The span index of a closing permutation depends only on its parity:
 it is $2^{16}$ for every odd one and $2^{10}$ for every even one (last
@@ -1108,8 +1147,7 @@ Several questions remain open:
   noncommutative and nonunital (Section~\ref{sec:identities}).
 \item A reason for the closure pattern of Section~\ref{sec:census}
   beyond the $2$-cycles, in particular for the failure of every
-  $4$-cycle and for the exact one-half rates; and which twists other
-  than those of Section~\ref{sec:census} close on~$\LL$.
+  $4$-cycle and for the exact one-half rates.
 \item Which polarizations of~$L/2L$, beyond the one of
   Appendix~\ref{app:mod2quotient}, lift to a closed bilinear product
   on~$\LL$.

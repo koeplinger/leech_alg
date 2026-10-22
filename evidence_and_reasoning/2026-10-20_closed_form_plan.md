@@ -1,5 +1,26 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Addendum (2026-10-22, prompt 323).**  Item 2 executed per
+`2026-10-21_criterion_plan.md` (changelog item 23): decisions (d), (e) and
+(f) as recommended, and "is given here" for the F7 tension.  Decision (g)
+was not understood as asked; it is asked again in plain words, and until the
+author decides, the paper does not name the review.  The author's aim for
+this phase (prompt 323): the paper with the updates, substantially correct
+and ready for the author's fine-comb review; glaring issues (babble,
+unwanted text that proliferates) are fixed as they arise.  The facts
+restated around the census table are likely to be amended later, at the
+author's direction.  Next: item 3, Appendix A rebuilt around the criterion
+modulo 2, with its own plan.
+
+**Addendum (2026-10-21, prompt 322).**  Item 2's own plan is
+`2026-10-21_criterion_plan.md` (proposed): Proposition 5.3 in Section 5.6
+with its proof, the census read through it, and Section 7's third question
+narrowed.  It asks decisions (d) to (g) again and points out one tension:
+the sentence after the census table says that no description of the closing
+permutations beyond the 3-cycles, and no reason for the failure of every
+4-cycle, "is known", while F7 nearly gives both; the plan recommends "is
+given here".  Nothing in the paper has changed.
+
 **Addendum (2026-10-21, prompt 321).**  The three tensions pointed out at
 prompt 320 are fixed (changelog item 22): Section 2.1 defines the Euclidean
 inner product; Section 5.1 states the failures on the ambient algebra and,

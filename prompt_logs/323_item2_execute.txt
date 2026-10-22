@@ -1,0 +1,79 @@
+Prompt 323 -- item 2 of the closed-form plan executed (the closure
+criterion in Section 5.6); decision (g) explained in plain words
+Date: 2026-10-22
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Regarding the decisions you need from me:
+(d) Restrict a twist to maps with g(L) = L -- yes, appropriate
+(e) The σ case as one sentence; Section 4 unchanged -- yes
+(f) Narrow Q3 rather than delete it. -- yes, I'll review
+(g) "No provenance note in the paper for now: the records already credit
+the criterion to Theorem A of the 13 October review. The question waits
+for your phase of taking ownership of the work. The alternative is a
+footnote at Proposition 5.3 naming the review." -- I have no idea what
+you're trying to tell me.
+
+Re "Tension (F7)": go with your recommendation for now. I'm not a fan of
+the many facts in the prose around that table, and will lilkely have you
+amend that later. For now, the focus is on making a paper that looks
+substantially correct and that you're happy with and that I'm happy with
+after running my tests and spot-checks. Yes, we'll address glaring issues
+(like babbling in the prose or proliferation of unwanted texts) so that
+they don't multiply until the time comes for my fine-comb review. That
+said, the goal is to prepare the paper with the updates for my fine-comb
+review.
+
+Continue as planned.'
+
+Rulings: decisions (d), (e) and (f) as recommended (the author reviews
+Section 7's narrowed third question).  The F7 tension as recommended: the
+sentence after the census table says "is given here".  The facts restated
+in the prose around the census table are likely to be amended later, at
+the author's direction.  The goal of this phase: the paper with the
+updates, substantially correct, ready for the author's fine-comb review;
+glaring issues (babble, unwanted text that proliferates) are fixed as
+they arise.  Decision (g) was not understood as asked: it is explained
+again in plain words, and the edits applied leave the paper silent on it
+until the author decides.  Execute item 2 per
+evidence_and_reasoning/2026-10-21_criterion_plan.md.
+
+Response:
+ 1. Item 2 executed: the four edits of section 3 of
+    evidence_and_reasoning/2026-10-21_criterion_plan.md applied to
+    paper/main.tex from the plan file (the scratchpad of prompt 322 was
+    cleared with the session); the working file equals HEAD plus the four
+    blocks exactly.  Section 5.6: a twist preserves L; Proposition 5.3,
+    the closure criterion, with its proof and the sigma instance; after
+    the census table, the identity's failure and the column Close read off
+    the proposition, and "is given here" in place of "is known".  Section
+    7's third question loses its last clause; Section 1's overview
+    sentence says "characterizes".
+ 2. Build: 21 pages, no undefined references; the known 1.3 pt overfull
+    vbox; a gap after the proof on page 10 and space at the foot of page
+    11, layout only.  Read: Section 1's sentence, pages 10, 11, 13 and 14.
+ 3. Records: changelog item 23; the item-2 plan's status line (executed);
+    a dated addendum to the parent plan (item 2 executed; (g) asked again;
+    the author's aim for this phase; next, item 3); the indexes
+    (evidence_and_reasoning/README.md; CURRENT_STATE.md header and map,
+    last updated 2026-10-22).  The records that still place the criterion
+    outside the paper (ledger claim 017, the glossary entry "Twist",
+    CURRENT_STATE open items 1 and 5, the README bullet, the script index)
+    wait for item 7, as planned.
+ 4. Decision (g), asked again in plain words: the closure criterion was
+    first stated, for isometries of L and with a proof modulo 2L, as
+    Theorem A of the AI review of the v8 draft of 13 October 2026
+    (paper/reviews/2026-10-13_claude_opus_5_5_review_v8.md); prompts 315
+    and 317 widened it to every g with g(L) = L and gave the exact proof
+    now in the paper.  The paper does not say so; it names no review for
+    any result (also not for rho's span index 1, from the same review).
+    Appendix C states the AI agent's role in general and names one outside
+    AI contribution (the Hermes proposals).  Options: leave the paper as it
+    is and settle how AI-found results are credited in one pass when the
+    author takes ownership of the text (recommended), or a one-line
+    footnote at Proposition 5.3 now.
+ 5. Memory: the aim of this phase (proof-upgrade process); a new note:
+    decisions are asked in plain words, with facts, options and a
+    recommendation; the v8 status.
+ 6. Lint: documentation clean.
+
+Status: CLOSED.

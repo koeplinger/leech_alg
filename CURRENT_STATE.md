@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-10-20
+Last updated: 2026-10-22
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
@@ -12,7 +12,8 @@ progress in `paper/main.tex`; its plans are
 `evidence_and_reasoning/2026-10-20_plan.md` (executed), and
 `evidence_and_reasoning/2026-10-20_closed_form_plan.md` (engaged: the closure
 criterion, Egan's construction and Section 5.1 by witnesses), with item 1 in
-`evidence_and_reasoning/2026-10-21_plan.md` (executed).
+`evidence_and_reasoning/2026-10-21_plan.md` (executed) and item 2 in
+`evidence_and_reasoning/2026-10-21_criterion_plan.md` (executed).
 
 This document is the technical summary of the research, for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
@@ -759,6 +760,7 @@ leech_alg/
 │   ├── 2026-10-20_plan.md         # Plan: the symbolic proof replaces the tables (executed)
 │   ├── 2026-10-20_closed_form_plan.md  # Plan: closure criterion, Egan's construction, §5.1 by witnesses (engaged)
 │   ├── 2026-10-21_plan.md         # Item 1: §5.1 by witnesses, the sampled data to Appendix D (executed)
+│   ├── 2026-10-21_criterion_plan.md  # Item 2: the closure criterion in §5.6 (executed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
