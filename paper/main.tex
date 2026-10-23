@@ -957,9 +957,74 @@ reason for the failure of every $4$-cycle.
 
 The span index of a closing permutation depends only on its parity:
 it is $2^{16}$ for every odd one and $2^{10}$ for every even one (last
-column).  In particular, $\star$ has span index $2^{16} = 65{,}536$, and
-its span contains~$2\LL$.\footnote{\scriptref{verify\_product\_span\_index.py}
-\scriptref{verify\_product\_span\_structure.py}.}
+column).
+
+\begin{proposition}\label{prop:span}
+The span of~$\star$ consists of the vectors $(w, w, w) + 2u$ with $w \in
+Ls$ and $u \in \LL$.  In particular, $\star$ has span index $2^{16} =
+65{,}536$, and its span contains~$2\LL$.\footnote{\scriptref{verify\_product\_span\_index.py}
+\scriptref{verify\_product\_span\_structure.py}
+\scriptref{verify\_product\_span\_proof.py}.}
+\end{proposition}
+
+\begin{proof}
+Write~$S$ for the span.  By~\eqref{eq:multiples} and the closure
+of~$\MO$, $L\bar s \cdot_\sigma L\bar s \subseteq 2L\bar s$ and $L\bar s
+\cdot_\sigma Ls + Ls \cdot_\sigma L\bar s \subseteq L\bar s$.  The
+products $(yp)z$ with $y, z \in \MO$ span~$\MO$, and so do the products
+$y(pz)$.  Indeed, $v := -\tfrac12(e_1 + e_2)s = \tfrac12(e_0 + e_2 + e_3 -
+e_7)$ lies in~$\MO$ by~\eqref{eq:MO}, as $s \in L$, and $pv + vp = 2v_0\,p
+- 2\langle p, v\rangle e_0 = p - e_0$, as $p$ is purely imaginary.  The
+right alternative law $(yx)x = yx^2$ with $x = p + v$ gives $(yp)v + (yv)p
+= y(pv + vp) = yp - y$, so $y = (yp)e_0 - (yp)v - \bigl((yv)p\bigr)e_0$
+for every $y \in \MO$; the left alternative law gives $y = e_0(py) - v(py)
+- e_0\bigl(p(vy)\bigr)$ in the same way.  Now $\sigma$ maps
+$Ls \cdot_\sigma Ls$ onto the products $(py)(pz) = p\bigl((yp)z\bigr)$
+of~\eqref{eq:moufang-imaginary}, and $L\bar s \cdot_\sigma Ls$ onto the
+products $2y(pz)$, with $y, z \in \MO$.  Hence the products in $Ls
+\cdot_\sigma Ls$ span~$Ls$, and those in $L\bar s \cdot_\sigma Ls$
+span~$L\bar s$.
+
+From here on, write $xy$ for $x \cdot_\sigma y$, while $L\bar s$ and~$Ls$
+remain the lattices of~\eqref{eq:disp1}.  By the proof of
+Proposition~\ref{prop:criterion}, $\LL$ is spanned by the vectors $(a, 0,
+-a)$, $(b, -b, 0)$ with $a, b \in L\bar s$ and $(-w, w, w)$ with $w \in
+Ls$ (their sum is the vector $(a + b - w, w - b, w - a)$ there).
+Definition~\ref{def:triple} gives
+\begin{align*}
+  (a, 0, -a) \star (a', 0, -a') &= (aa', -2aa', aa'), &
+  (b, -b, 0) \star (b', -b', 0) &= (bb', bb', -2bb'), \\
+  (a, 0, -a) \star (b, -b, 0) &= (2ab, -ab, -ab), &
+  (a, 0, -a) \star (-w, w, w) &= (-2aw, 2aw, 0), \\
+  (b, -b, 0) \star (-w, w, w) &= (-2bw, 0, 2bw), &
+  (-w, w, w) \star (-w', w', w') &= (3ww', -ww', -ww'),
+\end{align*}
+and the products in the opposite order are the same with the octonion
+factors on the right exchanged.  For $c \in L\bar s$ and integers $k_1,
+k_2, k_3$ with $k_1 + k_2 + k_3 = 0$, the vector $(k_1 c, k_2 c, k_3 c)$
+lies in~$\LL$ (Definition~\ref{def:wilson-leech}).  So, by the inclusions
+above, every product other than the products of two vectors $(-w, w, w)$
+lies in~$2\LL$.  These are $2(2c, 0, 0) - (c, c, c)$ with $c = ww' \in
+Ls$, and $(2c, 0, 0) \in \LL$ as $2L \subseteq L\bar s \cap Ls$.  Hence,
+by bilinearity, every vector of~$S$ has the stated form.
+
+Conversely, $S$ contains $(3c, -c, -c)$ for every $c \in Ls$, since the
+products in $Ls \cdot_\sigma Ls$ span~$Ls$.  The cyclic shift of the
+blocks preserves~$\LL$ and, by the $\ZZ_3$ symmetry of the routing,
+commutes with~$\star$, so it maps~$S$ onto itself, and $S$ also contains
+$(-c, 3c, -c)$ and $(-c, -c, 3c)$.  Adding the three gives $(c, c, c) \in
+S$, hence $(4c, 0, 0) \in S$ and $2(-c, c, c) = 2(c, c, c) - (4c, 0, 0)
+\in S$.  Since the products in $L\bar s \cdot_\sigma Ls$ span~$L\bar s$,
+the products of $(a, 0, -a)$ and of $(b, -b, 0)$ with $(-w, w, w)$ give
+$2(c, -c, 0)$ and $2(c, 0, -c)$ in~$S$ for every $c \in L\bar s$.  So $S$
+contains twice the vectors $(a, 0, -a)$, $(b, -b, 0)$ and $(-w, w, w)$
+that span~$\LL$, hence~$2\LL$, and with the vectors $(c, c, c)$, $c \in
+Ls$, every vector of the stated form.
+
+Finally, if $(c, c, c) \in 2\LL$ with $c \in Ls$, then $\tfrac32 c \in
+Ls$ by condition~(3), so $\tfrac12 c \in Ls$.  Hence $S/2\LL \cong
+Ls/2Ls$ has order~$2^8$, and $[\LL : S] = 2^{24}/2^8 = 2^{16}$.
+\end{proof}
 
 The transposition~$\sigma$ is also the reflection in the root
 $e_1 - e_2$ of~$L$, and reflections in the other roots of~$L$ are

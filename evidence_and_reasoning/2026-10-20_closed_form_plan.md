@@ -1,5 +1,12 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Addendum (2026-10-23, prompt 333).**  Item 5 executed per
+`2026-10-23_span_plan.md` (changelog item 26): Proposition 5.4 in Section
+5.6, the span of $\star$ by hand.  Decision (o) as recommended ("Scope
+compaction wins"): F6(b) to (e) stay out of v8, and F6(b) and (c) do not
+join item 5.  Next: item 6, the abstract and Section 7's summary, decision
+(p); then item 7, the records.
+
 **Addendum (2026-10-23, prompt 331).**  Decision (n) is taken: item 5 goes
 ahead, more simply than §3 has it, at the author's word ("it can be done
 simpler"; "You can simply refer to it without needing a new lemma").  Its
