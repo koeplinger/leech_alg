@@ -1,0 +1,37 @@
+Prompt 332 -- item 5: decision (r) agreed (neither the lemma nor the
+X-product)
+Date: 2026-10-23
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "What I recommend instead: neither the lemma nor the
+X-product." -- agreed'
+
+Context: the quoted sentence is from the progress message of prompt 331,
+which said that the X-product needs an invertible X and cannot carry the
+step that the products (yp)z, y and z in the maximal order O, span O,
+and recommended instead one exact check of 64 products, cited by
+footnote.  By the time of this prompt, the second check of the item-5
+plan had found a short proof of that step by hand (about four typeset
+lines) from the alternative laws, also without the lemma and without the
+X-product.
+
+Rulings: decision (r) of evidence_and_reasoning/2026-10-23_span_plan.md:
+neither the lemma nor the X-product carries the step.  The plan stays
+proposed; nothing is applied to the paper before the author's word on it.
+
+Response:
+ 1. Decision (r) recorded as taken in evidence_and_reasoning/
+    2026-10-23_span_plan.md (status line and section 1): neither the lemma
+    nor the X-product.  The author agreed when the recommended route was
+    one exact check of 64 products; the plan's second check had meanwhile
+    found a short argument by hand (about four typeset lines, from the
+    alternative laws), which the plan uses in place of that check, as the
+    reply to this prompt told the author.  The script keeps the 64-product
+    check as a cross-check.
+ 2. The plan's final check completed; its findings applied (log 331,
+    Response, item 4).  Log 331 closed.
+ 3. Open for the author: the reading of the plan (the exact text of its
+    section 3) and decision (o).  Nothing is applied to the paper.
+ 4. Lint: documentation clean.
+
+Status: CLOSED.

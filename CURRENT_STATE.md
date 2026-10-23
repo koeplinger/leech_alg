@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Last updated: 2026-10-22
+Last updated: 2026-10-23
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
@@ -12,10 +12,12 @@ progress in `paper/main.tex`; its plans are
 `evidence_and_reasoning/2026-10-20_plan.md` (executed), and
 `evidence_and_reasoning/2026-10-20_closed_form_plan.md` (engaged: the closure
 criterion, Egan's construction and Section 5.1 by witnesses), with items 1
-to 3 in `evidence_and_reasoning/2026-10-21_plan.md`,
-`evidence_and_reasoning/2026-10-21_criterion_plan.md` and
-`evidence_and_reasoning/2026-10-22_appendix_a_plan.md` (executed), and item 4
-in `evidence_and_reasoning/2026-10-22_section6_plan.md` (proposed).
+to 4 in `evidence_and_reasoning/2026-10-21_plan.md`,
+`evidence_and_reasoning/2026-10-21_criterion_plan.md`,
+`evidence_and_reasoning/2026-10-22_appendix_a_plan.md` and
+`evidence_and_reasoning/2026-10-22_section6_plan.md` (executed), and item 5,
+the span of the triple product by hand, in
+`evidence_and_reasoning/2026-10-23_span_plan.md` (proposed).
 
 This document is the technical summary of the research, for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
@@ -764,7 +766,8 @@ leech_alg/
 │   ├── 2026-10-21_plan.md         # Item 1: §5.1 by witnesses, the sampled data to Appendix D (executed)
 │   ├── 2026-10-21_criterion_plan.md  # Item 2: the closure criterion in §5.6 (executed)
 │   ├── 2026-10-22_appendix_a_plan.md  # Item 3: Appendix A around the criterion mod 2 (executed)
-│   ├── 2026-10-22_section6_plan.md  # Item 4: Section 6, the Baez–Egan block (proposed)
+│   ├── 2026-10-22_section6_plan.md  # Item 4: Section 6, the Baez–Egan block (executed)
+│   ├── 2026-10-23_span_plan.md  # Item 5: the span of the triple product by hand, §5.6 (proposed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail

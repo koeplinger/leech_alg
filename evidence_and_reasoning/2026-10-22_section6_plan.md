@@ -1,5 +1,16 @@
 # 2026-10-22 — Plan: Section 6, the Baez–Egan block
 
+**Status (2026-10-23, prompt 330): engaged and executed.**  The author:
+"Your recommendation appear good. Continue as planned."  Decisions (l),
+(m) and (n′) as recommended, the rulings of prompt 250 kept, Appendix A
+unchanged.  The author committed this plan and `verify_egan_construction.py`
+at 4854e73, before the paper cites the script.  The five edits of §3 were
+applied to `paper/main.tex` from this file, each old block found exactly
+once; the result equals the reviewed scratch build.  Build: 21 pages, no
+undefined references or citations, no hyperref warnings.  The script's
+index line now names the paper's §6.  Changelog item 25.  The records of
+§5 follow in item 7 of the parent plan.
+
 **Status (2026-10-22, prompt 329): proposed, not executed.**  Item 4 of
 `2026-10-20_closed_form_plan.md` (engaged at prompt 318), as its own plan.
 Drafted by Claude Opus 5.5 at the direction of Jens Köplinger, and reviewed

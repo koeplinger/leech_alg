@@ -142,7 +142,7 @@ $\LL$ inherit an algebraic structure from the octonion product?
 This question has been studied from several angles.  Geoffrey
 M.~Dixon \cite{Dixon2010} constructed~$\LL$ using an octonion
 XY-product.  John C.~Baez and Greg Egan \cite{Baez2014} explored
-Jordan-algebraic structures on~$\LL$ within the exceptional Jordan
+Jordan-algebraic structures containing the Leech lattice within the exceptional Jordan
 algebra~$\mathfrak{h}_3(\OO)$, finding closure under a doubled
 Jordan product.
 
@@ -1012,54 +1012,58 @@ independently reproduced this
 construction.\footnote{\scriptref{leech\_dixon.py}
 \scriptref{e8\_dixon.py}.}
 
-\textbf{Baez--Egan (2014)} \cite{Baez2014} study closure
-properties of integer sublattices of the exceptional Jordan algebra
-$\mathfrak{h}_3(\OO)$.  In parts~9--10 of the series, Baez considers
-the 27-dimensional lattice $\ZZ^3 \oplus L_L \subset \mathfrak{h}_3(\OO)$,
-with integers on the diagonal and an off-diagonal Leech sublattice
-$L_L \cong \LL$ embedded as an octonionic triple.  This lattice is
-\emph{not} closed under the Jordan product $x \circ y = xy + yx$,
-but \emph{is} closed under the doubled product $2(xy + yx)$.
-Egan further enumerates at least $17{,}280$ distinct off-diagonal
-Leech embeddings $L_L \subset \OO^3$ for which the associated
-27-dimensional lattice is closed under this doubled product
-(see part~10 of~\cite{Baez2014} for Egan's computational counts).
-Baez leaves open the question whether any such lattice is closed under
-the undoubled Jordan product, and conjectures that the answer is
-negative.
+\textbf{Baez--Egan (2014).}  In part~9 of the series \emph{Integral
+octonions}~\cite{Baez2014}, Greg Egan constructs the Leech lattice from
+the $E_8$ lattice alone; in the form of part~11, for sublattices
+$L_1, L_2 \subset L$, each isometric to~$\sqrt{2}\,L$, with
+$L_1 \cap L_2 = 2L$, the lattice
+\begin{equation}\label{eq:egan}
+  \LL(L_1, L_2) \;:=\; \bigl\{ (x,y,z) \in L^3 :
+    x{+}y,\, x{+}z,\, y{+}z \in L_1;\; x{+}y{+}z \in L_2 \bigr\}
+\end{equation}
+is isometric to~$\LL$.  Wilson's lattice is $\LL = \LL(L\bar s, Ls)$
+(Definition~\ref{def:wilson-leech}), and, with~$\sigma$ applied in each
+block, $\sigma(\LL) = \LL(2\MO, p\MO)$ by~\eqref{eq:multiples} and
+Lemma~\ref{lem:sigma-L}.  Applied in each block in the same way, an
+isometry~$g$ of~$L$ with $g(L\bar s) = L_1$ and $g(Ls) = L_2$, which
+exists by Appendix~\ref{app:mod2quotient}, carries $\LL$ onto
+$\LL(L_1, L_2)$ and~$\star_g$ onto the untwisted product~$\star_{\mathrm{id}}$
+of Section~\ref{sec:census}.  By Proposition~\ref{prop:criterion}, then,
+$\star_{\mathrm{id}}$ closes on $\LL(L_1, L_2)$ exactly when $L_1$
+and~$L_2$ are closed under the standard octonion product: it closes
+on~$\sigma(\LL)$, which is Theorem~\ref{thm:main}, and not on~$\LL$
+(Remark~\ref{rem:Ls-not-closed}).  There are $270$ sublattices of~$L$
+isometric to~$\sqrt{2}\,L$, and each meets exactly $64$ of them in~$2L$,
+so Egan's construction gives $17{,}280 = 270 \times 64$ lattices, all
+distinct (part~11, and Egan's comments there~\cite{Egan2014}).
+Appendix~\ref{app:mod2quotient} reads these pairs modulo~$2$, with the
+product that $L/2L$ inherits from the standard octonion product.
 
-Egan's construction of~$\LL$ uses a pair of sublattices
-$L_1, L_2 \subset L$, each isometric to~$\sqrt{2}\,L$.  We have
-likewise independently reproduced the full Baez--Egan verification
-chain: the $E_8$ simple-roots data, the lemma $L_1 \cap L_2 = 2L$, the
-Leech-lattice theorem for that pair, the doubled-Jordan-product
-closure, the
-derivation of the lower bound $244{,}035{,}421$ on the number of
-$E_8^3$-orbit Leech embeddings,\footnote{An orbit-stabilizer bound, $\lceil 3!\,\lvert W(E_8)\rvert^3 / \lvert\Co_0\rvert\rceil$; \scriptref{verify\_egan\_lower\_bound.py}.} and Egan's
-count.\footnote{\scriptref{egan\_baez\_count.py}.}  The count factors as
-$17{,}280 = 270 \times 64$: the $270$ is the number of sublattices $L_1 \subset L$
-isometric to $\sqrt{2}\,L$ (part~11 of \cite{Baez2014}), equivalently
-the number of $4$-dimensional maximal totally isotropic subspaces of
-$L/2L \cong \FF_2^8$ under the quadratic form induced by the
-$E_8$ Gram form (Appendix~\ref{app:mod2quotient}).  The $64$ is
-the number of $L_2$ in this collection that meet a given $L_1$ only
-in $2L$, equivalently the number of $4$-dimensional totally isotropic
-subspaces complementary to a given one; Appendix~\ref{app:mod2quotient} reads one such
-pair, $\sigma(L\bar s)/2L$ and $\sigma(Ls)/2L$, as ideal and
-subalgebra under the product that $L/2L$ inherits from the standard
-octonion product.
-
-\textbf{Comparison.}  The product~$\star$ is bilinear on~$\RR^{24}$
-itself, and its block-permutation symmetry~$S_3$ comes from the
-routing of Definition~\ref{def:triple}.  Whether the Leech embedding $\sigma(\LL) \subset
-\OO^3$ obtained by applying $\sigma$ blockwise overlaps with one of
-the embeddings cataloged by Egan, or sits outside that family, is
-a question this paper does not address.
+In parts~9 and~10, Baez considers the 27-dimensional lattice
+$\ZZ^3 \oplus L_L \subset \mathfrak{h}_3(\OO)$ of the exceptional Jordan
+algebra, with integers on the diagonal and an off-diagonal Leech
+lattice~$L_L$ at the standard scale, with entries in a maximal order of
+integral octonions (here~$\MO$), so that $L_L \cong \LL/\sqrt{2}$.  Egan found~\cite{Egan2014} that this lattice
+is \emph{not} closed under the Jordan product $x \circ y = xy + yx$ but
+\emph{is} closed under the doubled product $2(xy + yx)$.  Egan further
+enumerates at least $17{,}280$ distinct such lattices~$L_L$ for which
+the associated 27-dimensional lattice is closed under this doubled
+product: those of Egan's construction with~$\MO$ in place of~$L$ (see
+part~10 for Egan's computational counts).  Baez leaves open the question
+whether the 27-dimensional lattice of any such~$L_L$ is closed under the
+undoubled Jordan product, and conjectures that the answer is negative.  We have likewise independently reproduced the full
+Baez--Egan verification chain: Egan's simple roots of~$E_8$ and the two
+sublattices built from them, the lemma that these meet in twice that
+$E_8$ lattice, the Leech-lattice theorem for that pair, the
+doubled-Jordan-product closure,\footnote{\scriptref{verify\_egan\_construction.py}.}
+the derivation of the lower bound $244{,}035{,}421$ on the number of
+sublattices of~$L^3$ isometric to~$\LL$,\footnote{An orbit-stabilizer bound, $\lceil 3!\,\lvert W(E_8)\rvert^3 / \lvert\Co_0\rvert\rceil$; \scriptref{verify\_egan\_lower\_bound.py}.} and Egan's
+count.\footnote{\scriptref{egan\_baez\_count.py}.}
 
 \textbf{Anatomy of the Baez--Egan closure on $\LL$.}  The
 Baez--Egan closure is on the 27-dimensional lattice
-$\ZZ^3 \oplus \LL \subset \mathfrak{h}_3(\OO)$, not on $\LL$ alone.
-For off-diagonal Hermitian matrices $M_u, M_v \in \mathfrak{h}_3(\OO)$
+$\ZZ^3 \oplus L_L$, not on~$L_L$ alone.  At the paper's scale, for
+off-diagonal Hermitian matrices $M_u, M_v \in \mathfrak{h}_3(\OO)$
 representing $u = (x,y,z)$ and $v = (x',y',z')$ in $\LL \subset \OO^3$,
 direct computation gives
 \begin{equation}\label{eq:disp11}
@@ -1525,11 +1529,11 @@ construction (part~9, 23 November 2014) and the Jordan-ring count
 (part~10, 1 December 2014),
 \url{https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html},
 \url{https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html};
-the 270 rescaled copies of the first $E_8$ shell (part~11, 12 December
+the 270 rescaled copies of the first $E_8$ shell (part~11, 11 December
 2014) and Tim Silverman's account of the integral octonions modulo~2
 (part~12, 31 January 2016),
-\url{http://math.ucr.edu/home/baez/octonions/integers/integers_11.html},
-\url{http://math.ucr.edu/home/baez/octonions/integers/integers_12.html}.
+\url{https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html},
+\url{https://golem.ph.utexas.edu/category/2016/01/integral_octonions_part_12.html}.
 
 \bibitem[Calderbank2023]{Calderbank2023}
 D.~Calderbank,
@@ -1585,6 +1589,15 @@ G.\,M.~Dixon,
 \emph{Integral octonions, octonion XY-product, and the Leech lattice},
 preprint, 2010.
 \href{https://arxiv.org/abs/1011.2541}{arXiv:1011.2541}.
+
+\bibitem[Egan2014]{Egan2014}
+G.~Egan,
+comments of 26 November 2014 on Baez~\cite{Baez2014}, part~9, and of
+11 and 13 December 2014 on part~11,
+\url{https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html#c047749},
+\url{https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html#c047862}
+and
+\url{https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html#c047873}.
 
 \bibitem[Elduque1996]{Elduque1996}
 A.~Elduque,

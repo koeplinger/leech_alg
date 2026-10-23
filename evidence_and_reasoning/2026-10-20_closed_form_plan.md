@@ -1,5 +1,28 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Addendum (2026-10-23, prompt 331).**  Decision (n) is taken: item 5 goes
+ahead, more simply than §3 has it, at the author's word ("it can be done
+simpler"; "You can simply refer to it without needing a new lemma").  Its
+own plan is `2026-10-23_span_plan.md` (proposed): Section 5.6's sentence on
+the span of $\star$ becomes Proposition 5.4, the span is $\{(w, w, w) + 2u :
+w \in Ls,\ u \in \Lambda\}$, proved by hand from (4.1), (4.2) and the
+alternative laws: with $v = \tfrac12(e_0 + e_2 + e_3 - e_7) \in \mathcal O$,
+$y = (yp)e_0 - (yp)v - ((yv)p)e_0$ for every $y \in \mathcal O$, so the
+products $(yp)z$ span $\mathcal O$ (new script
+`verify_product_span_proof.py`, which checks every step).  F6(a)'s lemma is
+not used, so its literature check is not run.  The octonion X-product the
+author named needs an invertible $X$; it does not reach the image of $p$
+in $\mathcal O/2\mathcal O$, which has norm 0 (decision (r) of that plan).
+Decision (o), not asked before, is put there with its recommendation
+(F6(b) to (e) stay out of v8).
+
+**Addendum (2026-10-23, prompt 330).**  Item 4 executed per
+`2026-10-22_section6_plan.md` (changelog item 25): decisions (l), (m) and
+(n′) as recommended; the rulings of prompt 250 kept against this plan's
+item 4; Appendix A unchanged.  Next: item 5, the span of $\star$ by hand
+(optional, decision (n)), with its own plan and a literature check of the
+lemma first.
+
 **Addendum (2026-10-22, prompt 329).**  Item 4's own plan is
 `2026-10-22_section6_plan.md` (proposed): Section 6's Baez–Egan block with
 Egan's construction stated exactly and its two instances, the Jordan
