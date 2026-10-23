@@ -1,5 +1,16 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
+**Addendum (2026-10-22, prompt 329).**  Item 4's own plan is
+`2026-10-22_section6_plan.md` (proposed): Section 6's Baez–Egan block with
+Egan's construction stated exactly and its two instances, the Jordan
+paragraph at the right scale, the Comparison paragraph deleted, the
+Anatomy's opening at the right scale, and Section 1's sentence.  It asks
+(l) and (m) again and adds (n′), an exact script for the four links of the
+reproduction chain that had none (`verify_egan_construction.py`, in the
+repository, not yet cited).  It keeps two rulings of prompt 250 (one name of
+the product; "at least 17,280") against this plan's item 4, with the
+alternative offered.  Nothing in the paper has changed.
+
 **Addendum (2026-10-22, prompt 327).**  Item 3 executed per
 `2026-10-22_appendix_a_plan.md` (changelog item 24): decisions (i), (j) and
 (k) as recommended, and, at the author's direction, Silverman's comment of

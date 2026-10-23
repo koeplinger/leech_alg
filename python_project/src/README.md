@@ -85,6 +85,7 @@ Each of the four primary papers re-derived from the original, in exact arithmeti
 |---|---|
 | `egan_baez_count.py` | Independent check of Egan's count of 17,280 Jordan rings (17,280 = 270 × 64) in the Baez–Egan construction. |
 | `verify_egan_lower_bound.py` | Reproduces Egan's lower bound 244,035,421 on Leech copies in (E₈)³ as the orbit-stabilizer ceiling ⌈3!·\|W(E₈)\|³ / \|Co₀\|⌉ (paper §6). Egan's derivation, not his enumeration. |
+| `verify_egan_construction.py` | The four links of the Baez–Egan chain that the two scripts above do not cover: Egan's simple roots of E₈ and the two sublattices built from them (Baez, part 9: sums, dot products, Gram matrices); the lemma that they meet in twice that E₈ lattice; the Leech-lattice theorem for that pair (index 2¹², half the Gram matrix even of determinant 1, none of the 179,280 norm-4 vectors of L₀³ in it); the closure of ℤ³ ⊕ L_L under 2(xy+yx), and its failure under xy+yx, for L_L = aΛ ⊂ 𝒪³ at the standard scale. Exact; about ten seconds. Not yet cited: decision (n′) of `evidence_and_reasoning/2026-10-22_section6_plan.md`. |
 
 ### The structure of (R²⁴, +, ⋆): paper Section 5
 

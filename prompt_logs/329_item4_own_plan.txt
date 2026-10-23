@@ -13,3 +13,57 @@ with the exact old -> new text, for the author to read before anything is
 applied.  Decisions (l) and (m) are asked again in plain words, with facts,
 options and a recommendation.  The Baez discussion's contributors stay
 credited for what they did (prompt 327).
+
+Response:
+ 1. Item 4's own plan: evidence_and_reasoning/2026-10-22_section6_plan.md
+    (proposed, not executed).  Five edits to paper/main.tex, old -> new:
+    Section 1's sentence on Baez and Egan ("Jordan-algebraic structures
+    containing the Leech lattice"); Section 6's Baez-Egan block rebuilt
+    (Egan's construction, credited to part 9, stated exactly in the form
+    of part 11 as a display with L1 cap L2 = 2L; Lambda = Lambda(L sbar,
+    Ls) and, sigma applied in each block, sigma(Lambda) = Lambda(2O, pO);
+    through an isometry of L and Proposition 5.3, the untwisted product
+    closes on Lambda(L1, L2) exactly when L1 and L2 are closed; the count
+    in lattice terms with Egan's comments; the Jordan paragraph with L_L in
+    the integral octonions at the standard scale, Egan credited for the
+    closure, "doubled" and "at least 17,280" kept, and the reproduction
+    chain with defined labels and a new footnote; the Comparison paragraph
+    deleted); the Anatomy's opening at the right scale; [Baez2014] (Cafe
+    links for parts 11 and 12, part 11 dated 11 December 2014); new
+    [Egan2014] (comments of 26 November, 11 and 13 December 2014, with
+    anchors).  Decisions in plain words: (l), (m), and (n') the script
+    behind the chain; two rulings of prompt 250 kept against the parent
+    plan, with the alternative; Appendix A unchanged.
+ 2. New script python_project/src/verify_egan_construction.py (exact; ALL
+    PASS in about ten seconds), indexed in python_project/src/README.md as
+    not yet cited: the four links of the chain that had no script (Egan's
+    rows from part 9; the lemma L1 cap L2 = 2L0; the Leech-lattice theorem
+    for that pair; the doubled-Jordan-product closure at the standard
+    scale, with the failure of the undoubled product).
+ 3. Research (workflow, three gatherers and two checkers): the Baez series
+    pages and comments (Egan's construction and conditions; Baez's comment
+    of 25 November 2014 and Egan's of 26 November; part 10's Theorem 1',
+    "Result 1" twice, Theorem 4, the product names; the scale; URLs and
+    dates); every mathematical statement recomputed by two independent
+    programs; the provenance of Section 6's wording and the author's
+    rulings (prompts 060, 080, 082, 089, 230, 234, 250, 266, 267, 281, 309,
+    315, 316).
+ 4. Review (three lenses with checkers): no mathematical error.  The
+    draft's "correction to item 3" (restoring "simplifies Wilson's by
+    eliminating the octonions" in Appendix A) is withdrawn: that sentence
+    was AI wording added at Step B (prompt 314), after prompt 309, and item
+    3 kept what prompt 309 protects.  The other confirmed fixes are applied
+    (blockwise action; integral octonions; the pair form credited to part
+    11; chain labels; Egan's anchors; "containing"; the histories of (l)
+    and of prompt 250; the records list).  A second check (paper text, plan
+    claims, and the script under an adversarial reading) found nothing
+    false; its fixes are applied (Baez's question's antecedent; the script
+    checks its basis, computes the index 2^12, tests 2 abar(a x) = x; the
+    history of (n') with prompts 082, 089, 230).
+ 5. Scratch build: 21 pages, no undefined references or citations, no
+    hyperref warnings; the known boxes.  Section 6 read on pages 12-13.
+ 6. Records: the plan indexed as proposed (evidence_and_reasoning/README.md;
+    CURRENT_STATE.md); a dated addendum to the parent plan.  paper/main.tex
+    unchanged.  Lint: documentation clean.
+
+Status: CLOSED.
