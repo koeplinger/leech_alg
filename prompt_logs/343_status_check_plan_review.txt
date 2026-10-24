@@ -1,0 +1,20 @@
+Prompt 343 -- status check during the review of the consistency plan
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'How's it going?'
+
+Context: asked while the read-only adversarial review of the proposed plan
+evidence_and_reasoning/2026-10-24_consistency_plan.md (workflow run
+wf_083dbea9-bb5) was running.  Prompt 342 is open.
+
+Response: status reported.  The plan is drafted:
+evidence_and_reasoning/2026-10-24_consistency_plan.md (proposed), with the
+two decisions (s) and (t) and 90 exact edits to 20 files, every edit
+validated against its file and checked in scratch builds and runs; it is
+indexed in evidence_and_reasoning/README.md and CURRENT_STATE.md.  The
+adversarial review of the plan (five reviewers, each with a refuting
+verifier) has run for fifteen minutes; its confirmed findings go into the
+plan before hand-over.  Nothing in the plan is applied.
+
+Status: CLOSED.

@@ -1,0 +1,46 @@
+Prompt 341 -- remaining planned items, and how to handle the found-but-not-
+fixed corrections before the author's fine-comb review
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Great. Do we have any planned items remaining? Should we
+make a plan for the "found but not fixed" corrections now, or work it in at
+a later stage? The goal is to bring the paper into a state where we're
+self-consistent with what all we know now, and to prepare for a fine-comb
+review on my side where things are somewhat stable.'
+
+Context: prompt 339's compaction is done and reviewed (log 339); the
+author's commit bce1405 holds most of it, and the review's fixes are
+uncommitted.
+
+User (verbatim, received during this turn): 're "Interpretations for you to
+confirm:" -- all confirmed'
+(The four interpretations of the prompt-339 hand-over: the prompt logs stay
+immutable; the external review of 13 October 2026 is kept verbatim; in
+old reviews the linter checks only dated blocks; untouched documents get
+their dates and cleanup at their next edit.)
+
+Rulings: the four interpretations of prompt 339 stand as confirmed.
+
+Response: answered with the facts and a recommendation; no file other
+than this log changed.
+ 1. Planned items: none remaining; all ten plans are executed.  Two points
+    are open for the author's decision (the closed-form plan's status
+    block): the keyword "computer-assisted proof" and MSC code 68V05,
+    now that the proof is symbolic; and the paragraph after the census
+    table, which restates three facts of the table.  The restructure of
+    the paper (announced at prompt 334) has no plan yet.
+ 2. The found-but-not-fixed items: none is in paper/main.tex.  The paper
+    links two supporting documents: the Hermes supplement (current) and
+    the automorphism note (Section 5.4), whose text still speaks of v6.
+    The other items are in documents the paper does not link (companion,
+    historical appendix, Baez-Egan addendum note, a docstring, GAP test
+    comments).
+ 3. Recommendation: one short plan now, before the fine-comb, with the
+    two paper decisions, the automorphism note brought to the current
+    state (PDF rebuilt), and the known corrections in the other
+    supporting documents, each as exact old -> new text; the restructure
+    as its own plan after the author's fine-comb, so that the read can
+    shape it.  Drafted on the author's word.
+
+Status: CLOSED.

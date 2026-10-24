@@ -1,0 +1,27 @@
+Prompt 344 -- decisions (s) and (t) of the consistency plan
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Regarding the two decisions for me:
+
+* "(s) Keyword and MSC code: I recommend dropping the keyword
+  "computer-assisted proof" and keeping MSC 68V05." -- agreed
+* "(t) Census paragraph: I recommend removing the three table facts it
+  restates." -- agreed'
+
+Context: evidence_and_reasoning/2026-10-24_consistency_plan.md is proposed;
+its adversarial review (workflow run wf_083dbea9-bb5) is running.  Prompt
+342 is open.
+
+Rulings: decision (s), option 2: the keyword "computer-assisted proof" is
+dropped and MSC 68V05 stays (edits P1 and P3).  Decision (t), option 1: the
+paragraph after the census table loses the three restated table facts
+(edits P2 and P4).  The plan records both decisions as taken; it is
+executed on the author's word after its review.
+
+Response: both decisions recorded in the plan's status block and in §1
+("Decided"); §4 step 2 names the edits P1 to P4.  The plan's review is
+still running; its confirmed findings go into the plan before hand-over,
+and the plan is then ready to execute on the author's word.
+
+Status: CLOSED.

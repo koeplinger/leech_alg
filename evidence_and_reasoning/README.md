@@ -41,6 +41,7 @@ evidence_and_reasoning/
 ├── 2026-10-22_appendix_a_plan.md  # Item 3 of the closed-form plan: Appendix A around the criterion modulo 2 (executed)
 ├── 2026-10-22_section6_plan.md  # Item 4 of the closed-form plan: Section 6, the Baez–Egan block (executed)
 ├── 2026-10-23_span_plan.md  # Item 5 of the closed-form plan: the span of the triple product by hand, Section 5.6 (executed)
+├── 2026-10-24_consistency_plan.md  # Plan: consistency of the paper and its supporting documents before the fine-comb read (proposed)
 └── README.md               # This file
 ```
 

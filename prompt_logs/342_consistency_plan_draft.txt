@@ -1,0 +1,60 @@
+Prompt 342 -- draft the consistency plan before the author's fine-comb read
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "My recommendation: make one short plan now, before
+your fine-comb." -- I agree. Do it as you describe. And yes, I definitely
+want to do the fine-comb read first before starting the restructure work
+on section 5.6 (because there may be more to restructure, and we may not
+get that far yet on the first read). -- Go ahead and draft the recommended
+plan.'
+
+Context: the recommendation of prompt 341: one short plan with the two
+open decisions on the paper (the keyword "computer-assisted proof" and MSC
+68V05; the paragraph after the census table), the automorphism note
+brought to the current state (PDF rebuilt), and the known corrections in
+the other supporting documents, each as exact old -> new text.  The
+restructure, starting with Section 5.6, follows the author's fine-comb
+read, with its own plan.
+
+Rulings: as the context states; the restructure of Section 5.6 follows the
+author's fine-comb read, with its own plan.
+
+Response:
+ 1. Drafted evidence_and_reasoning/2026-10-24_consistency_plan.md, indexed in
+    evidence_and_reasoning/README.md and CURRENT_STATE.md.  §1: decisions
+    (s) keyword and MSC (MSC 2020 names 68V05 "Computer assisted proofs of
+    proofs-by-exhaustion type") and (t) the census paragraph; both taken
+    at prompt 344 as recommended.  §2: the automorphism note brought to the
+    current state; the runtime of verify_aut_lambda_star.py measured at
+    about 5 minutes on one core, so the note was right and the script's
+    docstring is corrected.  §3: the Baez-Egan note, the companion note,
+    the historical-appendix draft, the minimum-norm argument (Wilson 2009,
+    Section 4, p. 2189, checked against a journal-typeset copy; his note on
+    Dixon is in Section 5 and concerns the multiplication by j), ledger
+    claim 004, the Leech test docstrings, eight GAP files, two index lines.
+    §5: 94 exact edits to 20 files, each old text occurring exactly once and
+    the edits applying in order.
+ 2. Drafting: a read-only workflow (run wf_992cb51a-2df) drafted the
+    supporting-document edits with scratch builds and runs; the main thread
+    reviewed them and drafted the paper edits, claim 004, the
+    leech_wilson.py notes on Wilson and the rank-check corrections.
+    Scratch checks: the GAP suite 110 of 110 with the GAP edits; the Leech
+    tests 31 of 31 with the Python edits; the automorphism note 11 pages
+    and the companion note 10 pages, no new overfull boxes or undefined
+    references.
+ 3. Review (run wf_083dbea9-bb5; five reviewers, each with a refuting
+    verifier): 22 findings, 16 held up (10 distinct), all applied: the plan
+    said no listed file is linked from the paper (test_lemmas.g is); "by
+    hand" for the symbolic proof of Theorem 1.1; the list of computed
+    results; the re-dating steps for a later execution day; drafting labels
+    and draft history left in edit reasons; the companion's norm
+    convention (C4, C5); the rank check read as proof of Ls bar + Ls = L
+    also in claim 004 and the test docstrings (K4, T4 to T6); and summary
+    labels.
+ 4. Process slip: a scratch cleanup command used rm -rf, against the
+    standing rule; the permission system denied it, and fresh scratch
+    folders were used instead.
+ 5. Lint: documentation clean.  Nothing of the plan is applied.
+
+Status: CLOSED.

@@ -756,6 +756,7 @@ leech_alg/
 │   ├── 2026-10-22_appendix_a_plan.md  # Item 3: Appendix A around the criterion mod 2 (executed)
 │   ├── 2026-10-22_section6_plan.md  # Item 4: Section 6, the Baez–Egan block (executed)
 │   ├── 2026-10-23_span_plan.md  # Item 5: the span of the triple product by hand, §5.6 (executed)
+│   ├── 2026-10-24_consistency_plan.md  # Consistency before the fine-comb read (proposed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
