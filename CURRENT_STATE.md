@@ -35,8 +35,7 @@ would ideally respect or interact with this symmetry in a meaningful way.
 **Status: FOUND.**  Trial 007 identifies a bilinear product that closes on Λ:
 the *Z₃-symmetric triple-octonion product*.  It is simply an octonion product
 in all three blocks; the transposition σ is the device that exhibits its fit
-with Wilson's representation.  (The trial files and some evidence
-documents call it the "transposition-twisted triple octonion product".)
+with Wilson's representation.  (The trial files call it the "transposition-twisted triple octonion product".)
 See "The finding" below.
 Two other candidate families are comprehensively ruled out: the (untwisted)
 triple-octonion algebra and the triple Okubo/para-octonion algebra
@@ -211,7 +210,7 @@ holds for only 24 of 64.
 **Closure of permutation cycles: the full S₇ census**
 (`verify_all_permutations_exact.py`, all 5,040 permutations, reusing the
 per-permutation test of `verify_consecutive_twists_exact.py`; the
-single-cycle types also in `verify_all_cycles_exact.py`; paper §5.6,
+3- to 7-cycles also in `verify_all_cycles_exact.py`; paper §5.6,
 `sec:census`).  Writing
 x ·_π y := π⁻¹(π(x) · π(y)) for a permutation π of e₁,…,e₇ (for the
 involution σ this is the paper's twisted product) and testing closure of
@@ -793,7 +792,7 @@ leech_alg/
 │   │   ├── verify_ideal_decomposition.py         # R²⁴ = D ⊕ T
 │   │   ├── verify_star_algebra_structure.py      # Ambient algebra structure
 │   │   ├── verify_sigma_Ls_ideal_exclusion.py    # σ(Ls) is not an ideal of L
-│   │   ├── verify_all_permutations_exact.py      # Closure census over all of S₇ (single-cycle types: verify_all_cycles_exact.py)
+│   │   ├── verify_all_permutations_exact.py      # Closure census over all of S₇ (3- to 7-cycles: verify_all_cycles_exact.py)
 │   │   ├── verify_*.py            # Further exact verifications (span and the twist span-index census,
 │   │   │                          #   the seven maximal orders and Wilson's sublattices, mod 2,
 │   │   │                          #   historical sources, consecutive twists, the §5.1 witnesses,

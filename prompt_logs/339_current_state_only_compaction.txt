@@ -25,3 +25,97 @@ the current date correctly.'
 
 Context: items 6 and 7 of the closed-form plan were handed over at
 prompt 338's turn; nothing of prompts 334-338 is committed.
+
+Rulings: the author's rule as stated: every document describes the current
+state, forward-evolving, with Created and Updated dates; no dated
+addenda, notes or history; programs documented as-is; the exception is a
+durable public record (the released versions of the paper; v7 on
+ResearchGate is dated but not final, and the finalized v8 becomes the
+single record).  Asked during the work (CLOSING_NOTE.md, which only its
+dated addenda made current): the author chose to remove it.  Kept as
+before, since the prompt does not address them: the prompt logs stay
+immutable (MANIFESTO section 8).  Interpretation, for the author to
+confirm: material received from others and kept verbatim (the external
+review of 13 October 2026) is not edited.
+
+Response:
+ 1. The wrong date labels.  The paper's draft date (its subtitle) was only
+    ever set when the author asked (prompts 286, 289, 303, 310 and 335),
+    so it stayed "20 October 2026" while the paper changed on 21, 22 and
+    23 October; the dates were known (the prompt logs of those days carry
+    them).  Now: DOCUMENT_GENRES.md, rule 4 (check `date`, set Updated
+    and the subtitle date in the same edit), and tools/lint_docs.py,
+    check 6 (Updated, and the subtitle of paper/main.tex, must equal the
+    modification date of each changed file).
+ 2. The rule documents: DOCUMENT_GENRES.md rewritten (three genres:
+    immutable prompt log; public record, the released versions of the
+    paper; current state, everything else, with the kinds program, plan,
+    changelog, review and note, research statement); MANIFESTO sections
+    12 and 13 amended at the author's direction (three kinds of artifact
+    never edited: closed prompt logs, released versions, verbatim
+    material); TRIAL_METHODOLOGY.md's genre section; tools/lint_docs.py
+    rewritten (checks: genre, with only the dated-block patterns in
+    reviews; immutable logs, appends to a committed open entry allowed;
+    public records; dangling paths; index; dates) and tools/README.md.
+ 3. The compaction.  A read-only inventory workflow (run
+    wf_4447ad70-3c2) drafted exact replacements; the main thread reviewed
+    and applied them.  Programs: 38 Python files (src and tests) and 6 GAP
+    files, the dated CORRECTION, Note and Updated blocks folded into
+    as-is docstrings in the paper's current numbering (no computation
+    changed; a few printed labels naming retired tables changed).  Plans:
+    the ten plans each with one status block (all executed).  Records:
+    key claims 006 to 008, trial 007, the reviews of 16 May, 22 May,
+    24 May (W-concrete), 10 July, 12 October and 14 October, the Hermes
+    supplement (the 2e_0 slip corrected in place; PDF rebuilt, 5 pages).
+    Registry: six files.  Changelogs: v7_to_v8_changelog.md rewritten as
+    the net change part by part (pointers to its old item numbers now
+    name paper parts); the v3 to v7 changelogs compacted.  Current-state
+    documents: CURRENT_STATE.md ("The paper and its supporting material"
+    in place of the done-list), README.md, paper/README.md, the evidence
+    README, research_result, terminology, the ledger, the Python and GAP
+    READMEs.  CLOSING_NOTE.md removed and its references updated.  Not
+    changed: the prompt logs, the released versions, the external review,
+    and the companion LaTeX notes and other untouched documents, which get
+    their dates at their next edit.
+ 4. Checks made at this prompt in the session's scratch directory (no
+    repository script): the Appendix D table reproduces exactly with a
+    time budget of 3600 s per run (600 s stopped early under load; the
+    script index now gives 3600); trial 004 did not sample the basis
+    change T1 = T2 = T3 = sigma; the index-doubling permutations of trial
+    007 are octonion automorphisms; the facts of the index-one note
+    (block-sum norms of Min(Lambda), s_r with span index 1 and
+    Lambda + Z(1_r, 0, 0) closed of index 4, 270 Lagrangians and 142
+    subalgebras with their h values, 4,704 closing polarizations); the
+    2e_0 facts (w0 = s + 2e_0 = -s^2; no left or right identity among the
+    256 classes of L/2L or the 16 of W).  The GAP suite passes 110 of 110
+    after the edits.
+ 5. The author committed the working tree during the review (bce1405,
+    "housekeeping updates (pending verification)").  A run output that a
+    reviewer wrote to the repository root by mistake (out_s5_2.txt) went
+    into that commit; it is deleted again.
+ 6. Review (run wf_5994d156-5da; five reviewers by file group, each with
+    a refuting verifier): 37 findings, 28 distinct ones held up, all
+    applied.  Among them: claim 008 credited consistency_checks.py with
+    the equivalence of the 21 transpositions (it samples three); the
+    v5_to_v6 changelog misattributed the census to two review findings;
+    the Hermes supplement and the W-concrete review credited the paper's
+    Appendix A with two facts it does not state; dead pointers to the
+    old changelog items and to removed addenda in the plans; the census
+    script verify_all_cycles_exact.py described as covering "the
+    single-cycle types" (it covers the 3- to 7-cycles); the linter
+    flagged a staged new release; MANIFESTO section 12 missed the
+    verbatim material.
+ 7. Found, not changed (for the author): the companion LaTeX notes carry
+    dated status lines and some errors (the Baez-Egan addendum note says
+    "24-dimensional L/2L" and calls the polarization reading new;
+    companion.tex cites "Theorem 3.1" for Theorem 1.1; historical_
+    appendix.tex omits "an integer multiple of" in Mahler's theorem; the
+    automorphism note's framing as of v6 and an empty GAP path); stale
+    paper pointers in some untouched GAP test files; leech_wilson.py's
+    sketch that Lambda has no vectors of norm below 8 has an invalid
+    step; verify_aut_lambda_star.py gives a runtime of over ten minutes,
+    the automorphism note about five.
+ 8. Lint: documentation clean.  The fixes after the commit are
+    uncommitted.
+
+Status: CLOSED.

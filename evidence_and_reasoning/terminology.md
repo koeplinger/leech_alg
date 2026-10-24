@@ -632,12 +632,12 @@ census over all 5,040 permutations of S₇ is: transposition 21/21
 7-cycle 336/720 (46.7%); total 1,764/5,039 (35.0%); the identity does
 not close.  Exhaustive, not sampled
 (`verify_all_permutations_exact.py`; partial checks in
-`verify_all_cycles_exact.py` (the single-cycle types, exact) and
+`verify_all_cycles_exact.py` (the 3- to 7-cycles, exact) and
 `consistency_checks.py` (three transpositions, sampled); main paper
 §5.6).
 
 The name "transposition-twisted triple octonion product", used in the
-trial 007 files and in key claim 008, over-privileges the twist: the
+trial 007 files, over-privileges the twist: the
 product is not an exotic twisted object but an ordinary octonion
 product; the twist concerns its fit with a chosen representation.
 

@@ -289,7 +289,7 @@ New:
 
 The four edits are applied to `paper/main.tex`; the paper is built and the
 changed pages read; the changelog records the change; the linter runs.
-The parent plan's addendum notes decision (g), the provenance of
+The parent plan's status notes decision (g), the provenance of
 Proposition 5.3 in the paper, for the phase in which the author absorbs and
 owns the work.  Appendix A's research-program sentence and Section 7's fourth
 question (on polarizations) stay until item 3, which answers them.  The

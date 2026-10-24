@@ -69,17 +69,16 @@ of the fixed triple for (2,2)'s.
 
 ## Significance
 
-The paper's Remark "rem:unique" establishes that all 21 transposition-twists
-are equivalent (one GL(3,𝔽₂) orbit) and notes that "longer-cycle coordinate
-permutations are not covered by this argument and may yield inequivalent
-products." This item fills that in for the next case: 3-cycle and (2,2)
+The paper's Section 4 (first footnote) shows that all 21 transposition
+twists are equivalent: they form one orbit under conjugation by the order-21
+group of coordinate permutations preserving the oriented Fano triples. That
+argument does not cover permutations of other cycle types. This item fills that in for the next case: 3-cycle and (2,2)
 twists **do** yield products that close on Λ, for definite, Fano-structured
 fractions — and the identity (the untwisted product) does not, consistent
 with the paper.
 
-Whether to fold this into the paper (a remark extending rem:unique, or an
-outlook line) is decision **DP7** — to be taken when §6/Conclusion are
-revised.
+The paper's census over all of S₇ (Section 5.6, `sec:census`) carries these
+counts.
 
 ## Status
 

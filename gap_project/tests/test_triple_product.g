@@ -82,10 +82,11 @@ od;
 nfail := 0;
 ntot  := 0;
 
-# Type-1 x type-1: exhaustive over the 720 left operands times 6 right operands
-# (2 from each type, including a type-3 vector to exercise condition 3 hardest).
+# Type-1 x {type-1, type-2, type-3}: exhaustive over the 720 left operands times
+# 6 right operands (3 type-1, 2 type-2, 1 type-3, the type-3 vector to exercise
+# condition 3 hardest).
 right_ops := [
-    T1[1], T1[241], T1[481],                       # one from each cyclic perm family
+    T1[1], T1[241], T1[481],                       # three type-1 vectors, each (2r, 0, 0)
     type2_sample[1], type2_sample[10],
     type3_sample[1]
 ];

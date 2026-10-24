@@ -113,7 +113,7 @@ The AI agent operates in the role of a highly knowledgeable and thorough mathema
 ## 12. Forward-Evolving Corrections
 
 - When a mistake is discovered, whether in a claim, a computation, a classification, or the framing of a question, **the document that holds it is corrected in place**: it is made to say the right thing, and its `Updated` date is set.  Documents describe what **is**; git carries what they used to say, and the prompt log carries why they changed.
-- Two kinds of artifact are never edited.  A closed **prompt log** entry is immutable: a correction goes in a later entry, with its rationale.  A **released version of the paper** is a public record: a correction goes into the next version.
+- Three kinds of artifact are never edited.  A closed **prompt log** entry is immutable: a correction goes in a later entry, with its rationale.  A **released version of the paper** is a public record: a correction goes into the next version.  Material received from others and reproduced verbatim, such as the external review of 13 October 2026, is kept as received; comments on it belong in the project's own text.
 - This applies equally to mistakes made by the AI agent and to mistakes made by the human researcher.  The prompt log keeps the inquiry auditable: what was believed and done at each step.
 - The git commit history is the ultimate source of truth for what changed and when.  The full taxonomy is [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and it is enforced mechanically by [`tools/lint_docs.py`](tools/lint_docs.py).
 

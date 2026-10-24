@@ -55,10 +55,10 @@ since k is odd, 4-k is odd.  Both types satisfy the criterion.
 
 Use
 ---
-A library module with no main program.  The roots, WILSON_S, inner_product
-and is_in_L are imported by leech_wilson.py, symbolic_proof_checks.py,
-consistency_checks.py and the trial programs, and tested by
-python_project/tests/test_e8_wilson.py.  Not cited in the paper (v8 draft,
+A library module with no main program.  The roots, WILSON_S and is_in_L are
+imported by leech_wilson.py, symbolic_proof_checks.py, consistency_checks.py,
+trial programs 001 to 006 and trial_007_kirmse_twist.py; with inner_product
+they are tested by python_project/tests/test_e8_wilson.py.  Not cited in the paper (v8 draft,
 paper/main.tex); ledger key claim 002
 (evidence_and_reasoning/key_claims/002_wilson_e8_verified.txt).
 

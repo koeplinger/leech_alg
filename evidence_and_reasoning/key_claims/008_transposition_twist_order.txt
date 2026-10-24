@@ -105,8 +105,14 @@ arithmetic.
    transposition.  The other three scripts are in python_project/src/.
 
 3. Independence of the transposition:
-   All 21 transpositions of {1,…,7} are equivalent up to GL(3, F₂)
-   relabelling; verified in consistency_checks.py (check 7).
+   The 21 transpositions form one orbit under conjugation by the order-21
+   group of coordinate permutations preserving the oriented Fano triples,
+   each an octonion automorphism that fixes s and s̄ and preserves L (paper
+   Section 4, first footnote); all 21 close on Λ exactly, on the 576
+   basis-pair products of a Z-basis
+   (python_project/src/verify_consecutive_twists_exact.py).
+   consistency_checks.py, check 7, samples swap(1,2), swap(3,5) and
+   swap(4,7).
 
 --- WHAT DOES AND DOES NOT FOLLOW ---
 

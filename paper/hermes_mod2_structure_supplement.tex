@@ -94,8 +94,7 @@ criterion modulo~$2$'') establishes:
   $L_{k+2} = e_0 + e_k$ ($k = 2, \ldots, 6$) of
   \texttt{python\_project/src/verify\_mod2\_quotient.py}, its structure
   constants are the $L$-coordinates of the products $L_i L_j$, reduced
-  modulo~$2$. The product is non-unital ($e_0 \notin L$) and
-  non-commutative in this $L$-basis.
+  modulo~$2$.
 \item $V := \sigma(L\bar s)/2L = 2\mathcal O/2L$ and
   $W := \sigma(Ls)/2L = p\mathcal O/2L$ (display~(A.3)), where
   $\mathcal O$ is the maximal order of integral octonions of the paper's
@@ -104,6 +103,10 @@ criterion modulo~$2$'') establishes:
 \item Lemma~4.3 $\iff$ $V$ is a left ideal of $(\bar L, \bar\mu)$.
 \item Lemma~4.4 $\iff$ $W$ is a subalgebra of $(\bar L, \bar\mu)$.
 \end{enumerate}
+
+The product~$\bar\mu$ has no left or right identity (\S2), and it is not
+commutative: step~(a) of the first of the two verification scripts named
+below prints \texttt{False}.
 
 The proposals below refine~(3) and~(4). All claims have been verified
 by exact-arithmetic enumeration in this $L$-basis;

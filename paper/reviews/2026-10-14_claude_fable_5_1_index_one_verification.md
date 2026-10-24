@@ -247,9 +247,10 @@ is Coxeter's $J$, Bruck's order, is not determined here.
   comments; until prompt 287 no file named the model of prompts 281 to 286
   (now recorded there: Claude Fable 5.1); the date change to 13 October is
   logged (286); the ResearchGate v7 is called "published" in several files;
-  the docstring of `verify_discovery1_W_subalgebra.py` still calls a vector
-  $e_0$ that is $s = L_1$ in $L$-coordinates (the octonion identity is not in
-  $L$).  Disposition is the author's.
+  the line "e_0 (identity of L/2L) in W" printed by
+  `verify_discovery1_W_subalgebra.py` names a vector $e_0$ that is $s = L_1$
+  in $L$-coordinates (the octonion identity is not in $L$); its docstring
+  states this.  Disposition is the author's.
 
 ## 6. Recommendations for the paper (the author's decision)
 

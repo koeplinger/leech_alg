@@ -10,10 +10,11 @@ Genres
 immutable      prompt_logs/ (except its README)
 public record  the released versions of the paper, paper/main_YYYY-MM-DD.tex
                and their PDFs
-verbatim       material received from others and kept as received (the
-               external review of 13 October 2026, its folder and its
-               write-up; source_documents/)
-current state  every other document
+current state  every other document.  Material received from others and
+               kept as received (the external review of 13 October 2026,
+               its folder and its write-up; the PDFs in source_documents/)
+               is never edited; checks 1 and 6 skip it, and --list labels
+               it "verbatim".
 
 Checks
 ------
@@ -22,7 +23,9 @@ Checks
                settlement or supersession narratives, no change-history
                footers.
 2. IMMUTABLE   Files under prompt_logs/ that are already tracked by git must
-               not be modified or deleted.  (New entries are fine.)
+               not be modified or deleted.  New entries are fine, and so is
+               an append to an entry whose committed version is still open
+               (it has no closing "Status:" line).
 3. PUBLIC      A released version of the paper must not be modified or
                deleted.
 4. DANGLING    Every repository path named in an index document must exist.
@@ -246,10 +249,24 @@ def check_genre(files: list[str]) -> None:
 # ----------------------------------------------------------------------------
 
 
+CLOSED = re.compile(r"^Status:", re.M)
+
+
+def is_open_append(path: str) -> bool:
+    """True when the committed entry is still open and the change only appends."""
+    committed = git("show", f"HEAD:{path}")
+    if not committed or CLOSED.search(committed):
+        return False
+    current = read(path)
+    return current.startswith(committed)
+
+
 def check_immutable() -> None:
     for line in git("status", "--porcelain", "--", "prompt_logs").splitlines():
         code, path = line[:2], line[3:].strip()
         if path.endswith("README.md"):
+            continue
+        if "M" in code and not ("D" in code or "R" in code) and is_open_append(path):
             continue
         if "M" in code or "D" in code or "R" in code:
             err(f"{path}: prompt log modified or deleted. Prompt logs are IMMUTABLE.\n"
@@ -263,7 +280,7 @@ def check_immutable() -> None:
 
 def check_public(changed: dict[str, str]) -> None:
     for rel, code in changed.items():
-        if code == "??":
+        if code == "??" or code.startswith("A"):
             continue
         if genre_of(rel) == "public-record":
             err(f"{rel}: a released version of the paper was modified or deleted.\n"

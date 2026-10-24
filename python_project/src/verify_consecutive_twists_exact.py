@@ -4,8 +4,8 @@ Created: 2026-05-22.  Updated: 2026-10-24.
 
 A lemma criterion is only *sufficient* (the condition-2 lemma
 L.pi(Ls_bar) <= pi(Ls_bar) is not necessary: the three terms of a pairwise
-block sum are coupled by membership in Lambda).  This script uses the only
-fully reliable test: a genuine Z-basis of Wilson's Lambda (24 vectors), and,
+block sum are coupled by membership in Lambda).  This script tests closure
+directly and exhaustively: a genuine Z-basis of Wilson's Lambda (24 vectors), and,
 by bilinearity, star_pi closes on Lambda iff all 24*24 basis-pair products
 lie in Lambda.
 

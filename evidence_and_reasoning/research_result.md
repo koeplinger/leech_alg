@@ -90,7 +90,7 @@ Transpositions are not the only permutations of the imaginary basis units for
 which the assembled triple product closes.  The census over all 5,040
 permutations of S₇ is exhaustive
 (`verify_all_permutations_exact.py`; partial checks in
-`verify_all_cycles_exact.py` (the single-cycle types, exact) and
+`verify_all_cycles_exact.py` (the 3- to 7-cycles, exact) and
 `consistency_checks.py` (three transpositions, sampled); paper §5.6,
 `sec:census`):
 

@@ -471,7 +471,7 @@ Sections 5.1 and 5.6 longer; 20 pages should hold.
 
 *Own plan.*  An item marked *own plan* gets its own short plan file in
 `evidence_and_reasoning/` (status line, frozen once engaged, indexed), with
-the exact old → new text, as item 12 of `2026-10-12_plan.md` got
+the exact old → new text, as the span-index findings got
 `2026-10-14_plan.md`; it is applied only after the author has read it.
 *Every item*, before its hand-over: its changelog entry, an index line in
 `python_project/src/README.md` for any new script, a build, and the linter.

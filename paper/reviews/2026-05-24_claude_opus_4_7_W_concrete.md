@@ -37,7 +37,9 @@ From the main paper's Appendix A, "The closure criterion modulo 2":
   L-basis $L_1 = s$, $L_2 = e_0 + e_1$, $L_3 = e_0 - e_1$,
   $L_{k+2} = e_0 + e_k$ ($k = 2, \ldots, 6$) of
   `python_project/src/verify_mod2_quotient.py`, the
-  multiplication $\bar\mu$ is **non-commutative** and **non-unital**.
+  multiplication $\bar\mu$ is **non-commutative** and **non-unital**
+  (not stated in the paper: `verify_discovery1_W_subalgebra.py`, step (a);
+  correction 2 below).
 - $V := \sigma(L\bar s)/2L = 2\mathcal O/2L$ is a 4-dim left ideal of
   $L/2L$ (Lemma 4.3 ⟺ this), in fact a two-sided ideal, since
   $2\mathcal O$ is one in $L$ (paper Remark 4.5).

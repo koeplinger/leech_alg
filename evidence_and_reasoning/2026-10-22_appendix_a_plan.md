@@ -531,9 +531,7 @@ The records follow in item 7, as the parent plan provides:
   comment; Calderbank's entry, its heading "Complementary-Lagrangians
   reading" and its sentence on what Appendix A credits him for; and the
   [Baez2014] sentence of `prior_art_orders_on_leech.txt` on where the paper
-  uses parts 11 and 12 (part 12 is then cited in Appendix A only).  The
-  dated addendum of 13 October 2026 in `background_octonions.txt` stays as
-  written;
+  uses parts 11 and 12 (part 12 is then cited in Appendix A only);
 - dated notes in `verify_mod2_quotient.py`,
   `verify_polarization_lagrangians.py`, `verify_product_span_structure.py`
   and `verify_discovery1_W_subalgebra.py`, which name the old paragraphs or

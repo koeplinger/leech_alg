@@ -75,7 +75,7 @@ if __name__ == "__main__":
     # ---------------------------------------------------------------
     # (a) Is L/2L commutative as an F2-algebra?
     # ---------------------------------------------------------------
-    print("\n(a) Is the F2-octonion-algebra L/2L commutative?")
+    print("\n(a) Is (L/2L, mu-bar) commutative?")
     e = [tuple(1 if k==i else 0 for k in range(8)) for i in range(8)]
     commutes = all(mubar(e[i], e[j]) == mubar(e[j], e[i])
                    for i in range(8) for j in range(8))

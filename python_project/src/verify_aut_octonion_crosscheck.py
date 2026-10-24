@@ -139,7 +139,7 @@ def main():
     Gm, nmono = brute_force_monomial_stab_L()
     print("(ii) brute force over all 645120 signed permutations of e_1..e_7:")
     print("     monomial .s-automorphisms (before the L-condition):", nmono,
-          "(= |2^3 : L_3(2)|)")
+          "(= |2^3.L_3(2)|)")
     print("     of these, preserving L:", len(Gm))
     print("     equal as a SET to the backtracking Stab(L):",
           {key(a) for a in Gm} == {key(a) for a in groups["Stab(L)"]})

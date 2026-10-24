@@ -36,10 +36,10 @@ vectors, 136 including 0; the number of 4-dimensional totally isotropic
 subspaces, 270; and the number of ordered pairs of them that meet in 0,
 17,280, with 64 partners for every subspace.  Runtime about a minute.
 
-The paper cites this script in Section 6 (`sec:related`), in the Baez–Egan
-paragraph, for Egan's count (the last item of the reproduced Baez–Egan
-verification chain); the same paragraph states the counts 270 and
-17,280 = 270 × 64 after display (6.2) (`eq:egan`).  Ledger claim 023.
+The paper cites this script in Section 6 (`sec:related`), in the second
+paragraph on Baez–Egan (2014), for Egan's count (the last item of the
+reproduced Baez–Egan verification chain); the preceding paragraph states the
+counts 270 and 17,280 = 270 × 64 after display (6.2) (`eq:egan`).  Ledger claim 023.
 """
 
 import numpy as np
