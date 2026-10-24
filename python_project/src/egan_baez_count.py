@@ -2,6 +2,8 @@
 egan_baez_count.py — Independent attempt to verify Egan's count of 17,280
 Jordan rings in the Baez/Egan construction.
 
+Created: 2026-04-29.  Updated: 2026-10-24.
+
 Per Baez/Egan part 11
 (https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html):
 the count factorises as 17,280 = 270 × 64, where:
@@ -23,6 +25,21 @@ form). On this picture:
     subspaces that meet trivially.
 
 This module enumerates these subspaces and pairs and reports the counts.
+The form q comes from the Z-basis of E_8 = L built by
+leech_wilson._build_L_zbasis (s and seven type-1 roots): its Gram matrix is
+computed in floating point, and each entry (each diagonal entry halved) is
+asserted to be an integer before reduction modulo 2; the enumeration over
+F_2 is exact.
+
+Prints q (linear part a, off-diagonal part M); the number of isotropic
+vectors, 136 including 0; the number of 4-dimensional totally isotropic
+subspaces, 270; and the number of ordered pairs of them that meet in 0,
+17,280, with 64 partners for every subspace.  Runtime about a minute.
+
+The paper cites this script in Section 6 (`sec:related`), in the Baez–Egan
+paragraph, for Egan's count (the last item of the reproduced Baez–Egan
+verification chain); the same paragraph states the counts 270 and
+17,280 = 270 × 64 after display (6.2) (`eq:egan`).  Ledger claim 023.
 """
 
 import numpy as np

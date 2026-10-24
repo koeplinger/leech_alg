@@ -1,22 +1,19 @@
 # 2026-10-22 — Plan: Section 6, the Baez–Egan block
 
-**Status (2026-10-23, prompt 330): engaged and executed.**  The author:
-"Your recommendation appear good. Continue as planned."  Decisions (l),
-(m) and (n′) as recommended, the rulings of prompt 250 kept, Appendix A
-unchanged.  The author committed this plan and `verify_egan_construction.py`
-at 4854e73, before the paper cites the script.  The five edits of §3 were
-applied to `paper/main.tex` from this file, each old block found exactly
-once; the result equals the reviewed scratch build.  Build: 21 pages, no
-undefined references or citations, no hyperref warnings.  The script's
-index line now names the paper's §6.  Changelog item 25.  The records of
-§5 follow in item 7 of the parent plan.
+Created: 2026-10-22.  Updated: 2026-10-24.
 
-**Status (2026-10-22, prompt 329): proposed, not executed.**  Item 4 of
-`2026-10-20_closed_form_plan.md` (engaged at prompt 318), as its own plan.
-Drafted by Claude Opus 5.5 at the direction of Jens Köplinger, and reviewed
-before hand-over (§4).  Nothing in the paper has changed; the edits below are
-applied only after the author has read them.  The new script of decision
-(n′) is in the repository, not yet cited.
+**Status: executed.**  This plan is item 4 of the closed-form plan,
+`2026-10-20_closed_form_plan.md`.  The author's decisions of §1: (l), (m)
+and (n′) as recommended; the two rulings on the Jordan paragraph kept
+(one name of the product, "doubled", and "at least 17,280"); Appendix A
+unchanged.  The five edits of §3 are in `paper/main.tex` as written here:
+Section 6 (`sec:related`), with Egan's construction as display (6.2)
+(`eq:egan`) and without the Comparison paragraph; Section 1's sentence on
+Baez and Egan; the bibliography, with the new entry [Egan2014].  The
+reproduction chain cites `python_project/src/verify_egan_construction.py`.
+`paper/v7_to_v8_changelog.md` states the change under Section 6; the records of §5
+are part of item 7 of the parent plan.  Drafted by Claude Opus 5.5 at the
+direction of Jens Köplinger.
 
 ---
 
@@ -449,7 +446,7 @@ and
 `verify_egan_construction.py` is committed first; then the five edits are
 applied to `paper/main.tex`, the paper is built and the changed pages read,
 the script's index line in `python_project/src/README.md` names the paper's
-§6 in place of "not yet cited", changelog item 25 records the change, and
+§6 in place of "not yet cited", the changelog records the change, and
 the linter runs.  The records follow in
 item 7, as the parent plan provides: a ledger row for $\sigma(\Lambda)$ as an
 Egan lattice; the two registry entries [Baez2014] (`background_octonions.txt`

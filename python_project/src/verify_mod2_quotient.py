@@ -1,14 +1,15 @@
-"""Item (2): the mod-2-quotient nature of appendix Tables A.2 and A.3.
+"""Lemmas 4.3 and 4.4 of the paper read modulo 2: the mod-2-quotient nature
+of the two closure lemmas.
 
-Tables A.2 and A.3 are the explicit integer certificates for Lemmas 4.3 and
-4.4 (L . sigma(Ls_bar) <= sigma(Ls_bar)  and  sigma(Ls).sigma(Ls) <= sigma(Ls)).
-This script shows what those two lemmas *are*, structurally: statements about
-the 8-dimensional F2-bilinear algebra obtained from L by the mod-2 quotient
+Created: 2026-05-22.  Updated: 2026-10-24.
+
+Lemma 4.3 (`lem:L-sigmaLsbar`) and Lemma 4.4 (`lem:sigmaLs-closed`) state
+L . sigma(Ls_bar) <= sigma(Ls_bar)  and  sigma(Ls).sigma(Ls) <= sigma(Ls).
+The script checks both as integer certificates (each product of basis
+vectors has integer coordinates in the basis of the target lattice) and
+shows what those two lemmas *are*, structurally: statements about the
+8-dimensional F2-bilinear algebra obtained from L by the mod-2 quotient
 L -> L/2L.
-
-Note (15 October 2026): "Tables A.2 and A.3" here are the paper's Tables 2 and 3
-(Appendix A, labels tbl:appendix-LN and tbl:appendix-MM).  Code and output
-unchanged.
 
   - L_bar s ∩ Ls = 2L (Wilson), so 2L is contained in sigma(Ls) and
     sigma(Ls_bar);
@@ -19,25 +20,18 @@ unchanged.
   - Lemma 4.3  <=>  mu-bar(L_bar, V) <= V   (V a LEFT IDEAL of L_bar);
   - Lemma 4.4  <=>  mu-bar(W, W)     <= W   (W a SUBALGEBRA of L_bar).
 
-The paper's Section A.1 records two further structural facts (verified
-empirically in verify_discovery2_V_isotropic.py): V is in fact a TWO-SIDED
-ideal of L_bar; under the natural plus-type quadratic form
-q(v + 2L) := N(v)/2 mod 2, both V and W are LAGRANGIANS (maximal totally
-isotropic subspaces). The decomposition L_bar = V (+) W is a Witt
-decomposition into a complementary pair of Lagrangians -- a polarization
-of the orthogonal F2-space (L_bar, q).
+The paper cites this script for these two readings in Appendix A
+(`app:mod2quotient`, "The closure criterion modulo 2"), paragraph "Wilson's
+pair and sigma's pair".  The same paragraph records two further structural
+facts, checked by verify_polarization_lagrangians.py (and by
+verify_discovery2_V_isotropic.py): V is a TWO-SIDED ideal of L_bar; and
+under the quadratic form q(v + 2L) := N(v)/2 mod 2 of display (A.2), both
+V and W are LAGRANGIANS (maximal totally isotropic subspaces), so (V, W) is
+a polarization of the orthogonal F2-space (L_bar, q), an ordered pair of
+complementary Lagrangians.
 
-This is a mod-2 *quotient* (L -> L/2L) -- distinct from a 2-adic scaling or
+This is a mod-2 *quotient* (L -> L/2L), not a 2-adic scaling or
 saturation.
-
-Note (20 October 2026, prompt 311): the tables are retired in v8; "Tables A.2
-and A.3" below are now Lemmas 4.3 and 4.4 read modulo 2 in Appendix A.  Code
-and output unchanged.
-
-Note (20 October 2026, prompt 313): "Section A.1" above is Appendix A in v8,
-which has no subsections; its Polarization paragraph cites
-verify_polarization_lagrangians.py for the two further facts.  Code and
-output unchanged.
 """
 from fractions import Fraction as F
 from itertools import product as iproduct
@@ -148,16 +142,16 @@ if __name__ == "__main__":
     lem43_int = integer_subset(L, sLsbar)
     lem43_f2  = all(in_f2span(mubar(ei,v), V) for ei in e for v in spanV)
     print()
-    print("Lemma 4.3  L . sigma(Ls_bar) <= sigma(Ls_bar)  [Table A.2]:")
+    print("Lemma 4.3  L . sigma(Ls_bar) <= sigma(Ls_bar):")
     print("   integer certificate holds :", lem43_int)
     print("   mod-2 quotient: V is a LEFT IDEAL of (L/2L, mu-bar):", lem43_f2)
     # Lemma 4.4
     lem44_int = integer_subset(sLs, sLs)
     lem44_f2  = all(in_f2span(mubar(w1,w2), W) for w1 in spanW for w2 in spanW)
     print()
-    print("Lemma 4.4  sigma(Ls).sigma(Ls) <= sigma(Ls)  [Table A.3]:")
+    print("Lemma 4.4  sigma(Ls).sigma(Ls) <= sigma(Ls):")
     print("   integer certificate holds :", lem44_int)
     print("   mod-2 quotient: W is a SUBALGEBRA of (L/2L, mu-bar):", lem44_f2)
     print()
-    print("=> Tables A.2 and A.3 certify, respectively, that V is a left")
-    print("   ideal and W is a subalgebra of the octonion F2-algebra L/2L.")
+    print("=> Read modulo 2, Lemmas 4.3 and 4.4 say, respectively, that V is")
+    print("   a left ideal and W is a subalgebra of (L/2L, mu-bar).")

@@ -1,6 +1,8 @@
-"""Item (H): Section-5 algebraic-properties of the order (Lambda, star),
-re-run on large samples, with power-associativity split into cube and quartic
-and the Elduque symmetric-composition property added.
+"""Sampled algebraic identities of the order (Lambda, star) on minimal
+vectors: the identity table of paper Appendix D (`app:samples`, "Identities
+and product norms on minimal vectors"), which cites this script.
+
+Created: 2026-05-22.  Updated: 2026-10-24.
 
 All vectors are stored in *doubled-integer* coordinates (= 2 x the actual
 1/2-integer coordinate), so the whole hot loop is exact integer arithmetic.
@@ -12,11 +14,27 @@ Properties tested on minimal vectors u, v, w of Lambda (norm 8):
   right alternativity  (u*v)*v = u*(v*v)
   flexibility          (u*v)*u = u*(v*u)
   cube power-assoc.    (u*u)*u = u*(u*u)
-  quartic power-assoc. all 5 degree-4 parenthesisations of u coincide
+  quartic power-assoc. all 5 degree-4 parenthesizations of u coincide
   symmetric (Elduque)  <u*v, w> = <u, v*w>
+
+The counts "cube AND quartic", "quartic only (not cube)" and "cube only
+(not quartic)" back the sentence of Appendix D that every sample satisfying
+the quartic identity also satisfied the cube identity.  Section 5.1 of the
+paper (`sec:identities`) gives a hand-checkable witness of each failure
+(verify_identity_witnesses.py).
 
 The product star is the paper's sigma-twisted triple-octonion product,
 sigma = (1 2).
+
+Usage: python3 verify_section5_properties.py [seed [budget [target_N]]]
+with defaults seed 20260522, a time budget of 540 s and no target count.
+A run stops at the time budget or after target_N samples, whichever comes
+first, and prints the number of samples per property.  The paper's table
+(n = 10^6 per identity) is the sum of two runs of 500,000 samples each,
+with a time budget long enough for each run to reach its target (a run
+takes several minutes):
+    python3 verify_section5_properties.py 20260601 3600 500000
+    python3 verify_section5_properties.py 20260602 3600 500000
 """
 import time, random
 
@@ -98,13 +116,8 @@ def rand_min():
                     omul2(omul2(lam,j),k)], sh)
 
 if __name__ == "__main__":
-    # The harness caps a single command at ~10 min wall time; one million
-    # samples per property would take ~11 min.  To report a clean 1,000,000
-    # without splitting that into anything readers need to know about, this
-    # script accepts a seed and a time budget on the command line and is
-    # run twice with different seeds (~340 s each, ~500k samples each); the
-    # counts are summed after the two runs.  Defaults reproduce the
-    # one-shot 802k run from 2026-05-22.
+    # Arguments: seed, time budget in seconds, target sample count (usage
+    # in the module docstring).
     import sys
     seed     = int(sys.argv[1])   if len(sys.argv) > 1 else 20260522
     budget   = float(sys.argv[2]) if len(sys.argv) > 2 else 540.0

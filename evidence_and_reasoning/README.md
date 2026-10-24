@@ -1,5 +1,7 @@
 # Evidence and Reasoning
 
+Created: 2026-04-06.  Updated: 2026-10-24.
+
 This folder documents the structured reasoning behind the research: key claims,
 logical steps, supporting arguments, and the evidence base for each.
 
@@ -12,25 +14,16 @@ This folder serves two functions:
 2. **The body of reasoning behind the paper**: the organized material the
    formal write-up draws on.
 
-The result is published (doi:10.13140/RG.2.2.22093.19686), as v7 of the paper;
-the v8 revision in progress is planned in
-[`2026-10-12_plan.md`](2026-10-12_plan.md), for the span-index findings in
-[`2026-10-14_plan.md`](2026-10-14_plan.md), and for the symbolic proof that
-replaces the table certificates in [`2026-10-20_plan.md`](2026-10-20_plan.md),
-and for the closure criterion, Egan's construction and Section 5.1 in
-[`2026-10-20_closed_form_plan.md`](2026-10-20_closed_form_plan.md), whose items 1
-to 5 have their own plans, [`2026-10-21_plan.md`](2026-10-21_plan.md),
-[`2026-10-21_criterion_plan.md`](2026-10-21_criterion_plan.md),
-[`2026-10-22_appendix_a_plan.md`](2026-10-22_appendix_a_plan.md),
-[`2026-10-22_section6_plan.md`](2026-10-22_section6_plan.md) and
-[`2026-10-23_span_plan.md`](2026-10-23_span_plan.md).
+The result is published (doi:10.13140/RG.2.2.22093.19686), as v7 of the paper.
+The plans of the v8 revision in progress are the dated `2026-10-*_plan.md`
+files listed under Structure below, each with its status.
 
 ## Structure
 
 ```
 evidence_and_reasoning/
 ├── key_claims/             # One file per major claim or lemma, with argument and references
-│                           #   (README.md is the ledger; claims 009–022 are ledger-only rows, with no dedicated file)
+│                           #   (README.md is the ledger; claims 009–024 are ledger-only rows, with no dedicated file)
 ├── references/             # Central registry of all cited works, organized by topic
 ├── trial_NNN_*.md          # Results of each computational trial (001–007)
 ├── research_statement.md   # The research goal as posed, with its resolution
@@ -38,11 +31,11 @@ evidence_and_reasoning/
 │                           #   product) and of the structure of the resulting order
 ├── terminology.md          # Authoritative glossary of terms used across the corpus
 ├── editorial_standards.md  # The five prose standards; spelling and dash conventions
-├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (complete)
-├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (engaged; items applied)
+├── 2026-05-22_plan.md      # Planning record for the v3 → v4 paper revision (executed)
+├── 2026-10-12_plan.md      # Planning record for the v7 → v8 paper revision (executed)
 ├── 2026-10-14_plan.md      # Plan: the span-index findings in v8, for the wrap-up (executed)
 ├── 2026-10-20_plan.md      # Plan: the symbolic proof replaces the table certificates (executed)
-├── 2026-10-20_closed_form_plan.md  # Plan: the closure criterion, Egan's construction, Section 5.1 by witnesses (engaged)
+├── 2026-10-20_closed_form_plan.md  # Plan: the closure criterion, Egan's construction, Section 5.1 by witnesses (executed)
 ├── 2026-10-21_plan.md      # Item 1 of the closed-form plan: Section 5.1 by witnesses, the sampled data to Appendix D (executed)
 ├── 2026-10-21_criterion_plan.md  # Item 2 of the closed-form plan: the closure criterion in Section 5.6 (executed)
 ├── 2026-10-22_appendix_a_plan.md  # Item 3 of the closed-form plan: Appendix A around the criterion modulo 2 (executed)

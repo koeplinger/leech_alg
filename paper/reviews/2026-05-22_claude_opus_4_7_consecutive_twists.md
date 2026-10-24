@@ -1,6 +1,6 @@
 # Item (1c) — consecutive σ-twists and closure on the Leech lattice
 
-**Date:** 2026-05-22
+Created: 2026-05-22.  Updated: 2026-10-24.
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 113 (Phase A of the v4 update plan).
 **Scripts:** `python_project/src/verify_consecutive_twists_exact.py`
@@ -91,15 +91,14 @@ finer split among the 84 non-line (2,2)'s — why 42 of them and not the other
 
 ---
 
-## Appendix (2026-05-23): how 35 of 70 reconciles with 7 + 28
+## Appendix: how 35 of 70 reconciles with 7 + 28
 
-Prompted by feedback that the empirical 35/70 might be wrong — feedback
-suggested the Fano-line 3-subsets contribute 0/14 (analogous to the
-(2,2)-doubles rule), giving 28/70 in total. They do not. The 3-cycle case
-and the (2,2)-double case have **different** Fano-line behaviour, and the
-empirical counts are uniform across Fano-line and non-Fano 3-subsets. This
-appendix records the bookkeeping that connects "70 three-cycles" to "7
-Fano-line subsets + 28 non-line subsets".
+The Fano-line 3-subsets do not contribute 0/14, as an analogy with the
+(2,2)-doubles rule would suggest (28/70 in total). The 3-cycle case and the
+(2,2)-double case have **different** Fano-line behavior, and the counts are
+uniform across Fano-line and non-Fano 3-subsets. This appendix records the
+bookkeeping that connects "70 three-cycles" to "7 Fano-line subsets + 28
+non-line subsets".
 
 ### Bookkeeping
 
@@ -157,7 +156,7 @@ matter: a (2,2)-double (a b)(c d) fixes three indices, and if those three
 indices form a Fano line, it never closes (0 of 21); otherwise, half close
 (42 of 84).
 
-### Where the feedback's 28/70 came from
+### Why the count is not 28/70
 
 Applying the (2,2) Fano-line rule to the 3-cycles case would give:
 
@@ -165,14 +164,14 @@ Applying the (2,2) Fano-line rule to the 3-cycles case would give:
 - 28 non-Fano subsets: 28/56 close (one orientation per subset)
 - Total: 28/70
 
-That total is what the feedback proposed. But the analogy fails: the
-empirical script shows Fano-line 3-subsets contribute 7/14, not 0/14. The
-paper's footnote stands.
+The analogy fails: the exact closure test shows that the Fano-line
+3-subsets contribute 7/14, not 0/14.
 
 ### Cross-reference
 
-- Footnote in `paper/main.tex` Theorem 1.1: empirical statement "of the 70
-  3-cycles, exactly half close — for each three-element subset of imaginary
-  indices, one of the two cyclic orientations does."
+- `paper/main.tex`, Section 5.6 (`sec:census`), after the census table:
+  "For the 3-cycles the closing half admits a description: for each
+  three-element subset of imaginary indices, one of the two cyclic
+  orientations closes."
 - `prompt_logs/152_3cycle_count_check.txt`: closure note recording the
   reconciliation.

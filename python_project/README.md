@@ -1,5 +1,7 @@
 # Python Project
 
+Created: 2026-04-06.  Updated: 2026-10-24.
+
 Self-contained Python project for the computational work of this repository: lattice constructions, octonion / Okubo algebras, trial experiments testing candidate orders on the Leech lattice Λ, exact-arithmetic verification of the symbolic-proof lemmas and of the algebraic structure of the resulting order (ideals, idempotents, square-zero elements, automorphism group), and the foundation test suite.
 
 ## Structure
@@ -62,6 +64,9 @@ python3 verify_aut_lambda_star.py              # Aut(Λ, +, ⋆): order 36, C_6 
 python3 verify_aut_octonion_crosscheck.py      # independent re-derivation of the stabilizers
 python3 verify_sigma_Ls_ideal_exclusion.py     # σ(Ls) is not an ideal of L (paper Remark 4.5)
 python3 verify_all_permutations_exact.py       # closure census over all of S₇ (1,764 of 5,039)
+python3 verify_identity_witnesses.py           # §5.1: a witness of each failing identity, checked exactly
+python3 verify_twist_span_index_census.py      # §5.6: the closure criterion (Proposition 5.3) on all 5,040 permutations; span indices
+python3 verify_product_span_proof.py           # §5.6: every step of the proof of Proposition 5.4, the span of ⋆
 ```
 
 See [`src/README.md`](src/README.md) for what each one certifies, and [`../gap_project/README.md`](../gap_project/README.md) for the independent GAP determination of the automorphism group's order and structure.

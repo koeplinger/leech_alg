@@ -3,6 +3,8 @@
 ##  test_e8_wilson.g — Wilson's E_8 lattice L = D_8^+ (paper Section 2.2,
 ##  Wilson [Wilson2009] Section 2).  Mirrors python_project/tests/test_e8_wilson.py.
 ##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
+##
 ##  Verifies:
 ##    1.  Type-1 root count = 112.
 ##    2.  Type-2 root count = 128.
@@ -111,7 +113,7 @@ od;
 CHECK("L * L  subset L  on all 240*240 = 57,600 root pairs  (Coxeter / Lemma 4.2)",
       nfail = 0);
 
-# 17-18. Lsbar and Ls subset L  (Wilson Section 2; main paper, fix to error 2.1).
+# 17-18. Lsbar and Ls subset L  (Wilson Section 2; paper Section 2.3).
 nfail := 0;
 for r in ALL_ROOTS do
     if not IsInL(OctMult(r, WILSON_S_BAR)) then nfail := nfail + 1; fi;

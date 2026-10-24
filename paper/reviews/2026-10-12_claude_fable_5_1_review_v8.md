@@ -1,6 +1,6 @@
 # Journal-quality review of the assembled v8 (12 October 2026)
 
-**Date:** 2026-10-12
+Created: 2026-10-12.  Updated: 2026-10-24.
 **Reviewer:** Claude Fable 5.1, at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v8 (12 October 2026), 24 pp., in progress
 **Prompt:** 283.
@@ -76,7 +76,7 @@ with the projected Jordan products) serves.
 > to zero, again a symbolic classification.
 
 The "again" pointed to the Section 5.2 clause "a symbolic classification
-carried out and verified in exact arithmetic", cut in v8 (changelog item 4);
+carried out and verified in exact arithmetic", cut in v8 (`paper/v7_to_v8_changelog.md`, Section 5.2);
 the two clauses were added together at prompt 248 to resolve a presubmission
 should-fix asking that the two classifications be named as symbolic (they
 cannot be established by enumeration over ℝ²⁴). "symbolic classification" now

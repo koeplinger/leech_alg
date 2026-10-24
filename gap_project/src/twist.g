@@ -1,17 +1,18 @@
 #############################################################################
 ##
 ##  twist.g — The transposition sigma = (1 2) and the resulting twisted
-##  octonion product (paper Definition 3.1 with the canonical choice
-##  CORRECTION (2026-07-12): in v4 and later, sigma alone is Definition 3.1
-##  and the sigma-twisted octonion product is Definition 3.2, equation (2).
-##  s = 1, t = 2; all transposition twists are equivalent up to relabelling
-##  by Remark 3.5).
+##  octonion product: paper Definition 3.1 (`def:twist`) with the canonical
+##  choice i = 1, j = 2, and Definition 3.2 (`def:twisted-product`).  All
+##  transposition twists are equivalent up to relabeling (paper Section 4,
+##  `sec:proof`, footnote to sigma = (1 2)).
+##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
 ##
 ##  In our 1-indexed coordinates: e_0 is at position 1, e_1 at position 2,
 ##  e_2 at position 3, etc.  The transposition sigma = (e_1 e_2) swaps
 ##  positions 2 and 3.
 ##
-##  Twisted product (paper eq. (3)):
+##  Twisted product (paper eq. (3.1), `eq:twist-formula`):
 ##    x  *_sigma  y  :=  sigma(  sigma(x)  *  sigma(y)  ).
 ##
 ##  Sigma-images of the sublattices:

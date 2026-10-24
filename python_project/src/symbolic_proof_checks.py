@@ -1,8 +1,9 @@
 """
-symbolic_proof_checks.py — Exact-arithmetic verification of the four lemmas
-needed for the symbolic proof of Leech lattice closure, plus the
-accompanying non-triviality check σ(Ls) ≠ Ls (recorded as a remark in
-Section 4 of the paper rather than a lemma).
+symbolic_proof_checks.py — Exact-arithmetic verification, on Z-bases, of
+Lemmas 4.1, 4.3 and 4.4 of the symbolic proof of Leech lattice closure, plus
+the accompanying nontriviality checks of Remark 4.5 (σ(Ls) ≠ Ls).
+
+Created: 2026-04-11.  Updated: 2026-10-24.
 
 All arithmetic is exact rational arithmetic with fractions.Fraction on the
 coordinates as given: the octonion product is expanded over the Fano table
@@ -13,37 +14,24 @@ The numpy coordinates of the foundation modules (E8 roots, s, s-bar) are
 converted to Fractions on entry (to_frac); they are integers or halves, so
 the conversion is exact.
 
-Updated 12 October 2026 (correction): the paragraph above previously
-described doubled-integer arithmetic and a multiply_doubled() helper; this
-file never had either.  The paper's Appendix A certificates are integer
-coefficient tables; this script re-derives them in exact rational
-arithmetic.
+Checks, in the numbering of the paper (v8 draft, paper/main.tex, Section 4,
+`sec:proof`):
+Lemma 4.1 (`lem:sigma-L`): σ(L) = L, on the 8 basis vectors of L
+Lemma 4.3 (`lem:L-sigmaLsbar`): L · σ(Ls̄) ⊆ σ(Ls̄), on the 64 basis products
+Lemma 4.4 (`lem:sigmaLs-closed`): σ(Ls) · σ(Ls) ⊆ σ(Ls), on the 64 basis products
+Remark 4.5 (`rem:Ls-not-closed`): σ(Ls) ≠ Ls, σ(Ls̄) ≠ Ls̄ and Ls · Ls ⊄ Ls;
+    the script prints the remark's witnesses v, w and u_1 · u_2
+Bonus: L · Ls̄ ⊆ Ls̄ (without the twist), on the 64 basis products
+Lemma 4.2 (`lem:L-order`, L · L ⊆ L) is checked on its 64 basis products by
+verify_structural_proof.py, item (E), by verify_appendix_tables_v7.py, and
+by gap_project/tests/test_lemmas.g.
 
-Updated 15 October 2026 (correction): the first sentence above says "the
-four lemmas", and the list below names Lemma 4.2; this script checks
-Lemmas 4.1, 4.3 and 4.4 (and the bonus L·Ls̄ ⊆ Ls̄), not Lemma 4.2
-(L·L ⊆ L).  Lemma 4.2 is checked on the 64 basis products by
-gap_project/tests/test_lemmas.g, and by verify_appendix_tables.py, which
-also compares the paper's three printed Appendix A tables entry by entry
-with an exact recomputation.  Code and output unchanged.
+Prints each check and its result, then a summary.  Runs in under a second.
 
-Updated 20 October 2026 (prompt 313): v8 of the paper retired the Appendix A
-tables at prompt 311 (they remain in the frozen v7 source
-paper/main_2026-07-19.tex) and proves Lemmas 4.2 to 4.4 from the closure of
-the maximal order O = (1/2)(e1 + e2) L (paper Sections 2.2 and 4.1).  The
-two dated paragraphs above are historical where they name the Appendix A
-certificates and verify_appendix_tables.py, which stops on paper/main.tex.
-In Python, Lemma 4.2 is checked on its 64 basis products by
-verify_structural_proof.py, item (E); the paper's Appendix C cites that
-script with this one and gap_project/tests/test_lemmas.g, and
-verify_appendix_tables_v7.py recomputes the v7 tables.  Code and output
-unchanged.
-
-Lemma 4.1 (paper §4): σ(L) = L
-Lemma 4.2 (paper §4): L·L ⊆ L  (maximal order)
-Lemma 4.3 (paper §4): L · σ(Ls̄) ⊆ σ(Ls̄)
-Lemma 4.4 (paper §4): σ(Ls) · σ(Ls) ⊆ σ(Ls)
-Remark rem:Ls-not-closed (paper §4): σ(Ls) ≠ Ls  (witness: Ls·Ls ⊄ Ls)
+The paper cites this script in Appendix C (`sec:methodology`), paragraph
+"Symbolic proof and numeric validation", with verify_structural_proof.py and
+gap_project/tests/test_lemmas.g: the four lemmas verified on Z-bases in a
+Python and a GAP implementation.  Ledger claims 016 and 022.
 """
 
 import numpy as np

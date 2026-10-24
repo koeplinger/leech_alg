@@ -1,16 +1,16 @@
 """A square-zero vector of Lambda of norm 24: the norm-12 stratum is not all
 of the square-zero locus.
 
-Context (paper Section 5.4).  u = (x, y, z) in Lambda satisfies u star u = 0
-iff x, y, z lie in (L sbar) ^ Im(O), have equal norms, and sum to zero
-(verify_square_zero_classification.py).  The 4,032 hexagonal triples of the
-126 norm-4 roots are exactly the NORM-12 stratum of that locus.  This script
-shows the locus does not stop there: it constructs a square-zero vector of
-Lambda of norm 24.
+Created: 2026-07-17.  Updated: 2026-10-24.
 
-Note (20 October 2026, prompt 314): in v8 the square-zero subsection is
-Section 5.5, and the paper says "the square-zero vectors of norm 12" for "the
-norm-12 stratum".  Code and output unchanged.
+Context (paper Section 5.5, label sec:squarezero).  u = (x, y, z) in Lambda
+satisfies u star u = 0 iff x, y, z lie in (L sbar) ^ Im(O), have equal
+norms, and sum to zero (verify_square_zero_classification.py).  The 4,032
+hexagonal triples of the 126 norm-4 roots are exactly the NORM-12 stratum of
+that locus, which the paper calls "the square-zero vectors of norm 12".
+This script shows the locus does not stop there: it constructs a square-zero
+vector of Lambda of norm 24.  The paper cites it in Section 5.5 for that
+vector.
 
 Construction.  Take two hexagonal triples (x1,y1,z1) and (x2,y2,z2) of E_7
 roots that are BLOCKWISE ORTHOGONAL (<x1,x2> = <y1,y2> = <z1,z2> = 0), and

@@ -1,38 +1,45 @@
 """Verify the proposed Discovery 1: explicit subalgebra structure of
-W = sigma(Ls)/2L inside the F2-octonion-algebra L/2L.
+W = sigma(Ls)/2L inside L/2L, with the octonion product reduced modulo 2L.
 
-CORRECTION (13 October 2026).  Test (a)'s "(Expected: yes.)" below was the
-proposal's expectation; the test itself prints False, and that is right: the
-descended product mu-bar on L/2L is NOT commutative (54 of the 64 ordered
-L-basis commutators lie outside 2L; paper Appendix A.1 footnote;
-verify_polarization_lagrangians.py prints a witness;
-paper/hermes_mod2_structure_supplement.tex).  The sentence printed at step (e),
-"(But L/2L itself is commutative from (a) -- contradiction.)", is wrong: there
-is no contradiction, and a non-symmetric table for W is what a noncommutative
-algebra allows.  The computed results of this script (the basis of W, the actual
-table, the two cell corrections, N, N^2, N^3, w2) stand.  See also
-paper/reviews/2026-07-18_claude_fable_5_forensic_review_v6.md, S4.  Code and
-printed output are unchanged.
+Created: 2026-05-24.  Updated: 2026-10-24.
 
-Note (20 October 2026, prompt 313): in v8 the footnote cited above as "paper
-Appendix A.1 footnote" is the commutativity footnote of the Polarization
-paragraph of Appendix A, which has no subsections.  Code and output unchanged.
+Discovery 1 is a structural proposal of the Hermes agent, quoted verbatim
+with this verification in paper/hermes_mod2_structure_supplement.tex
+(Section 2, "Discovery 1 (Hermes): the multiplication table of W").  The
+paper (v8 draft, paper/main.tex) cites this script in Appendix C
+(`sec:methodology`), in the footnote on the Hermes proposals, with that
+supplement and verify_discovery2_V_isotropic.py.
 
-Note (20 October 2026, prompt 314): that footnote was removed from Appendix A
-at prompt 314: the appendix now derives the two-sidedness of V from the
-two-sided ideal 2O of L (O the maximal order of Section 2.2).  This script's
-computation of the commutators stands.  Code and output unchanged.
+Uses MUBAR from verify_mod2_quotient.py: the structure constants of the
+product mu-bar of L/2L (the octonion product reduced modulo 2L) in the
+L-basis L_1 = s, L_2 = e0 + e1, L_3 = e0 - e1, L_{k+2} = e0 + e_k
+(k = 2, ..., 6).  Elements of L/2L are printed as their F2-coordinates in
+this basis.
 
-Tests:
-  (a) Is the F2-octonion-algebra L/2L commutative? (Expected: yes.)
-  (b) Does the proposed basis (w0, w1, w2, w3) really span W?
-  (c) What is the actual multiplication table of W in this basis?
-  (d) Does that match the proposed table?
-  (e) Structural features: 3-dim nilpotent ideal? universal zero
-      divisor? identity not idempotent in W?
+Steps, as printed:
+  (a) Is L/2L commutative?  Prints False: mu-bar is not commutative (54 of
+      the 64 ordered pairs of L-basis vectors have their commutator outside
+      2L; verify_polarization_lagrangians.py, item (3), prints a witness).
+  (b) The proposed basis (w0, w1, w2, w3): each vector lies in W, and they
+      span exactly W (dim W = 4).
+  (c) The actual multiplication table of W in this basis.
+  (d) Comparison with the proposed table: 2 of the 16 cells differ, at
+      (w0, w0) = w0 and (w1, w0) = w1.
+  (e) Symmetry of the actual table: prints False.  The line printed after
+      it, "(But L/2L itself is commutative from (a) -- contradiction.)",
+      does not hold: by (a), L/2L is not commutative, so a nonsymmetric table
+      for W is consistent.
+  (f) Structural features of W from the actual table: w2 . w = 0 for every
+      w in W (printed as "universal zero divisor"); N = span(w1, w2, w3) is
+      an ideal of W; |N^2| = 2 and |N^3| = 1, that is N^2 = span{w2} and
+      N^3 = 0; the table has 6 nonzero entries.  The line
+      "e_0 (identity of L/2L) in W: False" tests the vector (1,0,...,0),
+      which is the class of L_1 = s: e_0 is not in L and has no class in
+      L/2L, which has no left or right identity.  So the class of s is not
+      in W.  w0 = s + 2e_0 with 2e_0 not in 2L, so w0 does not represent s
+      modulo 2L; w0 is congruent to s^2 modulo 2L.
 
-Uses MUBAR from verify_mod2_quotient.py (structure constants of the
-F2-octonion-algebra L/2L in the paper's L-basis).
+Runs in under a second.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -163,7 +170,7 @@ if __name__ == "__main__":
     print(f"    Total mismatches: {mismatches} of 16")
 
     # ---------------------------------------------------------------
-    # (e) Check symmetry of the actual table (must be symmetric)
+    # (e) Check symmetry of the actual table (mu-bar is not commutative, see (a))
     # ---------------------------------------------------------------
     print("\n(e) Symmetry of actual multiplication table on W:")
     sym = all(actual[(i,j)] == actual[(j,i)] for i in range(4) for j in range(4))
@@ -181,8 +188,8 @@ if __name__ == "__main__":
     print(f"    w2 is a universal zero divisor (w2 . everything in W = 0): "
           f"{w2_universal_zd}")
 
-    # Identity of L/2L: e_0 (since e_0 is the octonion identity).
-    # Is e_0 in W? If so, is w0 the e_0 in W's basis decomposition?
+    # The vector (1,0,...,0) is the class of L_1 = s (e_0 is not in L, and
+    # L/2L has no identity).  Is it in W?  If so, print it in W's basis.
     e0 = (1,0,0,0,0,0,0,0)
     e0_in_W = e0 in W_set
     print(f"    e_0 (identity of L/2L) in W: {e0_in_W}")

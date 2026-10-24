@@ -1,14 +1,7 @@
-"""Task B, part 3: independent cross-checks of the three octonion-automorphism
-stabilisers that drive the Aut(Lambda,+,star) enumeration.
+"""Independent cross-checks of the three octonion-automorphism stabilisers
+that drive the Aut(Lambda,+,star) enumeration.
 
-CORRECTION (13 October 2026).  The GAP identification
-(gap_project/octonion_stabilisers.g; paper/automorphism_group_2026-07-12.tex)
-refutes two of the three structure expectations at the end of this docstring;
-the three orders are unchanged.  Stab(L), order 1344, is the non-split
-extension 2^3.L_3(2) (GAP: (C2 x C2 x C2) . PSL(3,2)), not AGL(3,2) =
-2^3:L_3(2).  Stab(Ls), order 168, is the solvable group 2^3:(7:3) (GAP:
-(C2 x C2 x C2) : (C7 : C3)), not the simple group L_3(2).  12096 = G_2(2) =
-U_3(3).2 is confirmed.  Code and printed output are unchanged.
+Created: 2026-07-12.  Updated: 2026-10-24.
 
 verify_aut_lambda_star.py enumerates, completely,
         Stab(L)      := Aut(O,.s) ^ {A : A(L)     = L}      order  1344
@@ -33,8 +26,25 @@ being COMPLETE, so they are cross-checked here in two independent ways.
        Lsbar, whose minimal vectors have norm 4 -- and indeed those two
        stabilisers do contain non-monomial elements.)
 
-Also exports 8x8 generators of the three groups for GAP identification
-(expected: 1344 = AGL(3,2) = 2^3:L_3(2);  168 = L_3(2);  12096 = G_2(2)).
+Also exports 8x8 generators of the three groups to
+gap_project/octonion_stabilisers_gens.g, from which
+gap_project/octonion_stabilisers.g identifies them: Stab(L) is the nonsplit
+extension 2^3.L_3(2) (GAP: (C2 x C2 x C2) . PSL(3,2)); Stab(Ls) is the
+solvable group 2^3:(7:3) (GAP: (C2 x C2 x C2) : (C7 : C3)); and Stab(Lsbar)
+is G_2(2) = U_3(3).2 (GAP: PSU(3,3) : C2).
+
+Prints, for each group, its order, whether the re-run from a different first
+generator returns the same set, and its number of nonmonomial elements (none
+in Stab(L)); for (ii), the 1344 monomial .s-automorphisms, all of which
+preserve L, and that they equal the backtracking Stab(L) as a set; then the
+number of GAP generators of each group and whether they generate it; and the
+runtime.
+
+Not cited in the paper (v8 draft, paper/main.tex).  The companion note
+paper/automorphism_group_2026-07-12.tex, which the paper cites in Section 5.4
+(`sec:autgroup`), cites it in its Section 5 (`sec:lattice`), at check (i) of
+the stabilizer enumerations, and in its Section 8 (`sec:repro`).  Ledger
+claim 010.
 """
 import os, sys, time
 from fractions import Fraction as F

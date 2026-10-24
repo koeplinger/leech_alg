@@ -1,5 +1,12 @@
-"""Verify the Polarization paragraph of paper Appendix A.1: with
-V = sigma(Ls_bar)/2L and W = sigma(Ls)/2L inside L_bar = L/2L,
+"""Verify that (V, W) is a polarization of L_bar = L/2L and that V is a
+two-sided ideal, as paper Appendix A (`app:mod2quotient`) states in its
+paragraph "Wilson's pair and sigma's pair", where it cites this script at
+display (A.3) (`eq:disp15`).
+
+Created: 2026-07-18.  Updated: 2026-10-24.
+
+With V = sigma(Ls_bar)/2L = 2O/2L and W = sigma(Ls)/2L = pO/2L inside
+L_bar (O the maximal order (2.2) of the paper, p as in (4.1)):
 
   (1) V is a TWO-SIDED ideal of (L_bar, mu_bar): the right-ideal
       direction mu_bar(V, L_bar) <= V holds in addition to the
@@ -7,21 +14,15 @@ V = sigma(Ls_bar)/2L and W = sigma(Ls)/2L inside L_bar = L/2L,
   (2) both V and W are totally isotropic under the plus-type quadratic
       form q(v + 2L) = N(v)/2 mod 2, each of dimension 4 (the Witt
       index), and V (+) W = L_bar: a Witt decomposition of (L_bar, q)
-      into a complementary pair of Lagrangians;
-  (3) mu_bar is non-commutative on L_bar (the paper's footnote: L
-      contains half-integer elements, for which the commutator need
-      not lie in 2L).
+      into a complementary pair of Lagrangians, that is, (V, W) is a
+      polarization;
+  (3) mu_bar is noncommutative on L_bar (L contains half-integer
+      elements, for which the commutator need not lie in 2L).
 
-Note (20 October 2026, prompt 313): in v8 the paper's Appendix A has no
-subsections, so "Appendix A.1" above and "(paper A.1)" in the printed
-heading mean Appendix A, whose Polarization paragraph cites this script.
-Code and output unchanged.
-
-Note (20 October 2026, prompt 314): Appendix A no longer has the footnote
-named in item (3); it derives (1) from the two-sided ideal 2O of L and (2)
-from N(2x) = N(px) = 4N(x) on O (O the maximal order of Section 2.2,
-V = 2O/2L, W = pO/2L).  The script checks all three items as before.  Code
-and output unchanged.
+The paper derives (1) from the two-sided ideal 2O of L (Remark 4.5), and
+the isotropy in (2) from N(l sbar) = N(l s) = 2N(l) in 4Z on Wilson's
+pair (Lsbar/2L, Ls/2L), a polarization that sigma maps to (V, W).  It
+states neither (3) nor the value distribution of q below.
 
 Also certified along the way: q is the standard plus-type form on
 F_2^8 (value distribution 136 zeros, 120 ones over the 256 cosets).
@@ -61,7 +62,7 @@ def q_form(coords_in_L):
 
 def main():
     print("=" * 70)
-    print("Polarization of L/2L: V, W complementary Lagrangians (paper A.1)")
+    print("Polarization of L/2L: V, W complementary Lagrangians (paper Appendix A)")
     print("=" * 70)
 
     V_basis = f2span([tuple(int(c) % 2 for c in Lcoords(v)) for v in sLsbar])

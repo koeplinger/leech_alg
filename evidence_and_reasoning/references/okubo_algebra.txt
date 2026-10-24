@@ -1,6 +1,8 @@
 Topic: Okubo algebra — constructions, properties, triality, and applications
 =====================================================================================
 
+Created: 2026-04-08.  Updated: 2026-10-24.
+
 This file collects references for the Okubo (pseudo-octonion) algebra and
 related structures: symmetric composition algebras, triality, automorphisms
 and derivations of composition algebras, and applications.
@@ -225,7 +227,3 @@ and derivations of composition algebras, and applications.
   and python_project/src/okubo.py.
 - **Status**: Not held in source_documents/; listed by bibliographic
   information only.
-
----
-
-Last updated: 2026-10-20

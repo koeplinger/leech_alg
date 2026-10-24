@@ -1,3 +1,4 @@
+% Created: 2026-05-24.  Updated: 2026-10-24.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -27,7 +28,7 @@ triple-octonion product}\\
 \address{$^{1}$External contribution}
 \address{$^{2}$Anthropic, acting at the direction of Jens K\"oplinger}
 
-\date{24 May 2026}
+\date{24 May 2026; updated 24 October 2026}
 
 \thanks{This supplement records two structural proposals about the
 mod-2 quotient $L/2L$ communicated by an external contributor
@@ -36,19 +37,18 @@ verification carried out in this project. Where the proposals were
 correct or partially correct, the structure is recorded with
 attribution; where corrections were required, the original claim is
 reproduced verbatim and corrected forward. The supplement is companion material to the main paper
-(\texttt{paper/main.tex}, v4); it is not part of the paper and is not
+(\texttt{paper/main.tex}, v8); it is not part of the paper and is not
 in its referee scope.}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-The main paper's Appendix~A, Section~A.1 (``The mod-2-quotient reading
-of Tables~A.2 and~A.3'') stops at the structural statement: under the
-descended octonion product on $\bar L := L/2L$, the subspace
-$V := \sigma(L\bar s)/2L$ is a $4$-dimensional left ideal and
-$W := \sigma(Ls)/2L$ is a $4$-dimensional subalgebra, with
-$\bar L = V \oplus W$.
+The main paper's Appendix~A (``The closure criterion modulo~$2$'') reads
+Lemmas~4.3 and~4.4 modulo~$2$: under the descended octonion product on
+$\bar L := L/2L$, the subspace $V := \sigma(L\bar s)/2L$ is a
+$4$-dimensional left ideal and $W := \sigma(Ls)/2L$ is a $4$-dimensional
+subalgebra, with $\bar L = V \oplus W$.
 
 External feedback from \emph{Hermes} (using OpenCode with DeepSeek) proposed two
 finer structural descriptions: an explicit basis and multiplication
@@ -64,15 +64,16 @@ Of the two proposals, one (Discovery~1, the $W$ multiplication table)
 required two cell corrections and one structural re-interpretation;
 the other (Discovery~2, $V$ totally isotropic) is correct in its
 asserted form and is sharpened here in two new directions: $V$~is
-in fact a \emph{two-sided} ideal of $\bar L$ (not only a left ideal,
-as in the paper), and~$W$ is also totally isotropic under the natural
+in fact a \emph{two-sided} ideal of $\bar L$ (as the paper's Appendix~A
+also records), and~$W$ is also totally isotropic under the natural
 quadratic form (correcting the proposed ``mixed isotropy''
 claim). Together, $V$ and $W$ form a Witt decomposition of $\bar L$
 into a pair of maximal totally isotropic subspaces (Lagrangians) under
 the plus-type quadratic form induced by the norm on~$L$.
 
-The Lagrangian-polarization framing developed here is now recorded
-at the end of Section~A.1 of the main paper.
+The main paper's Appendix~A records the Lagrangian framing developed
+here: $(V, W)$ is a polarization of~$\bar L$, a pair of complementary
+Lagrangians.
 \end{abstract}
 
 % ===================================================================
@@ -84,23 +85,28 @@ coordinate-symmetric placement, $\sigma = (1\;2)$ is the transposition
 of two imaginary basis units of the paper, $L\bar s$ and~$Ls$ are
 Wilson's sublattices, and $\bar L := L/2L \cong \FF_2^{\,8}$
 is the mod-2 quotient with the descended (Z-bilinear $\to$ $\FF_2$-bilinear)
-octonion product~$\bar\mu$. The paper's Appendix~A,
-Section~A.1 establishes:
+octonion product~$\bar\mu$. The paper's Appendix~A (``The closure
+criterion modulo~$2$'') establishes:
 
 \begin{enumerate}[label=(\arabic*)]
-\item $\bar L$ has an inherited $\FF_2$-bilinear product $\bar\mu$
-  whose structure constants are the entries of Table~A.1 reduced
+\item $\bar L$ has an inherited $\FF_2$-bilinear product $\bar\mu$.  In
+  the $L$-basis $L_1 = s$, $L_2 = e_0 + e_1$, $L_3 = e_0 - e_1$,
+  $L_{k+2} = e_0 + e_k$ ($k = 2, \ldots, 6$) of
+  \texttt{python\_project/src/verify\_mod2\_quotient.py}, its structure
+  constants are the $L$-coordinates of the products $L_i L_j$, reduced
   modulo~$2$. The product is non-unital ($e_0 \notin L$) and
-  non-commutative in the paper's $L$-basis $L_1,\ldots,L_8$.
-\item $V := \sigma(L\bar s)/2L$ and $W := \sigma(Ls)/2L$ are
-  $4$-dimensional $\FF_2$-subspaces of $\bar L$ with
-  $\bar L = V \oplus W$.
+  non-commutative in this $L$-basis.
+\item $V := \sigma(L\bar s)/2L = 2\mathcal O/2L$ and
+  $W := \sigma(Ls)/2L = p\mathcal O/2L$ (display~(A.3)), where
+  $\mathcal O$ is the maximal order of integral octonions of the paper's
+  Section~2.2 and $p = e_2 - e_4 + e_5 - e_6$, are $4$-dimensional
+  $\FF_2$-subspaces of $\bar L$ with $\bar L = V \oplus W$.
 \item Lemma~4.3 $\iff$ $V$ is a left ideal of $(\bar L, \bar\mu)$.
 \item Lemma~4.4 $\iff$ $W$ is a subalgebra of $(\bar L, \bar\mu)$.
 \end{enumerate}
 
 The proposals below refine~(3) and~(4). All claims have been verified
-by exact-arithmetic enumeration on the paper's Appendix-A basis;
+by exact-arithmetic enumeration in this $L$-basis;
 verification scripts are in
 \texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py}
 and~\texttt{verify\_discovery2\_V\_isotropic.py}.
@@ -162,7 +168,7 @@ $L$-basis.
 
 \paragraph{Actual multiplication table.}
 Verified by direct computation of $\bar\mu(w_i, w_j)$ using the
-structure constants in the paper's Appendix-A $L$-basis:
+structure constants in the $L$-basis of~\S1:
 \[
 \begin{array}{c|cccc}
 \bar\mu(\cdot,\cdot) & w_0 & w_1 & w_2 & w_3 \\ \hline
@@ -175,13 +181,20 @@ w_3 & w_3 & w_2 & 0   & 0   \\
 Six non-zero entries; every non-zero entry is a single basis vector.
 
 \paragraph{Identity / idempotent claim.}
-In $L$-basis coordinates, $w_0 = L_1 + L_2 + L_3$. Since
-$L_2 + L_3 = (e_0 + e_1) + (e_0 - e_1) = 2 e_0 \in 2L$, this reduces
-modulo~$2L$ to $w_0 \equiv L_1 = s$. The octonion identity~$e_0$ is not
-in~$L$ (it has odd coordinate sum, so it lies outside~$D_8^+$), and
-$\bar L$ has no multiplicative identity. The corrected statement: $w_0$
-represents~$s$ modulo~$2L$ and is an \emph{idempotent in~$W$}
-($w_0^2 = w_0$), not an inherited identity of~$\bar L$.
+In $L$-basis coordinates, $w_0 = L_1 + L_2 + L_3 = s + 2e_0$, since
+$L_2 + L_3 = (e_0 + e_1) + (e_0 - e_1) = 2 e_0$. The octonion
+identity~$e_0$ is not in~$L$ (it has odd coordinate sum, so it lies
+outside~$D_8^+$), so $2e_0 \notin 2L$ (the main paper, Section~5.2: $2L$
+``contains $4e_0$ but not~$2e_0$''), and $w_0$ is not congruent to~$s$
+modulo~$2L$: $w_0$ lies in~$\sigma(Ls)$ while $s$ does not, and the class
+of~$s$ is not in~$W$. Since $s^2 = -s - 2e_0$, $w_0 = -s^2$, so $w_0$
+represents~$s^2$ modulo~$2L$. Neither $\bar L$ nor~$W$ has a left or a
+right identity (checked over the $256$ classes of~$\bar L$ and the $16$
+of~$W$). The line ``\texttt{e\_0 (identity of L/2L) in W: False}''
+printed by \texttt{verify\_discovery1\_W\_subalgebra.py} tests the class
+$(1, 0, \ldots, 0)$ of~$L_1 = s$. The corrected statement: $w_0$ is an
+\emph{idempotent in~$W$} ($w_0^2 = w_0$), not an inherited identity
+of~$\bar L$.
 
 \paragraph{Structural features (corrected confirmations).}
 With the actual table:
@@ -198,16 +211,19 @@ With the actual table:
 
 \subsection*{Does this replace the appendix tables?}
 
-Not by itself. The mod-2 quotient subsection (paper Section~A.1) already
-converts Lemma~4.4 to ``$W$ is a subalgebra of $\bar L$''; the table
-above describes the internal structure of~$W$ as an algebra, which
-is a refinement. Verifying $W$~closes under $\bar\mu$ still requires
-checking $4 \times 4 = 16$ basis products in~$\FF_2$~--- a reduction
-from the appendix tables' $64$ integer products in $\ZZ$, but not an
-elimination. A genuine structural argument would identify~$W$
-intrinsically inside~$\bar L$ (kernel of a natural map, image of a
-canonical construction, Peirce component, radical-like piece) without
-referencing~$\sigma$ at all. That identification is not yet in hand.
+Not by itself. In the paper's Appendix~A, Lemma~4.4 read modulo~$2$
+says that $W$ is a subalgebra of~$\bar L$; the table above describes the
+internal structure of~$W$ as an algebra, which is a refinement.
+Verifying $W$~closes under $\bar\mu$ still requires checking
+$4 \times 4 = 16$ basis products in~$\FF_2$. The structural argument is
+the paper's: $\sigma(Ls) = p\mathcal O$ (display~(4.1)), with $p$ a
+purely imaginary element of the maximal order~$\mathcal O$, so
+$p\mathcal O$ is closed (display~(4.3)), which proves Lemma~4.4 in
+Section~4. Modulo~$2L$ this identifies $W = p\mathcal O/2L$
+(display~(A.3)) without reference to~$\sigma$. Other intrinsic
+descriptions of~$W$ inside~$\bar L$ (kernel of a natural map, image of a
+canonical construction, Peirce component, radical-like piece) are not
+established.
 
 % ===================================================================
 \section{Discovery 2 (Hermes): $V$ totally isotropic left ideal}
@@ -259,7 +275,7 @@ Claim & Verified \\
 \midrule
 $V$ is a left ideal of $\bar L$ & Yes (already paper Lemma~4.3) \\
 $V$ is totally isotropic, $q \equiv 0$ on $V$ & Yes (all $16$ elements)\\
-$V \oplus W = \bar L$ & Yes (already paper Section~A.1) \\
+$V \oplus W = \bar L$ & Yes (already paper Appendix~A) \\
 $W$ has mixed isotropy ($8/8$) & \textbf{No} -- $W$ is totally isotropic \\
 \bottomrule
 \end{tabular}
@@ -275,14 +291,14 @@ quadratic form $q(v) = \Nrm(v)/2 \pmod 2$. (The proposal may have used
 a different form; under the standard one, $W$ is totally isotropic.)
 
 \paragraph{Bonus structural fact: $V$ is also a right ideal.}
-The paper records $V$ as a left ideal (the mod-2 form of Lemma~4.3).
+The mod-2 form of Lemma~4.3 is that $V$ is a left ideal.
 Direct empirical test gives also
 \[ \bar\mu(V, \bar L) \subseteq V, \]
-so $V$ is in fact a \emph{two-sided ideal} of $\bar L$. This is a
-genuine structural fact not appearing in the paper's mod-2 reading,
-and the right-ideal direction does not follow from the left-ideal
-direction (the algebra $\bar\mu$ is non-commutative in the
-$L$-basis).
+so $V$ is in fact a \emph{two-sided ideal} of $\bar L$. The right-ideal
+direction does not follow from the left-ideal direction (the algebra
+$\bar\mu$ is non-commutative in the $L$-basis). The paper's Appendix~A
+records the two-sided ideal with its reason: $V = 2\mathcal O/2L$, and
+$2\mathcal O$ is a two-sided ideal of~$L$ (paper Remark~4.5).
 
 \subsection*{The Witt decomposition picture}
 
@@ -307,6 +323,12 @@ This is a clean orthogonal-geometry picture of what
 $\sigma$ accomplishes structurally: a transversal decomposition of
 $\bar L$ into a pair of complementary Lagrangians, one carrying the
 two-sided-ideal role and the other carrying the subalgebra role.
+
+Wilson's own pair $(L\bar s/2L, Ls/2L)$ is also a pair of complementary
+Lagrangians, and $\sigma$ maps it to~$(V, W)$. The first half,
+$L\bar s/2L$, is a two-sided ideal of~$(\bar L, \bar\mu)$ already; what
+$\sigma$ changes is that $W$ is a subalgebra, whereas $Ls/2L$ is not (the
+paper's Appendix~A, paragraph ``Wilson's pair and $\sigma$'s pair'').
 
 \begin{observation}
 $V$ and $W$ are not only orthogonally placed -- they are
@@ -343,23 +365,19 @@ $V$~is in addition a two-sided ideal of all of~$\bar L$, whereas
 $N$~is only known to be a two-sided ideal of~$W$.
 
 % ===================================================================
-\section{Relevance to the paper's open question}
+\section{Relation to the paper's proof of Lemma~4.4}
 % ===================================================================
 
-The paper's Section~7 records as open: \emph{a structural reason for
-Lemma~\ref{lem:sigmaLs-closed}}, asking specifically for an
-``identification of~$\sigma(Ls)$ with a left ideal, with the image
-under a norm-preserving octonion automorphism, or with some
-module-theoretic structure over~$L$, that would lift the mod-2
-picture''. The structure documented here is the next layer past
-Section~A.1: not the integer-level structural reason the open
-question targets, but a sharper account of the mod-2 picture itself
---- specifically, the Witt-decomposition interpretation and the
-internal multiplication table of~$W$. These do not close the open
-question (the integer-level lift remains open) but they refine the
-target: any future intrinsic identification of $\sigma(Ls)$ should
-descend to recover the multiplication table of~$W$ recorded in
-\S2, with $w_0$ idempotent and $w_2$ a universal zero divisor.
+The paper proves Lemma~4.4 in Section~4 from the identity
+$\sigma(Ls) = p\mathcal O$ (display~(4.1)): $p = e_2 - e_4 + e_5 - e_6$
+is a purely imaginary element of the maximal order~$\mathcal O$, so
+$p\mathcal O$ is closed under the octonion product (display~(4.3)). This
+is the integer-level structural reason for Lemma~4.4. Its reduction
+modulo~$2L$ is $W = p\mathcal O/2L$ (display~(A.3)). The structure
+documented here is a sharper account of that mod-2 picture: the
+Witt-decomposition interpretation and the internal multiplication table
+of~$W$ recorded in~\S2, with $w_0$ idempotent and $w_2$ a universal zero
+divisor.
 
 % ===================================================================
 \section*{Attribution and provenance}
@@ -368,8 +386,8 @@ descend to recover the multiplication table of~$W$ recorded in
 Both structural proposals (\textbf{Discovery~1} and \textbf{Discovery~2})
 were communicated by an external contributor identified as
 \emph{Hermes} (using OpenCode with DeepSeek). The proposals reached this project
-through review feedback on the main paper's Appendix~A
-mod-2-quotient subsection; the original wording is reproduced
+through review feedback on the mod-2 reading in the main paper's
+Appendix~A; the original wording is reproduced
 verbatim in \S2 and~\S3.
 
 The empirical verification (existence of~$V$ and~$W$ with the
@@ -393,13 +411,14 @@ originals preserved.
 % ===================================================================
 
 \begin{itemize}
-\item Paper Appendix~A, Section~A.1 (``The mod-2-quotient reading of
-  Tables~A.2 and~A.3''): the level at which the paper's structural
-  account stops.
-\item Paper~\S7, open question~(1): the integer-level structural
-  reason for Lemma~4.4 (\emph{remains open}).
+\item Paper Appendix~A (``The closure criterion modulo~$2$''): the mod-2
+  reading of Lemmas~4.3 and~4.4, with $V = 2\mathcal O/2L$ and
+  $W = p\mathcal O/2L$ (display~(A.3)).
+\item Paper Section~4: Lemma~4.4, proved from
+  $\sigma(Ls) = p\mathcal O$ (display~(4.1)).
 \item \texttt{python\_project/src/verify\_mod2\_quotient.py}: paper-side
-  verification of $V$ as a left ideal and $W$ as a subalgebra.
+  verification of $V$ as a left ideal and $W$ as a subalgebra; its
+  $L$-basis is the one used here.
 \item \texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py}:
   verification of the $W$-multiplication table (with two-cell
   corrections to the proposal).

@@ -1,16 +1,18 @@
 # Document Genres
 
+Created: 2026-07-12.  Updated: 2026-10-24.
+
 Every artifact in this repository belongs to exactly one of three genres.  The
-genre determines how the artifact may be changed.  This is the rule that
-prevents documentation from silently turning into a change log of itself.
+genre determines how the artifact may be changed.  The rule behind them:
+documents describe the current state, and git carries the history.
 
 Enforced mechanically by [`tools/lint_docs.py`](tools/lint_docs.py).
 
 ---
 
-## 1. Immutable
+## 1. Immutable: the prompt log
 
-**The prompt log.  Never edited, never rewritten, never deleted.**
+**Never edited, never rewritten, never deleted.**
 
 | Artifact | |
 |---|---|
@@ -23,85 +25,83 @@ prompt log entry, never in the old one.
 
 ---
 
-## 2. Frozen
+## 2. Public record: the released versions of the paper
 
-**A dated record of what was true, known, or decided at a point in time.**
-
-| Artifact | Frozen when |
-|---|---|
-| `paper/main_YYYY-MM-DD.tex` and the released PDF | the version is declared good to go |
-| `paper/companion.tex`, supplemental and standalone notes | on release |
-| `evidence_and_reasoning/key_claims/NNN_*.txt` | on writing |
-| `paper/reviews/**` | on writing |
-| the version changelogs in `paper/` | on release of the later version |
-| `evidence_and_reasoning/trial_NNN_results.md` | when the trial is closed |
-| research plans (`evidence_and_reasoning/YYYY-MM-DD_plan.md`) | once engaged |
-| computer programs (`python_project/src/**`, `gap_project/**`) | once referenced by a paper, note, or claim |
-| `CLOSING_NOTE.md` | on writing: it records why the effort was closed, on the day it was closed |
-
-A frozen artifact is **never rewritten in place.**  It changes in exactly two ways:
-
-- **A dated addendum.**  A block headed with its date, placed at the top of the
-  body (below the header), stating what is now known.  The original text stays
-  as written, beneath it.  Example: the dated `--- FORWARD CORRECTION (date) ---`
-  blocks in `key_claims/008_transposition_twist_order.txt`.  For a program, the
-  addendum is a dated correction block in the module docstring.
-- **Deprecation.**  Marked deprecated and superseded, naming what supersedes it.
-
-**In-progress changelogs are the one exception with a live phase.**  A version
-changelog freezes only *on release of the later version*.  Until then it is a
-living document: it declares itself *in progress, not frozen* and is edited in
-place, like a current-state document.  When its version is frozen the
-declaration is dropped and the changelog is frozen with it.
-
-The reason is not ceremony.  A frozen artifact is *evidence*: it records what
-was believed on the day it was written, and a reader must be able to see both
-the belief and its correction.  Rewriting it destroys the thing it exists to
-preserve.
-
----
-
-## 3. Current state
-
-**Describes what IS.  Forward-evolving.  Edited freely, in place.**
+**A version of the paper that has been made public is a dated record.  It is
+never edited.**
 
 | Artifact | |
 |---|---|
-| `MANIFESTO.md` | the operating rules |
-| `DOCUMENT_GENRES.md` | this file |
-| `TRIAL_METHODOLOGY.md` | how a trial is written |
-| `CURRENT_STATE.md` | the state of the research |
-| every indexing `README.md` | what is in this folder, and what each file does |
-| `evidence_and_reasoning/terminology.md` | the glossary |
-| `evidence_and_reasoning/editorial_standards.md` | the prose standards |
-| `evidence_and_reasoning/research_result.md` | the condensed summary of the finding |
-| `LICENSE.md`, `LICENSE-CODE` | the licenses |
+| `paper/main_YYYY-MM-DD.tex` and its PDF | the source of a released version, as released |
 
-**Git is the history of these files.**  They carry no history of their own.
+A preprint (v7 is on ResearchGate) is a dated public record, but not a final
+one: the latest released version is the record of the work, and when the
+finalized v8 is released it becomes the single record.  A formal journal
+publication, once there is one, is a public record of the same kind.  A
+correction to a public record goes into the next version.
+
+---
+
+## 3. Current state: everything else
+
+**Describes what IS.  Forward-evolving.  Edited in place.**
+
+Every other artifact: the operating rules and the methodology, `CURRENT_STATE.md`,
+the README files, the glossary, the research result and statement, the ledger
+and the claim files, the trial results, the plans, the changelogs, the reviews
+and notes in `paper/reviews/`, the companion and supplemental notes, the
+reference registry, and the programs with their docstrings and comments.
+
+Each document carries two bare dates near its top:
+
+```
+Created: YYYY-MM-DD.  Updated: YYYY-MM-DD.
+```
+
+`Created` is the day the document was first written; `Updated` is the day of
+its last change, set in the same edit that makes the change.  The date is
+checked (`date`), not assumed.  The paper's working source carries its date in
+the subtitle, which is likewise set to the day of the last change.  A document
+that does not carry the line yet gets it at its next edit.
 
 ### What must never appear in a current-state document
 
-- A dated correction notice: *"(Corrected 12 July 2026; earlier versions of
-  this file said …)"*, *"Correction of record"*.
-- A settlement date: *"settled 12 July 2026"*, *"was open through v5"*,
-  *"now proved"*, *"SETTLED (was OPEN)"*.
+- A dated addendum, note, correction or status block: *"Addendum (date)"*,
+  *"Note (date, prompt N)"*, *"CORRECTION (date)"*, *"Updated date (prompt N)"*,
+  *"Status (date): …"* in a stack.
+- A correction notice: *"(Corrected 12 July 2026; earlier versions of this file
+  said …)"*, *"Correction of record"*.
+- A settlement date or narrative: *"settled 12 July 2026"*, *"was open through
+  v5"*, *"now proved"*, *"SETTLED (was OPEN)"*.
 - A supersession narrative: *"this supersedes the earlier statement that …"*.
+- History: what the document, a program or the paper used to say, which
+  version did what, or at which prompt something changed.
 - A change-history footer: *"Last updated: ⟨date⟩ (new entries: … ; previous
-  update: …)"*.  A bare date stamp with no narrative is fine.
-- A status block or section restating another document's content — for example,
-  the state of the manuscript inside a folder index.
-- A section that is not about what the document is about.
+  update: …)"*.
+- A status block or section restating another document's content, or a
+  section that is not about what the document is about.
 
-If a current-state document said something that is now wrong, **just make it
-say the right thing.**  Do not announce the change.  The reader wants the truth,
+If a document says something that is now wrong, **make it say the right thing,
+and set `Updated`.**  Do not announce the change.  The reader wants the truth,
 not its provenance; `git log` and the prompt log carry the provenance.
 
-### The research statement is a special case
+### Kinds of current-state document
 
-`evidence_and_reasoning/research_statement.md` records the research question as
-posed.  It is updated only on a *significant* deviation of the research goal —
-not on every finding.  Its "Corrections applied" section is part of its purpose:
-it records how the question itself had to be sharpened.
+- **A program** is documented as it is: what it computes, what it prints, and
+  where the paper cites it, in the paper's current numbering.
+- **A plan** states its status (proposed, engaged or executed) and the
+  decisions as taken, in one block below its title; its body is the plan.
+- **A changelog** states the net change from one released version of the paper
+  to the next, part by part, with the reasons.  It does not narrate the steps
+  by which a change was reached.
+- **A review or note** records an assessment.  Where it is wrong about a fact,
+  it is corrected in place.  Material received from others, such as an
+  external review incorporated verbatim or a proposal quoted verbatim, is
+  reproduced as received; comments on it belong in the project's own text.
+- **The research statement** (`evidence_and_reasoning/research_statement.md`)
+  records the research question as posed.  It changes only on a significant
+  deviation of the research goal, and its "Corrections applied" section records
+  how the question itself had to be sharpened.
 
 ---
 
@@ -131,4 +131,6 @@ when they have fallen behind.  What it must not do is add content of the wrong
    that lands on the human.
 3. **A sweep reports before it writes.**  Findings first, diffstat second, edits
    third.
-4. **Run the linter** (`python3 tools/lint_docs.py`) before handing work back.
+4. **Date every change.**  Check today's date (`date`) and set `Updated`, and
+   for the paper its subtitle date, in the same edit as the change.
+5. **Run the linter** (`python3 tools/lint_docs.py`) before handing work back.

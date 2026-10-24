@@ -1,45 +1,29 @@
 """
 leech_wilson.py — Wilson's octonionic Leech lattice construction.
 
+Created: 2026-04-07.  Updated: 2026-10-24.
+
 The Leech lattice as an integral octonion lattice
 --------------------------------------------------
-The Leech lattice Λ is a rank-24 lattice embedded inside L³, where L = E8 =
-the integral octonions (the Coxeter–Dickson order, the unique maximal order of
-the real octonion division algebra).  Because L carries the octonion product,
-L³ inherits candidate algebraic structure.  The membership conditions (1)–(3)
-below characterise exactly which elements of L³ belong to Λ.
+The Leech lattice Λ is a rank-24 lattice embedded inside L³, where L = E8 is
+Wilson's lattice D8+ at root norm 2 (e8_wilson.is_in_L).  L is closed under
+the octonion product, and e_0 is not in L, so L is a nonunital order; as a
+lattice it is a √2-scaled copy of a maximal order of integral octonions
+(paper Section 2.2, "The E8 lattice", in `sec:prelim`).  For a fixed octonion
+multiplication, exactly seven maximal orders of integral octonions contain
+the eight basis units e_0, ..., e_7, each an E8 lattice (Coxeter 1946;
+Conway–Smith 2003; paper Section 1, `sec:intro`, and Appendix B,
+`app:history`; verify_sigma_sublattice_maximal_order.py, item (A)); without
+that condition there are infinitely many.  Because L carries the octonion
+product, L³ inherits candidate algebraic structure.  The membership
+conditions (1)–(3) below characterise exactly which elements of L³ belong
+to Λ.
 
-CORRECTION (2026-07-12).  The docstring below poses the closure question as the
-project's open central question.  It is ANSWERED: Λ is closed under the
-Z₃-symmetric triple-octonion product, and closure is proved symbolically (paper
-Section 4).  This module is unchanged and remains the reference construction of
-Λ; only the framing below is historical.
-
-CORRECTION (2026-10-13).  The first paragraph above calls L "the Coxeter–Dickson
-order, the unique maximal order of the real octonion division algebra".  For a
-fixed octonion multiplication the integral octonions have seven maximal orders,
-each an E8 lattice (Coxeter 1946; Conway–Smith 2003; paper Section 1 and
-Appendix B; verify_coxeter_1946.py).  The L of this module is D8+ at root norm 2
-(e8_wilson.is_in_L): e_0 is not in L, so L is a nonunital order and, as a
-lattice, a √2-scaled copy of one of those maximal orders (paper Section 2.2).
-The identification "L = the Coxeter–Dickson order" and the word "unique" above
-are historical.  The module is unchanged.
-
-CORRECTION (15 October 2026).  Precisely: the integral octonions have exactly
-seven maximal orders containing the Gravesian order Z<e0, ..., e7> (paper
-Section 1, v8; verify_sigma_sublattice_maximal_order.py); without that
-qualifier there are infinitely many.  And the docstring line "(= 2B, the
-Coxeter–Dickson ring scaled by 2)" below is wrong on the same count as the
-comments of e8_wilson.py: L s̄ = 2B holds (Wilson 2009, p. 2187), but B is
-Wilson's set whose assumed closure "is known as Kirmse's mistake", not closed
-under multiplication, so not the Coxeter–Dickson ring (ledger claim 019).
-The module is unchanged.
-
-The central research question of this project: whether a proposed
-octonion-based multiplication rule on R^24 restricts to a product on Λ that
-closes — i.e., whether Λ forms a 24-dimensional integral algebra under some
-octonion-derived product.  Dixon [Dixon2010] has examined this question by
-defining an XY-product.  Wilson's construction provides the reference object:
+The paper proves that Λ is closed under the Z₃-symmetric triple-octonion
+product built from the σ-twisted octonion product, so that Λ is an order in
+R^24 (paper Theorem 1.1, `thm:main`, and Corollary 1.2, `cor:order`; proof
+in Section 4, `sec:proof`).  Dixon [Dixon2010] constructs Λ with an
+octonion XY-product.  Wilson's construction provides the reference object:
 Λ as a precisely characterised rank-24 Z-lattice with algebraic membership
 conditions.
 
@@ -51,8 +35,8 @@ lattice has no vectors of norm 2, so it has no root system in the classical
 Lie-theoretic sense; the minimal-vector shell plays the equivalent structural
 role.)
 
-What this module establishes (for future verification work)
-------------------------------------------------------------
+What this module establishes
+----------------------------
 1. A membership test is_in_leech(x, y, z): Wilson's three conditions.
 2. The three families of 196,560 minimal-shell vectors.
 3. The Leech lattice is rank 24, even, self-dual (Gram det = 1 under Wilson's
@@ -67,7 +51,7 @@ Wilson's Leech lattice definition [Wilson2009 Section 3]
 ---------------------------------------------------------
     Λ = { (x, y, z) ∈ L³ :
           1. x, y, z ∈ L
-          2. x+y, x+z, y+z ∈ Ls̄       (= 2B, the Coxeter–Dickson ring scaled by 2)
+          2. x+y, x+z, y+z ∈ Ls̄       (= 2B in Wilson's notation; see e8_wilson.py)
           3. x+y+z ∈ Ls  }
 
 where s = ½(−e₀+e₁+...+e₇) (WILSON_S), s̄ = conjugate of s, and
@@ -107,6 +91,14 @@ so both x,y ∈ Ls̄ = 2B ⊂ L.  Then y ∈ Ls̄ and x = (x+y) − y ∈ 2L + 2
 In the only-one-nonzero case (y=z=0), condition 3 gives x ∈ Ls, and
 condition 2 gives x ∈ Ls̄, so x ∈ Ls ∩ Ls̄ = 2L, hence N(x) ≥ N_std(2L) = 8.
 Contradiction.  Therefore Λ has no vectors of Wilson-norm < 4 (N_std < 8).
+
+Use
+---
+A library module with no main program.  It is imported by
+consistency_checks.py, egan_baez_count.py, symbolic_proof_checks.py and the
+trial programs, and tested by python_project/tests/test_leech_wilson.py.
+Not cited in the paper (v8 draft, paper/main.tex); ledger key claim 004
+(evidence_and_reasoning/key_claims/004_wilson_leech_verified.txt).
 
 References
 ----------

@@ -1,21 +1,20 @@
 #############################################################################
 ##
 ##  leech_wilson.g — Wilson's Leech lattice Lambda inside L^3, and the
-##  three-condition membership test (paper Definition 2.4).
-##  CORRECTION (2026-07-12): "Definition 2.4" is the v3 numbering. In v4 and
-##  later, Wilson's three conditions are Definition 2.1 (label def:wilson-leech).
-##  CORRECTION (2026-10-20, prompt 313): "paper Table 1" below names the
-##  unnumbered table of the three minimal-vector families in Section 2.3 of
-##  the paper; the paper's numbered Tables 1 to 3 (v3 to v7) were the
-##  Appendix A coefficient tables, retired in v8.  Code unchanged.
+##  three-condition membership test (paper Definition 2.1,
+##  `def:wilson-leech`).
+##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
 ##
 ##  Lambda = { (x, y, z) in L^3  :
 ##              (1) x, y, z in L;
 ##              (2) x+y, x+z, y+z in Lsbar;
 ##              (3) x + y + z in Ls. }
 ##
-##  Generators of the 196,560 minimal vectors (paper Table 1, after Wilson's
-##  Section 3).  J = { +-e_t : t = 0..7 } is the set of 16 unit octonions.
+##  Generators of the 196,560 minimal vectors (the unnumbered table of the
+##  three minimal-vector families in paper Section 2.3, `subsec:wilson-leech`,
+##  after Wilson's Section 3).  J = { +-e_t : t = 0..7 } is the set of 16
+##  unit octonions.
 ##
 ##  Requires:  src/octonion.g, src/e8_wilson.g, src/sublattices.g
 ##

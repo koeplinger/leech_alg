@@ -1,5 +1,7 @@
 # AI Agent Manifesto
 
+Created: 2026-04-06.  Updated: 2026-10-24.
+
 This document defines the operating rules for the AI agent assisting with this research project. These rules are binding for all AI-assisted work in this repository.
 
 ---
@@ -110,17 +112,16 @@ The AI agent operates in the role of a highly knowledgeable and thorough mathema
 
 ## 12. Forward-Evolving Corrections
 
-- When a mistake is discovered — whether in a claim, a computation, a classification, or the framing of a question — **it must be corrected forward, not by altering the historical record**.
-- Prompt logs, key claim files, and other artifacts that are already committed must be left as they were at the time of writing.  A new entry (new prompt log, amended claim, or explicit correction note) is created to record the correction and its rationale.
-- This applies equally to mistakes made by the AI agent and to mistakes made by the human researcher.  The research record must reflect what was actually believed and done at each step, so that the methodology remains auditable.
-- The git commit history is the ultimate source of truth for what changed and when.
-- **Forward correction applies to frozen artifacts, not to current-state ones.**  A frozen artifact (a released paper version, a claim file, a review, a plan, a referenced program) takes a *dated addendum*, or is marked deprecated and superseded; its original text stays as written.  A current-state artifact (this manifesto, the methodology, `CURRENT_STATE.md`, every indexing README, the terminology, the editorial standards) is simply corrected in place, with no notice, no date, and no supersession narrative: it describes what **is**, and git carries what it used to say.  The full taxonomy is [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and it is enforced mechanically by [`tools/lint_docs.py`](tools/lint_docs.py).
+- When a mistake is discovered, whether in a claim, a computation, a classification, or the framing of a question, **the document that holds it is corrected in place**: it is made to say the right thing, and its `Updated` date is set.  Documents describe what **is**; git carries what they used to say, and the prompt log carries why they changed.
+- Two kinds of artifact are never edited.  A closed **prompt log** entry is immutable: a correction goes in a later entry, with its rationale.  A **released version of the paper** is a public record: a correction goes into the next version.
+- This applies equally to mistakes made by the AI agent and to mistakes made by the human researcher.  The prompt log keeps the inquiry auditable: what was believed and done at each step.
+- The git commit history is the ultimate source of truth for what changed and when.  The full taxonomy is [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and it is enforced mechanically by [`tools/lint_docs.py`](tools/lint_docs.py).
 
 ---
 
 ## 13. Document Genres
 
-- Every artifact belongs to exactly one genre — **immutable**, **frozen**, or **current state** — and the genre determines how it may be changed.  See [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md).
+- Every artifact belongs to exactly one genre: **immutable** (the prompt log), **public record** (the released versions of the paper), or **current state** (everything else).  The genre determines how it may be changed.  See [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md).
 - Run `python3 tools/lint_docs.py` before handing work back and before any commit that touches documentation.  It is the mechanical check for this section and for §8 and §12.
 
 ---

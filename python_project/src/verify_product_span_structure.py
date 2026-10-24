@@ -1,20 +1,26 @@
 """Validation + structure of S = Z-span(Lambda star Lambda), following
 verify_product_span_index.py (which found [Lambda : S] = 65536 = 2^16).
 
+Created: 2026-07-10.  Updated: 2026-10-24.
+
+The paper cites this script, with verify_product_span_index.py and
+verify_product_span_proof.py, at Proposition 5.4 (`prop:span`, Section
+5.6), which proves by hand that S = {(w, w, w) + 2u : w in Ls, u in Lambda},
+of index 2^16, containing 2 Lambda.  Check (b), 2 Lambda in S, with the
+index gives the order 2^8 of S/2 Lambda, which the proof shows to be
+isomorphic to Ls/2Ls.
+
 Checks:
   (a) Consistency: random products u star v (u, v random Z-combinations
       of the Lambda basis) lie in S.  (Must hold by bilinearity; failure
       would indicate a bug in the span computation.)
   (b) Is 2*Lambda contained in S?  If yes, S/2Lambda is an F_2-subspace
       of Lambda/2Lambda of dimension 24 - 16 = 8, i.e., S is the full
-      preimage of an 8-dimensional subspace of Lambda/2Lambda -- a
-      2-primary structural statement in the same vein as Section A.1.
+      preimage of an 8-dimensional subspace of Lambda/2Lambda, a
+      2-primary structural statement like those of Appendix A of the
+      paper (`app:mod2quotient`).
   (c) The HNF diagonal of S (in Lambda coordinates), showing where the
       index 2^16 sits.
-
-Note (20 October 2026, prompt 313): "Section A.1" in (b) above is Appendix A
-of the paper in v8 (the mod-2-quotient reading), which has no subsections.
-Code and output unchanged.
 """
 import sys, os, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

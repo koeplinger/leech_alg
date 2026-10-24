@@ -1,6 +1,8 @@
 Topic: Triality and algebraic approaches to physics
 =====================================================
 
+Created: 2026-04-12.  Updated: 2026-10-24.
+
 This file collects soft references for the broader program of using
 triality and algebraic structures (normed division algebras, Moufang
 loops, composition algebras) in mathematical physics.  These references
@@ -19,9 +21,9 @@ technical claims.
 - **Title**: Moufang Loops and Groups with Triality are Essentially the
   Same Thing
 - **Published in**: Memoirs of the American Mathematical Society,
-  Volume 260, Number 1252 (2019), vi+194 pp.
+  Volume 260, Number 1252 (2019), xiv+186 pp.
 - **Year**: 2019
-- **ISBN**: 978-1-4704-3622-7
+- **ISBN**: 978-1-4704-3622-3 (print); 978-1-4704-5321-3 (e-book)
 - **DOI**: 10.1090/memo/1252
 - **Topics**: triality, Moufang loops, groups with triality, octonions
 - **Originality note**: Peer-reviewed monograph published in the Memoirs
@@ -31,8 +33,9 @@ technical claims.
   loop-theoretic setting, and a natural reference point for any
   ternary-structured reformulation of the construction in this paper.
 - **Status**: Bibliographic entry only; not held in source_documents/.
-- **Verification**: Title, volume, and DOI to be confirmed by the human
-  researcher before the final submission pass.
+- **Verification**: Title, series, volume, number, year, DOI, ISBNs and extent
+  checked against the zbMATH Open record and the KIT library catalogue
+  (katalog.bibliothek.kit.edu/bib/1189801).
 
 ---
 
@@ -95,39 +98,3 @@ technical claims.
 - **Status**: Bibliographic entry only; not held in source_documents/.
 - **Verification**: arXiv identifier 2306.13098 and journal reference
   Eur. Phys. J. C 83 (2023) 747 verified by WebFetch in prompt 194.
-
----
-
-Last updated: 2026-06-07 (GresnigtGourlayVarma2023 added to accompany
-v5 paper bibliography update; S_3 family-symmetry context)
-
----
-
-Addendum (2026-07-18): the "Last updated: 2026-06-07" footer above is
-incomplete; the file was also edited in place on 2026-07-02 (terminology
-alignment; see git history).  Recorded here as a dated marker per
-DOCUMENT_GENRES.md; future changes to this file take dated addenda.
-
-Addendum (2026-10-13): two fields of the [Hall2019_Moufang] entry above, drafted
-best-effort at prompt 041, are wrong.  Checked against the zbMATH Open record and
-the KIT library catalogue (katalog.bibliothek.kit.edu/bib/1189801): the ISBN
-given as 978-1-4704-3622-7 is not a valid ISBN-13 (its check digit computes to
-3); the print ISBN is 978-1-4704-3622-3 and the e-book ISBN 978-1-4704-5321-3.
-The extent is xiv+186 pp., not vi+194 pp.  Title, series (Memoirs AMS vol. 260,
-no. 1252, 2019) and DOI 10.1090/memo/1252 are confirmed, which closes the
-entry's "to be confirmed" line.  The paper's bibliography entry carries none
-of the corrected fields.
-
-Addendum (2026-10-15): [GresnigtGourlayVarma2023] note updated: the S_3 block
-permutation is the S_3 factor of Aut(Λ, +, ⋆) ≅ C_6 × S_3, a result of the
-paper's Section 5.3 (derivation in paper/automorphism_group_2026-07-12.pdf).
-The note's "empirical finding" and "Section 7" followed the v5 Conclusion,
-which stated S_3 ⊆ Aut(Λ, +, ⋆) empirically and left the group open.
-
-Addendum (2026-10-20): the header and the [FureyHughes2025_TrioOfTrialities]
-note updated to the paper's Outlook (Section 8): [Hall2019_Moufang] is cited in
-the paragraph on a ternary reformulation, Furey–Hughes and
-Gresnigt–Gourlay–Varma among the programs in algebraic physics.  The note's
-"contemporary example" and "algebraic skeleton" described the Outlook as first
-drafted (12 April 2026), which discussed the work at length; since 28 April
-2026 the paper has cited it only in that list.

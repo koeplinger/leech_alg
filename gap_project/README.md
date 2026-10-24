@@ -1,5 +1,7 @@
 # GAP / LOOPS verification suite
 
+Created: 2026-04-28.  Updated: 2026-10-24.
+
 A GAP re-implementation of the verification tests that went into the paper
 [`paper/main.tex`](../paper/main.tex) and the companion note
 [`paper/companion.tex`](../paper/companion.tex), running in parallel to the
@@ -28,7 +30,8 @@ LOOPS-library `MoufangLoop(16, 3)` (the standard octonion loop).
   `octonion_stabilisers.g`; without it the scripts print the group orders and
   then abort in a break loop at the structure identification.
 - **The AtlasRep package** (usually autoloaded with GAP) for one line of
-  `octonion_stabilisers.g`, which confirms Stab(Ls̄) ≅ U₃(3).2 = G₂(2) against
+  `octonion_stabilisers.g`, which confirms Stab(Ls̄) ≅ U₃(3).2 = G₂(2) in
+  Aut(O, ·_σ) against
   `AtlasGroup("U3(3).2")`.  Only that single cross-check needs it; the orders
   and structure descriptions do not.
 
@@ -81,7 +84,7 @@ gap_project/
 │                              in the Z-basis of Lambda, written by
 │                              verify_aut_lambda_star.py
 ├── octonion_stabilisers.g     standalone: identifies Stab(L), Stab(Ls),
-│                              Stab(Lsbar) inside the compact G_2
+│                              Stab(Lsbar) inside the compact G_2 = Aut(O, ._sigma)
 ├── octonion_stabilisers_gens.g  its input: 8x8 rational generators, written
 │                              by verify_aut_octonion_crosscheck.py
 ├── src/                   shared modules (loaded by every test)
@@ -221,7 +224,7 @@ independent second opinion on the orders):
 | Script | Input | What it reports |
 |---|---|---|
 | `aut_lambda_star.g` | `aut_lambda_star_gens.g` (written by `python_project/src/verify_aut_lambda_star.py`) | `Size` and `StructureDescription` of Aut(Λ, +, ⋆) from three 24×24 integer generators: **order 36, C₆ × S₃**.  Also the center (C₆), the derived subgroup (C₃), and the fact that −I₂₄ is **not** in the group (so the containment in Co₀ is strict) |
-| `octonion_stabilisers.g` | `octonion_stabilisers_gens.g` (written by `python_project/src/verify_aut_octonion_crosscheck.py`) | identification of the three octonion-automorphism lattice stabilizers: Stab(L) = 2³·L₃(2) of order 1344, Stab(Ls) = 2³:(7:3) of order 168, Stab(Ls̄) = U₃(3).2 = G₂(2) of order 12096 |
+| `octonion_stabilisers.g` | `octonion_stabilisers_gens.g` (written by `python_project/src/verify_aut_octonion_crosscheck.py`) | identification of the three lattice stabilizers in Aut(O, ·_σ), the automorphism group of the σ-twisted product: Stab(L) = 2³·L₃(2) of order 1344, Stab(Ls) = 2³:(7:3) of order 168, Stab(Ls̄) = U₃(3).2 = G₂(2) of order 12096 (not computed here: under the standard product the orders are 1344, 21 and 1344; ledger claim 010a) |
 
 Run them from inside `gap_project/`:
 

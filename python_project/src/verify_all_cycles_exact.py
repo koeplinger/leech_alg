@@ -1,6 +1,8 @@
 """Exact-arithmetic survey: closure of pi-twisted product on Lambda for
 all pure n-cycles pi in S_7, n in {3,4,5,6,7}.
 
+Created: 2026-05-24.  Updated: 2026-10-24.
+
 Re-uses the 24-vector Z-basis of Lambda and the closes() test from
 verify_consecutive_twists_exact.py (each call: 24*24 basis-pair products
 all required to lie in Lambda, exact arithmetic, no sampling).
@@ -12,11 +14,10 @@ Counts of n-cycles in S_7:
   6-cycles:  C(7,6) * 5!  =   7 * 120 = 840
   7-cycles:  C(7,7) * 6!  =   1 * 720 = 720
 
-
-RUNTIME NOTE (2026-07-17): about 15-20 minutes single-threaded on the
-project's reference machine (2,344 permutations x 576 exact basis-pair
-products).  For the full-S_7 census, including all mixed cycle types and
-multiprocessing, see verify_all_permutations_exact.py.
+Runtime: about 15-20 minutes single-threaded on the project's reference
+machine (2,344 permutations x 576 exact basis-pair products).  For the
+full-S_7 census, including all mixed cycle types and multiprocessing, see
+verify_all_permutations_exact.py.
 """
 from itertools import combinations, permutations
 from verify_consecutive_twists_exact import closes

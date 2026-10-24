@@ -3,17 +3,22 @@
 in Lambda }, companion to verify_product_span_index.py (which found
 [Lambda : S] = 65536 = 2^16 for the sigma-twisted product star).
 
-Paper Section 6, "Anatomy of the Baez--Egan closure": representing
-u = (x,y,z), v = (x',y',z') in Lambda subset O^3 as off-diagonal
-Hermitian matrices X, Y in h3(O), direct computation gives
+Created: 2026-07-10.  Updated: 2026-10-24.
+
+Paper Section 6 (`sec:related`), paragraph "Anatomy of the Baez--Egan
+closure on Lambda", which cites this script for the span index 2^25 of
+phi: representing u = (x,y,z), v = (x',y',z') in Lambda subset O^3 as
+off-diagonal Hermitian matrices X, Y in h3(O) (the paper's M_u, M_v),
+direct computation gives (display (6.3))
     2(XY + YX) = D + R,
-with D in Z^3 diagonal,
+with D in Z^3 diagonal (the paper's Delta, display (6.4); in the paper, D
+names the ideal of Section 5.4),
     D = 4(<x,x'> + <y,y'>, <x,x'> + <z,z'>, <y,y'> + <z,z'>)
 (so tr D = 8 <u,v>), and R the off-diagonal residue, lying in Lambda.
 The projected Jordan product is phi(u, v) := R.
 
 Parametrization (Hermitian, zero diagonal; chosen so the diagonal of
-2(XY + YX) matches the stated D verbatim -- the span index is invariant
+2(XY + YX) matches the stated D verbatim; the span index is invariant
 under block-permutation conventions):
     X_12 = x, X_21 = xbar, X_13 = ybar, X_31 = y, X_23 = z, X_32 = zbar.
 Expanding 2(XY + YX) entry-wise and reading the off-diagonal blocks
@@ -30,20 +35,19 @@ Validations (all must pass before the index is computed):
       Z matching the stated D, off-diagonal entries are Hermitian and
       match the closed-form phi blocks.
   (2) Lambda-closure: phi(B_i, B_j) in Lambda for all 24 x 24 = 576
-      basis pairs (the paper's "an order in the sense of Theorem 1.1").
+      basis pairs (the paper's "an order in the sense of Corollary 1.2",
+      `cor:order`).
   (3) Commutativity: phi(u, v) = phi(v, u) on 20 random pairs.
 
 Then, exactly as in verify_product_span_index.py: the Hermite normal
 form of the 576 basis-pair products in L^3 coordinates (integers)
 gives |det| = [L^3 : S_phi]; dividing by [L^3 : Lambda] = 4096 gives
-[Lambda : S_phi].  Finally, as in verify_product_span_structure.py,
-checks whether 2*Lambda is contained in S_phi (membership of the 24
-doubled basis vectors via the exact HNF inverse).  All arithmetic exact.
-
-Note (20 October 2026, prompt 315): the paper's Section 6 now writes M_u, M_v
-for the Hermitian matrices X, Y and Delta for the diagonal piece D (D is the
-ideal of Section 5.4), and calls the index the span index of phi.  Code and
-output unchanged.
+[Lambda : S_phi], the span index of phi.  Finally, as in
+verify_product_span_structure.py, checks whether 2*Lambda is contained in
+S_phi (membership of the 24 doubled basis vectors via the exact HNF
+inverse).  All arithmetic exact.  The run prints [Lambda : S_phi] =
+33554432 = 2^25 and finds 18 of the 24 doubled basis vectors in S_phi, so
+2*Lambda is not contained in S_phi.
 """
 import sys, os, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

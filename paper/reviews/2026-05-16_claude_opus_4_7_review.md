@@ -1,19 +1,17 @@
 # Formal referee review of the main paper (round 8)
 
-**Date:** 2026-05-16
+Created: 2026-05-16.  Updated: 2026-10-24.
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product*, dated 29 April 2026 (v3), in the LyX `paper` documentclass, with the supplemental repository as context.
 **Prompt:** 095 — accuracy review while the paper is out for peer review.
 
 This is an eighth-pass review, requested as an accuracy/quality check while the manuscript is under external review. Unlike the previous round (which only spot-checked the changes since round 6), this pass re-derived the load-bearing claims from scratch in an independent implementation, and re-read the manuscript end to end for argument, formulas, references, and wording.
 
-> **Correction note (added during Prompt 096).** Two follow-up items supersede parts of this review: (1) internal lemma/remark/proposition cross-references in this file were off by one in several places and have been corrected in place (pre-commit transcription fix); (2) the round-9 review (`2026-05-16_..._review_2.md`) records a *substantive* item this round missed — a false, self-contradictory claim in the §2.3 footnote. The "no substantive item" verdict below should be read as superseded by round 9 on that point.
-
 ---
 
 ## Recommendation
 
-**Accept.** The paper satisfies acceptable academic standards. The central theorem is correctly stated and correctly proved; the proof is symbolic and complete; every checkable numerical claim I tested reproduces exactly. No substantive item was found. One terminology point (the word "order") is the only thing a referee is at all likely to contest, and it is already disclosed in the manuscript — see §1 below.
+**Accept.** The paper satisfies acceptable academic standards. The central theorem is correctly stated and correctly proved; the proof is symbolic and complete; every checkable numerical claim I tested reproduces exactly. No substantive item was found in this round; the round-9 review (`2026-05-16_claude_opus_4_7_review_2.md`) records one that this round missed, a false, self-contradictory claim in the §2.3 footnote. One terminology point (the word "order") is the only thing a referee is at all likely to contest, and it is already disclosed in the manuscript — see §1 below.
 
 ---
 

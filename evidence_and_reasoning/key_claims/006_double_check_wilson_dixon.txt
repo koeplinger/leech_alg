@@ -1,20 +1,7 @@
 Claim number: 006
-Title: Double-check of Wilson and Dixon Leech lattice conclusions; integral algebra question is OPEN
-Status: ESTABLISHED (for claims 1a, 1b); OPEN (for claim 2)
-Date: 2026-04-07
-
---- FORWARD CORRECTION (2026-07-12) ---
-
-Per Manifesto Section 12, this file is preserved as written; the current
-statements live in paper/main.tex and in the ledger
-evidence_and_reasoning/key_claims/README.md.
-
-The OPEN item recorded below -- whether Lambda admits a bilinear product under
-which it is closed -- was ANSWERED on 2026-04-12 by claim 008: the
-Z_3-symmetric triple-octonion product closes on Lambda, and closure is proved
-symbolically (paper Section 4, four lemmas on a Z-basis).  The status line
-above ("OPEN for claim 2") is therefore historical.  The parts of this file
-that double-check Wilson and Dixon stand as written.
+Title: Double-check of Wilson and Dixon Leech lattice conclusions; the integral algebra question is answered by claim 008
+Status: ESTABLISHED (claims 1a and 1b; claim 2 by claim 008)
+Created: 2026-04-07.  Updated: 2026-10-24.
 
 --- STATEMENT ---
 
@@ -34,9 +21,11 @@ Three sub-claims were examined:
 
   Claim 2:  Λ₂₄ admits an order structure (a bilinear product under which
             Λ is closed).
-  Status: OPEN.  Neither Wilson nor Dixon demonstrates such a product.
-          Dixon [Dixon2010 Section 7] explicitly poses this as an open question:
-          "No idea yet."
+  Status: ESTABLISHED by claim 008: Λ is closed under the Z₃-symmetric
+          triple-octonion product, and closure is proved symbolically (paper
+          Theorem 1.1, Section 4).  Neither Wilson nor Dixon demonstrates
+          such a product.  Dixon [Dixon2010 Section 7] explicitly poses it
+          as an open question: "No idea yet."
 
 --- EVIDENCE FOR CLAIM 1a (WILSON — FULLY ESTABLISHED) ---
 
@@ -99,7 +88,7 @@ Computationally established (test_full_shells_differ):
   (24).  They are different representations of the Leech lattice minimal shell
   in the same ambient space R^24 = L³.
 
---- EVIDENCE FOR CLAIM 2 (INTEGRAL ALGEBRA — OPEN) ---
+--- EVIDENCE FOR CLAIM 2 (INTEGRAL ALGEBRA) ---
 
 What both constructions establish:
   Λ₂₄ is a rank-24 lattice embedded inside L³, where L = E8 = integral
@@ -117,17 +106,15 @@ What neither construction establishes:
   Section 7 whether Λ₂₄ can be given its own algebraic structure.  His answer:
   "No idea yet."
 
-  This is the central unsolved question of the research program (stated in
-  leech_wilson.py docstring: "The central research question of this project:
-  whether a proposed octonion-based multiplication rule on R^24 restricts to
-  a product on Λ that closes").
+  This is the central question of the research program.  Claim 008
+  answers it: Λ is closed under the Z₃-symmetric triple-octonion product
+  (paper Theorem 1.1, Section 4).
 
 --- OPEN QUESTIONS ---
 
 1. Even lattice property for Dixon's shell — should be tested computationally.
 2. Self-duality of Dixon's lattice — should be proven or verified.
-3. Integral algebra on Λ₂₄ — OPEN (the project's central question).
-4. Structural explanation for the 17,232 shared vectors between Wilson and
+3. Structural explanation for the 17,232 shared vectors between Wilson and
    Dixon (especially the type-2 and type-3 overlaps of 6,144 and 10,752).
 
 --- REFERENCES ---

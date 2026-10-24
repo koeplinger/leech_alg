@@ -1,26 +1,28 @@
 """Reproduce Egan's lower bound 244,035,421 on the number of copies of the
 Leech lattice in O^3 = (E_8)^3.
 
+Created: 2026-07-15.  Updated: 2026-10-24.
+
 Source: Greg Egan, in J. C. Baez, "Integral octonions (Part 10)",
 The n-Category Cafe, 1 December 2014,
 https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html
-(Correction, 18 July 2026: the part-10 date fixed from 12 December to
-1 December 2014; 12 December is part 11's date.)
 
-This is Egan's DERIVATION, an orbit-stabiliser lower bound; it is NOT a
-re-run of his enumeration (which counts the embeddings one by one, and which
+This is Egan's DERIVATION, an orbit-stabilizer lower bound; it is NOT a
+re-run of Egan's enumeration (which counts the embeddings one by one, and which
 this project does not reproduce). It reproduces the arithmetic that turns
-two standard group orders into the figure quoted in Section 6 of the paper.
+two standard group orders into the figure quoted in Section 6 of the paper
+(`sec:related`), in the paragraph on Baez–Egan (2014); the footnote on the
+figure cites this script.
 
 The argument.
   The isometry group of the lattice O^3 = (E_8)^3 acts on the set of Leech
-  sublattices of the type Egan considers. By orbit-stabiliser, the orbit of
+  sublattices of the type Egan considers. By orbit-stabilizer, the orbit of
   one such lattice Lambda has size
         |Isom(O^3)| / |Stab(Lambda)|.
-  The stabiliser of Lambda inside Isom(O^3) is a subgroup of the full
+  The stabilizer of Lambda inside Isom(O^3) is a subgroup of the full
   automorphism group of the Leech lattice, Aut(Lambda) = Co_0, so
         |Stab(Lambda)| <= |Co_0|.
-  Hence the orbit -- and therefore the total number of such Leech lattices --
+  Hence the orbit, and therefore the total number of such Leech lattices,
   is at least
         |Isom(O^3)| / |Co_0|,
   and, being an integer, at least the ceiling of that ratio.
@@ -43,7 +45,7 @@ from math import prod
 E8_INVARIANT_DEGREES = (2, 8, 12, 14, 18, 20, 24, 30)
 W_E8 = prod(E8_INVARIANT_DEGREES)
 
-# |Co_0| from its prime factorisation.
+# |Co_0| from its prime factorization.
 CO0_FACTORISATION = {2: 22, 3: 9, 5: 4, 7: 2, 11: 1, 13: 1, 23: 1}
 CO0 = prod(p**e for p, e in CO0_FACTORISATION.items())
 

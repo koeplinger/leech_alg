@@ -1,16 +1,14 @@
 Topic: Recent computer-assisted experimental work in adjacent areas
 =========================================================
 
+Created: 2026-07-19.  Updated: 2026-10-24.
+
 This file collects references for recent works, in lattice theory and in
 nonassociative algebra, that pursue related questions through computer-assisted
 experiment. The published v7 cites them in Section 6 (Related work) as adjacent
-experimental efforts, not as prior art the present construction builds on; v8
-no longer cites them (at prompt 309 the author ruled that, with the paper moved
-away from experimental mathematics, they are too far from its subject; they
-were removed at prompt 315, Step C of evidence_and_reasoning/2026-10-20_plan.md),
-and the entries are kept for the record. All
-bibliographic fields were verified against live sources (journal pages, arXiv,
-author publication lists) before inclusion.
+experimental efforts, not as prior art the present construction builds on; the
+v8 draft does not cite them. All bibliographic fields were verified against live
+sources (journal pages, arXiv, author publication lists) before inclusion.
 
 ---
 

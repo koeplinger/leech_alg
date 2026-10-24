@@ -1,23 +1,20 @@
 # 2026-10-21 — Plan: the closure criterion in Section 5.6
 
-**Addendum (2026-10-22, prompt 324).**  Decision (g) is settled: the paper
-carries no credit note for Proposition 5.3.  The work is explicitly a
-human–AI collaboration (Section 1, the declaration on the use of AI,
-Appendix C), and its results are joint; the records keep tracing where each
-result came from.
+Created: 2026-10-21.  Updated: 2026-10-24.
 
-**Status (2026-10-22, prompt 323): executed.**  The author's decisions (d),
-(e) and (f) as recommended, and "is given here" for the tension of §1; the
-four edits of §3 are applied to `paper/main.tex` (changelog item 23).
-Decision (g) was not understood as asked; it is asked again in plain words
-(prompt log 323), and until the author decides, the paper does not name the
-review.
-
-**Status (2026-10-21, prompt 322): proposed, not executed.**  Item 2 of
-`2026-10-20_closed_form_plan.md` (engaged at prompt 318), as its own plan.
-Drafted by Claude Opus 5.5 at the direction of Jens Köplinger, and reviewed
-before hand-over (§4).  Nothing in the paper has changed; the edits below are
-applied only after the author has read them.
+**Status: executed.**  This plan is item 2 of the closed-form plan,
+`2026-10-20_closed_form_plan.md`.  The author's decisions of §1: (d), (e)
+and (f) as recommended, and "is given here" for the tension around F7;
+(g) the paper carries no credit note for Proposition 5.3, since the work
+is a human–AI collaboration (Section 1, the declaration on the use of AI,
+Appendix C) and its results are joint, while the records trace where each
+result came from.  The four edits of §3 are in `paper/main.tex` as
+written here: Proposition 5.3 (`prop:criterion`) and the reading of the
+census table in Section 5.6 (`sec:census`), Section 1's overview, and
+Section 7's third question (`sec:conclusion`).  `paper/v7_to_v8_changelog.md` states
+the change under Section 5.6; the records of §5 are part of item 7 of
+the parent plan.  Drafted by Claude Opus 5.5 at the direction of Jens
+Köplinger.
 
 ---
 
@@ -291,7 +288,7 @@ New:
 ## 5. On execution, and what stays for later items
 
 The four edits are applied to `paper/main.tex`; the paper is built and the
-changed pages read; changelog item 23 records the change; the linter runs.
+changed pages read; the changelog records the change; the linter runs.
 The parent plan's addendum notes decision (g), the provenance of
 Proposition 5.3 in the paper, for the phase in which the author absorbs and
 owns the work.  Appendix A's research-program sentence and Section 7's fourth

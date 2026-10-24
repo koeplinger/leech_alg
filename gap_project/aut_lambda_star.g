@@ -2,10 +2,11 @@
 ##
 ##  aut_lambda_star.g -- structure of Aut(Lambda, +, star)
 ##
-##  REQUIREMENT NOTE (2026-07-17): StructureDescription and IdGroup need
-##  GAP's Small Groups library (SmallGrp).  Without it (e.g. gap -A or a
-##  minimal build) the script prints Size(G) = 36 and then aborts in a
-##  break loop.
+##  Created: 2026-07-12.  Updated: 2026-10-24.
+##
+##  StructureDescription and IdGroup need GAP's Small Groups library
+##  (SmallGrp).  Without it (e.g. gap -A or a minimal build) the script
+##  prints Size(G) = 36 and then aborts in a break loop.
 ##
 ##  Reads the 24x24 integer matrices produced by
 ##      python_project/src/verify_aut_lambda_star.py
@@ -21,6 +22,8 @@
 ##  and knows nothing of that enumeration.
 ##
 ##  Expected:  Size = 36,  StructureDescription = "C6 x S3".
+##
+##  The paper cites this script in Section 5.4 (`sec:autgroup`).
 ##
 #############################################################################
 

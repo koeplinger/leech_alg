@@ -1,10 +1,10 @@
 # v6 → v7 revision notes
 
+Created: 2026-07-19.  Updated: 2026-10-24.
+
 **v6** — dated 18 July 2026, 23 pages. Frozen at [paper/main_2026-07-18.tex](main_2026-07-18.tex).
 
-**v7** — dated 19 July 2026, 24 pages. **Frozen at [paper/main_2026-07-19.tex](main_2026-07-19.tex)** (19 July 2026); the last released version. The working source is [paper/main.tex](main.tex). This changelog is self-contained: it records every v6 → v7 change on its own, and the frozen v6 artifacts (including [v5_to_v6_changelog.md](v5_to_v6_changelog.md) and everything earlier) are not touched.
-
-**Addendum (13 October 2026).** Item 1's Accuracy note rested on the module docstring of `python_project/src/symbolic_proof_checks.py`, which was wrong: the script works in exact rational arithmetic (`fractions.Fraction`) on the coordinates as given, never doubled them, and has no `multiply_doubled()` (docstring corrected in place on 12 October 2026, prompt 283). The note's second clause stands: the Appendix A certificate tables are integer coefficient tables, and the v7 abstract's "certified in exact integer arithmetic" rests on them (three of the four lemmas; the fourth, $\sigma(L) = L$, is a parity argument). See [v7_to_v8_changelog.md](v7_to_v8_changelog.md), Record notes (12 October 2026). The text below stands as written.
+**v7** — dated 19 July 2026, 24 pages. **Frozen at [paper/main_2026-07-19.tex](main_2026-07-19.tex)** (19 July 2026); the last released version. This changelog is self-contained: it records every v6 → v7 change on its own.
 
 v7 is a publication-preparation revision aimed at an experimental-mathematics venue. The emphasis shifts toward the experimentation and methodology, the experimental discovery of closure and its exact-arithmetic certification, presented as a path that may lead to deeper structural understanding without claiming that understanding here.
 
@@ -15,14 +15,14 @@ v7 is a publication-preparation revision aimed at an experimental-mathematics ve
 - **What changed.** The abstract was rewritten from 309 words to 149, within a 150-word cap. It keeps the existence statement, the construction (nine octonion-multiplication blocks under cyclic $\mathbb{Z}_3$ routing), and Wilson's transposition $\sigma$, and it foregrounds the experimental arc: closure "first observed experimentally, on over 12 million random pairs of minimal vectors," followed by "the proof reduces to four lemmas certified in exact integer arithmetic." The mod-$2L$ Witt decomposition and the open polarization question are compressed to one sentence ("we ask which polarizations lift"). The v6 second paragraph surveying the Section 5 structural facts (idempotents, square-zero elements, automorphisms, span and index, the permutation-cycle census) is dropped from the abstract; those results stay in Section 5. The historical paragraph is compressed to a single sentence naming Bruck's repair; the full Dickson–Kirmse–Mahler–Bruck–Coxeter account stays in Appendix B.
 - **Where.** Abstract only.
 - **Rationale.** The target venue caps the abstract length, and the experimental-methodology framing matches the audience. The abstract remains standalone (no `\cite`, no `\ref`); the v6 inline locator "[J. Algebra 322 (2009), 2186–2190]" for Wilson is dropped, the full citation remaining in the bibliography.
-- **Accuracy.** "exact integer arithmetic" is exact: the four-lemma certification runs in doubled-integer coordinates throughout (`symbolic_proof_checks.py`, which doubles all coordinates "to avoid fractions entirely"), and the Appendix A certificate tables are integer 8-tuples. "over 12 million random pairs of minimal vectors" matches the >12,000,000-pair experimental run recorded in Appendix C. "$\sigma$ ... is an octonion-algebra isomorphism" is the same statement as v6's "an algebra isomorphism of the octonions"; the precise form, $\sigma\colon (\mathbb{O}, \cdot_\sigma) \to (\mathbb{O}, \cdot)$, is Definition 3.2. "$\sigma$ leaves the $E_8$ lattice $L$ invariant ... but moves Wilson's sublattices $L\bar s$ and $Ls$" is Lemma 4.1 ($\sigma(L) = L$) together with $\sigma(Ls) \ne Ls$, $\sigma(L\bar s) \ne L\bar s$ (Remark 4.5).
+- **Accuracy.** "exact integer arithmetic" rests on the Appendix A certificate tables, which are integer coefficient tables, for three of the four lemmas; the fourth, $\sigma(L) = L$, is a parity argument. `symbolic_proof_checks.py` checks Lemmas 4.1, 4.3 and 4.4 in exact rational arithmetic (`fractions.Fraction`) on the coordinates as given. "over 12 million random pairs of minimal vectors" matches the >12,000,000-pair experimental run recorded in Appendix C. "$\sigma$ ... is an octonion-algebra isomorphism" is the same statement as v6's "an algebra isomorphism of the octonions"; the precise form, $\sigma\colon (\mathbb{O}, \cdot_\sigma) \to (\mathbb{O}, \cdot)$, is Definition 3.2. "$\sigma$ leaves the $E_8$ lattice $L$ invariant ... but moves Wilson's sublattices $L\bar s$ and $Ls$" is Lemma 4.1 ($\sigma(L) = L$) together with $\sigma(Ls) \ne Ls$, $\sigma(L\bar s) \ne L\bar s$ (Remark 4.5).
 
 ---
 
 ## 2. Section 6: recent computer-assisted experimental work in adjacent fields
 
 - **What changed.** Three groups working experimentally in nearby fields are added to Section 6 (Related work), before the Corradetti entry, introduced by a one-line framing sentence and ordered chronologically by their *Experimental Mathematics* contribution:
-  - **Kirschmer–Nebe (2022):** binary Hermitian lattices over number fields, classified by computer (*Exp. Math.* 31); together with Nebe's extremal even unimodular 72-dimensional lattice of minimum 8, built from the Leech lattice (*Crelle* 673, 2012).
+  - **Gabriele Nebe (2022):** binary Hermitian lattices over number fields, classified by computer (Kirschmer–Nebe, *Exp. Math.* 31); together with Nebe's extremal even unimodular 72-dimensional lattice of minimum 8, a tensor product of the Barnes lattice and the Leech lattice (*Crelle* 673, 2012).
   - **Höhn–Mason (2023):** the 290 fixed-point sublattices of the Leech lattice (*J. Algebra* 448, 2016) and the $N=4$ superconformal structure on most vertex superalgebras of odd unimodular rank-24 lattices (*Exp. Math.* 32); together with the Höhn–Seysen computer-assisted determination of the order of the Monster (arXiv:2508.01037, 2025).
   - **Dotsenko (2025):** identities in nonassociative algebras by computer experiment, with conjectures on nilpotence and the nil property (*Exp. Math.* 34).
 - **Where.** Section 6; six new `\bibitem` entries (Dotsenko2025, HohnMason2016, HohnMason2023, HohnSeysen2025, KirschmerNebe2022, Nebe2012). Page count 23 → 24.
@@ -36,8 +36,6 @@ v7 is a publication-preparation revision aimed at an experimental-mathematics ve
 A journal-quality review of v7 for the Experimental Mathematics audience ([reviews/2026-07-19_claude_opus_4_8_experimental_math_review_v7.md](reviews/2026-07-19_claude_opus_4_8_experimental_math_review_v7.md); 2 should-fix, 1 split, 11 refuted, all adversarially verified) produced these changes:
 
 - **Remark 1.3 (§1), epistemic hygiene.** "such products *always* land on strictly higher shells" → "such products land on strictly higher shells, exhaustively for the self-products and on $10^6$ sampled distinct pairs." The distinct-pair bound is sampled (only the self-products are exhaustive, per Remark 4.5); flagging it honors the paper's own sampled-vs-exhaustive rule. This also resolves the 15 July fine-comb's item N1.
-- **Section 6, Nebe header.** "Gabriele Nebe and Markus Kirschmer (2022)" → "Gabriele Nebe (2022)", featuring the researcher and no longer reversing the published Kirschmer–Nebe byline that the sentence and bibitem both give.
-- **Nebe's 72-dimensional lattice** is now described precisely as "a tensor product of the Barnes lattice and the Leech lattice" (was "built from the Leech lattice").
 - **Bremner added.** The Dotsenko paragraph becomes a joint "Vladimir Dotsenko (2025) and Murray R. Bremner (2016)" mention pointing to computational nonassociative algebra: Dotsenko's experimental identities, and the Bremner–Madariaga–Peresi computer determination of the polynomial identities of the octonions (*Comment. Math. Univ. Carolin.* 57 (2016), no. 4, 413–452, DOI 10.14712/1213-7243.2015.188, verified field-by-field). New `\bibitem` BremnerMadariagaPeresi2016, in its alphabetical slot; registered in `evidence_and_reasoning/references/recent_experimental_work.txt`.
 - **Conclusion (§7) cross-reference.** "the pattern in the table" → "the pattern in the census table", making the reference to the Section 5.6 table precise.
 
@@ -47,4 +45,4 @@ Page count unchanged at 24.
 
 *Revision chain: [v3 → v4](v3_to_v4_summary.md), [v4 → v5](v4_to_v5_changelog.md), [v5 → v6](v5_to_v6_changelog.md), v6 → v7 (this file).*
 
-— Claude (Anthropic), at the direction of Jens Köplinger; opened and frozen 2026-07-19
+— Claude (Anthropic), at the direction of Jens Köplinger

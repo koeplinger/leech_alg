@@ -1,7 +1,16 @@
-"""The structural proof of Lemmas 4.2 to 4.4 (paper v8, Section 4, 20 October
-2026, prompt 311): the maximal order O := (1/2)(e1 + e2) L of Section 2.2, the
-two lattice identities, the Moufang identity for a purely imaginary
+"""The structural proof of Lemmas 4.2 to 4.4 (paper Section 4, label
+sec:proof): the maximal order O := (1/2)(e1 + e2) L of Section 2.2, the two
+lattice identities (4.1), the Moufang identity (4.2) for a purely imaginary
 multiplier, and the three lemmas as their consequences.
+
+Created: 2026-10-20.  Updated: 2026-10-24.
+
+The paper cites this script in Section 2.2 at the maximal order O of (2.2)
+(label eq:MO), with verify_sigma_sublattice_maximal_order.py; in Section 4.1
+at the lattice identities (4.1) (label eq:multiples); and twice in Appendix C
+(label sec:methodology, "Symbolic proof and numeric validation"): for the
+finite content of the proof, and with symbolic_proof_checks.py and
+gap_project/tests/test_lemmas.g for the lemmas on Z-bases.
 
 Conventions are the paper's: the multiplication (2.1) (octonions.py), L = D_8^+
 with s = (-e0 + e1 + ... + e7)/2, Wilson's sublattices L sbar = {l . sbar} and
@@ -34,9 +43,10 @@ L s = {l . s} (left multiples), sigma = (1 2).  Exact arithmetic throughout
     4.2, L . L in L), L . 2O in 2O (Lemma 4.3), (pO)(pO) in pO (Lemma 4.4),
     and the three lemma inclusions on the paper's lattices L, sigma(L sbar),
     sigma(L s).
-(F) The remark's exclusion: sigma(L s) = p O is not an ideal of L on either
-    side (some basis product of L . sigma(Ls) and of sigma(Ls) . L lies
-    outside sigma(Ls)), while sigma(L sbar) = 2 O is a two-sided ideal of L.
+(F) The exclusion of Remark 4.5 (label rem:Ls-not-closed): sigma(L s) = p O
+    is not an ideal of L on either side (some basis product of L . sigma(Ls)
+    and of sigma(Ls) . L lies outside sigma(Ls)), while sigma(L sbar) = 2 O
+    is a two-sided ideal of L.
 
 Usage: python3 verify_structural_proof.py   (about 3 s)
 """

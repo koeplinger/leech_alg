@@ -1,11 +1,13 @@
 """Item (1c), EXACT test: do consecutive sigma-twists close on the Leech lattice?
 
-An earlier lemma criterion turned out to be only *sufficient* (the
-condition-2 lemma L.pi(Ls_bar) <= pi(Ls_bar) is not necessary -- the three
-terms of a pairwise block sum are coupled by membership in Lambda).  This
-script uses the only fully reliable test: a genuine Z-basis of Wilson's
-Lambda (24 vectors), and -- by bilinearity -- star_pi closes on Lambda iff
-all 24*24 basis-pair products lie in Lambda.
+Created: 2026-05-22.  Updated: 2026-10-24.
+
+A lemma criterion is only *sufficient* (the condition-2 lemma
+L.pi(Ls_bar) <= pi(Ls_bar) is not necessary: the three terms of a pairwise
+block sum are coupled by membership in Lambda).  This script uses the only
+fully reliable test: a genuine Z-basis of Wilson's Lambda (24 vectors), and,
+by bilinearity, star_pi closes on Lambda iff all 24*24 basis-pair products
+lie in Lambda.
 
 pi ranges over the identity, the 21 transpositions, the 70 three-cycles and
 the 105 (2,2)-double-transpositions -- exactly the permutations reachable as

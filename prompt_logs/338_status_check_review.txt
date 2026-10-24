@@ -1,0 +1,23 @@
+Prompt 338 -- status check during the review of item 7's records
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'How is it going?'
+
+Context: asked after the read-only adversarial review of item 7's records
+(workflow run wf_f62eead5-395) was launched.  Before the question the
+author ran the terminal commands /agents and /list-agents (local
+commands, not prompts to the assistant).  Prompts 334, 335, 336 and 337
+are open.
+
+Response: status reported.  Item 6 is applied and read in the PDF
+(abstract, p. 1; Section 7, p. 14).  Item 7's records are written: the
+current-state records and the ledger, dated notes in the cited scripts,
+the registry, decision (q)'s dated addenda (Hermes supplement, PDF
+rebuilt; W-concrete review), the evidence README's plan status and the
+parent plan's addendum.  The adversarial review of all uncommitted edits
+(five file groups, each with a refuting verifier) is running; its
+confirmed findings are applied before prompts 334 to 337 are closed.
+Nothing is committed.
+
+Status: CLOSED.

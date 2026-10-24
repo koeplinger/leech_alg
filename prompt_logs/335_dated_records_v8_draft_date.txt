@@ -1,0 +1,29 @@
+Prompt 335 -- the dated records and the paper's v8 draft date set to 24
+October 2026
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Today is 24 October 2026. Make sure to update the dated
+records, including the paper's v8 draft date.'
+
+Context: received while the read-only gathering workflow of item 7 (prompt
+334) was running; prompt 334 stays open until item 7 is done.
+
+Rulings: the paper's v8 draft date and the date stamps of the
+current-state records become 24 October 2026.  Dated entries that record
+when something happened (prompt logs, changelog items, dated addenda) keep
+their own dates.
+
+Response: the paper's subtitle reads "24 October 2026 (v8)" (changelog
+section 0, the subtitle history); CURRENT_STATE.md carries "Last updated:
+2026-10-24"; the three registry files edited under prompt 334 carry the
+bare stamp "Last updated: 2026-10-24" (in prior_art_orders_on_leech.txt
+and background_octonions.txt in place of footers with a narrative; in
+leech_lattice_octonionic_constructions.txt in place of the bare stamp of
+2026-10-20).  The records written today carry 24 October 2026: changelog
+item 27 and the record notes, the parent plan's addendum, the dated
+addenda of decision (q) and the script notes.  The ledger, research_result
+and the glossary carry no date stamp.  Dated entries that record when
+something happened keep their own dates.
+
+Status: CLOSED.

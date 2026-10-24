@@ -1,6 +1,8 @@
 """
 e8_wilson.py — Wilson's E8 lattice construction.
 
+Created: 2026-04-06.  Updated: 2026-10-24.
+
 Wilson [Wilson2009] defines an E8 lattice L inside the real octonion algebra
 as the Z-integer span of 240 octonions:
 
@@ -28,17 +30,16 @@ Key structural element
 Wilson proves: s in L, s-bar in R = L-bar (the conjugate lattice).
 Key structural results from [Wilson2009] Section 2:
     N(s) = 2
-    Ls = 2B   (B = another copy of E8 / Coxeter-Dickson ring)
+    L s̄ = 2B   (Wilson 2009, p. 2187)
     2L ⊂ Ls ⊂ L
 
-CORRECTION (15 October 2026).  The line "Ls = 2B" above, and the comment at the
-definition of WILSON_S below, should read L s̄ = 2B: Wilson's identity is
-L s̄ = 2B (Wilson 2009, p. 2187), where B is his set whose assumed closure "is
-known as Kirmse's mistake"; B is stable under the 16 units but not closed under
-multiplication, so it is not the Coxeter–Dickson ring (that is Wilson's
-A = ½(1 + i₀)L, with L = (1 + i₀)A).  In the paper's coordinates L s̄ = 2J₁ and
-Ls = J₁·s² (ledger claim 019; verify_sigma_sublattice_maximal_order.py, item D).
-Code unchanged.
+Here B, as a lattice a scaled copy of E8, is Wilson's set whose assumed
+closure "is known as Kirmse's mistake": it is stable under the 16 units but
+not closed under multiplication.  Wilson's copy of the Coxeter–Dickson
+integral octonions is A = ½(1 + i₀)L, with L = (1 + i₀)A (p. 2187).  In the
+paper's coordinates L s̄ = 2J₁ and Ls = J₁·s², with J₁ the analogue of
+Kirmse's set for the paper's multiplication (ledger claim 019;
+verify_sigma_sublattice_maximal_order.py, item (D)).
 
 Lattice membership criterion
 ------------------------------
@@ -51,6 +52,15 @@ Verification: every type-1 root ±e_a ± e_b has integer coordinates summing
 to 0 or ±2 (both even).  Every type-2 root (1/2)(±e_0...±e_7) with k odd
 minus signs has all coordinates in Z+1/2 and sum equal to (8-2k)/2 = 4-k;
 since k is odd, 4-k is odd.  Both types satisfy the criterion.
+
+Use
+---
+A library module with no main program.  The roots, WILSON_S, inner_product
+and is_in_L are imported by leech_wilson.py, symbolic_proof_checks.py,
+consistency_checks.py and the trial programs, and tested by
+python_project/tests/test_e8_wilson.py.  Not cited in the paper (v8 draft,
+paper/main.tex); ledger key claim 002
+(evidence_and_reasoning/key_claims/002_wilson_e8_verified.txt).
 
 References
 ----------
@@ -130,7 +140,7 @@ def wilson_e8_roots() -> List[Octonion]:
 # s = (1/2)(-1 + i_0 + i_1 + ... + i_6) in Wilson's notation.
 # Under our index map: s = (1/2)(-e_0 + e_1 + e_2 + ... + e_7).
 # Properties: s in L (it is a type-2 root with exactly 1 minus sign),
-# N(s) = 2, and Ls = 2B  where B is the Coxeter-Dickson ring.
+# N(s) = 2, and L s-bar = 2B, with B Wilson's set of the module docstring.
 # Reference: [Wilson2009] Section 2.
 _s_coords = np.array([-0.5] + [0.5] * 7)
 WILSON_S: Octonion = STANDARD_ALGEBRA.element(_s_coords)

@@ -1,6 +1,6 @@
 # The span index of twisted triple products: verification of the external v8 review, and what index 1 means (14 October 2026)
 
-**Date:** 2026-10-14
+Created: 2026-10-14.  Updated: 2026-10-24.
 **Author of this note:** Claude Fable 5.1 (Anthropic), at the direction of Jens Köplinger
 **Subject:** the external review of v8 by Claude Opus 5.5 (13 October 2026),
 incorporated verbatim with its evidence as
@@ -12,65 +12,15 @@ in at least two independent implementations; the structural identification of
 Section 4 in two; the maximal order of Section 3.3 in two.  Not
 peer-reviewed.
 
-**Addendum (14 October 2026, prompt 288).**  Three corrections; the text
-below stands as written.
-
-1. Section 3.1's parenthesis "(the minimal vectors included, which are
-   never products, since product norms are at least 16)" gives the wrong
-   reason.  The bound $N \geq 16$ holds only for products of two minimal
-   vectors under $\sigma$ (paper, Remarks 1.3 and 5.1); under $s_r$ such
-   products have norms 20, 24, 28 and others.  The valid argument: the block
-   sum of $u \star_g v$ is $(x+y+z) \cdot_g (x'+y'+z')$, a product of two
-   vectors of $Ls$, whose norm lies in $16\mathbb Z$.  So the 189,360 minimal
-   vectors whose block sum has norm 4, 8 or 12 are never single products,
-   under any twist by an isometry of $L$ (count computed at prompt 288); the
-   remaining 7,200 were not settled.  Index 1 says that every vector of
-   $\Lambda$ is an integer combination of products, not that it is a
-   product.
-2. Section 3.2's "chain $\Lambda \subset \Lambda + \mathbb Z(1_r, 0, 0)
-   \subset L^3$ ... with indices 4 and $2^{10}$" is wrong: $1_r \notin L$,
-   so $\Lambda + \mathbb Z(1_r, 0, 0)$ is not contained in $L^3$.  It is
-   $\star_r$-closed of index 4 over $\Lambda$ and, like
-   $\Lambda + \mathbb Z\varepsilon_1$ for $\sigma$, not contained in $L^3$
-   (checked exactly at prompt 288).
-3. Section 2's "Not re-verified here: the review's spectrum ..., its rule
-   via $2 \cdot 1_g$" was overtaken after this note was written.  The
-   adversarial pass on the assessment (prompt 287) re-derived the spectrum
-   and, at the level of the 142 subalgebra Lagrangians, the rule
-   ($h = 1$ for all 120 not containing the class of $2e_0$; $2^5$ or $2^8$
-   otherwise).  At prompt 288 two further agents found the rule, Theorem A
-   and Theorem B to hold on random samples of $W(E_8)$ (1,115 and 439
-   closing twists).  The rule's direction "index $> 1$ when $2 \cdot 1_g$
-   lies in a Wilson sublattice" has a short proof; the converse and the
-   exact values are computed, not proved.
-
-**Addendum (14 October 2026, prompt 290).**  Two corrections; the text
-below stands as written.
-
-1. Section 4, item 4: "this remains a finite check ($p$ does not
-   normalize the order, so the Moufang identity does not give it)" is
-   wrong.  The premise holds ($pO^{(4)} \neq O^{(4)}p$), but closure needs
-   no normalizing.  For purely imaginary $p$, $p^2 = -N(p)$, and the left
-   Moufang identity gives $(pa)(pb) = p((ap)b)$ for all octonions $a, b$.
-   Since $p = e_2 - e_4 + e_5 - e_6$ is purely imaginary and lies in
-   $O^{(4)}$, $p\,O^{(4)}$ is closed, and Lemma 4.4 follows from the closure
-   of $O^{(4)}$ as Lemma 4.3 does (ledger claim 021; symbolic and exact
-   checks at prompt 290).
-2. Section 4, item 1: $L\bar s = 2J_1$ and $L = J_1 \cdot s$ are Wilson's,
-   and this note does not cite him: in his coordinates "$L\bar s = 2B$",
-   with $B$ the set whose assumed closure "is known as Kirmse's mistake"
-   (Wilson 2009, p. 2187), and "$Bs = L$" (p. 2189).  New beyond Wilson:
-   $\sigma(L\bar s) = 2O^{(4)}$ and $\sigma(Ls) = p\,O^{(4)}$, and the closure
-   argument of item 1.  The closing remark of Section 4 on "twice Bruck's
-   order" was not checked: $O^{(4)}$ is one of the seven, and which of them
-   is Coxeter's $J$ was not determined.
-
-Notation as in the paper (v8): $L = D_8^+$, Wilson's left-multiple sublattices
+Notation as in the paper (`paper/main.tex`, v8): $L = D_8^+$, Wilson's left-multiple sublattices
 $L\bar s$ and $Ls$, $\Lambda \subset L^3$; for an isometry $g$ of $\mathbb R^8$
 with $g(L) = L$, $x \cdot_g y := g^{-1}(g(x) \cdot g(y))$, $\star_g$ the triple
 product of Definition 3.3 built from $\cdot_g$, $S_g := \mathbb Z\text{-span}\{u
 \star_g v : u, v \in \Lambda\}$; the paper's $\sigma = (1\,2)$ is the reflection
-in the root $e_1 - e_2$.
+in the root $e_1 - e_2$, and the paper's $\rho$ (Section 5.6) is the
+reflection $s_r$ of Section 2.  Sections 1 to 4 cite the paper by its current
+numbering (labels resolve in `paper/main.aux`); Sections 5 and 6 review the
+v8 draft of 13 October 2026 and use its numbering.
 
 ---
 
@@ -137,19 +87,35 @@ $(1, 2^5)$ for $2^{10}$, $(1, 1)$ for index 1; its proof is a sketch whose
 steps were machine-checked, and the assessment agent wrote out the four
 remaining lemmas.
 
-Not re-verified here: the review's spectrum over all 17,280 Lagrangian pairs
-(the values $2^5$, $2^8$ and the counts), its rule via $2\cdot 1_g$, the
-signed-permutation census, and the right-multiple convention variant.
+The review's spectrum over all 17,280 Lagrangian pairs (the values $2^5$,
+$2^8$ and the counts) and its rule via $2 \cdot 1_g$ were re-derived by the
+adversarial pass on the assessment (prompt 287), at the level of the 142
+subalgebra Lagrangians $M/2L$ of $L/2L$: $h = [M : \langle M \cdot M\rangle]$
+is 1 for all 120 that do not contain the class of $2e_0$, and $2^5$ or $2^8$
+for the other 22.  Two further agents (prompt 288) found the rule, Theorem A
+and Theorem B to hold on random samples of $W(E_8)$ (1,115 and 439 closing
+twists).  The rule's direction "index $> 1$ when $2 \cdot 1_g$ lies in a
+Wilson sublattice" has a short proof; the converse and the exact values are
+computed, not proved.  Not re-verified here: the signed-permutation census
+and the right-multiple convention variant.
 
 ## 3. What index 1 means
 
 **3.1 Two different properties.**  The span index $[\Lambda : S_g]$ measures
 how far the products fall short of generating $\Lambda$ as a
 $\mathbb Z$-module: index 1 says $S_g = \Lambda$, every vector of $\Lambda$
-(the minimal vectors included, which are never products, since product norms
-are at least 16) is an integer combination of products; the nonunital ring
-$(\Lambda, \star_g)$ is idempotent, $\Lambda^2 = \Lambda$, and the mod-2
-defect of Section 5.5 vanishes.  Maximality of the order is a different
+is an integer combination of products; the nonunital ring
+$(\Lambda, \star_g)$ is idempotent, $\Lambda^2 = \Lambda$, and
+$\Lambda/S_g$, which is $(\mathbb Z/2)^{16}$ for $\sigma$ (paper
+Proposition 5.4), is trivial.  Index 1 does not say that every vector of
+$\Lambda$ is a product.  The block sum of $u \star_g v$ is
+$(x+y+z) \cdot_g (x'+y'+z')$, a product of two vectors of $Ls$, so its norm
+lies in $16\mathbb Z$, while the norm of the product itself need not (under
+$s_r$, products of two minimal vectors have norms such as 20, 24 and 28).
+Hence the 189,360 minimal vectors whose block sum has norm 4, 8 or 12 are
+never single products, under any twist by an isometry of $L$ (computed
+exactly at prompts 288 and 339); whether any of the other 7,200 is a
+product is not settled.  Maximality of the order is a different
 property: no lattice $\Lambda' \supsetneq \Lambda$ is $\star_g$-closed.  The
 first bounds the products from below, the second bounds the order from above;
 neither implies the other.
@@ -160,11 +126,12 @@ For $g \in \operatorname{Aut}(L)$, $L \cdot_g L = g^{-1}(g(L) \cdot g(L))
 $u, v \in L^3$ is a sum of three elements of $L$: $L^3 \star_g L^3 \subseteq
 L^3$, and $[L^3 : \Lambda] = 2^{12}$.  Hence $(\Lambda, \star_g)$ is not a
 maximal order for any such $g$, the 28 index-1 reflections included (checked
-exactly for $\sigma$, the 3-cycle and $s_r$).  For the index-1 reflection the
-chain $\Lambda \subset \Lambda + \mathbb Z(1_r, 0, 0) \subset L^3$ of
-$\star_r$-closed lattices has indices 4 and $2^{10}$, with $1_r = s_r(e_0)$
-the identity of $\cdot_r$ (GAP, one agent; the analogous chain for $\sigma$ is
-Section 7 of the paper).  Ledger claim 018.
+exactly for $\sigma$, the 3-cycle and $s_r$).  For the index-1 reflection,
+$\Lambda + \mathbb Z(1_r, 0, 0)$, with $1_r = s_r(e_0)$ the identity of
+$\cdot_r$, is $\star_r$-closed of index 4 over $\Lambda$; since
+$1_r \notin L$, it is not contained in $L^3$, like
+$\Lambda + \mathbb Z\varepsilon_1$ for $\sigma$ (paper Section 5.3).  Checked
+exactly at prompts 288 and 339.  Ledger claim 018.
 
 The second pass added a reason that does not depend on the twist at all.
 For any product assembled from a bilinear block product by the paper's
@@ -206,22 +173,21 @@ property of the products, not the effect of a unit-like element.  Two toy
 counterexamples (two-dimensional, nonunital, exact) show that neither
 implication holds in general.
 
-**3.5 Verdict on significance.**  A necessary correction and a worthwhile
-structural remark, not a breakthrough: it settles the paper's Section 7
-question (a product built from octonion multiplication can have the minimum
-index), it shows $2^{16}$ is a feature of $\sigma$ and not of the construction
-(index 1 is the generic case over the closing twists, $\sigma$ the extreme
-case), and it leaves the main theorem, maximality and the open question on
-Lemma 4.4 untouched.  The review's own measured stance is right.
+**3.5 Verdict on significance.**  A worthwhile structural remark, not a
+breakthrough: a product built from octonion multiplication can have the
+minimum index (paper Section 5.6), so $2^{16}$ is a feature of $\sigma$ and
+not of the construction (index 1 is the generic case over the closing
+twists, $\sigma$ the extreme case); the main theorem and maximality are
+untouched.  The review's own measured stance is right.
 
 **3.6 Maximality or index 1 as a route to a table-free closure proof.**
 Maximality presupposes closure and is false here; index 1 is a consequence of
 the structure, not a cause.  Theorem A reduces closure to two subalgebra
-conditions (it shrinks the certificate from three 64-entry integer tables to
-closure of two 4-dimensional subspaces of $L/2L$) but does not remove finite
-certificates.  What removes them for Lemma 4.3 is Section 4.
+conditions, closure of two 4-dimensional subspaces of $L/2L$, but does not
+remove finite certificates.  What removes them for Lemmas 4.3 and 4.4 is
+Section 4: both follow from the closure of $O^{(4)}$.
 
-## 4. A structural reason for Lemma 4.3
+## 4. A structural reason for Lemmas 4.3 and 4.4
 
 Verified first-hand (exact; the assessment agent's computation, re-derived
 independently by the orchestrator; ledger claim 019).  Let $C_K$ be Kirmse's
@@ -232,7 +198,12 @@ for the seven Fano lines $\ell$ of eq. (2.1), and $J_1 := \mathbb Z^8 +
 Then:
 
 1. $L\bar s = 2 J_1$: Wilson's sublattice is twice Kirmse's set (and
-   $L = J_1 \cdot s$, $Ls = J_1 \cdot s^2$).
+   $L = J_1 \cdot s$, $Ls = J_1 \cdot s^2$).  The first two identities are
+   Wilson's, stated in Wilson's coordinates as "$L\bar s = 2B$", with $B$
+   the set whose assumed closure "is known as Kirmse's mistake" (Wilson
+   2009, p. 2187), and "$Bs = L$" (p. 2189).  New beyond Wilson:
+   $\sigma(L\bar s) = 2O^{(4)}$ and $\sigma(Ls) = p\,O^{(4)}$, and the
+   closure arguments of items 3 and 4.
 2. $\sigma(L\bar s) = 2\, O^{(4)}$, and $O^{(4)}$ is the only one of the seven
    with this property.  All seven $O^{(n)}$ are closed under the standard
    product (Coxeter's theorem) and all seven contain $L$; $J_1$ is not closed.
@@ -243,12 +214,20 @@ Then:
    = 2^8$ explains the factor $2^8$ in $\sigma$'s index $2^{16}$.
 4. $\sigma(Ls) = p \cdot O^{(4)}$ with $p = e_2 - e_4 + e_5 - e_6$ (norm 4).
    Lemma 4.4 becomes "the principal left-multiple set $p \cdot O^{(4)}$ is
-   closed under multiplication"; this remains a finite check ($p$ does not
-   normalize the order, so the Moufang identity does not give it).
+   closed under multiplication", and this follows from the closure of
+   $O^{(4)}$ as Lemma 4.3 does.  For purely imaginary $p$, $p^2 = -N(p)$,
+   and the left Moufang identity gives $(pa)(pb) = p((ap)b)$ for all
+   octonions $a, b$; since $p$ is purely imaginary and lies in $O^{(4)}$,
+   $p\,O^{(4)}$ is closed.  No normalizing is needed
+   ($p\,O^{(4)} \neq O^{(4)} p$).  Ledger claim 021; symbolic and exact
+   checks at prompt 290; paper (4.2) and (4.3).
 
 Appendix B's remark that the Coxeter--Bruck transposition reappears "acting on
 a different object" is therefore sharper than stated: $\sigma$ acts on $L\bar
-s = 2J_1$, twice Kirmse's set itself, and carries it onto twice Bruck's order.
+s = 2J_1$, twice Kirmse's set itself, and carries it onto $2O^{(4)} =
+2\sigma(J_1)$, twice a maximal order (each transposition $(i\,j)$ carries
+$J_1$ onto $O^{(k)}$, with $\{i, j, k\}$ a Fano line).  Which of the seven
+is Coxeter's $J$, Bruck's order, is not determined here.
 
 ## 5. Other findings of the review, checked against the record
 

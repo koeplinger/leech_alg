@@ -2,6 +2,8 @@
 imaginary octonion basis units, does the pi-twisted triple product close on
 the Leech lattice?
 
+Created: 2026-07-17.  Updated: 2026-10-24.
+
 Extends verify_all_cycles_exact.py (single cycles) and
 verify_consecutive_twists_exact.py (transpositions, 3-cycles, (2,2)-doubles)
 to the full symmetric group: all 5,040 permutations, grouped by cycle type
@@ -12,6 +14,18 @@ Z_3-symmetric triple product is checked on all 24 x 24 = 576 basis-pair
 products of a Z-basis of Lambda, in exact rational arithmetic (by
 bilinearity this settles closure on all of Lambda).  The per-permutation
 test is closes() from verify_consecutive_twists_exact.py, reused unchanged.
+
+Prints the census table (cycle type, permutations tested, number that close,
+rate), the identity last, and the total over the nonidentity permutations:
+1,764 of 5,039 close.  Then two sanity checks: the per-type totals are the
+class sizes of S_7, and the closing counts of the single cycles and the
+(2,2) type are those of the table in paper Section 5.6, with the identity
+not closing.  Ends with ALL PASS (exit code 0) or a mismatch message (exit
+code 1).
+
+The paper cites this script in Section 5.6 (`sec:census`), in the footnote
+to the table of closure by cycle type, with verify_twist_span_index_census.py
+(the span-index column).  Ledger claim 014.
 
 Runtime: roughly an hour single-threaded; parallelized over CPU cores with
 multiprocessing (chunked), typically 10-20 minutes.
@@ -101,7 +115,8 @@ def main():
                 (3, 2, 2): 210, (7,): 720}
     ok_sizes = all(tested[ct] == n for ct, n in expected.items())
     print(f"\nclass sizes match S_7: {ok_sizes}")
-    # sanity: the previously published single-cycle and (2,2) rows
+    # sanity: the single-cycle and (2,2) rows of the table in paper Section 5.6
+    # (the identity does not close)
     prev = {(2,): 21, (3,): 35, (4,): 0, (5,): 252, (6,): 210, (7,): 336,
             (2, 2): 42, (): 0}
     ok_prev = all(closed[ct] == n for ct, n in prev.items())

@@ -1,4 +1,6 @@
-"""Task B, part 2: Aut(Lambda, +, star) -- exact order, structure, generators.
+"""Aut(Lambda, +, star): exact order, structure, generators.
+
+Created: 2026-07-12.  Updated: 2026-10-24.
 
 Runtime: long -- well over ten minutes single-threaded (the complete
 stabilizer enumerations dominate); the script prints its own runtime at
@@ -8,18 +10,17 @@ the end.
                               with  g(u star v) = g(u) star g(v) }.
 
 The ambient is GL_24(Z), NOT Co_0; whether every star-automorphism is an
-isometry of Lambda is one of the things settled here (it is -- see step 6).
+isometry of Lambda is one of the things settled here (it is: see (e)).
 
 INPUT FACTS (from verify_star_algebra_structure.py, all proved there):
   R^24 = D (+) T with D = {(a,a,a)}, T = {sum zero}, two-sided ideals with
-  D star T = T star D = 0, Ann(D) = T, Ann(T) = D.  Every element of
-  Aut(R^24, star) preserves D and T.  NOTE the route to that last statement
-  (12 July 2026): it is NOT "Ann is intrinsic, so g permutes D and T" -- that
-  is circular, since g(Ann(D)) = Ann(g(D)) gives g(T) = T only once g(D) = D
-  is known.  It is: D and T are SIMPLE and annihilate each other, so pi_T . g
-  restricted to D is an algebra map onto an ideal of T of dimension <= 8 < 16,
-  hence 0; so g(D) <= D, and only then does g(T) = T follow.  See the
-  CORRECTION block in verify_star_algebra_structure.py.  Consequently
+  D star T = T star D = 0, Ann(D) = T, Ann(T) = D.  Every element g of
+  Aut(R^24, star) preserves D and T: D and T are SIMPLE and annihilate each
+  other, so pi_T . g restricted to D is an algebra map onto an ideal of T of
+  dimension <= 8 < 16, hence 0; so g(D) <= D, hence g(D) = D, and then
+  g(T) = g(Ann(D)) = Ann(g(D)) = T (companion note
+  paper/automorphism_group_2026-07-12.tex, Lemma 4 and Proposition 5,
+  `lem:simple` and `prop:preserve`).  Consequently
         Aut(R^24, star) = { h_{A,B} rho_pi : A,B in Aut(O,.s), pi in S_3 },
         h_{A,B}(u)_alpha = B u_alpha + (A - B)(u_0+u_1+u_2)/3,
         rho_pi(u)_alpha  = u_{pi^{-1}(alpha)},
@@ -68,8 +69,20 @@ WHAT THIS SCRIPT COMPUTES (exact arithmetic throughout):
               Aut(Lambda,+,star) <= O(24) ^ GL(Lambda) = Co_0 .
       Confirmed here elementwise on the Gram matrix of Lambda.
 
-A GAP file with the 36 matrices in the Lambda-basis is written for the
-StructureDescription (see gap_project/aut_lambda_star.g).
+Three generators, as 24x24 integer matrices in the Z-basis of Lambda (the
+blockwise C_6 generator, a block 3-cycle and a block transposition), are
+written to gap_project/aut_lambda_star_gens.g, which
+gap_project/aut_lambda_star.g reads for the StructureDescription.
+
+Prints (a) to (e) in turn, then the element orders of K (1, 2, 3, 3, 6, 6,
+so K = C_6) and that K is abelian, the path of the GAP file, and the
+runtime.
+
+The paper cites this script in Section 5.4 (`sec:autgroup`), in the footnote
+on the companion note paper/automorphism_group_2026-07-12.pdf, with
+gap_project/aut_lambda_star.g.  The companion note cites it in its Sections 5
+(`sec:lattice`), 6 (`sec:co0`) and 8 (`sec:repro`).  Ledger claims 009 and
+010.
 """
 import os, sys, time
 from fractions import Fraction as F

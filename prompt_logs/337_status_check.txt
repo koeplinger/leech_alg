@@ -1,0 +1,15 @@
+Prompt 337 -- status check during item 7
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'How's it going?'
+
+Context: asked while the relaunched read-only gathering workflow of item 7
+(run wf_910ebaf7-4a8, resumed after the crash of prompt 336) was running.
+Prompts 334, 335 and 336 are open.
+
+Response: status reported while the gathering ran: item 6 applied, the v8
+draft date set, item 7's sites being gathered.  Item 7's records followed
+(log 334).
+
+Status: CLOSED.

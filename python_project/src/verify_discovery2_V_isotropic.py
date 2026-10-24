@@ -1,6 +1,13 @@
 """Verify the proposed Discovery 2: V = sigma(Ls_bar)/2L is a totally
 isotropic left ideal of L/2L, and W has mixed isotropy.
 
+Created: 2026-05-24.  Updated: 2026-10-24.
+
+Discovery 2 is one of the two structural proposals of the Hermes agent,
+quoted verbatim in paper/hermes_mod2_structure_supplement.pdf.  The paper
+cites this script in Appendix C (`sec:methodology`), in the footnote on
+those proposals, with verify_discovery1_W_subalgebra.py.
+
 The quadratic form on L/2L: for v in L (with norm form N(v) = sum v_i^2),
 q(v mod 2L) := N(v)/2 mod 2.  Well-defined because L is even (N takes
 even values on L) and N(v+2u) = N(v) + 4(v.u + N(u)), which is even
@@ -9,12 +16,21 @@ modulo 4, hence mod-2 of N/2 is invariant under v -> v + 2u.
 Tests:
   (a) Proposed basis of V spans V = sigma(Ls_bar)/2L.
   (b) V is a left ideal: mu-bar(L/2L, V) <= V.  (Already in
-      verify_mod2_quotient.py as Lemma 4.3 mod-2 form.)
+      verify_mod2_quotient.py as Lemma 4.3 mod-2 form.)  Also: is V a
+      right ideal?
   (c) V is totally isotropic: q(v) = 0 for all v in V.
   (d) W's isotropy distribution: how many elements have q = 0 vs 1.
-  (e) V (+) W = L/2L (already in verify_mod2_quotient.py).
+  (e) The isotropy distribution on all of L/2L, compared with the
+      plus-type form (136 zeros, 120 ones) and the minus-type form
+      (120 zeros, 136 ones) on F2^8.  (V (+) W = L/2L is checked in
+      verify_mod2_quotient.py.)
   (f) Compare V to W's nilpotent ideal N = span(w1, w2, w3): is N = V?
       Is N subset of V? Or are they disjoint?
+
+Result: the proposed basis spans V; V is a two-sided ideal and totally
+isotropic; W is totally isotropic as well (q = 0 on all 16 elements), not
+of mixed isotropy; q is the plus-type form; N lies in W and meets V only
+in 0.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

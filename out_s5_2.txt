@@ -1,0 +1,14 @@
+samples per property: 500000     runtime: 432 s
+property                         holds        of    percent
+commutativity                       88    500000     0.018%
+norm multiplicativity           233973    500000    46.795%
+left alternativity                 938    500000     0.188%
+right alternativity                950    500000     0.190%
+flexibility                      41792    500000     8.358%
+cube power-assoc                153356    500000    30.671%
+quartic power-assoc              63901    500000    12.780%
+cube AND quartic                 63901    500000    12.780%
+quartic only (not cube)              0    500000     0.000%
+cube only (not quartic)          89455    500000    17.891%
+symmetric (Elduque)             126547    500000    25.309%
+exit 0

@@ -1,8 +1,10 @@
 # v3 → v4 changes (top-level summary)
 
+Created: 2026-05-25.  Updated: 2026-10-24.
+
 **v3** — frozen 29 April 2026, 12 pages. Source preserved at [paper/main_2026-04-29.tex](main_2026-04-29.tex).
 
-**v4** — frozen 25 May 2026, 19 pages. Source at [paper/main.tex](main.tex) (working copy) and [paper/main_2026-05-25.tex](main_2026-05-25.tex) (frozen snapshot).
+**v4** — frozen 25 May 2026, 19 pages. Source preserved at [paper/main_2026-05-25.tex](main_2026-05-25.tex).
 
 The page-count growth from 12 → 19 is concentrated in three additions: the historical synthesis (new Appendix B), the mod-2-quotient structural reading (new Appendix A.1), and the expanded algebraic-properties test at N = 10⁶ (§5). The rest of the change is editorial refinement.
 
@@ -177,7 +179,6 @@ Total: 27 bibliography entries, all cross-checked against the project's central 
 ## G. v4 → v3 cross-references
 
 - Frozen v3 source: [paper/main_2026-04-29.tex](main_2026-04-29.tex).
-- Frozen v4 source: [paper/main_2026-05-25.tex](main_2026-05-25.tex) (this freeze).
-- Working source (continues in this file going forward): [paper/main.tex](main.tex) — currently identical to the v4 freeze.
+- Frozen v4 source: [paper/main_2026-05-25.tex](main_2026-05-25.tex).
 
-— Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger, 2026-05-25
+— Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger

@@ -1,13 +1,17 @@
-"""Recompute the three coefficient tables of the paper's Appendix A and compare
-them with the tables printed in paper/main.tex.  Prompt 293, 14 October 2026.
+"""Recompute the three coefficient tables of Appendix A of the released v7 of
+the paper (paper/main_2026-07-19.tex) and compare them with the printed
+tables.
 
-The paper's Appendix C states that the basis-pair identities of the appendix
-tables were recomputed in Python and in GAP as a cross-check against
-transcription or implementation errors.  symbolic_proof_checks.py checks
-Lemmas 4.1, 4.3 and 4.4 but not Lemma 4.2; this script covers all three tables
-and compares every printed entry with an exact recomputation.
+Created: 2026-10-14.  Updated: 2026-10-24.
 
-Conventions are the paper's (Appendix A): the multiplication (2.1)
+In v7 these tables (Tables 1 to 3) certify Lemmas 4.2 to 4.4, and v7's
+Appendix C states that their basis-pair identities were recomputed in Python
+and in GAP as a cross-check against transcription or implementation errors.
+symbolic_proof_checks.py checks Lemmas 4.1, 4.3 and 4.4 but not Lemma 4.2;
+this script covers all three tables and compares every printed entry with an
+exact recomputation.
+
+Conventions are those of v7's Appendix A: the multiplication (2.1)
 (verify_ideal_decomposition.omul), the basis L_1 = s = (-e0 + e1 + ... + e7)/2,
 L_2 = e0 + e1, L_3 = e0 - e1, L_{k+2} = e0 + e_k (k = 2, ..., 6), and
 M_k := sigma(L_k . s), N_k := sigma(L_k . sbar) with sigma = (1 2).
@@ -19,16 +23,19 @@ M_k := sigma(L_k . s), N_k := sigma(L_k . sbar) with sigma = (1 2).
 For each table: (1) the 64 coefficient vectors are computed exactly
 (fractions.Fraction, Gaussian elimination over Q) and checked to be integral,
 which proves the lemma's inclusion by Z-bilinearity; (2) the printed table is
-read from paper/main.tex by its label (not by line numbers), and its 64 rows
-(i, j, c_1, ..., c_8) are compared entry by entry with the recomputation.
+read from the LaTeX source MAIN_TEX by its label (not by line numbers), and
+its 64 rows (i, j, c_1, ..., c_8) are compared entry by entry with the
+recomputation.  Prints one line per table, then ALL PASS or FAILURE.
 
-Usage: python3 verify_appendix_tables.py   (under a second)
+MAIN_TEX defaults to paper/main.tex.  The paper's current source (v8 draft)
+prints no coefficient tables, so on that file the script stops with a
+ValueError: the table labels are not found.  verify_appendix_tables_v7.py
+sets MAIN_TEX to paper/main_2026-07-19.tex and runs the check.
 
-Note (20 October 2026, prompt 311): v8 of the paper retired the three tables
-(the proof is now the structural one of Section 4), so this script, run on
-paper/main.tex, stops with a ValueError (the table labels are not found).  The tables are in the frozen v7 source
-paper/main_2026-07-19.tex; verify_appendix_tables_v7.py runs this script on
-that file.  Code unchanged.
+Usage: python3 verify_appendix_tables_v7.py   (under a second)
+
+Not cited in the paper (v8 draft); ledger claim 022 cites
+verify_appendix_tables_v7.py.
 """
 import re
 from fractions import Fraction as F

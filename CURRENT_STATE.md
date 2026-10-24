@@ -1,23 +1,16 @@
 # Current State of the Research
 
-Last updated: 2026-10-23
+Created: 2026-04-09.  Updated: 2026-10-24.
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
 [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
-(ResearchGate), the frozen v7 of the paper.  A further revision, v8, is in
-progress in `paper/main.tex`; its plans are
-`evidence_and_reasoning/2026-10-12_plan.md`,
-`evidence_and_reasoning/2026-10-14_plan.md` and
-`evidence_and_reasoning/2026-10-20_plan.md` (executed), and
-`evidence_and_reasoning/2026-10-20_closed_form_plan.md` (engaged: the closure
-criterion, Egan's construction and Section 5.1 by witnesses), with items 1
-to 4 in `evidence_and_reasoning/2026-10-21_plan.md`,
-`evidence_and_reasoning/2026-10-21_criterion_plan.md`,
-`evidence_and_reasoning/2026-10-22_appendix_a_plan.md` and
-`evidence_and_reasoning/2026-10-22_section6_plan.md`, and item 5, the span
-of the triple product by hand, in
-`evidence_and_reasoning/2026-10-23_span_plan.md` (all executed).
+(ResearchGate), the released v7 of the paper.  A further revision, v8, is
+in progress in `paper/main.tex`; its plans are the dated `2026-10-*_plan.md`
+files in `evidence_and_reasoning/`, listed with their status in the repository
+map below.  References to the paper (sections, equations, and LaTeX labels in
+code font) are to `paper/main.tex` unless stated otherwise; `paper/main.aux`
+resolves the labels to numbers.
 
 This document is the technical summary of the research, for a human or an AI,
 with or without prior context.  It records what was established, what was ruled
@@ -42,7 +35,7 @@ would ideally respect or interact with this symmetry in a meaningful way.
 **Status: FOUND.**  Trial 007 identifies a bilinear product that closes on Λ:
 the *Z₃-symmetric triple-octonion product*.  It is simply an octonion product
 in all three blocks; the transposition σ is the device that exhibits its fit
-with Wilson's representation.  (The trial files and the older evidence
+with Wilson's representation.  (The trial files and some evidence
 documents call it the "transposition-twisted triple octonion product".)
 See "The finding" below.
 Two other candidate families are comprehensively ruled out: the (untwisted)
@@ -74,7 +67,8 @@ the Fano triples: the 21 transpositions form a single orbit under conjugation
 by the order-21 group of coordinate permutations preserving the oriented Fano
 triples, and conjugation carries the proof for σ = (1 2) to every
 transposition (paper §4, footnote).  They are not the only twists that close: see
-the cycle census below.
+the cycle census below and the closure criterion (paper Proposition 5.3,
+`prop:criterion`).
 
 ### Verification status
 
@@ -85,7 +79,8 @@ the cycle census below.
 | Fast (4M random) | 4,000,000 | 0 | `trial_007_fast.py` |
 | Multiprocessor (4M random) | 4,000,000 | 0 | `trial_007_exhaust.py` |
 | Symbolic proof (Lemmas 4.1–4.4, paper §4) | exact: the proof's finite content (the closure of the maximal order 𝒪 = ½(e₁+e₂)L of paper §2.2 on its 64 basis products; σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪, with p = e₂ − e₄ + e₅ − e₆, on 8 products each plus covolumes) and the identity (xa)(xb) = x((ax)b) for purely imaginary x, symbolically, in `verify_structural_proof.py`; the four lemmas on Z-bases (Lemma 4.1 on the 8 basis vectors of L, Lemmas 4.2–4.4 on 64 basis products each): all four in GAP, Lemmas 4.1, 4.3, 4.4 in `symbolic_proof_checks.py`, Lemmas 4.2–4.4 in `verify_structural_proof.py` | 0 | `verify_structural_proof.py`, `symbolic_proof_checks.py` (Python) + `gap_project/tests/test_lemmas.g` (GAP) |
-| Identity-test suite (N = 10⁶, paper §5.1) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
+| Identity witnesses (paper §5.1, `sec:identities`) | one exact witness per identity | n/a (each identity fails) | `verify_identity_witnesses.py` |
+| Identity-test suite (n = 10⁶, paper Appendix D, `app:samples`) | 1,000,000 samples per property | n/a (rates reported) | `verify_section5_properties.py` |
 | Exhaustive (all 38.6B pairs) | **not required** | — | `trial_007_exhaust.py --exhaustive` |
 
 **Zero failures across 12+ million tested pairs**, plus a symbolic proof
@@ -100,20 +95,28 @@ The rate is a sample estimate: 73.4% on the 5,000-pair sample of
 `evidence_and_reasoning/trial_001_results.md`.
 The transposition twist changes 30 of 64 multiplication table entries.
 This fixes condition 3 precisely: all other conditions were already
-satisfied by the untwisted product (`consistency_checks.py`, check 8).
+satisfied by the untwisted product (`consistency_checks.py`, check 8).  By the
+closure criterion (paper Proposition 5.3, `prop:criterion`), the untwisted
+product fails because Ls is not closed under it (paper Remark 4.5).
 
-### Algebraic properties (paper §5.1)
+### Algebraic properties (paper §5.1, `sec:identities`, and Appendix D, `app:samples`)
 
 The order (Λ, +, ⋆) is:
 - **Nonunital**: the ambient algebra (R²⁴, +, ⋆) has *no* multiplicative
-  identity at all.  In particular (e₀, e₀, e₀) is not one: it sends
-  (x', y', z') to (x'+y'+z', x'+y'+z', x'+y'+z').
-- **Noncommutative**: <0.1% of Min(Λ) pairs commute.
-- **Not norm-multiplicative**: product norms distribute across
-  {16, 32, 48, 64, 80, 96, 112, 128}, with 64 = N(u)·N(v) as the mode
-  (~47%).
-- **Not alternative, not flexible, not power-associative** (numerically,
-  N = 10⁶ samples per property).
+  identity at all (paper Remark 5.2, `rem:no-identity`).  In particular
+  (e₀, e₀, e₀) is not one: it sends (x', y', z') to
+  (x'+y'+z', x'+y'+z', x'+y'+z').
+- **Nonassociative, noncommutative, not alternative, not flexible, not
+  power-associative (cube and quartic), not norm-multiplicative, and not a
+  symmetric composition algebra**: each failure has a witness in the
+  ambient algebra that is checked by hand, and holds on the order by
+  scaling (paper §5.1; `verify_identity_witnesses.py`).  ⋆ does not preserve
+  the minimal shell (paper Remark 5.1, `rem:product-norms`).
+- **Sampled on minimal vectors** (paper Appendix D; n = 10⁶ per identity;
+  `verify_section5_properties.py`, and for the product norms
+  `verify_pair_norm_histogram.py`): <0.1% of Min(Λ) pairs commute; product
+  norms distribute across {16, 32, 48, 64, 80, 96, 112, 128}, with
+  64 = N(u)·N(v) as the mode (~47%).
 
 The key property is closure, not any classical algebraic identity.
 
@@ -146,9 +149,11 @@ full derivation in `paper/automorphism_group_2026-07-12.pdf`).
   orthogonal.  The inclusion is strict because −I₂₄ ∈ Co₀ does not
   preserve ⋆.  (The trace-form route fails: tr(L_u L_v) has signature
   (3, 21), not the Leech form.)
-- Octonion-automorphism stabilizers: |Stab(L)| = 1344 = 2³·L₃(2);
-  |Stab(Ls)| = 168 = 2³:(7:3); |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)
-  (`gap_project/octonion_stabilisers.g`).
+- Stabilizers of the Wilson sublattices in Aut(O, ·_σ), the automorphism
+  group of the σ-twisted product (the companion note's setting, its §5.2):
+  |Stab(L)| = 1344 = 2³·L₃(2); |Stab(Ls)| = 168 = 2³:(7:3);
+  |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2) (`gap_project/octonion_stabilisers.g`).
+  Under the standard octonion product the orders are 1344, 21 and 1344.
 - Completeness: the order-36 count and the Co₀ containment are established
   by two independent routes in the companion note
   (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
@@ -205,8 +210,9 @@ holds for only 24 of 64.
 
 **Closure of permutation cycles: the full S₇ census**
 (`verify_all_permutations_exact.py`, all 5,040 permutations, reusing the
-per-permutation test of `verify_consecutive_twists_exact.py`; earlier
-partial runs `verify_all_cycles_exact.py`; paper §5.6).  Writing
+per-permutation test of `verify_consecutive_twists_exact.py`; the
+single-cycle types also in `verify_all_cycles_exact.py`; paper §5.6,
+`sec:census`).  Writing
 x ·_π y := π⁻¹(π(x) · π(y)) for a permutation π of e₁,…,e₇ (for the
 involution σ this is the paper's twisted product) and testing closure of
 the assembled triple product exactly on the 576 basis-pair products of a
@@ -231,36 +237,67 @@ Z-basis of Λ:
 | **Total** | **5,039** | **1,764** | **35.0%** |
 
 Exhaustive, not sampled.  The identity (the untwisted product) does not
-close.  For the 3-cycles the closing half admits a description: one of the
+close, since Ls is not closed under the standard product (paper §5.6,
+`sec:census`, by Proposition 5.3).  For the 3-cycles the closing half admits a description: one of the
 two cyclic orientations per three-element index subset.
 
-**The span index depends on the twist** (paper §5.6, v8; claims 017, 018; the external review
-of v8 in `paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`, second pass
+**Which twists close; the span index depends on the twist** (paper §5.6,
+`sec:census`, Propositions 5.3 and 5.4, `prop:criterion` and `prop:span`;
+claims 015, 017, 018; the external review of v8 in
+`paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`, second pass
 `verify_twist_span_index_census.py` and the note
 `paper/reviews/2026-10-14_claude_fable_5_1_index_one_verification.md`).  For
-an isometry g of R⁸ with g(L) = L, write x ·_g y := g⁻¹(g(x)·g(y)), ⋆_g for
-the triple product of Definition 3.3 built from ·_g, and S_g for the Z-span of
-the products u ⋆_g v.  Among the 1,764 closing permutation twists above, every
+a twist g, an invertible linear map of R⁸ with g(L) = L, write
+x ·_g y := g⁻¹(g(x)·g(y)), ⋆_g for the triple product of Definition 3.3
+built from ·_g, and S_g for the Z-span of the products u ⋆_g v.  The closure
+criterion is the paper's Proposition 5.3, proved there for every twist: ⋆_g
+closes on Λ iff Ls̄ and Ls are both closed under ·_g.  The same proof holds
+for every Z-bilinear product μ with μ(L, L) ⊆ L (records only: the
+closed-form plan's F1).  It is Theorem A of the review (lines 125–169,
+stated there for g in W(E₈)), checked against direct closure on all 5,040
+permutations (`verify_twist_span_index_census.py`), on all 120 root
+reflections and all 17,280 polarizations (the review's package), and on
+twists in GL(L) that are not isometries (prompts 315 and 317).  Among the 1,764 closing permutation twists above, every
 even permutation gives [Λ : S_π] = 2¹⁰ and every odd one (σ among them) 2¹⁶.
 The reflection ρ in the root r = (e₀+e₁+⋯+e₆−e₇)/2 of L (the paper's symbol;
 s_r in the review) gives a product that closes on Λ with [Λ : S_ρ] = 1: its
 products Z-span Λ.  Of the 120 root
-reflections, 56 close, 28 with index 2¹⁶ and 28 with index 1.  Two statements
-of the review hold on all 5,040 permutations and all 120 reflections (checked
-exhaustively; the first has a short proof in the review, the second a sketch):
-⋆_g closes on Λ iff Ls̄ and Ls are both closed under ·_g, and
-[Λ : S_g] = [Ls : ⟨Ls ·_g Ls⟩]·[Ls̄ : ⟨Ls̄ ·_g Ls̄⟩]².  Index 1 concerns the
+reflections, 56 close, 28 with index 2¹⁶ and 28 with index 1.  The span of
+⋆ = ⋆_σ consists of the vectors (w, w, w) + 2u with w ∈ Ls and u ∈ Λ,
+proved by hand in the paper (Proposition 5.4; `verify_product_span_proof.py`).
+The review's index formula [Λ : S_g] = [Ls : ⟨Ls ·_g Ls⟩]·[Ls̄ : ⟨Ls̄ ·_g Ls̄⟩]²
+(its Theorem B, with a proof sketch there; not in the paper) holds on every
+closing twist checked.  Index 1 concerns the
 span of the products, not maximality: L ·_g L ⊆ L for every such g (g(L) = L
 and L · L ⊆ L), so L³ is a ⋆_g-closed overlattice of Λ of index 2¹² for every
 twist in this family, and (Λ, ⋆_g) is never a maximal order; for the index-1
 reflection, Λ + Z(1_r, 0, 0) is ⋆_r-closed of index 4 over Λ and, like
-Λ + Zε₁ for σ, not contained in L³ (1_r = s_r(e₀) is not in L).  An explicit maximal order above L³, of index 2²⁴·3⁸
-over Λ, decomposable and nonintegral, was constructed in the second pass
-(claim 020, two machine passes).  Independently of the twist, the closed
+Λ + Zε₁ for σ, not contained in L³ (1_r = s_r(e₀) is not in L).  Above L³ lies an explicit maximal order, of
+index 2²⁴·3⁸ over Λ, decomposable and nonintegral (claim 020; two machine
+passes).  Independently of the twist, the closed
 lattice proj_D(Λ) ⊕ proj_T(Λ) contains Λ with index 3⁸, so Wilson's 3-adic
-gluing alone rules out maximality (claim 018, single-pass strengthening).  Open: a structural proof of the index values (the
-two sublattice factors take only the values 1, 2⁵ and 2⁸ in the review's
-census over all of W(E₈)), and the ring structure of the index-1 orders.
+gluing alone rules out maximality (claim 018, single-pass strengthening).  Open: a structural proof of the index values other
+than σ's (the two sublattice factors take only the values 1, 2⁵ and 2⁸ in
+the review's census over all of W(E₈)), and the ring structure of the
+index-1 orders.
+
+**The closure criterion modulo 2** (paper Appendix A, `app:mod2quotient`;
+claim 017; `verify_mod2_quotient.py`, `verify_polarization_lagrangians.py`).
+The standard product descends to μ̄ on L̄ = L/2L, and a lattice between 2L
+and L is closed exactly when its image is a subalgebra, so ⋆_g closes on Λ
+iff g(Ls̄)/2L and g(Ls)/2L are subalgebras of (L̄, μ̄).  Under
+q(v + 2L) = N(v)/2 mod 2, Wilson's pair (Ls̄/2L, Ls/2L) is a polarization, an
+ordered pair of complementary Lagrangians; σ maps it to (2𝒪/2L, p𝒪/2L), a
+two-sided ideal and a subalgebra.  Every polarization is
+(g(Ls̄)/2L, g(Ls)/2L) for an isometry g of L (W(E₈) acts on L̄ as the full
+orthogonal group of q), and ⋆_g closes exactly when both halves are
+subalgebras.  Not in the paper: 4,704 of the 17,280 polarizations close,
+and of the 270 Lagrangians 142 are subalgebras, 16 right ideals and 8
+two-sided ideals (the review's §3.3 and its package,
+`paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`; recomputed at
+prompts 317 and 334).  With σ applied in each block, σ(Λ) = Λ(2𝒪, p𝒪) is
+Egan's lattice for the pair (2𝒪, p𝒪) (paper §6, display (6.2), `eq:egan`;
+claim 023).
 
 **Wilson's sublattices are Kirmse's set and Bruck's order, scaled** (claims
 019 and 021; `verify_sigma_sublattice_maximal_order.py`,
@@ -269,7 +306,7 @@ J₁ = Z⁸ + C_K/2, the analogue of Kirmse's set for (2.1), and
 O⁽⁴⁾ = Z⁸ + (0 4)C_K/2 the maximal order obtained from it by transposing the
 coordinates 0 and 4: Ls̄ = 2J₁, L = J₁·s, Ls = J₁·s², σ(Ls̄) = 2O⁽⁴⁾ and
 σ(Ls) = p·O⁽⁴⁾ with p = e₂ − e₄ + e₅ − e₆.  O⁽⁴⁾ is the paper's maximal
-order 𝒪 = ½(e₁ + e₂)L (paper §2.2, v8; Wilson's ring A₃), and
+order 𝒪 = ½(e₁ + e₂)L (paper §2.2; Wilson's ring A₃), and
 L = (e₁ + e₂)𝒪 ⊆ 𝒪.  The paper's proof of Lemmas 4.2 to 4.4 (§4.1) uses
 σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 (its eq. (4.1)): Lemma 4.3 (L · 2𝒪 ⊆ 2𝒪) and its
 right-handed counterpart (2𝒪 · L ⊆ 2𝒪) follow from L ⊆ 𝒪 and the closure
@@ -310,7 +347,7 @@ algebras and identifies the structural reason for failure.
 
 ---
 
-## Established foundations (prompts 001–014)
+## Established foundations
 
 These are the tools and verified constructions that all trials build on.
 
@@ -454,11 +491,10 @@ by 2π/3):
 
 Cross-block products use the target block's algebra: Bα × Bβ → Bγ using *_γ.
 
-**Note on the original intent:** The user's idea was to take three Okubo
-algebras from the same Fano line by cyclically rotating the mediator.
-Computational verification showed that no Fano line admits all 3 cyclic
-mediators as valid automorphisms: only 1 or 2 work.  The Z₃ orbit above
-is the closest valid construction.
+**Three Okubo algebras from one Fano line:** rotating the mediator of a Fano
+line cyclically would need all 3 cyclic mediators to be valid automorphisms,
+and no Fano line admits that (checked computationally): only 1 or 2 work.
+The Z₃ orbit above is the closest valid construction.
 
 ### What was tested (2 trials)
 
@@ -518,7 +554,7 @@ the failure mode analysis, and the verdict.
 ### Key claims
 
 `evidence_and_reasoning/key_claims/NNN_*.txt` and the ledger
-`key_claims/README.md` (rows 009–022): the logical backbone.  Each claim has a
+`key_claims/README.md` (rows 009–024): the logical backbone.  Each claim has a
 status and its evidence.
 
 ### Prompt logs
@@ -540,9 +576,9 @@ the trial, and prints detailed results.
 
 ---
 
-## What has been done since the finding
+## The paper and its supporting material
 
-1. **Symbolic proof complete.**  A symbolic proof of closure on Wilson's
+1. **The symbolic proof.**  A symbolic proof of closure on Wilson's
    three sublattice conditions is established in `paper/main.tex`
    (Section 4, "Proof of closure").  The proof rests on four lemmas
    about the interaction between the transposition σ, the order L
@@ -569,62 +605,53 @@ the trial, and prints detailed results.
    (Remark 4.5): nontriviality of the construction, not a step of the
    closure proof.
 
-2. **Formal paper at v7, dated 19 July 2026, frozen as
-   `paper/main_2026-07-19.tex` (24 pages), the last released version,
-   published on ResearchGate: doi:10.13140/RG.2.2.22093.19686.  The
-   working source `paper/main.tex` is v8, in progress since
-   12 October 2026 per `evidence_and_reasoning/2026-10-12_plan.md`,
-   `evidence_and_reasoning/2026-10-14_plan.md` and
-   `evidence_and_reasoning/2026-10-20_plan.md`.**
-   The paper contains abstract (standalone, with
-   keywords and MSC 2020 codes), preliminaries,
-   construction, symbolic proof, algebraic properties (Section 5, in
-   six subsections in v8: §5.1 identities at n = 10⁶ samples;
-   §5.2 idempotents; §5.3 maximality (L³ and Λ + Zε₁ are ⋆-closed
-   overlattices); §5.4 the automorphism group; §5.5 square-zero
-   elements; §5.6 other twists, closure and span of the image: the
-   full S₇ census with the span index of each closing permutation,
-   2¹⁶ for σ and the odd ones and 2¹⁰ for the even ones, and a
-   reflection twist with span index 1), related work
-   (including the comparative
-   span index 2²⁵ of the Baez–Egan induced product φ), conclusion,
-   outlook, declarations, and three appendices: the mod-2-quotient reading
-   of Lemmas 4.3 and 4.4, with a Lagrangian-polarization framing
-   (Appendix A); a historical note synthesizing the 1923–1946
-   integral-octonion literature from the primary sources, Dickson
-   (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946)
-   (Appendix B); and the research methodology (Appendix C).  v4 was
-   assembled per `evidence_and_reasoning/2026-05-22_plan.md` and
-   frozen as `paper/main_2026-05-25.tex` after two full referee-style
-   review rounds (paper/reviews/); v5 (frozen
-   `paper/main_2026-06-07.tex`) incorporated the update brief and
-   the reviewer-response additions; v6 (frozen
-   `paper/main_2026-07-18.tex`, dated 18 July 2026) carries a
-   clarity revision of the span-defect material, the Section 5
-   restructuring that records the structure results below, the full
-   S₇ closure census, the submission apparatus, and the review rounds
-   of 15–18 July (paper/reviews/); v7 (frozen
-   `paper/main_2026-07-19.tex`, dated 19 July 2026) prepares the
-   paper for an experimental-mathematics venue, with a shortened
-   abstract and recent computer-assisted experimental work in adjacent
-   fields cited in the related-work section.  Frozen
-   snapshots: `paper/main_2026-04-29.tex` (v3),
-   `paper/main_2026-05-25.tex` (v4), `paper/main_2026-06-07.tex` (v5),
-   `paper/main_2026-07-18.tex` (v6),
-   `paper/main_2026-07-19.tex` (v7, the
-   last frozen state).  Revision chain: `paper/v3_to_v4_summary.md`,
+2. **The paper.**  v7, dated 19 July 2026, is the last released version,
+   `paper/main_2026-07-19.tex` (24 pages), published on ResearchGate:
+   doi:10.13140/RG.2.2.22093.19686.  The working source `paper/main.tex`
+   is the v8 draft (22 pages, dated 24 October 2026).
+   The draft contains abstract (standalone, with
+   keywords and MSC 2020 codes; it names the closure criterion),
+   preliminaries, construction, symbolic proof, algebraic properties
+   (Section 5, in six subsections: §5.1 identities, each failure
+   with a witness checked by hand (`sec:identities`); §5.2 idempotents;
+   §5.3 maximality (L³ and Λ + Zε₁ are ⋆-closed overlattices); §5.4 the
+   automorphism group; §5.5 square-zero elements; §5.6 other twists,
+   closure and span of the image (`sec:census`): the closure criterion,
+   Proposition 5.3 (`prop:criterion`), for every twist g with g(L) = L;
+   the full S₇ census read through it, with the span index of each
+   closing permutation, 2¹⁶ for σ and the odd ones and 2¹⁰ for the even
+   ones; the span of ⋆ by hand, Proposition 5.4 (`prop:span`); and a
+   reflection twist with span index 1), related work (`sec:related`:
+   Egan's construction, display (6.2) (`eq:egan`), with Λ and σ(Λ) among
+   its lattices, and the span index 2²⁵ of the Baez–Egan induced product
+   φ), conclusion (`sec:conclusion`: a summary that names the criterion,
+   and three open questions), outlook, declarations, and four appendices:
+   the closure criterion modulo 2, with the answer to which polarizations
+   of L/2L close (Appendix A, `app:mod2quotient`); a historical note
+   synthesizing the 1923–1946 integral-octonion literature from the
+   primary sources, Dickson (1923), Kirmse (1924), Mahler (1942), and
+   Coxeter (1946) (Appendix B, `app:history`); the research methodology
+   (Appendix C, `sec:methodology`); and the identity frequencies sampled
+   on minimal vectors and the norms of products of minimal vectors
+   (Appendix D, `app:samples`).  The released versions are
+   `paper/main_2026-04-29.tex` (v3), `paper/main_2026-05-25.tex` (v4),
+   `paper/main_2026-06-07.tex` (v5), `paper/main_2026-07-18.tex` (v6)
+   and `paper/main_2026-07-19.tex` (v7); the changes from one version to
+   the next are in `paper/v3_to_v4_summary.md`,
    `paper/v4_to_v5_changelog.md`, `paper/v5_to_v6_changelog.md`,
-   `paper/v6_to_v7_changelog.md`, `paper/v7_to_v8_changelog.md` (in
+   `paper/v6_to_v7_changelog.md` and `paper/v7_to_v8_changelog.md` (in
    progress).
 
-3. **Computational verification extended.**  Over 12,000,000 random
+3. **Computational verification.**  Over 12,000,000 random
    minimal-vector pairs tested across multiple test harnesses with
    zero failures.  In addition, all classical algebraic identities
    (commutativity, norm multiplicativity, alternativity, flexibility,
    cube and quartic power-associativity, symmetric composition) have
-   been tested on N = 10⁶ samples; rates are tabulated in §5.
+   been tested on n = 10⁶ samples; rates are tabulated in the paper's
+   Appendix D (`app:samples`), and §5.1 (`sec:identities`) gives a witness
+   checked by hand for each failure.
 
-4. **σ identified as the Kirmse twist.**  The transposition σ used in
+4. **σ and the Kirmse twist.**  The transposition σ used in
    the paper is the same kind of linear involution that Bruck applied
    (recorded in Coxeter 1946) to repair Kirmse's nonclosed candidate
    J₁.  In the paper's coordinate-symmetric placement L = D₈⁺, σ
@@ -636,14 +663,17 @@ the trial, and prints detailed results.
 5. **Structure of the algebra.**  The ideal
    decomposition, the automorphism group, the idempotents, the
    square-zero elements, the exclusion of the σ(Ls)-as-ideal
-   explanation, and the exhaustive cycle census are recorded under
-   "Structure of the algebra" above.  Scripts:
+   explanation, the exhaustive cycle census, the closure criterion (paper
+   Proposition 5.3, `prop:criterion`) and the span of ⋆ by hand
+   (Proposition 5.4, `prop:span`) are recorded under "Structure of the
+   algebra" above.  Scripts:
    `verify_ideal_decomposition.py`, `verify_star_algebra_structure.py`,
    `verify_aut_lambda_star.py`, `verify_aut_octonion_crosscheck.py`,
    `verify_idempotent_classification.py`,
    `verify_idempotent_lattice_rescaling.py`,
    `verify_square_zero_classification.py`,
-   `verify_sigma_Ls_ideal_exclusion.py`, `verify_all_permutations_exact.py`
+   `verify_sigma_Ls_ideal_exclusion.py`, `verify_all_permutations_exact.py`,
+   `verify_twist_span_index_census.py`, `verify_product_span_proof.py`
    (all in `python_project/src/`); `aut_lambda_star.g`,
    `aut_lambda_star_gens.g`, `octonion_stabilisers.g`,
    `octonion_stabilisers_gens.g` (in `gap_project/`).
@@ -658,64 +688,22 @@ the trial, and prints detailed results.
 
 ## What remains open
 
-These questions are the ones the paper leaves open (Sections 7 and 8, and
-Appendix A for the first), together with further detail recorded here.
+These questions are the ones the paper leaves open (Sections 7 and 8), together
+with further detail recorded here.
 
-1. **Which polarizations of L/2L lift** (paper, Appendix A).  Appendix
-   A reads Lemmas 4.3 and 4.4, reduced modulo 2L, as a polarization:
-   V := σ(Ls̄)/2L is a two-sided ideal and W := σ(Ls)/2L a subalgebra of
-   the descended product on L/2L; under the plus-type quadratic form
-   q(v + 2L) := N(v)/2 mod 2 both are Lagrangians (maximal totally
-   isotropic subspaces), so L/2L = V ⊕ W is a Witt decomposition into a
-   complementary pair of Lagrangians.  Open: which polarizations of L/2L
-   arise from this construction, and which polarizations, beyond the one
-   constructed, lift to a closed bilinear product on Λ itself.
-   Lemmas 4.3 and 4.4 themselves are proved in the paper (§4.1; claims
-   019 and 021): σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 for the maximal order
-   𝒪 = ½(e₁ + e₂)L ⊇ L of the standard octonion product (eq. (2.2); the
-   order O⁽⁴⁾ above), with p = e₂ − e₄ + e₅ − e₆ purely imaginary, so both
-   follow from 𝒪·𝒪 ⊆ 𝒪, the second by the identity (pa)(pb) = p((ap)b),
-   a consequence of the left Moufang identity.  σ(Ls) is not an ideal of
-   L on either side (paper Remark 4.5; claim 013), so its closure is not
-   inherited from an ideal property.
-   Not in the paper, for the author's decision before the paper is sent
-   for review: for every twist g with g(L) = L, ⋆_g closes on Λ exactly
-   when g(Ls̄)/2L and g(Ls)/2L are both subalgebras of (L/2L, μ̄), as they
-   are for σ.  This is Theorem A of the review of 13 October 2026
-   (paper/reviews/2026-10-13_claude_opus_5_5_review_v8.md, lines
-   125–169; claim 017), stated there in lattice form (⋆_g closes iff
-   Ls̄ and Ls are closed under ·_g) for twists in W(E₈), proved by
-   reduction modulo 2L using only g(L) = L, and read modulo 2.  The same
-   review computed the polarization counts below (its §3.3).  The proof:
-   ⋆_g closes on Λ iff the untwisted product closes on g(Λ), the lattice
-   of Egan's form for the pair (g(Ls̄), g(Ls)); g(Λ) contains (2L)³, so
-   closure is decided modulo 2L, where the block sum of a product is ww′
-   and the pairwise sums are ab′ + ba′ + aa′, ab′ + ba′ + bb′ and
-   aa′ + bb′ for (w + a + b, w + b, w + a) with w in g(Ls)/2L and a, b in
-   g(Ls̄)/2L.  The routing identities behind it hold exactly over Z, not
-   only modulo 2L, so the criterion holds for every bilinear product μ
-   with μ(L, L) ⊆ L (prompt 317; plan
-   evidence_and_reasoning/2026-10-20_closed_form_plan.md, F1).
-   Checked exactly against direct closure on all 5,040 permutations (the
-   census of §5.6 row by row), on ρ, and on 26 twists in GL(L) that are
-   not isometries.  It settles, within twisted triple products, the
-   question of §7 and Appendix A which polarizations lift; for bilinear
-   products in general that question stays open.  Related: by (4.1),
-   σ(Λ) has the form of Egan's construction for the pair (2𝒪, p𝒪), which
-   bears on §6's sentence on Egan's catalog.
-
-2. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
+1. **Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ up to conjugacy**, and
    whether the order-6 octonion automorphism generating the C₆ admits an
    intrinsic description.  The group itself and the strict containment
    Aut(Λ, +, ⋆) ⊊ Co₀ are known (see "Structure of the algebra" above).
 
-3. **A structural proof of the span-index values** (2¹⁶ for the odd
-   closing permutations, 2¹⁰ for the even ones, 1 for the reflection ρ in
-   the root (e₀+e₁+⋯+e₆−e₇)/2 of L; claim 017; "Structure of the algebra"
-   above), and the ring structure of the index-1 orders.  Not posed in the
-   paper, which states the values in §5.6.
+2. **A structural proof of the span-index values** other than σ's: 2¹⁶
+   for the other odd closing permutations, 2¹⁰ for the even ones, 1 for the
+   reflection ρ in the root (e₀+e₁+⋯+e₆−e₇)/2 of L (claim 017; "Structure
+   of the algebra" above), and the ring structure of the index-1 orders.
+   σ's value is proved in the paper (Proposition 5.4, `prop:span`).  Not
+   posed in the paper, which states the other values in §5.6.
 
-4. **Classification** of the algebra (R²⁴, +, ⋆): it is
+3. **Classification** of the algebra (R²⁴, +, ⋆): it is
    nonassociative, nonalternative, nonflexible, non-power-associative,
    noncommutative and nonunital.  Its
    idempotents, square-zero elements, ideal decomposition and
@@ -724,16 +712,18 @@ Appendix A for the first), together with further detail recorded here.
    ternary rather than binary viewpoint (Elduque); §8 of the paper
    sketches the direction.
 
-5. **A structural characterization of which permutation cycles close.**
-   All 5,040 permutations of S₇ have been enumerated exactly (the census
-   above).  The 2-cycles close by Theorem 1.1, and for the 3-cycles the
-   closing half is described (for each three-element subset of imaginary
-   indices, one of the two cyclic orientations closes).  Open: a reason
-   for the failure of every 4-cycle and for the exact one-half rates
-   beyond the 3-cycles; and the closure of twists that are not coordinate
-   permutations, beyond the reflection ρ.
+4. **A reason for the closure pattern of the census.**  All 5,040
+   permutations of S₇ have been enumerated exactly (the census above), and
+   the closure criterion (paper Proposition 5.3, `prop:criterion`) decides
+   closure for every twist: π closes exactly when π(Ls̄) and π(Ls) are
+   closed under the standard octonion product.  The 2-cycles close by
+   Theorem 1.1, and for the 3-cycles the closing half is described (for
+   each three-element subset of imaginary indices, one of the two cyclic
+   orientations closes).  Open (paper §7, `sec:conclusion`, its third
+   question): a reason for the failure of every 4-cycle and for the exact
+   one-half rates.
 
-6. **Exhaustive verification** of all 38.6 billion minimal-vector
+5. **Exhaustive verification** of all 38.6 billion minimal-vector
    pairs.  Not required given the symbolic proof; available as an
    independent computational check.
 
@@ -744,10 +734,9 @@ Appendix A for the first), together with further detail recorded here.
 ```
 leech_alg/
 ├── MANIFESTO.md                   # Operating rules for AI-assisted research
-├── DOCUMENT_GENRES.md             # Immutable / frozen / current-state: how each artifact may change
+├── DOCUMENT_GENRES.md             # Immutable / public record / current state: how each artifact may change
 ├── TRIAL_METHODOLOGY.md           # Structure and philosophy for trial files
 ├── tools/                         # lint_docs.py: enforces the document genres mechanically
-├── CLOSING_NOTE.md                # Closing note (27 July 2026) and the addendum reopening the effort (12 October 2026)
 ├── CURRENT_STATE.md               # THIS FILE: technical summary of the research
 ├── README.md                      # General repository description
 │
@@ -756,13 +745,13 @@ leech_alg/
 │   │   ├── 001–006                # Foundations (Wilson, Dixon, octonions)
 │   │   ├── 007                    # Untwisted triple-octonion ruled out
 │   │   ├── 008                    # Z₃-symmetric triple-octonion product: order on Λ
-│   │   └── README.md              # The ledger; claims 009–022 are ledger-only rows
+│   │   └── README.md              # The ledger; claims 009–024 are ledger-only rows
 │   ├── references/                # Central reference registry
-│   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision
-│   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (engaged)
+│   ├── 2026-05-22_plan.md         # Plan of the v3 → v4 revision (executed)
+│   ├── 2026-10-12_plan.md         # Plan of the v7 → v8 revision (executed)
 │   ├── 2026-10-14_plan.md         # Plan: the span-index findings in v8 (executed)
 │   ├── 2026-10-20_plan.md         # Plan: the symbolic proof replaces the tables (executed)
-│   ├── 2026-10-20_closed_form_plan.md  # Plan: closure criterion, Egan's construction, §5.1 by witnesses (engaged)
+│   ├── 2026-10-20_closed_form_plan.md  # Plan: closure criterion, Egan's construction, §5.1 by witnesses (executed)
 │   ├── 2026-10-21_plan.md         # Item 1: §5.1 by witnesses, the sampled data to Appendix D (executed)
 │   ├── 2026-10-21_criterion_plan.md  # Item 2: the closure criterion in §5.6 (executed)
 │   ├── 2026-10-22_appendix_a_plan.md  # Item 3: Appendix A around the criterion mod 2 (executed)
@@ -804,24 +793,25 @@ leech_alg/
 │   │   ├── verify_ideal_decomposition.py         # R²⁴ = D ⊕ T
 │   │   ├── verify_star_algebra_structure.py      # Ambient algebra structure
 │   │   ├── verify_sigma_Ls_ideal_exclusion.py    # σ(Ls) is not an ideal of L
-│   │   ├── verify_all_permutations_exact.py      # Closure census over all of S₇ (earlier partial runs: verify_all_cycles_exact.py)
+│   │   ├── verify_all_permutations_exact.py      # Closure census over all of S₇ (single-cycle types: verify_all_cycles_exact.py)
 │   │   ├── verify_*.py            # Further exact verifications (span and the twist span-index census,
 │   │   │                          #   the seven maximal orders and Wilson's sublattices, mod 2,
-│   │   │                          #   historical sources, consecutive twists)
+│   │   │                          #   historical sources, consecutive twists, the §5.1 witnesses,
+│   │   │                          #   Egan's construction)
 │   │   └── consistency_checks.py  # Pre-paper verification (checks 1-3, 5-10)
 │   └── tests/                     # 197 tests verifying foundations
 │
 ├── gap_project/                   # Independent GAP / LOOPS re-derivation
 │   ├── aut_lambda_star*.g         # Automorphism group, second pass
-│   ├── octonion_stabilisers*.g    # Stabilizers of L, Ls, Ls̄ in G₂(Q)
+│   ├── octonion_stabilisers*.g    # Stabilizers of L, Ls, Ls̄ in Aut(O, ·_σ)
 │   ├── src/                       # Shared modules (octonions, E8, sublattices, twist, Leech, triple product)
 │   ├── tests/                     # 8 test files, one CHECK per claim
 │   └── run_all.g                  # 110 checks, exact rational arithmetic
 │
 ├── prompt_logs/                   # Chronological AI interaction log
-├── paper/                         # main.tex (v8, in progress); v7 frozen 2026-07-19 (24 pp.);
+├── paper/                         # main.tex (v8, in progress); v7 of 2026-07-19, released (24 pp.);
 │                                  #   bibliography inline via \bibitem;
-│                                  #   frozen snapshots main_2026-{04-29,05-25,06-07,07-18,07-19}.tex
+│                                  #   released versions main_2026-{04-29,05-25,06-07,07-18,07-19}.tex
 │                                  #   and main_2026-07-19.pdf; changelogs v3→v4 … v7→v8 (in progress);
 │                                  #   companion and standalone notes, reviews/
 └── source_documents/              # Primary source PDFs (freely redistributable)

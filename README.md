@@ -1,5 +1,7 @@
 # An Order on the Leech Lattice
 
+Created: 2026-04-06.  Updated: 2026-10-24.
+
 The Leech lattice Λ admits an **order**: it is closed under a bilinear product
 on R²⁴, a Z₃-symmetric triple-octonion product assembled from nine
 octonion-multiplication blocks under cyclic Z₃ permutation of three octonion
@@ -16,16 +18,14 @@ and Ls.
 > (ResearchGate).
 
 **A further revision of the paper (v8) is in progress** in
-[paper/main.tex](paper/main.tex); the published v7 stays frozen.
-[CLOSING_NOTE.md](CLOSING_NOTE.md) records the closure of the effort on
-27 July 2026 and, in its dated addendum, the reopening on 12 October 2026.
+[paper/main.tex](paper/main.tex).
 
-The published version is frozen as
+The published version is
 [paper/main_2026-07-19.tex](paper/main_2026-07-19.tex) (v7, 24 pages; compiled:
 [paper/main_2026-07-19.pdf](paper/main_2026-07-19.pdf)); the working source is
 [paper/main.tex](paper/main.tex) (v8, in progress; compiled:
 [paper/main.pdf](paper/main.pdf)).  [paper/](paper/) also holds the earlier
-frozen versions with their changelogs, the companion material, and the review
+released versions with their changelogs, the companion material, and the review
 record.
 
 This repository is the complete record of how the result was obtained.  The
@@ -40,13 +40,12 @@ verified.
 
 | Path | Purpose |
 |---|---|
-| [CLOSING_NOTE.md](CLOSING_NOTE.md) | The closing note of 27 July 2026, with the dated addendum of 12 October 2026 that reopens the effort |
 | [CURRENT_STATE.md](CURRENT_STATE.md) | Technical summary: what was established, what was ruled out, what remains open |
 | [MANIFESTO.md](MANIFESTO.md) | Operating rules for AI-assisted research |
-| [DOCUMENT_GENRES.md](DOCUMENT_GENRES.md) | What each artifact is for, and how it may be changed: immutable, frozen, or current state |
+| [DOCUMENT_GENRES.md](DOCUMENT_GENRES.md) | What each artifact is for, and how it may be changed: immutable, public record, or current state |
 | [tools/](tools/) | Project scaffolding; `lint_docs.py` enforces the document genres mechanically |
 | [TRIAL_METHODOLOGY.md](TRIAL_METHODOLOGY.md) | Structure and philosophy for trial files |
-| [paper/](paper/) | Formal write-up (`main.tex`, `main.pdf`), frozen versions and changelogs, companion material, and the review record |
+| [paper/](paper/) | Formal write-up (`main.tex`, `main.pdf`), released versions and changelogs, companion material, and the review record |
 | [evidence_and_reasoning/](evidence_and_reasoning/) | Key claims, trial results, and references |
 | [python_project/](python_project/) | Python code: shared tools, trial experiments, symbolic-proof verification |
 | [gap_project/](gap_project/) | GAP / LOOPS independent re-derivation of the paper's verification tests |
@@ -88,13 +87,22 @@ exhibits the fit of this octonion product with Wilson's representation.
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
   the order is not maximal (Section 5.3: L³ and Λ + Zε₁ are ⋆-closed
   overlattices, of index 2¹² and 4); the span index of the products depends
-  on the twist (Section 5.6: 2¹⁶ for σ, 2¹⁰ for the even closing
-  permutations, 1 for a reflection twist); Λ
+  on the twist (Section 5.6: 2¹⁶ for σ, proved by hand in Proposition 5.4,
+  2¹⁰ for the even closing permutations, 1 for a reflection twist); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
   ([python_project/src/verify_aut_lambda_star.py](python_project/src/verify_aut_lambda_star.py)
   and [gap_project/aut_lambda_star.g](gap_project/aut_lambda_star.g)).
+- **Which twists close** (Section 5.6, Proposition 5.3, named in the
+  abstract and the conclusion): for every invertible linear map g of R⁸ with
+  g(L) = L, the triple product built from the g-twisted octonion product
+  closes on Λ exactly when Wilson's sublattices Ls̄ and Ls are closed under
+  that product.  Appendix A reads this modulo 2: every polarization of L/2L
+  is (g(Ls̄)/2L, g(Ls)/2L) for an isometry g of L, and the product closes
+  exactly when both halves are subalgebras.  Section 6 applies it to Egan's
+  construction of Λ from E₈ alone, of which Wilson's Λ and σ(Λ) are two
+  instances.
 - **Key claims:** [007](evidence_and_reasoning/key_claims/007_triple_octonion_ruled_out.txt)
   (the triple product over Wilson's own multiplication convention does
   not close on Λ) and
@@ -109,12 +117,12 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.
-- A structural characterization of which permutation cycles close.  All
+- A reason for the closure pattern of the census of Section 5.6.  All
   5,040 permutations of S₇ have been enumerated exactly (1,764 of the
-  5,039 nonidentity permutations close); the 2-cycles close by Theorem
-  1.1, and the pattern is described for the 3-cycles.
-- Which polarizations of L/2L, beyond the one of Appendix A, lift to a
-  closed bilinear product on Λ.
+  5,039 nonidentity permutations close), and Proposition 5.3 decides
+  closure for each; the 2-cycles close by Theorem 1.1, and the pattern is
+  described for the 3-cycles.  Open: why every 4-cycle fails and why
+  several cycle types close at exactly one half.
 - Whether a **ternary** reformulation (via composition algebras in the
   sense of Elduque, or via Okubo's ternary structure) gives a more
   natural classification: the rigid Z₃ cross-block routing and the

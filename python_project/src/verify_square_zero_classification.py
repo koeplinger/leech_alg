@@ -1,6 +1,11 @@
 """Task A, part 3: COMPLETE classification of the square-zero elements of
 (R^24, +, star), and the consequence for the lattice.
 
+Created: 2026-07-12.  Updated: 2026-10-24.
+
+The paper cites this script in Section 5.5 (label sec:squarezero), for the
+classification in the ambient algebra: a cone of dimension 12 inside T.
+
 RESULT (algebra).  u = (x, y, z) satisfies u star u = 0 if and only if
 
       Re(x) = Re(y) = Re(z) = 0,    x + y + z = 0,    N(x) = N(y) = N(z),
@@ -12,9 +17,9 @@ set is a cone of dimension 12 (choose x in R^7 freely: 7; then y lies on the
 D only in 0.  This condition is invariant under sigma (sigma is orthogonal
 and fixes e_0), so it reads the same in the twisted and untwisted algebras.
 
-RESULT (lattice) -- THIS REFUTES THE WORKING ASSUMPTION.  Lambda DOES contain
-nonzero square-zero elements.  u = (x, y, z) in Lambda has u star u = 0 iff
-x, y, z lie in (L sbar) ^ Im(O), sum to zero, and have equal norms.  Now
+RESULT (lattice).  Lambda contains nonzero square-zero elements.
+u = (x, y, z) in Lambda has u star u = 0 iff x, y, z lie in (L sbar) ^ Im(O),
+sum to zero, and have equal norms.  Now
       (L sbar) ^ Im(O) = {lambda sbar : lambda in L, <lambda, s> = 0},
 whose 126 vectors of norm 4 form a copy of the E_7 root system, and E_7 root
 systems contain hexagonal triples.  Every such triple gives a square-zero
@@ -23,10 +28,6 @@ them exhaustively.  Their norm is necessarily a multiple of 12 (norm = 3 N(x)
 with N(x) in 2Z, and every Lambda-norm is in 4Z), so none of them is minimal
 -- which is exactly why the exhaustive minimal-shell search
 (verify_idempotents_min_shell.py) found none.
-
-The statement "Lambda has no nonzero square-zero element" is therefore FALSE;
-only the weaker (and true) statement "Min(Lambda) has no square-zero element"
-is supported.
 
 Second pass: the characterisation is re-derived independently by a symbolic
 check of the two octonion identities used, and every exhibited lattice vector

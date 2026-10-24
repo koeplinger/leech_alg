@@ -1,43 +1,12 @@
 # v4 → v5 revision response
 
+Created: 2026-06-07.  Updated: 2026-10-24.
+
 **v4** — frozen 25 May 2026, 19 pages. Source preserved at [paper/main_2026-05-25.tex](main_2026-05-25.tex).
 
-**v5** — dated 7 June 2026, 20 pages. Frozen at [paper/main_2026-06-07.tex](main_2026-06-07.tex). While this document was written, that state was the working [paper/main.tex](main.tex); the working source has since moved on to v6, so every "lines *n*–*m* of paper/main.tex" pointer below refers to the v5 source, not to the current file.
+**v5** — dated 7 June 2026, 20 pages. Frozen at [paper/main_2026-06-07.tex](main_2026-06-07.tex). The "lines *n*–*m* of paper/main.tex" pointers below refer to the v5 working source as each change was made, not to the current paper/main.tex.
 
 v5 is a minimal revision implementing the four issues recorded in [update_brief_2026-05-25_v4.pdf](update_brief_2026-05-25_v4.pdf). No mathematical content has been added or withdrawn; the four edits clarify three statements that were already in v4 and restore one citation that was dangling in the bibliography.
-
----
-
-## Forward corrections (12 July 2026)
-
-This document is the record of the v4 → v5 revision and is not rewritten. Three statements below have since been superseded by the v6 cycle; they are corrected here rather than in place.
-
-**1. Section 5 was restructured on 12 July 2026, and its remark numbers changed.** Section 5 is now divided into five subsections (5.1 Identities, 5.2 Idempotents and square-zero elements, 5.3 The automorphism group, 5.4 Span of the image, 5.5 Which twists close). The v5 remark numbers map onto the current ones as follows:
-
-| v5 (Section 5) | current (v6) |
-|---|---|
-| Remark 5.1 (product norms) | Remark 5.1 |
-| Remark 5.2 (*Exhaustive facts on the minimal shell*) | deleted; absorbed into Remark 5.1 |
-| Remark 5.3 (no multiplicative identity) | Remark 5.2 |
-| Remark 5.4 (*Span of the image*) | Remark 5.6 |
-
-Change 9(b) below originally cited the *Exhaustive facts* remark as "Remark 5.3"; in the v5 build it was Remark **5.2**, and it is corrected in place below. Change 9(a)'s *Span of the image* remark, Remark 5.4 in v5, is Remark 5.6 in v6.
-
-**2. "No square nilpotents" holds only on the minimal shell.** The exhaustive minimal-shell finding recorded in Change 9(b) stands: none of the 196,560 minimal vectors is idempotent, and none squares to zero. Read as a statement about all of Λ, it is false. Λ contains 4,032 square-zero vectors, all of norm 12, arising from the hexagonal triples of the $E_7$ root system formed by the 126 norm-4 vectors of $L\bar{s} \cap \mathrm{Im}(\mathbb{O})$; the minimal shell cannot see them, because every square-zero vector of Λ has norm in $12\mathbb{Z}$ while the minimal norm is 8 (`verify_square_zero_classification.py`). The idempotent half of the statement does extend: the ambient algebra has exactly eight idempotents, none of them in Λ, so the order has no idempotent at all (`verify_idempotent_classification.py`). Both classifications are now Section 5.2 of the paper.
-
-**3. The automorphism group is no longer open.** Changes 3 and 5 record the v5 bullet stating the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ with full identification left open. Settled on 12 July 2026: $\mathrm{Aut}(\Lambda,+,\star)$ is finite of order 36, with structure $C_6 \times S_3$, and the containment in $\mathrm{Co}_0$ is *proved* rather than asserted. The ambient algebra $\mathbb{R}^{24} = \mathbb{O}^3$ splits into the mutually annihilating two-sided ideals $D = \{(a,a,a)\}$ and $T = \{(p,q,r) : p+q+r=0\}$; a real octonion automorphism preserves the positive-definite norm, and $D \perp T$, so every $\star$-automorphism of $\mathbb{R}^{24}$ is orthogonal. The inclusion is strict because $-I_{24}$ does not preserve $\star$. Completeness rests on one non-enumerative step, the classification of the automorphisms of the complexification of $(T, \star)$; the lower bound $C_6 \times S_3$ and the strictness witness do not. Recorded as Remark 5.5 of the paper and derived in full in [paper/automorphism_group_2026-07-12.tex](automorphism_group_2026-07-12.tex) (`verify_aut_lambda_star.py`, `gap_project/aut_lambda_star.g`).
-
----
-
-## Forward corrections (18 July 2026)
-
-v6 was frozen on 18 July 2026 ([main_2026-07-18.tex](main_2026-07-18.tex)); parts of the 12 July corrections above describe intermediate v6 states and are superseded as follows. The authority for the final state is [v5_to_v6_changelog.md](v5_to_v6_changelog.md).
-
-**On correction 1:** final v6 has **six** subsections (§5.1 Identities, §5.2 Idempotents, §5.3 The automorphism group, §5.4 Square-zero elements, §5.5 Span of the image, §5.6 Closure of permutation cycles), and the 12 July remarks were recast as plain prose on 15 July: only Remarks 5.1 and 5.2 survive, both in §5.1. The v5 *Span of the image* remark is §5.5 prose, not "Remark 5.6". Full map in §1.1 of the v5 → v6 changelog.
-
-**On correction 2:** "none of them in Λ, so the order has no idempotent at all" overlooked that the zero vector is one of the eight idempotents and lies in Λ; the correct statement (final v6, §5.2) is that none of the seven **nonzero** idempotents lies in Λ, so the order has no nonzero idempotent. And "4,032 square-zero vectors, all of norm 12" is the **norm-12 stratum**: every square-zero norm of Λ lies in 12ℤ and higher strata are realized (norm-24 witness, `verify_square_zero_norm24_witness.py`). The classifications are §5.2 and §5.4 of the final paper.
-
-**On correction 3:** the automorphism result is §5.3 of the final paper (not "Remark 5.5"), and completeness is established by two independent routes in the standalone note: Route 1 via the classification of the automorphisms of the complexification of $(T,\star)$ (non-enumerative), Route 2 entirely finite and machine-checkable, so nothing load-bearing rests on the non-enumerative step.
 
 ---
 
@@ -45,7 +14,7 @@ v6 was frozen on 18 July 2026 ([main_2026-07-18.tex](main_2026-07-18.tex)); part
 
 1. §2.2 — Petersson 2018 survey cited at the end of the integral-octonion-history sentence.
 2. §6 — "cross-block $\mathbb{Z}_3$ symmetry" replaced by "cross-block $S_3$ extending the $\mathbb{Z}_3$ routing".
-3. §7 — Automorphism-group bullet extended with the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ (superseded 12 July 2026; see forward correction 3).
+3. §7 — Automorphism-group bullet extended with the empirical bound $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$.
 4. Appendix B — Kirmse paragraph extended with one sentence on his ideal-theoretic treatment and the alternativity context picked up by Mahler.
 5. §8 — Outlook physics paragraph: "$S_3$ symmetry" added to the list of structural themes; Gresnigt–Gourlay–Varma 2023 (*Eur. Phys. J. C* 83 (2023), 747) added to the cite list with sorting by year of publication.
 6. Acknowledgments — Holger P. Petersson added in alphabetical order.
@@ -74,7 +43,6 @@ v6 was frozen on 18 July 2026 ([main_2026-07-18.tex](main_2026-07-18.tex)); part
 - **What changed.** The bullet listing the open question on $\mathrm{Aut}(\Lambda,+,\star)$ now records the empirical containment $S_3 \subseteq \mathrm{Aut}(\Lambda,+,\star) \subsetneq \mathrm{Co}_0$ with the reasoning ($S_3$ from Change 2 above; strict inclusion in $\mathrm{Co}_0$ because $-I_{24} \in \mathrm{Co}_0$ does not preserve $\star$).
 - **Where.** §7 conclusion, the bullet on $\mathrm{Aut}(\Lambda,+,\star)$.
 - **Rationale.** Update brief item 3 asked for the bound to be stated explicitly so readers can see what is and is not known before the question is posed.
-- **Superseded (12 July 2026).** The question is now answered: $\mathrm{Aut}(\Lambda,+,\star) \cong C_6 \times S_3$, of order 36, and the containment in $\mathrm{Co}_0$ is proved. See forward correction 3 above; the v6 bullet asks instead where the group sits inside $\mathrm{Co}_0$ up to conjugacy.
 
 ### Change 4 — Appendix B Kirmse paragraph
 
@@ -100,30 +68,29 @@ v6 was frozen on 18 July 2026 ([main_2026-07-18.tex](main_2026-07-18.tex)); part
 - **Where.** Preamble line 70, title block line 75 of [paper/main.tex](main.tex).
 - **Rationale.** Version bookkeeping; the `\Aut` operator is needed to typeset Change 3.
 
-### Change 8 — Editorial-sweep refinements (same-day, 2026-06-07)
+### Change 8 — Editorial-sweep refinements
 
-Following the v5 freeze and the documentation-consistency sweep, five small editorial fixes were applied on the same day:
+Four small editorial fixes:
 
 - **§2.3 footnote (lines 250–254)**: the obstruction claim was rewritten from "Closure under left-multiplication by $L$ holds for $L\bar s$ but fails for $Ls$" to "$Ls$ is not closed under the octonion product itself ($Ls \cdot Ls \not\subseteq Ls$)", aligning the footnote with the bilinear-closure statement that Lemma 4.4 actually resolves.
 - **§5 properties table**: the row "Power-associativity" was relabeled "Quartic power-associativity" to match the surrounding prose, which distinguishes cube and quartic identities.
 - **§6 Comparison closing sentence**: the undefined symbol $\Sigma(\Lambda)$ (orphaned when Remark 4.6 was removed in the v4 cycle) was replaced with the explicit "the Leech embedding $\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise".
 - **Bibliography re-alphabetized**: Mahler1942 moved above MarraniCorradettiZucconi2025; Petersson2018 moved above SmithVojtechovsky2022; the `repo` bibitem now spells the author "J.~K\"oplinger" (matching `\author{}` and `Koeplinger2023`).
-- **§5 multiplicative-identity row**: was already "n/a (structural)" in the v5 freeze; no change.
 
 ---
 
 ## Page count and structural impact
 
-Page count: v4 = 19, v5 = 20. Through Change 8 the count held at 19 — the §7 bullet expansion (Change 3) and the four one-sentence growths in §2.2, §6, §8, and Appendix B were absorbed by removing the `\clearpage` that previously forced the bibliography onto its own page. The reviewer-response additions (Change 9: two new §5 remarks, the §6 comparison, and the §1 scope paragraph) add one page, bringing v5 to 20. No sections were added, removed, renumbered, or reordered; §5 remark numbering extends to 5.4, the new *Exhaustive facts* remark landing at 5.2 and *Span of the image* at 5.4 (both renumbered again in v6: see forward correction 1). The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are otherwise unchanged.
+Page count: v4 = 19, v5 = 20. Removing the `\clearpage` that forced the bibliography onto its own page absorbs the §7 bullet expansion (Change 3) and the four one-sentence growths in §2.2, §6, §8, and Appendix B; the reviewer-response additions (Change 9: two new §5 remarks, the §6 comparison, and the §1 scope paragraph) add one page. No sections were added, removed, renumbered, or reordered; §5 remark numbering extends to 5.4, the new *Exhaustive facts* remark landing at 5.2 and *Span of the image* at 5.4. The bibliography gains one entry (Gresnigt–Gourlay–Varma 2023 from Change 5, inserted in alphabetical order); the figure/table inventory, theorem and lemma numbering, and cross-references are otherwise unchanged.
 
 ---
 
 ## Verification
 
-The four content edits driven by the update brief were checked against the wording of the brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. At the time of the v5 freeze the v4 → v5 diff was six hunks, all six classified as user-requested. Change 5 (Gresnigt–Gourlay–Varma 2023 plus the "$S_3$ symmetry" token in the §8 list) is a same-day addition web-verified against arXiv:2306.13098 (Eur. Phys. J. C **83** (2023), 747) before insertion. The editorial-sweep refinements in Change 8 were applied later the same day and verified by a second adversarial pass; the cumulative v4 → v5 diff now contains additional hunks for those refinements, all enumerated above.
+The four content edits driven by the update brief were checked against the wording of the brief by an independent adversarial pass through the project workflow (`petersson-2018-citation-2.2`, `comparison-s3-z3-routing`, `conclusion-aut-bullet-s3`, `kirmse-paragraph-addition`); all four passed verbatim, with the one stylistic note that the brief's em-dashes appear as the LaTeX en-dash convention (`--`) in the source. Change 5 (Gresnigt–Gourlay–Varma 2023 plus the "$S_3$ symmetry" token in the §8 list) was web-verified against arXiv:2306.13098 (Eur. Phys. J. C **83** (2023), 747) before insertion, and the editorial-sweep refinements of Change 8 by a second adversarial pass. Every hunk of the v4 → v5 diff is enumerated above.
 
 ---
 
 *For background: the previous revision and the brief driving the present one are recorded in [paper/v3_to_v4_summary.md](v3_to_v4_summary.md) and [paper/update_brief_2026-05-25_v4.pdf](update_brief_2026-05-25_v4.pdf).*
 
-— Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger, 2026-06-07
+— Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger

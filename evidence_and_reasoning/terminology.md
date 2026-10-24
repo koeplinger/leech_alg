@@ -1,5 +1,7 @@
 # Terminology Reference
 
+Created: 2026-04-11.  Updated: 2026-10-24.
+
 This file defines terminology used in this project. Where established
 mathematical terminology exists, it is cited. Where constructions are
 specific to this project, the terms are listed under **Project-specific
@@ -24,8 +26,8 @@ Ideal decomposition R²⁴ = D ⊕ T — Petersson triality triple —
 Polarization of L/2L —
 Reflection ρ — Span index — Triple octonion product — Twist —
 Z₃-symmetric triple-octonion product
-(triple product for short; historically: transposition-twisted triple
-octonion product) —
+(triple product for short; in the trial files: transposition-twisted
+triple octonion product) —
 √3 obstruction
 
 ---
@@ -464,10 +466,13 @@ standalone note `paper/automorphism_group_2026-07-12.pdf`):
   machine-verified lower bound C₆ × S₃ ⊆ Aut(Λ, +, ⋆) and
   the strictness witness are independent of both.
 
-Related, and not to be confused with the above: the octonion-automorphism
-stabilizers of the Wilson sublattices, |Stab(L)| = 1344 = 2³·L₃(2),
-|Stab(Ls)| = 168 = 2³:(7:3), |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)
-(`gap_project/octonion_stabilisers.g`).
+Related, and not to be confused with the above: the stabilizers of the
+Wilson sublattices in Aut(O, ·_σ), the automorphism group of the σ-twisted
+product (the setting of the companion note
+`paper/automorphism_group_2026-07-12.tex`, §5.2): |Stab(L)| = 1344 =
+2³·L₃(2), |Stab(Ls)| = 168 = 2³:(7:3), |Stab(Ls̄)| = 12096 = U₃(3).2 =
+G₂(2) (`gap_project/octonion_stabilisers.g`).  Under the standard octonion
+product the orders are 1344, 21 and 1344.
 
 Do not confuse either with Aut(Λ) = 2·Co₁, the isometry group of the
 *lattice alone* (no product); see "Leech lattice Λ" above.
@@ -505,10 +510,11 @@ forming the **Z₃ orbit** under powers of an order-3 octonion automorphism τ:
 - B₁: Okubo_τ   (Petersson with τ)
 - B₂: Okubo_τ²  (Petersson with τ²)
 
-Cross-block products use the target block's algebra.  This construction
-arose when the user's original request (cyclically rotating the mediator
-of a Fano line) was shown to be mathematically impossible for all 7 Fano
-lines; the Petersson triality triple is the closest valid alternative.
+Cross-block products use the target block's algebra.  Rotating the
+mediator of a Fano line cyclically does not give three Okubo algebras: on
+each of the 7 Fano lines, only 1 or 2 of the 3 cyclic mediators are
+automorphisms.  The Petersson triality triple is the closest valid
+alternative.
 
 The construction failed due to a **√3 obstruction**: the Petersson
 construction with nontrivial τ introduces irrational structure constants
@@ -517,28 +523,39 @@ lattice entirely.
 
 ### Polarization of L/2L
 
-(Main paper Appendix A; `verify_mod2_quotient.py`,
+(Main paper Appendix A, "The closure criterion modulo 2", label
+`app:mod2quotient`; `verify_mod2_quotient.py`,
 `verify_polarization_lagrangians.py`.)  Since L · L ⊆ L, the standard
-octonion product descends to an F₂-bilinear product μ̄ on the **mod-2
-quotient** L̄ := L/2L ≅ F₂⁸.  With q(v + 2L) := N(v)/2 mod 2, the standard
-plus-type quadratic form on F₂⁸ (Witt index 4), a subspace is **totally
+octonion product descends to an F₂-bilinear product μ̄ on L̄ := L/2L ≅ F₂⁸.
+A lattice between 2L and L is closed exactly when its image in L̄ is a
+subalgebra, so Proposition 5.3 (`prop:criterion`) reads modulo 2: ⋆_g
+closes on Λ if and only if g(Ls̄)/2L and g(Ls)/2L are subalgebras of
+(L̄, μ̄).  With q(v + 2L) := N(v)/2 mod 2, a subspace is **totally
 isotropic** when q vanishes on it; the 4-dimensional ones are the
-**Lagrangians**, and a decomposition of L̄ into two complementary
-Lagrangians (a Witt decomposition) is a **polarization**.  In the main
-paper, V := σ(Ls̄)/2L = 2𝒪/2L and W := σ(Ls)/2L = p𝒪/2L form a
-polarization: V is a two-sided ideal and W a subalgebra of (L̄, μ̄), and both
-are totally isotropic because every vector of 2𝒪 and of p𝒪 has norm
-divisible by 4.  Lemmas 4.3 and 4.4, read modulo 2L, say that V is a left
-ideal and W a subalgebra.  The orthogonal-space picture of L̄ is Silverman's
-(part 12 of [Baez2014]); the reading of Egan's construction of Λ through a
-complementary pair of Lagrangians is Calderbank's [Calderbank2023].
+**Lagrangians**, and an ordered pair of complementary Lagrangians is a
+**polarization**.  Wilson's pair (Ls̄/2L, Ls/2L) is a polarization, and σ
+maps it to V := σ(Ls̄)/2L = 2𝒪/2L and W := σ(Ls)/2L = p𝒪/2L (display
+(A.3)).  Lemmas 4.3 and 4.4, read modulo 2L, say that V is a left ideal and
+W a subalgebra; V is also a two-sided ideal, while Ls/2L is not a
+subalgebra, so the identity twist does not close.  Since W(E₈) acts on L̄ as
+the full orthogonal group of q (Wilson's book, §3.12.4), every polarization
+is (g(Ls̄)/2L, g(Ls)/2L) for an isometry g of L, and ⋆_g closes exactly when
+both halves are subalgebras.  Credits (the appendix's "Relation to prior
+work"): the orthogonal space (L̄, q) is classical [WilsonBook2009];
+Lepowsky and Meurman (1982, §2) identify the lattices between 2L and L
+isometric to √2 L with the preimages of the Lagrangians and construct a
+lattice isometric to Λ from any polarization, noting Tits; Silverman found
+the identification independently (part 12 of [Baez2014]), read Egan's
+construction modulo 2 and found that Wilson's pair is a polarization
+[Silverman2016]; Calderbank related Egan's construction to Lepowsky and
+Meurman's [Calderbank2023].
 
 ### Reflection ρ
 
-(Main paper §5.6; `verify_twist_span_index_census.py`; claims 017, 018.
-Written s_r in the external review of v8.)  The reflection of R⁸ in the
-root r = ½(e₀ + e₁ + ⋯ + e₆ − e₇) of L, a twist (see "Twist" below) with
-ρ(L) = L.  The triple product ⋆_ρ closes on Λ with span index 1.  The
+(Main paper §5.6, label `sec:census`; `verify_twist_span_index_census.py`;
+claims 017, 018.  Written s_r in the external review of v8.)  The
+reflection of R⁸ in the root r = ½(e₀ + e₁ + ⋯ + e₆ − e₇) of L, a twist (see
+"Twist" below).  The triple product ⋆_ρ closes on Λ with span index 1.  The
 transposition σ is itself the reflection in the root e₁ − e₂ of L.  Of the
 120 reflections in roots of L, 56 close on Λ, 28 with span index 2¹⁶ and
 28 with span index 1 (claim 017).  Span index 1 does not make (Λ, +, ⋆_ρ)
@@ -547,9 +564,10 @@ a maximal order: L³ is a ⋆_ρ-closed overlattice of Λ of index 2¹² (claim
 
 ### Span index
 
-(Main paper §5.6; `verify_product_span_index.py`,
-`verify_product_span_structure.py`, `verify_twist_span_index_census.py`;
-claims 015, 017, 018.)  When a triple product ⋆_g (see "Twist" below)
+(Main paper §5.6, label `sec:census`, and Proposition 5.4, `prop:span`;
+`verify_product_span_index.py`, `verify_product_span_structure.py`,
+`verify_product_span_proof.py`, `verify_twist_span_index_census.py`; claims
+015, 017, 018.)  When a triple product ⋆_g (see "Twist" below)
 closes on Λ, the integer combinations of its products u ⋆_g v (u, v ∈ Λ)
 form a sublattice of Λ, the **span** of ⋆_g.  The **span index** of ⋆_g is
 the index of the span in Λ: the number of disjoint translates of the span
@@ -558,11 +576,13 @@ combination of products.  An order with a multiplicative identity has span
 index 1; the ambient algebra (R²⁴, +, ⋆) has none, and the index can be
 larger.  By bilinearity, closure and span index are decided by the 576
 products of pairs from a Z-basis of Λ; the index is computed exactly by
-Hermite normal form.  Values: ⋆ = ⋆_σ has span index 2¹⁶ = 65,536, and its
-span S = Δ(Ls) + 2Λ contains 2Λ (claim 015); every odd closing permutation
-twist has span index 2¹⁶ and every even one 2¹⁰; the reflection ρ has span
-index 1 (claim 017); the Baez–Egan product φ of main paper §6 has span
-index 2²⁵ (`verify_phi_span_index.py`).  The span index is invariant under
+Hermite normal form.  Values: the span of ⋆ = ⋆_σ consists of the vectors
+(w, w, w) + 2u with w ∈ Ls and u ∈ Λ, so it contains 2Λ and has span index
+2¹⁶ = 65,536 (Proposition 5.4, proved by hand; claim 015); every odd
+closing permutation twist has span index 2¹⁶ and every even one 2¹⁰; the
+reflection ρ has span index 1 (claim 017); the induced product φ of the
+Baez–Egan closure, at the paper's scale (main paper §6, `sec:related`), has
+span index 2²⁵ (`verify_phi_span_index.py`).  The span index is invariant under
 ring isomorphism, so orders with different span indices are not isomorphic:
 an order from an odd closing permutation (2¹⁶) is not isomorphic to one
 from an even closing permutation (2¹⁰), and neither is isomorphic to
@@ -570,8 +590,8 @@ from an even closing permutation (2¹⁰), and neither is isomorphic to
 (claim 018).
 
 ### Z₃-symmetric triple-octonion product
-(triple product for short; historically: transposition-twisted triple
-octonion product)
+(triple product for short; in the trial files: transposition-twisted
+triple octonion product)
 
 (Trial 007, prompt 025; main paper Definition 3.3.)  The triple
 octonion product (see below) built from the σ-twisted octonion product
@@ -611,15 +631,15 @@ census over all 5,040 permutations of S₇ is: transposition 21/21
 (3,2,2) 105/210 (50%), (4,3) 168/420 (40%), (5,2) 42/504 (8.3%),
 7-cycle 336/720 (46.7%); total 1,764/5,039 (35.0%); the identity does
 not close.  Exhaustive, not sampled
-(`verify_all_permutations_exact.py`; earlier partial runs
-`verify_all_cycles_exact.py`, `consistency_checks.py`; main paper
+(`verify_all_permutations_exact.py`; partial checks in
+`verify_all_cycles_exact.py` (the single-cycle types, exact) and
+`consistency_checks.py` (three transpositions, sampled); main paper
 §5.6).
 
-The historical name "transposition-twisted triple octonion product"
-(used in trial 007 and key claim 008, both preserved per Manifesto
-§12) over-privileges the twist: the product is not an exotic twisted
-object but an ordinary octonion product; the twist concerns its fit
-with a chosen representation.
+The name "transposition-twisted triple octonion product", used in the
+trial 007 files and in key claim 008, over-privileges the twist: the
+product is not an exotic twisted object but an ordinary octonion
+product; the twist concerns its fit with a chosen representation.
 
 ### Triple octonion product
 
@@ -635,22 +655,36 @@ per-block scaling.  Both failed, but trial 001 exhibited a distinctive
 
 In the main paper's notation this product is ⋆_g with g the identity
 (see "Twist" below), which the paper calls the untwisted product
-(Appendix C).  The paper's *triple product* (Definition 3.3) is the
+(Appendix C).  By Proposition 5.3 (`prop:criterion`) it closes on Egan's
+lattice Λ(L₁, L₂) (main paper §6, display (6.2), `eq:egan`) exactly when L₁
+and L₂ are closed under the standard product: on σ(Λ) = Λ(2𝒪, p𝒪) it
+closes, on Wilson's Λ = Λ(Ls̄, Ls) it does not, since Ls is not closed
+(Remark 4.5).  The paper's *triple product* (Definition 3.3) is the
 Z₃-symmetric triple-octonion product ⋆ = ⋆_σ (see above).
 
 ### Twist
 
-(Main paper §5.6.)  A **twist** is an invertible linear map g of R⁸.  It
-defines the **twisted octonion product** x ·_g y := g⁻¹(g(x) · g(y)) on O,
-another octonion product, isomorphic to the standard one via g; the triple
-product ⋆_g is that of main paper Definition 3.3 with ·_g in all nine block
-products.  The twist g = σ gives the σ-twisted product of Definition 3.2
-(σ⁻¹ = σ), and ⋆_σ = ⋆.  The twists tested are the permutations π of
+(Main paper §5.6, label `sec:census`, and Proposition 5.3,
+`prop:criterion`.)  A **twist** is an invertible linear map g of R⁸ with
+g(L) = L.  It defines the **twisted octonion product** x ·_g y :=
+g⁻¹(g(x) · g(y)) on O, another octonion product, isomorphic to the standard
+one via g; the triple product ⋆_g is that of main paper Definition 3.3 with
+·_g in all nine block products.  The twist g = σ gives the σ-twisted product
+of Definition 3.2 (σ⁻¹ = σ), and ⋆_σ = ⋆.  The **closure criterion**
+(Proposition 5.3, proved in the paper): for every twist g, ⋆_g closes on Λ
+if and only if Ls̄ and Ls are closed under ·_g, that is, if and only if
+g(Ls̄) and g(Ls) are closed under the standard octonion product.  For g = σ
+it gives Theorem 1.1 again; the identity does not close, since Ls is not
+closed (Remark 4.5).  The abstract and Section 7 (`sec:conclusion`) name
+it, Appendix A (`app:mod2quotient`) reads it modulo 2, and Section 6
+(display (6.2), `eq:egan`) applies it to Egan's lattices.  The same proof
+holds for every Z-bilinear product μ with μ(L, L) ⊆ L (records only:
+`evidence_and_reasoning/2026-10-20_closed_form_plan.md`, F1).  It is
+Theorem A of the external review of 13 October 2026, stated there for
+twists in W(E₈) (claim 017); `verify_twist_span_index_census.py` checks it on
+all 5,040 permutations.  The twists tested are the permutations π of
 e₁, …, e₇ (the S₇ census, under "Z₃-symmetric triple-octonion product"
-above) and the reflections in roots of L (see "Reflection ρ" above).  For
-an isometry g of R⁸ with g(L) = L, ⋆_g closes on Λ if and only if Ls̄ and Ls
-are both closed under ·_g (the external review's Theorem A, checked on all
-5,040 permutations and all 120 root reflections; claim 017).
+above) and the reflections in roots of L (see "Reflection ρ" above).
 
 ### √3 obstruction
 

@@ -1,6 +1,8 @@
 Topic: Octonion algebra — background and standard properties
 ==============================================================
 
+Created: 2026-04-06.  Updated: 2026-10-24.
+
 This file collects references for the foundational properties of the octonion
 algebra used throughout this project.  These are well-established results in
 the public domain.
@@ -242,19 +244,36 @@ the public domain.
 - **Published in**: The n-Category Café (group blog), 2013–2016
 - **Year**: 2013–2016 (parts 1–6: 2013; parts 7–11: November–December 2014; part 12: January 2016)
 - **URL**: https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html
-  (Part 9); https://math.ucr.edu/home/baez/octonions/integers/index.html
+  (part 9); https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html
+  (part 10); https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html
+  (part 11); https://golem.ph.utexas.edu/category/2016/01/integral_octonions_part_12.html
+  (part 12); https://math.ucr.edu/home/baez/octonions/integers/index.html
   (series index)
 - **Topics**: integral octonions, Leech lattice, exceptional Jordan
   algebra, Jordan ring, multiplicative closure
 - **Originality note**: Blog series; not peer-reviewed. Contains original
   computations by Baez and Egan, and open questions.
-- **Notes**: Parts 9–10 explore whether the Leech lattice can be made into
-  a ring via the exceptional Jordan algebra 𝔥₃(O). Key findings:
-  (1) The lattice Z³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed under the standard
-  Jordan product x ∘ y = xy + yx, but IS closed under the doubled
-  product 2(xy + yx). (2) Baez poses the open question of finding an
-  "exceptional Leech–Jordan ring." (3) Egan finds 17,280 sublattices
-  yielding formally real Jordan rings under the doubled product.
+- **Notes**: Part 9 (23 November 2014) gives Greg Egan's construction of
+  the Leech lattice from E₈ alone, in the form of part 11 (11 December
+  2014): Λ(L₁, L₂) for two sublattices of E₈, each isometric to √2 E₈,
+  that meet in 2E₈ (paper display (6.2)). Part 11 gives the 270 such
+  sublattices, and the construction gives 17,280 = 270 × 64 distinct
+  lattices (Egan's comments; see [Egan2014] in
+  prior_art_orders_on_leech.txt). Parts 9–10 (part 10: 1 December 2014)
+  explore whether the Leech lattice can be made into a ring via the
+  exceptional Jordan algebra 𝔥₃(O), with a Leech lattice L_L ≅ Λ/√2 off
+  the diagonal. Key findings: (1) Egan found that the lattice
+  Z³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed under the standard Jordan product
+  x ∘ y = xy + yx, but IS closed under the doubled product 2(xy + yx).
+  (2) Baez poses the open question of finding an "exceptional
+  Leech–Jordan ring." (3) Part 10 gives at least 17,280 such lattices
+  L_L (its first Result 1): those of Egan's construction with a maximal
+  order in place of E₈, for which the count is exact (its second
+  Result 1; part 11); its Puzzle 3 asks whether there are more. Part 12
+  (31 January 2016, by Tim Silverman) treats the integral octonions
+  modulo 2. The paper cites parts 9 and 11 for Egan's construction and
+  its count, parts 9–10 for the Jordan material (Section 6), and part 12
+  for Silverman's identification (Appendix A).
   The human researcher of this project (Koeplinger) participated in the
   discussion, reporting that Jordan products did not close on the Leech
   inner shell. This is the closest prior art to the present finding, but
@@ -271,7 +290,8 @@ the public domain.
 - **Topics**: octonions, background (Bol–Moufang identities, extra loops)
 - **Originality note**: Peer-reviewed journal article; no dispute known.
 - **Notes**: Cited in ledger claim 021 (as cited by Phillips–Vojtěchovský 2005)
-  for the Bol–Moufang identity behind (pa)(pb) = p((ap)b).
+  for the Bol–Moufang identity behind (pa)(pb) = p((ap)b).  Fields checked
+  against the journal record.
 
 ### [PhillipsVojtechovsky2005]
 - **Authors**: J. D. Phillips, Petr Vojtěchovský
@@ -281,7 +301,8 @@ the public domain.
 - **URL / DOI**: https://arxiv.org/abs/math/0701714
 - **Topics**: octonions, background
 - **Originality note**: Peer-reviewed journal article; no dispute known.
-- **Notes**: Cited in ledger claim 021 (Prop. 4.2).
+- **Notes**: Cited in ledger claim 021 (Prop. 4.2).  Fields checked against the
+  journal record.
 
 ### [McCrimmon1971]
 - **Authors**: Kevin McCrimmon
@@ -292,6 +313,7 @@ the public domain.
 - **Topics**: octonions, background
 - **Originality note**: Peer-reviewed journal article; no dispute known.
 - **Notes**: Cited in ledger claim 021 (Prop. 6, as restated by Alsaody–Gille 2019).
+  Fields checked against the journal record.
 
 ### [AlsaodyGille2019]
 - **Authors**: Seidon Alsaody, Philippe Gille
@@ -301,7 +323,8 @@ the public domain.
 - **URL / DOI**: https://arxiv.org/abs/1704.05229
 - **Topics**: octonions, background
 - **Originality note**: Peer-reviewed journal article; no dispute known.
-- **Notes**: Cited in ledger claim 021 (Prop. 2.4(1)).
+- **Notes**: Cited in ledger claim 021 (Prop. 2.4(1)).  Fields checked against the
+  journal record.
 
 ### [McCrimmon2004]
 - **Authors**: Kevin McCrimmon
@@ -312,7 +335,8 @@ the public domain.
 - **Topics**: background (isotopy)
 - **Originality note**: Standard textbook; no dispute known.
 - **Notes**: Cited by the glossary entry on the Petersson construction and
-  isotopy in terminology.md (§5.3).
+  isotopy in terminology.md (§5.3).  Fields checked against the publisher
+  record.
 
 ### [Albert1942]
 - **Authors**: A. Adrian Albert
@@ -323,24 +347,38 @@ the public domain.
 - **Topics**: background (isotopy)
 - **Originality note**: Peer-reviewed journal article; introduced isotopy of
   algebras; no dispute known.
-- **Notes**: Cited by the glossary entry on isotopy in terminology.md.
+- **Notes**: Cited by the glossary entry on isotopy in terminology.md.  Fields
+  checked against the journal record.
 
----
+### [CederwallPreitschopf1995]
+- **Authors**: Martin Cederwall, Christian R. Preitschopf
+- **Title**: S⁷ and Ŝ⁷ (arXiv title: The Seven-sphere and its Kac-Moody
+  Algebra)
+- **Published in**: Communications in Mathematical Physics, Volume 167
+  (1995), no. 2, pages 373–393
+- **Year**: 1995 (arXiv preprint: 6 September 1993)
+- **URL / DOI**: 10.1007/BF02100591; https://arxiv.org/abs/hep-th/9309030
+- **Topics**: octonions (X-product, the seven-sphere)
+- **Originality note**: Peer-reviewed journal article; no dispute known.
+  Dixon credits it with introducing the octonionic X-product
+  ([Dixon1994], §1).
+- **Notes**: Not cited in the paper. Recorded for the attribution of the
+  X-product in the [Dixon2010] entries (prior_art_orders_on_leech.txt,
+  leech_lattice_octonionic_constructions.txt). Fields checked against
+  Crossref and arXiv at prompt 334 (Crossref gives pages 373–393, the
+  arXiv journal reference 373–394).
 
-Last updated: 2026-06-07 (Kirmse 1924 / Petersson 2018 entries
-extended during the v4 / v5 paper cycle; positive Kirmse
-contributions recorded alongside the J_1 closure error)
-
-Addendum (2026-10-13): [Baez2002] note updated (the paper cites it in Section
-2.1); [Baez2014_IntegralOctonions] extended to the series' span 2013–2016 with
-Tim Silverman among the contributors; the paper uses part 11 (the 270 rescaled
-copies behind 17,280 = 270 × 64) and part 12 (Silverman's integral octonions
-modulo 2) in Section 6 and Appendix A.1.
-
-Addendum (2026-10-15): the heading [Baez2014_IntegralOctonions] renamed
-[Baez2014], the paper's bibliography key; entries added for the works cited in
-ledger claim 021 and in terminology.md (Fenyves 1968, Phillips–Vojtěchovský
-2005, McCrimmon 1971, Alsaody–Gille 2019, McCrimmon 2004, Albert 1942; fields
-checked against the journal and publisher records at prompt 294); the
-[Mahler1942] note states the principal-ideal theorem as the paper's Appendix B
-does; the [ConwaySmith2003] note records where the paper cites it.
+### [Dixon1994]
+- **Authors**: Geoffrey M. Dixon
+- **Title**: Octonion X-product orbits
+- **Published in**: arXiv preprint
+- **Year**: 1994 (26 October 1994)
+- **URL / DOI**: https://arxiv.org/abs/hep-th/9410202
+- **Topics**: octonions (X-product)
+- **Originality note**: Preprint; not peer-reviewed; no dispute known.
+- **Notes**: Not cited in the paper. Its §1 credits the introduction of
+  the octonionic X-product to its reference [1],
+  [CederwallPreitschopf1995]; its §4 defines, for a unit octonion X,
+  A ∘_X B = (AX)(X†B), and notes that O with this product is isomorphic
+  to O. Read in the original (arXiv PDF) at prompt 334, for the
+  attribution in the [Dixon2010] entries.

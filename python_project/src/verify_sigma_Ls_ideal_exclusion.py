@@ -1,15 +1,19 @@
 """Exclude the "left ideal" explanation of Lemma 4.4.
 
-Section 7 of the paper asks for a structural reason why sigma(Ls) is closed
-under the standard octonion product (Lemma 4.4), where Ls is not.  One
-candidate shape for such a reason is that sigma(Ls) might be an ideal of the
-octonion order L.  This script refutes that candidate at the integer level.
+Created: 2026-07-12.  Updated: 2026-10-24.
 
-Note (15 October 2026): the structural reason is known (paper Section 7, v8;
-ledger claim 021): sigma(Ls) = p O^(4) for the maximal order O^(4) containing L
-and p = e2 - e4 + e5 - e6 purely imaginary, and the Moufang identity
-(pa)(pb) = p((ap)b) makes p O^(4) closed.  The exclusion below stands: sigma(Ls)
-is not an ideal of L.  Code and output unchanged.
+Lemma 4.4 of the paper (label lem:sigmaLs-closed) states that sigma(Ls) is
+closed under the standard octonion product, where Ls is not (Remark 4.5,
+label rem:Ls-not-closed).  One candidate shape for a structural reason is
+that sigma(Ls) might be an ideal of the octonion order L.  This script
+refutes that candidate at the integer level.  The paper proves Lemma 4.4 in
+Section 4.1 (ledger claim 021) from sigma(Ls) = p O, with O = (1/2)(e1 + e2) L
+the maximal order of (2.2) (label eq:MO), which contains L, and
+p = e2 - e4 + e5 - e6 a purely imaginary element of O: the identity
+(pa)(pb) = p((ap)b) of (4.2) (label eq:moufang-imaginary) makes p O closed.
+
+The paper cites this script in Remark 4.5, which records the exclusion
+without the counts below; they depend on the bases.
 
 Counted here, for each pair of Z-bases (8 x 8 = 64 basis-pair products), is
 how many products land back in the target lattice:
@@ -26,19 +30,14 @@ target lattice iff its coordinates in the target Z-basis are integers.
 
 Expected (and obtained): 32/64, 21/64, 64/64, 64/64, 64/64, 24/64.  So
 sigma(Ls) is neither a left nor a right ideal of L; its companion
-sigma(Ls_bar) is a two-sided ideal.  That asymmetry -- ideal on one
-sublattice, mere subalgebra on the other -- is exactly what the mod-2
+sigma(Ls_bar) is a two-sided ideal.  That asymmetry, an ideal on one
+sublattice and only a subalgebra on the other, is exactly what the mod-2
 reduction records (V an ideal, W only a subalgebra; see
-verify_mod2_quotient.py), and it is what makes Lemma 4.4 the hard one.
+verify_mod2_quotient.py).
 
 The mod-2 picture already implies the exclusion (an integer-level ideal
 would reduce to a mod-2 ideal), but the integer-level counts are recorded
 here directly.
-
-Note (20 October 2026, prompt 311): the Section 7 paragraph moved into Section
-4: the exclusion is now recorded in Remark 4.5 of the paper (v8), without the
-basis-dependent counts, and the structural reason for Lemma 4.4 is Section
-4.1.  Code and output unchanged.
 """
 import os
 import sys
@@ -73,7 +72,7 @@ TESTS = [
 
 if __name__ == "__main__":
     print("=" * 72)
-    print("IDEAL EXCLUSION FOR sigma(Ls)  (Section 7, open question 1)")
+    print("IDEAL EXCLUSION FOR sigma(Ls)  (paper Remark 4.5)")
     print("=" * 72)
     ok = True
     for label, left, right, target, expected in TESTS:

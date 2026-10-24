@@ -1,34 +1,24 @@
 Claim number: 007
-Title: The triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃) is comprehensively ruled out as an order on Λ
+Title: The triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃) with the standard octonion product, and its tested variants, is ruled out as an order on Λ
 Status: ESTABLISHED
-Date: 2026-04-09
-
---- FORWARD CORRECTION (2026-07-12) ---
-
-Per Manifesto Section 12, this file is preserved as written.
-
-SCOPE, restated so that the title cannot mislead.  What is ruled out below is
-the triple-octonion algebra built from the STANDARD octonion multiplication in
-all three blocks, together with the discrete and continuous variants tested at
-the time (conjugations, signs, routings, per-block scalings, E8 basis
-automorphisms).  It is NOT ruled out that some OTHER octonion product in the
-three blocks closes on Lambda.  One does: claim 008 records the Z_3-symmetric
-triple-octonion product, which uses the sigma-twisted octonion product
-x .sigma y := sigma(sigma(x) . sigma(y)) in all three blocks.  That product was
-not in the family exhausted here.
-
-The project's current name for the construction that DOES close is the
-"Z_3-symmetric triple-octonion product" (paper title).  Nothing in the ruling
-out below is retracted.
+Created: 2026-04-09.  Updated: 2026-10-24.
 
 --- STATEMENT ---
 
 The triple-octonion algebra — three copies of the standard octonion algebra
 on R²⁴ with Z₃-symmetric cross-block mixing — cannot be an order on the
-Leech lattice Λ.  This ruling-out is comprehensive: it applies not only to
-the base algebra but to all natural modifications tested (per-block scaling,
-conjugation variants, sign flips, routing changes, and E8 automorphism
-basis changes).
+Leech lattice Λ.  This ruling-out applies not only to the base algebra but
+to all the modifications tested (per-block scaling, conjugation variants,
+sign flips, routing changes, and E8 automorphism basis changes).
+
+It does not cover other octonion products in the three blocks.  One of them
+closes on Λ: claim 008 records the Z₃-symmetric triple-octonion product,
+which uses the σ-twisted octonion product x ·_σ y := σ(σ(x) · σ(y)) in all
+three blocks.  It is the basis change of trial 004's form with
+T₁ = T₂ = T₃ = σ, a coordinate permutation and hence an automorphism of the
+E8 lattice.  Trial 004 sampled other automorphisms (one block changed,
+three independent ones, or sign changes in one block); none of them closes,
+and this one was not among them.
 
 --- DEFINITION OF THE ALGEBRA FAMILY ---
 
@@ -89,7 +79,8 @@ Trial 004 — E8 automorphism basis changes (trial_004_basis_automorphisms.py):
 
 --- STRUCTURAL DIAGNOSIS ---
 
-The failure is intrinsic to the triple-octonion architecture:
+For the standard octonion product, the failure is intrinsic to the
+triple-octonion architecture:
 
 1. Type-3 vectors have all three blocks nonzero.  The product generates 9
    nonzero contributions (3 same-block + 6 cross-block) distributed across
@@ -112,17 +103,30 @@ The failure is intrinsic to the triple-octonion architecture:
      mismatch between the product's block-independence and condition 3's
      block-linking requirement.
    - Routing changes where products land but doesn't change *what* they are.
-   - Basis changes within blocks can't create inter-block structure.
+   - The basis changes tested within blocks (trial 004) create no
+     inter-block structure.
+
+Claim 008 gives the exact reason.  For the base algebra, the block sum of
+u · v is the product of the block sums of u and v, so Wilson's condition 3
+holds for all products exactly when Ls · Ls ⊆ Ls.  Ls is not closed under
+the standard octonion product (paper Remark 4.5); under the σ-twisted
+product the condition becomes σ(Ls) · σ(Ls) ⊆ σ(Ls), which holds (paper
+Lemma 4.4).
 
 --- WHAT IS RULED OUT ---
 
-Any algebra of the form:
+The algebras of the form:
   "Three copies of an octonion algebra, with block structure O₁ ⊕ O₂ ⊕ O₃
    mapped to indices {0–7, 8–15, 16–23}, where same-block products use the
    standard octonion product (possibly with conjugation), and cross-block
    products use the octonion product (possibly with conjugation, sign flips,
    or different routing), optionally with per-block scaling or E8 automorphism
-   basis changes within each block."
+   basis changes within each block,"
+in the variants tested in trials 001 to 004: the base algebra, the per-block
+scalings of trial 002, all 1,536 discrete variants of trial 003, and the
+automorphism basis changes sampled in trial 004.  The σ-twisted product of
+claim 008 also has this form, with the basis change T₁ = T₂ = T₃ = σ, and
+it closes.
 
 --- WHAT IS NOT RULED OUT ---
 
@@ -132,6 +136,10 @@ Any algebra of the form:
 3. Products defined directly on R²⁴ without block structure.
 4. Products where same-block terms also differ from the standard octonion
    product.
+
+Claim 008 records a product of kind 4 that closes on Λ: the σ-twisted
+octonion product in all nine block products, the Z₃-symmetric
+triple-octonion product.
 
 --- REFERENCES ---
 

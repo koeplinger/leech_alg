@@ -1,135 +1,64 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
-**Addendum (2026-10-23, prompt 333).**  Item 5 executed per
-`2026-10-23_span_plan.md` (changelog item 26): Proposition 5.4 in Section
-5.6, the span of $\star$ by hand.  Decision (o) as recommended ("Scope
-compaction wins"): F6(b) to (e) stay out of v8, and F6(b) and (c) do not
-join item 5.  Next: item 6, the abstract and Section 7's summary, decision
-(p); then item 7, the records.
+Created: 2026-10-20.  Updated: 2026-10-24.
 
-**Addendum (2026-10-23, prompt 331).**  Decision (n) is taken: item 5 goes
-ahead, more simply than §3 has it, at the author's word ("it can be done
-simpler"; "You can simply refer to it without needing a new lemma").  Its
-own plan is `2026-10-23_span_plan.md` (proposed): Section 5.6's sentence on
-the span of $\star$ becomes Proposition 5.4, the span is $\{(w, w, w) + 2u :
-w \in Ls,\ u \in \Lambda\}$, proved by hand from (4.1), (4.2) and the
-alternative laws: with $v = \tfrac12(e_0 + e_2 + e_3 - e_7) \in \mathcal O$,
-$y = (yp)e_0 - (yp)v - ((yv)p)e_0$ for every $y \in \mathcal O$, so the
-products $(yp)z$ span $\mathcal O$ (new script
-`verify_product_span_proof.py`, which checks every step).  F6(a)'s lemma is
-not used, so its literature check is not run.  The octonion X-product the
-author named needs an invertible $X$; it does not reach the image of $p$
-in $\mathcal O/2\mathcal O$, which has norm 0 (decision (r) of that plan).
-Decision (o), not asked before, is put there with its recommendation
-(F6(b) to (e) stay out of v8).
+**Status: executed.**  The seven items of §3 are done, items 1 to 5 each
+through its own plan; the body is the plan as engaged.  In this plan "§"
+refers to the plan's own sections and "Section" to the paper's.  The
+author's decisions of §5, as taken: (a) item 1 first; (b) the witnesses
+as a short table of explicit vectors, so that Section 5.1 defines no
+symbols and Section 5.2 keeps its definition of $\varepsilon_i$ and
+$\omega$, and the exhaustive value set of Remark 5.1 in the new
+appendix; (c) the new appendix is Appendix D; (d) to (f) as
+recommended, and "is given here" for the tension around F7; (g) no credit
+note in the paper for results found on the AI side of the work: the work
+is a human–AI collaboration and its results are joint, while the records
+trace where each result came from; (h) Appendix A rebuilt around the
+criterion modulo 2; (i) to (k) as recommended, with the credits that
+Lepowsky and Meurman's paper, read in the original, supports, and with
+Silverman's comment that reads Egan's construction modulo 2 cited as
+well; (l) and (m) as recommended, with the exact script
+`verify_egan_construction.py` cited at the reproduction chain and two
+earlier rulings of the author kept against item 4 (one name of the
+product, and "at least 17,280"); (n) item 5, by hand and more simply than
+§3 has it, without F6(a)'s lemma, whose literature check is therefore not
+run, and without the X-product, which does not carry the step; (o) F6(b)
+to (e) stay out of v8; (p) the abstract and Section 7 each name the
+criterion in one sentence; (q) as recommended, with the corrections made
+in place: the Hermes supplement and the W-concrete review state $w_0
+\equiv s^2 \pmod{2L}$ (F8), and the stabilizer statements of the ledger,
+CURRENT_STATE and research_result name the group $\mathrm{Aut}(\mathbb O,
+\cdot_\sigma)$ in which they hold.  The items, with their own plans and the
+parts of the paper they changed (`paper/v7_to_v8_changelog.md` states the
+changes part by part):
 
-**Addendum (2026-10-23, prompt 330).**  Item 4 executed per
-`2026-10-22_section6_plan.md` (changelog item 25): decisions (l), (m) and
-(n′) as recommended; the rulings of prompt 250 kept against this plan's
-item 4; Appendix A unchanged.  Next: item 5, the span of $\star$ by hand
-(optional, decision (n)), with its own plan and a literature check of the
-lemma first.
+- Item 1: `2026-10-21_plan.md`; Section 5.1
+  (`sec:identities`) and Appendix D (`app:samples`).
+- Item 2: `2026-10-21_criterion_plan.md`; Proposition
+  5.3 (`prop:criterion`) in Section 5.6 (`sec:census`).
+- Item 3: `2026-10-22_appendix_a_plan.md`; Appendix A
+  (`app:mod2quotient`), and Section 7 (`sec:conclusion`) with three open
+  questions.
+- Item 4: `2026-10-22_section6_plan.md`; Section 6
+  (`sec:related`), with Egan's construction as display (6.2) (`eq:egan`).
+- Item 5: `2026-10-23_span_plan.md`; Proposition 5.4
+  (`prop:span`).
+- Item 6: the abstract and Section 7.
+- Item 7, the records: CURRENT_STATE, the indexing READMEs,
+  research_result, the ledger (the paper's labels in its "Recorded in"
+  column; claim 017 for every twist; rows 023, $\sigma(\Lambda)$ as one of
+  Egan's lattices, and 024, the witnesses), the glossary, the reference
+  registry (F8; Lepowsky and Meurman as read in the original; the entries
+  [Egan2014], [Silverman2016] and [WilsonBook2009], and, for the
+  attribution of the X-product, [Dixon1994] and
+  [CederwallPreitschopf1995]), and the docstrings of the cited scripts, in
+  the paper's numbering.
 
-**Addendum (2026-10-22, prompt 329).**  Item 4's own plan is
-`2026-10-22_section6_plan.md` (proposed): Section 6's Baez–Egan block with
-Egan's construction stated exactly and its two instances, the Jordan
-paragraph at the right scale, the Comparison paragraph deleted, the
-Anatomy's opening at the right scale, and Section 1's sentence.  It asks
-(l) and (m) again and adds (n′), an exact script for the four links of the
-reproduction chain that had none (`verify_egan_construction.py`, in the
-repository, not yet cited).  It keeps two rulings of prompt 250 (one name of
-the product; "at least 17,280") against this plan's item 4, with the
-alternative offered.  Nothing in the paper has changed.
-
-**Addendum (2026-10-22, prompt 327).**  Item 3 executed per
-`2026-10-22_appendix_a_plan.md` (changelog item 24): decisions (i), (j) and
-(k) as recommended, and, at the author's direction, Silverman's comment of
-16 February 2016 cited as well (that online discussion gave the research a
-key impulse and is a fact-finding aid now).  Section 7 now has three open
-questions.  Next: item 4, Section 6's Baez–Egan block, with its own plan.
-
-**Addendum (2026-10-22, prompts 325 and 326).**  Item 3's own plan is
-`2026-10-22_appendix_a_plan.md` (proposed): Appendix A rebuilt around the
-criterion modulo 2, and Section 7's fourth question deleted.  Reading
-Lepowsky and Meurman in the original (the author's copy, prompt 326) changed
-the facts behind decision (j): the identification of the lattices between
-$2L$ and $L$ isometric to $\sqrt2\,L$ with the maximal subspaces on which
-$q$ vanishes, and the construction of the Leech lattice from any
-complementary pair of them, are theirs (1982, §2), and they credit Tits
-with the same construction; Silverman found the identification
-independently in 2016.  The item-3 plan corrects the paper's credit
-accordingly and asks (i) to (k) again in plain words.  Nothing in the paper
-has changed.
-
-**Addendum (2026-10-22, prompt 324).**  Decision (g) is settled, also for
-later items: the paper carries no credit note for results found on the AI
-side of the work, Proposition 5.3 and $\rho$'s index 1 among them.  The work
-is explicitly a human–AI collaboration (Section 1, the declaration on the
-use of AI, Appendix C), and its results are joint; the records keep tracing
-where each result came from.  Next, as before: item 3, with its own plan.
-
-**Addendum (2026-10-22, prompt 323).**  Item 2 executed per
-`2026-10-21_criterion_plan.md` (changelog item 23): decisions (d), (e) and
-(f) as recommended, and "is given here" for the F7 tension.  Decision (g)
-was not understood as asked; it is asked again in plain words, and until the
-author decides, the paper does not name the review.  The author's aim for
-this phase (prompt 323): the paper with the updates, substantially correct
-and ready for the author's fine-comb review; glaring issues (babble,
-unwanted text that proliferates) are fixed as they arise.  The facts
-restated around the census table are likely to be amended later, at the
-author's direction.  Next: item 3, Appendix A rebuilt around the criterion
-modulo 2, with its own plan.
-
-**Addendum (2026-10-21, prompt 322).**  Item 2's own plan is
-`2026-10-21_criterion_plan.md` (proposed): Proposition 5.3 in Section 5.6
-with its proof, the census read through it, and Section 7's third question
-narrowed.  It asks decisions (d) to (g) again and points out one tension:
-the sentence after the census table says that no description of the closing
-permutations beyond the 3-cycles, and no reason for the failure of every
-4-cycle, "is known", while F7 nearly gives both; the plan recommends "is
-given here".  Nothing in the paper has changed.
-
-**Addendum (2026-10-21, prompt 321).**  The three tensions pointed out at
-prompt 320 are fixed (changelog item 22): Section 2.1 defines the Euclidean
-inner product; Section 5.1 states the failures on the ambient algebra and,
-by scaling, on the order; Section 5.1 points to Appendix D for the sampled
-frequencies.  Next, as before: item 2.
-
-**Addendum (2026-10-21, prompt 320).**  Section 5.1 was made readable at
-the author's ruling: the table lists each identity and a witness of its
-violation, written as explicit vectors, under two sentences of prose
-(changelog item 21; `2026-10-21_plan.md`, addendum).  The target structure
-of §2 for Sections 5.1 and 5.2 reads accordingly: Section 5.1 defines no
-$\varepsilon_\alpha$ or $\omega$, and Section 5.2 is unchanged.  Next, as
-before: item 2.
-
-**Status (2026-10-21, prompt 319): item 1 executed.**  Section 5.1 by
-witnesses and the new Appendix D, per `2026-10-21_plan.md` (changelog item
-20).  Next: item 2, the closure criterion in Section 5.6, with its own plan.
-The author's standing method for the remaining items (prompt 319): precision
-over adventure; tensions are brought to the author, not pursued; one
-significant update at a time, with notes and plans for later ones; a section
-may be revised several times; at every step the paper meets the editorial
-standards.  Note for later, pointed out at prompt 319: the keyword
-"computer-assisted proof" and the MSC code 68V05, kept at prompt 312 because
-Section 5 still rested on exhaustive computations, are to be reconsidered
-once the table-based proofs are replaced.
-
-**Status (2026-10-21, prompt 318): engaged.**  The author's decisions: (a)
-item 1 first; (b) as recommended (the witnesses as a short table;
-$\varepsilon_\alpha$ and $\omega$ defined in Section 5.1, with 5.2's clause
-edited; Remark 5.1's exhaustive value set to Appendix D); (c) no preference
-on lettering ("we can always regroup later"), so the new appendix is
-Appendix D; (h) Appendix A rebuilt around the criterion modulo 2.  Item 1's
-own plan is `2026-10-21_plan.md`.  The text below is the plan as engaged.
-
-**Status (2026-10-20, prompt 317): proposed, not executed.**  Drafted by
-Claude Opus 5.5 at the direction of Jens Köplinger, from the author's rulings
-of prompts 316 and 317, and reviewed before hand-over by four independent
-readers whose confirmed findings are applied.  Nothing in the paper has
-changed.  The items of §3 are executed one at a time, on the author's word.
-In this plan "§" refers to the plan's own sections and "Section" to the
-paper's.
+Open, outside the items, for the author: the keyword "computer-assisted
+proof" and the MSC code 68V05, to be reconsidered for the closed-form
+proofs; the paragraph after the census table, which restates three facts
+of the table.  Drafted by Claude Opus 5.5 at the direction of Jens
+Köplinger, and reviewed before hand-over by four independent readers.
 
 ---
 
@@ -155,7 +84,7 @@ with an independent check.  All arithmetic was exact, and the core statements
 were also re-derived first-hand.  Prompt log 317 names the workflows, the
 checks behind each count, and the scratch files.
 
-**Provenance, corrected.**  The closure criterion (F1) is Theorem A of the
+**Provenance.**  The closure criterion (F1) is Theorem A of the
 external review of 13 October 2026
 (`paper/reviews/2026-10-13_claude_opus_5_5_review_v8.md`, lines 125–169).  The
 review states it in lattice form for twists $g \in W(E_8)$: $\Lambda \star_g
@@ -168,14 +97,11 @@ Appendix A's question on which polarizations lift, for these twists (lines
 transitivity on the 17,280 ordered pairs, the 4,704 closing pairs, the 142
 subalgebras, 16 right ideals and 8 two-sided ideals among the 270 subspaces,
 and the span of $\star$ as the diagonal of $Ls$ plus $2\Lambda$, shared by all
-588 closing odd permutations.  Prompt logs 314 and 315, the addenda of
-prompts 314 to 316 to `2026-10-20_plan.md`, changelog item 18 and
-CURRENT_STATE presented the criterion, and log 314 these counts, as found
-anew.  Prompt 315 stated the criterion modulo 2 for every twist $g$ with $g(L)
-= L$, isometric or not.  Prompt 317 found that the routing identities behind
-it hold exactly over $\mathbb Z$, not only modulo $2L$, so the criterion holds
-for every bilinear $\mu$ with $\mu(L, L) \subseteq L$.  The records are
-corrected in this hand-over (prompt log 317).
+588 closing odd permutations.  Prompt 315 stated the criterion modulo 2 for
+every twist $g$ with $g(L) = L$, isometric or not.  Prompt 317 found that the
+routing identities behind it hold exactly over $\mathbb Z$, not only modulo
+$2L$, so the criterion holds for every bilinear $\mu$ with $\mu(L, L)
+\subseteq L$.
 
 ---
 

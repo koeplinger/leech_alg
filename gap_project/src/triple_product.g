@@ -1,10 +1,10 @@
 #############################################################################
 ##
 ##  triple_product.g — The Z_3-symmetric triple product on R^24 of the paper
-##  (Definition 3.6), in both untwisted (star_0) and sigma-twisted (star)
-##  CORRECTION (2026-07-12): "Definition 3.6" is the v3 numbering. In v4 and
-##  later the triple product is Definition 3.3 (label def:triple).
-##  forms.
+##  (Definition 3.3, `def:triple`), in both untwisted (star_0) and
+##  sigma-twisted (star) forms.
+##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
 ##
 ##  Decomposition:  R^24 = O_1 (+) O_2 (+) O_3.
 ##  Routing:        block alpha * block beta -> block gamma where

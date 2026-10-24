@@ -1,6 +1,8 @@
 Topic: Prior art — multiplicative structures / orders on the Leech lattice
 =============================================================================
 
+Created: 2026-04-11.  Updated: 2026-10-24.
+
 Literature search conducted: 2026-04-11, extended 2026-04-14
 Purpose: Identify any prior work establishing or ruling out an order (or
 ring, algebra, multiplicatively closed structure) on the Leech lattice,
@@ -30,8 +32,14 @@ roughly by structural distance from the present construction):
    (commutative) product, not an octonion-derived (noncommutative,
    nonassociative) product.  The question of closure under the
    undoubled Jordan product is left open, with a conjectured negative
-   answer.  The human researcher of this project (Koeplinger)
-   participated in that discussion.
+   answer.  Egan also constructs Λ from E₈ alone (part 9): Λ(L₁, L₂) for
+   two sublattices of E₈ isometric to √2 E₈ that meet in 2E₈.  Wilson's Λ
+   and σ(Λ) are two of its 17,280 lattices, and by the paper's closure
+   criterion (Proposition 5.3) the untwisted product closes on Λ(L₁, L₂)
+   exactly when L₁ and L₂ are closed under the standard octonion product
+   (paper Section 6).  The human
+   researcher of this project (Koeplinger) participated in that
+   discussion.
 
 2. **Dixon (1995, 2010)**: Proposes octonionic descriptions of Λ using
    variants of the octonion product (XY-product in the 2010 formal
@@ -49,7 +57,11 @@ roughly by structural distance from the present construction):
    including a Turyn-style construction from three copies of E₈);
    Lepowsky–Meurman 1982 (Λ as a sublattice of E₈³ containing 2E₈³,
    with a maximal 2-local subgroup that permutes the three factors and
-   one extra automorphism generating Co₀); and Elkies–Gross 1996 (an
+   one extra automorphism generating Co₀; their §2 constructs Λ from any
+   pair of complementary maximal totally singular subspaces of E₈/2E₈,
+   the form of Egan's construction, and their introduction credits work
+   of Tits with what amounts to the same construction; paper Appendix A);
+   and Elkies–Gross 1996 (an
    integer form of the exceptional Jordan algebra 𝔥₃(O) with a
    polarization outside the orbit of the identity matrix, related to Λ
    and to the even rank-26 lattice of determinant 3 and minimum 4).
@@ -64,10 +76,11 @@ Conway and Sloane give 23 constructions of Λ, one for each of the 23
 Niemeier lattices (equivalently, one for each class of deep hole in
 the Leech lattice).  Each construction glues vectors according to
 the hole structure.  Among the 23 is a Turyn-style construction from
-three copies of E₈ corresponding to the 3E₈ Niemeier lattice; this is
-the underlying structural precedent for all later "triple of
-octonions / E₈³" approaches (Lepowsky–Meurman 1982, Dixon 1995/2010,
-Wilson 2009).  An expanded version appears as Chapter 24 of SPLAG.
+three copies of E₈ corresponding to the 3E₈ Niemeier lattice; the later
+"triple of octonions / E₈³" approaches (Dixon 1995/2010, Wilson 2009)
+share its E₈³ setting.  Lepowsky and Meurman, from the same year, credit
+work of Tits with what amounts to their construction of Λ from E₈³ (see
+[LepowskyMeurman1982]).  An expanded version appears as Chapter 24 of SPLAG.
 Published in Proc. Roy. Soc. London A 381 (1982), 275–283.  The 23
 constructions are additive/code-theoretic; no bilinear product is
 defined on Λ.
@@ -79,47 +92,56 @@ obtained from library for verification.
 
 ### [LepowskyMeurman1982] — An E₈-approach to the Leech lattice and the Conway group
 
-Lepowsky and Meurman (J. Algebra 77 (1982), 484–504) describe Λ as a
-sublattice of E₈³ containing 2E₈³ and use this to construct the
-Conway group Co₀ via a maximal 2-local subgroup permuting the three
-E₈ factors together with one extra automorphism.  This is a
-group-theoretic / Lie-algebraic treatment of the E₈³ decomposition;
-no bilinear product on Λ is defined or tested.  The E₈³ ambient
-decomposition itself anticipates the R²⁴ = O₁ ⊕ O₂ ⊕ O₃ viewpoint
-used here and in Wilson 2009 / Dixon 2010 / Baez 2014, but the
-multiplicative question is not engaged.  Note: the 1982 paper is by
-Lepowsky and Meurman alone; Frenkel joined the collaboration later
-for the Monster vertex operator algebra (FLM, 1988).
-
-Direct PDF access was not available during this search (paywalled);
-structural content confirmed via secondary summaries.  Physical copy
-to be obtained from library for verification.
+Lepowsky and Meurman (J. Algebra 77 (1982), no. 2, 484–504;
+doi:10.1016/0021-8693(82)90268-X) describe Λ as a sublattice of E₈³
+containing 2E₈³ and use this to construct the Conway group Co₀ via a
+maximal 2-local subgroup permuting the three E₈ factors together with one
+extra automorphism.  Their §2, read in the original at prompt 326 (the
+author's copy; the article is in Elsevier's open archive): for lattices M
+with 2Γ < M < Γ, Γ = E₈, Proposition 2.1 shows that 2^{-1/2}M is even
+unimodular exactly when M/2Γ is a maximal totally singular subspace of
+Γ/2Γ; Theorem 2.2 and Corollary 2.3 build, from any two such lattices Φ, Ψ
+with Φ + Ψ = Γ and Φ ∩ Ψ = 2Γ, the lattice
+{(x₁+y, x₂+y, x₃+y) : xᵢ ∈ Φ, y ∈ Ψ, x₁+x₂+x₃ ∈ 2Γ}, and 2^{-1/2} times it
+is isometric to the Leech lattice; Proposition 2.4: 2^{-1/2}Φ and
+2^{-1/2}Ψ are isometric to E₈.  Their introduction credits work of Tits
+with what amounts to the same construction.  Wilson's Λ is their lattice
+for (Ls̄, Ls), and Egan's construction is of this form.  Their term is
+"totally singular" (Q = 0); the paper says "totally isotropic" and
+"Lagrangian".  The paper cites them in Section 6 (the precursors) and in
+Appendix A ("Relation to prior work", their §2).  No bilinear product on
+Λ is defined or tested.  The E₈³ ambient decomposition anticipates the
+R²⁴ = O₁ ⊕ O₂ ⊕ O₃ viewpoint used here and in Wilson 2009 / Dixon 2010 /
+Baez 2014, but the multiplicative question is not engaged.  Note: the
+1982 paper is by Lepowsky and Meurman alone; Frenkel joined the
+collaboration later for the Monster vertex operator algebra (FLM, 1988).
 
 ### [Dixon1995] — Octonions: invariant Leech lattice exposed
 
 Dixon's 1995 arXiv preprint (hep-th/9506080, 12 June 1995; preceded by
 the closely related hep-th/9504040, 7 April 1995, "Octonions:
 invariant representation of the Leech lattice") proposes an early
-octonionic description of Λ.  A conjectured formula for one of the
-three minimal-vector families needed a small correction: Wilson
-supplied this correction in a footnote-style remark at the end of §5
-of Wilson 2009, while independently deriving the sublattice
-characterization above.  The Dixon–Wilson situation is structurally
-analogous to the Kirmse–Coxeter one: an early, structurally correct
-proposal refined by a later author's short correction.  Dixon 1995
-does not test or claim closure of Λ under any bilinear product.
+octonionic description of Λ.  The two 1995 preprints are references [10]
+and [11] of Wilson 2009, which counts them among the attempts to build
+the Leech lattice from triples of integral octonions; the paper's
+Section 6 footnote describes the 1995 preprint as a precursor of Dixon's
+2010 construction.  The formula Wilson corrected is in the 2005 preprint
+(see [Dixon2005]).  Dixon 1995 does not test or claim closure of Λ under
+any bilinear product.
 
 ### [Dixon2005] — Integral octonions, octonion multiplication and the Leech lattice
 
 Dixon's 2005 preprint (dated 10 March 2005), cited as reference [12] of
 Wilson 2009.  Its conjectured formula for the third family of minimal
 vectors required a small correction, which Wilson supplied in a bracketed
-note at the end of §5 of Wilson 2009 while independently deriving the
-sublattice characterization above.  The preprint was posted at
-www.7stones.com/Homepage/8Lattice.pdf; that URL now serves Dixon's later
-2010 paper, so the 2005 preprint is cited by its locator through Wilson
-2009 rather than by a live link.  Like Dixon's other works here, it does
-not test or claim closure of Λ under a bilinear product.
+note in §5 of Wilson 2009 while independently deriving the sublattice
+characterization above.  The Dixon–Wilson situation is structurally
+analogous to the Kirmse–Coxeter one: an early, structurally correct
+proposal refined by a later author's short correction.  The preprint was
+posted at www.7stones.com/Homepage/8Lattice.pdf; that URL now serves
+Dixon's later 2010 paper, so the 2005 preprint is cited by its locator
+through Wilson 2009 rather than by a live link.  Like Dixon's other works
+here, it does not test or claim closure of Λ under a bilinear product.
 
 ### [ElkiesGross1996] — The exceptional cone and the Leech lattice
 
@@ -186,29 +208,54 @@ X = ℓ₀ = ½(1 + e₁ + … + e₇) to obtain E₈, and general XY-products f
 higher laminated lattices including Λ.  Each XY-product is an
 alternative octonion multiplication on R⁸ (isomorphic to the
 standard one).  Dixon does not test or claim closure of Λ under the
-XY-product or any other bilinear product.
+XY-product or any other bilinear product.  The human researcher of this
+project (Koeplinger) learned the name "X-product" from Dixon, who
+attributes it to Martin Cederwall (prompt 331).  Dixon's preprint
+"Octonion X-product orbits" ([Dixon1994], §1) credits the introduction
+of the X-product to Cederwall and Preitschopf
+([CederwallPreitschopf1995]), with X a unit octonion.  The paper
+(Section 6, after display (6.1)) gives the X-product in the form
+A ∘_X B = (AX)(X⁻¹B) and names no originator; none of its proofs uses
+it.
 
 ### [Baez2014] — Integral Octonions, parts 9–12 (n-Category Café)
 
 John Baez's blog series (parts 9–12, November 2014 – January 2016; the
 series runs 2013–2016) explores the
 exceptional Jordan algebra 𝔥₃(O) as a framework for the Leech lattice.
-Parts 9–10 contain the Leech-Jordan material; part 11 (12 December 2014)
-gives the 270 rescaled copies of the first E₈ shell, and part 12
-(31 January 2016, by Tim Silverman) the integral octonions modulo 2; the
-paper uses parts 11–12 in Section 6 (17,280 = 270 × 64) and Appendix A.  Baez considers the
-27-dimensional lattice ℤ³ ⊕ L_L ⊂ 𝔥₃(O) with integers on the
-diagonal and a Leech sublattice L_L ≅ Λ off-diagonal.  Key findings:
+Part 9 (23 November 2014) gives Greg Egan's construction of the Leech
+lattice from E₈ alone, in the form of part 11 (11 December 2014): for
+sublattices L₁, L₂ ⊂ L, each isometric to √2 L, with L₁ ∩ L₂ = 2L, the
+lattice Λ(L₁, L₂) := {(x,y,z) ∈ L³ : x+y, x+z, y+z ∈ L₁; x+y+z ∈ L₂} is
+isometric to Λ.  Part 11 gives the 270 such sublattices (the rescaled
+copies of the first E₈ shell); each meets exactly 64 of them in 2L, so the
+construction gives 17,280 = 270 × 64 lattices, all distinct (Egan's
+comments, [Egan2014]).  Wilson's Λ = Λ(Ls̄, Ls) and σ(Λ) = Λ(2𝒪, p𝒪) are
+two of them (paper Section 6, display (6.2)).  Parts 9–10 (part 10:
+1 December 2014) contain the Leech-Jordan material, and part 12
+(31 January 2016, by Tim Silverman) the integral octonions modulo 2.  The
+paper cites parts 9 and 11 for Egan's construction and its count and parts
+9–10 for the Jordan material (Section 6), and part 12 for Silverman's
+identification (Appendix A).  Links:
+https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html,
+https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html,
+https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html,
+https://golem.ph.utexas.edu/category/2016/01/integral_octonions_part_12.html.
+Baez considers the 27-dimensional lattice ℤ³ ⊕ L_L ⊂ 𝔥₃(O) with integers
+on the diagonal and, off the diagonal, a Leech lattice L_L at the standard
+scale with entries in a maximal order of integral octonions (L_L ≅ Λ/√2).
+Key findings:
 
-- The lattice ℤ³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed under the Jordan product
-  x ∘ y = xy + yx.
+- Egan found [Egan2014] that the lattice ℤ³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed
+  under the Jordan product x ∘ y = xy + yx.
 - It IS closed under the doubled Jordan product 2(xy + yx).
-- Egan computationally enumerated at least 17,280 distinct off-diagonal
-  Leech embeddings L_L ⊂ O³ for which the associated 27-dimensional
-  lattice is closed under the doubled product.  (The total number of
-  Leech embeddings he found in O³ is much larger — at least
-  244,035,421 — but only the 17,280 are compatible with Jordan
-  closure.)
+- Egan enumerated at least 17,280 distinct off-diagonal Leech lattices
+  L_L ⊂ O³ for which the associated 27-dimensional lattice is closed
+  under the doubled product (part 10, its first Result 1): those of
+  Egan's construction with a maximal order in place of L, for which the count is
+  exact (part 10's second Result 1; part 11).  Part 10 asks (Puzzle 3)
+  whether there are more.  Egan's orbit-stabilizer bound gives at least
+  244,035,421 sublattices of L³ isometric to Λ (paper Section 6).
 - Baez left as an open question whether any such lattice is closed
   under the undoubled Jordan product xy + yx, which would remove the
   factor-of-2 discrepancy, and conjectured that the answer is
@@ -225,15 +272,62 @@ different algebraic framework (commutative Jordan product in 27
 dimensions) rather than a noncommutative, nonassociative
 octonion-derived product in 24 dimensions.
 
-### [Calderbank2023] — Complementary-Lagrangians reading (comment on Baez, part 9)
+### [Calderbank2023] — Egan's construction and Lepowsky–Meurman (comment on Baez, part 9)
 
 David Calderbank, in a comment of 2 April 2023 on part 9 of Baez's
-Integral Octonions series (golem.ph.utexas.edu), observes that the Leech
-construction can be read in terms of the preimages in L of a
-complementary pair of Lagrangians of L/2L.  This project arrived at
-the same reading independently (prompt-log record), so the citation is
-completeness, not repair.  It is credited in Appendix A of the paper,
-alongside Silverman's mod-2 orthogonal-space picture of L/2L.
+Integral Octonions series
+(https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html#c062182),
+relates Egan's construction to the earlier literature.  Calderbank
+credits Baez and Egan with noting that the octonions are not needed ("the
+octonionic yoga is not really necessary"): the ingredients are the
+preimages in L of two complementary maximal isotropic subspaces of L/2L,
+and the triples (x+a, x+b, x+c) built from them give the Leech lattice.
+The comment names Tits (1980) and Lepowsky and Meurman (1982) among those
+who knew this "Turyn-inspired" construction from three copies of E₈
+(Calderbank has seen only Lepowsky and Meurman's paper, which quotes
+Tits), notes that it "isn't quite the Turyn construction", and relates it
+to the 23 constructions of Conway and Sloane and to Borcherds's thesis.
+The comment gives no theorem number.  The paper's Appendix A credits
+Calderbank for relating Egan's construction to that of Lepowsky and
+Meurman; it credits the identification itself to Lepowsky and Meurman
+(§2), and calls the orthogonal space (L/2L, q) classical (Wilson's book,
+§3.12.4).  This project arrived at the complementary-pair reading
+independently (prompt-log record).
+
+### [Egan2014] — Comments on Baez, parts 9 and 11 (n-Category Café)
+
+Greg Egan's comments of 26 November 2014 on part 9
+(https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html#c047749)
+and of 11 and 13 December 2014 on part 11
+(https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html#c047862
+and #c047873).  The comment of 26 November finds that the
+27-dimensional lattice Z³ ⊕ L_L of Hermitian matrices is not closed under
+the Jordan product xy + yx but is closed under the doubled product
+2(xy + yx).  The comment of 11 December shows that a Leech lattice built
+by Egan's construction determines its pair (L₁, L₂), so the
+construction's 17,280 lattices are distinct; the comment of 13 December
+counts 64 complementary partners for each of the 270 sublattices,
+270 × 64 = 17,280 ordered pairs.  The paper cites these
+comments in Section 6, for the count and for the Jordan closure.  Blog
+comments, not peer-reviewed; no dispute known.
+
+### [Silverman2016] — Comments on Baez, part 12 (n-Category Café)
+
+Tim Silverman's comments of 16 and 19 February 2016 on part 12 of Baez's
+series
+(https://golem.ph.utexas.edu/category/2016/01/integral_octonions_part_12.html#c050266
+and #c050282).  The comment of 16 February reads Egan's construction
+modulo 2, with the parametrization (x+p, x+q, x+r); the comment of
+19 February translates Wilson's octonionic construction down to F₂ and
+finds that Wilson's Ls̄ and Ls reduce to two disjoint maximal isotropic
+subspaces, that is, a polarization.  Part 12 itself (31 January 2016, by
+Silverman) identifies the 270 sublattices of E₈ isometric to √2 E₈ with
+the maximal totally isotropic subspaces of E₈/2E₈, independently of
+Lepowsky and Meurman, and says that this was assumed, not proved.  The
+paper cites the comments in Appendix A ("Relation to prior work"), at the
+author's direction (prompt 327): the online discussion gave the research a
+key impulse.  Blog comments, not peer-reviewed; no dispute
+known.
 
 ### [WilsonConway] — Conway's group and octonions
 
@@ -264,12 +358,13 @@ Searched for:
 Sources checked: Google Scholar, arXiv, Semantic Scholar, ResearchGate,
 n-Category Café, Wilson's publication list, Elkies' publication list.
 
-For the four paywalled references (Conway–Sloane 1982,
-Lepowsky–Meurman 1982, Elkies–Gross 1996, and the Elkies–Gross
-2001 follow-up), structural content was verified via secondary
-sources (including Wilson 2009, which cites all three in its
-bibliography); physical copies are to be obtained from a library to
-confirm the absence of multiplicative/ring/order structure on Λ.
+For the three paywalled references (Conway–Sloane 1982, Elkies–Gross
+1996, and the Elkies–Gross 2001 follow-up), structural content was
+verified via secondary sources (including Wilson 2009); physical copies
+are to be obtained from a library to confirm the absence of
+multiplicative/ring/order structure on Λ.  Lepowsky–Meurman 1982 is in
+Elsevier's open archive; its introduction, §2 and references were read in
+the original at prompt 326.
 
 ---
 
@@ -291,11 +386,10 @@ confirm the absence of multiplicative/ring/order structure on Λ.
   three multiplicative systems that are not isomorphic; the four octonionic
   orders with lattices C₈, A₂⁴, D₄² and E₈ are preserved by the new
   realization of the Okubo product.  The paper (§6, "Related work")
-  describes this version (prompt 316).  v1 (10 May 2026) took a 2-adic
-  route instead (a Z[√3]-order after 2-adic scaling, E₈ recovered by 2-adic
-  saturation), which the paper described until prompt 316, then contrasting
-  it with the mod-2 quotient of Appendix A.  See also the analysis note in
-  `paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md` (on v1).
+  describes this version.  v1 (10 May 2026) took a 2-adic route instead (a
+  Z[√3]-order after 2-adic scaling, E₈ recovered by 2-adic saturation); the
+  analysis note `paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md`
+  is on v1.
 
 ### [Koeplinger2026] — An order on the Leech lattice from a Z₃-symmetric triple-octonion product
 
@@ -311,23 +405,3 @@ corresponding source is frozen in this repository as
 `paper/main_2026-07-19.tex` (v7, 24 pages).  Originality note: the
 construction and its verification are original to this project; the prior
 art it builds on and is contrasted with is registered above.
-
----
-
-Last updated: 2026-06-07 (summary reworded to align with the current
-Z₃-symmetric triple-octonion framing; Corradetti 2026 entry unchanged
-from 2026-05-23 addition)
-
-Addendum (2026-07-19): entries [Dixon2005] and [Calderbank2023] added to
-close registry gaps found in the post-freeze sweep; entry [Koeplinger2026]
-added for this project's published result at the close of the effort.
-
-Addendum (2026-10-13): [Baez2014] extended to parts 9–12 to match the paper's
-bibliography; in [ElkiesGross1996], Wilson's reference for Elkies–Gross is [13]
-(his [12] is Dixon's 2005 preprint).  The [Dixon1995] entry's sentence that
-attributes to the 1995 preprint the conjectured formula Wilson corrected is
-superseded: Wilson's bracketed note concerns the preprint of 10 March 2005, see
-[Dixon2005]; the 1995 preprints are his [10] and [11], earlier attempts, which
-the paper (Section 6 footnote) describes as a precursor.  The locator "at the
-end of §5 of Wilson 2009" in the [Dixon1995] and [Dixon2005] entries is
-inexact (the note is inside §5) and was dropped from the paper at prompt 244.

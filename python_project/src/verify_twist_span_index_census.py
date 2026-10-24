@@ -1,18 +1,16 @@
 """Span index of twisted triple products: the permutation census and the
-index-1 reflection (prompt 287, 14 October 2026).
+index-1 reflection.
 
-Updated 14 October 2026 (prompt 289): in the paper's v8 the census is
-Section 5.5 ("Other twists: closure and span of the image"), which cites this
-script for the span-index column and for the reflection, there called rho;
-"Section 5.6" below refers to v7.
+Created: 2026-10-14.  Updated: 2026-10-24.
 
-Note (20 October 2026, prompt 314): v8 gained a subsection 5.3 (Maximality), so
-the census is now Section 5.6 of v8, as it was in v7.  Code and output
-unchanged.
+The paper cites this script in Section 5.6 (label sec:census, "Other twists:
+closure and span of the image"): at the census table, with
+verify_all_permutations_exact.py, for the span-index column, and at the
+reflection rho, which is s_r of Part 1 below.
 
-Second pass, in this repository, on the external review of v8 by Claude Opus
-5.5 (paper/reviews/2026-10-13_claude_opus_5_5_review_v8/), written from the
-paper's definitions with the exact lattice machinery of
+Written in this repository to check statements of the external review of v8
+by Claude Opus 5.5 (paper/reviews/2026-10-13_claude_opus_5_5_review_v8/), from
+the paper's definitions with the exact lattice machinery of
 verify_consecutive_twists_exact.py (Z-basis B of Lambda, membership tests, L^3
 coordinates) and the octonion product of verify_ideal_decomposition.py.  No
 code of the review is used.
@@ -31,17 +29,22 @@ Part 1, the reflection s_r in the root r = (e0 + e1 + ... + e6 - e7)/2 of L:
 Part 2, all 5,040 permutation twists pi (pi(e_a) = e_{pi(a)}, pi(e_0) = e_0,
   x ._pi y = pi^{-1}(pi(x) . pi(y)), the paper's Section 5.6 convention):
   closure, the span index of each closing twist, and two statements of the
-  review checked on every permutation:
+  review:
     Theorem A  star_pi closes on Lambda  <=>  L sbar and L s are both closed
-               under ._pi  (checked on the 64 basis products of each);
+               under ._pi  (checked on the 64 basis products of each), on
+               every permutation;
     Theorem B  [Lambda : S_pi] = h_W . h_V^2 with h_W = [Ls : <Ls ._pi Ls>],
-               h_V = [L sbar : <L sbar ._pi L sbar>] (8-dimensional HNFs).
-  Result (14 October 2026, 750 s on 12 cores): 1,764 closing permutations;
-  all 1,176 even ones have index 2^10, all 588 odd ones (sigma among them)
-  index 2^16; Theorems A and B hold on all 5,040.
+               h_V = [L sbar : <L sbar ._pi L sbar>] (8-dimensional HNFs), on
+               every closing permutation.
+  Theorem A is the paper's Proposition 5.3 (label prop:criterion), stated and
+  proved there for every twist, an invertible linear map g with g(L) = L.
+  Theorem B is not in the paper.
+  Result (750 s on 12 cores): 1,764 closing permutations; all 1,176 even ones
+  have index 2^10, all 588 odd ones (sigma among them) index 2^16; Theorem A
+  holds on all 5,040 permutations, Theorem B on all 1,764 closing ones.
 
 Independent of this file: the review's own implementations (Python, GAP,
-PARI/GP) and the second-pass agents of prompt 287 obtained the same numbers.
+PARI/GP) obtained the same numbers.
 
 Usage:  python3 verify_twist_span_index_census.py            # both parts
         python3 verify_twist_span_index_census.py --reflection-only

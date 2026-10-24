@@ -1,67 +1,15 @@
 # Trial 007 Results — Triple Kirmse-twisted octonion algebra
 
-Date: 2026-04-11
-
-## Forward correction (2026-05-23)
-
-This file, as written on 2026-04-11, characterised the working twist
-candidates by two co-equal families: the 21 transpositions and the 7
-"index-doubling permutations σ_s(k) = 2k − s (mod 7)."  Per Manifesto
-§12, this record is preserved as written; the corrections live in
-paper/main.tex v4 and `evidence_and_reasoning/terminology.md`.
-
-What was later established from the primary sources (verifying Kirmse
-1924, Coxeter 1946; see `paper/reviews/`):
-
-- The σ used throughout the paper is a **transposition of two imaginary
-  basis units**, a linear involution of R⁸ — the same map Bruck applied
-  to repair Kirmse's J₁ (Coxeter 1946 §4, "transposing two of the i's").
-- The "index-doubling permutation" framing was a misconception (the
-  Fano-plane automorphism orbit happens to contain such permutations,
-  but the canonical name and historical referent is the transposition).
-- Index-doubling permutations remain among the working twists in the
-  trial's enumeration, but they should be read as Fano-equivalent
-  representatives of the same orbit as the transpositions, not as a
-  distinct mechanism.
-
-The closure claim and the trial's empirical findings are unchanged.
-
-## Forward correction (2026-07-12)
-
-Three things below are overtaken.  This file is preserved as written (Manifesto
-§12); the current statements live in `paper/main.tex` and in
-`evidence_and_reasoning/key_claims/README.md`.
-
-- **The verdict is no longer conditional.**  Closure of the Z₃-symmetric
-  triple-octonion product on Λ is *proved* symbolically (paper §4, four lemmas
-  on a Z-basis).  It does not rest on sampling.
-- **The "what remains open" list below is closed.**  Exhaustive verification is
-  moot (the proof supersedes it); the algebraic properties are in paper §5; the
-  automorphism group is Aut(Λ, +, ⋆) ≅ C₆ × S₃ of order 36, strictly inside Co₀.
-- **The pair counts below are not reproducible.**  They were produced by
-  `trial_007_triple_octonion_swap.py`, which no longer exists.  The current
-  harness is `trial_007_kirmse_twist.py` and it tests 900 pairs per
-  transposition.  The 12M+ pairs of `trial_007_{scaled_test,fast,exhaust}.py`
-  stand.  The 21/21 transposition result is established exactly, on a Z-basis,
-  by `verify_consecutive_twists_exact.py`.
-
-## Forward correction (2026-10-15)
-
-Phase 0 and item 1 of "What this establishes" call L "the Coxeter–Dickson
-order (a maximal order of integral octonions)" with the Kirmse twist "already
-applied".  Per the dated correction of `leech_wilson.py` (2026-10-13) and the
-paper (Section 2.2, Lemma 4.1, Appendix B): L = D₈⁺ at root norm 2 is a
-nonunital order (e₀ ∉ L), as a lattice a √2-scaled copy of one of the seven
-maximal orders of the integral octonions; σ fixes L and acts on Wilson's
-sublattices (L s̄ = 2J₁, σ(L s̄) = 2O⁽⁴⁾, σ(Ls) = p·O⁽⁴⁾; ledger claims 019,
-021).  The closure result of Phase 0 (L · L ⊆ L on all 57,600 root pairs)
-stands.
+Created: 2026-04-11.  Updated: 2026-10-24.
 
 ## Algebra tested
 
 Same triple-product structure as trial 001 (three copies of an octonion algebra
 with Z₃ cross-block routing), but with DIFFERENT octonion multiplications
 obtained by applying permutations of {1,...,7} to the standard Fano triples.
+The "Kirmse twist" of the title is a transposition of two imaginary basis
+units, a linear involution of R⁸: the map by which Bruck repaired Kirmse's
+J₁ (Coxeter 1946, §4: "transposing two of the i's").
 
 The trial tested:
 - The standard multiplication (baseline / trial 001 confirmation)
@@ -70,15 +18,18 @@ The trial tested:
 - Additional permutations: 3-cycles, 4-cycles, 5-cycles, 7-cycles,
   products of disjoint cycles
 
-## Phase 0: Verification that Wilson's L is a maximal order
+## Phase 0: Verification that Wilson's L is closed
 
 **L IS closed under the standard octonion multiplication.** All 57,600 root
 pairs (240 × 240) were tested; every product lies in L.
 
-This confirms the claim in leech_wilson.py that Wilson's L is the
-Coxeter–Dickson order (a maximal order of integral octonions).  Consequently,
-trial 001 already used a maximal-order multiplication.  The "Kirmse twist"
-is already implicitly applied in the standard setup.
+L = D₈⁺ at root norm 2 is a nonunital order (e₀ ∉ L) and, as a lattice, a
+√2-scaled copy of a maximal order of integral octonions: L = (e₁ + e₂)𝒪 with
+𝒪 := ½(e₁ + e₂)L, one of the seven maximal orders that contain the eight
+basis units (paper Section 2.2).  The transposition σ fixes L (paper
+Lemma 4.1) and acts on Wilson's sublattices: Ls̄ = 2J₁, twice the analogue
+J₁ of Kirmse's set, σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 with
+p = e₂ − e₄ + e₅ − e₆ (paper (4.1); ledger claims 019 and 021).
 
 ## Phase 1: Index-doubling permutations
 
@@ -115,6 +66,16 @@ gives ≈74% failure rate (exclusively violating Wilson condition 3).
 All 21 transpositions were tested on a smaller sample (500–900 pairs per
 transposition, all type combinations): all achieve 0 failures.
 
+The pair counts in this phase and in the norm distribution below were
+produced by the harness trial_007_triple_octonion_swap.py, which is not in
+the repository, so they cannot be rerun.  The trial-007 harness in the
+repository, python_project/src/trial_007_kirmse_twist.py, tests 900 pairs
+per transposition.  All 21 transpositions close on Λ exactly: the 576
+basis-pair products of a Z-basis of Λ lie in Λ
+(python_project/src/verify_consecutive_twists_exact.py).  For swap(1,2),
+trial_007_scaled_test.py, trial_007_fast.py and trial_007_exhaust.py test
+12,000,000 further random minimal-vector pairs, with 0 failures.
+
 ## Phase 3: Broader permutation survey
 
 Not all permutations work. A survey of ~200 random permutations across all
@@ -139,8 +100,11 @@ Fano-plane automorphisms (index-doubling, identity) give the SAME
 multiplication as the standard and inherit its type3×type3 failure.
 Non-automorphism permutations give genuinely different multiplications.
 Among these, SOME close on the Leech lattice and others do not.  All
-transpositions close; the detailed criterion for general permutations
-is an open question.
+transpositions close.  The criterion for general permutations is the
+paper's Proposition 5.3 (`prop:criterion`): the twisted product
+x ·_π y := π⁻¹(π(x) · π(y)) gives a triple product that closes on Λ exactly
+when π(Ls̄) and π(Ls) are closed under the standard octonion product.  The
+exact census over all of S₇ is the paper's Section 5.6 (`sec:census`).
 
 ## Failure mode contrast
 
@@ -179,38 +143,41 @@ three-block sum with Wilson's sublattice Ls, fixing the condition-3 failure
 of the standard multiplication.
 
 **This means (Λ, +, ·) is an order in the R-algebra (R²⁴, +, ·)**, where ·
-is the transposition-twisted triple octonion product — provided the result
-survives exhaustive verification and independent mathematical proof.
+is the transposition-twisted triple octonion product, the paper's
+Z₃-symmetric triple-octonion product.  Closure on all of Λ is proved in the
+paper (Theorem 1.1, `thm:main`; Section 4).
 
 ## Caveats and verification status
 
 1. **Sample-based, not exhaustive.** The type3×type3 test covers 50,000 of
    the ~3.4 × 10¹⁰ possible pairs.  Zero failures in 593,400 total pairs
-   is strong evidence but not proof.
+   is evidence, not proof; the proof is the paper's (Section 4).
 
 2. **Bilinearity argument.** If the product of any two Min(Λ) vectors lies
    in Λ, then by bilinearity and the fact that Min(Λ) generates Λ over Z,
    ALL products of Λ vectors lie in Λ.  So testing on Min(Λ) suffices.
 
-3. **Algebraic properties not yet tested.** Whether this algebra is
-   alternative, flexible, power-associative, or has a multiplicative
-   identity is not yet established.
+3. **Algebraic properties.** The algebra is not alternative, flexible or
+   power-associative, and it has no multiplicative identity (paper Section
+   5.1, `sec:identities`, and Remark 5.2, `rem:no-identity`).
 
-4. **Independent verification required** (Manifesto §5).  This result
-   should be verified by a second computational method and ideally by
-   a mathematical proof.
+4. **Independent verification** (Manifesto §5).  Closure is proved
+   symbolically (paper Section 4) and checked in exact arithmetic by
+   python_project/src/verify_structural_proof.py,
+   python_project/src/symbolic_proof_checks.py and
+   gap_project/tests/test_lemmas.g.
 
 ## Verdict
 
-**CONDITIONAL PASS — pending exhaustive verification.**  The transposition-
-twisted triple octonion product achieves 100% Leech lattice closure on
-593,400 tested pairs with zero failures.  If confirmed, this establishes
-that the Leech lattice admits an order under an octonion-derived bilinear
-product.
+**PASS.**  The transposition-twisted triple octonion product achieves 100%
+Leech lattice closure on 593,400 tested pairs with zero failures, and
+closure on all of Λ is proved (paper Theorem 1.1): the Leech lattice admits
+an order under an octonion-derived bilinear product.
 
 ## What this establishes
 
-1. Wilson's L is a maximal order (Kirmse twist is already applied).
+1. Wilson's L is closed under the standard octonion product: a nonunital
+   order, as a lattice a √2-scaled copy of a maximal order (Phase 0).
 2. Fano-plane automorphisms (including index-doubling) do not change the
    multiplication and reproduce the trial 001 failure.
 3. Transpositions of imaginary basis elements produce a DIFFERENT
@@ -218,17 +185,21 @@ product.
 4. The correction fixes Wilson condition 3 (x+y+z ∈ Ls) for type3×type3
    products — the exact failure mode of all prior trials.
 
-## What remains open
+## Questions raised by this trial
 
-1. Exhaustive verification on all 196,560² ≈ 3.9 × 10¹⁰ pairs (or a
-   mathematical proof of closure).
-2. Algebraic properties of the resulting 24-dimensional algebra.
-3. The precise criterion distinguishing working from non-working
-   permutations (beyond "all transpositions work").
-4. Whether different transpositions give the same or distinct algebras
-   (they are all in the same GL(3,F_2) orbit, suggesting the same algebra
-   up to Fano-plane relabeling).
-
----
-
-Last updated: 2026-04-11
+1. Closure on all 196,560² ≈ 3.9 × 10¹⁰ pairs: proved for all of Λ (paper
+   Theorem 1.1, Section 4).
+2. Algebraic properties of the resulting 24-dimensional algebra: paper
+   Section 5 (`sec:properties`).  The automorphism group of the order is
+   C₆ × S₃, of order 36, strictly inside Co₀ (paper Section 5.4,
+   `sec:autgroup`).
+3. The criterion distinguishing working from non-working permutations:
+   paper Proposition 5.3 (`prop:criterion`), with the census of paper
+   Section 5.6 (`sec:census`).  A reason for the closure pattern beyond the
+   2-cycles, in particular for the failure of every 4-cycle and for the
+   exact one-half rates, is open (paper Section 7, `sec:conclusion`).
+4. Different transpositions give isomorphic orders: the 21 transpositions
+   form one orbit under conjugation by the order-21 group of coordinate
+   permutations preserving the oriented Fano triples, each an octonion
+   automorphism that fixes s and s̄ and preserves L (paper Section 4, first
+   footnote).

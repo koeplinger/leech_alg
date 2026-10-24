@@ -1,6 +1,8 @@
 """Sampled histogram of pair-product norms N(u star v) on Min(Lambda) x
-Min(Lambda), supporting the sampled half of the product-norm remark in paper
-Section 5.1.
+Min(Lambda), cited in the last paragraph of paper Appendix D
+(`app:samples`); Remark 5.1 (`rem:product-norms`) refers to that paragraph.
+
+Created: 2026-07-17.  Updated: 2026-10-24.
 
 Reuses the doubled-integer star and the family-weighted minimal-vector
 sampler of verify_section5_properties.py, unchanged; exact integer arithmetic
@@ -11,8 +13,8 @@ and whether the values 0 and 8 occur.  The paper's claim: on 10^6 sampled
 pairs the norms took only the values {16, 32, 48, 64, 80, 96, 112, 128}, all
 multiples of 16, with mode 64.
 
-Invocation for the paper's figure (same two-seed convention as the Section 5
-identity table):
+Invocation for the paper's figure (the two seeds of the identity table of
+Appendix D, verify_section5_properties.py):
     python3 verify_pair_norm_histogram.py 20260601 500000
     python3 verify_pair_norm_histogram.py 20260602 500000
 and the counts are summed.  Defaults: seed 20260601, 500,000 samples.

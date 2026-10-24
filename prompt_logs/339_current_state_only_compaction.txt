@@ -1,0 +1,27 @@
+Prompt 339 -- documents describe the current state only: compact the
+historical, incremental updates; the wrong date labels
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'The "verify..." scripts now have a series of historical
+updates in their comments. We don't want that. Scripts should be
+documented as-is, as current-state documents, and there's not point in
+description what has been there at some point in the past. The reader can
+always pull up the git history for provenance if they care. Also I've
+noted incrementalist updates in other documents. In general, the rule
+should be to keep documents forward-evolving, with "created" and
+"updated" dates, and describing current-state only. The exception is if
+there's a durable public record already, such as a formal journal
+publication. None of this exists yes, v7 is out on ResearchGate; and
+while preprint versoins are dated durable records, they are -- as a
+preprint -- not final. As soon as I upload the finalized v8 will it
+become the new single record. Compact all that historical incrementalist
+clutter that you've updated in the past days. I also noticed that you've
+used the date label 20 October 2026 for updates on the 21st, 22nd, and
+23rd of October. That's a mute point now, of course, becase you'll remove
+all that incrementalism and change it to today (24 October).
+Nevertheless, it is confusing to me that you would not be able to record
+the current date correctly.'
+
+Context: items 6 and 7 of the closed-form plan were handed over at
+prompt 338's turn; nothing of prompts 334-338 is committed.

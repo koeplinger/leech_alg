@@ -1,29 +1,24 @@
 # 2026-10-22 — Plan: Appendix A around the closure criterion modulo 2
 
-**Status (2026-10-22, prompt 327): engaged and executed.**  The author:
-"most of your suggestions are good; also do this: 'also cite Silverman's
-comment of 16 February 2016'".  Decisions (i), (j) and (k) as recommended,
-with that addition to (j).  The seven edits of §3 were applied to
-`paper/main.tex` from this file, each old block found exactly once (the
-result equals the reviewed scratch build).  The addition was then applied
-as a separate edit: in the last paragraph of Appendix A, "(part~12
-of~\cite{Baez2014}) and found that Wilson's pair is a polarization
-\cite{Silverman2016}, and David Calderbank related Egan's construction to
-that of Lepowsky and Meurman \cite{Calderbank2023}." became "(part~12
-of~\cite{Baez2014}), read Egan's construction modulo~$2$, and found that
-Wilson's pair is a polarization \cite{Silverman2016}.  David Calderbank
-related Egan's construction to that of Lepowsky and Meurman
-\cite{Calderbank2023}."; the entry [Silverman2016] now names the
-comments of 16 and 19 February 2016, with both anchors (#c050266,
-#c050282).  Build: 21 pages, no undefined references or citations, no
-hyperref warnings.  Changelog item 24.  The records of §5 follow in item 7
-of the parent plan.
+Created: 2026-10-22.  Updated: 2026-10-24.
 
-**Status (2026-10-22, prompt 325): proposed, not executed.**  Item 3 of
-`2026-10-20_closed_form_plan.md` (engaged at prompt 318), as its own plan.
-Drafted by Claude Opus 5.5 at the direction of Jens Köplinger, and reviewed
-before hand-over (§4).  Nothing in the paper has changed; the edits below are
-applied only after the author has read them.
+**Status: executed.**  This plan is item 3 of the closed-form plan,
+`2026-10-20_closed_form_plan.md`.  The author's decisions of §1: (i), (j)
+and (k) as recommended, with one addition to (j) at the author's
+direction: Silverman's comment that reads Egan's construction modulo 2
+is cited as well.  So the last paragraph of Appendix A credits Silverman
+with the identification of these sublattices with the Lagrangians (part
+12), the reading of Egan's construction modulo 2, and the finding that
+Wilson's pair is a polarization, and credits Calderbank in a sentence of
+its own; the entry [Silverman2016] names both comments, with their
+anchors.  With that addition, the edits of §3 are in `paper/main.tex`:
+Appendix A (`app:mod2quotient`), Section 1's overview, Section 7's open
+questions (`sec:conclusion`) and the bibliography.  The sentence of §3.2
+is not in the paper: Section 6 gives the count in the form of item 4's
+plan, `2026-10-22_section6_plan.md`.  `paper/v7_to_v8_changelog.md` states the
+change under Appendix A; the records of §5 are part of item 7 of
+the parent plan.  Drafted by Claude Opus 5.5 at the direction of Jens
+Köplinger.
 
 ---
 
@@ -83,9 +78,7 @@ changed the facts behind (j).  The edits of §3 follow the recommendations.
     x+r)$; Lepowsky and Meurman's Theorem 2.2 already has that form, so the
     plan credits it to them.
   - Calderbank's comment of 2 April 2023 relates Egan's construction to
-    Tits and to Lepowsky–Meurman.  It names no corollary; prompt log 316,
-    which says it does, is wrong on this point (corrected forward in prompt
-    log 326).
+    Tits and to Lepowsky–Meurman.  It names no corollary.
 
   *Recommended:* each credited once, in Appendix A's last paragraph, which
   keeps its heading "Relation to prior work":
@@ -528,7 +521,7 @@ Graduate Texts in Mathematics, vol.~251, Springer, 2009.
 ## 5. On execution, and what stays for later items
 
 The seven edits are applied to `paper/main.tex`; the paper is built and the
-changed pages read; changelog item 24 records the change; the linter runs.
+changed pages read; the changelog records the change; the linter runs.
 The records follow in item 7, as the parent plan provides:
 
 - the glossary: the entry "Polarization of L/2L" and the words of decision
@@ -554,6 +547,3 @@ The records follow in item 7, as the parent plan provides:
   title and "Lagrangian-polarization framing"), and the lead and item 1 of
   "What remains open", which say the general question stays open;
 - the ledger, on the polarization answer, with claim 017.
-
-The error of prompt log 316 on Calderbank's comment stays corrected forward,
-in prompt log 326 and in this plan; log 316 itself is not touched.

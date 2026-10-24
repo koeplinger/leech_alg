@@ -1,151 +1,18 @@
 Claim number: 008
-Title: The transposition-twisted triple octonion product is an order on the Leech lattice Λ
+Title: The Z₃-symmetric triple-octonion product is an order on the Leech lattice Λ
 Status: ESTABLISHED (symbolic proof + independent computational verification)
-Date: 2026-04-12
-
---- FORWARD CORRECTION (2026-10-20) ---
-
-The PROOF section below justifies Lemma 4.2 by "L is a maximal order", and
-it calls Lemmas 4.3 and 4.4 finite verifications of 64 basis products each.
-L does not contain e_0: it is a nonunital order and, as a lattice, a
-sqrt(2)-scaled copy of a maximal order of integral octonions (paper
-Section 2.2).  v8 of the paper (prompt 311) defines one such maximal order,
-𝒪 := (1/2)(e_1 + e_2) L, with L = (e_1 + e_2)𝒪 (Section 2.2), and proves
-Lemmas 4.2 to 4.4 from the closure of 𝒪, the identities sigma(L sbar) = 2𝒪
-and sigma(Ls) = p𝒪 with p = e_2 - e_4 + e_5 - e_6, and the identity
-(xa)(xb) = x((ax)b) for purely imaginary x (Section 4.1); Lemma 4.1 is the
-parity argument.  The finite content of the proof is the closure of 𝒪 on a
-Z-basis and the two identities on eight products each
-(python_project/src/verify_structural_proof.py); the basis-pair checks of
-the lemmas are kept as validation (paper Appendix C).  Item 1 of the
-COMPUTATIONAL EVIDENCE section: symbolic_proof_checks.py checks Lemmas 4.1,
-4.3 and 4.4 and the remark sigma(Ls) != Ls, not Lemma 4.2, which is checked
-on its 64 basis products by verify_structural_proof.py and
-gap_project/tests/test_lemmas.g.  Ledger claims 019, 021 and 022.  The
-closure claim itself is unchanged.
-
---- FORWARD CORRECTION (2026-10-13) ---
-
-The statement below that "maximality of the order ... [is] still open" (in the
-2026-07-12 block) and the "Does NOT follow" item on maximality are answered:
-the order is NOT maximal.  L^3 is itself star-closed (the proof of the paper's
-Proposition 4.6 uses only Wilson's condition (1)), an even integral
-overlattice of Lambda of index 2^12; and Lambda + Z eps_1, with
-eps_1 = (e_0, 0, 0), is a second star-closed overlattice, of index 4, not
-contained in L^3 and not integral.  Paper Section 7 (v8); ledger claim 016;
-verification record evidence_and_reasoning/2026-10-12_plan.md, Section 4.
-
---- FORWARD CORRECTION (2026-05-23) ---
-
-Two items in this file, as written on 2026-04-12, were corrected forward
-in the paper between v3 (29 April 2026) and v4 (23 May 2026).  Per
-Manifesto §12, this file is preserved as written; the corrections live
-in paper/main.tex v4.
-
-(i) The "STATEMENT" section below says "σ does not preserve the Wilson
-E8 lattice L."  This is incorrect for the coordinate-symmetric placement
-L = D₈⁺ used in the paper: σ is a coordinate permutation, which preserves
-both integer/half-integer parity and the coordinate sum, so σ(L) = L
-(paper Lemma 4.1).  σ moves the sublattices Ls and Ls̄ of L, and that
-is where the twist does its work.
-
-(ii) The "PROOF" section below enumerates five lemmas (4.1–4.5).  The
-fifth, σ(Ls) ≠ Ls, is now recorded in the paper as a remark
-(rem:Ls-not-closed), not a lemma: it is a non-triviality observation,
-not a step of the closure proof.  Paper v4 §4 has four lemmas plus
-three condition-propositions.
-
-The closure claim itself is unchanged.
-
---- FORWARD CORRECTION (2026-07-12) ---
-
-Per Manifesto Section 12, this file is preserved as written; the current
-statements live in paper/main.tex, in the standalone note
-paper/automorphism_group_2026-07-12.tex, and in the ledger
-evidence_and_reasoning/key_claims/README.md (claims 009-015).
-
-(iii) NAME.  The construction is now called the Z_3-symmetric
-triple-octonion product.  The title of this file, "transposition-twisted",
-is the historical name and is preserved.  The product is simply an
-octonion product in all three blocks; the transposition sigma is the
-device that exhibits its fit with Wilson's representation, not a new
-algebra.
-
-(iv) The "Does NOT follow" section below lists the automorphism group of
-the order and its relationship to Co_0 as open questions.  Both are now
-answered:
-
-    Aut(Lambda, +, star) is FINITE of ORDER 36, with structure C_6 x S_3
-    (centre C_6, derived subgroup C_3; -I_24 is not in it).  Every element
-    is a blockwise octonion automorphism composed with a permutation of the
-    three blocks.  The ambient group is Aut(R^24, star) = G_2 x G_2 x S_3,
-    compact, of dimension 28.
-
-    Aut(Lambda, +, star) is STRICTLY CONTAINED in Co_0, and this is proved:
-    an automorphism of the real octonions preserves the positive-definite
-    norm, and the two ideals D and T are orthogonal, so every
-    star-automorphism of R^24 is orthogonal.  The inclusion is strict
-    because -I_24 in Co_0 does not preserve star.
-
-    Completeness of the classification rests on one non-enumerative step
-    (the automorphisms of the complexification of (T, star)); the lower
-    bound C_6 x S_3 <= Aut and the strictness witness do not depend on it.
-
-    Verified by python_project/src/verify_aut_lambda_star.py and
-    verify_aut_octonion_crosscheck.py, and independently in
-    gap_project/aut_lambda_star.g.  Ledger claims 010, 010a.
-
-The remaining items of that section stand: maximality of the order and
-uniqueness up to isomorphism are still open.
-
-(v) The same section says no claim follows about "unitality".  That is
-still correct, and it is now sharper: the ambient algebra (R^24, +, star)
-has NO identity element at all, and it has exactly EIGHT idempotents, none
-of which lies in Lambda -- so the order has no idempotent.  It does,
-however, contain 4,032 nonzero square-zero elements, all of norm 12.  An
-unscoped claim that the order "has no nilpotents" would be FALSE; the
-statement that holds is that Min(Lambda) contains no idempotent and no
-square-zero vector.  Ledger claims 011, 012, 012a.
-
-(vi) SCRIPT NAMES in the EVIDENCE section below.
-trial_007_triple_octonion_swap.py no longer exists: the trial-007 harness
-is now python_project/src/trial_007_kirmse_twist.py, and it tests 900 pairs
-per transposition, not the 593,412 recorded below.  The 593,412 figure is
-the original harness's run and is preserved here as written; it is not
-reproducible from the current script.  The 12,000,000+ pairs from
-trial_007_{scaled_test,fast,exhaust}.py are unaffected, and the closure
-claim rests on the symbolic proof in any case (paper Section 4).
-
---- FORWARD CORRECTION (2026-07-18) ---
-
-Two statements in item (v) of the 2026-07-12 correction above were
-sharpened at the v6 freeze (18 July 2026); the frozen paper is the
-authority:
-
- - "none of which lies in Lambda -- so the order has no idempotent":
-   the zero vector is one of the eight idempotents and lies in Lambda.
-   The correct statement (paper Section 5.2): none of the seven NONZERO
-   idempotents lies in Lambda (e_0 not in L), so the order has no
-   nonzero idempotent.
- - "4,032 nonzero square-zero elements, all of norm 12": the 4,032
-   elements are exactly the norm-12 stratum.  Every square-zero norm of
-   Lambda lies in 12Z, and higher strata are realized (norm-24 witness,
-   python_project/src/verify_square_zero_norm24_witness.py).  Ledger
-   claim 012 carries the stratum statement.
+Created: 2026-04-12.  Updated: 2026-10-24.
 
 --- RELATION TO CLAIM 007 ---
 
-Claim 007 (2026-04-09) rules out the *untwisted* triple-octonion algebra,
-together with all natural discrete and continuous modifications tested
-at that time, as an order on Λ.  Claim 008 is not a revision of 007:
-claim 007 remains true of the family it covers.  Claim 008 records a
-positive finding obtained by leaving that family — specifically, by
-twisting the single octonion multiplication used in all three blocks
-via a transposition of imaginary basis elements, a construction not
-included in the discrete variants exhausted under claim 007.
-
-Per Manifesto Section 11 (Forward-evolving corrections), this file is
-a new entry recording a subsequent finding; it does not alter claim 007.
+Claim 007 rules out the *untwisted* triple-octonion algebra, together with
+the discrete and continuous modifications tested there, as an order on Λ.
+Claim 008 is not a revision of 007: claim 007 holds for the family it
+covers.  Claim 008 records a positive finding obtained by leaving that
+family — specifically, by twisting the single octonion multiplication used
+in all three blocks via a transposition of imaginary basis elements, a
+construction not included in the discrete variants exhausted under claim
+007.
 
 --- STATEMENT ---
 
@@ -156,32 +23,51 @@ multiplication on R⁸ by
     x ·_σ y := σ( σ(x) · σ(y) ),
 
 where · is the standard octonion product.  Equivalently, σ : (O, ·)
-→ (O, ·_σ) is an isomorphism of algebras, but σ does not preserve the
-Wilson E8 lattice L.
+→ (O, ·_σ) is an isomorphism of algebras.  σ preserves the Wilson E8
+lattice L = D₈⁺: σ(L) = L (paper Lemma 4.1, `lem:sigma-L`), since a
+coordinate permutation preserves the integer or half-integer type and the
+parity of the coordinate sum.  σ moves the sublattices Ls and Ls̄ of L,
+and that is where the twist does its work.
 
-Define the transposition-twisted triple octonion product on
+Define the Z₃-symmetric triple-octonion product on
 R²⁴ = O₁ ⊕ O₂ ⊕ O₃ by using ·_σ in all three blocks with Z₃-symmetric
 cross-block routing (same-block Oα × Oα → Oα; cross-block Oα × Oβ → Oγ
-for {α, β, γ} = {1, 2, 3}).
+for {α, β, γ} = {1, 2, 3}).  It is an octonion product in all three
+blocks; the transposition σ is the device that exhibits its fit with
+Wilson's representation, not a new algebra.
 
 Then the Leech lattice Λ (in Wilson's E8-triple realisation) is closed
 under this product.  Consequently (Λ, +, ·_σ-triple) is an order in
-the real non-associative R-algebra (R²⁴, +, ·_σ-triple).
+the real non-associative R-algebra (R²⁴, +, ·_σ-triple) (paper Theorem 1.1
+and Corollary 1.2, `thm:main` and `cor:order`).
 
 --- PROOF ---
 
-The symbolic proof is written out in full in paper/main.tex, Section 4.
-It reduces closure on Min(Λ) (hence, by bilinearity, on Λ) to five
-lemmas:
+The symbolic proof is written out in full in paper/main.tex, Section 4
+(`sec:proof`).  It reduces closure on Λ to four lemmas (paper Section 4.1),
+which paper Propositions 4.6 to 4.8 (`prop:cond1` to `prop:cond3`) carry to
+Wilson's three conditions:
 
-  Lemma 4.1:  σ(L) = L          (coordinate-permutation invariance of D₈⁺)
-  Lemma 4.2:  L · L ⊆ L         (L is a maximal order; Coxeter 1946)
-  Lemma 4.3:  L · σ(Ls̄) ⊆ σ(Ls̄)
+  Lemma 4.1:  σ(L) = L          (`lem:sigma-L`; parity argument)
+  Lemma 4.2:  L · L ⊆ L         (`lem:L-order`)
+  Lemma 4.3:  L · σ(Ls̄) ⊆ σ(Ls̄)   (`lem:L-sigmaLsbar`)
               (σ(Ls̄) is a left L-module under the standard product)
-  Lemma 4.4:  σ(Ls) · σ(Ls) ⊆ σ(Ls)
+  Lemma 4.4:  σ(Ls) · σ(Ls) ⊆ σ(Ls)   (`lem:sigmaLs-closed`)
               (σ(Ls) is closed under the standard product)
-  Lemma 4.5:  σ(Ls) ≠ Ls
-              (so the twist is doing nontrivial work)
+
+L does not contain e₀: it is a nonunital order and, as a lattice, a
+√2-scaled copy of a maximal order of integral octonions (paper Section 2.2).
+Lemmas 4.2 to 4.4 follow from the closure of one maximal order,
+𝒪 := ½(e₁ + e₂)L (paper (2.2), `eq:MO`), with L = (e₁ + e₂)𝒪, and from three
+facts: the lattice identities σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 with
+p = e₂ − e₄ + e₅ − e₆ (paper (4.1), `eq:multiples`); the identity
+(xa)(xb) = x((ax)b) for purely imaginary x (paper (4.2),
+`eq:moufang-imaginary`); and its consequence (xM)(xM) ⊆ xM for a closed
+lattice M containing a purely imaginary x (paper (4.3),
+`eq:multiple-closed`).  Ledger claims 019, 021 and 022.
+
+σ(Ls) ≠ Ls, so the twist does nontrivial work; this is paper Remark 4.5
+(`rem:Ls-not-closed`), not a step of the closure proof.
 
 The core structural point: v ·_σ w, expanded via the bilinearity
 decomposition, reduces each of Wilson's three sublattice conditions to
@@ -191,15 +77,21 @@ which holds (Lemma 4.4); the analogous statement for Ls itself is
 *false* for the untwisted product — this is precisely the condition-3
 failure recorded in claim 007.
 
-Lemmas 4.3 and 4.4 are *finite* verifications: each asserts closure of
-a product of 8 Z-basis vectors against 8 Z-basis vectors, i.e. 64
-products per lemma.  These are discharged by exact rational arithmetic.
+The finite content of the proof is the closure of 𝒪 on a Z-basis and the
+identities σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 on eight products each
+(python_project/src/verify_structural_proof.py).  The checks of Lemmas 4.2
+to 4.4 on basis pairs, 64 products per lemma, are kept as validation (paper
+Appendix C, `sec:methodology`); they are discharged by exact rational
+arithmetic.
 
 --- COMPUTATIONAL EVIDENCE ---
 
-1. Symbolic lemma checks (exact arithmetic, fractions.Fraction):
-   python_project/src/symbolic_proof_checks.py
-   Verifies Lemmas 4.1–4.5 on explicit Z-bases; all pass.
+1. Lemma checks on explicit Z-bases (exact arithmetic, fractions.Fraction):
+   python_project/src/symbolic_proof_checks.py checks Lemmas 4.1, 4.3 and
+   4.4 and the remark σ(Ls) ≠ Ls; all pass.  Lemma 4.2 is checked on its 64
+   basis products by python_project/src/verify_structural_proof.py, item
+   (E), and by gap_project/tests/test_lemmas.g, which checks all four
+   lemmas.
 
 2. Random-sample verification on Min(Λ):
    - trial_007_triple_octonion_swap.py      593,412 pairs, 0 failures
@@ -207,6 +99,10 @@ products per lemma.  These are discharged by exact rational arithmetic.
    - trial_007_fast.py                    4,000,000 pairs, 0 failures
    - trial_007_exhaust.py                 4,000,000 pairs, 0 failures
    Total: 12,593,412 random minimal-vector pairs tested; 0 failures.
+   trial_007_triple_octonion_swap.py is not in the repository, so its
+   593,412 pairs cannot be rerun; the trial-007 harness in the repository,
+   python_project/src/trial_007_kirmse_twist.py, tests 900 pairs per
+   transposition.  The other three scripts are in python_project/src/.
 
 3. Independence of the transposition:
    All 21 transpositions of {1,…,7} are equivalent up to GL(3, F₂)
@@ -221,14 +117,34 @@ Follows:
    product in that block structure; a single transposition twist
    removes it.
 
-Does NOT follow:
+Does NOT follow from closure (recorded elsewhere; ⋆ is the paper's name for
+the ·_σ-triple product):
  - Any claim about associativity, alternativity, flexibility, power-
-   associativity, unitality, or norm multiplicativity.  See Section 5
-   of the paper and the discussion in CURRENT_STATE.md: the order is
-   non-unital, non-commutative, and not norm-multiplicative.
- - Any claim that this order is maximal, or a claim about its
-   automorphism group, its relationship to Co₀, or uniqueness up to
-   isomorphism.  These are open questions.
+   associativity, unitality, or norm multiplicativity.  All of them fail on
+   the order (paper Section 5.1, `sec:identities`): it is nonunital,
+   noncommutative and not norm-multiplicative, and the ambient algebra
+   (R²⁴, +, ⋆) has no identity element (paper Remark 5.2,
+   `rem:no-identity`).  The ambient algebra has exactly eight idempotents,
+   and none of the seven nonzero ones lies in Λ (e₀ ∉ L), so the order has
+   no nonzero idempotent (paper Section 5.2, `sec:idempotents`; ledger
+   claim 011).  Λ contains square-zero elements: those of norm 12 are
+   exactly 4,032, every square-zero norm of Λ lies in 12Z, and norm 24
+   occurs (paper Section 5.5, `sec:squarezero`; ledger claim 012).  Min(Λ)
+   contains no idempotent and no square-zero vector (ledger claim 012a); an
+   unscoped claim that the order has no nilpotents is false.
+ - Maximality: the order is not maximal.  L³ is ⋆-closed, an even integral
+   overlattice of Λ of index 2¹²; Λ + Zε₁ with ε₁ = (e₀, 0, 0) is a second
+   ⋆-closed overlattice, of index 4, not contained in L³ and not integral
+   (paper Section 5.3, `sec:maximality`; ledger claim 016).
+ - The automorphism group: Aut(Λ, +, ⋆) is finite of order 36, with
+   structure C₆ × S₃, and strictly contained in Co₀ (paper Section 5.4,
+   `sec:autgroup`; ledger claims 010 and 010a; the companion note
+   paper/automorphism_group_2026-07-12.tex).
+ - Uniqueness up to isomorphism: twisted products with different span
+   indices give orders on Λ that are not isomorphic, among them ⋆ (span
+   index 2¹⁶), ⋆_π for a closing even permutation π (span index 2¹⁰) and
+   ⋆_ρ for the reflection ρ (span index 1) (paper Section 5.6,
+   `sec:census`; ledger claims 015 and 017).
 
 --- REFERENCES ---
 

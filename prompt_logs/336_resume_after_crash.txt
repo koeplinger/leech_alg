@@ -1,0 +1,26 @@
+Prompt 336 -- resume after the author's system crash
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'My operating system (Ubuntu Linux) hard-crashed with a GPU
+error. I've started now. Try to resume.'
+
+Context: the crash came while the read-only gathering workflow of item 7
+(prompt 334, run wf_910ebaf7-4a8) was running; it left no completed
+agent results.  Prompts 334 and 335 are open.  Before the crash: item 6
+applied to paper/main.tex (the abstract and Section 7 name the closure
+criterion; changelog item 27); the v8 draft date set to 24 October 2026
+(prompt 335; CURRENT_STATE stamp; the changelog's subtitle history).  The
+author committed item 5 at 9014f9a.
+
+Rulings: resume where the work stopped: check the working tree for damage,
+then continue item 7 (prompt 334) and the dated records (prompt 335).
+
+Response: the working tree was intact (the item 6 edit and the 24 October
+date in place); the paper was rebuilt in a new scratch folder, since the
+old one was gone, with the same result.  The gathering workflow was
+resumed from its run (wf_910ebaf7-4a8), and item 7 continued from there
+(log 334).  A stray file that a verifier had written to the repository
+root during the gathering (egan_count.out, gitignored) was removed.
+
+Status: CLOSED.

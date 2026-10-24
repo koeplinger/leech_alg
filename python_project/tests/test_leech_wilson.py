@@ -1,6 +1,8 @@
 """
 test_leech_wilson.py — Verification of Wilson's octonionic Leech lattice construction.
 
+Created: 2026-04-07.  Updated: 2026-10-24.
+
 Clarification on the user's question
 --------------------------------------
 Wilson does NOT define a "multiplication that closes on the Leech lattice."  He
@@ -8,7 +10,7 @@ constructs the Leech lattice as a SET Λ ⊂ L³ satisfying three algebraic
 conditions.  The Leech lattice has NO vectors of norm 2 (no root system); the
 relevant object is the 196,560 minimal vectors (norm-squared 8 under the standard
 R^24 norm).  This test suite verifies Wilson's construction and establishes the
-membership criteria that will later be used to evaluate other products.
+membership criteria used to evaluate other products.
 
 The answer to the user's question — "does Wilson's construction close on the
 Leech lattice?" — requires interpreting what "close" means:
@@ -156,10 +158,9 @@ class TestLsBarSublattice:
     """
     Ls̄ = {λ × s̄ : λ ∈ L} is an index-16 sublattice of L.
 
-    Wilson proves Ls̄ = LR = 2B (the Coxeter-Dickson ring scaled by 2).
-    (Note, 15 October 2026: B is Wilson's set whose assumed closure "is known
-    as Kirmse's mistake", not closed under multiplication, so not the
-    Coxeter–Dickson ring; L s̄ = 2B holds.  Ledger claim 019.  Test unchanged.)
+    Wilson proves Ls̄ = LR = 2B, with B the set whose assumed closure "is
+    known as Kirmse's mistake" (Wilson 2009, p. 2187): B is not closed under
+    multiplication, so it is not the Coxeter–Dickson ring (ledger claim 019).
     Gram matrix: ⟨λ₁s̄, λ₂s̄⟩ = N(s̄) × ⟨λ₁,λ₂⟩ = 2⟨λ₁,λ₂⟩.
     So det(Gram_Ls̄) = 2^8 × det(Gram_L) = 256 × 1 = 256.
     Reference: [Wilson2009] Sections 2–3.

@@ -1,0 +1,21 @@
+Prompt 340 -- status check during the compaction review
+Date: 2026-10-24
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'How's it going?'
+
+Context: asked while the read-only adversarial review of prompt 339's
+compaction (workflow run wf_5994d156-5da) was running.  Prompt 339 is open.
+
+Response: status reported.  The rule documents are rewritten
+(DOCUMENT_GENRES.md, MANIFESTO sections 12 and 13, TRIAL_METHODOLOGY.md,
+tools/lint_docs.py and its README, with a new date check); the compaction
+is applied to about 90 files (programs, GAP files, plans, claim files,
+trial 007, reviews, the Hermes supplement with its PDF rebuilt, the
+registry, the changelogs, the current-state documents); CLOSING_NOTE.md is
+removed; the linter is clean; the GAP suite passes 110 of 110.  The
+adversarial review of the compaction (five reviewers, each with a refuting
+verifier) has run for ten minutes; its confirmed findings are applied
+before prompt 339 is closed.  Nothing is committed.
+
+Status: CLOSED.

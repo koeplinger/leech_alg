@@ -1,5 +1,7 @@
 # Trial Methodology
 
+Created: 2026-04-09.  Updated: 2026-10-24.
+
 This document defines the methodology for all trial files (`trial_*.py`) in this
 project. Each trial tests whether a proposed 24-dimensional algebra closes
 under multiplication on the Leech lattice Λ (i.e., whether Λ admits an order
@@ -9,11 +11,11 @@ under the proposed product).
 
 ## Document genre
 
-A `trial_*.py` file, and its `trial_NNN_results.md`, are **frozen** artifacts
-once the trial is closed: they record what was tried and what came out, on the
-day it was run.  They are never rewritten.  If a later result changes what the
-trial means, that goes in a dated addendum, or in a new trial.  The rules for
-every artifact class are in [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and
+A `trial_*.py` file and its `trial_NNN_results.md` are current-state
+documents: they state what the trial tests and what came out, carry their
+`Created` and `Updated` dates, and are corrected in place when a later result
+changes what the trial means.  A new idea is a new trial.  The rules for every
+artifact class are in [`DOCUMENT_GENRES.md`](DOCUMENT_GENRES.md), and
 `python3 tools/lint_docs.py` enforces them.
 
 ---

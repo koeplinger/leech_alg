@@ -1,15 +1,19 @@
-"""The witnesses of paper v8, Section 5.1 (21 October 2026, prompt 318; item 1
-of evidence_and_reasoning/2026-10-20_closed_form_plan.md): every standard
-identity that fails on (Lambda, +, star) has a witness that can be checked by
-hand.
+"""The witnesses of Section 5.1 of the paper (`sec:identities`): every
+standard identity that fails on (Lambda, +, star) has a witness that can be
+checked by hand.  The paper cites this script in the lead paragraph of
+Section 5.1.
+
+Created: 2026-10-21.  Updated: 2026-10-24.
 
 Conventions are the paper's: the multiplication (2.1), sigma = (1 2),
 x ._sigma y := sigma(sigma(x) . sigma(y)), and the triple product of
 Definition 3.3,
     P1 = x.x' + z.y' + y.z',  P2 = y.y' + x.z' + z.x',  P3 = z.z' + y.x' + x.y',
 with ._sigma in all nine products; eps_1 = (e0, 0, 0), eps_2 = (0, e0, 0),
-eps_3 = (0, 0, e0) and omega = eps_1 + eps_2 + eps_3.  Exact arithmetic
-throughout (fractions.Fraction; sympy for one rank computation).
+eps_3 = (0, 0, e0) and omega = eps_1 + eps_2 + eps_3 = (e0, e0, e0).  The
+paper's table writes the witnesses as such explicit vectors, for example
+eps_1 - eps_2 = (e0, -e0, 0).  Exact arithmetic throughout
+(fractions.Fraction; sympy for one rank computation).
 
 (A) The routing rule on single blocks: for basis units e_i in block alpha and
     e_j in block beta, the product is e_i ._sigma e_j, in block alpha if
@@ -20,29 +24,24 @@ throughout (fractions.Fraction; sympy for one rank computation).
 (C) eps_a star eps_a = eps_a, and eps_a star eps_b = eps_c for {a, b, c} =
     {1, 2, 3}.
 (D) The table of Section 5.1: for each identity, both sides at the witness,
-    compared with the values the paper prints; they differ.  For the quartic
+    compared with expected values written into this script (the paper's
+    table lists the witnesses only); they differ.  For the quartic
     identity all five parenthesizations of u star u star u star u are
-    computed at u = eps_1 - eps_2 (the paper shows ((uu)u)u and (uu)(uu));
-    u star u = eps_1 + eps_2 - 2 eps_3, (uu)u = 3u = u(uu), so the cube
-    identity holds at this u.
-(E) The scaled witnesses: four times each witness vector lies in Lambda
-    (Wilson's three conditions, inLambda of verify_consecutive_twists_exact.py),
-    and at four times the witness both sides of the identity are multiplied
-    by 4 to the power of its degree, so the identity fails there too.
-(F) Remark 5.1: u = (2 lam, 0, 0) with lam = e3 + e4 lies in Lambda, N(u) = 8,
-    u star u = (-8 e0, 0, 0), of norm 64.
-(G) Remark 5.2, cross-check: (R^24, star) has neither a left nor a right
-    identity (the 576 linear equations e star b_k = b_k, resp. b_k star e =
-    b_k, over the standard basis b_k are inconsistent).
-
-Note (21 October 2026, prompt 320).  The paper's table in Section 5.1 now
-lists only the identities and their witnesses, written as explicit vectors
-(eps_1 = (e0, 0, 0), omega = (e0, e0, e0), eps_1 - eps_2 = (e0, -e0, 0));
-it no longer prints the two sides, and the paper no longer states the
-scaling into Lambda.  The witnesses are unchanged.  Item (D) checks the two
-sides as given in the table of prompt 319
-(evidence_and_reasoning/2026-10-21_plan.md, section 2.1), and item (E) the
-scaling stated there; both checks stand as a record.
+    computed at u = eps_1 - eps_2; ((uu)u)u = 3(uu) and (uu)(uu) = -3(uu)
+    differ.  u star u = eps_1 + eps_2 - 2 eps_3, (uu)u = 3u = u(uu), so the
+    cube identity holds at this u.
+(E) The scaled witnesses, behind the words "and hence, by scaling, on the
+    order" in the lead of Section 5.1 (the paper states neither the factor 4
+    nor that four times each witness lies in Lambda): four times each
+    witness vector lies in Lambda (Wilson's three conditions, inLambda of
+    verify_consecutive_twists_exact.py), and at four times the witness both
+    sides of the identity are multiplied by 4 to the power of its degree, so
+    the identity fails there too.
+(F) Remark 5.1 (`rem:product-norms`): u = (2 lam, 0, 0) with lam = e3 + e4
+    lies in Lambda, N(u) = 8, u star u = (-8 e0, 0, 0), of norm 64.
+(G) Remark 5.2 (`rem:no-identity`), cross-check: (R^24, star) has neither a
+    left nor a right identity (the 576 linear equations e star b_k = b_k,
+    resp. b_k star e = b_k, over the standard basis b_k are inconsistent).
 
 Usage: python3 verify_identity_witnesses.py   (a few seconds)
 """
@@ -143,7 +142,7 @@ def main():
     x = vsum(EPS[0], smul(-1, EPS[1]))             # eps_1 - eps_2
     xx = star(x, x)
     rows = []
-    # each row: (identity, both sides at the witness equal the values in the paper's table, and differ)
+    # each row: (identity, both sides at the witness equal the expected values, and differ)
     l, r = star(star(EPS[0], EPS[1]), EPS[2]), star(EPS[0], star(EPS[1], EPS[2]))
     rows.append(("associativity", l == EPS[2] and r == EPS[0] and l != r))
     l, r = star(star(EPS[0], EPS[0]), EPS[1]), star(EPS[0], star(EPS[0], EPS[1]))
