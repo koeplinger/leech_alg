@@ -1,0 +1,21 @@
+Prompt 348 -- pause the documentation sweep
+Date: 2026-10-25
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'pause the sweep, I need to conserve tokens for the next two
+hours'
+
+Context: the sweep of prompt 346 was running as workflow run
+wf_4a713d78-6e1 (relaunched at prompt 347).  Prompt 346 is open.
+
+Rulings: stop the run now; it resumes from the same run on the author's
+word, so that finished agents are reused.
+
+Response: the run is stopped.  All twenty scanners had finished, and 130
+of the verifiers; 8 agents were cut off, and the completeness critic had
+not started.  No program of the sweep is left running.  Nothing was
+applied; the repository holds only the leech_dixon.py fix of prompt 346
+and logs 346 to 348.  To continue: Workflow with the script of the run
+and resumeFromRunId wf_4a713d78-6e1, which reuses the finished agents.
+
+Status: CLOSED.

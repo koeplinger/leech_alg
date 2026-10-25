@@ -1,0 +1,40 @@
+Prompt 347 -- resume after the IDE crash
+Date: 2026-10-25
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'The IDE crashed. Try to resume.'
+
+Context: the crash came while the read-only sweep workflow of prompt 346
+(run wf_06a0fdd4-286) was running its first fourteen scanners; none had
+finished, so the run left no results to reuse.  Prompt 346 is open: the
+leech_dixon.py fix is applied (uncommitted); the sweep has not written
+anything.
+
+Rulings: resume where the work stopped: check the working tree, find the
+cause of the crash, then rerun the sweep of prompt 346 so that it cannot
+cause the same failure.
+
+Response:
+ 1. The working tree was intact: the leech_dixon.py fix and logs 346 and
+    347; the sweep had written nothing.
+ 2. Cause: at 11:32:42 the kernel's out-of-memory killer ended a python3
+    process of 8.3 GB in the editor's process group, and the IDE went down
+    with it.  The process was a scanner's ad hoc numpy check (the inner
+    products of Dixon's 184,320 type-3 vectors with 3,000 others), started
+    eight seconds earlier; the machine has 15 GB.
+ 3. Guards for the rerun: every program an agent runs goes through a
+    wrapper in the scratch folder (run_capped.sh: address space capped at
+    2.5 GB, so an oversized allocation fails inside the program; 10
+    minutes; one thread; at most two programs at once across all agents;
+    a check that git status is unchanged); ad hoc checks stay below about
+    ten million entries; at most eight agents run at once.  Calibrated:
+    the project's heavier scripts peak below 100 MB, the full pytest suite
+    at about 630 MB.
+ 4. Reproduced by the main thread for the brief, so that the agents need
+    not rerun them: pytest 197 passed; the GAP suite 110 passed, 0 failed.
+ 5. The sweep of prompt 346 was relaunched as run wf_4a713d78-6e1 (the
+    first run, wf_06a0fdd4-286, had no finished agents to reuse).
+ 6. The message "Tool loaded." appeared in the user's position after a
+    tool-schema lookup: a harness message, not a prompt; no action.
+
+Status: CLOSED.

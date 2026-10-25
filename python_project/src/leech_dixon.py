@@ -1,6 +1,8 @@
 """
 leech_dixon.py — Dixon's octonionic Leech lattice construction.
 
+Created: 2026-04-07.  Updated: 2026-10-25.
+
 Dixon [Dixon2010] Section 6 characterises the 196,560 minimal vectors of
 the Leech lattice in three explicit families built from the two E8
 representations A^odd and A^even, together with the base element ℓ₀.
@@ -34,18 +36,23 @@ of each triple are included):
 
   Total: 720 + 11,520 + 184,320 = 196,560.
 
-Relation to Wilson's type-3 [Wilson2009 p. 2189 footnote]
------------------------------------------------------------
-Wilson notes that Dixon's type-3 formula corresponds to his own formula
-((λs)j, λk, (λj)k) but with the j-multiplication omitted from the first
-component.  Dixon's (P, ±e_aP, ±(e_aℓ₀)(e_cP)) has norm structure (2, 2, 4)
-per component; the 3rd cyclic permutation (±(e_aℓ₀)(e_cP), P, ±e_aP) has
-structure (4, 2, 2), matching Wilson's type-3 norm structure.
+Relation to Wilson's type-3 vectors [Wilson2009 Section 3]
+----------------------------------------------------------
+Wilson's type-3 formula ((λs)j, λk, (λj)k) has component norms (4, 2, 2).
+Dixon's (P, ±e_aP, ±(e_aℓ₀)(e_cP)) has component norms (2, 2, 4); its
+cyclic permutation (±(e_aℓ₀)(e_cP), P, ±e_aP) has (4, 2, 2), matching
+Wilson's.
 
-Wilson's type-3 uses s = ½(−e₀+e₁+...+e₇) in the first component of the
-third cyclic permutation; Dixon uses ℓ₀ = ½(e₀+...+e₇) in an analogous
-role.  Both have norm 2, but they are different elements (s has one minus
-sign; ℓ₀ is the all-positive half-integer element).
+Wilson's type-3 uses s = ½(−e₀+e₁+...+e₇) in the first component; Dixon
+uses ℓ₀ = ½(e₀+...+e₇) in the third, which that cyclic permutation moves
+to the first.  Both have norm 2, but they are different elements (s has one
+minus sign; ℓ₀ is the all-positive half-integer element).
+
+Wilson's bracketed note on Dixon ([Wilson2009] Section 5, p. 2189) concerns
+the formula of Dixon's 2005 preprint [Dixon2005], not the 2010 construction
+implemented here: "in effect, his formula is equivalent to
+(λs, ±λk, ±(λj)k), that is, omitting the (necessary) multiplication by j in
+the first coordinate."
 
 A^odd versus Wilson's E8 roots
 ---------------------------------
@@ -67,6 +74,9 @@ computational tools for investigating this question.
 
 References
 ----------
+[Dixon2005]   G.M. Dixon, "Integral octonions, octonion multiplication and the
+              Leech lattice", preprint, 10 March 2005; reference [12] of
+              [Wilson2009].
 [Dixon2010]   G.M. Dixon, "Integral Octonions, Octonion XY-Product, and the
               Leech Lattice", preprint, 2010.
 [Wilson2009]  R.A. Wilson, "Octonions and the Leech lattice",

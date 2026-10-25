@@ -1,0 +1,32 @@
+Prompt 346 -- fix the Wilson note in leech_dixon.py; documentation consistency sweep
+Date: 2026-10-25
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "One problem found but not fixed, because it was
+outside the plan: leech_dixon.py:37 is cited in the Section 6 footnote
+(main.tex:1076), and its comments have two errors" -- go ahead and fix them
+now (I understand they affect supporting material in this repo only and
+won't make changes in the paper; if they make changes in the paper,
+however, then stop and let me know beforehand).
+
+Then, while I'm now starting to read very closely, do a documentation
+consistency sweep across the project.'
+(Ultracode on.)
+
+Context: the consistency plan was executed at prompt 345.  The latest
+commit is the author's 8651de3; the working tree was clean when this
+prompt arrived.  The author is starting a close read of paper/main.tex.
+
+Rulings:
+ 1. Fix the two errors in the comments of python_project/src/leech_dixon.py
+    (Wilson's bracketed note called a footnote; his remark, which concerns
+    the formula of Dixon's 2005 preprint, applied to the 2010 construction).
+    Supporting material only.  If a fix would change the paper, stop and
+    tell the author first.
+ 2. Then a documentation consistency sweep across the project, while the
+    author reads: paper/main.tex is not edited (findings on it are reported
+    only).  Manifesto Section 14 and DOCUMENT_GENRES.md: subagents read,
+    run and report, the main thread edits; findings first, diffstat second,
+    edits third.  Genre rules: prompt logs immutable; released paper
+    versions untouched; verbatim external material kept as received;
+    current-state documents corrected in place, with their Updated dates.
