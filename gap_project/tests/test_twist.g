@@ -1,21 +1,27 @@
 #############################################################################
 ##
-##  test_twist.g — The transposition-twisted octonion algebra (paper
-##  Definition 3.1, Proposition 3.2, Remark 3.5).
+##  test_twist.g — The sigma-twisted octonion product (paper Definitions
+##  3.1 and 3.2, `def:twist` and `def:twisted-product`), for
+##  sigma = (1 2).  All transposition twists are equivalent up to
+##  relabeling (paper Section 4, `sec:proof`, footnote to sigma = (1 2)).
+##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
 ##
 ##  Verifies:
 ##    1.  ApplySigma is an involution: sigma o sigma = id  on R^8.
 ##    2.  ApplySigma is an isometry: it preserves the Euclidean norm.
-##    3.  Proposition 3.2 (paper):  sigma( x * y )  =  sigma(x) *_sigma sigma(y).
+##    3.  sigma( x * y )  =  sigma(x) *_sigma sigma(y): sigma is an algebra
+##        isomorphism from (O, *) to (O, *_sigma), as the paper states after
+##        Definition 3.2.
 ##    4.  *_sigma satisfies the composition law N(x *_sigma y) = N(x) N(y) on
 ##        all 64 basis pairs.
-##    5.  *_sigma differs from * on at least one basis pair (so it is a
-##        DIFFERENT bilinear product on R^8, not merely an algebra-isomorphic
-##        relabelling of the same product).
+##    5.  *_sigma differs from * on at least one basis pair: it is a
+##        different bilinear product on R^8, isomorphic to * via sigma
+##        (item 3).
 ##    6.  Remark 4.5 obstruction restated through the twist:
 ##         Ls * Ls  not subset Ls            (standard product fails on Ls)
 ##         Ls *_sigma Ls   subset Ls         (twisted product succeeds on Ls)
-##    7.  Companion Section 8: the twisted product preserves L:
+##    7.  Companion Section 10: the twisted product preserves L:
 ##           L *_sigma L  subset L
 ##        (explicit on the 64 L-basis products).  Hence Coxeter's E_8 closure
 ##        is not undone by the sigma-twist.
@@ -36,7 +42,7 @@ CHECK("ApplySigma is an involution  (sigma o sigma = id  on the 8 basis vectors)
 CHECK("ApplySigma is an isometry  (preserves squared norm on basis vectors)",
       ForAll([0..7], i -> OctNormSq(ApplySigma(OctBasis(i))) = OctNormSq(OctBasis(i))));
 
-# 3. Proposition 3.2:  sigma(x*y) = sigma(x) *_sigma sigma(y).
+# 3. sigma(x*y) = sigma(x) *_sigma sigma(y)  (paper, after Definition 3.2).
 ok := true;
 for i in [0..7] do for j in [0..7] do
     x := OctBasis(i); y := OctBasis(j);
@@ -44,7 +50,7 @@ for i in [0..7] do for j in [0..7] do
         ok := false; break;
     fi;
 od; if not ok then break; fi; od;
-CHECK("Proposition 3.2:  sigma(x*y) = sigma(x) *_sigma sigma(y)  on all 64 basis pairs",
+CHECK("sigma is an algebra isomorphism:  sigma(x*y) = sigma(x) *_sigma sigma(y)  on all 64 basis pairs",
       ok);
 
 # 4. Composition law for *_sigma.
@@ -87,14 +93,14 @@ od; od;
 CHECK("Twisted *_sigma succeeds on Ls   (Ls *_sigma Ls   subset Ls)",
       twisted_ok);
 
-# 7. L *_sigma L  subset L  (companion Section 8: Kirmse's regime not reached).
+# 7. L *_sigma L  subset L  (companion Section 10: the twist keeps L closed).
 nfail := 0;
 for i in [1..8] do for j in [1..8] do
     if not IsIntegerCombination(OctMultSigma(L_BASIS[i], L_BASIS[j]), L_BASIS) then
         nfail := nfail + 1;
     fi;
 od; od;
-CHECK("Companion Section 8:  L *_sigma L  subset L   (twist preserves L)",
+CHECK("Companion Section 10:  L *_sigma L  subset L   (twist preserves L)",
       nfail = 0);
 
 PrintTestSummary();

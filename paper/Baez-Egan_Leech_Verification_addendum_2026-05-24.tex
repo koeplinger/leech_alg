@@ -1,3 +1,4 @@
+% Created: 2026-05-24.  Updated: 2026-10-24.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -13,32 +14,31 @@
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\Nrm}{N}
 
-\title[Addendum (2026-05-24): the $L/2L$ parallel]%
-{Addendum to\\
-\emph{Verification and Commentary: The Baez--Egan Embedding of the
-Leech Lattice in the Exceptional Jordan Algebra}\\
-\large The $L/2L$ parallel and how our work builds on it}
+\title[The $L/2L$ parallel]%
+{The $L/2L$ parallel and how our work builds on it\\
+\large A note accompanying \emph{Verification and Commentary: The
+Baez--Egan Embedding of the Leech Lattice in the Exceptional Jordan
+Algebra}}
 
 \author{Claude Opus 4.7}
 \address{Anthropic, at the direction of Jens K\"oplinger}
-\date{24 May 2026}
+\date{24 May 2026; updated 24 October 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This is a dated addendum to the original 16 April 2026 Verification
-and Commentary on the Baez--Egan embedding
-(\texttt{paper/Baez-Egan\_Leech\_Verification.pdf}, 8\,pp).  Re-reading
-that work in light of our subsequent paper \emph{An order on the Leech
-lattice from a $\ZZ_3$-symmetric triple-octonion product} (v4,
-24 May 2026), we notice an explicit lattice-algebraic parallel
-between Baez/Egan's ``key lemma'' (Part 9, $L_1 \cap L_2 = 2 L_0$)
-and Wilson's identity ($L\bar s \cap Ls = 2 L$), and we identify
-exactly how Section~A.1 of our paper (\emph{the mod-2-quotient
-reading}) builds on top of that shared identity.  The purpose of
-this addendum is to credit the shared lattice-algebraic foundation
-correctly and to delineate what is new in our use of it.
+This note accompanies the Verification and Commentary of 16 April
+2026 on the Baez--Egan embedding
+(\texttt{paper/Baez-Egan\_Leech\_Verification.pdf}, 8\,pp).  It sets
+out an explicit lattice-algebraic parallel between Baez/Egan's ``key
+lemma'' (Part 9, $L_1 \cap L_2 = 2 L_0$) and Wilson's identity
+($L\bar s \cap Ls = 2 L$), and how Appendix~A of our paper
+\emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
+triple-octonion product} (\texttt{paper/main.tex}, v8), ``The closure
+criterion modulo~$2$'', builds on that shared identity.  It credits
+the shared lattice-algebraic foundation and the prior work on $L/2L$,
+and states what our paper adds.
 \end{abstract}
 
 % ===================================================================
@@ -50,7 +50,7 @@ identity, in different notations:
 
 \begin{center}
 \begin{tabular}{l@{\hskip 2em}l}
-Baez/Egan (Part 9, Section~4 of original PDF): &
+Baez/Egan (Part 9; \S4 of the Verification and Commentary): &
 $L_1 \cap L_2 = 2 L_0$, \\[2pt]
 Wilson (2009, Section~2): &
 $L\bar s \cap Ls = 2 L$. \\
@@ -63,9 +63,9 @@ rotation~$R$, and the duality argument $\mathrm{dual}(L_1 \cap L_2) =
 \tfrac12 L_1 + \tfrac12 L_2 = \tfrac12 L_0$ gives
 $L_1 \cap L_2 = 2 L_0$ (Egan).
 
-In Wilson's setup, $L = D_8^+$ is the octonion-realised $E_8$; the
-sublattices~$L\bar s$ and~$Ls$ are the images of left-multiplication
-by $\bar s$ and~$s$ respectively (so each is isomorphic to
+In Wilson's setup, $L = D_8^+$ is the octonion-realized $E_8$; the
+sublattices~$L\bar s$ and~$Ls$ are the images of~$L$ under right
+multiplication by $\bar s$ and~$s$ respectively (so each is isomorphic to
 $\sqrt{2}\,E_8$, since $\Nrm(s) = \Nrm(\bar s) = 2$), and Wilson
 states the identity directly.
 
@@ -88,34 +88,34 @@ that the lattice
     a{+}b{+}c \in L_2\}
 \]
 is isometric to $\sqrt{2}\,\LL$.  The identity $L_1 \cap L_2 = 2 L_0$
-is used in showing both (i)~$L_L$ is even and self-dual, and (ii)~$L_L$
-has no vector of squared norm~$<4$.  This is the use in Egan's
+is used in showing that $L_L/\sqrt{2}$ is (i)~self-dual and
+(ii)~without vectors of squared norm~$2$.  This is the use in Egan's
 Part~9 of the original $n$-Category Caf\'e series.
 
 Baez/Egan do \emph{not}, anywhere in the Part~9 / Part~10 sequence,
 descend the octonion product on $L_0 = E_8$ modulo~$2 L_0$ to read
-$L_0 / 2 L_0$ as an $\FF_2$-bilinear algebra and analyse the sublattice
+$L_0 / 2 L_0$ as an $\FF_2$-bilinear algebra and analyze the sublattice
 images $L_1 / 2 L_0$, $L_2 / 2 L_0$ in that algebra.  The key lemma
 is used at the level of lattices in $\OO^3$, not at the level of an
 $\FF_2$-algebra structure inside $L_0 / 2 L_0$.
 
 % ===================================================================
-\section{What our Section A.1 builds on the same identity}
+\section{What our Appendix A builds on the same identity}
 % ===================================================================
 
-Section~A.1 of our paper (\emph{The mod-2-quotient reading of
-Tables~A.2 and~A.3}, v4) starts from the same identity, in Wilson's
-form:
+Appendix~A of our paper (``The closure criterion modulo~$2$'',
+\texttt{paper/main.tex}, v8) uses the same identity, in Wilson's
+form,
 \begin{equation}\label{eq:key}
   L\bar s \cap Ls \;=\; 2 L, \tag{$\dagger$}
 \end{equation}
-and uses it as the foundation for an explicitly algebraic reading.
+as the foundation for an explicitly algebraic reading.
 The steps:
 
 \begin{enumerate}
 \item From~\eqref{eq:key}, $2 L \subseteq L\bar s$ and $2 L \subseteq Ls$;
-  applying~$\sigma$ (which fixes $2 L$, since it is a coordinate
-  permutation of an even integer lattice),
+  applying~$\sigma$ (which fixes $2 L$, since $\sigma(L) = L$ by
+  Lemma~4.1 in our paper),
   $2 L \subseteq \sigma(L\bar s)$ and $2 L \subseteq \sigma(Ls)$.
 \item $L \cdot L \subseteq L$ (Coxeter; classical) and
   $\ZZ$-bilinearity descend the octonion product to an
@@ -129,7 +129,8 @@ The steps:
   $\bar L = V \oplus W$.
 \item The closure statements of Lemmas~4.3 and~4.4 in our paper
   become, mod~$2L$:
-  \(V\) is a (two-sided) ideal of $\bar L$;
+  \(V\) is a left ideal of $\bar L$, two-sided since
+  $\sigma(L\bar s)$ is a two-sided ideal of~$L$ (Remark~4.5);
   \(W\) is a subalgebra of $\bar L$.
 \item Under the natural plus-type quadratic form $q(v + 2L) :=
   \Nrm(v) / 2 \pmod 2$ on $\bar L$, direct verification shows that
@@ -138,12 +139,14 @@ The steps:
   Witt decomposition into a complementary pair of Lagrangians.
 \end{enumerate}
 
-Step~(1) uses identity~\eqref{eq:key} directly.  Steps~(2)--(5) are
-new in our paper: they descend the octonion product to an
-$\FF_2$-bilinear product on $L / 2 L$, read the sublattices as
-ideal/subalgebra in that descended algebra, and recognise the whole
-picture as a polarization of an $\FF_2$-orthogonal space.  Baez/Egan
-in Parts~9--10 do not take this $\FF_2$-algebra step.
+Step~(1) uses identity~\eqref{eq:key} directly.  Step~(5) reads
+$\bar L = V \oplus W$ as a polarization of~$(\bar L, q)$, an ordered
+pair of complementary Lagrangians.  For Wilson's pair
+$(L\bar s/2L, Ls/2L)$ that reading is prior work (Section~4), and
+$\sigma$, an isometry of~$L$, maps that pair to~$(V, W)$.  What our
+paper adds is the product~$\bar\mu$ of step~(2), under which $V$
+and~$W$ are a two-sided ideal and a subalgebra (step~(4)).
+Baez/Egan in Parts~9--10 do not take this $\FF_2$-algebra step.
 
 % ===================================================================
 \section{Attribution and overlap}
@@ -154,42 +157,45 @@ What is shared with Baez/Egan:
 \begin{itemize}
 \item The lattice-algebraic identity $L_1 \cap L_2 = 2 L_0$ (Egan's
   Part~9 key lemma), equivalent to Wilson's $L\bar s \cap Ls = 2 L$.
-  Egan's duality-based proof of this is in the original PDF~\S4 of
-  the 16~April 2026 Verification and Commentary, and is reproduced
-  here for the reader's convenience.
+  Egan's duality-based proof of this is in~\S4 of the Verification
+  and Commentary of 16~April 2026; Section~1 above summarizes it in
+  one line.
 \item The role of this identity in setting up a Leech-lattice
   construction inside $L_0^3$ via three sum-of-components conditions
   (Wilson 2009 in octonion language; Egan Part~9 in lattice
   language).
 \end{itemize}
 
-What is not in Baez/Egan and is new in our paper:
+The polarization reading of~$\bar L$ is prior work.  Lepowsky and
+Meurman (1982, \S2) identify the lattices between $2L$ and~$L$ that
+are isometric to $\sqrt{2}\,L$ with the preimages of the Lagrangians
+of~$(\bar L, q)$, and construct a lattice isometric to
+$\sqrt{2}\,\LL$ from any polarization; their introduction notes that
+work of Tits contains what amounts to the same construction.  Egan's
+construction is of this form.  In Baez's series, Tim Silverman
+arrived at the identification of these sublattices with the
+Lagrangians independently (Part~12).  Silverman's comments of 16 and
+19~February 2016 on Part~12 read Egan's construction modulo~$2$ and
+find that Wilson's pair $(L\bar s/2L, Ls/2L)$ is a polarization.
+David Calderbank related Egan's construction to that of Lepowsky and
+Meurman (comment of 2~April 2023 on Part~9).
 
-\begin{itemize}
-\item The descent of the octonion product modulo $2 L$ to an
-  $\FF_2$-bilinear product on $L / 2L$.
-\item The identification of $V$ and $W$ as ideal and subalgebra of
-  this descended algebra.
-\item The Witt-decomposition (polarization) reading of $L / 2L$ into
-  complementary Lagrangians under the natural plus-type quadratic
-  form.
-\end{itemize}
-
-The main paper (v4, Section~A.1) cites Wilson~2009 for the
-sublattice identities and notes Baez/Egan in~\S6 as part of the
-related-work discussion.  The cross-credit recorded here -- that
-our Section~A.1 builds on the same lattice-algebraic key lemma
-that Egan's Part~9 stripped to its geometric core -- is implicit
-in the main paper's references but is made explicit in this
-addendum.
+The main paper (\texttt{paper/main.tex}, v8) states the sublattice
+identities in Wilson's setting (Section~2.3) and Egan's construction
+in Section~6, for sublattices $L_1, L_2 \subset L$ isometric to
+$\sqrt{2}\,L$ with $L_1 \cap L_2 = 2L$; Wilson's lattice is the case
+$(L_1, L_2) = (L\bar s, Ls)$.  The paragraph ``Relation to prior
+work'' of its Appendix~A gives the credits above.  This note sets out
+the parallel between Egan's key lemma and Wilson's
+identity~\eqref{eq:key}, on which Appendix~A builds.
 
 % ===================================================================
 \section{What it would take to close the gap further}
 % ===================================================================
 
 A natural follow-up question: does Baez/Egan's framing extend to the
-$\FF_2$-algebra picture of Section~A.1?  In their setup the
-generalised lattice $L_L \subset L_0^3$ is constructed without
+$\FF_2$-algebra picture of Appendix~A?  In their setup the
+generalized lattice $L_L \subset L_0^3$ is constructed without
 explicit octonion multiplications; once those multiplications are
 brought back in (as in Wilson 2009, and as required for our
 $\bar\mu$ descent), the $\FF_2$-algebra picture is available.
@@ -202,7 +208,7 @@ Conversely, the Part~10 construction (lifting $\LL$ to the
 $27$-dimensional Jordan-algebra ambient $\widetilde{\LL} \subset
 \mathfrak{h}_3(\OO)$, closed under $2(XY + YX)$) is a different
 direction: it embeds $\LL$ into a $27$-dimensional ring,
-whereas our mod-2 picture works within $24$-dimensional $L / 2L$
+whereas our mod-2 picture works within the $8$-dimensional $L / 2L$
 inherited from~$L$ alone.  The two routes are not in competition;
 they are different uses of the same shared key lemma.
 
@@ -211,18 +217,24 @@ they are different uses of the same shared key lemma.
 % ===================================================================
 
 \begin{itemize}
-\item Original Verification PDF:
+\item Verification and Commentary:
   \texttt{paper/Baez-Egan\_Leech\_Verification.pdf}, 16 April 2026
   (Claude, Anthropic).
 \item Our main paper:
   \emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
-  triple-octonion product}, v4 (24 May 2026), Section~A.1
-  ``The mod-2-quotient reading of Tables A.2 and A.3''.
+  triple-octonion product}, v8 (\texttt{paper/main.tex}), Appendix~A
+  ``The closure criterion modulo~$2$'' and Section~6 ``Related work''.
 \item Wilson, R.~A., \emph{Octonions and the Leech lattice},
   J.~Algebra \textbf{322} (2009), 2186--2190.
-\item Baez, J.~C.\ (with G.~Egan and others),
-  \emph{Integral octonions} (parts 9 and 10),
-  $n$-Category Caf\'e, November--December 2014.
+\item Baez, J.~C.\ (with G.~Egan, T.~Silverman and others),
+  \emph{Integral octonions} (parts 9, 10 and~12),
+  $n$-Category Caf\'e, November--December 2014 (parts 9 and~10) and
+  31~January 2016 (part~12, a guest post by T.~Silverman); comments
+  by T.~Silverman of 16 and 19~February 2016 on part~12, and by
+  D.~Calderbank of 2~April 2023 on part~9.
+\item Lepowsky, J., and Meurman, A., \emph{An $E_8$-approach to the
+  Leech lattice and the Conway group}, J.~Algebra \textbf{77} (1982),
+  484--504.
 \end{itemize}
 
 \end{document}

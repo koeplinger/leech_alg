@@ -1,7 +1,15 @@
 #############################################################################
 ##
 ##  test_lemmas.g — The four lemmas of the symbolic proof in
-##  paper Section 4 (and the accompanying non-triviality remark).
+##  paper Section 4 (and the accompanying nontriviality remark).
+##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
+##
+##  The paper cites this file in Appendix C (`sec:methodology`), paragraph
+##  "Symbolic proof and numeric validation", with
+##  python_project/src/symbolic_proof_checks.py and
+##  python_project/src/verify_structural_proof.py: the four lemmas
+##  verified on Z-bases in a Python and a GAP implementation.
 ##
 ##  Mirrors python_project/src/symbolic_proof_checks.py.
 ##

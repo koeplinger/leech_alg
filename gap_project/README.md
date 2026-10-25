@@ -138,7 +138,7 @@ for all 240 roots ($Ls, L\bar s\subseteq L$).
 ### `test_sublattices.g`: 16 checks
 Ranks of $Ls$, $L\bar s$ bases; their Gram determinants $= 256 = 16^2$;
 $\mathrm{IsInLs}$, $\mathrm{IsInLsBar}$ accept all 240 root products; both
-reject every E8 root; $2L \subseteq Ls \cap L\bar s$; $Ls + L\bar s = L$;
+reject every E8 root; $2L \subseteq Ls \cap L\bar s$; $Ls + L\bar s$ of rank 8;
 Lemma 4.1 ($\sigma(L)=L$); Remark 4.5 ($\sigma(Ls) \ne Ls$, $Ls\cdot Ls
 \not\subseteq Ls$); the explicit companion witness vector
 $(-1,0,1,0,0,1,0,1)\in\sigma(Ls)\setminus Ls$.

@@ -42,7 +42,7 @@ Properties verified
  Sublattice relations  (Ls̄ ∩ Ls = 2L, Ls̄ + Ls = L):
 13.  2 × root ∈ Ls̄ for all 240 roots  (2L ⊆ Ls̄)
 14.  2 × root ∈ Ls  for all 240 roots  (2L ⊆ Ls)
-15.  Combined Z-span of Ls̄ and Ls vectors has rank 8  (Ls̄ + Ls spans L)
+15.  Combined Z-span of Ls̄ and Ls vectors has rank 8
 
  Type-1 minimal vectors  —  (2λ, 0, 0) and 2 cyclic perms, λ ∈ L:
 16.  Count = 720
@@ -55,7 +55,7 @@ Properties verified
 21.  All N_std = 8
 22.  Sample of 500 satisfy Wilson's membership conditions (is_in_leech)
 
- Type-3 minimal vectors  —  ((λs̄)j, λk, (λj)k) and 2 cyclic perms:
+ Type-3 minimal vectors  —  ((λs)j, λk, (λj)k) and 2 cyclic perms:
 23.  Count = 184,320
 24.  Sample of 500 have N_std = 8
 25.  Sample of 500 satisfy Wilson's membership conditions (is_in_leech)
@@ -262,7 +262,7 @@ class TestLsSublattice:
 
 
 # ---------------------------------------------------------------------------
-# 13–15: Sublattice relations  (2L ⊆ Ls̄ ∩ Ls; Ls̄ + Ls spans L)
+# 13–15: Sublattice relations  (2L ⊆ Ls̄ ∩ Ls; Ls̄ and Ls jointly of rank 8)
 # ---------------------------------------------------------------------------
 
 class TestSublatticeSumAndIntersection:
@@ -276,8 +276,8 @@ class TestSublatticeSumAndIntersection:
     index calculation: [L : Ls̄] = [L : Ls] = 16, and the sublattices
     together generate L.
 
-    The Ls̄ + Ls = L direction is tested via rank: combining all Ls̄ and Ls
-    generators, the matrix rank is 8 (= rank of L).
+    The rank check shows only that the combined Ls̄ and Ls generators have
+    rank 8 (= rank of L); Ls̄ + Ls = L is Wilson's statement (Section 2).
     """
 
     def test_2L_subset_Ls_bar(self, e8_roots):
@@ -300,8 +300,8 @@ class TestSublatticeSumAndIntersection:
         """
         Combined Z-span of all Ls̄ and Ls generators has rank 8.
 
-        This confirms Ls̄ + Ls ⊇ L in the vector-space sense; together with
-        the index bound this implies Ls̄ + Ls = L.
+        This shows only that the combined generators have rank 8;
+        Ls̄ + Ls = L is Wilson's statement (Section 2).
         Reference: [Wilson2009] Section 2.
         """
         from e8_wilson import WILSON_S
@@ -401,9 +401,9 @@ class TestType2Vectors:
 
 class TestType3Vectors:
     """
-    Type-3: ((λs̄)j, λk, (λj)k) and 2 cyclic permutations, λ ∈ L, j,k ∈ J.
+    Type-3: ((λs)j, λk, (λj)k) and 2 cyclic permutations, λ ∈ L, j,k ∈ J.
     Count: 3 × 240 × 16 × 16 = 184,320.
-    Norm:  N_std = N(λ)N(s̄)N(j) + N(λ)N(k) + N(λ)N(j)N(k) = 4 + 2 + 2 = 8.
+    Norm:  N_std = N(λ)N(s)N(j) + N(λ)N(k) + N(λ)N(j)N(k) = 4 + 2 + 2 = 8.
     Reference: [Wilson2009] Section 3.
 
     Note: leech_type3_vectors() generates ~120,000 octonion products.

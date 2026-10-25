@@ -54,10 +54,9 @@ changes part by part):
   [CederwallPreitschopf1995]), and the docstrings of the cited scripts, in
   the paper's numbering.
 
-Open, outside the items, for the author: the keyword "computer-assisted
-proof" and the MSC code 68V05, to be reconsidered for the closed-form
-proofs; the paragraph after the census table, which restates three facts
-of the table.  Drafted by Claude Opus 5.5 at the direction of Jens
+Outside the items, the keyword "computer-assisted proof" with the MSC code
+68V05, and the paragraph after the census table, are decided in
+`2026-10-24_consistency_plan.md` (decisions (s) and (t)).  Drafted by Claude Opus 5.5 at the direction of Jens
 Köplinger, and reviewed before hand-over by four independent readers.
 
 ---

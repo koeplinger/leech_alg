@@ -3,6 +3,8 @@
 ##  octonion.g — Octonion algebra over Q^8 with the standard Fano-plane
 ##  multiplication used in the paper.
 ##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
+##
 ##  Conventions (matching the main paper, Section 2.1, and the Python module
 ##  python_project/src/octonions.py):
 ##
@@ -10,7 +12,7 @@
 ##    Internal  : 1-indexed; position k holds the e_{k-1} coefficient.
 ##                So position 1 = e_0, position 2 = e_1, ..., position 8 = e_7.
 ##
-##  Standard Fano triples (paper eq. (1)):
+##  Standard Fano triples (paper eq. (2.1), `eq:fano`):
 ##    (1,2,4), (2,3,5), (3,4,6), (4,5,7), (5,6,1), (6,7,2), (7,1,3).
 ##  Encoding:  for each triple (a,b,c),  e_a*e_b = +e_c  (and its two cyclic
 ##  rotations);  e_b*e_a = -e_c  (and its two anti-cyclic rotations).

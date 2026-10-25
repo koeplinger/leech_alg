@@ -74,8 +74,8 @@ The three families below cover all minimal vectors of Λ, where:
   Type 1: (2λ, 0, 0) and cyclic permutations       —  3 × 240      =    720
   Type 2: (λs̄, (λs̄)j, 0) and cyclic permutations — 3 × 240 × 16 = 11,520
   Type 3: ((λs)j, λk, (λj)k) and cyclic perms     — 3 × 240 × 16 × 16 = 184,320
-  Note: type-2 uses s̄; type-3 uses s.  This is the distinction Wilson proves is
-  necessary: see [Wilson2009 p. 2189] footnote on Dixon's related construction.
+  Note: type-2 uses s̄; type-3 uses s.  With s̄ in the first coordinate the
+  type-3 triples have norm 8 but fail Wilson's conditions (key claim 004).
 
   Total: 196,560  =  3 × 240 × (1 + 16 + 16×16)
 
@@ -83,14 +83,18 @@ All three families are verified to have N_std = 8.
 
 Proof that Λ has no vectors of norm < 8  [Wilson2009 Section 4]
 ---------------------------------------------------------------
-Suppose (x, y, z) ∈ Λ has Wilson-norm N < 4 (i.e., N_std < 8).
-Then at least one of x, y, z must be 0 (since each nonzero coordinate from L
-has N ≥ 2).  If, say, z = 0, then conditions 2 and 3 give x+y ∈ Ls̄ and
-x+y ∈ Ls, so x+y ∈ Ls̄ ∩ Ls = 2L.  Also y+z = y ∈ Ls̄, and x+z = x ∈ Ls̄,
-so both x,y ∈ Ls̄ = 2B ⊂ L.  Then y ∈ Ls̄ and x = (x+y) − y ∈ 2L + 2B = 2B.
-In the only-one-nonzero case (y=z=0), condition 3 gives x ∈ Ls, and
-condition 2 gives x ∈ Ls̄, so x ∈ Ls ∩ Ls̄ = 2L, hence N(x) ≥ N_std(2L) = 8.
-Contradiction.  Therefore Λ has no vectors of Wilson-norm < 4 (N_std < 8).
+For (x, y, z) ∈ Λ, expanding the norms gives
+    N_std(x, y, z) = N(x+y) + N(x+z) + N(y+z) − N(x+y+z).
+By conditions 2 and 3 the terms on the right are norms of elements of Ls̄
+and Ls, and N(ls̄) = N(ls) = 2N(l) for l ∈ L; as L is even with minimum
+norm 2, these lie in 4Z and are at least 4 when l ≠ 0.  So N_std ∈ 4Z: Λ is
+even under Wilson's norm N_Wilson = N_std/2.  A nonzero vector of Λ with
+N_std < 8 therefore has N_std = 4, so one coordinate is 0 (three nonzero
+ones would give N_std ≥ 6); by symmetry, say z = 0.  Then x = x+z and
+y = y+z lie in Ls̄, so exactly one of them is nonzero (two would give
+N_std ≥ 8), say x.  Then x = x+y+z ∈ Ls as well, so x ∈ Ls̄ ∩ Ls = 2L and
+N(x) ≥ 8, a contradiction.  Hence every nonzero vector of Λ has N_std ≥ 8
+(N_Wilson ≥ 4).
 
 Use
 ---
@@ -346,9 +350,11 @@ def leech_type3_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     in type-3 produces norm-8 vectors that do NOT satisfy Wilson's conditions.
     Reference: [Wilson2009] Section 3 — "((λs)j, ±λk, ±(λj)k)".
 
-    Wilson notes: "Dixon's formula is equivalent to (λs, ±λk, ±(λj)k),
-    omitting the (necessary) multiplication by j in the first coordinate."
-    [Wilson2009, p. 2189 footnote]
+    Wilson's bracketed note on Dixon's conjectured formula ([Wilson2009]
+    Section 5, p. 2189) concerns the multiplication by j in the first
+    coordinate: "in effect, his formula is equivalent to (λs, ±λk, ±(λj)k),
+    that is, omitting the (necessary) multiplication by j in the first
+    coordinate."
 
     Norm: N_std = N(λ)N(s)N(j) + N(λ)N(k) + N(λ)N(j)N(k)
                 = 2·2·1 + 2·1 + 2·1·1 = 4 + 2 + 2 = 8. ✓

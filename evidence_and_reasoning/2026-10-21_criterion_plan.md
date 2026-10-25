@@ -8,10 +8,13 @@ and (f) as recommended, and "is given here" for the tension around F7;
 (g) the paper carries no credit note for Proposition 5.3, since the work
 is a human–AI collaboration (Section 1, the declaration on the use of AI,
 Appendix C) and its results are joint, while the records trace where each
-result came from.  The four edits of §3 are in `paper/main.tex` as
-written here: Proposition 5.3 (`prop:criterion`) and the reading of the
-census table in Section 5.6 (`sec:census`), Section 1's overview, and
-Section 7's third question (`sec:conclusion`).  `paper/v7_to_v8_changelog.md` states
+result came from.  The edits of §3.1, §3.2 and §3.4 are in `paper/main.tex`
+as written here: Proposition 5.3 (`prop:criterion`) in Section 5.6
+(`sec:census`), Section 1's overview, and Section 7's third question
+(`sec:conclusion`).  The reading of the census table (§3.3) has the form of
+decision (t) of `2026-10-24_consistency_plan.md`: without the three facts of
+the table that §3.3 restates, and with the sentence on the column "Close"
+before the description of the 3-cycles.  `paper/v7_to_v8_changelog.md` states
 the change under Section 5.6; the records of §5 are part of item 7 of
 the parent plan.  Drafted by Claude Opus 5.5 at the direction of Jens
 Köplinger.

@@ -2,9 +2,9 @@
 
 Created: 2026-07-12.  Updated: 2026-10-24.
 
-Runtime: long -- well over ten minutes single-threaded (the complete
-stabilizer enumerations dominate); the script prints its own runtime at
-the end.
+Runtime: about 5 minutes on one core of an Intel Core i7-12650H (the
+script runs single-threaded; the complete stabilizer enumerations take
+about 4 of the 5 minutes).  It prints its own runtime at the end.
 
     Aut(Lambda, +, star) := { g : Lambda -> Lambda  Z-linear bijection
                               with  g(u star v) = g(u) star g(v) }.

@@ -2,13 +2,18 @@
 ##
 ##  harness.g — Tiny test harness used by the test scripts in tests/.
 ##
-##  Usage in a test file:
-##      Read("src/harness.g");                     # initialises counters
-##      TEST("description of the check", boolean_expression);
+##  Created: 2026-04-28.  Updated: 2026-10-24.
+##
+##  Usage in a test file (as in tests/*.g):
+##      Read(Concatenation(GAP_PROJECT_ROOT, "/src/harness.g"));
+##      LoadAllSrc(GAP_PROJECT_ROOT);
+##      ResetTestCounters();
+##      CHECK("description of the check", boolean_expression);
 ##      ...
-##  At the end of run_all.g (or a single test file), the totals are printed
-##  via PrintTestSummary(); a non-zero failure count causes a non-zero exit
-##  (when running as a script, see run_all.g).
+##      PrintTestSummary();
+##  PrintTestSummary() prints the totals of the test file.  run_all.g adds
+##  up the totals of all test files, prints the sum, and exits with code 0
+##  if every check passed and 1 otherwise.
 ##
 #############################################################################
 

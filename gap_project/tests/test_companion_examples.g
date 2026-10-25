@@ -4,24 +4,26 @@
 ##  examples in the companion note (paper/companion.tex), recomputed in GAP
 ##  to give the reader a fully independent re-derivation.
 ##
-##  Verifies (companion Sections 2-8):
+##  Created: 2026-04-28.  Updated: 2026-10-24.
+##
+##  Verifies (companion Sections 3 to 5 and 11):
 ##    1.  e_1 * e_2  =  e_4   (companion Section 3, Example after the
 ##        Fano-triple list).
 ##    2.  e_1 * e_3  =  e_7   (same example, second multiplication).
 ##    3.  e_2 * e_7  = -e_6   (same example, third multiplication).
 ##    4.  s * s  =  -3/2 e_0  -  (1/2)(e_1 + e_2 + ... + e_7)   in L.
 ##        (Companion Section 3, "A sample product".)
-##    5.  Companion Example 4.5:
+##    5.  Companion Example 4.2 (`ex:Ls-fails`):
 ##           a = (-1, 0, 0, 0, 1, 0, 1, 1)   and
 ##           b = (-1, 1, 0, 0, 0, 1, 0, 1)
 ##        both lie in Ls;  their octonion product is
 ##           a * b = (0, -2, 2, 1, -2, -1, -1, -1) in L,
 ##        and a * b is NOT in Ls.
-##    6.  Companion Example 4.6 / Section 5: under  sigma = (1 2),
+##    6.  Companion Section 5 (`sec:swap`): under  sigma = (1 2),
 ##           e_1 *_sigma e_2  =  -e_4    (vs.  e_1 * e_2 = +e_4).
-##    7.  Companion Section 8: sigma fixes L  (sigma(L) = L) but moves Ls
+##    7.  Companion Section 5: sigma fixes L  (sigma(L) = L) but moves Ls
 ##        (sigma(Ls) ne Ls), with explicit witness  (-1, 0, 1, 0, 0, 1, 0, 1).
-##    8.  Companion final box ("Summary of concrete data"):
+##    8.  Companion Section 11 ("Summary of concrete data"):
 ##         (i)   sigma(Ls) ne Ls
 ##         (ii)  Ls * Ls  not subset Ls
 ##         (iii) sigma(Ls) * sigma(Ls)  subset sigma(Ls).
@@ -59,37 +61,37 @@ CHECK("Companion Section 3: s * s  =  -3/2 e_0  -  (1/2)(e_1 + ... + e_7)",
 CHECK("Companion Section 3: s * s  is in L",
       IsInL(ss));
 
-# 5. Companion Example 4.5: explicit a, b in Ls with a*b not in Ls.
+# 5. Companion Example 4.2: explicit a, b in Ls with a*b not in Ls.
 a := [-1, 0, 0, 0, 1, 0, 1, 1];
 b := [-1, 1, 0, 0, 0, 1, 0, 1];
 ab_expected := [ 0, -2, 2, 1, -2, -1, -1, -1 ];
 
-CHECK("Companion Example 4.5: a in Ls",
+CHECK("Companion Example 4.2: a in Ls",
       IsInLs(a));
-CHECK("Companion Example 4.5: b in Ls",
+CHECK("Companion Example 4.2: b in Ls",
       IsInLs(b));
-CHECK("Companion Example 4.5: a * b = (0, -2, 2, 1, -2, -1, -1, -1)",
+CHECK("Companion Example 4.2: a * b = (0, -2, 2, 1, -2, -1, -1, -1)",
       OctMult(a, b) = ab_expected);
-CHECK("Companion Example 4.5: a * b is in L",
+CHECK("Companion Example 4.2: a * b is in L",
       IsInL(OctMult(a, b)));
-CHECK("Companion Example 4.5: a * b is NOT in Ls   (so Ls * Ls not subset Ls)",
+CHECK("Companion Example 4.2: a * b is NOT in Ls   (so Ls * Ls not subset Ls)",
       not IsInLs(OctMult(a, b)));
 
 # 6. Companion Example (Section 5): under sigma = (1 2), e_1 *_sigma e_2 = -e_4.
 CHECK("Companion Section 5: e_1 *_sigma e_2  =  -e_4   (vs  e_1 * e_2 = +e_4)",
       OctMultSigma(e1, e2) = -e4);
 
-# 7. Companion Section 8: sigma fixes L (Lemma A) but moves Ls (sigma(Ls) ne Ls).
-CHECK("Companion Section 8: sigma(L) = L   (sigma(b) is a Z-comb of L_BASIS for all 8 basis b)",
+# 7. Companion Section 5: sigma fixes L (paper Lemma 4.1) but moves Ls (sigma(Ls) ne Ls).
+CHECK("Companion Section 5: sigma(L) = L   (sigma(b) is a Z-comb of L_BASIS for all 8 basis b)",
       ForAll(L_BASIS, b -> IsIntegerCombination(ApplySigma(b), L_BASIS)));
 
 witness := [-1, 0, 1, 0, 0, 1, 0, 1];
-CHECK("Companion Section 8 witness  (-1, 0, 1, 0, 0, 1, 0, 1)  in sigma(Ls)",
+CHECK("Companion Section 5 witness  (-1, 0, 1, 0, 0, 1, 0, 1)  in sigma(Ls)",
       IsInSigmaLs(witness));
-CHECK("Companion Section 8 witness  (-1, 0, 1, 0, 0, 1, 0, 1)  NOT in Ls",
+CHECK("Companion Section 5 witness  (-1, 0, 1, 0, 0, 1, 0, 1)  NOT in Ls",
       not IsInLs(witness));
 
-# 8. Companion final box: three concrete data points.
+# 8. Companion Section 11: three concrete data points.
 sigma_Ls_neq_Ls := false;
 for v in SIGMA_LS_BASIS do
     if not IsInLs(v) then sigma_Ls_neq_Ls := true; fi;

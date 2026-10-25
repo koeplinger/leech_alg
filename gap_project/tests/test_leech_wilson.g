@@ -1,7 +1,9 @@
 #############################################################################
 ##
 ##  test_leech_wilson.g — Wilson's Leech lattice Lambda inside L^3
-##  (paper Definition 2.4, Wilson [Wilson2009] Section 3).
+##  (paper Definition 2.1, `def:wilson-leech`; Wilson [Wilson2009] Section 3).
+##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
 ##
 ##  Mirrors python_project/tests/test_leech_wilson.py (the parts that don't
 ##  depend on enumerating the 184,320 type-3 vectors, which would be slow in

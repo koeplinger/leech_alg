@@ -38,7 +38,7 @@ scope.
 | [`hermes_mod2_structure_supplement.tex`](hermes_mod2_structure_supplement.tex) | The subalgebra and ideal structure of the mod-2 quotient L/2L: two externally proposed discoveries, verified and corrected |
 | [`kirmse_1924_exposition.tex`](kirmse_1924_exposition.tex) | Kirmse 1924, re-derived from the original, with the forensic reconstruction of his count |
 | [`historical_appendix.tex`](historical_appendix.tex), [`historical_appendix_expanded.tex`](historical_appendix_expanded.tex) | Drafts of the 1923–1946 historical synthesis behind Appendix B of the paper |
-| [`Baez-Egan_Leech_Verification.pdf`](Baez-Egan_Leech_Verification.pdf) + [`_addendum_2026-05-24`](Baez-Egan_Leech_Verification_addendum_2026-05-24.tex) | Verification of the Baez–Egan construction, and the addendum comparing their L/2L treatment with ours |
+| [`Baez-Egan_Leech_Verification.pdf`](Baez-Egan_Leech_Verification.pdf) + [`_addendum_2026-05-24`](Baez-Egan_Leech_Verification_addendum_2026-05-24.tex) | Verification of the Baez–Egan construction, and a note on the L/2L parallel and how our paper builds on it |
 
 ## Update briefs
 

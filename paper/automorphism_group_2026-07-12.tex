@@ -1,3 +1,4 @@
+% Created: 2026-07-12.  Updated: 2026-10-24.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -47,13 +48,13 @@ triple-octonion product}}
 
 \author{Claude Opus 4.8}
 \address{Anthropic}
-\date{12 July 2026}
+\date{12 July 2026; updated 24 October 2026}
 
 \thanks{This note was computed at the direction of Jens K\"oplinger and is
 companion material to the main paper \emph{An order on the Leech lattice
-from a $\ZZ_3$-symmetric triple-octonion product} (v6). It is not part of
-that paper and is not in its referee scope; the author of the main paper
-will decide how, and how much of, this material is worked into it.
+from a $\ZZ_3$-symmetric triple-octonion product}, whose Section~5.4
+states the main results of this note and cites it. It is not part of that
+paper and is not in its referee scope.
 Every nontrivial statement below is either proved here or reproduced by a
 named script in the project repository. Two independent computational
 passes were run: a first pass that produced the result, and a second pass
@@ -67,7 +68,7 @@ disagreed, the disagreement is recorded in \S\ref{sec:corrections}.}
 \maketitle
 
 \begin{abstract}
-The main paper leaves open the identification of $\Aut(\LL, +, \star)$,
+This note determines $\Aut(\LL, +, \star)$,
 the group of $\ZZ$-linear bijections of the Leech lattice that preserve the
 $\ZZ_3$-symmetric $\sigma$-twisted triple-octonion product~$\star$.
 That group has order~$36$ and is isomorphic to $C_6 \times S_3$: every
@@ -304,9 +305,7 @@ automorphism preserves $D$ and~$T$''. As written that is circular:
 $g(\Ann(D)) = \Ann(g(D))$ yields $g(T) = T$ only \emph{after} $g(D) = D$ is
 known, and the annihilator relations alone do not establish that~$D$ is
 intrinsic. The simplicity argument above is the non-circular replacement and
-is what the second pass verified. The conclusion is unaffected. The
-docstring of \texttt{python\_project/src/verify\_star\_algebra\_structure.py}
-still carries the circular wording and should be corrected.
+is what the second pass verified. The conclusion is unaffected.
 \end{remark}
 
 % ===================================================================
@@ -446,7 +445,8 @@ composition and have orders $1, 2, 2, 2, 3, 3$, hence form~$S_3$. There are
 no further components.
 
 Route~2 was carried out in the second, independent pass and does not share a
-step with Route~1. Route~1 is the derivation recorded in
+step with Route~1. Route~1 is the derivation given above; its input, the
+Fourier normal form, is checked exactly in
 \texttt{verify\_star\_algebra\_structure.py}. The two agree.
 
 \medskip
@@ -793,36 +793,27 @@ therefore implies neither preservation of the Leech form nor finiteness of the
 automorphism group. The trace-form route fails, even though its intended
 conclusion is true. This was confirmed independently in the second pass.
 
-\subsection{Relation to what the main paper (v6) asserts}
-\label{sec:v6}
+\subsection{Relation to the main paper}
+\label{sec:main-paper}
 
-The v6 Conclusion lists as an open problem: ``The automorphism group of
-$(\LL, +, \star)$, equivalently the stabilizer of the product tensor
-inside~$\Co_0$, and its relationship to the Conway group. Empirically,
-$S_3 \subseteq \Aut(\LL, +, \star) \subsetneq \Co_0$: the block-permutation
-$S_3$ acts by automorphisms, and the inclusion in $\Co_0$ is strict because
-$-I_{24} \in \Co_0$ does not preserve $\star$. Full identification of
-$\Aut(\LL, +, \star)$ is open.'' Against the present calculation:
+Section~5.4 of the main paper states the order, structure and generators of
+$\Aut(\LL,+,\star)$ and its strict containment in~$\Co_0$, and cites this note
+for their derivation.
 
 \begin{itemize}[leftmargin=*]
-\item \textbf{``Full identification is open'' is now closed.}
-  $\Aut(\LL,+,\star) \cong C_6 \times S_3$, of order~$36$, with the three
-  explicit generators of \S\ref{sec:lattice}. The open-problem list should be
-  updated.
-\item \textbf{$S_3 \subseteq \Aut(\LL,+,\star)$ is correct}, and the $S_3$ is
-  exactly the block-permutation subgroup. It is a proper subgroup of index~$6$:
-  the blockwise $C_6$ was missed.
-\item \textbf{The containment $\Aut(\LL,+,\star) \subseteq \Co_0$ is correct
-  and is now a theorem}, not an empirical observation. But the paper's phrasing
-  presents it as if it were free: the phrase ``equivalently the stabilizer of
-  the product tensor inside~$\Co_0$'' already presupposes that every
-  $\star$-automorphism of $\LL$ is an isometry. That presupposition is true, by
-  Theorem~\ref{thm:co0}, and the only proof we have of it goes through the
-  compactness of $\Aut(\OO,\cdot_s)$. If the sentence stays, it needs that
-  justification attached.
-\item \textbf{The strictness $\subsetneq \Co_0$ is correct}, and the reason
-  given ($-I_{24}$ is not multiplicative) is correct. It is a considerable
-  understatement: $36$ against $|\Co_0| = 8{,}315{,}553{,}613{,}086{,}720{,}000$.
+\item $\Aut(\LL,+,\star) \cong C_6 \times S_3$, of order~$36$
+  (Theorem~\ref{thm:main}), with the three explicit generators of
+  \S\ref{sec:lattice}. The signed permutation that the paper gives as the
+  generator of the~$C_6$ is~$A_6$.
+\item The block permutations form a subgroup~$S_3$ of index~$6$; the
+  blockwise part is the cyclic group~$C_6$.
+\item The containment $\Aut(\LL,+,\star) \subseteq \Co_0$ is
+  Theorem~\ref{thm:co0}; the paper's derivation of it, from the ambient
+  algebra, follows the proof of that theorem. Consequently
+  $\Aut(\LL,+,\star)$ is the stabilizer of the product~$\star$ in~$\Co_0$.
+\item The inclusion in~$\Co_0$ is strict because $-I_{24}$ is not
+  multiplicative; $|\Aut(\LL,+,\star)| = 36$ against
+  $|\Co_0| = 8{,}315{,}553{,}613{,}086{,}720{,}000$.
 \end{itemize}
 
 % ===================================================================
@@ -885,10 +876,8 @@ fixed.
 
 \begin{enumerate}[label=\textbf{C\arabic*.}, leftmargin=*]
 \item \textbf{The intrinsic-annihilator argument is circular as first stated}
-  (Remark~\ref{rem:circular}). The conclusion survives; the proof is now via
-  simplicity of the two ideals and a dimension count. The docstring of
-  \texttt{verify\_star\_algebra\_structure.py} still carries the circular
-  wording.
+  (Remark~\ref{rem:circular}). The conclusion survives; the proof is via
+  simplicity of the two ideals and a dimension count.
 \item \textbf{The order-$12096$ group stabilizes $L\bar s$, not $L$}
   (Remark~\ref{rem:12096}). The prior expectation that the maximal-order
   stabilizer would be $G_2(2)$, cut down by the extra sublattice conditions, is
@@ -909,8 +898,9 @@ fixed.
 
 All scripts use exact arithmetic (Python \texttt{Fraction}s or integers)
 throughout; no claim in this note rests on floating-point computation. Runtimes
-are on the project's reference machine. Python scripts live in
-\texttt{python\_project/src/} and GAP scripts in \texttt{}; both
+are wall-clock times on one core of an Intel Core i7-12650H; the Python
+scripts run single-threaded. Python scripts live in
+\texttt{python\_project/src/} and GAP scripts in \texttt{gap\_project/}; both
 are named below by file name alone.
 
 \begin{center}
@@ -963,9 +953,10 @@ Script & Certifies \\
 \end{longtable}
 \end{center}
 
-The earlier probe \texttt{python\_project/src/probe\_aut\_lambda\_star.py}
-recorded the $S_3$ of block permutations and the exclusion of $-I_{24}$; those
-observations are subsumed here.
+The probe \texttt{python\_project/src/probe\_aut\_lambda\_star.py} tests
+individual candidate maps against $\LL$ and~$\star$ on all $576$ basis pairs;
+it finds the $S_3$ of block permutations and excludes~$-I_{24}$, both
+contained in the results above.
 
 The independent second pass rebuilt the octonions, $\sigma$, $\cdot_s$, $L$,
 $s$, $\bar s$, $Ls$, $L\bar s$ and a $\ZZ$-basis of~$\LL$ from the definitions

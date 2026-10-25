@@ -1,7 +1,7 @@
 Claim number: 004
 Title: Wilson's octonionic construction yields the 196,560 minimal vectors of the Leech lattice
 Status: ESTABLISHED
-Date: 2026-04-07
+Created: 2026-04-07.  Updated: 2026-10-24.
 
 --- STATEMENT ---
 
@@ -33,11 +33,11 @@ CRITICAL NOTE ON TYPE-3 FORMULA:
 Type-2 uses s̄ in BOTH components.
 Type-3 uses s (not s̄) in the FIRST component.
 Using s̄ in type-3 produces 184,320 norm-8 triples that do NOT satisfy
-Wilson's membership conditions.  This distinction is verified computationally
-and is also explicitly noted in Wilson's paper:
-  "Dixon's formula is equivalent to (λs, ±λk, ±(λj)k), that is, omitting the
-   (necessary) multiplication by j in the first coordinate."
-  — [Wilson2009 p. 2189, footnote on Dixon's construction]
+Wilson's membership conditions; this is verified computationally.  Wilson's
+bracketed note on Dixon's conjectured formula [Wilson2009 Section 5, p. 2189]
+concerns a different point, the multiplication by j in the first coordinate:
+  "in effect, his formula is equivalent to (λs, ±λk, ±(λj)k), that is,
+   omitting the (necessary) multiplication by j in the first coordinate."
 
 All three families are verified to satisfy conditions (1)–(3) above.
 
@@ -55,7 +55,7 @@ Ls:
 
 Key relations:
   Ls̄ ∩ Ls = 2L  (all 2×root are in both; minimum norm = 8)
-  Ls̄ + Ls = L   (combined generators span L; verified by rank check)
+  Ls̄ + Ls = L   (Wilson Section 2; the combined generators have rank 8)
   2L ⊆ Ls̄ and 2L ⊆ Ls
 
 --- NORM AND COUNT VERIFICATION ---
@@ -79,12 +79,15 @@ Self-dual (det_Wilson = 1): proved analytically in [Wilson2009 Section 4].
 Under the standard R^24 Euclidean inner product, det(Gram_Λ) = 2^24 (because
 Wilson's norm is ½ of the standard norm, scaling the Gram det by 2^24).
 
-No norm-2 vectors (proven analytically):
-  If (x, y, z) ∈ Λ has N_std < 8, at least one coordinate is 0.
-  If z = 0: conditions (2) and (3) give x+y ∈ Ls̄ and x+y ∈ Ls, so
-    x+y ∈ Ls̄ ∩ Ls = 2L.  Also x ∈ Ls̄ and y ∈ Ls̄.
-  If y = z = 0: condition (3) gives x ∈ Ls, and condition (2) gives x ∈ Ls̄,
-    so x ∈ 2L, hence N(x) ≥ 8.  Contradiction.
+No norm-2 vectors (Wilson's argument, [Wilson2009 Section 4, p. 2189]):
+  For (x, y, z) ∈ Λ, N_std(x, y, z) = N(x+y) + N(x+z) + N(y+z) − N(x+y+z).
+  The terms on the right are norms of elements of Ls̄ and Ls, and
+  N(l s̄) = N(l s) = 2N(l) for l ∈ L, which lies in 4Z and is at least 4 for
+  l ≠ 0; so N_std ∈ 4Z.  A nonzero vector with N_std < 8 therefore has
+  N_std = 4, so one coordinate is 0 (three nonzero ones give N_std ≥ 6), say
+  z = 0.  Then x and y lie in Ls̄, so only one of them is nonzero (two would
+  give N_std ≥ 8), say x; then x = x+y+z ∈ Ls as well, so x ∈ Ls̄ ∩ Ls = 2L
+  and N(x) ≥ 8, a contradiction.
   Therefore min norm = 8 (minimum is achieved by the 196,560 minimal vectors).
 
 These four properties uniquely characterise the Leech lattice by Conway's

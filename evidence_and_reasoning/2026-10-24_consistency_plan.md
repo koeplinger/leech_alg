@@ -2,13 +2,15 @@
 
 Created: 2026-10-24.  Updated: 2026-10-24.
 
-**Status: proposed; decisions taken.**  (s) Option 2: the keyword
-"computer-assisted proof" is dropped and MSC 68V05 stays (P1, P3).  (t)
-Option 1: the paragraph after the census table loses the three table facts it
-restates (P2, P4).  Every edit of §5 was drafted read-only, checked against
-its source, and applied to scratch copies that build or run as §4 states; the
-plan was reviewed before hand-over by five readers, each finding checked by a
-refuting verifier.  Drafted by Claude Opus 5.5 at the direction
+**Status: executed.**  (s) Option 2: the keyword "computer-assisted proof" is
+dropped and MSC 68V05 stays (P1, P3).  (t) Option 1: the paragraph after the
+census table loses the three table facts it restates (P2, P4).  All 94 edits
+of §5 are applied.  The PDFs are rebuilt: the paper, 22 pages; the
+automorphism note, 11; the Baez–Egan note, 3; the companion note, 10; the
+historical-appendix draft, 2; none has an undefined reference or a new
+overfull box.  The GAP suite passes 110 of 110, the Leech tests 31 of 31,
+and the linter is clean.  The plan was reviewed before execution by five
+readers, each finding checked by a refuting verifier.  Drafted by Claude Opus 5.5 at the direction
 of Jens Köplinger.
 
 ## 0. Goal and scope

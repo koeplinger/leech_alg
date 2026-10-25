@@ -2,6 +2,8 @@
 ##
 ##  test_octonion.g — Octonion algebra basics (paper Section 2.1).
 ##
+##  Created: 2026-04-28.  Updated: 2026-10-24.
+##
 ##  Verifies (mirrors python_project/tests/test_octonions.py):
 ##    1.  e_0 is left and right identity.
 ##    2.  e_i^2 = -e_0 for i = 1..7.
@@ -167,7 +169,7 @@ for a in [1..7] do
         ok := false; break;
     fi;
 od;
-CHECK("Dixon's standard rule  e_a * e_{a+1} = e_{a+3}  for a = 1..7  (paper eq. (1))", ok);
+CHECK("Dixon's standard rule  e_a * e_{a+1} = e_{a+3}  for a = 1..7  (paper eq. (2.1))", ok);
 
 # ---------------------------------------------------------------------------
 # LOOPS independent verification.

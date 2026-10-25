@@ -1,3 +1,4 @@
+% Created: 2026-04-14.  Updated: 2026-10-24.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -19,17 +20,17 @@
 \large Kirmse--Coxeter and the $\sigma$-twist, by concrete example}
 \author{Claude Opus 4.7}
 \address{Anthropic}
-\date{16 April 2026; revised 23 May 2026 (v4 companion)}
+\date{14 April 2026; updated 24 October 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 This companion note was written by the AI agent (drafted by
-Claude Opus~4.6 in max-thinking mode, revised 23 May 2026 by
+Claude Opus~4.6 in max-thinking mode, revised by
 Claude Opus~4.7, Anthropic) at the direction of Jens K\"oplinger,
 the author of the accompanying paper ``An order on the Leech lattice
-from transposition-twisted octonions.''  It is a \emph{training
+from a $\ZZ_3$-symmetric triple-octonion product.''  It is a \emph{training
 document}, assembled from the overall corpus of the project
 repository
 \href{https://bitbucket.org/jenskoeplinger/leech_alg}%
@@ -58,7 +59,11 @@ numerics they may have missed.
 \section{Preliminaries}
 % ===================================================================
 
-This note follows the conventions of the main paper.  We work with
+This note follows the conventions of the main paper, with two
+differences of notation: the squared norm~$\|v\|^2$ here is what the
+main paper calls the norm, and $\star$ here is the untwisted triple
+product and $\star_\sigma$ the $\sigma$-twisted one, which the main
+paper writes $\star_{\mathrm{id}}$ and~$\star$.  We work with
 the real octonion algebra~$\OO$ on $\RR^8$ with basis
 $\{e_0, e_1, \ldots, e_7\}$, and with Wilson's construction of the
 Leech lattice inside the triple octonion space
@@ -159,10 +164,12 @@ $e_2 \cdot e_7 = -e_6$.
 
 Under the Fano convention \eqref{eq:fano}, the lattice~$L$ is closed
 under octonion multiplication: for every $u, v \in L$, the product
-$u \cdot v \in L$.  This is a classical result of Coxeter~(1946),
-verified in the main paper by computing all $8 \times 8 = 64$
-products of a $\ZZ$-basis of~$L$ in exact arithmetic and checking
-that each lies again in~$L$.
+$u \cdot v \in L$.  This is, at the scale where roots have squared norm~$2$, a classical
+result of Coxeter~(1946): the maximal orders of integral octonions
+are closed under multiplication.  The main paper proves it as
+Lemma~4.2, from the closure of one maximal order, and records an
+independent check of all $8 \times 8 = 64$ products of a
+$\ZZ$-basis of~$L$ in exact arithmetic.
 
 \begin{example}
 A sample product.  From $s \cdot s$ with $s$ as above, using the
@@ -336,8 +343,8 @@ Take
   a = (-1,\, 0,\, 0,\, 0,\, 1,\, 0,\, 1,\, 1), \qquad
   b = (-1,\, 1,\, 0,\, 0,\, 0,\, 1,\, 0,\, 1).
 \]
-Both $a$ and $b$ are in $Ls$ (they appear as basis vectors of~$Ls$
-produced in the main paper's exact-arithmetic verification).  Their
+Both $a$ and $b$ are in $Ls$ (they are the elements $u_1$
+and~$u_2$ of Remark~4.5 of the main paper).  Their
 octonion product, computed under the Fano convention
 \eqref{eq:fano}, is
 \[
@@ -438,14 +445,14 @@ posed afresh.
 \label{ex:sigmaLs-succeeds}
 A $\ZZ$-basis of~$\sigma(Ls)$ is obtained by applying~$\sigma$
 (coordinate swap of positions $1, 2$) to each basis vector of~$Ls$.
-Using the basis generated in the main paper's verification, all
-$8 \times 8 = 64$ products of basis vectors of~$\sigma(Ls)$, under
-the standard octonion product~$\cdot$, lie again in~$\sigma(Ls)$.
-The verification is in
-\href{../python_project/src/symbolic_proof_checks.py}{\texttt{symbolic\_proof\_checks.py}}
-as Lemma~D.
+All $8 \times 8 = 64$ products of these basis vectors, under the
+standard octonion product~$\cdot$, lie again in~$\sigma(Ls)$.  The
+verification, in exact arithmetic, is in
+\href{../python_project/src/symbolic_proof_checks.py}{\texttt{symbolic\_proof\_checks.py}}.
 
-Hence $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.
+Hence $\sigma(Ls) \cdot \sigma(Ls) \subseteq \sigma(Ls)$.  This is
+Lemma~4.4 of the main paper, which proves it from the closure of one
+maximal order of integral octonions.
 \end{example}
 
 \subsection*{Two equivalent readings}
@@ -483,7 +490,7 @@ Equivalently:
 Two different bilinear products on~$\RR^8$ (namely~$\cdot$
 and~$\cdot_\sigma$) are isomorphic as abstract algebras.  Every
 theorem phrased in the language of the abstract algebra carries
-over.  But ``does lattice~$X$ close under product~$\star$?'' is not
+over.  But ``does lattice~$X$ close under a given product?'' is not
 a theorem phrased purely in the abstract algebra: it also names a
 specific subset $X \subset \RR^8$, and the answer depends on how the
 isomorphism relates $X$ to itself.
@@ -507,10 +514,12 @@ main paper.
 
 \subsection*{Abstract}
 
-The Leech lattice~$\LL$ is the unique even unimodular lattice of
+The Leech lattice is the unique even unimodular lattice of
 rank~$24$ with no roots (i.e.\ no vectors of squared norm~$2$).  Its
 minimal vectors have squared norm~$4$, and there are exactly
-$196{,}560$ of them.
+$196{,}560$ of them.  As in the main paper, $\LL$ denotes its
+$\sqrt{2}$-scaled copy, at the scale of Wilson's construction below,
+whose $196{,}560$ minimal vectors have squared norm~$8$.
 
 \subsection*{Concrete (Wilson's construction)}
 
@@ -631,7 +640,7 @@ is:
 
 \begin{example}[$\sigma$-twisted triple product succeeds on~$\LL$]
 For all $u, v \in \LL$, the product $u \star_\sigma v$ lies
-in~$\LL$.  This is Theorem~3.1 of the main paper.
+in~$\LL$.  This is Theorem~1.1 of the main paper.
 \end{example}
 
 \subsection*{What is twisted and what is invariant (at the Leech
