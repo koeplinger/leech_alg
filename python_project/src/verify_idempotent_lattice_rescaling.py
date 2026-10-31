@@ -1,5 +1,12 @@
-"""Task A, part 4: how the eight idempotents of (R^24, +, star) sit relative
+"""How the eight idempotents of (R^24, +, star) sit relative
 to the Leech lattice Lambda.
+
+Created: 2026-07-12.  Updated: 2026-10-28.
+
+The paper cites this script in Section 5.2 (`sec:idempotents`), in the
+footnote to the statement that the order (Lambda, +, star) has no nonzero
+idempotent, which precedes the least multiples in display (5.2)
+(`eq:idempotent-multiples`).
 
 Uses the complete classification of verify_idempotent_classification.py
 (exactly 8 idempotents: 0, eps_1, eps_2, eps_3, w/3, and eps_i - w/3) and the
@@ -31,13 +38,14 @@ Facts established here (all exact):
      The smallest such u is (4 e_0, 0, 0) and its block permutations, of norm
      16, with c = 4 (and (-4 e_0, 0, 0) with c = -4).
      NO minimal vector of Lambda satisfies u star u = c u for ANY c: verified
-     exhaustively over all 196,560 minimal vectors, and proved -- c = 0 would
+     exhaustively over all 196,560 minimal vectors, and proved: c = 0 would
      make u square-zero (impossible on the minimal shell, see
      verify_square_zero_classification.py: square-zero norms lie in 12Z),
      while c =/= 0 forces N(u) = c^2 N(E) in {c^2, 2c^2/3, c^2/3} = 8, i.e.
      c^2 in {8, 12, 24}, which has no rational root.
 
- (D) The orchestrator's witness, verified: for lambda a PURELY IMAGINARY root
+ (D) The minimal-shell witness of Remark 5.1 (label rem:product-norms; there
+     lambda = e3 + e4), verified: for lambda a PURELY IMAGINARY root
      of L (Re(lambda) = 0; there are 84 of them),
         u = (2 lambda, 0, 0) in Min(Lambda)  and  u star u = (-8 e_0, 0, 0)
                                                            = -8 eps_1,
@@ -116,7 +124,7 @@ def main():
         v = smul(c, u)
         want = smul(c, v)
         good = eq(star(v, v), want) and eq(star_indep(v, v), want)
-        print(f"  u = {c}*{name:<14}: u*u = {c}*u : {good}   (N(u) = {Nu(v)})")
+        print(f"  u = {c}*{'(' + name + ')':<16}: u*u = {c}*u : {good}   (N(u) = {Nu(v)})")
     print()
 
     print("  exhaustive scan of the 196,560 minimal vectors for u*u = c*u ...")

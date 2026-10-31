@@ -1,6 +1,6 @@
 # The span index of twisted triple products: verification of the external v8 review, and what index 1 means (14 October 2026)
 
-Created: 2026-10-14.  Updated: 2026-10-24.
+Created: 2026-10-14.  Updated: 2026-10-28.
 **Author of this note:** Claude Fable 5.1 (Anthropic), at the direction of Jens Köplinger
 **Subject:** the external review of v8 by Claude Opus 5.5 (13 October 2026),
 incorporated verbatim with its evidence as
@@ -62,8 +62,8 @@ products.
 **The permutation census** (all 5,040 permutations $\pi$, the paper's
 Section 5.6 convention $x \cdot_\pi y = \pi^{-1}(\pi(x)\cdot\pi(y))$): 1,764
 close, in the paper's cycle-type counts; every closing even permutation has
-$[\Lambda : S_\pi] = 2^{10}$ and every closing odd one (the 21 transpositions,
-$\sigma$ among them) $2^{16}$.  The 3-cycle $5 \to 6 \to 7 \to 5$ closes with
+$[\Lambda : S_\pi] = 2^{10}$ and every closing odd one (588 of them, among them $\sigma$ and the other 20
+transpositions) $2^{16}$.  The 3-cycle $5 \to 6 \to 7 \to 5$ closes with
 $2^{10}$; its inverse does not close.
 
 **The root reflections** (120, one per $\pm r$): 56 close, 28 with index

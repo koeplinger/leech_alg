@@ -1,5 +1,7 @@
 # Primary-source verification — Dickson (1923), §19
 
+Created: 2026-05-20.  Updated: 2026-10-28.
+
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 109. Second source paper of the 1920s–40s set (after Kirmse).
@@ -93,10 +95,10 @@ predates Kirmse's paper; Kirmse's exhibited order is the defective one.
 
 ## Status
 
-Dickson (1923): **verified.** Kirmse (1924): verified (separate note).
-Pending: Mahler (1942) — loaded; Coxeter (1946) — to be obtained. The
-question of who first stated the count *seven* correctly remains open and is
-deferred to Coxeter.
+Dickson (1923): **verified.** Kirmse (1924), Mahler (1942) and Coxeter
+(1946) are verified in the sibling notes; Coxeter (1946) is the first of the
+four to state the count *seven* correctly
+(`2026-05-22_claude_opus_4_7_coxeter_1946_verification.md`).
 
 Facts vs. interpretation: the counts (7 maximal orders; 3 containing $p$; the
 identity of those 3), the closure of $O_D$, and the orbit sizes are **verified

@@ -1,13 +1,14 @@
 """A square-zero vector of Lambda of norm 24: the norm-12 stratum is not all
 of the square-zero locus.
 
-Created: 2026-07-17.  Updated: 2026-10-24.
+Created: 2026-07-17.  Updated: 2026-10-28.
 
 Context (paper Section 5.5, label sec:squarezero).  u = (x, y, z) in Lambda
 satisfies u star u = 0 iff x, y, z lie in (L sbar) ^ Im(O), have equal
 norms, and sum to zero (verify_square_zero_classification.py).  The 4,032
-hexagonal triples of the 126 norm-4 roots are exactly the NORM-12 stratum of
-that locus, which the paper calls "the square-zero vectors of norm 12".
+ordered hexagonal triples of the 126 norm-4 roots are exactly the NORM-12
+stratum of that locus, which the paper calls "the square-zero vectors of
+norm 12".
 This script shows the locus does not stop there: it constructs a square-zero
 vector of Lambda of norm 24.  The paper cites it in Section 5.5 for that
 vector.
@@ -26,8 +27,8 @@ directly, with the same implementations used by the classification script.
 
 Consistency: 24 lies in 12Z, so the proved constraint that every square-zero
 norm of Lambda is a multiple of 12 (N(u) = 3 N(x) with N(x) even, and every
-Lambda-norm in 4Z) is respected; the witness shows the multiples above 12 are
-realized.
+Lambda-norm in 4Z) is respected; the witness shows that a
+multiple above 12, namely 24, is realized.
 """
 import os
 import sys
@@ -72,7 +73,7 @@ def e7_roots():
 
 def main():
     print("=" * 68)
-    print("Square-zero vector of Lambda at norm 24 (stratum-not-census witness)")
+    print("Square-zero vector of Lambda at norm 24 (beyond the norm-12 stratum)")
     print("=" * 68)
 
     V = e7_roots()

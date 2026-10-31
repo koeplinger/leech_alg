@@ -3,7 +3,7 @@
 ##  test_lemmas.g — The four lemmas of the symbolic proof in
 ##  paper Section 4 (and the accompanying nontriviality remark).
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  The paper cites this file in Appendix C (`sec:methodology`), paragraph
 ##  "Symbolic proof and numeric validation", with
@@ -23,7 +23,8 @@
 ##  Remark 4.5:  sigma(Ls) ne Ls   AND   Ls * Ls  not subset Ls.
 ##  Bonus (untwisted condition 2):   L * Lsbar  subset Lsbar.
 ##
-##  Each lemma reduces, by Z-bilinearity, to a finite check on basis pairs.
+##  Each lemma reduces, by Z-linearity (Lemma 4.1) or Z-bilinearity (Lemmas
+##  4.2 to 4.4), to a finite check on basis vectors or basis pairs.
 ##
 #############################################################################
 

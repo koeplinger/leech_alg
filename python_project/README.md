@@ -1,6 +1,6 @@
 # Python Project
 
-Created: 2026-04-06.  Updated: 2026-10-24.
+Created: 2026-04-06.  Updated: 2026-10-28.
 
 Self-contained Python project for the computational work of this repository: lattice constructions, octonion / Okubo algebras, trial experiments testing candidate orders on the Leech lattice Λ, exact-arithmetic verification of the symbolic-proof lemmas and of the algebraic structure of the resulting order (ideals, idempotents, square-zero elements, automorphism group), and the foundation test suite.
 
@@ -23,7 +23,7 @@ Requires Python 3.x.  Install dependencies:
 pip install -r requirements.txt
 ```
 
-The external dependencies are `numpy` (fast array arithmetic in the trial harnesses), `sympy` (exact linear algebra over Q and Q(ζ₃) in the structure and automorphism verification scripts, and the symbolic octonion identities of `verify_structural_proof.py`), and `pytest` (test runner).  The optional GPU path of `trial_007_exhaust.py` (flag `--gpu`) also needs `cupy`; the default CPU path does not.  All other imports are standard-library (`fractions`, `itertools`, `collections`, `typing`, `multiprocessing`, `argparse`, `sys`, `os`, `random`, `time`, `re`, `math`, `pathlib`).
+The external dependencies are `numpy` (array arithmetic in the foundation modules, the trial harnesses and several verification scripts), `sympy` (exact linear algebra over Q and Q(ζ₃) in the structure and automorphism verification scripts, and the symbolic octonion identities of `verify_structural_proof.py`), and `pytest` (test runner).  The optional GPU path of `trial_007_exhaust.py` (flag `--gpu`) also needs `cupy`; the default CPU path does not.  All other imports are standard-library (`fractions`, `itertools`, `collections`, `typing`, `multiprocessing`, `argparse`, `sys`, `os`, `random`, `time`, `re`, `math`, `pathlib`).
 
 ## Running the tests
 
@@ -48,10 +48,10 @@ python3 trial_007_kirmse_twist.py       # The winning trial: triple-octonion clo
 python3 trial_007_fast.py               # 4M-pair random closure check
 python3 trial_007_exhaust.py            # Multiprocessor harness: 4M random pairs; --exhaustive for all 38.6B
 python3 trial_001_triple_octonion.py    # Any earlier trial; see src/README.md for the catalog
-python3 consistency_checks.py           # Pre-paper consistency sweep (checks 1-3, 5-10)
+python3 consistency_checks.py           # Consistency checks of the construction (checks 1-3, 5-10)
 ```
 
-The algebraic properties reported in Section 5 of the paper, and the ideal exclusion of Remark 4.5, are certified by their own scripts, each stating what it proves:
+The computed algebraic properties of Section 5 of the paper (Section 5.3 is proved by hand), and the ideal exclusion of Remark 4.5, are certified by their own scripts, each stating what it proves:
 
 ```bash
 cd src
@@ -59,7 +59,7 @@ python3 verify_ideal_decomposition.py          # R^24 = D + T, two annihilating 
 python3 verify_idempotent_classification.py    # exactly eight idempotents; no identity element
 python3 verify_idempotent_lattice_rescaling.py # no nonzero idempotent lies in Λ; least lattice multiples
 python3 verify_square_zero_classification.py   # the square-zero cone; norm-12 stratum of Λ is 4,032
-python3 verify_star_algebra_structure.py       # Aut(R^24, ⋆) = G_2 x G_2 x S_3, dimension 28
+python3 verify_star_algebra_structure.py       # dim Aut(R^24, ⋆) = 28 = dim(G_2 x G_2); the group G_2 x G_2 x S_3 is proved in the automorphism-group note
 python3 verify_aut_lambda_star.py              # Aut(Λ, +, ⋆): order 36, C_6 x S_3; inside Co_0
 python3 verify_aut_octonion_crosscheck.py      # independent re-derivation of the stabilizers
 python3 verify_sigma_Ls_ideal_exclusion.py     # σ(Ls) is not an ideal of L (paper Remark 4.5)
@@ -76,5 +76,5 @@ See [`src/README.md`](src/README.md) for what each one certifies, and [`../gap_p
 - Self-contained and runnable without internet access after `pip install`.
 - All computations are deterministic and reproducible (fixed seeds wherever randomness is used), with one exception: `verify_section5_properties.py` also stops at a time budget, so with no arguments its sample count depends on the machine; the paper's two runs (`src/README.md`) fix the sample count and reproduce exactly.
 - The symbolic-proof checks (`verify_structural_proof.py`, `symbolic_proof_checks.py`) use exact arithmetic (`fractions.Fraction`; `sympy` for the symbolic identity), with no floating-point.
-- The pytest suite covers the foundations (octonions, E8, Leech, Okubo) that the trials and `symbolic_proof_checks.py` are built on.  Each claim the paper makes names the script that reproduces it; those scripts are run directly, not through pytest, and several of them, `verify_structural_proof.py` among them, use their own implementation of the product (2.1).
+- The pytest suite covers the foundations (octonions, E8, Leech, Okubo) that the trials and `symbolic_proof_checks.py` are built on.  The paper names, in footnotes, the scripts that reproduce its computations; those scripts are run directly, not through pytest, and several of them, `verify_structural_proof.py` among them, use their own implementation of the product (2.1).
 - No personal or sensitive information is stored in this project.

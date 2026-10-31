@@ -1,6 +1,6 @@
 # Formal referee review of the main paper (round 8)
 
-Created: 2026-05-16.  Updated: 2026-10-24.
+Created: 2026-05-16.  Updated: 2026-10-28.
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product*, dated 29 April 2026 (v3), in the LyX `paper` documentclass, with the supplemental repository as context.
 **Prompt:** 095 — accuracy review while the paper is out for peer review.
@@ -88,7 +88,7 @@ Recorded again for continuity; none is load-bearing, all stand at author discret
 - **Argument.** The line of reasoning — Wilson's sublattice characterisation ⇒ two conditions hold for the untwisted triple product, the third fails ⇒ the transposition twist redirects condition (3) through the closed sublattice $\sigma(Ls)$ — is coherent, correctly motivated, and honestly scoped. Remark 4.6 ("Two equivalent framings") is a genuine strengthening: it forecloses the natural objection that the twist merely renames an existing closure, by exhibiting $\Sigma(\Lambda)\neq\Lambda$ explicitly.
 - **Honesty of scope.** The paper is careful where it should be: order-closure vs. shell-closure (Remarks 1.3, 2.2), the appendix being "validation, not proof" for the redundant CAS check (§A/methodology), the open question of whether $\Sigma(\Lambda)$ overlaps Egan's family (§6) left explicitly open. No overclaiming.
 - **References.** Spot-checked against bibliographic data: Wilson, *J. Algebra* **322** (2009) 2186–2190; Coxeter, *Duke Math. J.* **13** (1946) 561–578; Baez, *Bull. AMS* **39** (2002) 145–205; Conway–Sloane, *Proc. Roy. Soc. A* **381** (1982) 275–283; Lepowsky–Meurman, *J. Algebra* **77** (1982) 484–504; Elkies–Gross, *IMRN* **1996** no. 14, 665–698 — all consistent with the literature. The Kirmse 1924 attribution is handled fairly (historical error noted, but Kirmse credited for exhibiting the $E_8$ lattice in the octonions), consistent with the project's attribution policy. Every `\cite` resolves to a `\bibitem`; no orphan entries.
-- **Wording.** Professional, precise, free of editorialising and free of self-praise — consistent with the project's stated tone guidance. The abstract compresses "Kirmse → Coxeter → $\sigma$" into "each step a transposition of two basis indices," which is a fair teaser; the body (Remark 3.3, §6) then correctly distinguishes Coxeter's Fano-triple relabelling from $\sigma$'s linear coordinate transposition. No contradiction.
+- **Wording.** Professional, precise, free of editorialising and free of self-praise — consistent with the project's stated tone guidance. The abstract compresses "Kirmse → Coxeter → $\sigma$" into "each step a transposition of two basis indices," which is accurate: Coxeter (1946, §4) records Bruck's correction as "transposing two of the $i$'s", a linear coordinate transposition of the same kind as $\sigma$. The body (Remark 3.3, §6) instead contrasts Coxeter's correction, as a Fano-triple relabeling not induced by a linear map on $\mathbb{R}^8$, with $\sigma$'s linear coordinate transposition; that contrast is false (`2026-05-22_claude_opus_4_7_coxeter_1946_verification.md`).
 
 ---
 

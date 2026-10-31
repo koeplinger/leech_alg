@@ -1,7 +1,7 @@
 """Verify the proposed Discovery 1: explicit subalgebra structure of
 W = sigma(Ls)/2L inside L/2L, with the octonion product reduced modulo 2L.
 
-Created: 2026-05-24.  Updated: 2026-10-24.
+Created: 2026-05-24.  Updated: 2026-10-28.
 
 Discovery 1 is a structural proposal of the Hermes agent, quoted verbatim
 with this verification in paper/hermes_mod2_structure_supplement.tex
@@ -25,10 +25,8 @@ Steps, as printed:
   (c) The actual multiplication table of W in this basis.
   (d) Comparison with the proposed table: 2 of the 16 cells differ, at
       (w0, w0) = w0 and (w1, w0) = w1.
-  (e) Symmetry of the actual table: prints False.  The line printed after
-      it, "(But L/2L itself is commutative from (a) -- contradiction.)",
-      does not hold: by (a), L/2L is not commutative, so a nonsymmetric table
-      for W is consistent.
+  (e) Symmetry of the actual table: prints False, consistent with (a)
+      (mu-bar is not commutative).
   (f) Structural features of W from the actual table: w2 . w = 0 for every
       w in W (printed as "universal zero divisor"); N = span(w1, w2, w3) is
       an ideal of W; |N^2| = 2 and |N^3| = 1, that is N^2 = span{w2} and
@@ -176,7 +174,7 @@ if __name__ == "__main__":
     sym = all(actual[(i,j)] == actual[(j,i)] for i in range(4) for j in range(4))
     print(f"    Symmetric (commutative): {sym}")
     if not sym:
-        print(f"    (But L/2L itself is commutative from (a) -- contradiction.)")
+        print(f"    (Consistent with (a): mu-bar is not commutative.)")
 
     # ---------------------------------------------------------------
     # (f) If actual matches, check structural claims
@@ -217,7 +215,7 @@ if __name__ == "__main__":
     N3 = f2_span_set(f2span([g for g in N3_gens if g != (0,)*8]) or [(0,)*8])
     print(f"    |N^3| = {len(N3)}  (proposed: 0 -> 1 element)")
 
-    # Number of non-zero entries in the table (counting both directions)
+    # Number of nonzero entries in the table (counting both directions)
     nonzero = sum(1 for i in range(4) for j in range(4) if any(actual[(i,j)]))
     print(f"    Non-zero entries in 4x4 table: {nonzero}  "
           f"(proposed: 6)")

@@ -1,10 +1,13 @@
 """
 okubo.py — Okubo algebra (pseudo-octonion algebra) implementation.
 
+Created: 2026-04-08.  Updated: 2026-10-28.
+
 The Okubo algebra is an 8-dimensional real composition algebra that is
-non-unital, non-alternative, and flexible.  It is the unique (up to
-isomorphism) 8-dimensional non-unital symmetric composition division
-algebra over R.
+nonunital, nonalternative, and flexible.  It is a symmetric composition
+division algebra over R, as is the para-octonion algebra x * y = x̄ · ȳ;
+the two are told apart by their derivation algebras, su(3) of dimension
+8 here and g₂ of dimension 14 for the para-octonions.
 
 Two construction methods are provided:
 
@@ -25,11 +28,12 @@ Key properties (verified in test_okubo.py):
 
   - Composition algebra:  n(x*y) = n(x) n(y)  (Euclidean norm)
   - Symmetric composition:  (x*y)*x = x*(y*x) = n(x) y
-  - Non-unital:  no identity element
-  - Non-alternative:  neither left- nor right-alternative
+  - Nonunital:  no identity element
+  - Nonalternative:  neither left- nor right-alternative
   - Flexible:  (x*y)*x = x*(y*x)
   - Division algebra:  L_a and R_a are bijections for a ≠ 0
-  - Automorphism group Aut(O) = SU(3),  dim Der(O) = 8
+  - Derivation algebra:  dim Der(O) = 8 = dim su(3)  (the automorphism group,
+    SU(3)/Z₃ with SU(3) acting by conjugation, is not tested)
 
 References
 ----------
@@ -172,9 +176,10 @@ def _standard_tau_matrix() -> np.ndarray:
     Fano triple with the mediating fixed element e_3:
         (2, 3, 5):  e_2 * e_3 = e_5,   e_3 * e_5 = e_2
         (3, 4, 6):  e_3 * e_4 = e_6,   e_4 * e_6 = e_3
-    Both pairs are rotated by the same angle 2π/3.  The pairing is not
-    arbitrary: only specific pairings yield a valid automorphism (see
-    okubo_samples.py for worked examples on other Fano lines).
+    Both pairs are rotated by the same angle 2π/3.  The relative sense of
+    the two rotations is not arbitrary: reversing one of them alone gives
+    no automorphism (see okubo_samples.py for worked examples on other
+    Fano lines).
 
     Reference: [MarraniCorradettiZucconi2025] eq. (1.5).
     """

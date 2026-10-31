@@ -1,7 +1,7 @@
 """Verify the proposed Discovery 2: V = sigma(Ls_bar)/2L is a totally
 isotropic left ideal of L/2L, and W has mixed isotropy.
 
-Created: 2026-05-24.  Updated: 2026-10-24.
+Created: 2026-05-24.  Updated: 2026-10-28.
 
 Discovery 2 is one of the two structural proposals of the Hermes agent,
 quoted verbatim in paper/hermes_mod2_structure_supplement.pdf.  The paper
@@ -10,8 +10,9 @@ those proposals, with verify_discovery1_W_subalgebra.py.
 
 The quadratic form on L/2L: for v in L (with norm form N(v) = sum v_i^2),
 q(v mod 2L) := N(v)/2 mod 2.  Well-defined because L is even (N takes
-even values on L) and N(v+2u) = N(v) + 4(v.u + N(u)), which is even
-modulo 4, hence mod-2 of N/2 is invariant under v -> v + 2u.
+even values on L) and N(v+2u) = N(v) + 4(v.u + N(u)) is congruent to N(v)
+modulo 4 (v.u is an integer on L), so N/2 mod 2 is invariant under
+v -> v + 2u.
 
 Tests:
   (a) Proposed basis of V spans V = sigma(Ls_bar)/2L.
@@ -161,9 +162,9 @@ if __name__ == "__main__":
     print(f"     minus-type form on F2^8: q=0 -> 120, q=1 -> 136)")
 
     # ----------------------------------------------------------------
-    # (f) Compare V (left ideal) to N (nilpotent ideal of W)
+    # (f) Compare V (two-sided ideal) to N (nilpotent ideal of W)
     # ----------------------------------------------------------------
-    print("\n(f) Compare V (left ideal of L/2L) to W's nilpotent backbone")
+    print("\n(f) Compare V (two-sided ideal of L/2L) to W's nilpotent backbone")
     print("    N = span(w1, w2, w3):")
     w1 = (0,1,0,1,1,0,1,0)
     w2 = (0,0,0,1,0,1,1,1)
@@ -175,12 +176,11 @@ if __name__ == "__main__":
     print(f"    |N intersect V|     {len(N_set & V_set)}")
     print(f"    |N intersect W|     {len(N_set & W_set)}  (expect 8 -- N is in W)")
     print(f"    N totally isotropic?  {all(q_form(n) == 0 for n in N_set)}")
-    # The user's question: is V the same/similar ideal as N?
-    # V is in V (the "other half" of L/2L from W), N is in W.
-    # They live in disjoint summands (modulo the zero vector).
-    print(f"\n    Summary: V lives in V (V ∩ W = {{0}}), N lives in W.")
-    print(f"    V is a 4-dim left ideal of (L/2L, mu-bar).")
+    # Is V the same ideal as N?  V is the complement of W in L/2L, and N
+    # lies in W, so they meet only in the zero vector.
+    print(f"\n    Summary: V ∩ W = {{0}} (verify_mod2_quotient.py); N lies in W.")
+    print(f"    V is a 4-dim two-sided ideal of (L/2L, mu-bar).")
     print(f"    N is a 3-dim nilpotent ideal of W (the subalgebra).")
-    print(f"    They are structurally distinct: V is the left-ideal half")
+    print(f"    They are structurally distinct: V is the ideal half")
     print(f"    of the L/2L = V (+) W decomposition; N is the radical-like")
     print(f"    piece *inside* the subalgebra half W.")

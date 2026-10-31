@@ -1,5 +1,7 @@
 # Formal referee review of the main paper (round 4)
 
+Created: 2026-04-28.  Updated: 2026-10-28.
+
 **Date:** 2026-04-28 (third of the day)
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product* (Köplinger), version of 28 April 2026 (post-Prompt 084 edits), together with the supplemental repository as context.
@@ -71,9 +73,9 @@ These are listed for completeness of the disposition trail. None is a hard error
 
 > "There are seven such orders, one for each of the seven maximal orders of the integral octonions [Coxeter1946, ConwaySmith2003]."
 
-Read literally, this says "seven orders, one for each of the seven orders" — circular. The intended sense is that there are seven Coxeter-corrected octonion-multiplication conventions on $\mathbb{R}^8$, each of which makes $E_8$ a maximal order in the resulting octonion algebra; the seven such structures are in 1-1 correspondence with the seven maximal orders of the integral octonions. A short rewrite:
+Read literally, this says "seven orders, one for each of the seven orders" — circular. The intended sense is that, for a fixed octonion multiplication, seven maximal orders of integral octonions contain all eight basis units, each an $E_8$ lattice. A short rewrite:
 
-> "There are seven Coxeter-corrected octonion-multiplication conventions on $\mathbb{R}^8$, each of which makes $E_8$ a maximal order; the seven structures are in bijection with the seven maximal orders of the integral octonions [Coxeter1946, ConwaySmith2003]."
+> "For a fixed multiplication, seven maximal orders of integral octonions contain all eight basis units, each an $E_8$ lattice [Coxeter1946, ConwaySmith2003]."
 
 ### 3.2 The "essentially unique" claim's quantifier (Remark 3.5)
 
@@ -131,9 +133,3 @@ For the record:
 11. Soften "Wilson's $E_8$ lattice" wording to "in Wilson's setup, the $E_8$ lattice…".
 12. Tidy Wilson citation style — section pointers wherever Wilson is cited substantively.
 13. Consider swapping the order of Remarks 3.4 and 3.5, or add a bridge sentence between Remark 3.3 and Remark 3.4.
-
----
-
-## 6. Disposition by the author (to be added)
-
-Author to mark each item as accepted, deferred, or declined.

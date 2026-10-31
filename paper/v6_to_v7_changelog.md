@@ -1,6 +1,6 @@
 # v6 → v7 revision notes
 
-Created: 2026-07-19.  Updated: 2026-10-24.
+Created: 2026-07-19.  Updated: 2026-10-28.
 
 **v6** — dated 18 July 2026, 23 pages. Frozen at [paper/main_2026-07-18.tex](main_2026-07-18.tex).
 
@@ -35,7 +35,7 @@ v7 is a publication-preparation revision aimed at an experimental-mathematics ve
 
 A journal-quality review of v7 for the Experimental Mathematics audience ([reviews/2026-07-19_claude_opus_4_8_experimental_math_review_v7.md](reviews/2026-07-19_claude_opus_4_8_experimental_math_review_v7.md); 2 should-fix, 1 split, 11 refuted, all adversarially verified) produced these changes:
 
-- **Remark 1.3 (§1), epistemic hygiene.** "such products *always* land on strictly higher shells" → "such products land on strictly higher shells, exhaustively for the self-products and on $10^6$ sampled distinct pairs." The distinct-pair bound is sampled (only the self-products are exhaustive, per Remark 4.5); flagging it honors the paper's own sampled-vs-exhaustive rule. This also resolves the 15 July fine-comb's item N1.
+- **Remark 1.3 (§1), epistemic hygiene.** "such products *always* land on strictly higher shells" → "such products land on strictly higher shells, exhaustively for the self-products and on $10^6$ sampled distinct pairs." The distinct-pair bound is sampled (only the self-products are exhaustive, per Remark 5.1); flagging it honors the paper's own sampled-vs-exhaustive rule. This also resolves the 15 July fine-comb's item N1.
 - **Bremner added.** The Dotsenko paragraph becomes a joint "Vladimir Dotsenko (2025) and Murray R. Bremner (2016)" mention pointing to computational nonassociative algebra: Dotsenko's experimental identities, and the Bremner–Madariaga–Peresi computer determination of the polynomial identities of the octonions (*Comment. Math. Univ. Carolin.* 57 (2016), no. 4, 413–452, DOI 10.14712/1213-7243.2015.188, verified field-by-field). New `\bibitem` BremnerMadariagaPeresi2016, in its alphabetical slot; registered in `evidence_and_reasoning/references/recent_experimental_work.txt`.
 - **Conclusion (§7) cross-reference.** "the pattern in the table" → "the pattern in the census table", making the reference to the Section 5.6 table precise.
 

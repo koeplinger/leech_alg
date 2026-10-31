@@ -1,6 +1,8 @@
 """
 okubo_samples.py — Worked examples of Petersson isotope constructions.
 
+Created: 2026-04-08.  Updated: 2026-10-28.
+
 This file constructs several Okubo algebras from the standard octonion
 algebra, each using a different order-3 automorphism τ.  It is meant to
 be read and run as an instructive companion to okubo.py.
@@ -11,24 +13,29 @@ Run:
 How an order-3 automorphism τ is built
 ========================================
 
-Every order-3 automorphism of the octonions has the following anatomy:
+The order-3 automorphisms built here, which fix a coordinate quaternion
+subalgebra pointwise, have the following anatomy:
 
-1. Pick a FANO LINE — three imaginary basis elements {e_a, e_b, e_c}
+1. Pick a FANO LINE: three imaginary basis elements {e_a, e_b, e_c}
    satisfying the quaternion relations  e_a * e_b = e_c  (and cyclic
    rotations).  Together with e_0, they span a quaternion subalgebra H
    that τ will fix pointwise.
 
-2. The remaining four imaginary elements must be split into two ROTATION
-   PAIRS.  Each pair is rotated by 2π/3 in its plane.  The pairing is
-   not arbitrary: each pair must come from a Fano triple that also
-   contains a common fixed element (the "mediator").
+2. The remaining four imaginary elements are split into two ROTATION
+   PAIRS.  Each pair is rotated by 2π/3 in its plane.  Each pair lies
+   in a Fano triple with one element of the fixed line, and both pairs
+   share that element (the "mediator").  Each of the three elements of
+   the line mediates one of the three ways to split the four elements
+   into two pairs.
 
-3. Not every mediator works — only certain ones yield a valid algebra
-   automorphism.  Each valid mediator gives rise to a valid τ, and
-   hence to a valid Okubo algebra.
+3. Every element of the Fano line serves as a mediator, but the
+   relative sense of the two rotations is forced: of the four ways to
+   orient the two pairs, two yield an algebra automorphism (τ and
+   τ² = τ⁻¹) and two do not.  Each valid τ gives rise to a valid
+   Okubo algebra.
 
 This file demonstrates the construction for three different Fano lines,
-and shows one invalid pairing to illustrate the constraint.
+and shows one invalid orientation to illustrate the constraint.
 
 References
 ----------
@@ -49,7 +56,7 @@ from okubo import OkuboAlgebra, from_octonions, _validate_order3, _validate_auto
 # ---------------------------------------------------------------------------
 
 def verify_okubo(alg: OkuboAlgebra) -> bool:
-    """Check the essential properties that uniquely characterise the Okubo
+    """Check the essential properties that uniquely characterize the Okubo
     algebra and print a summary.  Returns True if all checks pass."""
     C = alg._struct
     basis = alg.basis
@@ -78,7 +85,7 @@ def verify_okubo(alg: OkuboAlgebra) -> bool:
     print(f"    Symmetric composition  (x*y)*x = n(x)y ........ {status}")
     ok = ok and sym_ok
 
-    # 3. Non-unital:  no left identity exists
+    # 3. Nonunital:  no left identity exists
     A = np.zeros((64, 8))
     b = np.zeros(64)
     for j in range(8):
@@ -102,7 +109,7 @@ def verify_okubo(alg: OkuboAlgebra) -> bool:
     print(f"    Division algebra (L_a invertible) .............. {status}")
     ok = ok and div_ok
 
-    # 5. Derivation algebra dimension = 8  (Aut = SU(3))
+    # 5. Derivation algebra dimension = 8  (Aut = SU(3)/Z₃)
     n_eq = 512
     Ad = np.zeros((n_eq, 64))
     for i in range(8):
@@ -136,7 +143,7 @@ def build_tau(pair1, pair2):
 
 # ===================================================================
 #  Example 1:  Fix the Fano line {e_1, e_3, e_7}
-#              (this is the "standard" τ from the literature)
+#              (the inverse of okubo.py's "standard" τ)
 # ===================================================================
 
 print("""
@@ -153,7 +160,10 @@ fixed element is e_3, which appears in two cross-triples:
     (3, 4, 6):  e_4 and e_6 are connected through fixed e_3
 
 So the rotation pairs are (e_2, e_5) and (e_4, e_6), both at angle 2π/3.
-This is the automorphism τ from [MarraniCorradettiZucconi2025] eq. (1.5).
+These are the planes and the angle of the automorphism τ of
+[MarraniCorradettiZucconi2025] eq. (1.5); build_tau turns them in the
+opposite sense to okubo._standard_tau_matrix, so tau1 is the inverse
+(τ²) of okubo.py's τ.
 """)
 
 tau1 = build_tau((2, 5), (4, 6))
@@ -183,8 +193,9 @@ fixed element is e_4, which appears in two cross-triples:
     (3, 4, 6):  e_3 and e_6 are connected through fixed e_4
 
 So the rotation pairs are (e_1, e_2) and (e_3, e_6), both at angle 2π/3.
-Note: this line also admits a second valid mediator e_5 with pairs
-(e_2, e_3) and (e_1, e_6), giving a different but equally valid τ.
+Note: this line also admits the mediators e_5, with pairs (e_2, e_3)
+and (e_1, e_6), and e_7, with pairs (e_6, e_2) and (e_1, e_3), each
+giving a different but equally valid τ.
 """)
 
 tau2 = build_tau((1, 2), (3, 6))
@@ -226,23 +237,25 @@ print(f"\n  Conclusion: {'This is an Okubo algebra.' if all_pass else 'NOT an Ok
 
 
 # ===================================================================
-#  Example 4:  INVALID pairing — same line, wrong mediator
+#  Example 4:  INVALID orientation: same line, mediator e_1, wrong relative sense
 # ===================================================================
 
 print("""
 ========================================================================
-EXAMPLE 4 (NEGATIVE):  Fix {e_0, e_1, e_3, e_7} with wrong pairing
+EXAMPLE 4 (NEGATIVE):  Fix {e_0, e_1, e_3, e_7}, wrong relative sense
 ========================================================================
 
-Same Fano line L7 as Example 1, but now we try to mediate through e_1
-instead of e_3.  This gives pairs (e_2, e_4) and (e_5, e_6):
+Same Fano line L7 as Example 1, mediated through e_1 instead of e_3.
+This gives pairs (e_2, e_4) and (e_5, e_6):
 
     (1, 2, 4):  e_2 and e_4 are connected through fixed e_1
     (5, 6, 1):  e_5 and e_6 are connected through fixed e_1
 
 Although each pair individually sits in a valid Fano triple with e_1,
-the resulting map is NOT an algebra automorphism.  The cross products
-between elements of different pairs are incompatible with this pairing.
+the resulting map is NOT an algebra automorphism: both rotations turn
+in the sense of left multiplication by e_1 (e_1 * e_2 = e_4 and
+e_1 * e_5 = e_6).  Reversing the second pair, (e_6, e_5), makes the two
+senses opposite and gives a valid τ with mediator e_1.
 """)
 
 tau_bad = build_tau((2, 4), (5, 6))
@@ -255,5 +268,6 @@ try:
 except ValueError as e:
     print(f"  Automorphism check:  FAIL")
     print(f"    Reason: {e}")
-    print("\n  Conclusion: Not every Fano-compatible pairing gives a valid τ.")
-    print("  The mediating element must be chosen correctly.")
+    print("\n  Conclusion: Not every orientation of the pairs gives a valid τ.")
+    print("  Relative to multiplication by e_1, the two rotations must turn in")
+    print("  opposite senses; mediator e_1 itself works.")

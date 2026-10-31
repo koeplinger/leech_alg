@@ -1,4 +1,4 @@
-% Created: 2026-07-12.  Updated: 2026-10-24.
+% Created: 2026-07-12.  Updated: 2026-10-28.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -46,9 +46,9 @@ $\ZZ_3$-symmetric triple-octonion product\\
 \emph{An order on the Leech lattice from a $\ZZ_3$-symmetric
 triple-octonion product}}
 
-\author{Claude Opus 4.8}
+\author{Claude Opus 4.8, 5.5}
 \address{Anthropic}
-\date{12 July 2026; updated 24 October 2026}
+\date{12 July 2026; updated 28 October 2026}
 
 \thanks{This note was computed at the direction of Jens K\"oplinger and is
 companion material to the main paper \emph{An order on the Leech lattice
@@ -78,8 +78,8 @@ group of order~$6$ of signed permutations of the octonion basis.
 It is contained in the Conway group~$\Co_0$, and this containment is a
 theorem rather than an observation: the ambient algebraic group
 $\Aut(\RR^{24}, \star)$ is the compact group $G_2 \times G_2 \times S_3$
-of dimension~$28$, and compactness forces every $\star$-automorphism to be
-a Euclidean isometry.
+of dimension~$28$, and every $\star$-automorphism is a Euclidean
+isometry, because every octonion automorphism preserves the norm.
 \end{abstract}
 
 % ===================================================================
@@ -145,8 +145,9 @@ every such~$g$ is in fact an isometry is one of the things settled below
 
 Two conventions should be flagged. First, $\star$ is bilinear and
 $\LL$-membership is $\ZZ$-linear, so a check carried out on all
-$24 \times 24 = 576$ pairs of basis vectors is a \emph{proof} for all of
-$\RR^{24}$, not a sample; every ``exhaustive basis check'' below is of
+$24 \times 24 = 576$ pairs of basis vectors is a \emph{proof}, not a sample: for all of~$\RR^{24}$ when the
+statement checked is an identity, and for all of~$\LL$ when it is
+$\LL$-membership of the products of a $\ZZ$-basis of~$\LL$; every ``exhaustive basis check'' below is of
 this kind. Second, $\LL$ as realized by~\eqref{eq:wilson} has minimal norm
 $8$, Gram determinant $2^{24}$ and index $4096$ in~$L^3$: it is a copy of
 $\sqrt2\,\LL_{\mathrm{Leech}}$ rather than the unimodular Leech lattice.
@@ -223,9 +224,9 @@ so $\RR^{24} = D \oplus T$.
 (5) $\ip{(a,a,a)}{(p,q,r)} = \ip{a}{p+q+r} = 0$.
 \end{proof}
 
-All five items were additionally checked by exhaustive basis computation in
-exact rational arithmetic, and re-checked against an independently coded
-nine-term expansion of~$\star$
+Items (1), (3) and~(4) were additionally checked by exhaustive basis
+computation in exact rational arithmetic, and~$\star$ itself was re-checked
+on random vectors against an independently coded nine-term expansion
 (\texttt{python\_project/src/verify\_ideal\_decomposition.py}).
 
 \begin{remark}
@@ -304,7 +305,7 @@ The first computational pass justified Proposition~\ref{prop:preserve} by
 automorphism preserves $D$ and~$T$''. As written that is circular:
 $g(\Ann(D)) = \Ann(g(D))$ yields $g(T) = T$ only \emph{after} $g(D) = D$ is
 known, and the annihilator relations alone do not establish that~$D$ is
-intrinsic. The simplicity argument above is the non-circular replacement and
+intrinsic. The simplicity argument above is the noncircular replacement and
 is what the second pass verified. The conclusion is unaffected.
 \end{remark}
 
@@ -403,9 +404,9 @@ Exact nullspace computations give $\dim \Der(\OO, \cdot_s) = 14$ and
 $\dim \Der(\RR^{24}, \star) = 28$: $28$ explicit derivations of the form
 $P \otimes X + Q \otimes Y$ with $X, Y \in \Der(\OO, \cdot_s)$ are exhibited
 and shown to be linearly independent over~$\QQ$, giving $\dim \geq 28$, and
-a rank bound modulo a prime (full rank over $\FF_p$ is a rigorous lower
+a rank bound modulo a prime (the rank over $\FF_p$ is a rigorous lower
 bound for the rank over~$\QQ$, hence the mod-$p$ nullity of the derivation
-system is a rigorous upper bound for its rank over~$\QQ$) gives
+system is a rigorous upper bound for its nullity over~$\QQ$) gives
 $\dim \leq 28$. Hence
 $\Der(\RR^{24}, \star) = \mathfrak{g}_2 \oplus \mathfrak{g}_2$; the second
 pass additionally computed the Killing form of $\Der(\OO, \cdot_s)$ and found
@@ -456,15 +457,16 @@ $\Aut(\RR^{24},\star) = \Aut(D,\star) \times \Aut(T,\star)
 = G_2 \times (G_2 \times S_3)$. Writing an element as $h_{A,B}\rho_\pi$ uses
 $A$ for the action on~$D$ and $B$ for the blockwise action on~$T$; the block
 permutations act trivially on~$D$ and commute with blockwise maps, so the
-product is direct and $h_{A,B}\rho_\pi = \rho_\pi h_{A,B}$. That every
-$h_{A,B}$ and every $\rho_\pi$ \emph{is} a $\star$-automorphism was checked
-exhaustively on all $576$ basis pairs. $\square$
+product is direct and $h_{A,B}\rho_\pi = \rho_\pi h_{A,B}$. Every $\rho_\pi$,
+and $h_{A,B}$ for ten random pairs $A, B$ of octonion automorphisms
+preserving~$L$, was checked to be a $\star$-automorphism on all $576$ basis
+pairs. $\square$
 
 \begin{remark}[What deserves a human reading]\label{rem:humanread}
 Everything in Theorem~\ref{thm:ambient} is either an exact finite computation
 or elementary, with one exception: the classification of $\Aut(S)$ over~$\CC$
 in Route~1, specifically the rank-of-$L_w$ / null-cone step. It is the only
-genuinely non-mechanical argument in this note. The second pass deliberately
+genuinely nonmechanical argument in this note. The second pass deliberately
 did \emph{not} reproduce it, taking Route~2 instead, and reached the same
 group. If Route~1 is printed anywhere, it should be re-read by hand; Route~2
 is the safer thing to publish.
@@ -587,7 +589,7 @@ and are the only roots of $L$ of the form $e_0 + (\text{imaginary unit})$, so
 $A(e_0 \pm e_j) = e_0 \pm A(e_j)$ forces $A(e_j) = \pm e_k$. (The forcing
 argument uses roots of norm~$2$ and does not apply to $Ls$ or $L\bar s$, whose
 minimal vectors have norm~$4$; and indeed those two stabilizers do contain
-non-monomial elements.)
+nonmonomial elements.)
 (iii)~The second pass re-enumerated all three from scratch, by its own shell
 and triple search, and obtained the same three orders.
 
@@ -613,10 +615,10 @@ $|K| = 6$, every element of $K$ has $A = B$, and
 \end{theorem}
 
 The diagonal part of~$K$ is identified by a proof: when $A = B$, $h_{A,A}$ is
-just the blockwise map $(x,y,z) \mapsto (Ax,Ay,Az)$, and since $A$ is an
-octonion-algebra automorphism it commutes with the sublattice conditions of
-\eqref{eq:wilson} in the sense that $h_{A,A}(\LL) = \LL$ holds if and only if
-$A$ stabilizes each of $L$, $L\bar s$ and $Ls$. So the diagonal part of $K$ is
+just the blockwise map $(x,y,z) \mapsto (Ax,Ay,Az)$, and
+$h_{A,A}(\LL) = \LL$ holds if and only if $A$ stabilizes each of $L$,
+$L\bar s$ and $Ls$: the conditions of~\eqref{eq:wilson} give the ``if'', and
+Corollary~\ref{cor:finite} with $L\bar s + Ls = L$ the ``only if''. So the diagonal part of $K$ is
 exactly the triple intersection $\Stab(L) \cap \Stab(Ls) \cap \Stab(L\bar s)$,
 which the enumeration above gives as a $C_6$. What is \emph{computed} is that
 $K$ has no other elements: no pair with $A \neq B$ survives. The lattice kills
@@ -673,7 +675,10 @@ Generators (2) and (3) generate the $S_3$ of block permutations. Under the
 Fourier normal form of \S\ref{sec:fourier} they have a clean reading: the block
 $3$-cycle is the cube-root-of-unity scaling
 $(\hat u_1, \hat u_2) \mapsto (\zeta^2 \hat u_1, \zeta \hat u_2)$, and the block
-transposition is the Fourier conjugation $\hat u_1 \leftrightarrow \hat u_2$.
+transposition is $(\hat u_1, \hat u_2) \mapsto (\zeta \hat u_2, \zeta^2 \hat u_1)$, the
+Fourier conjugation $\hat u_1 \leftrightarrow \hat u_2$ composed with such a scaling;
+the transposition $(x,y,z) \mapsto (x,z,y)$ that fixes the first block is the
+conjugation itself.
 That $A_6$ is not an automorphism of the \emph{untwisted} octonion product was
 checked in the second pass; the $C_6$ is a feature of $\cdot_s$.
 
@@ -739,7 +744,7 @@ $\Aut(\LL, +, \star) \subseteq \Co_0$.
 
 \begin{proof}
 Let $A$ be an algebra automorphism of the real octonions. The trace
-$t(x) := \tfrac18 \Tr(L_x)$ and hence the conjugation
+$t(x) := \tfrac14 \Tr(L_x)$ and hence the conjugation
 $\bar x = t(x)\,e_0 - x$ are determined by the algebra alone, so $A$ commutes
 with conjugation; and $\Nrm(x)\,e_0 = x \bar x$, so $A$ preserves the
 positive-definite norm form~$\Nrm$. Hence
@@ -770,8 +775,9 @@ pass, in standard coordinates, all $36$ satisfy $g^{\!\top} g = I_{24}$
 Note where the weight of the argument sits. Compactness of
 $\Aut(\RR^{24},\star)$ is what makes $\Aut(\LL,+,\star)$ finite in the first
 place (Corollary~\ref{cor:finite} gives an independent finiteness proof via the
-lattice stabilizers), and it is what forces the isometry property. It is load
-bearing and cannot be replaced by the trace form.
+lattice stabilizers). The isometry property rests on the norm form, which every
+octonion automorphism preserves; that argument is load bearing and cannot be
+replaced by the trace form.
 
 \subsection{The trace form does not do this job}
 
@@ -787,8 +793,9 @@ coordinates:
   \qquad \text{signature } (3, 21).
 \]
 It is not a scalar multiple of the Leech Gram matrix, and it is not even of the
-shape $\alpha \ip{u_D}{v_D} + \beta \ip{u_T}{v_T}$: it is blind to the $D/T$
-split and separates real from imaginary parts instead. Preservation of~$B$
+shape $\alpha \ip{u_D}{v_D} + \beta \ip{u_T}{v_T}$: although $B(D, T) = 0$,
+$B$ is indefinite on~$D$ and on~$T$ (signatures $(1,7)$ and $(2,14)$), since it
+is positive on real parts and negative on imaginary parts. Preservation of~$B$
 therefore implies neither preservation of the Leech form nor finiteness of the
 automorphism group. The trace-form route fails, even though its intended
 conclusion is true. This was confirmed independently in the second pass.
@@ -883,7 +890,7 @@ fixed.
   stabilizer would be $G_2(2)$, cut down by the extra sublattice conditions, is
   wrong in the paper's normalization.
 \item \textbf{The trace-form route to $\Co_0$ fails} (\S\ref{sec:co0}). Its
-  conclusion is true, but for the compactness reason instead.
+  conclusion is true, but for the norm-form reason instead.
 \item \textbf{The element-order list first reported was the list of conjugacy
   class representative orders}, not of group elements.
 \item \textbf{Scale.} The $\LL$ realized by~\eqref{eq:wilson} has minimal
@@ -918,7 +925,8 @@ Script & Certifies \\
 \texttt{verify\_star\_algebra\_structure.py}
   & The routing identity; $\Ann(T) = D$ and $\Ann(D) = T$; the $C_3$-Fourier
     normal form checked exactly over $\QQ(\zeta)$ on all $576$ basis pairs;
-    $h_{A,B}$ and the block permutations are automorphisms;
+    $h_{A,B}$ for ten random pairs $A, B$, and the six block permutations,
+    are automorphisms;
     $\dim \Der(\OO,\cdot_s) = 14$ and $\dim \Der(\RR^{24},\star) = 28$; the
     $\star$-intrinsic trace form. About $2$ minutes. \\
 \addlinespace

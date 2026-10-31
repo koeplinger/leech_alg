@@ -1,10 +1,10 @@
 #############################################################################
 ##
 ##  triple_product.g — The Z_3-symmetric triple product on R^24 of the paper
-##  (Definition 3.3, `def:triple`), in both untwisted (star_0) and
-##  sigma-twisted (star) forms.
+##  (Definition 3.3, `def:triple`), in both untwisted (star_id in paper
+##  Section 5.6) and sigma-twisted (star) forms.
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  Decomposition:  R^24 = O_1 (+) O_2 (+) O_3.
 ##  Routing:        block alpha * block beta -> block gamma where
@@ -24,7 +24,7 @@
 ##
 #############################################################################
 
-# Triple product (untwisted), using a user-supplied octonion product `mul`.
+# Triple product with a user-supplied octonion product `mul` in all nine blocks.
 # u and v are length-3 lists of length-8 vectors.
 TripleProductWith := function(u, v, mul)
     local x, y, z, xp, yp, zp, P1, P2, P3;

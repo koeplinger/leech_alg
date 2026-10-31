@@ -1,5 +1,7 @@
 # Formal referee review of the main paper (round 6)
 
+Created: 2026-04-29.  Updated: 2026-10-28.
+
 **Date:** 2026-04-29
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product*, dated 29 April 2026 (v1), in the LyX `paper` documentclass restyle (post-Prompt 092), with the supplemental repository as context.
@@ -83,6 +85,6 @@ These have appeared in every previous review and remain at the author's discreti
 
 ---
 
-## 5. Disposition by the author (to be added)
+## 5. Suggested disposition
 
 If items 2.1 and 2.2 are accepted, both are one-edit changes. The carry-overs from §3 remain held unless the author decides to address them.

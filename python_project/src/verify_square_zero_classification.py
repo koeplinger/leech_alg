@@ -1,7 +1,7 @@
-"""Task A, part 3: COMPLETE classification of the square-zero elements of
+"""COMPLETE classification of the square-zero elements of
 (R^24, +, star), and the consequence for the lattice.
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-10-28.
 
 The paper cites this script in Section 5.5 (label sec:squarezero), for the
 classification in the ambient algebra: a cone of dimension 12 inside T.
@@ -25,13 +25,19 @@ whose 126 vectors of norm 4 form a copy of the E_7 root system, and E_7 root
 systems contain hexagonal triples.  Every such triple gives a square-zero
 vector of Lambda of norm 12.  The script exhibits one explicitly and counts
 them exhaustively.  Their norm is necessarily a multiple of 12 (norm = 3 N(x)
-with N(x) in 2Z, and every Lambda-norm is in 4Z), so none of them is minimal
--- which is exactly why the exhaustive minimal-shell search
-(verify_idempotents_min_shell.py) found none.
+with N(x) in 2Z, and every Lambda-norm is in 4Z), so none of them is minimal.
+This is why the exhaustive minimal-shell search
+(verify_idempotents_min_shell.py) finds none.
 
-Second pass: the characterisation is re-derived independently by a symbolic
-check of the two octonion identities used, and every exhibited lattice vector
-is re-tested with the independently coded star of verify_ideal_decomposition.
+The characterization is certified by exact linear algebra over the degree-2
+monomials: with Re = 0 and z = -(x+y), every component of u star u is a
+rational linear combination of N(x) - N(y) and N(x) + 2<x,y>, and conversely.
+That the real parts and the block sum vanish follows from the ideal splitting
+(argument printed; sympy solves the remaining real system).  Every norm of
+Lambda lies in 4Z (Gram matrix of a Z-basis).  Second pass: every
+square-zero vector exhibited is re-tested with the independently coded star
+of verify_ideal_decomposition.py, and the 4,032 lattice vectors once more
+with the doubled-integer star of verify_section5_properties.py.
 """
 from fractions import Fraction as F
 from itertools import combinations
@@ -70,7 +76,7 @@ def main():
     #   g1 := N(P) - N(Q),      g2 := N(P) + 2<P,Q>,
     # and conversely g1, g2 are rational-linear combinations of the components.
     # The two systems are therefore EQUIVALENT, which proves the
-    # characterisation in both directions.  Certified here by exact linear
+    # characterization in both directions.  Certified here by exact linear
     # algebra over the degree-2 monomial basis (no Groebner heuristics).
     P = sp.symbols("p1:8", real=True); Q = sp.symbols("q1:8", real=True)
     sub = {X[0]: 0, Y[0]: 0, Z[0]: 0}
@@ -100,7 +106,7 @@ def main():
     print(f"  => u star u = 0  <=>  N(X) = N(Y)  and  N(X) + 2<X,Y> = 0")
     print(f"     <=>  N(X) = N(Y) = N(Z)  (given Re = 0 and X+Y+Z = 0):"
           f" {ok_char}")
-    print( "  (necessity is proved in the docstring from the ideal splitting:")
+    print( "  (necessity, from the ideal splitting (next block):")
     print( "   d*d = 0 forces d = 0 since D ~= O is a division algebra; then")
     print( "   S is singular on the sum-zero plane only if D2 = 0, i.e.")
     print( "   a = b = c = 0, after which the real parts give exactly these")
@@ -125,8 +131,7 @@ def main():
     # ------------------------------------------------ explicit algebra example
     print("=== an explicit nonzero square-zero element of R^24 ===")
     h = F(1, 2); r3 = None
-    # x = e1, y = -1/2 e1 + w, z = -1/2 e1 - w with N(w) = 3/4 -- needs sqrt(3),
-    # so use instead an exact rational hexagonal triple:
+    # an exact rational hexagonal triple:
     #   x = e1 + e2, y = -e1 + e3, z = -e2 - e3  -- check equal norms & sum 0
     x = add(E(1), E(2)); y = add([-c for c in E(1)], E(3))
     z = [-(p+q) for p, q in zip(x, y)]
@@ -215,8 +220,8 @@ def main():
     print()
 
     print("=== second pass: the pre-existing INDEPENDENT star implementation ===")
-    # verify_section5_properties.star is the doubled-integer product coded
-    # before this task; re-check every one of the 4032 witnesses with it.
+    # verify_section5_properties.star is an independently coded doubled-integer
+    # product; re-check every one of the 4032 witnesses with it.
     from verify_section5_properties import star as star_d, eq as eq_d, Nsq
     ZD = ([0]*8, [0]*8, [0]*8)
     bad2 = 0

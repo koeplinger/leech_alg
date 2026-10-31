@@ -1,6 +1,6 @@
 # v3 → v4 changes (top-level summary)
 
-Created: 2026-05-25.  Updated: 2026-10-24.
+Created: 2026-05-25.  Updated: 2026-10-28.
 
 **v3** — frozen 29 April 2026, 12 pages. Source preserved at [paper/main_2026-04-29.tex](main_2026-04-29.tex).
 
@@ -14,11 +14,11 @@ The page-count growth from 12 → 19 is concentrated in three additions: the his
 
 ### A.1 Section A.1 — *The mod-2-quotient reading of Tables A.2 and A.3* (new)
 
-The integer-coefficient tables that certify Lemmas 4.3 and 4.4 now have an explicit structural reading. From Wilson's identity $L\bar s \cap Ls = 2L$, the octonion product on $L$ descends to an $\mathbb{F}_2$-bilinear product $\bar\mu$ on $L/2L \cong \mathbb{F}_2^8$, and the two sublattices in play project to a 4 + 4 direct-sum decomposition:
-- $V := \sigma(L\bar s)/2L$ is a **two-sided ideal** of $(L/2L, \bar\mu)$ (Lemma 4.3 mod 2L).
+The integer-coefficient tables that certify Lemmas 4.3 and 4.4 now have an explicit structural reading. Since $L \cdot L \subseteq L$ and the product is $\mathbb{Z}$-bilinear, the octonion product on $L$ descends to an $\mathbb{F}_2$-bilinear product $\bar\mu$ on $L/2L \cong \mathbb{F}_2^8$; by Wilson's identities $L\bar s \cap Ls = 2L$ and $L\bar s + Ls = L$, the two sublattices in play project to a 4 + 4 direct-sum decomposition:
+- $V := \sigma(L\bar s)/2L$ is a **two-sided ideal** of $(L/2L, \bar\mu)$ (a left ideal by Lemma 4.3 mod 2L; a right ideal by direct verification, A.4).
 - $W := \sigma(Ls)/2L$ is a **subalgebra** of $(L/2L, \bar\mu)$ (Lemma 4.4 mod 2L).
 
-Under the natural plus-type quadratic form $q(v + 2L) := N(v)/2 \pmod 2$ on $L/2L$, both V and W are **maximal totally isotropic subspaces (Lagrangians)**, and $L/2L = V \oplus W$ is a **Witt decomposition into a complementary pair of Lagrangians** — a polarization of the orthogonal $\mathbb{F}_2$-space. The lattice-level picture of L/2L with this plus-type form and the 270 × 64 = 17,280 enumeration of complementary Lagrangian pairs is already in Baez/Egan (2014); what v4 adds is the descended product $\bar\mu$ and the identification of V and W as ideal and subalgebra of $(L/2L, \bar\mu)$.
+Under the natural plus-type quadratic form $q(v + 2L) := N(v)/2 \pmod 2$ on $L/2L$, both V and W are **maximal totally isotropic subspaces (Lagrangians)**, and $L/2L = V \oplus W$ is a **Witt decomposition into a complementary pair of Lagrangians** — a polarization of the orthogonal $\mathbb{F}_2$-space. The orthogonal space L/2L with this plus-type form is classical. The 270 sublattices of L isometric to √2 L, each meeting 64 of the others in 2L (270 × 64 = 17,280 pairs), are counted in the Baez series (part 11 and Egan's comments there, 2014). Lepowsky and Meurman (1982) and, independently, Tim Silverman (part 12 of the series, 2016) identify these sublattices with the preimages of the Lagrangians. v4 credits this picture to Baez/Egan; what v4 adds is the descended product $\bar\mu$ and the identification of V and W as ideal and subalgebra of $(L/2L, \bar\mu)$.
 
 §7 open question 1 is reframed as a **research program**: which polarizations of $L/2L$ lift to closed bilinear products on $\Lambda$ itself.
 
@@ -26,17 +26,17 @@ Under the natural plus-type quadratic form $q(v + 2L) := N(v)/2 \pmod 2$ on $L/2
 
 A 1-page synthesis of the four primary papers, all re-derived in exact arithmetic in this project:
 - **Dickson (1923)** — first verified maximal order ($O_D$); his Theorem XV undercounts to three because of an implicit Hurwitz-quaternion containment assumption.
-- **Kirmse (1924)** — independent treatment; recovered the full count of seven, but exhibited a non-closed candidate $J_1$ among them.
+- **Kirmse (1924)** — independent treatment; derived a correct necessary form for the maximal orders, without proving sufficiency, met by thirty $E_8$-type lattices; among the eight of these that are stable under multiplication by units (in our reconstruction), Kirmse exhibited $J_1$ (p. 70), which is not an order, and the other seven are the maximal orders.
 - **Mahler (1942)** — Euclidean property $N(X - G) \le 1/2$ and principal-ideal theorem in a maximal order.
 - **Coxeter (1946)** — identified Kirmse's error and the Bruck transposition that repairs $J_1$; first correct account of all seven maximal orders.
 
-This places the paper's σ as **exactly the Coxeter–Bruck transposition** — the same linear involution of $\mathbb{R}^8$, but acting on Wilson's coordinate-symmetric sublattice $Ls$ rather than on Kirmse's axis-asymmetric $J_1$. The abstract and Remark 2.2 (since removed) both make this identification.
+This places the paper's σ as **exactly the Coxeter–Bruck transposition** — the same linear involution of $\mathbb{R}^8$, but acting on Wilson's coordinate-symmetric sublattice $Ls$ rather than on Kirmse's axis-asymmetric $J_1$. The abstract makes this identification.
 
 ### A.3 §5 — N = 10⁶ algebraic-properties test
 
 §5 in v3 reported short-sample percentages with hand-waved precision. v4 reruns the eight properties on N = 10⁶ samples (per property) with proper standard-error columns. Two new rows:
 - **Cube power-associativity** split out from a general "power-associativity" row.
-- **Quartic power-associativity** (all five degree-4 parenthesisations equal) — a strictly stronger identity than cube.
+- **Quartic power-associativity** (all five degree-4 parenthesizations equal) — a strictly stronger identity than cube.
 - **Symmetric composition (Elduque)** — added as a new row.
 
 Empirically, every quartic-passing sample also satisfies the cube identity (verified in a joint exact-arithmetic test on 3×10⁵ samples), while the cube-passing set is ~2.4× larger. None of the eight properties holds globally; the paper does not overclaim composition or alternativity.
@@ -44,7 +44,7 @@ Empirically, every quartic-passing sample also satisfies the cube identity (veri
 ### A.4 Section A.1 closing — *Polarization* and *Structural reframing* paragraphs
 
 The two closing paragraphs of Section A.1 record:
-- **V is also a right ideal**, not only a left ideal (the right-ideal direction is not formally implied by the left-ideal direction since $\bar\mu$ is non-commutative in the L-basis; footnote explains why).
+- **V is also a right ideal**, not only a left ideal (the right-ideal direction is not formally implied by the left-ideal direction since $\bar\mu$ is noncommutative; footnote explains why).
 - The Lagrangian/Witt picture (V and W both totally isotropic).
 - The research-program reframing of §7's open question 1.
 
@@ -85,17 +85,17 @@ The full historical synthesis (Dickson 1923 / Kirmse 1924 / Mahler 1942 / Coxete
 
 - **Abstract** rewritten to open with the closure + polarization story; the historical paragraph now lists Dickson (first), Kirmse, Bruck (transposition), Coxeter (full account) in correct sequence.
 - **§1 intro**: σ is a transposition; preview matches §3.
-- **§2.1**: "division algebra" scoped to *unital* (Hurwitz uniqueness); the relaxation (non-unital, e.g. Okubo) is explicitly noted.
+- **§2.1**: "division algebra" scoped to *unital* (Hurwitz uniqueness); the relaxation (nonunital, e.g. Okubo) is explicitly noted.
 - **§2.2**: maximal-order line sharpened — "closed under multiplication *and admits no enlargement*".
 - **Remarks 2.1 and 2.2** removed (redundant with §1 / abstract).
-- **§5 table**: "Multiplicative identity" row reads "n/a (structural)" (no longer "0%" implying a sampling rate).
+- **§5 table**: "Multiplicative identity" row reads "n/a (structural)" in the column "Fraction of samples (% ± SE)", marking a structural fact rather than a sampling rate (v3: "the ambient algebra $(\mathbb{R}^{24}, +, \star)$ has no identity element").
 - **§7 bullet 1**: parenthetical pointer to Section A.1's polarization-reframing.
 - **§8 Outlook**: two subsection headers removed; the two paragraphs flow as a single forward-looking statement.
 
 ### B.5 Theorem 1.1, Corollary 1.2
 
 - **Theorem 1.1**: simplified to reference only the triple-product definition; the "in Wilson's representation" qualifier added explicitly.
-- **Corollary 1.2**: trimmed of conflated "Z-subring of full rank" language; the non-unital-order disclosure is now a footnote on "order".
+- **Corollary 1.2**: a new footnote on "order" states that the order is nonunital.
 
 ---
 
@@ -113,7 +113,7 @@ Petersson 2018 URL added; repo reference now cites both the Bitbucket primary an
 
 ### C.2 First-name additions
 
-On first body occurrence, 15 authors gained full first names: Robert A. Wilson, Richard H. Bruck, Johannes Kirmse, H. S. M. ("Donald") Coxeter, Geoffrey M. Dixon, John C. Baez, Greg Egan, Susumu Okubo, Alberto Elduque, John H. Conway, Neil J. A. Sloane, James Lepowsky, Arne Meurman, Noam D. Elkies, Benedict H. Gross, Leonard E. Dickson, Kurt Mahler, Daniele Corradetti, Jonathan I. Hall.
+On first body occurrence, 19 authors carry full first names (the 15 already cited in v3 gained them; Bruck, Dickson, Mahler and Corradetti are new in v4): Robert A. Wilson, Richard H. Bruck, Johannes Kirmse, H. S. M. ("Donald") Coxeter, Geoffrey M. Dixon, John C. Baez, Greg Egan, Susumu Okubo, Alberto Elduque, John H. Conway, Neil J. A. Sloane, James Lepowsky, Arne Meurman, Noam D. Elkies, Benedict H. Gross, Leonard E. Dickson, Kurt Mahler, Daniele Corradetti, Jonathan I. Hall.
 
 ### C.3 Wilson citations consolidated
 
@@ -133,11 +133,11 @@ Kept and lightly updated. Records the human–AI collaboration model, the prompt
 
 ---
 
-## D. Verification artefacts
+## D. Verification artifacts
 
 All claims in v4 have been independently verified in exact arithmetic. Key scripts:
-- `python_project/src/symbolic_proof_checks.py` — Lemmas 4.1–4.4.
-- `gap_project/tests/test_lemmas.g` — same lemmas, independent CAS.
+- `python_project/src/symbolic_proof_checks.py` — Lemmas 4.1, 4.3 and 4.4.
+- `gap_project/tests/test_lemmas.g` — Lemmas 4.1–4.4, independent CAS.
 - `python_project/src/verify_section5_properties.py` — §5 N = 10⁶ run.
 - `python_project/src/verify_mod2_quotient.py` — Section A.1 V/W ideal/subalgebra.
 - `python_project/src/verify_discovery1_W_subalgebra.py` — W multiplication table.
@@ -150,7 +150,7 @@ Total: 27 bibliography entries, all cross-checked against the project's central 
 
 ---
 
-## E. Companion artefacts updated for v4
+## E. Companion artifacts updated for v4
 
 - [paper/companion.tex](companion.tex) — re-versioned as v4 companion (Claude Opus 4.7, 23 May 2026); the σ ≡ Kirmse-twist framing aligned.
 - [paper/historical_appendix.tex](historical_appendix.tex), [paper/historical_appendix_expanded.tex](historical_appendix_expanded.tex) — standalone short and expanded forms of Appendix B.

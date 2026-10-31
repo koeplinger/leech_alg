@@ -1,13 +1,15 @@
-"""Exhaustive idempotent / square-nilpotent search over the full minimal
+"""Exhaustive idempotent / square-zero search over the full minimal
 shell Min(Lambda) of the Leech lattice under the paper's product star.
+
+Created: 2026-07-10.  Updated: 2026-10-28.
 
 For every one of the 196,560 minimal vectors u of Lambda (norm 8) in
 Wilson's octonionic representation, compute u star u under the paper's
 sigma-twisted triple-octonion product and check
   (a) u star u = u   (idempotent),
-  (b) u star u = 0   (square-nilpotent),
+  (b) u star u = 0   (square-zero),
 and tally the histogram of norms N(u star u) (actual norm convention:
-minimal vectors have N = 8, so norm multiplicativity gives N(u*u) = 64).
+minimal vectors have N = 8, so the norm-multiplicative value is N(u*u) = 64).
 
 All arithmetic is exact, in doubled-integer coordinates (Nsq = 4*N;
 minimal vectors have Nsq = 32).  The three Wilson families are
@@ -21,6 +23,11 @@ Before the search runs, the enumeration is deduplicated and asserted to
 give exactly 196,560 distinct vectors, each of norm Nsq = 32.
 
 Reuses the exact star machinery from verify_section5_properties.py.
+
+Prints: no idempotent and no square-zero vector on Min(Lambda); the values
+of N(u star u), {16, 32, 48, 64, 80, 96, 128}, with their counts; about ten
+seconds.  The paper cites this script in Appendix D (`app:samples`), for the
+self-product norms of all minimal vectors.
 """
 import sys, os, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -92,7 +99,7 @@ if __name__ == "__main__":
     el = time.time() - t0
 
     print(f"idempotents (u*u = u):        {len(idem)}")
-    print(f"square-nilpotents (u*u = 0):  {len(nilp)}")
+    print(f"square-zero (u*u = 0):        {len(nilp)}")
     print(f"min N(u*u): {min(hist)}    max N(u*u): {max(hist)}")
     print("histogram of N(u*u):")
     for n in sorted(hist):

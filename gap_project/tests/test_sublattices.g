@@ -1,8 +1,8 @@
 #############################################################################
 ##
-##  test_sublattices.g — The sublattices Ls, Lsbar, sigma(Ls), sigma(Lsbar).
+##  test_sublattices.g — The sublattices Ls, Lsbar and sigma(Ls).
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  Verifies (paper Section 2.3, Wilson [Wilson2009] Section 2):
 ##    1.  LS_BASIS and LS_BAR_BASIS each have rank 8.

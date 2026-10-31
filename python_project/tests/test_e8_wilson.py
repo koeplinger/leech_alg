@@ -1,6 +1,8 @@
 """
 test_e8_wilson.py — Verification of Wilson's E8 lattice construction.
 
+Created: 2026-04-06.  Updated: 2026-10-28.
+
 Wilson [Wilson2009] defines an E8 lattice L as the Z-span of 240 octonions
 (Section 2).  This module verifies that the construction has all expected
 properties of the E8 root lattice, and additionally checks the structural
@@ -12,7 +14,7 @@ Properties verified
  2.  Type-2 root count: 128
  3.  Total root count: 240
  4.  No duplicate roots
- 5.  Type-1 coordinate structure: exactly two non-zero entries, each ±1
+ 5.  Type-1 coordinate structure: exactly two nonzero entries, each ±1
  6.  Type-2 coordinate structure: all entries ±1/2
  7.  All type-1 roots have squared norm 2
  8.  All type-2 roots have squared norm 2
@@ -33,7 +35,7 @@ Properties verified
        d. s-bar has N(s-bar) = 2
 18.  Even lattice: sample of sums and differences of roots have even norm
 19.  Ls ⊆ L: r*s ∈ L for all 240 roots r
-     [Wilson2009 Section 2: "Ls ⊆ LR = 2B ⊂ L"]
+     [Wilson2009 Section 2: 2L ⊂ Ls ⊂ L]
 20.  2L ⊆ Ls: r*s-bar ∈ L for all 240 roots r
      [Wilson2009 Section 2: "2L ⊂ Ls"; by right-alternativity, 2r ∈ Ls iff
       (2r)*s^{-1} ∈ L; since s^{-1} = s-bar/N(s) = s-bar/2, this becomes
@@ -261,7 +263,7 @@ class TestRankAndSelfDuality:
 
         Verification that det(B)=1:
         With basis {WILSON_S, e0+e1, e0-e1, e0+e2, ..., e0+e6}, column-expansion
-        along the e7 column (only non-zero entry from WILSON_S) gives det(B) = 1.
+        along the e7 column (only nonzero entry from WILSON_S) gives det(B) = 1.
         """
         # Build the basis: WILSON_S first (type-2, covers the D8+ coset),
         # then 7 independent type-1 roots.
@@ -320,7 +322,7 @@ class TestEvenLattice:
     """
     L is an even lattice: N(v) is even for all v in L.
 
-    By the polarisation identity  N(r1+r2) = N(r1) + N(r2) + 2<r1,r2>
+    By the polarization identity  N(r1+r2) = N(r1) + N(r2) + 2<r1,r2>
     and the fact that N(root) = 2 and <r1,r2> ∈ Z (verified separately),
     every integer combination of roots has even norm.  We verify this for
     a sample of lattice sums and differences.
@@ -353,8 +355,7 @@ class TestLsSubsetL:
     """
     For all roots r in L, the product r*s lies in L.
 
-    Wilson proves Ls ⊆ LR = 2B ⊂ L  (where R = L-bar and B is the
-    Coxeter-Dickson ring).  We verify the outer inclusion Ls ⊆ L for all
+    Wilson proves 2L ⊂ Ls ⊂ L.  We verify the inclusion Ls ⊆ L for all
     240 roots.  By linearity over Z, this implies Ls ⊆ L for the full lattice.
 
     Reference: [Wilson2009] Section 2.
@@ -386,11 +387,8 @@ class TestTwoLSubsetLs:
 
     So: 2r ∈ Ls  iff  r * s-bar ∈ L.
 
-    Note: right-alternativity gives  (v * s) * s^{-1} = v * (s * s^{-1}) = v,
-    so (r*s)*s^{-1} = r and (2r)*s^{-1} = 2*(r*s^{-1})... wait, we use it
-    the other way: if w = u*s then w*s^{-1} = (u*s)*s^{-1} = u*(s*s^{-1}) = u.
-    Hence w ∈ Ls iff w*s^{-1} ∈ L.  Taking w = 2r:
-        (2r)*s^{-1} = (2r)*(s-bar/2) = r*s-bar.
+    The equivalence holds because right alternativity gives (u*s)*s^{-1} = u
+    and (w*s^{-1})*s = w for all octonions u, w, so w ∈ Ls iff w*s^{-1} ∈ L.
 
     Reference: [Wilson2009] Section 2 — "2L ⊂ Ls".
     """

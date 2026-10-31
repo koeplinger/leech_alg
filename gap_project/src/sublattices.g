@@ -4,14 +4,16 @@
 ##  membership tests.  Mirrors python_project/src/leech_wilson.py (the
 ##  Z-basis construction and `is_in_Ls`, `is_in_Ls_bar` predicates).
 ##
+##  Created: 2026-04-28.  Updated: 2026-10-28.
+##
 ##  Definitions (paper Section 2.3):
 ##    Ls    = { ell * s     : ell in L },     index 16 in L.
 ##    Lsbar = { ell * sbar  : ell in L },     index 16 in L.
 ##  Both are sublattices of L (despite sbar not lying in L).
 ##
-##  Z-basis construction.  If {b_1,...,b_8} is a Z-basis of L and c is any
-##  octonion, then {b_1*c, ..., b_8*c} is a Z-basis of L*c, because
-##  multiplication on the left by a fixed c is Z-linear:  for n_i in Z,
+##  Z-basis construction.  If {b_1,...,b_8} is a Z-basis of L and c is a
+##  nonzero octonion, then {b_1*c, ..., b_8*c} is a Z-basis of L*c, because
+##  right multiplication by c is Z-linear and injective:  for n_i in Z,
 ##    (sum n_i b_i) * c = sum n_i (b_i * c).
 ##
 ##  Requires:  src/octonion.g, src/e8_wilson.g

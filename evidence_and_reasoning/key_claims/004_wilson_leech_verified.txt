@@ -1,7 +1,7 @@
 Claim number: 004
 Title: Wilson's octonionic construction yields the 196,560 minimal vectors of the Leech lattice
 Status: ESTABLISHED
-Created: 2026-04-07.  Updated: 2026-10-24.
+Created: 2026-04-07.  Updated: 2026-10-28.
 
 --- STATEMENT ---
 
@@ -33,13 +33,18 @@ CRITICAL NOTE ON TYPE-3 FORMULA:
 Type-2 uses s̄ in BOTH components.
 Type-3 uses s (not s̄) in the FIRST component.
 Using s̄ in type-3 produces 184,320 norm-8 triples that do NOT satisfy
-Wilson's membership conditions; this is verified computationally.  Wilson's
-bracketed note on Dixon's conjectured formula [Wilson2009 Section 5, p. 2189]
-concerns a different point, the multiplication by j in the first coordinate:
+Wilson's membership conditions: each fails conditions (2) and (3)
+(python_project/src/consistency_checks.py, check 9f, finds one such triple
+outside Λ).  Wilson's bracketed note on the conjectured formula of Dixon's
+2005 preprint (reference [12] of [Wilson2009]; not the 2010 construction of
+claim 005) [Wilson2009 Section 5, p. 2189] concerns a different point, the
+multiplication by j in the first coordinate:
   "in effect, his formula is equivalent to (λs, ±λk, ±(λj)k), that is,
    omitting the (necessary) multiplication by j in the first coordinate."
 
-All three families are verified to satisfy conditions (1)–(3) above.
+All three families satisfy conditions (1)–(3) above [Wilson2009 Section 3];
+test_leech_wilson.py checks type 1 in full and types 2 and 3 on samples of
+about 500.
 
 --- SUBLATTICE STRUCTURES ---
 
@@ -72,8 +77,12 @@ Total: 720 + 11,520 + 184,320 = 196,560. ✓
 
 Rank 24: the 196,560 minimal vectors span R^24.
 
-Even lattice: the full 720×720 Gram matrix of type-1 vectors has all entries
-in 2Z (Wilson inner product = ½ × standard dot product is always an integer).
+Even lattice: every N_std lies in 4Z (Wilson's argument below), so Wilson's
+norms are even; checked exactly on a Z-basis of Λ by
+python_project/src/verify_square_zero_classification.py (diagonal Gram
+entries in 4Z, the others in 2Z).  test_even_lattice_type1_gram checks the
+720×720 Gram matrix of the type-1 vectors (all entries in 2Z); these span
+only (2L)³.
 
 Self-dual (det_Wilson = 1): proved analytically in [Wilson2009 Section 4].
 Under the standard R^24 Euclidean inner product, det(Gram_Λ) = 2^24 (because
@@ -90,7 +99,7 @@ No norm-2 vectors (Wilson's argument, [Wilson2009 Section 4, p. 2189]):
   and N(x) ≥ 8, a contradiction.
   Therefore min norm = 8 (minimum is achieved by the 196,560 minimal vectors).
 
-These four properties uniquely characterise the Leech lattice by Conway's
+These four properties uniquely characterize the Leech lattice by Conway's
 theorem [Conway–Sloane, Chapter 12].
 
 --- ANSWER TO PROMPT 006 ---
@@ -100,11 +109,12 @@ on the Leech lattice?"
 
 Precise answer: Wilson does NOT define a "multiplication that closes on the
 Leech lattice."  He constructs the Leech lattice as a SET Λ ⊂ L³ via three
-algebraic conditions, then characterises its 196,560 minimal vectors.
+algebraic conditions, then characterizes its 196,560 minimal vectors.
 
-The object Wilson constructs IS the Leech lattice (verified computationally
-by confirming all 196,560 minimal vectors satisfy conditions 1–3, plus the four
-defining properties of the Leech lattice).
+The object Wilson constructs IS the Leech lattice (by the four
+properties under LATTICE PROPERTIES; test_leech_wilson.py checks conditions 1–3
+on all 720 type-1 vectors and on samples of about 500 type-2 and 500 type-3
+vectors).
 
 The computational tools built here — the membership test is_in_leech(x, y, z)
 and the three minimal-vector generators — are the reference for evaluating
@@ -122,10 +132,8 @@ whether a proposed product maps E8 elements into the Leech lattice.
 --- COMPUTATIONAL EVIDENCE ---
 
 Test file:  python_project/tests/test_leech_wilson.py
-Test count: 31 tests across 8 classes
-Test result: 31 passed, 0 failed (run date: 2026-04-07)
-
-Full suite (136 tests including octonion, Wilson E8, and Dixon E8): 136 passed, 0 failed.
+Test count: 31 tests across 9 classes
+Test result: 31 passed, 0 failed.
 
 Key tests:
   - test_is_in_Ls_bar_rejects_norm2_root: all 240 E8 roots ∉ Ls̄ (min norm 4)

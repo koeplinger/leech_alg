@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Created: 2026-04-09.  Updated: 2026-10-24.
+Created: 2026-04-09.  Updated: 2026-10-28.
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
@@ -65,7 +65,7 @@ All 21 transpositions close on Λ, verified exactly on a Z-basis
 the Fano triples: the 21 transpositions form a single orbit under conjugation
 by the order-21 group of coordinate permutations preserving the oriented Fano
 triples, and conjugation carries the proof for σ = (1 2) to every
-transposition (paper §4, footnote).  They are not the only twists that close: see
+transposition (paper §4, first footnote).  They are not the only twists that close: see
 the cycle census below and the closure criterion (paper Proposition 5.3,
 `prop:criterion`).
 
@@ -119,7 +119,7 @@ The order (Λ, +, ⋆) is:
 
 The key property is closure, not any classical algebraic identity.
 
-### Structure of the algebra (paper §2.2, §4.1 and §5.2–§5.6)
+### Structure of the algebra (paper §2.2, §4.1, §5.2–§5.6, §6 and Appendix A)
 
 These results are exact and exhaustive.
 
@@ -149,13 +149,13 @@ full derivation in `paper/automorphism_group_2026-07-12.pdf`).
   preserve ⋆.  (The trace-form route fails: tr(L_u L_v) has signature
   (3, 21), not the Leech form.)
 - Stabilizers of the Wilson sublattices in Aut(O, ·_σ), the automorphism
-  group of the σ-twisted product (the companion note's setting, its §5.2):
+  group of the σ-twisted product (the setting of the automorphism-group note,
+  `paper/automorphism_group_2026-07-12.pdf`, its §5.2):
   |Stab(L)| = 1344 = 2³·L₃(2); |Stab(Ls)| = 168 = 2³:(7:3);
   |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2) (`gap_project/octonion_stabilisers.g`).
   Under the standard octonion product the orders are 1344, 21 and 1344.
 - Completeness: the order-36 count and the Co₀ containment are established
-  by two independent routes in the companion note
-  (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
+  by two independent routes in that note: Route 1 uses the
   classification of the automorphisms of the complexification of (T, ⋆)
   (nonenumerative); Route 2 is entirely finite and machine-checkable, so
   nothing load-bearing is left open.  The machine-verified lower bound
@@ -192,9 +192,9 @@ u = (x, y, z) satisfies u ⋆ u = 0 exactly when x, y, z are purely imaginary,
 of equal norm, and sum to zero: a hexagonal triple in Im(O) = R⁷, giving a
 12-dimensional cone inside T.  **Λ does contain nonzero square-zero
 elements**, with norms in 12Z (N(u) = 3·N(x) with N(x) ∈ 2Z, and every
-Λ-norm lies in 4Z).  The norm-12 stratum is exactly the 4,032 hexagonal
-triples of the E₇ root system formed by the 126 norm-4 vectors of
-Ls̄ ∩ Im(O); higher strata are realized (norm-24 witness:
+Λ-norm lies in 4Z).  The norm-12 stratum is exactly the 4,032 ordered
+hexagonal triples of the E₇ root system formed by the 126 norm-4 vectors of
+Ls̄ ∩ Im(O); norm 24 occurs as well (witness:
 `verify_square_zero_norm24_witness.py`).  Min(Λ) itself contains no
 idempotent and no square-zero vector (minimal norm 8, not a multiple
 of 12).
@@ -270,8 +270,8 @@ closing twist checked.  Index 1 concerns the
 span of the products, not maximality: L ·_g L ⊆ L for every such g (g(L) = L
 and L · L ⊆ L), so L³ is a ⋆_g-closed overlattice of Λ of index 2¹² for every
 twist in this family, and (Λ, ⋆_g) is never a maximal order; for the index-1
-reflection, Λ + Z(1_r, 0, 0) is ⋆_r-closed of index 4 over Λ and, like
-Λ + Zε₁ for σ, not contained in L³ (1_r = s_r(e₀) is not in L).  Above L³ lies an explicit maximal order, of
+reflection, Λ + Z(1_ρ, 0, 0) is ⋆_ρ-closed of index 4 over Λ and, like
+Λ + Zε₁ for σ, not contained in L³ (1_ρ = ρ(e₀), the identity of ·_ρ, is not in L).  Above L³ lies an explicit maximal order, of
 index 2²⁴·3⁸ over Λ, decomposable and nonintegral (claim 020; two machine
 passes).  Independently of the twist, the closed
 lattice proj_D(Λ) ⊕ proj_T(Λ) contains Λ with index 3⁸, so Wilson's 3-adic
@@ -294,7 +294,7 @@ subalgebras.  Not in the paper: 4,704 of the 17,280 polarizations close,
 and of the 270 Lagrangians 142 are subalgebras, 16 right ideals and 8
 two-sided ideals (the review's §3.3 and its package,
 `paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`; recomputed at
-prompts 317 and 334).  With σ applied in each block, σ(Λ) = Λ(2𝒪, p𝒪) is
+prompts 317 and 339).  With σ applied in each block, σ(Λ) = Λ(2𝒪, p𝒪) is
 Egan's lattice for the pair (2𝒪, p𝒪) (paper §6, display (6.2), `eq:egan`;
 claim 023).
 
@@ -313,7 +313,7 @@ of 𝒪, and Lemmas 4.2 and 4.4 from (xa)(xb) = x((ax)b) for purely imaginary
 x, which makes x𝒪 closed for x = e₁ + e₂ and x = p.  The factor 2⁸ in σ's
 span index is [2𝒪 : 4𝒪].  Ls̄ = 2J₁ and L = J₁·s are Wilson's (2009,
 pp. 2187, 2189: Ls̄ = 2B with B the set of "Kirmse's mistake", and Bs = L);
-σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 go beyond him.
+σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 go beyond Wilson.
 
 ### Evidence files
 
@@ -321,7 +321,7 @@ pp. 2187, 2189: Ls̄ = 2B with B the set of "Kirmse's mistake", and Bs = L);
 - `evidence_and_reasoning/trial_007_results.md`: detailed trial results
 - `evidence_and_reasoning/references/prior_art_orders_on_leech.txt`:
   literature search confirming novelty
-- `python_project/src/consistency_checks.py`: all pre-paper checks
+- `python_project/src/consistency_checks.py`: consistency checks of the construction
 
 ---
 
@@ -348,7 +348,9 @@ algebras and identifies the structural reason for failure.
 
 ## Established foundations
 
-These are the tools and verified constructions that all trials build on.
+These are the project's tools and verified constructions.  The trials build
+on the octonion algebra and Wilson's E8 and Leech constructions; trials 005
+and 006 also on the Okubo algebra.
 
 ### Verified lattice constructions
 
@@ -385,9 +387,11 @@ table (up to index relabeling).
 
 ### Okubo algebra
 
-`python_project/src/okubo.py` and `okubo_samples.py` implement the Okubo
-algebra (Petersson construction from octonions via order-3 automorphism τ).
-These have been tested against the Leech lattice in trials 005–006 (see below).
+`python_project/src/okubo.py` implements the Okubo algebra by the Petersson
+construction from octonions via an order-3 automorphism τ, and on traceless
+3×3 Hermitian matrices; `okubo_samples.py` gives worked examples of the
+Petersson construction.  Trials 005–006 test the Petersson construction
+against the Leech lattice (see below).
 
 ### Test suite
 
@@ -426,16 +430,17 @@ Three copies of the standard octonion algebra on R²⁴:
 | Trial | What it tests | File | Result |
 |---|---|---|---|
 | 001 | Base algebra, no modifications | `trial_001_triple_octonion.py` | FAIL: ~3/4 of t3×t3 products leave Λ |
-| 002 | Per-block scaling (s₁, s₂, s₃) | `trial_002_scaled_triple_octonion.py` | FAIL: norm obstruction (min ≈ 14.6 > 8) + lattice obstruction |
+| 002 | Per-block scaling (s₁, s₂, s₃), products normalized to norm 8 | `trial_002_scaled_triple_octonion.py` | FAIL: no closure on Min(Λ) (lattice obstruction) |
 | 003 | Conjugation × sign × routing (1,536 variants, exhaustive) | `trial_003_discrete_variants.py` | FAIL: all 1,536 variants fail; best = baseline |
-| 004 | E8 automorphism basis changes (1,128 tested) | `trial_004_basis_automorphisms.py` | FAIL: identity is already optimal; changes make it worse |
+| 004 | E8 automorphism basis changes (1,128 tested) | `trial_004_basis_automorphisms.py` | FAIL: no sampled change beats the identity; most make it worse |
 
 ### The failure mode
 
-Across all four trials, the failure is:
+In the base algebra (trial 001) and in the best discrete variant (trial 003),
+the failure is:
 - **Exclusively type3 × type3 products** (all other type combinations pass)
 - **Exclusively Wilson condition 3** (x+y+z ∈ Ls; conditions 1 and 2 always pass)
-- **Structurally invariant** under all tested modifications
+- **Persistent**: type3 × type3 products fail under every tested modification
 
 ### Why it fails (structural diagnosis)
 
@@ -447,26 +452,35 @@ Wilson's condition 3) aggregates information from all three blocks.  The
 triple-octonion architecture does not preserve the delicate Ls sublattice
 structure that condition 3 requires.
 
-This is not a parameter-tuning problem:
-- Conjugation doesn't fix it (all 4³ = 64 patterns fail identically)
-- Sign flips have literally zero effect (all 2³ = 8 patterns tie)
+None of the tested modifications fixes it:
+- Conjugation doesn't fix it (all 4³ = 64 patterns fail; uniform patterns do best)
+- Sign flips leave the failure count unchanged (all 2³ = 8 patterns give the
+  same number of failures; the rates differ where products vanish)
 - Routing changes don't help (third-block is already optimal)
-- Basis changes make it worse (identity is optimal; automorphisms add new failures)
-- Scaling can't fix it (norm is bounded below ≈ 14.6 for t3×t3)
+- The sampled basis changes do not help (none beats the identity; most make it
+  worse, and some add new failures); the basis change σ in all three blocks,
+  not among them, gives the product of the finding, which closes
+- Per-block scaling with each product rescaled to norm 8 fails (trial 002: no
+  tested t3×t3 product lands in Min(Λ))
 
 ### What this rules out
 
-The entire family of algebras with:
-- Three copies of any octonion algebra (standard, X-product, or related)
+The base algebra and the variants tested for closure on Λ in trials 001, 003
+and 004 (key claim 007), and the per-block scalings of trial 002 for closure of
+the minimal shell only:
+- Three copies of the standard octonion algebra
 - Block structure O₁ ⊕ O₂ ⊕ O₃ mapped to indices {0–7, 8–15, 16–23}
 - Any conjugation pattern on cross-block terms
 - Any sign pattern on cross-block terms
 - Any of three routing rules (third/left/right block)
-- Any E8 automorphism basis change within blocks
-- Any per-block scaling
+- The E8 automorphism basis changes sampled in trial 004
+- The per-block scalings of trial 002 (products normalized to the minimal shell)
 
 ### What this does NOT rule out
 
+- Other octonion products in the blocks: one of them, the σ-twisted product
+  (trial 004's form with the basis change σ in all three blocks), closes on Λ
+  (the finding above)
 - Algebras with a different block decomposition (not 8+8+8)
 - Algebras where the cross-block product is not an octonion product at all
   (e.g., Okubo product, or a product defined by different structure constants)
@@ -491,15 +505,17 @@ by 2π/3):
 Cross-block products use the target block's algebra: Bα × Bβ → Bγ using *_γ.
 
 **Three Okubo algebras from one Fano line:** rotating the mediator of a Fano
-line cyclically would need all 3 cyclic mediators to be valid automorphisms,
-and no Fano line admits that (checked computationally): only 1 or 2 work.
-The Z₃ orbit above is the closest valid construction.
+line cyclically needs each of its 3 elements to mediate an order-3
+automorphism, and on every Fano line each does, for one of the two relative
+senses of the two rotations (worked examples in
+`python_project/src/okubo_samples.py`).  Trial 005 tests the Z₃ orbit above,
+not these three algebras.
 
 ### What was tested (2 trials)
 
 | Trial | What it tests | File | Result |
 |---|---|---|---|
-| 005 | Base algebra + 1,536 discrete variants (exhaustive) | `trial_005_triple_okubo.py` | FAIL: 91.5% leave E8 lattice |
+| 005 | Base algebra + 1,536 discrete variants (exhaustive) | `trial_005_triple_okubo.py` | FAIL: 91.5% of failures leave the E8 lattice |
 | 006 | E8 automorphism basis changes (600 tested) | `trial_006_triple_okubo_automorphisms.py` | FAIL: 3.8% best; √3 not absorbable |
 
 ### The failure mode
@@ -509,12 +525,12 @@ This failure is **more severe** than the triple-octonion:
 - The triple-octonion preserved E8 membership (conditions 1 & 2) and failed
   only on condition 3 for type3×type3.
 - The triple Okubo/para-octonion fails on **ALL type combinations** (not just
-  type3×type3) and **91.5% of products leave the E8 lattice entirely**
+  type3×type3) and **91.5% of the failing products leave the E8 lattice**
   (condition 1 fails).
 
 ### Why it fails (structural diagnosis)
 
-The Petersson construction with any nontrivial order-3 automorphism τ
+The Petersson construction with the order-3 automorphism τ above
 introduces structure constants involving cos(2π/3) = −1/2 and sin(2π/3) = √3/2.
 When applied to E8 lattice vectors (integer or half-integer coordinates), the
 products acquire irrational √3 components that cannot lie in the E8 lattice.
@@ -529,9 +545,12 @@ irrational structure constants.  This is a fundamental algebraic obstruction.
 
 ### What this rules out
 
-Any 24-dimensional algebra built from Petersson isotopes of the octonion
-algebra (para-octonion and/or Okubo algebras) using a nontrivial order-3
-automorphism τ, with the same 8+8+8 block structure and cross-block routing.
+The triple algebra tested (the para-octonion algebra and the Okubo algebras
+from τ and τ² in blocks 0, 1 and 2, with the order-3 automorphism τ above, the
+2π/3-rotation), its 1,536 discrete variants (trial 005) and the 600 sampled E8
+automorphism basis changes (trial 006), with the same 8+8+8 block structure and
+cross-block routing.  The trials do not test an algebra with the para-octonion
+product in every block.
 
 ### What this does NOT rule out
 
@@ -559,8 +578,8 @@ status and its evidence.
 ### Prompt logs
 
 `prompt_logs/NNN_*.txt`: chronological record of every research step.
-These are immutable (never altered after commit) per the Manifesto and
-`DOCUMENT_GENRES.md`.
+An entry may be appended to while its work is open; once closed it is
+immutable, per the Manifesto (§12) and `DOCUMENT_GENRES.md`.
 The README in that folder has a summary table.
 
 ### Trial code
@@ -643,8 +662,8 @@ the trial, and prints detailed results.
 
 3. **Computational verification.**  Over 12,000,000 random
    minimal-vector pairs tested across multiple test harnesses with
-   zero failures.  In addition, all classical algebraic identities
-   (commutativity, norm multiplicativity, alternativity, flexibility,
+   zero failures.  In addition, eight classical algebraic identities
+   (commutativity, norm multiplicativity, left and right alternativity, flexibility,
    cube and quartic power-associativity, symmetric composition) have
    been tested on n = 10⁶ samples; rates are tabulated in the paper's
    Appendix D (`app:samples`), and §5.1 (`sec:identities`) gives a witness
@@ -679,8 +698,8 @@ the trial, and prints detailed results.
 
 6. **Standalone note on the automorphism group.**
    `paper/automorphism_group_2026-07-12.tex` / `.pdf` ("The automorphism
-   group of the triple-octonion product", 11 pages, 12 July 2026) gives
-   the full derivation, the complete enumerations, and an independent
+   group of the Z₃-symmetric triple-octonion product", 11 pages, 12 July
+   2026) gives the full derivation, the complete enumerations, and an independent
    second computational pass.  It is self-contained and records what
    failed verification (the trace-form route to Co₀) as well as what
    passed.  It is companion material, not part of the paper.
@@ -738,6 +757,7 @@ leech_alg/
 ├── tools/                         # lint_docs.py: enforces the document genres mechanically
 ├── CURRENT_STATE.md               # THIS FILE: technical summary of the research
 ├── README.md                      # General repository description
+├── LICENSE.md, LICENSE-CODE       # CC BY 4.0 for text, evidence and paper; MIT for code
 │
 ├── evidence_and_reasoning/
 │   ├── key_claims/                # Logical backbone: one file per major claim
@@ -758,14 +778,15 @@ leech_alg/
 │   ├── 2026-10-23_span_plan.md  # Item 5: the span of the triple product by hand, §5.6 (executed)
 │   ├── 2026-10-24_consistency_plan.md  # Consistency before the fine-comb read (executed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
-│   ├── trial_002_results.md       # Per-block scaling: norm + lattice obstruction
+│   ├── trial_002_results.md       # Per-block scaling, normalized products: lattice obstruction
 │   ├── trial_003_results.md       # Discrete variants: all 1,536 fail
-│   ├── trial_004_results.md       # Automorphism basis changes: identity optimal
+│   ├── trial_004_results.md       # Sampled automorphism basis changes: none beats the identity
 │   ├── trial_005_results.md       # Triple Okubo/para-octonion: √3 leaves E8
 │   ├── trial_006_results.md       # Okubo + automorphisms: √3 not absorbable
 │   ├── trial_007_results.md       # The σ twist: closure on Λ (THE FINDING)
 │   ├── editorial_standards.md     # The five prose standards (US English)
 │   ├── terminology.md             # Project-specific and established terms
+│   ├── research_statement.md      # The research goal as posed, with its resolution
 │   └── research_result.md         # Condensed summary of the finding
 │
 ├── python_project/
@@ -794,11 +815,13 @@ leech_alg/
 │   │   ├── verify_star_algebra_structure.py      # Ambient algebra structure
 │   │   ├── verify_sigma_Ls_ideal_exclusion.py    # σ(Ls) is not an ideal of L
 │   │   ├── verify_all_permutations_exact.py      # Closure census over all of S₇ (3- to 7-cycles: verify_all_cycles_exact.py)
-│   │   ├── verify_*.py            # Further exact verifications (span and the twist span-index census,
+│   │   ├── verify_*.py            # Further verifications (span and the twist span-index census,
 │   │   │                          #   the seven maximal orders and Wilson's sublattices, mod 2,
 │   │   │                          #   historical sources, consecutive twists, the §5.1 witnesses,
-│   │   │                          #   Egan's construction)
-│   │   └── consistency_checks.py  # Pre-paper verification (checks 1-3, 5-10)
+│   │   │                          #   Egan's construction; sampled: the Appendix D identities and norms)
+│   │   ├── egan_baez_count.py     # Egan's count 17,280 = 270 × 64 (paper §6)
+│   │   ├── probe_aut_lambda_star.py  # Candidate Co₀ elements tested against ⋆ (a probe)
+│   │   └── consistency_checks.py  # Consistency checks of the construction (checks 1-3, 5-10)
 │   └── tests/                     # 197 tests verifying foundations
 │
 ├── gap_project/                   # Independent GAP / LOOPS re-derivation

@@ -1,21 +1,23 @@
 """
 trial_007_exhaust.py — Exhaustive / large-scale Leech closure verification.
 
+Created: 2026-04-11.  Updated: 2026-10-28.
+
 Performance-optimized for the exhaustive test: all 196,560² = 38,635,833,600
 pairs of Min(Λ) vectors through the swap(1,2) triple octonion product.
 
 NOT reference code.  The clean implementations are in trial_001_triple_octonion.py
 and trial_007_explanation.py.  This file trades readability for speed.
 
-Key optimisations
+Key optimizations
 =================
 1. Fixed-first-vector trick.  For exhaustive row-by-row enumeration, the first
    vector a is constant across all 196,560 second vectors.  The bilinear product
    result[k] = Σ_{ij} M[i,j,k] a[i] b[j]  factors as  result = B @ C  where
    C[j,k] = Σ_i M[i,j,k] a[i]  is precomputed once per row.  This replaces
-   N×8×8×8 = 512N multiply-adds with N×8×8 = 64N — an 8× reduction.
+   N×8×8×8 = 512N multiply-adds with N×8×8 = 64N, an 8× reduction.
 
-2. Vectorised membership checks.  All Wilson conditions (is_in_L, is_in_Ls̄,
+2. Vectorized membership checks.  All Wilson conditions (is_in_L, is_in_Ls̄,
    is_in_Ls) are batch-evaluated over NumPy/CuPy arrays.
 
 3. CPU multiprocessing.  Rows are distributed across cores via mp.Pool.
@@ -106,7 +108,7 @@ def multiply_fixed_first(fixed_vec, all_vecs):
     """
     Multiply a fixed 24-vector against all rows of all_vecs.
 
-    Uses the factorisation: for fixed a and varying b,
+    Uses the factorization: for fixed a and varying b,
       prod[k] = Σ_{ij} M[i,j,k] a[i] b[j] = Σ_j b[j] C[j,k]
     where C[j,k] = Σ_i M[i,j,k] a[i] is precomputed once.
 

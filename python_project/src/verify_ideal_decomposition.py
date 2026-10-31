@@ -1,4 +1,6 @@
-"""Task A, part 1: the ideal decomposition of the algebra (R^24, +, star).
+"""The ideal decomposition of the algebra (R^24, +, star).
+
+Created: 2026-07-12.  Updated: 2026-10-28.
 
 star is the paper's Z_3-symmetric sigma-twisted triple-octonion product,
 sigma = (1 2), on R^24 = O_1 (+) O_2 (+) O_3.
@@ -7,8 +9,8 @@ Two subspaces are tested:
     D := {(a,a,a) : a in O}              (the diagonal, 8-dimensional)
     T := {(p,q,r) : p + q + r = 0}       (the sum-zero part, 16-dimensional)
 
-Claims checked EXACTLY (Fractions), each by an exhaustive run over a basis
-pair -- which, star being bilinear, is a proof and not a sample:
+Claims checked EXACTLY (Fractions), each by an exhaustive run over all basis
+pairs (star being bilinear, this is a proof and not a sample):
 
   (0) the "sum" map  Sigma(x,y,z) := x + y + z  is an algebra homomorphism
       (R^24, star) -> (O, .s):     Sigma(u star v) = Sigma(u) .s Sigma(v).
@@ -26,9 +28,11 @@ pair -- which, star being bilinear, is a proof and not a sample:
       product).  The twist therefore changes nothing about the algebra up
       to isomorphism; it is only the lattice Lambda that sees it.
 
-Independent second pass: every identity is re-checked on 200 random
-rational vectors with denominators up to 7, using an independently coded
-star (a direct 9-term expansion), not the block formula.
+Independent second pass, on 200 random pairs u, v of rational vectors with
+denominators up to 7: the block-formula star against an independently coded
+star (a direct 9-term expansion), (0), and the splitting u = d + t (d in D,
+t in T, d star t = t star d = 0, u star u = d star d + t star t, d star d in D,
+t star t in T).
 """
 import random
 from fractions import Fraction as F

@@ -1,7 +1,7 @@
-"""Validation + structure of S = Z-span(Lambda star Lambda), following
-verify_product_span_index.py (which found [Lambda : S] = 65536 = 2^16).
+"""Validation + structure of S = Z-span(Lambda star Lambda), of index
+[Lambda : S] = 65536 = 2^16 (also computed by verify_product_span_index.py).
 
-Created: 2026-07-10.  Updated: 2026-10-24.
+Created: 2026-07-10.  Updated: 2026-10-28.
 
 The paper cites this script, with verify_product_span_index.py and
 verify_product_span_proof.py, at Proposition 5.4 (`prop:span`, Section

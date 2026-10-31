@@ -1,7 +1,7 @@
 Topic: Recent computer-assisted experimental work in adjacent areas
 =========================================================
 
-Created: 2026-07-19.  Updated: 2026-10-24.
+Created: 2026-07-19.  Updated: 2026-10-28.
 
 This file collects references for recent works, in lattice theory and in
 nonassociative algebra, that pursue related questions through computer-assisted
@@ -27,7 +27,7 @@ sources (journal pages, arXiv, author publication lists) before inclusion.
 - **Notes**: Classifies binary Hermitian lattices over number fields by computer,
   with an application to the classification of 48-dimensional extremal even
   unimodular lattices admitting a semilarge automorphism. Cited in v7 as computational
-  lattice theory in the target venue.
+  lattice theory in Experimental Mathematics.
 
 ---
 
@@ -65,7 +65,7 @@ sources (journal pages, arXiv, author publication lists) before inclusion.
   Elsevier). No dispute over priority or originality known to this project.
 - **Notes**: Determines, by computer, the 290 orbits of fixed-point sublattices of
   the Leech lattice under the action of the Conway group Co_0, with the
-  corresponding coinvariant lattices and stabilizing subgroups. Directly relevant
+  corresponding coinvariant lattices and stabilizing subgroups. Cited in v7
   as a computational census of Leech sublattices.
 
 ---
@@ -85,7 +85,7 @@ sources (journal pages, arXiv, author publication lists) before inclusion.
   Mathematics). No dispute over priority or originality known to this project.
 - **Notes**: Establishes, by computer, that at least 267 of the 273 vertex
   superalgebras associated to odd unimodular lattices of rank 24 carry an N=4
-  superconformal subalgebra. Cited in v7 as experimental work in the target venue on
+  superconformal subalgebra. Cited in v7 as experimental work in Experimental Mathematics on
   rank-24 unimodular lattices.
 
 ---
@@ -145,6 +145,5 @@ sources (journal pages, arXiv, author publication lists) before inclusion.
   Univ. Carolin.). No dispute over priority or originality known to this project.
 - **Notes**: Uses the structure theory of the group algebra of the symmetric
   group, by computer, to determine the polynomial identities satisfied by the
-  octonions. Cited alongside Dotsenko as computational work on identities in
-  nonassociative algebra, directly relevant to the octonionic setting of the
-  present paper.
+  octonions. Cited in v7 alongside Dotsenko as computational work on identities
+  in nonassociative algebra.

@@ -1,7 +1,7 @@
 """Lemmas 4.3 and 4.4 of the paper read modulo 2: the mod-2-quotient nature
 of the two closure lemmas.
 
-Created: 2026-05-22.  Updated: 2026-10-24.
+Created: 2026-05-22.  Updated: 2026-10-28.
 
 Lemma 4.3 (`lem:L-sigmaLsbar`) and Lemma 4.4 (`lem:sigmaLs-closed`) state
 L . sigma(Ls_bar) <= sigma(Ls_bar)  and  sigma(Ls).sigma(Ls) <= sigma(Ls).
@@ -11,7 +11,7 @@ shows what those two lemmas *are*, structurally: statements about the
 8-dimensional F2-bilinear algebra obtained from L by the mod-2 quotient
 L -> L/2L.
 
-  - L_bar s ∩ Ls = 2L (Wilson), so 2L is contained in sigma(Ls) and
+  - Ls_bar ∩ Ls = 2L (Wilson), so 2L is contained in sigma(Ls) and
     sigma(Ls_bar);
   - L.L <= L and Z-bilinearity make the octonion product descend to an
     F2-bilinear product mu-bar on L_bar := L/2L = F2^8;

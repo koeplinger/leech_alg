@@ -1,8 +1,8 @@
-"""Degree of span-surjectivity of the triple product: compute the exact
+"""The span index of the triple product: compute the exact
 index [Lambda : S] of the sublattice S := Z-span{ u star v : u, v in
 Lambda } inside Lambda.
 
-Created: 2026-07-10.  Updated: 2026-10-24.
+Created: 2026-07-10.  Updated: 2026-10-28.
 
 The paper cites this script in Section 5.6 (label sec:census) for the
 method, and at Proposition 5.4 (label prop:span), with
@@ -15,7 +15,6 @@ B_i star B_j of a Z-basis B of Lambda.  Working in L^3 coordinates
 |det| = [L^3 : S]; dividing by [L^3 : Lambda] = 4096 gives [Lambda : S].
 
   [Lambda : S] = 1   <=>  the products Z-span all of Lambda
-                          ("span-surjective")
   [Lambda : S] = n   <=>  products generate a proper sublattice of
                           index n (every u star v lies in S; a fraction
                           1 - 1/n of Lambda-cosets mod S is unreachable
@@ -35,7 +34,7 @@ star = twisted(SIGMA)
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("Span-surjectivity: index of S = Z-span(Lambda star Lambda) in Lambda")
+    print("Span index: index of S = Z-span(Lambda star Lambda) in Lambda")
     print("=" * 70)
     print(f"[L^3 : Lambda] = {detB}  (expect 4096 = 2^12)")
 

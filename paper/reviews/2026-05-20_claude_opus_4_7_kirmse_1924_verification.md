@@ -1,5 +1,7 @@
 # Primary-source verification — Kirmse (1924)
 
+Created: 2026-05-20.  Updated: 2026-10-28.
+
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 100. Step (1) of the Kirmse-twist plan: derive the history from
@@ -88,24 +90,28 @@ claim "$J_1$ is an order."
 ## Notes for the digest / wording update
 
 - The manuscript's "Kirmse proposed a labelling under which $D_8^+$ is not
-  closed" is **correct in substance** and now verified: Kirmse's $J_1$ is
-  exactly such a non-closed lattice.
+  closed" mislocates the error: $D_8^+$ is closed under Kirmse's table (1),
+  which is a correct octonion algebra; what is not closed is his lattice
+  $J_1$.
 - The phrase to add, supported by the source: Kirmse's specific error was
   claiming **eight** maximal orders where there are **seven** — his $J_1$
   being a non-closed candidate. (So the answer to "did Kirmse propose seven
   correct orders and err on an eighth?" is: he claimed eight; seven are
   genuine; the verification shows his *named* one was a non-closed one.
   Whether the other seven of "his eight" are exactly the seven genuine
-  maximal orders is not determinable from his text — he gives a schematic
-  form, not an explicit list — and is left for Coxeter (1946).)
+  maximal orders is not determinable from his text, which gives a schematic
+  form and no explicit list; the reconstruction in
+  `2026-05-20_claude_opus_4_7_kirmse_forensic.md` identifies them with the
+  seven genuine maximal orders.)
 - Biographical: the article's by-line reads "Johannes Kirmse **in
   Hannover**", and it is dated "Hannover, am 15. April 1924" — not Apolda.
   `terminology.md` (following Petersson) says Apolda; minor, worth a check.
-- The correction itself (who fixed it, and the precise form of the fix)
-  still requires **Coxeter (1946)**; this verification settles Kirmse's
-  side only.
+- The correction itself (who fixed it, and the precise form of the fix) is
+  in **Coxeter (1946)**
+  (`2026-05-22_claude_opus_4_7_coxeter_1946_verification.md`); this
+  verification settles Kirmse's side only.
 
 ## Status
 
-Kirmse (1924): **verified.** Pending: Dickson (1923) — downloaded; Mahler
-(1942) — loaded; Coxeter (1946) — to be obtained.
+Kirmse (1924): **verified.** Dickson (1923), Mahler (1942) and Coxeter
+(1946) are verified in the sibling notes.

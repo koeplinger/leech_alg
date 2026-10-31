@@ -1,11 +1,15 @@
-"""The proof of the span of the triple product (paper Section 5.6), step by
-step, in exact arithmetic.  Notation as in the paper: L = D8+ with the
+"""The proof of the span of the triple product (paper Section 5.6,
+Proposition 5.4, label prop:span), step by step, in exact arithmetic.  The
+paper cites this script at Proposition 5.4, with verify_product_span_index.py
+and verify_product_span_structure.py.  Notation as in the paper: L = D8+ with the
 octonion product of (2.1), s and sbar of Section 2.3, sigma = (1 2), x.y
 the sigma-twisted product (Definition 3.2), star the triple product
 (Definition 3.3), Lambda Wilson's lattice (Definition 2.1), MO =
 (1/2)(e1+e2)L the maximal order of (2.2), p = e2 - e4 + e5 - e6 of (4.1).
 As in the paper's proof, juxtaposition is the octonion product of (2.1)
 in (1) and (2), and the twisted product x.y in (4) and (5).
+
+Created: 2026-10-23.  Updated: 2026-10-28.
 
   (1) The products (yp)z with y, z in MO span MO, and so do the products
       y(pz), by hand: v := -(1/2)(e1+e2)s = (1/2)(e0+e2+e3-e7) lies in MO,
@@ -43,7 +47,9 @@ in (1) and (2), and the twisted product x.y in (4) and (5).
       Delta + 2 Lambda; [Lambda : S] = 2^16 and [Delta + 2 Lambda :
       2 Lambda] = 2^8, that is, Delta cap 2 Lambda = 2 Delta.
   (7) The cyclic shift (x, y, z) -> (z, x, y) maps Lambda to itself and
-      commutes with star (on the basis of (3)).
+      commutes with star (on the basis of (3)); and star agrees, on the same
+      basis pairs, with the triple product that verify_consecutive_twists_exact.py
+      builds for sigma = (1 2).
 
 Run: python3 verify_product_span_proof.py  ->  ALL PASS (exit 0).
 """

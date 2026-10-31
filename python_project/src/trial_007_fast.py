@@ -1,15 +1,18 @@
 """
 trial_007_fast.py — Performance-optimized Leech closure test for swap(1,2).
 
+Created: 2026-04-11.  Updated: 2026-10-28.
+
 NOT intended as readable reference code.  The clean, verifiable implementations
 are in trial_001_triple_octonion.py, trial_007_kirmse_twist.py, and
 trial_007_explanation.py.  This file trades clarity for speed: it precomputes
 a dense structure-constant tensor, batches all multiplications via np.einsum,
-and vectorises all Wilson membership checks with bulk NumPy operations.
+and vectorizes all Wilson membership checks with bulk NumPy operations.
 
 The purpose is to push toward exhaustive verification of the 38.6 billion
 pairs in Min(Λ) × Min(Λ), or at least to test a much larger sample than
-the 4 million pairs that took 14 minutes in pure Python.
+the 4,000,000 pairs of trial_007_scaled_test.py (pure Python, about 14
+minutes at 213.3 µs per pair).
 
 Usage
 =====
@@ -23,7 +26,7 @@ import sys
 
 # ---------------------------------------------------------------------------
 # We import ONLY what we need for vector generation.  All hot-path code is
-# reimplemented here in vectorised NumPy.
+# reimplemented here in vectorized NumPy.
 # ---------------------------------------------------------------------------
 from octonions import OctonionAlgebra, STANDARD_FANO_TRIPLES
 from leech_wilson import (
@@ -335,7 +338,7 @@ def run_test(n_pairs=4_000_000, seed=2026, batch_size=50_000, exhaustive=False):
         zero_mask = norms_sq < 1e-12
         n_zero = int(np.sum(zero_mask))
 
-        # Check non-zero products for Leech membership
+        # Check nonzero products for Leech membership
         nonzero_mask = ~zero_mask
         n_nonzero = int(np.sum(nonzero_mask))
 

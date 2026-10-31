@@ -1,6 +1,6 @@
 # 2026-10-24 — Plan: consistency before the author's fine-comb read
 
-Created: 2026-10-24.  Updated: 2026-10-24.
+Created: 2026-10-24.  Updated: 2026-10-28.
 
 **Status: executed.**  (s) Option 2: the keyword "computer-assisted proof" is
 dropped and MSC 68V05 stays (P1, P3).  (t) Option 1: the paragraph after the
@@ -10,7 +10,13 @@ automorphism note, 11; the Baez–Egan note, 3; the companion note, 10; the
 historical-appendix draft, 2; none has an undefined reference or a new
 overfull box.  The GAP suite passes 110 of 110, the Leech tests 31 of 31,
 and the linter is clean.  The plan was reviewed before execution by five
-readers, each finding checked by a refuting verifier.  Drafted by Claude Opus 5.5 at the direction
+readers, and the applied edits by three (§4, step 6), each finding checked
+by a refuting verifier.  The confirmed findings of the second review are
+applied: the status blocks of `2026-10-20_closed_form_plan.md` and
+`2026-10-21_criterion_plan.md`, and two edits beyond §5, in Section 6 of
+`paper/companion.tex` ("close under a given product?") and in the comment on
+tests 13 to 15 of `python_project/tests/test_leech_wilson.py` ("Ls̄ and Ls
+jointly of rank 8").  Drafted by Claude Opus 5.5 at the direction
 of Jens Köplinger.
 
 ## 0. Goal and scope

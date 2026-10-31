@@ -3,7 +3,7 @@
 ##  octonion.g — Octonion algebra over Q^8 with the standard Fano-plane
 ##  multiplication used in the paper.
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  Conventions (matching the main paper, Section 2.1, and the Python module
 ##  python_project/src/octonions.py):
@@ -122,7 +122,7 @@ OCT_E0   := [1, 0, 0, 0, 0, 0, 0, 0];
 # Bridge to the LOOPS package: build the 16-element signed-units loop from
 # OCT_TABLE and let LOOPS verify the Moufang property.
 #
-# Element labelling 1..16:
+# Element labeling 1..16:
 #    1..8   ->  +e_0, +e_1, ..., +e_7
 #    9..16  ->  -e_0, -e_1, ..., -e_7
 # ---------------------------------------------------------------------------

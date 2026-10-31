@@ -1,10 +1,12 @@
 # Formal referee review of the main paper
 
+Created: 2026-04-16.  Updated: 2026-10-28.
+
 **Date:** 2026-04-16
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from transposition-twisted octonions* (Köplinger), version of 14 April 2026, together with the companion note `paper/companion.tex` and the supplemental repository as context.
 
-This document records the referee report verbatim as delivered. Two demonstrable errors in the manuscript were verified computationally against `python_project/src/e8_wilson.py` and the triple-product formula of Definition 3.6 before the report was written; those checks are noted inline.
+This document records the referee report. Two demonstrable errors in the manuscript were verified computationally against `python_project/src/e8_wilson.py` and the triple-product formula of Definition 3.6 before the report was written; those checks are noted inline.
 
 ---
 
@@ -78,7 +80,7 @@ Section 5 calls the argument a "symbolic proof", but Lemmas 4.3 and 4.4 are veri
 
 ### 3.3 Coxeter's transposition vs. $\sigma$
 
-The abstract and Section 6 frame the result as a chain "Kirmse $\to$ Coxeter $\to$ $\sigma$-twist, each step a transposition of two basis indices". This is elegant but conflates two structurally different operations: Coxeter's correction is a permutation of Fano *lines* (equivalently, a relabelling of the multiplication table that need not be induced by a linear map on $\mathbb{R}^8$); $\sigma$ is a linear coordinate involution of $\mathbb{R}^8$. The companion (Section 8, "Could the $\sigma$-twist undo Coxeter's fix?") addresses this clearly and correctly. The main paper must do the same, because a reader of only the main paper will walk away with a misleading picture of what kind of "transposition" is involved at each step.
+The abstract and Section 6 frame the result as a chain "Kirmse $\to$ Coxeter $\to$ $\sigma$-twist, each step a transposition of two basis indices". This is elegant but leaves the roles of the two transpositions unstated. They are of the same kind: Coxeter (1946, §4) records Bruck's remedy as "transposing two of the $i$'s", a linear coordinate involution of $\mathbb{R}^8$, as $\sigma$ is. They differ in what they act on: the Coxeter–Bruck transposition carries Kirmse's $J_1$, which is not closed under multiplication, onto a maximal order, while $\sigma$ fixes $L$ and moves Wilson's sublattices $L\bar s$ and $Ls$. The companion (Section 8, "Could the $\sigma$-twist undo Coxeter's fix?") shows that $\sigma$ fixes $L$ and moves $Ls$, but it describes Coxeter's correction as a swap of two Fano triples that makes $L$ closed, whereas the correction is a coordinate transposition applied to $J_1$. The main paper must state what each transposition acts on, because a reader of only the main paper will not see it.
 
 ### 3.4 Routing in Definition 3.6
 
@@ -125,7 +127,7 @@ The routing rule "$\alpha\cdot\beta\to\gamma$ with $\{\alpha,\beta,\gamma\}=\{1,
 
 **Strongly recommended:**
 4. Add a paragraph in Section 6 comparing $\Sigma(\Lambda)$ and $\star$ against the Egan enumeration and against Dixon's XY-product, explicitly addressing novelty.
-5. Pull the Kirmse–Coxeter vs. $\sigma$ distinction from the companion into Section 6 of the main paper.
+5. State the Kirmse–Coxeter vs. $\sigma$ distinction of 3.3 in Section 6 of the main paper.
 6. Move Section 5 to an appendix and tighten Section 7.
 7. State or cite the argument that $L\bar s\subseteq L$ is a *sublattice* (closure under addition and $L$-multiplication) so that the reader sees the consistency despite $\bar s\notin L$.
 
@@ -135,20 +137,3 @@ The routing rule "$\alpha\cdot\beta\to\gamma$ with $\{\alpha,\beta,\gamma\}=\{1,
 10. An explicit statement and justification of the routing choice in Definition 3.6.
 
 The core mathematical content — a concrete bilinear product on $\mathbb{R}^{24}$ under which $\Lambda$ is closed — is genuine and, modulo the novelty question against Dixon/Egan, worth publishing. But the manuscript as submitted contains two verifiable false statements in its exposition and leaves unresolved the question of whether the construction is a new closure phenomenon or a presentation of a known one. Major revision and a second referee round recommended.
-
----
-
-## Disposition by the author (2026-04-16)
-
-Upon receipt of this review, the author directed the following immediate corrections in the main paper (the companion is checked for parallel issues):
-
-- **2.1 (mandatory):** adopt option (b) — state explicitly that $L\bar s\subseteq L$ while $\bar s\notin L$, with a brief justification. Wilson's symbol conventions are preserved.
-- **2.2 (mandatory):** state simply that $(\mathbb{R}^{24},\star)$ has no multiplicative identity; remove the incorrect $(e_0,e_0,e_0)$ justification.
-
-The remaining points (3.1–3.4, §§4–5, §6 items 4–10) are deferred to a later revision pass. The author notes specifically:
-
-- The "symbolic proof" re-labelling (3.2) is accepted and will be addressed when a genuinely symbolic proof is supplied.
-- The Coxeter-vs-$\sigma$ distinction (3.3) is accepted as important and will be pulled into the main paper; it is not made now because the paper is in early circulation and further edits risk adding confusion.
-- The novelty comparison (3.1) will be revisited closer to formal submission; the author's present view is that the simplicity of the $\mathbb{Z}_3$-symmetric triple-octonion product is itself the notable feature, and that making the comparison the centre of the paper invites a "simplicity debate" that is not productive absent a maximality result.
-
-All deferred items remain open for formal review and are not to be considered settled.

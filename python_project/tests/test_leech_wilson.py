@@ -1,23 +1,15 @@
 """
 test_leech_wilson.py — Verification of Wilson's octonionic Leech lattice construction.
 
-Created: 2026-04-07.  Updated: 2026-10-24.
+Created: 2026-04-07.  Updated: 2026-10-28.
 
-Clarification on the user's question
---------------------------------------
-Wilson does NOT define a "multiplication that closes on the Leech lattice."  He
-constructs the Leech lattice as a SET Λ ⊂ L³ satisfying three algebraic
-conditions.  The Leech lattice has NO vectors of norm 2 (no root system); the
-relevant object is the 196,560 minimal vectors (norm-squared 8 under the standard
-R^24 norm).  This test suite verifies Wilson's construction and establishes the
-membership criteria used to evaluate other products.
-
-The answer to the user's question — "does Wilson's construction close on the
-Leech lattice?" — requires interpreting what "close" means:
-  - Wilson's 196,560 minimal vectors come in three explicit families (types 1–3).
-  - All three families are verified to satisfy Wilson's membership conditions.
-  - The resulting object is the unique even self-dual rank-24 lattice with no
-    vectors of norm-squared < 8 [Wilson2009, Section 4].
+Wilson constructs the Leech lattice as a set Λ ⊂ L³ satisfying three
+algebraic conditions; he defines no multiplication on it.  Under Wilson's
+norm N_Wilson = N_std/2, Λ is even and self-dual and has no vectors of
+norm 2 [Wilson2009, Section 4]; its 196,560 minimal vectors have N_std = 8
+under the standard R^24 norm and come in three explicit families (types
+1–3).  This suite checks the three families and the membership test
+is_in_leech, which the trials use to evaluate other products.
 
 Properties verified
 -------------------
@@ -30,16 +22,16 @@ Properties verified
  4.  The 8 precomputed Ls̄ basis vectors are linearly independent (rank 8)
  5.  det(Gram of Ls̄ basis) ≈ 256  ([L : Ls̄]² × det(Gram_L) = 16² × 1 = 256)
  6.  is_in_Ls_bar correctly identifies all Ls̄ elements
- 7.  is_in_Ls_bar correctly rejects a known non-member (a norm-2 E8 root)
+ 7.  is_in_Ls_bar correctly rejects a known nonmember (a norm-2 E8 root)
 
  Ls  = {λ * s  : λ ∈ L}  (the other index-16 sublattice of L):
  8.  All 240 products λ * s are in L
  9.  The 8 precomputed Ls basis vectors are linearly independent (rank 8)
 10.  det(Gram of Ls basis) ≈ 256
 11.  is_in_Ls correctly identifies all Ls elements
-12.  is_in_Ls correctly rejects a known non-member
+12.  is_in_Ls correctly rejects a known nonmember
 
- Sublattice relations  (Ls̄ ∩ Ls = 2L, Ls̄ + Ls = L):
+ Sublattice relations  (2L ⊆ Ls̄ ∩ Ls; Ls̄ and Ls jointly of rank 8):
 13.  2 × root ∈ Ls̄ for all 240 roots  (2L ⊆ Ls̄)
 14.  2 × root ∈ Ls  for all 240 roots  (2L ⊆ Ls)
 15.  Combined Z-span of Ls̄ and Ls vectors has rank 8
@@ -62,14 +54,16 @@ Properties verified
 
  Leech lattice summary:
 26.  Total count: 720 + 11,520 + 184,320 = 196,560
-27.  Types 1, 2, 3 are pairwise distinct (proven by zero-component structure)
+27.  Types 1, 2, 3 are pairwise distinct (by their zero-block structure, checked
+     on the first 10 vectors of each type)
 28.  The 196,560 vectors span R^24 (rank 24)
-29.  Even lattice: sample pairs of type-1 vectors have integer standard dot product
-     (which equals 2 × Wilson inner product; self-duality follows from Wilson's proof)
+29.  All 720 × 720 pairs of type-1 vectors have even standard dot product (2 × the
+     Wilson inner product, which is therefore an integer on them; self-duality
+     follows from Wilson's proof)
 
- Non-members:
-30.  (root, 0, 0) is NOT in Λ for any E8 root  (N_std = 2 < 8, violates the
-     no-norm-2 property; algebraically: root ∉ Ls̄, violating condition 2)
+ Nonmembers:
+30.  (root, 0, 0) is NOT in Λ for any E8 root  (N_std = 2 < 8; algebraically:
+     root ∉ Ls̄, violating condition 2)
 31.  A manually constructed triple that violates condition 2 is correctly rejected
 
 References
@@ -120,7 +114,7 @@ def type2():
 
 @pytest.fixture(scope="module")
 def type3():
-    return leech_type3_vectors()   # 184,320 vectors, slow (~5-10 s)
+    return leech_type3_vectors()   # 184,320 vectors, the slowest fixture
 
 
 @pytest.fixture(scope="module")
@@ -281,7 +275,7 @@ class TestSublatticeSumAndIntersection:
     """
 
     def test_2L_subset_Ls_bar(self, e8_roots):
-        """2 × root ∈ Ls̄ for all 240 roots  (2L ⊆ Ls̄ = 2B ⊇ 2L)."""
+        """2 × root ∈ Ls̄ for all 240 roots  (2L ⊆ Ls̄ = 2B)."""
         alg = STANDARD_ALGEBRA
         for r in e8_roots:
             two_r = alg.element(2.0 * r.coords)
@@ -406,7 +400,7 @@ class TestType3Vectors:
     Norm:  N_std = N(λ)N(s)N(j) + N(λ)N(k) + N(λ)N(j)N(k) = 4 + 2 + 2 = 8.
     Reference: [Wilson2009] Section 3.
 
-    Note: leech_type3_vectors() generates ~120,000 octonion products.
+    Note: leech_type3_vectors() computes 65,280 octonion products.
     The module-scoped type3 fixture (see above) ensures this is done once.
     """
 
@@ -427,7 +421,7 @@ class TestType3Vectors:
         """
         500 evenly-spaced type-3 vectors satisfy Wilson's membership conditions.
 
-        Sampling every 369th vector (≈ 500 checks from 184,320).
+        Sampling every 368th vector (≈ 500 checks from 184,320).
         """
         alg = STANDARD_ALGEBRA
         step = max(1, len(type3) // 500)
@@ -446,16 +440,13 @@ class TestLeechLatticeSummary:
     """
     Summary properties of the Leech lattice, derived from the three families.
 
-    These tests verify the four defining properties of the Leech lattice
-    [Conway–Sloane, Chapter 12]:
-      (a) Even self-dual lattice (tested via dot-product parity)
-      (b) Rank 24
-      (c) No norm-2 vectors  (tested separately in TestNonMembers)
-      (d) Uniqueness  (asserted by reference to Wilson's proof)
-
-    Property (d), self-duality (det_Wilson = 1), follows from Wilson's proof
-    [Wilson2009 Section 4] and is not reproduced numerically here.  The even
-    lattice property (a) is spot-checked via type-1 pairwise dot products.
+    The Leech lattice is the unique even self-dual lattice of rank 24 with
+    no vectors of norm 2 [Conway–Sloane, Chapter 12].  These tests check the
+    total count, the zero-block structure (first 10 vectors of each type),
+    rank 24 (on 90 vectors) and the integrality of Wilson's inner product on
+    the type-1 vectors.  Evenness, self-duality (det_Wilson = 1) and the
+    absence of norm-2 vectors follow from Wilson's proof [Wilson2009
+    Section 4] and are not reproduced numerically here.
     """
 
     def test_total_minimal_vector_count(self, type1, type2, type3):
@@ -474,7 +465,7 @@ class TestLeechLatticeSummary:
         This test verifies the zero-block structure as a proxy.
         """
         def count_nonzero_blocks(x, y, z):
-            """Count how many of the three R^8 components are non-zero."""
+            """Count how many of the three R^8 components are nonzero."""
             return sum(
                 np.any(np.abs(v) > 1e-10) for v in (x, y, z)
             )
@@ -532,14 +523,14 @@ class TestLeechLatticeSummary:
 
 
 # ---------------------------------------------------------------------------
-# 30–31: Non-members
+# 30–31: Nonmembers
 # ---------------------------------------------------------------------------
 
 class TestNonMembers:
     """
     Verifies that is_in_leech correctly rejects vectors outside Λ.
 
-    Two key non-members are tested:
+    Two key nonmembers are tested:
       - A single E8 root in position x with y = z = 0: this fails condition 2
         (x + y = root ∉ Ls̄, since min norm in Ls̄ is 4 > 2 = N(root)).
       - A triple (root, root, 0): x + y = 2root ∈ Ls̄ (passes condition 2),
@@ -552,7 +543,7 @@ class TestNonMembers:
 
         Proof: condition 2 requires x + y = root ∈ Ls̄.  But min N in Ls̄ = 4,
         and N(root) = 2 < 4.  So root ∉ Ls̄, and condition 2 fails.
-        Reference: [Wilson2009] Section 4 — "no vectors of norm 2".
+        Reference: [Wilson2009] Section 2 (Ls̄ = 2B, of minimum norm 4).
         """
         alg = STANDARD_ALGEBRA
         zero = alg.element(np.zeros(8))

@@ -1,6 +1,6 @@
 # Journal-grade review of v6 (applied-audience lens)
 
-Created: 2026-07-10.  Updated: 2026-10-24.
+Created: 2026-07-10.  Updated: 2026-10-28.
 **Reviewer:** Claude Fable 5 (Anthropic), at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v6 (10 July 2026), 20 pp., as at git commit `b8bf187`; frozen copy `paper/main_2026-07-10.tex` (byte-identical to working source), in the repository at that commit. Line numbers below refer to that state.
 **Prompt:** 208.
@@ -41,11 +41,11 @@ Prior-art accounting is **thorough, generous, and fair**. Layered, verifiable cr
 
 **Is the φ comparison fair to Baez–Egan? Yes.** The "Anatomy of the Baez–Egan closure" paragraph carries the guard rails a referee would want: it opens by locating their closure on the 27-dimensional ambient, "not on Λ alone"; φ is explicitly a projection with the inner-product shadow D discarded; the differences run in both directions (φ is commutative, ⋆ is not); and the neutral closer ("distinct bilinear products … through different ambient algebras") precedes the 2²⁵-vs-2¹⁶ numbers. It does not read as criticism. One residual softness: the defining sentence for φ is agentless, so a fast referee could momentarily read φ as a product Baez–Egan themselves proposed and are now being measured by. One clause ("we read off a Z-bilinear closed product φ…") removes the ambiguity.
 
-**The one required defect is bibliographic, not ethical.** The [Baez2014] entry dates the series "November–December 2014" and says the material "appears in parts 9 and 10", but the series ran 2013–2014 (part 1 is 23 July 2013), and the 270 × 64 = 17,280 factorisation that Section 6 and A.1 credit to Baez/Egan lives in **part 11** (main post 11 Dec 2014; Egan's 64-complement count in part 11's comments). Neither part 9 nor part 10 contains 270, 64, or the isotropic-subspace picture; the project's own prompt log 090 already says "Per Baez/Egan part 11". A reader following the bibliography cannot find the credited material.
+**The one required defect is bibliographic, not ethical.** The [Baez2014] entry dates the series "November–December 2014" and says the material "appears in parts 9 and 10", but the series ran 2013–2016 (part 1 is 23 July 2013; part 12, 31 January 2016), and the 270 × 64 = 17,280 factorisation that Section 6 and A.1 credit to Baez/Egan lives in **part 11** (main post 11 Dec 2014; Egan's 64-complement count in part 11's comments). Neither part 9 nor part 10 contains 270, 64, or the isotropic-subspace picture; the project's own prompt log 090 already says "Per Baez/Egan part 11". A reader following the bibliography cannot find the credited material.
 
 Two related recommended items sharpen the same paragraph rather than weaken it. First, the A.1 claim that the Lagrangian articulation is "already in Baez/Egan" is *generous* rather than unfair — in part 11 as published Baez counts 270 as Fano-plane structures, and the F₂-isotropic-subspace articulation appears in the comment thread — so the credit should be softened to "Baez/Egan and the surrounding discussion" or pinpointed to part 11 post-and-comments. Second, a public 2023 comment by David Calderbank on the cited part 9 page states essentially the complementary-Lagrangian-preimage reading that A.1 develops; the project record shows independent arrival (prompt log 156), so nothing was used-but-uncredited, but a referee who reads the thread could notice the omission. One crediting sentence closes it.
 
-Smaller items: Petersson lacks a first name at first mention (the only such miss); the "OpenCode DeepSeek, Hermes" acknowledgment inverts contributor and tooling relative to the project record; a name-order flip ("Egan and Baez") in one sentence; a Jordan-product factor-naming convention that differs from Baez's own words in part 10 (the formulas are explicit, so nothing is wrong); and a pinpoint to Wilson 2009 "§5" that could not be confirmed from the project's evidence files.
+Smaller items: Petersson lacks a first name at first mention (the only such miss); the "OpenCode DeepSeek, Hermes" acknowledgment inverts contributor and tooling relative to the project record; a name-order flip ("Egan and Baez") in one sentence; and a Jordan-product factor-naming convention that differs from Baez's own words in part 10 (the formulas are explicit, so nothing is wrong). The pinpoint to Wilson 2009 "§5" is correct: the bracketed note on Dixon's formula is in Section 5 (p. 2189).
 
 ---
 
@@ -121,7 +121,7 @@ The main text quantifies over a generic σ = (i j), but the appendix certificate
 
 **R2. Correct the [Baez2014] bibliography entry and factorisation pointer.**
 *Location:* `paper/main.tex` L1547–1553; dependent credits at L735–744 and L1331–1344.
-The series ran 2013–2014, not "November–December 2014"; the credited 270 × 64 = 17,280 factorisation and Lagrangian material live in part 11, not parts 9–10. A reader following the bibliography cannot find the credited material.
+The series ran 2013–2016, not "November–December 2014"; the credited 270 × 64 = 17,280 factorisation and Lagrangian material live in part 11, not parts 9–10. A reader following the bibliography cannot find the credited material.
 *Fix:* correct the dates, add the part 11 URL, change "parts 9 and 10" to "parts 9–11", and point the Section 6 factorisation sentence to part 11 explicitly.
 
 **R3. Do not assert Aut(Λ, +, ⋆) ⊆ Co₀.**
@@ -178,7 +178,7 @@ The term is used nowhere else and never defined; the rest of the paper says "Wil
 6. **φ's defining sentence is agentless.** (L780–784) "…we read off a Z-bilinear closed product φ(u,v) := R on Λ" makes the authorship of the read-off explicit.
 7. **"Egan and Baez's closure" vs. "Baez–Egan" heading.** (L761–762) Align unless the reversal is a deliberate nod to Egan's computational role.
 8. **Jordan-product factor naming differs from Baez's part 10.** (L722–731) Formulas are explicit so nothing is wrong; optional half-sentence noting the convention.
-9. **Wilson 2009 "§5" pinpoint unconfirmed.** (L695–703) Check the printed paper; the remark may sit in an unnumbered closing note (p. 2190).
+9. **Wilson 2009 "§5" pinpoint.** (L695–703) Correct as printed: Wilson's bracketed note on Dixon's formula is in Section 5 (p. 2189).
 10. **"The tables verify, the quotient explains" vs. Conclusion's "does not explain".** (L1316–1318) "…the quotient explains what they certify" (or "interprets") keeps the *why* open.
 11. **A.1 closing program: what varies is implicit.** (L1386–1389) Add "…as the twist varies over the closing permutations of Remark 4.6, i.e. which of the 17,280 complementary Lagrangian pairs are realized".
 12. **Remark 5.4's open question could hand the reader a first invariant.** (L679–680) E.g. behavior of S/2Λ under the three block projections to L/2L, or which Co₀-coset types S meets.

@@ -1,6 +1,6 @@
 # Trial 007 Results — Triple Kirmse-twisted octonion algebra
 
-Created: 2026-04-11.  Updated: 2026-10-24.
+Created: 2026-04-11.  Updated: 2026-10-28.
 
 ## Algebra tested
 
@@ -78,10 +78,12 @@ trial_007_scaled_test.py, trial_007_fast.py and trial_007_exhaust.py test
 
 ## Phase 3: Broader permutation survey
 
-Not all permutations work. A survey of ~200 random permutations across all
-cycle types shows:
+Not all permutations work. A survey of permutations of seven cycle types
+gave the following; no program in the repository reproduces it, and the
+exact counts over all of S₇ are those of the paper's Section 5.6
+(`sec:census`; `python_project/src/verify_all_permutations_exact.py`):
 
-| Cycle type | Tested | Worked (0 failures) |
+| Cycle type | Worked (0 failures) / tested | Rate |
 |---|---|---|
 | (2,) transpositions | 2/2 | 100% |
 | (2,2) double-swaps | 4/5 | 80% |
@@ -94,11 +96,11 @@ cycle types shows:
 The pattern depends on the relationship between the permutation and the
 Fano-plane structure, not on cycle type or parity alone.
 
-### What distinguishes working from non-working permutations
+### What distinguishes working from nonworking permutations
 
 Fano-plane automorphisms (index-doubling, identity) give the SAME
 multiplication as the standard and inherit its type3×type3 failure.
-Non-automorphism permutations give genuinely different multiplications.
+Permutations that are not automorphisms give genuinely different multiplications.
 Among these, SOME close on the Leech lattice and others do not.  All
 transpositions close.  The criterion for general permutations is the
 paper's Proposition 5.3 (`prop:criterion`): the twisted product
@@ -113,8 +115,8 @@ exact census over all of S₇ is the paper's Section 5.6 (`sec:census`).
 | Standard | ≈74% | Condition 3 only (x+y+z ∈ Ls) |
 | swap(1,2) | 0% | (none) |
 
-The transposition fixes precisely the Wilson condition 3 failure that has
-been the consistent failure mode since trial 001.
+The transposition removes precisely the Wilson condition 3 failure of the
+untwisted product (trials 001 and 003).
 
 ## Product norm distribution (swap(1,2), type3×type3)
 
@@ -138,9 +140,10 @@ The triple octonion product with Z₃ cross-block routing closes on the Leech
 lattice Λ when the octonion multiplication is obtained from the standard Fano
 triples by applying any transposition of imaginary basis elements.  This is a
 different but isomorphic octonion algebra on the same R⁸.  The transposition
-introduces sign changes in certain structure constants that align the
-three-block sum with Wilson's sublattice Ls, fixing the condition-3 failure
-of the standard multiplication.
+changes entries of the multiplication table in sign or target (swap(1,2)
+changes 30 of the 64 entries; trial_007_explanation.py), so that Ls is
+closed under the twisted product (paper Lemma 4.4 and Proposition 5.3), which
+removes the condition-3 failure of the standard multiplication.
 
 **This means (Λ, +, ·) is an order in the R-algebra (R²⁴, +, ·)**, where ·
 is the transposition-twisted triple octonion product, the paper's
@@ -182,8 +185,9 @@ an order under an octonion-derived bilinear product.
    multiplication and reproduce the trial 001 failure.
 3. Transpositions of imaginary basis elements produce a DIFFERENT
    multiplication that closes on Λ.
-4. The correction fixes Wilson condition 3 (x+y+z ∈ Ls) for type3×type3
-   products — the exact failure mode of all prior trials.
+4. The twist removes the failure of Wilson condition 3 (x+y+z ∈ Ls) on
+   type3×type3 products, the failure mode of the untwisted product (trials
+   001 and 003).
 
 ## Questions raised by this trial
 
@@ -193,7 +197,7 @@ an order under an octonion-derived bilinear product.
    Section 5 (`sec:properties`).  The automorphism group of the order is
    C₆ × S₃, of order 36, strictly inside Co₀ (paper Section 5.4,
    `sec:autgroup`).
-3. The criterion distinguishing working from non-working permutations:
+3. The criterion distinguishing working from nonworking permutations:
    paper Proposition 5.3 (`prop:criterion`), with the census of paper
    Section 5.6 (`sec:census`).  A reason for the closure pattern beyond the
    2-cycles, in particular for the failure of every 4-cycle and for the

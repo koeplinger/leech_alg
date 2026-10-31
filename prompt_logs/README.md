@@ -1,6 +1,8 @@
 # Prompt Logs
 
-This folder contains a chronological, enumerated record of every prompt submitted to the AI agent during this research project.
+Created: 2026-04-06.  Updated: 2026-10-28.
+
+This folder contains a chronological, enumerated record of every prompt submitted to the AI agent during this research project.  Two numbers have no file of their own: prompt 073 was interrupted, and `074_gap_loops_tests_retry.txt` records its retry; prompt 112 is recorded in `111_substantial_update_plan.txt`.  The numbers 233 to 236 are each shared by a prompt of 17 July 2026 and the logs of subagent verifications run that day.
 
 The discovery is at [prompt 025](025_triple_kirmse_twisted_octonions.txt) (11 April 2026), where the construction was proposed; the prompts that follow trace how the result was checked and verified.  The effort was closed at [prompts 279 and 280](279_project_closing_note.txt) (27 July 2026) and reopened at [prompt 281](281_reopen_project_v8_readthrough_comments.txt) (12 October 2026) for the v8 revision of the paper.
 
@@ -37,7 +39,7 @@ onward (subsequent paper-revision cycles through the v5 freeze and
 beyond) are not enumerated here: the directory listing of `prompt_logs/`
 is the canonical record, and each file is self-describing (the prompt
 is the first content of every file, with a date stamp).  Per Manifesto §12 and
-`DOCUMENT_GENRES.md`, *every* prompt log is immutable, enumerated here or not.
+`DOCUMENT_GENRES.md`, *every* prompt log entry is immutable once closed, enumerated here or not.
 
 ### Foundational phase (prompts 001–069)
 
@@ -58,7 +60,7 @@ is the first content of every file, with a date stamp).  Per Manifesto §12 and
 | [013_okubo_algebra_implementation.txt](013_okubo_algebra_implementation.txt) | Implement Okubo algebra with multiple constructions and comprehensive tests |
 | [014_okubo_samples.txt](014_okubo_samples.txt) | Instructive examples of Petersson τ constructions in okubo_samples.py |
 | [015_trial_methodology_and_trial_001.txt](015_trial_methodology_and_trial_001.txt) | Trial methodology established; trial 001 (triple-octonion algebra) implemented and run; type3×type3 failure isolated |
-| [016_trial_002_scaled_basis.txt](016_trial_002_scaled_basis.txt) | Trial 002: per-block scaling search; two structural obstructions found (norm bound + lattice membership) |
+| [016_trial_002_scaled_basis.txt](016_trial_002_scaled_basis.txt) | Trial 002: per-block scaling search, products normalized to norm 8; no closure on Min(Λ) (lattice obstruction) |
 | [017_zmodule_vs_order_correction.txt](017_zmodule_vs_order_correction.txt) | User self-corrects: the goal is an order on Λ, not a Z-module; terminology clarified |
 | [018_terminology_update_order.txt](018_terminology_update_order.txt) | Replace "Z-module"/"Z-algebra" with "order" across all non-prompt-log files |
 | [019_ideas_additional_tests.txt](019_ideas_additional_tests.txt) | Six ideas for additional tests to rule out the triple-octonion algebra; conjugation + sign + routing sweep recommended |
@@ -82,7 +84,7 @@ is the first content of every file, with a date stamp).  Per Manifesto §12 and
 | [037_kirmse_distinction.txt](037_kirmse_distinction.txt) | Kirmse/Coxeter distinction and attribution; historical accuracy |
 | [038_shells_vs_order.txt](038_shells_vs_order.txt) | "Shells" vs. "order" terminology tightened |
 | [039_paper_updates_kirmse_shells.txt](039_paper_updates_kirmse_shells.txt) | Paper edits: Kirmse attribution, shells-vs-order usage |
-| [040_elduque_and_acknowledgments.txt](040_elduque_and_acknowledgments.txt) | Elduque references integrated; acknowledgements drafted |
+| [040_elduque_and_acknowledgments.txt](040_elduque_and_acknowledgments.txt) | Elduque references integrated; acknowledgments drafted |
 | [041_outlook_soft_references.txt](041_outlook_soft_references.txt) | Outlook section softened; forward-looking references added |
 | [042_furey_hughes_trio_of_trialities.txt](042_furey_hughes_trio_of_trialities.txt) | Furey/Hughes arXiv:2409.17948 correctly cited |
 | [043_readme_update_and_abstract_tweaks.txt](043_readme_update_and_abstract_tweaks.txt) | README refreshed; abstract tightened; repository URL set |

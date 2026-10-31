@@ -1,6 +1,8 @@
 Topic: Computer algebra systems used in the verification suites
 ==============================================================
 
+Created: 2026-04-28.  Updated: 2026-10-28.
+
 This file collects references for the software systems used to verify the
 claims in the paper and the companion.  The Python suite in
 python_project/ uses standard scientific-Python libraries (NumPy, SymPy,
@@ -33,8 +35,9 @@ of which are recorded below.
 - **Notes**: Used by gap_project/ for exact-rational verification of the
   octonion multiplication, the E_8 lattice L = D_8^+, the sublattices
   Ls and Lsbar, the σ-twisted octonion product, the four lemmas of
-  paper Section 4, and Theorem 1.1 (closure of the Leech lattice
-  under the Z₃-symmetric triple-octonion product).  The suite uses no
+  paper Section 4 (on Z-bases), and a spot check of Theorem 1.1 (closure
+  of the Leech lattice under the Z₃-symmetric triple-octonion product)
+  on sampled products of minimal vectors.  The suite uses no
   floating-point arithmetic; all checks are exact over Q.
 
 ---
@@ -62,7 +65,7 @@ of which are recorded below.
   maintained publicly by Nagy and Vojtěchovský since the mid-2000s.  It
   draws on the standard quasigroup-theoretic literature; its
   implementations of e.g. the Moufang-loop classification (Goodaire et
-  al.; Nagy-Vojtěchovský 2007 for order 64; Slattery-Zenisek 2012 for
+  al.; Nagy–Vojtěchovský 2007 for order 64; Slattery–Zenisek 2012 for
   order 243) are correctly attributed in the package documentation.  No
   dispute over the package's authorship is known.
 - **Notes**: Used by gap_project/tests/test_octonion.g for an

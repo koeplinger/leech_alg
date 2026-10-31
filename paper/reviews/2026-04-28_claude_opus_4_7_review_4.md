@@ -1,5 +1,7 @@
 # Formal referee review of the main paper (round 5)
 
+Created: 2026-04-28.  Updated: 2026-10-28.
+
 **Date:** 2026-04-28 (fourth of the day)
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product* (Köplinger), version of 28 April 2026 (post-Prompts 086 and 087), together with the supplemental repository as context.
@@ -59,7 +61,7 @@ These have appeared in every previous review and each has been explicitly held b
 - **§6 Comparison paragraph** does not extend to the three earlier precursors (Conway–Sloane 1982, Lepowsky–Meurman 1982, Elkies–Gross 1996) named in the same section.
 - **Validation cross-check protocol** between Appendix A and the Python / GAP-LOOPS implementations is asserted but not described in detail.
 - **First-occurrence footnote on the "order" terminology** is not yet attached to Theorem 1.1 / Corollary 1.3.
-- **§3.3 (Egan/Baez investigation)** — flagged in Prompt 077 as a deep-dive item to do *before* finalising the §6 Comparison paragraph. Not part of the polish trail; this is where the author intends to direct the next investigative step.
+- **§3.3 (Egan/Baez investigation)** — flagged in Prompt 082 as a deep-dive item to do *before* finalising the §6 Comparison paragraph. Not part of the polish trail; this is where the author intends to direct the next investigative step.
 
 ---
 
@@ -67,9 +69,9 @@ These have appeared in every previous review and each has been explicitly held b
 
 I report these for completeness; both are below the threshold that would normally warrant a round.
 
-### 3.1 Mild duplication of the seven-orders fact ([main.tex:91–94](../main.tex#L91-L94) and [main.tex:200–203](../main.tex#L200-L203))
+### 3.1 Mild duplication of the seven-orders claim ([main.tex:91–94](../main.tex#L91-L94) and [main.tex:200–203](../main.tex#L200-L203))
 
-The §1 mention ("Seven octonion-multiplication conventions on $\mathbb{R}^8$…") and Remark 2.3's mention ("There are seven such Coxeter-corrected conventions, each giving one of the seven maximal orders…") state essentially the same fact. They are framed differently — the §1 mention is a high-level introduction to the question, the Remark a historical aside in the Kirmse–Coxeter context — and a reader will not be confused. A trim to one place is possible but not required.
+The §1 mention ("Seven octonion-multiplication conventions on $\mathbb{R}^8$…") and Remark 2.3's mention ("There are seven such Coxeter-corrected conventions, each giving one of the seven maximal orders…") state essentially the same claim, which is false for $L$: $L$ is closed under all 480 octonion multiplication tables on $e_0, \ldots, e_7$ (`2026-10-12_claude_fable_5_1_review_v8.md`, SF4). They are framed differently — the §1 mention is a high-level introduction to the question, the Remark a historical aside in the Kirmse–Coxeter context — and a reader will not be confused. A trim to one place is possible but not required.
 
 ### 3.2 Appendix A specialises to $\sigma = (1\;2)$ without comment ([main.tex:900](../main.tex#L900))
 
@@ -95,6 +97,6 @@ The manuscript is in good shape and ready for the planned next investigative ste
 
 ---
 
-## 6. Disposition by the author (to be added)
+## 6. Suggested disposition
 
 Author may close out items 3.1 and 3.2 above, accept the carry-overs as held, and proceed.

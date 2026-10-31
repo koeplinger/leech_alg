@@ -1,10 +1,12 @@
 # Journal-quality review of v4 (round 2)
 
+Created: 2026-05-25.  Updated: 2026-10-28.
+
 **Date:** 2026-05-24
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v4 (24 May 2026), 19 pp.
 **Prompt:** 185.
-**Purpose of this round:** the manuscript has undergone substantial section-by-section reworking since the round-1 journal review (prompt 159, dated 23 May). This pass checks whether those edits have *improved* the paper end-to-end and whether any *regressions* slipped in.
+**Purpose of this round:** the manuscript has undergone substantial section-by-section reworking since the round-1 journal review (prompt 159, dated 24 May). This pass checks whether those edits have *improved* the paper end-to-end and whether any *regressions* slipped in.
 
 ---
 
@@ -85,7 +87,7 @@ This is the historically accurate chain. It also matches the way Appendix B read
 
 ### II.1 Em-dashes in Appendix B (editorial standard violation)
 
-**Location:** [paper/main.tex:1344](paper/main.tex#L1344) — the Kirmse paragraph contains:
+**Location:** [paper/main.tex:1344](../main_2026-05-25.tex#L1344) — the Kirmse paragraph contains:
 
 > "...and he derived a correct *necessary* form for the maximal orders **---** thirty $E_8$-type lattices realise it **---** without proving sufficiency."
 
@@ -93,7 +95,7 @@ Two `---` (em-dash) occurrences in prose. Editorial standard 4 forbids `---` (em
 
 ### II.2 §1 intro: division-algebra wording lags behind §2.1
 
-**Location:** [paper/main.tex:123-124](paper/main.tex#L123-L124):
+**Location:** [paper/main.tex:123-124](../main_2026-05-25.tex#L123-L124):
 
 > "In rank 8, the $E_8$ lattice $L$ carries an octonionic multiplication that makes it a maximal order in the real octonion division algebra."
 
@@ -103,7 +105,7 @@ After §2.1 was updated to scope "division algebra" to *unital* algebras (Hurwit
 
 ### II.3 Remark 1.3 still has the "subring as Z-module" language
 
-**Location:** [paper/main.tex:182-185](paper/main.tex#L182-L185), inside `rem:order-closure`:
+**Location:** [paper/main.tex:182-185](../main_2026-05-25.tex#L182-L185), inside `rem:order-closure`:
 
 > "...consistent with $(\Lambda, +, \star)$ being an order in the ring-theoretic sense — **a subring that is a free $\mathbb{Z}$-module of rank equal to the ambient algebra's dimension** — a property weaker than..."
 
@@ -117,7 +119,7 @@ Just for the record — these are en-dash usages, conforming to the editorial st
 
 ## III. Status of items raised in the round-1 review
 
-The round-1 review (prompt 159, 23 May) recommended three optional final-pass touches; all three were applied (prompt 160):
+The round-1 review (prompt 159, 24 May) recommended three optional final-pass touches; all three were applied (prompt 160):
 
 | Item | Recommendation | Applied |
 |---|---|---|
@@ -159,11 +161,11 @@ The closing of the abstract's historical paragraph says "The map σ of the prese
 
 In priority order:
 
-1. **(Required, editorial standard)** [paper/main.tex:1344](paper/main.tex#L1344): replace the two `---` (em-dash) in the Kirmse paragraph with `--` (en-dash). One small Edit.
+1. **(Required, editorial standard)** [paper/main.tex:1344](../main_2026-05-25.tex#L1344): replace the two `---` (em-dash) in the Kirmse paragraph with `--` (en-dash). One small Edit.
 
-2. **(Optional, consistency)** [paper/main.tex:124](paper/main.tex#L124): drop "division" from "the real octonion division algebra" — "the real octonion algebra" suffices given §2.1's scoping.
+2. **(Optional, consistency)** [paper/main.tex:124](../main_2026-05-25.tex#L124): drop "division" from "the real octonion division algebra" — "the real octonion algebra" suffices given §2.1's scoping.
 
-3. **(Optional, consistency)** [paper/main.tex:183-184](paper/main.tex#L183-L184), inside `rem:order-closure`: consider whether to trim "a subring that is a free $\mathbb{Z}$-module of rank equal to the ambient algebra's dimension" for parity with the trimmed Cor 1.2. Technically OK as written.
+3. **(Optional, consistency)** [paper/main.tex:183-184](../main_2026-05-25.tex#L183-L184), inside `rem:order-closure`: consider whether to trim "a subring that is a free $\mathbb{Z}$-module of rank equal to the ambient algebra's dimension" for parity with the trimmed Cor 1.2. Technically OK as written.
 
 Items 2 and 3 are author's choice. Item 1 is the only editorial standard violation I found.
 

@@ -2,24 +2,26 @@
 ##
 ##  run_all.g — Driver script for the GAP/LOOPS verification suite.
 ##
+##  Created: 2026-04-28.  Updated: 2026-10-28.
+##
 ##  Usage (from the repository root):
 ##      gap -q gap_project/run_all.g
 ##
 ##  Or, from any directory:
 ##      gap -q -c 'GAP_PROJECT_ROOT := "/abs/path/to/leech_alg/gap_project";' \
-##              gap_project/run_all.g
+##              /abs/path/to/leech_alg/gap_project/run_all.g
 ##
 ##  Loads the LOOPS package, then runs each tests/*.g in sequence, tracking
 ##  pass/fail counts.  Prints a final summary and exits with code 0 if all
-##  tests pass, non-zero otherwise.
+##  tests pass, nonzero otherwise.
 ##
-##  Requires:  GAP 4.x and the LOOPS package (`apt install gap` plus the
-##  LOOPS package via gap_packages, or install via GAP's PackageManager).
+##  Requires:  GAP 4.x (`apt install gap`) and the LOOPS package (see
+##  gap_project/README.md for how to install it).
 ##
 #############################################################################
 
-# Determine GAP_PROJECT_ROOT: either set by the caller, or derived from this
-# file's location.  For simplicity we require either:
+# Determine GAP_PROJECT_ROOT: either set by the caller, or the relative
+# path "gap_project".  So we require either:
 #   (a) the working directory equals the repository root, in which case
 #       "gap_project" is the relative path; OR
 #   (b) GAP_PROJECT_ROOT is already set as an absolute path.

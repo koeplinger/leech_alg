@@ -1,4 +1,9 @@
-"""Task A, part 2: COMPLETE classification of the idempotents of (R^24, +, star).
+"""COMPLETE classification of the idempotents of (R^24, +, star).
+
+Created: 2026-07-12.  Updated: 2026-10-28.
+
+The paper cites this script in Section 5.2 (label sec:idempotents), for the
+eight idempotents (5.1) (label eq:idempotents).
 
 RESULT.  The algebra has exactly EIGHT idempotents (u star u = u), namely
 
@@ -48,8 +53,8 @@ PROOF, each step verified exactly below (all arithmetic in Fractions/sympy):
  S8.  Hence every idempotent has zero imaginary part, i.e. lies in A_3, and
       the 8 solutions of S7 (read over R) are the complete list.       QED
 
-Independent second pass: (i) a float Newton search from 20000 random starts
-in R^24 converges only to the eight (reported, but only as corroboration --
+Independent second pass: (i) a float Newton search from 5000 random starts
+in R^24 converges only to the eight (reported only as corroboration:
 it is floating point and proves nothing); (ii) the 8 are re-verified with the
 independently coded star of verify_ideal_decomposition.py.
 """
@@ -131,7 +136,7 @@ def main():
         print(f"  {name:<14} {show(u):<34} u*u = u : {good}")
     print()
 
-    # eps_i acts as a block transposition (H2)
+    # eps_i acts on either side as the swap of the other two blocks (paper Section 5.3)
     print("=== left/right multiplication by eps_i ===")
     rng = random.Random(7)
     def rv():

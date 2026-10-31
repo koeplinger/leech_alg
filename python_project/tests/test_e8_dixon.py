@@ -1,6 +1,8 @@
 """
 test_e8_dixon.py — Verification of Dixon's E8 lattice constructions.
 
+Created: 2026-04-07.  Updated: 2026-10-28.
+
 Dixon [Dixon2010] defines two families of 240-element sets inside the octonion
 algebra, each forming the minimal-vector shell of an E8 lattice representation:
 
@@ -482,8 +484,8 @@ class TestAOddVsWilson:
     """
     Relation between Dixon's A^odd and Wilson's E8 roots.
 
-    A₁ consists of ±e_a ± e_b for distinct a,b — identical to Wilson's 112
-    type-1 roots.
+    A₁ consists of ±e_a ± e_b for distinct a,b; these are exactly Wilson's
+    112 type-1 roots.
 
     A₃ uses EVEN number of minus signs among the 8 coordinates, whereas
     Wilson's type-2 roots use an ODD number of minus signs.  The two sets are

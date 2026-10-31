@@ -1,15 +1,16 @@
 Claim number: 008
 Title: The Z₃-symmetric triple-octonion product is an order on the Leech lattice Λ
 Status: ESTABLISHED (symbolic proof + independent computational verification)
-Created: 2026-04-12.  Updated: 2026-10-24.
+Created: 2026-04-12.  Updated: 2026-10-28.
 
 --- RELATION TO CLAIM 007 ---
 
 Claim 007 rules out the *untwisted* triple-octonion algebra, together with
-the discrete and continuous modifications tested there, as an order on Λ.
+the modifications tested there for closure on Λ (trials 003 and 004), as an
+order on Λ.
 Claim 008 is not a revision of 007: claim 007 holds for the family it
 covers.  Claim 008 records a positive finding obtained by leaving that
-family — specifically, by twisting the single octonion multiplication used
+family, specifically by twisting the single octonion multiplication used
 in all three blocks via a transposition of imaginary basis elements, a
 construction not included in the discrete variants exhausted under claim
 007.
@@ -36,9 +37,9 @@ for {α, β, γ} = {1, 2, 3}).  It is an octonion product in all three
 blocks; the transposition σ is the device that exhibits its fit with
 Wilson's representation, not a new algebra.
 
-Then the Leech lattice Λ (in Wilson's E8-triple realisation) is closed
+Then the Leech lattice Λ (in Wilson's E8-triple realization) is closed
 under this product.  Consequently (Λ, +, ·_σ-triple) is an order in
-the real non-associative R-algebra (R²⁴, +, ·_σ-triple) (paper Theorem 1.1
+the real nonassociative R-algebra (R²⁴, +, ·_σ-triple) (paper Theorem 1.1
 and Corollary 1.2, `thm:main` and `cor:order`).
 
 --- PROOF ---
@@ -69,18 +70,18 @@ lattice M containing a purely imaginary x (paper (4.3),
 σ(Ls) ≠ Ls, so the twist does nontrivial work; this is paper Remark 4.5
 (`rem:Ls-not-closed`), not a step of the closure proof.
 
-The core structural point: v ·_σ w, expanded via the bilinearity
-decomposition, reduces each of Wilson's three sublattice conditions to
-a statement about standard octonion products of the σ-images of the
-input blocks.  Wilson's condition (3) becomes σ(Ls) · σ(Ls) ⊆ σ(Ls),
+The core structural point: the ·_σ-triple product of v and w, expanded
+via the bilinearity decomposition, reduces each of Wilson's three
+sublattice conditions to a statement about standard octonion products of
+the σ-images of the input blocks.  Wilson's condition (3) becomes σ(Ls) · σ(Ls) ⊆ σ(Ls),
 which holds (Lemma 4.4); the analogous statement for Ls itself is
-*false* for the untwisted product — this is precisely the condition-3
+*false* for the untwisted product; this is precisely the condition-3
 failure recorded in claim 007.
 
 The finite content of the proof is the closure of 𝒪 on a Z-basis and the
 identities σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 on eight products each
 (python_project/src/verify_structural_proof.py).  The checks of Lemmas 4.2
-to 4.4 on basis pairs, 64 products per lemma, are kept as validation (paper
+to 4.4 on basis pairs, 64 products per lemma, serve as validation (paper
 Appendix C, `sec:methodology`); they are discharged by exact rational
 arithmetic.
 

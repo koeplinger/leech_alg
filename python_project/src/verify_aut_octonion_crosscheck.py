@@ -1,7 +1,7 @@
-"""Independent cross-checks of the three octonion-automorphism stabilisers
+"""Independent cross-checks of the three octonion-automorphism stabilizers
 that drive the Aut(Lambda,+,star) enumeration.
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-10-28.
 
 verify_aut_lambda_star.py enumerates, completely,
         Stab(L)      := Aut(O,.s) ^ {A : A(L)     = L}      order  1344
@@ -23,8 +23,8 @@ being COMPLETE, so they are cross-checked here in two independent ways.
        Hence EVERY A in Stab(L) is a signed permutation of e_1..e_7 fixing e_0.
        All 2^7 * 7! = 645120 signed permutations are therefore tested directly.
        (The forcing argument uses roots of norm 2 and does NOT apply to Ls or
-       Lsbar, whose minimal vectors have norm 4 -- and indeed those two
-       stabilisers do contain non-monomial elements.)
+       Lsbar, whose minimal vectors have norm 4; and indeed those two
+       stabilizers do contain nonmonomial elements.)
 
 Also exports 8x8 generators of the three groups to
 gap_project/octonion_stabilisers_gens.g, from which

@@ -3,6 +3,8 @@
 ##  e8_wilson.g — Wilson's E_8 lattice L = D_8^+ in the octonionic basis,
 ##  matching python_project/src/e8_wilson.py exactly.
 ##
+##  Created: 2026-04-28.  Updated: 2026-10-28.
+##
 ##  Wilson [Wilson2009, Section 2] uses an integer span of 240 octonions:
 ##    Type-1 (112): ±e_a ± e_b for distinct a, b in {0,...,7}.
 ##    Type-2 (128): (1/2)(±e_0 ± ... ± e_7) with an ODD number of minus signs.
@@ -113,8 +115,8 @@ WILSON_S_BAR := OctConjugate(WILSON_S);            # = (-1/2,...,-1/2), sum -4
 # Construction: take WILSON_S (a type-2 root, providing the half-integer
 # coset that D_8 alone misses), then 7 type-1 roots that together with
 # WILSON_S form an 8x8 matrix of full rank.  By the determinant argument in
-# python_project/src/e8_wilson.py (see test_e8_wilson.py / TestRankAndSelfDuality),
-# this basis has |det| = 1, so it is a unimodular Z-basis of L.
+# python_project/tests/test_e8_wilson.py (TestRankAndSelfDuality), this basis
+# has |det| = 1, so it is a unimodular Z-basis of L.
 # ---------------------------------------------------------------------------
 
 BuildLBasis := function()

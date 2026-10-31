@@ -1,6 +1,8 @@
 """
 trial_004_basis_automorphisms.py — Basis changes via E8 lattice automorphisms.
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Algebra family tested
 =====================
 Same base multiplication rule as trial 001: three copies of the octonion
@@ -28,17 +30,19 @@ Key insight: if T₁ = T₂ = T₃ = T for some T ∈ Aut(O) ∩ Aut(L) (an
 octonion automorphism that also preserves L), then ★ is identical to the
 original product (conjugation by an algebra automorphism doesn't change the
 algebra).  So only automorphisms OUTSIDE the octonion automorphism group G₂
-give genuinely different algebras.
+give a different product.  Every choice of T₁, T₂, T₃ gives an algebra
+isomorphic to the original one, via diag(T₁, T₂, T₃); what changes is whether
+Λ is closed under it.
 
 Strategy
 ========
-The full Aut(L) = W(E₈) has order 696,729,600 — far too large to sweep.
+The full Aut(L) = W(E₈) has order 696,729,600, far too large to sweep.
 Instead, we sample a manageable set of E8 automorphisms:
 
   1. SIGN CHANGES: flipping signs of individual coordinates.  These are
      diagonal matrices with ±1 entries.  Must preserve L, so the number of
      sign flips must be even (to preserve sum parity).  This gives 2⁷ = 128
-     sign patterns (we fix the sign of e₀ to reduce redundancy).
+     sign patterns (the sign of e₀ is set by the parity of the other seven).
 
   2. COORDINATE PERMUTATIONS: permuting the 8 coordinates.  Not all
      permutations preserve L; we need the sum-parity to be maintained.  All
@@ -52,8 +56,8 @@ Instead, we sample a manageable set of E8 automorphisms:
 
 We sample 500 random automorphisms from this family and apply each one
 to ONE block (T₁ = T, T₂ = T₃ = I), testing whether the modified product
-closes on the Leech lattice.  We also test a few cases with different
-automorphisms on different blocks.
+closes on the Leech lattice.  We also test 500 random triples (T₁, T₂, T₃)
+of independent automorphisms, and all 128 even sign changes on one block.
 
 References
 ==========
@@ -480,11 +484,10 @@ def run_trial(n_automorphisms=500, verbose=True):
             print("\n✓ Found basis change(s) with 100% closure! "
                   "Further testing needed.")
         else:
-            print(f"\n✗ No E8 automorphism basis change achieves closure.")
+            print(f"\n✗ No sampled E8 automorphism basis change achieves closure.")
             print(f"  Best overall rate: {overall_best*100:.1f}%")
-            print(f"  This provides strong evidence that the triple-octonion")
-            print(f"  algebra cannot be rescued by changing the basis within")
-            print(f"  each E8 block.")
+            print(f"  The basis change T₁ = T₂ = T₃ = σ, not sampled here,")
+            print(f"  does close (trial 007; paper Theorem 1.1).")
 
     return {
         'baseline_rate': n_ok_baseline / max(1, n_nz_baseline),

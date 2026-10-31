@@ -1,7 +1,7 @@
 """
 leech_wilson.py — Wilson's octonionic Leech lattice construction.
 
-Created: 2026-04-07.  Updated: 2026-10-24.
+Created: 2026-04-07.  Updated: 2026-10-28.
 
 The Leech lattice as an integral octonion lattice
 --------------------------------------------------
@@ -16,7 +16,7 @@ Conway–Smith 2003; paper Section 1, `sec:intro`, and Appendix B,
 `app:history`; verify_sigma_sublattice_maximal_order.py, item (A)); without
 that condition there are infinitely many.  Because L carries the octonion
 product, L³ inherits candidate algebraic structure.  The membership
-conditions (1)–(3) below characterise exactly which elements of L³ belong
+conditions (1)–(3) below characterize exactly which elements of L³ belong
 to Λ.
 
 The paper proves that Λ is closed under the Z₃-symmetric triple-octonion
@@ -24,25 +24,27 @@ product built from the σ-twisted octonion product, so that Λ is an order in
 R^24 (paper Theorem 1.1, `thm:main`, and Corollary 1.2, `cor:order`; proof
 in Section 4, `sec:proof`).  Dixon [Dixon2010] constructs Λ with an
 octonion XY-product.  Wilson's construction provides the reference object:
-Λ as a precisely characterised rank-24 Z-lattice with algebraic membership
+Λ as a precisely characterized rank-24 Z-lattice with algebraic membership
 conditions.
 
 The minimal-vector shell of Λ consists of the 196,560 vectors of minimum
 norm (N_std = 8 in the standard R^24 metric), partitioned into three families.
-These are the analogue, for the Leech lattice, of the 240 roots in E8 — the
-extremal vectors that generate and characterise the lattice.  (The Leech
+These are the analogue, for the Leech lattice, of the 240 roots in E8: the
+extremal vectors that generate and characterize the lattice.  (The Leech
 lattice has no vectors of norm 2, so it has no root system in the classical
 Lie-theoretic sense; the minimal-vector shell plays the equivalent structural
 role.)
 
-What this module establishes
-----------------------------
+What this module provides
+-------------------------
 1. A membership test is_in_leech(x, y, z): Wilson's three conditions.
 2. The three families of 196,560 minimal-shell vectors.
-3. The Leech lattice is rank 24, even, self-dual (Gram det = 1 under Wilson's
-   inner product), and has minimum norm 8.
+3. The properties of Λ it relies on: rank 24 (tested in
+   python_project/tests/test_leech_wilson.py), evenness and minimum norm 8
+   (the proof below), and self-duality (Gram det = 1 under Wilson's inner
+   product; [Wilson2009]).
 
-These together uniquely characterise the Leech lattice by Conway's theorem
+These together uniquely characterize the Leech lattice by Conway's theorem
 [Conway–Sloane, Chapter 12].  The membership test and minimal-vector shell
 serve as the reference for checking whether a proposed product maps E8 elements
 into the Leech lattice.
@@ -295,7 +297,7 @@ def leech_type1_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     """
     Return the 720 type-1 minimal vectors of Λ.
 
-    Formula: (2λ, 0, 0) and its 3 cyclic permutations,
+    Formula: (2λ, 0, 0) and its 2 cyclic shifts,
     where λ runs over the 240 roots of L.
 
     Norm: N_std(2λ, 0, 0) = N(2λ) = 4·N(λ) = 4·2 = 8. ✓
@@ -315,7 +317,7 @@ def leech_type2_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     """
     Return the 11,520 type-2 minimal vectors of Λ.
 
-    Formula: (λs̄, (λs̄)j, 0) and its 3 cyclic permutations,
+    Formula: (λs̄, (λs̄)j, 0) and its 2 cyclic shifts,
     where λ runs over the 240 roots of L and j ∈ J (16 elements).
 
     Norm: N_std(λs̄, (λs̄)j, 0) = N(λ)N(s̄) + N(λ)N(s̄)N(j)
@@ -342,7 +344,7 @@ def leech_type3_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     """
     Return the 184,320 type-3 minimal vectors of Λ.
 
-    Formula: ((λs)j, λk, (λj)k) and its 3 cyclic permutations,
+    Formula: ((λs)j, λk, (λj)k) and its 2 cyclic shifts,
     where λ runs over the 240 roots of L and j, k ∈ J (16 elements each).
 
     Note: the first component uses s (Wilson's element WILSON_S), NOT s̄.
@@ -350,8 +352,9 @@ def leech_type3_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     in type-3 produces norm-8 vectors that do NOT satisfy Wilson's conditions.
     Reference: [Wilson2009] Section 3 — "((λs)j, ±λk, ±(λj)k)".
 
-    Wilson's bracketed note on Dixon's conjectured formula ([Wilson2009]
-    Section 5, p. 2189) concerns the multiplication by j in the first
+    Wilson's bracketed note on Dixon's conjectured formula (Dixon's 2005
+    preprint, Wilson's reference [12]; [Wilson2009] Section 5, p. 2189)
+    concerns the multiplication by j in the first
     coordinate: "in effect, his formula is equivalent to (λs, ±λk, ±(λj)k),
     that is, omitting the (necessary) multiplication by j in the first
     coordinate."
@@ -387,8 +390,8 @@ def leech_minimal_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     These are the 3 × 240 × (1 + 16 + 16×16) = 196,560 vectors of minimum
     norm (N_std = 8) in the Leech lattice, as listed in [Wilson2009] Section 3.
 
-    Note: calling this function computes ~200,000 octonion products and may
-    take several seconds.  Use the individual leech_type*_vectors() functions
+    Note: calling this function computes 69,120 octonion products and builds
+    196,560 vectors (under a second).  Use the individual leech_type*_vectors() functions
     when only a subset is needed.
     """
     return leech_type1_vectors() + leech_type2_vectors() + leech_type3_vectors()

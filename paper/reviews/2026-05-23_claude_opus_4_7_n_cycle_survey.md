@@ -1,5 +1,7 @@
 # Exact-arithmetic n-cycle closure survey
 
+Created: 2026-05-24.  Updated: 2026-10-28.
+
 **Date:** 2026-05-23
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 153 — double-check the 4-cycle total failure noted in
@@ -129,15 +131,17 @@ analog of paper §4:
 A structural argument for 4-cycle total failure would show that one of
 the latter two inclusions *always* fails when π is a 4-cycle. The script
 `verify_consecutive_twists_exact.py` already noted that the
-condition-2 inclusion is *sufficient but not necessary*; the genuine
-failure mode is the joint Λ-membership test, not either sublattice
-inclusion alone. So the structural argument needs to operate on Λ
-directly (or on a finer invariant that captures Λ).
+condition-2 inclusion is *sufficient but not necessary*; the paper's closure
+criterion for twists (`prop:criterion` in `paper/main.tex`) is exact:
+the triple product built from the π-twisted product closes on Λ
+exactly when π(Lsbar) and π(Ls) are both closed under the standard
+octonion product. So the structural argument can operate on these two
+sublattices.
 
 The mod-2 picture of Appendix A (V = σ(Lsbar)/2L is a left ideal,
 W = σ(Ls)/2L is a subalgebra of L/2L) is the natural place to look:
-for which π is π(Ls)/2L still a subalgebra? For which π is L · π(Lsbar)
-still in π(Lsbar) mod 2L? If 4-cycles uniformly violate one of these
+for which π is π(Ls)/2L still a subalgebra? For which π is π(Lsbar)/2L
+still a subalgebra? If 4-cycles uniformly violate one of these
 mod-2 conditions, that would give the structural argument.
 
 ## Cross-references

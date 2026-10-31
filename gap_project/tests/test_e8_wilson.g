@@ -3,13 +3,13 @@
 ##  test_e8_wilson.g — Wilson's E_8 lattice L = D_8^+ (paper Section 2.2,
 ##  Wilson [Wilson2009] Section 2).  Mirrors python_project/tests/test_e8_wilson.py.
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  Verifies:
 ##    1.  Type-1 root count = 112.
 ##    2.  Type-2 root count = 128.
 ##    3.  Total root count  = 240, all distinct.
-##    4.  Type-1 roots have exactly two non-zero coords, each +-1.
+##    4.  Type-1 roots have exactly two nonzero coords, each +-1.
 ##    5.  Type-2 roots have all coords +-1/2.
 ##    6.  All 240 roots have squared norm 2.
 ##    7.  All 240 roots pass IsInL.
@@ -24,7 +24,8 @@
 ##        s = (-1/2, 1/2, ..., 1/2) is in L (norm 2, type-2 root).
 ##        sbar = (-1/2, -1/2, ..., -1/2) has norm 2 but is NOT in L
 ##        (paper Section 2.3: even sum -4 falls in the excluded branch).
-##    15. Even lattice: pairwise sums and differences of roots have even norm.
+##    15. Even lattice: sums and differences of pairs among the first 20
+##        roots have even norm.
 ##    16. L * L  subset L  (all 57600 root products lie in L).
 ##        This is the Coxeter / paper Lemma 4.2 closure.
 ##    17. r * sbar in L for all 240 roots  (Lsbar subset L; Wilson Section 2).

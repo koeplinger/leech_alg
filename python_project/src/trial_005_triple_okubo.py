@@ -2,6 +2,8 @@
 trial_005_triple_okubo.py — Triple symmetric-composition algebra on R²⁴
 with Z₃-shifted Petersson isotopes.
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Algebra definition
 ==================
 
@@ -27,18 +29,17 @@ All three are symmetric composition algebras:
 
 The three algebras form a natural Z₃ orbit under the powers of τ.
 
-Why not three "shifted mediator" Okubo algebras?
--------------------------------------------------
-The user's original idea was to pick one Fano line (associative triple)
+The Z₃ orbit and the "shifted mediator" Okubo algebras
+------------------------------------------------------
+The author's original idea was to pick one Fano line (associative triple)
 and build three Okubo algebras by cyclically rotating which element of
-the triple serves as mediator.  Computational verification shows that for
-EVERY Fano line in the standard octonion algebra, only 1 or 2 of the 3
-cyclic mediators yield valid automorphisms (see prompt_logs/023).  No
-Fano line admits all three.
+the triple serves as mediator.  Every element of every Fano line mediates
+an order-3 automorphism, for one of the two relative senses of the two
+rotations (worked examples in okubo_samples.py).  This trial does not
+test those three algebras.
 
-The Z₃-orbit of Petersson isotopes {τ⁰, τ¹, τ²} is the closest valid
-construction to the user's intent: same Fano line, same τ, three
-"shifts" that are genuinely different algebras.
+It tests the Z₃-orbit of Petersson isotopes {τ⁰, τ¹, τ²}: same Fano line,
+same τ, three "shifts" that are genuinely different algebras.
 
 The 24-dimensional algebra
 --------------------------
@@ -60,7 +61,7 @@ in block γ's algebra.
 The Fano line and automorphism τ
 ---------------------------------
 Fano line: {e₁, e₃, e₇}  (the standard choice from [MarraniCorradettiZucconi2025]).
-Valid mediator: e₃.
+Mediator: e₃.
 Rotation pairs: (e₂, e₅) and (e₄, e₆), angle 2π/3.
 
 This trial includes the base test AND all discrete variants (conjugation,
@@ -68,7 +69,10 @@ sign, routing) as in trials 001 + 003, for exhaustiveness.
 
 References
 ==========
-[MarraniCorradettiZucconi2025]  eq. (1.5)–(1.6) for the Petersson isotope.
+[MarraniCorradettiZucconi2025]  A. Marrani, D. Corradetti, F. Zucconi,
+              "Physics with non-unital algebras? An invitation to the Okubo
+              algebra", J. Phys. A 58 (2025) 075202; eq. (1.5)–(1.6) for
+              the Petersson isotope.
 [Wilson2009]  R.A. Wilson, "Octonions and the Leech lattice",
               J. Algebra 322 (2009) 2186–2190.
 """
@@ -101,7 +105,8 @@ BLOCK_SLICES = [slice(0, 8), slice(8, 16), slice(16, 24)]
 
 def build_tau_matrix():
     """
-    The standard order-3 automorphism τ of the octonion algebra.
+    The order-3 automorphism τ of this trial: the inverse (τ²) of
+    okubo._standard_tau_matrix, the same matrix as tau1 of okubo_samples.py.
 
     Fixes: {e₀, e₁, e₃, e₇}  (quaternion subalgebra from Fano line {1,3,7}).
     Rotates: (e₂, e₅) and (e₄, e₆) by 2π/3.
@@ -522,7 +527,7 @@ def run_trial(verbose=True):
 
                                 if rate > best_rate:
                                     best_rate = rate
-                                    conj_strs = [CONJ_LABELS[cl*2+cr]
+                                    conj_strs = [CONJ_LABELS[cl+2*cr]
                                                  for cl, cr in conj_codes]
                                     sign_str = "".join("+" if s > 0 else "-"
                                                        for s in sign_codes)

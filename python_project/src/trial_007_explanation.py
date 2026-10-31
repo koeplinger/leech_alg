@@ -2,6 +2,8 @@
 trial_007_explanation.py — Demonstrate the transposition-twisted triple
 octonion product on the Leech lattice.
 
+Created: 2026-04-11.  Updated: 2026-10-28.
+
 This file is a self-contained, minimal demonstration of the finding from
 trial 007: applying a transposition of two imaginary basis elements to the
 standard Fano triples produces a different multiplication on R^8 that,
@@ -41,15 +43,17 @@ The standard and swapped algebras are both octonion algebras over R.
 Since the real octonion algebra is unique up to isomorphism, there exists
 a linear map φ: R^8 → R^8 such that φ(x ·_std y) = φ(x) ·_swap φ(y).
 
-But φ moves the lattice: φ(L) ≠ L in general.  The Leech lattice is a
-fixed geometric object in R^24.  The swapped multiplication happens to
-map Λ × Λ → Λ; the standard multiplication does not.
+The transposition itself, φ = σ, is such a map, and it fixes L (paper
+Lemma 4.1).  It moves Wilson's sublattices Ls̄ and Ls (paper Remark 4.5),
+and with them the Leech lattice: σ(Λ) ≠ Λ.  The Leech lattice is a fixed
+geometric object in R^24.  The swapped multiplication maps Λ × Λ → Λ; the
+standard multiplication does not.
 
 Analogy: consider the integers Z ⊂ R.  Define two multiplications on R:
   (a) standard: x · y = xy
-  (b) scaled:   x * y = 2xy
+  (b) scaled:   x * y = ½xy
 Both are isomorphic as R-algebras (via φ(x) = 2x).  But Z is closed
-under (a) and not under (b).  A different lattice (½Z) is closed under (b).
+under (a) and not under (b).  A different lattice (2Z) is closed under (b).
 
 References
 ==========

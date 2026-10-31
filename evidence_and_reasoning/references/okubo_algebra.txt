@@ -1,7 +1,7 @@
 Topic: Okubo algebra — constructions, properties, triality, and applications
 =====================================================================================
 
-Created: 2026-04-08.  Updated: 2026-10-24.
+Created: 2026-04-08.  Updated: 2026-10-28.
 
 This file collects references for the Okubo (pseudo-octonion) algebra and
 related structures: symmetric composition algebras, triality, automorphisms
@@ -70,7 +70,8 @@ and derivations of composition algebras, and applications.
   Hermitian matrices with product x*y = μ·xy + μ̄·yx − (1/3)Tr(xy); the
   Petersson construction from octonions via an order-3 automorphism τ; the
   norm n(x) = (1/6)Tr(x²); the idempotent e satisfying e*e = e; recovery
-  of the octonionic product via x·y = (e*x)*(y*e); Aut(Okubo) = SU(3);
+  of the octonionic product via x·y = (e*x)*(y*e); the action of SU(3) by
+  automorphisms (its center acts trivially, so Aut(Okubo) = SU(3)/Z₃);
   and conjectured connections to QCD (gluons as Okubo algebra elements).
 
 ---
@@ -92,8 +93,8 @@ and derivations of composition algebras, and applications.
 - **Notes**: Review of nonassociative algebras, especially Lie algebras
   satisfying the triality relation, and their connection to S₄ (symmetric
   group on 4 objects) symmetry. Authored by Susumu Okubo (the algebra's
-  namesake) and Noriaki Kamiya. Relevant for understanding the triality
-  principle from the perspective of its originator.
+  namesake) and Noriaki Kamiya. Relevant for understanding triality from
+  the perspective of the Okubo algebra's originator.
 
 ---
 
@@ -137,8 +138,10 @@ and derivations of composition algebras, and applications.
   is known at time of writing.
 - **Notes**: Develops the Principle of Local Triality for derivations and
   orthogonal Lie algebras of symmetric composition algebras. Computes
-  automorphism groups and derivation algebras: for Okubo algebras,
-  Aut = SU(3) and Der = su(3) (the 8-dimensional Lie algebra of type A₂).
+  automorphism groups and derivation algebras of symmetric composition
+  algebras. For the compact real Okubo algebra, Der = su(3) (the
+  8-dimensional Lie algebra of type A₂) and Aut = SU(3)/Z₃: SU(3) acts by
+  conjugation and its center acts trivially (paper Section 8).
   Establishes that symmetric composition algebras (para-Hurwitz and Okubo)
   satisfy (x*y)*x = x*(y*x) = n(x)y. Central reference for the triality
   framework connecting octonions, para-octonions, and Okubo algebras.

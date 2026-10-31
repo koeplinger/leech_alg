@@ -1,9 +1,9 @@
 """
 leech_dixon.py — Dixon's octonionic Leech lattice construction.
 
-Created: 2026-04-07.  Updated: 2026-10-25.
+Created: 2026-04-07.  Updated: 2026-10-28.
 
-Dixon [Dixon2010] Section 6 characterises the 196,560 minimal vectors of
+Dixon [Dixon2010] Section 6 characterizes the 196,560 minimal vectors of
 the Leech lattice in three explicit families built from the two E8
 representations A^odd and A^even, together with the base element ℓ₀.
 
@@ -62,8 +62,9 @@ the Wilson type-2 roots have an ODD number of minus signs.  The two sets of
 128 half-integer elements are disjoint (they partition all 256 sign patterns).
 
 As a consequence, Dixon's type-1 vectors (2P, 0, 0) for P ∈ A₃ are NOT in
-Wilson's lattice Λ (they require 2P ∈ Ls̄ ∩ Ls = 2L, but 2P ∉ 2L because 2P
-has coordinates ±1 which are not all even).  See test_leech_dixon.py for the
+Wilson's lattice Λ (they require 2P ∈ Ls̄ ∩ Ls = 2L, that is, P ∈ L,
+but P is a half-integer vector with an even coordinate sum, so P ∉ L; in fact
+2P lies in Ls̄ but not in Ls).  See test_leech_dixon.py for the
 computational confirmation of this finding.
 
 Integral octonion lattice interpretation
@@ -104,8 +105,8 @@ of minus signs = 0).  Dixon uses ℓ₀ to construct the third component of the
 type-3 minimal vectors.  Reference: [Dixon2010] Section 6, eq. (6).
 """
 
-# Precomputed at module load time — keeps generator functions O(n) without
-# recomputing the same products in different calls.
+# Precomputed at module load time, so that the generator functions stay O(n)
+# and do not recompute the same products in different calls.
 _a_odd:  List[Octonion] = dixon_a_odd()    # 240 norm-2 elements (A₁ ∪ A₃)
 _a_even: List[Octonion] = dixon_xi_even()  # 240 norm-1 elements (Ξ^even)
 
@@ -124,7 +125,7 @@ def dixon_leech_type1() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     """
     Return the 720 type-1 minimal vectors of Dixon's Leech construction.
 
-    Formula [Dixon2010 eq. (22)]: (2P, 0, 0) and its 3 cyclic permutations,
+    Formula [Dixon2010 eq. (22)]: (2P, 0, 0) and its 2 cyclic shifts,
     where P runs over all 240 elements of A^odd.
 
     Norm: N_std(2P, 0, 0) = 4·N(P) = 4·2 = 8. ✓
@@ -132,8 +133,8 @@ def dixon_leech_type1() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
 
     Note: A^odd = A₁ ∪ A₃.  Type-1 vectors with P ∈ A₁ satisfy Wilson's
     membership conditions (is_in_leech).  Type-1 vectors with P ∈ A₃ do
-    NOT (2P ∉ 2L = Ls̄ ∩ Ls, because 2P has coordinates ±1 which are not
-    all even).  See test_leech_dixon.py for computational confirmation.
+    NOT (2P ∉ 2L = Ls̄ ∩ Ls, because P ∉ L: P is a half-integer
+    vector with an even coordinate sum).  See test_leech_dixon.py for computational confirmation.
     Reference: [Dixon2010] Section 6, eq. (22).
     """
     zero = np.zeros(8)
@@ -150,8 +151,8 @@ def dixon_leech_type2() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     """
     Return the 11,520 type-2 minimal vectors of Dixon's Leech construction.
 
-    Formula [Dixon2010 eq. (21)]: (2Q, ±2e_aQ, 0) and its 3 cyclic
-    permutations, where Q runs over all 240 elements of A^even and
+    Formula [Dixon2010 eq. (21)]: (2Q, ±2e_aQ, 0) and its 2 cyclic
+    shifts, where Q runs over all 240 elements of A^even and
     e_a ∈ {e₀,...,e₇}.
 
     Norm: N_std = N(2Q) + N(±2e_aQ) = 4·N(Q) + 4·N(e_a)·N(Q) = 4 + 4 = 8. ✓
@@ -178,7 +179,7 @@ def dixon_leech_type3() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     Return the 184,320 type-3 minimal vectors of Dixon's Leech construction.
 
     Formula [Dixon2010 eq. (20)]:
-        (P, ±e_aP, ±(e_aℓ₀)(e_cP)) and its 3 cyclic permutations,
+        (P, ±e_aP, ±(e_aℓ₀)(e_cP)) and its 2 cyclic shifts,
     where P ∈ A^odd, a,c ∈ {0,...,7}, and the two ± signs are independent.
 
     Norm: N_std = N(P) + N(e_aP) + N((e_aℓ₀)(e_cP))
@@ -225,8 +226,8 @@ def dixon_leech_minimal_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarr
     Return all 196,560 minimal vectors of Dixon's Leech construction.
 
     Combines the three families from [Dixon2010] Section 6 eqs. (20)–(22).
-    Note: this function computes ~200,000 octonion products and may take
-    several seconds.  Use the individual dixon_leech_type*() functions when
+    Note: this function computes 21,120 octonion products and builds
+    196,560 vectors (under a second).  Use the individual dixon_leech_type*() functions when
     only a subset is needed.
     """
     return (dixon_leech_type1()

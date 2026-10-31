@@ -1,22 +1,29 @@
 """Verification of Dickson 1923, Section 19, "The Integers of Cayley's Algebra".
 
+Created: 2026-05-20.  Updated: 2026-10-28.
+
 Source: L. E. Dickson, "A new simple theory of hypercomplex integers,"
 J. Math. Pures Appl. (9) 2 (1923), 281-326; Section 19, pp. 319-324.
 
-From Dickson's own data only -- his Cayley-Dickson product (his eq. 24) and his
-order (30) with basis (29) -- this script checks:
+This script uses only Dickson's own data: his Cayley-Dickson product (his
+eq. 24) and his order (30) with basis (29).  It checks:
   - the product is a composition algebra; basal units close to +/- units;
-  - Dickson's order O_D (system (30)) IS closed -- a genuine maximal order;
+  - Dickson's order O_D (system (30)) IS closed: a genuine maximal order;
   - there are exactly 7 maximal orders for his product (not 3);
   - Dickson's THEOREM XV ("the only maximal systems having C,U,N are (30)
     and its two (i j k)-cyclic images") undercounts: 3 stated, 7 actual;
   - the 3 of Theorem XV are exactly the maximal orders containing the Hurwitz
-    quaternion p = 1/2(1+i+j+k) -- the very restriction Dickson states in his
+    quaternion p = 1/2(1+i+j+k), the very restriction Dickson states in his
     derivation ("We shall assume that the latter occur in our set in all
     cases," p. 321), but which holds for only 3 of the 7 maximal orders.
 
 Dickson's axioms (his Section 6): C = closure, U = contains the unit 1,
 N = norm is a rational integer.  All 7 maximal orders satisfy C, U, N.
+
+Prints one line per check, then Theorem XV's count against the verified
+count; about a second.  The paper cites this script in Appendix B
+(`app:history`), in the footnote of its opening paragraph; the paragraph on
+Dickson there states the results.
 """
 from fractions import Fraction as F
 from itertools import product as iproduct, permutations
@@ -115,12 +122,6 @@ def cyc(code):
 
 if __name__ == "__main__":
     random.seed(0)
-    comp = all(N(omul([F(random.randint(-3,3)) for _ in range(8)],
-                      [F(random.randint(-3,3)) for _ in range(8)]))
-               == N(x)*N(y) for x, y in
-               [([F(random.randint(-3,3)) for _ in range(8)],
-                 [F(random.randint(-3,3)) for _ in range(8)]) for _ in range(300)])
-    # (recompute cleanly)
     comp = True
     for _ in range(300):
         x = [F(random.randint(-3,3)) for _ in range(8)]

@@ -1,6 +1,6 @@
 # An Order on the Leech Lattice
 
-Created: 2026-04-06.  Updated: 2026-10-24.
+Created: 2026-04-06.  Updated: 2026-10-28.
 
 The Leech lattice Λ admits an **order**: it is closed under a bilinear product
 on R²⁴, a Z₃-symmetric triple-octonion product assembled from nine
@@ -154,12 +154,14 @@ Requires Python 3.x with NumPy and SymPy (see [python_project/requirements.txt](
 
 ```bash
 gap -q gap_project/run_all.g                    # 110 checks across 8 files
-cd gap_project && gap -q -b aut_lambda_star.g   # Automorphism group, second pass
-cd gap_project && gap -q -b octonion_stabilisers.g   # Stabilizers of L, Ls, Ls̄
+(cd gap_project && gap -q -b aut_lambda_star.g < /dev/null)   # Automorphism group, second pass
+(cd gap_project && gap -q -b octonion_stabilisers.g < /dev/null)   # Stabilizers of L, Ls, Ls̄
 ```
 
-Requires GAP 4.x with the LOOPS package
-(`apt install gap gap-pkg-loops` on Debian/Ubuntu, or via GAP's PackageManager).
+Requires GAP 4.x (`apt install gap` on Debian/Ubuntu) with the LOOPS package,
+which the Debian/Ubuntu archive does not carry: unpack its release archive into
+`~/.gap/pkg/`, or run `LoadPackage("PackageManager"); InstallPackage("loops");`
+in a GAP that has the PackageManager package.
 The GAP suite re-derives the same verification claims as the Python suite,
 with all arithmetic exact (rational), and uses LOOPS to cross-verify the
 octonion multiplication as a Moufang loop of order 16.  See

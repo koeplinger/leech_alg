@@ -1,8 +1,12 @@
 """
 e8_dixon.py — Dixon's E8 lattice constructions.
 
+Created: 2026-04-07.  Updated: 2026-10-28.
+
 Dixon [Dixon2010] defines two families of 240-element sets inside the octonion
 algebra, each forming the minimal-vector shell of an E8 lattice representation.
+The module prints nothing.  The paper cites it, with leech_dixon.py, in
+Section 6 (`sec:related`), in the paragraph on Dixon (2010).
 
 Ξ^even (primary, rational coefficients, norm² = 1)
 ---------------------------------------------------
@@ -27,8 +31,9 @@ Key property [Dixon2010 eq. (5)]
 ----------------------------------
 For all X ∈ Ξ^even ∪ Ξ^odd and all basis pairs (e_a, e_b):
     e_a ◦_X e_b = (e_a * X) * (X^{-1} * e_b) = ±e_c
-for some basis element e_c.  We verify this for X ∈ Ξ^even (norm 1, X^{-1} = X̄)
-and X ∈ A^odd (norm √2, X^{-1} = X̄/2).
+for some basis element e_c.  tests/test_e8_dixon.py verifies this, with
+is_pm_basis_element below, for X ∈ Ξ^even (norm 1, X^{-1} = X̄) and
+X ∈ A^odd (norm √2, X^{-1} = X̄/2).
 
 Structure of Ξ₂
 -----------------

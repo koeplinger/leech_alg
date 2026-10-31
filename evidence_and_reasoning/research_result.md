@@ -1,6 +1,6 @@
 # Research Result
 
-Created: 2026-04-11.  Updated: 2026-10-24.
+Created: 2026-04-11.  Updated: 2026-10-28.
 
 Published: J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
 triple-octonion product*, [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
@@ -68,7 +68,7 @@ The same product on all three copies.
 |---|---|---|
 | Trial 007 base (per transposition) | 900 | 0 |
 | Scaled tests (three harnesses: `trial_007_{scaled_test,fast,exhaust}.py`) | 12,000,000+ | 0 |
-| All 21 transpositions (small sample) | ~15,000 | 0 |
+| All 21 transpositions, exactly on a Z-basis of Λ (`verify_consecutive_twists_exact.py`) | 576 basis-pair products each | 0 |
 | Symbolic proof (Lemmas 4.1–4.4, paper §4, `sec:proof`): its finite content, the closure of one maximal order (paper §2.2, (2.2), `eq:MO`) and two lattice identities (paper §4.1, (4.1), `eq:multiples`) | 64 + 8 + 8 products, plus covolumes | 0 |
 | Lemma inclusions on Z-bases, in Python and GAP (validation) | 8 basis vectors (Lemma 4.1) + 192 basis products (Lemmas 4.2–4.4) | 0 |
 | Identity witnesses (paper §5.1, `sec:identities`) | one exact witness per identity | n/a (each identity fails) |
@@ -84,7 +84,7 @@ The 21 transpositions form a single orbit under conjugation by the order-21
 group of coordinate permutations preserving the oriented Fano triples; each
 such permutation is an octonion automorphism fixing s and s̄ and preserving
 L, so conjugation carries the proof for σ = (1 2) to every transposition
-(paper §4, footnote).
+(paper §4, first footnote).
 
 Transpositions are not the only permutations of the imaginary basis units for
 which the assembled triple product closes.  The census over all 5,040
@@ -157,10 +157,9 @@ and `gap_project/tests/test_lemmas.g` (all four).
 The standard product fails condition 3 because Ls·Ls ⊄ Ls.  The twist
 maps the condition-3 sublattice from Ls to σ(Ls), where closure holds.
 The accompanying observation σ(Ls) ≠ Ls (verified by an explicit
-witness in `symbolic_proof_checks.py`) is recorded as a remark in
-Section 4 of the paper (Remark 4.5, `rem:Ls-not-closed`) rather than a
-lemma: it confirms the construction is nontrivial, but is not used in the
-closure argument.
+witness in `symbolic_proof_checks.py`) is part of Remark 4.5 of the paper
+(`rem:Ls-not-closed`): it confirms the construction is nontrivial, but is
+not used in the closure argument.
 
 One candidate explanation for Lemma 4.4 is **excluded**
 (`verify_sigma_Ls_ideal_exclusion.py`; paper Remark 4.5, `rem:Ls-not-closed`; claim 013):
@@ -179,9 +178,9 @@ is not norm-multiplicative, and it is not a symmetric composition
 algebra.  Each failure has a witness in the ambient algebra that is
 checked by hand (paper §5.1, `sec:identities`; `verify_identity_witnesses.py`;
 claim 024); for the identity element see paper Remark 5.2
-(`rem:no-identity`).  Sampled rates on minimal vectors, n = 10⁶ per
-property, exact integer arithmetic (`verify_section5_properties.py`; paper
-Appendix D, `app:samples`).
+(`rem:no-identity`).  Paper Appendix D (`app:samples`) gives the rates
+sampled on minimal vectors, n = 10⁶ per property, in exact integer
+arithmetic (`verify_section5_properties.py`).
 
 ### Structure of the ambient algebra and of the order
 
@@ -215,7 +214,7 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
   because −I₂₄ ∈ Co₀ does not preserve ⋆.  (The trace-form route
   fails: tr(L_u L_v) has signature (3, 21), not the Leech form.)
 - Completeness: the order-36 count and the Co₀ containment are
-  established by two independent routes in the companion note
+  established by two independent routes in the standalone note
   (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
   classification of the automorphisms of the complexification of
   (T, ⋆) (nonenumerative); Route 2 is entirely finite and
@@ -223,7 +222,7 @@ mutually annihilating two-sided ideals: D ⋆ T = T ⋆ D = 0.
   machine-verified lower bound C₆ × S₃ ⊆ Aut and the strictness
   witness are independent of both.
 - Stabilizers of the Wilson sublattices in Aut(O, ·_σ), the automorphism
-  group of the σ-twisted product (the companion note's setting, its §5.2;
+  group of the σ-twisted product (the standalone note's setting, its §5.2;
   not in the paper): |Stab(L)| = 1344 = 2³·L₃(2); |Stab(Ls)| = 168 =
   2³:(7:3); |Stab(Ls̄)| = 12096 = U₃(3).2 = G₂(2)
   (`gap_project/octonion_stabilisers.g`).  Under the standard octonion
@@ -262,9 +261,9 @@ contained in L³ and not integral (paper §5.3, `sec:maximality`; key claim 016)
   inside T, meeting D only in 0.
 - **Λ does contain nonzero square-zero elements, with norms in 12Z**
   (N(u) = 3 N(x) with N(x) ∈ 2Z, and every Λ-norm lies in 4Z).  The
-  norm-12 stratum is exactly the 4,032 hexagonal triples of the E₇
-  root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O); higher
-  strata are realized (norm-24 witness:
+  norm-12 stratum is exactly the 4,032 ordered hexagonal triples of the E₇
+  root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O); norm 24
+  occurs as well (witness:
   `verify_square_zero_norm24_witness.py`).
 - The minimal shell sees none: the minimal norm is 8, not a multiple
   of 12.

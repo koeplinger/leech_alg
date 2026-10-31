@@ -1,5 +1,7 @@
 # Context-aware review of the main paper (v4)
 
+Created: 2026-05-23.  Updated: 2026-10-28.
+
 **Date:** 2026-05-23
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v4 (23 May 2026), 19–20 pp.
@@ -193,7 +195,7 @@ After this turn's sweep of `terminology.md` (correcting the σ(L)≠L contradict
 
 The paper §7 lists five open questions. Cross-checking each against the repo state:
 
-1. **Structural reason for Lemma 4.4.** §7 specifically calls out "An identification of σ(Ls) with a left ideal, with the image under a norm-preserving octonion automorphism, or with some module-theoretic structure over L". Appendix A's mod-2-quotient subsection (this turn's v4 addition) **partially answers** this: W := σ(Ls)/2L is identified as a subalgebra of the F₂-octonion-algebra L/2L, and the companion V := σ(L\bar s)/2L as a left ideal. The §7 bullet text accurately registers this as partial — it explicitly asks for a structural reason at the integer level, which the mod-2 quotient does not directly provide. **Internally consistent.** A reader cross-referencing the bullet against the appendix subsection might benefit from a parenthetical pointer: "(see Appendix~\ref{app:mod2quotient} for what the tables certify after reduction mod 2L; an integer-level structural reason is the remaining open part)".
+1. **Structural reason for Lemma 4.4.** §7 specifically calls out "An identification of σ(Ls) with a left ideal, with the image under a norm-preserving octonion automorphism, or with some module-theoretic structure over L". Appendix A's mod-2-quotient subsection (this turn's v4 addition) **partially answers** this: W := σ(Ls)/2L is identified as a subalgebra of the F₂-algebra L/2L, and the companion V := σ(L\bar s)/2L as a left ideal. The §7 bullet text accurately registers this as partial — it explicitly asks for a structural reason at the integer level, which the mod-2 quotient does not directly provide. **Internally consistent.** A reader cross-referencing the bullet against the appendix subsection might benefit from a parenthetical pointer: "(see Appendix~\ref{app:mod2quotient} for what the tables certify after reduction mod 2L; an integer-level structural reason is the remaining open part)".
 
 2. **Aut(Λ, +, ⋆) vs Co₀.** First-step probe results in `python_project/src/probe_aut_lambda_star.py` and `prompt_logs/146_aut_lambda_star.txt` establish:
    - Z₃ cyclic block permutation ∈ Aut(Λ, +, ⋆)

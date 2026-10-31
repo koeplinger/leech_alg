@@ -1,7 +1,7 @@
 Topic: Triality and algebraic approaches to physics
 =====================================================
 
-Created: 2026-04-12.  Updated: 2026-10-24.
+Created: 2026-04-12.  Updated: 2026-10-28.
 
 This file collects soft references for the broader program of using
 triality and algebraic structures (normed division algebras, Moufang
@@ -34,7 +34,7 @@ technical claims.
   ternary-structured reformulation of the construction in this paper.
 - **Status**: Bibliographic entry only; not held in source_documents/.
 - **Verification**: Title, series, volume, number, year, DOI, ISBNs and extent
-  checked against the zbMATH Open record and the KIT library catalogue
+  checked against the zbMATH Open record and the KIT library catalog
   (katalog.bibliothek.kit.edu/bib/1189801).
 
 ---
@@ -81,20 +81,20 @@ technical claims.
 - **Year**: 2023
 - **DOI**: 10.1140/epjc/s10052-023-11923-y
 - **arXiv**: 2306.13098 [hep-ph]
-- **Topics**: S_3 family symmetry, Cayley-Dickson algebras, sedenions,
+- **Topics**: S_3 family symmetry, Cayley–Dickson algebras, sedenions,
   three generations, algebraic physics
 - **Originality note**: Peer-reviewed journal article (Eur. Phys. J. C).
   The arXiv preprint (June 2023) precedes the journal publication
   (2023). No dispute over originality or priority is known at time
   of writing.
 - **Notes**: Builds a three-generation colored-fermion model with
-  S_3 family symmetry from the Cayley-Dickson sedenions. Cited in
-  this paper's Outlook to accompany the result that the
-  Z₃-symmetric triple-octonion product admits S_3 block-permutation
-  automorphisms (Aut(Λ, +, ⋆) ≅ C_6 × S_3, main paper Section 5.4); the
-  Outlook lists S_3 symmetry alongside triality and
-  symmetric-composition-algebra structures as a structural theme
-  in algebraic physics.
+  S_3 family symmetry from the Cayley–Dickson sedenions. Cited in
+  this paper's Outlook (Section 8), with [Koeplinger2023],
+  [FureyHughes2025_TrioOfTrialities] and [MarraniCorradettiZucconi2025],
+  among the programs that model fundamental physics on
+  normed-division-algebra, triality, S_3 symmetry, or
+  symmetric-composition-algebra structures; S_3 enters the paper as the
+  block permutations in Aut(Λ, +, ⋆) ≅ C_6 × S_3 (main paper Section 5.4).
 - **Status**: Bibliographic entry only; not held in source_documents/.
 - **Verification**: arXiv identifier 2306.13098 and journal reference
   Eur. Phys. J. C 83 (2023) 747 verified by WebFetch in prompt 194.

@@ -1,6 +1,8 @@
 """
 trial_001_triple_octonion.py — Triple-octonion algebra on R^24.
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Algebra definition
 ==================
 Take the standard octonion algebra O (Fano-plane rule: e_a · e_{a+1} = e_{a+3},
@@ -224,8 +226,9 @@ def run_trial(max_pairs: int = 0, verbose: bool = True):
     Parameters
     ----------
     max_pairs : int
-        Maximum number of (a, b) pairs to test. 0 means test all pairs within
-        each vector type and a sample of cross-type pairs.
+        Not used.  The pair counts are fixed in test_sets: 200 type1×type1,
+        200 type1×type2, 500 type2×type2, 100 type1×type3, 100 type2×type3
+        and 200 type3×type3, 1,300 pairs in all.
     verbose : bool
         Print progress and results.
 

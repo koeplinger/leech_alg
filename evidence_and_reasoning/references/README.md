@@ -1,5 +1,7 @@
 # References
 
+Created: 2026-04-06.  Updated: 2026-10-28.
+
 This is the central reference registry for the project. Every work cited anywhere in this repository must have an entry here.
 
 ## Organization
@@ -11,6 +13,8 @@ References are grouped by topic. Each entry provides:
 - **Originality note**: whether the originality or priority of the work is disputed, and if so, a pointer to that dispute
 
 ## Topics
+
+The main topic tags (entries may add more specific ones):
 
 - `leech_lattice` — Constructions and properties of the Leech lattice
 - `octonions` — Octonion algebra, integral octonions, and related products

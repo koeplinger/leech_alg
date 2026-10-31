@@ -1,12 +1,12 @@
 # v4 → v5 revision response
 
-Created: 2026-06-07.  Updated: 2026-10-24.
+Created: 2026-06-07.  Updated: 2026-10-28.
 
 **v4** — frozen 25 May 2026, 19 pages. Source preserved at [paper/main_2026-05-25.tex](main_2026-05-25.tex).
 
 **v5** — dated 7 June 2026, 20 pages. Frozen at [paper/main_2026-06-07.tex](main_2026-06-07.tex). The "lines *n*–*m* of paper/main.tex" pointers below refer to the v5 working source as each change was made, not to the current paper/main.tex.
 
-v5 is a minimal revision implementing the four issues recorded in [update_brief_2026-05-25_v4.pdf](update_brief_2026-05-25_v4.pdf). No mathematical content has been added or withdrawn; the four edits clarify three statements that were already in v4 and restore one citation that was dangling in the bibliography.
+v5 implements the three items recorded in [update_brief_2026-05-25_v4.pdf](update_brief_2026-05-25_v4.pdf) (Changes 1 to 4; its $S_3$ item gives Changes 2 and 3), with follow-on edits (Changes 5 to 7), editorial refinements (Change 8) and additions in response to a referee (Change 9). The four brief-driven edits add no mathematical content: they clarify three statements that were already in v4 and restore one citation that was dangling in the bibliography. Change 9 adds the index $2^{16}$ of the span of the products, exhaustive facts on the minimal shell and the index $2^{25}$ of the span of $\varphi$.
 
 ---
 
@@ -19,8 +19,8 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 5. §8 — Outlook physics paragraph: "$S_3$ symmetry" added to the list of structural themes; Gresnigt–Gourlay–Varma 2023 (*Eur. Phys. J. C* 83 (2023), 747) added to the cite list with sorting by year of publication.
 6. Acknowledgments — Holger P. Petersson added in alphabetical order.
 7. Mechanical: subtitle date/version bump; `\DeclareMathOperator{\Aut}{Aut}` added to the preamble in support of change 3.
-8. Editorial-sweep refinements (same-day): §2.3 footnote obstruction clarification ($L \cdot Ls$ wording → $Ls \cdot Ls \not\subseteq Ls$); §5 row label "Power-associativity" → "Quartic power-associativity"; §6 undefined $\Sigma(\Lambda)$ → "$\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise"; bibliography re-alphabetized (Mahler, Petersson positions; `repo` bibitem author spelling).
-9. Reviewer-response additions (same-day; prompted by referee feedback from an abstract-algebra journal): **(a)** new Remark 5.4 (*Span of the image*) — the products $\Lambda \star \Lambda$ span a proper sublattice $S$ with $[\Lambda : S] = 2^{16}$, $2\Lambda \subseteq S$, $\Lambda/S \cong (\mathbb{Z}/2)^{16}$ (exact, Hermite normal form; `verify_product_span_{index,structure}.py`); one-sentence abstract addition; **(b)** new Remark 5.2 (*Exhaustive facts on the minimal shell*) — no idempotents and no square-nilpotents among all 196,560 minimal vectors, self-product norms in $\{16,\ldots,128\}\setminus\{112\}$, minimum 16 (exhaustive; `verify_idempotents_min_shell.py`); **(c)** §6 Baez–Egan anatomy extended with the comparative span defect of $\varphi$: $[\Lambda : \mathrm{span}\,\varphi(\Lambda,\Lambda)] = 2^{25}$, a span that, unlike the span of $\star$, does not contain $2\Lambda$ (`verify_phi_span_index.py`, validated against the paper's $D$-formula, $\Lambda$-closure on all 576 basis pairs, and commutativity); **(d)** new closing paragraph of §1 stating the paper's deliberately bounded scope (existence + elementary proof; two structural readings offered as verified starting points; human–AI collaboration with end-to-end public record); **(e)** §7 automorphism bullet gains the reviewer's stabilizer formulation ("the stabiliser of the product tensor inside $\mathrm{Co}_0$", quoted with the v5 source spelling); **(f)** Appendix C correction: "each of the four lemmas is established by exhibiting … integer coefficients" → "three of the four lemmas … the fourth, $\sigma(L) = L$, is a parity argument" (pre-existing miscount caught by the verification pass).
+8. Editorial-sweep refinements: §2.3 footnote obstruction clarification ($L \cdot Ls$ wording → $Ls \cdot Ls \not\subseteq Ls$); §5 row label "Power-associativity" → "Quartic power-associativity"; §6 undefined $\Sigma(\Lambda)$ → "$\sigma(\Lambda) \subset \mathbb{O}^3$ obtained by applying $\sigma$ block-wise"; bibliography re-alphabetized (Mahler, Petersson positions; `repo` bibitem author spelling).
+9. Reviewer-response additions (prompted by referee feedback from an abstract-algebra journal): **(a)** new Remark 5.4 (*Span of the image*) — the products $\Lambda \star \Lambda$ span a proper sublattice $S$ with $[\Lambda : S] = 2^{16}$, $2\Lambda \subseteq S$, $\Lambda/S \cong (\mathbb{Z}/2)^{16}$ (exact, Hermite normal form; `verify_product_span_{index,structure}.py`); one-sentence abstract addition; **(b)** new Remark 5.2 (*Exhaustive facts on the minimal shell*) — no idempotents and no square-nilpotents among all 196,560 minimal vectors, self-product norms in $\{16,\ldots,128\}\setminus\{112\}$, minimum 16 (exhaustive; `verify_idempotents_min_shell.py`); **(c)** §6 Baez–Egan anatomy extended with the comparative span defect of $\varphi$: $[\Lambda : \mathrm{span}\,\varphi(\Lambda,\Lambda)] = 2^{25}$, a span that, unlike the span of $\star$, does not contain $2\Lambda$ (`verify_phi_span_index.py`, validated against the paper's $D$-formula, $\Lambda$-closure on all 576 basis pairs, and commutativity); **(d)** new closing paragraph of §1 stating the paper's deliberately bounded scope (existence + elementary proof; two structural readings offered as verified starting points; human–AI collaboration with end-to-end public record); **(e)** §7 automorphism bullet gains the reviewer's stabilizer formulation ("the stabiliser of the product tensor inside $\mathrm{Co}_0$", quoted with the v5 source spelling); **(f)** Appendix C correction: "each of the four lemmas is established by exhibiting … integer coefficients" → "three of the four lemmas … the fourth, $\sigma(L) = L$, is a parity argument" (pre-existing miscount caught by the verification pass).
 
 ---
 
@@ -30,13 +30,13 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 - **What changed.** Appended "; for a modern survey of the integral-octonion history, see Petersson~\cite{Petersson2018}." to the closing sentence of §2.2 that cites Coxeter and Conway–Smith.
 - **Where.** §2.2, lines 227–228 of [paper/main.tex](main.tex), final clause of the paragraph.
-- **Rationale.** Petersson 2018 was already in the bibliography (added in v4, item C.1) but had no body-text citation, leaving the reference dangling; update brief item 1 flagged this.
+- **Rationale.** Petersson 2018 was already in the bibliography (v3 cited it in a Section 2 remark that v4 removed) but had no body-text citation, leaving the reference dangling; update brief item 1 flagged this.
 
 ### Change 2 — $S_3$ vs $\mathbb{Z}_3$ in §6 Comparison paragraph
 
 - **What changed.** "the cross-block $\mathbb{Z}_3$ symmetry is supplied by the routing" rewritten as "the cross-block $S_3$ extending the $\mathbb{Z}_3$ routing is supplied by the routing".
 - **Where.** §6 "Comparison" paragraph, lines 698–701 of [paper/main.tex](main.tex).
-- **Rationale.** The triple product is fixed by the full symmetric group $S_3$ on the three Λ-blocks, not just the cyclic $\mathbb{Z}_3$ rotation built into Definition 3.3; update brief item 2 corrects the understatement.
+- **Rationale.** The triple product is fixed by the full symmetric group $S_3$ on the three Λ-blocks, not just the cyclic $\mathbb{Z}_3$ rotation built into Definition 3.3; update brief item 3 corrects the understatement.
 
 ### Change 3 — §7 automorphism-group bullet extended
 
@@ -48,7 +48,7 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 - **What changed.** One sentence appended to the Kirmse 1924 paragraph recording his ideal-theoretic framing, Mahler's continuation of that thread, and the alternativity context.
 - **Where.** Appendix B (Historical note), lines 1357–1362 of [paper/main.tex](main.tex).
-- **Rationale.** Update brief item 4, in line with the fair-attribution standard adopted during v4: record positive contributions alongside the $J_1$ closure error.
+- **Rationale.** Update brief item 2, in line with the fair-attribution standard adopted during v4: record positive contributions alongside the $J_1$ closure error.
 
 ### Change 5 — §8 outlook: $S_3$ symmetry token and Gresnigt 2023 citation
 
@@ -60,7 +60,7 @@ v5 is a minimal revision implementing the four issues recorded in [update_brief_
 
 - **What changed.** The acknowledgments list now reads "Matthew Barley, Geoffrey M. Dixon, **Holger P. Petersson**, Petr Vojtěchovský, and Robert A. Wilson" — Petersson inserted in alphabetical order.
 - **Where.** §Acknowledgments of [paper/main.tex](main.tex).
-- **Rationale.** Petersson is the modern source whose 2018 lecture established the project's stance on Kirmse and the chain of 1923–1946 contributions; the citation added in Change 1 puts him in the bibliography, and the acknowledgment recognizes his off-paper input alongside the other named collaborators.
+- **Rationale.** Petersson is the modern source whose 2018 lecture established the project's stance on Kirmse and the chain of 1923–1946 contributions; the citation restored in Change 1 cites Petersson's lecture in the body, and the acknowledgment recognizes his off-paper input alongside the other named collaborators.
 
 ### Change 7 — Mechanical preamble and subtitle
 

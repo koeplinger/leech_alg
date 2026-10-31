@@ -1,10 +1,12 @@
 """
 octonions.py — Octonion algebra implementation.
 
+Created: 2026-04-06.  Updated: 2026-10-28.
+
 Two concrete algebras are provided:
 
   STANDARD_ALGEBRA
-      The product used (up to index relabelling) by both Wilson [Wilson2009]
+      The product used (up to index relabeling) by both Wilson [Wilson2009]
       and Dixon [Dixon2010] in their respective E8/Leech lattice constructions.
       Fano-plane rule:  e_a * e_{a+1} = e_{a+3},  a = 1,...,7 (mod 7 in {1,...,7}).
 
@@ -16,17 +18,18 @@ Two concrete algebras are provided:
 
 Index convention (used throughout this file)
 --------------------------------------------
-Basis elements are labelled e_0, ..., e_7 where e_0 is the real unit (identity).
+Basis elements are labeled e_0, ..., e_7 where e_0 is the real unit (identity).
 This matches Dixon's notation directly.
 
 Wilson [Wilson2009] uses the index set PL(7) = {inf} u F_7, with imaginary
-units labelled i_0, ..., i_6 (and i_inf for the identity).  The correspondence
-to Dixon's labelling is:
+units labeled i_0, ..., i_6 (and i_inf for the identity).  The correspondence
+to Dixon's labeling is:
     Wilson  i_inf  <->  Dixon  e_0   (identity)
     Wilson  i_k    <->  Dixon  e_{k+1}   for k = 0,...,6.
 Under this map Wilson's base rule  i_0 * i_1 = i_3  becomes  e_1 * e_2 = e_4,
 which is Dixon's rule at a = 1.  The two papers therefore use the *same*
-Fano-plane multiplication table.  See key claim 001 in evidence_and_reasoning/.
+Fano-plane multiplication table.  See key claim 001
+(evidence_and_reasoning/key_claims/001_wilson_dixon_multiplication_tables_compared.txt).
 
 Fano-plane triples: convention
 -------------------------------
@@ -277,7 +280,7 @@ class Octonion:
 # ---------------------------------------------------------------------------
 
 #: Standard octonion algebra.
-#: Used (up to index relabelling) by both Wilson [Wilson2009] and Dixon [Dixon2010].
+#: Used (up to index relabeling) by both Wilson [Wilson2009] and Dixon [Dixon2010].
 STANDARD_ALGEBRA = OctonionAlgebra(STANDARD_FANO_TRIPLES, name="standard")
 
 #: Dixon's X-product algebra.
@@ -300,7 +303,7 @@ def associator(x: Octonion, y: Octonion, z: Octonion) -> Octonion:
         (x, y, z) = -(y, x, z) = -(x, z, y)   etc.
     This implies left alternativity, right alternativity, and flexibility.
     Reference: [Wikipedia] Octonion - Associativity;
-               R.D. Schafer, Introduction to Nonassociative Algebras,
-               Academic Press, 1966, Theorem 3.1.
+               R.D. Schafer, An Introduction to Nonassociative Algebras,
+               Academic Press, 1966, Chapter III.
     """
     return (x * y) * z - x * (y * z)

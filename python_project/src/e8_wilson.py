@@ -1,7 +1,7 @@
 """
 e8_wilson.py — Wilson's E8 lattice construction.
 
-Created: 2026-04-06.  Updated: 2026-10-24.
+Created: 2026-04-06.  Updated: 2026-10-28.
 
 Wilson [Wilson2009] defines an E8 lattice L inside the real octonion algebra
 as the Z-integer span of 240 octonions:
@@ -185,7 +185,7 @@ def is_in_L(x: Octonion, tol: float = 1e-9) -> bool:
                           check then becomes sum(c2_i)/2 odd).
       Mixed parities =>  not in L.
 
-    Reference: standard characterisation of E8 = D8+.  Consistency with
+    Reference: standard characterization of E8 = D8+.  Consistency with
     [Wilson2009] Section 2 verified by checking both root types satisfy the
     criterion (see module docstring).
     """
@@ -194,7 +194,7 @@ def is_in_L(x: Octonion, tol: float = 1e-9) -> bool:
         # Coords are not multiples of 1/2.
         return False
     c2i = c2.astype(int)
-    parities = c2i % 2   # 0 for even, 1 for odd (Python % is non-negative)
+    parities = c2i % 2   # 0 for even, 1 for odd (Python % is nonnegative)
     if np.all(parities == 0):
         # All integer coordinates.  Even sum iff sum(c2i) % 4 == 0.
         return int(np.sum(c2i)) % 4 == 0

@@ -1,5 +1,7 @@
 # Source Documents
 
+Created: 2026-04-06.  Updated: 2026-10-28.
+
 This folder holds primary source materials that are freely redistributable. For works that are not freely redistributable by third parties, see "Externally hosted sources" below for arXiv IDs / DOIs.
 
 ## Contents (held locally)
@@ -19,7 +21,7 @@ These works are not freely redistributable by third parties under their present 
 | [Dixon2010] | G.M. Dixon, "Integral Octonions, Octonion XY-Product, and the Leech Lattice", preprint, 2010 | https://arxiv.org/abs/1011.2541 | arXiv nonexclusive-distrib/1.0 |
 | [Elduque2023_IsotropicNorm] | A. Elduque, "Okubo algebras with isotropic norm" (arXiv preprint 2022; published Springer 2023) | https://arxiv.org/abs/2210.03456 | arXiv nonexclusive-distrib/1.0 |
 | [KamiyaOkubo2015] | N. Kamiya and S. Okubo, "Algebras satisfying triality and S₄-symmetry", arXiv preprint, 2015 | https://arxiv.org/abs/1503.00614 | arXiv nonexclusive-distrib/1.0 |
-| [MarraniCorradettiZucconi2025] | A. Marrani, D. Corradetti, F. Zucconi, "An invitation to Okubo algebra" (arXiv preprint 2023; published J. Phys. A 2025) | https://arxiv.org/abs/2309.17435 | arXiv nonexclusive-distrib/1.0 |
+| [MarraniCorradettiZucconi2025] | A. Marrani, D. Corradetti, F. Zucconi, "Physics with non-unital algebras? An invitation to the Okubo algebra" (arXiv preprint 2023; published J. Phys. A 2025) | https://arxiv.org/abs/2309.17435 | arXiv nonexclusive-distrib/1.0 |
 | [Elduque2000_Triality] | A. Elduque, "On triality and automorphisms and derivations of composition algebras", Linear Algebra Appl. 314 (2000) 49–74 | https://doi.org/10.1016/S0024-3795(00)00105-1 | Elsevier copyright |
 | [Elduque1996] | A. Elduque, "On a class of ternary composition algebras", J. Korean Math. Soc. 33 (1996) 183–203 | https://koreascience.kr/article/JAKO199611920807509.page | Journal copyright |
 

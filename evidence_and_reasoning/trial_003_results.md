@@ -1,5 +1,7 @@
 # Trial 003 Results — Discrete variants of triple-octonion cross-block rule
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Date: 2026-04-09
 
 ## Algebra family tested
@@ -8,10 +10,10 @@ Same triple-octonion base (O₁ ⊕ O₂ ⊕ O₃) as trials 001–002, but with
 discrete degrees of freedom varied in the cross-block terms:
 
 - **Conjugation**: for each of 3 cross-block pairs, 4 choices (plain, conj left,
-  conj right, conj both) — 4³ = 64 combinations.
-- **Sign**: for each cross-block pair, ±1 — 2³ = 8 combinations.
+  conj right, conj both): 4³ = 64 combinations.
+- **Sign**: for each cross-block pair, ±1: 2³ = 8 combinations.
 - **Routing**: where cross-block products land (third block, left block, or
-  right block) — 3 choices.
+  right block): 3 choices.
 
 Total: 64 × 8 × 3 = **1,536 variants**, all tested exhaustively.
 
@@ -36,24 +38,28 @@ Each variant was tested against 250 Min(Λ) pairs:
 ### Closure rate distribution
 
 The rates cluster tightly:
-- 68.8%: 31 variants (all with third-block routing)
-- 66.0%: 12 variants
-- 64.0%: 32 variants
-- Below 64%: the remaining ~1,400 variants
+- 68.8%: 31 variants (24 with third-block, 4 with left-block and 3 with
+  right-block routing)
+- 67.8% to 68.7%: 41 variants
+- 65.6% to 66.0%: 24 variants
+- 64.0% to 64.4%: 48 variants
+- Below 64%: the remaining 1,392 variants
 
 ### Key structural observations
 
-**1. Sign flips have zero effect.** All 8 sign patterns produce identical
-results when conjugation and routing are held fixed. This means the sign of
-cross-block contributions is irrelevant — the failure mechanism is insensitive
-to it.
+**1. Sign flips do not change the failure count.** With conjugation and
+routing held fixed, all 8 sign patterns give the same number of failures. The
+closure rates can still differ, because some sign patterns produce zero
+products, which are not counted.
 
-**2. Third-block routing is optimal.** Left-block and right-block routing
-produce lower closure rates. Breaking Z₃ symmetry hurts rather than helps.
+**2. Routing does not help.** Third-block routing reaches the best rate,
+68.8%, in 24 variants; left-block and right-block routing reach it in 4 and
+3 variants, and no routing does better.
 
-**3. Conjugation has limited effect.** The best variants are those with
-*uniform* conjugation across all three pairs (all plain, all conj-left,
-all conj-right, or all conj-both). Mixed conjugation patterns perform worse.
+**3. Conjugation has limited effect.** The best variants have *uniform*
+conjugation across all three pairs: all plain, all conj-left or all
+conj-right. All conj-both reaches at most 66.0%, and no mixed pattern
+reaches 68.8%.
 
 **4. Failure mode is identical to trial 001.** The detailed Wilson-condition
 analysis of the best variant shows:
@@ -66,21 +72,25 @@ modification to the cross-block rule changes the fundamental obstruction.
 
 ## Interpretation
 
-The type3×type3 failure on condition 3 (x+y+z ∈ Ls) is a **structural
-property of the triple-octonion architecture**, not an artifact of the specific
-cross-block rule. Conjugation, sign flips, and routing changes — the three
-natural discrete modifications — cannot fix it.
+The type3×type3 failure on condition 3 (x+y+z ∈ Ls) is a **property of the
+standard octonion product in the three blocks**, not an artifact of the
+specific cross-block rule. Conjugation, sign flips and routing changes, the
+three natural discrete modifications, cannot fix it. For the base algebra
+the reason is exact (key claim 007): the block sum of a product is the
+product of the block sums, and Ls is not closed under the standard product
+(paper Remark 4.5). With the σ-twisted product in all three blocks the
+triple product closes (trial 007; paper Theorem 1.1).
 
-The insensitivity to sign flips is particularly telling: it means the failure
-is not caused by constructive/destructive interference between cross-block
-contributions, but by the inherent structure of how type-3 vectors interact
-with the triple-block decomposition.
+The insensitivity to sign flips points the same way: the failure is not
+caused by constructive or destructive interference between cross-block
+contributions.
 
 ## Verdict
 
-**FAIL — structural obstruction.** All 1,536 discrete variants of the
-triple-octonion cross-block rule fail on the same type3×type3 obstruction.
-The failure is intrinsic to the triple-octonion architecture.
+**FAIL.** All 1,536 discrete variants of the triple-octonion cross-block rule
+fail, every one of them on type3×type3 pairs. The failure belongs to the
+standard octonion product in the three blocks: with the σ-twisted product the
+same architecture closes (trial 007).
 
 ## What this rules out
 

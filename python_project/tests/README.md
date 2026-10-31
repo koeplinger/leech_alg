@@ -1,5 +1,7 @@
 # Tests
 
+Created: 2026-04-06.  Updated: 2026-10-28.
+
 Test suite for the Python project.  197 tests verify every shared tool used by the trials and by `symbolic_proof_checks.py`.
 
 Run the full suite from `python_project/`:
@@ -8,7 +10,7 @@ Run the full suite from `python_project/`:
 python3 -m pytest tests/ -v
 ```
 
-Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech constructions of Wilson and Dixon, the Okubo algebra), so that no trial rests on an unverified tool; the script behind the paper's proof, `verify_structural_proof.py`, uses its own implementation of the product (2.1) and checks the laws its proof uses symbolically.  It does not cover the paper's own results.  Those are certified one by one by the standalone verification scripts in [`../src/`](../src/README.md), which are run directly and print their own pass/fail report, and independently in [`../../gap_project/`](../../gap_project/README.md).
+Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech constructions of Wilson and Dixon, the Okubo algebra), so that no trial rests on an unverified tool; the script behind the paper's proof, `verify_structural_proof.py`, uses its own implementation of the product (2.1) and checks the laws its proof uses symbolically.  It does not cover the paper's own results.  Their computations are checked by the standalone verification scripts in [`../src/`](../src/README.md), which are run directly and print their own pass/fail report, and independently in [`../../gap_project/`](../../gap_project/README.md).
 
 ## Contents
 
@@ -19,7 +21,7 @@ Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech
 | `test_e8_dixon.py` | Dixon's E8 constructions Ξ^even and A^odd: enumeration, lattice properties, integrality |
 | `test_leech_wilson.py` | Wilson's Leech lattice Λ: 196,560 minimal vectors, three-condition membership test, type-1/2/3 decomposition |
 | `test_leech_dixon.py` | Dixon's Leech lattice: 196,560 minimal vectors, comparison with Wilson's embedding (17,232 shared vectors) |
-| `test_okubo.py` | Okubo algebra: Petersson construction, order-3 automorphism τ validation, structure constants |
+| `test_okubo.py` | Okubo algebra, Petersson and Hermitian-matrix constructions: composition, symmetric composition, no identity, division, idempotents, derivation algebra of dimension 8 |
 
 ## Categories
 

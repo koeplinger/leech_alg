@@ -1,7 +1,9 @@
 #############################################################################
 ##
 ##  octonion_stabilisers.g -- identify the three octonion-automorphism
-##  lattice stabilisers used by the Aut(Lambda,+,star) computation.
+##  lattice stabilizers used by the Aut(Lambda,+,star) computation.
+##
+##  Created: 2026-07-12.  Updated: 2026-10-28.
 ##
 ##  Reads 8x8 rational generators produced by
 ##      python_project/src/verify_aut_octonion_crosscheck.py
@@ -11,8 +13,8 @@
 ##      StabLs     = { A : A(Ls)    = Ls    }   expected order   168
 ##      StabLsbar  = { A : A(Lsbar) = Lsbar }   expected order 12096
 ##
-##  The last one is |G_2(2)|; the paper's Ls_bar, not L, is the lattice whose
-##  octonion-automorphism stabiliser is the full G_2(2).
+##  The last one is |G_2(2)|; the paper's Lsbar, not L, is the lattice whose
+##  octonion-automorphism stabilizer is the full G_2(2).
 ##
 #############################################################################
 

@@ -2,13 +2,19 @@
 trial_006_triple_okubo_automorphisms.py — E8 automorphism basis changes
 for the triple symmetric-composition algebra.
 
-This is the automorphism companion to trial 005, analogous to how trial 004
-was the automorphism companion to trial 003.
+Created: 2026-04-09.  Updated: 2026-10-28.
+
+This is the automorphism companion to trial 005, as trial 004 is to trial 001.
+The product is that of trial 005 with an E8 lattice automorphism T_i as a
+change of basis in each block i: a block pair (i, j) with target t
+contributes T_t(T_i⁻¹ a_i *_t T_j⁻¹ b_j) to block t, where *_t is block t's
+product.
 
 Trial 005 showed that the triple Okubo/para-octonion algebra fails
-catastrophically: 91.5% of products leave the E8 lattice entirely (Wilson
-condition 1 fails).  This is because the Petersson construction introduces
-irrational structure constants (√3/2 from the 2π/3 rotation in τ).
+catastrophically: 91.5% of the failing products leave the E8 lattice
+entirely (Wilson condition 1 fails).  This is because the Petersson
+construction introduces irrational structure constants (√3/2 from the
+2π/3 rotation in τ).
 
 A priori, an E8 automorphism basis change COULD absorb some of these
 irrational factors if the automorphism happens to align with the rotation

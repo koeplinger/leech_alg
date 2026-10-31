@@ -1,5 +1,7 @@
 # Primary-source verification — Mahler (1942)
 
+Created: 2026-05-20.  Updated: 2026-10-28.
+
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 110. Third source paper of the 1920s–40s set.
@@ -84,10 +86,10 @@ candid about its own limits, marred only by a printer's slip in $A_8$.
 
 ## Status
 
-Dickson (1923), Kirmse (1924), Mahler (1942): **all verified.** Coxeter (1946)
-remains to be obtained — it is the source for who first stated the count
-*seven* correctly, and for the precise form of the correction of Kirmse's
-construction.
+Dickson (1923), Kirmse (1924), Mahler (1942): **all verified.** Coxeter (1946),
+verified in `2026-05-22_claude_opus_4_7_coxeter_1946_verification.md`, is the
+first of the four to state the count *seven* correctly and gives the precise
+form of the correction of Kirmse's construction.
 
 Facts vs. interpretation: the product identity, $J=O_D$ and its closure, the
 counts 240/2160, the covering radius² $=\tfrac12$, and the Theorem-2

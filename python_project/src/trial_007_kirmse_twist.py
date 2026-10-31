@@ -1,22 +1,28 @@
 """
 trial_007_kirmse_twist.py — Triple Kirmse-twisted octonion algebra on R^24.
 
+Created: 2026-04-11.  Updated: 2026-10-28.
+
 Preliminary investigation
 =========================
-The "Kirmse twist" (index-doubling permutation) corrects Kirmse's non-closed
-integral octonions to a genuine maximal order (Coxeter–Dickson integers).
-There are 7 maximal orders in the octonions, one for each choice of
-distinguished imaginary basis element.
+The "Kirmse twist" is a transposition of two imaginary basis units, the map
+by which Bruck derived a maximal order from Kirmse's set J₁ (Coxeter 1946,
+§4: "transposing two of the i's").  For a fixed multiplication, seven
+maximal orders of integral octonions contain the eight basis units (paper
+Section 1 and Appendix B).
 
-Key question: does Wilson's E8 lattice L, as defined in e8_wilson.py, form
-a maximal order under the standard octonion multiplication?  If yes, then
-trial 001 already used a maximal-order multiplication and this trial's
-proposed construction is structurally identical to trial 001.
+Key question: is Wilson's E8 lattice L, as defined in e8_wilson.py, closed
+under the standard octonion multiplication?  It is (Phase 0): L is a nonunital
+order (e_0 is not in L) and, as a lattice, a √2-scaled copy of a maximal
+order of integral octonions (paper Section 2.2).  The twist matters for
+Wilson's sublattices Ls̄ and Ls, not for L (paper Section 4).
 
 This trial proceeds in phases:
   Phase 0: Verify whether L is closed under the standard multiplication.
-  Phase 1: Test 7 permuted multiplication tables (one per imaginary basis
-           element) to determine which make L a maximal order.
+  Phase 1: Test the 7 index-doubling permutations of the Fano triples (one
+           per imaginary basis element) for closure of L.
+  Phase 1b: Test the 21 transpositions of imaginary basis elements for
+           closure of L.
   Phase 2: For each multiplication that closes on L, run the triple-product
            Leech lattice closure test (same as trial 001 but with the
            twisted multiplication).
@@ -203,7 +209,9 @@ def build_index_doubling_algebras() -> List[Tuple[str, OctonionAlgebra]]:
     In F_7 arithmetic (with 7 ≡ 0), σ_s fixes s and permutes the other 6
     elements in two 3-cycles.
 
-    These are the permutations directly associated with the Kirmse twist.
+    Each is an automorphism of the oriented Fano triples, so it leaves the
+    multiplication table unchanged; the Kirmse twist is a transposition
+    (build_transposition_algebras).
     """
     algebras = []
 
@@ -360,14 +368,14 @@ def run_trial(verbose: bool = True):
 
     if std_result['closed']:
         if verbose:
-            print("\n  *** FINDING: Wilson's L IS a maximal order under the")
-            print("  standard octonion multiplication. This means trial 001")
-            print("  already used the Coxeter–Dickson integral octonions.")
-            print("  The 'Kirmse twist' is already implicitly applied.")
+            print("\n  *** FINDING: Wilson's L IS closed under the standard")
+            print("  octonion multiplication: a nonunital order (e_0 is not in L),")
+            print("  as a lattice a sqrt(2)-scaled copy of a maximal order of")
+            print("  integral octonions.  Trial 001 used the same L.")
     else:
         if verbose:
             print("\n  *** FINDING: Wilson's L is NOT closed under the standard")
-            print("  multiplication. A Kirmse twist is needed.")
+            print("  multiplication.")
 
     # ==================================================================
     # Phase 1: Test index-doubling permutations
@@ -441,8 +449,8 @@ def run_trial(verbose: bool = True):
     if not closed_algebras:
         if verbose:
             print("\n  No algebra closes on L. Cannot proceed to Leech test.")
-            print("  This would mean Wilson's L is NOT a maximal order under")
-            print("  ANY of the tested multiplications — a surprising finding.")
+            print("  This would mean Wilson's L is not closed under any of the")
+            print("  tested multiplications.")
         return {
             'phase0': std_result,
             'phase1_idx_dbl': idx_dbl_results,

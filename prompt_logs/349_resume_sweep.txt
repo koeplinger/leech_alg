@@ -1,0 +1,31 @@
+Prompt 349 -- resume the documentation sweep
+Date: 2026-10-28
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'We've got a new token budget. Resume.'
+
+Context: the sweep of prompt 346 was paused at prompt 348 (run
+wf_4a713d78-6e1: all twenty scanners and 130 verifiers finished; eight
+agents cut off; the completeness critic not started).  The author's
+commit ee17acd holds the leech_dixon.py fix and logs 346 to 348; the
+working tree is clean, and the paper is unchanged since the sweep began.
+Prompt 346 is open.
+
+Rulings: resume the run from wf_4a713d78-6e1, reusing the finished agents;
+then continue prompt 346: findings first, diffstat second, edits third.
+
+Response: the run was resumed from wf_4a713d78-6e1 (finished agents
+reused; eight finished scanners re-ran because their results had
+completed out of order) and completed by run wf_a642503e-692 (the 422
+findings still unverified, the completeness critic, the two gap
+scanners).  Prompt 346 then continued in its order: findings and the
+dry-run diffstat in log 346, part 1; the edits; a read-only review of the
+applied edits (run wf_e5c6e0c7-858) and its fixes; log 346, part 2.  Two
+errors were caught before anything was written to the repository: the
+script that applies the holds split each line at "#", which every finding
+id contains, so no hold took effect and four held Dixon edits had entered
+the edit list; and the per-area diffstat first written into log 346 came
+from that dry run.  The parser was fixed, the dry run repeated and the
+exact figures written.  Nothing committed.
+
+Status: CLOSED.

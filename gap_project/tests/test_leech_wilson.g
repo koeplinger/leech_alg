@@ -3,7 +3,7 @@
 ##  test_leech_wilson.g — Wilson's Leech lattice Lambda inside L^3
 ##  (paper Definition 2.1, `def:wilson-leech`; Wilson [Wilson2009] Section 3).
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  Mirrors python_project/tests/test_leech_wilson.py (the parts that don't
 ##  depend on enumerating the 184,320 type-3 vectors, which would be slow in
@@ -14,7 +14,8 @@
 ##    1.  J = { +-e_t : t = 0..7 } has 16 elements, each of squared norm 1.
 ##    2.  All 240 root products r * sbar lie in L  (Lsbar subset L).
 ##    3.  All 240 root products r * s    lie in L  (Ls    subset L).
-##    4.  IsInLsBar / IsInLs reject every E8 root  (norm 2 < min 4 in Ls(*)).
+##    4.  IsInLsBar / IsInLs reject every E8 root  (norm 2 < 4, the minimal
+##        norm of Ls and Lsbar).
 ##    5.  Type-1 minimal vector count = 720 = 3 * 240.
 ##    6.  Every type-1 minimal vector has ambient squared norm 8.
 ##    7.  Every type-1 minimal vector satisfies Wilson's three conditions.
@@ -88,7 +89,7 @@ od;
 CHECK(Concatenation("Type-2 sample (", String(sampled), " vectors) satisfies Wilson's three conditions"),
       type2_sample_ok);
 
-# 10. Sample type-3 vectors:  ( (lambda*s)*j,  lambda*k,  (lambda*j)*k )  and perms.
+# 10. Sample type-3 vectors:  ( (lambda*s)*j,  lambda*k,  (lambda*j)*k ), unpermuted.
 type3_sample_ok := true;
 sampled := 0;
 for ridx in [1, 60, 120, 180, 240] do
@@ -108,7 +109,7 @@ od;
 CHECK(Concatenation("Type-3 sample (", String(sampled), " vectors) satisfies Wilson's three conditions"),
       type3_sample_ok);
 
-# 11. Non-members.
+# 11. Nonmembers.
 zero := [0,0,0,0,0,0,0,0];
 CHECK("(root, 0, 0) is NOT in Lambda for any of the 240 roots",
       ForAll(ROOTS, r -> not IsInLeech(r, zero, zero)));

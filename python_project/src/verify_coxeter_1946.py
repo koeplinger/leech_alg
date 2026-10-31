@@ -1,32 +1,40 @@
 """Verify Coxeter 1946 from scratch -- Section 4, "Kirmse's mistake".
 
+Created: 2026-05-22.  Updated: 2026-10-28.
+
 Source: H. S. M. Coxeter, "Integral Cayley numbers", Duke Math. J. 13 (1946),
-561-578.  Section 4 (pp. 565-566) discusses Kirmse 1924.
+561-578.  Section 4 (pp. 565-566) discusses Kirmse 1924.  The paper cites
+this script in Appendix B (`app:history`), in the footnote of its opening
+paragraph; the paragraph on Coxeter there states (C3) to (C5).  Prints each
+claim with its check, the coordinate symmetry of Kirmse's lattices, a
+concrete example for tau = (1 2), and a verdict; a few seconds.
 
 Coxeter's Section-4 claims, each checked below against Kirmse's own data
 (table (1) p.64 and J_1 p.70, the same data used by verify_kirmse_1924.py):
 
-  (C1) Coxeter's table (4.1) reproduces Kirmse's multiplication table (1).
+  (C1) Coxeter's table (4.1) reproduces Kirmse's multiplication table (1)
+       (by reading the two sources; the script encodes the one table and
+       checks that it is a composition algebra on 400 random integer pairs).
   (C2) Kirmse states there are eight maximal domains; "actually there are
        only seven, which presumably are the remaining seven of his eight".
   (C3) J_1 (Kirmse's exhibited domain) is not closed under multiplication:
          1/2(1+i1+i2+i3) . 1/2(1+i1+i4+i5) = 1/2(i1+i2+i4+i7),
        which "is not one of the 240 units".
   (C4) Bruck's correction: "Bruck's domain J can be derived from J_1 by
-       transposing two of the i's" -- a *linear* coordinate transposition --
+       transposing two of the i's" (a *linear* coordinate transposition),
        and the result is closed.
   (C5) "the (7 choose 2) = 21 transpositions fall into 7 sets of 3, each set
        having the same effect" -> exactly seven domains; in each, one i is
        fixed by all three transpositions (the "special unit").
   (C6) framing duality: transposing two i's in the *elements* (J_1 -> J,
        same table) is equivalent to transposing them in the *table*
-       (J_1 fixed, table (4.1) -> a relabelled table).  Both are the one
+       (J_1 fixed, table (4.1) -> a relabeled table).  Both are the one
        linear involution; this is what Coxeter means by "Kirmse's J_1 could
        be used as it stands if we replaced his multiplication table".
 
-The point of (C4)/(C6) for our paper: Coxeter's correction *is* induced by a
-linear map on R^8 -- a transposition of two coordinate axes -- exactly the
-kind of map our sigma is.
+The point of (C4)/(C6) for our paper: Bruck's correction, as Coxeter records
+it, *is* induced by a linear map on R^8 (a transposition of two coordinate
+axes), exactly the kind of map our sigma is.
 """
 from fractions import Fraction as F
 from itertools import product as iproduct, permutations, combinations
@@ -131,7 +139,7 @@ def transp(a, b):
 def permute_code(code, p):
     return frozenset(tuple(w[p[k]] for k in range(8)) for w in code)
 def conj_table(tab, p):
-    """table relabelled by the coordinate permutation p (p involutive here)."""
+    """table relabeled by the coordinate permutation p (p involutive here)."""
     t = {}
     for i in range(8):
         for j in range(8):
@@ -155,7 +163,7 @@ if __name__ == "__main__":
     print("(C1) Coxeter's (4.1) = Kirmse's table (1); a composition algebra:",
           comp)
 
-    # --- (C3) the non-closure witness ---
+    # --- (C3) the nonclosure witness ---
     prod = omul(a1, a3)
     witness = half(1,2,4,7)            # 1/2(i1 + i2 + i4 + i7)
     print()

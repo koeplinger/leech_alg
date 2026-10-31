@@ -1,5 +1,7 @@
 # Journal-quality review of the main paper (v4, 24 May 2026)
 
+Created: 2026-05-24.  Updated: 2026-10-28.
+
 **Date:** 2026-05-24
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of an editorial reviewer at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v4 (24 May 2026), 20 pp.
@@ -76,7 +78,7 @@ These are the kinds of things a copy-editor or a referee might pick at; none aff
 
 ### III.1 The non-commutativity of $\bar\mu$ in the L-basis (Section A.1)
 
-The Section A.1 polarization paragraph states $\bar\mu$ is non-commutative in the L-basis. This will surprise some readers who expect the F₂-octonion algebra to be commutative (since signs vanish mod 2). The non-commutativity arises because the L-basis mixes the half-integer $s$ with integer vectors, and the antisymmetric part of products involving $s$ does not vanish mod 2L. The paper states the fact concisely and moves on; this is the right level of detail, but a one-line footnote pointing out *why* it's non-commutative could pre-empt confusion. ("The non-commutativity arises because $s$ is half-integer, so $L_1 \cdot L_2 - L_2 \cdot L_1$ need not lie in 2L.")
+The Section A.1 polarization paragraph states $\bar\mu$ is non-commutative in the L-basis. This will surprise some readers who expect the F₂-algebra $L/2L$ to be commutative (since signs vanish mod 2). The non-commutativity does not come from $s$: for octonions, $xy - yx$ is twice the imaginary part of the product of the imaginary parts of $x$ and $y$, which need not lie in $L$; already the integer vectors $e_0 + e_1$ and $e_0 + e_2$ of $L$ have commutator $2e_4 \notin 2L$. The paper states the fact concisely and moves on; this is the right level of detail, but a one-line footnote pointing out *why* it's non-commutative could pre-empt confusion. ("The commutator $xy - yx$ is twice an octonion that need not lie in $L$; for example, $(e_0 + e_1)(e_0 + e_2) - (e_0 + e_2)(e_0 + e_1) = 2e_4 \notin 2L$.")
 
 ### III.2 §7 bullet 1 versus Section A.1 polarization paragraph
 
@@ -129,8 +131,8 @@ For the avoidance of doubt — these are things a referee might suggest changing
 ## V. Significance and venue suitability
 
 The paper's natural venues are:
-- **General algebra journals**: J. Algebra, Comm. Algebra, Adv. Math.; algebra of Λ + octonions is a recurring theme.
-- **Lattice / discrete geometry**: Discrete Comput. Geom., where Wilson 2009 also sits.
+- **General algebra journals**: J. Algebra (where Wilson 2009 sits), Comm. Algebra, Adv. Math.; algebra of Λ + octonions is a recurring theme.
+- **Lattice / discrete geometry**: Discrete Comput. Geom.
 - **Mathematical physics-adjacent venues**: J. Math. Phys., Lett. Math. Phys. — defensible given the §8 outlook on triality and physics-application context.
 
 For all three categories the paper is at the right technical level. The exposition is more accessible than some recent work on integral octonions, partly because the historical Appendix B works as a 2-page primer for any reader who hasn't seen Coxeter 1946.

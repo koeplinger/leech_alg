@@ -1,6 +1,7 @@
 Claim number: 002
 Title: Wilson's 240-element octonionic construction is a valid E8 lattice
 Status: ESTABLISHED
+Created: 2026-04-06.  Updated: 2026-10-28.
 Date: 2026-04-06
 
 --- STATEMENT ---
@@ -35,12 +36,12 @@ Type-2 roots (128):  (1/2)(±e_0 ± e_1 ± ... ± e_7)  with an ODD number of mi
   Squared norm: 8 * (1/2)^2 = 2.
 
 Total: 112 + 128 = 240.
-Reference: [Wilson2009] Section 2 — "112 octonions ±i_t ± i_u" and "128 octonions
+Reference: [Wilson2009] Section 2: "112 octonions ±i_t ± i_u" and "128 octonions
 (1/2)(±1 ± i_0 ± ... ± i_6) which have an odd number of minus signs".
 
 --- LATTICE MEMBERSHIP CRITERION ---
 
-L is the D8+ lattice (one of the two standard realisations of E8 in R^8):
+L is the D8+ lattice (one of the two standard realizations of E8 in R^8):
 
   L = { x in R^8 : all x_i in Z,      sum(x_i) even  }
     u { x in R^8 : all x_i in Z + 1/2, sum(x_i) odd  }
@@ -95,7 +96,5 @@ laws; the computational verification above provides an independent second-pass c
 --- COMPUTATIONAL EVIDENCE ---
 
 Test file:  python_project/tests/test_e8_wilson.py
-Test count: 24 tests across 10 classes
-Test result: 24 passed, 0 failed (run date: 2026-04-06)
-
-Full suite (76 tests including octonion algebra tests): 76 passed, 0 failed.
+Test count: 24 tests across 11 classes
+Test result: 24 passed, 0 failed.

@@ -1,6 +1,6 @@
 """Forensic reconstruction of Kirmse's count of EIGHT maximal orders (1924).
 
-Created: 2026-05-20.  Updated: 2026-10-24.
+Created: 2026-05-20.  Updated: 2026-10-28.
 
 Uses only Kirmse's own multiplication table (1), p.64, and his order J_1, p.70.
 No later author enters.  The paper cites this script in Appendix B
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     bad = [c for c in unitinv if c not in genuine]
     print("unique unit-invariant non-order  == J_1 :", bad == [J1])
     print()
-    # where do J_1's products fail?  -- using Kirmse's own generators a_1..a_4 (p.70)
+    # where do J_1's products fail?  Checked with Kirmse's own generators a_1..a_4 (p.70)
     def half(*idx):
         v=[F(0)]*8
         for k in idx: v[k]=F(1,2)

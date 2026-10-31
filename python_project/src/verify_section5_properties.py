@@ -2,7 +2,7 @@
 vectors: the identity table of paper Appendix D (`app:samples`, "Identities
 and product norms on minimal vectors"), which cites this script.
 
-Created: 2026-05-22.  Updated: 2026-10-24.
+Created: 2026-05-22.  Updated: 2026-10-28.
 
 All vectors are stored in *doubled-integer* coordinates (= 2 x the actual
 1/2-integer coordinate), so the whole hot loop is exact integer arithmetic.
@@ -99,7 +99,8 @@ Z = [0]*8
 def cyc(trip, sh): return tuple(trip[(k-sh)%3] for k in range(3))
 
 def rand_min():
-    """a uniformly-ish random minimal vector of Lambda, doubled-int coords."""
+    """a uniformly random minimal vector of Lambda, doubled-int coords (each
+    family with its share of 196,560; the parameters index distinct vectors)."""
     r = random.random()
     lam = random.choice(droots)
     sh  = random.randint(0,2)

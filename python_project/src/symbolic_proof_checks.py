@@ -1,9 +1,10 @@
 """
 symbolic_proof_checks.py — Exact-arithmetic verification, on Z-bases, of
 Lemmas 4.1, 4.3 and 4.4 of the symbolic proof of Leech lattice closure, plus
-the accompanying nontriviality checks of Remark 4.5 (σ(Ls) ≠ Ls).
+the accompanying nontriviality checks of Remark 4.5 (σ(Ls) ≠ Ls, σ(Ls̄) ≠ Ls̄
+and Ls · Ls ⊄ Ls).
 
-Created: 2026-04-11.  Updated: 2026-10-24.
+Created: 2026-04-11.  Updated: 2026-10-28.
 
 All arithmetic is exact rational arithmetic with fractions.Fraction on the
 coordinates as given: the octonion product is expanded over the Fano table
@@ -226,10 +227,10 @@ def main():
         print("  Since σ is its own inverse, σ(L) = L. ✓")
 
     # ===============================================================
-    # Remark rem:Ls-not-closed: σ(Ls) ≠ Ls (paper records this as a remark, not a lemma)
+    # Remark 4.5 (rem:Ls-not-closed): σ(Ls) ≠ Ls, σ(Ls̄) ≠ Ls̄
     # ===============================================================
     print("\n" + "=" * 70)
-    print("REMARK rem:Ls-not-closed: σ(Ls) ≠ Ls (paper §4: a remark, not a lemma)")
+    print("REMARK 4.5 (rem:Ls-not-closed): σ(Ls) ≠ Ls")
     print("=" * 70)
     found_diff = False
     for i, v in enumerate(sigma_Ls_basis):

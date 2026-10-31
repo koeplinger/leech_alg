@@ -1,5 +1,7 @@
 # Forensic pre-freeze review of v6 (18 July 2026)
 
+Created: 2026-07-18.  Updated: 2026-10-28.
+
 **Date:** 2026-07-18
 **Reviewer:** Claude Fable 5, at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v6 (18 July 2026), 23 pp., not frozen
@@ -277,7 +279,7 @@ Tables 2 and 3 and let them float, or accept the white space deliberately.
 ### N1. `verify_egan_lower_bound.py` docstring dates part 10 as "12 December 2014"
 
 The live page (fetched this session) is posted December 1, 2014; 12 December
-is part 11's date. The paper's bibliography (lines 1752–1753) is correct;
+is the date of the math.ucr.edu copy of part 11 (the post is dated 11 December). The paper's bibliography (lines 1752–1753) is correct;
 the script docstring is not. One-line docstring fix (referenced program;
 fix before freeze with a prompt-log record, or leave with this review as
 the record).

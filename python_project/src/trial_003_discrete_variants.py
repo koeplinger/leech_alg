@@ -2,6 +2,8 @@
 trial_003_discrete_variants.py — Exhaustive sweep over discrete modifications
 of the triple-octonion algebra.
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Algebra family tested
 =====================
 Same base structure as trials 001–002: three copies of the octonion algebra on
@@ -17,8 +19,9 @@ discrete degrees of freedom in the cross-block terms:
         a · b̄       (conjugate right)
         ā · b̄       (conjugate both)
 
-      Octonion conjugation: ā = (a₀, -a₁, -a₂, ..., -a₇).  It swaps the
-      relationship between Ls and Ls̄ sublattices — directly relevant since
+      Octonion conjugation: ā = (a₀, -a₁, -a₂, ..., -a₇).  It maps Ls̄ onto
+      itself but maps neither L nor Ls into L, so it changes how the cross
+      terms meet Wilson's sublattices.  This is relevant since
       trial 001 failed exclusively on Wilson condition 3 (x+y+z ∈ Ls).
 
   (B) SIGN — multiply each cross-block contribution by +1 or -1.
@@ -48,8 +51,8 @@ Parameter space
   so we test all of them without symmetry reduction.
 
 For each variant, we test a SAMPLE of Min(Λ) pairs and count how many products
-land in Λ.  Variants with 100% closure on the sample are tested more
-thoroughly.
+land in Λ.  A variant with 100% closure on the sample would need further
+testing; the summary flags it.
 
 Motivation
 ==========
@@ -228,7 +231,7 @@ def enumerate_variants():
 
                                 conj_strs = []
                                 for ci, (cl, cr) in enumerate(conj_codes):
-                                    idx = cl * 2 + cr
+                                    idx = cl + 2 * cr
                                     conj_strs.append(CONJ_LABELS[idx])
 
                                 sign_str = "".join("+" if s > 0 else "-"
@@ -284,7 +287,7 @@ def run_trial(verbose=True):
     test_pairs = []
     pair_labels = []
 
-    # type1 × type1: 50 pairs
+    # type1 × type1: 25 pairs
     idx1 = rng.choice(len(type1), min(50, len(type1)), replace=False)
     for i in range(0, len(idx1) - 1, 2):
         test_pairs.append((type1[idx1[i]], type1[idx1[i+1]]))

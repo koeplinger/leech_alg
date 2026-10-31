@@ -1,5 +1,7 @@
 # Full journal-style review of the main paper (v4)
 
+Created: 2026-05-23.  Updated: 2026-10-28.
+
 **Date:** 2026-05-23
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a journal referee at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product*, v4 (23 May 2026), 20 pp.
@@ -41,7 +43,7 @@ The "two equivalent framings" remark (Remark 4.6, rem:two-framings) is a useful 
 
 ### 3. The mod-2-quotient reading (Appendix A subsection)
 
-This is one of the strongest passages in the paper. The decomposition $\bar L = V \oplus W$ with $V$ a left ideal and $W$ a subalgebra of the octonion $\FF_2$-algebra $\bar L = L/2L$ converts the appendix tables from "verified by computation" to "verified instances of a structural fact." The argument:
+This is one of the strongest passages in the paper. The decomposition $\bar L = V \oplus W$ with $V$ a left ideal and $W$ a subalgebra of the $\FF_2$-algebra $\bar L = L/2L$ converts the appendix tables from "verified by computation" to "verified instances of a structural fact." The argument:
 
 1. $L \cdot L \subseteq L$ + $\ZZ$-bilinearity ⟹ the product descends to $\bar\mu \colon \bar L \times \bar L \to \bar L$.
 2. $2L \subseteq \sigma(L\bar s)$ and $2L \subseteq \sigma(Ls)$ (applying σ to $2L \subseteq L\bar s, Ls$, noting σ fixes $2L$).
@@ -51,7 +53,7 @@ This is one of the strongest passages in the paper. The decomposition $\bar L = 
 
 I verified the dimensional arithmetic: $[L : \sigma(L\bar s)] = [L : L\bar s] = 16$ (since σ is an isometry of $L$), so $[\sigma(L\bar s) : 2L] = 2^8/16 = 16$, hence $\dim_{\FF_2} V = 4$; same for $W$. The decomposition $\bar L = V \oplus W$ then follows from $\sigma(L\bar s) + \sigma(Ls) = L$ and $\sigma(L\bar s) \cap \sigma(Ls) = 2L$ via the σ-image of Wilson's identities $L\bar s + Ls = L$, $L\bar s \cap Ls = 2L$. The structural account is complete.
 
-This is *not* the same as identifying $V$ and $W$ inside the $\FF_2$-octonion-algebra by name (e.g., which left ideal is $V$? — the algebra $L/2L$ has more than one). The text correctly stops at "left ideal" and "subalgebra" without overclaiming. The open question in §7 ("identification of $\sigma(Ls)$ with a left ideal, with the image under a norm-preserving octonion automorphism, or with some module-theoretic structure over $L$") is exactly the right follow-up.
+This is *not* the same as identifying $V$ and $W$ inside the $\FF_2$-algebra $L/2L$ by name (e.g., which left ideal is $V$? — the algebra $L/2L$ has more than one). The text correctly stops at "left ideal" and "subalgebra" without overclaiming. The open question in §7 ("identification of $\sigma(Ls)$ with a left ideal, with the image under a norm-preserving octonion automorphism, or with some module-theoretic structure over $L$") is exactly the right follow-up.
 
 ### 4. §5 algebraic properties
 
@@ -95,7 +97,7 @@ These are all minor and local.
 
 ### B. §1 Introduction
 
-4. **L115–117:** "In rank 8, the $E_8$ lattice $L$ carries an octonionic multiplication that makes it a maximal order in the real octonion division algebra. Seven octonion-multiplication conventions on $\RR^8$ have this property; the resulting structures are in bijection with the seven maximal orders of the integral octonions." The two sentences together correctly say that one lattice $L = D_8^+$ supports seven distinct multiplication tables, each pairing with $L$ to give a maximal order. But the first sentence singular ("an octonionic multiplication") may suggest a single canonical multiplication. Consider: "carries octonionic multiplication tables that make it a maximal order" — minor.
+4. **L115–117:** "In rank 8, the $E_8$ lattice $L$ carries an octonionic multiplication that makes it a maximal order in the real octonion division algebra. Seven octonion-multiplication conventions on $\RR^8$ have this property; the resulting structures are in bijection with the seven maximal orders of the integral octonions." The two sentences say that one lattice $L = D_8^+$ supports seven distinct multiplication tables, each pairing with $L$ to give a maximal order. That is false for $L$: at this normalization $e_0 \notin L$, $L$ is a $\sqrt{2}$-scaled copy of a maximal order, and $L$ is closed under all 480 octonion multiplication tables on $e_0, \ldots, e_7$ (`2026-10-12_claude_fable_5_1_review_v8.md`, SF4). The classical count is the other way round: for a fixed multiplication, seven maximal orders of integral octonions contain all eight basis units. Consider replacing the two sentences by that classical statement.
 
 ### C. §3 Construction
 
@@ -109,7 +111,7 @@ These are all minor and local.
 
 ### E. §6 Related work
 
-8. **L739–740:** "The situation is similar to the Kirmse–Bruck–Coxeter relationship discussed below: an early, structurally correct proposal needing correction." This in-line analogy between Dixon's 1995 → Wilson's 2009 footnote and Kirmse 1924 → Bruck 1946 is a structural comparison the paper makes; the parenthetical "discussed below" used to point to §6's now-absent Kirmse subsection. Now that the historical material is in Appendix B, consider "(see Appendix B for the historical case)" or similar — the current "discussed below" is no longer accurate since §6 ends with a one-line pointer to Appendix B, not a discussion.
+8. **L739–740:** "The situation is similar to the Kirmse–Bruck–Coxeter relationship discussed below: an early, structurally correct proposal needing correction." This in-line analogy between Dixon's 2005 preprint → Wilson's 2009 bracketed note (Section 5, p. 2189) and Kirmse 1924 → Bruck 1946 is a structural comparison the paper makes; the parenthetical "discussed below" used to point to §6's now-absent Kirmse subsection. Now that the historical material is in Appendix B, consider "(see Appendix B for the historical case)" or similar — the current "discussed below" is no longer accurate since §6 ends with a one-line pointer to Appendix B, not a discussion.
 
 9. **L843–845:** "**Dickson (1923), Kirmse (1924), Mahler (1942), Bruck and Coxeter (1946).** For a full historical account, see Appendix~\ref{app:history}." Good: clean, minimal, and the bold-tag preserves §6's enumerative rhythm.
 
@@ -154,7 +156,7 @@ In order of priority:
 2. **(Edit, §6)** Change "discussed below" at L739 to "see Appendix~\ref{app:history}". *Reason: §6 no longer discusses Kirmse below this line.*
 3. **(Edit, abstract)** L91: "but it moves Wilson's sublattices $L\bar s$ and $Ls$" (delete "conditions on the"). *Reason: σ moves sublattices, not conditions.*
 4. **(Edit, bibliography)** Relocate `Kirmse1924` to its alphabetical position between Kamiya and Koeplinger. *Reason: alphabetisation.*
-5. **(Optional, §1)** L115–116: "carries octonionic multiplication tables" (plural). *Reason: signals the seven-conventions story before stating it.*
+5. **(Edit, §1)** L115–116: replace the two sentences by the classical statement (for a fixed multiplication, seven maximal orders of integral octonions contain all eight basis units). *Reason: the seven-conventions reading does not hold for $L$.*
 6. **(Optional, §5)** Tighten the post-table sentence to credit each rate-ruling-out individually rather than jointly. *Reason: factual sharpness.*
 7. **(Optional, §6 Comparison)** "$\ZZ_3$-symmetric (in fact $S_3$-symmetric)" — only if the author wishes to record the stronger empirical finding from probe 146. *Reason: the stronger claim is true.*
 8. **(Optional, §7 open questions)** Add "$-I_{24} \in \Co_0 \setminus \mathrm{Aut}(\Lambda, +, \star)$" to the second bullet. *Reason: known from probe testing; establishes strict inclusion.*
@@ -165,8 +167,8 @@ None of items 1–8 changes a single line of the proof.
 
 ## VI. Verdict
 
-**Recommend accept**, conditional on items 1–4 above (the minor required revisions). Items 5–8 are author's choice.
+**Recommend accept**, conditional on items 1–5 above (the minor required revisions). Items 6–8 are author's choice.
 
-The paper makes a contribution that is precise, fully verified, internally honest about its scope (a non-unital order in the ring-theoretic sense, no claim of composition or alternativity), and structurally well-organised. The novelty — that closure of $\star$ on $\Lambda$ reduces to closure of $\sigma(Ls)$ under the standard octonion product, paired with the structural reading that $V = \sigma(L\bar s)/2L$ is a left ideal and $W = \sigma(Ls)/2L$ is a subalgebra of the $\FF_2$-octonion-algebra — is a clean and useful addition to the literature on octonionic constructions of $\Lambda$.
+The paper makes a contribution that is precise, fully verified, internally honest about its scope (a non-unital order in the ring-theoretic sense, no claim of composition or alternativity), and structurally well-organised. The novelty — that closure of $\star$ on $\Lambda$ reduces to closure of $\sigma(Ls)$ under the standard octonion product, paired with the structural reading that $V = \sigma(L\bar s)/2L$ is a left ideal and $W = \sigma(Ls)/2L$ is a subalgebra of the $\FF_2$-algebra $L/2L$ — is a clean and useful addition to the literature on octonionic constructions of $\Lambda$.
 
 — Claude Opus 4.7 (referee), 2026-05-23

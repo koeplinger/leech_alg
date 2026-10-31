@@ -1,6 +1,7 @@
 Claim number: 003
 Title: Dixon's two 240-element octonionic constructions are valid E8 minimal-vector shells
 Status: ESTABLISHED
+Created: 2026-04-07.  Updated: 2026-10-28.
 Date: 2026-04-07
 
 --- STATEMENT ---
@@ -8,8 +9,8 @@ Date: 2026-04-07
 Dixon [Dixon2010] defines two 240-element subsets of STANDARD_ALGEBRA, each
 forming the minimal-vector shell of an E8 lattice representation:
 
-  Ξ^even = Ξ₀ ∪ Ξ₂  (240 elements, norm² = 1)
-  A^odd  = A₁ ∪ A₃  (240 elements, norm² = 2)
+  Ξ^even = Ξ₀ ∪ Ξ₂  (240 elements, norm 1)
+  A^odd  = A₁ ∪ A₃  (240 elements, norm 2)
 
 Both sets satisfy all expected properties of a root system / minimal-vector
 shell for E8:
@@ -108,7 +109,5 @@ Total: 2 × 240 × 64 = 30,720 combinations verified.
 --- COMPUTATIONAL EVIDENCE ---
 
 Test file:  python_project/tests/test_e8_dixon.py
-Test count: 29 tests across 11 classes
-Test result: 29 passed, 0 failed (run date: 2026-04-07)
-
-Full suite (105 tests including octonion and Wilson tests): 105 passed, 0 failed.
+Test count: 29 tests across 13 classes
+Test result: 29 passed, 0 failed.

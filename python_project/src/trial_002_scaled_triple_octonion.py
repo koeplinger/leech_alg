@@ -1,6 +1,8 @@
 """
 trial_002_scaled_triple_octonion.py — Per-block scaling of the triple-octonion algebra.
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Algebra
 =======
 The same triple-octonion multiplication as trial 001 (three copies O₁, O₂, O₃
@@ -88,7 +90,7 @@ def batch_is_in_L(vecs: np.ndarray, tol: float = 1e-9) -> np.ndarray:
     c2 = np.round(vecs * 2.0)
     close = np.all(np.abs(vecs * 2.0 - c2) < tol, axis=1)
     c2i = c2.astype(np.int64)
-    parities = c2i % 2  # 0 or 1 (Python % is non-negative for int)
+    parities = c2i % 2  # 0 or 1 (Python % is nonnegative for int)
     all_even = np.all(parities == 0, axis=1)
     all_odd = np.all(parities == 1, axis=1)
     s = np.sum(c2i, axis=1)

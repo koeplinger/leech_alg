@@ -1,3 +1,4 @@
+% Created: 2026-05-23.  Updated: 2026-10-28.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -21,27 +22,26 @@ triple-octonion product}\\
 \address{Anthropic}
 \thanks{Drafted by the AI agent Claude Opus 4.7 (Anthropic) at the
 direction of Jens K\"oplinger, as part of the systematic investigation
-recorded in this repository (\texttt{prompt\_logs/}).  The short version
-that appears in the main paper (\texttt{paper/historical\_appendix.tex})
-is owned by the principal investigator; this expanded form is a
-standalone reading copy and is intentionally longer than the version
-that will be merged into the manuscript.}
-\date{23 May 2026}
+recorded in this repository (\texttt{prompt\_logs/}).  The version
+that appears in the main paper, as Appendix~B, is owned by the principal
+investigator; this expanded form is a standalone reading copy and is
+intentionally longer than Appendix~B.}
+\date{23 May 2026; updated 28 October 2026}
 
 \begin{document}
 \maketitle
 
-\begin{abstract}
+\begin{abstract}\sloppy
 This is an expanded draft of the historical appendix.  It is written
 \emph{solely from the primary sources}: the four papers Dickson (1923),
 Kirmse (1924), Mahler (1942), and Coxeter (1946), each obtained and
-re-derived in exact arithmetic in this project
-(\texttt{python\_project/src/verify\_dickson\_1923.py},
-\texttt{verify\_kirmse\_1924.py},
-\texttt{verify\_mahler\_1942.py},
-\texttt{verify\_coxeter\_1946.py};
-companion notes in \texttt{paper/reviews/}).  No secondary source is taken
-on trust.  A short form of this appendix, targeted at the main paper's
+re-derived in exact arithmetic in this project (the scripts
+\texttt{verify\_dickson\_1923.py}, \texttt{verify\_kirmse\_1924.py},
+\texttt{verify\_kirmse\_1924\_forensic.py}, \texttt{verify\_mahler\_1942.py}
+and \texttt{verify\_coxeter\_1946.py} in \texttt{python\_project/src/}, with
+companion notes in \texttt{paper/reviews/}); Mahler's covering-radius
+theorem is checked by sampling in exact arithmetic.  No secondary source is
+taken on trust.  A short form of this appendix, targeted at the main paper's
 length budget, is in \texttt{paper/historical\_appendix.tex}.
 \end{abstract}
 
@@ -49,14 +49,17 @@ length budget, is in \texttt{paper/historical\_appendix.tex}.
 \section*{Setting}
 % ===================================================================
 
-The integral-Cayley-number construction -- a maximal order in the real
-octonion algebra, supported on the $E_8$ lattice -- was developed in four
+The integral-Cayley-number construction (a maximal order in the real
+octonion algebra, supported on the $E_8$ lattice) was developed in four
 papers between 1923 and 1946.  Each contributes one piece.  Together they
 fix three facts that underlie the present construction: there are
-\emph{seven} maximal orders; each is obtained from any one by a
+\emph{seven} maximal orders containing the eight basis units; each is
+obtained from Kirmse's lattice~$J_1$ (which is not an order) by a
 transposition of two imaginary basis units (a linear involution of~$\RR^8$);
-and the underlying lattice is~$E_8$.  The third fact and the count are
-already in Dickson; the second is the Coxeter--Bruck remedy of Kirmse.
+and the underlying lattice is~$E_8$.  Dickson exhibited
+one such order but counted three; the count of seven is Coxeter's, the
+second fact is the Coxeter--Bruck remedy of Kirmse, and Coxeter
+identified the lattice as~$E_8$ (the vertex set of the honeycomb~$5_{21}$).
 
 % ===================================================================
 \section*{Dickson 1923}
@@ -70,7 +73,7 @@ $q, Q$ quaternions, and the product (his equation~(24))
   (q + Qe)(r + Re) \;=\; (qr - \bar R Q) + (Rq + Q \bar r)\, e,
 \]
 and then determined the maximal sets of integers closed under his three
-axioms -- closure C, contains unit~U, integral norm~N (his Section~6).
+axioms: closure C, contains unit~U, integral norm~N (his Section~6).
 From the norm form he derived that integer coordinates are either integers
 or half-integers, ran a case analysis, and exhibited (his~(29)) the basis
 \[
@@ -99,7 +102,7 @@ assume that the latter occur in our set in all cases.''}
 The assumption that every maximal order contains the Hurwitz quaternions is
 stronger than C, U, N.  Of the seven maximal orders, \emph{three} contain
 those quaternions, and those three are precisely $O_D$ and its two
-$(i\,j\,k)$-cyclic images -- exactly Dickson's Theorem~XV triple.  The four
+$(i\,j\,k)$-cyclic images, exactly Dickson's Theorem~XV triple.  The four
 he missed are exactly the maximal orders that do not contain the integral
 quaternions.
 
@@ -116,8 +119,8 @@ the problem with a different presentation.  He fixed an octonion
 multiplication on the basis $\{1, i_1, \ldots, i_7\}$ by seven cyclic Fano
 triples (his table~(1) on p.\,64) and sought the maximal sets of octonion
 integers closed under multiplication.  He derived a correct
-\emph{necessary} form for the maximal orders -- thirty $E_8$-type
-lattices satisfy it -- but did not prove sufficiency.  He then stated
+\emph{necessary} form for the maximal orders (thirty $E_8$-type
+lattices satisfy it) but did not prove sufficiency.  He then stated
 that there are \emph{eight} such sets
 (\emph{``Man findet acht solche \ldots,''} p.\,70); in our
 reconstruction these are the eight of the thirty that are stable
@@ -158,8 +161,8 @@ defective one, and his \emph{count} is too large by one.
 \section*{Mahler 1942}
 % ===================================================================
 
-K.~Mahler \cite{Mahler1942}, eighteen years later, worked over a maximal
-order (one of the seven, to be made explicit by Coxeter in 1946) and
+K.~Mahler \cite{Mahler1942}, eighteen years later, worked over Dickson's maximal
+order~$O_D$ (integral Cayley numbers ``defined according to Dickson'') and
 developed its arithmetic.  His principal results are two.
 
 \begin{itemize}
@@ -186,7 +189,7 @@ Coxeter in the following paper.
 H.\,S.\,M.~Coxeter \cite{Coxeter1946}, in \emph{Integral Cayley numbers},
 identifies Kirmse's error and supplies a corrected order.  His Section~4
 (``Kirmse's mistake'') reproduces Kirmse's table as his~(4.1) (the two
-tables are identical, verified) and exhibits the same non-closure witness
+tables are identical, verified) and exhibits the same nonclosure witness
 as above:
 \[
   \tfrac{1}{2}(1 + i_1 + i_2 + i_3) \cdot
@@ -201,7 +204,7 @@ The remedy is due to \textbf{R.\,H.~Bruck}.  Coxeter writes:
 \emph{``When I pointed this out to Bruck, he sent me a revised description
 of such a domain.  Bruck's domain~$J$ can be derived from~$J_1$ by
 transposing two of the~$i$'s.''}  That is, the correction is a transposition
-of two imaginary basis units of the octonions -- a linear involution
+of two imaginary basis units of the octonions, a linear involution
 of~$\RR^8$.  Any of the $\binom{7}{2} = 21$ such transpositions repairs
 Kirmse's~$J_1$.  Coxeter further notes that the $21$ ``fall into $7$ sets of
 $3$, each set having the same effect,'' yielding the seven maximal orders;
@@ -211,8 +214,8 @@ is three disjoint transpositions fixing one common imaginary unit, the
 
 Coxeter then develops the geometry of the corrected order.  Its $240$
 norm-$1$ units are the vertices of Gosset's polytope~$4_{21}$; the order
-itself is the eight-dimensional honeycomb~$5_{21}$, the densest sphere
-packing in eight dimensions (his Sections~6--13).  He proves the corrected
+itself is the vertex set of the eight-dimensional honeycomb~$5_{21}$ (his
+Sections~6--13).  He proves the corrected
 order maximal in his Section~11.
 
 A postscript (Section~14) records that Coxeter learned of Dickson and
@@ -220,9 +223,9 @@ Mahler only after the manuscript was written, when Olga Taussky Todd drew
 his attention to Mahler, which in turn cites Dickson.  Coxeter there
 identifies the cause of Dickson's Theorem~XV undercount independently:
 \begin{quote}
-\emph{``\ldots\ he asserted [9; 334] that there are only three systems which
-include all the eight basic units \ldots\ He misused the remaining four of
-the seven systems by adding the very artificial requirement that the
+\emph{``\ldots\ he asserted [9; 324] that there are only three systems which
+include all the eight basic units \ldots\ He missed the remaining four of
+the seven systems by adding the very artificial requirement [9; 321] that the
 integral Cayley numbers should include the integral quaternions
 $\tfrac{1}{2}(\pm 1 \pm i \pm j \pm k)$.''}
 \end{quote}
@@ -238,22 +241,23 @@ The four papers together fix the construction the present paper rests on:
 
 \begin{itemize}
 \item \textbf{1923 (Dickson).}  An integral-Cayley-number maximal order
-exists; the lattice is $E_8$; the count, in the form Dickson's theorem
+exists; the count, in the form Dickson's theorem
 gives, is three (under his stated extra assumption).
 \item \textbf{1924 (Kirmse).}  An independent treatment; correct
-multiplication; an enumerated count of eight that includes one non-closed
+multiplication; an enumerated count of eight that includes one nonclosed
 candidate.
 \item \textbf{1942 (Mahler).}  Arithmetic of the order: Euclidean
 with~$\Nrm(X-G) \le \tfrac{1}{2}$; principal ideals.
 \item \textbf{1946 (Coxeter, with Bruck).}  Kirmse's $J_1$ is not closed
 (an explicit one-line witness); Bruck's remedy is a transposition of two
 imaginary basis units; the $21$ such transpositions yield exactly the seven
-maximal orders; Coxeter's postscript supplies the missing connection to
+maximal orders; the lattice is~$E_8$ (the vertex set of~$5_{21}$);
+Coxeter's postscript supplies the missing connection to
 Dickson and Mahler.
 \end{itemize}
 
 \noindent
-The count converges over the four papers -- $3 \to 8 \to 7$ -- and the
+The count converges over the four papers ($3 \to 8 \to 7$), and the
 correction that turns Kirmse's~$J_1$ into a genuine order is the
 \emph{Coxeter--Bruck transposition} of two imaginary coordinate axes: a
 linear involution of~$\RR^8$.
@@ -263,8 +267,7 @@ useful at the Leech-lattice level: the same linear involution
 of~$\RR^8$, but acting on a different object.  The Coxeter--Bruck
 transposition is applied to a maximal-order candidate that sits
 asymmetrically in~$\RR^8$, and so changes which $E_8$ placement is
-considered.  The present~$\sigma$ (Definition of the
-transposition-twisted product, Section~3 of the main paper) is
+considered.  The present~$\sigma$ (Definition~3.1 of the main paper) is
 applied where the order is~$L = D_8^+$, the coordinate-symmetric
 placement; hence $\sigma(L) = L$ and the $E_8$-level closure is
 preserved automatically ($L \cdot_\sigma L = \sigma(L \cdot L)

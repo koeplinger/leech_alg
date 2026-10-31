@@ -2,14 +2,14 @@
 ##
 ##  test_octonion.g — Octonion algebra basics (paper Section 2.1).
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  Verifies (mirrors python_project/tests/test_octonions.py):
 ##    1.  e_0 is left and right identity.
 ##    2.  e_i^2 = -e_0 for i = 1..7.
 ##    3.  Imaginary basis pairs anticommute.
-##    4.  Algebra is non-commutative.
-##    5.  Algebra is non-associative.
+##    4.  Algebra is noncommutative.
+##    5.  Algebra is nonassociative.
 ##    6.  Composition law N(xy) = N(x) N(y) on all 64 basis pairs.
 ##    7.  x * conj(x) = N(x) e_0 (and conj(x) * x).
 ##    8.  Conjugate is an involution.
@@ -26,7 +26,7 @@
 ##  Plus, via the LOOPS package (independent verification):
 ##    L1. The 16 signed basis units form a loop of order 16.
 ##    L2. That loop is a Moufang loop.
-##    L3. It is non-associative.
+##    L3. It is nonassociative.
 ##    L4. It is isomorphic to MoufangLoop(16, 3) (the standard octonion loop).
 ##
 #############################################################################
@@ -58,11 +58,11 @@ for i in [1..7] do for j in [1..7] do
 od; if not ok then break; fi; od;
 CHECK("Distinct imaginary basis units anticommute  (e_i e_j = - e_j e_i)", ok);
 
-# 4. Non-commutativity (sanity).
+# 4. Noncommutativity (sanity).
 CHECK("Algebra is NOT commutative  (e_1 * e_2 <> e_2 * e_1)",
      OctMult(OctBasis(1), OctBasis(2)) <> OctMult(OctBasis(2), OctBasis(1)));
 
-# 5. Non-associativity (sanity).
+# 5. Nonassociativity (sanity).
 CHECK("Algebra is NOT associative  ((e_1*e_2)*e_3 <> e_1*(e_2*e_3))",
      OctMult(OctMult(OctBasis(1), OctBasis(2)), OctBasis(3))
        <> OctMult(OctBasis(1), OctMult(OctBasis(2), OctBasis(3))));

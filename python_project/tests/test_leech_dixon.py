@@ -1,18 +1,11 @@
 """
 test_leech_dixon.py — Verification of Dixon's octonionic Leech lattice construction.
 
+Created: 2026-04-07.  Updated: 2026-10-28.
+
 This suite verifies Dixon's three families of 196,560 minimal vectors
 [Dixon2010 Section 6] and compares them against Wilson's construction
 [Wilson2009 Section 3].
-
-Key question addressed
-----------------------
-The user's prompt asks to verify Dixon's construction as a Leech lattice and
-to check whether it can be interpreted as a 24-dimensional integral algebra
-(module over the integers) that closes on the minimal-vector shell.
-
-Dixon's own answer to the algebraic question [Dixon2010 Section 7]: "No idea
-yet."  This test suite provides the computational groundwork.
 
 Central finding: Dixon's construction gives a DIFFERENT EMBEDDING of the
 Leech lattice from Wilson's.  The two constructions share only 17,232 of the
@@ -32,26 +25,26 @@ Properties verified
  Type-1 vectors  —  (2P, 0, 0) and 2 cyclic perms, P ∈ A^odd:
  4.  Count = 720
  5.  All N_std = 8
- 6.  Exactly 1 nonzero block per triple (zero-component structure)
+ 6.  Exactly 1 nonzero block per triple (first 30 vectors)
  7.  Type-1 vectors with P ∈ A₁ (112 elements): all 336 satisfy is_in_leech
      (A₁ = Wilson's type-1 roots; 2P ∈ 2L, so all conditions are met)
  8.  Type-1 vectors with P ∈ A₃ (128 elements): all 384 FAIL is_in_leech
-     (A₃ has even # of minus signs; 2P ∉ 2L = Ls̄ ∩ Ls, violating
-      Wilson's condition 2.  This is the key structural difference between
-      Dixon's A^odd and Wilson's E8 roots.)
+     (A₃ has even # of minus signs; 2P ∉ 2L = Ls̄ ∩ Ls: 2P lies in Ls̄ but
+      not in Ls, violating Wilson's condition 3.  This is the key structural
+      difference between Dixon's A^odd and Wilson's E8 roots.)
  9.  No duplicates among the 720 vectors
 
  Type-2 vectors  —  (2Q, ±2e_aQ, 0) and 2 cyclic perms, Q ∈ A^even:
 10.  Count = 11,520
 11.  All N_std = 8
-12.  Exactly 2 nonzero blocks per triple
+12.  Exactly 2 nonzero blocks per triple (first 30 vectors)
 13.  Dixon's type-2 uses a different embedding: only 6,144 of 11,520 type-2
      vectors lie in Wilson's Λ; the remaining 5,376 do not.
 
  Type-3 vectors  —  (P, ±e_aP, ±(e_aℓ₀)(e_cP)) and 2 cyclic perms:
 14.  Count = 184,320
 15.  Sample of 500 have N_std = 8
-16.  Exactly 3 nonzero blocks per triple (sample)
+16.  Exactly 3 nonzero blocks per triple (first 30 vectors)
 17.  Dixon's type-3 uses a different embedding: only 10,752 of 184,320 type-3
      vectors lie in Wilson's Λ; the remaining 173,568 do not.
 
@@ -106,7 +99,7 @@ def dix_type2():
 
 @pytest.fixture(scope="module")
 def dix_type3():
-    return dixon_leech_type3()    # 184,320 vectors, slow (~5–10 s)
+    return dixon_leech_type3()    # 184,320 vectors, the slowest fixture
 
 
 # ---------------------------------------------------------------------------
@@ -158,8 +151,9 @@ class TestType1VectorsDixon:
       - A₁ (112 elements):  ±e_a ± e_b, integer coordinates.
         These ARE Wilson's type-1 E8 roots.  2P ∈ 2L, so (2P,0,0) ∈ Λ.
       - A₃ (128 elements):  ½∑±e_a, EVEN # of minus signs.
-        These are NOT Wilson's E8 roots.  2P has integer coords ±1 not all
-        even, so 2P ∉ 2L = Ls̄ ∩ Ls.  Therefore (2P,0,0) ∉ Λ.
+        These are NOT Wilson's E8 roots.  P is a half-integer vector with an
+        even coordinate sum, so P ∉ L and 2P ∉ 2L = Ls̄ ∩ Ls; 2P lies in Ls̄
+        but not in Ls.  Therefore (2P,0,0) ∉ Λ.
 
     This split is the central structural difference between Dixon's A^odd and
     Wilson's E8 roots (which use the COMPLEMENTARY half-integer set, with an
@@ -179,7 +173,7 @@ class TestType1VectorsDixon:
                 f"Type-1 vector has N_std = {norm}, expected 8"
 
     def test_type1_zero_structure(self, dix_type1):
-        """All type-1 vectors have exactly 1 nonzero block (2 zero blocks)."""
+        """The first 30 type-1 vectors have exactly 1 nonzero block (2 zero blocks)."""
         for x, y, z in dix_type1[:30]:
             nonzero = sum(np.any(np.abs(v) > 1e-10) for v in (x, y, z))
             assert nonzero == 1, \
@@ -214,9 +208,11 @@ class TestType1VectorsDixon:
         All 384 type-1 vectors with P ∈ A₃ FAIL Wilson's is_in_leech.
 
         A₃ = {½∑±e_a : even # of minus signs}.  These are NOT Wilson's E8
-        roots (which require ODD # of minus signs).  For P ∈ A₃, 2P has
-        coordinates ±1 which are not all even, so 2P ∉ 2L = Ls̄ ∩ Ls.
-        Wilson's condition 2 requires x+y = 2P ∈ Ls̄, which fails.
+        roots (which require ODD # of minus signs).  P ∈ A₃ is a
+        half-integer vector with an even coordinate sum, so P ∉ L and
+        2P ∉ 2L = Ls̄ ∩ Ls.
+        2P lies in Ls̄ but not in Ls, so Wilson's condition 3 (x+y+z = 2P ∈ Ls)
+        fails.
         Count: 128 × 3 = 384.
         """
         alg = STANDARD_ALGEBRA
@@ -274,7 +270,7 @@ class TestType2VectorsDixon:
                 f"Type-2 vector has N_std = {norm}, expected 8"
 
     def test_type2_zero_structure(self, dix_type2):
-        """All type-2 vectors have exactly 2 nonzero blocks (1 zero block)."""
+        """The first 30 type-2 vectors have exactly 2 nonzero blocks (1 zero block)."""
         for x, y, z in dix_type2[:30]:
             nonzero = sum(np.any(np.abs(v) > 1e-10) for v in (x, y, z))
             assert nonzero == 2, \
@@ -291,7 +287,7 @@ class TestType2VectorsDixon:
 
         The overlap occurs where Dixon's 2Q coincides with a Wilson Ls̄
         element and ±2e_aQ coincides with the corresponding (λs̄)j element.
-        The non-overlap arises because Dixon uses LEFT multiplication by
+        The other vectors fail because Dixon uses LEFT multiplication by
         e_a (e_a × Q) whereas Wilson uses RIGHT multiplication ((λs̄) × j).
         Reference: [Dixon2010] Section 6 eq. (21); [Wilson2009] Section 3.
         """
@@ -340,10 +336,10 @@ class TestType3VectorsDixon:
 
     def test_type3_zero_structure(self, dix_type3):
         """
-        Type-3 vectors have exactly 3 nonzero blocks (no zero component).
-
-        The three components of (P, ±e_aP, ±(e_aℓ₀)(e_cP)) have norms
-        (2, 2, 4) respectively, all nonzero for generic P, a, c.
+        The first 30 type-3 vectors have exactly 3 nonzero blocks (no zero
+        component).  The three components of (P, ±e_aP, ±(e_aℓ₀)(e_cP)) have
+        norms (2, 2, 4) for all P, a, c, so every type-3 vector has three
+        nonzero blocks.
         """
         for x, y, z in dix_type3[:30]:
             nonzero = sum(np.any(np.abs(v) > 1e-10) for v in (x, y, z))
@@ -420,7 +416,7 @@ class TestShellComparison:
     """
     Comparison of Dixon's 196,560 vectors with Wilson's 196,560 vectors.
 
-    The two constructions use different parameterisations of the Leech lattice:
+    The two constructions use different parameterizations of the Leech lattice:
       - Wilson's type-1 uses λ ∈ A₁ ∪ {ODD-minus half-integer elements of L}.
       - Dixon's type-1 uses P ∈ A₁ ∪ A₃ (A₃ = EVEN minus signs).
 
@@ -443,8 +439,8 @@ class TestShellComparison:
         from leech_wilson import leech_type1_vectors
         from e8_wilson import wilson_e8_roots
 
-        # Wilson's type-1 vectors are (2λ, 0, 0) for ALL 240 E8 roots λ.
-        # Filter to just A₁ (integer-coordinate) roots.
+        # Wilson's type-1 vectors are (2λ, 0, 0) for all 240 E8 roots λ; the
+        # A₁ vectors below must be among them.
         wilson_t1 = leech_type1_vectors()
         wilson_keys = {
             tuple(np.round(np.concatenate([x, y, z]) * 2).astype(int))

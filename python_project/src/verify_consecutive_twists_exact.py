@@ -1,6 +1,6 @@
-"""Item (1c), EXACT test: do consecutive sigma-twists close on the Leech lattice?
+"""EXACT test: do consecutive sigma-twists close on the Leech lattice?
 
-Created: 2026-05-22.  Updated: 2026-10-24.
+Created: 2026-05-22.  Updated: 2026-10-28.
 
 A lemma criterion is only *sufficient* (the condition-2 lemma
 L.pi(Ls_bar) <= pi(Ls_bar) is not necessary: the three terms of a pairwise
@@ -9,9 +9,12 @@ directly and exhaustively: a genuine Z-basis of Wilson's Lambda (24 vectors), an
 by bilinearity, star_pi closes on Lambda iff all 24*24 basis-pair products
 lie in Lambda.
 
-pi ranges over the identity, the 21 transpositions, the 70 three-cycles and
-the 105 (2,2)-double-transpositions -- exactly the permutations reachable as
-a product of two transpositions (= two consecutive sigma-twists).
+pi ranges over the identity, the 21 transpositions (single sigma-twists),
+the 70 three-cycles and the 105 (2,2)-double-transpositions.  The identity,
+the three-cycles and the double transpositions are exactly the products of
+two transpositions (two consecutive sigma-twists).  The double
+transpositions are enumerated as ordered pairs of disjoint transpositions,
+so each is tested twice and the script prints their count out of 210.
 """
 from fractions import Fraction as F
 from itertools import combinations, product as iproduct

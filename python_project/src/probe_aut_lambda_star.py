@@ -1,6 +1,8 @@
-"""First-step probe of Aut(Lambda, +, star): test specific candidate
+"""Probe of Aut(Lambda, +, star): test specific candidate
 automorphisms in the Conway group Co_0 = Aut(Lambda, +) for whether they
 preserve the Z_3-symmetric triple-octonion product star.
+
+Created: 2026-05-23.  Updated: 2026-10-28.
 
 Each candidate g is tested on all 24 * 24 = 576 basis-pair products: g is
 in Aut(Lambda, +, star) iff g(Lambda) = Lambda and g(B_i star B_j) =
@@ -82,7 +84,7 @@ if __name__ == "__main__":
             in_group.append(name)
 
     print()
-    print("Lower-bound subgroup of Aut(Lambda, +, star) so far:")
+    print("In Aut(Lambda, +, star):")
     for n in in_group: print("  +", n)
     print("Excluded:")
     for n in out_group: print("  -", n)

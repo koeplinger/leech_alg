@@ -1,5 +1,7 @@
 # Trial 006 Results — E8 automorphism basis changes for triple Okubo
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Date: 2026-04-09
 
 ## Algebra tested
@@ -18,13 +20,13 @@ automorphisms applied as basis changes within each block.
 ## Interpretation
 
 The baseline drops to 0.0% (from 6.9% in trial 005's larger sample) because
-this trial's test set does not include type1×type1 pairs (the only partially
-successful combination).  Even with automorphisms, the best rate is 3.8% —
+this trial's test set includes neither type1×type1 nor type1×type3 pairs, the
+only combinations with products in Λ in trial 005 (53.5% and 4.0%).  Even with automorphisms, the best rate is 3.8%,
 essentially zero.
 
 The irrational √3 factors in the Petersson construction's structure constants
-cannot be absorbed by E8 automorphisms (which are signed permutations with
-integer/half-integer entries).
+cannot be absorbed by E8 automorphisms, which are rational matrices (the ones
+tested are signed permutations).
 
 ## Verdict
 

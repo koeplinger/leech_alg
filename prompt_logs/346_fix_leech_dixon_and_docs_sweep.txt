@@ -30,3 +30,273 @@ Rulings:
     edits third.  Genre rules: prompt logs immutable; released paper
     versions untouched; verbatim external material kept as received;
     current-state documents corrected in place, with their Updated dates.
+
+Response, part 1: findings and diffstat (written 2026-10-28, before the
+sweep's edits; the work ran through prompts 347 to 349).
+
+Ruling 1 (done, in the author's commit ee17acd): leech_dixon.py's note on
+Wilson now calls his remark a bracketed note (Wilson 2009, Section 5,
+p. 2189) about the formula of Dixon's 2005 preprint, reference [12] of
+Wilson 2009, not about the 2010 construction the module implements; the
+preprint has a reference entry.  The paper is unchanged.
+
+Method (Manifesto Section 14): read-only workflows.  Twenty scanners by
+angle; one adversarial verifier pass per finding, grouped by file; a
+completeness critic; two gap scanners (statements fixed in one file but
+repeated in others; the paper's own statements about its record).  After
+the first launch ran the machine out of memory (log 347), every program run
+went through a wrapper capped at 2.5 GB with at most two runs at a time.
+Runs: wf_06a0fdd4-286 (out of memory), wf_4a713d78-6e1 (resumed; paused at
+prompt 348; the resume re-ran eight finished scanners because their
+results had completed out of order), wf_a642503e-692 (422 of the 488
+findings then unverified, the critic and the gap scanners; it read its
+inputs from files).  The main thread reviewed every verdict and every
+proposed edit, reworded where needed, and checked two results itself (the
+Dixon inner products; the Okubo mediators, below).
+
+Results: 825 findings (768 from the scanners, 57 from the gap scanners).
+528 confirmed, 151 confirmed with a corrected fix, 65 refuted, 15 parked
+by their verifier, 66 not verified (governance and review nits, report
+only by the brief).  By target, among the confirmed, corrected and
+parked findings: 634 documentation fixes, 42 author decisions, 3 paper
+items (report only), 15 parked.
+
+Headline findings:
+ 1. Dixon (author decision).  The 196,560 norm-8 vectors that
+    leech_dixon.py builds are not the minimal vectors of a Leech lattice:
+    among its type-3 vectors, inner products 1, 3 and 5 occur (so the
+    vectors do not span an even lattice), and 6 (two norm-8 vectors at
+    squared distance 4).  Checked by the main thread and by eight verifiers.
+    test_leech_dixon.py passes because it tests norms on samples, the block
+    structure and the rank, not inner products.  The Leech part of the
+    paper's Section 6 sentence "We have independently reproduced this
+    construction" (main.tex:1074-1077, footnote citing leech_dixon.py and
+    e8_dixon.py) is therefore not supported; the E8 part (e8_dixon.py)
+    stands.  Appendix C's "This independent verification is how we know
+    that the properties stated in the literature are correctly
+    implemented" (main.tex:1469-1471) is affected too.  Records that
+    repeat the claim: key claim 005 and its ledger row, key claim 006:17,
+    CURRENT_STATE.md:360 ("ESTABLISHED"), python_project/README.md:36,
+    python_project/src/README.md:17, python_project/tests/README.md:21,
+    test_leech_dixon.py:17, leech_dixon.py:125, :151 and :225, and
+    references/leech_lattice_octonionic_constructions.txt:76-79.  The ten
+    held findings with edits on this, and the two on Appendix C and
+    python_project/README.md:36 (author decisions by their verifiers),
+    wait for the author's decision.
+ 2. Mahler (author decision).  Mahler 1942 proves N(X-G) <= 15/16
+    (Theorem 1, p. 126) and states without proof that the exact constant is
+    1/2 (p. 127).  The paper's Appendix B (main.tex:1416), the drafts
+    historical_appendix.tex:66 and historical_appendix_expanded.tex:166, and
+    the registry (background_octonions.txt:137) give 1/2 as his result.
+    Prompt 290 recorded this as a side finding, not acted on, and
+    prompt 291 parked it without putting it to the author; the drafts' fix
+    is held so that paper and records change together.
+ 3. The original trial-007 harness (author decision): key claim 008 gives
+    593,412 pairs (total 12,593,412); the run's own log (prompt 025) and the
+    trial table give 593,400, and 593,412 has no source.  Put to the author
+    at prompt 219 and left open; held.
+ 4. Okubo mediators: the records said that on every Fano line only 1 or 2
+    of the 3 elements mediate an order-3 automorphism.  Each of the 3 does,
+    for one of the two relative senses of the two rotations (21 of 21,
+    checked by the main thread); the count of 1 or 2 belongs to one fixed
+    orientation convention.  Corrected in okubo.py, okubo_samples.py,
+    trial_005 and its results, terminology.md and CURRENT_STATE.md.
+ 5. The trial records overstated what trials 002 to 004 rule out.  Trial
+    004's family contains the closing product (T1 = T2 = T3 = sigma, not
+    sampled); its sign patterns do not all tie.  Trial 002 normalizes each
+    product to norm 8 (closure of the minimal shell), and its "norm
+    obstruction" is none, since the overall scale is free.  Trial 003's
+    failure belongs to the standard product in the three blocks, not to the
+    architecture; its rate distribution and routing statements were wrong
+    (rerun).  Corrected in the trial results, the programs' docstrings and
+    printed conclusions, key claim 007 and the trackers.  Key claim 007's
+    own scope (trials#55, #59) and the paper's "explored and ruled out"
+    (main.tex:1503-1505) are left for the author.
+ 6. Quotation and attribution: Coxeter's postscript misquoted ("misused"
+    for "missed"; "[9; 334]" for "[9; 324]"; a dropped "[9; 321]"); the
+    transposition remedy credited to Coxeter where Coxeter records it as
+    Bruck's; reviews that endorsed the false contrast between a Fano-line
+    permutation and a linear map (Coxeter records a transposition of two
+    imaginary units); Mahler's ring is Dickson's O_D; Dickson 1923 is in
+    English; Wilson 2009 is in J. Algebra; the Okubo algebra's automorphism
+    group is SU(3)/Z3; Schafer's and Albert's titles; Kirmse's by-line
+    (Hannover).
+ 7. Mathematical slips in the notes: companion (s-bar is the conjugate of
+    s, not of -s; "seven maximal orders" needs "containing the eight basis
+    units"; (2.1) is not one of Coxeter's tables; Hurwitz's theorem needs
+    "unital"); automorphism note (t(x) = (1/4) Tr(L_x); nullity, not rank;
+    the Fourier action of a block transposition; isometry comes from the
+    norm form, not compactness; checks described as exhaustive that are
+    sampled); Hermes supplement ("sigma-independent"; V and W are dual, not
+    orthogonal; credit to Silverman and Lepowsky-Meurman); update briefs
+    ((L/2L, mu-bar) is not an octonion algebra; strictness of
+    Aut in Co0 needs Aut contained in Co0; S3 symmetry follows from the
+    definition); the n-cycle survey and a v4 review against the paper's
+    exact criterion; the analogy in trial_007_explanation.py (xy/2, not 2xy).
+ 8. Code-facing records: GAP prerequisites (LOOPS is not in the Ubuntu
+    archive), which GAP tests check what, and the two GAP scripts that need
+    standard input closed to exit; test and class counts in key claims
+    001 to 006, with the dated full-suite lines removed; timing comments;
+    consistency_checks.py's list of checks; the trial 003 and 005
+    conjugation labels (index cl + 2*cr) and the best-variant label quoted
+    in trial_005_results.md.
+ 9. Genre: dated "Disposition by the author" sections in two reviews (the
+    author's rulings stay in prompt logs 071 and 082) and "(to be added)"
+    placeholders for them in five others; dated status sections and
+    narration in update briefs and notes; "pre-paper"; pending-status lines
+    that the source verifications of May settled.
+10. Style: US spelling, closed-up non-, spaced dash asides, and gendered
+    pronouns for Egan, Silverman and Calderbank (prompt 334), in plans,
+    notes, the registry and program comments.
+
+Not applied, with the reason:
+ - Held for the author: Dixon (ten findings), Mahler (one), 593,412 (one).
+ - Style-only changes to strings a program prints or writes (19 edits): the
+   editorial standards cover docstrings, headers and comments; printed
+   statements that were false or stale are fixed (among them
+   trial_004_basis_automorphisms.py, trial_007_kirmse_twist.py,
+   okubo_samples.py, consistency_checks.py's "third-power associativity").
+ - "non-exclusive" in the arXiv license name: kept at prompt 314.
+ - Style-only findings in review records (33): outside the genre rule for
+   reviews.  Refuted findings (65, the 33 above
+   among them).  Overlapping proposals from different scanners: one edit
+   kept per text.
+
+Author decisions besides 1 to 3 (report only):
+ - Paper, report only: Appendix C lists "forward-evolving corrections" and
+   says errors were "corrected forward" (main.tex:1499-1500, 1521-1522),
+   while MANIFESTO Section 12 now corrects documents in place; "All data and
+   code are public" (1271-1273) and "the full record ... all prompts, code"
+   (1526-1527), while some computations survive only as recorded results
+   (the trial-007 harness, the trial 001 tables, ledger rows 010a, 016 to
+   018, 020, 021) and prompt 073 has no log (the Section 1 sentence at
+   213-216 is the author's, prompts 223 and 224: parked).
+ - Records: key claim 007's scope and its ledger row (trials#55, #59); the
+   ESTABLISHED label of the ledger (ledger#41); A_3 means two things
+   (scripts' span of eps_1 to eps_3; the paper's Wilson ring);
+   verify_discovery1_W_subalgebra.py prints "e_0 (identity of L/2L)",
+   quoted by the Hermes supplement; trial_002's summary line contradicts
+   its own count (trials#8); the automorphism note's \thanks overclaims
+   (notes-1#10); the Hermes supplement's claim that its two scripts verify
+   all claims (notes-2#31); the Kirmse exposition's theorem on doubles is
+   false as stated (counterexample; notes-2#23); the expanded historical
+   draft omits Kirmse's ideal-theoretic contribution (notes-2#12); the
+   Baez-Egan addendum's scoping sentences (notes-1#28); the references
+   README's claim that every cited work has an entry (registry#3); the
+   Kirmse history note's acquisition list (reviews-1#24); a v4 review that
+   calls "Kirmse (1924) recovered the full count of seven" accurate
+   (gap-siblings#38); a glossary entry for Egan's lattices
+   (glossary-vocabulary#15).
+ - Governance prose: DOCUMENT_GENRES.md:19 makes all of prompt_logs/
+   immutable, its README included; MANIFESTO.md:137 is history;
+   TRIAL_METHODOLOGY.md:36 ("the structural role that roots play") and :54;
+   lint_docs.py skips real files under its "_to_v" placeholder and does not
+   protect verbatim material; research_statement.md:7 ("four lemmas on a
+   Z-basis"), :12 and :91; editorial_standards.md (the non- rule's
+   exceptions, the term rulings of prompts 304, 309, 316 and 334, the list
+   of governance files); TRIAL_METHODOLOGY.md's dash asides;
+   research_statement.md:38 ("non-closed"); and the governance scanner's 38
+   unverified nits and style points, four of which repeat items above.
+   28 nits in review records, unverified.
+
+Diffstat of the dry run (scratch copy; paper/main.tex not touched): 884
+edits, 153 files, +1834 -1550.
+  python programs and indexes                54 files  +503 -375
+  paper/reviews                              25 files  +170 -182
+  glossary, trials, plans, two others        17 files  +286 -229
+  paper notes, briefs, changelogs, README    16 files  +328 -318
+  gap_project                                14 files  +125 -92
+  key claims                                  9 files  +131 -100
+  python tests                                7 files  +132 -131
+  reference registry                          7 files   +76 -65
+  CURRENT_STATE and three READMEs             4 files   +83 -58
+
+Correction to log 347 (closed): "the project's heavier scripts peak below
+100 MB" holds for the three scripts measured, not for all of them.
+
+Response, part 2: edits and checks (written 2026-10-28).
+
+Applied: the 884 edits of the dry run to 153 files, each file's Updated
+date and each note's \date set to 28 October 2026.  By hand: two passages
+duplicated by overlapping edits removed (the map line for
+research_statement.md in CURRENT_STATE.md; key claim 007's "Test" lines);
+the \date of update_brief_2026-04-29_v3_kirmse.tex; the expanded
+historical draft's abstract reset to avoid two new overfull lines.
+paper/main.tex is not edited.
+
+Checks: pytest 197 passed; the GAP suite 110 passed, 0 failed;
+aut_lambda_star.g and octonion_stabilisers.g exit with standard input
+closed, as the READMEs now say; the 21 programs whose code or printed
+output changed, run from a copy of HEAD and from the edited tree, differ
+only where intended (the trial 003 and 005 labels; the corrected printed
+conclusions); the ten edited notes rebuilt with no new overfull box or
+undefined reference; linter clean.
+
+Review of the applied edits (read-only; run wf_e5c6e0c7-858): twelve
+groups of files, each read hunk by hunk by a reviewer, each reviewer's
+findings checked by a verifier.  74 findings: 66 confirmed, 5 confirmed
+with a corrected fix, 3 refuted.  The main thread reviewed each one and
+checked the Okubo orientations itself; 74 edits to 47 files followed:
+ - okubo_samples.py, Example 4: the sweep's new text stated the rule
+   backwards.  The failing map turns both pairs in the sense of left
+   multiplication by the mediator e_1; the valid maps turn them in
+   opposite senses (all 84 orientations on the 21 mediators).  Text and
+   printed lines corrected.
+ - Siblings of facts the sweep corrected: Aut = SU(3)/Z3 in
+   test_okubo.py's docstring, and okubo.py no longer lists the group as
+   tested; trial_005's tau is the inverse of okubo.py's standard tau; the
+   4,032 hexagonal triples are ordered (ledger, CURRENT_STATE.md,
+   research_result.md, src/README.md, the witness script); Mahler's ring
+   is Dickson's O_D (the Coxeter verification's table); (L/2L, mu-bar) is
+   not an octonion algebra (three v4 reviews); check 1c of
+   consistency_checks.py verifies no relabeling claim (a June review); the
+   reason the trace form is not blockwise (automorphism note); trial 005's
+   scope and claim 007's scope (CURRENT_STATE.md, key claim 008); the
+   attribution of the Fano-triple wording and the seven-conventions claim
+   (two April reviews); what the April companion's Section 8 says (the
+   16 April review).
+ - Broken text from the edits: a dangling "It" and two double-colon
+   sentences in the Kirmse brief, one in the v3 brief; two parenthesized
+   groups side by side in the Kirmse exposition; the companion's
+   sigma = (a b), which clashed with its triple letters, is now (i j) as
+   in the paper; the Baez-Egan addendum's scale parenthetical; three GAP
+   headers whose new stamp split the title; stray wraps and long lines in
+   eight files.
+ - consistency_checks.py: one style-only change to a printed string
+   ("nonunital") had been applied against the rule above; reverted, so
+   20 such edits are not applied in all.
+ - python_project/src/README.md: the Mahler row the sweep wrote took one
+   side of the held Mahler question; it now says only what the script
+   checks.
+ - Part 1 of this log, corrected in place: eight verifiers, not four;
+   twelve Dixon findings with edits; the Mahler provenance (prompts 290,
+   291); the target tally; 422 of 488; two dated disposition sections and
+   five placeholders; the refuted count; the governance list; two
+   diffstat labels; ledger row 017; the Section 1 sentence.
+ Refuted, not applied: prompt_logs/README.md row 021 (it summarizes log
+ 021's own content, as decided in the sweep); CURRENT_STATE.md's "uniform
+ patterns do best" (true: every uniform pattern beats every mixed one);
+ e8_dixon.py's pointer to the paper's Dixon paragraph (true now).
+Checks after these edits: okubo_samples.py's output differs from the
+sweep's run only in Example 4; consistency_checks.py ALL PASS, output
+unchanged; pytest 197 passed; the GAP suite 110 passed, 0 failed;
+octonion_stabilisers.g exits; seven notes rebuilt (automorphism note 11
+pages, companion 10, Kirmse exposition 7, Baez-Egan addendum 3, the
+Kirmse brief, the v3 brief and the historical appendix 2 each), no new
+overfull box; linter clean.
+
+In all: 154 files edited (+1894 -1591), ten PDFs rebuilt; paper/main.tex
+unchanged; nothing committed.
+
+Held for the author, at their current lines:
+ 1. Dixon: main.tex:1074-1077 (footnote at 1076) and 1469-1471; key
+    claims 005 and 006 and their ledger rows; CURRENT_STATE.md:362;
+    python_project/README.md:36; python_project/src/README.md:17;
+    python_project/tests/README.md:23; test_leech_dixon.py:10, 419, 486;
+    leech_dixon.py:126, 152, 179, 226;
+    references/leech_lattice_octonionic_constructions.txt:77-79.
+ 2. Mahler: main.tex:1414-1416; historical_appendix.tex:66-68;
+    historical_appendix_expanded.tex:169-173; background_octonions.txt:136-137.
+ 3. 593,412: key claim 008:98-104.
+
+Status: CLOSED.

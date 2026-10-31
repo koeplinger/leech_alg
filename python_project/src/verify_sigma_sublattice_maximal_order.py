@@ -1,6 +1,6 @@
 """Wilson's sublattices and the maximal orders of the octonions.
 
-Created: 2026-10-14.  Updated: 2026-10-24.
+Created: 2026-10-14.  Updated: 2026-10-28.
 
 The paper cites this script in Section 2.2, with verify_structural_proof.py,
 at the maximal order O := (1/2)(e1 + e2) L of (2.2) (label eq:MO), which
@@ -14,8 +14,9 @@ multiples, L sbar = {l . sbar} and L s = {l . s}, and sigma = (1 2).  Exact
 arithmetic throughout (fractions.Fraction; integer Hermite normal forms).
 
 (A) Section 1.  For the multiplication (2.1), exactly seven maximal orders of
-    the rational octonions contain the Gravesian order Z<e0, ..., e7>, each a
-    scaled copy of the E_8 lattice.  Reduction to a finite check (standard):
+    integral octonions contain all eight basis units (the lattice
+    Z<e0, ..., e7> they span), each a scaled copy of the E_8 lattice.
+    Reduction to a finite check (standard):
     in an order every element has an integral trace t(x) = 2 x_0, so for x in
     an order containing every e_i, t(x . conj(e_i)) = 2 <x, e_i> is an integer
     and x lies in (1/2)Z^8.  Such an order is Z^8 + C/2 for a binary code C,

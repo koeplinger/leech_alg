@@ -1,6 +1,6 @@
 # Item (1c) — consecutive σ-twists and closure on the Leech lattice
 
-Created: 2026-05-22.  Updated: 2026-10-24.
+Created: 2026-05-22.  Updated: 2026-10-28.
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 113 (Phase A of the v4 update plan).
 **Scripts:** `python_project/src/verify_consecutive_twists_exact.py`
@@ -22,16 +22,15 @@ product of two transpositions is exactly one of three things:
 - a **3-cycle** (σ₁, σ₂ share one index);
 - a **(2,2)** double transposition (σ₁, σ₂ disjoint).
 
-## Method, and a corrected misstep
+## Method
 
-A first attempt used a lemma criterion — ⋆_π closes iff
+A lemma criterion gives a sufficient condition: ⋆_π closes if
 π(Ls)·π(Ls) ⊆ π(Ls) **and** L·π(Ls̄) ⊆ π(Ls̄). The second lemma is
 **sufficient but not necessary**: the three terms of a pairwise block sum are
 coupled by membership in Λ, so closure can hold even when L·π(Ls̄) ⊄ π(Ls̄).
-A direct cross-check on Λ caught a 3-cycle that closes although the criterion
-said it should not. The criterion was discarded.
+A 3-cycle closes on Λ although the criterion fails for it.
 
-The reliable test, used here: build a genuine **Z-basis of Wilson's Λ** (24
+The test used here is direct: build a genuine **Z-basis of Wilson's Λ** (24
 vectors; verified — covolume 2¹² = [L³:Λ] in L³-coordinates, every basis
 vector in Λ). By bilinearity, **⋆_π closes on Λ iff all 24×24 = 576
 basis-pair products lie in Λ** — exact, no sampling. Sanity: the identity

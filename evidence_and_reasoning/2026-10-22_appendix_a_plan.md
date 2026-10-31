@@ -1,6 +1,6 @@
 # 2026-10-22 — Plan: Appendix A around the closure criterion modulo 2
 
-Created: 2026-10-22.  Updated: 2026-10-24.
+Created: 2026-10-22.  Updated: 2026-10-28.
 
 **Status: executed.**  This plan is item 3 of the closed-form plan,
 `2026-10-20_closed_form_plan.md`.  The author's decisions of §1: (i), (j)
@@ -67,13 +67,13 @@ changed the facts behind (j).  The edits of §3 follow the recommendations.
     Leech lattice from a different viewpoint".  The project has not read
     Tits's papers, so the paper does not cite them.
   - Silverman, in part 12 (31 January 2016), identified the 270 sublattices
-    with these subspaces, saying he assumed it and had not proved it, and
-    he calls the reduction of $E_8$ modulo 2 "a well-known thing that people
-    do".  In a comment of 18 February 2016 he did not know who first built
+    with these subspaces, saying that the identification was assumed, not proved;
+    part 12 calls the reduction of $E_8$ modulo 2 "a well-known thing that people
+    do".  In a comment of 18 February 2016 Silverman did not know who first built
     the Leech lattice from two copies of $E_8$ ("somebody (dunno who)").
-    In a comment of 19 February 2016 he found that Wilson's $L\bar s$ and $Ls$ reduce to two disjoint
+    In a comment of 19 February 2016 Silverman found that Wilson's $L\bar s$ and $Ls$ reduce to two disjoint
     such subspaces, that is, that Wilson's pair is a polarization.  The
-    parent plan named his comment of 16 February 2016 instead, which reads
+    parent plan named Silverman's comment of 16 February 2016 instead, which reads
     Egan's construction modulo 2 with the parametrization $(x+p, x+q,
     x+r)$; Lepowsky and Meurman's Theorem 2.2 already has that form, so the
     plan credits it to them.
@@ -91,18 +91,18 @@ changed the facts behind (j).  The edits of §3 follow the recommendations.
   note that work of Tits contains what amounts to the same construction.  Egan's construction
   (Section 6) is of this form.  In the Baez series, Tim Silverman arrived at
   the identification of these sublattices with the Lagrangians independently
-  (part 12) and found that Wilson's pair is a polarization [his comment of
+  (part 12) and found that Wilson's pair is a polarization [Silverman's comment of
   19 February 2016], and David Calderbank related Egan's construction to that
-  of Lepowsky and Meurman [his comment]."  Wilson's book and Silverman's
+  of Lepowsky and Meurman [Calderbank's comment]."  Wilson's book and Silverman's
   comment are new bibliography entries; Calderbank's gets the comment's
   anchor.  Section 6's clause "that mod-2 orthogonal-space picture is Tim
   Silverman's" becomes a pointer to Appendix A now, so that the paper does
   not contradict itself until item 4 rewrites Section 6.  *Or:* also cite
-  Silverman's comment of 16 February 2016, a revised repost of his comment
-  of 28 January 2016 in the part 11 thread, where he first posted his
+  Silverman's comment of 16 February 2016, a revised repost of the comment
+  of 28 January 2016 in the part 11 thread that first posted Silverman's
   reading of Egan's construction modulo 2 with the parametrization $(x+p,
   x+q, x+r)$; or leave out the clause on Tits, so that the paper does not
-  name him; or leave Silverman and Calderbank out.  The last would leave both
+  name Tits; or leave Silverman and Calderbank out.  The last would leave both
   uncredited in the paper's text: their credits replaced, at the v6 review,
   the credit to the Baez series that the author asked for at prompts 183 and
   184 (Baez and Egan stay credited in Section 6).
@@ -481,7 +481,7 @@ Graduate Texts in Mathematics, vol.~251, Springer, 2009.
 - The sources, read and quoted (prompts 325 and 326): Lepowsky–Meurman §2
   and their reference list, in the author's copy; Wilson's book, §3.12.4,
   p. 104, in the publisher's preview and in the 2007 draft; Silverman's part
-  12 and his comments of 28 January, 16, 18 and 19 February 2016; Calderbank's
+  12 and comments of 28 January, 16, 18 and 19 February 2016; Calderbank's
   comment, with its anchor.
 - Every mathematical statement of the new Appendix A except one was
   recomputed by two independent programs in exact arithmetic (prompt 325):
@@ -529,7 +529,7 @@ The records follow in item 7, as the parent plan provides:
 - the reference registry: Lepowsky–Meurman read (Proposition 2.1, Theorem
   2.2, Corollary 2.3, and their note on Tits); Wilson's book; Silverman's
   comment; Calderbank's entry, its heading "Complementary-Lagrangians
-  reading" and its sentence on what Appendix A credits him for; and the
+  reading" and its sentence on what Appendix A credits Calderbank for; and the
   [Baez2014] sentence of `prior_art_orders_on_leech.txt` on where the paper
   uses parts 11 and 12 (part 12 is then cited in Appendix A only);
 - dated notes in `verify_mod2_quotient.py`,

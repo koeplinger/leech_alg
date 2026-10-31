@@ -1,6 +1,6 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
-Created: 2026-10-20.  Updated: 2026-10-24.
+Created: 2026-10-20.  Updated: 2026-10-28.
 
 **Status: executed.**  The seven items of §3 are done, items 1 to 5 each
 through its own plan; the body is the plan as engaged.  In this plan "§"
@@ -183,7 +183,7 @@ of part 9 omits Egan's condition that the two images of each simple root
 $r_i$ sum to $r_i$, and is false as literally stated, so the paper states
 Egan's condition, not that summary.
 
-Definition 2.1 is $\Lambda(L\bar s, Ls)$, as Egan himself notes.  By (4.1) and
+Definition 2.1 is $\Lambda(L\bar s, Ls)$, as Egan notes.  By (4.1) and
 Lemma 4.1, $\sigma(\Lambda) = \Lambda(2\mathcal O, p\mathcal O)$.  So
 $\sigma(\Lambda)$ is one of Egan's 17,280 lattices: the Comparison paragraph's
 open question (main.tex 1017–1020) is answered by the paper's own (4.1).  The
@@ -220,8 +220,8 @@ L_2)$ iff $L_1$ and $L_2$ are closed; it closes on $\sigma(\Lambda)$ (Theorem
 *Terms.*  Two conventions coexist in characteristic 2.  "Totally singular
 subspace" ($q$ vanishes) is the usage of Taylor, Cameron and Shimakura.
 Silverman's part 12 defines "singular" subspaces ($q$ vanishes) against
-"isotropic" ones (the polar form vanishes), but his tables call the $q$-zero
-points "isotropic", his subspaces are "maximal flats", and he never writes
+"isotropic" ones (the polar form vanishes), but its tables call the $q$-zero
+points "isotropic", its subspaces are "maximal flats", and it never writes
 "totally singular".  Elman–Karpenko–Merkurjev and Wilson's book say "totally
 isotropic subspace" for $q$, the paper's usage; Baez and Calderbank say
 "maximal isotropic".  In Elman–Karpenko–Merkurjev a *form* is totally singular
@@ -235,7 +235,7 @@ decomposition" and "lift" are not defined.
 acts as the full orthogonal group with kernel $\{\pm1\}$, is older than the
 blog series: Wilson, *The Finite Simple Groups*, §3.12.4 (2009; draft of 23
 July 2007).  Silverman's part 12 identifies the 270 sublattices with its
-maximal flats, and his comment of 16 February 2016 reads Egan's construction
+maximal flats, and Silverman's comment of 16 February 2016 reads Egan's construction
 modulo 2, with the parametrization $(x+p, x+q, x+r)$ that the criterion uses.
 The paper credits Silverman twice (main.tex 1006–1007 and 1255–1256) and, for
 the picture itself, the wrong source.  The construction of $\Lambda$ from a
@@ -413,7 +413,7 @@ cube identity on all of $\mathrm{Min}(\Lambda)$; the sampled values agree.
 - The registry entry [Baez2014] says that only the 17,280 lattices are
   compatible with Jordan closure; part 10 says "at least 17,280" (its first
   Result 1) and asks in Puzzle 3 whether there are more.  The entry
-  [Calderbank2023] omits his credits.
+  [Calderbank2023] omits Calderbank's credits.
 - `egan_baez_count.py`, cited for Egan's count, builds its Gram matrix in
   floating point with integrality assertions; its counts are right.
 
@@ -502,7 +502,7 @@ pair and $\sigma$'s pair, with (A.3) condensed; the terms of decision (i),
 including Section 6's two uses of "totally isotropic" (main.tex 1004, 1009) if
 the terms change, so that the paper stays consistent; the polarization answer
 of decision (k); prior work credited once (decision (j)), with Silverman's
-full name, since Section 6 no longer names him after item 4; the
+full name, since Section 6 no longer names Silverman after item 4; the
 research-program sentence replaced by the answer; Section 7's fourth question
 deleted; Appendix C's Hermes wording per decision (i).  Decisions (i) to (k).
 
@@ -618,7 +618,7 @@ Each decision is asked again before its item; the recommendation is marked.
   citation chosen in item 3's own plan (Wilson's book, §3.12.4, is the source
   found).  Silverman once, in Appendix A, for the identification of the 270
   sublattices with the maximal subspaces on which $q$ vanishes (part 12) and
-  for the reading of Egan's construction modulo 2 (his comment of 16 February
+  for the reading of Egan's construction modulo 2 (Silverman's comment of 16 February
   2016).  The complementary-pair construction credited through Calderbank's
   comment; Lepowsky–Meurman's Corollary 2.3 cited directly only after it is
   read; Tits 1980 not cited, since unread (*recommended*).

@@ -1,36 +1,40 @@
 """
 test_okubo.py — Tests for the Okubo algebra implementation.
 
+Created: 2026-04-08.  Updated: 2026-10-28.
+
 Both construction methods (Petersson isotope from octonions, Hermitian
-matrix construction) are exercised by every test via the parametrised
-`alg` fixture.
+matrix construction) are exercised via the parametrized `alg` fixture;
+two idempotent tests address one construction each.
 
 Properties verified
 -------------------
-Together, properties 1–5 on an 8-dimensional real algebra uniquely
-characterise the Okubo algebra (up to isomorphism), by the classification
-of symmetric composition algebras [Elduque2000_Triality].
-
  1.  Bilinearity of the product  (sanity check; guaranteed by structure
      constants but verified explicitly)
  2.  Composition norm:  n(x*y) = n(x) n(y) for the Euclidean norm
  3.  Symmetric composition:  (x*y)*x = x*(y*x) = n(x) y
- 4.  Non-unital:  no identity element exists
- 5.  Division algebra:  L_a and R_a are bijections for every a ≠ 0
-
-Additional properties (consequences of the above):
-
- 6.  Flexibility:  (x*y)*x = x*(y*x)
- 7.  Non-alternative:  left and right alternativity fail
+ 4.  Flexibility:  (x*y)*x = x*(y*x)
+ 5.  Nonunital:  no identity element exists
+ 6.  Nonalternative:  left and right alternativity fail
+ 7.  Division algebra:  L_a and R_a are bijections for every a ≠ 0
  8.  Existence of a norm-1 idempotent  e * e = e,  n(e) = 1
- 9.  Derivation algebra dimension = 8  (= dim su(3), confirming Aut = SU(3))
+ 9.  Derivation algebra dimension = 8  (= dim su(3), consistent with
+     Aut = SU(3)/Z₃)
+10.  The norm is positive definite
+
+Properties 1–8 and 10 do not determine the Okubo algebra: the para-octonion
+algebra x*y = x̄ȳ, another 8-dimensional real symmetric composition
+division algebra [Elduque2000_Triality], has all of them (with idempotent
+e_0).  Property 9 tells the two apart: dim Der = 8 for the Okubo algebra,
+14 for the para-octonions.
 
 Methodology note
 ----------------
 Properties 2, 3 are tested exhaustively on all 64 ordered pairs of basis
-elements.  By bilinearity/trilinearity this certifies the identities for
-ALL real linear combinations, not just basis elements.  Additional random-
-element tests provide independent numerical confidence.
+elements and on 20 random pairs each.  Both identities are quadratic in x
+(property 2 also in y), so the basis-pair checks do not certify them for
+all elements; the random-element tests give numerical evidence for
+general elements.
 
 References
 ----------
@@ -68,7 +72,7 @@ N_RANDOM = 20   # random element pairs per test
 
 @pytest.fixture(params=["petersson", "hermitian"])
 def alg(request):
-    """Parametrised fixture: runs every test on both constructions."""
+    """Parametrized fixture: runs each test that uses it on both constructions."""
     if request.param == "petersson":
         return PETERSSON_ALGEBRA
     return HERMITIAN_ALGEBRA
@@ -201,7 +205,7 @@ class TestFlexibility:
 
 
 # ---------------------------------------------------------------------------
-# 5. Non-unital
+# 5. Nonunital
 # ---------------------------------------------------------------------------
 
 class TestNonUnital:
@@ -250,7 +254,7 @@ class TestNonUnital:
 
 
 # ---------------------------------------------------------------------------
-# 6. Non-alternative
+# 6. Nonalternative
 # ---------------------------------------------------------------------------
 
 class TestNonAlternative:
@@ -393,7 +397,7 @@ class TestIdempotent:
 
 
 # ---------------------------------------------------------------------------
-# 9. Derivation algebra dimension = 8  (Aut = SU(3))
+# 9. Derivation algebra dimension = 8  (Aut = SU(3)/Z₃)
 # ---------------------------------------------------------------------------
 
 class TestDerivationAlgebra:
@@ -401,10 +405,11 @@ class TestDerivationAlgebra:
 
     A derivation D of the algebra satisfies D(x*y) = D(x)*y + x*D(y).
     The space of all derivations is the Lie algebra of the automorphism
-    group.  For the Okubo algebra, Aut(O) = SU(3), so dim Der = 8.
+    group.  For the Okubo algebra, Aut(O) = SU(3)/Z₃ (SU(3) acting by
+    conjugation, its center Z₃ acting trivially), so dim Der = dim su(3) = 8.
 
     Reference: [Elduque2000_Triality]; [MarraniCorradettiZucconi2025]
-    Table 4  (Aut = SU(3)).
+    Table 4  (Aut = SU(3), acting through SU(3)/Z₃).
     """
 
     def test_derivation_dimension(self, alg):

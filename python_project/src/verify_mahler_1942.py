@@ -1,19 +1,26 @@
 """Verification of Mahler 1942, "On Ideals in the Cayley-Dickson Algebra".
 
+Created: 2026-05-20.  Updated: 2026-10-28.
+
 Source: K. Mahler, Proc. Roy. Irish Acad. Sect. A 48 (1942), 123-133.
 (The cover sheet misprints the title as "Cayley-Dixon"; the paper reads
 "Cayley-Dickson".)  Mahler works with the integral Cayley numbers "defined
 according to Dickson" (he cites Dickson 1923, p.319 ff.).
 
 Checked, from Mahler's data only:
-  - his Cayley-Dickson product equals Dickson's;
-  - his ring J -- the criterion (14) and the basis (10) -- is a maximal
+  - his Cayley-Dickson product equals Dickson's (by inspection: the script
+    encodes the one product) and is a composition algebra (300 random pairs);
+  - his ring J, given by the criterion (14) and the basis (10), is a maximal
     order, and equals Dickson's order O_D;
   - the counts 240 (norm 1) and 2160 (norm 2);
   - THEOREM 1 (Euclidean algorithm): the covering radius^2 of J is 1/2
     (Mahler proves <= 15/16 and states the exact constant is 1/2);
   - the explicit counterexample (p.133): the norm-2 C-number (g|g),
     g=(1+i1+i2+i3)/2, does NOT generate a left ideal.
+
+Prints one line per check; a few seconds.  The paper cites this script
+in Appendix B (`app:history`), in the footnote of its opening paragraph
+(Mahler's covering-radius theorem, by exact-arithmetic sampling).
 """
 from fractions import Fraction as F
 from itertools import product as iproduct
@@ -44,8 +51,9 @@ def inJ(X):
 
 # Mahler's basis (10).  NOTE: as printed, A8 = ( (1+i3)/2 | (1+i2)/2 );
 # that value fails Mahler's own criterion (14) and makes the basis span a
-# NON-closed lattice -- a typographical misprint.  The value consistent with
-# (14), with J being a ring, and with "J = Dickson's order" is
+# lattice that is NOT closed, so the printed value is a typographical
+# misprint.  The value consistent with (14), with J being a ring, and with
+# "J = Dickson's order" is
 # A8 = ( (1+i3)/2 | (1+i3)/2 ) = Dickson's V.  We use the corrected A8.
 A = [vec(0,1,0,0,0,0,0,0), vec(0,0,1,0,0,0,0,0), vec(0,0,0,1,0,0,0,0),
      vec(h,h,h,h,0,0,0,0), vec(0,0,0,0,1,0,0,0),
@@ -119,10 +127,7 @@ if __name__ == "__main__":
         return best
     worst = F(0); arg = None
     random.seed(1)
-    samples = ([[F(random.randint(0,8),8) for _ in range(8)] for _ in range(6000)]
-               + [[F(p,4) for p in pat] for pat in iproduct(range(4), repeat=4)
-                  for pad in [()]
-                  for pat8 in [list(pat)+[0,0,0,0]] for pat in [pat8[:8]]][:0])
+    samples = [[F(random.randint(0,8),8) for _ in range(8)] for _ in range(6000)]
     for X in samples:
         d = depth2(X)
         if d > worst: worst, arg = d, X

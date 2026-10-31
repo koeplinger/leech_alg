@@ -1,5 +1,7 @@
 # Formal referee review of the main paper (round 2)
 
+Created: 2026-04-28.  Updated: 2026-10-28.
+
 **Date:** 2026-04-28
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product* (Köplinger), version of 28 April 2026, together with the supplemental repository as context.
@@ -15,7 +17,7 @@ For continuity:
 - **2.1** ($\bar s \notin L$): both §2.2 and §2.3 are now consistent with the supplemental code's `is_in_L`.
 - **2.2** (multiplicative identity): the block-matrix argument is correct; the table entry and the remark agree.
 - **3.2** ("symbolic proof" branding): the proofs of Lemmas 4.2–4.4 in §4 close by reference to explicit basis tables in Appendix A. All 64 integer coefficients per lemma are displayed.
-- **3.3** (Coxeter vs $\sigma$): pulled into Remark 3.3 in §3 and into the §6 Kirmse–Coxeter–$\sigma$ paragraph; the structural separation between Coxeter's Fano-triple permutation and $\sigma$'s linear coordinate involution is explicit.
+- **3.3** (Coxeter vs $\sigma$): pulled into Remark 3.3 in §3 and into the §6 Kirmse–Coxeter–$\sigma$ paragraph; the paper there contrasts Coxeter's correction, as a Fano-triple permutation, with $\sigma$'s linear coordinate involution; that contrast is wrong (`2026-05-22_claude_opus_4_7_coxeter_1946_verification.md`), since Coxeter (1946, §4) records Bruck's correction as a transposition of two of the $i$'s, a linear involution like $\sigma$.
 - **§5 → Appendix B**; **§7 (Outlook)** tightened to two short subsections.
 - **Sublattice status of $L\bar s$**: explained in a new footnote in §2.3.
 - **Comparison paragraph** in §6 distinguishes the present construction from Baez–Egan and Dixon.
@@ -108,10 +110,10 @@ The open questions list ends with:
 
 > "Whether other permutations of the Fano triples (beyond transpositions) also yield closed products on $\Lambda$."
 
-But the new Remark 3.3 carefully distinguishes $\sigma$ — a coordinate involution, not a Fano-triple permutation — from Coxeter's $\kappa$, which is a Fano-triple permutation. Under Remark 3.3's terminology, $\sigma$ is not a "permutation of Fano triples" at all. The bullet is therefore ambiguous between:
+But the new Remark 3.3 distinguishes $\sigma$, a coordinate involution, from Coxeter's $\kappa$, which it calls a Fano-triple permutation (Coxeter in fact records Bruck's correction as a transposition of two imaginary units, a linear involution like $\sigma$). Under Remark 3.3's terminology, $\sigma$ is not a "permutation of Fano triples" at all. The bullet is therefore ambiguous between:
 
 - (a) other linear coordinate permutations (beyond simple transpositions $\sigma$) that conjugate the multiplication;
-- (b) other Fano-triple permutations (in Coxeter's sense) applied on top of the present convention;
+- (b) other Fano-triple permutations (in Remark 3.3's sense) applied on top of the present convention;
 - (c) something more general, e.g., longer permutation cycles in the imaginary index set.
 
 Each of (a), (b), (c) is a different question. Pick one or split into two bullets.
@@ -124,7 +126,7 @@ Each of (a), (b), (c) is a different question. Pick one or split into two bullet
 
 - **Closure-of-shells distinction is duplicated.** Remark 1.4 ("Order-closure, not shell-closure") and Remark 2.4 ("Closure of the lattice, not the shells") make essentially the same point: products of minimal vectors land on higher shells, and lattice closure is independent of shell closure. The duplication is benign but consolidating one of them (or making them complementary rather than overlapping) would tighten the paper.
 
-- **The footnote justifying $L\bar s \subseteq L$ (§2.3) appeals to "implicit use".** It reads: "...closed under left-multiplication by $L$ (Wilson's condition (2) for the untwisted product, used implicitly throughout [Wilson2009])." A precise pointer (page or section in Wilson 2009) or a one-line direct argument — e.g., $L\bar s$ is the conjugate of $Ls$, $L$ is conjugation-stable, $Ls \subseteq L$ since $s \in L$, hence $L\bar s = \overline{Ls} \subseteq \bar L = L$ — would make the footnote self-contained.
+- **The footnote justifying $L\bar s \subseteq L$ (§2.3) appeals to "implicit use".** It reads: "...closed under left-multiplication by $L$ (Wilson's condition (2) for the untwisted product, used implicitly throughout [Wilson2009])." A precise pointer (page or section in Wilson 2009) or a one-line direct argument — e.g., $\bar s = -e_0 - s$, so $\ell\bar s = -\ell - \ell s \in L$ for every $\ell \in L$, since $s \in L$ and $L \cdot L \subseteq L$ — would make the footnote self-contained.
 
 - **Lemma 4.5 / rem:Ls-not-closed.** Has an explicit witness for $\sigma(Ls) \ne Ls$: the vector $v = (-1, 0, 1, 0, 0, 1, 0, 1)$. The companion claim $Ls \cdot Ls \not\subseteq Ls$ is asserted ("there exist basis vectors $a, b \in Ls$ with $a \cdot b \notin Ls$") without naming them. The supplemental code names them; the paper could, in a parenthetical.
 
@@ -179,34 +181,3 @@ Each of (a), (b), (c) is a different question. Pick one or split into two bullet
 13. Verify the Egan count of $17{,}280$ against the n-Category Café source and add the precise pointer.
 14. One-line orientation in Proposition 3.3's proof identifying which equality is being shown.
 15. Extend or annotate the §6 Comparison paragraph to cover the three earlier precursors (Conway–Sloane, Lepowsky–Meurman, Elkies–Gross).
-
----
-
-## 7. Disposition by the author (2026-04-28)
-
-Upon receipt of this review, the author directed the following immediate corrections in the main paper:
-
-- **§2.1 (mandatory):** Lemma 4.1's proof updated to use the corrected description of $L$ ("all integers with even sum, or all half-integers with odd sum"), with a back-reference to §2.
-
-- **§3.1 (strongly recommended):** the bilinearity-reduction preamble now adds a parenthetical noting that the forward direction uses bilinearity and the reverse direction is immediate.
-
-- **§3.2 (strongly recommended):** Appendix A now states the $\ZZ$-basis of $L$ in closed form: $L_1 = s$, $L_2 = e_0+e_1$, $L_3 = e_0-e_1$, $L_{k+2} = e_0+e_k$ for $k=2,\ldots,6$.
-
-- **§3.5 (strongly recommended):** the fifth open-question bullet rewritten under interpretation (a) — other linear coordinate permutations of $\RR^8$ beyond simple transpositions — to remove the conflict with Remark 3.3.
-
-- **§4 minor:**
-  - Sample sizes and the sampling protocol added to §5's properties table.
-  - Remark 3.5 ("essentially unique") now contains a one-line proof using $2$-transitivity of $\GL(3, \FF_2)$.
-  - Remark 4.6 closes the $\Sigma(\Lambda) \ne \Lambda$ gap by chasing a witness through the block sum.
-  - Egan's $17{,}280$ count cross-referenced to part 10 of \cite{Baez2014}.
-- **§5 exposition:** the logging-protocol-violations sentence in Appendix B has been replaced by a broader statement that mistakes were made on both sides (human and AI) throughout the investigation, and that each was caught by the systematic cross-checking the methodology requires.
-
-The remaining items (§3.3 Egan/Baez novelty question, §3.4 routing uniqueness, and several minor items) are deferred:
-
-- **§3.3** is now an active research direction: the author intends to (a) independently verify Baez's claim about the doubled Jordan product on $\ZZ^3 \oplus L_L$ by direct symbolic computation, (b) document this verification, and (c) answer a structural question relating Baez–Egan's closure anatomy on $\Lambda$ to the present construction. This will be addressed in follow-up prompts and reflected in the paper as a short, factual mention of the verification result, with details deferred to the supplemental repository.
-
-- **§3.4** (routing uniqueness): the paper makes an existence claim, not a uniqueness claim; the question of whether other $\ZZ_3$-symmetric routings yield closed products is genuine but deferred to mathematical follow-up.
-
-- Minor items 8 (precise $L\bar s$ citation), 9 (validation cross-check protocol description), 11 (logging-violations consideration — partially addressed: the specific prompt numbers were removed; the broader point retained), 12 (consolidating closure-of-shells remarks), 14 (Proposition 3.3 orientation), 15 (extending the §6 Comparison to earlier precursors): not addressed in this round; left open.
-
-All deferred items remain open for formal review and are not to be considered settled.

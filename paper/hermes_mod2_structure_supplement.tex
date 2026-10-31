@@ -1,4 +1,4 @@
-% Created: 2026-05-24.  Updated: 2026-10-24.
+% Created: 2026-05-24.  Updated: 2026-10-28.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -28,7 +28,7 @@ triple-octonion product}\\
 \address{$^{1}$External contribution}
 \address{$^{2}$Anthropic, acting at the direction of Jens K\"oplinger}
 
-\date{24 May 2026; updated 24 October 2026}
+\date{24 May 2026; updated 28 October 2026}
 
 \thanks{This supplement records two structural proposals about the
 mod-2 quotient $L/2L$ communicated by an external contributor
@@ -63,7 +63,7 @@ in this project
 Of the two proposals, one (Discovery~1, the $W$ multiplication table)
 required two cell corrections and one structural re-interpretation;
 the other (Discovery~2, $V$ totally isotropic) is correct in its
-asserted form and is sharpened here in two new directions: $V$~is
+main assertion and is sharpened here in two new directions: $V$~is
 in fact a \emph{two-sided} ideal of $\bar L$ (as the paper's Appendix~A
 also records), and~$W$ is also totally isotropic under the natural
 quadratic form (correcting the proposed ``mixed isotropy''
@@ -71,8 +71,8 @@ claim). Together, $V$ and $W$ form a Witt decomposition of $\bar L$
 into a pair of maximal totally isotropic subspaces (Lagrangians) under
 the plus-type quadratic form induced by the norm on~$L$.
 
-The main paper's Appendix~A records the Lagrangian framing developed
-here: $(V, W)$ is a polarization of~$\bar L$, a pair of complementary
+The main paper's Appendix~A records this Lagrangian framing, with its
+prior work (Lepowsky and Meurman; Silverman): $(V, W)$ is a polarization of~$\bar L$, a pair of complementary
 Lagrangians.
 \end{abstract}
 
@@ -84,7 +84,7 @@ Throughout, $L = D_8^+$ is the $E_8$ lattice in the
 coordinate-symmetric placement, $\sigma = (1\;2)$ is the transposition
 of two imaginary basis units of the paper, $L\bar s$ and~$Ls$ are
 Wilson's sublattices, and $\bar L := L/2L \cong \FF_2^{\,8}$
-is the mod-2 quotient with the descended (Z-bilinear $\to$ $\FF_2$-bilinear)
+is the mod-2 quotient with the descended ($\ZZ$-bilinear $\to$ $\FF_2$-bilinear)
 octonion product~$\bar\mu$. The paper's Appendix~A (``The closure
 criterion modulo~$2$'') establishes:
 
@@ -165,9 +165,8 @@ $\FF_2$-subspace $W = \sigma(Ls)/2L$.
 The multiplication table requires two cell corrections, and one
 structural claim is incorrect; the original framing as an
 ``$\FF_2$-algebra in the conventional sense'' overstates the
-structure since the descended product on $\bar L$ is non-unital
-(the octonion identity $e_0 \notin L$) and non-commutative in the
-$L$-basis.
+structure since the descended product on $\bar L$ is nonunital
+(the octonion identity $e_0 \notin L$) and noncommutative.
 
 \paragraph{Actual multiplication table.}
 Verified by direct computation of $\bar\mu(w_i, w_j)$ using the
@@ -181,7 +180,7 @@ w_2 & 0   & 0   & 0   & 0   \\
 w_3 & w_3 & w_2 & 0   & 0   \\
 \end{array}
 \]
-Six non-zero entries; every non-zero entry is a single basis vector.
+Six nonzero entries; every nonzero entry is a single basis vector.
 
 \paragraph{Identity / idempotent claim.}
 In $L$-basis coordinates, $w_0 = L_1 + L_2 + L_3 = s + 2e_0$, since
@@ -212,7 +211,7 @@ With the actual table:
   idempotent.
 \end{itemize}
 
-\subsection*{Does this replace the appendix tables?}
+\subsection*{Is this the structural reason for Lemma~4.4?}
 
 Not by itself. In the paper's Appendix~A, Lemma~4.4 read modulo~$2$
 says that $W$ is a subalgebra of~$\bar L$; the table above describes the
@@ -259,7 +258,7 @@ For an even unimodular lattice $L$ with norm form $\Nrm(v) =
 \]
 is well-defined because $\Nrm(v + 2u) = \Nrm(v) + 4 \langle v, u\rangle
 + 4 \Nrm(u) \equiv \Nrm(v) \pmod{4}$, so the right-hand side is
-$\sigma$-independent of the chosen representative. For $L = D_8^+$
+independent of the chosen representative. For $L = D_8^+$
 this $q$ is the standard plus-type form on $\FF_2^{\,8}$: $136$
 isotropic vectors (including~$0$) and $120$ anisotropic vectors out
 of~$256$, Witt index~$4$.
@@ -269,7 +268,7 @@ of~$256$, Witt index~$4$.
 The proposed basis of~$V$ is correct: the four vectors above are in
 $V = \sigma(L\bar s)/2L$ and span exactly it.
 
-The two correct claims and the four-by-four scoresheet:
+The four claimed properties and their verification:
 
 \begin{center}
 \begin{tabular}{lc}
@@ -299,7 +298,7 @@ Direct empirical test gives also
 \[ \bar\mu(V, \bar L) \subseteq V, \]
 so $V$ is in fact a \emph{two-sided ideal} of $\bar L$. The right-ideal
 direction does not follow from the left-ideal direction (the algebra
-$\bar\mu$ is non-commutative in the $L$-basis). The paper's Appendix~A
+$\bar\mu$ is noncommutative). The paper's Appendix~A
 records the two-sided ideal with its reason: $V = 2\mathcal O/2L$, and
 $2\mathcal O$ is a two-sided ideal of~$L$ (paper Remark~4.5).
 
@@ -328,17 +327,18 @@ $\bar L$ into a pair of complementary Lagrangians, one carrying the
 two-sided-ideal role and the other carrying the subalgebra role.
 
 Wilson's own pair $(L\bar s/2L, Ls/2L)$ is also a pair of complementary
-Lagrangians, and $\sigma$ maps it to~$(V, W)$. The first half,
+Lagrangians, as Tim Silverman found in the Baez series (the paper's
+Appendix~A, ``Relation to prior work''), and $\sigma$ maps it to~$(V, W)$. The first half,
 $L\bar s/2L$, is a two-sided ideal of~$(\bar L, \bar\mu)$ already; what
 $\sigma$ changes is that $W$ is a subalgebra, whereas $Ls/2L$ is not (the
 paper's Appendix~A, paragraph ``Wilson's pair and $\sigma$'s pair'').
 
 \begin{observation}
-$V$ and $W$ are not only orthogonally placed -- they are
-geometrically related: under the bilinear form
-$b(x, y) := q(x+y) - q(x) - q(y)$ associated to~$q$, the pairing
-between $V$ and $W$ is non-degenerate (since their direct sum is
-$\bar L$ and both are isotropic), so $V$ and $W$ are dual Lagrangians
+Under the bilinear form
+$b(x, y) := q(x+y) - q(x) - q(y)$ associated to~$q$, which is
+nondegenerate because $L$ is unimodular, the pairing between $V$
+and~$W$ is nondegenerate (since their direct sum is $\bar L$ and both
+are isotropic), so $V$ and $W$ are dual Lagrangians
 of the orthogonal space~$(\bar L, q)$.
 \end{observation}
 
@@ -346,7 +346,7 @@ of the orthogonal space~$(\bar L, q)$.
 \section{Discovery 1 vs Discovery 2: are the ideals the same?}
 % ===================================================================
 
-The user (and a reader) might reasonably ask whether the
+A reader might ask whether the
 $3$-dim nilpotent ideal $N \subset W$ from Discovery~1 is the same
 object as the $4$-dim two-sided ideal $V \subset \bar L$ from
 Discovery~2. \emph{They are not.} Their relationship is:
@@ -422,6 +422,9 @@ originals preserved.
 \item \texttt{python\_project/src/verify\_mod2\_quotient.py}: paper-side
   verification of $V$ as a left ideal and $W$ as a subalgebra; its
   $L$-basis is the one used here.
+\item \texttt{python\_project/src/verify\_polarization\_lagrangians.py}:
+  paper-side verification that $(V, W)$ is a polarization of~$\bar L$ and
+  that $V$ is a two-sided ideal (cited in the paper's Appendix~A).
 \item \texttt{python\_project/src/verify\_discovery1\_W\_subalgebra.py}:
   verification of the $W$-multiplication table (with two-cell
   corrections to the proposal).

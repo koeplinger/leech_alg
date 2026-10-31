@@ -2,16 +2,19 @@
 test_octonions.py — Verification that STANDARD_ALGEBRA and XPRODUCT_ALGEBRA
 satisfy all defining properties of the octonion algebra.
 
-Both algebras are exercised by every test via the `alg` fixture, which is
-parametrised over [STANDARD_ALGEBRA, XPRODUCT_ALGEBRA].
+Created: 2026-04-06.  Updated: 2026-10-28.
+
+Tests 1–16 exercise both algebras via the `alg` fixture, which is
+parametrized over [STANDARD_ALGEBRA, XPRODUCT_ALGEBRA]; tests 17–19 use
+the two algebras directly.
 
 Properties verified
 -------------------
  1.  Identity element
  2.  Imaginary squares: e_i^2 = -e_0
  3.  Anticommutativity of distinct imaginary basis pairs
- 4.  Non-commutativity (sanity: the algebra is NOT commutative)
- 5.  Non-associativity (sanity: the algebra is NOT associative)
+ 4.  Noncommutativity (sanity: the algebra is NOT commutative)
+ 5.  Nonassociativity (sanity: the algebra is NOT associative)
  6.  Composition algebra: N(x*y) = N(x)*N(y)
  7.  Conjugate formula: x * conj(x) = conj(x) * x = N(x) * e_0
  8.  Conjugate is an involution: conj(conj(x)) = x
@@ -20,21 +23,24 @@ Properties verified
 11.  Flexibility: (x*y)*x = x*(y*x)
 12.  Total antisymmetry of the associator (over all 512 ordered basis triples)
 13.  Moufang identity: z*(x*(z*y)) = ((z*x)*z)*y
-14.  Division algebra: every nonzero element has a two-sided inverse
+14.  Division algebra: x^{-1} = conj(x)/N(x) is a two-sided inverse (basis elements)
 15.  No zero divisors among basis elements
-16.  Power-associativity: x^3 and x^4 behave correctly
-17.  The two algebras have different multiplication tables
-18.  Cross-check: X-product table agrees with Dixon's formula
+16.  Power-associativity: (x*x)*x = x*(x*x) and (e_i^2)^2 = e_0 on basis elements
+17.  Multiplication rules of the papers: e_a * e_{a+1} = e_{a+3} (standard)
+     and e_a o e_{a+2} = e_{a+3} (X-product), a = 1,...,7 (mod 7)
+18.  The two algebras have different multiplication tables
+19.  Cross-check: X-product table agrees with Dixon's formula
          A o_X B = (A * l0) * (l0^{-1} * B)  where l0 = (e0+...+e7)/2
 
 Notes on scope
 --------------
 Properties 9-11 are tested over all 64 ordered pairs of basis elements.
-This is a complete check by bilinearity: if the identity holds for all pairs
-of basis elements it holds for all real linear combinations.
-(More precisely: left alternativity (x*x)*y = x*(x*y) linearises to the
-condition that the associator is antisymmetric in its first two arguments,
-which is tested exhaustively in test 12 over all 512 basis triples.)
+Each identity is quadratic in one argument, so basis pairs alone do not
+cover all elements; test 12 does.  Left alternativity (x*x)*y = x*(x*y)
+linearizes to the antisymmetry of the associator in its first two
+arguments, right alternativity to antisymmetry in its last two, and
+flexibility follows from both; test 12 checks these on all 512 basis
+triples.
 
 Property 12 (associator antisymmetry) over all 8^3 = 512 basis triples
 is the most comprehensive test: by trilinearity it certifies the identity
@@ -48,7 +54,7 @@ References
               Journal of Algebra 322 (2009) 2186-2190.
               DOI: 10.1016/j.jalgebra.2009.03.021
 [Wikipedia]   https://en.wikipedia.org/wiki/Octonion
-[Schafer1966] R.D. Schafer, Introduction to Nonassociative Algebras,
+[Schafer1966] R.D. Schafer, An Introduction to Nonassociative Algebras,
               Academic Press, 1966.
 """
 
@@ -142,7 +148,7 @@ class TestAnticommutativity:
 
 
 # ---------------------------------------------------------------------------
-# 4. Non-commutativity (sanity check)
+# 4. Noncommutativity (sanity check)
 # Reference: [Wikipedia] Octonion - Properties
 # ---------------------------------------------------------------------------
 
@@ -156,7 +162,7 @@ class TestNonCommutativity:
 
 
 # ---------------------------------------------------------------------------
-# 5. Non-associativity (sanity check)
+# 5. Nonassociativity (sanity check)
 # Reference: [Wikipedia] Octonion - Properties
 # ---------------------------------------------------------------------------
 
@@ -191,7 +197,7 @@ class TestNormMultiplicativity:
                     f"N(e{i} * e{j}) != N(e{i}) * N(e{j})"
 
     def test_on_general_elements(self, alg: OctonionAlgebra) -> None:
-        """Spot-check on a few non-basis elements."""
+        """Spot-check on a few elements outside the basis."""
         samples = [
             alg.element([1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]),
             alg.element([0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0]),
@@ -303,7 +309,7 @@ class TestFlexibility:
 # property for ALL real octonion elements.
 #
 # Reference: [Wikipedia] Octonion - Associativity;
-#            [Schafer1966] Theorem 3.1 (alternativity <=> associator alternating)
+#            [Schafer1966] Chapter III (alternativity <=> associator alternating)
 # ---------------------------------------------------------------------------
 
 class TestAssociatorAntisymmetry:
@@ -505,7 +511,8 @@ class TestAlgebrasAreDistinct:
 #
 # This test verifies that the XPRODUCT_FANO_TRIPLES in octonions.py are
 # the correct combinatorial encoding of Dixon's analytic definition.
-# Both sides are computed using STANDARD_ALGEBRA multiplication.
+# The formula side is computed in STANDARD_ALGEBRA, the table side in
+# XPRODUCT_ALGEBRA.
 #
 # Reference: [Dixon2010] eq. (7), and the multiplication table stated after it.
 # ---------------------------------------------------------------------------

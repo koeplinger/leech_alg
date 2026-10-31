@@ -3,7 +3,7 @@ standard identity that fails on (Lambda, +, star) has a witness that can be
 checked by hand.  The paper cites this script in the lead paragraph of
 Section 5.1.
 
-Created: 2026-10-21.  Updated: 2026-10-24.
+Created: 2026-10-21.  Updated: 2026-10-28.
 
 Conventions are the paper's: the multiplication (2.1), sigma = (1 2),
 x ._sigma y := sigma(sigma(x) . sigma(y)), and the triple product of
@@ -13,7 +13,7 @@ with ._sigma in all nine products; eps_1 = (e0, 0, 0), eps_2 = (0, e0, 0),
 eps_3 = (0, 0, e0) and omega = eps_1 + eps_2 + eps_3 = (e0, e0, e0).  The
 paper's table writes the witnesses as such explicit vectors, for example
 eps_1 - eps_2 = (e0, -e0, 0).  Exact arithmetic throughout
-(fractions.Fraction; sympy for one rank computation).
+(fractions.Fraction; sympy for the rank computations of (G)).
 
 (A) The routing rule on single blocks: for basis units e_i in block alpha and
     e_j in block beta, the product is e_i ._sigma e_j, in block alpha if

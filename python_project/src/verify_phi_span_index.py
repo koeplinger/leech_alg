@@ -1,9 +1,9 @@
 """Baez-Egan projected Jordan product phi on Lambda: exact span index
 [Lambda : S_phi] of the sublattice S_phi := Z-span{ phi(u, v) : u, v
-in Lambda }, companion to verify_product_span_index.py (which found
+in Lambda }, companion to verify_product_span_index.py (which finds
 [Lambda : S] = 65536 = 2^16 for the sigma-twisted product star).
 
-Created: 2026-07-10.  Updated: 2026-10-24.
+Created: 2026-07-10.  Updated: 2026-10-28.
 
 Paper Section 6 (`sec:related`), paragraph "Anatomy of the Baez--Egan
 closure on Lambda", which cites this script for the span index 2^25 of

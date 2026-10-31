@@ -1,21 +1,22 @@
 Claim number: 005
-Title: Dixon's octonionic construction produces 196,560 norm-8 rank-24 minimal vectors — a different embedding of the Leech lattice minimal shell from Wilson's
+Title: Dixon's octonionic construction produces 196,560 norm-8 rank-24 minimal vectors, a different embedding of the Leech lattice minimal shell from Wilson's
 Status: ESTABLISHED
+Created: 2026-04-07.  Updated: 2026-10-28.
 Date: 2026-04-07
 
 --- STATEMENT ---
 
-Dixon [Dixon2010 Section 6] characterises the Leech lattice minimal-vector
+Dixon [Dixon2010 Section 6] characterizes the Leech lattice minimal-vector
 shell in three families:
 
   ℓ₀ = ½(e₀+e₁+...+e₇),  N(ℓ₀) = 2  [eq. (6)]
   A^odd  = A₁ ∪ A₃  (240 norm-2 elements)
   A^even = Ξ^even   (240 norm-1 elements)
 
-  Type 1 [eq. (22)]:  (2P, 0, 0) + 3 cyclic perms,  P ∈ A^odd
-  Type 2 [eq. (21)]:  (2Q, ±2e_aQ, 0) + 3 cyclic perms,  Q ∈ A^even,
+  Type 1 [eq. (22)]:  (2P, 0, 0) + 2 cyclic perms,  P ∈ A^odd
+  Type 2 [eq. (21)]:  (2Q, ±2e_aQ, 0) + 2 cyclic perms,  Q ∈ A^even,
                        a ∈ {0,...,7}
-  Type 3 [eq. (20)]:  (P, ±e_aP, ±(e_aℓ₀)(e_cP)) + 3 cyclic perms,
+  Type 3 [eq. (20)]:  (P, ±e_aP, ±(e_aℓ₀)(e_cP)) + 2 cyclic perms,
                        P ∈ A^odd, a,c ∈ {0,...,7}, ± signs independent
 
   Count: 720 + 11,520 + 184,320 = 196,560.
@@ -28,7 +29,7 @@ Computationally verified:
 --- A^ODD vs WILSON'S E8 ROOTS ---
 
 Dixon's A^odd = A₁ ∪ A₃, where:
-  A₁ (112 elements):  ±e_a ± e_b — identical to Wilson's type-1 roots.
+  A₁ (112 elements):  ±e_a ± e_b, identical to Wilson's type-1 roots.
   A₃ (128 elements):  ½∑_{a=0}^{7} ±e_a with an EVEN number of minus signs.
 
 Wilson's E8 roots = A₁ ∪ {½∑±e_a with an ODD number of minus signs}.
@@ -53,8 +54,10 @@ subsets of R^24 = L³.  The two shells share exactly 17,232 vectors:
 Membership in Wilson's Λ:
   - Dixon type-1 with P ∈ A₁: ALL 336 satisfy Wilson's is_in_leech. ✓
   - Dixon type-1 with P ∈ A₃: ALL 384 FAIL Wilson's is_in_leech.
-    Reason: for P ∈ A₃, 2P has integer coordinates ±1 (not all even), so
-    2P ∉ 2L = Ls̄ ∩ Ls.  Wilson's condition 2 requires 2P ∈ Ls̄, which fails.
+    Reason: P ∈ A₃ has an even number of minus signs, hence an even
+    coordinate sum, so P ∉ L and 2P ∉ 2L = Ls̄ ∩ Ls.  2P lies in Ls̄ (every
+    vector with all coordinates ±1 does), so Wilson's condition 2 holds and
+    condition 3, 2P ∈ Ls, fails.
   - Dixon type-2: 6,144 of 11,520 pass is_in_leech (partial overlap).
   - Dixon type-3: 10,752 of 184,320 pass is_in_leech (partial overlap).
 
@@ -96,10 +99,12 @@ lattice against which a proposed product can be evaluated.
    Leech lattice.
 
 2. Dixon's shell is a DIFFERENT EMBEDDING of the Leech lattice minimal shell
-   than Wilson's — the two shells share only 17,232 of the 196,560 vectors.
+   than Wilson's: the two shells share only 17,232 of the 196,560 vectors.
 
-3. The question of a 24-dimensional integral algebra structure on Λ₂₄ remains
-   open.  Dixon Section 7 acknowledges this explicitly.
+3. Dixon Section 7 poses the question of a 24-dimensional integral algebra
+   structure on Λ₂₄ as open; claim 008 answers it for Wilson's Λ (paper
+   Theorem 1.1) with an order whose product does not preserve the minimal
+   shell (paper Remark 1.3).
 
 --- REFERENCES ---
 
@@ -114,10 +119,7 @@ lattice against which a proposed product can be evaluated.
 
 Test file:  python_project/tests/test_leech_dixon.py
 Test count: 21 tests across 6 classes
-Test result: 21 passed, 0 failed (run date: 2026-04-07)
-
-Full suite (157 tests including octonion, Wilson E8, Dixon E8, Wilson Leech,
-Dixon Leech): 157 passed, 0 failed.
+Test result: 21 passed, 0 failed.
 
 Key tests:
   - test_type1_a1_subset_in_leech: all 336 A₁ type-1 vectors satisfy Wilson's

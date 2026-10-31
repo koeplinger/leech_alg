@@ -1,7 +1,7 @@
 Topic: Octonion algebra — background and standard properties
 ==============================================================
 
-Created: 2026-04-06.  Updated: 2026-10-24.
+Created: 2026-04-06.  Updated: 2026-10-28.
 
 This file collects references for the foundational properties of the octonion
 algebra used throughout this project.  These are well-established results in
@@ -16,7 +16,7 @@ the public domain.
 - **URL**: https://en.wikipedia.org/wiki/Octonion
 - **Topics**: octonions, alternativity, flexibility, associator, Moufang identities,
   composition algebra, division algebra, Fano plane, conjugate, norm
-- **Originality note**: Wikipedia is a collaborative encyclopaedia.  The mathematical
+- **Originality note**: Wikipedia is a collaborative encyclopedia.  The mathematical
   content on this page describes results in the public domain (the octonion algebra
   was discovered by John T. Graves in 1843 and independently by Arthur Cayley in 1845;
   see note on priority below).  Wikipedia itself makes no original mathematical claims.
@@ -41,7 +41,7 @@ the public domain.
 ### [Schafer1966]
 
 - **Authors**: Richard D. Schafer
-- **Title**: Introduction to Nonassociative Algebras
+- **Title**: An Introduction to Nonassociative Algebras
 - **Published in**: Academic Press, New York, 1966.  (Dover reprint 1995.)
 - **Topics**: alternative algebras, associator, Moufang algebras, Cayley algebras
 - **Originality note**: Standard textbook; no dispute known.
@@ -84,10 +84,10 @@ the public domain.
   (1924) and Coxeter (1946). Dickson's order O_D (his system (30)) is
   genuinely closed, verified in this project. His Theorem XV states
   three maximal orders; the true number is seven. The undercount arises
-  from an extra assumption Dickson states openly on p. 321 — that the
-  orders contain the Hurwitz quaternions ½(±1±i±j±k) — which holds for
-  exactly three of the seven. Coxeter (1946, §14, postscript)
-  identifies this cause independently.
+  from an extra assumption Dickson states openly on p. 321, that the
+  orders contain the Hurwitz quaternions ½(±1±i±j±k); exactly three of
+  the seven do. Coxeter (1946, §14, postscript)
+  identifies Dickson's undercount with this cause.
 - **Notes**: Predates Kirmse and Coxeter. Construction is correct; the
   count is too small by four, by a qualifier Dickson stated in the
   derivation. Verified from the original in this project
@@ -107,7 +107,7 @@ the public domain.
 - **Year**: 1924
 - **Topics**: integral octonions, E8 lattice, sums of eight squares
 - **Originality note**: Original research paper; Kirmse's sole known
-  publication. No dispute over originality known. The paper contains
+  paper on integral octonions. No dispute over originality known. The paper contains
   one substantive error (an enumeration miscount: eight stated, seven
   actual; his exhibited domain J_1 is not closed), identified by
   Coxeter (1946) and remedied by R. H. Bruck (reported in Coxeter
@@ -115,10 +115,10 @@ the public domain.
   (python_project/src/verify_kirmse_1924.py; note in paper/reviews/).
 - **Notes**: Kirmse exhibited the E8 lattice as a positive definite
   unimodular integral quadratic lattice of rank 8 inside the real
-  octonion algebra. He also published what are presumably the first
-  appearance in print of the identities x(x̄y) = n(x)y = (yx̄)x
-  (Petersson 2018). See terminology.md for a fuller account of Kirmse's
-  contributions alongside the error.
+  octonion algebra. He also published the identities x(x̄y) = n(x)y = (yx̄)x,
+  presumably their first appearance in print (Petersson 2018). See
+  terminology.md for a fuller account of Kirmse's contributions
+  alongside the error.
 
 ---
 
@@ -139,8 +139,8 @@ the public domain.
   multiple of an integral Cayley number of norm 1, 2, or 4; his Theorem 2).
   Mahler cites Dickson (1923) but not Kirmse; that citation
   chain brought Dickson's priority to Coxeter's attention (Coxeter 1946,
-  §14). Verified from the original in this project (one transcription
-  error in equation (10), without consequence for the theorems;
+  §14). Verified from the original in this project (one misprint in
+  equation (10), without consequence for the theorems;
   python_project/src/verify_mahler_1942.py; note in paper/reviews/).
 - **Notes**: Cited in Coxeter (1946)'s postscript. Results re-derived
   computationally.
@@ -167,8 +167,8 @@ the public domain.
 - **Notes**: Coxeter showed Kirmse's exhibited domain J_1 is not closed:
   the product ½(1+i_1+i_2+i_3)·½(1+i_1+i_4+i_5) = ½(i_1+i_2+i_4+i_7) is
   not among Kirmse's 240 units. Bruck supplied the remedy: a
-  transposition of two imaginary basis units of the octonions — a
-  linear involution of R^8 — carries J_1 to a closed maximal order.
+  transposition of two imaginary basis units of the octonions (a
+  linear involution of R^8) carries J_1 to a closed maximal order.
   The (7 choose 2) = 21 such transpositions yield the seven maximal
   orders, in seven sets of three. §§6–13 develop the E_8 / 5_{21}
   geometry of the corrected order.
@@ -210,9 +210,10 @@ the public domain.
 - **Originality note**: Standard reference monograph. No dispute known.
 - **Notes**: Chapter 4 covers the Leech lattice. Chapter 12 contains
   Conway's uniqueness theorem for the Leech lattice (the unique even
-  unimodular lattice of rank 24 with no vectors of squared norm 2).
-  Cited in this project for the Leech lattice's basic properties and for
-  the fact that Min(Λ) generates Λ over Z.
+  unimodular lattice of rank 24 with no vectors of squared length 2).
+  Cited by the paper in Section 1 for that characterization, and in this
+  project for the Leech lattice's basic properties (Chapter 4) and for the
+  uniqueness theorem (Chapter 12).
 
 ---
 
@@ -263,7 +264,7 @@ the public domain.
   explore whether the Leech lattice can be made into a ring via the
   exceptional Jordan algebra 𝔥₃(O), with a Leech lattice L_L ≅ Λ/√2 off
   the diagonal. Key findings: (1) Egan found that the lattice
-  Z³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed under the standard Jordan product
+  Z³ ⊕ L_L ⊂ 𝔥₃(O) is NOT closed under the Jordan product
   x ∘ y = xy + yx, but IS closed under the doubled product 2(xy + yx).
   (2) Baez poses the open question of finding an "exceptional
   Leech–Jordan ring." (3) Part 10 gives at least 17,280 such lattices
@@ -334,8 +335,9 @@ the public domain.
 - **ISBN**: 978-0-387-95447-9
 - **Topics**: background (isotopy)
 - **Originality note**: Standard textbook; no dispute known.
-- **Notes**: Cited by the glossary entry on the Petersson construction and
-  isotopy in terminology.md (§5.3).  Fields checked against the publisher
+- **Notes**: Cited, at its §5.3, by the glossary entry "Isotopy (of
+  algebras)" in terminology.md, whose example is the Petersson
+  construction.  Fields checked against the publisher
   record.
 
 ### [Albert1942]

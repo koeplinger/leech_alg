@@ -1,5 +1,7 @@
 # Item (3) — analysis of Corradetti's Okubo / E8 / 2-adic work
 
+Created: 2026-05-22.  Updated: 2026-10-28.
+
 **Date:** 2026-05-22
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 114 (Phase A of the v4 update plan).
@@ -52,8 +54,7 @@ on point** for us.
 
 1. **Shared foundation.** Corradetti's whole construction sits on the
    Coxeter–Dickson integral octonions — the very order whose history this
-   project verified (Kirmse 1924, Dickson 1923, Mahler 1942, Coxeter 1946
-   pending). His Remark-4 shell formula $240\sum d^3$ is the $E_8$/Eisenstein
+   project verified (Kirmse 1924, Dickson 1923, Mahler 1942, Coxeter 1946). His Remark-4 shell formula $240\sum d^3$ is the $E_8$/Eisenstein
    identity Kirmse derived.
 2. **The Okubo / symmetric-composition / ternary theme.** Our §8 Outlook
    explicitly invokes Okubo algebras, Elduque, symmetric composition
@@ -125,5 +126,4 @@ present the 2-adic nature of Tables A.2/A.3 we should name it precisely as a
 
 The analysis of 2605.09333 is from a full read; the three newer papers from
 abstracts only (sufficient to confirm they are not more on-point than the
-main one). Recommendation: cite Corradetti in §8 (and optionally §6) — final
-wording to be settled when those sections are revised.
+main one). Recommendation: cite Corradetti in §8 (and optionally §6).

@@ -1,7 +1,7 @@
 Topic: Prior art — multiplicative structures / orders on the Leech lattice
 =============================================================================
 
-Created: 2026-04-11.  Updated: 2026-10-24.
+Created: 2026-04-11.  Updated: 2026-10-28.
 
 Literature search conducted: 2026-04-11, extended 2026-04-14
 Purpose: Identify any prior work establishing or ruling out an order (or
@@ -15,11 +15,11 @@ before publishing our finding.
 **No prior work was found establishing an order on the Leech lattice
 under an octonion-derived bilinear product.**
 
-The specific construction in this project — a Z₃-symmetric
-triple-octonion product on R²⁴, with σ a coordinate transposition of
-two imaginary basis units that is an octonion-algebra isomorphism
-fixing the E₈ lattice L = D₈⁺ but moving Wilson's sublattices Ls and
-Ls̄ — does not appear in the literature.
+The specific construction in this project appears in no prior work: a
+Z₃-symmetric triple-octonion product on R²⁴, with σ a coordinate
+transposition of two imaginary basis units that is an octonion-algebra
+isomorphism fixing the E₈ lattice L = D₈⁺ but moving Wilson's
+sublattices Ls and Ls̄.
 
 The closest related work falls into four categories (listed
 roughly by structural distance from the present construction):
@@ -41,16 +41,17 @@ roughly by structural distance from the present construction):
    researcher of this project (Koeplinger) participated in that
    discussion.
 
-2. **Dixon (1995, 2010)**: Proposes octonionic descriptions of Λ using
-   variants of the octonion product (XY-product in the 2010 formal
-   preprint, earlier versions going back to the 1995 arXiv preprints),
-   but does not establish closure of Λ under any such product.
+2. **Dixon (1995, 2005, 2010)**: Proposes octonionic descriptions of Λ
+   using variants of the octonion product (XY-product in the 2010
+   preprint, earlier versions in the 2005 preprint and the 1995 arXiv
+   preprints), but does not establish closure of Λ under any such
+   product.
 
 3. **Wilson (2009)**: Characterizes Λ as a sublattice of L³ using
    octonionic conditions, but does not define or test a multiplicative
    product on Λ.
 
-4. **Earlier precursors** — additive/geometric constructions of Λ
+4. **Earlier precursors**: additive/geometric constructions of Λ
    that foreshadow the octonion-triple and Jordan-algebra frameworks
    above but do not test closure under any bilinear product:
    Conway–Sloane 1982 (23 constructions, one per Niemeier lattice,
@@ -61,10 +62,10 @@ roughly by structural distance from the present construction):
    pair of complementary maximal totally singular subspaces of E₈/2E₈,
    the form of Egan's construction, and their introduction credits work
    of Tits with what amounts to the same construction; paper Appendix A);
-   and Elkies–Gross 1996 (an
-   integer form of the exceptional Jordan algebra 𝔥₃(O) with a
-   polarization outside the orbit of the identity matrix, related to Λ
-   and to the even rank-26 lattice of determinant 3 and minimum 4).
+   and Elkies–Gross 1996 (an integer form of the exceptional Jordan
+   algebra 𝔥₃(O) with a positive definite element of determinant 1
+   outside the orbit of the identity matrix, related to Λ and to the
+   even rank-26 lattice of determinant 3 and minimum 4).
 
 ---
 
@@ -136,8 +137,8 @@ Wilson 2009.  Its conjectured formula for the third family of minimal
 vectors required a small correction, which Wilson supplied in a bracketed
 note in §5 of Wilson 2009 while independently deriving the sublattice
 characterization above.  The Dixon–Wilson situation is structurally
-analogous to the Kirmse–Coxeter one: an early, structurally correct
-proposal refined by a later author's short correction.  The preprint was
+analogous to the Kirmse–Bruck–Coxeter one: an early, structurally
+correct proposal refined by a later short correction.  The preprint was
 posted at www.7stones.com/Homepage/8Lattice.pdf; that URL now serves
 Dixon's later 2010 paper, so the 2005 preprint is cited by its locator
 through Wilson 2009 rather than by a live link.  Like Dixon's other works
@@ -185,7 +186,7 @@ Physical copy to be obtained from library for verification.
 Wilson constructs Λ as {(x,y,z) ∈ L³ : conditions 1–3}, gives the
 explicit decomposition 196,560 = 3 × 240 × (1 + 16 + 16²) of the
 minimal shell into three families, and proves Λ is even and self-dual
-by elementary arguments using L and the sublattices Ls, Ls̄.  The
+by elementary arguments using L and the sublattices Ls, Ls̄.  Wilson's
 paper does not describe the Conway group; it announces at the end
 that a follow-on paper ("Conway's group and octonions", listed as
 reference [20] of Wilson 2009 and submitted at the time) will
@@ -220,7 +221,7 @@ it.
 
 ### [Baez2014] — Integral Octonions, parts 9–12 (n-Category Café)
 
-John Baez's blog series (parts 9–12, November 2014 – January 2016; the
+John Baez's blog series (parts 9–12, November 2014 to January 2016; the
 series runs 2013–2016) explores the
 exceptional Jordan algebra 𝔥₃(O) as a framework for the Leech lattice.
 Part 9 (23 November 2014) gives Greg Egan's construction of the Leech
@@ -232,7 +233,7 @@ copies of the first E₈ shell); each meets exactly 64 of them in 2L, so the
 construction gives 17,280 = 270 × 64 lattices, all distinct (Egan's
 comments, [Egan2014]).  Wilson's Λ = Λ(Ls̄, Ls) and σ(Λ) = Λ(2𝒪, p𝒪) are
 two of them (paper Section 6, display (6.2)).  Parts 9–10 (part 10:
-1 December 2014) contain the Leech-Jordan material, and part 12
+1 December 2014) contain the Leech–Jordan material, and part 12
 (31 January 2016, by Tim Silverman) the integral octonions modulo 2.  The
 paper cites parts 9 and 11 for Egan's construction and its count and parts
 9–10 for the Jordan material (Section 6), and part 12 for Silverman's
@@ -331,8 +332,8 @@ known.
 
 ### [WilsonConway] — Conway's group and octonions
 
-Wilson's follow-on to Wilson 2009 describes the double cover of
-Conway's group Co₀ using right multiplications by 3×3 octonionic
+Wilson's follow-on to Wilson 2009 describes Conway's group Co₀,
+the double cover of Co₁, using right multiplications by 3×3 octonionic
 matrices.  This uses the octonion product to describe symmetries, not
 to define a closed algebra on Λ.
 

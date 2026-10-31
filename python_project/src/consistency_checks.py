@@ -1,9 +1,11 @@
 """
-consistency_checks.py — Pre-paper verification of all claims.
+consistency_checks.py — Consistency checks of the construction.
 
-Runs checks 1–3, 5, 7–10 from the consistency check plan.
+Created: 2026-04-11.  Updated: 2026-10-28.
+
+Runs checks 1–3 and 5–10; check 6 (algebraic properties, sampled) is an
+investigation, reported as PASS once it completes.
 Check 4 (exhaustive verification) is handled by trial_007_exhaust.py.
-Check 6 (algebraic properties) is a separate investigation.
 
 Each check prints PASS or FAIL with details.
 """
@@ -83,9 +85,10 @@ def check_1():
         print(f"      FAIL: {comp_fail} composition failures.")
         ok = False
 
-    # 1c. All 21 transpositions produce the same table up to GL(3,F2)
-    print("\n  1c. All 21 transpositions same up to GL(3,F₂)...")
-    # Two octonion algebras are "the same up to relabelling" iff there
+    # 1c. Table signatures of the 21 transpositions (a necessary condition
+    # for equality up to relabeling; every octonion table passes it)
+    print("\n  1c. Table signatures of the 21 transpositions (necessary condition only)...")
+    # Two octonion algebras are "the same up to relabeling" iff there
     # exists a permutation π of {1,...,7} mapping one's Fano triples to
     # the other's (as unordered sets of ordered triples up to cyclic
     # rotation).  We check a weaker condition: same number of +1 and -1
@@ -108,7 +111,7 @@ def check_1():
         print(f"      PASS: all 21 transpositions have identical table signatures.")
     else:
         print(f"      PARTIAL: {len(sigs)} distinct signatures (expected 1).")
-        # Not a hard failure — signatures might differ in labelling
+        # Not a hard failure: signatures might differ in labeling
         # This needs deeper investigation if it triggers
 
     print(f"\n  CHECK 1: {'PASS' if ok else 'FAIL'}")
@@ -170,9 +173,11 @@ def check_2():
         print(f"      UNEXPECTED: σ moves {moved_out_of_L}/240 roots out of L.")
         ok = False
 
-    # Check whether σ preserves the sublattice Ls̄ (it should NOT, since
-    # Ls̄ depends on the specific element s̄ which is not invariant under σ)
-    ls_bar_roots = [r for r in roots if is_in_Ls_bar(r)]
+    # Check whether σ preserves the sublattice Ls̄.  It does not: σ fixes s̄,
+    # but σ(Ls̄) = 2𝒪 ≠ Ls̄ (paper eq. (4.1) and Remark 4.5).
+    # Ls̄ has minimum norm 4 and contains no root of L: test its 240
+    # norm-4 generators r·s̄ instead.
+    ls_bar_roots = [r * WILSON_S_BAR for r in roots]
     moved_out_of_Lsbar = 0
     for r in ls_bar_roots:
         sr = std.element(sigma(r.coords))
@@ -232,12 +237,12 @@ def check_3():
 
 
 # ===================================================================
-# CHECK 5: Bilinearity and generation
+# CHECK 5: Bilinearity and the rank of Min(Λ)
 # ===================================================================
 
 def check_5():
     print("\n" + "=" * 60)
-    print("CHECK 5: Bilinearity and Min(Λ) generates Λ")
+    print("CHECK 5: Bilinearity and the rank of Min(Λ)")
     print("=" * 60)
     ok = True
 
@@ -273,7 +278,7 @@ def check_5():
         print(f"      FAIL: {bilin_fail} linearity failures.")
         ok = False
 
-    # 5b. Min(Λ) generates Λ over Z — check rank and Gram determinant
+    # 5b. Rank of Min(Λ): it spans R²⁴ (generation of Λ over Z is not tested)
     print("\n  5b. Min(Λ) spans a rank-24 lattice...")
     type1_vecs = [flatten_leech_vector(t) for t in leech_type1_vectors()]
     type2_vecs = [flatten_leech_vector(t) for t in leech_type2_vectors()[:500]]
@@ -291,8 +296,7 @@ def check_5():
         print(f"      FAIL: rank {rank}, expected 24.")
         ok = False
 
-    # Verify they generate the LATTICE (not just the vector space)
-    # by finding 24 independent vectors and computing Gram determinant
+    # Gram determinant of 24 independent vectors chosen greedily from Min(Λ)
     print("\n  5c. Gram determinant check...")
     all_vecs = np.array(type1_vecs)
     # Greedily find 24 independent vectors
@@ -318,14 +322,11 @@ def check_5():
         G = B @ B.T
         det = np.linalg.det(G)
         print(f"      Gram det of 24 Min(Λ) vectors: {det:.1f}")
-        # The Leech lattice under standard inner product has det = 1
-        # (it is unimodular under Wilson's halved inner product).
-        # Under standard inner product, det(Gram) = 2^24 for
-        # the even unimodular lattice with the standard metric.
-        # But Min(Λ) vectors might not form a Z-basis of Λ directly.
-        # The key claim is just that they GENERATE Λ over Z, which
-        # rank 24 confirms (since Λ has rank 24).
-        print(f"      (Min(Λ) generates Λ — rank suffices for the argument.)")
+        # Λ is unimodular under Wilson's halved inner product, so
+        # det(Gram_Λ) = 2^24 under the standard inner product.  These 24
+        # vectors are not a Z-basis of Λ (det = 2^54, index 2^15), and
+        # rank 24 does not show that Min(Λ) generates Λ over Z.
+        print(f"      (rank 24 only; generation of Λ over Z is not checked here.)")
     else:
         print(f"      Could not find 24 independent vectors.")
         ok = False
@@ -691,8 +692,8 @@ def check_6():
         print(f"        left failures: {id_fail_left}, right failures: {id_fail_right}")
         has_identity = False
 
-    # Note: the identity element is NOT in Λ (squared norm = 3, not 8),
-    # so (Λ,+,·) is a non-unital order.
+    # (e0, e0, e0) is not an identity element: the algebra has none (paper
+    # Remark 5.2, rem:no-identity), so (Λ,+,⋆) is a nonunital order.
     id_norm = float(np.dot(e_candidate, e_candidate))
     print(f"      N(e) = {id_norm} — {'NOT in Min(Λ)' if abs(id_norm - 8.0) > 0.01 else 'in Min(Λ)'}.")
     if has_identity:
@@ -774,8 +775,9 @@ def check_6():
             flex_fail += 1
     print(f"      {n_alt - flex_fail}/{n_alt} pass ({'PASS' if flex_fail == 0 else 'FAIL'})")
 
-    # 6e. Power-associativity: x²·x = x·x² (implies x^n well-defined)
-    print("\n  6e. Power-associativity x²·x = x·x²...")
+    # 6e. Third-power associativity x²·x = x·x², a necessary condition for
+    # power-associativity (well-defined powers x^n)
+    print("\n  6e. Third-power associativity x²·x = x·x²...")
     pow_fail = 0
     n_pow = 2000
     idx3 = rng.choice(len(all_vecs), size=n_pow)
@@ -788,7 +790,7 @@ def check_6():
             pow_fail += 1
     print(f"      {n_pow - pow_fail}/{n_pow} pass ({'PASS' if pow_fail == 0 else 'FAIL'})")
 
-    # 6f. Commutativity (not expected, but characterise)
+    # 6f. Commutativity (not expected, but characterize)
     print("\n  6f. Commutativity x·y = y·x...")
     comm_fail = 0
     for i in range(n_alt):
@@ -822,7 +824,7 @@ def load_all_min_vectors():
 
 def main():
     print("=" * 60)
-    print("CONSISTENCY CHECKS — Pre-paper verification")
+    print("CONSISTENCY CHECKS")
     print("=" * 60)
     print()
 

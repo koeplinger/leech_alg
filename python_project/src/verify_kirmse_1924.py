@@ -1,4 +1,13 @@
 """Verify Kirmse 1924 from scratch: his multiplication table (1) and his order J_1.
+
+Created: 2026-05-20.  Updated: 2026-10-28.
+
+Prints: table (1) is a composition algebra; J_1 has index 16 over J_0 and is
+not closed (10 of the 144 generator products leave it; an example is
+printed); of the 30 E8-type candidate lattices, 7 are closed under table (1),
+and J_1 is not among them.  About a second.  The paper cites this script in
+Appendix B (`app:history`), in the footnote of its opening paragraph.
+
 Sources, both from Kirmse's paper (pp.63-82, scans seq_325-344):
   - table (1), p.64 (seq_326): 7 cyclic Fano triples below.
   - J_1, p.70 (seq_332): J_1 = [J_0, a1,a2,a3,a4].
@@ -32,11 +41,6 @@ def kmul(u,v):
 def N(u): return sum(x*x for x in u)
 # sanity: composition law N(uv)=N(u)N(v)
 import random; random.seed(0)
-ok=all(N(kmul([F(random.randint(-3,3)) for _ in range(8)],
-               [F(random.randint(-3,3)) for _ in range(8)]))
-       == N(u)*N(v) for u,v in [([F(random.randint(-2,2)) for _ in range(8)],
-                                 [F(random.randint(-2,2)) for _ in range(8)]) for _ in range(1)])
-# proper composition check
 good=True
 for _ in range(300):
     u=[F(random.randint(-3,3)) for _ in range(8)]

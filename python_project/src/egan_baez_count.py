@@ -1,12 +1,12 @@
 """
-egan_baez_count.py — Independent attempt to verify Egan's count of 17,280
-Jordan rings in the Baez/Egan construction.
+egan_baez_count.py — Independent check of Egan's count of 17,280 Jordan
+rings in the Baez–Egan construction.
 
-Created: 2026-04-29.  Updated: 2026-10-24.
+Created: 2026-04-29.  Updated: 2026-10-28.
 
 Per Baez/Egan part 11
 (https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html):
-the count factorises as 17,280 = 270 × 64, where:
+the count factorizes as 17,280 = 270 × 64, where:
   - 270 is the number of sublattices L_1 ⊂ E_8 isometric to √2 E_8.
   - For each such L_1, there are exactly 64 sublattices L_2 isometric
     to √2 E_8 with L_1 ∩ L_2 = 2 E_8.
@@ -44,9 +44,10 @@ counts 270 and 17,280 = 270 × 64 after display (6.2) (`eq:egan`).  Ledger claim
 
 import numpy as np
 from typing import List, Tuple, FrozenSet
+import os
 import sys
 
-sys.path.insert(0, '/home/jens/Projects/leech_alg/python_project/src')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from leech_wilson import _build_L_zbasis
 
@@ -146,7 +147,7 @@ def enumerate_maximal_isotropic_subspaces(
     """Enumerate all 4-dim totally isotropic subspaces of F_2^8 with q.
 
     A 4-dim totally isotropic subspace V satisfies:
-      - dim V = 4 (15 non-zero elements)
+      - dim V = 4 (15 nonzero elements)
       - q(v) = 0 for all v ∈ V
       - V is closed under addition (subspace property)
     """
@@ -156,22 +157,15 @@ def enumerate_maximal_isotropic_subspaces(
     # For a subspace ⟨v_1, v_2, v_3, v_4⟩, we need q(v_i) = 0 AND
     # q(v_i + v_j) = 0 for all i, j (which simplifies to bilinear-form
     # condition q(v_i + v_j) = q(v_i) + q(v_j) + b(v_i, v_j) where
-    # b(v_i, v_j) is the polarisation bilinear form). For F_2 quadratic
+    # b(v_i, v_j) is the polarization bilinear form). For F_2 quadratic
     # forms, b(u, v) = q(u + v) - q(u) - q(v) over Z (then mod 2).
     # Total isotropy requires q(any element of V) = 0, equivalently:
     # q(v_i) = 0 for each generator AND b(v_i, v_j) = 0 for all i ≠ j.
 
-    # Compute bilinear form b: b(u, v) = q(u + v) - q(u) - q(v) (mod 2)
-    # For our q with linear and bilinear parts:
-    # q(u + v) = a·(u+v) + sum (u+v)_i (u+v)_j m_ij
-    # = q(u) + q(v) + sum_{i<j} m_ij (u_i v_j + u_j v_i)
-    # = q(u) + q(v) + sum_{i≠j} m_ij u_i v_j  (i<j,j<i covered by symmetry)
-    # Actually: u_i v_j + u_j v_i = (uv^T + vu^T)_{ij}, but over F_2 it
-    # simplifies. The polarisation b(u, v) = sum_{i,j} m_ij u_i v_j (with
-    # appropriate symmetry) — it's the off-diagonal symmetric bilinear.
-    # In F_2: b(u, v) = sum_{i<j} m_ij (u_i v_j + u_j v_i) = u^T (M)/2 v
-    # but M is symmetric so just take u^T M_strictUpper v + ...
-    # Easier: compute b(u, v) by direct evaluation.
+    # The polarization b(u, v) = q(u + v) - q(u) - q(v) (mod 2).  With q as in
+    # build_q_form, q(u + v) = q(u) + q(v) + sum_{i<j} m_ij (u_i v_j + u_j v_i),
+    # so b(u, v) = u^T M v (mod 2), M being symmetric with zero diagonal.
+    # b_form evaluates it directly from q.
     def b_form(u, v):
         return (q_value((u + v) % 2, a, M) - q_value(u, a, M) - q_value(v, a, M)) % 2
 

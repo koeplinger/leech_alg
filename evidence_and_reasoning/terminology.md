@@ -1,6 +1,6 @@
 # Terminology Reference
 
-Created: 2026-04-11.  Updated: 2026-10-24.
+Created: 2026-04-11.  Updated: 2026-10-28.
 
 This file defines terminology used in this project. Where established
 mathematical terminology exists, it is cited. Where constructions are
@@ -73,8 +73,9 @@ the isotopy triple (φ, φ, φ) where all three maps are the same.
 In this project: the σ-twisted octonion product ·_σ (main paper
 Definition 3.2) is isomorphic to the standard octonion product · of eq.
 (2.1).  The map σ: e_i ↔ e_j (extended linearly, fixing e₀)
-satisfies σ(x · y) = σ(x) ·_σ σ(y) for all basis pairs.  Verified
-computationally: 0/64 mismatches.  For the coordinate-symmetric placement
+satisfies σ(x · y) = σ(x) ·_σ σ(y) for all x, y, by definition
+(σ² = id); `consistency_checks.py` (check 2) confirms it for σ = (1 2)
+on the 64 basis pairs.  For the coordinate-symmetric placement
 L = D₈⁺ used throughout the paper, σ preserves L (it is a coordinate
 permutation, which preserves both integer/half-integer parity and the
 coordinate sum); σ moves the sublattices Ls and Ls̄ of L, and that is
@@ -100,7 +101,8 @@ composition algebra) has fundamentally different properties: for example,
 it has no identity element.
 
 Reference: McCrimmon, K., "A Taste of Jordan Algebras" (2004), §5.3;
-Albert, A.A., "Non-associative algebras I", Ann. of Math. 43 (1942),
+Albert, A.A., "Non-associative algebras. I. Fundamental concepts and
+isotopy", Ann. of Math. (2) 43 (1942),
 685–707 (introduced the concept of isotopy for nonassociative algebras).
 
 ### Leech lattice Λ — norm conventions
@@ -153,8 +155,8 @@ References:
 
 Johannes Kirmse (born 1894, Schmölln, Thuringia) received his PhD from the
 University of Leipzig in 1923 under Gustav Herglotz and published his sole
-known paper on integral octonions in 1924, while working as a high school
-teacher in Apolda:
+known paper on integral octonions in 1924, under the by-line "Johannes
+Kirmse in Hannover" (Kirmse 1924, p. 63):
 
 > J. Kirmse, "Über die Darstellbarkeit natürlicher ganzer Zahlen als Summen
 > von acht Quadraten und über ein mit diesem Problem zusammenhängendes
@@ -179,7 +181,7 @@ Kirmse then claimed, without proof, that his lattice is closed under
 octonion multiplication.  In fact Kirmse stated that there are *eight*
 such maximal domains (his p. 70); the true number is **seven**, and the
 one he exhibited explicitly, $J_1$, is the spurious entry.  Coxeter
-(1946, §4) re-derived the failure with an explicit one-line witness,
+(1946, §4) identified the failure with an explicit one-line witness,
 $\tfrac12(1{+}i_1{+}i_2{+}i_3)\cdot\tfrac12(1{+}i_1{+}i_4{+}i_5)
 =\tfrac12(i_1{+}i_2{+}i_4{+}i_7)\notin J_1$, and recorded the remedy
 supplied by **R. H. Bruck**: "Bruck's domain $J$ can be derived from
@@ -199,10 +201,10 @@ There is no difference of operation, only of name.
 What differs is the lattice on which the twist is applied. Kirmse's
 $J_1$ (and the seven Kirmse–Coxeter–Bruck orders that the twist relates
 to it) are **axis-asymmetric** placements of $E_8$ in $\mathbb{R}^8$:
-their coordinate stabilizers in $S_8$ are of order $1344 \cong
-\mathrm{AGL}(3,2)$ and contain no transposition, so every transposition
+their coordinate stabilizers in $S_8$ are isomorphic to
+$\mathrm{AGL}(3,2)$, of order $1344$, and contain no transposition, so every transposition
 moves them. It is exactly this axis-asymmetry that lets the Kirmse
-twist turn a lattice not closed under the octonion product
+twist turn a lattice that does not close under the octonion product
 (Kirmse's $J_1$) into one that does (Bruck's $J$).
 
 The main paper, and the Leech-lattice construction of Wilson on which
@@ -250,9 +252,10 @@ References:
 
 ### Maximal order (of integral octonions)
 
-The integral octonions, for a fixed octonion multiplication, are the orders
-of the octonion algebra over Q (the Q-span of e₀, …, e₇): lattices Γ that
-are closed under multiplication and contain the identity.  A maximal order
+For a fixed octonion multiplication, the orders of the octonion algebra
+over Q (the Q-span of e₀, …, e₇) are the lattices Γ that are closed under
+multiplication and contain the identity; their elements are integral
+octonions.  A maximal order
 is one maximal with respect to inclusion among them.  There are infinitely
 many maximal orders (G₂(Q) is infinite, and only finitely many of its
 elements preserve a given maximal order; the external review of v8,
@@ -272,7 +275,7 @@ nonetheless states three maximal orders rather than seven, an undercount
 arising from an extra assumption he states openly in the derivation
 (p. 321: that the orders contain the Hurwitz quaternions
 $\tfrac12(\pm1\pm i\pm j\pm k)$).  Coxeter (1946, §14, postscript)
-identifies this cause independently.  Verified from the originals in
+identifies Dickson's undercount with this cause.  Verified from the originals in
 this project (`verify_dickson_1923.py`,
 `verify_coxeter_1946.py`).
 
@@ -281,7 +284,7 @@ the main paper uses one maximal order throughout, 𝒪 := ½(e₁ + e₂)L.  It
 contains the eight basis units, is closed under the standard octonion
 product, and is one of the seven maximal orders above, the ring A₃ of
 Wilson (2009, §2); the ledger (claims 019, 021) writes it O⁽⁴⁾.  Since
-(e₁ + e₂)² = −2 and L = −L, the alternative law gives L = (e₁ + e₂)𝒪, so
+(e₁ + e₂)² = −2 and L = −L, the left alternative law x(xy) = x²y gives L = (e₁ + e₂)𝒪, so
 L ⊆ 𝒪 and L is a √2-scaled copy of 𝒪.  Lemmas 4.2 to 4.4 of the main
 paper (§4.1) rest on three facts: σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 with
 p = e₂ − e₄ + e₅ − e₆ (eq. (4.1)); (xa)(xb) = x((ax)b) for every purely
@@ -318,7 +321,8 @@ The symmetric composition algebra obtained from an octonion algebra (O, ·)
 via the **Petersson construction** with a nontrivial order-3 automorphism τ:
 x * y = τ(x̄) · τ²(ȳ).  Named after Susumu Okubo, who first constructed
 it on traceless 3×3 matrices over C.  Over R, there is (up to isomorphism)
-one Okubo algebra; over other fields there may be several.
+one Okubo algebra with positive definite norm, the pseudo-octonion
+algebra (a division algebra); over other fields there may be several.
 References: [MarraniCorradettiZucconi2025], [Elduque2000_Triality].
 
 ### Order
@@ -344,12 +348,12 @@ symmetric composition algebra.  Reference: [Elduque2000_Triality] §3.
 
 ### Petersson construction
 
-Given an octonion algebra (O, ·) and an order-3 automorphism τ of O, the
+Given an octonion algebra (O, ·) and an automorphism τ of O with τ³ = id, the
 **Petersson isotope** is the algebra (O, *_τ) with product
 x *_τ y = τ(x̄) · τ²(ȳ).  The resulting algebra is always a symmetric
 composition algebra.  When τ = id, this gives the para-Hurwitz algebra;
 when τ ≠ id, it gives an Okubo algebra.
-Reference: [MarraniCorradettiZucconi2025] eq. (1.5); originally due to
+Reference: [MarraniCorradettiZucconi2025] eqs. (1.5)–(1.6); originally due to
 H. Petersson [Petersson1969].
 
 ### Square-zero element (square nilpotent)
@@ -368,9 +372,9 @@ In this project (main paper §5.5;
   dimension 12; it lies in T and meets D only in 0.
 - **The order (Λ, +, ⋆) does contain square-zero elements, with norms
   in 12Z** (N(u) = 3 N(x) with N(x) ∈ 2Z, and every norm of Λ lies in
-  4Z).  The norm-12 stratum is exactly the 4,032 hexagonal triples of
+  4Z).  The norm-12 stratum is exactly the 4,032 ordered hexagonal triples of
   the E₇ root system formed by the 126 norm-4 vectors of Ls̄ ∩ Im(O);
-  higher strata are realized (norm-24 witness:
+  norm 24 occurs as well (witness:
   `verify_square_zero_norm24_witness.py`).
 - **Min(Λ) contains none**: the minimal norm is 8, not a multiple
   of 12.
@@ -420,8 +424,9 @@ succeeding (or partially succeeding) and one failing:
 - **Trial 001** (triple octonion product): type1×type1, type1×type2,
   type1×type3, type2×type2, type2×type3 all closed at 100%.  Only
   type3×type3 failed (≈75% failure rate).  Since type-1 and type-2 vectors
-  each populate only two of the three blocks while type-3 vectors populate
-  all three, this is effectively a 2+1 split based on block occupancy.
+  populate one and two of the three blocks, respectively, while type-3
+  vectors populate all three, this is effectively a 2+1 split based on
+  block occupancy.
 
 - **Trial 005** (Petersson triality triple): block 0 (para-octonion)
   partially succeeded (53.5% on type1×type1) while blocks 1 and 2
@@ -458,7 +463,7 @@ standalone note `paper/automorphism_group_2026-07-12.pdf`):
   does not preserve ⋆.  (The trace-form route fails: tr(L_u L_v) has
   signature (3, 21), not the Leech form.)
 - **Completeness**: the order-36 count and the Co₀ containment are
-  established by two independent routes in the companion note
+  established by two independent routes in the standalone note
   (`paper/automorphism_group_2026-07-12.pdf`): Route 1 uses the
   classification of the automorphisms of the complexification of
   (T, ⋆) (nonenumerative); Route 2 is entirely finite and
@@ -468,7 +473,7 @@ standalone note `paper/automorphism_group_2026-07-12.pdf`):
 
 Related, and not to be confused with the above: the stabilizers of the
 Wilson sublattices in Aut(O, ·_σ), the automorphism group of the σ-twisted
-product (the setting of the companion note
+product (the setting of the standalone note
 `paper/automorphism_group_2026-07-12.tex`, §5.2): |Stab(L)| = 1344 =
 2³·L₃(2), |Stab(Ls)| = 168 = 2³:(7:3), |Stab(Ls̄)| = 12096 = U₃(3).2 =
 G₂(2) (`gap_project/octonion_stabilisers.g`).  Under the standard octonion
@@ -511,13 +516,15 @@ forming the **Z₃ orbit** under powers of an order-3 octonion automorphism τ:
 - B₂: Okubo_τ²  (Petersson with τ²)
 
 Cross-block products use the target block's algebra.  Rotating the
-mediator of a Fano line cyclically does not give three Okubo algebras: on
-each of the 7 Fano lines, only 1 or 2 of the 3 cyclic mediators are
-automorphisms.  The Petersson triality triple is the closest valid
-alternative.
+mediator of a Fano line cyclically gives three order-3 automorphisms: on
+each of the 7 Fano lines, each of the 3 elements mediates one, for one of
+the two relative senses of the two rotations (worked examples in
+`python_project/src/okubo_samples.py`).  Trial 005 tests the Petersson
+triality triple, not the algebras these three give.
 
 The construction failed due to a **√3 obstruction**: the Petersson
-construction with nontrivial τ introduces irrational structure constants
+construction with trial 005's τ (a rotation by 2π/3 in two planes)
+introduces irrational structure constants
 (cos 2π/3, sin 2π/3), so products of E8 lattice vectors leave the E8
 lattice entirely.
 
@@ -617,7 +624,7 @@ The 21 transpositions form a single orbit under conjugation by the
 order-21 group of coordinate permutations preserving the oriented Fano
 triples.  Each such permutation is an octonion automorphism that fixes s
 and s̄ and preserves L, so conjugation carries the paper's §4 proof for
-σ = (1 2) to every transposition (paper §4, footnote).
+σ = (1 2) to every transposition (paper §4, first footnote).
 
 Transpositions are not the only permutations of the imaginary basis units
 for which the assembled triple product closes.  Writing
@@ -638,7 +645,7 @@ not close.  Exhaustive, not sampled
 
 The name "transposition-twisted triple octonion product", used in the
 trial 007 files, over-privileges the twist: the
-product is not an exotic twisted object but an ordinary octonion
+block product ·_σ is not an exotic twisted object but an ordinary octonion
 product; the twist concerns its fit with a chosen representation.
 
 ### Triple octonion product
@@ -650,7 +657,8 @@ routing**: products of vectors from blocks α and β land in block γ, where
 Same-block products Oα × Oα → Oα also use the standard octonion product.
 
 Trial 001 tested this product without rescaling.  Trial 002 tested it with
-per-block scaling.  Both failed, but trial 001 exhibited a distinctive
+per-block scaling, each product normalized to norm 8 (closure of the minimal
+shell).  Both failed, but trial 001 exhibited a distinctive
 **2+1 closure pattern** (see above).
 
 In the main paper's notation this product is ⋆_g with g the identity
@@ -689,8 +697,8 @@ above) and the reflections in roots of L (see "Reflection ρ" above).
 ### √3 obstruction
 
 The failure mode specific to the Petersson triality triple (trial 005):
-the Petersson construction with a nontrivial order-3 automorphism τ
-introduces structure constants involving cos(2π/3) = −1/2 and
+the Petersson construction with the order-3 automorphism τ of trial 005
+(a rotation by 2π/3 in two planes) introduces structure constants involving cos(2π/3) = −1/2 and
 sin(2π/3) = √3/2.  Products of E8 lattice vectors (integer or
 half-integer coordinates) then acquire irrational √3 components and
 cannot lie in the E8 lattice.  This is a more fundamental obstruction

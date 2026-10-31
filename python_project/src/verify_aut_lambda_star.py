@@ -1,6 +1,6 @@
 """Aut(Lambda, +, star): exact order, structure, generators.
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-10-28.
 
 Runtime: about 5 minutes on one core of an Intel Core i7-12650H (the
 script runs single-threaded; the complete stabilizer enumerations take
@@ -12,7 +12,9 @@ about 4 of the 5 minutes).  It prints its own runtime at the end.
 The ambient is GL_24(Z), NOT Co_0; whether every star-automorphism is an
 isometry of Lambda is one of the things settled here (it is: see (e)).
 
-INPUT FACTS (from verify_star_algebra_structure.py, all proved there):
+INPUT FACTS (the ideal structure is checked in verify_star_algebra_structure.py;
+the simplicity of D and T and the form of Aut(R^24, star) are proved in the
+note cited below):
   R^24 = D (+) T with D = {(a,a,a)}, T = {sum zero}, two-sided ideals with
   D star T = T star D = 0, Ann(D) = T, Ann(T) = D.  Every element g of
   Aut(R^24, star) preserves D and T: D and T are SIMPLE and annihilate each
@@ -31,7 +33,7 @@ WHAT THIS SCRIPT COMPUTES (exact arithmetic throughout):
   (a) Lambda ^ D = {(a,a,a) : a in Ls}   and   Lambda ^ T = {(p,q,r) in
       (Ls_bar)^3 : p+q+r = 0}.                       [lattice computation]
       Hence  h_{A,B} rho_pi in Aut(Lambda,+,star)  =>  A(Ls) = Ls  and
-      B(Ls_bar) = Ls_bar.  Both stabilisers are finite, so the group is
+      B(Ls_bar) = Ls_bar.  Both stabilizers are finite, so the group is
       FINITE.
 
   (b) COMPLETE enumerations of the finite groups
@@ -40,7 +42,7 @@ WHAT THIS SCRIPT COMPUTES (exact arithmetic throughout):
           Aut(O,.s) ^ Stab(Ls_bar) -- order 12096   (candidates for B)
       Completeness: an automorphism of (O,.s) is orthogonal and is determined
       by the images of any three elements that generate O as an algebra; it
-      permutes the minimal vectors of the stabilised lattice; so the search
+      permutes the minimal vectors of the stabilized lattice; so the search
       over image-triples of three generating minimal vectors, pruned by the
       Gram condition, is exhaustive.
 
@@ -64,7 +66,7 @@ WHAT THIS SCRIPT COMPUTES (exact arithmetic throughout):
       the real octonions preserves the positive-definite norm form, because
       N(x) 1 = x x_bar and conjugation is determined by the algebra).  D and T
       are orthogonal complements in R^24 and h_{A,B} acts as A on D and
-      blockwise-B on T, so h_{A,B} rho_pi is in O(24) -- for ALL A,B, not
+      blockwise-B on T, so h_{A,B} rho_pi is in O(24), for ALL A,B, not
       merely the lattice-preserving ones.  Hence
               Aut(Lambda,+,star) <= O(24) ^ GL(Lambda) = Co_0 .
       Confirmed here elementwise on the Gram matrix of Lambda.
@@ -258,7 +260,7 @@ def main():
     idx  = abs(B0.det()/BLam.det())
     print("    [Lambda : (Lambda^D) (+) (Lambda^T)] =", idx, "= 3^8")
 
-    # ---------------- (b) the three octonion-automorphism stabilisers
+    # ---------------- (b) the three octonion-automorphism stabilizers
     SL = octonion_autos_stabilising(MIN_L,     inL,      Lb)
     SA = octonion_autos_stabilising(MIN_LS,    inLs,     Lsb)
     SB = octonion_autos_stabilising(MIN_LSBAR, inLsbar,  Lsbarb)

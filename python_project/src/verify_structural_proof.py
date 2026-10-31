@@ -3,7 +3,7 @@ sec:proof): the maximal order O := (1/2)(e1 + e2) L of Section 2.2, the two
 lattice identities (4.1), the Moufang identity (4.2) for a purely imaginary
 multiplier, and the three lemmas as their consequences.
 
-Created: 2026-10-20.  Updated: 2026-10-24.
+Created: 2026-10-20.  Updated: 2026-10-28.
 
 The paper cites this script in Section 2.2 at the maximal order O of (2.2)
 (label eq:MO), with verify_sigma_sublattice_maximal_order.py; in Section 4.1
@@ -48,7 +48,7 @@ L s = {l . s} (left multiples), sigma = (1 2).  Exact arithmetic throughout
     and of sigma(Ls) . L lies outside sigma(Ls)), while sigma(L sbar) = 2 O
     is a two-sided ideal of L.
 
-Usage: python3 verify_structural_proof.py   (about 3 s)
+Usage: python3 verify_structural_proof.py   (about 5 s)
 """
 import random
 from fractions import Fraction as F

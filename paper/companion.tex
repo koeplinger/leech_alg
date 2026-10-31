@@ -1,4 +1,4 @@
-% Created: 2026-04-14.  Updated: 2026-10-24.
+% Created: 2026-04-14.  Updated: 2026-10-28.
 \documentclass[11pt]{amsart}
 
 \usepackage[T1]{fontenc}
@@ -20,7 +20,7 @@
 \large Kirmse--Coxeter and the $\sigma$-twist, by concrete example}
 \author{Claude Opus 4.7}
 \address{Anthropic}
-\date{14 April 2026; updated 24 October 2026}
+\date{14 April 2026; updated 28 October 2026}
 
 \begin{document}
 \maketitle
@@ -37,16 +37,16 @@ repository
      {\texttt{bitbucket.org/jenskoeplinger/leech\_alg}},
 intended as a learning tool for the principal investigator and for
 other readers who approach this construction with the kind of
-questions -- and, candidly, misconceptions -- that arose throughout
+questions (and, candidly, misconceptions) that arose throughout
 the investigation.  Authorship and intellectual leadership of the
-main paper and the research programme belong to K\"oplinger, with AI
+main paper and the research program belong to K\"oplinger, with AI
 collaboration as acknowledged there; the present companion is solely
 the AI agent's rendering of that work in expository form and makes no
 claim to new mathematics.
 
 The note walks through the construction step by step, pairing every
 abstract definition with a concrete hand-checkable example, first at
-the~$E_8$ level (where Coxeter's correction of Kirmse is the
+the~$E_8$ level (where the Coxeter--Bruck correction of Kirmse is the
 historical example of the same kind of operation) and then at the
 Leech level (where the $\sigma$-twist applies that same kind of map
 to a different object).  Readers who are
@@ -134,11 +134,11 @@ sum~$3$ (odd).  Confirmed in~$L$.
 
 \subsection*{Abstract}
 
-The octonions~$\OO$ are the unique real \emph{normed division
-algebra} of dimension~$8$: a real $8$-dimensional vector space with
+The octonions~$\OO$ are the unique unital real \emph{normed division
+algebra} of dimension~$8$ (Hurwitz): a real $8$-dimensional vector space with
 a bilinear product~$x \cdot y$ and a positive-definite quadratic
 norm satisfying $\|x \cdot y\| = \|x\| \cdot \|y\|$.  The algebra is
-non-commutative and non-associative (but alternative).
+noncommutative and nonassociative (but alternative).
 
 \subsection*{Concrete}
 
@@ -190,15 +190,15 @@ $s \cdot s \in L$.
 
 \subsection*{What Kirmse did, and where it went wrong}
 
-Kirmse (1924) fixed one octonion multiplication -- call it
-$\cdot_K$ -- given by the seven Fano triples
+Kirmse (1924) fixed one octonion multiplication, call it
+$\cdot_K$, given by the seven Fano triples
 \[
   (1,2,3),\ (1,5,4),\ (1,6,7),\ (2,4,7),\ (2,6,5),\ (3,4,6),\ (3,5,7)
 \]
-(read cyclically, as in \eqref{eq:fano}; this labelling differs
+(read cyclically, as in \eqref{eq:fano}; this labeling differs
 from~\eqref{eq:fano}).  He then looked for the \emph{maximal orders}:
 the largest lattices in $(\RR^8, \cdot_K)$ closed under multiplication.
-His table $\cdot_K$ is itself a perfectly correct octonion algebra --
+His table $\cdot_K$ is itself a perfectly correct octonion algebra;
 that is \emph{not} where the error lies.  He listed eight candidate
 maximal orders and described one of them, $J_1$, in detail.
 
@@ -222,26 +222,26 @@ arithmetic in \texttt{verify\_coxeter\_1946.py}, is
 \]
 and $\tfrac12(i_1{+}i_2{+}i_4{+}i_7) \notin J_1$.  So $J_1$ is not an
 order at all.  There are in fact \emph{seven} maximal orders
-for~$\cdot_K$, not eight; $J_1$ is the spurious entry on Kirmse's list.
+for~$\cdot_K$ containing $1, i_1, \ldots, i_7$, not eight; $J_1$ is the spurious entry on Kirmse's list.
 Coxeter identified the mistake; R.~H.~Bruck supplied the remedy.
 
 \subsection*{The remedy: a transposition of two coordinate axes}
 
-Bruck's correction, as Coxeter reports it, is to ``transpose two of
-the $i$'s.''  Concretely: pick a transposition of two imaginary
-basis axes -- a linear involution of~$\RR^8$ that swaps
+Bruck's correction, as Coxeter reports it, is ``transposing two of
+the $i$'s'' (his~\S4).  Concretely: pick a transposition of two imaginary
+basis axes, a linear involution of~$\RR^8$ that swaps
 $e_a \leftrightarrow e_b$ and fixes the other six.  \emph{Any} of
 the $\binom72 = 21$ such transpositions repairs~$J_1$ (Coxeter; the 21
-fall into 7 triples of equal effect, giving the 7 maximal orders --
+fall into 7 triples of equal effect, giving the 7 maximal orders;
 verified).
 
 We write~$\sigma$ for such a transposition, the \emph{same} symbol the
-main paper uses -- because it is the same kind of map, and disguising
+main paper uses, because it is the same kind of map, and disguising
 that with two symbols would only obscure the point of this note.  What
 differs between the Kirmse--Coxeter use and the main paper's use is
 never the map: it is the \emph{algebra and lattice the map is applied
 to}, and we keep that explicit at every step.  For definiteness take
-$\sigma = (1\;2)$, the swap $e_1 \leftrightarrow e_2$ -- which is at
+$\sigma = (1\;2)$, the swap $e_1 \leftrightarrow e_2$.  It is at
 once one of the 21 transpositions that repair Kirmse's~$J_1$ and the
 transposition the main paper twists by.
 
@@ -249,14 +249,14 @@ The repair has two equivalent descriptions, and it is worth being
 completely explicit about \emph{which object each one moves.}
 
 \smallskip
-\noindent\emph{Framing A -- $\sigma$ acts on the lattice (on the vector
+\noindent\emph{Framing A: $\sigma$ acts on the lattice (on the vector
 space).}  Keep the product~$\cdot_K$.  Replace the lattice~$J_1$ by its
 image $J := \sigma(J_1)$.  Then $(J, \cdot_K)$ \emph{is} a maximal order:
 $J$ is closed under~$\cdot_K$.  The algebra is untouched; what changed
 is the subset of~$\RR^8$ being tested.
 
 \smallskip
-\noindent\emph{Framing B -- $\sigma$ acts on the product (on the
+\noindent\emph{Framing B: $\sigma$ acts on the product (on the
 algebra).}  Keep the lattice~$J_1$.  Replace~$\cdot_K$ by its
 $\sigma$-conjugate
 \[
@@ -272,7 +272,7 @@ and $\sigma\colon (\RR^8, \cdot_K^{\,\sigma}) \to (\RR^8, \cdot_K)$ is an
 algebra \emph{isomorphism}, so it carries closed sublattices to closed
 sublattices: $J_1$ is closed under~$\cdot_K^{\,\sigma}$ \emph{iff}
 $\sigma(J_1)$ is closed under~$\cdot_K$.  Because~$\sigma$ is orthogonal,
-$\cdot_K^{\,\sigma}$ is again a \emph{composition} algebra -- again an
+$\cdot_K^{\,\sigma}$ is again a \emph{composition} algebra, again an
 octonion algebra; the ``corrected table'' is just another octonion
 table, isomorphic to Kirmse's via~$\sigma$.
 
@@ -292,7 +292,7 @@ products that involve a swapped axis, and leaves the rest alone
       & i_3 \cdot_K^{\,\sigma} i_4 = +i_6 \quad (\text{unchanged}).
   \end{array}
 \]
-And on the very pair that broke closure -- the same two
+And on the very pair that broke closure, the same two
 elements~$a_1, a_3$ of the same lattice~$J_1$:
 \[
   a_1 \cdot_K a_3 = \tfrac12(i_1{+}i_2{+}i_4{+}i_7) \notin J_1,
@@ -316,16 +316,15 @@ and Coxeter got right.
 \subsection*{A concrete lattice where the story does matter}
 
 From here on we return to the multiplication~$\cdot$ of
-\eqref{eq:fano} -- one of Coxeter's seven corrected octonion tables
--- and to the lattice~$L$, which closes under it.
+\eqref{eq:fano} and to the lattice~$L$, which closes under it.
 
 Whether a transposition twist changes anything depends entirely on the
 lattice it is asked about.  For the lattice~$L$ itself the twist is
 invisible: $L$ is symmetric under every coordinate permutation, so
 transposing two axes produces an algebra under which $L$ also closes
 (this is made precise in Section~10).  Kirmse's~$J_1$, by contrast, is
-\emph{not} symmetric under such a swap -- which is exactly why the
-twist moved it.  A second lattice of that non-symmetric kind, the one
+\emph{not} symmetric under such a swap, which is exactly why the
+twist moved it.  A second lattice of that nonsymmetric kind, the one
 that drives the rest of this note, appears naturally in Wilson's Leech
 construction: the sublattice
 \[
@@ -350,7 +349,7 @@ octonion product, computed under the Fano convention
 \[
   a \cdot b = (0,\, -2,\, 2,\, 1,\, -2,\, -1,\, -1,\, -1).
 \]
-This vector has integer coordinates and lies in~$L$ -- but it is
+This vector has integer coordinates and lies in~$L$, but it is
 \emph{not} an integer combination of a $\ZZ$-basis of~$Ls$.  The
 verification is carried out with exact rational arithmetic in the
 script
@@ -369,10 +368,10 @@ fails to close.
 
 \subsection*{Abstract}
 
-Fix a transposition $\sigma = (s\; t)$ on the imaginary basis
+Fix a transposition $\sigma = (i\; j)$ on the imaginary basis
 indices $\{1, \ldots, 7\}$ (for example, $\sigma = (1\;2)$).
 Extend~$\sigma$ linearly to a map $\RR^8 \to \RR^8$ that fixes
-$e_0$ and swaps $e_s \leftrightarrow e_t$.  This~$\sigma$ is an
+$e_0$ and swaps $e_i \leftrightarrow e_j$.  This~$\sigma$ is an
 \emph{isometry} of~$\RR^8$: it preserves the Euclidean inner
 product.  It is also an involution: $\sigma^2 = \mathrm{id}$.
 
@@ -505,7 +504,7 @@ therefore closes under both products.  The sublattice~$Ls$ is
 gap between the two closure statements.
 
 This is the structural lesson of Kirmse--Coxeter in isolation.  The
-same lesson, applied one dimension higher, is the content of the
+same lesson, applied one level higher, is the content of the
 main paper.
 
 % ===================================================================
@@ -524,9 +523,9 @@ whose $196{,}560$ minimal vectors have squared norm~$8$.
 \subsection*{Concrete (Wilson's construction)}
 
 Identify $\RR^{24}$ with $\OO_1 \oplus \OO_2 \oplus \OO_3$: three
-copies of the octonions, labelled $\alpha = 1, 2, 3$.  Let
+copies of the octonions, labeled $\alpha = 1, 2, 3$.  Let
 $\bar{s} = \tfrac{1}{2}(-e_0 - e_1 - e_2 - \cdots - e_7)$, the
-octonion conjugate of the negative of the earlier~$s$, again of
+octonion conjugate of the earlier~$s$, again of
 squared norm~$2$.  Note $\bar s \notin L$ under the lattice
 membership criterion of Section~\ref{sec:e8}: its coordinates are
 half-integer but its coordinate sum is~$-4$, which falls in the
@@ -569,7 +568,7 @@ where
   P_3 &= z \cdot z' + y \cdot x' + x \cdot y'.
 \end{align*}
 Same-block products stay in the block; cross-block products
-$O_\alpha \times O_\beta$ land in $O_\gamma$ with
+$\OO_\alpha \times \OO_\beta$ land in $\OO_\gamma$ with
 $\{\alpha, \beta, \gamma\} = \{1, 2, 3\}$.  The three blocks play
 the same role under cyclic rotation $1 \to 2 \to 3 \to 1$.
 
@@ -654,11 +653,11 @@ level)}
 \item \textbf{Invariant under~$\sigma$:} the ambient space
   $\RR^{24}$, the three-block decomposition into~$\OO_1, \OO_2,
   \OO_3$, the $\ZZ_3$ cross-block routing rule, and the
-  sub-lattice~$L$ of each block ($\sigma(L) = L$).
-\item \textbf{Not invariant under~$\sigma$:} the sub-lattice~$Ls$
-  of each block ($\sigma(Ls) \ne Ls$), and through it the Leech
-  lattice itself ($\sigma(\LL) \ne \LL$ in general, since~$\LL$ is
-  defined by a condition involving~$Ls$).
+  sublattice~$L$ of each block ($\sigma(L) = L$).
+\item \textbf{Not invariant under~$\sigma$:} the sublattices~$L\bar s$
+  and~$Ls$ of each block ($\sigma(L\bar s) \ne L\bar s$, $\sigma(Ls) \ne Ls$),
+  and through them the Leech lattice itself ($\sigma(\LL) \ne \LL$, since~$\LL$
+  is defined by conditions involving~$L\bar s$ and~$Ls$).
 \end{itemize}
 
 The comparison with the $E_8$ level is exact.  One level down,
@@ -668,16 +667,16 @@ fixes~$\OO_1 \oplus \OO_2 \oplus \OO_3$ but not~$\LL$, and this is
 what allows the twist to change the closure question for~$\LL$.
 
 % ===================================================================
-\section{Could the $\sigma$-twist undo Coxeter's fix?}
+\section{Could the $\sigma$-twist undo the Coxeter--Bruck fix?}
 % ===================================================================
 
-A natural concern.  Coxeter's correction of Kirmse and the
+A natural concern.  The Coxeter--Bruck correction of Kirmse and the
 present~$\sigma$ are both transpositions of two imaginary coordinate
-axes -- the same kind of map, a linear involution of~$\RR^8$
+axes: the same kind of map, a linear involution of~$\RR^8$
 (Section~\ref{sec:kirmse}); indeed $\sigma = (1\;2)$ is one of the
 $21$ transpositions that repair Kirmse's~$J_1$.  Could a poor choice
-of~$\sigma$, then, reverse Coxeter's correction and return the $E_8$
-lattice to a non-closing regime?
+of~$\sigma$, then, reverse that correction and return the $E_8$
+lattice to a nonclosing regime?
 
 It cannot, and the reason is one short computation.
 
@@ -707,24 +706,24 @@ proposition returns each block to~$L$.  Condition~(1) holding
 \emph{is} Coxeter's closure carried through the twist; the
 construction depends on the correction, it does not undo it.
 
-The twist does act non-trivially -- but only on the lattices
+The twist does act nontrivially, but only on the lattices
 $\sigma$ does \emph{not} fix.  $L$ is fixed; the sublattices $Ls$ and
 $L\bar s$ are not, and that is where Wilson's conditions~(2) and~(3)
 are redirected.  There is no tension between ``$\sigma$ fixes~$L$'' and
 ``$\sigma$ moves Kirmse's~$J_1$'': $L$ and~$J_1$ are both copies
-of~$E_8$, but \emph{placed} differently in~$\RR^8$ -- $L = D_8^+$ is
+of~$E_8$, but \emph{placed} differently in~$\RR^8$: $L = D_8^+$ is
 the coordinate-symmetric placement, $J_1$ is not (it is fixed by none
 of the $21$ transpositions).  Whether a transposition fixes a lattice
 is a property of the lattice's placement, not of the map.  Taking the
 order to be the symmetric placement~$D_8^+$ is exactly what makes the
-twist free at the $E_8$ level; Coxeter's transposition, asked instead
-about the non-symmetric~$J_1$, necessarily moves it.
+twist free at the $E_8$ level; the Coxeter--Bruck transposition, asked instead
+about the nonsymmetric~$J_1$, necessarily moves it.
 
 % ===================================================================
 \section{Summary of concrete data}
 % ===================================================================
 
-\noindent Three empirical facts are verified by exact rational
+\noindent Three facts are verified by exact rational
 arithmetic in
 \href{../python_project/src/symbolic_proof_checks.py}
      {\texttt{symbolic\_proof\_checks.py}}:

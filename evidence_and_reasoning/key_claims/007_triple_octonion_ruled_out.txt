@@ -1,15 +1,19 @@
 Claim number: 007
-Title: The triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃) with the standard octonion product, and its tested variants, is ruled out as an order on Λ
+Title: The triple-octonion algebra (O₁ ⊕ O₂ ⊕ O₃) with the standard octonion product, and the variants tested for closure on Λ, is ruled out as an order on Λ
 Status: ESTABLISHED
-Created: 2026-04-09.  Updated: 2026-10-24.
+Created: 2026-04-09.  Updated: 2026-10-28.
 
 --- STATEMENT ---
 
-The triple-octonion algebra — three copies of the standard octonion algebra
-on R²⁴ with Z₃-symmetric cross-block mixing — cannot be an order on the
+The triple-octonion algebra (three copies of the standard octonion algebra
+on R²⁴ with Z₃-symmetric cross-block mixing) cannot be an order on the
 Leech lattice Λ.  This ruling-out applies not only to the base algebra but
-to all the modifications tested (per-block scaling, conjugation variants,
-sign flips, routing changes, and E8 automorphism basis changes).
+to the modifications tested for closure on Λ (conjugation variants, sign
+flips, routing changes, and E8 automorphism basis changes).  Trial 002
+tests per-block scaling for closure of the minimal shell, each product
+renormalized to norm 8, and does not rule it out as an order: with
+s₁ = s₂ = s₃ = ½ the scaled product is twice the base product, which maps
+Λ × Λ into (2L)³ ⊆ Λ (L · L ⊆ L, paper Lemma 4.2).
 
 It does not cover other octonion products in the three blocks.  One of them
 closes on Λ: claim 008 records the Z₃-symmetric triple-octonion product,
@@ -25,7 +29,7 @@ and this one was not among them.
 Base algebra (trial 001):
   O₁ at indices 0–7, O₂ at indices 8–15, O₃ at indices 16–23.
   Same-block:  Oα × Oα → Oα  (standard octonion product).
-  Cross-block: Oα × Oβ → Oγ  where {α,β,γ} = {0,1,2}.
+  Cross-block: Oα × Oβ → Oγ  where {α,β,γ} = {1,2,3}.
 
 Modifications tested:
   (a) Per-block scaling s₁, s₂, s₃ (trial 002)
@@ -44,17 +48,22 @@ Automorphism search: 500 single-block + 500 three-block random +
 --- EVIDENCE ---
 
 Trial 001 — Base algebra (trial_001_triple_octonion.py):
-  Result: 74.8% of type3×type3 products fail.
+  Result: about three quarters of type3×type3 products fail: 74.8% in the
+    5,000-pair run recorded in trial_001_results.md, which no repository
+    program reproduces; 73.4% in consistency_checks.py, check 8; 160 of the
+    200 type3×type3 pairs that trial_001_triple_octonion.py tests.
   All other type combinations (t1×t1, t1×t2, t1×t3, t2×t2, t2×t3) pass 100%.
   Failure mode: exclusively Wilson condition 3 (x+y+z ∈ Ls).
   Conditions 1 and 2 are always satisfied.
   Evidence file: evidence_and_reasoning/trial_001_results.md
 
 Trial 002 — Per-block scaling (trial_002_scaled_triple_octonion.py):
-  Result: Two independent obstructions.
-  Obstruction 1 (norm): For type3×type3, min achievable ||q||² ≈ 14.6 > 8.
-    No scaling can bring these products to the minimal shell.
-  Obstruction 2 (lattice): Even when ||q||² = 8 is achievable (type2×type2),
+  Test: closure of Min(Λ), each product of two minimal vectors renormalized
+  to norm 8 (not closure of the bilinear product on Λ).
+  Result: one obstruction.
+  Norm bound: for type3×type3, min ||q||² ≈ 14.6 at the overall scale
+    s₁ = 1; the overall scale is free, so this is no obstruction.
+  Obstruction (lattice): Even when ||q||² = 8 is reached (type2×type2),
     0 of 1,188 products at that norm satisfy Wilson's conditions.
     The scaling introduces irrational coordinate mixing.
   Evidence file: evidence_and_reasoning/trial_002_results.md
@@ -62,18 +71,21 @@ Trial 002 — Per-block scaling (trial_002_scaled_triple_octonion.py):
 Trial 003 — Discrete variants (trial_003_discrete_variants.py):
   Result: All 1,536 variants fail.
   Best closure rate: 68.8% (same as baseline; achieved by 31 variants,
-    all with third-block routing).
+    24 with third-block, 4 with left-block and 3 with right-block routing).
   Zero variants have zero type3×type3 failures.
-  Sign flips have zero effect (all 8 patterns tie when other params fixed).
+  Sign flips leave the failure counts unchanged (all 8 patterns give the
+    same number of failures when the other parameters are fixed).
   Detailed analysis of best variant confirms: failures are exclusively
     type3×type3, exclusively condition 3 (x+y+z ∈ Ls).
   Evidence file: evidence_and_reasoning/trial_003_results.md
 
 Trial 004 — E8 automorphism basis changes (trial_004_basis_automorphisms.py):
-  Result: Identity (no change) is already optimal at 60%.
+  Result: no sampled automorphism improves on the identity (60%); the
+    unsampled change T₁ = T₂ = T₃ = σ closes (claim 008).
   Single-block automorphisms: best 53.3% (worse than baseline).
   Three-block automorphisms: best 40.0% (much worse).
-  Sign-only on one block (exhaustive 128): all tie at 60.0%.
+  Sign-only on one block (exhaustive 128): best 60.0%, reached by 16 of
+    the 128; the others give 50.0% to 55.3% (trial_004_results.md, finding 5).
   Automorphisms introduce NEW failure types (type2×type2) not in baseline.
   Evidence file: evidence_and_reasoning/trial_004_results.md
 
@@ -122,16 +134,16 @@ The algebras of the form:
    products use the octonion product (possibly with conjugation, sign flips,
    or different routing), optionally with per-block scaling or E8 automorphism
    basis changes within each block,"
-in the variants tested in trials 001 to 004: the base algebra, the per-block
-scalings of trial 002, all 1,536 discrete variants of trial 003, and the
-automorphism basis changes sampled in trial 004.  The σ-twisted product of
+in the variants tested for closure on Λ in trials 001, 003 and 004: the base
+algebra, all 1,536 discrete variants of trial 003, and the automorphism
+basis changes sampled in trial 004.  The σ-twisted product of
 claim 008 also has this form, with the basis change T₁ = T₂ = T₃ = σ, and
 it closes.
 
 --- WHAT IS NOT RULED OUT ---
 
 1. Algebras where cross-block products use a DIFFERENT product (not the
-   octonion product) — e.g., the Okubo product.
+   octonion product), e.g., the Okubo product.
 2. Algebras with a different block decomposition (not 8+8+8).
 3. Products defined directly on R²⁴ without block structure.
 4. Products where same-block terms also differ from the standard octonion

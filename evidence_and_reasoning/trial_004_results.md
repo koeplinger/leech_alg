@@ -1,5 +1,7 @@
 # Trial 004 Results — E8 automorphism basis changes
 
+Created: 2026-04-09.  Updated: 2026-10-28.
+
 Date: 2026-04-09
 
 ## Algebra family tested
@@ -38,8 +40,10 @@ Three search strategies:
 
 ### Key findings
 
-**1. The identity (no basis change) is already optimal.** No automorphism
-improves over the baseline. Most make it significantly worse.
+**1. No sampled automorphism improves on the identity.** Most make it
+significantly worse.  The family has a closing member that the sampling
+missed: the same transposition σ of two imaginary units in all three blocks
+(T₁ = T₂ = T₃ = σ) closes on Λ (trial 007; paper Theorem 1.1).
 
 **2. Single-block changes hurt.** Best is 53.3% vs. 60.0% baseline. Breaking
 the Z₃ symmetry by modifying only one block degrades performance.
@@ -53,33 +57,29 @@ that the original algebra has.
 type3×type3 (68 failures). The baseline has zero type2×type2 failures. Basis
 changes disrupt the lattice conditions that the original product preserves.
 
-**5. Sign-only changes are neutral.** All 128 sign patterns on one block
-tie at the baseline rate of 60.0%. Sign changes within a block (with even
-parity to preserve L) commute with the octonion product structure in a way
-that preserves the failure pattern.
+**5. Sign-only changes do not help.** The best of the 128 sign patterns on
+one block ties with the baseline at 60.0% (90/150). The program prints only
+the best rate; on the same 150 pairs, 16 of the 128 patterns reach 60.0% and
+the other 112 give 50.0% to 55.3% (75 to 83 of 150).
 
 ## Interpretation
 
-The triple-octonion algebra has a specific coordination between its three
-blocks that is already "locally optimal" among E8 automorphism-related
-variants. Changing the basis within a block can only make things worse —
-it breaks the alignment between the octonion product and the Leech lattice
-membership conditions without gaining anything.
-
-This is consistent with the trial 003 finding that the failure is structural:
-it's not the specific coordinate system within each E8 block that causes the
-type3×type3 obstruction, but the triple-block architecture itself.
+Random basis changes in single blocks, or independent ones in the three
+blocks, break the alignment between the octonion product and the Leech
+lattice membership conditions.  The coordinate system within the blocks does
+matter: the same transposition σ in all three blocks moves Wilson's
+sublattices Ls̄ and Ls onto lattices closed under the octonion product, and
+the triple product closes (paper Section 4).
 
 ## Verdict
 
-**FAIL — no improvement possible via basis change.** The identity basis is
-already optimal. E8 automorphisms (sign changes, coordinate permutations)
-can only degrade closure, not improve it. The type3×type3 obstruction is
-invariant under the automorphism group of the constituent E8 lattice.
+**FAIL.** None of the 1,128 sampled basis changes closes, and none improves
+on the identity.  The obstruction is not invariant under the automorphisms of
+E8: the unsampled change T₁ = T₂ = T₃ = σ closes (trial 007).
 
 ## What this rules out
 
-The triple-octonion algebra O₁ ⊕ O₂ ⊕ O₃ with any choice of E8 lattice
-automorphism applied independently to each block. Combined with trial 003
-(discrete cross-block modifications), this establishes that no simple
-modification of the triple-octonion algebra can achieve an order on Λ.
+The basis changes tested: 500 single-block and 500 independent three-block
+signed permutations, and all 128 even sign changes on one block.  It does not
+rule out the family: the same transposition σ in all three blocks closes on
+Λ (trial 007; paper Theorem 1.1).

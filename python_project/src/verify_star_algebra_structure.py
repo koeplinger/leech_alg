@@ -1,6 +1,6 @@
 """The structure of Aut(R^24, star) as a real algebraic group.
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-10-28.
 
 star is the paper's Z_3-symmetric sigma-twisted triple-octonion product on
 R^24 = O_1 (+) O_2 (+) O_3, sigma = (1 2).  Index the blocks by Z/3 and write
@@ -21,7 +21,8 @@ basis-exhaustive check below is a PROOF, not a sample.
         - D star T = T star D = 0, so the projections pi_D, pi_T are algebra
           homomorphisms;
         - D and T are SIMPLE (their multiplication algebras <L_u, R_u> are the
-          full matrix algebras, of dimensions 64 and 256, computed exactly);
+          full matrix algebras, of dimensions 64 and 256, computed exactly in
+          the report's second pass; this script does not recompute them);
         - hence pi_T(g(D)) is an ideal of T of dimension <= 8 < 16, so it is 0,
           so g(D) <= D and therefore g(D) = D;
         - only THEN does g(T) = g(Ann(D)) = Ann(g(D)) = Ann(D) = T follow.
@@ -33,7 +34,7 @@ basis-exhaustive check below is a PROOF, not a sample.
   (3) FOURIER.   Over Q(zeta), zeta a primitive cube root of unity, put
               u_hat_j := sum_alpha zeta^{j alpha} u_alpha.
       Then      (u star v)_hat_k = u_hat_{2k} .s v_hat_{2k}.  [checked, exactly
-      in Q(zeta) -- carried as pairs p + q zeta with zeta^2 = -1 - zeta]
+      in Q(zeta), carried as pairs p + q zeta with zeta^2 = -1 - zeta]
       So over C the algebra is O_C (the j=0 part, = D (x) C) plus the
       SWAP-TWISTED algebra S: (a_1,a_2)(b_1,b_2) = (a_2 b_2, a_1 b_1) on
       O_C (+) O_C (the j=1,2 part, = T (x) C).
@@ -42,7 +43,9 @@ basis-exhaustive check below is a PROOF, not a sample.
       is the orthogonal projection of R^24 onto D and Q = I - P; concretely
               h_{A,B}(u)_alpha = B u_alpha + (A - B)(u_0+u_1+u_2)/3.
       Every h_{A,B} is a star-automorphism, every block permutation rho_pi is
-      a star-automorphism, and they commute.                [checked]
+      a star-automorphism, and they commute.  [checked: h_{A,B} for 10
+      random pairs A, B among the 1344 automorphisms preserving L, all six
+      rho_pi, and the commutation for one pair and one 3-cycle]
       The report proves the converse (Aut(S) = G_2(C) x S_3 for the
       swap-twisted algebra, whose real points give blockwise B together with
       the block permutations), so
@@ -58,9 +61,10 @@ basis-exhaustive check below is a PROOF, not a sample.
               B(u,v) = 24 * sum_alpha Re(u_alpha .s v_alpha),
       diagonal with entries (+24, -24,...,-24) per block, signature (3,21).
       It is NOT a positive multiple of the Leech Gram matrix, and it is NOT of
-      the shape alpha <u_D,v_D> + beta <u_T,v_T> (it is blind to the D/T
-      split).  So the trace form does NOT by itself place Aut(Lambda,+,star)
-      inside Co_0.  The correct argument is compactness: an algebra
+      the shape alpha <u_D,v_D> + beta <u_T,v_T> (B(D, T) = 0, but B is
+      indefinite on D and on T, of signatures (1,7) and (2,14)).  So the
+      trace form does NOT by itself place Aut(Lambda,+,star) inside Co_0.
+      The correct argument uses the norm: an algebra
       automorphism of the REAL octonions preserves the positive-definite norm
       (N(x) 1 = x x_bar, and conjugation x_bar = t(x) 1 - x is determined by
       the algebra), so Aut(O,.s) < O(8); D and T are orthogonal complements;
@@ -373,9 +377,9 @@ def main():
     print("    B = 24 * sum_alpha Re(u_alpha .s v_alpha), signature (3,21):", shape)
     print("    B is a scalar multiple of the Leech Gram matrix:",
           Bf == Bf[0,0]*eye(24), " <-- NO")
-    print("    B distinguishes D from T:  B|_D and B|_T both have signature")
-    print("    (1,7) resp. (2,14); B is blind to the D/T split, so the trace")
-    print("    form does NOT by itself force Aut(Lambda,+,star) into Co_0.")
+    print("    B|_D and B|_T have signatures (1,7) and (2,14): B is indefinite")
+    print("    on both ideals, so the trace form does NOT by itself force")
+    print("    Aut(Lambda,+,star) into Co_0.")
 
 
 if __name__ == "__main__":

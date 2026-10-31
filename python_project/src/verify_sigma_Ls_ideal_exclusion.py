@@ -1,6 +1,6 @@
-"""Exclude the "left ideal" explanation of Lemma 4.4.
+"""Exclude the "ideal" explanation of Lemma 4.4.
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-10-28.
 
 Lemma 4.4 of the paper (label lem:sigmaLs-closed) states that sigma(Ls) is
 closed under the standard octonion product, where Ls is not (Remark 4.5,
@@ -32,8 +32,8 @@ Expected (and obtained): 32/64, 21/64, 64/64, 64/64, 64/64, 24/64.  So
 sigma(Ls) is neither a left nor a right ideal of L; its companion
 sigma(Ls_bar) is a two-sided ideal.  That asymmetry, an ideal on one
 sublattice and only a subalgebra on the other, is exactly what the mod-2
-reduction records (V an ideal, W only a subalgebra; see
-verify_mod2_quotient.py).
+reduction records (V a two-sided ideal, W only a subalgebra; see
+verify_mod2_quotient.py and verify_polarization_lagrangians.py).
 
 The mod-2 picture already implies the exclusion (an integer-level ideal
 would reduce to a mod-2 ideal), but the integer-level counts are recorded
@@ -83,7 +83,7 @@ if __name__ == "__main__":
               f"   (expected {expected:2d}) {'OK' if match else 'MISMATCH'}")
     print()
     print("  sigma(Ls) is NOT an ideal of L (neither side); sigma(Lsbar) is a")
-    print("  two-sided ideal.  The 'left ideal' candidate for a structural")
+    print("  two-sided ideal.  The 'ideal' candidate for a structural")
     print("  reason for Lemma 4.4 is therefore excluded.")
     print()
     print("ALL COUNTS AS EXPECTED" if ok else "UNEXPECTED COUNTS -- INVESTIGATE")

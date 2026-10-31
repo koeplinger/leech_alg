@@ -1,7 +1,7 @@
 """Reproduce Egan's lower bound 244,035,421 on the number of copies of the
 Leech lattice in O^3 = (E_8)^3.
 
-Created: 2026-07-15.  Updated: 2026-10-24.
+Created: 2026-07-15.  Updated: 2026-10-28.
 
 Source: Greg Egan, in J. C. Baez, "Integral octonions (Part 10)",
 The n-Category Cafe, 1 December 2014,
@@ -11,8 +11,10 @@ This is Egan's DERIVATION, an orbit-stabilizer lower bound; it is NOT a
 re-run of Egan's enumeration (which counts the embeddings one by one, and which
 this project does not reproduce). It reproduces the arithmetic that turns
 two standard group orders into the figure quoted in Section 6 of the paper
-(`sec:related`), in the paragraph on Baez–Egan (2014); the footnote on the
-figure cites this script.
+(`sec:related`), in the second paragraph on Baez–Egan (2014); the footnote on
+the figure cites this script.  Prints the two group orders, |Isom(O^3)|, the
+ratio with its floor and ceiling, and ALL PASS when the ceiling is
+244,035,421; instant.
 
 The argument.
   The isometry group of the lattice O^3 = (E_8)^3 acts on the set of Leech

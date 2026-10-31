@@ -1,5 +1,7 @@
 # Forensic note — can Kirmse's "eight" maximal orders be constructed from his paper?
 
+Created: 2026-05-20.  Updated: 2026-10-28.
+
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 103. Follows the verification in prompt 100
@@ -94,10 +96,10 @@ theorem (p. 69) that makes the search finite. The step from that framework to
 
 ## Status
 
-This sharpens the open point left in §6 of the preliminary exposition
-(`paper/kirmse_1924_exposition.tex`): we can now say what Kirmse's eight most
-likely were and where the computation fell short. Whether to fold this into
-the exposition is deferred, with the rest, until Coxeter (1946) is read.
+This note reconstructs what Kirmse's eight most likely were and where the
+computation fell short. The exposition (`paper/kirmse_1924_exposition.tex`)
+carries the reconstruction in its Section 5 (Independent verification), item
+(d), and its reading in Section 6 (Assessment).
 
 Facts vs. reconstruction are kept separate above: the counts 30 / 7 / 8, the
 identity of the eight, and the location of $J_1$'s failure are **verified

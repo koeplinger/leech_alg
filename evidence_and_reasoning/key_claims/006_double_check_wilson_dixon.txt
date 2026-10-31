@@ -1,7 +1,7 @@
 Claim number: 006
 Title: Double-check of Wilson and Dixon Leech lattice conclusions; the integral algebra question is answered by claim 008
 Status: ESTABLISHED (claims 1a and 1b; claim 2 by claim 008)
-Created: 2026-04-07.  Updated: 2026-10-24.
+Created: 2026-04-07.  Updated: 2026-10-28.
 
 --- STATEMENT ---
 
@@ -32,19 +32,27 @@ Three sub-claims were examined:
 Wilson's Λ is verified to satisfy all four defining properties of the Leech
 lattice [Conway–Sloane Chapter 12]:
 
-  (i)   Even lattice: type-1 Gram matrix verified to have all entries in 2Z
-        (test_even_lattice_type1_gram in test_leech_wilson.py). ✓
+  (i)   Even lattice: every norm lies in 4Z at the standard scale (Wilson's
+        argument, [Wilson2009 Section 4]; claim 004), checked exactly on a
+        Z-basis of Λ by verify_square_zero_classification.py.
+        test_even_lattice_type1_gram checks only the type-1 Gram matrix. ✓
   (ii)  Self-dual (det_Wilson = 1): analytic proof in [Wilson2009 Section 4].
-        Not reproduced computationally but referenced. ✓
+        Also computed exactly: the Z-basis of Λ built in
+        python_project/src/verify_consecutive_twists_exact.py has |det| = 2¹²
+        in L³-coordinates, so det(Gram) = 2²⁴ at the standard scale and 1 at
+        Wilson's; verify_square_zero_classification.py checks that the same
+        Gram matrix has its diagonal in 4Z and its off-diagonal entries in 2Z. ✓
   (iii) Rank 24: verified (test_rank_24 in test_leech_wilson.py). ✓
-  (iv)  No norm-2 vectors: analytic proof in [Wilson2009 Section 4]; also
-        computationally confirmed by test_single_root_not_in_leech (all 240
-        E8 roots (norm 2) fail membership). ✓
+  (iv)  No norm-2 vectors at Conway's scale (no nonzero vector with
+        N_std < 8): analytic proof in [Wilson2009 Section 4], reproduced in
+        claim 004.  test_single_root_not_in_leech checks only that the 240
+        vectors (root, 0, 0), of N_std = 2, fail membership. ✓
 
-  All 196,560 minimal vectors verified to satisfy membership conditions
+  All 720 type-1 vectors and evenly spaced samples of about 500 type-2 and
+  about 500 type-3 vectors verified to satisfy membership conditions
   (is_in_leech tests for all three families). ✓
 
-  By Conway's uniqueness theorem, these four properties characterise the
+  By Conway's uniqueness theorem, these four properties characterize the
   Leech lattice uniquely (up to isometry).
 
 --- EVIDENCE FOR CLAIM 1b (DIXON — STRUCTURAL VERIFICATION) ---
@@ -60,9 +68,9 @@ Dixon's construction produces 196,560 candidate minimal vectors satisfying:
   characterization.  Two properties are NOT independently verified:
 
   (v)   Even lattice property: NOT TESTED for Dixon's shell.
-        Gap: the type-1 even-lattice test (Gram entries in 2Z) has been
-        performed only for Wilson's type-1.  A corresponding test for Dixon's
-        type-1 should be added for full rigour.
+        Gap: no computation checks that Dixon's vectors span an even
+        lattice.  A Gram test on the type-1 vectors would not settle it: they
+        span only a sublattice.
 
   (vi)  Self-duality: NOT PROVEN for Dixon's lattice.
         Gap: no analytic proof of det = 1 has been produced or reproduced
@@ -112,8 +120,8 @@ What neither construction establishes:
 
 --- OPEN QUESTIONS ---
 
-1. Even lattice property for Dixon's shell — should be tested computationally.
-2. Self-duality of Dixon's lattice — should be proven or verified.
+1. Even lattice property for Dixon's shell: should be tested computationally.
+2. Self-duality of Dixon's lattice: should be proven or verified.
 3. Structural explanation for the 17,232 shared vectors between Wilson and
    Dixon (especially the type-2 and type-3 overlaps of 6,144 and 10,752).
 
@@ -128,6 +136,9 @@ What neither construction establishes:
 
 --- COMPUTATIONAL EVIDENCE ---
 
-Full test suite: 157 tests, 0 failures (run date: 2026-04-07).
-No new tests added in this prompt; the double-check relied on re-examination
-of existing evidence and source materials.
+The double-check rests on the tests of claims 004 and 005
+(python_project/tests/test_leech_wilson.py and
+python_project/tests/test_leech_dixon.py), on the exact Z-basis checks of
+python_project/src/verify_consecutive_twists_exact.py and
+python_project/src/verify_square_zero_classification.py (items (i) and (ii)
+of claim 1a), and on the source papers; it adds no tests of its own.

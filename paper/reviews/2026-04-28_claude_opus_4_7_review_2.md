@@ -1,5 +1,7 @@
 # Formal referee review of the main paper (round 3)
 
+Created: 2026-04-28.  Updated: 2026-10-28.
+
 **Date:** 2026-04-28 (second of the day)
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
 **Manuscript reviewed:** `paper/main.tex` — *An order on the Leech lattice from a $\mathbb{Z}_3$-symmetric triple-octonion product* (Köplinger), version of 28 April 2026 (post-Prompt 082 edits), together with the supplemental repository as context.
@@ -21,8 +23,6 @@ For continuity:
 - Remark 4.6 now closes the $\Sigma(\Lambda) \ne \Lambda$ gap in prose.
 - Egan's $17{,}280$ count cross-references part 10 of `\cite{Baez2014}`.
 - The logging-protocol-violations sentence in Appendix B has been replaced with a balanced both-sides statement.
-
-The disposition of the morning review records these correctly.
 
 ---
 
@@ -95,7 +95,7 @@ The conclusion "By $\mathbb{Z}$-bilinearity, [the lemma's inclusion]" is implici
 
 ## 3. Carry-overs from earlier reviews
 
-These were noted in the morning review and remain "deferred" in the disposition. Listing them here so a single line-by-line pass can see the full picture:
+These were noted in the morning review and remain deferred by the author. Listing them here so a single line-by-line pass can see the full picture:
 
 - **Petersson 2018 cited as a workshop lecture only.** [main.tex:1414–1417](../main.tex#L1414-L1417). If a published version exists (Petersson did publish on integral octonions in this period), it would be preferred over the lecture.
 - **Closure-of-shells distinction duplicated.** Remark 1.4 (`rem:order-closure`, [main.tex:142–154](../main.tex#L142-L154)) and Remark 2.4 (`rem:shells`, [main.tex:210–221](../main.tex#L210-L221)) make essentially the same point. They are placed in different sections but a reader sees both.
@@ -144,9 +144,3 @@ For the record (and because the author asked for thoroughness):
 11. Extend the §6 "Comparison" paragraph to cover the earlier precursors.
 12. Specify the validation cross-check protocol in Appendix B.
 13. Footnote at first occurrence of "order" pointing to Remark 1.4.
-
----
-
-## 6. Disposition by the author (to be added)
-
-Author to mark each item as accepted, deferred, or declined, before the next investigative step (Egan/Baez deep dive).

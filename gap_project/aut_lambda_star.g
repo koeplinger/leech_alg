@@ -2,7 +2,7 @@
 ##
 ##  aut_lambda_star.g -- structure of Aut(Lambda, +, star)
 ##
-##  Created: 2026-07-12.  Updated: 2026-10-24.
+##  Created: 2026-07-12.  Updated: 2026-10-28.
 ##
 ##  StructureDescription and IdGroup need GAP's Small Groups library
 ##  (SmallGrp).  Without it (e.g. gap -A or a minimal build) the script
@@ -11,7 +11,8 @@
 ##  Reads the 24x24 integer matrices produced by
 ##      python_project/src/verify_aut_lambda_star.py
 ##  (three generators, expressed in the Z-basis of Wilson's Leech lattice
-##  Lambda that the Python script builds by Hermite normal form), forms the
+##  Lambda built by Hermite normal form in verify_consecutive_twists_exact.py
+##  and imported by the Python script), forms the
 ##  matrix group they generate inside GL_24(Z), and reports its order and
 ##  StructureDescription.
 ##

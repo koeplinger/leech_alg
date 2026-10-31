@@ -1,6 +1,7 @@
 Claim number: 001
-Title: Wilson and Dixon use identical octonion multiplication tables (up to index relabelling)
+Title: Wilson and Dixon use identical octonion multiplication tables (up to index relabeling)
 Status: ESTABLISHED
+Created: 2026-04-06.  Updated: 2026-10-28.
 Date: 2026-04-06
 
 --- STATEMENT ---
@@ -70,7 +71,7 @@ The test checks that e_a * e_{a+1} = e_{a+3} for all a = 1,...,7 in STANDARD_ALG
 confirming that the implemented table matches Dixon's stated rule exactly.  By the
 index mapping above, this also confirms Wilson's rule.
 
-All 52 tests in the test suite pass.
+All 52 tests in test_octonions.py pass.
 
 --- ADDITIONAL NOTE: Dixon's X-product ---
 

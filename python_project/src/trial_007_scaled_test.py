@@ -2,14 +2,16 @@
 trial_007_scaled_test.py — Scaled closure test for the transposition-twisted
 triple octonion product.
 
+Created: 2026-04-11.  Updated: 2026-10-28.
+
 Purpose
 =======
 Run 4,000,000 random pairs from Min(Λ) through the swap(1,2) multiplication
 and check Leech lattice closure.  Measure wall-clock time to extrapolate how
 long the fully exhaustive test (196,560² ≈ 3.86 × 10¹⁰ pairs) would take.
 
-This addresses caveat 1 from trial_007_results.md: the previous test covered
-593,400 pairs, which is suggestive but not exhaustive.
+It extends the sample of trial_007_results.md (caveat 1 there: 593,400
+pairs, suggestive but not exhaustive).
 
 References
 ==========

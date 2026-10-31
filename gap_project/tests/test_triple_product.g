@@ -4,24 +4,26 @@
 ##  Definition 3.3, `def:triple`) and the main theorem (Theorem 1.1,
 ##  `thm:main`: closure of Lambda under *_sigma).
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-24.
+##  Created: 2026-04-28.  Updated: 2026-10-28.
 ##
 ##  This is the paper's main result, verified here on a representative set of
 ##  Leech minimal vectors:
 ##    - all 720 type-1 vectors  (one block of 2*lambda, two zero blocks);
-##    - a sample of type-2 vectors  (two non-zero blocks);
-##    - a sample of type-3 vectors  (three non-zero blocks).
+##    - a sample of type-2 vectors  (two nonzero blocks);
+##    - a sample of type-3 vectors  (three nonzero blocks).
 ##
 ##  Theorem 1.1 says  Lambda *_sigma Lambda  subset Lambda.  By bilinearity,
 ##  closure on a generating set of Lambda over Z is sufficient.  The 196,560
-##  minimal vectors generate Lambda; we verify on type-1 (exhaustive) and on
-##  type-2 / type-3 samples.  (The 12M+ random-pair tests are in
-##  python_project/src/trial_007_{scaled_test,fast,exhaust}.py; we replicate
-##  the symbolic verification per Wilson's three conditions here.)
+##  minimal vectors generate Lambda; this file spot-checks the products of
+##  all 720 type-1 vectors with six right operands, and type-2 / type-3
+##  sample grids.  (The 12M+ random-pair tests are in
+##  python_project/src/trial_007_{scaled_test,fast,exhaust}.py; here each
+##  product is checked exactly against Wilson's three conditions.)
 ##
-##  Also verifies (paper Section 5.1, Remark 5.2, `rem:no-identity`):
-##    - The ambient algebra (R^24, *) has NO multiplicative identity;
-##      (e_0, e_0, e_0) is NOT one.
+##  Also checks two instances of paper Remark 5.2 (Section 5.1,
+##  `rem:no-identity`), that (R^24, *_sigma) has no multiplicative identity:
+##    - (e_0, e_0, e_0) is not one;
+##    - no (a, b, c) with components in J is a left identity.
 ##
 #############################################################################
 
@@ -41,8 +43,9 @@ end;
 
 # ---------------------------------------------------------------------------
 # Theorem 1.1 spot-check: u *_sigma v  in Lambda  for sample u, v in Lambda.
-# We use type-1 x type-1, then a small grid of type-2 x type-2 and
-# type-3 x type-3 to exercise all three Wilson conditions non-trivially.
+# We use the 720 type-1 vectors against six right operands, then sample
+# grids of type-2 x {type-2, type-3} and type-3 x type-3 to exercise all
+# three Wilson conditions nontrivially.
 # ---------------------------------------------------------------------------
 
 # Type-1 closure: full check over the 720 type-1 minimal vectors as left
@@ -130,19 +133,17 @@ CHECK(Concatenation("Theorem 1.1: type-3 x type-3 closure (", String(ntot), " pr
       nfail = 0);
 
 # ---------------------------------------------------------------------------
-# The standard (untwisted) triple product fails on Lambda — paper's pre-twist
-# obstruction, and the companion's Example 4.2.
+# The standard (untwisted) triple product fails on Lambda (companion
+# Example 8.1).
 #
-# By Definition 3.3, P_1+P_2+P_3 = (x+y+z)*(x'+y'+z'), and this is in Ls
-# only if Ls*Ls subset Ls, which is false.  We exhibit a concrete failing
-# (u, v) pair: take u and v to be type-3 Leech vectors whose triple sums
-# are the witness (a, b) of Companion Example 4.2.
+# With the standard product in all nine blocks, P_1+P_2+P_3 =
+# (x+y+z)*(x'+y'+z'), so Wilson's condition (3) for the product asks that
+# the product of two block sums, both in Ls, lie in Ls; but Ls*Ls is not
+# contained in Ls (companion Example 4.2; paper Remark 4.5).
 # ---------------------------------------------------------------------------
 
-# Standard triple product fails on a witness pair drawn from Lambda.
-# Construction: pick u, v in Lambda whose triple sums fall outside Ls *
-# Ls's image in Ls.  We just iterate over the type-3 sample and report any
-# untwisted-failure.
+# The check searches the type-3 sample for a pair (u, v) whose untwisted
+# product is not in Lambda.
 found_untwisted_fail := false;
 for u in type3_sample do
     for v in type3_sample do
