@@ -96,7 +96,7 @@ def main():
     print()
     print(f"{'cycle type':<12} {'tested':>7} {'close':>7} {'rate':>8}")
     print("-" * 38)
-    # sort: identity, then by (total cycle weight, type)
+    # sort: by (total cycle weight, type), the identity last
     order = sorted(tested, key=lambda ct: (len(ct) == 0, sum(ct), ct))
     total_t = total_c = 0
     for ct in order:

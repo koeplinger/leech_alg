@@ -1,6 +1,6 @@
 # Formal referee review of the main paper
 
-Created: 2026-04-16.  Updated: 2026-10-28.
+Created: 2026-04-16.  Updated: 2026-10-31.
 
 **Date:** 2026-04-16
 **Reviewer:** Claude Opus 4.7 (Anthropic), acting in the role of a highly trained mathematician at the direction of Jens Köplinger
@@ -69,7 +69,7 @@ $$\Lambda\star\Lambda\subseteq\Lambda \iff \Sigma(\Lambda)\star_0\Sigma(\Lambda)
 This is a candid framing, but it reduces the content of Theorem 1.2 to: *there exists a Leech embedding $\Sigma(\Lambda)\subset\mathbb{O}^3$ on which the standard triple product closes*. The paper then owes the reader an answer to the obvious questions:
 
 - **(Novelty vs. Egan.)** The paper itself cites, in Section 6, that Egan "enumerated at least $17{,}280$ distinct off-diagonal Leech embeddings $L_L\subset\mathbb{O}^3$" on which a (Jordan-doubled) product closes. Is $\Sigma(\Lambda)$ in that list? Related to it? This is not a peripheral question — it is central to whether Theorem 1.2 is new.
-- **(Novelty vs. Dixon.)** The cited Dixon (1995, 2010) papers construct $\Lambda$ via an octonionic XY-product. Dixon's XY-product on $\mathbb{O}^3$ (specialised appropriately) furnishes a bilinear product on $\mathbb{R}^{24}$; is the author's $\star$ essentially the same, a conjugate, or genuinely distinct? Footnote 4 of Section 6 compares Dixon–Wilson only historically, not mathematically.
+- **(Novelty vs. Dixon.)** The cited Dixon (1995, 2010) papers describe the Leech lattice in $\mathbb{O}^3$, and Dixon (2010) obtains the integral octonions from an octonionic XY-product. Dixon's XY-product, extended to $\mathbb{O}^3$ (specialised appropriately), furnishes a bilinear product on $\mathbb{R}^{24}$; is the author's $\star$ essentially the same, a conjugate, or genuinely distinct? Footnote 4 of Section 6 compares Dixon–Wilson only historically, not mathematically.
 - **(Novelty vs. Lepowsky–Meurman.)** Lepowsky–Meurman (1982) described $\Lambda$ as a sublattice of $E_8^3$ containing $2E_8^3$; do their generators fit into $\Sigma(\Lambda)$ or into a related orbit?
 
 Without a direct comparison, a hostile reviewer could argue that the paper is a reformulation of known material with new bookkeeping. A sympathetic reviewer will still ask for at least one paragraph in Section 6 establishing *what is new*, preferably showing that $\Sigma(\Lambda)$ is (or is not) in the orbit of $\Lambda$ under $\mathrm{Aut}(\Lambda)=\mathrm{Co}_0$, and relating $\star$ to Dixon's XY-product on equal footing.

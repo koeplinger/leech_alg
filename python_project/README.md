@@ -23,7 +23,7 @@ Requires Python 3.x.  Install dependencies:
 pip install -r requirements.txt
 ```
 
-The external dependencies are `numpy` (array arithmetic in the foundation modules, the trial harnesses and several verification scripts), `sympy` (exact linear algebra over Q and Q(ζ₃) in the structure and automorphism verification scripts, and the symbolic octonion identities of `verify_structural_proof.py`), and `pytest` (test runner).  The optional GPU path of `trial_007_exhaust.py` (flag `--gpu`) also needs `cupy`; the default CPU path does not.  All other imports are standard-library (`fractions`, `itertools`, `collections`, `typing`, `multiprocessing`, `argparse`, `sys`, `os`, `random`, `time`, `re`, `math`, `pathlib`).
+The external dependencies are `numpy` (array arithmetic in the foundation modules, the trial harnesses and several verification scripts), `sympy` (exact linear algebra over Q and Q(ζ₃) in the structure and automorphism verification scripts, and the symbolic octonion identities of `verify_structural_proof.py`), and `pytest` (test runner).  The optional GPU path of `trial_007_exhaust.py` (flag `--gpu`) also needs `cupy`; the default CPU path does not.  Check 3 of `verify_dixon_leech_lattice.py` needs PARI/GP (`gp`, version 2.11 or later, on the PATH); without it the script skips that check.  All other imports are standard-library (`fractions`, `itertools`, `collections`, `typing`, `multiprocessing`, `argparse`, `sys`, `os`, `random`, `time`, `re`, `math`, `pathlib`, `shutil`, `subprocess`, `tempfile`).
 
 ## Running the tests
 
@@ -51,7 +51,7 @@ python3 trial_001_triple_octonion.py    # Any earlier trial; see src/README.md f
 python3 consistency_checks.py           # Consistency checks of the construction (checks 1-3, 5-10)
 ```
 
-The computed algebraic properties of Section 5 and Appendix E of the paper (Section 5.3 is proved by hand), and the ideal exclusion of Remark 4.5, are certified by their own scripts, each stating what it proves:
+The computed algebraic properties of Section 5 and Appendix E of the paper (Sections 5.3 and 5.6 are proved by hand), and the ideal exclusion of Remark 4.5, are certified by their own scripts, each stating what it proves:
 
 ```bash
 cd src
@@ -76,5 +76,5 @@ See [`src/README.md`](src/README.md) for what each one certifies, and [`../gap_p
 - Self-contained and runnable without internet access after `pip install`.
 - All computations are deterministic and reproducible (fixed seeds wherever randomness is used), with one exception: `verify_section5_properties.py` also stops at a time budget, so with no arguments its sample count depends on the machine; the paper's two runs (`src/README.md`) fix the sample count and reproduce exactly.
 - The symbolic-proof checks (`verify_structural_proof.py`, `symbolic_proof_checks.py`) use exact arithmetic (`fractions.Fraction`; `sympy` for the symbolic identity), with no floating-point.
-- The pytest suite covers the foundations (octonions, E8, Leech, Okubo) that the trials and `symbolic_proof_checks.py` are built on.  The paper names, in footnotes, the scripts that reproduce its computations; those scripts are run directly, not through pytest, and several of them, `verify_structural_proof.py` among them, use their own implementation of the product (2.1).
+- The pytest suite covers the foundations (octonions, E8, Leech, Okubo) that the trials and `symbolic_proof_checks.py` are built on.  The paper names, in footnotes, the scripts that reproduce its computations, and two library modules, `e8_dixon.py` and `leech_dixon.py` (Dixon's construction, Section 6), which the suite tests; those scripts are run directly, not through pytest, and several of them, `verify_structural_proof.py` among them, use their own implementation of the product (2.1).
 - No personal or sensitive information is stored in this project.

@@ -1,13 +1,14 @@
 # Trial 005 Results — Triple symmetric-composition algebra (para-octonion + Okubo_τ + Okubo_τ²)
 
-Created: 2026-04-09.  Updated: 2026-10-28.
+Created: 2026-04-09.  Updated: 2026-10-31.
 
 Date: 2026-04-09
 
 ## Algebra tested
 
 Three different 8-dimensional symmetric composition algebras on R²⁴, one per
-block, forming a Z₃ orbit under the powers of an order-3 octonion automorphism τ:
+block, forming a Z₃ orbit under the powers of an order-3 octonion automorphism τ
+that fixes a quaternion subalgebra pointwise:
 
 - Block 0 (indices 0–7): **para-octonion** x *₀ y = x̄ · ȳ (Petersson with τ⁰)
 - Block 1 (indices 8–15): **Okubo from τ** x *₁ y = τ(x̄) · τ²(ȳ)

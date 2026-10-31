@@ -1,12 +1,12 @@
 """
 test_e8_wilson.py — Verification of Wilson's E8 lattice construction.
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 Wilson [Wilson2009] defines an E8 lattice L as the Z-span of 240 octonions
 (Section 2).  This module verifies that the construction has all expected
 properties of the E8 root lattice, and additionally checks the structural
-identities involving Wilson's element s that Wilson himself proves.
+identities involving Wilson's element s that Wilson proves.
 
 Properties verified
 -------------------

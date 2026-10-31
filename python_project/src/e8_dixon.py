@@ -24,8 +24,8 @@ A^odd = A₁ ∪ A₃
 
 Dixon defines Ξ₁ and Ξ₃ identically but with irrational normalizations 1/√2 and 1/√8.
 In Section 6 of [Dixon2010] Dixon introduces A₁ and A₃ (the rational-coefficient equivalents
-used in the Leech lattice construction).  Only A₁, A₃ (rational) are implemented here
-since they live in the same vector space as Ξ^even.
+used in the Leech lattice construction).  Only A₁ and A₃ are implemented here since,
+like Ξ^even, they have rational coefficients.
 
 Key property [Dixon2010 eq. (5)]
 ----------------------------------
@@ -206,7 +206,8 @@ def is_pm_basis_element(x: Octonion, tol: float = 1e-9) -> bool:
     """
     Return True iff x = ±e_k for some k in {0,...,7}.
 
-    Used to verify the X-product closure property eq. (5) of [Dixon2010].
+    Used to verify the X-product property eq. (5) of [Dixon2010],
+    e_a ◦_X e_b = ±e_c.
     """
     c = x.coords
     nonzero_mask = np.abs(c) > tol

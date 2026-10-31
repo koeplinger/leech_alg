@@ -11,7 +11,7 @@ Two concrete algebras are provided:
       Fano-plane rule:  e_a * e_{a+1} = e_{a+3},  a = 1,...,7 (mod 7 in {1,...,7}).
 
   XPRODUCT_ALGEBRA
-      Dixon's X-product [Dixon2010], defined as
+      Dixon's X-product with X = l0 [Dixon2010, eq. (7)], defined as
           A o_X B = (A * l0) * (l0^{-1} * B),   l0 = (e0+e1+...+e7)/2.
       This yields a different but isomorphic octonion algebra on the same vector
       space.  Fano-plane rule:  e_a o e_{a+2} = e_{a+3},  a = 1,...,7 (mod 7).

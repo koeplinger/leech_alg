@@ -99,10 +99,12 @@ arithmetic.
    - trial_007_scaled_test.py             4,000,000 pairs, 0 failures
    - trial_007_fast.py                    4,000,000 pairs, 0 failures
    - trial_007_exhaust.py                 4,000,000 pairs, 0 failures
-   Total: 12,593,400 minimal-vector pairs tested, all random except the
+   Total: 12,593,400 tests of minimal-vector pairs, all random except the
    518,400 type1×type1 pairs of the first run, which are all of them;
    0 failures (prompt 025 and trial_007_results.md give the first run's
-   593,400).  trial_007_triple_octonion_swap.py is not in the repository,
+   593,400).  trial_007_fast.py and the first worker of trial_007_exhaust.py
+   test the same 250,000 pairs (trial_007_results.md).
+   trial_007_triple_octonion_swap.py is not in the repository,
    so its 593,400 pairs cannot be rerun; the trial-007 harness in the repository,
    python_project/src/trial_007_kirmse_twist.py, tests 900 pairs per
    transposition.  The other three scripts are in python_project/src/.
@@ -143,8 +145,9 @@ the ·_σ-triple product):
    unscoped claim that the order has no nilpotents is false.
  - Maximality: the order is not maximal.  L³ is ⋆-closed, an even integral
    overlattice of Λ of index 2¹²; Λ + Zε₁ with ε₁ = (e₀, 0, 0) is a second
-   ⋆-closed overlattice, of index 4, not contained in L³ and not integral
-   (paper Section 5.3, `sec:maximality`; ledger claim 016).
+   ⋆-closed overlattice, of index 4, not contained in L³ and not integral;
+   neither of the two contains the other (paper Section 5.3,
+   `sec:maximality`; ledger claim 016).
  - The automorphism group: Aut(Λ, +, ⋆) is finite of order 36, with
    structure C₆ × S₃, and strictly contained in Co₀ (paper Section 5.4,
    `sec:autgroup`; ledger claims 010 and 010a; the companion note

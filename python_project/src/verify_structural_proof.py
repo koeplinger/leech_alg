@@ -3,7 +3,7 @@ sec:proof): the maximal order O := (1/2)(e1 + e2) L of Section 2.2, the two
 lattice identities (4.1), the Moufang identity (4.2) for a purely imaginary
 multiplier, and the three lemmas as their consequences.
 
-Created: 2026-10-20.  Updated: 2026-10-28.
+Created: 2026-10-20.  Updated: 2026-10-31.
 
 The paper cites this script in Section 2.2 at the maximal order O of (2.2)
 (label eq:MO), with verify_sigma_sublattice_maximal_order.py; in Section 4.1
@@ -25,7 +25,7 @@ L s = {l . s} (left multiples), sigma = (1 2).  Exact arithmetic throughout
     unimodular, hence a maximal order); O = Z^8 + (1/2)(0 4)C_K = sigma(J_1),
     the descriptions of ledger claim 019 (verify_sigma_sublattice_maximal_order.py);
     and O = (1/2)(e0 + e4) B (e0 + e4) with B := (1/2) L sbar, Wilson's ring A_3
-    (his A_t = (1/2)(1 + i_t) B (1 + i_t) with i_t = e_{t+1}; Wilson 2009, Sec. 2).
+    (A_t = (1/2)(1 + i_t) B (1 + i_t) with i_t = e_{t+1}; Wilson 2009, Sec. 2).
 (B) L = q O: q O lies in L and has covolume 1 = covol(L).  (Immediate from
     the definition, since q^2 = -2 and L = -L; checked anyway.)
 (C) sigma(L sbar) = 2 O and sigma(L s) = p O, each by eight products (the

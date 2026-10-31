@@ -1,7 +1,7 @@
 """
 trial_007_exhaust.py — Exhaustive / large-scale Leech closure verification.
 
-Created: 2026-04-11.  Updated: 2026-10-28.
+Created: 2026-04-11.  Updated: 2026-10-31.
 
 Performance-optimized for the exhaustive test: all 196,560² = 38,635,833,600
 pairs of Min(Λ) vectors through the swap(1,2) triple octonion product.
@@ -739,7 +739,7 @@ def main():
         if args.exhaustive:
             print()
             print("  EXHAUSTIVE VERIFICATION COMPLETE.")
-            print("  The swap(1,2) triple octonion product closes on Min(Λ).")
+            print("  The swap(1,2) triple octonion product maps Min(Λ) × Min(Λ) into Λ.")
             print("  By bilinearity and the fact that Min(Λ) generates Λ over Z,")
             print("  ALL products of Λ vectors lie in Λ.")
             print("  Therefore (Λ, +, ·) is an order under this product.")

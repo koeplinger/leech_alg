@@ -1,7 +1,7 @@
 """
 okubo.py — Okubo algebra (pseudo-octonion algebra) implementation.
 
-Created: 2026-04-08.  Updated: 2026-10-28.
+Created: 2026-04-08.  Updated: 2026-10-31.
 
 The Okubo algebra is an 8-dimensional real composition algebra that is
 nonunital, nonalternative, and flexible.  It is a symmetric composition
@@ -13,7 +13,8 @@ Two construction methods are provided:
 
   from_octonions(oct_algebra)
       Petersson isotope construction.  Given an octonion algebra (O, ·, n)
-      and an order-3 automorphism τ, the Okubo product is
+      and an order-3 automorphism τ that fixes a quaternion subalgebra
+      pointwise, the Okubo product is
           x * y = τ(x̄) · τ²(ȳ).
       Reference: [MarraniCorradettiZucconi2025] eq. (1.6)/(1.17);
                  [Elduque2000_Triality].
@@ -233,7 +234,8 @@ def from_octonions(
     The Okubo product is:
         x * y = τ(x̄) · τ²(ȳ)
     where · is the octonion product, ¯ is octonion conjugation, and
-    τ is an order-3 automorphism.
+    τ is an order-3 automorphism that fixes a quaternion subalgebra
+    pointwise.
 
     The Euclidean norm on R⁸ is the composition norm (inherited from the
     octonion algebra, since τ and conjugation are isometries).

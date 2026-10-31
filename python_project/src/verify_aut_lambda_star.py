@@ -1,6 +1,6 @@
 """Aut(Lambda, +, star): exact order, structure, generators.
 
-Created: 2026-07-12.  Updated: 2026-10-28.
+Created: 2026-07-12.  Updated: 2026-10-31.
 
 Runtime: about 5 minutes on one core of an Intel Core i7-12650H (the
 script runs single-threaded; the complete stabilizer enumerations take
@@ -26,7 +26,9 @@ note cited below):
         Aut(R^24, star) = { h_{A,B} rho_pi : A,B in Aut(O,.s), pi in S_3 },
         h_{A,B}(u)_alpha = B u_alpha + (A - B)(u_0+u_1+u_2)/3,
         rho_pi(u)_alpha  = u_{pi^{-1}(alpha)},
-  with h_{A,B} rho_pi = rho_pi h_{A,B}, i.e. (G_2 x G_2) x S_3.
+  with h_{A,B} rho_pi = rho_pi h_{A,B}, i.e. (G_2 x G_2) x S_3.  Every
+  element of Aut(Lambda, +, star) extends linearly to an element of
+  Aut(R^24, star), as Lambda spans R^24 and star is bilinear.
 
 WHAT THIS SCRIPT COMPUTES (exact arithmetic throughout):
 

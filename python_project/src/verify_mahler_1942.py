@@ -1,6 +1,6 @@
 """Verification of Mahler 1942, "On Ideals in the Cayley-Dickson Algebra".
 
-Created: 2026-05-20.  Updated: 2026-10-28.
+Created: 2026-05-20.  Updated: 2026-10-31.
 
 Source: K. Mahler, Proc. Roy. Irish Acad. Sect. A 48 (1942), 123-133.
 (The cover sheet misprints the title as "Cayley-Dixon"; the paper reads
@@ -13,8 +13,9 @@ Checked, from Mahler's data only:
   - his ring J, given by the criterion (14) and the basis (10), is a maximal
     order, and equals Dickson's order O_D;
   - the counts 240 (norm 1) and 2160 (norm 2);
-  - THEOREM 1 (Euclidean algorithm): the covering radius^2 of J is 1/2
-    (Mahler proves <= 15/16 and states the exact constant is 1/2);
+  - THEOREM 1 (Euclidean algorithm): the covering radius^2 of J is 1/2, by
+    exact-arithmetic sampling (Mahler proves <= 15/16 and states without
+    proof that the exact constant is 1/2);
   - the explicit counterexample (p.133): the norm-2 C-number (g|g),
     g=(1+i1+i2+i3)/2, does NOT generate a left ideal.
 

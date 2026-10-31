@@ -1,6 +1,6 @@
 # Context-aware review of the main paper (v4)
 
-Created: 2026-05-23.  Updated: 2026-10-28.
+Created: 2026-05-23.  Updated: 2026-10-31.
 
 **Date:** 2026-05-23
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
@@ -71,12 +71,12 @@ The post-table claim — *"every quartic-passing sample also satisfied the cube 
 
 Appendix C L1424–1425: *"Closure of the twisted product was first observed on over 12,000,000 random pairs of minimal vectors with zero failures."*
 
-The repo records (`evidence_and_reasoning/key_claims/008_transposition_twist_order.txt` L74–79):
-- trial_007_triple_octonion_swap.py: 593,412
+The repo records (`evidence_and_reasoning/key_claims/008_transposition_twist_order.txt` L98–102):
+- trial_007_triple_octonion_swap.py: 593,400
 - trial_007_scaled_test.py: 4,000,000
 - trial_007_fast.py: 4,000,000
 - trial_007_exhaust.py: 4,000,000
-- **Total: 12,593,412 — matches "over 12,000,000".** ✓
+- **Total: 12,593,400 — matches "over 12,000,000".** ✓
 
 **Match.**
 

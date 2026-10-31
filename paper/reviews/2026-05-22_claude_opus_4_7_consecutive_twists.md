@@ -1,6 +1,6 @@
 # Item (1c) — consecutive σ-twists and closure on the Leech lattice
 
-Created: 2026-05-22.  Updated: 2026-10-28.
+Created: 2026-05-22.  Updated: 2026-10-31.
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 113 (Phase A of the v4 update plan).
 **Scripts:** `python_project/src/verify_consecutive_twists_exact.py`
@@ -76,7 +76,7 @@ twists **do** yield products that close on Λ, for definite, Fano-structured
 fractions — and the identity (the untwisted product) does not, consistent
 with the paper.
 
-The paper's census over all of S₇ (Section 5.6, `sec:census`) carries these
+The paper's census over all of S₇ (Appendix E, `sec:census`) carries these
 counts.
 
 ## Status
@@ -167,7 +167,7 @@ The analogy fails: the exact closure test shows that the Fano-line
 
 ### Cross-reference
 
-- `paper/main.tex`, Section 5.6 (`sec:census`), after the census table:
+- `paper/main.tex`, Appendix E (`sec:census`), after the census table:
   "For the 3-cycles the closing half admits a description: for each
   three-element subset of imaginary indices, one of the two cyclic
   orientations closes."

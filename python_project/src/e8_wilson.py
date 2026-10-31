@@ -1,7 +1,7 @@
 """
 e8_wilson.py — Wilson's E8 lattice construction.
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 Wilson [Wilson2009] defines an E8 lattice L inside the real octonion algebra
 as the Z-integer span of 240 octonions:
@@ -12,12 +12,12 @@ as the Z-integer span of 240 octonions:
 
 Index convention
 ----------------
-Wilson labels his octonion basis {i_inf, i_0, ..., i_6} with index set
+Wilson labels the octonion basis {i_inf, i_0, ..., i_6} with index set
 PL(7) = {inf} u F_7.  This module uses {e_0, ..., e_7}.  The correspondence is:
     Wilson  i_inf  <->  e_0   (real unit / identity)
     Wilson  i_k    <->  e_{k+1}   for k = 0,...,6.
 
-Under this map Wilson's type-1 roots ±i_t ± i_u become ±e_a ± e_b, and his
+Under this map Wilson's type-1 roots ±i_t ± i_u become ±e_a ± e_b, and the
 type-2 roots (1/2)(±1 ± i_0 ± ... ± i_6) with odd # minus signs become
 (1/2)(±e_0 ± e_1 ± ... ± e_7) with odd # minus signs.  The two descriptions
 are identical in structure.

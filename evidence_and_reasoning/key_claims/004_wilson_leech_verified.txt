@@ -1,7 +1,7 @@
 Claim number: 004
 Title: Wilson's octonionic construction yields the 196,560 minimal vectors of the Leech lattice
 Status: ESTABLISHED
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 
 --- STATEMENT ---
 
@@ -108,7 +108,7 @@ The user asked: "does Wilson's construction yield a multiplication that closes
 on the Leech lattice?"
 
 Precise answer: Wilson does NOT define a "multiplication that closes on the
-Leech lattice."  He constructs the Leech lattice as a SET Λ ⊂ L³ via three
+Leech lattice."  Wilson constructs the Leech lattice as a SET Λ ⊂ L³ via three
 algebraic conditions, then characterizes its 196,560 minimal vectors.
 
 The object Wilson constructs IS the Leech lattice (by the four

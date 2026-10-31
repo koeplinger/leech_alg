@@ -22,7 +22,8 @@ the script reports check 3 as skipped, prints PASS for checks 1 and 2 only,
 and exits with code 2.  Coordinates are taken as exact half-integers, and the
 script stops if one is not.  About 10 seconds; about 1.3 GB of memory at
 peak (Python and gp together).  Prints one line per check and ALL PASS or
-FAIL; exit code 0 on ALL PASS.
+FAIL; exit code 0 on ALL PASS.  Not cited in the paper (v8 draft,
+paper/main.tex); ledger key claims 005 and 006.
 """
 import shutil
 import subprocess

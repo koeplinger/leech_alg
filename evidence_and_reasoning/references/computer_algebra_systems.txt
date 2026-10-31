@@ -1,14 +1,15 @@
 Topic: Computer algebra systems used in the verification suites
 ==============================================================
 
-Created: 2026-04-28.  Updated: 2026-10-28.
+Created: 2026-04-28.  Updated: 2026-10-31.
 
 This file collects references for the software systems used to verify the
 claims in the paper and the companion.  The Python suite in
 python_project/ uses standard scientific-Python libraries (NumPy, SymPy,
-pytest) which are not listed individually here; the GAP suite in
-gap_project/ uses the GAP system together with the LOOPS package, both
-of which are recorded below.
+pytest) which are not listed individually here (one script,
+python_project/src/verify_dixon_leech_lattice.py, also calls PARI/GP for
+its lattice test); the GAP suite in gap_project/ uses the GAP system
+together with the LOOPS package, both of which are recorded below.
 
 ---
 
@@ -37,8 +38,13 @@ of which are recorded below.
   Ls and Lsbar, the σ-twisted octonion product, the four lemmas of
   paper Section 4 (on Z-bases), and a spot check of Theorem 1.1 (closure
   of the Leech lattice under the Z₃-symmetric triple-octonion product)
-  on sampled products of minimal vectors.  The suite uses no
-  floating-point arithmetic; all checks are exact over Q.
+  on sampled products of minimal vectors; gap_project/aut_lambda_star.g
+  computes the order and structure of Aut(Λ, +, ⋆) (paper Section 5.4)
+  from the three generators that verify_aut_lambda_star.py writes, and
+  gap_project/octonion_stabilisers.g identifies the stabilizers of L, Ls
+  and Lsbar in the automorphism group of the σ-twisted product (ledger
+  claim 010a).  The suite uses no floating-point arithmetic; all checks
+  are exact over Q.
 
 ---
 

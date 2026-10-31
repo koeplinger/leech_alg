@@ -1,6 +1,6 @@
 # The span index of twisted triple products: verification of the external v8 review, and what index 1 means (14 October 2026)
 
-Created: 2026-10-14.  Updated: 2026-10-28.
+Created: 2026-10-14.  Updated: 2026-10-31.
 **Author of this note:** Claude Fable 5.1 (Anthropic), at the direction of Jens Köplinger
 **Subject:** the external review of v8 by Claude Opus 5.5 (13 October 2026),
 incorporated verbatim with its evidence as
@@ -17,7 +17,7 @@ $L\bar s$ and $Ls$, $\Lambda \subset L^3$; for an isometry $g$ of $\mathbb R^8$
 with $g(L) = L$, $x \cdot_g y := g^{-1}(g(x) \cdot g(y))$, $\star_g$ the triple
 product of Definition 3.3 built from $\cdot_g$, $S_g := \mathbb Z\text{-span}\{u
 \star_g v : u, v \in \Lambda\}$; the paper's $\sigma = (1\,2)$ is the reflection
-in the root $e_1 - e_2$, and the paper's $\rho$ (Section 5.6) is the
+in the root $e_1 - e_2$, and the paper's $\rho$ (Appendix E) is the
 reflection $s_r$ of Section 2.  Sections 1 to 4 cite the paper by its current
 numbering (labels resolve in `paper/main.aux`); Sections 5 and 6 review the
 v8 draft of 13 October 2026 and use its numbering.
@@ -107,7 +107,7 @@ $\mathbb Z$-module: index 1 says $S_g = \Lambda$, every vector of $\Lambda$
 is an integer combination of products; the nonunital ring
 $(\Lambda, \star_g)$ is idempotent, $\Lambda^2 = \Lambda$, and
 $\Lambda/S_g$, which is $(\mathbb Z/2)^{16}$ for $\sigma$ (paper
-Proposition 5.4), is trivial.  Index 1 does not say that every vector of
+Proposition E.1), is trivial.  Index 1 does not say that every vector of
 $\Lambda$ is a product.  The block sum of $u \star_g v$ is
 $(x+y+z) \cdot_g (x'+y'+z')$, a product of two vectors of $Ls$, so its norm
 lies in $16\mathbb Z$, while the norm of the product itself need not (under
@@ -175,7 +175,7 @@ implication holds in general.
 
 **3.5 Verdict on significance.**  A worthwhile structural remark, not a
 breakthrough: a product built from octonion multiplication can have the
-minimum index (paper Section 5.6), so $2^{16}$ is a feature of $\sigma$ and
+minimum index (paper Appendix E), so $2^{16}$ is a feature of $\sigma$ and
 not of the construction (index 1 is the generic case over the closing
 twists, $\sigma$ the extreme case); the main theorem and maximality are
 untouched.  The review's own measured stance is right.
@@ -222,7 +222,7 @@ Then:
    ($p\,O^{(4)} \neq O^{(4)} p$).  Ledger claim 021; symbolic and exact
    checks at prompt 290; paper (4.2) and (4.3).
 
-Appendix B's remark that the Coxeter--Bruck transposition reappears "acting on
+Appendix B's remark that the Coxeter--Bruck transposition reappears "acting now on
 a different object" is therefore sharper than stated: $\sigma$ acts on $L\bar
 s = 2J_1$, twice Kirmse's set itself, and carries it onto $2O^{(4)} =
 2\sigma(J_1)$, twice a maximal order (each transposition $(i\,j)$ carries

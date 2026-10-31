@@ -1,6 +1,6 @@
-"""Verify Kirmse 1924 from scratch: his multiplication table (1) and his order J_1.
+"""Verify Kirmse 1924 from scratch: the multiplication table (1) and the set J_1.
 
-Created: 2026-05-20.  Updated: 2026-10-28.
+Created: 2026-05-20.  Updated: 2026-10-31.
 
 Prints: table (1) is a composition algebra; J_1 has index 16 over J_0 and is
 not closed (10 of the 144 generator products leave it; an example is
@@ -148,4 +148,4 @@ print("Kirmse's J_1 is closed (a genuine maximal order):", J1code in closed)
 print()
 print("VERDICT:  Kirmse claimed 8 maximal orders; the true number is",
       len(closed),".")
-print("          His named, used order J_1 is one of the non-closed candidates.")
+print("          Kirmse's named, used set J_1 is one of the nonclosed candidates.")

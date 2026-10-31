@@ -38,7 +38,7 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
   (p. 2187); L itself is a nonunital order and, as a lattice, a √2-scaled copy
   of a maximal order of the integral octonions (paper Section 2.2). That
   section fixes one such order, 𝒪 = ½(e_1 + e_2)L (display (2.2)), and
-  identifies it with Wilson's ring A_3 = ½(1 + i_3)B(1 + i_3) of his Section 2,
+  identifies it with the ring A_3 = ½(1 + i_3)B(1 + i_3) of Wilson's Section 2,
   where B = ½Ls̄ and i_t = e_{t+1} (checked in
   python_project/src/verify_structural_proof.py). The three-coordinate
   structure Λ ⊂ L³ (Wilson's Section 3, cited in paper Section 1) is the
@@ -74,9 +74,9 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
   Λ16 (Section 4). The Leech part (Section 6) writes the minimal vectors of a
   Leech lattice in O³ with the ordinary octonion product (eqs. (20)–(22)),
   rewriting Wilson's; they are the componentwise conjugates of Wilson's (key
-  claim 005). This approach is a second independent line of
-  evidence for the three-copies-of-E8 structure on which this project's
-  Z₃-symmetric triple-octonion product ⋆ is built. Section 6 of the project's
+  claim 005). Like Wilson's, this representation is set in the
+  three-copies-of-E8 structure on which this project's Z₃-symmetric
+  triple-octonion product ⋆ is built. Section 6 of the project's
   paper describes the XY-product (display (6.1)) and the X-product and reports an
   independent reproduction of Dixon's construction (python_project/src/leech_dixon.py,
   e8_dixon.py).

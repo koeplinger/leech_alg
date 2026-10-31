@@ -1,6 +1,6 @@
 # Journal-quality review of the assembled v8 (12 October 2026)
 
-Created: 2026-10-12.  Updated: 2026-10-24.
+Created: 2026-10-12.  Updated: 2026-10-31.
 **Reviewer:** Claude Fable 5.1, at the direction of Jens Köplinger
 **Manuscript:** `paper/main.tex`, v8 (12 October 2026), 24 pp., in progress
 **Prompt:** 283.
@@ -186,11 +186,11 @@ wording.
 ### SF7. "over 12,000,000 random pairs" has no script footnote (Appendix C, lines 1722–1724; abstract line 102)
 
 The only computational claim without a `\scriptref`. The record composes the
-figure as 593,412 + 3 × 4,000,000 = 12,593,412 (key claim 008); the three
+figure as 593,400 + 3 × 4,000,000 = 12,593,400 (key claim 008); the three
 4,000,000-pair runs are reproducible (`trial_007_scaled_test.py`,
-`trial_007_fast.py`, `trial_007_exhaust.py`), the 593,412-pair harness is not
+`trial_007_fast.py`, `trial_007_exhaust.py`), the 593,400-pair harness is not
 retained. **Fix:** footnote the three scripts after "zero failures", with a
-clause that the earlier 593,412-pair run is recorded in key claim 008.
+clause that the earlier 593,400-pair run is recorded in key claim 008.
 
 ### SF8. Section 5.1 now states its verdict twice (lines 603–604 and 685–688)
 

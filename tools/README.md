@@ -1,6 +1,6 @@
 # Tools
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-10-31.
 
 Project scaffolding.  Nothing here is part of the research; these are the
 checks that keep the record honest.
@@ -20,7 +20,9 @@ documentation.
 ## What it checks
 
 1. **Genre.**  A current-state document (every document except the prompt log
-   and the released versions of the paper; material kept verbatim is skipped)
+   and the released versions of the paper; skipped are material kept verbatim,
+   the research statement, and the files that define the genre vocabulary:
+   `DOCUMENT_GENRES.md`, `MANIFESTO.md`, this README and `lint_docs.py`)
    must not narrate its own history: no dated addenda, notes, correction or
    status blocks, no correction notices, no settlement dates, no supersession
    narratives, no change-history footers.  In a review, which compares versions
@@ -39,4 +41,5 @@ documentation.
 6. **Dates.**  A changed current-state document carries the line
    `Created: YYYY-MM-DD.  Updated: YYYY-MM-DD.`, and its `Updated` date is the
    day of the change (the file's modification date); for the paper's working
-   source, the subtitle date plays this role.
+   source, the subtitle date plays this role, in the form `D Month YYYY (vN)` or,
+   for a working draft, `D Month YYYY, vN (WIP)`.

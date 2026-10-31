@@ -1,7 +1,7 @@
 """Verify the proposed Discovery 1: explicit subalgebra structure of
 W = sigma(Ls)/2L inside L/2L, with the octonion product reduced modulo 2L.
 
-Created: 2026-05-24.  Updated: 2026-10-28.
+Created: 2026-05-24.  Updated: 2026-10-31.
 
 Discovery 1 is a structural proposal of the Hermes agent, quoted verbatim
 with this verification in paper/hermes_mod2_structure_supplement.tex
@@ -177,7 +177,7 @@ if __name__ == "__main__":
         print(f"    (Consistent with (a): mu-bar is not commutative.)")
 
     # ---------------------------------------------------------------
-    # (f) If actual matches, check structural claims
+    # (f) Structural features of W, from the actual table
     # ---------------------------------------------------------------
     print("\n(f) Structural features of W (using ACTUAL table):")
     # Universal zero divisor: w2 multiplied by anything in W gives 0?

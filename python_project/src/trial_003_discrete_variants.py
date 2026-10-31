@@ -2,7 +2,7 @@
 trial_003_discrete_variants.py — Exhaustive sweep over discrete modifications
 of the triple-octonion algebra.
 
-Created: 2026-04-09.  Updated: 2026-10-28.
+Created: 2026-04-09.  Updated: 2026-10-31.
 
 Algebra family tested
 =====================
@@ -36,7 +36,8 @@ discrete degrees of freedom in the cross-block terms:
         "left"   routing: Oα × Oβ → Oα  (product stays in left factor's block)
         "right"  routing: Oα × Oβ → Oβ  (product stays in right factor's block)
 
-      These break Z₃ symmetry but are legitimate algebraic choices.
+      Like third-block routing, these commute with the cyclic permutation of
+      the three blocks.
 
 Parameter space
 ===============
@@ -46,9 +47,9 @@ Parameter space
 
   Total: 64 × 8 × 3 = 1,536 variants.
 
-  We can reduce by Z₃ symmetry for the "third-block" routing (but not for
-  left/right routing).  However, 1,536 is small enough to sweep exhaustively,
-  so we test all of them without symmetry reduction.
+  We can reduce by Z₃ symmetry for each of the three routings.  However,
+  1,536 is small enough to sweep exhaustively, so we test all of them
+  without symmetry reduction.
 
 For each variant, we test a SAMPLE of Min(Λ) pairs and count how many products
 land in Λ.  A variant with 100% closure on the sample would need further
@@ -58,9 +59,10 @@ Motivation
 ==========
 Trial 001 showed that the triple-octonion algebra fails exclusively on
 condition 3 (x+y+z ∈ Ls) for type3 × type3 products.  Conjugation directly
-modifies the Ls/Ls̄ structure.  Sign flips and routing changes alter the
-interference pattern in the three-block sum.  Together, these cover all "simple
-discrete tweaks" to the cross-block rule.
+modifies the Ls/Ls̄ structure.  Sign flips alter the
+interference pattern in the three-block sum; routing changes leave that sum
+unchanged and only move terms between the blocks.  Together, these cover all
+"simple discrete tweaks" to the cross-block rule.
 
 If ALL 1,536 variants fail, this rules out the entire family of
 "three-octonion algebras with simple cross-block modifications" as candidates

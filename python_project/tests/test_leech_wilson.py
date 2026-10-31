@@ -1,10 +1,10 @@
 """
 test_leech_wilson.py — Verification of Wilson's octonionic Leech lattice construction.
 
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 
 Wilson constructs the Leech lattice as a set Λ ⊂ L³ satisfying three
-algebraic conditions; he defines no multiplication on it.  Under Wilson's
+algebraic conditions and defines no multiplication on it.  Under Wilson's
 norm N_Wilson = N_std/2, Λ is even and self-dual and has no vectors of
 norm 2 [Wilson2009, Section 4]; its 196,560 minimal vectors have N_std = 8
 under the standard R^24 norm and come in three explicit families (types

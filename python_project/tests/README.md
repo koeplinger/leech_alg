@@ -16,7 +16,7 @@ Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech
 
 | File | Subject |
 |---|---|
-| `test_octonions.py` | Octonion algebra: structure constants, Fano-plane rule, composition (norm-multiplicativity), Dixon X-product |
+| `test_octonions.py` | Octonion algebra: structure constants, Fano-plane rule, composition (norm-multiplicativity), Dixon's X-product with X = ℓ₀ (Dixon 2010, eq. (7)) |
 | `test_e8_wilson.py` | Wilson's E8 lattice L: 240-root enumeration, membership test, structural element s |
 | `test_e8_dixon.py` | Dixon's E8 constructions Ξ^even and A^odd: enumeration, lattice properties, integrality; closure of Ξ^even under the X-product with X = ℓ₀⁻¹ |
 | `test_leech_wilson.py` | Wilson's Leech lattice Λ: 196,560 minimal vectors, three-condition membership test, type-1/2/3 decomposition |

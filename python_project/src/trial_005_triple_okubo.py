@@ -2,15 +2,16 @@
 trial_005_triple_okubo.py — Triple symmetric-composition algebra on R²⁴
 with Z₃-shifted Petersson isotopes.
 
-Created: 2026-04-09.  Updated: 2026-10-28.
+Created: 2026-04-09.  Updated: 2026-10-31.
 
 Algebra definition
 ==================
 
 Background: the Petersson isotope construction
 ----------------------------------------------
-Given an octonion algebra (O, ·) and an order-3 automorphism τ, the
-Petersson isotope with parameter τ^k (k = 0, 1, 2) is:
+Given an octonion algebra (O, ·) and an order-3 automorphism τ that fixes a
+quaternion subalgebra pointwise (as the τ of this trial does), the Petersson
+isotope with parameter τ^k (k = 0, 1, 2) is:
 
     x *_k y = τ^k(x̄) · τ^{2k}(ȳ)
 

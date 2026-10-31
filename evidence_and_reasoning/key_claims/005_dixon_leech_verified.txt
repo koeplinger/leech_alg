@@ -6,8 +6,8 @@ Date: 2026-04-07
 
 --- STATEMENT ---
 
-Dixon [Dixon2010 Section 6] characterizes the Leech lattice minimal-vector
-shell in three families:
+Dixon [Dixon2010 Section 6] characterizes the minimal-vector shell of a
+Leech lattice in three families:
 
   ℓ₀ = ½(e₀+e₁+...+e₇),  N(ℓ₀) = 2  [Section 3, eq. (6)]
   A^odd  = A₁ ∪ A₃  (240 norm-2 elements)

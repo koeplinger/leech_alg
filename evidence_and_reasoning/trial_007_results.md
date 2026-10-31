@@ -73,8 +73,12 @@ repository, python_project/src/trial_007_kirmse_twist.py, tests 900 pairs
 per transposition.  All 21 transpositions close on Λ exactly: the 576
 basis-pair products of a Z-basis of Λ lie in Λ
 (python_project/src/verify_consecutive_twists_exact.py).  For swap(1,2),
-trial_007_scaled_test.py, trial_007_fast.py and trial_007_exhaust.py test
-12,000,000 further random minimal-vector pairs, with 0 failures.
+trial_007_scaled_test.py, trial_007_fast.py and trial_007_exhaust.py make
+12,000,000 further tests of random minimal-vector pairs, with 0 failures.
+trial_007_fast.py and the first worker of trial_007_exhaust.py (of 16 in
+the run of prompt log 030) draw with the same default seed, 2026, in the
+same way, so the same 250,000 pairs are tested twice; about 11.75 million
+of the 12,000,000 pairs are distinct.
 
 ## Phase 3: Broader permutation survey
 

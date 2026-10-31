@@ -1,7 +1,7 @@
 Claim number: 001
 Title: Wilson and Dixon use identical octonion multiplication tables (up to index relabeling)
 Status: ESTABLISHED
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 Date: 2026-04-06
 
 --- STATEMENT ---
@@ -14,7 +14,7 @@ expressed in different index conventions.  No separate multiplication tables are
 
 Wilson's index set and rule
 ----------------------------
-Wilson uses the projective line PL(7) = {inf} u F_7 as his index set, giving basis
+Wilson uses the projective line PL(7) = {inf} u F_7 as the index set, giving basis
 elements {i_inf, i_0, i_1, i_2, i_3, i_4, i_5, i_6}.  i_inf is the real unit (identity).
 The multiplication is defined by:
 
@@ -31,7 +31,7 @@ Reference: [Wilson2009], Section 2.
 
 Dixon's index set and rule
 --------------------------
-Dixon uses {0, 1, ..., 7} as his index set, with e_0 = 1 (identity) and
+Dixon uses {0, 1, ..., 7} as the index set, with e_0 = 1 (identity) and
 e_1,...,e_7 as imaginary units.  The multiplication is defined by:
 
     e_a * e_{a+1} = e_{a+3},   a = 1,...,7,  indices mod 7 in {1,...,7}
@@ -75,7 +75,7 @@ All 52 tests in test_octonions.py pass.
 
 --- ADDITIONAL NOTE: Dixon's X-product ---
 
-Dixon additionally defines an X-product:
+Dixon additionally defines X-products; the one with X = l_0 (Dixon's eq. (7)) is:
     A o_X B := (A * l_0) * (l_0^{-1} * B),   l_0 = (e_0 + e_1 + ... + e_7) / 2
 
 This is a DIFFERENT multiplication table on the same 8-dimensional space, governed

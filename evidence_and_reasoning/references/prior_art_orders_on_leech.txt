@@ -55,8 +55,9 @@ roughly by structural distance from the present construction):
 4. **Earlier precursors**: additive/geometric constructions of Λ
    that foreshadow the octonion-triple and Jordan-algebra frameworks
    above but do not test closure under any bilinear product:
-   Conway–Sloane 1982 (23 constructions, one per Niemeier lattice,
-   including a Turyn-style construction from three copies of E₈);
+   Conway–Sloane 1982 (23 constructions, one for each Niemeier lattice other
+   than the Leech lattice, including a Turyn-style construction from three
+   copies of E₈);
    Lepowsky–Meurman 1982 (Λ as a sublattice of E₈³ containing 2E₈³,
    with a maximal 2-local subgroup that permutes the three factors and
    one extra automorphism generating Co₀; their §2 constructs Λ from any
@@ -75,10 +76,10 @@ roughly by structural distance from the present construction):
 ### [ConwaySloane1982] — Twenty-three constructions for the Leech lattice
 
 Conway and Sloane give 23 constructions of Λ, one for each of the 23
-Niemeier lattices (equivalently, one for each class of deep hole in
-the Leech lattice).  Each construction glues vectors according to
-the hole structure.  Among the 23 is a Turyn-style construction from
-three copies of E₈ corresponding to the 3E₈ Niemeier lattice; the later
+Niemeier lattices other than the Leech lattice (equivalently, one for each
+class of deep hole in the Leech lattice).  Each construction glues vectors
+according to the hole structure.  Among the 23 is a Turyn-style construction
+from three copies of E₈ corresponding to the 3E₈ Niemeier lattice; the later
 "triple of octonions / E₈³" approaches (Dixon 1995/2010, Wilson 2009)
 share its E₈³ setting.  Lepowsky and Meurman, from the same year, credit
 work of Tits with what amounts to their construction of Λ from E₈³ (see
@@ -238,9 +239,9 @@ comments, [Egan2014]).  Wilson's Λ = Λ(Ls̄, Ls) and σ(Λ) = Λ(2𝒪, p𝒪)
 two of them (paper Section 6, display (6.2)).  Parts 9–10 (part 10:
 1 December 2014) contain the Leech–Jordan material, and part 12
 (31 January 2016, by Tim Silverman) the integral octonions modulo 2.  The
-paper cites parts 9 and 11 for Egan's construction and its count and parts
-9–10 for the Jordan material (Section 6), and part 12 for Silverman's
-identification (Appendix A).  Links:
+paper cites parts 9 and 11 for Egan's construction and its count
+(Section 6), parts 9–10 for the Jordan material (Sections 1 and 6), and
+part 12 for Silverman's identification (Appendix A).  Links:
 https://golem.ph.utexas.edu/category/2014/11/integral_octonions_part_9.html,
 https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_10.html,
 https://golem.ph.utexas.edu/category/2014/12/integral_octonions_part_11.html,
@@ -335,7 +336,8 @@ known.
 
 ### [WilsonConway] — Conway's group and octonions
 
-Wilson's follow-on to Wilson 2009 describes Conway's group Co₀,
+Wilson's follow-on to Wilson 2009 (J. Group Theory 14 (2011), no. 1,
+1–8; doi:10.1515/jgt.2010.038) describes Conway's group Co₀,
 the double cover of Co₁, using right multiplications by 3×3 octonionic
 matrices.  This uses the octonion product to describe symmetries, not
 to define a closed algebra on Λ.
@@ -395,6 +397,10 @@ the original at prompt 326.
   analysis note `paper/reviews/2026-05-22_claude_opus_4_7_corradetti_analysis.md`
   is on v1.
 
+---
+
+## This project's paper and a personal communication cited in it
+
 ### [Koeplinger2026] — An order on the Leech lattice from a Z₃-symmetric triple-octonion product
 
 This project's own result, recorded here because the registry is exhaustive
@@ -419,10 +425,10 @@ art it builds on and is contrasted with is registered above.
   repository, and its content is not described here; requests for it go
   to its author.
 - **Year**: 2026
-- **Topics**: the ambient algebra (R²⁴, +, ⋆) of [Koeplinger2026]
+- **Topics**: not described here; cited at two facts (see Notes)
 - **Originality note**: private work in progress; no dispute known.
 - **Notes**: The paper (v8) cites it as "H. P. Petersson, personal research
-  draft (21 October 2026)", in addition to its scripts, at two facts: the
-  automorphism group Aut(R²⁴, ⋆) = G₂ × G₂ × S₃ of the ambient algebra
-  (Section 5.4), and the nonzero idempotents of (5.1), εᵢ, ω/3 and
-  εᵢ − ω/3 (Section 5.2).  Ledger claims 010 and 011.
+  draft (21 October 2026)", at two facts: the automorphism group
+  Aut(R²⁴, ⋆) = G₂ × G₂ × S₃ of the ambient algebra (Section 5.4), and the
+  nonzero idempotents of (5.1), εᵢ, ω/3 and εᵢ − ω/3 (Section 5.2).
+  Ledger claims 010 and 011.

@@ -1,6 +1,6 @@
 """EXACT test: do consecutive sigma-twists close on the Leech lattice?
 
-Created: 2026-05-22.  Updated: 2026-10-28.
+Created: 2026-05-22.  Updated: 2026-10-31.
 
 A lemma criterion is only *sufficient* (the condition-2 lemma
 L.pi(Ls_bar) <= pi(Ls_bar) is not necessary: the three terms of a pairwise
@@ -172,4 +172,4 @@ if __name__ == "__main__":
     print("=> a single sigma-twist vs. two consecutive sigma-twists:")
     print(f"   single twist (transposition): closes")
     print(f"   two consecutive twists  ->  identity / 3-cycle / (2,2):",
-          "closes" if (closes(ident) or n3 or n22) else "none close")
+          "some close" if (closes(ident) or n3 or n22) else "none close")

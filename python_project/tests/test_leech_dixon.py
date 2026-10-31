@@ -313,8 +313,9 @@ class TestType3VectorsDixon:
     Type-3: (P, ±e_aP, ±e_a(ℓ₀(e_cP))) and 2 cyclic perms,
             P ∈ A^odd, a,c ∈ {0,...,7}, ± signs independent.
 
-    Norm structure (2, 2, 4) per component.  The 3rd cyclic permutation
-    has structure (4, 2, 2), matching Wilson's type-3.
+    Norm structure (2, 2, 4) per component.  Its cyclic shift
+    (±e_a(ℓ₀(e_cP)), P, ±e_aP) has structure (4, 2, 2), matching Wilson's
+    type-3.
     Count: 240 × 8 × 8 × 2 × 2 × 3 = 184,320.
     Reference: [Dixon2010] Section 6, eq. (20).
     """

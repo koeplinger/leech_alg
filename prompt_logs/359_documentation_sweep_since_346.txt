@@ -1,0 +1,294 @@
+Prompt 359 -- documentation consistency sweep for the updates since the last sweep
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Make another documentation consistency sweep, to account
+for the updates since the last sweep.'
+(Ultracode on.)
+
+Context: the last sweep is that of prompts 346 to 349 (25 to 28 October
+2026; commit 62fac57).  Since then, prompts 350 to 358: Dixon's Leech
+construction (the slip in leech_dixon.py, the new verification script, the
+framing in the paper's Sections 1 and 6, a copy of Lambda); the Mahler
+correction; 593,400 in key claim 008; the subtitle "v8 (WIP)"; change-log
+hygiene; Sections 5.3 and 5.4 reworded, Section 5.6 reduced to the closure
+criterion and the new Appendix E; the citation of a personal research
+draft; 23 pages.  Commits 345b8ef and 0a4db30 hold prompts 350 to 356,
+commits eda78be and f967290 prompts 357 and 358.
+
+Rulings:
+ 1. Sweep the repository's documentation for consistency with its current
+    state, with the updates since the last sweep in focus.
+ 2. Method as at prompt 346 (Manifesto Section 14, DOCUMENT_GENRES.md):
+    read-only agents find and verify, the main thread decides and edits;
+    findings first, a dry run with its diffstat second, the edits third;
+    then a review of the applied edits.  paper/main.tex and the governance
+    documents are report only; prompt logs are immutable; released paper
+    versions and source documents are untouched; current-state documents
+    are corrected in place, with their Updated dates; the privacy rule of
+    prompt 358 holds for every text the sweep writes.
+
+Findings (read-only run wf_a4fadc49-c37, 38 agents: fifteen scanners by
+area and three by fact, each with an adversarial verifier, then a
+completeness critic and its verifier).  220 findings: 163 confirmed, 19
+corrected, 25 refuted, 13 parked.  Every finding and verdict was read in
+the main thread.  The main threads:
+ 1. Privacy: the registry entry [Petersson2026] (prompt 358) had a Topics
+    line naming a subject, and it stood, with [Koeplinger2026], under a
+    heading for thematically adjacent prior work; "in addition to its
+    scripts" was inexact at Section 5.4.  Nothing else in the repository
+    says more than the citation form, the status and the two facts.
+ 2. Section 5 restructure (prompt 357): stale pointers in two project
+    notes, a plan status block and ledger rows 016 and 017; the summaries
+    of Section 5.3 without "neither contains the other"; the git-ignored
+    local paper/main.aux predates the restructure.
+ 3. Section 5.4: the step that every automorphism of the order extends
+    linearly to R²⁴ (in the paper since prompt 357) is missing from four
+    record summaries and the scripts README; "two independent routes" is
+    overstated in four hubs (the two routes derive the component group,
+    the automorphism note's §4(c)); the C₆ generator is an automorphism of
+    (O, ·_σ), unqualified in four hubs; the standard-product stabilizer
+    orders have no source in three.
+ 4. Dixon: the X-product with X = ℓ₀ (Dixon's eq. (7)) unnamed in
+    octonions.py, two READMEs, CURRENT_STATE.md and key claim 001; key
+    claim 003 ("for all X", undefined Ξ^odd and Ξ₃, the test's scope for
+    two counts); key claim 006 (Dixon framing; L called the integral
+    octonions); a review of 16 April saying Dixon constructs Λ via an
+    XY-product; a registry sentence calling Dixon's Leech representation an
+    independent line of evidence; leech_dixon.py without its citation;
+    PARI/GP and three standard modules missing from the dependency notes.
+ 5. Counts: 593,412 in two reviews; Wilson 2009 as issue 7 in a review;
+    33 for the 34 bibliography entries of v8; "12,000,000+" and "12M+" for
+    the three trial-007 harnesses.  New: trial_007_fast.py and the first
+    worker of trial_007_exhaust.py draw with the same default seed in the
+    same way, so the same 250,000 pairs are tested twice (checked in the
+    code); about 11.75 million of the 12,000,000 pairs are distinct.
+ 6. Mahler: "1/2" as Mahler's bound in the review of the v5 sweep; a
+    garbled sentence in the expanded historical draft; the Mahler script's
+    sampled covering radius listed as checked.
+ 7. Older errors: the Petersson construction gives an Okubo algebra only
+    for an order-3 τ that fixes a quaternion subalgebra pointwise (two
+    verifiers, by exact computation; okubo.py, trial 005, the glossary);
+    trial_003's docstring on routing and Z₃; a wrong call in a dead branch
+    of consistency_checks.py; two printed overstatements
+    (verify_consecutive_twists_exact.py, trial_007_exhaust.py); the
+    Niemeier count in the registry; Kirmse's J₁ called an order; Dickson's
+    seven maximal orders without the eight basal units; a probe docstring
+    with Co₀ = Aut(Λ, +); Wilson and Dixon pronouns in records and
+    programs; smaller pointer and wording slips.
+ Decided in the main thread: "overlattice" stays the records' term (a
+ ⋆-closed overlattice of Λ is a larger order); the summaries of Section
+ 5.3 gain "neither contains the other".  Pronouns: Wilson and Dixon in
+ records and programs, as at prompt 354; for others only where a sentence
+ is edited for another reason.  Not applied: the 22-page count in the
+ status block of the consistency plan (the record of its execution); the
+ span plan's title (the plan as made); refuted findings, among them
+ Mahler's "as unnecessary" (Mahler's own words, p. 127).
+ Paper, governance and author items: see the report below.
+
+Dry run: a fresh clone of HEAD (f967290) with logs 359 and 360; 138
+edits applied to 62 files, each to a string that occurs exactly once;
+diffstat "62 files changed, 279 insertions(+), 213 deletions(-)"; linter
+clean; the edited programs compile.
+
+Edits: the 138 edits of the dry run, applied to the working tree (62
+files), each to a string that occurs exactly once; every edited
+current-state file carries "Updated: 2026-10-31".  The PDFs of
+paper/Baez-Egan_Leech_Verification_addendum_2026-05-24.tex and
+paper/historical_appendix_expanded.tex were rebuilt; the git-ignored local
+paper/main.aux, main.out and main.log were refreshed from a build of the
+current main.tex.
+
+Checks: tools/lint_docs.py clean; pytest 198 passed; the GAP suite 110
+passed; the edited programs compile; verify_consecutive_twists_exact.py
+prints the same counts as before (the identity does not close; 21 of 21
+transpositions, 35 of 70 3-cycles and 84 of 210 (2,2) doubles close) and
+"some close" for two consecutive twists.  Not run: the exhaustive branch
+of trial_007_exhaust.py (far too long; the edit is to a printed line, and
+the file compiles), and the corrected call in consistency_checks.py, which
+lies in a branch that never runs, as the product has no identity element
+(the review ran its check 6 to completion).
+
+Review of the applied edits (read-only run wf_3f2cdc91-308, 9 agents: four
+reviewers by area, each with an adversarial verifier, and a critic for
+missed siblings and privacy).  71 findings; none says an applied edit is
+false.  The 48 area findings: 30 confirmed, 5 corrected, 9 refuted, 4
+parked; the critic's 23 were checked in the main thread.  Applied, as 33
+further edits in 17 files:
+ - siblings the edits left behind: the order-6 generator in README.md as
+   an automorphism of the σ-twisted octonion product; "neither contains
+   the other" in key claim 008; the condition on τ in CURRENT_STATE.md and
+   the scripts README; "Min(Λ) closure" in the criterion for "ruled out";
+   the probe's candidates in the file map; the extension step in the
+   docstring of verify_aut_lambda_star.py; J₁ as a set, not an order, in
+   the printed verdict of verify_kirmse_1924.py; octonion_stabilisers.g in
+   the GAP registry entry;
+ - counts: the hub texts on trial 007 count tests ("12M+ tests of random
+   pairs", "random-pair tests"), and key claim 008 records the 250,000
+   pairs tested twice;
+ - older errors next to edited text: ledger row 010a gave conjugation by σ
+   as the reason for the standard-product orders 1344, 21 and 1344, while
+   it carries the stabilizer of X in Aut(O, ·_σ) onto that of σ(X) in
+   Aut(O, ·) (orders checked exactly by a verifier); key claim 003 said
+   Dixon proves eq. (5), which Dixon states without proof; key claim 006
+   gains "as a lattice" and "the laminated lattice Λ₁₆"; "Neither L³ nor
+   Λ + Zε₁ contains the other" now gives both reasons (e₀ ∉ L, and
+   2¹² > 4);
+ - two reviews: in the review of the v5 sweep this sweep had changed
+   Mahler's bound "1/2" to "15/16", but every text checked there said 1/2
+   in v5, so the sentence now names no number; the Mahler verification
+   "agrees with" Mahler's proved bound (its check is sampled);
+ - the addendum's displayed date, still "updated 28 October 2026" after
+   the stamp update; its PDF was rebuilt;
+ - line wrapping left by the edits (eight places, and the GAP entry
+   above), a doubled "Wilson's", a reason repeated in the docstring of
+   e8_dixon.py, and the place of a gloss in ledger row 014.
+ Not applied: the 9 refuted findings; ledger row 016's provenance (true as
+ it stands: the exact inner product −3/2 of log 357 already gives
+ ε₁ ∉ L³); the pointer to paper/main.aux in the index-one note (true for a
+ built paper, and reviews change only where wrong); "order J₁" in the
+ Coxeter verification and the Kirmse exposition (Kirmse's designation,
+ beside the proof that J₁ is not an order); the test docstring's "Dixon's
+ X-product rule" (its module defines the X-product with ℓ₀); the Authors
+ field of [Petersson2026] (with A1 below).  Parked: see P5, A3 and A8.
+ Item 1 of the findings was reworded at the critic's suggestion so that
+ it names no subject; log 360 is closed and keeps its wording.
+ Dry run of these fixes: a clone of HEAD with the working tree; "17 files
+ changed, 78 insertions(+), 67 deletions(-)"; linter clean.  Applied, the
+ 17 files are byte-identical to the dry run.  Then: linter clean; pytest
+ 198 passed; test_e8_dixon.py 30 passed; verify_kirmse_1924.py prints the
+ new verdict; the three edited programs parse; the rebuilt addendum PDF
+ prints "updated 31 October 2026", its text otherwise unchanged.
+
+Report (for the author; none of this was edited).
+Paper (report only):
+ P1. Section 6 (main.tex:1046): "23 constructions of Λ, one for each
+     Niemeier lattice"; there are 24 Niemeier lattices, the Leech lattice
+     among them.  Suggested: "one for each Niemeier lattice other than the
+     Leech lattice" (not "other than Λ": the paper's Λ is the √2-scaled
+     copy).
+ P2. Section 6 (944): "the ordinary octonion product" is the paper's only
+     "ordinary"; its term is "the standard octonion product" (Section 2.1),
+     which Dixon's table (3) is.  The v7-to-v8 changelog quotes the
+     sentence (:120).
+ P3. Appendix E (1487): "For every cycle type of S₇"; the table lists the
+     14 nonidentity types (total 5,039).  Suggested: "every nonidentity
+     cycle type".
+ P4. Appendix E (1523): the 3-cycle statement (of the two orientations of
+     each 3-subset, exactly one closes) has no script footnote;
+     verify_twist_characterization.py computes it (35 of 35, checked
+     exactly).  Suggested: cite it there.
+ P5. Appendix C (1352): "over 12,000,000 random pairs".  trial_007_fast.py
+     and the first worker of trial_007_exhaust.py draw the same 250,000
+     pairs, so there are 12,075,000 tests of random pairs but at most
+     11,823,189 distinct random pairs (about 12.34 million distinct pairs
+     with the first run's 518,400 exhaustive ones).  At prompt 284 the
+     author ruled "over 12 million" sufficient; the repeat was found
+     since.  Suggested: "in over 12,000,000 tests of random pairs".  The
+     records now count tests; the reviews of 23 May (:79) and 12 October
+     (SF7) and the v6-to-v7 changelog (:18) follow the ruling.
+ P6. Gendered pronouns in the paper: Wilson (928); Dickson, Kirmse and
+     Coxeter in Appendix B (1273-1309).  The records follow the rule of
+     prompts 334 and 354; does it apply to the paper's prose?
+ P7. The Section 6 footnote (945-947) calls [Dixon1995] "a closely related
+     octonionic description of Λ"; Dixon 2010, Section 6, says eq. (20) is
+     the representation of [Dixon1995] up to a scalar.  Optional.
+ P8. The footnote of Section 2.3 (293-297) opens two sentences with a bare
+     symbol, if the rule of prompt 357 is to apply there.
+ P9. Section 5.4 (824): the [Petersson2026] footnote is a bare citation,
+     unlike the one in Section 5.2; deliberate (prompt 358), no change.
+ P10. Forward references outside Section 1: 13, of which 11 point to
+     appendices and 2 into the main text (261, 637); the editorial
+     corollary allows one or two.  No change suggested; the corollary
+     could exempt pointers to appendices.
+ P11. The abstract does not say that the order is not maximal; an abstract
+     may leave it out.
+ P12. Appendix C (1352): "Closure of the twisted product was first
+     observed on ... pairs of minimal vectors"; the paper's twisted
+     product is ·_g on O (Definition 3.2, Section 5.6), and what closes on
+     Λ is the triple product ⋆.
+ P13. Section 7 (1092): "the order-6 octonion automorphism" (pointing to
+     Section 5.4, which makes it an automorphism of (O, ·_σ), as README.md
+     now says).  Optional.
+Governance documents (report only):
+ G1. DOCUMENT_GENRES.md:63: the subtitle's version mark ("D Month YYYY,
+     vN (WIP)", the mark going at release) is stated only in the linter
+     and the changelog.
+ G2. DOCUMENT_GENRES.md:94 and MANIFESTO.md Section 12 (:115): the rule of
+     prompts 351 and 352 (a changelog records only its own revision) is
+     not stated, and DOCUMENT_GENRES.md:84-86 reads the other way.
+ G3. DOCUMENT_GENRES.md:77: read literally, the History bullet forbids
+     what a changelog is about.  Suggested: "A changelog or a review may
+     state what the paper says in the versions it compares."
+ G4. DOCUMENT_GENRES.md:92: a plan's status block uses the current
+     numbering, its title and body keep theirs (prompt 357); not stated.
+ G5. DOCUMENT_GENRES.md:97: a review or note keeps the numbering of the
+     version it assessed; not stated.
+ G6. MANIFESTO.md:39: the rule of prompt 354 (high recall over high
+     precision; a cheap exact check settles a doubt; slips in the
+     project's tooling are fixed on the spot) is not stated.
+ G7. MANIFESTO.md:46: the rule of prompt 356 (the paper cites the script
+     of the key or initial discovery, proof or validation; independent
+     checks need not be cited) is not stated.
+ G8. MANIFESTO.md:52: how a private communication is cited (prompt 358)
+     is not stated.
+ G9. prompt_logs/README.md:31 and :40: "the prompt as submitted, unedited"
+     and "the prompt is the first content ..., with a date stamp" do not
+     hold for every log (abridged or paraphrased prompts in 025, 098, 101,
+     103 to 106, 108, 109, 111 and 233 to 236; log 358 withholds a path;
+     logs 070, 071, 072, 074 and 075 have no date; most logs open with a
+     header).
+ G10. prompt_logs/README.md:55: row 008's "17,232 shared" is the overlap
+     of the module before prompt 354; Dixon's shell as printed shares
+     49,488 vectors with Wilson's.  By the ruling of prompt 346 a row
+     summarizes its own log.
+ G11. editorial_standards.md:59: the two rules of prompt 357 (say in words
+     what a symbol denotes; numerical experiments with few takeaways go to
+     an appendix) are not stated.
+ G12. MANIFESTO.md:11 has a spaced dash aside.
+ G13. TRIAL_METHODOLOGY.md:34: "we test closure on the minimal shell of
+     Λ"; the trials test whether products of minimal vectors lie in Λ
+     (Remark 1.3: order-closure, not shell-closure).
+Author decisions:
+ A1. The name form in the citation of [Petersson2026]: "H. P. Petersson"
+     (as the paper writes it, after [Petersson2018]) or "H. Petersson" (as
+     written at prompt 358); the glossary's "H. Petersson
+     [Petersson1969]" (terminology.md:357) follows the answer.
+ A2. The presubmission review of v6 (2026-07-17, :200) calls the v6 Dixon
+     credits clean, which they were not (prompt 355).  Recommended: drop
+     Dixon from that sentence.
+ A3. Registry entries for software besides GAP and LOOPS: PARI/GP (check
+     3 of verify_dixon_leech_lattice.py), and GAP's bundled SmallGrp and
+     AtlasRep (aut_lambda_star.g, octonion_stabilisers.g).
+ A4. LICENSE.md: two spaced dash asides, and "Koeplinger" in its
+     recommended citation (probably deliberate ASCII); an edit needs a
+     date stamp the file lacks.
+ A5. The registry file prior_art_orders_on_leech.txt: its title and
+     Purpose line call it prior art, while its last section holds this
+     project's paper and a personal communication.
+ A6. The Appendix C part of held item 1 of prompt 346 can be closed:
+     since prompt 354 the Dixon module builds Dixon's shell, and its tests
+     check it exactly.
+ A7. The held item of prompt 346 on "every prompt ... end to end" gains
+     one exception: log 358 withholds a local file path and says so.  The
+     paper needs no change.
+ A8. The glossary entry "Triality" (terminology.md:413, from April 2026)
+     says the Principle of Local Triality "relates the three symmetric
+     composition algebras {para-O, Okubo_τ, Okubo_τ²}".  The sources at
+     hand state the principle for one symmetric composition algebra at a
+     time (its triality algebra projects isomorphically onto so(S, n):
+     Elduque, "Composition algebras", arXiv:1810.09979, Theorem 4.2), and a
+     catalogue summary of [Elduque2000_Triality] (MaRDI portal) speaks of
+     the automorphisms, derivations and orthogonal transformations of
+     such algebras; its Section 4 is not held, and the publisher's page
+     refused access.  Recommended, unless Section 4
+     says otherwise: "... the Principle of Local Triality (Elduque)
+     expresses triality through the orthogonal Lie algebra of an
+     8-dimensional symmetric composition algebra, such as para-O or the
+     Okubo algebras Okubo_τ and Okubo_τ² obtained from ...".
+ A9. okubo.from_octonions checks only that τ is an automorphism of order
+     3; a τ that fixes only a 2-dimensional subalgebra yields the
+     para-octonion algebra under the name OkuboAlgebra.  The docstring
+     states the condition; a guard would be a code change.
+
+Status: CLOSED.

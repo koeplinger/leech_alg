@@ -6,6 +6,8 @@ Created: 2026-04-07.  Updated: 2026-10-31.
 Dixon [Dixon2010] Section 6 characterizes the 196,560 minimal vectors of
 a Leech lattice in three explicit families built from the two E8
 representations A^odd and A^even, together with the base element ℓ₀.
+The module prints nothing.  The paper cites it, with e8_dixon.py, in
+Section 6 (`sec:related`), in the paragraph on Dixon (2010).
 
 Key definitions [Dixon2010 Sections 3 and 6]
 ---------------------------------------------

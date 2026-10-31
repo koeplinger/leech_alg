@@ -3,7 +3,10 @@ the sentence "We have likewise independently reproduced the full
 Baez--Egan verification chain") that no other script of the repository
 checks, in exact arithmetic.  The other two links have their own
 scripts: the lower bound 244,035,421 (verify_egan_lower_bound.py) and
-Egan's count 17,280 = 270 x 64 (egan_baez_count.py).
+Egan's count 17,280 = 270 x 64 (egan_baez_count.py).  The paper cites this
+script in that sentence, at the doubled-Jordan-product closure.
+
+Created: 2026-10-23.  Updated: 2026-10-31.
 
   (1) Egan's simple roots of E8 and the two sublattices built from them
       (Baez, "Integral octonions", part 9, Egan's text, with its explicit

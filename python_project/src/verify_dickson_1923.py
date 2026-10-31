@@ -1,6 +1,6 @@
 """Verification of Dickson 1923, Section 19, "The Integers of Cayley's Algebra".
 
-Created: 2026-05-20.  Updated: 2026-10-28.
+Created: 2026-05-20.  Updated: 2026-10-31.
 
 Source: L. E. Dickson, "A new simple theory of hypercomplex integers,"
 J. Math. Pures Appl. (9) 2 (1923), 281-326; Section 19, pp. 319-324.
@@ -9,7 +9,8 @@ This script uses only Dickson's own data: his Cayley-Dickson product (his
 eq. 24) and his order (30) with basis (29).  It checks:
   - the product is a composition algebra; basal units close to +/- units;
   - Dickson's order O_D (system (30)) IS closed: a genuine maximal order;
-  - there are exactly 7 maximal orders for his product (not 3);
+  - exactly 7 maximal orders for Dickson's product contain the eight basal
+    units (not 3);
   - Dickson's THEOREM XV ("the only maximal systems having C,U,N are (30)
     and its two (i j k)-cyclic images") undercounts: 3 stated, 7 actual;
   - the 3 of Theorem XV are exactly the maximal orders containing the Hurwitz

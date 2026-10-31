@@ -1,5 +1,7 @@
 # Detailed bibliography reference check (paper v4, 24 May 2026)
 
+Created: 2026-05-24.  Updated: 2026-10-31.
+
 **Date:** 2026-05-24
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 163 — detailed bibliography reference check.
@@ -81,7 +83,7 @@ These are choices the paper has made consistently. None is a discrepancy; they a
 ### II.1 Issue numbers omitted from journal articles
 
 Several entries omit issue numbers where they exist:
-- **Wilson2009**: bib gives J. Algebra **322** (2009), 2186-2190; full citation has issue 7 (per project record).
+- **Wilson2009**: bib gives J. Algebra **322** (2009), 2186-2190; full citation has issue 6 (per project record).
 - **MarraniCorradettiZucconi2025**: bib gives J. Phys. A: Math. Theor. **58** (2025), 075202; the journal record adds issue 7 (per web).
 - **Hall2019_Moufang**: bib gives Memoirs AMS vol. 260, no. 1252, which is the *issue*-equivalent for Memoirs; correct as written.
 - **Baez2002**: bib gives Bull. AMS **39** (2002), 145-205; journal record adds No. 2 (per web).

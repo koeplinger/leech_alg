@@ -1,8 +1,8 @@
 """Forensic reconstruction of Kirmse's count of EIGHT maximal orders (1924).
 
-Created: 2026-05-20.  Updated: 2026-10-28.
+Created: 2026-05-20.  Updated: 2026-10-31.
 
-Uses only Kirmse's own multiplication table (1), p.64, and his order J_1, p.70.
+Uses only Kirmse's own multiplication table (1), p.64, and the set J_1, p.70.
 No later author enters.  The paper cites this script in Appendix B
 (`app:history`), in the footnote of its opening paragraph; the paragraph on
 Kirmse there summarizes the result below.

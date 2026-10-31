@@ -1,6 +1,6 @@
 # Primary-source verification — Mahler (1942)
 
-Created: 2026-05-20.  Updated: 2026-10-28.
+Created: 2026-05-20.  Updated: 2026-10-31.
 
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
@@ -37,7 +37,7 @@ Dickson"** — citing Dickson 1923, p. 319 ff. — as a ring $J$, and proves:
    and **2160** of norm 2 — exactly as Mahler states.
 3. **Theorem 1.** The covering radius² of $J$ is **$\tfrac12$** (an explicit
    deep hole at depth² $\tfrac12$ was exhibited; 6000 samples never exceed
-   it). This confirms both Mahler's *proved* bound ($\tfrac12\le\tfrac{15}{16}$)
+   it). This agrees with both Mahler's *proved* bound ($\tfrac12\le\tfrac{15}{16}$)
    and his *stated* exact constant $\tfrac12$. Since the covering radius² is
    $<1$, the Euclidean argument of Theorem 2 goes through.
 4. **Theorem 2 counterexample.** Mahler's witness on p. 133 — that
@@ -92,7 +92,8 @@ first of the four to state the count *seven* correctly and gives the precise
 form of the correction of Kirmse's construction.
 
 Facts vs. interpretation: the product identity, $J=O_D$ and its closure, the
-counts 240/2160, the covering radius² $=\tfrac12$, and the Theorem-2
+counts 240/2160, the covering radius² $=\tfrac12$ (by exact-arithmetic
+sampling, with an exact deep hole), and the Theorem-2
 counterexample are **verified facts**; the diagnosis of $A_8$ as a misprint
 follows necessarily — the printed value is inconsistent with Mahler's own
 criterion (14) and with $J$ being a ring.

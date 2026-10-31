@@ -28,7 +28,7 @@ Three sub-claims were examined:
           such a product.  Dixon [Dixon2010 Section 7] explicitly poses it
           as an open question: "No idea yet."
 
---- EVIDENCE FOR CLAIM 1a (WILSON — FULLY ESTABLISHED) ---
+--- EVIDENCE FOR CLAIM 1a (WILSON) ---
 
 Wilson's Λ is verified to satisfy all four defining properties of the Leech
 lattice [Conway–Sloane Chapter 12]:
@@ -89,8 +89,11 @@ Section 6].
 
 What both constructions establish:
   Λ₂₄ is a rank-24 lattice embedded inside L³ (in Dixon's construction,
-  inside L̄³), where L = E8 = integral octonions.  Because L carries the octonion product, the question "does some
-  octonion-derived product make Λ an order?" is well-posed and natural.
+  inside L̄³), where L = E8 is a nonunital order and, as a lattice, a
+  √2-scaled copy of a maximal order of integral octonions
+  (paper Section 2.2).  Because L carries the octonion product, the
+  question "does some octonion-derived product make Λ an order?" is
+  well-posed and natural.
 
 What neither construction establishes:
   No product on Λ₂₄ is defined by either Wilson or Dixon.
@@ -99,8 +102,9 @@ What neither construction establishes:
   No multiplication is proposed.  Key claim 004: "Wilson does NOT define a
   'multiplication that closes on the Leech lattice.'"
 
-  Dixon [Dixon2010]: defines XY-products on E8 (8-dimensional), and asks in
-  Section 7 whether Λ₂₄ can be given its own algebraic structure.  Dixon's answer:
+  Dixon [Dixon2010]: obtains E8 from an X-product and the laminated
+  lattice Λ₁₆ from XY-products, and asks in Section 7 whether Λ₂₄ can be
+  given its own algebraic structure.  Dixon's answer:
   "No idea yet."
 
   This is the central question of the research program.  Claim 008

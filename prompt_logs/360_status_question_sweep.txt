@@ -1,0 +1,33 @@
+Prompt 360 -- status question during the documentation sweep
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'How's it going?'
+
+Context: prompt 359 is open: the read-only sweep (workflow run
+wf_a4fadc49-c37: fifteen area scanners, three gap scanners by fact, a
+verifier for each, a completeness critic and its verifier) is running.
+Prompts 357 and 358 are closed and committed (eda78be, f967290).
+
+Rulings: none; a status report.
+
+Response: 37 of the sweep's 38 agents are done; the verifier of the
+completeness critic is running.  The area and gap scanners report 200
+findings; their verifiers confirmed 149, corrected 19, refuted 20 and
+parked 12.  The 168 kept findings fall in 60 files; merged where they
+start from the same text, 143 remain.  164 of the 200 scanner findings
+are documentation fixes; the rest are reports on the paper (9) and the
+governance documents (15) and questions for the author (12).  The critic
+adds 20 findings, under verification.  Most in number: the reference
+registry, CURRENT_STATE.md, the ledger, the glossary and the v7-to-v8
+change log.  First in weight: the registry entry [Petersson2026] added at
+prompt 358 says more than ruling 2 of prompt 358 allows, since its Topics
+line names a subject; and it sits under the heading "Thematically
+adjacent — order on E₈, not on Λ", which is wrong for it and for
+[Koeplinger2026].  Nine scanners flagged the Topics line independently,
+two the heading.  The entry is in commit f967290, and main is level with
+origin/main.  Next, as ruled at prompt 359: review every verdict, the
+dry run with its diffstat, the edits, the checks, a review of the applied
+edits, the hand-over.
+
+Status: CLOSED.

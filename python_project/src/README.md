@@ -10,12 +10,12 @@ The 198-test suite in `../tests/` covers all of them except `okubo_samples.py`, 
 
 | Module | Purpose |
 |---|---|
-| `octonions.py` | Octonion algebra: standard product and Dixon X-product |
+| `octonions.py` | Octonion algebra: standard product and Dixon's X-product with X = ℓ₀ (eq. (7)) |
 | `e8_wilson.py` | Wilson's E8 lattice L (240 roots, membership test, structural element s) |
-| `e8_dixon.py` | Dixon's E8 constructions (Ξ^even, A^odd) |
+| `e8_dixon.py` | Dixon's E8 constructions (Ξ^even, A^odd); cited, with `leech_dixon.py`, in the paper's §6 (`sec:related`) |
 | `leech_wilson.py` | Wilson's Leech lattice Λ (196,560 minimal vectors, membership test) |
-| `leech_dixon.py` | Dixon's Leech lattice construction (the 196,560 minimal vectors of eqs. (20)–(22); the componentwise conjugates of Wilson's) |
-| `okubo.py` | Okubo algebra: Petersson construction via an order-3 automorphism τ, and the construction on traceless 3×3 Hermitian matrices |
+| `leech_dixon.py` | Dixon's Leech lattice construction (the 196,560 minimal vectors of eqs. (20)–(22); the componentwise conjugates of Wilson's); cited, with `e8_dixon.py`, in the paper's §6 (`sec:related`) |
+| `okubo.py` | Okubo algebra: Petersson construction via an order-3 automorphism τ that fixes a quaternion subalgebra pointwise, and the construction on traceless 3×3 Hermitian matrices |
 | `okubo_samples.py` | Instructive examples of Petersson τ constructions |
 
 ## Trial files
@@ -77,7 +77,7 @@ Each of the four primary papers re-derived from the original, in exact arithmeti
 | File | Purpose |
 |---|---|
 | `verify_dickson_1923.py` | Dickson 1923, §19: his 8-element basis and the closure of all 64 basis products; his Theorem XV undercount (three maximal orders; the true count is seven). |
-| `verify_kirmse_1924.py` | Kirmse 1924: his multiplication table (1), p. 64, and his order J₁, p. 70, which is not closed. |
+| `verify_kirmse_1924.py` | Kirmse 1924: the multiplication table (1), p. 64, and the set J₁, p. 70, which is not closed. |
 | `verify_kirmse_1924_forensic.py` | Reconstruction of Kirmse's count of eight, using only his own data: the necessary form (thirty candidates) and the unit-stability narrowing. |
 | `verify_mahler_1942.py` | Mahler 1942, on ideals in the Cayley–Dickson algebra: his ring J (criterion (14), and basis (10) with the misprinted A₈ corrected) is Dickson's maximal order O_D, with 240 and 2160 elements of norm 1 and 2; the covering radius² ½ of J, by exact-arithmetic sampling (Mahler's Theorem 1 proves ≤ 15/16; ½ is stated there without proof); his counterexample of p. 133. |
 | `verify_coxeter_1946.py` | Coxeter 1946, §4, "Kirmse's mistake": Bruck's transposition, checked against Kirmse's own data. |
@@ -107,13 +107,13 @@ Each of the four primary papers re-derived from the original, in exact arithmeti
 | File | Purpose |
 |---|---|
 | `verify_star_algebra_structure.py` | Computations behind the ambient group Aut(R²⁴, ⋆) = G₂ × G₂ × S₃, compact, of dimension 28, which the companion note proves (Theorem 8, `thm:ambient`). D and T are two-sided ideals that annihilate each other (Ann(D) = T, Ann(T) = D); their simplicity, proved in the companion note (Lemma 4, `lem:simple`) and not recomputed here, is what forces g(D) = D for every automorphism (a dimension count on ideals of T; an annihilator argument alone would be circular, as the module docstring explains); the C₃-Fourier normal form over Q(ζ₃); h_{A,B} = P⊗A + Q⊗B and the block permutations; dim Der = 28; the ⋆-intrinsic trace form (signature (3,21), **not** the Leech form, so the trace-form route to Co₀ fails). |
-| `verify_aut_lambda_star.py` | **Aut(Λ, +, ⋆): exact order 36, structure C₆ × S₃.** Center C₆, derived subgroup C₃, −I₂₄ ∉ it, element orders 1(×1), 2(×7), 3(×8), 6(×20): computed by `gap_project/aut_lambda_star.g` from the generators this script writes. Λ∩D = {(a,a,a) : a ∈ Ls} and Λ∩T = {(p,q,r) ∈ (Ls̄)³, sum zero}, with glue (Z/3)⁸ of order 6,561; complete enumeration of the octonion-automorphism stabilizers of L, Ls, Ls̄ (orders 1344, 168, 12096); the surviving pairs (A,B) by two independent methods; all 36 elements re-verified against Λ and ⋆. Containment in Co₀ is **proved**, not assumed: every octonion automorphism preserves the positive-definite norm and D ⊥ T, so every ⋆-automorphism of R²⁴ is orthogonal (confirmed elementwise on the Leech Gram matrix). Writes the GAP generators. |
+| `verify_aut_lambda_star.py` | **Aut(Λ, +, ⋆): exact order 36, structure C₆ × S₃.** Center C₆, derived subgroup C₃, −I₂₄ ∉ it, element orders 1(×1), 2(×7), 3(×8), 6(×20): computed by `gap_project/aut_lambda_star.g` from the generators this script writes. Λ∩D = {(a,a,a) : a ∈ Ls} and Λ∩T = {(p,q,r) ∈ (Ls̄)³, sum zero}, with glue (Z/3)⁸ of order 6,561; complete enumeration of the stabilizers of L, Ls, Ls̄ in Aut(O, ·_σ) (orders 1344, 168, 12096); the surviving pairs (A,B) by two independent methods; all 36 elements re-verified against Λ and ⋆. Containment in Co₀ is **proved**, not assumed: every automorphism of the order extends linearly to R²⁴ (Λ spans R²⁴, and ⋆ is bilinear); every octonion automorphism preserves the positive-definite norm and D ⊥ T, so every ⋆-automorphism of R²⁴ is orthogonal (confirmed elementwise on the Leech Gram matrix). Writes the GAP generators. |
 | `verify_aut_octonion_crosscheck.py` | Independent cross-checks of those three stabilizer enumerations: re-run from a different generating triple, and an assumption-free brute force over all 645,120 signed permutations for Stab(L). Writes 8×8 GAP generators. |
 | `probe_aut_lambda_star.py` | Tests four candidate maps (the block 3-cycle, the block transposition 1↔2, −I₂₄, σ in each block) against Λ and ⋆ on all 576 basis-pair products: the two block permutations lie in Aut(Λ, +, ⋆), −I₂₄ preserves Λ but not ⋆, and σ in each block does not preserve Λ (a probe of individual maps; the complete answer is `verify_aut_lambda_star.py`). |
 
 The group-theoretic half of the automorphism calculation (`Size`, `StructureDescription`) is done independently in GAP: see [`../../gap_project/README.md`](../../gap_project/README.md). The derivation is written up in `paper/automorphism_group_2026-07-12.tex`.
 
-**Completeness**: the order-36 claim and the Co₀ containment are established by two independent routes in the companion note (`paper/automorphism_group_2026-07-12.pdf`): Route 1 via the classification of Aut of the complexification of (T, ⋆) (nonenumerative), Route 2 entirely finite and machine-checkable, so nothing load-bearing is left open. The machine-verified lower bound C₆ × S₃ ≤ Aut and the strictness witness are independent of both.
+**Completeness**: the order-36 claim and the Co₀ containment rest on the ambient group of the companion note (`paper/automorphism_group_2026-07-12.pdf`, §4), whose component-group step (§4(c)) has two independent derivations: Route 1 via the classification of Aut of the complexification of (T, ⋆) (nonenumerative), Route 2 entirely finite and machine-checkable, so nothing load-bearing is left open. The machine-verified lower bound C₆ × S₃ ≤ Aut and the strictness witness are independent of both.
 
 ## Guidelines
 

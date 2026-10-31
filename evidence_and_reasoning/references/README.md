@@ -1,6 +1,6 @@
 # References
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 This is the central reference registry for the project. Every work cited anywhere in this repository must have an entry here.
 
@@ -32,7 +32,7 @@ Each topic has its own file:
 | [leech_lattice_octonionic_constructions.txt](leech_lattice_octonionic_constructions.txt) | Leech lattice, octonions, E8 lattice — octonionic constructions |
 | [background_octonions.txt](background_octonions.txt) | Octonion algebra background: standard properties, history, survey |
 | [okubo_algebra.txt](okubo_algebra.txt) | Okubo algebra: constructions, properties, triality, applications |
-| [prior_art_orders_on_leech.txt](prior_art_orders_on_leech.txt) | Prior art on multiplicative orders on the Leech lattice |
+| [prior_art_orders_on_leech.txt](prior_art_orders_on_leech.txt) | Prior art on multiplicative orders on the Leech lattice; thematically adjacent work; this project's paper and a personal communication cited in it |
 | [triality_and_algebraic_physics.txt](triality_and_algebraic_physics.txt) | Soft references: triality in physics, division-algebra approaches to the Standard Model |
 | [computer_algebra_systems.txt](computer_algebra_systems.txt) | GAP and LOOPS — the systems used in the GAP verification suite |
 | [recent_experimental_work.txt](recent_experimental_work.txt) | Recent computer-assisted experimental work in adjacent areas (cited in v7's Section 6; not cited in v8) |

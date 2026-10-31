@@ -20,8 +20,8 @@ Properties verified
  7.  All Ξ^even elements have squared norm 1
  8.  All Ξ₂ elements satisfy the defining condition for some ordering:
        e_a(e_b(e_c*e_d)) = ±e_0
- 9.  Exactly 14 valid 4-element subsets arising from Ξ₂
-     [Dixon2010 Section 2: 7 Type-A sets and 7 Type-B sets]
+ 9.  Exactly 14 valid 4-element subsets arising from Ξ₂, 7 of Type A and
+     7 of Type B ([Dixon2010 Section 2] states the count |Ξ₂| = 224)
 10.  Ξ^even spans R^8 (rank 8)
 11.  2⟨α,β⟩ ∈ Z for all α,β ∈ Ξ^even (root-system integrality condition)
 12.  Root system reflection closure: σ_α(β) = β − 2⟨α,β⟩α ∈ ±Ξ^even
@@ -30,7 +30,7 @@ Properties verified
        (e_a * X) * (X̄ * e_b) = ±e_c  for all X ∈ Ξ^even, all 64 basis pairs
 14.  A₁ count: 112
 15.  A₃ count: 128
-16.  A^odd total: 240
+16.  A^odd total: 240, no duplicates
 17.  All A^odd elements have squared norm 2
 18.  A₁ = Wilson's type-1 roots (same set)
 19.  A₃ ∩ Wilson's type-2 = ∅

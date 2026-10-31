@@ -1,6 +1,6 @@
 # Documentation consistency sweep — post-v5 (2026-06-07)
 
-Created: 2026-06-07.  Updated: 2026-10-28.
+Created: 2026-06-07.  Updated: 2026-10-31.
 
 Reviewer: Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 Scope: post-v5 cross-document consistency audit across five clusters — changelogs, reference files, frozen artifacts, READMEs and key claims, and live-docs cross-check.
@@ -96,7 +96,7 @@ The v5 release itself (date 7 June 2026, page count 19, frozen snapshots, change
 - **`paper/hermes_mod2_structure_supplement.tex`, Abstract (line 50), Setting Section 1 (lines 87-88), and recurring throughout** — Section A.1 title is quoted as "The mod-2-quotient reading of Tables A.2 and A.3", but in `main.tex` (both the v4 frozen snapshot `main_2026-05-25.tex` and the current v5 `main.tex`) the appendix tables are not letter-prefixed: they render as Tables 1, 2, 3. The actual rendered subsection title is "The mod-2-quotient reading of Tables 2 and 3". This was already inconsistent at the artifact's freeze date (24 May 2026), so it is not a v4→v5 drift; but it remains a factually wrong cross-reference now.
   *Fix:* Replace every occurrence of "Tables A.2 and A.3" with "Tables 2 and 3" (lines 50, 87-88, 201, and any other instances). Alternatively, change `main.tex` to reset the table counter inside Appendix A — but the simpler fix is to update the supplement to match the actual numbering.
 
-**Cluster assessment:** Across the seven frozen artifacts, two issues meet the bar for flagging. All v4 self-references are honest to artifact dates and should not be touched. All cited verification scripts exist at the paths given. All `\cite` keys resolve inside each artifact's own bibliography. The `companion.tex`, `historical_appendix.tex`, `historical_appendix_expanded.tex`, `kirmse_1924_exposition.tex`, and `update_brief_2026-05-25_v4.tex` artifacts pass: their factual claims (Dickson's three vs seven, Kirmse's eight vs seven, the `J_1` closure witness, the 21 transpositions / 7 orders count, Mahler's Euclidean bound 1/2 vs Dickson's 5/4, and the Coxeter-Bruck attribution) all agree with the current `main.tex` Appendix B and Section 5 wording. The lemma numbering (4.3, 4.4) referenced in the `hermes_mod2` supplement and the Baez-Egan addendum still matches v5, and Section A.1 / `app:mod2quotient` still exists with the same label.
+**Cluster assessment:** Across the seven frozen artifacts, two issues meet the bar for flagging. All v4 self-references are honest to artifact dates and should not be touched. All cited verification scripts exist at the paths given. All `\cite` keys resolve inside each artifact's own bibliography. The `companion.tex`, `historical_appendix.tex`, `historical_appendix_expanded.tex`, `kirmse_1924_exposition.tex`, and `update_brief_2026-05-25_v4.tex` artifacts pass: their factual claims (Dickson's three vs seven, Kirmse's eight vs seven, the `J_1` closure witness, the 21 transpositions / 7 orders count, Mahler's Euclidean bound vs Dickson's 5/4, and the Coxeter-Bruck attribution) all agree with the current `main.tex` Appendix B and Section 5 wording. The lemma numbering (4.3, 4.4) referenced in the `hermes_mod2` supplement and the Baez-Egan addendum still matches v5, and Section A.1 / `app:mod2quotient` still exists with the same label.
 
 ---
 

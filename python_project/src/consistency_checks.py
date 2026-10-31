@@ -1,7 +1,7 @@
 """
 consistency_checks.py — Consistency checks of the construction.
 
-Created: 2026-04-11.  Updated: 2026-10-28.
+Created: 2026-04-11.  Updated: 2026-10-31.
 
 Runs checks 1–3 and 5–10; check 6 (algebraic properties, sampled) is an
 investigation, reported as PASS once it completes.
@@ -697,11 +697,7 @@ def check_6():
     id_norm = float(np.dot(e_candidate, e_candidate))
     print(f"      N(e) = {id_norm} — {'NOT in Min(Λ)' if abs(id_norm - 8.0) > 0.01 else 'in Min(Λ)'}.")
     if has_identity:
-        in_leech = check_leech_membership(
-            swp.element(e_candidate[:8]),
-            swp.element(e_candidate[8:16]),
-            swp.element(e_candidate[16:24]),
-        )
+        in_leech = check_leech_membership(e_candidate)['in_leech']
         print(f"      e ∈ Λ? {'Yes' if in_leech else 'No'} — the order is {'unital' if in_leech else 'non-unital'}.")
 
     # 6b. Norm multiplicativity: N(u·v) = N(u)·N(v)?

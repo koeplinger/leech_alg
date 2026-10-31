@@ -4,7 +4,7 @@
 ##  Definition 3.3, `def:triple`) and the main theorem (Theorem 1.1,
 ##  `thm:main`: closure of Lambda under *_sigma).
 ##
-##  Created: 2026-04-28.  Updated: 2026-10-28.
+##  Created: 2026-04-28.  Updated: 2026-10-31.
 ##
 ##  This is the paper's main result, verified here on a representative set of
 ##  Leech minimal vectors:
@@ -16,7 +16,7 @@
 ##  closure on a generating set of Lambda over Z is sufficient.  The 196,560
 ##  minimal vectors generate Lambda; this file spot-checks the products of
 ##  all 720 type-1 vectors with six right operands, and type-2 / type-3
-##  sample grids.  (The 12M+ random-pair tests are in
+##  sample grids.  (The 12,000,000 random-pair tests are in
 ##  python_project/src/trial_007_{scaled_test,fast,exhaust}.py; here each
 ##  product is checked exactly against Wilson's three conditions.)
 ##

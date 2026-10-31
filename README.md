@@ -73,9 +73,9 @@ exhibits the fit of this octonion product with Wilson's representation.
   [python_project/src/symbolic_proof_checks.py](python_project/src/symbolic_proof_checks.py),
   Lemmas 4.2 to 4.4 in `verify_structural_proof.py`, and all four in
   [gap_project/tests/test_lemmas.g](gap_project/tests/test_lemmas.g).
-- **Computational verification** on 12M+ random pairs of minimal vectors
-  with zero failures, plus tests from first principles on every foundation
-  (octonion properties, Wilson's construction).  198 tests pass.
+- **Computational verification** in 12M+ tests of random pairs of minimal
+  vectors with zero failures, plus tests from first principles on every
+  foundation (octonion properties, Wilson's construction).  198 tests pass.
 - **Independent GAP / LOOPS re-derivation** of the same verification tests
   ([gap_project/](gap_project/), 110 checks; uses the LOOPS package to
   cross-verify the octonion multiplication as a nonassociative Moufang
@@ -86,9 +86,10 @@ exhibits the fit of this octonion product with Wilson's representation.
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
   the order is not maximal (Section 5.3: L³ and Λ + Zε₁ are ⋆-closed
-  overlattices, of index 2¹² and 4); the span index of the products depends
-  on the twist (Appendix E: 2¹⁶ for σ, proved by hand in Proposition E.1,
-  2¹⁰ for the even closing permutations, 1 for a reflection twist); Λ
+  overlattices, of index 2¹² and 4, and neither contains the other); the
+  span index of the products depends on the twist (Appendix E: 2¹⁶ for σ,
+  proved by hand in Proposition E.1, 2¹⁰ for the even closing
+  permutations, 1 for a reflection twist); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
   finite of order 36, with Aut(Λ, +, ⋆) ⊊ Co₀
@@ -115,8 +116,8 @@ These are the questions the paper leaves open (Sections 7 and 8), with further
 detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
-  and whether the order-6 octonion automorphism generating the C₆ has an
-  intrinsic description.
+  and whether the order-6 automorphism of the σ-twisted octonion product
+  that generates the C₆ has an intrinsic description.
 - A reason for the closure pattern of the census of Appendix E.  All
   5,040 permutations of S₇ have been enumerated exactly (1,764 of the
   5,039 nonidentity permutations close), and Proposition 5.3 decides

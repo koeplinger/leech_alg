@@ -1,6 +1,6 @@
 # Primary-source verification — Kirmse (1924)
 
-Created: 2026-05-20.  Updated: 2026-10-28.
+Created: 2026-05-20.  Updated: 2026-10-31.
 
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
@@ -105,7 +105,7 @@ claim "$J_1$ is an order."
   seven genuine maximal orders.)
 - Biographical: the article's by-line reads "Johannes Kirmse **in
   Hannover**", and it is dated "Hannover, am 15. April 1924" — not Apolda.
-  `terminology.md` (following Petersson) says Apolda; minor, worth a check.
+  Petersson (2018) says Apolda; `terminology.md` gives the by-line.
 - The correction itself (who fixed it, and the precise form of the fix) is
   in **Coxeter (1946)**
   (`2026-05-22_claude_opus_4_7_coxeter_1946_verification.md`); this

@@ -1,8 +1,9 @@
 """Probe of Aut(Lambda, +, star): test specific candidate
-automorphisms in the Conway group Co_0 = Aut(Lambda, +) for whether they
-preserve the Z_3-symmetric triple-octonion product star.
+isometries of R^24 for whether they lie in the Conway group Co_0, the
+isometry group of Lambda, and preserve the Z_3-symmetric triple-octonion
+product star.
 
-Created: 2026-05-23.  Updated: 2026-10-28.
+Created: 2026-05-23.  Updated: 2026-10-31.
 
 Each candidate g is tested on all 24 * 24 = 576 basis-pair products: g is
 in Aut(Lambda, +, star) iff g(Lambda) = Lambda and g(B_i star B_j) =

@@ -1,7 +1,7 @@
-"""Exact-arithmetic survey: closure of pi-twisted product on Lambda for
-all pure n-cycles pi in S_7, n in {3,4,5,6,7}.
+"""Exact-arithmetic survey: closure of the pi-twisted triple
+product on Lambda for all pure n-cycles pi in S_7, n in {3,4,5,6,7}.
 
-Created: 2026-05-24.  Updated: 2026-10-28.
+Created: 2026-05-24.  Updated: 2026-10-31.
 
 Re-uses the 24-vector Z-basis of Lambda and the closes() test from
 verify_consecutive_twists_exact.py (each call: 24*24 basis-pair products
