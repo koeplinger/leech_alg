@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Documentation linter.  Enforces DOCUMENT_GENRES.md mechanically.
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-10-31.
 
 No LLM, no network, no dependencies.  Runs in a few seconds.
 
@@ -348,7 +348,9 @@ def check_index() -> None:
 # check 6: a changed document carries its dates, and Updated is the day of the change
 # ----------------------------------------------------------------------------
 
-SUBTITLE = re.compile(r"\\subtitle\{(\d{1,2}\s+\w+\s+20\d\d)\s*\(v\d+\)\}")
+# "D Month YYYY (vN)" for a released version, "D Month YYYY, vN (WIP)" while
+# the working source is in progress.
+SUBTITLE = re.compile(r"\\subtitle\{(\d{1,2}\s+\w+\s+20\d\d)(?:\s*\(v\d+\)|,\s*v\d+\s*\(WIP\))\}")
 
 
 def mtime_date(rel: str) -> dt.date:
@@ -365,7 +367,7 @@ def check_dates(changed: dict[str, str]) -> None:
         if rel == PAPER_SOURCE:
             m = SUBTITLE.search(read(rel))
             if not m:
-                err(f"{rel}: no \\subtitle{{D Month YYYY (vN)}} date found.")
+                err(f"{rel}: no \\subtitle{{D Month YYYY (vN)}} or \\subtitle{{D Month YYYY, vN (WIP)}} date found.")
             elif dt.datetime.strptime(m.group(1), "%d %B %Y").date() != day:
                 err(f"{rel}: subtitle date {m.group(1)!r} is not the day of the last change ({day}).\n"
                     f"    Set the paper's date in the same edit as the change.")

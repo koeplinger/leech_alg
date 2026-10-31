@@ -1,8 +1,8 @@
 # Tests
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
-Test suite for the Python project.  197 tests verify every shared tool used by the trials and by `symbolic_proof_checks.py`.
+Test suite for the Python project.  198 tests verify every shared tool used by the trials and by `symbolic_proof_checks.py`.
 
 Run the full suite from `python_project/`:
 
@@ -18,9 +18,9 @@ Scope: this suite covers the **foundations** (octonion algebra, the E8 and Leech
 |---|---|
 | `test_octonions.py` | Octonion algebra: structure constants, Fano-plane rule, composition (norm-multiplicativity), Dixon X-product |
 | `test_e8_wilson.py` | Wilson's E8 lattice L: 240-root enumeration, membership test, structural element s |
-| `test_e8_dixon.py` | Dixon's E8 constructions Ξ^even and A^odd: enumeration, lattice properties, integrality |
+| `test_e8_dixon.py` | Dixon's E8 constructions Ξ^even and A^odd: enumeration, lattice properties, integrality; closure of Ξ^even under the X-product with X = ℓ₀⁻¹ |
 | `test_leech_wilson.py` | Wilson's Leech lattice Λ: 196,560 minimal vectors, three-condition membership test, type-1/2/3 decomposition |
-| `test_leech_dixon.py` | Dixon's Leech lattice: 196,560 minimal vectors, comparison with Wilson's embedding (17,232 shared vectors) |
+| `test_leech_dixon.py` | Dixon's Leech lattice: 196,560 minimal vectors; their componentwise conjugates are exactly Wilson's, family by family; sampled inner products in {0, ±2, ±4, ±8} |
 | `test_okubo.py` | Okubo algebra, Petersson and Hermitian-matrix constructions: composition, symmetric composition, no identity, division, idempotents, derivation algebra of dimension 8 |
 
 ## Categories

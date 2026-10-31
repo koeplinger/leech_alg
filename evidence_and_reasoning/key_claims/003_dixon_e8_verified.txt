@@ -1,7 +1,7 @@
 Claim number: 003
 Title: Dixon's two 240-element octonionic constructions are valid E8 minimal-vector shells
 Status: ESTABLISHED
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 Date: 2026-04-07
 
 --- STATEMENT ---
@@ -24,6 +24,9 @@ shell for E8:
   - Reflection closure: σ_α(β) = β − 2⟨α,β⟩α ∈ Ξ^even for all α,β ∈ Ξ^even.
   - Dixon's X-product property eq. (5): for all X and all basis pairs (e_a, e_b),
     the X-product (e_a*X)*(X^{-1}*e_b) is a ±basis element.
+  - Dixon's X-Product Integral Octonion Result, eqs. (8) and (9), for
+    X = ℓ₀⁻¹: Ξ^even is closed under A ∘ B = (A ℓ₀⁻¹)(ℓ₀ B), and not under
+    the ordinary product or the X-product with X = ℓ₀.
 
 These properties are verified computationally in python_project/tests/test_e8_dixon.py.
 
@@ -97,6 +100,21 @@ Verified computationally:
 
 Total: 2 × 240 × 64 = 30,720 combinations verified.
 
+--- CLOSURE OF Ξ^even UNDER THE X-PRODUCT WITH X = ℓ₀⁻¹ ---
+
+Reference: [Dixon2010 Section 3, eqs. (7) to (9)].
+
+With ℓ₀ = ½(e₀ + e₁ + ... + e₇) and ℓ₀⁻¹ = ¼(e₀ − e₁ − ... − e₇), Dixon's
+eq. (8) is A ∘ B = (A ℓ₀⁻¹)(ℓ₀ B), an instance of eq. (9) (X ∈ Ξ^odd,
+product ∘_{X†}; ℓ₀/√2 ∈ Ξ₃, and the X-product does not change when X is
+scaled).  Verified, exactly and in the test:
+  - all 240 × 240 = 57,600 products of Ξ^even lie in Ξ^even, so the span of
+    Ξ^even is closed under this product;
+  - Dixon's example e₁ ∘ e₂ = ½(e₃ − e₅ + e₆ + e₇);
+  - the ordinary product takes 43,008 of the 57,600 pairs out of Ξ^even, and
+    the X-product with X = ℓ₀ (Dixon's eq. (7), which takes units to units,
+    with the table e_a ∘ e_{a+2} = e_{a+3}) takes 53,760 out.
+
 --- REFERENCES ---
 
 [Dixon2010]  G.M. Dixon, "Integral Octonions, Octonion XY-Product, and the
@@ -109,5 +127,5 @@ Total: 2 × 240 × 64 = 30,720 combinations verified.
 --- COMPUTATIONAL EVIDENCE ---
 
 Test file:  python_project/tests/test_e8_dixon.py
-Test count: 29 tests across 13 classes
-Test result: 29 passed, 0 failed.
+Test count: 30 tests across 14 classes
+Test result: 30 passed, 0 failed.

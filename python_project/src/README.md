@@ -1,12 +1,12 @@
 # Source Code
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 This folder contains the Python source code for the project: lattice constructions, octonion / Okubo algebra implementations, trial experiments, and the exact-arithmetic checks behind the paper's symbolic proof.  References to the paper are to its working source, `paper/main.tex`, unless a row names the released v7.
 
 ## Shared tools (foundations)
 
-The 197-test suite in `../tests/` covers all of them except `okubo_samples.py`, a script of worked examples.  The trials build on `octonions.py`, `e8_wilson.py` and `leech_wilson.py`; trials 005 and 006 also use `okubo.py`.
+The 198-test suite in `../tests/` covers all of them except `okubo_samples.py`, a script of worked examples.  The trials build on `octonions.py`, `e8_wilson.py` and `leech_wilson.py`; trials 005 and 006 also use `okubo.py`.
 
 | Module | Purpose |
 |---|---|
@@ -14,7 +14,7 @@ The 197-test suite in `../tests/` covers all of them except `okubo_samples.py`, 
 | `e8_wilson.py` | Wilson's E8 lattice L (240 roots, membership test, structural element s) |
 | `e8_dixon.py` | Dixon's E8 constructions (Ξ^even, A^odd) |
 | `leech_wilson.py` | Wilson's Leech lattice Λ (196,560 minimal vectors, membership test) |
-| `leech_dixon.py` | Dixon's Leech lattice construction |
+| `leech_dixon.py` | Dixon's Leech lattice construction (the 196,560 minimal vectors of eqs. (20)–(22); the componentwise conjugates of Wilson's) |
 | `okubo.py` | Okubo algebra: Petersson construction via an order-3 automorphism τ, and the construction on traceless 3×3 Hermitian matrices |
 | `okubo_samples.py` | Instructive examples of Petersson τ constructions |
 
@@ -79,7 +79,7 @@ Each of the four primary papers re-derived from the original, in exact arithmeti
 | `verify_dickson_1923.py` | Dickson 1923, §19: his 8-element basis and the closure of all 64 basis products; his Theorem XV undercount (three maximal orders; the true count is seven). |
 | `verify_kirmse_1924.py` | Kirmse 1924: his multiplication table (1), p. 64, and his order J₁, p. 70, which is not closed. |
 | `verify_kirmse_1924_forensic.py` | Reconstruction of Kirmse's count of eight, using only his own data: the necessary form (thirty candidates) and the unit-stability narrowing. |
-| `verify_mahler_1942.py` | Mahler 1942, on ideals in the Cayley–Dickson algebra: his ring J (criterion (14), and basis (10) with the misprinted A₈ corrected) is Dickson's maximal order O_D, with 240 and 2160 elements of norm 1 and 2; the covering radius² ½ of J, by exact-arithmetic sampling; his counterexample of p. 133. |
+| `verify_mahler_1942.py` | Mahler 1942, on ideals in the Cayley–Dickson algebra: his ring J (criterion (14), and basis (10) with the misprinted A₈ corrected) is Dickson's maximal order O_D, with 240 and 2160 elements of norm 1 and 2; the covering radius² ½ of J, by exact-arithmetic sampling (Mahler's Theorem 1 proves ≤ 15/16; ½ is stated there without proof); his counterexample of p. 133. |
 | `verify_coxeter_1946.py` | Coxeter 1946, §4, "Kirmse's mistake": Bruck's transposition, checked against Kirmse's own data. |
 
 ### Prior art
@@ -89,6 +89,7 @@ Each of the four primary papers re-derived from the original, in exact arithmeti
 | `egan_baez_count.py` | Independent check of Egan's count of 17,280 Jordan rings (17,280 = 270 × 64) in the Baez–Egan construction: 270 Lagrangians of (L/2L, q), 64 complements each.  The Gram matrix is computed in floating point with integrality assertions; the counting over F₂ is exact.  Cited in the paper's §6 (`sec:related`), at the reproduction chain. |
 | `verify_egan_lower_bound.py` | Reproduces Egan's lower bound 244,035,421 on Leech copies in (E₈)³ as the orbit-stabilizer ceiling ⌈3!·\|W(E₈)\|³ / \|Co₀\|⌉ (paper §6). Egan's derivation, not Egan's enumeration. |
 | `verify_egan_construction.py` | The four links of the Baez–Egan chain that the two scripts above do not cover: Egan's simple roots of E₈ and the two sublattices built from them (Baez, part 9: sums, dot products, Gram matrices); the lemma that they meet in twice that E₈ lattice; the Leech-lattice theorem for that pair (index 2¹², half the Gram matrix even of determinant 1, none of the 179,280 norm-4 vectors of L₀³ in it); the closure of ℤ³ ⊕ L_L under 2(xy+yx), and its failure under xy+yx, for L_L = aΛ ⊂ 𝒪³ at the standard scale. Exact; about ten seconds. Cited in the paper's §6, at the reproduction chain. |
+| `verify_dixon_leech_lattice.py` | Dixon's Leech construction (`leech_dixon.py`, Dixon 2010, eqs. (20)–(22)) gives the minimal vectors of a Leech lattice: the 196,560 vectors are distinct of norm 8; their componentwise conjugates are exactly Wilson's minimal vectors, family by family; and, independently of Wilson, with PARI/GP, their span rescaled to norm 4 is even unimodular of rank 24 with no vector of norm 2 and exactly 196,560 of norm 4.  Exact; about ten seconds; check 3 needs `gp`. |
 
 ### The structure of (R²⁴, +, ⋆): paper Section 5
 

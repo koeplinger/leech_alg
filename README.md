@@ -1,6 +1,6 @@
 # An Order on the Leech Lattice
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 The Leech lattice Λ admits an **order**: it is closed under a bilinear product
 on R²⁴, a Z₃-symmetric triple-octonion product assembled from nine
@@ -75,7 +75,7 @@ exhibits the fit of this octonion product with Wilson's representation.
   [gap_project/tests/test_lemmas.g](gap_project/tests/test_lemmas.g).
 - **Computational verification** on 12M+ random pairs of minimal vectors
   with zero failures, plus tests from first principles on every foundation
-  (octonion properties, Wilson's construction).  197 tests pass.
+  (octonion properties, Wilson's construction).  198 tests pass.
 - **Independent GAP / LOOPS re-derivation** of the same verification tests
   ([gap_project/](gap_project/), 110 checks; uses the LOOPS package to
   cross-verify the octonion multiplication as a nonassociative Moufang

@@ -1,7 +1,7 @@
 """
 test_e8_dixon.py — Verification of Dixon's E8 lattice constructions.
 
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 
 Dixon [Dixon2010] defines two families of 240-element sets inside the octonion
 algebra, each forming the minimal-vector shell of an E8 lattice representation:
@@ -37,6 +37,10 @@ Properties verified
 20.  A₃ ∪ Wilson's type-2 = all 256 sign patterns at scale ½
 21.  X-product property [Dixon2010 eq. (5)] for A^odd (norm 2, X^{-1} = X̄/2):
        (e_a * X) * ((X̄/2) * e_b) = ±e_c  for all X ∈ A^odd, all 64 basis pairs
+22.  Ξ^even is closed under the X-product with X = ℓ₀⁻¹ [Dixon2010 eqs. (8),
+     (9)]: (A ℓ₀⁻¹)(ℓ₀ B) ∈ Ξ^even for all 240 × 240 pairs, with Dixon's
+     example e₁ ∘ e₂ = ½(e₃ − e₅ + e₆ + e₇); neither the ordinary product nor
+     the X-product with X = ℓ₀ closes Ξ^even
 
 References
 ----------
@@ -565,3 +569,51 @@ class TestAOddXProduct:
                          f"  X = {x.coords}\n"
                          f"  a = {a}, b = {b}\n"
                          f"  result = {result.coords}")
+
+
+# ---------------------------------------------------------------------------
+# 22: Closure of Ξ^even under the X-product with X = ℓ₀⁻¹
+# ---------------------------------------------------------------------------
+
+class TestXiEvenClosureUnderXProduct:
+    """
+    Dixon's X-Product Integral Octonion Result [Dixon2010 eqs. (8), (9)]:
+    Ξ^even, which is not closed under the ordinary product, is closed under
+    the X-product A ∘ B = (A X)(X⁻¹ B) with X = ℓ₀⁻¹ = ¼(e₀ − e₁ − ... − e₇),
+    where ℓ₀ = ½(e₀ + e₁ + ... + e₇).  The X-product with X = ℓ₀ (Dixon's
+    eq. (7)) takes units to units but does not close Ξ^even.
+    Reference: [Dixon2010 Section 3, eqs. (7) to (9)].
+    """
+
+    def test_xi_even_closed_under_xproduct_l0_inverse(self, xi_even):
+        """
+        (A ℓ₀⁻¹)(ℓ₀ B) ∈ Ξ^even for all 240 × 240 pairs A, B ∈ Ξ^even, and
+        e₁ ∘ e₂ = ½(e₃ − e₅ + e₆ + e₇) as printed.  The ordinary product
+        and the X-product with X = ℓ₀ take some pairs out of Ξ^even.
+        """
+        alg = STANDARD_ALGEBRA
+        l0 = alg.element(0.5 * np.ones(8))
+        l0_inv = alg.element(np.array([0.25] + [-0.25] * 7))
+        keys = {tuple(np.rint(2 * v.coords).astype(int)) for v in xi_even}
+
+        def in_xi_even(v):
+            c2 = 2 * v.coords
+            return (np.allclose(c2, np.rint(c2), atol=1e-9)
+                    and tuple(np.rint(c2).astype(int)) in keys)
+
+        def outside(left, right):
+            # number of pairs with left(A) * right(B) outside Ξ^even
+            lefts = [left(A) for A in xi_even]
+            rights = [right(B) for B in xi_even]
+            return sum(not in_xi_even(p * q) for p in lefts for q in rights)
+
+        assert outside(lambda A: A * l0_inv, lambda B: l0 * B) == 0, \
+            "Ξ^even is not closed under the X-product with X = ℓ₀⁻¹"
+        assert outside(lambda A: A, lambda B: B) > 0, \
+            "Ξ^even is unexpectedly closed under the ordinary product"
+        assert outside(lambda A: A * l0, lambda B: l0_inv * B) > 0, \
+            "Ξ^even is unexpectedly closed under the X-product with X = ℓ₀"
+        e1, e2 = alg.basis_element(1), alg.basis_element(2)
+        example = (e1 * l0_inv) * (l0 * e2)
+        assert np.allclose(example.coords, 0.5 * np.array([0, 0, 0, 1, 0, -1, 1, 1])), \
+            f"e₁ ∘ e₂ = {example.coords}, expected ½(e₃ − e₅ + e₆ + e₇)"

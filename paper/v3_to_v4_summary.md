@@ -1,6 +1,6 @@
 # v3 → v4 changes (top-level summary)
 
-Created: 2026-05-25.  Updated: 2026-10-28.
+Created: 2026-05-25.  Updated: 2026-10-31.
 
 **v3** — frozen 29 April 2026, 12 pages. Source preserved at [paper/main_2026-04-29.tex](main_2026-04-29.tex).
 
@@ -18,7 +18,7 @@ The integer-coefficient tables that certify Lemmas 4.3 and 4.4 now have an expli
 - $V := \sigma(L\bar s)/2L$ is a **two-sided ideal** of $(L/2L, \bar\mu)$ (a left ideal by Lemma 4.3 mod 2L; a right ideal by direct verification, A.4).
 - $W := \sigma(Ls)/2L$ is a **subalgebra** of $(L/2L, \bar\mu)$ (Lemma 4.4 mod 2L).
 
-Under the natural plus-type quadratic form $q(v + 2L) := N(v)/2 \pmod 2$ on $L/2L$, both V and W are **maximal totally isotropic subspaces (Lagrangians)**, and $L/2L = V \oplus W$ is a **Witt decomposition into a complementary pair of Lagrangians** — a polarization of the orthogonal $\mathbb{F}_2$-space. The orthogonal space L/2L with this plus-type form is classical. The 270 sublattices of L isometric to √2 L, each meeting 64 of the others in 2L (270 × 64 = 17,280 pairs), are counted in the Baez series (part 11 and Egan's comments there, 2014). Lepowsky and Meurman (1982) and, independently, Tim Silverman (part 12 of the series, 2016) identify these sublattices with the preimages of the Lagrangians. v4 credits this picture to Baez/Egan; what v4 adds is the descended product $\bar\mu$ and the identification of V and W as ideal and subalgebra of $(L/2L, \bar\mu)$.
+Under the natural plus-type quadratic form $q(v + 2L) := N(v)/2 \pmod 2$ on $L/2L$, both V and W are **maximal totally isotropic subspaces (Lagrangians)**, and $L/2L = V \oplus W$ is a **Witt decomposition into a complementary pair of Lagrangians** — a polarization of the orthogonal $\mathbb{F}_2$-space. The lattice-level picture of L/2L with this plus-type form and the 270 × 64 = 17,280 enumeration of complementary Lagrangian pairs is already in Baez/Egan (2014); what v4 adds is the descended product $\bar\mu$ and the identification of V and W as ideal and subalgebra of $(L/2L, \bar\mu)$.
 
 §7 open question 1 is reframed as a **research program**: which polarizations of $L/2L$ lift to closed bilinear products on $\Lambda$ itself.
 
@@ -44,7 +44,7 @@ Empirically, every quartic-passing sample also satisfies the cube identity (veri
 ### A.4 Section A.1 closing — *Polarization* and *Structural reframing* paragraphs
 
 The two closing paragraphs of Section A.1 record:
-- **V is also a right ideal**, not only a left ideal (the right-ideal direction is not formally implied by the left-ideal direction since $\bar\mu$ is noncommutative; footnote explains why).
+- **V is also a right ideal**, not only a left ideal (the right-ideal direction is not formally implied by the left-ideal direction since $\bar\mu$ is noncommutative in the L-basis; footnote explains why).
 - The Lagrangian/Witt picture (V and W both totally isotropic).
 - The research-program reframing of §7's open question 1.
 

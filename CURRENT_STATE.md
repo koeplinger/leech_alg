@@ -1,6 +1,6 @@
 # Current State of the Research
 
-Created: 2026-04-09.  Updated: 2026-10-28.
+Created: 2026-04-09.  Updated: 2026-10-31.
 
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
@@ -395,7 +395,7 @@ against the Leech lattice (see below).
 
 ### Test suite
 
-197 tests verify the foundations.  Run with:
+198 tests verify the foundations.  Run with:
 ```
 cd python_project && python3 -m pytest tests/ -v
 ```
@@ -626,7 +626,7 @@ the trial, and prints detailed results.
 2. **The paper.**  v7, dated 19 July 2026, is the last released version,
    `paper/main_2026-07-19.tex` (24 pages), published on ResearchGate:
    doi:10.13140/RG.2.2.22093.19686.  The working source `paper/main.tex`
-   is the v8 draft (22 pages, dated 24 October 2026).
+   is the v8 draft (22 pages, dated 31 October 2026, marked "v8 (WIP)").
    The draft contains abstract (standalone, with
    keywords and MSC 2020 codes; it names the closure criterion),
    preliminaries, construction, symbolic proof, algebraic properties
@@ -818,11 +818,11 @@ leech_alg/
 │   │   ├── verify_*.py            # Further verifications (span and the twist span-index census,
 │   │   │                          #   the seven maximal orders and Wilson's sublattices, mod 2,
 │   │   │                          #   historical sources, consecutive twists, the §5.1 witnesses,
-│   │   │                          #   Egan's construction; sampled: the Appendix D identities and norms)
+│   │   │                          #   Egan's and Dixon's Leech constructions; sampled: the Appendix D identities and norms)
 │   │   ├── egan_baez_count.py     # Egan's count 17,280 = 270 × 64 (paper §6)
 │   │   ├── probe_aut_lambda_star.py  # Candidate Co₀ elements tested against ⋆ (a probe)
 │   │   └── consistency_checks.py  # Consistency checks of the construction (checks 1-3, 5-10)
-│   └── tests/                     # 197 tests verifying foundations
+│   └── tests/                     # 198 tests verifying foundations
 │
 ├── gap_project/                   # Independent GAP / LOOPS re-derivation
 │   ├── aut_lambda_star*.g         # Automorphism group, second pass

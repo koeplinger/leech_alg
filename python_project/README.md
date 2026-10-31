@@ -1,6 +1,6 @@
 # Python Project
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 Self-contained Python project for the computational work of this repository: lattice constructions, octonion / Okubo algebras, trial experiments testing candidate orders on the Leech lattice Λ, exact-arithmetic verification of the symbolic-proof lemmas and of the algebraic structure of the resulting order (ideals, idempotents, square-zero elements, automorphism group), and the foundation test suite.
 
@@ -33,7 +33,7 @@ From this directory:
 python3 -m pytest tests/ -v
 ```
 
-The 197-test suite verifies every foundation (octonion algebra, Wilson's E8 and Leech constructions, Dixon's E8 and Leech constructions, Okubo algebra) before any trial relies on it.
+The 198-test suite verifies every foundation (octonion algebra, Wilson's E8 and Leech constructions, Dixon's E8 and Leech constructions, Okubo algebra) before any trial relies on it.
 
 ## Running individual scripts
 

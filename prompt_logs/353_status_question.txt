@@ -1,0 +1,29 @@
+Prompt 353 -- status question
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'How's it going?'
+
+Context: prompt 350 is open: the Mahler correction and the "v8 (WIP)"
+mark are applied (paper rebuilt, linter clean); the Dixon investigation
+plan waits for the read-only scouting run wf_11a9519a-64c (transcription
+of Dixon 2010, related sources, a map of leech_dixon.py, a comparison and
+a critic).  Prompts 351 and 352 (change log hygiene) are closed.
+
+Rulings: none; a status report.
+
+Response: four of the five scouting notes are written (transcription of
+Dixon 2010, related sources, module map, comparison); the critic is
+running.  Read so far, nothing computed: (1) leech_dixon.py differs from
+the printed eq. (20) in one place only, the third component of the
+largest family: the module has (e_a l0)(e_c P), the preprint
+e_a(l0(e_c P)) = (e_a l0 e_a)(e_b P); (2) by reading, each step of
+Dixon's Section 6 derivation from Wilson's family holds, so (20) to (22)
+as printed would be the componentwise conjugates of Wilson's three
+families; (3) the 2005 preprint (Wilson's reference [12]) is recovered
+from the Internet Archive; its third family is the formula Wilson
+corrected; (4) Section 6 of the preprint uses neither the X-product nor
+the XY-product, which bears on the paper's description of Dixon (2010).
+Next: the plan, its review, the hand-over.
+
+Status: CLOSED.

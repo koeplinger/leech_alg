@@ -1,7 +1,7 @@
 Claim number: 008
 Title: The Z₃-symmetric triple-octonion product is an order on the Leech lattice Λ
 Status: ESTABLISHED (symbolic proof + independent computational verification)
-Created: 2026-04-12.  Updated: 2026-10-28.
+Created: 2026-04-12.  Updated: 2026-10-31.
 
 --- RELATION TO CLAIM 007 ---
 
@@ -95,13 +95,15 @@ arithmetic.
    lemmas.
 
 2. Random-sample verification on Min(Λ):
-   - trial_007_triple_octonion_swap.py      593,412 pairs, 0 failures
+   - trial_007_triple_octonion_swap.py      593,400 pairs, 0 failures
    - trial_007_scaled_test.py             4,000,000 pairs, 0 failures
    - trial_007_fast.py                    4,000,000 pairs, 0 failures
    - trial_007_exhaust.py                 4,000,000 pairs, 0 failures
-   Total: 12,593,412 random minimal-vector pairs tested; 0 failures.
-   trial_007_triple_octonion_swap.py is not in the repository, so its
-   593,412 pairs cannot be rerun; the trial-007 harness in the repository,
+   Total: 12,593,400 minimal-vector pairs tested, all random except the
+   518,400 type1×type1 pairs of the first run, which are all of them;
+   0 failures (prompt 025 and trial_007_results.md give the first run's
+   593,400).  trial_007_triple_octonion_swap.py is not in the repository,
+   so its 593,400 pairs cannot be rerun; the trial-007 harness in the repository,
    python_project/src/trial_007_kirmse_twist.py, tests 900 pairs per
    transposition.  The other three scripts are in python_project/src/.
 

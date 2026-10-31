@@ -1,7 +1,7 @@
 Topic: Prior art — multiplicative structures / orders on the Leech lattice
 =============================================================================
 
-Created: 2026-04-11.  Updated: 2026-10-28.
+Created: 2026-04-11.  Updated: 2026-10-31.
 
 Literature search conducted: 2026-04-11, extended 2026-04-14
 Purpose: Identify any prior work establishing or ruling out an order (or
@@ -42,10 +42,11 @@ roughly by structural distance from the present construction):
    discussion.
 
 2. **Dixon (1995, 2005, 2010)**: Proposes octonionic descriptions of Λ
-   using variants of the octonion product (XY-product in the 2010
-   preprint, earlier versions in the 2005 preprint and the 1995 arXiv
-   preprints), but does not establish closure of Λ under any such
-   product.
+   in O³ (in the 2010 preprint written with the ordinary octonion
+   product and derived from Wilson's; earlier versions in the 2005
+   preprint and the 1995 arXiv preprints) and obtains the integral
+   octonions from octonion X- and XY-products, but does not establish
+   closure of Λ under any product.
 
 3. **Wilson (2009)**: Characterizes Λ as a sublattice of L³ using
    octonionic conditions, but does not define or test a multiplicative
@@ -197,16 +198,18 @@ sublattice characterization only.
 
 ### [Dixon2010] — Integral Octonions, Octonion XY-Product, and the Leech Lattice
 
-Dixon's 2010 preprint (arXiv:1011.2541) constructs Λ using the
-octonion XY-product
+Dixon's 2010 preprint (arXiv:1011.2541) obtains the integral octonions
+from the octonion XY-product
 
     A ∘_{XY} B  =  (A X)(Y† B),
 
 where X, Y ∈ O are chosen so that Y X† is a unit octonion (the
 identity of the new multiplication).  The special case Y† = X⁻¹ gives
 the X-product A ∘_X B = (A X)(X⁻¹ B).  Dixon uses the X-product with
-X = ℓ₀ = ½(1 + e₁ + … + e₇) to obtain E₈, and general XY-products for
-higher laminated lattices including Λ.  Each XY-product is an
+X = ℓ₀⁻¹, where ℓ₀ = ½(1 + e₁ + … + e₇), to obtain E₈, and XY-products
+for the laminated lattice Λ₁₆.  For Λ itself, Dixon writes the minimal
+vectors in O³ with the ordinary octonion product, rewriting Wilson's
+(the componentwise conjugates of Wilson's, key claim 005).  Each XY-product is an
 alternative octonion multiplication on R⁸ (isomorphic to the
 standard one).  Dixon does not test or claim closure of Λ under the
 XY-product or any other bilinear product.  The human researcher of this

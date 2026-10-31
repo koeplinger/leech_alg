@@ -1,7 +1,7 @@
 """
 e8_dixon.py — Dixon's E8 lattice constructions.
 
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 
 Dixon [Dixon2010] defines two families of 240-element sets inside the octonion
 algebra, each forming the minimal-vector shell of an E8 lattice representation.
@@ -23,7 +23,7 @@ A₃ = {(∑_{a=0}^{7} ±e_a)/2 : even # of +'s}  128 elements  (differ from Wil
 A^odd = A₁ ∪ A₃
 
 Dixon defines Ξ₁ and Ξ₃ identically but with irrational normalizations 1/√2 and 1/√8.
-In Section 6 of [Dixon2010] he introduces A₁ and A₃ (the rational-coefficient equivalents
+In Section 6 of [Dixon2010] Dixon introduces A₁ and A₃ (the rational-coefficient equivalents
 used in the Leech lattice construction).  Only A₁, A₃ (rational) are implemented here
 since they live in the same vector space as Ξ^even.
 

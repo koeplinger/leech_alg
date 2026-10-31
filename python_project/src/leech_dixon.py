@@ -1,18 +1,20 @@
 """
 leech_dixon.py — Dixon's octonionic Leech lattice construction.
 
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 
 Dixon [Dixon2010] Section 6 characterizes the 196,560 minimal vectors of
 the Leech lattice in three explicit families built from the two E8
 representations A^odd and A^even, together with the base element ℓ₀.
 
-Key definitions [Dixon2010 Section 6]
---------------------------------------
-  ℓ₀ = ½(e₀+e₁+...+e₇)                  N(ℓ₀) = 2  [eq. (6)]
+Key definitions [Dixon2010 Sections 3 and 6]
+---------------------------------------------
+  ℓ₀ = ½(e₀+e₁+...+e₇)                  N(ℓ₀) = 2  [Section 3, eq. (6)]
   A^odd  = A₁ ∪ A₃   (240 norm-2 elements)
   A^even = Ξ^even     (240 norm-1 elements)
   e_a    = octonion basis element, a ∈ {0,...,7}
+All products are the octonion product of Dixon's table (3),
+e_a e_{a+1} = e_{a+3}, which is STANDARD_ALGEBRA.
 
 The three families are generated as follows (all three cyclic permutations
 of each triple are included):
@@ -28,25 +30,31 @@ of each triple are included):
     Count: 240 × 8 × 2 × 3 = 11,520.
 
   Type 3 [eq. (20)]:
-    (P, ±e_aP, ±(e_aℓ₀)(e_cP)),  P ∈ A^odd, a,c ∈ {0,...,7}, ± independent
-    N_std = N(P) + N(e_aP) + N((e_aℓ₀)(e_cP))
+    (P, ±e_aP, ±e_a(ℓ₀(e_cP))),  P ∈ A^odd, a,c ∈ {0,...,7}, ± independent
+    N_std = N(P) + N(e_aP) + N(e_a(ℓ₀(e_cP)))
           = 2 + N(e_a)·N(P) + N(e_a)·N(ℓ₀)·N(e_c)·N(P)
           = 2 + 2 + 4 = 8.
     Count: 240 × 8 × 8 × 2 × 2 × 3 = 184,320.
+    Dixon prints the third component also as (e_aℓ₀e_a)(e_bP), with e_b
+    depending on e_a, e_c and P; both forms give the same set of vectors.
+    The product nesting matters: (e_aℓ₀)(e_cP) is in general a different
+    octonion.
 
   Total: 720 + 11,520 + 184,320 = 196,560.
 
-Relation to Wilson's type-3 vectors [Wilson2009 Section 3]
-----------------------------------------------------------
-Wilson's type-3 formula ((λs)j, λk, (λj)k) has component norms (4, 2, 2).
-Dixon's (P, ±e_aP, ±(e_aℓ₀)(e_cP)) has component norms (2, 2, 4); its
-cyclic permutation (±(e_aℓ₀)(e_cP), P, ±e_aP) has (4, 2, 2), matching
-Wilson's.
+Dixon writes "we include all permutations"; the three cyclic shifts used
+here already give a set closed under all six orderings of the components.
 
-Wilson's type-3 uses s = ½(−e₀+e₁+...+e₇) in the first component; Dixon
-uses ℓ₀ = ½(e₀+...+e₇) in the third, which that cyclic permutation moves
-to the first.  Both have norm 2, but they are different elements (s has one
-minus sign; ℓ₀ is the all-positive half-integer element).
+Relation to Wilson's construction [Wilson2009 Section 3]
+--------------------------------------------------------
+Dixon derives eq. (20) from Wilson's largest family ((λs)j, λk, (λj)k),
+written in Dixon's notation, by conjugating each component, shifting the
+components cyclically and replacing P by e_cP [Dixon2010 Section 6].  The
+196,560 vectors built here are exactly the componentwise conjugates
+(x̄, ȳ, z̄) of Wilson's 196,560 minimal vectors (leech_wilson.py), so they
+are the minimal vectors of a copy of the Leech lattice, the image of
+Wilson's Λ under componentwise conjugation (test_leech_dixon.py;
+verify_dixon_leech_lattice.py, which also checks the lattice directly).
 
 Wilson's bracketed note on Dixon ([Wilson2009] Section 5, p. 2189) concerns
 the formula of Dixon's 2005 preprint [Dixon2005], not the 2010 construction
@@ -60,12 +68,14 @@ Dixon's A^odd = A₁ ∪ A₃, where A₃ has an EVEN number of minus signs in t
 half-integer representation.  Wilson's E8 roots = A₁ ∪ Wilson-type-2, where
 the Wilson type-2 roots have an ODD number of minus signs.  The two sets of
 128 half-integer elements are disjoint (they partition all 256 sign patterns).
+Conjugation changes the sign of seven coordinates and so maps the one set
+onto the other: the conjugates of A^odd are exactly Wilson's E8 roots.
 
 As a consequence, Dixon's type-1 vectors (2P, 0, 0) for P ∈ A₃ are NOT in
 Wilson's lattice Λ (they require 2P ∈ Ls̄ ∩ Ls = 2L, that is, P ∈ L,
 but P is a half-integer vector with an even coordinate sum, so P ∉ L; in fact
-2P lies in Ls̄ but not in Ls).  See test_leech_dixon.py for the
-computational confirmation of this finding.
+2P lies in Ls̄ but not in Ls); their conjugates are.  See test_leech_dixon.py
+for the computational confirmation.
 
 Integral octonion lattice interpretation
 -----------------------------------------
@@ -102,7 +112,7 @@ Dixon's base element ℓ₀ = ½(e₀+e₁+...+e₇).
 
 N(ℓ₀) = 8 × (½)² = 2.  This is the all-positive element of A₃ (EVEN number
 of minus signs = 0).  Dixon uses ℓ₀ to construct the third component of the
-type-3 minimal vectors.  Reference: [Dixon2010] Section 6, eq. (6).
+type-3 minimal vectors.  Reference: [Dixon2010] Section 3, eq. (6).
 """
 
 # Precomputed at module load time, so that the generator functions stay O(n)
@@ -112,9 +122,6 @@ _a_even: List[Octonion] = dixon_xi_even()  # 240 norm-1 elements (Ξ^even)
 
 # Octonion basis elements e_0,...,e_7.
 _BASIS: List[Octonion] = [STANDARD_ALGEBRA.basis_element(a) for a in range(8)]
-
-# Precomputed e_a × ℓ₀ for each basis element a (used in type-3 third component).
-_ea_l0: List[Octonion] = [ea * ELLO_0 for ea in _BASIS]
 
 
 # ---------------------------------------------------------------------------
@@ -179,42 +186,38 @@ def dixon_leech_type3() -> List[Tuple[np.ndarray, np.ndarray, np.ndarray]]:
     Return the 184,320 type-3 minimal vectors of Dixon's Leech construction.
 
     Formula [Dixon2010 eq. (20)]:
-        (P, ±e_aP, ±(e_aℓ₀)(e_cP)) and its 2 cyclic shifts,
+        (P, ±e_aP, ±e_a(ℓ₀(e_cP))) and its 2 cyclic shifts,
     where P ∈ A^odd, a,c ∈ {0,...,7}, and the two ± signs are independent.
 
-    Norm: N_std = N(P) + N(e_aP) + N((e_aℓ₀)(e_cP))
+    Norm: N_std = N(P) + N(e_aP) + N(e_a(ℓ₀(e_cP)))
                = 2 + N(e_a)·N(P) + N(e_a)·N(ℓ₀)·N(e_c)·N(P)
                = 2 + 2 + 4 = 8. ✓
     Count: 240 × 8 × 8 × 2 × 2 × 3 = 184,320.
 
-    Implementation note: (e_aℓ₀) is precomputed for each a (independent of P
-    and c).  For each (P, a), the product e_aP is computed once and reused
-    across all values of c.  For each (P, c), the product e_cP is computed
-    once and reused across all values of a.
+    Implementation note: for each P, the products e_cP and ℓ₀(e_cP) are
+    computed once for every c and reused across all values of a; e_aP is
+    computed once for each (P, a).
     Reference: [Dixon2010] Section 6, eq. (20).
     """
-    alg = STANDARD_ALGEBRA
     result: List[Tuple[np.ndarray, np.ndarray, np.ndarray]] = []
     for P in _a_odd:
         P_c = P.coords.copy()
 
-        # Precompute e_cP for all c (independent of a).
-        ec_P_all: List[np.ndarray] = [(_BASIS[c] * P).coords for c in range(8)]
+        # ℓ₀(e_cP) for all c (independent of a).
+        l0_ec_P_all: List[Octonion] = [ELLO_0 * (_BASIS[c] * P) for c in range(8)]
 
         for idx_a in range(8):
-            ea_P = (_BASIS[idx_a] * P).coords   # e_aP
-            ea_l0 = _ea_l0[idx_a]               # e_aℓ₀  (precomputed)
+            ea = _BASIS[idx_a]
+            ea_P = (ea * P).coords   # e_aP
 
             for idx_c in range(8):
-                ec_P = ec_P_all[idx_c]
-                # (e_aℓ₀)(e_cP) — note: ea_l0 is an Octonion, ec_P is an array
-                prod = (ea_l0 * alg.element(ec_P)).coords
+                prod = (ea * l0_ec_P_all[idx_c]).coords   # e_a(ℓ₀(e_cP))
 
                 for s1 in (+1, -1):       # sign on e_aP
                     comp2 = s1 * ea_P
-                    for s2 in (+1, -1):   # sign on (e_aℓ₀)(e_cP)
+                    for s2 in (+1, -1):   # sign on e_a(ℓ₀(e_cP))
                         comp3 = s2 * prod
-                        # 3 cyclic permutations of (P, ±e_aP, ±(e_aℓ₀)(e_cP))
+                        # 3 cyclic permutations of (P, ±e_aP, ±e_a(ℓ₀(e_cP)))
                         result.append((P_c.copy(), comp2.copy(), comp3.copy()))
                         result.append((comp3.copy(), P_c.copy(), comp2.copy()))
                         result.append((comp2.copy(), comp3.copy(), P_c.copy()))
@@ -226,9 +229,9 @@ def dixon_leech_minimal_vectors() -> List[Tuple[np.ndarray, np.ndarray, np.ndarr
     Return all 196,560 minimal vectors of Dixon's Leech construction.
 
     Combines the three families from [Dixon2010] Section 6 eqs. (20)–(22).
-    Note: this function computes 21,120 octonion products and builds
-    196,560 vectors (under a second).  Use the individual dixon_leech_type*() functions when
-    only a subset is needed.
+    Note: this function computes 23,040 octonion products and builds
+    196,560 vectors (under a second).  Use the individual dixon_leech_type*()
+    functions when only a subset is needed.
     """
     return (dixon_leech_type1()
             + dixon_leech_type2()

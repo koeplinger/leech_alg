@@ -1,19 +1,21 @@
 """
 test_leech_dixon.py — Verification of Dixon's octonionic Leech lattice construction.
 
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 
 This suite verifies Dixon's three families of 196,560 minimal vectors
 [Dixon2010 Section 6] and compares them against Wilson's construction
 [Wilson2009 Section 3].
 
-Central finding: Dixon's construction gives a DIFFERENT EMBEDDING of the
-Leech lattice from Wilson's.  The two constructions share only 17,232 of the
-196,560 minimal vectors.  The difference arises because Dixon uses A^odd for
-type-1 (where A₃ has EVEN # of minus signs) while Wilson uses his E8 roots
-(where the half-integer part has ODD # of minus signs).  The difference
-propagates to type-2 and type-3 as well: only 6,144 of 11,520 Dixon type-2
-vectors and 10,752 of 184,320 Dixon type-3 vectors lie in Wilson's Λ.
+Central finding: Dixon's 196,560 vectors are exactly the componentwise
+conjugates (x̄, ȳ, z̄) of Wilson's 196,560 minimal vectors, family by family.
+Dixon derives the largest family (eq. (20)) from Wilson's in this way
+[Dixon2010 Section 6].  Componentwise conjugation is an isometry of R^24, so
+Dixon's vectors are the minimal vectors of a copy of the Leech lattice, the
+conjugate of Wilson's Λ; their inner products are checked here directly as
+well.  The vectors themselves mostly lie outside Wilson's Λ: Dixon's A^odd
+uses the half-integer roots with an EVEN number of minus signs (A₃), Wilson's
+E8 roots those with an ODD number, and conjugation exchanges the two.
 
 Properties verified
 -------------------
@@ -30,34 +32,31 @@ Properties verified
      (A₁ = Wilson's type-1 roots; 2P ∈ 2L, so all conditions are met)
  8.  Type-1 vectors with P ∈ A₃ (128 elements): all 384 FAIL is_in_leech
      (A₃ has even # of minus signs; 2P ∉ 2L = Ls̄ ∩ Ls: 2P lies in Ls̄ but
-      not in Ls, violating Wilson's condition 3.  This is the key structural
-      difference between Dixon's A^odd and Wilson's E8 roots.)
+     not in Ls, violating Wilson's condition 3.  Their conjugates lie in Λ.)
  9.  No duplicates among the 720 vectors
 
  Type-2 vectors  —  (2Q, ±2e_aQ, 0) and 2 cyclic perms, Q ∈ A^even:
 10.  Count = 11,520
 11.  All N_std = 8
 12.  Exactly 2 nonzero blocks per triple (first 30 vectors)
-13.  Dixon's type-2 uses a different embedding: only 6,144 of 11,520 type-2
-     vectors lie in Wilson's Λ; the remaining 5,376 do not.
+13.  Their componentwise conjugates are exactly Wilson's 11,520 type-2 vectors
 
- Type-3 vectors  —  (P, ±e_aP, ±(e_aℓ₀)(e_cP)) and 2 cyclic perms:
+ Type-3 vectors  —  (P, ±e_aP, ±e_a(ℓ₀(e_cP))) and 2 cyclic perms:
 14.  Count = 184,320
-15.  Sample of 500 have N_std = 8
+15.  All N_std = 8
 16.  Exactly 3 nonzero blocks per triple (first 30 vectors)
-17.  Dixon's type-3 uses a different embedding: only 10,752 of 184,320 type-3
-     vectors lie in Wilson's Λ; the remaining 173,568 do not.
+17.  Their componentwise conjugates are exactly Wilson's 184,320 type-3 vectors
 
  Dixon Leech summary:
 18.  Total: 720 + 11,520 + 184,320 = 196,560 minimal vectors (no duplicates)
 19.  The 196,560 vectors span R^24 (rank 24; verified using type-1 + type-2)
 
- Comparison with Wilson's minimal-vector shell:
-20.  Dixon's type-1 vectors from A₁ equal Wilson's type-1 vectors from A₁
-     (both sets are {2P : P ∈ A₁} × 3 cyclic perms, same 336 vectors)
-21.  Dixon's full shell has exactly 179,328 vectors not in Wilson's shell,
-     and Wilson's shell has exactly 179,328 vectors not in Dixon's shell.
-     The two shells share exactly 17,232 vectors.
+ Comparison with Wilson's minimal-vector shell, and inner products:
+20.  The inner products of 3,000 sampled vectors (and of the pair type-3
+     [0], [411]) lie in {0, ±2, ±4, ±8}, ±8 only for v = ±w, as for the
+     minimal vectors of the √2-scaled Leech lattice
+21.  The componentwise conjugates of all 196,560 vectors are exactly
+     Wilson's 196,560 minimal vectors
 
 References
 ----------
@@ -73,7 +72,12 @@ import pytest
 
 from octonions import STANDARD_ALGEBRA
 from e8_dixon import dixon_a1, dixon_a3, dixon_a_odd, dixon_xi_even
-from leech_wilson import is_in_leech
+from leech_wilson import (
+    is_in_leech,
+    leech_type1_vectors,
+    leech_type2_vectors,
+    leech_type3_vectors,
+)
 from leech_dixon import (
     ELLO_0,
     dixon_leech_type1,
@@ -102,13 +106,30 @@ def dix_type3():
     return dixon_leech_type3()    # 184,320 vectors, the slowest fixture
 
 
+def to_keyset(vecs):
+    """Integer keys (coordinates × 2) of triples, for exact set comparison."""
+    return {
+        tuple(np.round(np.concatenate([x, y, z]) * 2).astype(int))
+        for x, y, z in vecs
+    }
+
+
+def conjugate_keyset(vecs):
+    """Integer keys (coordinates × 2) of the componentwise conjugates (x̄, ȳ, z̄)."""
+    sign = np.array([1.0] + [-1.0] * 7)
+    return {
+        tuple(np.round(np.concatenate([sign * x, sign * y, sign * z]) * 2).astype(int))
+        for x, y, z in vecs
+    }
+
+
 # ---------------------------------------------------------------------------
 # 1–3: ℓ₀ properties
 # ---------------------------------------------------------------------------
 
 class TestEllo0:
     """
-    ℓ₀ = ½(e₀+e₁+...+e₇) is Dixon's base element [Dixon2010 eq. (6)].
+    ℓ₀ = ½(e₀+e₁+...+e₇) is Dixon's base element [Dixon2010 Section 3, eq. (6)].
 
     It is the all-positive element of A₃ (even number of minus signs = 0),
     and has norm N(ℓ₀) = 8 × (½)² = 2.  Dixon uses ℓ₀ to build the third
@@ -155,9 +176,9 @@ class TestType1VectorsDixon:
         even coordinate sum, so P ∉ L and 2P ∉ 2L = Ls̄ ∩ Ls; 2P lies in Ls̄
         but not in Ls.  Therefore (2P,0,0) ∉ Λ.
 
-    This split is the central structural difference between Dixon's A^odd and
-    Wilson's E8 roots (which use the COMPLEMENTARY half-integer set, with an
-    ODD number of minus signs).
+    Wilson's E8 roots use the COMPLEMENTARY half-integer set, with an ODD
+    number of minus signs.  Conjugation maps A^odd onto Wilson's E8 roots,
+    which is why Dixon's shell is the conjugate of Wilson's (tests 13, 17, 21).
     Reference: [Dixon2010] Section 6, eq. (22).
     """
 
@@ -235,13 +256,7 @@ class TestType1VectorsDixon:
 
     def test_type1_no_duplicates(self, dix_type1):
         """All 720 type-1 vectors are distinct."""
-        # Represent each triple as an integer tuple (coords × 2) to avoid
-        # floating-point hash issues.
-        keys = {
-            tuple(np.round(np.concatenate([x, y, z]) * 2).astype(int))
-            for x, y, z in dix_type1
-        }
-        assert len(keys) == 720
+        assert len(to_keyset(dix_type1)) == 720
 
 
 # ---------------------------------------------------------------------------
@@ -276,34 +291,17 @@ class TestType2VectorsDixon:
             assert nonzero == 2, \
                 f"Type-2 vector has {nonzero} nonzero blocks, expected 2"
 
-    def test_type2_partial_wilson_overlap(self, dix_type2):
+    def test_type2_conjugates_are_wilson_type2(self, dix_type2):
         """
-        Dixon's type-2 gives a different embedding: only 6,144 of 11,520
-        vectors lie in Wilson's Λ; the other 5,376 do not.
+        The componentwise conjugates of the 11,520 type-2 vectors are exactly
+        Wilson's 11,520 type-2 vectors.
 
-        This test confirms the partial overlap by checking a sample of 500
-        evenly-spaced vectors for Wilson membership and verifying that both
-        passing and failing vectors are present.
-
-        The overlap occurs where Dixon's 2Q coincides with a Wilson Ls̄
-        element and ±2e_aQ coincides with the corresponding (λs̄)j element.
-        The other vectors fail because Dixon uses LEFT multiplication by
-        e_a (e_a × Q) whereas Wilson uses RIGHT multiplication ((λs̄) × j).
+        Conjugation reverses products: the conjugate of e_aQ is Q̄ē_a, so
+        Dixon's left multiplication by e_a becomes Wilson's right
+        multiplication by a unit.
         Reference: [Dixon2010] Section 6 eq. (21); [Wilson2009] Section 3.
         """
-        alg = STANDARD_ALGEBRA
-        step = max(1, len(dix_type2) // 500)
-        pass_count = 0
-        fail_count = 0
-        for i in range(0, len(dix_type2), step):
-            x, y, z = dix_type2[i]
-            ox, oy, oz = alg.element(x), alg.element(y), alg.element(z)
-            if is_in_leech(ox, oy, oz):
-                pass_count += 1
-            else:
-                fail_count += 1
-        assert pass_count > 0, "No type-2 vectors in Wilson's Λ — expected partial overlap"
-        assert fail_count > 0, "All type-2 vectors in Wilson's Λ — expected partial overlap"
+        assert conjugate_keyset(dix_type2) == to_keyset(leech_type2_vectors())
 
 
 # ---------------------------------------------------------------------------
@@ -312,7 +310,7 @@ class TestType2VectorsDixon:
 
 class TestType3VectorsDixon:
     """
-    Type-3: (P, ±e_aP, ±(e_aℓ₀)(e_cP)) and 2 cyclic perms,
+    Type-3: (P, ±e_aP, ±e_a(ℓ₀(e_cP))) and 2 cyclic perms,
             P ∈ A^odd, a,c ∈ {0,...,7}, ± signs independent.
 
     Norm structure (2, 2, 4) per component.  The 3rd cyclic permutation
@@ -325,19 +323,17 @@ class TestType3VectorsDixon:
         """Exactly 184,320 type-3 vectors."""
         assert len(dix_type3) == 184_320
 
-    def test_type3_sample_norm_8(self, dix_type3):
-        """500 evenly-spaced type-3 vectors have N_std = 8."""
-        step = max(1, len(dix_type3) // 500)
-        for i in range(0, len(dix_type3), step):
-            x, y, z = dix_type3[i]
-            norm = float(np.dot(x, x) + np.dot(y, y) + np.dot(z, z))
-            assert abs(norm - 8.0) < 1e-10, \
-                f"Type-3 vector [{i}] has N_std = {norm}, expected 8"
+    def test_type3_all_norm_8(self, dix_type3):
+        """All 184,320 type-3 vectors have N_std = 8."""
+        V = np.array([np.concatenate(t) for t in dix_type3])
+        norms = np.einsum("ij,ij->i", V, V)
+        assert np.allclose(norms, 8.0, atol=1e-10), \
+            f"Type-3 norms range over [{norms.min()}, {norms.max()}], expected 8"
 
     def test_type3_zero_structure(self, dix_type3):
         """
         The first 30 type-3 vectors have exactly 3 nonzero blocks (no zero
-        component).  The three components of (P, ±e_aP, ±(e_aℓ₀)(e_cP)) have
+        component).  The three components of (P, ±e_aP, ±e_a(ℓ₀(e_cP))) have
         norms (2, 2, 4) for all P, a, c, so every type-3 vector has three
         nonzero blocks.
         """
@@ -346,33 +342,19 @@ class TestType3VectorsDixon:
             assert nonzero == 3, \
                 f"Type-3 vector has {nonzero} nonzero blocks, expected 3"
 
-    def test_type3_partial_wilson_overlap(self, dix_type3):
+    def test_type3_conjugates_are_wilson_type3(self, dix_type3):
         """
-        Dixon's type-3 gives a different embedding: only 10,752 of 184,320
-        vectors lie in Wilson's Λ; the other 173,568 do not.
+        The componentwise conjugates of the 184,320 type-3 vectors are exactly
+        Wilson's 184,320 type-3 vectors.
 
-        This test confirms the partial overlap by checking a sample of 500
-        evenly-spaced vectors for Wilson membership and verifying that both
-        passing and failing vectors are present.
-
-        Note: the first 768 type-3 entries all use the same P (the first
-        A^odd element).  The stride is chosen so the sample covers ~500
-        distinct positions across all 240 P values.
+        This is the content of Dixon's derivation of eq. (20) from Wilson's
+        largest family: conjugate each component, shift cyclically, replace
+        P by e_cP.  The nesting e_a(ℓ₀(e_cP)) matters; the octonion
+        (e_aℓ₀)(e_cP) differs from it in general, and with it the set fails
+        (inner products 1, 3, 5 and 6 occur).
         Reference: [Dixon2010] Section 6 eq. (20); [Wilson2009] Section 3.
         """
-        alg = STANDARD_ALGEBRA
-        step = max(1, len(dix_type3) // 500)
-        pass_count = 0
-        fail_count = 0
-        for i in range(0, len(dix_type3), step):
-            x, y, z = dix_type3[i]
-            ox, oy, oz = alg.element(x), alg.element(y), alg.element(z)
-            if is_in_leech(ox, oy, oz):
-                pass_count += 1
-            else:
-                fail_count += 1
-        assert pass_count > 0, "No type-3 vectors in Wilson's Λ — expected partial overlap"
-        assert fail_count > 0, "All type-3 vectors in Wilson's Λ — expected partial overlap"
+        assert conjugate_keyset(dix_type3) == to_keyset(leech_type3_vectors())
 
 
 # ---------------------------------------------------------------------------
@@ -381,15 +363,18 @@ class TestType3VectorsDixon:
 
 class TestDixonLeechSummary:
     """
-    Summary properties of Dixon's 196,560 minimal-vector candidates.
+    Summary properties of Dixon's 196,560 minimal vectors.
 
     Tests 18–19 verify the two most basic structural properties: the correct
-    total count and that the vectors span all of R^24 (rank 24).
+    total count of distinct vectors and that the vectors span all of R^24
+    (rank 24).
     """
 
     def test_total_count(self, dix_type1, dix_type2, dix_type3):
-        """Total: 720 + 11,520 + 184,320 = 196,560 minimal vectors."""
+        """Total: 720 + 11,520 + 184,320 = 196,560 distinct minimal vectors."""
         assert len(dix_type1) + len(dix_type2) + len(dix_type3) == 196_560
+        keys = to_keyset(dix_type1) | to_keyset(dix_type2) | to_keyset(dix_type3)
+        assert len(keys) == 196_560
 
     def test_rank_24(self, dix_type1, dix_type2):
         """
@@ -409,116 +394,66 @@ class TestDixonLeechSummary:
 
 
 # ---------------------------------------------------------------------------
-# 20–21: Comparison with Wilson's minimal-vector shell
+# 20–21: Inner products, and comparison with Wilson's minimal-vector shell
 # ---------------------------------------------------------------------------
 
 class TestShellComparison:
     """
-    Comparison of Dixon's 196,560 vectors with Wilson's 196,560 vectors.
+    Two checks that the 196,560 vectors are the minimal vectors of a Leech
+    lattice at the scale of Wilson's Λ (minimal norm 8).
 
-    The two constructions use different parameterizations of the Leech lattice:
-      - Wilson's type-1 uses λ ∈ A₁ ∪ {ODD-minus half-integer elements of L}.
-      - Dixon's type-1 uses P ∈ A₁ ∪ A₃ (A₃ = EVEN minus signs).
-
-    The two half-integer families (A₃ vs Wilson-type-2) are disjoint, so the
-    full shells differ in at least 384 vectors (Dixon's A₃ type-1 vectors
-    vs Wilson's type-2-root type-1 vectors).
-
-    This test confirms the shells are not equal, and that the A₁ type-1
-    subsystem is the same in both constructions.
+    Test 20 is direct and does not use Wilson's construction: the inner
+    products of minimal vectors of the √2-scaled Leech lattice lie in
+    {0, ±2, ±4, ±8}, with ±8 only for v = ±w.  Test 21 is exact: the
+    componentwise conjugates are Wilson's 196,560 minimal vectors, and
+    componentwise conjugation is an isometry of R^24.
     """
 
-    def test_a1_type1_shells_agree(self, dix_type1):
+    def test_inner_products_sample(self, dix_type1, dix_type2, dix_type3):
         """
-        The 336 type-1 vectors from A₁ are identical in both constructions.
-
-        Both Wilson and Dixon generate type-1 vectors (2P, 0, 0) + cyclic
-        perms for P ∈ A₁ = {±e_a ± e_b : a ≠ b}.  The 112 A₁ elements are
-        the same in both; the 336 resulting triples must therefore coincide.
+        Inner products of 3,000 sampled vectors, together with the pair
+        type-3 [0] and [411], lie in {0, ±2, ±4, ±8}; ±8 occurs only for
+        v = ±w.
         """
-        from leech_wilson import leech_type1_vectors
-        from e8_wilson import wilson_e8_roots
+        V = np.array([np.concatenate(t) for t in
+                      list(dix_type1) + list(dix_type2) + list(dix_type3)])
+        rng = np.random.default_rng(354)
+        start3 = len(dix_type1) + len(dix_type2)
+        idx = np.unique(np.concatenate([
+            rng.choice(len(V), size=3000, replace=False),
+            [start3, start3 + 411],
+        ]))
+        S = V[idx]
+        # Coordinates are half-integers, so S @ S.T is computed exactly in floats.
+        G = np.rint(S @ S.T).astype(int)
+        assert np.array_equal(S @ S.T, G), "Non-integral inner products"
+        assert set(np.unique(G)) <= {-8, -4, -2, 0, 2, 4, 8}, \
+            f"Inner products outside {{0, ±2, ±4, ±8}}: {sorted(set(np.unique(G)))}"
+        off = G - np.diag(np.diag(G))
+        same = np.argwhere(np.abs(off) == 8)
+        for i, j in same:
+            assert np.allclose(np.abs(S[i]), np.abs(S[j])) and \
+                (np.allclose(S[i], S[j]) or np.allclose(S[i], -S[j])), \
+                "Inner product ±8 between two vectors that are not ±equal"
 
-        # Wilson's type-1 vectors are (2λ, 0, 0) for all 240 E8 roots λ; the
-        # A₁ vectors below must be among them.
-        wilson_t1 = leech_type1_vectors()
-        wilson_keys = {
-            tuple(np.round(np.concatenate([x, y, z]) * 2).astype(int))
-            for x, y, z in wilson_t1
-        }
-
-        # Dixon's type-1 vectors from A₁ only.
-        a1 = dixon_a1()
-        zero = np.zeros(8)
-        a1_keys = set()
-        for P in a1:
-            two_P = 2.0 * P.coords
-            for triple in [
-                (two_P, zero, zero),
-                (zero, two_P, zero),
-                (zero, zero, two_P),
-            ]:
-                key = tuple(np.round(np.concatenate(triple) * 2).astype(int))
-                a1_keys.add(key)
-
-        assert len(a1_keys) == 336, f"Expected 336 A₁ type-1 vectors, got {len(a1_keys)}"
-        assert a1_keys.issubset(wilson_keys), \
-            "Dixon's A₁ type-1 vectors are not all in Wilson's type-1 shell"
-
-    def test_full_shells_differ(self, dix_type1, dix_type2, dix_type3):
+    def test_conjugate_shell_equals_wilson_shell(self, dix_type1, dix_type2, dix_type3):
         """
-        Dixon's 196,560-vector shell overlaps with Wilson's in exactly 17,232
-        vectors; each shell has 179,328 exclusive vectors.
+        The componentwise conjugates of all 196,560 Dixon vectors are exactly
+        Wilson's 196,560 minimal vectors.
 
-        The disagreement extends across all three types:
-          type-1: Dixon uses A^odd (A₁ ∪ A₃), Wilson uses E8 roots (A₁ ∪
-                  Wilson-type-2).  The A₃ vs Wilson-type-2 mismatch gives
-                  128 × 3 = 384 Dixon-only and 384 Wilson-only vectors.
-          type-2: Only 6,144 of Dixon's 11,520 type-2 vectors coincide with
-                  Wilson's type-2; the other 5,376 Dixon type-2 are exclusive.
-          type-3: Only 10,752 of Dixon's 184,320 type-3 vectors coincide
-                  with Wilson's type-3; the other 173,568 are exclusive.
-
-        Total exclusive (per construction):
-          384 (type-1) + 5,376 (type-2) + 173,568 (type-3) = 179,328.
-        Shared: 336 + 6,144 + 10,752 = 17,232.
-
-        This confirms Dixon's construction is a DIFFERENT EMBEDDING of the
-        Leech lattice in the ambient R^24 = L³, not the same copy as Wilson's.
-        Both constructions produce 196,560 norm-8 vectors spanning R^24.
+        Hence Dixon's vectors are the minimal vectors of the conjugate of
+        Wilson's Λ, a Leech lattice of minimal norm 8 (Wilson's construction
+        is verified in test_leech_wilson.py and key claim 004).
         """
-        from leech_wilson import leech_type1_vectors, leech_type2_vectors, leech_type3_vectors
-
-        def to_keyset(vecs):
-            return {
-                tuple(np.round(np.concatenate([x, y, z]) * 2).astype(int))
-                for x, y, z in vecs
-            }
-
-        wilson_keys = (
+        dixon_conj = (
+            conjugate_keyset(dix_type1)
+            | conjugate_keyset(dix_type2)
+            | conjugate_keyset(dix_type3)
+        )
+        wilson = (
             to_keyset(leech_type1_vectors())
             | to_keyset(leech_type2_vectors())
             | to_keyset(leech_type3_vectors())
         )
-        dixon_keys = (
-            to_keyset(dix_type1)
-            | to_keyset(dix_type2)
-            | to_keyset(dix_type3)
-        )
-
-        assert dixon_keys != wilson_keys, \
-            "Dixon's shell equals Wilson's shell unexpectedly"
-
-        dixon_only = dixon_keys - wilson_keys
-        wilson_only = wilson_keys - dixon_keys
-        shared = dixon_keys & wilson_keys
-
-        assert len(shared) == 17_232, (
-            f"Expected 17,232 shared vectors, got {len(shared)}"
-        )
-        assert len(dixon_only) == 179_328, (
-            f"Expected 179,328 Dixon-only vectors, got {len(dixon_only)}"
-        )
-        assert len(wilson_only) == 179_328, (
-            f"Expected 179,328 Wilson-only vectors, got {len(wilson_only)}"
-        )
+        assert len(wilson) == 196_560
+        assert dixon_conj == wilson

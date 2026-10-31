@@ -1,0 +1,31 @@
+Prompt 352 -- restore four passages of the older change logs
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'regarding changelog hygiene "I recommend restoring the four
+passages to their pre-sweep wording. Shall I?" -- yes, definitely; I also
+agree with the memory you made about change logs, and I agree that
+syntactic or semantic improvements in the older changelogs are acceptable,
+as long as they're faithful to the actual changes being logged.'
+
+Context: prompt 350 is open (the Dixon plan in preparation).  Log 351 put
+four passages to the author: in paper/v3_to_v4_summary.md, A.1 (the credit
+for the mod-2 orthogonal space) and A.4 ("in the L-basis"); in
+paper/v5_to_v6_changelog.md, the Silverman and Calderbank bullets.  The
+sweep of prompt 346 had brought the Lepowsky-Meurman findings of October
+2026 into them.
+
+Rulings: restore the four passages to their wording before the sweep
+(ee17acd).  Syntactic or semantic improvements to the older change logs
+are acceptable where they stay faithful to the changes being logged.
+
+Response: restored.  paper/v3_to_v4_summary.md: A.1 again says that the
+lattice-level picture and the 17,280 enumeration are in Baez/Egan (2014),
+as v4 states; A.4 again has "in the L-basis" (the closed-up
+"noncommutative" stays, a style improvement).  paper/v5_to_v6_changelog.md:
+the Silverman and Calderbank bullets are as before the sweep.  Compared
+with ee17acd, the four passages differ only in that one spelling.  Updated
+dates set; linter clean.  The memory on current-state documents now
+carries the rule on change logs and this refinement.
+
+Status: CLOSED.

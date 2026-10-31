@@ -1,0 +1,69 @@
+Prompt 350 -- plan the Dixon investigation; correct Mahler; mark v8 as work in progress; explain 593,412
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Re "Dixon's Leech construction." -- this requires another
+look. Make a plan on how to investigate. The goal is to find how Dixon's
+construction yields a Leech lattice. We need to be exact: Can we confirm
+it? Then all is well, and just make a note here. Was there a typo or minor
+error, but Dixon's construction is essentially working? Then just make a
+write-up and I'll let him know. Otherwise, if his construction can't be
+made to work entirely, then that needs a detailed write-up on your behalf
+that I can read. It would be surprising.
+
+Re "Mahler" -- Make the correction, of course. My oversight. Today is 31
+October 2026. Also, even though the version of the paper that we're
+working on is "v8", do mark it explicitly as work-in-progress, e.g. "v8
+(WIP)".
+
+Re "593,412" -- I don't understand. In the paper we say that there were
+more than 12 million, and a human really doesn't care whether there were
+12 more. Tell me what this is about.'
+(Ultracode on.)
+
+Context: the author committed the sweep of prompts 346 to 349 (62fac57);
+the working tree was clean when this prompt arrived.  Held from that
+sweep: (1) leech_dixon.py's 196,560 vectors are not the minimal vectors of
+a Leech lattice (inner products 1, 3, 5 and 6 among the type-3 vectors),
+so the Leech part of the paper's Section 6 sentence "We have independently
+reproduced this construction" is unsupported as it stands; (2) Mahler 1942
+proves N(X-G) <= 15/16 (Theorem 1) and states the exact constant 1/2
+without proof, while Appendix B gives 1/2 as his result; (3) key claim
+008's 593,412.
+
+Rulings:
+ 1. Dixon: a plan for the investigation, not the investigation.  Its goal:
+    exactly how Dixon's construction yields a Leech lattice.  Outcomes and
+    deliverables: confirmed (a note here); a typo or minor error with the
+    construction essentially working (a write-up the author passes to
+    Dixon); not workable (a detailed write-up for the author).
+ 2. Mahler: correct the paper's Appendix B and the records.  The paper's
+    date becomes 31 October 2026, and the version is marked as work in
+    progress ("v8 (WIP)").
+ 3. 593,412: explain what the item is about.
+
+Response:
+ - Mahler (ruling 2): the paper's Appendix B now reads N(X-G) <= 15/16
+   "(sharper than Dickson's 5/4; Mahler states without proof that 1/2 is
+   the best constant)".  The same correction is in
+   paper/historical_appendix.tex, paper/historical_appendix_expanded.tex
+   (Theorem 1, p. 126; the best constant stated on p. 127; Coxeter's
+   remark that 1/2 follows from Section 11 of the 1946 paper), the registry
+   entry [Mahler1942], and python_project/src/README.md (the source's
+   account).  paper/v7_to_v8_changelog.md records it under Appendix B, with
+   the source.  paper/v3_to_v4_summary.md was edited as well and reverted
+   at prompt 351.
+ - Version (ruling 2): the subtitle reads "31 October 2026, v8 (WIP)".
+   tools/lint_docs.py accepts that form beside "D Month YYYY (vN)"; the
+   changelog says the mark goes when v8 is released; CURRENT_STATE.md gives
+   the date and the mark.  The paper (22 pages, no new warning) and both
+   historical drafts were rebuilt; the linter is clean.
+ - Dixon (ruling 1): a read-only scouting run (wf_11a9519a-64c: the
+   preprint transcribed from its TeX source, the related sources, a map of
+   leech_dixon.py, a comparison and a critic) found that leech_dixon.py
+   departs from the printed eq. (20) in one product.  At prompt 354 the
+   author ruled that a false alarm needs no plan; the check and the fix are
+   recorded there.
+ - 593,412 (ruling 3): answered at prompt 354.
+
+Status: CLOSED.

@@ -1,0 +1,44 @@
+Prompt 351 -- a change log records only what changed between its two versions
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'You made corrections in the v3 to v4 change log. That
+change log is what changed between v3 and v4. We didn't change the Mahler
+correction between v3 and v4. Hence, this doesn't belong in the
+corresponding change log.'
+
+Context: prompt 350 is open.  Its Mahler correction had also edited
+paper/v3_to_v4_summary.md: the Mahler bullet (1/2 replaced by 15/16) and,
+in the same list, the Dickson bullet ("implicit" assumption replaced by an
+assumption stated in the derivation).
+
+Rulings: a change log records what changed between its two versions.  A
+correction made in a later version is recorded in that version's change
+log (here v7 to v8), not in an earlier one.  Both edits to
+paper/v3_to_v4_summary.md are reverted.
+
+Response: both edits reverted; paper/v3_to_v4_summary.md is identical to
+the committed version (62fac57).  The Mahler correction stays recorded in
+paper/v7_to_v8_changelog.md (Appendix B).
+
+The same rule bears on four edits that the sweep of prompt 346 made to
+older change logs (committed in 62fac57).  They bring findings of October
+2026 into logs of earlier revisions:
+ - v3_to_v4_summary.md, A.1: the credit for the orthogonal space and its
+   Lagrangians now names Lepowsky and Meurman (1982) and Silverman; v4
+   credited Baez/Egan (main_2026-05-25.tex, Section A.1, "In addition to
+   Baez/Egan").
+ - v3_to_v4_summary.md, A.4: "non-commutative in the L-basis" lost "in the
+   L-basis", which is v4's wording.
+ - v5_to_v6_changelog.md, the Silverman and Calderbank bullets: each now
+   adds the Lepowsky-Meurman identification, found at prompts 325 to 327;
+   v6 credits Silverman and Calderbank (main_2026-07-18.tex, Section A.1).
+The v7 to v8 changelog already records those credits (Appendix A,
+"Relation to prior work").  Put to the author: restore the four passages
+as they were before the sweep (recommended).  The sweep's other edits to
+the older logs correct the logs' own descriptions of their revisions
+(v4's A.1 reasoning and its Appendix B on Kirmse; frozen v4 has no Remark
+2.2; v5's Change 9 adds mathematics; v3 already cited Petersson; v7's
+self-product remark is Remark 5.1) or are style only; they stay.
+
+Status: CLOSED.  Decision with the author.

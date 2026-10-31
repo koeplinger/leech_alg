@@ -1,7 +1,7 @@
 """
 octonions.py — Octonion algebra implementation.
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 Two concrete algebras are provided:
 
@@ -286,7 +286,10 @@ STANDARD_ALGEBRA = OctonionAlgebra(STANDARD_FANO_TRIPLES, name="standard")
 #: Dixon's X-product algebra.
 #: Isomorphic to STANDARD_ALGEBRA as abstract algebras, but the multiplication
 #: table on the same vector space is different.
-#: Used in Dixon's E8 lattice construction [Dixon2010].
+#: Dixon's eq. (7) [Dixon2010]: the X-product with X = l0, which takes basis
+#: units to basis units up to sign.  Dixon's E8 shell Xi^even (e8_dixon.py) is
+#: closed under the X-product with X = l0^{-1} (eq. (8)), not under this one
+#: (tests/test_e8_dixon.py).
 XPRODUCT_ALGEBRA = OctonionAlgebra(XPRODUCT_FANO_TRIPLES, name="xproduct")
 
 

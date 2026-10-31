@@ -1,7 +1,7 @@
 """
 leech_wilson.py — Wilson's octonionic Leech lattice construction.
 
-Created: 2026-04-07.  Updated: 2026-10-28.
+Created: 2026-04-07.  Updated: 2026-10-31.
 
 The Leech lattice as an integral octonion lattice
 --------------------------------------------------
@@ -22,10 +22,11 @@ to Λ.
 The paper proves that Λ is closed under the Z₃-symmetric triple-octonion
 product built from the σ-twisted octonion product, so that Λ is an order in
 R^24 (paper Theorem 1.1, `thm:main`, and Corollary 1.2, `cor:order`; proof
-in Section 4, `sec:proof`).  Dixon [Dixon2010] constructs Λ with an
-octonion XY-product.  Wilson's construction provides the reference object:
-Λ as a precisely characterized rank-24 Z-lattice with algebraic membership
-conditions.
+in Section 4, `sec:proof`).  Dixon [Dixon2010] writes the minimal vectors of
+a Leech lattice in O³ with the ordinary octonion product; they are the
+componentwise conjugates of Wilson's (leech_dixon.py).  Wilson's construction
+provides the reference object: Λ as a precisely characterized rank-24
+Z-lattice with algebraic membership conditions.
 
 The minimal-vector shell of Λ consists of the 196,560 vectors of minimum
 norm (N_std = 8 in the standard R^24 metric), partitioned into three families.
@@ -101,8 +102,8 @@ N(x) ≥ 8, a contradiction.  Hence every nonzero vector of Λ has N_std ≥ 8
 Use
 ---
 A library module with no main program.  It is imported by
-consistency_checks.py, egan_baez_count.py, symbolic_proof_checks.py and the
-trial programs, and tested by python_project/tests/test_leech_wilson.py.
+consistency_checks.py, egan_baez_count.py, symbolic_proof_checks.py,
+verify_dixon_leech_lattice.py and the trial programs, and tested by python_project/tests/test_leech_wilson.py.
 Not cited in the paper (v8 draft, paper/main.tex); ledger key claim 004
 (evidence_and_reasoning/key_claims/004_wilson_leech_verified.txt).
 

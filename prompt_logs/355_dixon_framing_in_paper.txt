@@ -1,0 +1,78 @@
+Prompt 355 -- frame Dixon (2010) correctly in the paper
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "Lines 145–146 and 1054–1055 say Dixon (2010)
+"constructed Λ using an octonion XY-product". Dixon's §6, the Leech part,
+uses only the ordinary octonion product. In the preprint the XY-product
+gives the integral octonions and Λ₁₆ (§4)." -- ouch, my oversight (and I
+believe I introduced this error very early on). Make a surgical amendment
+to the paper's prose so that it's correctly framed.
+
+re "Lines 1071–1074 say Dixon uses "this X-product with X = ℓ₀ to obtain
+E₈". In the preprint the product with ℓ₀ (eq. (7)) only takes units to
+units. The E₈ closure example uses the product with ℓ₀⁻¹ (eq. (8))." --
+good find, make this precise (if I understand it correctly, just the
+inverse; if that's not it, then stop and let me know).
+
+re "593,412" -- ok.'
+(Ultracode on.)
+
+Context: prompt 354 is open (its independent verification run
+wf_714a2bc4-718 is still running).  paper/main.tex says at lines 145-146
+"Geoffrey M.~Dixon \cite{Dixon2010} constructed~$\LL$ using an octonion
+XY-product", and at 1054-1074 "constructs~$\LL$ using the octonion
+XY-product" and "Dixon uses this X-product with $X = \ell_0 = ...$ to
+obtain~$E_8$, and general XY-products for higher-dimensional laminated
+lattices including~$\LL$".  In the preprint, Section 6 writes the minimal
+vectors of Lambda over O^3 with the ordinary octonion product, rewriting
+Wilson's; the X- and XY-products give the integral octonions (Sections 2
+to 4) and Lambda_16 (Section 4).
+
+Rulings:
+ 1. A surgical amendment of the paper's prose (Sections 1 and 6), so that
+    Dixon (2010) is framed as the preprint states it.
+ 2. Make the E8 statement precise: X = l0^{-1} in place of X = l0, if that
+    is exactly right; if it is not, stop and tell the author first.
+ 3. 593,412: the record fix of prompt 354 stands.
+
+Response:
+ 1. The paper, Section 1 (main.tex 144-146): "constructed~$\LL$ using an
+    octonion XY-product" -> "obtained the integral octonions from an
+    octonion XY-product and represented~$\LL$ in~$\OO^3$".  Section 6, the
+    Dixon paragraph: "constructs~$\LL$ using the octonion XY-product" ->
+    "obtains the integral octonions from the octonion XY-product"; "Dixon
+    uses this X-product with $X = \ell_0 = ...$ to obtain~$E_8$, and
+    general XY-products for higher-dimensional laminated lattices
+    including~$\LL$" -> "Dixon uses this X-product with $X = \ell_0^{-1}$,
+    where $\ell_0 = ...$, to obtain~$E_8$, and XY-products for the
+    laminated lattice~$\Lambda_{16}$.  For~$\LL$ itself, Dixon writes the
+    minimal vectors in~$\OO^3$ with the ordinary octonion product,
+    rewriting Wilson's"; the footnote on Dixon's 1995 and 2005 preprints
+    moves to that sentence.  "We have independently reproduced this
+    construction" stays.
+ 2. The inverse is exactly right.  Over all 57,600 pairs of Dixon's
+    240-element E8 shell, the X-product with X = l0^{-1} (eq. (8), an
+    instance of eq. (9)) never leaves the shell; the X-product with X = l0
+    (eq. (7), which takes units to units) leaves it 53,760 times, the
+    ordinary product 43,008 times; Dixon's example e1 o e2 =
+    1/2(e3 - e5 + e6 + e7) holds.  A new test in test_e8_dixon.py checks
+    this (198 tests); key claim 003 and its ledger row record it; the
+    counts read 198 in CURRENT_STATE.md, README.md and the python_project
+    READMEs.
+ 3. Siblings: paper/v7_to_v8_changelog.md (Section 1, paragraph 3; Section
+    6, Dixon, with the reason and the checks); the registry
+    (leech_lattice_octonionic_constructions.txt,
+    prior_art_orders_on_leech.txt); leech_wilson.py's docstring; the comment
+    on XPRODUCT_ALGEBRA in octonions.py.
+ 4. Review (run wf_ee55ddc4-231, against the preprint's TeX): the amended
+    paper passages hold.  Four sibling findings applied: README.md's test
+    count; the changelog's reason (an X-product enters Dixon's Section 6
+    through eqs. (18) and (19), to justify a rewriting step, but does not
+    build Lambda); "the minimal vectors of a Leech lattice" in the
+    registry, where Lambda denotes Wilson's lattice; the octonions.py
+    comment.
+Checks: the paper builds at 22 pages with no new warning; 198 tests pass;
+linter clean.  Nothing committed.
+
+Status: CLOSED.
