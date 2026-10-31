@@ -409,3 +409,20 @@ corresponding source is frozen in this repository as
 `paper/main_2026-07-19.tex` (v7, 24 pages).  Originality note: the
 construction and its verification are original to this project; the prior
 art it builds on and is contrasted with is registered above.
+
+### [Petersson2026] — personal research draft (21 October 2026)
+
+- **Authors**: Holger P. Petersson
+- **Title**: personal research draft (21 October 2026)
+- **Published in**: not published; a personal communication to the author
+  of [Koeplinger2026], work in progress.  It is not held in this
+  repository, and its content is not described here; requests for it go
+  to its author.
+- **Year**: 2026
+- **Topics**: the ambient algebra (R²⁴, +, ⋆) of [Koeplinger2026]
+- **Originality note**: private work in progress; no dispute known.
+- **Notes**: The paper (v8) cites it as "H. P. Petersson, personal research
+  draft (21 October 2026)", in addition to its scripts, at two facts: the
+  automorphism group Aut(R²⁴, ⋆) = G₂ × G₂ × S₃ of the ambient algebra
+  (Section 5.4), and the nonzero idempotents of (5.1), εᵢ, ω/3 and
+  εᵢ − ω/3 (Section 5.2).  Ledger claims 010 and 011.

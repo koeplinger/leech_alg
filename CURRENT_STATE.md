@@ -627,7 +627,7 @@ the trial, and prints detailed results.
 2. **The paper.**  v7, dated 19 July 2026, is the last released version,
    `paper/main_2026-07-19.tex` (24 pages), published on ResearchGate:
    doi:10.13140/RG.2.2.22093.19686.  The working source `paper/main.tex`
-   is the v8 draft (22 pages, dated 31 October 2026, marked "v8 (WIP)").
+   is the v8 draft (23 pages, dated 31 October 2026, marked "v8 (WIP)").
    The draft contains abstract (standalone, with
    keywords and MSC 2020 codes; it names the closure criterion),
    preliminaries, construction, symbolic proof, algebraic properties

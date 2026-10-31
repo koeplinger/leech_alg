@@ -1,0 +1,58 @@
+Prompt 358 -- cite H. Petersson's personal research draft at the facts it gives
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim, except for one local file path, withheld here because the
+file name describes the private draft): 'I have received a personal
+communication by Holger Petersson here, which I want to reference as
+"personal research draft (21 October 2026)": [path withheld] -- Note that
+this is his private in-progress work and we are referencing this here in a
+public repository (including this prompt). Therefore, don't divulge
+anything about what exactly he is working on. The draft is obviously
+incomplete. For our purpose, his calculations yield the automorphism group
+of the ambient algebra, and some algebraic properties. Do not add this
+paper to the project, just reference it as "H. Petersson, personal research
+draft (21 October 2026)". If anyone asks, I will direct them to Petersson
+until he has made this work public (if he so choses upon completion). Make
+references at the facts that we're bringing to his draft, similar to and in
+addition to how we've been referencing the computer proofs.'
+(Ultracode on.)
+
+Context: prompt 357 is closed.  The paper cites the scripts that check its
+facts in footnotes, at the facts.
+
+Rulings:
+ 1. Cite the draft as "H. Petersson, personal research draft (21 October
+    2026)": in the bibliography, and at each fact of the paper that the
+    draft gives (the automorphism group of the ambient algebra, and some
+    algebraic properties), in addition to the script references there.
+ 2. The draft is private work in progress.  Nothing in the repository or
+    in this log says what it is about beyond the facts of the paper that
+    it gives; the draft is not added to the repository.
+ 3. Whoever asks for the draft is directed to Petersson.
+
+Response:
+ 1. The paper cites the draft as [Petersson2026], "H. P. Petersson,
+    personal research draft (21 October 2026)." (in the bibliography after
+    [Petersson2018], whose form of the name it follows), in footnotes at
+    two facts, next to the scripts, as for the computer proofs:
+    - Section 5.2: the footnote at the classification of the idempotents
+      adds "The nonzero idempotents of (5.1) are also obtained in
+      [Petersson2026]."
+    - Section 5.4: a footnote [Petersson2026] at Aut(R^24, star) = G_2 x
+      G_2 x S_3.
+ 2. Records: the reference registry (prior_art_orders_on_leech.txt: an
+    entry that names only the two facts and says that requests go to the
+    draft's author); ledger rows 010 and 011 (evidence); paper/
+    v7_to_v8_changelog.md (Sections 5.2 and 5.4, the bibliography, the
+    page count); CURRENT_STATE.md (the page count).  Not changed: the
+    companion note on the automorphism group, which proves the ambient
+    group by hand and has no bibliography.
+ 3. Discretion: the draft is not in the repository, and no repository file
+    or this log describes it beyond the two facts; this log withholds the
+    file's path.
+Checks: the paper builds with no undefined reference, 23 pages (the last
+page holds only the bibliography entry [repo]); paper/main.pdf replaced;
+linter clean.  Nothing committed.
+
+Status: CLOSED.
