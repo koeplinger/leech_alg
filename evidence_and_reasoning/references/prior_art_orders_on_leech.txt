@@ -207,9 +207,9 @@ where X, Y ∈ O are chosen so that Y X† is a unit octonion (the
 identity of the new multiplication).  The special case Y† = X⁻¹ gives
 the X-product A ∘_X B = (A X)(X⁻¹ B).  Dixon uses the X-product with
 X = ℓ₀⁻¹, where ℓ₀ = ½(1 + e₁ + … + e₇), to obtain E₈, and XY-products
-for the laminated lattice Λ₁₆.  For Λ itself, Dixon writes the minimal
-vectors in O³ with the ordinary octonion product, rewriting Wilson's
-(the componentwise conjugates of Wilson's, key claim 005).  Each XY-product is an
+for the laminated lattice Λ₁₆.  For Λ, Dixon writes the minimal vectors
+of a copy of Λ (the componentwise conjugates of Wilson's, key claim 005)
+in O³ with the ordinary octonion product.  Each XY-product is an
 alternative octonion multiplication on R⁸ (isomorphic to the
 standard one).  Dixon does not test or claim closure of Λ under the
 XY-product or any other bilinear product.  The human researcher of this

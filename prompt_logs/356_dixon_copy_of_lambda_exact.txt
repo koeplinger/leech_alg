@@ -1,0 +1,68 @@
+Prompt 356 -- Dixon's Leech vectors span a copy of Lambda: say so exactly
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "Λ versus a copy of Λ. The paper defines Λ as Wilson's
+lattice, while Dixon's 196,560 vectors are the minimal vectors of its
+componentwise conjugate, a copy. "For Λ itself, Dixon writes the minimal
+vectors in O³ …" reads fine as related-work prose. If you want it exact:
+"… the minimal vectors of a copy of Λ (the componentwise conjugates of
+Wilson's) …"." -- I want it exact. It is interesting to observe: Dixon uses
+the X-product to construct E8, the XY product to construct Lambda_16, and
+we're using the triple-octonion product with our cross-block routing to
+close on Lambda. It's an interesting chain of algebra step-ups related to
+the laminated lattices in those dimensions. Don't write that into the
+paper, I just want to note it here.
+
+re the footnote and what to cite: leave it; independent checks and
+verifications don't need to be cited, the key (or initial) discovery /
+proof / validation suffices.'
+(Ultracode on.)
+
+Context: prompt 355 is closed.  Its hand-over offered two refinements of
+the Dixon paragraph in paper Section 6, not applied.  (a) The paper
+defines Lambda as Wilson's lattice; Dixon's 196,560 vectors are the
+minimal vectors of its componentwise conjugate, a copy of Lambda (key
+claim 005); the sentence reads "For~$\LL$ itself, Dixon writes the minimal
+vectors in~$\OO^3$ with the ordinary octonion product, rewriting
+Wilson's~\cite{Wilson2009}."  (b) The footnote to "We have independently
+reproduced this construction" (leech_dixon.py, e8_dixon.py) could also
+cite verify_dixon_leech_lattice.py.
+
+Rulings:
+ 1. (a): make the sentence exact: the minimal vectors of a copy of
+    Lambda, the componentwise conjugates of Wilson's.
+ 2. The author's observation, recorded here and not in the paper: Dixon
+    constructs E8 with the X-product and Lambda_16 with the XY-product,
+    and this project closes Lambda under the triple-octonion product with
+    its cross-block routing; a chain of algebra step-ups along the
+    laminated lattices in dimensions 8, 16 and 24.
+ 3. (b): the footnote stays as it is.  The paper cites the script of the
+    key (or initial) discovery, proof or validation; independent checks
+    and verifications are not cited.
+
+Response:
+ 1. The paper, Section 6 (main.tex 1065-1068): "For~$\LL$ itself, Dixon
+    writes the minimal vectors in~$\OO^3$ with the ordinary octonion
+    product, rewriting Wilson's~\cite{Wilson2009}." -> "For~$\LL$, Dixon
+    writes the minimal vectors of a copy of~$\LL$ (the componentwise
+    conjugates of Wilson's~\cite{Wilson2009}) in~$\OO^3$ with the ordinary
+    octonion product."  "itself" goes, since the sentence now names a
+    copy; "rewriting Wilson's" goes, since the parenthesis states the
+    relation to Wilson's exactly and carries the citation.  Both footnotes
+    stay.  Section 1's "represented~$\LL$ in~$\OO^3$" stays: a
+    representation is a copy.
+ 2. Siblings: paper/v7_to_v8_changelog.md (Section 1, paragraph 3: "the
+    minimal vectors of a copy of Lambda"; Section 6, Dixon: the new
+    wording, and the reason says the vectors span a copy of Lambda, not
+    the paper's Lambda itself); prior_art_orders_on_leech.txt (the same
+    sentence, rewrapped); leech_dixon.py's docstring ("a Leech lattice").
+    Already exact: key claims 005 and 006, the constructions registry,
+    leech_wilson.py, verify_dixon_leech_lattice.py, test_leech_dixon.py.
+ 3. Ruling 2 is recorded here and in memory, not in the paper; ruling 3 is
+    recorded in memory.
+Checks: the paper builds at 22 pages with the same box messages as before
+and no new warning (paper/main.pdf replaced); test_leech_dixon.py 21
+passed after the docstring edit; linter clean.  Nothing committed.
+
+Status: CLOSED.

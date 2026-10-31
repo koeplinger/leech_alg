@@ -4,7 +4,7 @@ leech_dixon.py — Dixon's octonionic Leech lattice construction.
 Created: 2026-04-07.  Updated: 2026-10-31.
 
 Dixon [Dixon2010] Section 6 characterizes the 196,560 minimal vectors of
-the Leech lattice in three explicit families built from the two E8
+a Leech lattice in three explicit families built from the two E8
 representations A^odd and A^even, together with the base element ℓ₀.
 
 Key definitions [Dixon2010 Sections 3 and 6]
