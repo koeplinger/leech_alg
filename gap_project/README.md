@@ -1,6 +1,6 @@
 # GAP / LOOPS verification suite
 
-Created: 2026-04-28.  Updated: 2026-10-28.
+Created: 2026-04-28.  Updated: 2026-10-31.
 
 A GAP re-implementation of the verification tests that went into the paper
 [`paper/main.tex`](../paper/main.tex) and the companion note
@@ -265,7 +265,7 @@ and they are not the same list.
   under conjugation by the order-21 group of coordinate permutations
   preserving the oriented Fano triples, so the proof for $(e_1\;e_2)$ carries
   over to each of them, as the footnote to $\sigma = (1\;2)$ in paper
-  Section 4 states; all 21 close on $\Lambda$, paper Section 5.6).
+  Section 4 states; all 21 close on $\Lambda$, paper Appendix E).
 - What $\sigma$ is, and is not.  It is a transposition of two imaginary basis
   units, extended linearly and fixing $e_0$.  It is **not** an octonion
   automorphism.  It carries the octonion product to the isomorphic twisted

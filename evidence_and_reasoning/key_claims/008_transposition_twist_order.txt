@@ -152,7 +152,7 @@ the ·_σ-triple product):
  - Uniqueness up to isomorphism: twisted products with different span
    indices give orders on Λ that are not isomorphic, among them ⋆ (span
    index 2¹⁶), ⋆_π for a closing even permutation π (span index 2¹⁰) and
-   ⋆_ρ for the reflection ρ (span index 1) (paper Section 5.6,
+   ⋆_ρ for the reflection ρ (span index 1) (paper Appendix E,
    `sec:census`; ledger claims 015 and 017).
 
 --- REFERENCES ---

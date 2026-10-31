@@ -1,6 +1,6 @@
 # Research Result
 
-Created: 2026-04-11.  Updated: 2026-10-28.
+Created: 2026-04-11.  Updated: 2026-10-31.
 
 Published: J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
 triple-octonion product*, [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
@@ -91,7 +91,7 @@ which the assembled triple product closes.  The census over all 5,040
 permutations of S₇ is exhaustive
 (`verify_all_permutations_exact.py`; partial checks in
 `verify_all_cycles_exact.py` (the 3- to 7-cycles, exact) and
-`consistency_checks.py` (three transpositions, sampled); paper §5.6,
+`consistency_checks.py` (three transpositions, sampled); paper Appendix E,
 `sec:census`):
 
 | Cycle type of π | Permutations | Close | Rate |
@@ -273,14 +273,14 @@ self-product norms of all 196,560 minimal vectors are {16, 32, 48, 64, 80,
 96, 128} (paper Appendix D, `app:samples`; `verify_idempotents_min_shell.py`;
 claim 012a).
 
-**Span of the image** (paper §5.6, Proposition 5.4, `prop:span`;
+**Span of the image** (paper Appendix E, Proposition E.1, `prop:span`;
 `verify_product_span_proof.py`, with `verify_product_span_index.py` and
 `verify_product_span_structure.py` as cross-checks; claim 015).
 S := Z-span{u ⋆ v : u, v ∈ Λ} consists of the vectors (w, w, w) + 2u with
 w ∈ Ls and u ∈ Λ, proved by hand in the paper; so [Λ : S] = 65,536 = 2¹⁶,
 2Λ ⊆ S and Λ/S ≅ (Z/2)¹⁶.  Closure is not surjectivity.
 
-The index depends on the twist (paper §5.6, `sec:census`; claims 017, 018):
+The index depends on the twist (paper Appendix E, `sec:census`; claims 017, 018):
 among the closing permutation twists, every even permutation gives 2¹⁰ and
 every odd one 2¹⁶; the reflection ρ in the root (e₀+e₁+⋯+e₆−e₇)/2 of L
 closes on Λ with index 1, its products Z-spanning Λ.  L³ is a closed

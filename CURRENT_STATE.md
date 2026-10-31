@@ -119,7 +119,7 @@ The order (Λ, +, ⋆) is:
 
 The key property is closure, not any classical algebraic identity.
 
-### Structure of the algebra (paper §2.2, §4.1, §5.2–§5.6, §6 and Appendix A)
+### Structure of the algebra (paper §2.2, §4.1, §5.2–§5.6, §6 and Appendices A and E)
 
 These results are exact and exhaustive.
 
@@ -210,7 +210,7 @@ holds for only 24 of 64.
 **Closure of permutation cycles: the full S₇ census**
 (`verify_all_permutations_exact.py`, all 5,040 permutations, reusing the
 per-permutation test of `verify_consecutive_twists_exact.py`; the
-3- to 7-cycles also in `verify_all_cycles_exact.py`; paper §5.6,
+3- to 7-cycles also in `verify_all_cycles_exact.py`; paper Appendix E,
 `sec:census`).  Writing
 x ·_π y := π⁻¹(π(x) · π(y)) for a permutation π of e₁,…,e₇ (for the
 involution σ this is the paper's twisted product) and testing closure of
@@ -236,12 +236,13 @@ Z-basis of Λ:
 | **Total** | **5,039** | **1,764** | **35.0%** |
 
 Exhaustive, not sampled.  The identity (the untwisted product) does not
-close, since Ls is not closed under the standard product (paper §5.6,
+close, since Ls is not closed under the standard product (paper Appendix E,
 `sec:census`, by Proposition 5.3).  For the 3-cycles the closing half admits a description: one of the
 two cyclic orientations per three-element index subset.
 
-**Which twists close; the span index depends on the twist** (paper §5.6,
-`sec:census`, Propositions 5.3 and 5.4, `prop:criterion` and `prop:span`;
+**Which twists close; the span index depends on the twist** (paper §5.6
+and Appendix E, `sec:criterion` and `sec:census`, Propositions 5.3 and E.1,
+`prop:criterion` and `prop:span`;
 claims 015, 017, 018; the external review of v8 in
 `paper/reviews/2026-10-13_claude_opus_5_5_review_v8/`, second pass
 `verify_twist_span_index_census.py` and the note
@@ -263,7 +264,7 @@ s_r in the review) gives a product that closes on Λ with [Λ : S_ρ] = 1: its
 products Z-span Λ.  Of the 120 root
 reflections, 56 close, 28 with index 2¹⁶ and 28 with index 1.  The span of
 ⋆ = ⋆_σ consists of the vectors (w, w, w) + 2u with w ∈ Ls and u ∈ Λ,
-proved by hand in the paper (Proposition 5.4; `verify_product_span_proof.py`).
+proved by hand in the paper (Proposition E.1; `verify_product_span_proof.py`).
 The review's index formula [Λ : S_g] = [Ls : ⟨Ls ·_g Ls⟩]·[Ls̄ : ⟨Ls̄ ·_g Ls̄⟩]²
 (its Theorem B, with a proof sketch there; not in the paper) holds on every
 closing twist checked.  Index 1 concerns the
@@ -633,25 +634,26 @@ the trial, and prints detailed results.
    (Section 5, in six subsections: §5.1 identities, each failure
    with a witness checked by hand (`sec:identities`); §5.2 idempotents;
    §5.3 maximality (L³ and Λ + Zε₁ are ⋆-closed overlattices); §5.4 the
-   automorphism group; §5.5 square-zero elements; §5.6 other twists,
-   closure and span of the image (`sec:census`): the closure criterion,
-   Proposition 5.3 (`prop:criterion`), for every twist g with g(L) = L;
-   the full S₇ census read through it, with the span index of each
-   closing permutation, 2¹⁶ for σ and the odd ones and 2¹⁰ for the even
-   ones; the span of ⋆ by hand, Proposition 5.4 (`prop:span`); and a
-   reflection twist with span index 1), related work (`sec:related`:
+   automorphism group; §5.5 square-zero elements; §5.6 the closure
+   criterion (`sec:criterion`), Proposition 5.3 (`prop:criterion`), for
+   every twist g with g(L) = L), related work (`sec:related`:
    Egan's construction, display (6.2) (`eq:egan`), with Λ and σ(Λ) among
    its lattices, and the span index 2²⁵ of the Baez–Egan induced product
    φ), conclusion (`sec:conclusion`: a summary that names the criterion,
-   and three open questions), outlook, declarations, and four appendices:
+   and three open questions), outlook, declarations, and five appendices:
    the closure criterion modulo 2, with the answer to which polarizations
    of L/2L close (Appendix A, `app:mod2quotient`); a historical note
    synthesizing the 1923–1946 integral-octonion literature from the
    primary sources, Dickson (1923), Kirmse (1924), Mahler (1942), and
    Coxeter (1946) (Appendix B, `app:history`); the research methodology
-   (Appendix C, `sec:methodology`); and the identity frequencies sampled
+   (Appendix C, `sec:methodology`); the identity frequencies sampled
    on minimal vectors and the norms of products of minimal vectors
-   (Appendix D, `app:samples`).  The released versions are
+   (Appendix D, `app:samples`); and other twists, closure and span of the
+   image (Appendix E, `sec:census`: the full S₇ census read through the
+   closure criterion, with the span index of each closing permutation,
+   2¹⁶ for σ and the odd ones and 2¹⁰ for the even ones; the span of ⋆ by
+   hand, Proposition E.1 (`prop:span`); and a reflection twist with span
+   index 1).  The released versions are
    `paper/main_2026-04-29.tex` (v3), `paper/main_2026-05-25.tex` (v4),
    `paper/main_2026-06-07.tex` (v5), `paper/main_2026-07-18.tex` (v6)
    and `paper/main_2026-07-19.tex` (v7); the changes from one version to
@@ -683,7 +685,7 @@ the trial, and prints detailed results.
    square-zero elements, the exclusion of the σ(Ls)-as-ideal
    explanation, the exhaustive cycle census, the closure criterion (paper
    Proposition 5.3, `prop:criterion`) and the span of ⋆ by hand
-   (Proposition 5.4, `prop:span`) are recorded under "Structure of the
+   (Proposition E.1, `prop:span`) are recorded under "Structure of the
    algebra" above.  Scripts:
    `verify_ideal_decomposition.py`, `verify_star_algebra_structure.py`,
    `verify_aut_lambda_star.py`, `verify_aut_octonion_crosscheck.py`,
@@ -718,8 +720,8 @@ with further detail recorded here.
    for the other odd closing permutations, 2¹⁰ for the even ones, 1 for the
    reflection ρ in the root (e₀+e₁+⋯+e₆−e₇)/2 of L (claim 017; "Structure
    of the algebra" above), and the ring structure of the index-1 orders.
-   σ's value is proved in the paper (Proposition 5.4, `prop:span`).  Not
-   posed in the paper, which states the other values in §5.6.
+   σ's value is proved in the paper (Proposition E.1, `prop:span`).  Not
+   posed in the paper, which states the other values in Appendix E.
 
 3. **Classification** of the algebra (R²⁴, +, ⋆): it is
    nonassociative, nonalternative, nonflexible, non-power-associative,
@@ -775,7 +777,7 @@ leech_alg/
 │   ├── 2026-10-21_criterion_plan.md  # Item 2: the closure criterion in §5.6 (executed)
 │   ├── 2026-10-22_appendix_a_plan.md  # Item 3: Appendix A around the criterion mod 2 (executed)
 │   ├── 2026-10-22_section6_plan.md  # Item 4: Section 6, the Baez–Egan block (executed)
-│   ├── 2026-10-23_span_plan.md  # Item 5: the span of the triple product by hand, §5.6 (executed)
+│   ├── 2026-10-23_span_plan.md  # Item 5: the span of the triple product by hand, Appendix E (executed)
 │   ├── 2026-10-24_consistency_plan.md  # Consistency before the fine-comb read (executed)
 │   ├── trial_001_results.md       # Base triple-octonion: t3×t3 fails cond. 3
 │   ├── trial_002_results.md       # Per-block scaling, normalized products: lattice obstruction

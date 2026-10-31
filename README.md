@@ -81,13 +81,13 @@ exhibits the fit of this octonion product with Wilson's representation.
   cross-verify the octonion multiplication as a nonassociative Moufang
   loop of order 16, isomorphic to the standard octonion loop
   MoufangLoop(16, 3)).  All arithmetic exact (rational); no floating point.
-- **Structure of the algebra**, exact and exhaustive (Section 5 of the
-  paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
+- **Structure of the algebra**, exact and exhaustive (Section 5 and Appendix E
+  of the paper): the ambient algebra splits as R²⁴ = D ⊕ T into mutually
   annihilating two-sided ideals (D the diagonal octonions, T the sum-zero
   triples); it has exactly eight idempotents, of which only 0 lies in Λ;
   the order is not maximal (Section 5.3: L³ and Λ + Zε₁ are ⋆-closed
   overlattices, of index 2¹² and 4); the span index of the products depends
-  on the twist (Section 5.6: 2¹⁶ for σ, proved by hand in Proposition 5.4,
+  on the twist (Appendix E: 2¹⁶ for σ, proved by hand in Proposition E.1,
   2¹⁰ for the even closing permutations, 1 for a reflection twist); Λ
   contains square-zero vectors of norms in 12Z, exactly 4,032 of them of
   norm 12; and Aut(Λ, +, ⋆) ≅ C₆ × S₃ is
@@ -117,7 +117,7 @@ detail in [CURRENT_STATE.md](CURRENT_STATE.md).
 - Where Aut(Λ, +, ⋆) ≅ C₆ × S₃ sits inside Co₀ = Aut(Λ) up to conjugacy,
   and whether the order-6 octonion automorphism generating the C₆ has an
   intrinsic description.
-- A reason for the closure pattern of the census of Section 5.6.  All
+- A reason for the closure pattern of the census of Appendix E.  All
   5,040 permutations of S₇ have been enumerated exactly (1,764 of the
   5,039 nonidentity permutations close), and Proposition 5.3 decides
   closure for each; the 2-cycles close by Theorem 1.1, and the pattern is

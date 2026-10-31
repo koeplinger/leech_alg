@@ -1,12 +1,12 @@
 # 2026-10-22 — Plan: Section 6, the Baez–Egan block
 
-Created: 2026-10-22.  Updated: 2026-10-24.
+Created: 2026-10-22.  Updated: 2026-10-31.
 
 **Status: executed.**  This plan is item 4 of the closed-form plan,
 `2026-10-20_closed_form_plan.md`.  The author's decisions of §1: (l), (m)
 and (n′) as recommended; the two rulings on the Jordan paragraph kept
 (one name of the product, "doubled", and "at least 17,280"); Appendix A
-unchanged.  The five edits of §3 are in `paper/main.tex` as written here:
+unchanged.  The five edits of §3 are in `paper/main.tex`:
 Section 6 (`sec:related`), with Egan's construction as display (6.2)
 (`eq:egan`) and without the Comparison paragraph; Section 1's sentence on
 Baez and Egan; the bibliography, with the new entry [Egan2014].  The

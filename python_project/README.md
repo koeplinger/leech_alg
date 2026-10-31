@@ -51,7 +51,7 @@ python3 trial_001_triple_octonion.py    # Any earlier trial; see src/README.md f
 python3 consistency_checks.py           # Consistency checks of the construction (checks 1-3, 5-10)
 ```
 
-The computed algebraic properties of Section 5 of the paper (Section 5.3 is proved by hand), and the ideal exclusion of Remark 4.5, are certified by their own scripts, each stating what it proves:
+The computed algebraic properties of Section 5 and Appendix E of the paper (Section 5.3 is proved by hand), and the ideal exclusion of Remark 4.5, are certified by their own scripts, each stating what it proves:
 
 ```bash
 cd src
@@ -65,8 +65,8 @@ python3 verify_aut_octonion_crosscheck.py      # independent re-derivation of th
 python3 verify_sigma_Ls_ideal_exclusion.py     # σ(Ls) is not an ideal of L (paper Remark 4.5)
 python3 verify_all_permutations_exact.py       # closure census over all of S₇ (1,764 of 5,039)
 python3 verify_identity_witnesses.py           # §5.1: a witness of each failing identity, checked exactly
-python3 verify_twist_span_index_census.py      # §5.6: the closure criterion (Proposition 5.3) on all 5,040 permutations; span indices
-python3 verify_product_span_proof.py           # §5.6: every step of the proof of Proposition 5.4, the span of ⋆
+python3 verify_twist_span_index_census.py      # Appendix E: the closure criterion (Proposition 5.3) on all 5,040 permutations; span indices
+python3 verify_product_span_proof.py           # Appendix E: every step of the proof of Proposition E.1, the span of ⋆
 ```
 
 See [`src/README.md`](src/README.md) for what each one certifies, and [`../gap_project/README.md`](../gap_project/README.md) for the independent GAP determination of the automorphism group's order and structure.

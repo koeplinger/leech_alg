@@ -1,11 +1,11 @@
 """Validation + structure of S = Z-span(Lambda star Lambda), of index
 [Lambda : S] = 65536 = 2^16 (also computed by verify_product_span_index.py).
 
-Created: 2026-07-10.  Updated: 2026-10-28.
+Created: 2026-07-10.  Updated: 2026-10-31.
 
 The paper cites this script, with verify_product_span_index.py and
-verify_product_span_proof.py, at Proposition 5.4 (`prop:span`, Section
-5.6), which proves by hand that S = {(w, w, w) + 2u : w in Ls, u in Lambda},
+verify_product_span_proof.py, at Proposition E.1 (`prop:span`, Appendix E),
+which proves by hand that S = {(w, w, w) + 2u : w in Ls, u in Lambda},
 of index 2^16, containing 2 Lambda.  Check (b), 2 Lambda in S, with the
 index gives the order 2^8 of S/2 Lambda, which the proof shows to be
 isomorphic to Ls/2Ls.

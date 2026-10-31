@@ -1,6 +1,6 @@
 # Terminology Reference
 
-Created: 2026-04-11.  Updated: 2026-10-28.
+Created: 2026-04-11.  Updated: 2026-10-31.
 
 This file defines terminology used in this project. Where established
 mathematical terminology exists, it is cited. Where constructions are
@@ -559,7 +559,7 @@ Meurman's [Calderbank2023].
 
 ### Reflection ρ
 
-(Main paper §5.6, label `sec:census`; `verify_twist_span_index_census.py`;
+(Main paper Appendix E, label `sec:census`; `verify_twist_span_index_census.py`;
 claims 017, 018.  Written s_r in the external review of v8.)  The
 reflection of R⁸ in the root r = ½(e₀ + e₁ + ⋯ + e₆ − e₇) of L, a twist (see
 "Twist" below).  The triple product ⋆_ρ closes on Λ with span index 1.  The
@@ -571,7 +571,7 @@ a maximal order: L³ is a ⋆_ρ-closed overlattice of Λ of index 2¹² (claim
 
 ### Span index
 
-(Main paper §5.6, label `sec:census`, and Proposition 5.4, `prop:span`;
+(Main paper Appendix E, label `sec:census`, and Proposition E.1, `prop:span`;
 `verify_product_span_index.py`, `verify_product_span_structure.py`,
 `verify_product_span_proof.py`, `verify_twist_span_index_census.py`; claims
 015, 017, 018.)  When a triple product ⋆_g (see "Twist" below)
@@ -585,7 +585,7 @@ larger.  By bilinearity, closure and span index are decided by the 576
 products of pairs from a Z-basis of Λ; the index is computed exactly by
 Hermite normal form.  Values: the span of ⋆ = ⋆_σ consists of the vectors
 (w, w, w) + 2u with w ∈ Ls and u ∈ Λ, so it contains 2Λ and has span index
-2¹⁶ = 65,536 (Proposition 5.4, proved by hand; claim 015); every odd
+2¹⁶ = 65,536 (Proposition E.1, proved by hand; claim 015); every odd
 closing permutation twist has span index 2¹⁶ and every even one 2¹⁰; the
 reflection ρ has span index 1 (claim 017); the induced product φ of the
 Baez–Egan closure, at the paper's scale (main paper §6, `sec:related`), has
@@ -641,7 +641,7 @@ not close.  Exhaustive, not sampled
 (`verify_all_permutations_exact.py`; partial checks in
 `verify_all_cycles_exact.py` (the 3- to 7-cycles, exact) and
 `consistency_checks.py` (three transpositions, sampled); main paper
-§5.6).
+Appendix E).
 
 The name "transposition-twisted triple octonion product", used in the
 trial 007 files, over-privileges the twist: the
@@ -672,7 +672,7 @@ Z₃-symmetric triple-octonion product ⋆ = ⋆_σ (see above).
 
 ### Twist
 
-(Main paper §5.6, label `sec:census`, and Proposition 5.3,
+(Main paper §5.6, label `sec:criterion`, and Proposition 5.3,
 `prop:criterion`.)  A **twist** is an invertible linear map g of R⁸ with
 g(L) = L.  It defines the **twisted octonion product** x ·_g y :=
 g⁻¹(g(x) · g(y)) on O, another octonion product, isomorphic to the standard

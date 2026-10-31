@@ -1,6 +1,6 @@
 # Evidence and Reasoning
 
-Created: 2026-04-06.  Updated: 2026-10-28.
+Created: 2026-04-06.  Updated: 2026-10-31.
 
 This folder documents the structured reasoning behind the research: key claims,
 logical steps, supporting arguments, and the evidence base for each.
@@ -40,7 +40,7 @@ evidence_and_reasoning/
 ├── 2026-10-21_criterion_plan.md  # Item 2 of the closed-form plan: the closure criterion in Section 5.6 (executed)
 ├── 2026-10-22_appendix_a_plan.md  # Item 3 of the closed-form plan: Appendix A around the criterion modulo 2 (executed)
 ├── 2026-10-22_section6_plan.md  # Item 4 of the closed-form plan: Section 6, the Baez–Egan block (executed)
-├── 2026-10-23_span_plan.md  # Item 5 of the closed-form plan: the span of the triple product by hand, Section 5.6 (executed)
+├── 2026-10-23_span_plan.md  # Item 5 of the closed-form plan: the span of the triple product by hand, Appendix E (executed)
 ├── 2026-10-24_consistency_plan.md  # Plan: consistency of the paper and its supporting documents before the fine-comb read (executed)
 └── README.md               # This file
 ```

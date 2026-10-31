@@ -1,6 +1,6 @@
 # 2026-10-20 — Plan: the closed-form v8 (the closure criterion, Egan's construction, Section 5.1)
 
-Created: 2026-10-20.  Updated: 2026-10-28.
+Created: 2026-10-20.  Updated: 2026-10-31.
 
 **Status: executed.**  The seven items of §3 are done, items 1 to 5 each
 through its own plan; the body is the plan as engaged.  In this plan "§"
@@ -35,13 +35,13 @@ changes part by part):
 - Item 1: `2026-10-21_plan.md`; Section 5.1
   (`sec:identities`) and Appendix D (`app:samples`).
 - Item 2: `2026-10-21_criterion_plan.md`; Proposition
-  5.3 (`prop:criterion`) in Section 5.6 (`sec:census`).
+  5.3 (`prop:criterion`) in Section 5.6 (`sec:criterion`).
 - Item 3: `2026-10-22_appendix_a_plan.md`; Appendix A
   (`app:mod2quotient`), and Section 7 (`sec:conclusion`) with three open
   questions.
 - Item 4: `2026-10-22_section6_plan.md`; Section 6
   (`sec:related`), with Egan's construction as display (6.2) (`eq:egan`).
-- Item 5: `2026-10-23_span_plan.md`; Proposition 5.4
+- Item 5: `2026-10-23_span_plan.md`; Proposition E.1
   (`prop:span`).
 - Item 6: the abstract and Section 7.
 - Item 7, the records: CURRENT_STATE, the indexing READMEs,

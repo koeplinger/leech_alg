@@ -2,7 +2,7 @@
 imaginary octonion basis units, does the pi-twisted triple product close on
 the Leech lattice?
 
-Created: 2026-07-17.  Updated: 2026-10-24.
+Created: 2026-07-17.  Updated: 2026-10-31.
 
 Extends verify_all_cycles_exact.py (single cycles) and
 verify_consecutive_twists_exact.py (transpositions, 3-cycles, (2,2)-doubles)
@@ -19,11 +19,11 @@ Prints the census table (cycle type, permutations tested, number that close,
 rate), the identity last, and the total over the nonidentity permutations:
 1,764 of 5,039 close.  Then two sanity checks: the per-type totals are the
 class sizes of S_7, and the closing counts of the single cycles and the
-(2,2) type are those of the table in paper Section 5.6, with the identity
+(2,2) type are those of the table in paper Appendix E, with the identity
 not closing.  Ends with ALL PASS (exit code 0) or a mismatch message (exit
 code 1).
 
-The paper cites this script in Section 5.6 (`sec:census`), in the footnote
+The paper cites this script in Appendix E (`sec:census`), in the footnote
 to the table of closure by cycle type, with verify_twist_span_index_census.py
 (the span-index column).  Ledger claim 014.
 
@@ -115,7 +115,7 @@ def main():
                 (3, 2, 2): 210, (7,): 720}
     ok_sizes = all(tested[ct] == n for ct, n in expected.items())
     print(f"\nclass sizes match S_7: {ok_sizes}")
-    # sanity: the single-cycle and (2,2) rows of the table in paper Section 5.6
+    # sanity: the single-cycle and (2,2) rows of the table in paper Appendix E
     # (the identity does not close)
     prev = {(2,): 21, (3,): 35, (4,): 0, (5,): 252, (6,): 210, (7,): 336,
             (2, 2): 42, (): 0}

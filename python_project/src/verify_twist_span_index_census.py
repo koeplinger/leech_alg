@@ -1,9 +1,9 @@
 """Span index of twisted triple products: the permutation census and the
 index-1 reflection.
 
-Created: 2026-10-14.  Updated: 2026-10-24.
+Created: 2026-10-14.  Updated: 2026-10-31.
 
-The paper cites this script in Section 5.6 (label sec:census, "Other twists:
+The paper cites this script in Appendix E (label sec:census, "Other twists:
 closure and span of the image"): at the census table, with
 verify_all_permutations_exact.py, for the span-index column, and at the
 reflection rho, which is s_r of Part 1 below.

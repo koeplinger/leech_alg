@@ -1,6 +1,6 @@
 # Trial 007 Results — Triple Kirmse-twisted octonion algebra
 
-Created: 2026-04-11.  Updated: 2026-10-28.
+Created: 2026-04-11.  Updated: 2026-10-31.
 
 ## Algebra tested
 
@@ -80,7 +80,7 @@ trial_007_scaled_test.py, trial_007_fast.py and trial_007_exhaust.py test
 
 Not all permutations work. A survey of permutations of seven cycle types
 gave the following; no program in the repository reproduces it, and the
-exact counts over all of S₇ are those of the paper's Section 5.6
+exact counts over all of S₇ are those of the paper's Appendix E
 (`sec:census`; `python_project/src/verify_all_permutations_exact.py`):
 
 | Cycle type | Worked (0 failures) / tested | Rate |
@@ -106,7 +106,7 @@ transpositions close.  The criterion for general permutations is the
 paper's Proposition 5.3 (`prop:criterion`): the twisted product
 x ·_π y := π⁻¹(π(x) · π(y)) gives a triple product that closes on Λ exactly
 when π(Ls̄) and π(Ls) are closed under the standard octonion product.  The
-exact census over all of S₇ is the paper's Section 5.6 (`sec:census`).
+exact census over all of S₇ is the paper's Appendix E (`sec:census`).
 
 ## Failure mode contrast
 
@@ -199,7 +199,7 @@ an order under an octonion-derived bilinear product.
    `sec:autgroup`).
 3. The criterion distinguishing working from nonworking permutations:
    paper Proposition 5.3 (`prop:criterion`), with the census of paper
-   Section 5.6 (`sec:census`).  A reason for the closure pattern beyond the
+   Appendix E (`sec:census`).  A reason for the closure pattern beyond the
    2-cycles, in particular for the failure of every 4-cycle and for the
    exact one-half rates, is open (paper Section 7, `sec:conclusion`).
 4. Different transpositions give isomorphic orders: the 21 transpositions

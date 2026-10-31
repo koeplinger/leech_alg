@@ -197,18 +197,18 @@ Section~\ref{sec:construction} defines the product, and
 Section~\ref{sec:proof} proves Theorem~\ref{thm:main}.
 Section~\ref{sec:properties} determines algebraic properties of the
 order: that standard identities fail on it; its idempotents; that it is
-not maximal; its automorphism group and square-zero elements; and the
-index of the span of its products.  It also characterizes the twists
-other than~$\sigma$ that close on~$\LL$.
+not maximal; its automorphism group; and its square-zero elements.  It
+also characterizes the twists other than~$\sigma$ that close on~$\LL$.
 Section~\ref{sec:related} places the construction among related work,
 Section~\ref{sec:conclusion} concludes with the open questions, and
 Section~\ref{sec:outlook} is an outlook.  Appendix~\ref{sec:appendix-tables}
 reads the closure criterion modulo~$2$, Appendix~\ref{app:history} traces
 the integral octonions from Dickson to Coxeter,
-Appendix~\ref{sec:methodology} records the research methodology, and
+Appendix~\ref{sec:methodology} records the research methodology,
 Appendix~\ref{app:samples} gives sampled frequencies of identities of
 Section~\ref{sec:properties} and the norms of products of minimal
-vectors.
+vectors, and Appendix~\ref{sec:census} tests the closure of other twists
+and determines the index of the span of the products.
 
 All results were developed through a systematic human--AI
 collaboration, and the complete research record is public~\cite{repo}:
@@ -633,7 +633,10 @@ This completes the proof of Theorem~\ref{thm:main}.
 % ===============================================================
 
 Throughout this section, $\sigma = (1\;2)$, as in
-Section~\ref{sec:proof}.
+Section~\ref{sec:proof}.  Appendix~\ref{sec:census} complements this
+section: it tests other twists (Section~\ref{sec:criterion}) for
+closure on~$\LL$ and determines how much of~$\LL$ the products of the
+order reach.
 
 \subsection{Identities}\label{sec:identities}
 
@@ -752,31 +755,44 @@ shell.
 
 \subsection{Maximality}\label{sec:maximality}
 
-The order $(\LL, +, \star)$ is not maximal: it is properly contained
-in the $\star$-closed lattice~$L^3$.  The proof of
+The order $(\LL, +, \star)$ is not maximal: larger orders in the
+ambient algebra contain it.  Two such orders, $L^3$ and
+$\LL + \ZZ\varepsilon_1$, witness this, and neither contains the
+other.
+
+The first witness is~$L^3$.  The proof of
 Proposition~\ref{prop:cond1} uses only Wilson's condition~(1), that
-the blocks of~$u$ and~$v$ lie in~$L$, so it shows $L^3 \star L^3
+the blocks of both factors lie in~$L$, so it shows $L^3 \star L^3
 \subseteq L^3$.  The lattice~$L^3$ is even and integral, and
 $[L^3 : \LL] = 2^{12}$.
 
-A second $\star$-closed overlattice, $\LL + \ZZ\varepsilon_1$, is not
-contained in~$L^3$, because $e_0 \notin L$.  The idempotent $\varepsilon_1 = (e_0, 0, 0)$ acts
-on either side as the swap of blocks~2 and~3: since $e_0$ is the
-identity of $(\OO, \cdot_\sigma)$, \eqref{eq:P1}--\eqref{eq:P3} give
-$\varepsilon_1 \star v = v \star \varepsilon_1 = (x', z', y')$ for
+The second witness is $\LL + \ZZ\varepsilon_1$, the lattice generated
+by~$\LL$ and the idempotent $\varepsilon_1 = (e_0, 0, 0)$.  On either
+side, $\varepsilon_1$ acts as the swap of blocks~2 and~3: since $e_0$
+is the identity of $(\OO, \cdot_\sigma)$, \eqref{eq:P1}--\eqref{eq:P3}
+give $\varepsilon_1 \star v = v \star \varepsilon_1 = (x', z', y')$ for
 $v = (x', y', z')$.  This swap preserves~$\LL$, because Wilson's three
 conditions are symmetric in the blocks.  With $\varepsilon_1 \star
 \varepsilon_1 = \varepsilon_1$, the lattice $\LL + \ZZ\varepsilon_1$ is
 therefore $\star$-closed by bilinearity.
 By~\eqref{eq:idempotent-multiples}, $4\varepsilon_1$ is the least
-positive multiple of~$\varepsilon_1$ in~$\LL$, so the index is
-$[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  This overlattice is not integral:
-$\varepsilon_1$ has half-integer inner products with vectors of~$\LL$.
+positive multiple of~$\varepsilon_1$ in~$\LL$, so
+$[\LL + \ZZ\varepsilon_1 : \LL] = 4$.  Unlike~$L^3$, the second witness
+is not integral: $\varepsilon_1$ has half-integer inner products with
+some vectors of~$\LL$.
+
+Neither witness contains the other: $\LL + \ZZ\varepsilon_1$ is not
+contained in~$L^3$, because the first block~$e_0$ of~$\varepsilon_1$ is
+not in~$L$, and $L^3$ is not contained in~$\LL + \ZZ\varepsilon_1$,
+since $[L^3 : \LL] = 2^{12}$ exceeds $[\LL + \ZZ\varepsilon_1 : \LL] =
+4$.
 
 \subsection{The automorphism group}\label{sec:autgroup}
 
-$\Aut(\LL, +, \star)$ is finite, of order~$36$, with structure
-$C_6 \times S_3$.  The~$S_3$ is the block permutation of
+Restricted to the Leech lattice, the ambient algebra has the
+automorphism group $\Aut(\LL, +, \star)$, the group of bijections
+of~$\LL$ that preserve both $+$ and~$\star$.  This group is finite, of
+order~$36$, with structure $C_6 \times S_3$.  The~$S_3$ permutes the three blocks of
 Definition~\ref{def:triple}, and the~$C_6$ is generated by the
 following signed permutation of imaginary basis units, an automorphism of
 the algebra $(\OO, \cdot_\sigma)$ of
@@ -790,17 +806,21 @@ $e_0$ fixed:
   &e_4 \mapsto -e_4. \label{eq:c6-gen-3}
 \end{align}
 
-The containment $\Aut(\LL, +, \star) \subseteq \Co_0$ can already be
-settled at the level of the ambient algebra, before the lattice is
-imposed.  As a real algebra, $\RR^{24} = \OO^3$
+Every automorphism of the order $(\LL, +, \star)$ is an isometry
+of~$\LL$, so $\Aut(\LL, +, \star)$ is a subgroup of the Conway
+group~$\Co_0$, the isometry group of~$\LL$.  This inclusion can already
+be settled at the level of the ambient algebra, to which every
+automorphism of the order extends linearly ($\LL$ spans~$\RR^{24}$, and
+$\star$ is bilinear).  As a real algebra, $\RR^{24} = \OO^3$
 splits as $D \oplus T$, where $D = \{(a,a,a) : a \in \OO\}$ (of
 dimension~8) and $T = \{(x,y,z) \in \OO^3 : x+y+z = 0\}$ (of
 dimension~16).  Both are two-sided ideals, and $D \star T = T \star D
-= 0$.  Every $\star$-automorphism preserves them and acts on each by an
-octonion automorphism, composed with a permutation of the blocks, so
-that $\Aut(\RR^{24}, \star) = G_2 \times G_2 \times S_3$.  An automorphism of
+= 0$.  Every automorphism of the ambient algebra preserves them and
+acts on each by an octonion automorphism, composed with a permutation
+of the blocks, so that the ambient algebra itself has the automorphism
+group $\Aut(\RR^{24}, \star) = G_2 \times G_2 \times S_3$.  An automorphism of
 the \emph{real} octonions preserves the positive-definite octonion norm,
-and $D \perp T$; hence every $\star$-automorphism of~$\RR^{24}$ is
+and $D \perp T$; hence every automorphism of the ambient algebra is
 orthogonal, and
 \begin{equation}\label{eq:disp9}
   \Aut(\LL, +, \star) \;\subsetneq\; \Co_0 .
@@ -843,12 +863,12 @@ $4{,}032$ vectors are exactly the square-zero vectors of norm~12, and
 norm~24 occurs as well: the sum of two of them that are blockwise
 orthogonal is square-zero of norm~24.\footnote{\scriptref{verify\_square\_zero\_norm24\_witness.py}.}
 
-\subsection{Other twists: closure and span of the image}\label{sec:census}\label{sec:span}
+\subsection{The closure criterion}\label{sec:criterion}
 
 The construction twists the octonion product by one
 transposition,~$\sigma$.  This subsection replaces~$\sigma$ by other
-maps and tests two properties of the resulting triple product: whether
-it still closes on~$\LL$, and how much of~$\LL$ its products reach.
+maps and characterizes those for which the resulting triple product
+still closes on~$\LL$.
 
 A \emph{twist} is an invertible linear map~$g$ of~$\RR^8$ with
 $g(L) = L$.  It defines the twisted product $x \cdot_g y :=
@@ -893,152 +913,6 @@ For $g = \sigma$, the lattices $\sigma(L\bar s) = 2\MO$ and $\sigma(Ls) =
 p\MO$ of~\eqref{eq:multiples} are closed under the standard octonion
 product, by the closure of~$\MO$ and Lemma~\ref{lem:sigmaLs-closed}, so
 the proposition gives Theorem~\ref{thm:main} again.
-
-When $\star_g$ closes on~$\LL$, the integer combinations of its
-products $u \star_g v$ ($u, v \in \LL$) form a sublattice of~$\LL$,
-the \emph{span} of~$\star_g$.  The \emph{span index} of~$\star_g$ is
-the number of disjoint translates of the span that make up~$\LL$.  Span index~$1$ means that every vector
-of~$\LL$ is an integer combination of products.  An order that
-contains a multiplicative identity always has span index~$1$, since
-every vector $u = u \cdot 1$ is a product; the ambient algebra here
-has no multiplicative identity, and the span index can be larger.
-
-Both properties are decided by finitely many products.  By
-bilinearity it suffices to take the $24 \times 24 = 576$ products of
-pairs of vectors from a $\ZZ$-basis of~$\LL$.  The product~$\star_g$
-closes on~$\LL$ if and only if all of them lie in~$\LL$, and the span
-index is the index of the lattice they span, computed exactly by
-Hermite normal form.\footnote{\scriptref{verify\_product\_span\_index.py}.}
-
-As an experiment, we generalize from the transposition~$\sigma$ to all
-permutations~$\pi$ of the seven imaginary basis units
-$e_1, \ldots, e_7$, each fixing~$e_0$.  These form the symmetric
-group~$S_7$, with~$\sigma$ as a special case.  For every cycle type
-of~$S_7$ we find:\footnote{\scriptref{verify\_all\_permutations\_exact.py}
-\scriptref{verify\_twist\_span\_index\_census.py}.}
-\begin{center}
-\begin{tabular}{@{}lrrrr@{}}
-\toprule
-Cycle type of $\pi$ & Permutations & Close & Rate & Span index \\
-\midrule
-$2$-cycle     & $21$  & $21$  & $100\%$  & $2^{16}$ \\
-$3$-cycle     & $70$  & $35$  & $50\%$   & $2^{10}$ \\
-$(2,2)$       & $105$ & $42$  & $40\%$   & $2^{10}$ \\
-$4$-cycle     & $210$ & $0$   & $0\%$    & n/a \\
-$(3,2)$       & $420$ & $126$ & $30\%$   & $2^{16}$ \\
-$5$-cycle     & $504$ & $252$ & $50\%$   & $2^{10}$ \\
-$(2,2,2)$     & $105$ & $21$  & $20\%$   & $2^{16}$ \\
-$(3,3)$       & $280$ & $112$ & $40\%$   & $2^{10}$ \\
-$(4,2)$       & $630$ & $294$ & $46.7\%$ & $2^{10}$ \\
-$6$-cycle     & $840$ & $210$ & $25\%$   & $2^{16}$ \\
-$(3,2,2)$     & $210$ & $105$ & $50\%$   & $2^{10}$ \\
-$(4,3)$       & $420$ & $168$ & $40\%$   & $2^{16}$ \\
-$(5,2)$       & $504$ & $42$  & $8.3\%$  & $2^{16}$ \\
-$7$-cycle     & $720$ & $336$ & $46.7\%$ & $2^{10}$ \\
-\midrule
-Total         & $5{,}039$ & $1{,}764$ & $35.0\%$ & \\
-\bottomrule
-\end{tabular}
-\end{center}
-The $2$-cycles, the transpositions of Definition~\ref{def:twist},
-close by Theorem~\ref{thm:main}.  By Proposition~\ref{prop:criterion},
-the identity permutation does not close, since $Ls$ is not closed
-under the standard octonion product (Remark~\ref{rem:Ls-not-closed}).
-Each permutation~$\pi$ preserves~$L$, as $\sigma$ does
-(Lemma~\ref{lem:sigma-L}), so by the same proposition the column
-``Close'' counts the permutations~$\pi$ for which $\pi(L\bar s)$
-and~$\pi(Ls)$ are closed under the standard octonion product.  For the
-$3$-cycles the closing half admits a description: for each
-three-element subset of imaginary indices, one of the two cyclic
-orientations closes.  No description in terms of~$\pi$ like that of
-the $3$-cycles is given here for the other types that close in part,
-nor a reason for the failure of every $4$-cycle.
-
-The span index of a closing permutation depends only on its parity:
-it is $2^{16}$ for every odd one and $2^{10}$ for every even one (last
-column).
-
-\begin{proposition}\label{prop:span}
-The span of~$\star$ consists of the vectors $(w, w, w) + 2u$ with $w \in
-Ls$ and $u \in \LL$.  In particular, $\star$ has span index $2^{16} =
-65{,}536$, and its span contains~$2\LL$.\footnote{\scriptref{verify\_product\_span\_index.py}
-\scriptref{verify\_product\_span\_structure.py}
-\scriptref{verify\_product\_span\_proof.py}.}
-\end{proposition}
-
-\begin{proof}
-Write~$S$ for the span.  By~\eqref{eq:multiples} and the closure
-of~$\MO$, $L\bar s \cdot_\sigma L\bar s \subseteq 2L\bar s$ and $L\bar s
-\cdot_\sigma Ls + Ls \cdot_\sigma L\bar s \subseteq L\bar s$.  The
-products $(yp)z$ with $y, z \in \MO$ span~$\MO$, and so do the products
-$y(pz)$.  Indeed, $v := -\tfrac12(e_1 + e_2)s = \tfrac12(e_0 + e_2 + e_3 -
-e_7)$ lies in~$\MO$ by~\eqref{eq:MO}, as $s \in L$, and $pv + vp = 2v_0\,p
-- 2\langle p, v\rangle e_0 = p - e_0$, as $p$ is purely imaginary.  The
-right alternative law $(yx)x = yx^2$ with $x = p + v$ gives $(yp)v + (yv)p
-= y(pv + vp) = yp - y$, so $y = (yp)e_0 - (yp)v - \bigl((yv)p\bigr)e_0$
-for every $y \in \MO$; the left alternative law gives $y = e_0(py) - v(py)
-- e_0\bigl(p(vy)\bigr)$ in the same way.  Now $\sigma$ maps
-$Ls \cdot_\sigma Ls$ onto the products $(py)(pz) = p\bigl((yp)z\bigr)$
-of~\eqref{eq:moufang-imaginary}, and $L\bar s \cdot_\sigma Ls$ onto the
-products $2y(pz)$, with $y, z \in \MO$.  Hence the products in $Ls
-\cdot_\sigma Ls$ span~$Ls$, and those in $L\bar s \cdot_\sigma Ls$
-span~$L\bar s$.
-
-From here on, write $xy$ for $x \cdot_\sigma y$, while $L\bar s$ and~$Ls$
-remain the lattices of~\eqref{eq:disp1}.  By the proof of
-Proposition~\ref{prop:criterion}, $\LL$ is spanned by the vectors $(a, 0,
--a)$, $(b, -b, 0)$ with $a, b \in L\bar s$ and $(-w, w, w)$ with $w \in
-Ls$ (their sum is the vector $(a + b - w, w - b, w - a)$ there).
-Definition~\ref{def:triple} gives
-\begin{align*}
-  (a, 0, -a) \star (a', 0, -a') &= (aa', -2aa', aa'), &
-  (b, -b, 0) \star (b', -b', 0) &= (bb', bb', -2bb'), \\
-  (a, 0, -a) \star (b, -b, 0) &= (2ab, -ab, -ab), &
-  (a, 0, -a) \star (-w, w, w) &= (-2aw, 2aw, 0), \\
-  (b, -b, 0) \star (-w, w, w) &= (-2bw, 0, 2bw), &
-  (-w, w, w) \star (-w', w', w') &= (3ww', -ww', -ww'),
-\end{align*}
-and the products in the opposite order are the same with the octonion
-factors on the right exchanged.  For $c \in L\bar s$ and integers $k_1,
-k_2, k_3$ with $k_1 + k_2 + k_3 = 0$, the vector $(k_1 c, k_2 c, k_3 c)$
-lies in~$\LL$ (Definition~\ref{def:wilson-leech}).  So, by the inclusions
-above, every product other than the products of two vectors $(-w, w, w)$
-lies in~$2\LL$.  These are $2(2c, 0, 0) - (c, c, c)$ with $c = ww' \in
-Ls$, and $(2c, 0, 0) \in \LL$ as $2L \subseteq L\bar s \cap Ls$.  Hence,
-by bilinearity, every vector of~$S$ has the stated form.
-
-Conversely, $S$ contains $(3c, -c, -c)$ for every $c \in Ls$, since the
-products in $Ls \cdot_\sigma Ls$ span~$Ls$.  The cyclic shift of the
-blocks preserves~$\LL$ and, by the $\ZZ_3$ symmetry of the routing,
-commutes with~$\star$, so it maps~$S$ onto itself, and $S$ also contains
-$(-c, 3c, -c)$ and $(-c, -c, 3c)$.  Adding the three gives $(c, c, c) \in
-S$, hence $(4c, 0, 0) \in S$ and $2(-c, c, c) = 2(c, c, c) - (4c, 0, 0)
-\in S$.  Since the products in $L\bar s \cdot_\sigma Ls$ span~$L\bar s$,
-the products of $(a, 0, -a)$ and of $(b, -b, 0)$ with $(-w, w, w)$ give
-$2(c, -c, 0)$ and $2(c, 0, -c)$ in~$S$ for every $c \in L\bar s$.  So $S$
-contains twice the vectors $(a, 0, -a)$, $(b, -b, 0)$ and $(-w, w, w)$
-that span~$\LL$, hence~$2\LL$, and with the vectors $(c, c, c)$, $c \in
-Ls$, every vector of the stated form.
-
-Finally, if $(c, c, c) \in 2\LL$ with $c \in Ls$, then $\tfrac32 c \in
-Ls$ by condition~(3), so $\tfrac12 c \in Ls$.  Hence $S/2\LL \cong
-Ls/2Ls$ has order~$2^8$, and $[\LL : S] = 2^{24}/2^8 = 2^{16}$.
-\end{proof}
-
-The transposition~$\sigma$ is also the reflection in the root
-$e_1 - e_2$ of~$L$, and reflections in the other roots of~$L$ are
-twists as well.  For the reflection~$\rho$ in the root
-$r = \tfrac12(e_0 + e_1 + \cdots + e_6 - e_7)$, the triple
-product~$\star_\rho$ closes on~$\LL$ with span
-index~$1$.\footnote{\scriptref{verify\_twist\_span\_index\_census.py}.}
-
-The span index is invariant under ring isomorphism, since an
-isomorphism maps products to products and hence the span onto the
-span.  Orders with different span indices are therefore not
-isomorphic.  By the parity split, an order $(\LL, +, \star_\pi)$ with
-$\pi$ odd (span index $2^{16}$, $\sigma$ among them) is not isomorphic
-to one with $\pi$ even (span index $2^{10}$), and neither is
-isomorphic to $(\LL, +, \star_\rho)$ (span index~$1$).
 
 % ===============================================================
 \section{Related work}\label{sec:related}
@@ -1094,7 +968,7 @@ Lemma~\ref{lem:sigma-L}.  Applied in each block in the same way, an
 isometry~$g$ of~$L$ with $g(L\bar s) = L_1$ and $g(Ls) = L_2$, which
 exists by Appendix~\ref{app:mod2quotient}, carries $\LL$ onto
 $\LL(L_1, L_2)$ and~$\star_g$ onto the untwisted product~$\star_{\mathrm{id}}$
-of Section~\ref{sec:census}.  By Proposition~\ref{prop:criterion}, then,
+of Section~\ref{sec:criterion}.  By Proposition~\ref{prop:criterion}, then,
 $\star_{\mathrm{id}}$ closes on $\LL(L_1, L_2)$ exactly when $L_1$
 and~$L_2$ are closed under the standard octonion product: it closes
 on~$\sigma(\LL)$, which is Theorem~\ref{thm:main}, and not on~$\LL$
@@ -1157,7 +1031,7 @@ in its arguments), whereas $\star$ is not
 are therefore distinct bilinear products on~$\RR^{24}$ that both close
 on~$\LL$.  Their spans differ as well.  Computed by the same
 Hermite-normal-form method as for~$\star$
-(Section~\ref{sec:span}),\footnote{\scriptref{verify\_phi\_span\_index.py}.}
+(Appendix~\ref{sec:span}),\footnote{\scriptref{verify\_phi\_span\_index.py}.}
 the span index of~$\varphi$ is~$2^{25}$.  Unlike for~$\star$, the span
 of~$\varphi$ does not contain~$2\LL$: its index exceeds
 $[\LL : 2\LL] = 2^{24}$.
@@ -1207,7 +1081,7 @@ under~$\cdot_g$ (Proposition~\ref{prop:criterion}).  The order is
 nonunital, has no nonzero idempotent and is
 not maximal; its automorphism group is $C_6 \times S_3$, and its span
 index is~$2^{16}$, a value that depends on the twist
-(Section~\ref{sec:properties}).
+(Section~\ref{sec:properties} and Appendix~\ref{sec:span}).
 
 Several questions remain open:
 \begin{itemize}
@@ -1217,7 +1091,7 @@ Several questions remain open:
 \item A classification of the algebra $(\RR^{24}, +, \star)$, which is
   nonassociative, nonalternative, nonflexible, non-power-associative,
   noncommutative and nonunital (Section~\ref{sec:identities}).
-\item A reason for the closure pattern of Section~\ref{sec:census}
+\item A reason for the closure pattern of Appendix~\ref{sec:census}
   beyond the $2$-cycles, in particular for the failure of every
   $4$-cycle and for the exact one-half rates.
 \end{itemize}
@@ -1299,7 +1173,7 @@ the reduction of the order~$L$ modulo~$2$.  A lattice~$M$ with
 $2L \subseteq M \subseteq L$ is the full preimage of~$M/2L$, so it is
 closed under the standard octonion product exactly when $M/2L$ is a
 subalgebra of~$(\bar L, \bar\mu)$.  For a twist~$g$
-(Section~\ref{sec:census}), the lattices $g(L\bar s)$ and~$g(Ls)$
+(Section~\ref{sec:criterion}), the lattices $g(L\bar s)$ and~$g(Ls)$
 contain~$2L$, since $L\bar s \cap Ls = 2L$
 (Section~\ref{subsec:wilson-leech}) and $g(2L) = 2L$.
 Proposition~\ref{prop:criterion} therefore reads modulo~$2$: $\star_g$
@@ -1577,6 +1451,162 @@ $10^6$ sampled pairs, the pair-product norms $\Nrm(u \star v)$ took
 only the values $\{16, 32, 48, 64, 80, 96, 112, 128\}$, all multiples
 of~16, with mode~64 (the norm-multiplicative value $\Nrm(u)\Nrm(v) = 8
 \times 8$).\footnote{\scriptref{verify\_pair\_norm\_histogram.py}.}
+
+% ===============================================================
+\section{Other twists: closure and span of the
+image}\label{sec:census}\label{sec:span}
+% ===============================================================
+
+This appendix replaces~$\sigma$ by other twists
+(Section~\ref{sec:criterion}) and tests two properties of the
+resulting triple product: whether it still closes on~$\LL$, and how
+much of~$\LL$ its products reach.
+
+When $\star_g$ closes on~$\LL$, the integer combinations of its
+products $u \star_g v$ ($u, v \in \LL$) form a sublattice of~$\LL$,
+the \emph{span} of~$\star_g$.  The \emph{span index} of~$\star_g$ is
+the number of disjoint translates of the span that make up~$\LL$.  Span index~$1$ means that every vector
+of~$\LL$ is an integer combination of products.  An order that
+contains a multiplicative identity always has span index~$1$, since
+every vector $u = u \cdot 1$ is a product; the ambient algebra here
+has no multiplicative identity, and the span index can be larger.
+
+Both properties are decided by finitely many products.  By
+bilinearity it suffices to take the $24 \times 24 = 576$ products of
+pairs of vectors from a $\ZZ$-basis of~$\LL$.  The product~$\star_g$
+closes on~$\LL$ if and only if all of them lie in~$\LL$, and the span
+index is the index of the lattice they span, computed exactly by
+Hermite normal form.\footnote{\scriptref{verify\_product\_span\_index.py}.}
+
+As an experiment, we generalize from the transposition~$\sigma$ to all
+permutations~$\pi$ of the seven imaginary basis units
+$e_1, \ldots, e_7$, each fixing~$e_0$.  These form the symmetric
+group~$S_7$, with~$\sigma$ as a special case.  For every cycle type
+of~$S_7$ we find:\footnote{\scriptref{verify\_all\_permutations\_exact.py}
+\scriptref{verify\_twist\_span\_index\_census.py}.}
+\begin{center}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Cycle type of $\pi$ & Permutations & Close & Rate & Span index \\
+\midrule
+$2$-cycle     & $21$  & $21$  & $100\%$  & $2^{16}$ \\
+$3$-cycle     & $70$  & $35$  & $50\%$   & $2^{10}$ \\
+$(2,2)$       & $105$ & $42$  & $40\%$   & $2^{10}$ \\
+$4$-cycle     & $210$ & $0$   & $0\%$    & n/a \\
+$(3,2)$       & $420$ & $126$ & $30\%$   & $2^{16}$ \\
+$5$-cycle     & $504$ & $252$ & $50\%$   & $2^{10}$ \\
+$(2,2,2)$     & $105$ & $21$  & $20\%$   & $2^{16}$ \\
+$(3,3)$       & $280$ & $112$ & $40\%$   & $2^{10}$ \\
+$(4,2)$       & $630$ & $294$ & $46.7\%$ & $2^{10}$ \\
+$6$-cycle     & $840$ & $210$ & $25\%$   & $2^{16}$ \\
+$(3,2,2)$     & $210$ & $105$ & $50\%$   & $2^{10}$ \\
+$(4,3)$       & $420$ & $168$ & $40\%$   & $2^{16}$ \\
+$(5,2)$       & $504$ & $42$  & $8.3\%$  & $2^{16}$ \\
+$7$-cycle     & $720$ & $336$ & $46.7\%$ & $2^{10}$ \\
+\midrule
+Total         & $5{,}039$ & $1{,}764$ & $35.0\%$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+The $2$-cycles, the transpositions of Definition~\ref{def:twist},
+close by Theorem~\ref{thm:main}.  By Proposition~\ref{prop:criterion},
+the identity permutation does not close, since $Ls$ is not closed
+under the standard octonion product (Remark~\ref{rem:Ls-not-closed}).
+Each permutation~$\pi$ preserves~$L$, as $\sigma$ does
+(Lemma~\ref{lem:sigma-L}), so by the same proposition the column
+``Close'' counts the permutations~$\pi$ for which $\pi(L\bar s)$
+and~$\pi(Ls)$ are closed under the standard octonion product.  For the
+$3$-cycles the closing half admits a description: for each
+three-element subset of imaginary indices, one of the two cyclic
+orientations closes.  No description in terms of~$\pi$ like that of
+the $3$-cycles is given here for the other types that close in part,
+nor a reason for the failure of every $4$-cycle.
+
+The span index of a closing permutation depends only on its parity:
+it is $2^{16}$ for every odd one and $2^{10}$ for every even one (last
+column).
+
+\begin{proposition}\label{prop:span}
+The span of~$\star$ consists of the vectors $(w, w, w) + 2u$ with $w \in
+Ls$ and $u \in \LL$.  In particular, $\star$ has span index $2^{16} =
+65{,}536$, and its span contains~$2\LL$.\footnote{\scriptref{verify\_product\_span\_index.py}
+\scriptref{verify\_product\_span\_structure.py}
+\scriptref{verify\_product\_span\_proof.py}.}
+\end{proposition}
+
+\begin{proof}
+Write~$S$ for the span.  By~\eqref{eq:multiples} and the closure
+of~$\MO$, $L\bar s \cdot_\sigma L\bar s \subseteq 2L\bar s$ and $L\bar s
+\cdot_\sigma Ls + Ls \cdot_\sigma L\bar s \subseteq L\bar s$.  The
+products $(yp)z$ with $y, z \in \MO$ span~$\MO$, and so do the products
+$y(pz)$.  Indeed, $v := -\tfrac12(e_1 + e_2)s = \tfrac12(e_0 + e_2 + e_3 -
+e_7)$ lies in~$\MO$ by~\eqref{eq:MO}, as $s \in L$, and $pv + vp = 2v_0\,p
+- 2\langle p, v\rangle e_0 = p - e_0$, as $p$ is purely imaginary.  The
+right alternative law $(yx)x = yx^2$ with $x = p + v$ gives $(yp)v + (yv)p
+= y(pv + vp) = yp - y$, so $y = (yp)e_0 - (yp)v - \bigl((yv)p\bigr)e_0$
+for every $y \in \MO$; the left alternative law gives $y = e_0(py) - v(py)
+- e_0\bigl(p(vy)\bigr)$ in the same way.  Now $\sigma$ maps
+$Ls \cdot_\sigma Ls$ onto the products $(py)(pz) = p\bigl((yp)z\bigr)$
+of~\eqref{eq:moufang-imaginary}, and $L\bar s \cdot_\sigma Ls$ onto the
+products $2y(pz)$, with $y, z \in \MO$.  Hence the products in $Ls
+\cdot_\sigma Ls$ span~$Ls$, and those in $L\bar s \cdot_\sigma Ls$
+span~$L\bar s$.
+
+From here on, write $xy$ for $x \cdot_\sigma y$, while $L\bar s$ and~$Ls$
+remain the lattices of~\eqref{eq:disp1}.  By the proof of
+Proposition~\ref{prop:criterion}, $\LL$ is spanned by the vectors $(a, 0,
+-a)$, $(b, -b, 0)$ with $a, b \in L\bar s$ and $(-w, w, w)$ with $w \in
+Ls$ (their sum is the vector $(a + b - w, w - b, w - a)$ there).
+Definition~\ref{def:triple} gives
+\begin{align*}
+  (a, 0, -a) \star (a', 0, -a') &= (aa', -2aa', aa'), &
+  (b, -b, 0) \star (b', -b', 0) &= (bb', bb', -2bb'), \\
+  (a, 0, -a) \star (b, -b, 0) &= (2ab, -ab, -ab), &
+  (a, 0, -a) \star (-w, w, w) &= (-2aw, 2aw, 0), \\
+  (b, -b, 0) \star (-w, w, w) &= (-2bw, 0, 2bw), &
+  (-w, w, w) \star (-w', w', w') &= (3ww', -ww', -ww'),
+\end{align*}
+and the products in the opposite order are the same with the octonion
+factors on the right exchanged.  For $c \in L\bar s$ and integers $k_1,
+k_2, k_3$ with $k_1 + k_2 + k_3 = 0$, the vector $(k_1 c, k_2 c, k_3 c)$
+lies in~$\LL$ (Definition~\ref{def:wilson-leech}).  So, by the inclusions
+above, every product other than the products of two vectors $(-w, w, w)$
+lies in~$2\LL$.  These are $2(2c, 0, 0) - (c, c, c)$ with $c = ww' \in
+Ls$, and $(2c, 0, 0) \in \LL$ as $2L \subseteq L\bar s \cap Ls$.  Hence,
+by bilinearity, every vector of~$S$ has the stated form.
+
+Conversely, $S$ contains $(3c, -c, -c)$ for every $c \in Ls$, since the
+products in $Ls \cdot_\sigma Ls$ span~$Ls$.  The cyclic shift of the
+blocks preserves~$\LL$ and, by the $\ZZ_3$ symmetry of the routing,
+commutes with~$\star$, so it maps~$S$ onto itself, and $S$ also contains
+$(-c, 3c, -c)$ and $(-c, -c, 3c)$.  Adding the three gives $(c, c, c) \in
+S$, hence $(4c, 0, 0) \in S$ and $2(-c, c, c) = 2(c, c, c) - (4c, 0, 0)
+\in S$.  Since the products in $L\bar s \cdot_\sigma Ls$ span~$L\bar s$,
+the products of $(a, 0, -a)$ and of $(b, -b, 0)$ with $(-w, w, w)$ give
+$2(c, -c, 0)$ and $2(c, 0, -c)$ in~$S$ for every $c \in L\bar s$.  So $S$
+contains twice the vectors $(a, 0, -a)$, $(b, -b, 0)$ and $(-w, w, w)$
+that span~$\LL$, hence~$2\LL$, and with the vectors $(c, c, c)$, $c \in
+Ls$, every vector of the stated form.
+
+Finally, if $(c, c, c) \in 2\LL$ with $c \in Ls$, then $\tfrac32 c \in
+Ls$ by condition~(3), so $\tfrac12 c \in Ls$.  Hence $S/2\LL \cong
+Ls/2Ls$ has order~$2^8$, and $[\LL : S] = 2^{24}/2^8 = 2^{16}$.
+\end{proof}
+
+The transposition~$\sigma$ is also the reflection in the root
+$e_1 - e_2$ of~$L$, and reflections in the other roots of~$L$ are
+twists as well.  For the reflection~$\rho$ in the root
+$r = \tfrac12(e_0 + e_1 + \cdots + e_6 - e_7)$, the triple
+product~$\star_\rho$ closes on~$\LL$ with span
+index~$1$.\footnote{\scriptref{verify\_twist\_span\_index\_census.py}.}
+
+The span index is invariant under ring isomorphism, since an
+isomorphism maps products to products and hence the span onto the
+span.  Orders with different span indices are therefore not
+isomorphic.  By the parity split, an order $(\LL, +, \star_\pi)$ with
+$\pi$ odd (span index $2^{16}$, $\sigma$ among them) is not isomorphic
+to one with $\pi$ even (span index $2^{10}$), and neither is
+isomorphic to $(\LL, +, \star_\rho)$ (span index~$1$).
 
 % ===============================================================
 % References
