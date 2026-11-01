@@ -358,7 +358,7 @@ when τ has order 3 and fixes a quaternion subalgebra pointwise, it gives an
 Okubo algebra (an order-3 τ that fixes only a 2-dimensional subalgebra gives
 the para-octonion algebra again).
 Reference: [MarraniCorradettiZucconi2025] eqs. (1.5)–(1.6); originally due to
-H. Petersson [Petersson1969].
+H. P. Petersson [Petersson1969].
 
 ### Square-zero element (square nilpotent)
 

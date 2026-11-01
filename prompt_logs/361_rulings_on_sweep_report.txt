@@ -1,0 +1,60 @@
+Prompt 361 -- the author's rulings on the report of the sweep of prompt 359
+Date: 2026-10-31
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "over 12,000,000" I don't know how often you've
+brought this back to me now; no, we humans don't care to that degree;
+note that -- beyond these formally recorded tests -- we ran a plethora
+more without recording them. over 12,000,000. Period.
+
+re "section 6" and the 23 Niemeier lattice wording: Yes, correct it.
+
+re appendix C "closure of the twisted product" don't change it ... it's
+more than clear what is meant. Same 12,000,000 phrase, costing time, brain
+cycles, reading time, ...
+
+re glossary triality sentence -- don't change
+
+re Petersson: of course H. P. Petersson, this was a mistake on my behalf;
+use the canonical way he authors
+
+re privacy concern: there isn't, the ambient algebra is subject of this
+paper and is what Petersson wrote about that we're referencing. All is
+well, nothing needs correction or cleanup.'
+(Ultracode on.)
+
+Context: log 359 (closed) reports thirteen paper items, thirteen
+governance items and nine author items; the hand-over put five of them to
+the author.  Commit 154adf2 holds prompts 359 and 360.
+
+Rulings:
+ 1. "Over 12,000,000" stays as written, in the paper and as a figure;
+    beyond the recorded tests, many more ran unrecorded.  Not to be raised
+    again (report item P5 closed).
+ 2. Section 6: correct the Niemeier wording (report item P1).
+ 3. Appendix C keeps "Closure of the twisted product" (item P12 closed).
+ 4. The glossary's triality sentence stays (item A8 closed).
+ 5. Petersson's name: "H. P. Petersson", the canonical form of his
+    authorship (item A1).
+ 6. No privacy concern: the ambient algebra is the subject of the paper
+    and what the cited draft is referenced for.  Nothing needs correction
+    or cleanup (pushed commit f967290, log 360).
+
+Response:
+ 1. Section 6 (paper/main.tex, Earlier precursors): "23 constructions of
+    Lambda, one for each Niemeier lattice other than the Leech lattice".
+    paper/v7_to_v8_changelog.md records it in its Section 6 bullet.
+ 2. Petersson's name: the glossary's "H. Petersson [Petersson1969]"
+    (evidence_and_reasoning/terminology.md) now reads "H. P. Petersson".
+    Every other form outside the prompt logs and the released versions was
+    already "H. P. Petersson" or "Holger P. Petersson".
+ 3. Nothing else changed; the records keep their wording.
+Checks: the paper builds with no undefined reference, 23 pages, labels
+unchanged; its text differs from the previous build only by the new words;
+paper/main.pdf replaced; linter clean.  A read-only review (run
+wf_e8c02910-0c3: three reviewers, a verifier) found no other place that
+miscounts the Niemeier lattices and no other noncanonical form of the
+name; its notes on this log asked only for fuller paraphrase and were
+refuted.  Nothing committed.
+
+Status: CLOSED.
