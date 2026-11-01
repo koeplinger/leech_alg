@@ -1,0 +1,25 @@
+Prompt 369 -- the held items of prompt 346 closed; v8 to the preprint servers
+Date: 2026-11-01
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're "The two held items from prompt 346" -- they are
+actioned and hence ruled closed, as you suggest. All is well. I'll start
+the preprint publishing process for v8.'
+
+Context: v8 is released and frozen (paper/main_2026-11-01.tex and its PDF,
+prompt 368); log 368 explained the two held items of prompt 346 (log 359,
+A6 and A7) with the recommendation to close both without change.
+
+Rulings:
+ 1. Both held items of prompt 346 are closed without change: Appendix C's
+    verification sentence (supported again since the Dixon fix of prompt
+    354) and Section 1's "every prompt, computation, and verification, end
+    to end".
+ 2. The author takes v8 through the preprint publishing process.
+
+Response: no edit to the paper or the records.  Memory updated: no open
+item remains for v8.
+
+Nothing committed.
+
+Status: CLOSED.
