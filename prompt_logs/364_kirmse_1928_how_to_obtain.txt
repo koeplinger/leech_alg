@@ -1,0 +1,37 @@
+Prompt 364 -- how to obtain Kirmse's 1928 correction
+Date: 2026-11-01
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Now about Kirmse's 1928 correction that you found on
+HathiTrust. Give me instructions on how to obtain it.'
+
+Context: log 363 flags Kirmse's 1928 "Berichtigung" (Ber. Verh. Saechs.
+Akad. Wiss. Leipzig, Math.-Phys. Kl. 80 (1928), 33-34; JFM 54.0164.05) as
+the condition for dropping "(WIP)" from v8.  Log 362 records the scan as
+HathiTrust, v. 79-80, behind a bot check.
+
+Correction of the premise: the scan was not found, only its volume.  At
+prompt 362 a reviewer found the correction through zbMATH (JFM 54.0164.05)
+and HathiTrust's catalog record 003854381 for the series; the record's
+only item for 1928 is uc1.b3552809 (University of California, v. 79-80,
+1927-28, rights "pdus", full view in the US).  The reviewer's search inside
+that volume for "Kirmse" met a Cloudflare check, so no page of it has been
+seen and it is not confirmed that the scan holds pp. 33-34 of v. 80.
+
+Found this turn: the 1924 pages came the same way (prompt 100): HathiTrust
+volume mdp.39015073714498, saved by the author as single-page images
+(mdp.39015073714498-seq_325.jpg to seq_344.jpg) in
+/home/jens/tmp/LeechAlg_1920s-1940s/Kirmse_1924/.  A web search found no
+second digitized copy of v. 80 (the Online Books Page lists the series;
+the Deutsche Digitale Bibliothek holds an 1883 volume digitized by the
+Bayerische Staatsbibliothek).
+
+Answer: instructions for the author to open uc1.b3552809 in a browser,
+find the correction by searching inside the volume, download the pages one
+by one as images into /home/jens/tmp/LeechAlg_1920s-1940s/Kirmse_1928/,
+with interlibrary loan as the fallback.  The AI then reads them and reports
+whether Appendix B needs a sentence.
+
+Nothing committed.
+
+Status: CLOSED.

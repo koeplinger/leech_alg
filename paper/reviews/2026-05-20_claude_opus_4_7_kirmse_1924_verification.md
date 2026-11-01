@@ -1,6 +1,6 @@
 # Primary-source verification — Kirmse (1924)
 
-Created: 2026-05-20.  Updated: 2026-10-31.
+Created: 2026-05-20.  Updated: 2026-11-01.
 
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
@@ -114,4 +114,5 @@ claim "$J_1$ is an order."
 ## Status
 
 Kirmse (1924): **verified.** Dickson (1923), Mahler (1942) and Coxeter
-(1946) are verified in the sibling notes.
+(1946) are verified in the sibling notes, and Kirmse's corrigendum of 1928
+in `2026-11-01_claude_opus_5_5_kirmse_1928_verification.md`.

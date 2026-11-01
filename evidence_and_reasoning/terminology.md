@@ -1,6 +1,6 @@
 # Terminology Reference
 
-Created: 2026-04-11.  Updated: 2026-10-31.
+Created: 2026-04-11.  Updated: 2026-11-01.
 
 This file defines terminology used in this project. Where established
 mathematical terminology exists, it is cited. Where constructions are
@@ -195,7 +195,12 @@ imaginary basis units**, a linear involution of $\mathbb{R}^8$.  The
 $\binom{7}{2}=21$ such transpositions yield the seven maximal orders
 in seven sets of three.  Verified from the originals in this project
 (`python_project/src/verify_kirmse_1924.py`,
-`verify_coxeter_1946.py`; notes in `paper/reviews/`).
+`verify_coxeter_1946.py`; notes in `paper/reviews/`).  Kirmse's
+two-page corrigendum, Ber. Verh. Sächs. Akad. Wiss. Leipzig, Math.-Phys.
+Kl. **80** (1928), 33–34, dated in Schmölln on 10 November 1927, corrects
+an interchange of his left and right multiplication matrices and his
+definition of ideals; it does not concern the maximal orders, and it
+treats $J_1$ as the integral domain throughout.
 
 **Kirmse twist (this project's shorthand, used in the trial record) = the Coxeter–Bruck transposition of the main paper's Appendix B = the transposition $\sigma$ of Definition 3.1.** The
 Kirmse twist is shorthand for the transposition of two imaginary basis

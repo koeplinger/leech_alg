@@ -1,0 +1,61 @@
+Prompt 365 -- reading Kirmse's 1928 correction
+Date: 2026-11-01
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'I have scanned the two pages here: /home/jens/tmp/Kirmse1928
+-- while I read them, have a look yourself as well and see whether it
+affects the order claim, or whether it's an unrelated correction (e.g.
+about his ideal-theoretic treatment of the integral octonions). To recap
+our understanding: Kirmse 1924 shows a necessary condition formula for an
+order, which permits 30 solutions (in our reconstruction). He then claims
+-- after an unstated narrowing -- to find exactly 8 orders. We have
+reconstructed a plausible such narrowing. Our of those 8, he then picks the
+one that isn't an order.'
+
+Context: log 363 makes the reading of this correction the condition for
+dropping "(WIP)" from v8; log 364 gave the author the steps to obtain it.
+The author's two screenshots are in /home/jens/tmp/Kirmse1928/, outside the
+repository.
+
+Read: J. Kirmse, "Berichtigung aus der Abhandlung 1924: Zur Darstellbarkeit
+natuerlicher ganzer Zahlen als Summen von acht Quadraten", Ber. Leipzig 80
+(1928), 33-34, presented by Herglotz, dated "Schmoelln (Thueringen), den
+10. November 1927" (the session heading reads "16. Januar 1918", evidently
+for 1928).  It corrects two passages of the 1924 paper and restates its
+results:
+ 1. Section 1: "die beiden Produktzeilen S. 64 unten und S. 65 [sind]
+    vertauscht, und so ist die rechtsseitige Matrix an die Stelle der
+    linksseitigen gelangt ... die Schlussergebnisse bleiben."  The two lines
+    are the lists "a.1, a i1, ..., a i7" (p. 64) and "1.a, i1 a, ..., i7 a"
+    (p. 65) that define the left- and right-sided matrices.
+ 2. Section 3: a new definition of ideals (ideal moduli; ideals are those
+    whose numbers' norms are all divisible by the module's norm); the
+    ideals of the paper are then exactly those of the integral domain, but
+    more of them are distinct.
+ 3. p. 34: the uniqueness of the primary representation, the unique
+    prime-product representation of all numbers in J_1, the zeta functions
+    of J_1 and J_0, and the counting theorems (240 - 1 other numbers of the
+    same norm in each primitive ideal).
+It does not touch Section 2 (p. 70: the eight maximal orders, J_1), and it
+treats J_1 as the integral domain throughout.
+
+Check of item 1 (scratch s365/check_1928.py, run against
+python_project/src/verify_kirmse_1924.py; matrix (3) and formula (4)
+transcribed from the 1924 scan, seq_327): row j of (3) is i_j*a by table
+(1), not a*i_j; formula (4), printed as ab, is b*a by table (1), follows
+from (3) by its printed rule, and is a composition product.  Under the
+reversed product, J_1 is still not closed (10 of 144 generator products
+leave it) and the same 7 of the 30 candidates are closed; closure of a set
+does not depend on the order of the factors.  a1*a3 = 1/2(i1+i2+i4+i7) and
+a3*a1 = 1/2(i1+i3+i5-i7), both outside J_1.
+
+The author's recap (necessary form, 30 lattices in our reconstruction, an
+unstated narrowing to eight, J_1 the one that is not an order) matches
+Appendix B.  The author's reading (prompt 366, sent during this prompt):
+the corrigendum affects the ideal-theoretic parts only, not the order of
+p. 70.  Agreed, with one precision: its first item concerns the
+multiplication matrices of Section 1, which do not bear on closure either.
+
+Nothing committed.
+
+Status: CLOSED.

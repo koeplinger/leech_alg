@@ -1,0 +1,51 @@
+Prompt 366 -- a footnote citing Kirmse's 1928 corrigendum
+Date: 2026-11-01
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim, sent while prompt 365 was being worked on): 'From my
+reading, the correction affects the ideal-theoretic parts only, and not the
+order relevant here (on his page 70 of the original 1924 paper). If you
+agree, then let's update the paper with a footnote that cites the 1928
+corrigendum, with a brief statement that his 1928 corrigendum is unrelated
+to the order question.'
+
+Context: log 365 (open) reads the corrigendum; log 363 made reading it the
+condition for dropping "(WIP)".  The prompt-291 ruling against more Kirmse
+material in Appendix B is lifted for this footnote by the author's request.
+Log 291's ruling reads: "No addition to Appendix B on L sbar or Kirmse's
+mistake."  It stands otherwise.
+
+Edits (scratch s365/edits/apply_366.py; dry run first, then applied), 11
+edits in 6 files, dated 1 November 2026:
+ - paper/main.tex: a footnote to the Appendix B sentence on J_1: "Kirmse's
+   1928 corrigendum [Kirmse1928] corrects an interchange of his left and
+   right multiplication matrices and his definition of ideals; it does not
+   concern the maximal orders."  New bibliography entry [Kirmse1928],
+   "Berichtigung aus der Abhandlung 1924: Zur Darstellbarkeit natuerlicher
+   ganzer Zahlen als Summen von acht Quadraten", Ber. Verh. Saechs. Akad.
+   Wiss. Leipzig, Math.-Phys. Kl. 80 (1928), 33-34 (heading as printed;
+   zbMATH has "Berichtigung zu der Abhandlung").
+ - paper/v7_to_v8_changelog.md: Subtitle (the condition of prompt 363 is
+   met); Appendix B, what changed and rationale; Bibliography (added
+   [Kirmse1928]; 37 entries in v8).
+ - CURRENT_STATE.md: the release condition removed.
+ - background_octonions.txt: new entry [Kirmse1928]; [Kirmse1924] points
+   to it.  terminology.md: the Kirmse entry states what the corrigendum
+   corrects.  The 1924 verification note points to the new note.
+New: paper/reviews/2026-11-01_claude_opus_5_5_kirmse_1928_verification.md
+(short quotations with translations, the check of item 1, verdict).
+
+Checks: paper/main.pdf rebuilt, 23 pages, labels identical to the build of
+prompt 363, one underfull-box warning fewer, one warning (geometry, ruled
+at prompt 267); the footnote is number 24, so later footnotes move up by
+one (no record cites a footnote of the current paper by number).  Linter
+clean.
+
+The release steps (drop "(WIP)", freeze main_YYYY-MM-DD.tex, push, arXiv
+metadata) now wait only for the author's word.
+
+Memory: project_reopened_v8.md and its index line updated.
+
+Nothing committed.
+
+Status: CLOSED.
