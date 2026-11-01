@@ -1,12 +1,12 @@
 # Paper
 
-Created: 2026-07-12.  Updated: 2026-10-28.
+Created: 2026-07-12.  Updated: 2026-11-01.
 
 The write-up and everything that supports it.  Genres per
 [`DOCUMENT_GENRES.md`](../DOCUMENT_GENRES.md): each released version is kept
 as a dated snapshot, a public record that is never edited; the external
 review of 13 October 2026 is kept as received; every other file here, the
-working source `main.tex` (v8, in progress) among them, describes its
+working source `main.tex` (the source of v8) among them, describes its
 current state and is corrected in place.
 
 The paper is published: J. Köplinger, *An order on the Leech lattice from a
@@ -18,13 +18,14 @@ Z₃-symmetric triple-octonion product*,
 
 | File | |
 |---|---|
-| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** Working source, v8 in progress. Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` three times (from a fresh checkout, two runs leave a rerun warning and an unsettled PDF outline). |
+| [`main.tex`](main.tex), [`main.pdf`](main.pdf) | **The paper.** Working source of v8, released 1 November 2026 as `main_2026-11-01.tex`. Bibliography inline via `\bibitem`. Build: `pdflatex main.tex` three times (from a fresh checkout, two runs leave a rerun warning and an unsettled PDF outline). |
 | [`main_2026-04-29.tex`](main_2026-04-29.tex) | v3, released |
 | [`main_2026-05-25.tex`](main_2026-05-25.tex) | v4, released |
 | [`main_2026-06-07.tex`](main_2026-06-07.tex) | v5, released |
 | [`main_2026-07-18.tex`](main_2026-07-18.tex) | v6, released |
-| [`main_2026-07-19.tex`](main_2026-07-19.tex), [`main_2026-07-19.pdf`](main_2026-07-19.pdf) | v7, the last released version |
-| [`v3_to_v4_summary.md`](v3_to_v4_summary.md), [`v4_to_v5_changelog.md`](v4_to_v5_changelog.md), [`v5_to_v6_changelog.md`](v5_to_v6_changelog.md), [`v6_to_v7_changelog.md`](v6_to_v7_changelog.md), [`v7_to_v8_changelog.md`](v7_to_v8_changelog.md) (in progress) | what changed between versions |
+| [`main_2026-07-19.tex`](main_2026-07-19.tex), [`main_2026-07-19.pdf`](main_2026-07-19.pdf) | v7, released, published on ResearchGate |
+| [`main_2026-11-01.tex`](main_2026-11-01.tex), [`main_2026-11-01.pdf`](main_2026-11-01.pdf) | v8, the last released version |
+| [`v3_to_v4_summary.md`](v3_to_v4_summary.md), [`v4_to_v5_changelog.md`](v4_to_v5_changelog.md), [`v5_to_v6_changelog.md`](v5_to_v6_changelog.md), [`v6_to_v7_changelog.md`](v6_to_v7_changelog.md), [`v7_to_v8_changelog.md`](v7_to_v8_changelog.md) | what changed between versions |
 
 ## Companion and standalone notes
 

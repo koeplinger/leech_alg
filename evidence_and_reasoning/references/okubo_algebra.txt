@@ -48,7 +48,8 @@ and derivations of composition algebras, and applications.
   three-fold vector cross products, and their automorphism groups (Spin
   groups).  It does not treat symmetric composition algebras or the Okubo
   algebra (journal text read at prompt 362).  Cited in the paper's Outlook
-  among the works on composition algebras with triality.
+  among the works on composition algebras with triality, its ternary
+  algebras carrying triality too (the author, prompt 368).
 
 ---
 

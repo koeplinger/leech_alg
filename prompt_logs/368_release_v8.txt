@@ -1,0 +1,115 @@
+Prompt 368 -- last touch-ups and the release of v8
+Date: 2026-11-01
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'Ok, thanks for clarifying the sentence I didn't
+understand.
+
+Re things worth deciding before release:
+* Abstract "We determine idempotents, automorphism group, square-zero
+elements of the algebra, and the index …" -- use your suggested updated
+wording.
+* Abstract Wilsons two sublattices: Use your suggestion.
+* re "Forward-evolving corrections: no rewriting history; errors are
+corrected in subsequent entries." -- yes, update the appendix C, and also
+specify "other documents are corrected in place, date stamped with the
+update, with their history in git."
+* re "Pronouns (never ruled)" -- the mandatory rule is that the name is
+stated first in full, first and last name; after that, we can use he/his
+and she/her when it's clear who we're talking about, and in any ambiguity
+we use the last name. This leaves open what to use when there's no
+ambiguity. From my reading, the prose is good. Unless there is a conflict
+with these rules, don't change anything.
+* re "Outlook: Elduque 1996": good call-out, but I want the spin in the
+outlook towards triality (and Elduque's 1996 ternary algebras handle those,
+too); being ternary alone does not deliver what I'm attempting to hint at.
+It is an outlook after all, and anyone picking up and demonstrating ternary
+algebras with nondegenerate forms to be interesting is a valuable addition
+(even if it would dismiss my spin).
+
+I agree with all your points that you recommend to not change.
+
+With these minor surgical touch-ups, change the version to removing WIP,
+and freeze it. I'll take care of the rest.
+
+About your "Repository, outside the paper", all the ones that you spell
+our are not to be followed-up on (ruled). Then, tell me what this means:
+"two held items from prompt 346" so that I can make a ruling.'
+
+Context: v8 is "1 November 2026, v8 (WIP)", 23 pages; log 367 (closed)
+holds the round-up this prompt rules on.
+
+Rulings:
+ 1. Abstract: the recommended sentence on the results, and "Wilson's two
+    sublattices of L".
+ 2. Appendix C: the corrections bullet, with "other documents are corrected
+    in place, date stamped with the update, with their history in git".
+ 3. Names (mandatory): a person is named first in full, first and last
+    name; then he/his or she/her where it is clear who is meant, and the
+    last name in any ambiguity.  Otherwise the prose stands.
+ 4. Outlook: Elduque 1996 stays; its ternary algebras carry triality too,
+    and the outlook leans toward triality.
+ 5. The items recommended for no change stay unchanged.
+ 6. Drop "(WIP)" and freeze v8; the author does the rest.
+ 7. The repository items of log 367 (log 359: G1-G13, A4, A5, A9) are not
+    to be followed up.
+
+Check of the rule on names (first mentions in reading order, abstract
+included, citation keys and eponyms set aside): four first mentions lacked
+a first name: Bruck and Kirmse in the abstract, Dickson and Coxeter in the
+overview of Section 1, "(Hurwitz)" in Section 2.1, "work of Tits" in
+Appendix A.  One pronoun was ambiguous: Appendix B's "His Sections 6-13"
+follows a sentence naming Bruck and means Coxeter.  Coxeter is given as
+he published, "H. S. M. Coxeter", as the Section 6 heading has him.
+
+Edits (scratch s368/edits/apply_368.py; dry run first, then applied), 36
+edits in 10 files, dated 1 November 2026:
+ - paper/main.tex: the subtitle "1 November 2026 (v8)"; the abstract
+   ("but moves Wilson's two sublattices of L"; "We determine the
+   idempotents, the square-zero elements, and the automorphism group of
+   the algebra, as well as the automorphism group of the order and the
+   index of the span of its products."; "Richard H. Bruck's repair of
+   Johannes Kirmse's integral octonions"); "from Leonard E. Dickson to
+   H. S. M. Coxeter"; "(Adolf Hurwitz)"; "work of Jacques Tits";
+   "Coxeter's Sections 6-13"; Appendix C's bullet "Forward-evolving
+   corrections: the prompt logs are never rewritten, and later entries
+   correct earlier errors; other documents are corrected in place, date
+   stamped with the update, with their history in git."
+ - paper/v7_to_v8_changelog.md: v8 released and frozen; the subtitle; the
+   abstract (three changes, the rule on names, length 197 words); Section
+   1, Section 2.1, Appendices A, B and C; the Outlook rationale (Elduque
+   1996).
+ - The status of v8 in CURRENT_STATE.md, README.md, paper/README.md (a row
+   for the frozen copy), evidence_and_reasoning/README.md,
+   research_result.md, DOCUMENT_GENRES.md, and the registry file
+   recent_experimental_work.txt; okubo_algebra.txt (Elduque 1996).  The
+   docstrings of scripts that say "v8 draft, paper/main.tex" and the plans
+   keep their wording.
+Release: paper/main.pdf rebuilt (23 pages, labels identical to the build
+of prompt 366, one warning: geometry, ruled at prompt 267; page breaks
+shift slightly); frozen as paper/main_2026-11-01.tex and
+paper/main_2026-11-01.pdf, byte-identical to main.tex and main.pdf.
+Linter clean.
+
+The two held items of prompt 346 (log 359, A6 and A7), explained to the
+author for a ruling:
+ - A6: the held Dixon item of 346 included Appendix C's sentence "This
+   independent verification is how we know that the properties stated in
+   the literature are correctly implemented", unsupported while
+   leech_dixon.py did not build Dixon's shell; since prompt 354 it does, and
+   its tests check it.  Recommended: close, no change.
+ - A7: Section 1's "the complete research record is public: every prompt,
+   computation, and verification, end to end" (the author's sentence,
+   prompts 223 and 224).  Known gaps: no log for prompt 073; some early
+   computations survive only as recorded results (the trial-007 harness,
+   the trial-001 tables, ledger rows 010a, 016-018, 020, 021); log 358
+   withholds a local file path by design.  Recommended: close, no change.
+v8 is frozen; should the author want a change to either sentence before
+publishing, the freeze is redone the same day.
+
+Memory: feedback_names_in_paper.md (new), project_reopened_v8.md and the
+index.
+
+Nothing committed.
+
+Status: CLOSED.

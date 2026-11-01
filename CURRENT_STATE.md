@@ -5,8 +5,9 @@ Created: 2026-04-09.  Updated: 2026-11-01.
 The result is published: J. Köplinger, *An order on the Leech lattice from a
 Z₃-symmetric triple-octonion product*,
 [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
-(ResearchGate), the released v7 of the paper.  A further revision, v8, is
-in progress in `paper/main.tex`; its plans are the dated `2026-10-*_plan.md`
+(ResearchGate), v7 of the paper.  Its revision v8 is released, dated
+1 November 2026, in `paper/main_2026-11-01.tex`, frozen from the working source
+`paper/main.tex`; its plans are the dated `2026-10-*_plan.md`
 files in `evidence_and_reasoning/`, listed with their status in the repository
 map below.  References to the paper (sections, equations, and LaTeX labels in
 code font) are to `paper/main.tex` unless stated otherwise; a build of the paper
@@ -632,11 +633,11 @@ the trial, and prints detailed results.
    (Remark 4.5): nontriviality of the construction, not a step of the
    closure proof.
 
-2. **The paper.**  v7, dated 19 July 2026, is the last released version,
-   `paper/main_2026-07-19.tex` (24 pages), published on ResearchGate:
-   doi:10.13140/RG.2.2.22093.19686.  The working source `paper/main.tex`
-   is the v8 draft (23 pages, dated 1 November 2026, marked "v8 (WIP)").
-   The draft contains abstract (standalone, with
+2. **The paper.**  v8, dated 1 November 2026, is the latest released
+   version, `paper/main_2026-11-01.tex` (23 pages), frozen from the working
+   source `paper/main.tex`.  v7, dated 19 July 2026,
+   `paper/main_2026-07-19.tex` (24 pages), is published on ResearchGate:
+   doi:10.13140/RG.2.2.22093.19686.  v8 contains abstract (standalone, with
    keywords and MSC 2020 codes; it names the closure criterion),
    introduction, preliminaries, construction, symbolic proof, algebraic properties
    (Section 5, in six subsections: §5.1 identities, each failure
@@ -843,10 +844,10 @@ leech_alg/
 │   └── run_all.g                  # 110 checks, exact rational arithmetic
 │
 ├── prompt_logs/                   # Chronological AI interaction log
-├── paper/                         # main.tex (v8, in progress); v7 of 2026-07-19, released (24 pp.);
+├── paper/                         # main.tex (source of v8); v8 of 2026-11-01, released (23 pp.);
 │                                  #   bibliography inline via \bibitem;
-│                                  #   released versions main_2026-{04-29,05-25,06-07,07-18,07-19}.tex
-│                                  #   and main_2026-07-19.pdf; changelogs v3→v4 … v7→v8 (in progress);
+│                                  #   released versions main_2026-{04-29,05-25,06-07,07-18,07-19,11-01}.tex
+│                                  #   and main_2026-{07-19,11-01}.pdf; changelogs v3→v4 … v7→v8;
 │                                  #   companion and standalone notes, reviews/
 └── source_documents/              # Primary source PDFs (freely redistributable)
 ```

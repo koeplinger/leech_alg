@@ -1,6 +1,6 @@
 # Document Genres
 
-Created: 2026-07-12.  Updated: 2026-10-24.
+Created: 2026-07-12.  Updated: 2026-11-01.
 
 Every artifact in this repository belongs to exactly one of three genres.  The
 genre determines how the artifact may be changed.  The rule behind them:
@@ -35,8 +35,8 @@ never edited.**
 | `paper/main_YYYY-MM-DD.tex` and its PDF | the source of a released version, as released |
 
 A preprint (v7 is on ResearchGate) is a dated public record, but not a final
-one: the latest released version is the record of the work, and when the
-finalized v8 is released it becomes the single record.  A formal journal
+one: the latest released version is the record of the work, and v8,
+released on 1 November 2026, is the single record.  A formal journal
 publication, once there is one, is a public record of the same kind.  A
 correction to a public record goes into the next version.
 

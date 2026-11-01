@@ -1,6 +1,6 @@
 # An Order on the Leech Lattice
 
-Created: 2026-04-06.  Updated: 2026-10-31.
+Created: 2026-04-06.  Updated: 2026-11-01.
 
 The Leech lattice Λ admits an **order**: it is closed under a bilinear product
 on R²⁴, a Z₃-symmetric triple-octonion product assembled from nine
@@ -17,14 +17,14 @@ and Ls.
 > [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
 > (ResearchGate).
 
-**A further revision of the paper (v8) is in progress** in
-[paper/main.tex](paper/main.tex).
+**The revision v8 of the paper is released**, dated 1 November 2026:
+[paper/main_2026-11-01.tex](paper/main_2026-11-01.tex) (23 pages; compiled:
+[paper/main_2026-11-01.pdf](paper/main_2026-11-01.pdf)), frozen from the working
+source [paper/main.tex](paper/main.tex).
 
-The published version is
+The version published under the DOI above is
 [paper/main_2026-07-19.tex](paper/main_2026-07-19.tex) (v7, 24 pages; compiled:
-[paper/main_2026-07-19.pdf](paper/main_2026-07-19.pdf)); the working source is
-[paper/main.tex](paper/main.tex) (v8, in progress; compiled:
-[paper/main.pdf](paper/main.pdf)).  [paper/](paper/) also holds the earlier
+[paper/main_2026-07-19.pdf](paper/main_2026-07-19.pdf)).  [paper/](paper/) also holds the earlier
 released versions with their changelogs, the companion material, and the review
 record.
 

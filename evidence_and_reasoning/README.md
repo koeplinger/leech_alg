@@ -1,6 +1,6 @@
 # Evidence and Reasoning
 
-Created: 2026-04-06.  Updated: 2026-10-31.
+Created: 2026-04-06.  Updated: 2026-11-01.
 
 This folder documents the structured reasoning behind the research: key claims,
 logical steps, supporting arguments, and the evidence base for each.
@@ -15,7 +15,8 @@ This folder serves two functions:
    formal write-up draws on.
 
 The result is published (doi:10.13140/RG.2.2.22093.19686), as v7 of the paper.
-The plans of the v8 revision in progress are the dated `2026-10-*_plan.md`
+v8, dated 1 November 2026, is released (`paper/main_2026-11-01.tex`).
+The plans of the v8 revision are the dated `2026-10-*_plan.md`
 files listed under Structure below, each with its status.
 
 ## Structure

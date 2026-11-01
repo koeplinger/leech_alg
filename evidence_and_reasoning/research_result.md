@@ -1,11 +1,11 @@
 # Research Result
 
-Created: 2026-04-11.  Updated: 2026-10-31.
+Created: 2026-04-11.  Updated: 2026-11-01.
 
 Published: J. Köplinger, *An order on the Leech lattice from a Z₃-symmetric
 triple-octonion product*, [doi:10.13140/RG.2.2.22093.19686](https://doi.org/10.13140/RG.2.2.22093.19686)
-(ResearchGate); this is v7 of the paper.  v8 is in progress in
-`paper/main.tex`.
+(ResearchGate); this is v7 of the paper.  v8, dated 1 November 2026, is
+released in `paper/main_2026-11-01.tex`.
 
 ## Summary
 

@@ -1,0 +1,68 @@
+Prompt 367 -- round-up of open points before finalizing v8
+Date: 2026-11-01
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 'What do you mean with "It never mentions §2, and it still
+treats J₁ as the integral domain throughout."? What is "it", the Kirmse
+corrigendum or our footnote? Section 2 where?
+
+The new footnote and new reference entry is good.
+
+Now I want to round up things that were left behind, or ruled by me in a
+way that is questionable or heavy-handed, open issues or questions,
+concerns -- anything we have identified so far that should get another
+look before we finalize this new version v8 of the paper. The goal is to
+wrap up, not to start a new investigation. Look only at points already
+identified, and don't open another research round that ventures out.'
+
+Context: v8 is "1 November 2026, v8 (WIP)", 23 pages; commit 100d8d3
+holds prompts 364-366.  The footnote and the entry [Kirmse1928] are
+approved.
+
+Answer to the question: "it" is Kirmse's 1928 corrigendum, and "Section 2"
+is Section 2 of Kirmse's 1924 paper (pp. 68-71), where p. 70 claims eight
+maximal orders and defines J_1.  The corrigendum corrects Sections 1 and 3
+of that paper, says nothing about its Section 2, and still speaks of J_1 as
+the integral domain.  The footnote says only the first part.
+
+Round-up (sources: logs 359, 361, 362, 363 and the triage of 362; only
+points already identified; no new search):
+Paper, for a decision before release:
+ 1. Abstract (prompts 296, 309): "We determine idempotents, automorphism
+    group, square-zero elements of the algebra, and the index ..." omits
+    the order's group C6 x S3 (Section 5.4, the Conclusion) while the
+    algebra's group is the one stated with [Petersson2026]; the articles
+    went in an October edit (9f91761).  Parked at 362 (prose-A#4).
+ 2. Abstract: "moves Wilson's sublattices L sbar and Ls", with s undefined
+    in the abstract (the objection of prompt 309 to Section 1).  Parked at
+    362 (prose-A#11).
+ 3. Appendix C: "Forward-evolving corrections: no rewriting history; errors
+    are corrected in subsequent entries" contradicts the repository's rule
+    since prompt 339 (current-state documents corrected in place).  Reported
+    at 346, parked at 362 (prose-B#14).
+ 4. Pronouns (log 359, P6, never ruled): he/his for Wilson (Section 6) and
+    for Dickson, Kirmse and Coxeter (Appendix B); the footnote of 366 adds
+    two for Kirmse.
+ 5. Outlook: Elduque 1996 stays among the works on composition algebras
+    with triality; log 363 recorded that as the author's knowing choice,
+    which was an inference of the AI, not a ruling.
+Looked at again, no change recommended: ruling 170 (Section 2 now has a
+second Wilson citation, the A_3 locator since the October rework; the
+index facts of Section 2.3 have no source, the title of 2.3 attributing
+them); the Section 6 footnote's "closely related" description of
+[Dixon1995] (P7); forward references to appendices (P10); the abstract's
+silence on maximality (P11).
+Release steps, on the author's word: drop "(WIP)", date and freeze the
+release copy, push and tag, arXiv metadata.
+Repository, outside the paper (log 359, report only, still open where
+checked): G1-G11 (rules stated only in logs), G12 (a dash aside in
+MANIFESTO.md), G13 (TRIAL_METHODOLOGY.md, "closure on the minimal shell"),
+A4 (LICENSE.md, dash asides, no date stamp), A5 (the prior-art file's
+title), A6-A7 (held items of 346), A9 (okubo.from_octonions guard).
+Recommended: one small batch after the release.
+Not raised: items the author closed (prompt 361) and the items fixed at
+362.
+
+Nothing edited but this log.  Nothing committed.
+
+Status: CLOSED.
