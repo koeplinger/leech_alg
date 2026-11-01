@@ -1,7 +1,7 @@
 Topic: Octonion algebra — background and standard properties
 ==============================================================
 
-Created: 2026-04-06.  Updated: 2026-10-31.
+Created: 2026-04-06.  Updated: 2026-11-01.
 
 This file collects references for the foundational properties of the octonion
 algebra used throughout this project.  These are well-established results in
@@ -123,7 +123,10 @@ the public domain.
   ganzer Zahlen als Summen von acht Quadraten", Ber. Verh. Sächs. Akad.
   Wiss. Leipzig, Math.-Phys. Kl. 80 (1928), 33–34 (JFM 54.0164.05; cited
   by P. J. C. Lamont, Proc. Glasgow Math. Assoc. 6 (1963), 99–106).  Its
-  content has not been read in this project (prompt 362).
+  content has not been read in this project (prompt 362).  It is to be
+  read before v8 is released, which keeps "(WIP)" until then; if it
+  corrects J_1 or the count of eight, Appendix B of the paper needs a
+  sentence (prompt 363).
 
 ---
 

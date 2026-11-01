@@ -1,7 +1,7 @@
 Topic: Okubo algebra — constructions, properties, triality, and applications
 =====================================================================================
 
-Created: 2026-04-08.  Updated: 2026-10-31.
+Created: 2026-04-08.  Updated: 2026-11-01.
 
 This file collects references for the Okubo (pseudo-octonion) algebra and
 related structures: symmetric composition algebras, triality, automorphisms
@@ -48,7 +48,7 @@ and derivations of composition algebras, and applications.
   three-fold vector cross products, and their automorphism groups (Spin
   groups).  It does not treat symmetric composition algebras or the Okubo
   algebra (journal text read at prompt 362).  Cited in the paper's Outlook
-  among the works on symmetric and ternary composition algebras.
+  among the works on composition algebras with triality.
 
 ---
 
@@ -189,8 +189,8 @@ and derivations of composition algebras, and applications.
 - **Notes**: Seminal book-length treatment of nonassociative algebras in
   physics by the algebra's namesake. Cited in Section 5.1 (Identities) of
   the paper for symmetric composition algebras, such as the Okubo and
-  para-Hurwitz algebras, and in the Outlook among the works on symmetric and ternary
-  composition algebras.
+  para-Hurwitz algebras, and in the Outlook among the works on composition
+  algebras with triality.
 - **Status**: Not held in source_documents/; listed by bibliographic
   information only.
 

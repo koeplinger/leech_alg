@@ -1,0 +1,83 @@
+Prompt 363 -- the author's rulings on the release review of v8
+Date: 2026-11-01
+Model: Claude Opus 5.5 (Anthropic).
+
+User (verbatim): 're wording changes: good catch on "division algebra" being
+equivalent to absence of zero divisors. My phrase "ternay composition
+algebras" was wrong, I meant to write "composition algebras with triality"
+(i.e. existence of a nondegenerate ternary form; which Elduque's symmetric
+ones are). Change it to "composition algebras with triality" instead of your
+suggested "Symmetric and ternary composition algebras". All others are good.
+
+re three decisions:
+- re citing Dixon's question: nice! yes, add it
+- re Dixon's first posting: sure, name it.
+- re Kirmse's 1928 correction: that is a big deal; flag this for follow-up.
+
+Do not drop WIP until we have Kirmse 1928 looked at.
+
+Re "One reviewer sent your e-mail address to the Unpaywall API once" -- that
+is ok. Identify myself as requestor of information that requires one.'
+(Ultracode off.)
+
+Context: the working tree holds the reviewed v8 of prompt 362 (log 362,
+"For the author" items 1-4), uncommitted.
+
+Rulings:
+ 1. Outlook: "composition algebras with triality" replaces "Symmetric and
+    ternary composition algebras".
+ 2. The other four changes to the author's wording stand.
+ 3. Section 1 adds Dixon's question.
+ 4. The June 1995 Dixon entry names the first posting, hep-th/9504040.
+ 5. Kirmse's 1928 correction is flagged for follow-up; v8 keeps "(WIP)"
+    until it is read.
+ 6. A service that requires a contact e-mail address may be given the
+    author's, identifying the author as the requester.
+
+Sources read: Dixon, arXiv:1011.2541, Section 7 ("Motivation"): "The
+question is: can Lambda_24 be given its own algebraic structure, perhaps
+involving a ternary multiplication? No idea yet."  Dixon,
+hep-th/9506080 (12 June 1995): "In [1] I presented a representation of
+Lambda_24 ... over O^3", its reference [1] being hep-th/9504040, "Octonions:
+Invariant Representation of the Leech Lattice" (7 April 1995).
+
+Edits (scratch s363/edits/apply_363.py; dry run first, then applied), 16
+edits in 7 files, dated 1 November 2026:
+ - paper/main.tex: Section 1, "obtained the integral octonions from an
+   octonion XY-product, represented Lambda in O^3, and asked whether Lambda
+   can be given its own algebraic structure [Dixon2010, Section 7]";
+   Outlook, "Composition algebras with triality, as studied by ...";
+   [Dixon1995] dated June 1995 and "It revisits the representation of the
+   Leech lattice first posted in Octonions: invariant representation of
+   the Leech lattice, preprint, April 1995. arXiv:hep-th/9504040."; the
+   subtitle "1 November 2026, v8 (WIP)".
+ - paper/v7_to_v8_changelog.md: date; Subtitle (the mark goes after
+   Kirmse's 1928 correction has been read); Section 1 paragraph 3 with
+   Dixon's question; Outlook and its rationale (the author's correction);
+   Bibliography, [Dixon1995].
+ - CURRENT_STATE.md: the v8 line names the release gate.
+ - References registry: background_octonions.txt (Kirmse 1928 to be read
+   before release; Appendix B needs a sentence if it corrects J_1 or the
+   count of eight); okubo_algebra.txt (two Outlook mentions);
+   prior_art_orders_on_leech.txt ([Dixon1995], [Dixon2010]);
+   leech_lattice_octonionic_constructions.txt ([Dixon2010]).
+Elduque 1996 stays among the Outlook's citations: the author kept the list
+knowing that it treats triple products (log 362, item 4).
+
+Checks: paper/main.pdf rebuilt, 23 pages, no undefined reference, labels
+and box warnings identical to those of the last build of prompt 362, one
+warning (geometry, ruled at prompt 267); the new citation is tied.  Linter
+clean.
+
+Follow-up (the author's flag): Kirmse's 1928 "Berichtigung" (Ber. Verh.
+Saechs. Akad. Wiss. Leipzig, Math.-Phys. Kl. 80 (1928), 33-34; JFM
+54.0164.05).  The AI cannot reach the scan (HathiTrust bot check).  When the
+author supplies the two pages, the AI reads them and reports whether
+Appendix B needs a sentence; v8 keeps "(WIP)" until then.
+
+Memory: feedback_contact_email_for_apis.md (ruling 6) and
+project_reopened_v8.md updated.
+
+Nothing committed.
+
+Status: CLOSED.

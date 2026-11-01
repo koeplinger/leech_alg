@@ -1,7 +1,7 @@
 Topic: Prior art — multiplicative structures / orders on the Leech lattice
 =============================================================================
 
-Created: 2026-04-11.  Updated: 2026-10-31.
+Created: 2026-04-11.  Updated: 2026-11-01.
 
 Literature search conducted: 2026-04-11, extended 2026-04-14
 Purpose: Identify any prior work establishing or ruling out an order (or
@@ -134,7 +134,9 @@ the Leech lattice from triples of integral octonions; the paper's
 Section 6 footnote describes the 1995 preprint as a precursor of Dixon's
 2010 construction.  The formula Wilson corrected is in the 2005 preprint
 (see [Dixon2005]).  Dixon 1995 does not test or claim closure of Λ under
-any bilinear product.
+any bilinear product.  The June preprint revisits the representation of
+the April one (its reference [1]); the paper's entry for it names the
+April preprint as the first posting (prompt 363).
 
 ### [Dixon2005] — Integral octonions, octonion multiplication and the Leech lattice
 
@@ -217,7 +219,10 @@ of a copy of Λ (the componentwise conjugates of Wilson's, key claim 005)
 in O³ with the standard octonion product.  Each XY-product is an
 alternative octonion multiplication on R⁸ (isomorphic to the
 standard one).  Dixon does not test or claim closure of Λ under the
-XY-product or any other bilinear product.  The human researcher of this
+XY-product or any other bilinear product.  Its Section 7 (Motivation)
+asks: "can Λ₂₄ be given its own algebraic structure, perhaps involving a
+ternary multiplication?  No idea yet."  The paper's Section 1 cites the
+question.  The human researcher of this
 project (Koeplinger) learned the name "X-product" from Dixon, who
 attributes it to Martin Cederwall (prompt 331).  Dixon's preprint
 "Octonion X-product orbits" ([Dixon1994], §1) credits the introduction
