@@ -14,7 +14,8 @@ direct computation gives (display (6.3))
 with D in Z^3 diagonal (the paper's Delta, display (6.4); in the paper, D
 names the ideal of Section 5.4),
     D = 4(<x,x'> + <y,y'>, <x,x'> + <z,z'>, <y,y'> + <z,z'>)
-(so tr D = 8 <u,v>), and R the off-diagonal residue, lying in Lambda.
+(so tr D = 8 <u,v>), and R the off-diagonal residue, lying in (2L)^3, a
+subset of Lambda.
 The projected Jordan product is phi(u, v) := R.
 
 Parametrization (Hermitian, zero diagonal; chosen so the diagonal of
@@ -36,7 +37,10 @@ Validations (all must pass before the index is computed):
       match the closed-form phi blocks.
   (2) Lambda-closure: phi(B_i, B_j) in Lambda for all 24 x 24 = 576
       basis pairs (the paper's "an order in the sense of Corollary 1.2",
-      `cor:order`).
+      `cor:order`), and each block of phi(B_i, B_j), halved, in L, so
+      that phi(Lambda, Lambda) lies in (2L)^3 (the paper's "R lying in
+      (2L)^3 subset Lambda"; (2L)^3 lies in Lambda since 2L lies in
+      L sbar and in Ls).
   (3) Commutativity: phi(u, v) = phi(v, u) on 20 random pairs.
 
 Then, exactly as in verify_product_span_index.py: the Hermite normal
@@ -50,10 +54,11 @@ inverse).  All arithmetic exact.  The run prints [Lambda : S_phi] =
 2*Lambda is not contained in S_phi.
 """
 import sys, os, random
+from fractions import Fraction
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sympy import Matrix
 from sympy.matrices.normalforms import hermite_normal_form
-from verify_consecutive_twists_exact import B, omul, l3, detB, inLambda, add
+from verify_consecutive_twists_exact import B, omul, l3, detB, inLambda, inL, add
 
 def conj(a):                              # octonion conjugation
     return [a[0]] + [-t for t in a[1:]]
@@ -135,22 +140,27 @@ if __name__ == "__main__":
     print(f"(1) D-formula match (diag = stated D in Z, off-diag Hermitian = phi):"
           f" {ok_D}/{N_RAND}")
 
-    # --- validation (2): Lambda-closure on all 576 basis pairs
+    # --- validation (2): Lambda-closure on all 576 basis pairs, and the
+    # residue in (2L)^3: each block, halved, lies in L
     prods = []
-    n_in = 0
+    n_in = n_2L = 0
     for bi in B:
         for bj in B:
             p = phi(bi, bj)
             if inLambda(p):
                 n_in += 1
+            if all(inL(scl(blk, Fraction(1, 2))) for blk in p):
+                n_2L += 1
             prods.append(l3(p))
-    print(f"(2) Lambda-closure: {n_in}/576 basis-pair products in Lambda")
+    print(f"(2) Lambda-closure: {n_in}/576 basis-pair products in Lambda;"
+          f" {n_2L}/576 in (2L)^3")
 
     # --- validation (3): commutativity on 20 random pairs
     ok_comm = sum(1 for u, v in pairs if phi(u, v) == phi(v, u))
     print(f"(3) commutativity phi(u,v) = phi(v,u): {ok_comm}/{N_RAND}")
 
-    if not (ok_D == N_RAND and n_in == 576 and ok_comm == N_RAND):
+    if not (ok_D == N_RAND and n_in == 576 and n_2L == 576
+            and ok_comm == N_RAND):
         print("VALIDATION FAILED -- not computing the index.")
         sys.exit(1)
 

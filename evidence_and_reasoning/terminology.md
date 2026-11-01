@@ -76,7 +76,7 @@ Definition 3.2) is isomorphic to the standard octonion product · of eq.
 satisfies σ(x · y) = σ(x) ·_σ σ(y) for all x, y, by definition
 (σ² = id); `consistency_checks.py` (check 2) confirms it for σ = (1 2)
 on the 64 basis pairs.  For the coordinate-symmetric placement
-L = D₈⁺ used throughout the paper, σ preserves L (it is a coordinate
+L ≅ D₈⁺ used throughout the paper, σ preserves L (it is a coordinate
 permutation, which preserves both integer/half-integer parity and the
 coordinate sum); σ moves the sublattices Ls and Ls̄ of L, and that is
 where the twist does its work.  See "Kirmse integers — Kirmse twist"
@@ -132,9 +132,14 @@ shell has N_W = 4 and E8 roots have N_W = 1.  When citing Wilson's results,
 we translate to the standard convention above.
 
 The Leech lattice is constructed in this project via Wilson's
-characterization (paper §2.3), which starts from the E8 lattice L = D₈⁺ of
+characterization (paper §2.3), which starts from the E8 lattice L ≅ D₈⁺ of
 paper §2.2, a √2-scaled copy of the maximal order 𝒪 of the same section
-(L = (e₁ + e₂)𝒪; see "Maximal order" below).  With
+(L = (e₁ + e₂)𝒪; see "Maximal order" below).  L consists of the vectors
+whose coordinates are all integers with even sum or all half-integers with
+odd sum.  The standard D₈⁺ of Conway and Sloane takes the half-integer
+coset with even sum, so L is a copy of D₈⁺ (by a sign change of one
+coordinate), not D₈⁺ itself; the records and the code use "D₈⁺" as a name
+for L.  With
 s = ½(−e₀ + e₁ + ⋯ + e₇) ∈ L and s̄ = ½(−e₀ − e₁ − ⋯ − e₇) ∉ L,
 **Wilson's sublattices** are Ls̄ = {ℓ·s̄ : ℓ ∈ L} and Ls = {ℓ·s : ℓ ∈ L},
 each of index 16 in L, with Ls̄ + Ls = L and Ls̄ ∩ Ls = 2L.  Wilson's three
@@ -208,7 +213,7 @@ twist turn a lattice that does not close under the octonion product
 (Kirmse's $J_1$) into one that does (Bruck's $J$).
 
 The main paper, and the Leech-lattice construction of Wilson on which
-it builds, take the opposite representation: $L = D_8^+$ is the
+it builds, take the opposite representation: $L \cong D_8^+$ is the
 **axis-symmetric** placement of $E_8$, invariant under every
 coordinate permutation. The Kirmse twist therefore *fixes* $L$
 ($\sigma(L) = L$), and $L$ closes under the octonion product directly.
@@ -283,7 +288,8 @@ In this project (main paper §2.2, eq. (2.2); `verify_structural_proof.py`):
 the main paper uses one maximal order throughout, 𝒪 := ½(e₁ + e₂)L.  It
 contains the eight basis units, is closed under the standard octonion
 product, and is one of the seven maximal orders above, the ring A₃ of
-Wilson (2009, §2); the ledger (claims 019, 021) writes it O⁽⁴⁾.  Since
+Wilson (2009, §2), with Wilson's 1 and i_t read as e₀ and e_{t+1} (main
+paper §2.2); the ledger (claims 019, 021) writes it O⁽⁴⁾.  Since
 (e₁ + e₂)² = −2 and L = −L, the left alternative law x(xy) = x²y gives L = (e₁ + e₂)𝒪, so
 L ⊆ 𝒪 and L is a √2-scaled copy of 𝒪.  Lemmas 4.2 to 4.4 of the main
 paper (§4.1) rest on three facts: σ(Ls̄) = 2𝒪 and σ(Ls) = p𝒪 with
@@ -330,8 +336,8 @@ References: [MarraniCorradettiZucconi2025], [Elduque2000_Triality].
 
 (Main paper Corollary 1.2 with its footnote, and Remark 1.3.)  An
 **order** in a finite-dimensional real algebra is a subring that is a free
-Z-module of rank equal to the algebra's dimension: a full-rank lattice
-closed under the product.  The classical definition also asks for the
+Z-module of rank equal to the algebra's dimension and spans it: a
+full-rank lattice closed under the product.  The classical definition also asks for the
 identity element (see "Maximal order" above); the ambient algebra
 (R²⁴, +, ⋆) has none, and the paper uses the term "in the nonunital
 sense" (Corollary 1.2, footnote).  (Λ, +, ⋆) is such an order, and so is L
@@ -619,7 +625,7 @@ imaginary basis units e_i and e_j (main paper Definitions 3.1 and 3.2).
 The product ·_σ is simply another octonion product on R⁸,
 isomorphic to the standard one via σ itself.  The transposition σ is
 the device that exhibits the fit of this octonion product with
-Wilson's representation of the Leech lattice: σ leaves L = D₈⁺
+Wilson's representation of the Leech lattice: σ leaves L ≅ D₈⁺
 invariant but moves Wilson's sublattices Ls and Ls̄.
 
 All 21 transpositions close on Λ.  The evidence is the symbolic proof of
@@ -688,7 +694,7 @@ Z₃-symmetric triple-octonion product ⋆ = ⋆_σ (see above).
 g(L) = L.  It defines the **twisted octonion product** x ·_g y :=
 g⁻¹(g(x) · g(y)) on O, another octonion product, isomorphic to the standard
 one via g; the triple product ⋆_g is that of main paper Definition 3.3 with
-·_g in all nine block products.  The twist g = σ gives the σ-twisted product
+·_g in all nine block-pair products.  The twist g = σ gives the σ-twisted product
 of Definition 3.2 (σ⁻¹ = σ), and ⋆_σ = ⋆.  The **closure criterion**
 (Proposition 5.3, proved in the paper): for every twist g, ⋆_g closes on Λ
 if and only if Ls̄ and Ls are closed under ·_g, that is, if and only if

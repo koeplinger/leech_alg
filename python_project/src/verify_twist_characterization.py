@@ -1,11 +1,11 @@
-"""Characterization: WHICH consecutive sigma-twists close on Lambda.
+"""Tally of WHICH consecutive sigma-twists close on Lambda.
 
-Created: 2026-05-22.  Updated: 2026-10-28.
+Created: 2026-05-22.  Updated: 2026-11-01.
 
 The exact test (verify_consecutive_twists_exact.py) shows that of the
 permutations reachable as a product of two transpositions, 35 of the 70
 three-cycles and 42 of the 105 (2,2)-double-transpositions close on Lambda.
-This script characterizes which ones, against the Fano-line structure.
+This script tallies which ones close, against the Fano-line structure.
 """
 from itertools import combinations
 from verify_consecutive_twists_exact import closes

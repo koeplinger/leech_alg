@@ -1,7 +1,7 @@
 Topic: Okubo algebra — constructions, properties, triality, and applications
 =====================================================================================
 
-Created: 2026-04-08.  Updated: 2026-10-28.
+Created: 2026-04-08.  Updated: 2026-10-31.
 
 This file collects references for the Okubo (pseudo-octonion) algebra and
 related structures: symmetric composition algebras, triality, automorphisms
@@ -43,9 +43,12 @@ and derivations of composition algebras, and applications.
 - **Originality note**: Published in a peer-reviewed journal (J. Korean Math.
   Soc., ISSN 0304-9914). No dispute over originality or priority is known at
   time of writing.
-- **Notes**: Introduces and studies a class of ternary composition algebras
-  related to symmetric composition algebras. Relevant to the algebraic
-  foundations underlying the Okubo algebra's ternary structure.
+- **Notes**: Studies the triple products {x, y, z} = x(ȳz) and (xȳ)z on
+  Cayley–Dickson (unital composition) algebras of dimension 4 or 8, the
+  three-fold vector cross products, and their automorphism groups (Spin
+  groups).  It does not treat symmetric composition algebras or the Okubo
+  algebra (journal text read at prompt 362).  Cited in the paper's Outlook
+  among the works on symmetric and ternary composition algebras.
 
 ---
 
@@ -145,6 +148,8 @@ and derivations of composition algebras, and applications.
   Establishes that symmetric composition algebras (para-Hurwitz and Okubo)
   satisfy (x*y)*x = x*(y*x) = n(x)y. Central reference for the triality
   framework connecting octonions, para-octonions, and Okubo algebras.
+  Cited in the paper's Section 5.1 for symmetric composition algebras and
+  in its Outlook.
 
 ---
 
@@ -183,9 +188,9 @@ and derivations of composition algebras, and applications.
   algebra bearing his name. No dispute over originality known.
 - **Notes**: Seminal book-length treatment of nonassociative algebras in
   physics by the algebra's namesake. Cited in Section 5.1 (Identities) of
-  the paper for symmetric composition algebras in the sense of Okubo and
-  para-Hurwitz, and in the Outlook among the works on ternary composition
-  algebras.
+  the paper for symmetric composition algebras, such as the Okubo and
+  para-Hurwitz algebras, and in the Outlook among the works on symmetric and ternary
+  composition algebras.
 - **Status**: Not held in source_documents/; listed by bibliographic
   information only.
 

@@ -34,7 +34,7 @@ together with the LOOPS package, both of which are recorded below.
   computational primitives.  No dispute over the software's authorship
   or purpose is known.
 - **Notes**: Used by gap_project/ for exact-rational verification of the
-  octonion multiplication, the E_8 lattice L = D_8^+, the sublattices
+  octonion multiplication, the E_8 lattice L ≅ D_8^+, the sublattices
   Ls and Lsbar, the σ-twisted octonion product, the four lemmas of
   paper Section 4 (on Z-bases), and a spot check of Theorem 1.1 (closure
   of the Leech lattice under the Z₃-symmetric triple-octonion product)
@@ -44,7 +44,7 @@ together with the LOOPS package, both of which are recorded below.
   gap_project/octonion_stabilisers.g identifies the stabilizers of L, Ls
   and Lsbar in the automorphism group of the σ-twisted product (ledger
   claim 010a).  The suite uses no floating-point arithmetic; all checks
-  are exact over Q.
+  are exact over Q.  Cited in the paper as [GAP] (Appendix C).
 
 ---
 
@@ -81,6 +81,7 @@ together with the LOOPS package, both of which are recorded below.
   the result is a Moufang loop of order 16 isomorphic to the LOOPS
   library's MoufangLoop(16, 3).  This is the only place the LOOPS
   package itself is exercised; the rest of the GAP suite is plain GAP.
+  Cited in the paper as [LOOPS] (Appendix C), next to [GAP].
 
 ---
 

@@ -53,9 +53,10 @@ the seven maximal orders.
 
 Coxeter found the error himself ("We easily verify that $J_1$ itself is not
 closed under multiplication"). He then told R. H. Bruck, who "sent me a
-revised description of such a domain." The fix — transposing two of the
-$i$'s — is **Bruck's**; Coxeter verified it (§5), proved it maximal (§11),
-and supplied the geometric $E_8$ development. The introduction (p. 561)
+revised description of such a domain." The fix, the domain $J$, is
+**Bruck's**; Coxeter notes that it "can be derived from $J_1$ by
+transposing two of the $i$'s" (§4), verified it (§5), proved it maximal
+(§11), and supplied the geometric $E_8$ development. The introduction (p. 561)
 thanks Bruck "for pointing the way out of the impasse into which Kirmse's
 mistake had led me." So: **error identified by Coxeter, remedy supplied by
 Bruck, published and developed by Coxeter (1946).**

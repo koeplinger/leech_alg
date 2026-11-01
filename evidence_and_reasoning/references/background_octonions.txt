@@ -106,8 +106,8 @@ the public domain.
   Klasse, Volume 76 (1924), pages 63–82
 - **Year**: 1924
 - **Topics**: integral octonions, E8 lattice, sums of eight squares
-- **Originality note**: Original research paper; Kirmse's sole known
-  paper on integral octonions. No dispute over originality known. The paper contains
+- **Originality note**: Original research paper; Kirmse's main paper on
+  integral octonions. No dispute over originality known. The paper contains
   one substantive error (an enumeration miscount: eight stated, seven
   actual; his exhibited domain J_1 is not closed), identified by
   Coxeter (1946) and remedied by R. H. Bruck (reported in Coxeter
@@ -118,7 +118,12 @@ the public domain.
   octonion algebra. He also published the identities x(x̄y) = n(x)y = (yx̄)x,
   presumably their first appearance in print (Petersson 2018). See
   terminology.md for a fuller account of Kirmse's contributions
-  alongside the error.
+  alongside the error.  Kirmse published a two-page correction to this
+  paper, "Berichtigung zu der Abhandlung: Zur Darstellbarkeit natürlicher
+  ganzer Zahlen als Summen von acht Quadraten", Ber. Verh. Sächs. Akad.
+  Wiss. Leipzig, Math.-Phys. Kl. 80 (1928), 33–34 (JFM 54.0164.05; cited
+  by P. J. C. Lamont, Proc. Glasgow Math. Assoc. 6 (1963), 99–106).  Its
+  content has not been read in this project (prompt 362).
 
 ---
 
@@ -192,7 +197,7 @@ the public domain.
 - **Notes**: Chapter 9 covers maximal orders of integral octonions and the
   Kirmse–Coxeter–Bruck correction. Cited by the paper, with Coxeter 1946, for
   the seven maximal orders (Sections 1 and 2.2, Lemma 4.2), and on its own for
-  L = D_8^+ (Section 2.2) and for the left Moufang identity in the proof of
+  the coordinates of L ≅ D_8^+ (Section 2.2) and for the left Moufang identity in the proof of
   (4.2) (Section 4.1). Used as a modern cross-check; the
   primary-source-verified account in this project is built directly from
   Dickson (1923), Kirmse (1924), Mahler (1942), and Coxeter (1946).

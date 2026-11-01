@@ -1,6 +1,6 @@
 # Item (1c) — consecutive σ-twists and closure on the Leech lattice
 
-Created: 2026-05-22.  Updated: 2026-10-31.
+Created: 2026-05-22.  Updated: 2026-11-01.
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
 **Prompt:** 113 (Phase A of the v4 update plan).
 **Scripts:** `python_project/src/verify_consecutive_twists_exact.py`
@@ -49,7 +49,7 @@ both reproduced.
 **Consecutive σ-twists do close on Λ — for a substantial fraction.** Not "all,
 of course" (half the 3-cycles), and not "none."
 
-## Characterisation — the Fano plane governs it
+## The tally against the Fano plane
 
 - **3-cycles.** For *every one* of the 35 three-element subsets {a,b,c},
   **exactly one** of the two 3-cycles on it closes and the other does not
@@ -62,9 +62,11 @@ of course" (half the 3-cycles), and not "none."
   it **never** closes (0 of 21). If they do **not** form a Fano line,
   **exactly half** close (42 of 84). Total 42 of 105.
 
-So closure of a consecutive-twist product is not arbitrary: it is controlled
-by the Fano-plane structure — orientation for 3-cycles, the Fano-line status
-of the fixed triple for (2,2)'s.
+So closure of a consecutive-twist product is not arbitrary: each 3-subset
+has exactly one closing orientation, and a (2,2) closes only if its fixed
+triple is not a Fano line (half of those close).  Which of the two
+orientations closes, and which half of those (2,2)'s, the tally does not
+decide.
 
 ## Significance
 
@@ -82,7 +84,7 @@ counts.
 ## Status
 
 Verified facts: the closure counts (identity 0; transpositions 21/21;
-3-cycles 35/70; (2,2) 42/105) and the Fano characterisation are exact
+3-cycles 35/70; (2,2) 42/105) and the tallies against the Fano plane are exact
 (24-vector Z-basis of Λ, 576 basis-pair products, exact arithmetic). The
 finer split among the 84 non-line (2,2)'s — why 42 of them and not the other
 42 — is not resolved here and is left as an open question.

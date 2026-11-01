@@ -18,7 +18,7 @@ under an octonion-derived bilinear product.**
 The specific construction in this project appears in no prior work: a
 Z₃-symmetric triple-octonion product on R²⁴, with σ a coordinate
 transposition of two imaginary basis units that is an octonion-algebra
-isomorphism fixing the E₈ lattice L = D₈⁺ but moving Wilson's
+isomorphism fixing the E₈ lattice L ≅ D₈⁺ but moving Wilson's
 sublattices Ls and Ls̄.
 
 The closest related work falls into four categories (listed
@@ -56,8 +56,8 @@ roughly by structural distance from the present construction):
    that foreshadow the octonion-triple and Jordan-algebra frameworks
    above but do not test closure under any bilinear product:
    Conway–Sloane 1982 (23 constructions, one for each Niemeier lattice other
-   than the Leech lattice, including a Turyn-style construction from three
-   copies of E₈);
+   than the Leech lattice, including a construction from three copies of
+   E₈);
    Lepowsky–Meurman 1982 (Λ as a sublattice of E₈³ containing 2E₈³,
    with a maximal 2-local subgroup that permutes the three factors and
    one extra automorphism generating Co₀; their §2 constructs Λ from any
@@ -78,8 +78,12 @@ roughly by structural distance from the present construction):
 Conway and Sloane give 23 constructions of Λ, one for each of the 23
 Niemeier lattices other than the Leech lattice (equivalently, one for each
 class of deep hole in the Leech lattice).  Each construction glues vectors
-according to the hole structure.  Among the 23 is a Turyn-style construction
-from three copies of E₈ corresponding to the 3E₈ Niemeier lattice; the later
+according to the hole structure.  Among the 23 is a construction from three
+copies of E₈, for the Niemeier lattice E₈³: a holy construction (Borcherds,
+arXiv:math/9911195, §2.7), not of the Turyn form of Tits and
+Lepowsky–Meurman, since at the unimodular scale it meets each E₈ block in
+a lattice of determinant 900, where a lattice of Turyn form meets it in
+√2E₈, of determinant 256 (exact check at prompt 362); the later
 "triple of octonions / E₈³" approaches (Dixon 1995/2010, Wilson 2009)
 share its E₈³ setting.  Lepowsky and Meurman, from the same year, credit
 work of Tits with what amounts to their construction of Λ from E₈³ (see
@@ -210,7 +214,7 @@ the X-product A ∘_X B = (A X)(X⁻¹ B).  Dixon uses the X-product with
 X = ℓ₀⁻¹, where ℓ₀ = ½(1 + e₁ + … + e₇), to obtain E₈, and XY-products
 for the laminated lattice Λ₁₆.  For Λ, Dixon writes the minimal vectors
 of a copy of Λ (the componentwise conjugates of Wilson's, key claim 005)
-in O³ with the ordinary octonion product.  Each XY-product is an
+in O³ with the standard octonion product.  Each XY-product is an
 alternative octonion multiplication on R⁸ (isomorphic to the
 standard one).  Dixon does not test or claim closure of Λ under the
 XY-product or any other bilinear product.  The human researcher of this

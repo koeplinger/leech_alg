@@ -1,6 +1,6 @@
 # Primary-source verification — Dickson (1923), §19
 
-Created: 2026-05-20.  Updated: 2026-10-28.
+Created: 2026-05-20.  Updated: 2026-10-31.
 
 **Date:** 2026-05-20
 **Reviewer:** Claude Opus 4.7 (Anthropic), at the direction of Jens Köplinger
@@ -33,8 +33,11 @@ two of the numbers (29)"), **proves it maximal**, and states:
 
 That is: Dickson claims there are **three** maximal orders.
 
-His axioms (his §6): **C** = closure under multiplication, **U** = contains
-the unit $1$, **N** = norm is a rational integer.
+His axioms: **C** = closure under multiplication, **U** = contains the
+basal units $e_0, \ldots, e_7$ (both from Hurwitz's definition, which
+Dickson states in general form in his §4, p. 289; containing $1$ alone is
+Du Pasquier's weaker $U_1$, which Dickson's new definition in his §6 uses
+instead), and **N** = norm is a rational integer (his §6).
 
 ## Verification from scratch
 
@@ -49,7 +52,7 @@ Using only Dickson's product (eq. 24) and his basis (29):
    isomorphic to Coxeter's.)
 3. **There are exactly seven maximal orders** for Dickson's product (30
    $E_8$-type candidate lattices; 7 closed) — not three. All seven satisfy
-   C, U, N (each is closed, contains $J_0\ni 1$, and is an even lattice so has
+   C, U, N (each is closed, contains $J_0$, the integer span of the basal units, and is an even lattice so has
    integral norm). Since Dickson's derivation also shows every octonion
    integer has half-integer coordinates, every "maximal system having C,U,N"
    is one of these seven rank-8 lattices.

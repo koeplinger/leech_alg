@@ -39,9 +39,9 @@ the Leech lattice using octonions, the E8 lattice, and related structures.
   of a maximal order of the integral octonions (paper Section 2.2). That
   section fixes one such order, 𝒪 = ½(e_1 + e_2)L (display (2.2)), and
   identifies it with the ring A_3 = ½(1 + i_3)B(1 + i_3) of Wilson's Section 2,
-  where B = ½Ls̄ and i_t = e_{t+1} (checked in
+  where B = ½Ls̄ and i_t = e_{t+1} (stated in paper Section 2.2; checked in
   python_project/src/verify_structural_proof.py). The three-coordinate
-  structure Λ ⊂ L³ (Wilson's Section 3, cited in paper Section 1) is the
+  structure Λ ⊂ L³ (Wilson's Sections 3 and 4, cited in paper Section 1) is the
   setting of the paper's construction (paper Section 3).
 
 ---
